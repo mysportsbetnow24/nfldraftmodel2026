@@ -18,6 +18,110 @@ POSITION_SIZE_TARGETS: Dict[str, Tuple[int, int]] = {
 }
 
 
+# Baselines used for combine-derived RAS approximation when official RAS is missing.
+POSITION_COMBINE_BASELINES: Dict[str, Dict[str, Tuple[float, float, str]]] = {
+    "QB": {
+        "forty": (4.76, 0.13, "lower"),
+        "ten_split": (1.63, 0.07, "lower"),
+        "vertical": (33.5, 3.8, "higher"),
+        "broad": (117.0, 8.0, "higher"),
+        "shuttle": (4.35, 0.17, "lower"),
+        "three_cone": (7.15, 0.20, "lower"),
+        "bench": (13.0, 4.0, "higher"),
+    },
+    "RB": {
+        "forty": (4.53, 0.10, "lower"),
+        "ten_split": (1.55, 0.05, "lower"),
+        "vertical": (35.5, 3.5, "higher"),
+        "broad": (122.0, 7.0, "higher"),
+        "shuttle": (4.20, 0.15, "lower"),
+        "three_cone": (7.00, 0.18, "lower"),
+        "bench": (18.0, 4.0, "higher"),
+    },
+    "WR": {
+        "forty": (4.49, 0.09, "lower"),
+        "ten_split": (1.53, 0.05, "lower"),
+        "vertical": (36.0, 3.6, "higher"),
+        "broad": (124.0, 7.5, "higher"),
+        "shuttle": (4.18, 0.14, "lower"),
+        "three_cone": (6.95, 0.17, "lower"),
+        "bench": (14.0, 4.0, "higher"),
+    },
+    "TE": {
+        "forty": (4.69, 0.10, "lower"),
+        "ten_split": (1.61, 0.06, "lower"),
+        "vertical": (34.0, 3.5, "higher"),
+        "broad": (121.0, 7.0, "higher"),
+        "shuttle": (4.35, 0.16, "lower"),
+        "three_cone": (7.10, 0.18, "lower"),
+        "bench": (20.0, 4.0, "higher"),
+    },
+    "OT": {
+        "forty": (5.14, 0.12, "lower"),
+        "ten_split": (1.78, 0.07, "lower"),
+        "vertical": (29.0, 3.0, "higher"),
+        "broad": (105.0, 7.0, "higher"),
+        "shuttle": (4.73, 0.17, "lower"),
+        "three_cone": (7.80, 0.22, "lower"),
+        "bench": (24.0, 5.0, "higher"),
+    },
+    "IOL": {
+        "forty": (5.18, 0.13, "lower"),
+        "ten_split": (1.79, 0.07, "lower"),
+        "vertical": (28.5, 2.8, "higher"),
+        "broad": (103.0, 6.5, "higher"),
+        "shuttle": (4.75, 0.18, "lower"),
+        "three_cone": (7.85, 0.22, "lower"),
+        "bench": (26.0, 5.0, "higher"),
+    },
+    "EDGE": {
+        "forty": (4.70, 0.10, "lower"),
+        "ten_split": (1.62, 0.06, "lower"),
+        "vertical": (34.0, 3.3, "higher"),
+        "broad": (118.0, 7.0, "higher"),
+        "shuttle": (4.35, 0.16, "lower"),
+        "three_cone": (7.20, 0.20, "lower"),
+        "bench": (22.0, 5.0, "higher"),
+    },
+    "DT": {
+        "forty": (4.95, 0.12, "lower"),
+        "ten_split": (1.72, 0.07, "lower"),
+        "vertical": (31.0, 3.2, "higher"),
+        "broad": (111.0, 7.0, "higher"),
+        "shuttle": (4.55, 0.17, "lower"),
+        "three_cone": (7.55, 0.21, "lower"),
+        "bench": (25.0, 5.0, "higher"),
+    },
+    "LB": {
+        "forty": (4.64, 0.10, "lower"),
+        "ten_split": (1.59, 0.06, "lower"),
+        "vertical": (34.5, 3.3, "higher"),
+        "broad": (120.0, 7.0, "higher"),
+        "shuttle": (4.28, 0.15, "lower"),
+        "three_cone": (7.12, 0.19, "lower"),
+        "bench": (21.0, 4.5, "higher"),
+    },
+    "CB": {
+        "forty": (4.47, 0.09, "lower"),
+        "ten_split": (1.53, 0.05, "lower"),
+        "vertical": (36.5, 3.5, "higher"),
+        "broad": (124.0, 7.0, "higher"),
+        "shuttle": (4.15, 0.14, "lower"),
+        "three_cone": (6.90, 0.17, "lower"),
+        "bench": (13.0, 4.0, "higher"),
+    },
+    "S": {
+        "forty": (4.53, 0.09, "lower"),
+        "ten_split": (1.55, 0.05, "lower"),
+        "vertical": (35.5, 3.3, "higher"),
+        "broad": (122.0, 7.0, "higher"),
+        "shuttle": (4.20, 0.14, "lower"),
+        "three_cone": (6.98, 0.18, "lower"),
+        "bench": (15.0, 4.0, "higher"),
+    },
+}
+
+
 RAS_HISTORICAL_COMPS: Dict[str, Dict[str, List[str]]] = {
     "QB": {
         "elite": ["Josh Allen", "Cam Newton"],
@@ -118,9 +222,24 @@ def ras_tier(ras_score: float) -> str:
 
 
 def _ras_percentile(ras_score: float) -> float:
-    # Smooth proxy distribution for a 0-10 RAS-like scale.
     pct = ((ras_score / 10.0) ** 1.7) * 100.0
     return round(_clamp(pct, 1.0, 99.8), 2)
+
+
+def ras_percentile(ras_score: float) -> float:
+    return _ras_percentile(ras_score)
+
+
+
+def _score_lower_better(value: float, mean: float, stdev: float) -> float:
+    z = (mean - value) / max(stdev, 1e-6)
+    return _clamp(5.0 + z * 1.7, 0.5, 9.95)
+
+
+
+def _score_higher_better(value: float, mean: float, stdev: float) -> float:
+    z = (value - mean) / max(stdev, 1e-6)
+    return _clamp(5.0 + z * 1.7, 0.5, 9.95)
 
 
 
@@ -148,6 +267,66 @@ def estimate_ras(position: str, height_in: int, weight_lb: int, athletic_score: 
         "ras_tier": tier,
         "ras_percentile": _ras_percentile(ras_score),
         "ras_source": "estimated_profile_proxy",
+    }
+
+
+
+def ras_from_combine_profile(position: str, combine: dict, fallback_ras: dict) -> dict:
+    official = combine.get("ras_official")
+    if official is not None:
+        score = round(_clamp(float(official), 0.0, 10.0), 2)
+        return {
+            "ras_estimate": score,
+            "ras_tier": ras_tier(score),
+            "ras_percentile": _ras_percentile(score),
+            "ras_source": "combine_official",
+        }
+
+    baselines = POSITION_COMBINE_BASELINES.get(position, {})
+    metric_weights = {
+        "forty": 0.20,
+        "ten_split": 0.08,
+        "vertical": 0.12,
+        "broad": 0.10,
+        "shuttle": 0.12,
+        "three_cone": 0.12,
+        "bench": 0.08,
+    }
+
+    weighted = 0.0
+    weight_used = 0.0
+    for metric, weight in metric_weights.items():
+        value = combine.get(metric)
+        base = baselines.get(metric)
+        if value is None or base is None:
+            continue
+        mean, stdev, direction = base
+        if direction == "lower":
+            sub = _score_lower_better(float(value), mean, stdev)
+        else:
+            sub = _score_higher_better(float(value), mean, stdev)
+        weighted += sub * weight
+        weight_used += weight
+
+    # Size component using measured combine height/weight when present.
+    target_h, target_w = POSITION_SIZE_TARGETS.get(position, (72, 210))
+    h = combine.get("height_in")
+    w = combine.get("weight_lb")
+    if h is not None and w is not None:
+        size_component = 10.0 - (abs(float(h) - target_h) / 8.0) * 3.6 - (abs(float(w) - target_w) / 70.0) * 3.4
+        size_component = _clamp(size_component, 2.0, 10.0)
+        weighted += size_component * 0.18
+        weight_used += 0.18
+
+    if weight_used < 0.35:
+        return fallback_ras
+
+    score = round(_clamp(weighted / weight_used, 0.0, 10.0), 2)
+    return {
+        "ras_estimate": score,
+        "ras_tier": ras_tier(score),
+        "ras_percentile": _ras_percentile(score),
+        "ras_source": "combine_derived_partial",
     }
 
 

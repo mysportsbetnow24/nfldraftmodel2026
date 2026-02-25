@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import math
-from typing import Dict
+from typing import Dict, Mapping, Optional
 
+from src.modeling.film_traits import score_film_traits
 from src.schemas import round_from_grade
 
 
@@ -111,7 +112,7 @@ def _athletic_proxy(position: str, rank_seed: int, height_in: int, weight_lb: in
     return max(60.0, min(95.0, score))
 
 
-def _trait_score(position: str, rank_seed: int) -> float:
+def _trait_proxy_score(position: str, rank_seed: int) -> float:
     pos_bonus = {
         "QB": 1.8,
         "OT": 1.2,
@@ -121,6 +122,17 @@ def _trait_score(position: str, rank_seed: int) -> float:
     }.get(position, 0.5)
     score = 95.0 - (rank_seed * 0.085) + pos_bonus
     return max(60.0, min(97.0, score))
+
+
+def _film_trait_blend_weight(coverage: float) -> float:
+    """Blend weight for film-charted trait score; higher coverage gets more authority."""
+    if coverage >= 0.90:
+        return 0.55
+    if coverage >= 0.75:
+        return 0.45
+    if coverage >= 0.50:
+        return 0.35
+    return 0.25
 
 
 def _production_score(class_year: str, rank_seed: int) -> float:
@@ -141,10 +153,26 @@ def _risk_penalty(class_year: str, rank_seed: int) -> float:
     return early_entry + uncertainty
 
 
-def grade_player(position: str, rank_seed: int, class_year: str, height_in: int, weight_lb: int) -> dict:
+def grade_player(
+    position: str,
+    rank_seed: int,
+    class_year: str,
+    height_in: int,
+    weight_lb: int,
+    film_subtraits: Optional[Mapping[str, float]] = None,
+) -> dict:
     weights = POSITION_WEIGHTS[position]
 
-    trait = _trait_score(position, rank_seed)
+    trait_proxy = _trait_proxy_score(position, rank_seed)
+    film_eval = score_film_traits(position, film_subtraits or {})
+
+    if film_eval["film_trait_score"] is not None:
+        film_weight = _film_trait_blend_weight(film_eval["film_trait_coverage"])
+        trait = (1.0 - film_weight) * trait_proxy + film_weight * float(film_eval["film_trait_score"])
+    else:
+        film_weight = 0.0
+        trait = trait_proxy
+
     prod = _production_score(class_year, rank_seed)
     ath = _athletic_proxy(position, rank_seed, height_in, weight_lb)
     size = _size_score(position, height_in, weight_lb)
@@ -169,6 +197,11 @@ def grade_player(position: str, rank_seed: int, class_year: str, height_in: int,
 
     return {
         "trait_score": round(trait, 2),
+        "trait_proxy_score": round(trait_proxy, 2),
+        "film_trait_score": round(film_eval["film_trait_score"], 2) if film_eval["film_trait_score"] is not None else "",
+        "film_trait_coverage": round(film_eval["film_trait_coverage"], 3),
+        "film_trait_blend_weight": round(film_weight, 3),
+        "film_trait_missing_count": film_eval["film_trait_missing_count"],
         "production_score": round(prod, 2),
         "athletic_score": round(ath, 2),
         "size_score": round(size, 2),

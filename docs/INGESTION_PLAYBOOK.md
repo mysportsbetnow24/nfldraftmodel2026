@@ -36,6 +36,9 @@ export CFBD_API_KEY="..."
   - `player_season_stats`
   - `team_season_stats`
   - `team_advanced_stats`
+  - `advanced_game_stats`
+  - `player_ppa`
+  - `team_ppa`
   - `games`
   - `team_game_stats`
   - `roster`
@@ -43,6 +46,16 @@ export CFBD_API_KEY="..."
 - Monthly safety cap:
   - hard-guarded at 1,000 calls/month by default
   - script defaults to dry-run; use `--execute` to spend one call
+
+### External board/PFF CSV import
+- Adapter: `src/ingest/rankings_loader.py`
+- File: `data/sources/manual/nfl-draft-bigboard-scout-mode-2026-02-25.csv`
+- Imported fields:
+  - external rank
+  - position
+  - school
+  - PFF grade
+  - PFF WAA
 
 ### Consensus/analyst boards
 - Adapter: `src/ingest/rankings_loader.py`
@@ -59,12 +72,18 @@ export CFBD_API_KEY="..."
   - NFL.com order tracker
   - NFL Operations release
 
-### Odds API (approval required)
+### Odds API (approved)
 - Adapter: `src/ingest/odds_loader.py`
+- Pull script: `scripts/pull_odds_data.py`
+- Usage monitor: `scripts/odds_usage_status.py`
+- Approved campaign budget (Feb 25, 2026):
+  - 2,880 calls across 120 days
+  - hard-guard enforced in code
+  - script defaults to dry-run; use `--execute` to spend one call
 - Markets:
   - first overall pick
-  - player drafted by team
   - first position drafted
+  - player drafted by team
 
 ## Data quality checks
 

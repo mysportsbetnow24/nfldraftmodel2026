@@ -16,19 +16,26 @@ from src.ingest.cfbd_loader import fetch_dataset
 OUT_DIR = ROOT / "data" / "sources" / "cfbd"
 
 
+DATASET_CHOICES = [
+    "player_season_stats",
+    "team_season_stats",
+    "team_advanced_stats",
+    "advanced_game_stats",
+    "player_ppa",
+    "team_ppa",
+    "games",
+    "team_game_stats",
+    "roster",
+    "fbs_teams",
+]
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Pull selected CFBD dataset with strict monthly call cap")
-    p.add_argument("--dataset", required=True, choices=[
-        "player_season_stats",
-        "team_season_stats",
-        "team_advanced_stats",
-        "games",
-        "team_game_stats",
-        "roster",
-        "fbs_teams",
-    ])
+    p.add_argument("--dataset", required=True, choices=DATASET_CHOICES)
     p.add_argument("--year", type=int, default=2025)
     p.add_argument("--team", type=str, default=None)
+    p.add_argument("--conference", type=str, default=None)
     p.add_argument("--week", type=int, default=None)
     p.add_argument("--season-type", type=str, default="regular", choices=["regular", "postseason", "both"])
     p.add_argument("--max-calls", type=int, default=1000)
@@ -36,8 +43,10 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def output_path(dataset: str, year: int, team: str | None, week: int | None) -> Path:
+def output_path(dataset: str, year: int, team: str | None, conference: str | None, week: int | None) -> Path:
     parts = [dataset, str(year)]
+    if conference:
+        parts.append(conference.lower())
     if team:
         parts.append(team.lower().replace(" ", "_"))
     if week is not None:
@@ -53,6 +62,7 @@ def main() -> None:
         dataset=args.dataset,
         year=args.year,
         team=args.team,
+        conference=args.conference,
         week=args.week,
         season_type=args.season_type,
         execute=args.execute,
@@ -65,7 +75,7 @@ def main() -> None:
         return
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = output_path(args.dataset, args.year, args.team, args.week)
+    out = output_path(args.dataset, args.year, args.team, args.conference, args.week)
     with out.open("w") as f:
         json.dump(result, f, indent=2)
 

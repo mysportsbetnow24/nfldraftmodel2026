@@ -1,0 +1,10 @@
+{
+  "status": "ok",
+  "source_path": "/Users/nickholz/nfldraftmodel2026/data/sources/manual/playerprofiler_2026.csv",
+  "source_rows": 3,
+  "board_rows": 462,
+  "join_rate_name_pos": 0.0,
+  "join_rate_name": 0.0,
+  "skill_source_rows": 3,
+  "source_rows_full_coverage": 3
+}

@@ -1,0 +1,283 @@
+NFL DRAFT MODEL 2026 - FULL GRADING FORMULA + FILM SUB-TRAIT METHODOLOGY
+Last updated: 2026-02-25
+
+---------------------------------------------------------------------
+1) WHAT THIS DOCUMENT IS
+---------------------------------------------------------------------
+This document is the direct implementation reference for:
+- Current numeric grading model (trait, production, athletic, size, context, risk)
+- Round-value mapping
+- New film sub-trait scoring model (release, bend, processing, etc.)
+- How film sub-traits blend into final trait score and final grade
+
+Primary implementation files:
+- src/modeling/grading.py
+- src/modeling/film_traits.py
+- scripts/build_big_board.py
+- src/ingest/film_traits_loader.py
+
+---------------------------------------------------------------------
+2) FINAL GRADE FORMULA (IMPLEMENTED)
+---------------------------------------------------------------------
+For player p at position pos:
+
+final_grade =
+  w_trait(pos)      * trait_score
++ w_production(pos) * production_score
++ w_athletic(pos)   * athletic_score
++ w_size(pos)       * size_score
++ w_context(pos)    * context_score
+- risk_penalty
+
+Round mapping:
+- 92-100: Round 1
+- 88-91.9: Round 1-2
+- 84-87.9: Round 2-3
+- 80-83.9: Round 3-4
+- 76-79.9: Round 4-5
+- 72-75.9: Round 5-6
+- 68-71.9: Round 6-7
+- <68: UDFA
+
+---------------------------------------------------------------------
+3) POSITION WEIGHTS (IMPLEMENTED)
+---------------------------------------------------------------------
+QB:   trait .40, production .25, athletic .15, size .10, context .10
+RB:   trait .33, production .30, athletic .20, size .07, context .10
+WR:   trait .35, production .30, athletic .20, size .05, context .10
+TE:   trait .35, production .25, athletic .20, size .10, context .10
+OT:   trait .40, production .20, athletic .15, size .15, context .10
+IOL:  trait .40, production .20, athletic .12, size .18, context .10
+EDGE: trait .36, production .28, athletic .20, size .08, context .08
+DT:   trait .36, production .26, athletic .15, size .15, context .08
+LB:   trait .35, production .25, athletic .20, size .10, context .10
+CB:   trait .38, production .25, athletic .22, size .05, context .10
+S:    trait .35, production .25, athletic .20, size .08, context .12
+
+---------------------------------------------------------------------
+4) COMPONENT FORMULAS (IMPLEMENTED)
+---------------------------------------------------------------------
+4.1 Trait score (proxy + film blend)
+A) Trait proxy:
+trait_proxy = clamp(95 - 0.085*rank_seed + pos_bonus, 60, 97)
+
+pos_bonus:
+- QB 1.8, OT 1.2, EDGE 1.0, CB 0.9, WR 0.8, others 0.5
+
+B) Film trait score (if film chart exists):
+film_trait_score = weighted average of position-specific sub-traits (0-100)
+coverage = sum(weights of provided sub-traits)
+missing_penalty = max(0, (0.65 - coverage) * 8)
+film_trait_score_adj = clamp(film_trait_score - missing_penalty, 0, 100)
+
+C) Blend weight based on chart completeness:
+if coverage >= 0.90: film_weight = 0.55
+elif coverage >= 0.75: film_weight = 0.45
+elif coverage >= 0.50: film_weight = 0.35
+else: film_weight = 0.25
+
+D) Final trait score:
+if film exists:
+  trait_score = (1-film_weight)*trait_proxy + film_weight*film_trait_score_adj
+else:
+  trait_score = trait_proxy
+
+4.2 Production score
+exp_bonus =
+- 1.2 if SR/RSR
+- 0.2 if SO/RSO
+- 0.5 otherwise
+
+production_score = clamp(92 - 0.08*rank_seed + exp_bonus, 58, 95)
+
+4.3 Athletic score
+base = 90 - 0.09*rank_seed
+frame_bonus = (height_in - 72)*0.35 + (weight_lb - 220)*0.01
+athletic_score = clamp(base + frame_bonus*pos_mod, 60, 95)
+
+pos_mod:
+QB 1.5, RB 0.8, WR 1.0, TE 0.9, OT 0.7, IOL 0.4,
+EDGE 1.2, DT 0.8, LB 1.0, CB 1.1, S 1.0
+
+4.4 Size score
+Each position has a target minimum frame (height, weight):
+size_score = clamp(
+  90 - 0.8*abs(height_in - min_height_in)
+     - 0.08*abs(weight_lb - min_weight_lb),
+  62, 95
+)
+
+Position frame targets:
+QB 74/215, RB 69/200, WR 70/185, TE 76/245, OT 77/310,
+IOL 74/300, EDGE 75/250, DT 74/290, LB 73/225, CB 70/185, S 71/200
+
+4.5 Context score
+context_score = clamp(90 - 0.07*rank_seed, 62, 93)
+
+4.6 Risk penalty
+early_entry = 1.8 if class in {SO, RSO, FR, RFR} else 0.9
+uncertainty = 1.4 if rank_seed > 180 else 0.6
+risk_penalty = early_entry + uncertainty
+
+Risk bands:
+- Non-early + top180: 1.5
+- Non-early + >180: 2.3
+- Early + top180: 2.4
+- Early + >180: 3.2
+
+---------------------------------------------------------------------
+5) FILM SUB-TRAITS BY POSITION (IMPLEMENTED)
+---------------------------------------------------------------------
+All sub-traits are graded on 0-100 scale from All-22 charting.
+
+QB:
+- processing .22
+- accuracy .20
+- arm_talent .14
+- creation .14
+- pocket_presence .15
+- situational_command .15
+
+RB:
+- vision .22
+- burst .16
+- contact_balance .20
+- lateral_agility .12
+- pass_pro .15
+- receiving .15
+
+WR:
+- release .18
+- route_running .21
+- separation .22
+- ball_skills .16
+- yac .13
+- play_strength .10
+
+TE:
+- release .12
+- route_running .17
+- ball_skills .17
+- yac .14
+- inline_blocking .22
+- pass_pro .18
+
+OT:
+- pass_set .20
+- anchor .18
+- hand_usage .18
+- recovery .14
+- run_blocking .16
+- processing .14
+
+IOL:
+- leverage .18
+- anchor .18
+- hand_usage .16
+- processing .18
+- lateral_agility .12
+- run_blocking .18
+
+EDGE:
+- get_off .17
+- bend .19
+- hand_usage .16
+- rush_plan .15
+- counter_moves .13
+- run_defense .20
+
+DT:
+- get_off .15
+- power .20
+- hand_usage .16
+- leverage .18
+- pass_rush .15
+- run_defense .16
+
+LB:
+- processing .21
+- trigger .16
+- range .18
+- block_deconstruction .14
+- coverage .16
+- tackling .15
+
+CB:
+- press .15
+- footwork .16
+- recovery_speed .17
+- processing .16
+- ball_skills .19
+- tackling .17
+
+S:
+- processing .20
+- range .18
+- man_coverage .14
+- tackling .16
+- angles .16
+- communication .16
+
+---------------------------------------------------------------------
+6) HOW TO CHART AND INGEST FILM SUB-TRAITS (IMPLEMENTED)
+---------------------------------------------------------------------
+Files:
+- data/sources/manual/film_traits_2026_template.csv
+- data/sources/manual/film_traits_2026.csv
+
+Workflow:
+1) Copy template row format into film_traits_2026.csv.
+2) For each player/position, input 0-100 sub-trait scores from film charting.
+3) Rebuild board:
+   python3 scripts/build_big_board.py
+
+In output board, these fields will populate:
+- trait_proxy_score
+- film_trait_score
+- film_trait_coverage
+- film_trait_blend_weight
+- film_trait_missing_count
+- film_traits_source
+- film_eval_date
+
+---------------------------------------------------------------------
+7) WHY THESE SUB-TRAITS / WEIGHTS WERE CHOSEN
+---------------------------------------------------------------------
+Method used:
+- Started from your Scouting Bible position categories and All-22 watch points.
+- Collapsed to 6 high-signal numeric traits per position for operational charting speed.
+- Weighted traits by translatability and down-to-down stability (example: WR separation/route-running > YAC volatility).
+- Added coverage-aware blending so sparse charts cannot overpower the board.
+
+This is intended as v1 infrastructure. As historical backtesting is added (2016-2025),
+weights should be re-fit by position against NFL outcomes.
+
+---------------------------------------------------------------------
+8) NEXT CALIBRATION STEP (RECOMMENDED)
+---------------------------------------------------------------------
+After you chart at least 80-120 players:
+- Fit per-position regression:
+  target ~ film_subtraits + production + athletic + size + context
+- Compare predictive lift vs current proxy-only trait score.
+- Refit sub-trait weights and blend weights from empirical lift.
+
+---------------------------------------------------------------------
+9) EXAMPLE (WR)
+---------------------------------------------------------------------
+Input chart:
+release=82, route_running=85, separation=88, ball_skills=83, yac=79, play_strength=74
+
+film_trait_raw =
+0.18*82 + 0.21*85 + 0.22*88 + 0.16*83 + 0.13*79 + 0.10*74
+= 82.91
+
+If all six traits are present:
+coverage = 1.00, missing_penalty = 0, film_weight = 0.55
+
+trait_score = 0.45*trait_proxy + 0.55*82.91
+
+That trait_score then flows into final_grade via position weights.
+
+---------------------------------------------------------------------
+END
+---------------------------------------------------------------------

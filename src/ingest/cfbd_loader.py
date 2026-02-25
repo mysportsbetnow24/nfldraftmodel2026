@@ -7,8 +7,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict
 
-import requests
-
 
 ROOT = Path(__file__).resolve().parents[2]
 USAGE_DIR = ROOT / "data" / "processed" / "api_usage"
@@ -130,6 +128,9 @@ class CFBDClient:
         if not self.api_key:
             raise RuntimeError("CFBD_API_KEY is not set. Export it in your shell before using --execute.")
 
+        # Import requests only when executing API calls so dry-run works without dependency installs.
+        import requests  # type: ignore
+
         status = self.tracker.reserve_call(endpoint=endpoint, params=params)
 
         resp = requests.get(
@@ -154,6 +155,9 @@ DATASET_ENDPOINTS = {
     "player_season_stats": "/stats/player/season",
     "team_season_stats": "/stats/season",
     "team_advanced_stats": "/stats/season/advanced",
+    "advanced_game_stats": "/stats/game/advanced",
+    "player_ppa": "/ppa/players/season",
+    "team_ppa": "/ppa/teams",
     "games": "/games",
     "team_game_stats": "/games/teams",
     "roster": "/roster",
@@ -161,10 +165,14 @@ DATASET_ENDPOINTS = {
 }
 
 
+SEASON_TYPE_DATASETS = {"games", "team_game_stats", "advanced_game_stats", "team_ppa"}
+
+
 def fetch_dataset(
     dataset: str,
     year: int,
     team: str | None = None,
+    conference: str | None = None,
     week: int | None = None,
     season_type: str = "regular",
     execute: bool = False,
@@ -179,9 +187,11 @@ def fetch_dataset(
     params: Dict[str, Any] = {"year": year}
     if team:
         params["team"] = team
+    if conference:
+        params["conference"] = conference
     if week is not None:
         params["week"] = week
-    if dataset in {"games", "team_game_stats"}:
+    if dataset in SEASON_TYPE_DATASETS:
         params["seasonType"] = season_type
 
     return client.get(DATASET_ENDPOINTS[dataset], params=params, execute=execute)
