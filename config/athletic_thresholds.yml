@@ -1,0 +1,44 @@
+QB:
+  min_height_in: 74
+  min_weight_lb: 215
+  forty_max: 5.10
+RB:
+  min_height_in: 69
+  min_weight_lb: 200
+  forty_max: 4.62
+WR:
+  min_height_in: 70
+  min_weight_lb: 185
+  forty_max: 4.58
+TE:
+  min_height_in: 76
+  min_weight_lb: 245
+  forty_max: 4.80
+OT:
+  min_height_in: 77
+  min_weight_lb: 310
+  forty_max: 5.35
+IOL:
+  min_height_in: 74
+  min_weight_lb: 300
+  forty_max: 5.40
+EDGE:
+  min_height_in: 75
+  min_weight_lb: 250
+  forty_max: 4.85
+DT:
+  min_height_in: 74
+  min_weight_lb: 290
+  forty_max: 5.20
+LB:
+  min_height_in: 73
+  min_weight_lb: 225
+  forty_max: 4.75
+CB:
+  min_height_in: 70
+  min_weight_lb: 185
+  forty_max: 4.55
+S:
+  min_height_in: 71
+  min_weight_lb: 200
+  forty_max: 4.62

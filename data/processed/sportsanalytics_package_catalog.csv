@@ -1,0 +1,12 @@
+package,category,use_case
+nflreadr,nfl_data,Load nflverse datasets in R
+cfbfastR,cfb_data,Load college football PBP and summaries
+nflplotR,viz,Visualize NFL play and player data
+tidymodels,modeling,Model training and evaluation workflows
+xgboost,modeling,Gradient boosting for prospect success models
+mgcv,modeling,GAM models for non-linear age/production curves
+lme4,modeling,Hierarchical models by conference/team
+survival,modeling,Career survival / second-contract modeling
+forecast,time_series,Trend and aging-curve analysis
+arrow,storage,Columnar storage for large PBP tables
+duckdb,storage,Fast local analytics for joins/feature building

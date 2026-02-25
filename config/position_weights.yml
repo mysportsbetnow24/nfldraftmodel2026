@@ -1,0 +1,66 @@
+QB:
+  trait: 0.40
+  production: 0.25
+  athletic: 0.15
+  size: 0.10
+  context: 0.10
+RB:
+  trait: 0.33
+  production: 0.30
+  athletic: 0.20
+  size: 0.07
+  context: 0.10
+WR:
+  trait: 0.35
+  production: 0.30
+  athletic: 0.20
+  size: 0.05
+  context: 0.10
+TE:
+  trait: 0.35
+  production: 0.25
+  athletic: 0.20
+  size: 0.10
+  context: 0.10
+OT:
+  trait: 0.40
+  production: 0.20
+  athletic: 0.15
+  size: 0.15
+  context: 0.10
+IOL:
+  trait: 0.40
+  production: 0.20
+  athletic: 0.12
+  size: 0.18
+  context: 0.10
+EDGE:
+  trait: 0.36
+  production: 0.28
+  athletic: 0.20
+  size: 0.08
+  context: 0.08
+DT:
+  trait: 0.36
+  production: 0.26
+  athletic: 0.15
+  size: 0.15
+  context: 0.08
+LB:
+  trait: 0.35
+  production: 0.25
+  athletic: 0.20
+  size: 0.10
+  context: 0.10
+CB:
+  trait: 0.38
+  production: 0.25
+  athletic: 0.22
+  size: 0.05
+  context: 0.10
+S:
+  trait: 0.35
+  production: 0.25
+  athletic: 0.20
+  size: 0.08
+  context: 0.12

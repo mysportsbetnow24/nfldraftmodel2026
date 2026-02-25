@@ -1,0 +1,65 @@
+# Ingestion Playbook
+
+## Environment
+
+Set environment variables before live pulls:
+
+```bash
+export ODDS_API_KEY="..."
+export CFBD_API_KEY="..."
+```
+
+## Source adapters
+
+### nflverse / nflreadr
+- Adapter: `src/ingest/nflverse_loader.py`
+- Intended tables:
+  - `pbp_nfl`
+  - `player_stats_nfl`
+  - `rosters_nfl`
+  - `draft_history_nfl`
+  - `injuries_nfl`
+
+### cfbfastr / SportsDataverse
+- Adapter: `src/ingest/cfbfastr_loader.py`
+- Intended tables:
+  - `pbp_cfb`
+  - `player_stats_cfb`
+  - `team_stats_cfb`
+  - `rosters_cfb`
+
+### Consensus/analyst boards
+- Adapter: `src/ingest/rankings_loader.py`
+- Feeds:
+  - Daniel Jeremiah (public)
+  - NFL Mock Draft Database (consensus)
+  - DraftTek
+  - PFF public board pages
+  - Manual imports for paywalled boards
+
+### Draft order and comp picks
+- Adapter: `src/ingest/rankings_loader.py`
+- Sources:
+  - NFL.com order tracker
+  - NFL Operations release
+
+### Odds API (approval required)
+- Adapter: `src/ingest/odds_loader.py`
+- Markets:
+  - first overall pick
+  - player drafted by team
+  - first position drafted
+
+## Data quality checks
+
+- Unique key checks (`player_name + school + position + class_year` provisional key).
+- Position normalization map (EDGE/DE/OLB etc).
+- Height/weight standardization.
+- Duplicate source row suppression.
+- Timestamp + source_url provenance columns on every load.
+
+## Legal and paywall notes
+
+- Do not bypass authentication/paywalls.
+- Use manual template imports for paid sources.
+- Keep source attribution on each ranking row.
