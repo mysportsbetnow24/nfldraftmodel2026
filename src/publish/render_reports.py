@@ -17,6 +17,11 @@ def _player_card(row: dict) -> str:
     note = html.escape(row["scouting_notes"])
     team_fit = html.escape(row["best_team_fit"])
     comp = html.escape(row["historical_comp"])
+    ras_score = row.get("ras_estimate", "")
+    ras_tier = html.escape(row.get("ras_tier", ""))
+    ras_pct = row.get("ras_percentile", "")
+    ras_comp_1 = html.escape(row.get("ras_historical_comp_1", ""))
+    ras_comp_2 = html.escape(row.get("ras_historical_comp_2", ""))
     headshot = html.escape(row.get("headshot_url", ""))
 
     img_tag = f'<img src="{headshot}" alt="{name}" class="headshot" />' if headshot else '<div class="headshot placeholder">No headshot yet</div>'
@@ -28,6 +33,8 @@ def _player_card(row: dict) -> str:
   <p class=\"meta\">{pos} | {school} | Grade {row['final_grade']} ({row['round_value']})</p>
   <p><strong>Best Team Fit:</strong> {team_fit}</p>
   <p><strong>Historical Comp:</strong> {comp}</p>
+  <p><strong>RAS (Estimated):</strong> {ras_score}/10 ({ras_tier}, {ras_pct} percentile)</p>
+  <p><strong>RAS Historical Bucket Comps:</strong> {ras_comp_1} | {ras_comp_2}</p>
   <p><strong>Core Stat:</strong> {html.escape(row['core_stat_name'])} = {row['core_stat_value']}</p>
   <p>{note}</p>
 </article>

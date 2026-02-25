@@ -28,6 +28,22 @@ export CFBD_API_KEY="..."
   - `team_stats_cfb`
   - `rosters_cfb`
 
+### CollegeFootballData.com (CFBD API)
+- Adapter: `src/ingest/cfbd_loader.py`
+- Pull script: `scripts/pull_cfbd_data.py`
+- Usage monitor: `scripts/cfbd_usage_status.py`
+- Supported datasets:
+  - `player_season_stats`
+  - `team_season_stats`
+  - `team_advanced_stats`
+  - `games`
+  - `team_game_stats`
+  - `roster`
+  - `fbs_teams`
+- Monthly safety cap:
+  - hard-guarded at 1,000 calls/month by default
+  - script defaults to dry-run; use `--execute` to spend one call
+
 ### Consensus/analyst boards
 - Adapter: `src/ingest/rankings_loader.py`
 - Feeds:

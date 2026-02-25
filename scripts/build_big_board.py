@@ -13,6 +13,7 @@ if str(ROOT) not in sys.path:
 from src.ingest.rankings_loader import analyst_aggregate_score, load_analyst_rows, normalize_pos
 from src.modeling.comp_model import assign_comp
 from src.modeling.grading import grade_player, scouting_note
+from src.modeling.ras import estimate_ras, historical_ras_comparison
 from src.modeling.team_fit import best_team_fit
 from src.schemas import parse_height_to_inches
 
@@ -76,6 +77,14 @@ def main() -> None:
 
         fit_team, fit_score = best_team_fit(pos)
         comp = assign_comp(pos, row["rank_seed"])
+        ras = estimate_ras(
+            position=pos,
+            height_in=height_in,
+            weight_lb=row["weight_lb"],
+            athletic_score=grades["athletic_score"],
+            rank_seed=row["rank_seed"],
+        )
+        ras_comps = historical_ras_comparison(pos, ras["ras_tier"])
 
         report = {
             **row,
@@ -88,6 +97,8 @@ def main() -> None:
             "best_team_fit": fit_team,
             "best_team_fit_score": fit_score,
             **comp,
+            **ras,
+            **ras_comps,
             "scouting_notes": scouting_note(pos, grades["final_grade"], row["rank_seed"]),
             "headshot_url": "",
         }

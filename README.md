@@ -4,6 +4,7 @@ Offline-first 2026 NFL Draft modeling workspace with:
 - Prospect database and top-300 board seed
 - Scouting Bible (position charts, traits, thresholds, grading logic)
 - Consensus ranking merge pipeline (analyst + public boards)
+- Relative Athletic Score (RAS) proxy and historical RAS bucket comparisons
 - Team-need and scheme-fit scoring
 - Round 1 and 7-round mock draft simulation
 - Publish-ready player report templates
@@ -15,6 +16,7 @@ python3 scripts/build_seed_datasets.py
 python3 scripts/build_big_board.py
 python3 scripts/run_mock_draft.py
 python3 scripts/generate_player_reports.py
+python3 scripts/cfbd_usage_status.py
 ```
 
 Outputs are written to `data/processed` and `data/outputs`.
@@ -24,6 +26,17 @@ Outputs are written to `data/processed` and `data/outputs`.
 - Shell network is blocked in this environment, so live pulls are implemented as adapters and documented in `docs/INGESTION_PLAYBOOK.md`.
 - Odds API pulls are intentionally gated behind user approval.
 - Paywalled analyst boards (Brugler/McShay/PFF premium) are supported via manual import templates.
+- CFBD pulls are hard-capped at 1,000 calls/month with dry-run default.
+
+## CFBD usage-safe pulls
+
+```bash
+# Dry run (no call spent)
+python3 scripts/pull_cfbd_data.py --dataset team_advanced_stats --year 2025
+
+# Spend exactly one call
+python3 scripts/pull_cfbd_data.py --dataset team_advanced_stats --year 2025 --execute
+```
 
 ## Core files
 

@@ -72,3 +72,22 @@ Comp confidence tiers:
 - `A`: distance <= 0.35
 - `B`: 0.36 - 0.55
 - `C`: >0.55
+
+## 8. Relative Athletic Score (RAS) proxy
+
+Until verified combine/pro-day testing is ingested, this model uses an estimated 0-10 RAS-like score:
+
+`ras_estimate = 0.72*athletic_component + 0.23*size_component + 0.05*consensus_component`
+
+- `athletic_component`: normalized from current athletic proxy.
+- `size_component`: distance from position size targets.
+- `consensus_component`: small stabilizer from seed rank.
+
+RAS tiers:
+- `elite`: >= 9.0
+- `great`: 8.0-8.99
+- `good`: 7.0-7.99
+- `average`: 6.0-6.99
+- `below_average`: < 6.0
+
+Each tier maps to historical athlete buckets by position for quick contextual comps.

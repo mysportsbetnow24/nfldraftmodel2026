@@ -1,0 +1,13 @@
+# Secrets
+.env
+.env.*
+
+# Python cache/artifacts
+__pycache__/
+*.py[cod]
+
+# Local API usage state
+/data/processed/api_usage/
+
+# Optional large raw pulls
+/data/sources/cfbd/
