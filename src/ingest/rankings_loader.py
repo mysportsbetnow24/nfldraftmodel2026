@@ -31,6 +31,8 @@ POS_MAP = {
     "G": "IOL",
     "C": "IOL",
     "T": "OT",
+    "HB": "RB",
+    "FB": "RB",
 }
 
 

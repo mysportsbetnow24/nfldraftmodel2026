@@ -1,0 +1,50 @@
+Guardrailed vs Uncapped Production Test
+
+uncapped_env: PRODUCTION_SIGNAL_MULTIPLIER=1.0, PRODUCTION_SIGNAL_MAX_DELTA=50, PRODUCTION_SIGNAL_QB_MULTIPLIER=1.0, PRODUCTION_SIGNAL_QB_MAX_DELTA=50
+guardrailed_env: defaults (0.82/7.0, QB 0.74/6.0)
+shared_players: 412
+
+stability_summary:
+- top10_overlap: 9/10
+- top32_overlap: 31/32
+- top100_overlap: 97/100
+- mean_abs_rank_delta: 9.60
+- max_abs_rank_delta: 53
+- mean_abs_final_grade_delta: 0.54
+- max_abs_final_grade_delta: 2.84
+- mean_abs_production_component_delta: 2.59
+- max_abs_production_component_delta: 13.47
+
+largest_risers_under_guardrail:
+- Jeff Persi: 329 -> 276 (delta -53) | grade 67.98 -> 70.82
+- Tristan Leigh: 399 -> 364 (delta -35) | grade 63.79 -> 66.21
+- Bauer Sharp: 409 -> 376 (delta -33) | grade 63.0 -> 65.72
+- Stephen Hall: 317 -> 285 (delta -32) | grade 68.67 -> 70.61
+- Eugene Asante: 107 -> 77 (delta -30) | grade 78.84 -> 80.53
+- Jaden Rashada: 261 -> 232 (delta -29) | grade 71.94 -> 73.83
+- Makhi Hughes: 160 -> 132 (delta -28) | grade 75.85 -> 77.95
+- Jaydn Ott: 263 -> 235 (delta -28) | grade 71.72 -> 73.67
+- Jimmori Robinson: 319 -> 291 (delta -28) | grade 68.4 -> 70.58
+- Xavian Sorey Jr.: 343 -> 315 (delta -28) | grade 67.22 -> 69.55
+- Jermod McCoy: 86 -> 59 (delta -27) | grade 79.8 -> 81.49
+- Chris Hilton Jr.: 322 -> 295 (delta -27) | grade 68.33 -> 70.53
+- Kevin Concepcion: 105 -> 79 (delta -26) | grade 78.99 -> 80.49
+- Nic Anderson: 234 -> 208 (delta -26) | grade 73.15 -> 75.24
+- Oscar Cardenas: 247 -> 221 (delta -26) | grade 72.68 -> 74.36
+
+largest_fallers_under_guardrail:
+- Devon Marshall: 156 -> 190 (delta +34) | grade 76.0 -> 75.95
+- Jadon Canady: 170 -> 204 (delta +34) | grade 75.53 -> 75.37
+- Roman Hemby: 161 -> 194 (delta +33) | grade 75.77 -> 75.77
+- Eric McAlister: 157 -> 187 (delta +30) | grade 75.94 -> 76.02
+- Carson Beck: 163 -> 193 (delta +30) | grade 75.65 -> 75.78
+- Albert Regis: 165 -> 195 (delta +30) | grade 75.63 -> 75.77
+- Le'Veon Moss: 167 -> 196 (delta +29) | grade 75.6 -> 75.7
+- Logan Jones: 152 -> 179 (delta +27) | grade 76.19 -> 76.18
+- DJ Campbell: 181 -> 207 (delta +26) | grade 75.1 -> 75.28
+- Hezekiah Masses: 147 -> 171 (delta +24) | grade 76.52 -> 76.49
+- Josh Cuevas: 176 -> 200 (delta +24) | grade 75.27 -> 75.54
+- Eli Raridon: 186 -> 210 (delta +24) | grade 74.92 -> 75.21
+- Jager Burton: 190 -> 214 (delta +24) | grade 74.77 -> 74.94
+- Kevin Coleman Jr.: 195 -> 218 (delta +23) | grade 74.69 -> 74.73
+- Tommy Castellanos: 228 -> 251 (delta +23) | grade 73.24 -> 72.99

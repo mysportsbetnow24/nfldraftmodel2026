@@ -1,0 +1,39 @@
+RAS BENCHMARK DIGEST (2026)
+Generated: 2026-02-25 19:26:02 EST
+
+1) Historical Import Summary
+- Source: /Users/nickholz/Downloads/New Menu Table (no draft).csv
+- Historical DB: data/sources/manual/ras_historical_database.csv
+- Match log: data/processed/ras_2026_matches.csv
+- 2026 matched prospects (strict): 5
+- 2026 unmatched prospects: 188
+
+2) Position Targets (from historical RAS distribution)
+- starter_target_ras = position median (p50 since 2016)
+- impact_target_ras = position p75 since 2016
+- elite_target_ras = blend toward top-end percentile
+
+CB: Starter >= 5.142 | Impact >= 6.71 | Elite >= 8.59 | n=2761
+DT: Starter >= 5.15 | Impact >= 7.018 | Elite >= 8.69 | n=2033
+EDGE: Starter >= 5.14 | Impact >= 6.992 | Elite >= 8.783 | n=2030
+IOL: Starter >= 5.352 | Impact >= 7.228 | Elite >= 8.939 | n=1736
+LB: Starter >= 5.14 | Impact >= 6.86 | Elite >= 8.54 | n=3203
+OT: Starter >= 5.966 | Impact >= 7.805 | Elite >= 9.138 | n=1501
+QB: Starter >= 6.068 | Impact >= 7.31 | Elite >= 8.816 | n=1048
+RB: Starter >= 5.002 | Impact >= 6.76 | Elite >= 8.506 | n=2645
+S: Starter >= 4.86 | Impact >= 6.48 | Elite >= 8.466 | n=2445
+TE: Starter >= 5.508 | Impact >= 7.008 | Elite >= 8.618 | n=1338
+WR: Starter >= 5.22 | Impact >= 6.8 | Elite >= 8.56 | n=3816
+
+3) How This Is Used In Model Outputs
+- big_board_2026.csv now includes:
+  ras_benchmark_starter_target, ras_benchmark_impact_target, ras_benchmark_elite_target
+  ras_meets_starter_target, ras_meets_impact_target, ras_meets_elite_target
+  ras_benchmark_sample_n
+- reports/scouting cards display benchmark context next to RAS where available.
+
+4) Practical Scouting Use
+- Use < Starter target as an athletic floor flag.
+- Use >= Impact target as priority upside indicator.
+- Use >= Elite target for high-ceiling athletic archetype comps.
+- Keep film/production primary; use RAS as context + tiebreaker, not sole driver.

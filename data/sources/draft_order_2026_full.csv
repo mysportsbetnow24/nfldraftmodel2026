@@ -1,33 +1,258 @@
 round,pick_in_round,overall_pick,current_team,original_team,acquired_via,source_url
-1,1,1,LV,LV,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,2,2,CLE,CLE,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,3,3,TEN,TEN,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,4,4,NYG,NYG,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,5,5,NYJ,IND,Trade with Colts,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,6,6,CAR,CAR,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,7,7,NO,NO,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,8,8,IND,NYJ,Trade with Jets,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,9,9,SEA,SEA,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,10,10,NE,NE,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,11,11,MIA,MIA,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,12,12,DAL,GB,Trade with Packers,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,13,13,ARI,ARI,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,14,14,ATL,ATL,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,15,15,CHI,CHI,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,16,16,JAX,JAX,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,17,17,CIN,CIN,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,18,18,DEN,DEN,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,19,19,TB,TB,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,20,20,HOU,HOU,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,21,21,MIN,MIN,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,22,22,LAC,LAC,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,23,23,CLE,JAX,Trade with Jaguars,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,24,24,PIT,PIT,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,25,25,GB,GB,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,26,26,WAS,WAS,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,27,27,LAR,ATL,Trade with Falcons,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,28,28,DET,DET,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,29,29,BUF,BUF,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,30,30,BAL,BAL,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,31,31,KC,KC,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
-1,32,32,PHI,PHI,,https://www.espn.com/nfl/story/_/id/45474052/2026-nfl-draft-order-first-round-all-32-picks
+1,1,1,LV,LV,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,2,2,NYJ,NYJ,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,3,3,ARI,ARI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,4,4,TEN,TEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,5,5,NYG,NYG,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,6,6,CLE,CLE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,7,7,WAS,WAS,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,8,8,NO,NO,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,9,9,KC,KC,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,10,10,CIN,CIN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,11,11,MIA,MIA,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,12,12,DAL,DAL,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,13,13,LAR,ATL,LAR g ATL (2025 Draft trade),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,14,14,BAL,BAL,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,15,15,TB,TB,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,16,16,NYJ,IND,NYJ g IND (A Gardner),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,17,17,DET,DET,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,18,18,MIN,MIN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,19,19,CAR,CAR,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,20,20,DAL,GB,DAL g GB (M Parsons),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,21,21,PIT,PIT,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,22,22,LAC,LAC,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,23,23,PHI,PHI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,24,24,CLE,JAX,CLE g JAX (2025 Draft Trade),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,25,25,CHI,CHI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,26,26,BUF,BUF,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,27,27,SF,SF,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,28,28,HOU,HOU,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,29,29,LAR,LAR,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,30,30,DEN,DEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,31,31,NE,NE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+1,32,32,SEA,SEA,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,1,33,NYJ,NYJ,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,2,34,ARI,ARI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,3,35,TEN,TEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,4,36,LV,LV,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,5,37,NYG,NYG,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,6,38,HOU,WAS,HOU g WAS (L Tunsil),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,7,39,CLE,CLE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,8,40,KC,KC,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,9,41,CIN,CIN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,10,42,NO,NO,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,11,43,MIA,MIA,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,12,44,NYJ,DAL,NYJ g DAL (Q Williams),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,13,45,BAL,BAL,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,14,46,TB,TB,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,15,47,IND,IND,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,16,48,ATL,ATL,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,17,49,DET,DET,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,18,50,MIN,MIN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,19,51,CAR,CAR,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,20,52,GB,GB,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,21,53,PIT,PIT,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,22,54,PHI,PHI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,23,55,LAC,LAC,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,24,56,JAX,JAX,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,25,57,CHI,CHI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,26,58,SF,SF,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,27,59,HOU,HOU,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,28,60,BUF,BUF,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,29,61,LAR,LAR,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,30,62,DEN,DEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,31,63,NE,NE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+2,32,64,SEA,SEA,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,1,65,ARI,ARI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,2,66,TEN,TEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,3,67,LV,LV,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,4,68,PHI,NYJ,PHI g NYJ (H Reddick),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,5,69,HOU,NYG,HOU g NYG (2025 Draft Trade),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,6,70,CLE,CLE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,7,71,WAS,WAS,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,8,72,CIN,CIN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,9,73,NO,NO,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,10,74,KC,KC,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,11,75,MIA,MIA,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,12,76,PIT,DAL,PIT g DAL (G Pickens),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,13,77,ATL,ATL,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,14,78,BAL,BAL,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,15,79,TB,TB,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,16,80,IND,IND,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,17,81,JAX,DET,JAX g DET (NFL Draft Trade),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,18,82,MIN,MIN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,19,83,CAR,CAR,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,20,84,GB,GB,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,21,85,PIT,PIT,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,22,86,LAC,LAC,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,23,87,MIA,PHI,MIA g PHI (J Phillips),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,24,88,JAX,JAX,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,25,89,CHI,CHI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,26,90,MIA,HOU,MIA g HOU (2025 Draft Trade),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,27,91,BUF,BUF,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,28,92,SF,SF,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,29,93,LAR,LAR,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,30,94,DEN,DEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,31,95,NE,NE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,32,96,SEA,SEA,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,33,97,MIN,MIN,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,34,98,PHI,PHI,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,35,99,PIT,PIT,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,36,100,JAX,DET,JAX g DET (NFL Draft Trade),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,1,101,TEN,TEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,2,102,LV,LV,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,3,103,NYJ,NYJ,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,4,104,ARI,ARI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,5,105,NYG,NYG,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,6,106,HOU,WAS,HOU g WAS (L Tunsil),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,7,107,CLE,CLE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,8,108,DEN,NO,DEN g NO (D Vele),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,9,109,KC,KC,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,10,110,CIN,CIN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,11,111,MIA,MIA,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,12,112,DAL,DAL,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,13,113,IND,IND,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,14,114,ATL,ATL,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,15,115,BAL,BAL,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,16,116,TB,TB,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,17,117,MIN,MIN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,18,118,DET,DET,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,19,119,CAR,CAR,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,20,120,GB,GB,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,21,121,PIT,PIT,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,22,122,PHI,PHI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,23,123,LAC,LAC,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,24,124,LV,JAX,LV g JAX (J Meyers),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,25,125,NE,KC,NE g CHI t KC (2025 Draft Trade),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,26,126,BUF,BUF,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,27,127,SF,SF,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,28,128,HOU,HOU,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,29,129,CHI,LAR,CHI g LAR (2025 Draft Trade),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,30,130,DEN,DEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,31,131,NE,NE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,32,132,NO,SEA,NO g SEA (R Shaheed),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,33,133,SF,SF,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,34,134,LV,LV,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,35,135,PIT,PIT,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,36,136,NO,NO,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,37,137,PHI,PHI,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,38,138,SF,SF,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,1,139,CLE,LV,CLE g LV (K Pickett),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,2,140,TEN,BAL,TEN g NYJ t BAL (2025 Draft Trade),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,3,141,ARI,ARI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,4,142,LAR,TEN,LAR g TEN (E Jones),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,5,143,NYG,NYG,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,6,144,CLE,CLE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,7,145,WAS,WAS,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,8,146,KC,KC,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,9,147,CLE,CIN,CLE g CIN (J Flacco),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,10,148,NO,NO,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,11,149,MIA,MIA,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,12,150,DAL,DAL,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,13,151,PHI,ATL,PHI g ATL(2025 Draft Trade),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,14,152,BAL,BAL,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,15,153,TB,TB,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,16,154,IND,IND,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,17,155,DET,DET,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,18,156,CAR,MIN,CAR g MIN (A Theilen),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,19,157,CAR,CAR,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,20,158,GB,GB,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,21,159,PIT,PIT,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,22,160,BAL,LAC,BAL g LAC (A Gilman),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,23,161,MIN,PHI,MIN g PHI (S Howell),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,24,162,JAX,JAX,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,25,163,CHI,CHI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,26,164,JAX,PHI,JAX g SF t PHI (B Huff/T Bigsby),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,27,165,HOU,PHI,HOU g HOU t PHI(C Gardner-Johnson/JMetchie),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,28,166,BUF,BUF,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,29,167,LAR,LAR,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,30,168,DEN,DEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,31,169,NE,NE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,32,170,NO,SEA,NO g SEA (R Shaheed),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,33,171,SF,SF,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,34,172,BAL,BAL,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,35,173,BAL,BAL,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,36,174,LV,LV,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,37,175,NYJ,NYJ,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,38,176,KC,KC,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,39,177,DAL,DAL,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,40,178,NYJ,NYJ,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,41,179,PHI,PHI,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,1,180,LV,LV,LAR g NYJ t CLE t JAX (J Meyers),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,2,181,ARI,ARI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,3,182,TEN,TEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,4,183,LV,LV,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,5,184,NYG,NYG,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,6,185,WAS,WAS,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,7,186,SEA,CLE,SEA g CLE (N Harris),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,8,187,CIN,CIN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,9,188,NO,NO,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,10,189,NE,KC,NE g KC (J Uche),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,11,190,NYG,MIA,NYG G MIA (D Waller),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,12,191,NYG,DAL,NYG g DAL (J Phillips),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,13,192,TEN,NYJ,TEN g BAL t NYJ (2025 Draft Trade/J Brownlee),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,14,193,TB,TB,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,15,194,MIN,IND,MIN g IND (M Blackmon),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,16,195,ATL,ATL,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,17,196,SF,MIN,SF g MIN t HOU t MIN (Various),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,18,197,CIN,CLE,CIN g DET t CLE (J Flacco),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,19,198,CAR,CAR,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,20,199,GB,GB,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,21,200,NE,PIT,NE g PIT (K Duggar),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,22,201,JAX,HOU,JAX g PHI t HOU (T Bigsby),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,23,202,LAC,LAC,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,24,203,DET,JAX,DET g JAX (2025 Draft Trade),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,25,204,CLE,CHI,CLE g CHI (J Tryon),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,26,205,LAR,HOU,LAR g HOU (B Skowronek),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,27,206,NYJ,BUF,NYJ g BUF (B Codrington),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,28,207,WAS,SF,WAS g SF (B Robinson),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,29,208,LAR,TEN,LAR g LAR t TEN (T White/ E Jones),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,30,209,BAL,PHI,BAL g DEN t NYJ t MIN t PHI(J Alexander/Various),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,31,210,NE,NE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,32,211,DET,JAX,DET g SEA t JAX(R Robertson-Harris/T Patrick),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,33,212,DET,DET,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,34,213,PIT,PIT,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,35,214,PIT,PIT,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,36,215,DAL,DAL,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,37,216,IND,IND,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,1,217,ARI,ARI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,2,218,NYJ,TEN,NYJ g TEN (J Brownlee),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,3,219,LV,LV,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,4,220,BUF,NYJ,BUF g NYJ (B Codrington),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,5,221,CIN,DAL,CIN g NYG t DAL (J Phillips/L Wilson),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,6,222,DET,CLE,DET g CLE (Z Smith),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,7,223,WAS,WAS,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,8,224,PIT,NE,PIT g NO t NE (D Godchaux/K Duggar),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,9,225,DAL,KC,DAL g KC (P Hendershot cond),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,10,226,CIN,CIN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,11,227,MIA,MIA,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,12,228,BUF,DAL,BUF g DAL (K Elam),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,13,229,TB,TB,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,14,230,IND,IND,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,15,231,ATL,ATL,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,16,232,LAR,BAL,LAR g BAL (T White),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,17,233,JAX,DET,JAX g DET (R Patterson),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,18,234,MIN,MIN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,19,235,MIN,CAR,MIN g CAR (A Thielen),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,20,236,GB,GB,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,21,237,PIT,PIT,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,22,238,TEN,LAC,TEN g LAC (E Molden),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,23,239,CHI,CLE,CHI g PHI t JAX t CLE (various),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,24,240,MIN,JAX,MIN g JAX (C Robinson),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,25,241,CHI,CHI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,26,242,NYJ,CLE,NYJ g BUF t CLE (A Cooper/J Briggs),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,27,243,HOU,SF,HOU g SF (K Davis),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,28,244,MIN,HOU,MIN g HOU (C Akers),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,29,245,JAX,HOU,JAX G LAR t HOU (C Kirk),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,30,246,DEN,DEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,31,247,SF,NE,SF g NE (K White),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,32,248,CLE,SEA,CLE g SEA (N Harris),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,33,249,BAL,BAL,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,34,250,LAR,LAR,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,35,251,DEN,DEN,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,36,252,BAL,BAL,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,37,253,IND,IND,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,38,254,GB,GB,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,39,255,DEN,DEN,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,40,256,LAR,LAR,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,41,257,GB,GB,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp

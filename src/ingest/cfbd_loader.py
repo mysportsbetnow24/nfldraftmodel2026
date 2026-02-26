@@ -127,19 +127,46 @@ class CFBDClient:
 
         if not self.api_key:
             raise RuntimeError("CFBD_API_KEY is not set. Export it in your shell before using --execute.")
+        insecure_ssl = str(os.getenv("CFBD_INSECURE_SSL", "")).strip().lower() in {"1", "true", "yes"}
+        status_before = self.tracker.status()
+        if status_before.calls_used >= status_before.max_calls:
+            raise CFBDQuotaExceeded(
+                f"CFBD monthly cap reached ({status_before.calls_used}/{status_before.max_calls}). Refusing new API call."
+            )
+        try:
+            # Prefer requests if available.
+            import requests  # type: ignore
 
-        # Import requests only when executing API calls so dry-run works without dependency installs.
-        import requests  # type: ignore
+            resp = requests.get(
+                url,
+                params=params,
+                headers={"Authorization": f"Bearer {self.api_key}"},
+                timeout=self.timeout_seconds,
+                verify=not insecure_ssl,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+        except ModuleNotFoundError:
+            # Fallback to stdlib so API pulls work without extra installs.
+            import json
+            import ssl
+            from urllib.parse import urlencode
+            from urllib.request import Request, urlopen
 
+            query = urlencode(params or {})
+            request_url = f"{url}?{query}" if query else url
+            req = Request(
+                request_url,
+                headers={"Authorization": f"Bearer {self.api_key}"},
+                method="GET",
+            )
+            ctx = ssl._create_unverified_context() if insecure_ssl else None
+            with urlopen(req, timeout=self.timeout_seconds, context=ctx) as resp:  # nosec B310
+                payload = resp.read().decode("utf-8")
+            data = json.loads(payload)
+        # Only record usage after a successful response so local quota tracking
+        # does not overcount transient network/cert errors.
         status = self.tracker.reserve_call(endpoint=endpoint, params=params)
-
-        resp = requests.get(
-            url,
-            params=params,
-            headers={"Authorization": f"Bearer {self.api_key}"},
-            timeout=self.timeout_seconds,
-        )
-        resp.raise_for_status()
         return {
             "dry_run": False,
             "url": url,
@@ -147,7 +174,7 @@ class CFBDClient:
             "calls_used": status.calls_used,
             "calls_remaining": status.calls_remaining,
             "max_calls": status.max_calls,
-            "data": resp.json(),
+            "data": data,
         }
 
 

@@ -13,6 +13,7 @@ Offline-first 2026 NFL Draft modeling workspace with:
 
 ```bash
 python3 scripts/build_seed_datasets.py
+python3 scripts/qa_build_inputs.py
 python3 scripts/build_big_board.py
 python3 scripts/run_mock_draft.py
 python3 scripts/generate_player_reports.py
@@ -21,6 +22,63 @@ python3 scripts/odds_usage_status.py
 ```
 
 Outputs are written to `data/processed` and `data/outputs`.
+
+## Consensus Signal Ingest (now local-first)
+
+```bash
+# Uses local analyst rankings + external board + optional manual CSVs.
+# In restricted network environments this still populates consensus signals.
+python3 scripts/pull_consensus_big_boards.py --skip-fetch
+python3 scripts/build_big_board.py
+```
+
+Consensus output:
+- `data/processed/consensus_big_boards_2026.csv`
+
+## Historical Calibration (real data only)
+
+Synthetic calibration fallback is disabled. Provide:
+- `data/sources/manual/historical_draft_outcomes_2016_2025.csv`
+- Template: `data/sources/manual/historical_draft_outcomes_2016_2025_template.csv`
+
+Run:
+
+```bash
+python3 scripts/calibrate_historical_model.py --min-year 2016 --max-year 2025
+python3 scripts/build_big_board.py
+```
+
+## Daily combine update cycle
+
+Update `data/sources/manual/combine_2026_results.csv`, then run:
+
+```bash
+python3 scripts/update_combine_cycle.py --combine data/sources/manual/combine_2026_results.csv
+```
+
+This runs:
+1. `scripts/qa_build_inputs.py`
+2. `scripts/build_mockdraftable_features.py`
+3. `scripts/build_big_board.py`
+4. `scripts/run_mock_draft.py`
+5. `scripts/generate_player_reports.py`
+
+Optional flags:
+- `--skip-mock`
+- `--skip-reports`
+
+## Prebuild QA gates (fail-fast)
+
+The board build now hard-stops on:
+- duplicate players by `canonical_name + normalized_position` in seed inputs
+- invalid/missing positions
+- invalid height/weight in seed inputs
+- out-of-range combine measurables
+- players marked as returning to school (`data/sources/manual/returning_to_school_2026.csv`)
+
+Reports are always written to:
+- `data/outputs/prebuild_qa_report.json`
+- `data/outputs/prebuild_qa_report.md`
 
 ## Current constraints
 
@@ -105,6 +163,36 @@ python3 scripts/pull_mockdraftable_data.py --execute
 
 Uses position aggregate baselines for athletic normalization.
 See `docs/MOCKDRAFTABLE_INTEGRATION.md` for usage and weighting guidance.
+
+## UnderDog 2026 Team Needs ingest
+
+```bash
+# Dry run
+python3 scripts/pull_underdog_team_needs.py
+
+# Live pull
+python3 scripts/pull_underdog_team_needs.py --execute
+```
+
+See `docs/TEAM_NEEDS_UNDERDOG.md` for chart outputs and team-profile patch workflow.
+
+## Drafttek 2026 Draft Order + Trades ingest
+
+```bash
+# Dry run
+python3 scripts/pull_drafttek_draft_order.py
+
+# Parse a local saved Drafttek HTML snapshot
+python3 scripts/pull_drafttek_draft_order.py --html-path /tmp/drafttek_trade_value_2026.html
+
+# Live pull
+python3 scripts/pull_drafttek_draft_order.py --execute
+```
+
+Writes:
+- `data/sources/draft_order_2026_full.csv`
+- `data/sources/draft_pick_trades_2026.csv`
+- `data/sources/draft_order_2026_round1.csv`
 
 ## Core files
 

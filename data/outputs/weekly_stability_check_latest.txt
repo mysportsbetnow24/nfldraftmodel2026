@@ -1,0 +1,26 @@
+WEEKLY STABILITY CHECK - 2026 BOARD
+
+Run date: 2026-02-26
+Current board: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
+Previous board baseline: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026_pre_midband_brake.csv
+Current watchlist: /Users/nickholz/nfldraftmodel2026/data/outputs/contrarian_watchlist_2026.csv
+Previous watchlist baseline: derived from previous board
+
+Top-32 Churn
+- overlap: 30/32
+- churn_rate: 0.125
+- added: C.J. Allen, Emmanuel Pregnon
+- dropped: Jacob Rodriguez, Joshua Josephs
+
+Top-50 Rank Delta
+- players with prior rank: 50
+- mean_abs_rank_delta: 2.24
+- detail_csv: /Users/nickholz/nfldraftmodel2026/data/outputs/weekly_top50_rank_delta_20260226_012508.csv
+
+Outlier Watchlist Trend
+- current_count: 15
+- previous_count: 15
+- retained: 15
+- added: 0
+- dropped: 0
+- trend_csv: /Users/nickholz/nfldraftmodel2026/data/outputs/weekly_outlier_watchlist_trend_20260226_012508.csv

@@ -54,5 +54,8 @@
 - Report:
 - How He Wins:
 - Primary Concerns:
-- Projection:
+- 2025 Production Snapshot:
+- Board Movement:
+- Analyst Source Snapshot:
+- Role / Scheme Projection:
 - Value Range:

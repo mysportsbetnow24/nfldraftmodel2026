@@ -1,7 +1,6 @@
 rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,seed_row_id
 1,Fernando Mendoza,Indiana,QB,"6'5""",225,RJR,DraftTek_Top300_2026,1
 2,Francis Mauigoa,Miami (FL),OT,"6'6""",315,JR,DraftTek_Top300_2026,2
-3,Arch Manning,Texas,QB,"6'4""",225,SO,DraftTek_Top300_2026,3
 4,Peter Woods,Clemson,DT3T,"6'3""",315,JR,DraftTek_Top300_2026,4
 5,Caleb Downs,Ohio State,SAF,"6'0""",205,JR,DraftTek_Top300_2026,5
 6,Avieon Terrell,Clemson,CBN,"5'11""",180,JR,DraftTek_Top300_2026,6
@@ -26,7 +25,6 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 25,Denzel Boston,Washington,WRX,"6'4""",209,SR,DraftTek_Top300_2026,25
 26,Jalon Kilgore,South Carolina,SAF,"6'2""",215,JR,DraftTek_Top300_2026,26
 27,Austin Barber,Florida,OT,"6'6""",314,SR,DraftTek_Top300_2026,27
-28,Josh Conerly Jr.,Oregon,OT,"6'4""",315,SR,DraftTek_Top300_2026,28
 29,Eli Holstein,Pittsburgh,QB,"6'4""",225,RSO,DraftTek_Top300_2026,29
 30,R Mason Thomas,Oklahoma,EDGE,"6'2""",249,SR,DraftTek_Top300_2026,30
 31,Kevin Concepcion,Texas A&M,WRZ,"5'11""",183,SR,DraftTek_Top300_2026,31
@@ -51,7 +49,6 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 50,Kaimon Rucker,North Carolina,EDGE,"6'2""",265,SR,DraftTek_Top300_2026,50
 51,Davison Igbinosun,Ohio State,CBN,"6'2""",193,SR,DraftTek_Top300_2026,51
 52,Chandler Rivers,Duke,CBN,"5'10""",180,SR,DraftTek_Top300_2026,52
-53,Luke Kandra,Cincinnati,IOLG,"6'5""",323,SR,DraftTek_Top300_2026,53
 54,Quinten Joyner,Texas Tech,RB,"5'11""",210,JR,DraftTek_Top300_2026,54
 55,T.J. Searcy,Texas A&M,EDGE,"6'5""",270,SR,DraftTek_Top300_2026,55
 56,Tacario Davis,Washington,CBN,"6'4""",195,SR,DraftTek_Top300_2026,56
@@ -61,14 +58,10 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 60,Conner Weigman,Houston,QB,"6'3""",225,SR,DraftTek_Top300_2026,60
 61,Cade Klubnik,Clemson,QB,"6'2""",205,SR,DraftTek_Top300_2026,61
 62,Drew Allar,Penn State,QB,"6'5""",238,SR,DraftTek_Top300_2026,62
-63,Nico Iamaleava,UCLA,QB,"6'6""",210,SR,DraftTek_Top300_2026,63
 64,Jaydn Ott,Oklahoma,RB,"6'0""",205,SR,DraftTek_Top300_2026,64
 65,Makhi Hughes,Oregon,RB,"5'11""",214,SR,DraftTek_Top300_2026,65
 66,Le'Veon Moss,Texas A&M,RB,"6'1""",215,SR,DraftTek_Top300_2026,66
 67,Demond Claiborne,Wake Forest,RB,"5'11""",195,SR,DraftTek_Top300_2026,67
-68,Jordan James,Oregon,RB,"5'10""",205,SR,DraftTek_Top300_2026,68
-69,Dylan Sampson,Tennessee,RB,"5'11""",201,SR,DraftTek_Top300_2026,69
-70,LeQuint Allen,Syracuse,RB,"6'0""",201,SR,DraftTek_Top300_2026,70
 71,Miller Moss,Louisville,QB,"6'1""",205,SR,DraftTek_Top300_2026,71
 72,Darius Taylor,Minnesota,RB,"6'1""",215,JR,DraftTek_Top300_2026,72
 73,Roman Hemby,Indiana,RB,"6'0""",208,SR,DraftTek_Top300_2026,73
@@ -76,10 +69,6 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 75,Justice Boone,Colorado,RB,"5'10""",205,SR,DraftTek_Top300_2026,75
 76,Ryan Williams,Alabama,WRX,"6'0""",175,SO,DraftTek_Top300_2026,76
 77,Eric Singleton Jr.,Auburn,WRZ,"5'11""",180,JR,DraftTek_Top300_2026,77
-78,Jordyn Tyson,Arizona State,WRX,"6'1""",195,JR,DraftTek_Top300_2026,78
-79,Evan Stewart,Oregon,WRX,"6'0""",175,SR,DraftTek_Top300_2026,79
-80,Carnell Tate,Ohio State,WRX,"6'3""",191,JR,DraftTek_Top300_2026,80
-81,Kevin Concepcion,Texas A&M,WRZ,"5'11""",183,SR,DraftTek_Top300_2026,81
 82,Barion Brown,LSU,WRZ,"6'1""",185,SR,DraftTek_Top300_2026,82
 83,Jalen Hale,Alabama,WRZ,"6'1""",195,JR,DraftTek_Top300_2026,83
 84,Tyreak Sapp,Florida,EDGE,"6'3""",270,SR,DraftTek_Top300_2026,84
@@ -87,37 +76,24 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 86,Kenyon Sadiq,Oregon,TEY,"6'3""",245,JR,DraftTek_Top300_2026,86
 87,Jayden Loftin,Georgia Tech,DT1T,"6'5""",295,JR,DraftTek_Top300_2026,87
 88,Zane Durant,Penn State,DT3T,"6'1""",290,SR,DraftTek_Top300_2026,88
-89,Jonah Monheim,USC,IOLC,"6'5""",310,SR,DraftTek_Top300_2026,89
 90,Dorian Brew,Oregon,CBN,"6'1""",190,JR,DraftTek_Top300_2026,90
 91,Justin Flowe,Arizona,LBILB,"6'2""",220,SR,DraftTek_Top300_2026,91
 92,Patrick Payton,LSU,EDGE,"6'5""",250,SR,DraftTek_Top300_2026,92
-93,Shemar James,Florida,LBILB,"6'2""",229,SR,DraftTek_Top300_2026,93
 94,Eugene Asante,Auburn,LBILB,"6'0""",223,SR,DraftTek_Top300_2026,94
 95,Xavier Nwankpa,Iowa,SAF,"6'2""",205,SR,DraftTek_Top300_2026,95
 96,Deontae Lawson,Alabama,LBILB,"6'2""",239,SR,DraftTek_Top300_2026,96
 97,Sonny Styles,Ohio State,LBILB,"6'4""",240,SR,DraftTek_Top300_2026,97
-98,Harold Perkins Jr.,LSU,LBOLB,"6'1""",220,SR,DraftTek_Top300_2026,98
-99,C.J. Allen,Georgia,LBILB,"6'1""",235,JR,DraftTek_Top300_2026,99
 100,Dasan McCullough,Oklahoma,LBOLB,"6'5""",230,SR,DraftTek_Top300_2026,100
-101,Caleb Lomu,Utah,OT,"6'6""",302,JR,DraftTek_Top300_2026,101
-102,Monroe Freeling,Georgia,OT,"6'6""",315,JR,DraftTek_Top300_2026,102
-103,Leo Delaney,Michigan,OT,"6'6""",309,JR,DraftTek_Top300_2026,103
-104,Aamil Wagner,Notre Dame,OT,"6'6""",292,SR,DraftTek_Top300_2026,104
 105,Kyle Altuner,Iowa,OT,"6'8""",329,RSO,DraftTek_Top300_2026,105
 106,Ethan Onianwa,Ohio State,OT,"6'6""",345,SR,DraftTek_Top300_2026,106
 107,Spencer Fano,Utah,OT,"6'5""",304,JR,DraftTek_Top300_2026,107
-108,Francis Mauigoa,Miami (FL),OT,"6'6""",315,JR,DraftTek_Top300_2026,108
 109,Jordan Seaton,Colorado,OT,"6'5""",285,JR,DraftTek_Top300_2026,109
 110,Caden Proctor,Alabama,OT,"6'7""",360,JR,DraftTek_Top300_2026,110
-111,Caleb Lomu,Utah,OT,"6'6""",302,JR,DraftTek_Top300_2026,111
-112,Spencer Fano,Utah,OT,"6'5""",304,JR,DraftTek_Top300_2026,112
 113,Earnest Greene III,Georgia,OT,"6'4""",320,SR,DraftTek_Top300_2026,113
-114,Austin Barber,Florida,OT,"6'6""",314,SR,DraftTek_Top300_2026,114
 115,Kevon O'Donnell,Wake Forest,OT,"6'5""",305,RSO,DraftTek_Top300_2026,115
 116,Evan Link,Michigan,OT,"6'6""",328,JR,DraftTek_Top300_2026,116
 117,Hollin Pierce,Rutgers,OT,"6'8""",344,SR,DraftTek_Top300_2026,117
 118,Fernando Carmona,Arkansas,OT,"6'5""",322,SR,DraftTek_Top300_2026,118
-119,Logan Brown,Kansas,OT,"6'6""",320,SR,DraftTek_Top300_2026,119
 120,Jermayne Lole,Louisville,DT3T,"6'3""",310,SR,DraftTek_Top300_2026,120
 121,Daniel Calhoun,Texas,OT,"6'6""",310,JR,DraftTek_Top300_2026,121
 122,Xavier Chaplin,Auburn,OT,"6'7""",338,SR,DraftTek_Top300_2026,122
@@ -128,12 +104,9 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 127,Tanner Miller,Michigan,IOLC,"6'4""",295,SR,DraftTek_Top300_2026,127
 128,Parker Brailsford,Alabama,IOLC,"6'2""",290,SR,DraftTek_Top300_2026,128
 129,Jake Slaughter,Florida,IOLC,"6'4""",308,SR,DraftTek_Top300_2026,129
-130,Luke Kandra,Cincinnati,IOLG,"6'5""",323,SR,DraftTek_Top300_2026,130
-131,Jonah Monheim,USC,IOLC,"6'5""",310,SR,DraftTek_Top300_2026,131
 132,Cayden Green,Missouri,IOLG,"6'5""",320,JR,DraftTek_Top300_2026,132
 133,Tyler Mercer,Louisville,IOLG,"6'2""",326,RJR,DraftTek_Top300_2026,133
 134,Addison Nichols,Arkansas,IOLG,"6'5""",320,SR,DraftTek_Top300_2026,134
-135,Eugene Brooks III,Oklahoma,IOLG,"6'4""",325,SR,DraftTek_Top300_2026,135
 136,Timothy McKay,NC State,IOLG,"6'4""",320,SR,DraftTek_Top300_2026,136
 137,Bryce Lovett,NC State,IOLG,"6'5""",331,SR,DraftTek_Top300_2026,137
 138,Malachi Goodman,Clemson,IOLG,"6'4""",320,RSO,DraftTek_Top300_2026,138
@@ -142,50 +115,28 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 141,Aaron Parks,Indiana,IOLG,"6'4""",310,RJR,DraftTek_Top300_2026,141
 142,Joe Brunner,Wisconsin,IOLG,"6'6""",325,RJR,DraftTek_Top300_2026,142
 143,Kage Casey,Boise State,OT,"6'5""",310,SR,DraftTek_Top300_2026,143
-144,Miles Frazier,LSU,IOLG,"6'6""",323,SR,DraftTek_Top300_2026,144
 145,C.J. Satterwhite,Clemson,IOLG,"6'4""",315,JR,DraftTek_Top300_2026,145
 146,Connor Tollison,Missouri,IOLC,"6'5""",312,SR,DraftTek_Top300_2026,146
 147,Brady Latham,Arkansas,IOLG,"6'6""",316,SR,DraftTek_Top300_2026,147
 148,Joe Crocker Jr.,Auburn,IOLG,"6'6""",320,SR,DraftTek_Top300_2026,148
 149,Nolan Rucci,Penn State,OT,"6'8""",317,SR,DraftTek_Top300_2026,149
 150,Colin Nova,NC State,IOLC,"6'3""",302,RJR,DraftTek_Top300_2026,150
-151,Peter Woods,Clemson,DT3T,"6'3""",315,JR,DraftTek_Top300_2026,151
-152,Darrell Jackson Jr.,Florida State,DT1T,"6'5""",334,RSR,DraftTek_Top300_2026,152
-153,Jordyn Bugg,LSU,DT3T,"6'2""",295,JR,DraftTek_Top300_2026,153
-154,Keeshawn Silver,USC,DT1T,"6'4""",336,SR,DraftTek_Top300_2026,154
 155,Elijah Rushing,Oregon,EDGE,"6'6""",260,RSO,DraftTek_Top300_2026,155
 156,Dominic Gooden,Oklahoma,DT3T,"6'2""",300,SR,DraftTek_Top300_2026,156
-157,Tyreak Sapp,Florida,EDGE,"6'3""",270,SR,DraftTek_Top300_2026,157
 158,David Bailey,Texas Tech,EDGE,"6'4""",250,SR,DraftTek_Top300_2026,158
 159,Gabriel Brownlow-Dindy,South Carolina,DT1T,"6'3""",310,SR,DraftTek_Top300_2026,159
-160,Jayden Loftin,Georgia Tech,DT1T,"6'5""",295,JR,DraftTek_Top300_2026,160
-161,LT Overton,Alabama,EDGE,"6'5""",283,SR,DraftTek_Top300_2026,161
-162,Deone Walker,Kentucky,DT1T,"6'6""",348,SR,DraftTek_Top300_2026,162
-163,James Pearce Jr.,Tennessee,EDGE,"6'5""",245,SR,DraftTek_Top300_2026,163
 164,Tyre West,Indiana,DT3T,"6'3""",300,SR,DraftTek_Top300_2026,164
-165,T.J. Parker,Clemson,EDGE,"6'3""",265,JR,DraftTek_Top300_2026,165
-166,Rueben Bain Jr.,Miami (FL),EDGE,"6'3""",275,JR,DraftTek_Top300_2026,166
-167,Keldric Faulk,Auburn,EDGE,"6'6""",274,JR,DraftTek_Top300_2026,167
 168,CJ Mims,West Virginia,EDGE,"6'3""",264,SR,DraftTek_Top300_2026,168
-169,Patrick Payton,LSU,EDGE,"6'5""",250,SR,DraftTek_Top300_2026,169
 170,Darris Smith,LSU,EDGE,"6'6""",245,SR,DraftTek_Top300_2026,170
-171,R Mason Thomas,Oklahoma,EDGE,"6'2""",249,SR,DraftTek_Top300_2026,171
 172,Derrick Moore,Michigan,EDGE,"6'4""",271,SR,DraftTek_Top300_2026,172
 173,Xavier McLeod,Georgia,DT3T,"6'4""",320,RJR,DraftTek_Top300_2026,173
-174,Kaimon Rucker,North Carolina,EDGE,"6'2""",265,SR,DraftTek_Top300_2026,174
-175,Elijah Simmons,Tennessee,DT1T,"6'2""",340,SR,DraftTek_Top300_2026,175
 176,Domata Peko Jr.,UCLA,DT1T,"6'3""",325,SR,DraftTek_Top300_2026,176
 177,Jeremiah Alexander,Alabama,EDGE,"6'2""",246,SR,DraftTek_Top300_2026,177
 178,Aaron Bryant,Texas,DT3T,"6'5""",290,RJR,DraftTek_Top300_2026,178
 179,Joel Starlings,South Carolina,DT3T,"6'4""",320,RJR,DraftTek_Top300_2026,179
-180,Aeneas Peebles,Virginia Tech,DT3T,"6'1""",282,SR,DraftTek_Top300_2026,180
-181,C.J. West,Indiana,DT3T,"6'1""",316,SR,DraftTek_Top300_2026,181
 182,Tre Williams,Clemson,DT1T,"6'2""",290,SR,DraftTek_Top300_2026,182
 183,Nyckoles Harbor,South Carolina,EDGE,"6'5""",243,JR,DraftTek_Top300_2026,183
 184,Justice Boone,Colorado,EDGE,"5'10""",205,SR,DraftTek_Top300_2026,184
-185,Jalon Kilgore,South Carolina,SAF,"6'2""",215,JR,DraftTek_Top300_2026,185
-186,Xavier Nwankpa,Iowa,SAF,"6'2""",205,SR,DraftTek_Top300_2026,186
-187,Caleb Downs,Ohio State,SAF,"6'0""",205,JR,DraftTek_Top300_2026,187
 188,Devyn Bobby,Notre Dame,SAF,"6'1""",200,JR,DraftTek_Top300_2026,188
 189,Jalyn Phillips,Georgia,SAF,"6'2""",211,SR,DraftTek_Top300_2026,189
 190,Dillon Thieneman,Oregon,SAF,"6'0""",207,JR,DraftTek_Top300_2026,190
@@ -197,17 +148,7 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 196,Branson Combs,Wake Forest,SAF,"6'2""",200,SR,DraftTek_Top300_2026,196
 197,Keon Wylie,Texas Tech,SAF,"6'2""",206,SR,DraftTek_Top300_2026,197
 198,KJ Bolden,Georgia,SAF,"6'0""",185,JR,DraftTek_Top300_2026,198
-199,Rayuan Lane III,Navy,SAF,"5'11""",200,SR,DraftTek_Top300_2026,199
 200,Jalon Daniels,Oklahoma,SAF,"6'0""",205,RJR,DraftTek_Top300_2026,200
-201,Avieon Terrell,Clemson,CBN,"5'11""",180,JR,DraftTek_Top300_2026,201
-202,Jermod McCoy,Tennessee,CBN,"6'0""",195,JR,DraftTek_Top300_2026,202
-203,Dorian Brew,Oregon,CBN,"6'1""",190,JR,DraftTek_Top300_2026,203
-204,Daylen Everette,Georgia,CBN,"6'1""",190,SR,DraftTek_Top300_2026,204
-205,Davison Igbinosun,Ohio State,CBN,"6'2""",193,SR,DraftTek_Top300_2026,205
-206,Chandler Rivers,Duke,CBN,"5'10""",180,SR,DraftTek_Top300_2026,206
-207,DJ McKinney,Colorado,CBN,"6'2""",180,SR,DraftTek_Top300_2026,207
-208,Tacario Davis,Washington,CBN,"6'4""",195,SR,DraftTek_Top300_2026,208
-209,Takye Heath,Georgia Tech,CBN,"6'0""",185,SR,DraftTek_Top300_2026,209
 210,AJ Harris,Penn State,CBN,"6'1""",190,JR,DraftTek_Top300_2026,210
 211,Ricardo Jones Jr.,Purdue,CBN,"6'1""",180,SR,DraftTek_Top300_2026,211
 212,Domani Jackson,Alabama,CBN,"6'1""",195,SR,DraftTek_Top300_2026,212
@@ -217,10 +158,6 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 216,Jeremiah Wilson,Florida State,CBN,"5'10""",185,SR,DraftTek_Top300_2026,216
 217,Dezz Ricks,Texas A&M,CBN,"6'2""",195,JR,DraftTek_Top300_2026,217
 218,Tyreak Chappell,South Carolina,CBN,"5'11""",190,SR,DraftTek_Top300_2026,218
-219,Jason Marshall Jr.,Florida,CBN,"6'0""",200,SR,DraftTek_Top300_2026,219
-220,Domani Jackson,Alabama,CBN,"6'1""",195,SR,DraftTek_Top300_2026,220
-221,AJ Harris,Penn State,CBN,"6'1""",190,JR,DraftTek_Top300_2026,221
-222,Kobee Minor,Indiana,CBN,"6'0""",188,SR,DraftTek_Top300_2026,222
 223,Ja'Keem Jackson,Florida,CBN,"6'2""",195,SR,DraftTek_Top300_2026,223
 224,Jordan Shaw,Washington,CBN,"6'0""",190,SR,DraftTek_Top300_2026,224
 225,Lorenzo Styles Jr.,Ohio State,CBN,"5'11""",194,SR,DraftTek_Top300_2026,225
@@ -229,38 +166,15 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 228,Malik Muhammad,Texas,CBN,"6'0""",190,JR,DraftTek_Top300_2026,228
 229,Treyveon McGee,Georgia,CBN,"5'10""",180,SR,DraftTek_Top300_2026,229
 230,Tyler Collins,Mississippi State,CBN,"6'2""",195,SR,DraftTek_Top300_2026,230
-231,Harold Perkins Jr.,LSU,LBOLB,"6'1""",220,SR,DraftTek_Top300_2026,231
-232,C.J. Allen,Georgia,LBILB,"6'1""",235,JR,DraftTek_Top300_2026,232
-233,Anthony Hill Jr.,Texas,LBILB,"6'3""",235,JR,DraftTek_Top300_2026,233
-234,Dasan McCullough,Oklahoma,LBOLB,"6'5""",230,SR,DraftTek_Top300_2026,234
-235,Justin Flowe,Arizona,LBILB,"6'2""",220,SR,DraftTek_Top300_2026,235
-236,Shemar James,Florida,LBILB,"6'2""",229,SR,DraftTek_Top300_2026,236
-237,Eugene Asante,Auburn,LBILB,"6'0""",223,SR,DraftTek_Top300_2026,237
-238,Deontae Lawson,Alabama,LBILB,"6'2""",239,SR,DraftTek_Top300_2026,238
-239,Sonny Styles,Ohio State,LBILB,"6'4""",240,SR,DraftTek_Top300_2026,239
 240,Isaiah Paul,Baylor,LBILB,"6'2""",225,SR,DraftTek_Top300_2026,240
 241,David Bailey,Texas Tech,LBOLB,"6'4""",250,SR,DraftTek_Top300_2026,241
 242,Raesjon Davis,USC,LBILB,"6'2""",230,SR,DraftTek_Top300_2026,242
 243,Ernest Hausmann,Michigan,LBILB,"6'2""",238,SR,DraftTek_Top300_2026,243
-244,C.J. Allen,Georgia,LBILB,"6'1""",235,JR,DraftTek_Top300_2026,244
 245,Martavius French,Tennessee,LBILB,"6'2""",225,SR,DraftTek_Top300_2026,245
 246,Shedrick Shropshire,TCU,LBILB,"6'2""",224,SR,DraftTek_Top300_2026,246
-247,Jalon Walker,Georgia,LBOLB,"6'2""",245,SR,DraftTek_Top300_2026,247
 248,Popo Aumavae,Oregon,LBILB,"6'0""",240,SR,DraftTek_Top300_2026,248
 249,Jaren Kanak,Oklahoma,LBILB,"6'2""",233,SR,DraftTek_Top300_2026,249
 250,Tysheem Johnson,Oregon,LBILB,"6'1""",220,SR,DraftTek_Top300_2026,250
-251,Jeremiah Smith,Ohio State,WRX,"6'3""",220,SO,DraftTek_Top300_2026,251
-252,Ja'Kobi Lane,USC,WRX,"6'4""",195,JR,DraftTek_Top300_2026,252
-253,Denzel Boston,Washington,WRX,"6'4""",209,SR,DraftTek_Top300_2026,253
-254,Nyck Harbor,South Carolina,WRX,"6'5""",243,JR,DraftTek_Top300_2026,254
-255,Ryan Williams,Alabama,WRX,"6'0""",175,SO,DraftTek_Top300_2026,255
-256,Eric Singleton Jr.,Auburn,WRZ,"5'11""",180,JR,DraftTek_Top300_2026,256
-257,Evan Stewart,Oregon,WRZ,"6'0""",175,SR,DraftTek_Top300_2026,257
-258,Carnell Tate,Ohio State,WRX,"6'3""",191,JR,DraftTek_Top300_2026,258
-259,Kevin Concepcion,Texas A&M,WRZ,"5'11""",183,SR,DraftTek_Top300_2026,259
-260,Barion Brown,LSU,WRZ,"6'1""",185,SR,DraftTek_Top300_2026,260
-261,Jordyn Tyson,Arizona State,WRZ,"6'1""",195,JR,DraftTek_Top300_2026,261
-262,Jalen Hale,Alabama,WRZ,"6'1""",195,JR,DraftTek_Top300_2026,262
 263,Dane Key,Georgia,WRX,"6'3""",210,SR,DraftTek_Top300_2026,263
 264,Nic Anderson,Oklahoma,WRX,"6'4""",215,SR,DraftTek_Top300_2026,264
 265,Germie Bernard,Alabama,WRZ,"6'1""",204,SR,DraftTek_Top300_2026,265
@@ -269,33 +183,11 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 268,Johntay Cook,Texas,WRZ,"6'0""",185,SR,DraftTek_Top300_2026,268
 269,Chris Bell,Louisville,WRX,"6'2""",220,SR,DraftTek_Top300_2026,269
 270,Isaiah Sategna,Arkansas,WRZ,"5'11""",185,SR,DraftTek_Top300_2026,270
-271,C.J. Baxter,Texas,RB,"6'1""",230,JR,DraftTek_Top300_2026,271
-272,Justice Haynes,Michigan,RB,"5'11""",210,JR,DraftTek_Top300_2026,272
-273,Nicholas Singleton,Penn State,RB,"6'0""",226,SR,DraftTek_Top300_2026,273
-274,Jaydn Ott,Oklahoma,RB,"6'0""",205,SR,DraftTek_Top300_2026,274
-275,Makhi Hughes,Oregon,RB,"5'11""",214,SR,DraftTek_Top300_2026,275
-276,Le'Veon Moss,Texas A&M,RB,"6'1""",215,SR,DraftTek_Top300_2026,276
-277,Demond Claiborne,Wake Forest,RB,"5'11""",195,SR,DraftTek_Top300_2026,277
-278,Jordan James,Oregon,RB,"5'10""",205,SR,DraftTek_Top300_2026,278
-279,Dylan Sampson,Tennessee,RB,"5'11""",201,SR,DraftTek_Top300_2026,279
-280,LeQuint Allen,Syracuse,RB,"6'0""",201,SR,DraftTek_Top300_2026,280
-281,Darius Taylor,Minnesota,RB,"6'1""",215,JR,DraftTek_Top300_2026,281
-282,Roman Hemby,Indiana,RB,"6'0""",208,SR,DraftTek_Top300_2026,282
-283,Caden Durham,LSU,RB,"5'9""",210,JR,DraftTek_Top300_2026,283
-284,Justice Boone,Colorado,RB,"5'10""",205,SR,DraftTek_Top300_2026,284
-285,Eli Stowers,Vanderbilt,TEY,"6'4""",233,RSR,DraftTek_Top300_2026,285
-286,Oscar Delp,Georgia,TEY,"6'5""",245,SR,DraftTek_Top300_2026,286
-287,Elija Lofton,Miami (FL),TEY,"6'3""",230,JR,DraftTek_Top300_2026,287
-288,Kenyon Sadiq,Oregon,TEY,"6'3""",245,JR,DraftTek_Top300_2026,288
 289,Tanner Koziol,Houston,TEY,"6'7""",250,SR,DraftTek_Top300_2026,289
 290,Holden Staes,Tennessee,TEY,"6'4""",242,SR,DraftTek_Top300_2026,290
-291,Theo Johnson,Penn State,TEY,"6'6""",257,SR,DraftTek_Top300_2026,291
-292,Gunnar Helm,Texas,TEY,"6'5""",250,SR,DraftTek_Top300_2026,292
 293,Arlis Boardingham,Florida,TEY,"6'5""",245,SR,DraftTek_Top300_2026,293
 294,Eli Raridon,Notre Dame,TEY,"6'6""",250,SR,DraftTek_Top300_2026,294
 295,RJ Maryland,SMU,TEY,"6'4""",240,SR,DraftTek_Top300_2026,295
 296,Oscar Cardenas,UTSA,TEY,"6'4""",240,SR,DraftTek_Top300_2026,296
-297,Ben Yurosek,Georgia,TEY,"6'4""",245,SR,DraftTek_Top300_2026,297
 298,Luke Hasz,Arkansas,TEY,"6'3""",245,JR,DraftTek_Top300_2026,298
-299,Bryson Nesbit,North Carolina,TEY,"6'6""",235,SR,DraftTek_Top300_2026,299
 300,Max Klare,Purdue,TEY,"6'4""",240,SR,DraftTek_Top300_2026,300

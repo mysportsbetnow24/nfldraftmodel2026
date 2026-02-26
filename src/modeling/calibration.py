@@ -3,7 +3,6 @@ from __future__ import annotations
 import csv
 import json
 import math
-import random
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
@@ -35,95 +34,34 @@ def _clamp(v: float, lo: float, hi: float) -> float:
 
 
 
-def generate_seed_historical(path: Path, seed: int = 20260225) -> int:
-    """Generates synthetic historical outcomes for offline calibration bootstrapping."""
-    random.seed(seed)
-    path.parent.mkdir(parents=True, exist_ok=True)
-
-    positions = ["QB", "RB", "WR", "TE", "OT", "IOL", "EDGE", "DT", "LB", "CB", "S"]
-    pos_bias = {
-        "QB": 0.08,
-        "OT": 0.06,
-        "EDGE": 0.05,
-        "CB": 0.04,
-        "WR": 0.03,
-        "DT": 0.02,
-        "S": 0.00,
-        "LB": -0.01,
-        "TE": -0.01,
-        "IOL": -0.02,
-        "RB": -0.03,
-    }
-
-    rows: List[dict] = []
-    overall = 1
-    for year in range(2016, 2026):
-        for rnd in range(1, 8):
-            picks_in_round = 32
-            for _ in range(picks_in_round):
-                pos = random.choice(positions)
-                model_grade = _clamp(random.gauss(88 - (rnd - 1) * 3.4, 3.5), 62, 97)
-                ras = _clamp(random.gauss(7.4 - (rnd - 1) * 0.25, 1.1), 2.0, 10.0)
-                pff_grade = _clamp(random.gauss(80 - (rnd - 1) * 1.8, 7.0), 55, 95)
-
-                base = 0.58 - (rnd - 1) * 0.06 + pos_bias[pos]
-                grade_term = (model_grade - 78) * 0.015
-                ras_term = (ras - 7.0) * 0.03
-                pff_term = (pff_grade - 75) * 0.007
-                prob = _clamp(base + grade_term + ras_term + pff_term, 0.04, 0.96)
-
-                success = 1 if random.random() < prob else 0
-                second_contract = 1 if random.random() < _clamp(prob - 0.12, 0.01, 0.9) else 0
-                starter_seasons = 0
-                if success:
-                    starter_seasons = int(_clamp(random.gauss(2.8 + prob * 1.8, 1.2), 1, 9))
-                career_value = round(max(0.0, random.gauss((prob * 26) + (second_contract * 8), 6.5)), 2)
-
-                rows.append(
-                    {
-                        "draft_year": year,
-                        "overall_pick": overall,
-                        "draft_round": rnd,
-                        "position": pos,
-                        "model_grade": round(model_grade, 2),
-                        "ras": round(ras, 2),
-                        "pff_grade": round(pff_grade, 2),
-                        "career_value": career_value,
-                        "starter_seasons": starter_seasons,
-                        "second_contract": second_contract,
-                        "success_label": success,
-                        "data_source": "synthetic_seed",
-                    }
-                )
-                overall += 1
-        overall = 1
-
-    with path.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
-        writer.writeheader()
-        writer.writerows(rows)
-
-    return len(rows)
-
-
-
-def load_historical_rows(path: Path = DEFAULT_HISTORICAL_PATH, generate_seed_if_missing: bool = True) -> List[dict]:
+def load_historical_rows(
+    path: Path = DEFAULT_HISTORICAL_PATH,
+    min_year: int = 2016,
+    max_year: int = 2025,
+) -> List[dict]:
     if not path.exists():
-        if not generate_seed_if_missing:
-            raise FileNotFoundError(f"Historical outcomes file not found: {path}")
-        generate_seed_historical(path)
+        raise FileNotFoundError(
+            f"Historical outcomes file not found: {path}. "
+            "Provide real outcomes data for 2016-2025; synthetic fallback is disabled."
+        )
 
     rows: List[dict] = []
     with path.open() as f:
         reader = csv.DictReader(f)
         for row in reader:
             try:
+                draft_year = int(row["draft_year"])
+                if draft_year < min_year or draft_year > max_year:
+                    continue
+                data_source = str(row.get("data_source", "manual")).strip() or "manual"
+                if "synthetic" in data_source.lower():
+                    continue
                 rows.append(
                     {
-                        "draft_year": int(row["draft_year"]),
+                        "draft_year": draft_year,
                         "overall_pick": int(row["overall_pick"]),
                         "draft_round": int(row["draft_round"]),
-                        "position": row["position"],
+                        "position": str(row["position"]).strip().upper(),
                         "model_grade": float(row["model_grade"]),
                         "ras": float(row.get("ras", 7.0) or 7.0),
                         "pff_grade": float(row.get("pff_grade", 70.0) or 70.0),
@@ -131,11 +69,16 @@ def load_historical_rows(path: Path = DEFAULT_HISTORICAL_PATH, generate_seed_if_
                         "starter_seasons": int(float(row.get("starter_seasons", 0) or 0)),
                         "second_contract": int(float(row.get("second_contract", 0) or 0)),
                         "success_label": int(float(row["success_label"])),
-                        "data_source": row.get("data_source", "manual"),
+                        "data_source": data_source,
                     }
                 )
             except Exception:
                 continue
+    if not rows:
+        raise RuntimeError(
+            "No valid real historical rows found in outcomes file. "
+            "Check schema/years and ensure data_source is not synthetic."
+        )
     return rows
 
 
@@ -219,6 +162,45 @@ def build_config(rows: List[dict]) -> CalibrationConfig:
         sample_size=len(rows),
         data_source=source,
     )
+
+
+def year_based_backtest(rows: List[dict], min_train_rows: int = 250) -> List[dict]:
+    years = sorted({int(r["draft_year"]) for r in rows})
+    report_rows: List[dict] = []
+    for holdout_year in years:
+        train = [r for r in rows if int(r["draft_year"]) < holdout_year]
+        test = [r for r in rows if int(r["draft_year"]) == holdout_year]
+        if len(train) < min_train_rows or not test:
+            continue
+
+        b0, b1 = fit_logistic_grade(train)
+        pos_adj = position_additives(train, b0, b1)
+
+        probs: List[float] = []
+        labels: List[float] = []
+        for r in test:
+            base = _sigmoid(b0 + b1 * float(r["model_grade"]))
+            p = _clamp(base + float(pos_adj.get(r["position"], 0.0)), 0.02, 0.98)
+            probs.append(p)
+            labels.append(float(r["success_label"]))
+
+        brier = sum((p - y) ** 2 for p, y in zip(probs, labels)) / len(labels)
+        accuracy = sum((1 if p >= 0.5 else 0) == int(y) for p, y in zip(probs, labels)) / len(labels)
+        avg_prob = sum(probs) / len(probs)
+        obs_rate = sum(labels) / len(labels)
+
+        report_rows.append(
+            {
+                "holdout_year": holdout_year,
+                "train_rows": len(train),
+                "test_rows": len(test),
+                "brier_score": round(brier, 4),
+                "accuracy": round(accuracy, 4),
+                "avg_predicted_success": round(avg_prob, 4),
+                "observed_success_rate": round(obs_rate, 4),
+            }
+        )
+    return report_rows
 
 
 

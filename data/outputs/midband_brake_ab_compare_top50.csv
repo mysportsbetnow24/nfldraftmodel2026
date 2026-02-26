@@ -1,0 +1,51 @@
+player_name,position,pre_rank,post_rank,rank_change_pre_minus_post,pre_grade,post_grade,grade_change,consensus_mean_rank,pre_round_value,post_round_value,post_midband_brake_penalty,post_guardrail_penalty,post_drift_penalty
+Joshua Josephs,EDGE,28,41,-13,82.97,82.19,-0.78,68.33,Round 2-3,Round 3-4,0.78,0.0,0.0
+Jacob Rodriguez,LB,30,42,-12,82.80,81.92,-0.88,72.67,Round 2-3,Round 3-4,0.88,0.0,0.0
+Elijah Sarratt,WR,40,50,-10,82.32,81.63,-0.69,62.0,Round 2-3,Round 3-4,0.69,0.0,0.0
+Romello Height,EDGE,15,22,-7,83.68,83.18,-0.50,66.0,Round 2-3,Round 2-3,0.5,0.0,0.0
+Derrick Moore,EDGE,33,38,-5,82.71,82.22,-0.49,62.0,Round 2-3,Round 2-3,0.49,0.0,0.0
+A.J. Haulcy,S,23,28,-5,83.14,82.84,-0.30,53.0,Round 2-3,Round 2-3,0.3,0.0,0.0
+Brian Parker II,OT,49,44,5,81.87,81.87,0.00,103.0,Round 3-4,Round 3-4,0.0,0.0,0.0
+Brandon Cisse,CB,50,45,5,81.86,81.86,0.00,33.6,Round 3-4,Round 3-4,0.0,0.0,0.0
+Emmanuel Pregnon,IOL,36,32,4,82.51,82.46,-0.05,43.0,Round 2-3,Round 2-3,0.05,0.0,0.0
+LT Overton,EDGE,41,37,4,82.22,82.22,0.00,36.8,Round 3-4,Round 2-3,0.0,0.0,0.0
+R Mason Thomas,EDGE,47,43,4,81.87,81.87,0.00,41.2,Round 3-4,Round 3-4,0.0,0.0,0.0
+Omar Cooper Jr.,WR,51,47,4,81.68,81.68,0.00,41.0,Round 3-4,Round 3-4,0.0,0.0,0.0
+Kenyon Sadiq,TE,52,48,4,81.68,81.68,0.00,18.6,Round 3-4,Round 3-4,0.0,0.0,0.0
+Caleb Lomu,OT,53,49,4,81.66,81.66,0.00,21.83,Round 3-4,Round 3-4,0.0,0.0,0.0
+C.J. Allen,LB,34,31,3,82.66,82.66,0.00,28.0,Round 2-3,Round 2-3,0.0,0.0,0.0
+T.J. Parker,EDGE,37,34,3,82.41,82.41,0.00,26.5,Round 2-3,Round 2-3,0.0,0.0,0.0
+Colton Hood,CB,38,35,3,82.36,82.36,0.00,32.4,Round 2-3,Round 2-3,0.0,0.0,0.0
+Nyck Harbor,WR,39,36,3,82.33,82.33,0.00,8.0,Round 2-3,Round 2-3,0.0,0.0,0.0
+Cashius Howell,EDGE,42,39,3,82.20,82.20,0.00,20.4,Round 3-4,Round 2-3,0.0,0.0,0.0
+Monroe Freeling,OT,43,40,3,82.19,82.19,0.00,25.8,Round 3-4,Round 2-3,0.0,0.0,0.0
+Gabe Jacas,EDGE,35,33,2,82.57,82.43,-0.14,48.5,Round 2-3,Round 2-3,0.14,0.0,0.0
+Sonny Styles,LB,18,16,2,83.55,83.55,0.00,9.0,Round 2-3,Round 2-3,0.0,0.0,0.0
+Makai Lemon,WR,29,27,2,82.89,82.89,0.00,11.4,Round 2-3,Round 2-3,0.0,0.0,0.0
+Kayden McDonald,DT,31,29,2,82.77,82.77,0.00,29.0,Round 2-3,Round 2-3,0.0,0.0,0.0
+Peter Woods,DT,32,30,2,82.72,82.72,0.00,14.38,Round 2-3,Round 2-3,0.0,0.0,0.0
+Jadarian Price,RB,45,46,-1,82.07,81.78,-0.29,51.5,Round 3-4,Round 3-4,0.29,0.0,0.0
+Keldric Faulk,EDGE,16,15,1,83.64,83.64,0.00,18.8,Round 2-3,Round 2-3,0.0,0.0,0.0
+Kadyn Proctor,OT,19,18,1,83.48,83.48,0.00,21.67,Round 2-3,Round 2-3,0.0,0.0,0.0
+Keith Abney II,CB,20,19,1,83.44,83.44,0.00,46.0,Round 2-3,Round 2-3,0.0,0.0,0.0
+Jordyn Tyson,WR,21,20,1,83.37,83.37,0.00,12.17,Round 2-3,Round 2-3,0.0,0.0,0.0
+Emmanuel McNeil-Warren,S,22,21,1,83.36,83.36,0.00,26.4,Round 2-3,Round 2-3,0.0,0.0,0.0
+Dillon Thieneman,S,24,23,1,83.13,83.13,0.00,32.6,Round 2-3,Round 2-3,0.0,0.0,0.0
+Denzel Boston,WR,25,24,1,83.02,83.02,0.00,20.8,Round 2-3,Round 2-3,0.0,0.0,0.0
+Christen Miller,DT,26,25,1,83.02,83.02,0.00,39.8,Round 2-3,Round 2-3,0.0,0.0,0.0
+Zion Young,EDGE,27,26,1,82.99,82.99,0.00,41.2,Round 2-3,Round 2-3,0.0,0.0,0.0
+Keionte Scott,CB,6,6,0,84.50,84.37,-0.13,52.0,Round 1,Round 1,0.13,0.0,0.0
+Chris Johnson,CB,17,17,0,83.60,83.52,-0.08,49.0,Round 2-3,Round 2-3,0.08,0.0,0.0
+David Bailey,EDGE,1,1,0,85.53,85.53,0.00,5.43,Round 1,Round 1,0.0,0.0,0.0
+Caleb Downs,S,2,2,0,84.96,84.96,0.00,3.9,Round 1,Round 1,0.0,0.0,0.0
+Rueben Bain Jr.,EDGE,3,3,0,84.96,84.96,0.00,5.0,Round 1,Round 1,0.0,0.0,0.0
+Akheem Mesidor,EDGE,4,4,0,84.80,84.80,0.00,23.6,Round 1,Round 1,0.0,0.0,0.0
+Jeremiyah Love,RB,5,5,0,84.61,84.61,0.00,5.12,Round 1,Round 1,0.0,0.0,0.0
+Mansoor Delane,CB,7,7,0,84.35,84.35,0.00,10.2,Round 1,Round 1,0.0,0.0,0.0
+Francis Mauigoa,OT,8,8,0,84.31,84.31,0.00,7.83,Round 1,Round 1,0.0,0.0,0.0
+Fernando Mendoza,QB,9,9,0,84.24,84.24,0.00,2.14,Round 1-2,Round 1-2,0.0,0.0,0.0
+Arvell Reese,EDGE,10,10,0,84.17,84.17,0.00,2.57,Round 1-2,Round 1-2,0.0,0.0,0.0
+Olaivavega Ioane,IOL,11,11,0,84.12,84.12,0.00,15.75,Round 1-2,Round 1-2,0.0,0.0,0.0
+Spencer Fano,OT,12,12,0,83.90,83.90,0.00,12.2,Round 2-3,Round 2-3,0.0,0.0,0.0
+Carnell Tate,WR,13,13,0,83.79,83.79,0.00,8.0,Round 2-3,Round 2-3,0.0,0.0,0.0
+Avieon Terrell,CB,14,14,0,83.70,83.70,0.00,21.33,Round 2-3,Round 2-3,0.0,0.0,0.0

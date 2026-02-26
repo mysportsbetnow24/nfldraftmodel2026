@@ -1,0 +1,31 @@
+cfbfastR P0 Import Report
+
+base_file: /Users/nickholz/nfldraftmodel2026/data/sources/manual/cfb_production_2025.csv
+output_file: /Users/nickholz/nfldraftmodel2026/data/sources/manual/cfb_production_2025.csv
+season: 2025
+dry_run: False
+
+input_files: 3
+source_rows_seen: 5197
+players_updated: 131
+cells_updated: 445
+players_added: 0
+unmatched_rows: 5066
+
+source_type_detection:
+- qb: 1
+- rb: 1
+- wrte: 1
+
+mapped_columns_counts:
+- qb_ppa_overall: 26
+- qb_ppa_passing: 26
+- qb_ppa_passing_downs: 26
+- qb_ppa_standard_downs: 26
+- qb_usage_rate: 26
+- rb_ppa_rushing: 25
+- rb_ppa_standard_downs: 25
+- rb_usage_rate: 25
+- wrte_ppa_overall: 80
+- wrte_ppa_passing_downs: 80
+- wrte_usage_rate: 80

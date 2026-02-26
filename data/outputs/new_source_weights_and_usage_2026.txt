@@ -1,0 +1,35 @@
+2026 Added Scouting Source Weights and Usage
+Date: 2026-02-26
+
+Prior/Consensus Blend (inside prior_signal weighted mean):
+- tdn_rank_signal: 0.08
+- ringer_rank_signal: 0.08
+- br_rank_signal: 0.09
+- atoz_rank_signal: 0.08
+- si_rank_signal: 0.03
+- tdn_grade_label_signal: 0.04
+
+Trait Component Additions:
+- tdn_text_trait_signal: 0.05
+- br_text_trait_signal: 0.04
+- atoz_text_trait_signal: 0.04
+- si_text_trait_signal: 0.02
+
+Risk Penalty Additions (penalty-only):
+- tdn_risk_penalty
+- br_risk_penalty
+- atoz_risk_penalty
+- si_risk_penalty
+
+How these are used:
+1) Rank signals anchor board placement and reduce outlier spikes.
+2) Text trait signals add scouting language context to film trait grade.
+3) Risk signals only subtract from grade (no upside boost).
+4) Existing guardrails (especially QB) still cap thin-profile outliers.
+
+Output fields now available in big_board_2026.csv:
+- br_rank, br_rank_signal, br_text_trait_signal, br_risk_penalty, br_strengths, br_concerns, br_summary
+- atoz_rank, atoz_rank_signal, atoz_text_trait_signal, atoz_risk_penalty, atoz_strengths, atoz_concerns, atoz_summary
+- si_rank, si_rank_signal, si_text_trait_signal, si_risk_penalty, si_strengths, si_concerns, si_summary
+- scouting_report_summary, scouting_why_he_wins, scouting_primary_concerns, scouting_production_snapshot,
+  scouting_board_movement, scouting_role_projection

@@ -1,0 +1,28 @@
+Results Digest by Feature
+
+Total prospects: 142
+Average final grade: 77.00
+Top 32 with external_rank > 100: 2
+Top 50 with external_rank > 100: 14
+
+Top 20 by final grade:
+ 1. Caleb Downs (S) grade=85.14 ext_rank=5 seed=5
+ 2. Jeremiyah Love (RB) grade=84.95 ext_rank=6 seed=16
+ 3. David Bailey (EDGE) grade=84.75 ext_rank=4 seed=158
+ 4. Fernando Mendoza (QB) grade=84.42 ext_rank=1 seed=1
+ 5. Carnell Tate (WR) grade=83.96 ext_rank=8 seed=13
+ 6. Avieon Terrell (CB) grade=83.86 ext_rank=19 seed=6
+ 7. Jordyn Tyson (WR) grade=83.53 ext_rank=7 seed=12
+ 8. Spencer Fano (OT) grade=83.33 ext_rank=18 seed=107
+ 9. Kadyn Proctor (OT) grade=83.26 ext_rank=25 seed=9
+10. Keldric Faulk (EDGE) grade=83.17 ext_rank=16 seed=14
+11. Denzel Boston (WR) grade=83.02 ext_rank=20 seed=25
+12. Eli Stowers (TE) grade=82.86 ext_rank=44 seed=21
+13. Sonny Styles (LB) grade=82.78 ext_rank=9 seed=97
+14. Peter Woods (DT) grade=82.6 ext_rank=14 seed=4
+15. T.J. Parker (EDGE) grade=82.58 ext_rank=23 seed=11
+16. C.J. Allen (LB) grade=82.48 ext_rank=28 seed=40
+17. Dillon Thieneman (S) grade=82.37 ext_rank=38 seed=190
+18. R Mason Thomas (EDGE) grade=82.15 ext_rank=37 seed=30
+19. Derrick Moore (EDGE) grade=82.08 ext_rank=58 seed=172
+20. Monroe Freeling (OT) grade=81.89 ext_rank=30 seed=34

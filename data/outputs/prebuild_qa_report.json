@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "checked_at_utc": "2026-02-26T06:25:08.265990+00:00",
+  "paths": {
+    "seed_path": "/Users/nickholz/nfldraftmodel2026/data/processed/prospect_seed_2026.csv",
+    "combine_path": "/Users/nickholz/nfldraftmodel2026/data/sources/manual/combine_2026_results.csv",
+    "returning_path": "/Users/nickholz/nfldraftmodel2026/data/sources/manual/returning_to_school_2026.csv"
+  },
+  "counts": {
+    "seed_rows": 192,
+    "combine_rows": 5,
+    "errors": 0,
+    "warnings": 0
+  },
+  "errors": [],
+  "warnings": []
+}

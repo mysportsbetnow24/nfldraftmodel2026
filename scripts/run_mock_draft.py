@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
 import sys
 from pathlib import Path
 
@@ -15,8 +16,20 @@ OUT = ROOT / "data" / "outputs"
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Run 2026 mock drafts from current board and draft order inputs.")
+    parser.add_argument(
+        "--allow-simulated-trades",
+        action="store_true",
+        help="Enable synthetic trade-down heuristics (default off, strict draft order).",
+    )
+    args = parser.parse_args()
+
     board = load_board()
-    round1, full7, trades = simulate_full_draft(board, rounds=7)
+    round1, full7, trades = simulate_full_draft(
+        board,
+        rounds=7,
+        allow_simulated_trades=args.allow_simulated_trades,
+    )
 
     write_csv(OUT / "mock_2026_round1.csv", round1)
     write_csv(OUT / "mock_2026_7round.csv", full7)

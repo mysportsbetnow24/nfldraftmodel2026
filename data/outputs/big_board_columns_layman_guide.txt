@@ -1,0 +1,777 @@
+2026 BIG BOARD COLUMN GUIDE (LAYMAN TERMS)
+Generated from: data/outputs/big_board_2026.csv
+Total columns: 244
+
+How to read this:
+- Meaning: what the column is in plain English.
+- How we use it: how it affects ranking, reporting, or QA.
+
+[Identity & Inputs] (14 columns)
+- rank_seed
+  Meaning: Original seed rank before model scoring.
+  How we use it: Used as an early prior and baseline confidence anchor.
+- player_name
+  Meaning: Prospect name.
+  How we use it: Primary player identifier in outputs.
+- school
+  Meaning: College team.
+  How we use it: Used for display, joins, and context.
+- pos_raw
+  Meaning: Original position text from source.
+  How we use it: Raw ingest field before normalization.
+- height
+  Meaning: Original height string (e.g., 6'3").
+  How we use it: Stored for transparency and parsing checks.
+- weight_lb
+  Meaning: Original weight in pounds.
+  How we use it: Input to size/athletic modeling.
+- class_year
+  Meaning: College class (SR/JR/etc).
+  How we use it: Affects context and risk assumptions.
+- source_primary
+  Meaning: Main source that created this row.
+  How we use it: Tracks provenance and import path.
+- seed_row_id
+  Meaning: Internal row id from seed pipeline.
+  How we use it: Used to build stable player_uid and debugging joins.
+- player_uid
+  Meaning: Stable internal player key.
+  How we use it: Used for report pages and persistent references.
+- position
+  Meaning: Normalized model position bucket.
+  How we use it: Drives position-specific formulas and comps.
+- position_evidence_score
+  Meaning: How confident we are the position label is correct.
+  How we use it: Used in dedupe tie-breaks across conflicting position rows.
+- height_in
+  Meaning: Parsed height in inches.
+  How we use it: Numeric size and athletic calculations.
+- weight_lb_effective
+  Meaning: Effective/cleaned weight used by model.
+  How we use it: Feeds grading and size metrics.
+
+[Core Board Signals] (14 columns)
+- seed_signal
+  Meaning: Seed rank converted to score scale.
+  How we use it: Part of prior/market signal.
+- analyst_signal
+  Meaning: Combined signal from analyst ranks.
+  How we use it: Adds external market intelligence to priors.
+- external_rank
+  Meaning: Best available outside-board rank.
+  How we use it: Market anchor input.
+- external_rank_signal
+  Meaning: External rank converted to score.
+  How we use it: Blended into prior signal.
+- pff_grade
+  Meaning: PFF performance grade if available.
+  How we use it: Production/performance component.
+- pff_waa
+  Meaning: PFF wins-above-average style value.
+  How we use it: Used as efficiency/value context.
+- pff_grade_locked
+  Meaning: Whether PFF grade is treated as fixed.
+  How we use it: Prevents accidental overwrite in pipeline.
+- market_signal_score
+  Meaning: Overall market perception score.
+  How we use it: Combines external/consensus market data.
+- consensus_score
+  Meaning: Final score used to sort board.
+  How we use it: Directly determines final board order.
+- consensus_board_mean_rank
+  Meaning: Average rank across consensus sources.
+  How we use it: Measures market central tendency.
+- consensus_board_rank_std
+  Meaning: Std dev of source ranks.
+  How we use it: Measures disagreement/uncertainty.
+- consensus_board_source_count
+  Meaning: How many sources ranked this player.
+  How we use it: Coverage/confidence check.
+- consensus_board_sources
+  Meaning: Which sources contributed ranks.
+  How we use it: Audit trail for consensus input.
+- consensus_board_signal
+  Meaning: Consensus rank converted to scoring signal.
+  How we use it: Input to prior/market blend.
+
+[Kiper Features] (19 columns)
+- kiper_rank
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_prev_rank
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_rank_delta
+  Meaning: Change from prior Kiper board.
+  How we use it: Volatility flag rather than pure boost.
+- kiper_rank_signal
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_strength_tags
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_concern_tags
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_statline_2025
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_statline_2025_games
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_statline_2025_yards
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_statline_2025_tds
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_statline_2025_efficiency
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_games_norm
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_yards_norm
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_tds_norm
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_efficiency_norm
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_statline_2025_norm
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_volatility_flag
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_volatility_penalty
+  Meaning: Field pulled from Mel Kiper structured signals.
+  How we use it: Used as one moderate external input (not the driver).
+- kiper_source_url
+  Meaning: Source page URL for Kiper row.
+  How we use it: Traceability.
+
+[TDN Features] (13 columns)
+- tdn_rank
+  Meaning: Field from The Draft Network rank/text parsing.
+  How we use it: Used in prior blending, trait language signal, and risk penalties.
+- tdn_rank_signal
+  Meaning: Field from The Draft Network rank/text parsing.
+  How we use it: Used in prior blending, trait language signal, and risk penalties.
+- tdn_grade_label
+  Meaning: Field from The Draft Network rank/text parsing.
+  How we use it: Used in prior blending, trait language signal, and risk penalties.
+- tdn_grade_round
+  Meaning: Field from The Draft Network rank/text parsing.
+  How we use it: Used in prior blending, trait language signal, and risk penalties.
+- tdn_grade_label_signal
+  Meaning: Field from The Draft Network rank/text parsing.
+  How we use it: Used in prior blending, trait language signal, and risk penalties.
+- tdn_text_trait_signal
+  Meaning: Field from The Draft Network rank/text parsing.
+  How we use it: Used in prior blending, trait language signal, and risk penalties.
+- tdn_text_coverage
+  Meaning: Field from The Draft Network rank/text parsing.
+  How we use it: Used in prior blending, trait language signal, and risk penalties.
+- tdn_risk_hits
+  Meaning: Field from The Draft Network rank/text parsing.
+  How we use it: Used in prior blending, trait language signal, and risk penalties.
+- tdn_risk_flag
+  Meaning: Field from The Draft Network rank/text parsing.
+  How we use it: Used in prior blending, trait language signal, and risk penalties.
+- tdn_risk_penalty
+  Meaning: Field from The Draft Network rank/text parsing.
+  How we use it: Used in prior blending, trait language signal, and risk penalties.
+- tdn_strengths
+  Meaning: Field from The Draft Network rank/text parsing.
+  How we use it: Used in prior blending, trait language signal, and risk penalties.
+- tdn_concerns
+  Meaning: Field from The Draft Network rank/text parsing.
+  How we use it: Used in prior blending, trait language signal, and risk penalties.
+- tdn_summary
+  Meaning: Field from The Draft Network rank/text parsing.
+  How we use it: Used in prior blending, trait language signal, and risk penalties.
+
+[Ringer Features] (2 columns)
+- ringer_rank
+  Meaning: Field from Ringer big board ingest.
+  How we use it: Used as a consensus anchor signal.
+- ringer_rank_signal
+  Meaning: Field from Ringer big board ingest.
+  How we use it: Used as a consensus anchor signal.
+
+[Bleacher Features] (10 columns)
+- br_rank
+  Meaning: Field from Bleacher Report report parsing.
+  How we use it: Used for rank signal, trait-language signal, and risk context.
+- br_rank_signal
+  Meaning: Field from Bleacher Report report parsing.
+  How we use it: Used for rank signal, trait-language signal, and risk context.
+- br_text_trait_signal
+  Meaning: Field from Bleacher Report report parsing.
+  How we use it: Used for rank signal, trait-language signal, and risk context.
+- br_text_coverage
+  Meaning: Field from Bleacher Report report parsing.
+  How we use it: Used for rank signal, trait-language signal, and risk context.
+- br_risk_hits
+  Meaning: Field from Bleacher Report report parsing.
+  How we use it: Used for rank signal, trait-language signal, and risk context.
+- br_risk_flag
+  Meaning: Field from Bleacher Report report parsing.
+  How we use it: Used for rank signal, trait-language signal, and risk context.
+- br_risk_penalty
+  Meaning: Field from Bleacher Report report parsing.
+  How we use it: Used for rank signal, trait-language signal, and risk context.
+- br_strengths
+  Meaning: Field from Bleacher Report report parsing.
+  How we use it: Used for rank signal, trait-language signal, and risk context.
+- br_concerns
+  Meaning: Field from Bleacher Report report parsing.
+  How we use it: Used for rank signal, trait-language signal, and risk context.
+- br_summary
+  Meaning: Field from Bleacher Report report parsing.
+  How we use it: Used for rank signal, trait-language signal, and risk context.
+
+[AtoZ Features] (10 columns)
+- atoz_rank
+  Meaning: Field from A to Z scouting parsing.
+  How we use it: Used similarly to other analyst-text sources when available.
+- atoz_rank_signal
+  Meaning: Field from A to Z scouting parsing.
+  How we use it: Used similarly to other analyst-text sources when available.
+- atoz_text_trait_signal
+  Meaning: Field from A to Z scouting parsing.
+  How we use it: Used similarly to other analyst-text sources when available.
+- atoz_text_coverage
+  Meaning: Field from A to Z scouting parsing.
+  How we use it: Used similarly to other analyst-text sources when available.
+- atoz_risk_hits
+  Meaning: Field from A to Z scouting parsing.
+  How we use it: Used similarly to other analyst-text sources when available.
+- atoz_risk_flag
+  Meaning: Field from A to Z scouting parsing.
+  How we use it: Used similarly to other analyst-text sources when available.
+- atoz_risk_penalty
+  Meaning: Field from A to Z scouting parsing.
+  How we use it: Used similarly to other analyst-text sources when available.
+- atoz_strengths
+  Meaning: Field from A to Z scouting parsing.
+  How we use it: Used similarly to other analyst-text sources when available.
+- atoz_concerns
+  Meaning: Field from A to Z scouting parsing.
+  How we use it: Used similarly to other analyst-text sources when available.
+- atoz_summary
+  Meaning: Field from A to Z scouting parsing.
+  How we use it: Used similarly to other analyst-text sources when available.
+
+[SI/FCS Features] (10 columns)
+- si_rank
+  Meaning: Field from SI/FCS scouting parsing.
+  How we use it: Used as supplemental rank/text/risk signal.
+- si_rank_signal
+  Meaning: Field from SI/FCS scouting parsing.
+  How we use it: Used as supplemental rank/text/risk signal.
+- si_text_trait_signal
+  Meaning: Field from SI/FCS scouting parsing.
+  How we use it: Used as supplemental rank/text/risk signal.
+- si_text_coverage
+  Meaning: Field from SI/FCS scouting parsing.
+  How we use it: Used as supplemental rank/text/risk signal.
+- si_risk_hits
+  Meaning: Field from SI/FCS scouting parsing.
+  How we use it: Used as supplemental rank/text/risk signal.
+- si_risk_flag
+  Meaning: Field from SI/FCS scouting parsing.
+  How we use it: Used as supplemental rank/text/risk signal.
+- si_risk_penalty
+  Meaning: Field from SI/FCS scouting parsing.
+  How we use it: Used as supplemental rank/text/risk signal.
+- si_strengths
+  Meaning: Field from SI/FCS scouting parsing.
+  How we use it: Used as supplemental rank/text/risk signal.
+- si_concerns
+  Meaning: Field from SI/FCS scouting parsing.
+  How we use it: Used as supplemental rank/text/risk signal.
+- si_summary
+  Meaning: Field from SI/FCS scouting parsing.
+  How we use it: Used as supplemental rank/text/risk signal.
+
+[ESPN Features] (19 columns)
+- espn_source_year
+  Meaning: ESPN data season/year reference.
+  How we use it: Controls era normalization.
+- espn_ovr_rank
+  Meaning: ESPN overall rank.
+  How we use it: External board anchor.
+- espn_pos_rank
+  Meaning: ESPN position rank.
+  How we use it: Position-specific market anchor.
+- espn_grade
+  Meaning: ESPN grade value.
+  How we use it: Adds external grading signal.
+- espn_grade_z
+  Meaning: ESPN grade normalized vs peers.
+  How we use it: Cross-position/year comparable score.
+- espn_rank_signal
+  Meaning: Field from ESPN-derived rank/grade/production/text features.
+  How we use it: Used for external anchor plus efficiency/trait context.
+- espn_pos_signal
+  Meaning: Field from ESPN-derived rank/grade/production/text features.
+  How we use it: Used for external anchor plus efficiency/trait context.
+- espn_grade_signal
+  Meaning: Field from ESPN-derived rank/grade/production/text features.
+  How we use it: Used for external anchor plus efficiency/trait context.
+- espn_prod_signal
+  Meaning: Field from ESPN-derived rank/grade/production/text features.
+  How we use it: Used for external anchor plus efficiency/trait context.
+- espn_qbr
+  Meaning: ESPN QBR (mainly QB).
+  How we use it: QB production context.
+- espn_epa_per_play
+  Meaning: ESPN EPA/play style metric.
+  How we use it: Efficiency context signal.
+- espn_trait_processing
+  Meaning: Field from ESPN-derived rank/grade/production/text features.
+  How we use it: Used for external anchor plus efficiency/trait context.
+- espn_trait_separation
+  Meaning: Field from ESPN-derived rank/grade/production/text features.
+  How we use it: Used for external anchor plus efficiency/trait context.
+- espn_trait_play_strength
+  Meaning: Field from ESPN-derived rank/grade/production/text features.
+  How we use it: Used for external anchor plus efficiency/trait context.
+- espn_trait_motor
+  Meaning: Field from ESPN-derived rank/grade/production/text features.
+  How we use it: Used for external anchor plus efficiency/trait context.
+- espn_trait_instincts
+  Meaning: Field from ESPN-derived rank/grade/production/text features.
+  How we use it: Used for external anchor plus efficiency/trait context.
+- espn_text_coverage
+  Meaning: Field from ESPN-derived rank/grade/production/text features.
+  How we use it: Used for external anchor plus efficiency/trait context.
+- espn_volatility_flag
+  Meaning: ESPN text indicates volatility.
+  How we use it: Risk handling and uncertainty.
+- espn_volatility_hits
+  Meaning: Count of volatility terms in ESPN text.
+  How we use it: Risk intensity check.
+
+[PlayerProfiler Features] (12 columns)
+- pp_source
+  Meaning: PlayerProfiler data source marker.
+  How we use it: Provenance for PP fields.
+- pp_last_updated
+  Meaning: Last PP update date.
+  How we use it: Freshness check.
+- pp_breakout_age
+  Meaning: Age at breakout production.
+  How we use it: Skill-position development signal.
+- pp_college_dominator
+  Meaning: Share of team production.
+  How we use it: Skill-position usage/impact signal.
+- pp_breakout_signal
+  Meaning: Field from PlayerProfiler metrics.
+  How we use it: Used mainly for skill-position production-risk context.
+- pp_dominator_signal
+  Meaning: Field from PlayerProfiler metrics.
+  How we use it: Used mainly for skill-position production-risk context.
+- pp_skill_signal
+  Meaning: Field from PlayerProfiler metrics.
+  How we use it: Used mainly for skill-position production-risk context.
+- pp_data_coverage
+  Meaning: How much PP data is present.
+  How we use it: Confidence/availability indicator.
+- pp_early_declare
+  Meaning: Early declare indicator from PP.
+  How we use it: Draft intent/risk context.
+- pp_risk_flag
+  Meaning: PP profile risk marker.
+  How we use it: Risk penalty input.
+- pp_profile_tier
+  Meaning: PP profile bucket label.
+  How we use it: Context/tiering field.
+- pp_notes
+  Meaning: PP notes text.
+  How we use it: Scout context, not core math driver.
+
+[Language/NLP Features] (14 columns)
+- lang_source_count
+  Meaning: Count of reports used for language features.
+  How we use it: Confidence of NLP features.
+- lang_text_coverage
+  Meaning: How much text was parsed.
+  How we use it: NLP reliability signal.
+- lang_trait_processing
+  Meaning: NLP/linguistic feature from analyst report text.
+  How we use it: Used to quantify trait language and risk wording.
+- lang_trait_technique
+  Meaning: NLP/linguistic feature from analyst report text.
+  How we use it: Used to quantify trait language and risk wording.
+- lang_trait_explosiveness
+  Meaning: NLP/linguistic feature from analyst report text.
+  How we use it: Used to quantify trait language and risk wording.
+- lang_trait_physicality
+  Meaning: NLP/linguistic feature from analyst report text.
+  How we use it: Used to quantify trait language and risk wording.
+- lang_trait_competitiveness
+  Meaning: NLP/linguistic feature from analyst report text.
+  How we use it: Used to quantify trait language and risk wording.
+- lang_trait_versatility
+  Meaning: NLP/linguistic feature from analyst report text.
+  How we use it: Used to quantify trait language and risk wording.
+- lang_miller_keyword_hits
+  Meaning: Hits on Matt Miller style trait keywords.
+  How we use it: Film-language alignment signal.
+- lang_miller_coverage
+  Meaning: Coverage rate of Miller keyword map.
+  How we use it: NLP completeness indicator.
+- lang_risk_hits
+  Meaning: Count of risk words in language corpus.
+  How we use it: Risk intensity measure.
+- lang_risk_flag
+  Meaning: Risk language present or not.
+  How we use it: Risk penalty trigger.
+- lang_trait_composite
+  Meaning: NLP/linguistic feature from analyst report text.
+  How we use it: Used to quantify trait language and risk wording.
+- lang_sources
+  Meaning: Source list for language features.
+  How we use it: Auditability.
+
+[Combine & Testing] (14 columns)
+- combine_source
+  Meaning: Where combine row came from.
+  How we use it: Provenance for testing data.
+- combine_last_updated
+  Meaning: Last combine data update date.
+  How we use it: Freshness / recency check.
+- combine_height_in
+  Meaning: Official combine/testing field.
+  How we use it: Used in athletic sizing and trusted athletic benchmarks.
+- combine_weight_lb
+  Meaning: Official combine/testing field.
+  How we use it: Used in athletic sizing and trusted athletic benchmarks.
+- combine_arm_in
+  Meaning: Official combine/testing field.
+  How we use it: Used in athletic sizing and trusted athletic benchmarks.
+- combine_hand_in
+  Meaning: Official combine/testing field.
+  How we use it: Used in athletic sizing and trusted athletic benchmarks.
+- combine_forty
+  Meaning: Official combine/testing field.
+  How we use it: Used in athletic sizing and trusted athletic benchmarks.
+- combine_ten_split
+  Meaning: Official combine/testing field.
+  How we use it: Used in athletic sizing and trusted athletic benchmarks.
+- combine_vertical
+  Meaning: Official combine/testing field.
+  How we use it: Used in athletic sizing and trusted athletic benchmarks.
+- combine_broad
+  Meaning: Official combine/testing field.
+  How we use it: Used in athletic sizing and trusted athletic benchmarks.
+- combine_shuttle
+  Meaning: Official combine/testing field.
+  How we use it: Used in athletic sizing and trusted athletic benchmarks.
+- combine_three_cone
+  Meaning: Official combine/testing field.
+  How we use it: Used in athletic sizing and trusted athletic benchmarks.
+- combine_bench
+  Meaning: Official combine/testing field.
+  How we use it: Used in athletic sizing and trusted athletic benchmarks.
+- combine_ras_official
+  Meaning: Official RAS from combine source.
+  How we use it: Best athletic truth source when available.
+
+[MockDraftable Features] (9 columns)
+- md_composite
+  Meaning: MockDraftable-style athletic composite.
+  How we use it: Athletic context when full combine data is limited.
+- md_speed_pct
+  Meaning: MockDraftable-style athletic baseline field.
+  How we use it: Used for athletic context when combine is incomplete.
+- md_explosion_pct
+  Meaning: MockDraftable-style athletic baseline field.
+  How we use it: Used for athletic context when combine is incomplete.
+- md_agility_pct
+  Meaning: MockDraftable-style athletic baseline field.
+  How we use it: Used for athletic context when combine is incomplete.
+- md_size_pct
+  Meaning: MockDraftable-style athletic baseline field.
+  How we use it: Used for athletic context when combine is incomplete.
+- md_height_z
+  Meaning: MockDraftable-style athletic baseline field.
+  How we use it: Used for athletic context when combine is incomplete.
+- md_height_pct
+  Meaning: MockDraftable-style athletic baseline field.
+  How we use it: Used for athletic context when combine is incomplete.
+- md_weight_z
+  Meaning: MockDraftable-style athletic baseline field.
+  How we use it: Used for athletic context when combine is incomplete.
+- md_weight_pct
+  Meaning: MockDraftable-style athletic baseline field.
+  How we use it: Used for athletic context when combine is incomplete.
+
+[Film & Component Scores] (22 columns)
+- film_traits_source
+  Meaning: Source for manual film traits.
+  How we use it: Traceability for film grades.
+- film_eval_date
+  Meaning: Date film traits were evaluated.
+  How we use it: Staleness control.
+- trait_score
+  Meaning: Model trait score (overall traits).
+  How we use it: Core grade component.
+- trait_proxy_score
+  Meaning: Fallback trait score when data is sparse.
+  How we use it: Keeps model stable with missing data.
+- film_trait_score
+  Meaning: Score from film sub-trait matrix.
+  How we use it: Direct film evaluation input.
+- film_trait_coverage
+  Meaning: How complete film sub-traits are.
+  How we use it: Confidence/weighting for film score.
+- film_trait_blend_weight
+  Meaning: How much film traits are weighted.
+  How we use it: Controls impact of film score.
+- film_trait_missing_count
+  Meaning: Missing film sub-trait fields.
+  How we use it: Data quality indicator.
+- production_score
+  Meaning: Production/performance component.
+  How we use it: One of core components in final grade.
+- athletic_score
+  Meaning: Athletic component score.
+  How we use it: Core component in final grade.
+- size_score
+  Meaning: Size/frame component score.
+  How we use it: Core component in final grade.
+- context_score
+  Meaning: Context component (age/class/situation).
+  How we use it: Core component in final grade.
+- risk_penalty
+  Meaning: Penalty for volatility/uncertainty/red flags.
+  How we use it: Subtracts from score.
+- final_grade
+  Meaning: Main model grade.
+  How we use it: Primary displayed player value.
+- floor_grade
+  Meaning: Conservative outcome grade.
+  How we use it: Lower-bound projection.
+- ceiling_grade
+  Meaning: Upside outcome grade.
+  How we use it: Upper-bound projection.
+- round_value
+  Meaning: Grade-to-round translation.
+  How we use it: Draft range label for scouts/mocks.
+- psi
+  Meaning: Prospect Strength Index composite.
+  How we use it: Internal summary metric used for separation.
+- core_stat_name
+  Meaning: Custom core metric label for player.
+  How we use it: Gives each player a differentiator stat.
+- core_stat_value
+  Meaning: Value of custom core metric.
+  How we use it: Comparison/tiering aid.
+- best_role
+  Meaning: Projected NFL role archetype.
+  How we use it: Used in reports and fit logic.
+- best_scheme_fit
+  Meaning: Best scheme family for player.
+  How we use it: Used for team-fit and report text.
+
+[Formula Diagnostics] (30 columns)
+- formula_trait_component
+  Meaning: Intermediate/diagnostic field from grading formula.
+  How we use it: Used to explain and audit how final grade was produced.
+- formula_production_component
+  Meaning: Intermediate/diagnostic field from grading formula.
+  How we use it: Used to explain and audit how final grade was produced.
+- formula_athletic_component
+  Meaning: Intermediate/diagnostic field from grading formula.
+  How we use it: Used to explain and audit how final grade was produced.
+- formula_size_component
+  Meaning: Intermediate/diagnostic field from grading formula.
+  How we use it: Used to explain and audit how final grade was produced.
+- formula_context_component
+  Meaning: Intermediate/diagnostic field from grading formula.
+  How we use it: Used to explain and audit how final grade was produced.
+- formula_risk_penalty
+  Meaning: Intermediate/diagnostic field from grading formula.
+  How we use it: Used to explain and audit how final grade was produced.
+- formula_raw_score
+  Meaning: Pre-adjustment formula output.
+  How we use it: Intermediate score before caps/penalties.
+- formula_calibrated_grade
+  Meaning: Formula score after calibration.
+  How we use it: More realistic grade mapping.
+- formula_prior_signal
+  Meaning: Prior/market input into formula.
+  How we use it: Anchors formula to available market evidence.
+- formula_prior_grade
+  Meaning: Grade implied by prior signal.
+  How we use it: Intermediate prior conversion.
+- formula_score
+  Meaning: Main formula score after controls.
+  How we use it: Primary modeled output before final presentation.
+- formula_floor
+  Meaning: Formula-based floor grade.
+  How we use it: Downside estimate from formula.
+- formula_ceiling
+  Meaning: Formula-based ceiling grade.
+  How we use it: Upside estimate from formula.
+- formula_round_value
+  Meaning: Round mapping from formula score.
+  How we use it: Range projection based on formula.
+- weight_prior_tdn_rank
+  Meaning: Configured model weight for a source feature.
+  How we use it: Shows exact influence assigned in formula.
+- weight_prior_ringer_rank
+  Meaning: Configured model weight for a source feature.
+  How we use it: Shows exact influence assigned in formula.
+- weight_prior_bleacher_rank
+  Meaning: Configured model weight for a source feature.
+  How we use it: Shows exact influence assigned in formula.
+- weight_prior_atoz_rank
+  Meaning: Configured model weight for a source feature.
+  How we use it: Shows exact influence assigned in formula.
+- weight_prior_si_rank
+  Meaning: Configured model weight for a source feature.
+  How we use it: Shows exact influence assigned in formula.
+- weight_prior_tdn_grade_label
+  Meaning: Configured model weight for a source feature.
+  How we use it: Shows exact influence assigned in formula.
+- weight_trait_tdn_text
+  Meaning: Configured model weight for a source feature.
+  How we use it: Shows exact influence assigned in formula.
+- weight_trait_bleacher_text
+  Meaning: Configured model weight for a source feature.
+  How we use it: Shows exact influence assigned in formula.
+- weight_trait_atoz_text
+  Meaning: Configured model weight for a source feature.
+  How we use it: Shows exact influence assigned in formula.
+- weight_trait_si_text
+  Meaning: Configured model weight for a source feature.
+  How we use it: Shows exact influence assigned in formula.
+- formula_guardrail_penalty
+  Meaning: Penalty from safety guardrails.
+  How we use it: Prevents over-ranking thin-data players.
+- formula_hard_cap
+  Meaning: Maximum allowed grade by guardrail.
+  How we use it: Caps extreme outputs.
+- formula_hard_cap_penalty
+  Meaning: Penalty from hitting hard cap.
+  How we use it: Shows cap impact explicitly.
+- calibration_position_delta
+  Meaning: Historical correction by position.
+  How we use it: Adjusts bias by position group.
+- calibration_grade_adjustment
+  Meaning: Global historical adjustment.
+  How we use it: Aligns output to backtested reality.
+- calibrated_success_prob
+  Meaning: Estimated probability of success tier.
+  How we use it: Decision support metric.
+
+[Legacy Compatibility] (4 columns)
+- legacy_final_grade
+  Meaning: Older model final grade.
+  How we use it: Back-compat comparison column.
+- legacy_floor_grade
+  Meaning: Older model floor.
+  How we use it: Back-compat comparison column.
+- legacy_ceiling_grade
+  Meaning: Older model ceiling.
+  How we use it: Back-compat comparison column.
+- legacy_round_value
+  Meaning: Older model round label.
+  How we use it: Back-compat comparison column.
+
+[Fit, Comps, RAS] (19 columns)
+- best_team_fit
+  Meaning: Most compatible NFL team fit now.
+  How we use it: Mock and report recommendation.
+- best_team_fit_score
+  Meaning: Numeric strength of team fit.
+  How we use it: Ranks fit confidence.
+- historical_comp
+  Meaning: Historical NFL player comp.
+  How we use it: Style/context communication aid.
+- comp_style
+  Meaning: Why the comp fits stylistically.
+  How we use it: Quick comp rationale.
+- comp_confidence
+  Meaning: Confidence grade for comp.
+  How we use it: How strong the comp match is.
+- ras_estimate
+  Meaning: RAS used in model (official or estimate).
+  How we use it: Athletic benchmarking and comps.
+- ras_tier
+  Meaning: RAS tier label (elite/great/etc).
+  How we use it: Quick athletic bucket.
+- ras_percentile
+  Meaning: Approx percentile from RAS.
+  How we use it: Relative athletic standing.
+- ras_source
+  Meaning: Whether RAS is official, estimate, or pending.
+  How we use it: Trust level for athletic metric.
+- ras_benchmark_starter_target
+  Meaning: Historical starter-level RAS target for position.
+  How we use it: Floor benchmark by position.
+- ras_benchmark_impact_target
+  Meaning: Historical impact-level RAS target.
+  How we use it: High-end benchmark by position.
+- ras_benchmark_elite_target
+  Meaning: Historical elite-level RAS target.
+  How we use it: Ceiling benchmark by position.
+- ras_meets_starter_target
+  Meaning: If player meets starter RAS benchmark.
+  How we use it: Quick pass/fail athletic floor check.
+- ras_meets_impact_target
+  Meaning: If player meets impact RAS benchmark.
+  How we use it: Quick upside check.
+- ras_meets_elite_target
+  Meaning: If player meets elite RAS benchmark.
+  How we use it: Quick elite-athlete check.
+- ras_benchmark_sample_n
+  Meaning: Historical sample size behind benchmarks.
+  How we use it: How stable the benchmark is.
+- ras_historical_comp_1
+  Meaning: Historical RAS-based comp 1.
+  How we use it: Athletic-profile comparison.
+- ras_historical_comp_2
+  Meaning: Historical RAS-based comp 2.
+  How we use it: Athletic-profile comparison.
+- ras_comparison_note
+  Meaning: Short note on RAS comparison outcome.
+  How we use it: Context for athletic profile quality.
+
+[Scouting Narrative] (8 columns)
+- scouting_notes
+  Meaning: General scouting summary note.
+  How we use it: Human-readable report layer.
+- scouting_report_summary
+  Meaning: Long-form scout-style summary paragraph.
+  How we use it: Publishable board/report text.
+- scouting_why_he_wins
+  Meaning: How player wins in NFL role.
+  How we use it: Strength-focused report section.
+- scouting_primary_concerns
+  Meaning: Main developmental or risk concerns.
+  How we use it: Risk-focused report section.
+- scouting_production_snapshot
+  Meaning: Production snapshot line.
+  How we use it: Quick production context in reports.
+- scouting_board_movement
+  Meaning: Movement note from analyst signals.
+  How we use it: Volatility/narrative context.
+- scouting_role_projection
+  Meaning: Expected NFL usage and fit projection.
+  How we use it: Role planning for teams.
+- headshot_url
+  Meaning: Player image URL placeholder.
+  How we use it: Used by web report cards when available.
+
+[Final Ordering] (1 columns)
+- consensus_rank
+  Meaning: Final board rank after all scoring and dedupe.
+  How we use it: Official ordering on the board.

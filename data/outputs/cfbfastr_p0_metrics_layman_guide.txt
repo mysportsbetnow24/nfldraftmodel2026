@@ -1,0 +1,88 @@
+CFBfastr P0 Metrics Added (Layman's Guide)
+
+Goal:
+Use stronger college efficiency data to sharpen rankings WITHOUT letting production stats hijack the board.
+
+How this is protected:
+- New P0 metrics are blended into existing player production signal, not replacing it.
+- Blend weight: 35% P0, 65% legacy production.
+- Max movement from P0 layer:
+  - QB: +/-3.0 signal points
+  - Other positions: +/-4.0 signal points
+- If only P0 exists (no legacy), we still anchor to neutral and cap impact.
+
+QB metrics added:
+1) qb_wepa_passing
+- What it is: opponent/context-adjusted passing impact.
+- Why it helps: better than raw yards/TDs when schedule/context differ.
+
+2) qb_ppa_passing
+- What it is: passing efficiency per-play value.
+- Why it helps: captures how much each passing play actually helps scoring expectation.
+
+3) qb_ppa_overall
+- What it is: all-play PPA impact.
+- Why it helps: balances pure passing splits with total on-field impact.
+
+4) qb_ppa_passing_downs
+- What it is: efficiency on obvious pass downs.
+- Why it helps: shows translatable “must-pass” execution.
+
+5) qb_ppa_standard_downs
+- What it is: efficiency on early/normal downs.
+- Why it helps: avoids overvaluing only scramble/late-down chaos.
+
+6) qb_usage_rate
+- What it is: how much offense flows through the QB.
+- Why it helps: role/context check for whether production came on real volume.
+
+WR/TE metrics added:
+1) wrte_wepa_receiving
+- What it is: context-adjusted receiving impact.
+- Why it helps: isolates real receiving value vs. raw volume.
+
+2) wrte_ppa_overall
+- What it is: overall per-play value for usage involving this player.
+- Why it helps: measures down-to-down contribution, not just splash plays.
+
+3) wrte_ppa_passing_downs
+- What it is: value on passing downs.
+- Why it helps: targets NFL-translation situations.
+
+4) wrte_usage_rate
+- What it is: player involvement rate.
+- Why it helps: production sustainability check (high value on low usage can be volatile).
+
+RB metrics added:
+1) rb_wepa_rushing
+- What it is: context-adjusted rushing impact.
+- Why it helps: separates RB performance from line/schedule inflation.
+
+2) rb_ppa_rushing
+- What it is: rushing per-play value.
+- Why it helps: better signal than raw rushing totals.
+
+3) rb_ppa_standard_downs
+- What it is: early-down rushing value.
+- Why it helps: aligns with NFL run-game translation.
+
+4) rb_usage_rate
+- What it is: workload share.
+- Why it helps: checks whether efficiency holds at meaningful volume.
+
+Where these show up now:
+- In cfb production ingestion logic (guardrailed blend).
+- In big board output columns:
+  - cfbfastr_p0_signal_raw
+  - cfbfastr_p0_available
+  - cfbfastr_p0_mode
+  - cfbfastr_p0_applied_delta
+  - cfbfastr_p0_max_delta
+  - cfbfastr_p0_coverage_count
+
+What to fill in manually right now:
+- data/sources/manual/cfb_production_2025_template.csv now includes the new P0 columns.
+- Once you paste values, rerun build_big_board.py.
+
+Key constraint preserved:
+- Team-level CFB stats are still blocked from NFL team-needs logic and from direct player grade inflation.

@@ -1,0 +1,41 @@
+Big Board Integrity Report
+
+Board rows: 340
+Duplicate player rows: 0
+Unique players: 340
+
+Legacy/invalid spot-check:
+- Arch Manning: not present
+- James Pearce Jr.: not present
+- Jalon Walker: not present
+- Theo Johnson: not present
+- Caleb Williams: not present
+- Drake Maye: not present
+- Marvin Harrison Jr.: not present
+
+Top 25 snapshot:
+1. Darrell Jackson Jr. | DT | Florida State Seminoles | grade=87.23
+2. Drew Allar | QB | Penn State Nittany Lions | grade=86.94
+3. Chris Bell | WR | Louisville Cardinals | grade=86.71
+4. Kadyn Proctor | OT | Alabama Crimson Tide | grade=86.46
+5. Jalon Kilgore | CB | South Carolina Gamecocks | grade=86.44
+6. LT Overton | EDGE | Alabama Crimson Tide | grade=85.58
+7. Derrick Moore | EDGE | Michigan Wolverines | grade=85.2
+8. Keldric Faulk | EDGE | Auburn Tigers | grade=84.89
+9. Denzel Boston | WR | Washington Huskies | grade=84.63
+10. Trinidad Chambliss | QB | Mississippi Rebels | grade=84.42
+11. Sonny Styles | LB | Ohio State Buckeyes | grade=84.34
+12. Ar'maj Reed-Adams | IOL | Texas A&M Aggies | grade=84.31
+13. Jaeden Roberts | IOL | Alabama Crimson Tide | grade=84.03
+14. Davison Igbinosun | CB | Ohio State Buckeyes | grade=83.88
+15. Nicholas Singleton | RB | Penn State Nittany Lions | grade=83.34
+16. Romello Height | EDGE | Texas Tech Red Raiders | grade=83.16
+17. Nolan Rucci | OT | Penn State Nittany Lions | grade=82.76
+18. Ethan Onianwa | IOL | Ohio State Buckeyes | grade=82.76
+19. Tanner Koziol | TE | Houston Cougars | grade=82.6
+20. Chase Bisontis | IOL | Texas A&M Aggies | grade=82.53
+21. J.C. Davis | OT | Illinois Fighting Illini | grade=82.52
+22. Ja'Kobi Lane | WR | USC Trojans | grade=82.47
+23. Diego Pavia | QB | Vanderbilt Commodores | grade=82.45
+24. Tacario Davis | CB | Washington Huskies | grade=82.4
+25. Jacob Rodriguez | LB | Texas Tech Red Raiders | grade=82.32

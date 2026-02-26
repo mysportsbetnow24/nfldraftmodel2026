@@ -82,19 +82,36 @@ ROLE_BY_POS = {
 
 
 def _size_score(position: str, height_in: int, weight_lb: int) -> float:
+    """
+    Position-based frame scoring.
+    - Penalize below minimum thresholds aggressively.
+    - Allow a reasonable above-threshold band with only mild penalty.
+    """
     thresholds = ATHLETIC_THRESHOLDS.get(position, {})
-    target_h = thresholds.get("min_height_in", max(height_in, 72))
-    target_w = thresholds.get("min_weight_lb", max(weight_lb, 200))
+    min_h = int(thresholds.get("min_height_in", 72))
+    min_w = int(thresholds.get("min_weight_lb", 200))
 
-    h_pen = abs(height_in - target_h) * 0.8
-    w_pen = abs(weight_lb - target_w) * 0.08
+    # Position-specific tolerance above minimum before mild penalties.
+    h_upper_soft = min_h + 4
+    w_upper_soft = min_w + 35
+
+    h_below = max(0, min_h - height_in)
+    h_above = max(0, height_in - h_upper_soft)
+    w_below = max(0, min_w - weight_lb)
+    w_above = max(0, weight_lb - w_upper_soft)
+
+    h_pen = (1.5 * h_below) + (0.35 * h_above)
+    w_pen = (0.12 * w_below) + (0.02 * w_above)
     score = 90.0 - h_pen - w_pen
     return max(62.0, min(95.0, score))
 
 
 def _athletic_proxy(position: str, rank_seed: int, height_in: int, weight_lb: int) -> float:
     base = 90.0 - (rank_seed * 0.09)
-    frame_bonus = (height_in - 72) * 0.35 + (weight_lb - 220) * 0.01
+    thresholds = ATHLETIC_THRESHOLDS.get(position, {})
+    frame_h = int(thresholds.get("min_height_in", 72))
+    frame_w = int(thresholds.get("min_weight_lb", 220))
+    frame_bonus = (height_in - frame_h) * 0.28 + (weight_lb - frame_w) * 0.008
     pos_mod = {
         "QB": 1.5,
         "RB": 0.8,

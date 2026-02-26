@@ -27,7 +27,6 @@ _LINE_RE = re.compile(
 )
 
 
-
 def _split_name_school(body: str) -> Tuple[str, str]:
     compact = body.strip()
     for school in SCHOOL_CANDIDATES:
@@ -41,7 +40,6 @@ def _split_name_school(body: str) -> Tuple[str, str]:
     if len(parts) == 1:
         return compact, "Unknown"
     return " ".join(parts[:-1]), parts[-1]
-
 
 
 def parse_seed_line(line: str) -> Dict | None:
@@ -67,7 +65,6 @@ def parse_seed_line(line: str) -> Dict | None:
         "class_year": match.group("class").replace(".", ""),
         "source_primary": "DraftTek_Top300_2026",
     }
-
 
 
 def load_seed_rows(path: Path | None = None) -> List[Dict]:

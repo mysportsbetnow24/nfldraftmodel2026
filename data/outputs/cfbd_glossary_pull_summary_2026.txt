@@ -1,0 +1,29 @@
+CFBD Glossary Pull Summary (2026-02-26)
+
+team_advanced_stats rows: 136
+team_ppa rows: 136
+advanced_game_stats rows: 3214
+
+team_advanced available metrics:
+- success_rate: available
+- explosiveness: available
+- power_success: available
+- stuff_rate: available
+- line_yards: available
+- second_level_yards: available
+- open_field_yards: available
+- havoc_total: available
+- havoc_front_seven: available
+- havoc_db: available
+- passing_downs_success: available
+- standard_downs_success: available
+- points_per_opportunity: available
+- scoring_opportunities: available
+
+league-level reference means (2025 team season):
+- offense_success_rate_mean: 0.4241
+- defense_success_rate_mean: 0.4121
+- offense_explosiveness_mean: 1.2485
+- defense_explosiveness_mean: 1.2506
+
+separation rule: team-level files are context-only; player final_grade remains player-feature only.

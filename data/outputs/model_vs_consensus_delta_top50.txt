@@ -1,0 +1,41 @@
+MODEL VS CONSENSUS DELTA REPORT (TOP 50 BY MODEL RANK)
+
+Input: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
+Rows analyzed: 50
+Average delta (consensus_mean - model_rank): 7.29
+Median-like center (sorted mid): 3.20
+Max positive delta (model much higher): 54.00
+Max negative delta (model lower): -31.00
+
+Most aggressive model-over-consensus (top 15):
+- #49 Brian Parker II (OT): delta 54.00; cmr 103.00; ext 99; pff 85.5; drivers [no_guardrail_hit]
+- #15 Romello Height (EDGE): delta 51.00; cmr 66.00; ext 51; pff 92.5; drivers [high_pff|no_guardrail_hit]
+- #6 Keionte Scott (CB): delta 46.00; cmr 52.00; ext 50; pff 89.6; drivers [high_pff|no_guardrail_hit|language_support]
+- #30 Jacob Rodriguez (LB): delta 42.67; cmr 72.67; ext 90; pff 93.0; drivers [high_pff|no_guardrail_hit]
+- #48 Zakee Wheatley (S): delta 40.67; cmr 88.67; ext 92; pff 85.9; drivers [no_guardrail_hit]
+- #28 Joshua Josephs (EDGE): delta 40.33; cmr 68.33; ext 61; pff 87.1; drivers [no_guardrail_hit]
+- #17 Chris Johnson (CB): delta 32.00; cmr 49.00; ext 55; pff 91.6; drivers [high_pff|no_guardrail_hit]
+- #23 A.J. Haulcy (S): delta 30.00; cmr 53.00; ext 42; pff 86.6; drivers [no_guardrail_hit]
+- #33 Derrick Moore (EDGE): delta 29.00; cmr 62.00; ext 58; pff 89.9; drivers [high_pff|no_guardrail_hit]
+- #20 Keith Abney II (CB): delta 26.00; cmr 46.00; ext 35; pff 86.3; drivers [no_guardrail_hit]
+- #40 Elijah Sarratt (WR): delta 22.00; cmr 62.00; ext 66; pff 86.1; drivers [no_guardrail_hit]
+- #44 Gennings Dunker (OT): delta 20.00; cmr 64.00; ext 83; pff 82.0; drivers [no_guardrail_hit]
+- #4 Akheem Mesidor (EDGE): delta 19.60; cmr 23.60; ext 32; pff 92.5; drivers [high_pff|no_guardrail_hit]
+- #27 Zion Young (EDGE): delta 14.20; cmr 41.20; ext 45; pff 85.0; drivers [no_guardrail_hit]
+- #26 Christen Miller (DT): delta 13.80; cmr 39.80; ext 29; pff 84.5; drivers [no_guardrail_hit|elite_trait_prod]
+
+Most conservative model-vs-consensus (top 10):
+- #39 Nyck Harbor (WR): delta -31.00; cmr 8.00; ext ; pff ; drivers [strong_prior|no_guardrail_hit|elite_trait_prod]
+- #42 Cashius Howell (EDGE): delta -21.60; cmr 20.40; ext 15; pff 81.2; drivers [strong_prior|no_guardrail_hit|elite_trait_prod|strong_athletic]
+- #32 Peter Woods (DT): delta -17.62; cmr 14.38; ext 14; pff 72.2; drivers [strong_prior|no_guardrail_hit|elite_trait_prod|strong_athletic]
+- #29 Makai Lemon (WR): delta -17.60; cmr 11.40; ext 10; pff 90.8; drivers [high_pff|strong_prior|no_guardrail_hit|elite_trait_prod|strong_athletic]
+- #43 Monroe Freeling (OT): delta -17.20; cmr 25.80; ext 30; pff 72.1; drivers [no_guardrail_hit]
+- #50 Brandon Cisse (CB): delta -16.40; cmr 33.60; ext 31; pff 75.2; drivers [no_guardrail_hit]
+- #37 T.J. Parker (EDGE): delta -10.50; cmr 26.50; ext 23; pff 80.7; drivers [strong_prior|no_guardrail_hit|elite_trait_prod|strong_athletic]
+- #18 Sonny Styles (LB): delta -9.00; cmr 9.00; ext 9; pff 88.5; drivers [high_pff|strong_prior|no_guardrail_hit]
+- #21 Jordyn Tyson (WR): delta -8.83; cmr 12.17; ext 7; pff 82.9; drivers [strong_prior|no_guardrail_hit|elite_trait_prod|strong_athletic]
+- #10 Arvell Reese (EDGE): delta -7.43; cmr 2.57; ext 3; pff 76.4; drivers [strong_prior|no_guardrail_hit|elite_trait_prod]
+
+Requested player checks:
+- Keionte Scott: model #6, consensus mean 52.00, delta 46.00, ext 50, pff 89.6, drivers [high_pff|no_guardrail_hit|language_support]
+- Romello Height: model #15, consensus mean 66.00, delta 51.00, ext 51, pff 92.5, drivers [high_pff|no_guardrail_hit]

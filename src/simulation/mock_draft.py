@@ -220,7 +220,12 @@ def _insert_comp_picks(order_rows: List[dict], round_no: int, comp_picks: Dict[i
 
 
 
-def simulate_round(order_rows: List[dict], board: List[dict], round_no: int) -> Tuple[List[dict], List[dict], List[dict]]:
+def simulate_round(
+    order_rows: List[dict],
+    board: List[dict],
+    round_no: int,
+    allow_simulated_trades: bool = False,
+) -> Tuple[List[dict], List[dict], List[dict]]:
     team_map = _team_map()
     picks: List[dict] = []
     trades: List[dict] = []
@@ -228,7 +233,7 @@ def simulate_round(order_rows: List[dict], board: List[dict], round_no: int) -> 
 
     mutable_order = order_rows[:]
     for idx in range(len(mutable_order)):
-        if round_no == 1:
+        if round_no == 1 and allow_simulated_trades:
             mutable_order, did_trade = _maybe_trade_down(mutable_order, idx, remaining, team_map)
             if did_trade:
                 trades.append(
@@ -287,7 +292,11 @@ def simulate_round(order_rows: List[dict], board: List[dict], round_no: int) -> 
 
 
 
-def simulate_full_draft(board: List[dict], rounds: int = 7) -> Tuple[List[dict], List[dict], List[dict]]:
+def simulate_full_draft(
+    board: List[dict],
+    rounds: int = 7,
+    allow_simulated_trades: bool = False,
+) -> Tuple[List[dict], List[dict], List[dict]]:
     round_orders = load_round_orders(rounds=rounds)
     comp_picks = load_comp_picks()
     remaining = board[:]
@@ -297,7 +306,12 @@ def simulate_full_draft(board: List[dict], rounds: int = 7) -> Tuple[List[dict],
 
     for rnd in range(1, rounds + 1):
         order_rows = _insert_comp_picks(round_orders[rnd], rnd, comp_picks)
-        picks, remaining, trades = simulate_round(order_rows, remaining, rnd)
+        picks, remaining, trades = simulate_round(
+            order_rows,
+            remaining,
+            rnd,
+            allow_simulated_trades=allow_simulated_trades,
+        )
         if rnd == 1:
             round1_picks = picks[:]
         all_picks.extend(picks)
@@ -310,6 +324,7 @@ def simulate_full_draft(board: List[dict], rounds: int = 7) -> Tuple[List[dict],
 def write_csv(path: Path, rows: List[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     if not rows:
+        path.write_text("")
         return
     with path.open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))

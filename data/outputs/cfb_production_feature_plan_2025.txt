@@ -1,0 +1,35 @@
+2025 CFB Production Features Added (Position-Priority)
+
+1) QB efficiency + pressure
+- qb_qbr
+- qb_epa_per_play
+- qb_success_rate
+- qb_pressure_to_sack_rate
+- qb_under_pressure_epa
+- qb_under_pressure_success_rate
+
+2) WR / TE efficiency + role share
+- yprr
+- target_share
+
+3) RB explosives + tackle breaking
+- explosive_run_rate
+- missed_tackles_forced_per_touch
+
+4) EDGE pass-rush disruption
+- pressure_rate
+
+5) CB / S coverage impact
+- coverage_plays_per_target
+
+Model outputs now include:
+- cfb_prod_signal
+- cfb_prod_available
+- cfb_prod_coverage_count
+- position sub-signals and raw values (cfb_* columns in big_board_2026.csv)
+
+Data entry file:
+- data/sources/manual/cfb_production_2025.csv
+
+Template:
+- data/sources/manual/cfb_production_2025_template.csv

@@ -12,7 +12,7 @@ BOARD_PATH = ROOT / "data" / "processed" / "big_board_2026.csv"
 OUT_DIR = ROOT / "data" / "outputs" / "player_reports_html"
 INDEX_PATH = ROOT / "data" / "outputs" / "reports_index.html"
 BLANK_TEMPLATE_PATH = ROOT / "data" / "outputs" / "scouting_card_template.html"
-MAX_REPORTS = 250
+MAX_REPORTS = 300
 TEMPLATE_MD_PATH = ROOT / "data" / "outputs" / "scouting_card_template.md"
 
 
@@ -384,30 +384,87 @@ def _summary_sections(row: dict) -> list[tuple[str, str]]:
     team_fit = row.get("best_team_fit", "")
     comp = row.get("historical_comp", "")
     note = row.get("scouting_notes", "")
+    kiper_rank = _first_non_empty(row.get("kiper_rank", ""), "N/A")
+    kiper_prev_rank = _first_non_empty(row.get("kiper_prev_rank", ""), "")
+    kiper_delta = _first_non_empty(row.get("kiper_rank_delta", ""), "")
+    kiper_strength_tags = _first_non_empty(row.get("kiper_strength_tags", ""), "")
+    kiper_concern_tags = _first_non_empty(row.get("kiper_concern_tags", ""), "")
+    kiper_statline_2025 = _first_non_empty(row.get("kiper_statline_2025", ""), "")
 
     pp_sig = _first_non_empty(row.get("pp_skill_signal", ""), "N/A")
     ras = _first_non_empty(row.get("ras_estimate", "Pending"), "Pending")
     md = _first_non_empty(row.get("md_composite", "Pending"), "Pending")
 
-    summary_intro = (
-        f"{name} ({pos}, {school}) checks in as a consensus top-{rank} profile with a model grade of "
-        f"{final_grade:.2f}. Tape and data align to a {row.get('round_value','')} projection if the current trend holds."
+    summary_intro = _first_non_empty(
+        row.get("scouting_report_summary", ""),
+        (
+            f"{name} ({pos}, {school}) checks in as a consensus top-{rank} profile with a model grade of "
+            f"{final_grade:.2f}. Tape and data align to a {row.get('round_value','')} projection if the current trend holds."
+        ),
     )
 
-    wins = (
-        f"Primary translatable strengths: {note}. The profile fits best in a {scheme_fit} environment, where {best_role.lower()} "
-        f"can be deployed without forcing role expansion too early."
+    wins = _first_non_empty(
+        row.get("scouting_why_he_wins", ""),
+        (
+            f"Primary translatable strengths: {note}. "
+            f"{'Structured trait tags: ' + kiper_strength_tags + '. ' if kiper_strength_tags else ''}"
+            f"The profile fits best in a {scheme_fit} environment, where {best_role.lower()} can be deployed without forcing role expansion too early."
+        ),
     )
 
-    concerns = (
-        f"Key development stress points: tighten play-to-play consistency, verify processing under pressure, and resolve any "
-        f"volatile outcomes flagged by contextual risk. Athletic markers currently read RAS {ras} and MockDraftable {md}, "
-        f"while PlayerProfiler skill signal sits at {pp_sig}."
+    concerns = _first_non_empty(
+        row.get("scouting_primary_concerns", ""),
+        (
+            f"Key development stress points: tighten play-to-play consistency, verify processing under pressure, and resolve any "
+            f"volatile outcomes flagged by contextual risk. Athletic markers currently read RAS {ras} and MockDraftable {md}, "
+            f"while PlayerProfiler skill signal sits at {pp_sig}. "
+            f"{'Structured concern tags: ' + kiper_concern_tags + '.' if kiper_concern_tags else ''}"
+        ),
     )
 
-    projection = (
-        f"NFL projection: {best_role}. Ideal early deployment comes with {team_fit} based on current roster/scheme assumptions. "
-        f"Historical style comp: {comp}."
+    production_snapshot = _first_non_empty(
+        row.get("scouting_production_snapshot", ""),
+        (
+            f"{kiper_statline_2025}."
+            if kiper_statline_2025
+            else "No structured 2025 Kiper production snapshot ingested yet; rely on model production tables + manual film notes."
+        ),
+    )
+
+    board_movement = _first_non_empty(row.get("scouting_board_movement", ""), "")
+    if not board_movement:
+        kiper_delta_num = _to_float(row, "kiper_rank_delta", 0.0)
+        if kiper_rank == "N/A":
+            board_movement = "No Kiper board movement data ingested yet for this player."
+        else:
+            if kiper_delta and str(kiper_delta) not in {"0", "0.0"}:
+                direction = "up" if kiper_delta_num > 0 else "down"
+                delta_abs = str(abs(int(kiper_delta_num)))
+                board_movement = (
+                    f"Kiper board context: current rank {kiper_rank}"
+                    f"{f' (prev {kiper_prev_rank})' if kiper_prev_rank else ''}, moved {direction} {delta_abs} spots."
+                )
+            else:
+                board_movement = (
+                    f"Kiper board context: current rank {kiper_rank}"
+                    f"{f' (prev {kiper_prev_rank})' if kiper_prev_rank else ''}, stable movement."
+                )
+
+    role_scheme_projection = _first_non_empty(
+        row.get("scouting_role_projection", ""),
+        (
+            f"NFL projection: {best_role}. Ideal early deployment comes with {team_fit} based on current roster/scheme assumptions. "
+            f"Best scheme fit: {scheme_fit}. Historical style comp: {comp}."
+        ),
+    )
+
+    analyst_snapshot = (
+        f"Kiper {kiper_rank}; "
+        f"TDN {row.get('tdn_rank','') or 'N/A'}; "
+        f"Ringer {row.get('ringer_rank','') or 'N/A'}; "
+        f"Bleacher {row.get('br_rank','') or 'N/A'}; "
+        f"AtoZ {row.get('atoz_rank','') or 'N/A'}; "
+        f"SI/FCS {row.get('si_rank','') or 'N/A'}."
     )
 
     value = (
@@ -419,7 +476,10 @@ def _summary_sections(row: dict) -> list[tuple[str, str]]:
         ("Report", summary_intro),
         ("How He Wins", wins),
         ("Primary Concerns", concerns),
-        ("Projection", projection),
+        ("2025 Production Snapshot", production_snapshot),
+        ("Board Movement", board_movement),
+        ("Analyst Source Snapshot", analyst_snapshot),
+        ("Role / Scheme Projection", role_scheme_projection),
         ("Value Range", value),
     ]
 
@@ -500,9 +560,20 @@ def _player_card(row: dict) -> str:
     bench = _safe_float_str(row, "bench_reps", 0)
 
     ras = _first_non_empty(row.get("ras_estimate", ""), "Pending")
+    ras_starter_target = _first_non_empty(row.get("ras_benchmark_starter_target", ""), "N/A")
+    ras_impact_target = _first_non_empty(row.get("ras_benchmark_impact_target", ""), "N/A")
+    ras_target_line = f"Starter>={ras_starter_target}, Impact>={ras_impact_target}"
     md_composite = _first_non_empty(row.get("md_composite", ""), "Pending")
     pff_grade = _safe_float_str(row, "pff_grade", 1)
     pp_signal = _first_non_empty(row.get("pp_skill_signal", ""), "N/A")
+    source_signal_line = (
+        f"Kiper {_first_non_empty(row.get('kiper_rank', ''), 'N/A')} | "
+        f"TDN {_first_non_empty(row.get('tdn_rank', ''), 'N/A')} | "
+        f"Ringer {_first_non_empty(row.get('ringer_rank', ''), 'N/A')} | "
+        f"Bleacher {_first_non_empty(row.get('br_rank', ''), 'N/A')} | "
+        f"AtoZ {_first_non_empty(row.get('atoz_rank', ''), 'N/A')} | "
+        f"SI/FCS {_first_non_empty(row.get('si_rank', ''), 'N/A')}"
+    )
 
     all22_text = _all22_focus(row.get("position", ""))
     verification_note = _first_non_empty(
@@ -536,6 +607,13 @@ def _player_card(row: dict) -> str:
         "round_value": row.get("round_value", ""),
         "ras_estimate": row.get("ras_estimate", ""),
         "pp_skill_signal": row.get("pp_skill_signal", ""),
+        "kiper_rank": row.get("kiper_rank", ""),
+        "kiper_rank_delta": row.get("kiper_rank_delta", ""),
+        "tdn_rank": row.get("tdn_rank", ""),
+        "ringer_rank": row.get("ringer_rank", ""),
+        "br_rank": row.get("br_rank", ""),
+        "atoz_rank": row.get("atoz_rank", ""),
+        "si_rank": row.get("si_rank", ""),
         "md_composite": row.get("md_composite", ""),
         "film_weighted_grade": film_weighted,
         "source_confidence": source_confidence,
@@ -602,7 +680,11 @@ def _player_card(row: dict) -> str:
       </tr>
       <tr>
         <td class="label">Composite Signals:</td>
-        <td colspan="6">{_editable_cell(f"RAS {ras} | MockDraftable {md_composite} | PFF Grade {pff_grade} | PlayerProfiler Signal {pp_signal}", 'athletic.composites')}</td>
+        <td colspan="6">{_editable_cell(f"RAS {ras} ({ras_target_line}) | MockDraftable {md_composite} | PFF Grade {pff_grade} | PlayerProfiler Signal {pp_signal}", 'athletic.composites')}</td>
+      </tr>
+      <tr>
+        <td class="label">Scouting Sources:</td>
+        <td colspan="6">{_editable_cell(source_signal_line, 'athletic.scouting_sources')}</td>
       </tr>
       {''.join(trait_html)}
       <tr class="section"><th colspan="7">Film Sub-Trait Matrix</th></tr>
@@ -1016,7 +1098,10 @@ def _blank_template_markdown() -> str:
 - Report:
 - How He Wins:
 - Primary Concerns:
-- Projection:
+- 2025 Production Snapshot:
+- Board Movement:
+- Analyst Source Snapshot:
+- Role / Scheme Projection:
 - Value Range:
 """.strip() + "\n"
 
@@ -1028,6 +1113,10 @@ def render_reports() -> None:
         rows = list(csv.DictReader(f))
 
     rows = rows[:MAX_REPORTS]
+    expected_files = {f"{_slugify(row.get('player_name', ''))}.html" for row in rows}
+    for stale in OUT_DIR.glob("*.html"):
+        if stale.name not in expected_files:
+            stale.unlink()
 
     index_rows = []
     for row in rows:

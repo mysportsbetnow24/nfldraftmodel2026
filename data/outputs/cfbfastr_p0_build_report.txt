@@ -1,0 +1,18 @@
+cfbfastR-style P0 CSV Build Report
+
+season: 2025
+source_ppa: /Users/nickholz/nfldraftmodel2026/data/sources/cfbd/player_ppa_2025.json
+source_stats: /Users/nickholz/nfldraftmodel2026/data/sources/cfbd/player_season_stats_2025.json
+
+qb_rows: 827
+wrte_rows: 2980
+rb_rows: 1390
+
+outputs:
+- /Users/nickholz/nfldraftmodel2026/data/sources/manual/cfbfastr_qb_p0_2025.csv
+- /Users/nickholz/nfldraftmodel2026/data/sources/manual/cfbfastr_wrte_p0_2025.csv
+- /Users/nickholz/nfldraftmodel2026/data/sources/manual/cfbfastr_rb_p0_2025.csv
+
+notes:
+- WEPA fields are left blank in this build because CFBD API payloads used here do not include WEPA directly.
+- Usage rates are derived from player/team season shares: QB pass attempts share, WR/TE receptions share, RB carry share.

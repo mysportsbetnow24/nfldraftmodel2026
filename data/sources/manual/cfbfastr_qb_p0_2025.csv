@@ -1,0 +1,828 @@
+player_name,school,position,season,qb_ppa_overall,qb_ppa_passing,qb_ppa_standard_downs,qb_ppa_passing_downs,qb_wepa_passing,qb_usage_rate
+Jake Ryder,Villanova,QB,2025,-0.427,-0.559,-0.559,-0.295,,0.0024
+Jacob Zeno,Texas A&M,QB,2025,0.086,0.086,0.019,0.187,,0.0123
+Kaiden Bennett,Delaware State,QB,2025,0.206,0.111,0.025,0.453,,0.7601
+Zach Calzada,Kentucky,QB,2025,-0.114,-0.206,0.091,-0.345,,0.1585
+Dequan Finn,Miami (OH),QB,2025,0.297,0.289,0.181,0.503,,0.4932
+Ta'Quan Roberson,Buffalo,QB,2025,0.205,0.192,0.093,0.368,,0.8704
+Cade McNamara,East Tennessee State,QB,2025,0.171,0.139,0.104,0.28,,0.4946
+Maverick McIvor,Western Kentucky,QB,2025,0.265,0.255,0.227,0.325,,0.5549
+Haynes King,Georgia Tech,QB,2025,0.321,0.354,0.256,0.463,,0.9233
+Jeff Sims,Arizona State,QB,2025,0.066,0.068,-0.219,0.415,,0.4382
+Drew Pyne,Bowling Green,QB,2025,0.021,-0.038,-0.179,0.245,,0.5374
+Brendon Lewis,Memphis,QB,2025,0.256,0.171,0.198,0.351,,0.8932
+Aidan Bouman,South Dakota,QB,2025,0.278,0.295,0.161,0.446,,0.997
+Deuce Hogan,Nicholls,QB,2025,0.02,-0.001,-0.035,0.085,,1.0
+Jacolby Criswell,East Tennessee State,QB,2025,0.305,0.264,0.304,0.308,,0.371
+Joe Fagnano,UConn,QB,2025,0.468,0.464,0.354,0.65,,0.9135
+Tucker Gleason,Toledo,QB,2025,0.323,0.348,0.225,0.467,,0.806
+Chubba Purdy,Nevada,QB,2025,0.02,-0.221,0.038,-0.01,,0.281
+Carson Beck,Miami,QB,2025,0.318,0.374,0.248,0.425,,0.9435
+Malakai Anthony,Bowie State,QB,2025,0.256,0.125,-0.076,0.501,,1.0
+Michael Chandler II,Campbell,QB,2025,0.036,0.184,-0.158,0.444,,0.1074
+Ben Finley,Akron,QB,2025,0.133,0.106,0.071,0.21,,0.9005
+Ben Gulbranson,Stanford,QB,2025,0.221,0.24,0.275,0.164,,0.665
+Taylen Green,Arkansas,QB,2025,0.405,0.332,0.288,0.587,,0.8556
+Ken Seals,TCU,QB,2025,0.096,0.119,-0.421,0.815,,0.1
+Evan Simon,Temple,QB,2025,0.256,0.281,0.196,0.341,,0.9023
+Kiael Kelly,Ball State,QB,2025,0.042,-0.063,0.009,0.084,,0.9819
+Behren Morton,Texas Tech,QB,2025,0.295,0.338,0.124,0.516,,0.688
+Miller Moss,Louisville,QB,2025,0.159,0.126,0.156,0.162,,0.9179
+Will Crowder,Troy,QB,2025,0.07,0.032,-0.076,0.268,,0.4548
+TJ Finley,Georgia State,QB,2025,0.148,0.158,0.034,0.308,,0.4258
+Christian Veilleux,Georgia State,QB,2025,0.122,0.093,0.17,0.07,,0.1822
+Carlos Del Rio-Wilson,Marshall,QB,2025,0.278,0.363,0.209,0.395,,0.7642
+Athan Kaliakmanis,Rutgers,QB,2025,0.232,0.274,0.21,0.265,,0.9735
+Sawyer Robertson,Baylor,QB,2025,0.249,0.252,0.106,0.483,,0.9863
+Preston Stone,Northwestern,QB,2025,0.16,0.163,0.066,0.306,,0.9788
+Kaidon Salter,Colorado,QB,2025,0.317,0.294,0.222,0.44,,0.573
+Mitch Griffis,Texas Tech,QB,2025,0.482,0.431,0.352,0.665,,0.0744
+Mike Wright,East Carolina,QB,2025,-0.112,-0.059,-0.14,0.07,,0.0159
+Timmy McClain,Bethune-Cookman,QB,2025,0.29,0.376,0.142,0.521,,0.3469
+Peter Costelli,Northern Colorado,QB,2025,0.182,0.165,0.06,0.495,,0.1025
+Jalen Kitna,UAB,QB,2025,0.211,0.23,0.079,0.406,,0.7694
+Cam Ransom,Bethune-Cookman,QB,2025,0.328,0.328,0.225,0.497,,0.6531
+Blake Shapen,Mississippi State,QB,2025,0.201,0.272,0.038,0.402,,0.7795
+Dexter Williams II,Kennesaw State,QB,2025,0.125,0.111,-0.122,0.45,,0.2962
+Casey Case,Stony Brook,QB,2025,-0.072,-0.096,0.237,-0.521,,0.0537
+Sky Forest,Lane College,QB,2025,0.54,0.76,0.236,1.756,,0.2353
+Grayson James,Boston College,QB,2025,0.307,0.329,0.219,0.452,,0.3326
+Garrett Nussmeier,LSU,QB,2025,0.211,0.2,0.125,0.331,,0.6501
+Sam Huard,USC,QB,2025,3.211,3.211,,3.211,,0.0024
+Zach Gibson,Florida Atlantic,QB,2025,0.133,0.25,0.091,0.192,,0.0914
+Cornelious Brown,Alabama A&M,QB,2025,0.461,0.485,0.486,0.424,,0.3222
+Jacob Clark,Missouri State,QB,2025,0.262,0.247,0.22,0.314,,0.8684
+Michael Johnson Jr.,Akron,QB,2025,-0.239,-0.187,-0.059,-0.568,,0.0572
+Aveon Smith,Merrimack,QB,2025,0.054,0.115,-0.158,0.655,,0.0714
+Camden Orth,Chattanooga,QB,2025,0.327,0.265,0.098,0.653,,0.7315
+Luke Sprague,Sacramento State,QB,2025,-0.025,,-0.025,,,0.0
+Daniel Greek,Tarleton State,QB,2025,0.674,0.726,0.548,0.996,,0.1835
+Brady Lichtenberg,Cincinnati,QB,2025,0.155,0.134,0.278,-0.059,,0.0579
+Ari Patu,North Alabama,QB,2025,0.145,0.081,0.024,0.308,,0.2561
+Billy Edwards,Wisconsin,QB,2025,0.164,0.164,-0.182,1.2,,0.0588
+Jalon Daniels,Kansas,QB,2025,0.354,0.376,0.344,0.373,,0.9273
+Austin Smith,Austin Peay,QB,2025,0.5,0.405,0.791,0.006,,0.0586
+Luke Altmyer,Illinois,QB,2025,0.388,0.387,0.267,0.571,,0.9812
+Braylon Braxton,Southern Miss,QB,2025,0.203,0.209,0.02,0.444,,0.8811
+Jaylen Henderson,West Virginia,QB,2025,-0.008,-0.604,-0.279,0.485,,0.055
+Nate Hampton,Gardner-Webb,QB,2025,0.322,0.382,0.229,0.459,,0.4062
+Logan Fife,New Mexico State,QB,2025,0.076,0.075,-0.03,0.21,,0.7648
+Samari Collier,Coastal Carolina,QB,2025,0.239,0.193,0.266,0.207,,0.1955
+Ryan Stubblefield,South Carolina State,QB,2025,0.228,0.186,-0.044,0.568,,0.3924
+Parker Navarro,Ohio,QB,2025,0.29,0.236,0.215,0.418,,0.9743
+Cade Fennegan,Abilene Christian,QB,2025,-0.007,0.545,-0.56,0.545,,0.0025
+JaCobian Morgan,Jackson State,QB,2025,0.396,0.349,0.335,0.471,,0.5426
+Ethan Hampton,Illinois,QB,2025,0.235,0.235,-0.65,2.892,,0.0108
+Kyron Drones,Virginia Tech,QB,2025,0.189,0.131,0.099,0.319,,0.9875
+Nick Vattiato,Middle Tennessee,QB,2025,0.111,0.124,0.012,0.269,,0.7212
+D.C. Tabscott,North Alabama,QB,2025,-0.021,0.045,0.132,-0.174,,0.1159
+Quayde Hawkins,Abilene Christian,QB,2025,0.479,1.329,0.121,1.017,,0.0075
+Billy Wiles,App State,QB,2025,0.137,0.207,0.134,0.165,,0.0138
+Eddie Lee Marburger,UT Rio Grande Valley,QB,2025,0.389,0.359,0.281,0.61,,1.0
+Brendan Sullivan,Tulane,QB,2025,-0.03,0.314,-0.139,0.224,,0.0708
+Joey Labas,Central Michigan,QB,2025,0.293,0.339,0.152,0.459,,0.8254
+Sam Vidlak,Stephen F. Austin,QB,2025,0.262,0.271,0.168,0.4,,0.7843
+Cameron Friel,UNLV,QB,2025,-0.156,-0.619,0.384,-1.237,,0.0047
+Brady Olson,Central Connecticut,QB,2025,0.219,0.255,0.15,0.324,,0.9871
+Xavier Ward,San José State,QB,2025,-0.489,-0.52,-0.656,-0.169,,0.0658
+Hunter Herring,UL Monroe,QB,2025,0.07,0.604,0.061,0.089,,0.0331
+Tahj Bullock,Colorado State,QB,2025,-0.159,-0.559,-0.062,-0.907,,0.0025
+Justin Lamson,Montana State,QB,2025,0.438,0.514,0.343,0.609,,0.9493
+Henry Belin IV,Duke,QB,2025,-0.006,-0.529,0.624,-0.276,,0.0099
+Jacurri Brown,UCF,QB,2025,0.861,2.409,0.225,2.041,,0.0124
+Braden Davis,Hampton,QB,2025,0.145,0.092,0.025,0.28,,0.5816
+Jayden Denegal,San Diego State,QB,2025,0.073,0.086,0.063,0.089,,0.8414
+A.J. Duffy,New Haven,QB,2025,0.28,0.252,0.208,0.426,,0.9882
+JC French,Georgia Southern,QB,2025,0.224,0.201,0.096,0.452,,0.9091
+Walker Howard,Louisiana,QB,2025,0.169,-0.015,-0.04,0.308,,0.1202
+Josh Hoover,TCU,QB,2025,0.381,0.44,0.222,0.603,,0.8978
+Sam Horn,Missouri,QB,2025,0.373,,0.373,,,0.0
+Cade Klubnik,Clemson,QB,2025,0.211,0.234,0.252,0.134,,0.827
+Justyn Martin,Maryland,QB,2025,-0.666,,-0.666,,,0.0
+Kyle Lowe,SE Louisiana,QB,2025,0.364,0.299,0.174,0.935,,0.3314
+Jayden Maiava,USC,QB,2025,0.477,0.495,0.4,0.621,,0.9595
+Nicco Marchiol,West Virginia,QB,2025,0.173,0.18,0.181,0.163,,0.2997
+MJ Morris,Coastal Carolina,QB,2025,0.238,0.226,0.122,0.392,,0.1504
+Alex Orji,UNLV,QB,2025,0.07,0.12,0.07,,,0.0071
+Maalik Murphy,Oregon State,QB,2025,0.187,0.177,0.199,0.171,,0.6404
+Ty Simpson,Alabama,QB,2025,0.322,0.33,0.245,0.441,,0.9044
+Jayden Sauray,Delaware State,QB,2025,0.146,0.227,0.097,0.184,,0.2325
+Conner Weigman,Houston,QB,2025,0.284,0.327,0.235,0.373,,0.9443
+Gunner Stockton,Georgia,QB,2025,0.314,0.298,0.286,0.363,,0.9257
+Brady Allen,Louisville,QB,2025,0.059,0.449,0.019,0.105,,0.029
+Devin Kargman,Kent State,QB,2025,-0.18,-0.18,-0.517,0.157,,0.0582
+Steven Angeli,Syracuse,QB,2025,0.381,0.427,0.229,0.629,,0.3799
+Beau Pribula,Missouri,QB,2025,0.263,0.263,0.214,0.346,,0.75
+Zion Turner,Marshall,QB,2025,0.187,0.249,0.125,0.274,,0.1761
+Destin Wade,North Alabama,QB,2025,0.024,-0.047,-0.049,0.155,,0.4879
+Max Johnson,North Carolina,QB,2025,0.139,0.099,0.052,0.284,,0.2451
+Andy Peters,St. Thomas (MN),QB,2025,0.343,0.336,0.256,0.465,,0.7241
+Treyson Bourguet,BYU,QB,2025,0.507,-0.199,1.263,-1.004,,0.005
+Sean Brown,Towson,QB,2025,1.205,1.205,,1.205,,0.0056
+Noah Kim,Eastern Michigan,QB,2025,0.235,0.265,0.106,0.428,,0.9975
+Stone Earle,Abilene Christian,QB,2025,0.197,0.196,0.156,0.261,,0.99
+Maddox Kopp,Houston Christian,QB,2025,0.038,-0.022,-0.042,0.148,,0.3488
+Carter Peevy,Maine,QB,2025,0.221,0.173,0.097,0.37,,0.9602
+Chandler Morris,Virginia,QB,2025,0.325,0.302,0.12,0.596,,0.8862
+Walker Eget,San José State,QB,2025,0.312,0.329,0.246,0.415,,0.8086
+Nathan Kent,Towson,QB,2025,1.101,1.144,1.106,1.096,,0.0899
+Otto Kuhns,Norfolk State,QB,2025,0.338,0.319,0.166,0.632,,0.741
+Mark Gronowski,Iowa,QB,2025,0.289,0.218,0.262,0.345,,0.9161
+Bryson Barnes,Utah State,QB,2025,0.241,0.209,0.168,0.359,,0.8834
+Nick Billoups,Lane College,QB,2025,-0.175,-0.107,-0.599,0.334,,0.7647
+Devin Brown,California,QB,2025,0.026,0.125,-0.627,0.679,,0.0139
+Carson Camp,SE Louisiana,QB,2025,0.158,0.165,0.024,0.372,,0.657
+Grant Wilson,Indiana,QB,2025,0.727,0.835,0.727,,,0.0025
+Matthew Sluka,James Madison,QB,2025,0.299,0.01,0.019,1.039,,0.0286
+Derek Robertson,Monmouth,QB,2025,0.467,0.474,0.446,0.514,,0.6295
+Jacob Conover,Utah State,QB,2025,0.232,0.334,0.223,0.247,,0.0968
+Walker Harris,North Carolina Central,QB,2025,0.34,0.383,0.225,0.475,,0.9973
+DJ Williams,Southern Illinois,QB,2025,0.354,0.321,0.345,0.372,,0.9697
+Gaston Moore,South Florida,QB,2025,0.075,0.091,-0.013,0.217,,0.1188
+Bronson Barron,Southern Utah,QB,2025,0.31,0.334,0.121,0.6,,0.8826
+Robby Ashford,Wake Forest,QB,2025,0.294,0.256,0.231,0.386,,0.7951
+Victor Gabalis,Tarleton State,QB,2025,0.207,0.236,0.148,0.276,,0.8165
+Grant Harper,UC Davis,QB,2025,-0.201,-0.182,-0.487,0.085,,0.1049
+CJ Jordan,Portland State,QB,2025,-0.231,-0.225,-0.604,-0.014,,0.0504
+Cam Fancher,UCF,QB,2025,0.065,-0.093,0.056,0.078,,0.1787
+Henry Hesson,Miami (OH),QB,2025,-0.036,-0.032,-0.189,0.142,,0.267
+Braedyn Locke,Arizona,QB,2025,-1.045,-1.155,-1.287,-0.772,,0.0336
+Kai Horton,Washington,QB,2025,-0.01,-0.339,-0.003,-0.023,,0.0351
+Jase Bauer,UT Martin,QB,2025,0.23,0.219,0.072,0.465,,0.9201
+CJ Montes,Kent State,QB,2025,-0.13,-0.179,0.213,-0.499,,0.0651
+Brett Griffis,Central Connecticut,QB,2025,-0.242,-0.481,0.019,-1.158,,0.0129
+Drew Dickey,Vanderbilt,QB,2025,0.648,0.976,0.557,0.785,,0.005
+Myles Burkett,Eastern Kentucky,QB,2025,0.147,0.112,0.033,0.279,,0.9107
+Holden Geriner,Texas State,QB,2025,0.356,-0.592,,0.356,,0.0028
+Drew Allar,Penn State,QB,2025,0.248,0.189,0.119,0.48,,0.469
+Devin Farrell,Rhode Island,QB,2025,0.389,0.427,0.267,0.558,,0.9152
+Nick Evers,UConn,QB,2025,0.253,0.367,-0.224,1.303,,0.0333
+Thomas Castellanos,Florida State,QB,2025,0.317,0.297,0.188,0.494,,0.9115
+Owen McCown,UTSA,QB,2025,0.262,0.268,0.196,0.367,,0.917
+Tyler Riddell,Duquesne,QB,2025,0.3,0.261,0.19,0.451,,0.9302
+Katin Houser,East Carolina,QB,2025,0.314,0.334,0.126,0.674,,0.9273
+Rocco Becht,Iowa State,QB,2025,0.263,0.227,0.338,0.173,,0.9768
+Tevin Carter,Prairie View A&M,QB,2025,0.22,0.128,-0.018,0.601,,0.2569
+Julian Calvez,UT Martin,QB,2025,0.131,0.054,0.146,0.085,,0.0703
+Conner Harrell,Charlotte,QB,2025,0.307,0.374,0.183,0.465,,0.2533
+Conner Harrell,Charlotte,QB,2025,0.307,0.374,0.183,0.465,,0.2533
+Tayven Jackson,UCF,QB,2025,0.225,0.201,0.209,0.249,,0.7816
+Noah Fifita,Arizona,QB,2025,0.23,0.224,0.092,0.445,,0.9597
+Brandon Rose,Massachusetts,QB,2025,-0.011,0.08,-0.257,0.267,,0.212
+Zach Wilcke,Charlotte,QB,2025,-0.046,-0.105,-0.043,-0.051,,0.1346
+Zach Wilcke,Charlotte,QB,2025,-0.046,-0.105,-0.043,-0.051,,0.1346
+Gunnar Smith,Fordham,QB,2025,0.038,0.003,-0.055,0.191,,1.0
+Blaine Hipa,Princeton,QB,2025,0.073,0.059,-0.239,0.442,,0.2327
+Te'Sean Smoot,Alabama State,QB,2025,0.577,0.604,0.492,0.718,,0.336
+AJ Bianco,Nevada,QB,2025,-0.079,-0.157,-0.119,-0.036,,0.1471
+Jaxon Dailey,Northern Iowa,QB,2025,0.167,0.206,-0.057,0.547,,0.317
+Tanner Murray,SE Louisiana,QB,2025,0.578,0.406,0.387,1.151,,0.0116
+Joshua Wood,Idaho,QB,2025,0.321,0.237,0.274,0.385,,0.7602
+Ethan Vasko,Liberty,QB,2025,0.187,0.224,0.129,0.275,,0.8471
+Brayden Fowler-Nicolosi,Colorado State,QB,2025,0.281,0.257,0.161,0.389,,0.2087
+Landy Lyddy,Southern Miss,QB,2025,0.348,0.351,0.326,0.391,,0.1145
+Davin Wydner,West Georgia,QB,2025,0.269,0.19,0.064,0.539,,0.8018
+Luca Stanzani,Long Island University,QB,2025,0.15,0.035,0.124,0.19,,0.5507
+Fernando Mendoza,Indiana,QB,2025,0.468,0.459,0.295,0.832,,0.9381
+Amari Jones,Bethune-Cookman,QB,2025,-0.323,,,-0.323,,0.0
+Tyler Hughes,William & Mary,QB,2025,0.268,0.235,0.118,0.474,,0.9086
+Ashton Daniels,Auburn,QB,2025,0.246,0.145,0.154,0.386,,0.3306
+Jake Mcnamara,East Tennessee State,QB,2025,0.059,0.199,-0.125,0.428,,0.0995
+Tyler Voss,San Diego,QB,2025,0.084,0.075,-0.163,0.317,,0.2714
+Ridge Docekal,Bryant,QB,2025,0.041,0.034,0.07,-0.001,,0.2082
+Bishop Davenport,South Alabama,QB,2025,0.177,0.155,0.042,0.379,,0.9484
+Cole Pennington,Gardner-Webb,QB,2025,0.062,0.092,-0.076,0.258,,0.5909
+Caden Veltkamp,Florida Atlantic,QB,2025,0.223,0.242,0.1,0.41,,0.8862
+Maddux Madsen,Boise State,QB,2025,0.28,0.287,0.158,0.433,,0.6398
+Zeon Chriss,Houston,QB,2025,0.079,-0.247,0.361,-0.333,,0.0557
+Jackson Arnold,Auburn,QB,2025,0.198,0.106,0.198,0.197,,0.5972
+Rickie Collins,Syracuse,QB,2025,0.052,0.013,-0.176,0.243,,0.4436
+Marco Lainez,Elon,QB,2025,0.094,-0.034,0.272,-0.096,,0.0671
+Tad Hudson,Coastal Carolina,QB,2025,0.107,0.062,-0.072,0.277,,0.6366
+Nico Iamaleava,UCLA,QB,2025,0.227,0.09,0.11,0.429,,0.9022
+Eli Holstein,Pittsburgh,QB,2025,0.369,0.381,0.3,0.48,,0.2694
+Tyler Jefferson,Florida A&M,QB,2025,-0.374,-0.77,-0.885,-0.203,,0.0
+Avery Johnson,Kansas State,QB,2025,0.209,0.211,0.063,0.409,,0.9971
+Gabarri Johnson,Oregon State,QB,2025,-0.071,-0.133,-0.084,-0.053,,0.232
+J.J. Kohl,App State,QB,2025,0.417,0.423,0.301,0.549,,0.4252
+Chris Parson,Austin Peay,QB,2025,0.335,0.381,0.143,0.678,,0.9381
+Dylan Lonergan,Boston College,QB,2025,0.198,0.233,0.11,0.332,,0.6256
+Arch Manning,Texas,QB,2025,0.253,0.209,0.153,0.388,,0.9642
+Jaden Rashada,Sacramento State,QB,2025,0.056,0.022,-0.41,0.65,,0.19
+Dante Moore,Oregon,QB,2025,0.382,0.414,0.296,0.551,,0.945
+Malachi Nelson,UTEP,QB,2025,0.034,0.025,-0.04,0.178,,0.4634
+Marcel Reed,Texas A&M,QB,2025,0.312,0.339,0.258,0.409,,0.9263
+Malachi Singleton,Purdue,QB,2025,0.011,-0.039,-0.089,0.273,,0.1584
+D'Wayne' Winfield,Louisiana,QB,2025,0.212,0.236,0.115,0.355,,0.6334
+Dylan Wittke,Minnesota,QB,2025,-0.194,-0.194,-0.194,,,0.0076
+Cardell Williams,Sacramento State,QB,2025,0.276,0.186,0.177,0.421,,0.7919
+Tommy Lock,Missouri,QB,2025,-0.402,-0.402,,-0.402,,0.0028
+Max Brown,West Virginia,QB,2025,0.15,0.201,0.204,0.109,,0.0092
+Lanorris Sellers,South Carolina,QB,2025,0.192,0.157,0.172,0.216,,0.8618
+Lex Thomas,NC State,QB,2025,-0.273,-0.273,-0.187,-0.308,,0.017
+Jake Jensen,Montana,QB,2025,0.04,-0.179,-0.35,0.625,,0.0263
+Pat McQuaide,Villanova,QB,2025,0.292,0.29,0.106,0.517,,0.9569
+Ralph Rucker,Bucknell,QB,2025,0.394,0.382,0.17,0.705,,0.506
+Reese Poffenbarger,North Texas,QB,2025,0.048,0.099,0.459,-1.799,,0.0147
+Zevi Eckhaus,Washington State,QB,2025,0.236,0.191,0.232,0.241,,0.7518
+Kekoa Visperas,Tennessee Tech,QB,2025,0.29,0.23,0.244,0.359,,0.9716
+Carter Cravens,Morehead State,QB,2025,0.284,0.311,0.155,0.489,,0.727
+Jace Wilson,Tennessee Tech,QB,2025,0.923,1.102,1.586,0.344,,0.0258
+Tysan Robbins,Arkansas-Pine Bluff,QB,2025,0.31,-0.313,0.933,-0.313,,0.003
+Quincy Crittendon,Samford,QB,2025,0.081,0.131,-0.079,0.305,,0.515
+Matthew Caldwell,Texas,QB,2025,1.103,1.159,0.309,1.897,,0.0263
+Kyle Wickersham,Richmond,QB,2025,0.112,0.088,0.023,0.223,,0.6563
+Jackson Proctor,Northern Illinois,QB,2025,-0.108,-0.5,-0.006,-0.278,,0.0246
+Ameer Dudley,Robert Morris,QB,2025,-0.207,-0.306,-0.589,0.12,,0.0423
+Tommy Rittenhouse,Illinois State,QB,2025,0.268,0.291,0.177,0.425,,0.9485
+Jaylon Tolbert,Alcorn State,QB,2025,0.147,0.15,0.018,0.313,,0.9701
+Aiden Dunne,Northern Iowa,QB,2025,-0.347,-0.347,-0.355,-0.326,,0.0317
+Hunter Simmons,Wisconsin,QB,2025,0.017,-0.001,0.036,-0.014,,0.4338
+Joe Pesansky,Florida International,QB,2025,0.06,0.079,-0.066,0.239,,0.3715
+Simon Romfo,North Dakota,QB,2025,-0.112,0.177,-0.265,0.243,,0.027
+Cole Payton,North Dakota State,QB,2025,0.587,0.569,0.453,0.838,,0.8333
+Colton FitzGerald,West Georgia,QB,2025,-0.042,-0.041,-0.171,0.078,,0.1585
+Byrum Brown,South Florida,QB,2025,0.409,0.442,0.373,0.486,,0.8441
+Gavin Rupp,Stetson,QB,2025,-0.076,-0.079,-0.037,-0.124,,0.0939
+Jake Weir,Houston Christian,QB,2025,-0.143,-0.12,-0.233,-0.041,,0.5785
+Chris Irvin,Western Illinois,QB,2025,-0.067,-0.081,-0.083,-0.047,,0.2788
+Cade Cunningham,Jacksonville State,QB,2025,-1.124,-1.124,-1.124,,,0.0061
+Taron Dickens,Western Carolina,QB,2025,0.445,0.488,0.362,0.58,,0.7228
+Jack Shields,UAlbany,QB,2025,0.071,0.039,-0.047,0.189,,0.7917
+Grant Jordan,Massachusetts,QB,2025,0.004,-0.097,-0.07,0.115,,0.2651
+Jalen Macon,Northern Illinois,QB,2025,-0.013,-0.383,-0.09,0.125,,0.0861
+Christopher Zellous,Stony Brook,QB,2025,0.127,0.077,0.115,0.151,,0.4182
+Andrew Body,Alabama State,QB,2025,0.54,0.472,0.356,0.879,,0.64
+Gevani McCoy,Temple,QB,2025,0.26,0.359,0.309,0.182,,0.0948
+Noah Bodden,Edward Waters,QB,2025,0.027,-0.04,0.335,-0.307,,1.0
+Gavin Wimsatt,Jacksonville State,QB,2025,0.189,0.1,0.015,0.464,,0.3415
+Brendan Sorsby,Cincinnati,QB,2025,0.446,0.404,0.405,0.519,,0.9229
+Christopher Vizzina,Clemson,QB,2025,0.003,0.129,-0.249,0.341,,0.1498
+Kaden Anderson,Wyoming,QB,2025,0.09,0.098,0.034,0.16,,0.8773
+Stephen Kittleman,Tulsa,QB,2025,0.104,0.662,0.006,0.301,,0.0074
+Luther Richesson,Central Arkansas,QB,2025,0.025,-0.038,0.093,-0.102,,0.2722
+Trinidad Chambliss,Ole Miss,QB,2025,0.345,0.374,0.217,0.586,,0.8541
+Alonza Barnett,James Madison,QB,2025,0.195,0.144,0.184,0.21,,0.961
+Kyle Crum,San Diego State,QB,2025,-0.042,0.071,-0.237,0.237,,0.1
+Tucker Kilcrease,Troy,QB,2025,0.134,0.185,0.075,0.211,,0.5151
+Turner Helton,Georgia Southern,QB,2025,-0.161,-0.171,-0.32,0.109,,0.0606
+Austin Novosad,Oregon,QB,2025,0.683,0.683,-1.074,2.441,,0.0046
+Dijon Jennings,Weber State,QB,2025,0.05,0.12,-0.188,0.426,,0.434
+Charlie Mirer,Stanford,QB,2025,0.467,-0.141,-0.624,0.831,,0.0077
+Jake Strong,McNeese,QB,2025,0.176,0.153,0.108,0.272,,0.8502
+Grayson Loftis,Charlotte,QB,2025,-0.045,-0.017,-0.184,0.115,,0.6121
+Grayson Loftis,Charlotte,QB,2025,-0.045,-0.017,-0.184,0.115,,0.6121
+John Mateer,Oklahoma,QB,2025,0.2,0.209,0.093,0.353,,0.9254
+E.J. Warner,Fresno State,QB,2025,0.424,0.381,0.295,0.566,,0.7426
+Bert Emanuel Jr.,San Diego State,QB,2025,-0.004,-0.095,0.108,-0.103,,0.0552
+Ryan Staub,Colorado,QB,2025,0.231,0.201,-0.152,0.568,,0.1545
+Cam'Ron McCoy,Southern,QB,2025,0.143,0.033,0.291,-0.03,,1.0
+Nevan Cremascoli,South Dakota,QB,2025,-0.325,-0.096,-0.554,-0.096,,0.003
+Kenny Minchey,Notre Dame,QB,2025,0.461,0.436,0.289,0.622,,0.081
+William Watson III,Virginia Tech,QB,2025,0.13,0.953,-1.023,1.744,,0.0125
+Brock Glenn,Florida State,QB,2025,0.488,0.253,0.402,0.859,,0.0295
+Carson Conklin,Fresno State,QB,2025,0.002,0.035,-0.325,0.217,,0.2574
+Ethan Crawford,Arkansas State,QB,2025,-0.153,,,-0.153,,0.0
+Javance Tupou'ata-Johnson,North Dakota,QB,2025,0.614,-0.108,0.917,0.372,,0.027
+Giovanni Lopez,North Carolina,QB,2025,0.229,0.23,0.067,0.49,,0.7352
+Will Prichard,Morehead State,QB,2025,-0.971,-0.971,,-0.971,,0.0031
+Israel Carter,Norfolk State,QB,2025,-0.167,-0.288,-0.196,-0.118,,0.0882
+Zane Flores,Oklahoma State,QB,2025,0.02,0.013,-0.116,0.193,,0.7178
+McCae Hillstead,BYU,QB,2025,0.259,0.663,0.126,0.571,,0.0125
+Jacobe Robinson,Southern Miss,QB,2025,-0.115,,-0.115,,,0.0
+Chase Jenkins,Rice,QB,2025,0.077,0.123,0.02,0.159,,0.7679
+CJ Tiller,Utah State,QB,2025,1.699,,1.699,,,0.0
+Jax Leatherwood,Southeast Missouri State,QB,2025,0.209,0.187,-0.035,0.532,,0.5894
+Anthony Colandrea,UNLV,QB,2025,0.353,0.304,0.239,0.528,,0.9858
+Jackson Brousseau,Colorado State,QB,2025,0.186,0.157,0.144,0.247,,0.5115
+Ryder Burton,UAB,QB,2025,0.238,0.239,0.207,0.286,,0.2237
+Broc Lowry,Western Michigan,QB,2025,0.2,0.158,0.228,0.152,,0.8618
+Keldric Luster,Texas State,QB,2025,0.323,0.295,-0.707,0.839,,0.0084
+John-Keawe Sagapolutele,Portland State,QB,2025,0.055,0.105,-0.074,0.23,,0.9388
+Cal Swanson,Holy Cross,QB,2025,0.049,0.004,0.004,0.11,,0.5015
+Emory Williams,Miami,QB,2025,0.137,0.048,-0.194,0.542,,0.0383
+Aidan Chiles,Michigan State,QB,2025,0.431,0.343,0.373,0.515,,0.537
+Tyler Douglas,Temple,QB,2025,0.971,,1.551,-0.189,,0.0
+Evan Bullock,Louisiana Tech,QB,2025,-0.139,-0.061,-0.21,-0.015,,0.1479
+Charlie Gilliam,Samford,QB,2025,-0.155,0.178,-0.28,0.274,,0.0822
+Luke Duncan,UCLA,QB,2025,0.272,0.272,-0.007,0.762,,0.095
+Jaxon Smolik,Penn State,QB,2025,-0.454,,-0.454,,,0.0
+Tucker McDonald,UConn,QB,2025,0.4,0.4,0.4,,,0.0067
+Lincoln Kienholz,Ohio State,QB,2025,0.587,0.659,0.37,2.039,,0.0343
+Sam Leavitt,Arizona State,QB,2025,0.3,0.21,0.353,0.224,,0.5571
+CJ Bailey,NC State,QB,2025,0.352,0.356,0.247,0.478,,0.9659
+Elijah Brown,Stanford,QB,2025,0.182,0.185,0.12,0.246,,0.3248
+Jayden Bradford,Liberty,QB,2025,0.747,1.875,0.747,,,0.0032
+Jadyn Davis,Michigan,QB,2025,-0.092,-0.092,-0.559,0.374,,0.0059
+C.J. Carr,Notre Dame,QB,2025,0.357,0.345,0.262,0.506,,0.9128
+Hauss Hejny,Oklahoma State,QB,2025,0.786,0.776,0.55,1.022,,0.0274
+Josh Flowers,Arkansas State,QB,2025,-0.291,0.043,-0.552,0.127,,0.0119
+Michael Hawkins Jr.,Oklahoma,QB,2025,0.279,0.225,0.415,0.136,,0.0629
+Austin Mack,Alabama,QB,2025,0.374,0.399,0.275,0.628,,0.0612
+KJ Jackson,Arkansas,QB,2025,0.489,0.428,0.361,0.663,,0.1417
+Jake Merklinger,Tennessee,QB,2025,0.356,0.267,0.29,0.523,,0.0549
+Mabrey Mettauer,Sam Houston,QB,2025,-0.064,-0.137,0.09,-0.196,,0.1572
+Ju'Juan Johnson,LSU,QB,2025,-0.003,-0.002,0.134,-0.446,,0.0023
+Luke Kromenhoek,Mississippi State,QB,2025,0.225,0.069,0.218,0.232,,0.0231
+Air Noland,South Carolina,QB,2025,0.074,0.108,-0.032,0.391,,0.0088
+D.J. Lagway,Florida,QB,2025,0.131,0.126,0.109,0.168,,0.9059
+Dylan Raiola,Nebraska,QB,2025,0.277,0.266,0.135,0.608,,0.6614
+Isaiah Marshall,Kansas,QB,2025,0.444,0.984,0.465,0.039,,0.0087
+Riley Trujillo,Delaware,QB,2025,-0.482,,-0.653,0.028,,0.0
+Kalieb Osborne,Toledo,QB,2025,0.242,0.108,0.235,0.257,,0.131
+Michael Van Buren Jr.,LSU,QB,2025,-0.132,-0.245,-0.382,0.241,,0.3409
+John White,Southern Miss,QB,2025,-1.053,-1.053,-1.053,,,0.0022
+Demond Williams Jr.,Washington,QB,2025,0.332,0.315,0.259,0.466,,0.9568
+Ryan Puglisi,Georgia,QB,2025,0.117,0.08,0.09,0.158,,0.0647
+Dante Reno,Yale,QB,2025,0.193,0.283,0.074,0.362,,0.9785
+Julian Sayin,Ohio State,QB,2025,0.482,0.52,0.414,0.633,,0.9583
+AJ Surace,Rutgers,QB,2025,0.592,0.592,-0.633,1.612,,0.0238
+Asher Weiner,Princeton,QB,2025,0.18,-0.513,0.389,-0.445,,0.0031
+Jaylen Raynor,Arkansas State,QB,2025,0.158,0.173,0.11,0.239,,0.9881
+Brett Brown,Missouri,QB,2025,-1.316,-2.72,0.089,-2.72,,0.0028
+John Griffith,Morgan State,QB,2025,-0.59,-0.631,-0.382,-0.849,,0.0543
+AJ Swann,App State,QB,2025,0.055,0.094,-0.08,0.234,,0.437
+Trent Pearman,Clemson,QB,2025,-0.566,0.343,-2.143,0.616,,0.0105
+Blake Horvath,Navy,QB,2025,0.382,0.528,0.285,0.59,,0.8736
+Nate Glantz,Lindenwood,QB,2025,0.324,0.368,0.285,0.369,,0.9912
+Tyriq Starks,Howard,QB,2025,0.081,0.024,-0.005,0.17,,0.9203
+Dewayne Coleman,Army,QB,2025,0.153,0.26,0.022,0.321,,0.288
+John Alan Richter,Toledo,QB,2025,0.598,0.632,0.558,0.7,,0.063
+Blake Kendall,James Madison,QB,2025,-0.081,,-0.081,,,0.0
+Colton Allen,Colorado,QB,2025,-0.079,-0.079,,-0.079,,0.0028
+Aidan Semo,UAlbany,QB,2025,0.57,0.605,0.71,-0.045,,0.0234
+Tommy Ulatowski,Kennesaw State,QB,2025,-0.243,-0.244,-0.438,0.147,,0.0118
+Skyler Locklear,UTEP,QB,2025,0.021,-0.107,-0.053,0.134,,0.5146
+Bo Kelly,Cal Poly,QB,2025,0.144,0.126,0.094,0.201,,0.2797
+Jack Layne,New Mexico,QB,2025,0.252,0.232,0.132,0.425,,0.9343
+Tanner Maddocks,Villanova,QB,2025,0.729,0.784,0.695,0.781,,0.0359
+Davi Belfort,UCF,QB,2025,0.57,0.636,0.448,0.795,,0.0149
+Ashten Snelsire,Richmond,QB,2025,0.15,0.186,0.053,0.292,,0.3437
+James McCauley,Columbia,QB,2025,-0.204,-0.204,-0.953,0.171,,0.0277
+Ayden Pereira,Merrimack,QB,2025,0.133,0.063,-0.037,0.326,,0.9226
+Jaden Craig,Harvard,QB,2025,0.342,0.359,0.214,0.57,,0.943
+Patrick Heitert,Southeast Missouri State,QB,2025,-0.051,-0.361,-0.056,-0.044,,0.0277
+Dean DeNobile,Lafayette,QB,2025,0.249,0.249,0.125,0.476,,0.9693
+Collin Shannon,VMI,QB,2025,0.276,0.295,0.084,0.503,,0.7302
+Kevin Jennings,SMU,QB,2025,0.331,0.376,0.272,0.417,,0.987
+Charlie Fiser,SMU,QB,2025,0.474,0.482,0.474,,,0.0087
+Diego Pavia,Vanderbilt,QB,2025,0.483,0.517,0.34,0.802,,0.945
+AJ Maddox,Ole Miss,QB,2025,0.334,0.355,0.355,0.313,,0.0019
+Colin Parachek,UAlbany,QB,2025,0.067,-0.019,-0.291,0.44,,0.1849
+Bryce Patterson,Morehead State,QB,2025,0.198,0.24,0.163,0.241,,0.2423
+Liam O'Brien,Pennsylvania,QB,2025,0.365,0.355,0.23,0.63,,0.9905
+Angel H Flores,Central Michigan,QB,2025,0.247,-0.053,0.222,0.291,,0.1111
+Mark Konecny,Western Michigan,QB,2025,-0.549,-0.292,-0.549,,,0.0033
+Keegan Patterson,Indiana State,QB,2025,0.17,0.168,0.074,0.278,,0.6911
+Ashton Frye,Grambling,QB,2025,-0.197,0.127,-0.522,0.054,,0.1171
+Keyone Jenkins,Florida International,QB,2025,0.131,0.123,0.074,0.215,,0.6145
+Austin Myers,Central Arkansas,QB,2025,0.135,0.192,0.071,0.24,,0.6028
+Logan Gonzalez,Idaho State,QB,2025,-0.477,-0.656,-0.477,,,1.0
+Brooks Ferguson,Portland State,QB,2025,1.092,1.092,1.178,0.92,,0.0072
+Coulter Cleland,Davidson,QB,2025,0.15,0.168,0.042,0.288,,0.8911
+Xavier Washington,Drake,QB,2025,0.888,0.768,1.256,-0.092,,0.0385
+Matthew Schecklman,Northern Iowa,QB,2025,0.198,0.157,0.205,0.189,,0.6513
+Chase Mason,South Dakota State,QB,2025,0.352,0.37,0.279,0.467,,0.5545
+Carson Jones,Furman,QB,2025,0.077,0.077,-0.636,0.382,,0.0232
+Zach Osborne,Colgate,QB,2025,0.366,0.424,0.33,0.438,,0.2658
+Danny Lauter,Georgetown,QB,2025,0.387,0.396,0.144,0.667,,0.2436
+DJ Ralph,Chadron St,QB,2025,0.118,0.024,0.372,-0.241,,1.0
+Noah Sanders,North Carolina A&T,QB,2025,-0.014,0.041,0.116,-0.088,,0.0777
+Reagan Andrew,Butler,QB,2025,0.235,0.215,0.131,0.475,,0.7063
+Nathan Hayes,North Dakota State,QB,2025,0.491,0.488,0.093,0.843,,0.163
+Ja'Shawn Scroggins,Howard,QB,2025,-0.092,-0.177,0.33,-0.485,,0.0598
+Brandon Jorgensen,Southern Connecticut State,QB,2025,0.243,-0.998,-0.998,0.656,,1.0
+Ty Englehart,Presbyterian,QB,2025,0.002,-0.184,0.195,-0.342,,0.1228
+Nick Whitfield Jr.,St. Francis (PA),QB,2025,0.08,0.097,0.005,0.199,,0.8248
+Adrian Mejia,St. Francis (PA),QB,2025,0.009,0.058,0.207,-0.26,,0.0363
+Reggie Graff,Utah Tech,QB,2025,0.151,0.144,0.111,0.214,,0.2786
+Sonny Mannino,Marist,QB,2025,0.062,,-0.15,0.319,,0.7618
+Amari Powell,St. Thomas (MN),QB,2025,0.39,0.508,0.596,0.071,,0.185
+Marshall Howe,Yale,QB,2025,0.041,-0.199,-0.891,0.974,,0.0215
+Jake Stearney,Colgate,QB,2025,0.152,0.183,0.106,0.23,,0.6847
+Hank Brown,Iowa,QB,2025,0.03,0.135,-0.336,0.275,,0.0734
+Samaj Jones,Cincinnati,QB,2025,0.397,0.738,0.555,0.239,,0.0193
+Rowan Keefe,Valparaiso,QB,2025,0.112,0.132,-0.039,0.401,,0.7222
+Cole Gonzales,Pittsburgh,QB,2025,0.158,0.175,-0.175,0.518,,0.0474
+Aidan Leffler,Ball State,QB,2025,-0.514,-0.514,-0.514,,,0.0036
+Jaxon Potter,Washington State,QB,2025,0.239,0.245,0.313,0.099,,0.2334
+Ty Dieffenbach,Cal Poly,QB,2025,0.357,0.355,0.382,0.32,,0.401
+Raeden Oliver,Morgan State,QB,2025,0.338,0.338,0.533,-0.052,,0.0072
+Brock Hansel,UCF,QB,2025,-0.184,-0.184,-0.213,-0.124,,0.0074
+JD Sherrod,Southeast Missouri State,QB,2025,-0.971,-0.747,-1.194,-0.747,,0.0021
+Noah Walters,Oklahoma State,QB,2025,1.231,2.107,1.171,1.32,,0.0384
+Cade Carruth,Alabama,QB,2025,0.224,,0.224,,,0.0
+Eric Rodriguez,East Texas A&M,QB,2025,0.172,0.145,0.079,0.336,,0.4952
+Zach Tanner,Robert Morris,QB,2025,0.109,0.145,-0.135,0.315,,0.5407
+Andre Washington,Alcorn State,QB,2025,0.067,-0.562,0.204,-0.115,,0.0269
+Ethan Greenwood,Long Island University,QB,2025,0.128,0.092,-0.008,0.33,,0.4444
+Isaiah Freeman,Hampton,QB,2025,0.153,-0.057,0.252,0.037,,0.2376
+Micah Alejado,Hawai'i,QB,2025,0.277,0.303,0.107,0.541,,0.7963
+Ashley Tucker Jr.,Alabama A&M,QB,2025,0.318,,0.318,,,0.0103
+Earl Woods,Hampton,QB,2025,0.259,0.194,0.241,0.286,,0.1702
+Ryan Browne,Purdue,QB,2025,0.226,0.185,0.071,0.447,,0.8366
+Jackson Gilkey,Weber State,QB,2025,0.078,0.054,-0.053,0.27,,0.3372
+Conner Kenyon,Rhode Island,QB,2025,0.345,0.38,0.245,0.488,,0.0848
+Devon Dampier,Utah,QB,2025,0.321,0.27,0.166,0.59,,0.9003
+Jack O'Connell,Stonehill,QB,2025,0.13,0.133,-0.024,0.286,,0.9814
+Beau Brungard,Youngstown State,QB,2025,0.333,0.343,0.245,0.512,,0.9734
+Cole Lacrue,Eastern Illinois,QB,2025,0.188,0.006,-0.085,0.659,,0.4901
+Dru Deshields,Kent State,QB,2025,0.247,0.262,0.303,0.18,,0.8219
+Caleb Mccreary,Tennessee State,QB,2025,-0.335,,0.198,-0.869,,0.0291
+Jeremy Hecklinski,Iowa,QB,2025,-0.147,-0.147,,-0.147,,0.007
+Darian Mensah,Duke,QB,2025,0.343,0.346,0.26,0.474,,0.9881
+Blaze Berlowitz,Vanderbilt,QB,2025,0.564,0.292,0.586,0.535,,0.0425
+Aidan Armenta,UL Monroe,QB,2025,0.127,0.143,0.147,0.107,,0.8344
+Caden Creel,Jacksonville State,QB,2025,0.206,0.143,0.139,0.327,,0.6433
+Darius Curry,Colorado State,QB,2025,0.093,0.161,-0.087,0.304,,0.2723
+Luke Moga,Oregon,QB,2025,0.867,0.359,0.653,0.995,,0.0115
+Blake Barnett,Kansas State,QB,2025,0.04,,0.117,-0.424,,0.0
+Carson Cruver,Florida Atlantic,QB,2025,-0.876,-0.876,,-0.876,,0.0034
+Colton Joseph,Old Dominion,QB,2025,0.41,0.444,0.246,0.758,,0.8727
+PJ Hatter,Georgia State,QB,2025,1.009,,1.009,,,0.0
+Deuce Adams,Louisville,QB,2025,-0.105,-0.033,-0.181,0.053,,0.0507
+Braden Graham,Holy Cross,QB,2025,-0.024,-0.017,-0.293,0.269,,0.2215
+Will Hammond,Texas Tech,QB,2025,0.387,0.28,0.459,0.289,,0.2231
+Trever Jackson,Arkansas,QB,2025,-0.223,-0.223,,-0.223,,0.0026
+Daniel Kaelin,Virginia,QB,2025,0.096,0.02,-0.042,0.424,,0.1057
+JacQai Long,Marshall,QB,2025,-0.301,-0.372,-0.162,-0.423,,0.0537
+Whit Muschamp,Vanderbilt,QB,2025,1.035,1.035,-0.33,3.764,,0.0075
+Danny O'Neil,Wisconsin,QB,2025,0.115,0.05,0.111,0.123,,0.3309
+Clayton Dees,Florida International,QB,2025,-0.056,0.144,0.096,-0.286,,0.0093
+Shay Smith,UTEP,QB,2025,-0.132,-0.307,-0.191,-0.087,,0.0195
+Aaron Philo,Georgia Tech,QB,2025,-0.203,-0.535,0.239,-0.534,,0.0716
+Deshawn Purdie,Wake Forest,QB,2025,0.235,0.238,-0.046,0.49,,0.2025
+Connor Moberly,Iowa State,QB,2025,0.055,-0.502,0.195,-0.502,,0.0029
+Bear Bachmeier,BYU,QB,2025,0.301,0.281,0.268,0.363,,0.9651
+Cutter Boley,Kentucky,QB,2025,0.185,0.19,0.154,0.226,,0.8224
+EJ Colson,Incarnate Word,QB,2025,0.225,0.184,0.081,0.463,,1.0
+AJ Hill,Memphis,QB,2025,0.079,0.079,-0.191,0.445,,0.0777
+Ty Hawkins,SMU,QB,2025,0.591,0.779,0.53,0.959,,0.0022
+Deuce Knight,Auburn,QB,2025,0.545,0.364,0.208,0.807,,0.0694
+Karle Lacey Jr.,Texas,QB,2025,0.179,0.179,,0.179,,0.0024
+Jamar Malone,Sacramento State,QB,2025,-0.193,,-0.193,,,0.0
+Lloyd Jones III,Texas Tech,QB,2025,0.678,1.247,0.258,1.098,,0.0103
+TJ Lateef,Nebraska,QB,2025,0.076,0.066,-0.046,0.289,,0.3254
+Husan Longstreet,USC,QB,2025,0.851,0.578,0.672,1.231,,0.0357
+George MacIntyre,Tennessee,QB,2025,0.425,0.425,0.359,0.535,,0.0206
+Ryan Montgomery,Georgia,QB,2025,1.318,1.318,,1.318,,0.0024
+Luke Nickel,Miami,QB,2025,-1.15,-1.15,-1.15,,,0.002
+Deante Ruffin,Kent State,QB,2025,-0.161,-0.331,-1.013,0.521,,0.0103
+Keelon Russell,Alabama,QB,2025,0.56,0.592,0.147,1.387,,0.0287
+Steele Pizzella,Wake Forest,QB,2025,-1.257,-1.311,-1.257,,,0.0025
+Kevin Sperry,Florida State,QB,2025,0.468,0.526,0.015,1.566,,0.0501
+Austin Simmons,Ole Miss,QB,2025,0.526,0.575,0.578,0.408,,0.144
+Carter Smith,Wisconsin,QB,2025,-0.123,-0.173,-0.353,0.2,,0.1691
+Malik Washington,Maryland,QB,2025,0.19,0.196,-0.024,0.467,,0.9633
+Bryce Underwood,Michigan,QB,2025,0.253,0.23,0.19,0.345,,0.9853
+Thomas Gotkowski,Miami (OH),QB,2025,0.064,0.044,-0.061,0.233,,0.2343
+Ethan Grunkemeyer,Penn State,QB,2025,0.233,0.278,0.084,0.505,,0.5251
+Michael Merdinger,Liberty,QB,2025,0.268,0.2,0.45,0.142,,0.1306
+Drake Lindsey,Minnesota,QB,2025,0.185,0.194,0.121,0.282,,0.9798
+Miles O'Neill,Texas A&M,QB,2025,-0.12,-0.069,0.182,-0.523,,0.0344
+Nate Bennett,Baylor,QB,2025,0.119,0.119,-0.576,0.64,,0.0137
+Gael Ochoa,UNLV,QB,2025,-0.975,,-0.975,,,0.0
+Cole Geer,Virginia,QB,2025,0.214,0.622,-0.08,1.393,,0.0041
+AJ Hairston,Massachusetts,QB,2025,-0.036,-0.054,-0.197,0.115,,0.5205
+Daniel Beale,Louisiana,QB,2025,0.028,-0.009,-0.09,0.175,,0.2463
+Khristian Martin,Maryland,QB,2025,0.125,0.03,0.207,-0.079,,0.0346
+Alessio Milivojevic,Michigan State,QB,2025,0.099,0.114,-0.031,0.335,,0.4577
+Jake Schakel,Eastern Washington,QB,2025,0.133,0.177,-0.098,0.474,,0.3378
+Locklan Hewlett,South Florida,QB,2025,-0.047,0.14,-0.535,0.51,,0.0297
+Tavien St. Clair,Ohio State,QB,2025,-0.587,-0.587,-0.587,,,0.0049
+Brayden Roggow,Akron,QB,2025,0.203,0.26,0.162,0.254,,0.0423
+Chris Dietrich,Bucknell,QB,2025,0.224,0.235,0.129,0.337,,0.3631
+Tucker Parks,Western Kentucky,QB,2025,-0.458,-0.99,0.074,-0.99,,0.0041
+Arrington Maiden,Memphis,QB,2025,-0.039,-0.184,-0.329,0.14,,0.0243
+Matthew Wilson,App State,QB,2025,-0.082,-0.104,0.061,-0.368,,0.0433
+Landyn Locke,Sam Houston,QB,2025,0.008,-0.012,-0.117,0.185,,0.3634
+Will Wilson,NC State,QB,2025,0.516,-0.376,0.673,-0.979,,0.0122
+Brad Jackson,Texas State,QB,2025,0.334,0.339,0.18,0.58,,0.9832
+Jared Hollins,South Alabama,QB,2025,0.107,0.129,0.051,0.301,,0.0516
+Dermaricus Davis,Hawai'i,QB,2025,0.411,-0.147,0.444,0.37,,0.0056
+Jadyn Glasser,Central Michigan,QB,2025,0.453,0.38,0.189,0.942,,0.0357
+Cale Hellums,Army,QB,2025,0.303,0.406,0.349,0.202,,0.696
+Jake Retzlaff,Tulane,QB,2025,0.301,0.304,0.188,0.524,,0.9222
+Ui Ale,Troy,QB,2025,-0.17,-0.427,-0.196,-0.091,,0.0232
+Champ Long,North Carolina A&T,QB,2025,-0.075,0.298,-0.773,0.763,,0.0541
+Max Shikenjanski,Minnesota,QB,2025,0.589,0.427,-0.928,1.5,,0.0126
+Michael Grant,Florida State,QB,2025,3.235,3.235,,3.235,,0.0029
+Blake Baker,Louisiana Tech,QB,2025,0.292,0.312,0.28,0.31,,0.4984
+Cole Ballard,Kansas,QB,2025,0.089,-0.038,0.125,-0.031,,0.064
+Will Burns,Southern Utah,QB,2025,0.497,0.374,0.443,0.655,,0.1074
+Lucian Anderson III,Bowling Green,QB,2025,0.219,0.101,-0.141,0.637,,0.1459
+Cash Mccollum,Weber State,QB,2025,-1.027,-1.027,-0.926,-1.129,,0.0059
+Brandon Tennison,UTSA,QB,2025,0.22,0.212,0.21,0.232,,0.0762
+Anthony Garcia,Utah State,QB,2025,0.667,0.732,0.405,1.137,,0.0174
+Gunnar Gray,Buffalo,QB,2025,-0.073,-0.042,-0.136,0.031,,0.1296
+Jack Jacobs,East Texas A&M,QB,2025,0.241,0.217,0.163,0.397,,0.0457
+Ethan Lane,Central Michigan,QB,2025,-0.541,-0.541,-0.512,-0.571,,0.0119
+Josh Holst,Northern Illinois,QB,2025,0.066,0.084,0.066,0.065,,0.5328
+Kirk Francis,Tulsa,QB,2025,0.124,0.124,0.058,0.215,,0.2162
+Jacob Dehaan,Toledo,QB,2025,0.676,,0.676,,,0.0
+RJ Johnson III,Florida A&M,QB,2025,0.313,0.304,0.097,0.558,,0.7703
+Joey Aguilar,Tennessee,QB,2025,0.37,0.379,0.281,0.537,,0.9245
+Caleb Koger,Central Arkansas,QB,2025,0.29,0.389,-0.155,0.834,,0.1194
+Nate Bell,Eastern Washington,QB,2025,0.171,-0.026,0.094,0.292,,0.3889
+Jared Taylor,Eastern Washington,QB,2025,0.062,0.045,0.061,0.064,,0.1733
+Andrew Frazier,Davidson,QB,2025,0.088,0.099,-0.004,0.255,,0.0028
+Isaiah Sepand,Davidson,QB,2025,-0.925,-0.925,,-0.925,,0.0
+Skyler Cassel,Utah Tech,QB,2025,-0.43,-0.43,-0.43,,,0.0025
+Chance Wilson,Montana State,QB,2025,0.912,0.562,0.566,2.641,,0.008
+Adam Damante,New Mexico State,QB,2025,0.189,0.186,0.062,0.341,,0.2203
+Jaylen King,Florida State,QB,2025,-0.21,-0.42,-0.21,,,0.0029
+Colbey Lamberth,Eastern Kentucky,QB,2025,2.321,2.321,,2.321,,0.0
+Nehuel Garcia,Furman,QB,2025,-1.296,,-1.296,,,0.0
+Keali'i Ah Yat,Montana,QB,2025,0.389,0.391,0.272,0.557,,0.9514
+Davin Garinger,Austin Peay,QB,2025,0.265,,0.265,,,0.0
+Ty Watkins,North Alabama,QB,2025,-0.376,2.353,-0.649,2.353,,0.0027
+Jordyn Potts,Eastern Kentucky,QB,2025,-0.157,-0.152,-0.443,0.058,,0.0893
+Amari Odom,Kennesaw State,QB,2025,0.27,0.274,0.05,0.63,,0.6896
+Caden Drezek,Maine,QB,2025,0.006,0.026,-0.185,0.083,,0.0369
+Zach Marker,Delaware,QB,2025,0.072,-0.239,0.208,-0.019,,0.0148
+Nick Minicucci,Delaware,QB,2025,0.264,0.247,0.262,0.267,,0.9501
+Daniel Lipovski,Lafayette,QB,2025,0.46,1.548,-1.145,0.995,,0.0056
+Noah Brannock,William & Mary,QB,2025,0.012,0.018,-0.03,0.094,,0.0796
+Chase Goodwin,Columbia,QB,2025,0.098,0.089,0.021,0.201,,0.6308
+Xander Menapace,Columbia,QB,2025,0.113,0.05,0.334,-0.181,,0.1015
+Garrett Bass-Sulpizio,Cornell,QB,2025,0.125,0.181,0.011,0.377,,0.8164
+Tyler Nelson,Prairie View A&M,QB,2025,-0.233,-0.044,0.084,-0.868,,0.005
+Cole Feuerbacher,Missouri State,QB,2025,-0.057,0.179,-0.608,0.179,,0.0185
+West Smith,Princeton,QB,2025,0.227,0.227,-0.471,0.366,,0.0189
+Kai Coln,Princeton,QB,2025,0.157,0.173,0.014,0.345,,0.7453
+Bryce Schondelmyer,Dayton,QB,2025,0.544,0.562,0.533,0.558,,0.5356
+Robert Coleman,Lamar,QB,2025,0.02,0.065,-0.001,0.044,,0.3529
+Aiden McCown,Lamar,QB,2025,0.168,0.131,0.153,0.189,,0.634
+Kamden Sixkiller,Campbell,QB,2025,0.265,0.215,0.15,0.435,,0.852
+Jeff Hoenstine,St. Francis (PA),QB,2025,0.002,-0.118,-0.363,0.436,,0.1027
+Elijah Owens,Indiana State,QB,2025,0.22,0.169,0.309,0.028,,0.1178
+Cadin Olsen,Pennsylvania,QB,2025,2.256,2.256,2.506,2.005,,0.0
+Devin Page,Cornell,QB,2025,0.181,0.171,0.102,0.302,,0.1836
+Grayson Saunier,Dartmouth,QB,2025,0.322,0.321,0.094,0.658,,0.9929
+Jerry Kaminski,North Dakota,QB,2025,0.249,0.248,0.198,0.327,,0.9386
+Jackson Kilburg,Colgate,QB,2025,0.142,0.14,0.1,0.225,,0.0248
+Julian Dugger,Washington State,QB,2025,0.261,0.112,0.45,0.072,,0.0147
+James Murphy,Brown,QB,2025,0.193,0.195,0.068,0.399,,0.9679
+Ruben Lee II,Mississippi Valley State,QB,2025,-0.433,-0.433,-0.605,-0.262,,0.0029
+Shawn Brown,Stonehill,QB,2025,0.597,0.011,0.179,1.714,,0.0124
+JT Fayard,Wofford,QB,2025,0.101,0.145,0.055,0.159,,0.6449
+Czavian Teasett,Grambling,QB,2025,0.215,0.165,0.085,0.384,,0.8784
+Drew VanVleet,Dayton,QB,2025,0.038,0.121,-0.19,0.244,,0.2542
+Trey Drake,North Dakota State,QB,2025,-0.396,-0.155,-0.68,-0.112,,0.0037
+Austen Frattura,Davidson,QB,2025,0.665,,1.027,0.303,,0.0
+Jaden Keefner,Bryant,QB,2025,0.274,0.236,0.276,0.27,,0.329
+Collin Hurst,Presbyterian,QB,2025,0.615,0.627,0.436,0.908,,0.8653
+Caron Tyler,Valparaiso,QB,2025,-0.12,-0.042,-0.426,0.235,,0.2257
+Landon Graves,UL Monroe,QB,2025,0.211,0.29,-0.178,1.611,,0.1325
+Khalil Wilkins,West Virginia,QB,2025,0.129,0.019,-0.096,0.457,,0.1101
+Braxton Woodson,Navy,QB,2025,0.345,0.055,0.398,0.258,,0.1044
+Brock Thomas,Oregon,QB,2025,0.425,0.416,1.195,0.075,,0.0367
+Julian Lewis,Colorado,QB,2025,-0.034,-0.044,-0.428,0.34,,0.264
+Xavier Rice,Duquesne,QB,2025,-0.802,-0.802,-0.969,-0.468,,0.0063
+Bennett Judy,Western Carolina,QB,2025,0.079,0.095,0.097,0.047,,0.1644
+Max Cutforth,Boise State,QB,2025,0.035,0.082,-0.281,0.369,,0.3538
+Anthony Benzija,Stetson,QB,2025,0.431,0.431,-0.074,0.647,,0.0
+Chris Stephenson,Stetson,QB,2025,0.129,-0.112,0.124,0.136,,0.3204
+Nathan Brown,San Diego,QB,2025,-1.258,-2.016,-2.016,-0.501,,0.0
+Dominiq Ponder,Colorado,QB,2025,-0.649,-1.087,,-0.649,,0.0028
+Jalyn Gramstad,Nebraska,QB,2025,0.067,0.067,0.026,0.128,,0.0132
+Jaron-Keawe Sagapolutele,California,QB,2025,0.2,0.221,0.021,0.441,,0.9781
+Scotty Fox Jr.,West Virginia,QB,2025,0.036,0.087,-0.086,0.192,,0.5199
+Alex Manske,Iowa State,QB,2025,0.401,0.295,0.507,0.295,,0.0145
+Shaker Reisig,Boston College,QB,2025,-0.093,-0.153,-0.009,-0.32,,0.0419
+Brennen Ward,Kentucky,QB,2025,-0.264,-0.264,-1.213,0.685,,0.0164
+Cutter Woods,South Carolina,QB,2025,-0.018,-0.09,-0.242,0.476,,0.0324
+Kevin White,North Carolina A&T,QB,2025,0.159,0.157,-0.02,0.345,,0.6858
+Zolten Osbourne,Charleston Southern,QB,2025,0.15,0.192,0.08,0.217,,0.9561
+Jack Wagner,Idaho,QB,2025,0.216,0.232,0.219,0.21,,0.1316
+Nick Josifek,Idaho,QB,2025,0.415,0.398,-0.185,0.949,,0.038
+Kia'i Keone,Northern Colorado,QB,2025,-0.954,-4.214,-1.186,-0.023,,0.0025
+Dom Nankil,San Diego,QB,2025,0.271,0.284,0.137,0.405,,0.7257
+John Michalski,Sacred Heart,QB,2025,0.055,-0.18,-0.271,0.503,,0.1103
+Chandler Wilson,VMI,QB,2025,-0.112,-0.203,-0.319,0.066,,0.1471
+Jordan Davis,Texas Southern,QB,2025,0.257,0.142,0.359,0.146,,0.0896
+Gavin Rutherford,Stephen F. Austin,QB,2025,0.391,0.363,0.314,0.509,,0.1843
+Matt Vezza,New Hampshire,QB,2025,0.189,0.132,0.121,0.296,,0.9866
+Sean Ashenfelder,Rutgers,QB,2025,0.816,3.025,-1.393,3.025,,0.0026
+JC Evans,James Madison,QB,2025,0.579,-0.488,0.353,0.955,,0.0052
+Dez Thomas II,Georgetown,QB,2025,0.108,0.012,-0.006,0.247,,0.639
+Patrick Duchien,Montana State,QB,2025,0.695,0.628,0.752,0.561,,0.0347
+Dante Torres,Harvard,QB,2025,0.683,0.695,0.905,0.46,,0.037
+Chris Jimerson Jr.,North Texas,QB,2025,0.961,2.189,1.159,0.367,,0.0042
+Christian Langford,Florida International,QB,2025,-0.407,-0.716,-0.407,,,0.0
+Kamario Taylor,Mississippi State,QB,2025,0.275,0.031,0.303,0.23,,0.1974
+Alberto Mendoza,Indiana,QB,2025,1.336,1.462,1.325,1.418,,0.0594
+JP Pickles,Mercer,QB,2025,-0.234,-0.36,-0.171,-0.325,,0.0177
+Jim Ogle,Murray State,QB,2025,0.06,0.042,0.056,0.068,,0.7188
+Quinn Henicle,Old Dominion,QB,2025,0.066,-0.053,-0.026,0.208,,0.1212
+Ryan Boe,Northwestern,QB,2025,0.163,-0.689,0.713,-0.525,,0.0185
+Cameran Brown,Georgia State,QB,2025,0.311,0.26,0.243,0.409,,0.3898
+Roman Gagliano,Middle Tennessee,QB,2025,0.15,0.141,0.045,0.306,,0.2727
+Luke Marble,South Dakota State,QB,2025,-0.044,0.046,-0.004,-0.1,,0.1757
+Matt Zollers,Missouri,QB,2025,-0.186,-0.134,-0.277,-0.086,,0.2444
+Rodney Tisdale Jr.,Western Kentucky,QB,2025,0.136,0.15,-0.068,0.479,,0.4309
+Nate Rogers,UAB,QB,2025,-0.162,-1.077,0.054,-1.462,,0.0046
+Ethan Drumm,Wofford,QB,2025,-0.068,-0.066,0.014,-0.156,,0.1277
+Carter Jones,Nevada,QB,2025,0.175,0.209,0.244,0.076,,0.5654
+Robert McDaniel,San José State,QB,2025,-0.258,-0.284,-0.199,-0.317,,0.0226
+Austin Carlisle,Houston,QB,2025,0.339,,0.345,0.309,,0.0
+Mason Heintschel,Pittsburgh,QB,2025,0.219,0.229,0.049,0.424,,0.681
+Luke Carney,Syracuse,QB,2025,-0.094,-0.27,0.098,-0.368,,0.0172
+Jack James,Troy,QB,2025,-1.142,-1.142,,-1.142,,0.0
+Chris Denson,Clemson,QB,2025,0.664,-0.087,0.573,0.984,,0.0084
+Brady Davidson,Northern Illinois,QB,2025,-0.109,-0.147,-0.169,-0.031,,0.3566
+Tristan Ti'a,Oregon State,QB,2025,0.048,0.117,0.007,0.114,,0.123
+Ksaan Farrar,UConn,QB,2025,-0.077,-0.057,0.181,-0.452,,0.0399
+Weston Bryan,Georgia Southern,QB,2025,0.297,0.201,0.315,0.155,,0.021
+Braden Atkinson,Mercer,QB,2025,0.423,0.439,0.379,0.484,,0.8985
+Brady Stober,Samford,QB,2025,0.13,0.122,-0.034,0.374,,0.3928
+Au'Tori Newkirk,North Carolina,QB,2025,-1.131,-1.499,-1.131,,,0.0169
+Mason Drube,Wyoming,QB,2025,-0.093,0.068,-0.258,0.129,,0.0992
+Jordan Magwood,Florida Atlantic,QB,2025,0.502,0.443,0.271,0.963,,0.0155
+Chaston Ditta,East Carolina,QB,2025,-0.084,-0.004,0.282,-0.66,,0.0545
+Banks Bowen,Oklahoma State,QB,2025,0.181,-0.343,-0.12,0.481,,0.0137
+Roman Jensen,Maryland,QB,2025,-1.376,,-1.376,,,0.0
+Major Cantrell,Iowa State,QB,2025,0.121,,0.121,,,0.0
+Anthony Grigsby Jr.,Cal Poly,QB,2025,0.26,0.334,0.093,0.443,,0.203
+Michael Valentino,Florida Atlantic,QB,2025,-0.558,-0.558,-0.558,,,0.0017
+Drew Mestemaker,North Texas,QB,2025,0.366,0.374,0.268,0.581,,0.9789
+Drew Devillier,Rice,QB,2025,-0.112,-0.187,-0.506,0.255,,0.0938
+JD Davis II,Alabama A&M,QB,2025,-0.595,-0.833,-0.606,-0.582,,0.0825
+Mason Welch,Louisiana Tech,QB,2025,0.028,,0.028,,,0.0
+Hunter Watson,Sam Houston,QB,2025,0.05,-0.017,0.096,-0.005,,0.4691
+DJ Bailey,Sam Houston,QB,2025,0.435,0.64,0.868,-0.215,,0.0077
+Jackson Gutierrez,Navy,QB,2025,0.145,-0.515,0.328,-0.255,,0.0165
+Brandon Nunez,Mississippi Valley State,QB,2025,0.074,0.121,-0.018,0.173,,0.3724
+Parker Awad,New Mexico State,QB,2025,-0.718,-1.389,-0.608,-0.754,,0.0064
+Patrick Grusser,Marist,QB,2025,0.081,0.012,0.257,-0.271,,0.0249
+Hunter Najm,Bowling Green,QB,2025,-0.036,-0.107,-0.381,0.233,,0.2349
+Preston Clemmer,Kennesaw State,QB,2025,0.383,0.383,0.383,,,0.0
+Lucas Scheerhorn,Rice,QB,2025,-0.341,-0.541,-0.359,-0.335,,0.058
+Ethan Houck,Liberty,QB,2025,-0.001,-0.421,-0.231,0.368,,0.0191
+Jason Wright,Buffalo,QB,2025,-0.069,-0.654,-0.044,-0.216,,0.0
+Nolan Good,Kent State,QB,2025,-0.404,-0.101,-0.486,-0.321,,0.0342
+Quentin Hayes,The Citadel,QB,2025,0.185,0.295,0.127,0.301,,0.5935
+Josh Johnson,Air Force,QB,2025,0.281,0.475,0.192,0.434,,0.1718
+Maguire Martin,Air Force,QB,2025,1.0,,1.0,,,0.0
+Jackson Akins,Cal Poly,QB,2025,-0.101,-0.091,-0.175,0.051,,0.104
+Rocco Koch,Idaho,QB,2025,0.085,-0.513,0.083,0.091,,0.0205
+Battle Alberson,Chattanooga,QB,2025,0.24,0.171,0.078,0.46,,0.2651
+Baylor Hayes,Tulsa,QB,2025,0.046,0.05,-0.07,0.256,,0.7764
+Trey Hedden,Furman,QB,2025,0.196,0.202,0.048,0.427,,0.9722
+Whitt Newbauer,Oklahoma,QB,2025,-0.084,-0.691,-0.128,-0.026,,0.0093
+Jared Echols,Charleston Southern,QB,2025,0.221,0.435,0.643,-0.202,,0.0063
+Jarrin Alley,Butler,QB,2025,0.232,0.174,0.217,0.247,,0.1713
+Gabe Passini,Butler,QB,2025,0.118,0.22,0.178,-0.053,,0.1189
+Casey Bullock,Davidson,QB,2025,-0.239,-0.226,-0.022,-0.545,,0.1061
+Bronson Barben,Utah Tech,QB,2025,0.134,0.136,-0.036,0.357,,0.7164
+Will Currid,Brown,QB,2025,-0.156,0.043,-1.043,0.907,,0.0214
+Liam Poronsky,Dayton,QB,2025,0.19,0.218,0.288,0.104,,0.1661
+Braden Streeter,Delaware,QB,2025,0.175,0.208,-0.038,0.601,,0.0351
+Landen Clark,Elon,QB,2025,0.239,0.23,0.103,0.426,,0.9295
+Caleb Sanchez,Columbia,QB,2025,0.139,0.155,-0.005,0.294,,0.2338
+Luke Flowers,Montana,QB,2025,1.239,1.239,-0.959,1.678,,0.0121
+Connor Wolf,Eastern Illinois,QB,2025,0.071,0.085,0.131,,,0.4868
+JoJo Crump,VMI,QB,2025,-0.544,-0.718,-0.642,-0.152,,0.0082
+Ty Pennington,Northern Arizona,QB,2025,0.31,0.331,0.301,0.324,,0.9669
+Lathan Boone,Northern Arizona,QB,2025,0.176,-0.115,0.098,0.298,,0.0276
+Ben Mauney,Gardner-Webb,QB,2025,0.719,,,0.719,,0.0
+Aleks Sitkowski,Colgate,QB,2025,-0.676,-0.676,-0.686,-0.63,,0.0248
+Tripp Holley,Fordham,QB,2025,-0.237,,,-0.237,,0.0
+Eric Handley,Alabama A&M,QB,2025,0.139,0.167,-0.017,0.329,,0.5825
+Pops Battle,Lindenwood,QB,2025,-0.153,-0.274,0.088,-1.357,,0.0088
+Jack Snyder,Sacred Heart,QB,2025,0.346,0.331,0.059,0.748,,0.8821
+Jack Johnson,Georgetown,QB,2025,-0.259,-0.32,-0.338,-0.159,,0.1175
+Johnny Weber,Southeast Missouri State,QB,2025,0.183,0.2,-0.024,0.395,,0.3809
+Jason Penza,Lafayette,QB,2025,-0.062,0.037,-0.138,0.101,,0.0223
+Jordan Barton,Wagner,QB,2025,0.059,0.061,-0.228,0.325,,0.3603
+Hayden Johnson,Lehigh,QB,2025,0.402,0.45,0.292,0.547,,0.9894
+Matt Machalik,Lehigh,QB,2025,0.094,-0.075,0.274,-0.534,,0.0106
+Chase Spellman,Drake,QB,2025,0.415,0.442,0.528,0.293,,0.2393
+Caden Pinnick,UC Davis,QB,2025,0.402,0.412,0.299,0.633,,0.8824
+Lucas Powell,Lamar,QB,2025,-0.373,-0.177,-0.187,-0.558,,0.0098
+Ryan Jackson,St. Thomas (MN),QB,2025,0.194,0.171,0.059,0.344,,0.0752
+Brennan Myer,Bryant,QB,2025,0.194,0.183,0.135,0.279,,0.4627
+Antwon McKay Jr.,Western Illinois,QB,2025,-0.2,,-0.324,-0.075,,0.0023
+Tanner Zolnosky,Western Illinois,QB,2025,-0.309,,-0.309,,,0.0
+Alex Flores,McNeese,QB,2025,-0.051,-0.066,0.265,-0.587,,0.0642
+Devin Lippold,McNeese,QB,2025,0.187,-0.118,0.2,0.151,,0.0856
+Kael Alexander,Stetson,QB,2025,0.021,0.084,-0.181,0.201,,0.4466
+Gunner Chenier,Stetson,QB,2025,0.035,-0.094,-0.004,0.089,,0.1392
+Brenton Toles III,Hampton,QB,2025,-0.535,-0.677,-0.988,-0.081,,0.0106
+Khaioz Watford,Hampton,QB,2025,0.283,0.283,0.614,-0.047,,0.0
+Marcus Brown,Valparaiso,QB,2025,-0.164,-0.738,-0.592,0.265,,0.0104
+Abram Johnston,Northwestern State,QB,2025,-0.081,-0.102,-0.151,0.008,,0.7978
+Jagger Matera,Monmouth,QB,2025,-1.845,-1.845,,-1.845,,0.0024
+Frankie Weaver,Monmouth,QB,2025,0.38,0.398,0.225,0.729,,0.3658
+Braxton Thomas,North Carolina A&T,QB,2025,0.499,0.918,0.174,0.825,,0.0439
+Alex McClelland,Rhode Island,QB,2025,0.407,,0.166,1.373,,0.0
+DJ Gordon,Harvard,QB,2025,0.187,0.233,0.058,0.783,,0.0
+Quinn Boyd,Stony Brook,QB,2025,0.102,0.107,0.001,0.337,,0.521
+Winston Watkins,Towson,QB,2025,0.111,0.938,0.31,-1.02,,0.0112
+Derrick Gurley,William & Mary,QB,2025,-0.608,-0.608,-0.608,,,0.0029
+Joey Tomasso,William & Mary,QB,2025,-0.773,-0.773,0.545,-2.091,,0.0029
+James Hayes,Alabama State,QB,2025,0.616,0.616,0.502,0.73,,0.024
+Logan Kushner,Duquesne,QB,2025,0.283,0.374,0.242,0.335,,0.0635
+Mikal Davis,Delaware State,QB,2025,-0.49,,-0.49,,,0.0
+Jake Wolfe,Robert Morris,QB,2025,0.086,0.021,0.004,0.174,,0.1042
+Payton Wehner,St. Francis (PA),QB,2025,0.531,0.727,-0.3,1.029,,0.0
+Jack Stevens,Wagner,QB,2025,-0.075,-0.219,-0.119,-0.006,,0.4656
+Parker Stofa,Jackson State,QB,2025,-0.482,-1.277,0.374,-1.338,,0.0532
+Kobe Muasau,Morgan State,QB,2025,0.253,0.223,0.056,0.424,,0.4239
+Parker Lancaster,Norfolk State,QB,2025,-0.194,-0.007,0.717,-0.65,,0.0193
+Alex Gevaudan,Mercyhurst,QB,2025,-0.013,-0.013,-0.237,0.212,,0.0925
+Adam Urena,Mercyhurst,QB,2025,0.137,0.157,-0.052,0.362,,0.8978
+Cameron Peters,Prairie View A&M,QB,2025,0.406,0.462,0.201,0.71,,0.728
+Beckham Pellant,Illinois State,QB,2025,-0.104,-0.098,-0.206,-0.022,,0.0404
+Brock Riddle,Indiana State,QB,2025,0.088,0.075,-0.033,0.217,,0.1879
+Jake Curry,Southern Illinois,QB,2025,-0.329,-0.371,-0.263,-0.438,,0.0248
+ET Harris,Southern Illinois,QB,2025,0.211,,0.211,,,0.0
+Jack Henry,South Dakota State,QB,2025,0.098,0.09,-0.01,0.256,,0.2649
+Baxter Wright,Murray State,QB,2025,0.119,0.146,0.013,0.321,,0.2396
+Jack Sulik,North Dakota,QB,2025,-0.032,-0.018,0.958,-0.527,,0.0074
+Nick Poulos,Ohio,QB,2025,0.26,-0.148,0.228,0.325,,0.0257
+James Laubstein,New Mexico,QB,2025,0.295,0.349,0.34,0.143,,0.0486
+David Parsons,Morehead State,QB,2025,0.424,0.424,-0.174,1.021,,0.0276
+Landon Holcomb,Arkansas-Pine Bluff,QB,2025,-0.394,,-0.703,-0.084,,0.0
+DJ Stevenson,Arkansas-Pine Bluff,QB,2025,0.18,0.285,0.055,0.384,,0.0606
+Cobey Thompkins,The Citadel,QB,2025,0.138,0.194,0.072,0.227,,0.3613
+Cooper Tankersley,The Citadel,QB,2025,-0.255,-0.074,-0.319,-0.191,,0.0258
+Ron Peace,East Texas A&M,QB,2025,0.317,0.325,0.068,0.696,,0.4087
+Will Madonna,East Texas A&M,QB,2025,-0.614,-0.597,-0.605,-0.626,,0.0505
+Karson Siqueiros-Lasky,Pennsylvania,QB,2025,0.484,0.484,0.751,-0.048,,0.0063
+Isaac Lee,Western Carolina,QB,2025,0.103,0.011,-0.039,0.275,,0.1069
+Max Holtzclaw,Presbyterian,QB,2025,0.084,0.184,0.481,-0.313,,0.012
+Jonathan Palmer,Tennessee State,QB,2025,-0.083,-0.038,0.019,-0.167,,0.2587
+Vinson Berry,Norfolk State,QB,2025,-0.012,-0.031,0.173,-0.296,,0.1515
+Raymond Moore III,Morgan State,QB,2025,0.094,-0.117,0.022,0.162,,0.5109
+KJ Cooper,Texas Southern,QB,2025,0.133,0.084,-0.01,0.296,,0.9104
+Josh Brown,Mississippi Valley State,QB,2025,0.133,0.171,-0.096,0.392,,0.607
+Kareem Keye,Alabama State,QB,2025,1.152,1.152,0.399,2.658,,0.0
+Liam Szarka,Air Force,QB,2025,0.388,0.595,0.34,0.479,,0.7362
+Noah Gillon,App State,QB,2025,-0.34,-0.316,-0.661,-0.019,,0.0768
+Patrick Crayton Jr.,Rice,QB,2025,-0.44,-0.41,0.066,-0.903,,0.067
+John Gazzaniga,Alabama,QB,2025,-0.296,,-0.296,,,0.0
+Godspower Nwawuihe,Army,QB,2025,0.037,,0.037,,,0.0
+Mason Phillips,Tennessee,QB,2025,0.557,,,0.557,,0.0
+Byrd Ficklin,Utah,QB,2025,0.538,0.851,0.505,0.904,,0.0943
+Luke Weaver,Hawai'i,QB,2025,0.122,0.063,0.017,0.286,,0.1944
+Marcus Beamon,Central Michigan,QB,2025,-0.025,-0.494,0.155,-0.768,,0.0159
+Tramell Jones Jr.,Florida,QB,2025,0.011,0.085,0.143,-0.226,,0.0941
+Ryan Huff,Old Dominion,QB,2025,-0.316,-0.316,-0.316,,,0.003
+Brady Hart,Texas A&M,QB,2025,0.047,0.037,-0.05,0.183,,0.0246
+Brady Jones,Western Michigan,QB,2025,-0.18,-0.201,-0.38,0.026,,0.1316
+Trey Kukuk,Louisiana Tech,QB,2025,0.149,0.084,0.12,0.193,,0.3408
+Stanley Anderson-Lofton,Middle Tennessee,QB,2025,-0.071,-0.851,-1.381,1.239,,0.002
+Deuce Bailey,Missouri State,QB,2025,0.195,0.165,0.009,0.512,,0.1085
+Tama Amisone,San José State,QB,2025,0.057,-0.055,0.07,0.03,,0.1029
+Landon Sims,Wyoming,QB,2025,0.361,0.305,-0.123,1.425,,0.0209
+Joseph Filardi,Syracuse,QB,2025,-0.023,-0.11,-0.17,0.107,,0.1593
+Kaden Rolfsness,Eastern Washington,QB,2025,0.053,0.141,-0.095,0.262,,0.0956
+Lek Powell,Charleston Southern,QB,2025,0.271,0.233,-0.816,0.94,,0.0376
+Sawyer Teeney,Idaho,QB,2025,-0.195,-0.278,-0.146,-0.373,,0.0468
+Cooper Panteck,Robert Morris,QB,2025,-0.026,-0.035,-0.262,0.252,,0.3094
+Deven Sisler,Stonehill,QB,2025,0.3,-0.068,-0.54,0.93,,0.0062
+Nicholas Penuvchev,Bucknell,QB,2025,0.101,0.101,0.064,0.124,,0.1012
+Luke Pennington,Dayton,QB,2025,-0.968,0.739,-0.968,,,0.0102
+Logan Inagawa,Drake,QB,2025,0.198,0.236,0.119,0.314,,0.7137
+Byron McNair,Tennessee State,QB,2025,0.137,0.168,-0.084,0.339,,0.7093
+Treynor Cleeland,UC Davis,QB,2025,0.359,0.359,-0.482,2.881,,0.0102
+Will O'Dell,Marist,QB,2025,0.119,0.181,0.035,0.235,,0.2078
+Jared Lockhart,Jackson State,QB,2025,0.298,0.353,0.178,0.431,,0.3972
+Xander Eschelman,Columbia,QB,2025,-0.701,-1.133,-0.942,-0.124,,0.0031
+Dominic Campanile,Holy Cross,QB,2025,0.057,0.051,-0.149,0.222,,0.2708
+Jalen Ferguson,Campbell,QB,2025,-0.038,-0.006,-0.257,0.263,,0.0406
+Cason Carswell,Western Illinois,QB,2025,0.152,0.164,0.063,0.287,,0.7074
+Finley Polk,Gardner-Webb,QB,2025,0.324,,,0.324,,0.0
+Derek Morgan,Lehigh,QB,2025,-0.202,,-0.202,,,0.0
+Brady Ford,Eastern Illinois,QB,2025,0.023,0.023,-1.446,1.493,,0.0199
+DJ Smith,Mercer,QB,2025,0.082,0.059,-0.068,0.306,,0.0839
+Achilles Ringo,Alcorn State,QB,2025,-0.485,-0.485,-0.485,,,0.003
+Hayden Fletcher,Northern Arizona,QB,2025,0.828,2.128,-0.472,2.128,,0.0028
+Eric Gibson Jr.,Northern Colorado,QB,2025,0.302,0.376,0.125,0.604,,0.8875
+Jy Walls,North Carolina A&T,QB,2025,0.002,0.547,0.379,-0.376,,0.0135
+Nelson Layne,North Carolina A&T,QB,2025,0.042,-0.468,-0.183,0.273,,0.1216
+Terrell Russell,Howard,QB,2025,1.203,1.429,0.525,1.429,,0.0133
+Frankie Williams,UAlbany,QB,2025,-0.007,,,-0.007,,0.0
+Kaleb Bailey,Murray State,QB,2025,-0.124,-0.915,-0.233,0.402,,0.0339
+Reilly Garcia,Houston Christian,QB,2025,-0.119,0.032,-0.07,-0.16,,0.0727
+Trey Blakeney,Austin Peay,QB,2025,-0.066,,,-0.066,,0.0
+Andrew Indorf,Towson,QB,2025,0.213,0.25,0.167,0.288,,0.882
+Jett Peddy,Florida A&M,QB,2025,-0.104,-0.108,-0.372,0.102,,0.1366
+Jackson Byrd,East Tennessee State,QB,2025,0.545,0.508,0.103,1.282,,0.0269
+Jordan Martin-Durham,Western Carolina,QB,2025,-4.214,,-4.214,,,0.0
+Jayden Whitaker,Wofford,QB,2025,-0.041,-0.053,0.001,-0.07,,0.2274
+Xavier Hill,The Citadel,QB,2025,-0.537,-0.537,,-0.537,,0.0
+Eli Anderson,Northwestern State,QB,2025,0.002,0.071,0.033,-0.043,,0.1948
+Nana Utsey,VMI,QB,2025,0.022,-0.131,-0.02,0.086,,0.1117
+Ian Reynolds,VMI,QB,2025,-0.209,-0.347,,-0.209,,0.0027
+Benjamin Newman,Wagner,QB,2025,-1.289,-1.189,-1.032,-1.546,,0.0121
+Josiah Bushnell,Morgan State,QB,2025,-0.035,,0.159,-0.713,,0.0
+Eli Friend,Princeton,QB,2025,-0.316,,-0.316,,,0.0
+Bryson Broadway,Stephen F. Austin,QB,2025,0.271,0.487,0.318,0.223,,0.0157
+Myles Lopez,Stephen F. Austin,QB,2025,-1.555,-1.555,,-1.555,,0.0045
+JT Kitna,Stephen F. Austin,QB,2025,0.776,0.693,0.029,2.644,,0.0112
+Christian Peters,Arkansas-Pine Bluff,QB,2025,0.014,-0.018,-0.135,0.233,,0.8758
+Garrison Davis,Arkansas-Pine Bluff,QB,2025,0.036,-0.262,-0.051,0.36,,0.0606
+Jake Hamilton,St. Francis (PA),QB,2025,0.017,-0.261,0.012,0.023,,0.0363
+Kingston Tisdell,Weber State,QB,2025,-0.021,-0.008,-0.073,0.037,,0.2229
