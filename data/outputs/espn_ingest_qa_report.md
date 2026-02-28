@@ -1,23 +1,23 @@
 # ESPN Ingest QA Report
 
-- Status: `missing_prospects`
+- Status: `ok`
 - Dataset directory: `/Users/nickholz/nfldraftmodel2026/data/sources/external/espn_nfl_draft_prospect_data`
 
 ## Row counts
 
-- prospects: `0`
-- profiles: `0`
-- college_qbr: `0`
-- college_stats: `0`
-- ids: `0`
+- prospects: `643`
+- profiles: `643`
+- college_qbr: `25`
+- college_stats: `2678`
+- ids: `643`
 
 ## QA checks
 
 - duplicate (draft_year, player_id): `0`
-- non-empty profile text rows: `0`
-- board rows checked: `462`
-- name+position join rate: `0.0`
-- name-only join rate: `0.0`
+- non-empty profile text rows: `643`
+- board rows checked: `412`
+- name+position join rate: `0.9903`
+- name-only join rate: `1.0`
 
 ## Useful fields
 

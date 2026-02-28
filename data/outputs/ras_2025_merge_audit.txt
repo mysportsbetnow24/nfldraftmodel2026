@@ -1,0 +1,32 @@
+RAS 2025 Merge Audit
+
+historical_rows_total: 24510
+historical_year_min: 1987
+historical_year_max: 2025
+historical_rows_2025: 2511
+
+2025 rows by position:
+- CB: 290
+- DT: 225
+- EDGE: 234
+- IOL: 208
+- LB: 314
+- OT: 124
+- QB: 64
+- RB: 220
+- S: 277
+- TE: 140
+- WR: 415
+
+Current RAS benchmark samples:
+- CB: sample_n_all=2748, sample_n_since_2016=1769, starter=5.15, impact=6.73, elite=8.592
+- DT: sample_n_all=2026, sample_n_since_2016=1307, starter=5.15, impact=7.025, elite=8.69
+- EDGE: sample_n_all=2024, sample_n_since_2016=1243, starter=5.142, impact=7.0, elite=8.788
+- IOL: sample_n_all=1785, sample_n_since_2016=1154, starter=5.358, impact=7.207, elite=8.93
+- LB: sample_n_all=3192, sample_n_since_2016=1987, starter=5.146, impact=6.86, elite=8.544
+- OT: sample_n_all=1493, sample_n_since_2016=744, starter=5.97, impact=7.81, elite=9.144
+- QB: sample_n_all=1045, sample_n_since_2016=534, starter=6.076, impact=7.31, elite=8.817
+- RB: sample_n_all=2634, sample_n_since_2016=1497, starter=5.01, impact=6.77, elite=8.514
+- S: sample_n_all=2430, sample_n_since_2016=1647, starter=4.86, impact=6.485, elite=8.474
+- TE: sample_n_all=1329, sample_n_since_2016=759, starter=5.536, impact=7.035, elite=8.62
+- WR: sample_n_all=3804, sample_n_since_2016=2516, starter=5.22, impact=6.8, elite=8.56

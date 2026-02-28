@@ -1,33 +1,33 @@
-round,pick,overall_pick,team,original_pick_owner,acquired_via,player_name,position,school,final_grade,round_value
-1,1,1,LV,LV,,Fernando Mendoza,QB,Indiana,84.24,Round 1-2
-1,2,2,NYJ,NYJ,,Francis Mauigoa,OT,Miami (FL) Hurricanes,84.31,Round 1
-1,3,3,ARI,ARI,,David Bailey,EDGE,Texas Tech,85.53,Round 1
-1,4,4,TEN,TEN,,Rueben Bain Jr.,EDGE,Miami (FL) Hurricanes,84.96,Round 1
-1,5,5,NYG,NYG,,Spencer Fano,OT,Utah,83.9,Round 2-3
-1,6,6,CLE,CLE,,Carnell Tate,WR,Ohio State,83.79,Round 2-3
-1,7,7,WAS,WAS,,Akheem Mesidor,EDGE,Miami (FL) Hurricanes,84.8,Round 1
-1,8,8,NO,NO,,Arvell Reese,EDGE,Ohio State,84.17,Round 1-2
-1,9,9,KC,KC,,Kadyn Proctor,OT,Alabama,83.48,Round 2-3
-1,10,10,CIN,CIN,,Mansoor Delane,CB,LSU Tigers,84.35,Round 1
-1,11,11,MIA,MIA,,Caleb Downs,S,Ohio State,84.96,Round 1
-1,12,12,DAL,DAL,,Jeremiyah Love,RB,Notre Dame,84.61,Round 1
-1,13,13,LAR,ATL,LAR g ATL (2025 Draft trade),Keionte Scott,CB,Miami (FL) Hurricanes,84.29,Round 1
-1,14,14,BAL,BAL,,Avieon Terrell,CB,Clemson,83.7,Round 2-3
-1,15,15,TB,TB,,Keldric Faulk,EDGE,Auburn,83.64,Round 2-3
-1,16,16,NYJ,IND,NYJ g IND (A Gardner),Jordyn Tyson,WR,Arizona State,83.37,Round 2-3
-1,17,17,DET,DET,,Chris Johnson,CB,San Diego State Aztecs,83.53,Round 2-3
-1,18,18,MIN,MIN,,Keith Abney II,CB,Arizona State Sun Devils,83.44,Round 2-3
-1,19,19,CAR,CAR,,Romello Height,EDGE,Texas Tech Red Raiders,83.28,Round 2-3
-1,20,20,DAL,GB,DAL g GB (M Parsons),Christen Miller,DT,Georgia Bulldogs,83.02,Round 2-3
-1,21,21,PIT,PIT,,Kayden McDonald,DT,Ohio State Buckeyes,82.77,Round 2-3
-1,22,22,LAC,LAC,,Peter Woods,DT,Clemson,82.72,Round 2-3
-1,23,23,PHI,PHI,,Zion Young,EDGE,Missouri Tigers,82.99,Round 2-3
-1,24,24,CLE,JAX,CLE g JAX (2025 Draft Trade),Denzel Boston,WR,Washington,83.02,Round 2-3
-1,25,25,CHI,CHI,,Monroe Freeling,OT,Georgia,82.19,Round 3-4
-1,26,26,BUF,BUF,,Emmanuel McNeil-Warren,S,Toledo Rockets,83.36,Round 2-3
-1,27,27,SF,SF,,Brian Parker II,OT,Duke Blue Devils,81.87,Round 3-4
-1,28,28,HOU,HOU,,Sonny Styles,LB,Ohio State,83.55,Round 2-3
-1,29,29,LAR,LAR,,Olaivavega Ioane,IOL,Penn State Nittany Lions,84.12,Round 1-2
-1,30,30,DEN,DEN,,Makai Lemon,WR,USC Trojans,82.89,Round 2-3
-1,31,31,NE,NE,,Caleb Lomu,OT,Utah,81.66,Round 3-4
-1,32,32,SEA,SEA,,Dillon Thieneman,S,Oregon,83.13,Round 2-3
+round,pick,overall_pick,team,original_pick_owner,acquired_via,player_name,position,school,final_grade,round_value,team_athletic_bias_enabled,team_athletic_fit_modifier,team_athletic_target_ras,player_athletic_proxy,player_athletic_source,team_athletic_tier,team_athletic_threshold_mode,team_athletic_threshold_confidence,team_athletic_bias_reason
+1,1,1,LV,LV,,Fernando Mendoza,QB,Indiana,81.14,Round 2-3,0,0.0,,,none,,,,disabled
+1,2,2,NYJ,NYJ,,Francis Mauigoa,OT,Miami (FL) Hurricanes,82.59,Round 1-2,0,0.0,,,none,,,,disabled
+1,3,3,ARI,ARI,,Cashius Howell,EDGE,Texas A&M Aggies,83.76,Round 1-2,0,0.0,,,none,,,,disabled
+1,4,4,TEN,TEN,,R Mason Thomas,EDGE,Oklahoma,82.78,Round 1-2,0,0.0,,,none,,,,disabled
+1,5,5,NYG,NYG,,Kadyn Proctor,OT,Alabama,82.36,Round 1-2,0,0.0,,,none,,,,disabled
+1,6,6,CLE,CLE,,Carnell Tate,WR,Ohio State,81.98,Round 2-3,0,0.0,,,none,,,,disabled
+1,7,7,WAS,WAS,,Brian Parker II,OT,Duke Blue Devils,81.56,Round 2-3,0,0.0,,,none,,,,disabled
+1,8,8,NO,NO,,David Bailey,EDGE,Texas Tech,82.38,Round 1-2,0,0.0,,,none,,,,disabled
+1,9,9,KC,KC,,Monroe Freeling,OT,Georgia,80.85,Round 2-3,0,0.0,,,none,,,,disabled
+1,10,10,CIN,CIN,,Mansoor Delane,CB,LSU Tigers,82.07,Round 1-2,0,0.0,,,none,,,,disabled
+1,11,11,MIA,MIA,,Caleb Downs,S,Ohio State,82.33,Round 1-2,0,0.0,,,none,,,,disabled
+1,12,12,DAL,DAL,,Jeremiyah Love,RB,Notre Dame,83.18,Round 1-2,0,0.0,,,none,,,,disabled
+1,13,13,LAR,ATL,LAR g ATL (2025 Draft trade),Keionte Scott,CB,Miami (FL) Hurricanes,81.76,Round 2-3,0,0.0,,,none,,,,disabled
+1,14,14,BAL,BAL,,Caleb Lomu,OT,Utah,80.44,Round 2-3,0,0.0,,,none,,,,disabled
+1,15,15,TB,TB,,Keldric Faulk,EDGE,Auburn,81.33,Round 2-3,0,0.0,,,none,,,,disabled
+1,16,16,NYJ,IND,NYJ g IND (A Gardner),Emmanuel McNeil-Warren,S,Toledo Rockets,81.7,Round 2-3,0,0.0,,,none,,,,disabled
+1,17,17,DET,DET,,Zion Young,EDGE,Missouri Tigers,81.28,Round 2-3,0,0.0,,,none,,,,disabled
+1,18,18,MIN,MIN,,Christen Miller,DT,Georgia Bulldogs,81.09,Round 2-3,0,0.0,,,none,,,,disabled
+1,19,19,CAR,CAR,,Romello Height,EDGE,Texas Tech Red Raiders,81.13,Round 2-3,0,0.0,,,none,,,,disabled
+1,20,20,DAL,GB,DAL g GB (M Parsons),Kayden McDonald,DT,Ohio State Buckeyes,80.9,Round 2-3,0,0.0,,,none,,,,disabled
+1,21,21,PIT,PIT,,Caleb Banks,DT,Florida Gators,80.81,Round 2-3,0,0.0,,,none,,,,disabled
+1,22,22,LAC,LAC,,Dillon Thieneman,S,Oregon,81.66,Round 2-3,0,0.0,,,none,,,,disabled
+1,23,23,PHI,PHI,,Akheem Mesidor,EDGE,Miami (FL) Hurricanes,80.24,Round 2-3,0,0.0,,,none,,,,disabled
+1,24,24,CLE,JAX,CLE g JAX (2025 Draft Trade),Makai Lemon,WR,USC Trojans,81.42,Round 2-3,0,0.0,,,none,,,,disabled
+1,25,25,CHI,CHI,,Spencer Fano,OT,Utah,80.13,Round 2-3,0,0.0,,,none,,,,disabled
+1,26,26,BUF,BUF,,Peter Woods,DT,Clemson,80.4,Round 2-3,0,0.0,,,none,,,,disabled
+1,27,27,SF,SF,,Blake Miller,OT,Clemson Tigers,79.51,Round 4-5,0,0.0,,,none,,,,disabled
+1,28,28,HOU,HOU,,Denzel Boston,WR,Washington,81.24,Round 2-3,0,0.0,,,none,,,,disabled
+1,29,29,LAR,LAR,,Arvell Reese,LB,Ohio State Buckeyes,81.79,Round 2-3,0,0.0,,,none,,,,disabled
+1,30,30,DEN,DEN,,Nyck Harbor,WR,South Carolina,81.22,Round 2-3,0,0.0,,,none,,,,disabled
+1,31,31,NE,NE,,Jordyn Tyson,WR,Arizona State,80.97,Round 2-3,0,0.0,,,none,,,,disabled
+1,32,32,SEA,SEA,,C.J. Allen,LB,Georgia,81.55,Round 2-3,0,0.0,,,none,,,,disabled

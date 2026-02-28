@@ -139,6 +139,9 @@ def run_check(board_path: Path, watchlist_path: Path, snapshot_dir: Path) -> tup
                 "consensus_mean_rank": row.get("consensus_board_mean_rank", ""),
                 "midband_brake_penalty": row.get("formula_midband_brake_penalty", ""),
                 "soft_ceiling_penalty": row.get("formula_soft_ceiling_penalty", ""),
+                "consensus_tail_soft_penalty": row.get("formula_consensus_tail_soft_penalty", ""),
+                "front7_inflation_penalty": row.get("formula_front7_inflation_penalty", ""),
+                "cb_nickel_inflation_penalty": row.get("formula_cb_nickel_inflation_penalty", ""),
             }
         )
     mean_abs_top50_delta = (sum(abs_deltas) / len(abs_deltas)) if abs_deltas else 0.0
@@ -236,4 +239,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

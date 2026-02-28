@@ -1,0 +1,19 @@
+2026 DELTA AUDIT
+
+Current board: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
+Previous board: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260227_232155.csv
+Rows compared: 459
+
+Top Risers (prev rank - curr rank > 0)
+1. Arvell Reese (LB) 11 -> 10 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+2. Keionte Scott (CB) 12 -> 11 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+3. Emmanuel McNeil-Warren (S) 13 -> 12 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+4. Dillon Thieneman (S) 14 -> 13 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+5. Christen Miller (DT) 25 -> 24 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+6. Olaivavega Ioane (IOL) 26 -> 25 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+7. Jordyn Tyson (WR) 27 -> 26 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+8. Kayden McDonald (DT) 28 -> 27 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+
+Top Fallers (prev rank - curr rank < 0)
+1. Brian Parker II (OT) 10 -> 14 (-4); driver: guardrail_relief (down 0.28) [ath 0.0, prod 0.0, prior 0.0, guardrail -0.28]
+2. Skyler Bell (WR) 24 -> 28 (-4); driver: guardrail_relief (down 0.27) [ath 0.0, prod 0.0, prior 0.0, guardrail -0.27]

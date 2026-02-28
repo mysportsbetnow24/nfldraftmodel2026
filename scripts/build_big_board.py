@@ -13,10 +13,14 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from src.ingest.combine_loader import load_combine_results
+from src.ingest.athletic_profile_loader import evaluate_athletic_profile, load_historical_athletic_context
 from src.ingest.cfb_production_loader import load_cfb_production_signals
+from src.ingest.draft_age_loader import load_draft_age_signals
+from src.ingest.early_declare_loader import load_early_declare_signals
 from src.ingest.consensus_board_loader import load_consensus_board_signals
 from src.ingest.eligibility_loader import load_returning_to_school
 from src.ingest.eligibility_loader import load_declared_underclassmen, is_senior_class, load_already_in_nfl_exclusions
+from src.ingest.historical_combine_loader import build_combine_merge_key, find_historical_combine_comps, load_historical_combine_profiles
 from src.ingest.espn_loader import load_espn_player_signals
 from src.ingest.analyst_language_loader import load_analyst_linguistic_signals
 from src.ingest.kiper_loader import load_kiper_structured_signals
@@ -26,6 +30,13 @@ from src.ingest.prebuild_validation import format_prebuild_report_md, run_prebui
 from src.ingest.playerprofiler_loader import load_playerprofiler_signals
 from src.ingest.mockdraftable_loader import load_mockdraftable_baselines
 from src.ingest.ras_benchmarks_loader import load_ras_benchmarks
+from src.ingest.roi_prior_loader import load_position_roi_priors, pick_band_from_rank
+from src.ingest.production_percentile_comps_loader import (
+    POSITION_BASELINES as PROD_POSITION_BASELINES,
+    REVERSE_DIRECTION_METRICS as PROD_REVERSE_METRICS,
+    find_production_percentile_comps,
+    load_production_percentile_pack,
+)
 from src.ingest.rankings_loader import (
     analyst_aggregate_score,
     canonical_player_name,
@@ -44,6 +55,11 @@ from src.schemas import parse_height_to_inches, round_from_grade
 
 PROCESSED = ROOT / "data" / "processed"
 OUTPUTS = ROOT / "data" / "outputs"
+SOURCE_RELIABILITY_PATH = ROOT / "data" / "sources" / "manual" / "source_reliability_weights_2026.csv"
+SOURCE_RELIABILITY_POS_YEAR_PATH = (
+    ROOT / "data" / "sources" / "manual" / "source_reliability_by_pos_year_2016_2025.csv"
+)
+CURRENT_DRAFT_YEAR = int(os.getenv("DRAFT_YEAR", "2026"))
 
 POSITION_DEFAULT_FRAME = {
     "QB": (76, 220),
@@ -68,6 +84,43 @@ PRODUCTION_SIGNAL_MULTIPLIER = float(os.getenv("PRODUCTION_SIGNAL_MULTIPLIER", "
 PRODUCTION_SIGNAL_MAX_DELTA = float(os.getenv("PRODUCTION_SIGNAL_MAX_DELTA", "7.0"))
 PRODUCTION_SIGNAL_QB_MULTIPLIER = float(os.getenv("PRODUCTION_SIGNAL_QB_MULTIPLIER", "0.74"))
 PRODUCTION_SIGNAL_QB_MAX_DELTA = float(os.getenv("PRODUCTION_SIGNAL_QB_MAX_DELTA", "6.0"))
+PRODUCTION_SIGNAL_FRONT7_MULTIPLIER = float(
+    os.getenv("PRODUCTION_SIGNAL_FRONT7_MULTIPLIER", "0.68")
+)
+PRODUCTION_SIGNAL_FRONT7_MAX_UP_DELTA = float(
+    os.getenv("PRODUCTION_SIGNAL_FRONT7_MAX_UP_DELTA", "3.8")
+)
+PRODUCTION_SIGNAL_FRONT7_MAX_DOWN_DELTA = float(
+    os.getenv("PRODUCTION_SIGNAL_FRONT7_MAX_DOWN_DELTA", "9.0")
+)
+FRONT7_INFLATION_BRAKE_MAX = float(os.getenv("FRONT7_INFLATION_BRAKE_MAX", "1.45"))
+NICKEL_CB_INFLATION_BRAKE_MAX = float(os.getenv("NICKEL_CB_INFLATION_BRAKE_MAX", "1.20"))
+AUTO_WEEKLY_STABILITY_CHECK = str(
+    os.getenv("AUTO_WEEKLY_STABILITY_CHECK", "1")
+).strip().lower() in {"1", "true", "yes", "y"}
+AUTO_DELTA_AUDIT_AFTER_BUILD = str(
+    os.getenv("AUTO_DELTA_AUDIT_AFTER_BUILD", "1")
+).strip().lower() in {"1", "true", "yes", "y"}
+UPSIDE_EVIDENCE_GUARDRAIL_ACTIVE_GRADE = float(
+    os.getenv("UPSIDE_EVIDENCE_GUARDRAIL_ACTIVE_GRADE", "82.0")
+)
+UPSIDE_EVIDENCE_GUARDRAIL_PENALTY_PER_MISSING = float(
+    os.getenv("UPSIDE_EVIDENCE_GUARDRAIL_PENALTY_PER_MISSING", "0.28")
+)
+UPSIDE_EVIDENCE_GUARDRAIL_MAX_PENALTY = float(
+    os.getenv("UPSIDE_EVIDENCE_GUARDRAIL_MAX_PENALTY", "1.1")
+)
+ALLOW_SINGLE_YEAR_PRODUCTION_KNN = str(
+    os.getenv("ALLOW_SINGLE_YEAR_PRODUCTION_KNN", "0")
+).strip().lower() in {"1", "true", "yes", "y"}
+ENABLE_DRAFT_AGE_SCORING = str(os.getenv("ENABLE_DRAFT_AGE_SCORING", "0")).strip().lower() in {"1", "true", "yes", "y"}
+ENABLE_EARLY_DECLARE_SCORING = str(os.getenv("ENABLE_EARLY_DECLARE_SCORING", "0")).strip().lower() in {"1", "true", "yes", "y"}
+CFB_PROXY_FALLBACK_HEAVY_MAX_COVERAGE = int(os.getenv("CFB_PROXY_FALLBACK_HEAVY_MAX_COVERAGE", "2"))
+CFB_PROXY_FALLBACK_HEAVY_MIN_FALLBACKS = int(os.getenv("CFB_PROXY_FALLBACK_HEAVY_MIN_FALLBACKS", "1"))
+CFB_PROXY_FALLBACK_HEAVY_MAX_RELIABILITY = float(os.getenv("CFB_PROXY_FALLBACK_HEAVY_MAX_RELIABILITY", "0.45"))
+CFB_PROXY_FALLBACK_FAIL_ON_HEAVY = str(
+    os.getenv("CFB_PROXY_FALLBACK_FAIL_ON_HEAVY", "0")
+).strip().lower() in {"1", "true", "yes", "y"}
 
 POSITION_VALUE_ADJUSTMENT = {
     "QB": 0.35,
@@ -105,6 +158,261 @@ ROUND_RANK_BANDS = [
     (170, "Round 5-6"),
     (230, "Round 6-7"),
 ]
+
+DEFAULT_SOURCE_RELIABILITY = {
+    "seed_rank": {"hit_rate": 0.58, "stability": 0.76, "sample_size": 3000},
+    "external_rank": {"hit_rate": 0.61, "stability": 0.82, "sample_size": 1200},
+    "analyst_rank": {"hit_rate": 0.57, "stability": 0.70, "sample_size": 1500},
+    "consensus_rank": {"hit_rate": 0.64, "stability": 0.86, "sample_size": 1800},
+    "kiper_rank": {"hit_rate": 0.62, "stability": 0.78, "sample_size": 900},
+    "tdn_rank": {"hit_rate": 0.56, "stability": 0.66, "sample_size": 600},
+    "ringer_rank": {"hit_rate": 0.56, "stability": 0.66, "sample_size": 600},
+    "bleacher_rank": {"hit_rate": 0.57, "stability": 0.68, "sample_size": 700},
+    "atoz_rank": {"hit_rate": 0.54, "stability": 0.62, "sample_size": 500},
+    "si_rank": {"hit_rate": 0.53, "stability": 0.61, "sample_size": 400},
+    "cbs_rank": {"hit_rate": 0.58, "stability": 0.74, "sample_size": 800},
+    "cbs_wilson_rank": {"hit_rate": 0.59, "stability": 0.75, "sample_size": 800},
+    "tdn_grade_label": {"hit_rate": 0.55, "stability": 0.64, "sample_size": 450},
+}
+
+
+def _load_source_reliability_weights(
+    path: Path = SOURCE_RELIABILITY_PATH,
+    pos_year_path: Path = SOURCE_RELIABILITY_POS_YEAR_PATH,
+) -> dict:
+    """
+    Optional manual override for source reliability.
+    CSV schema:
+      source,hit_rate,stability,sample_size
+    Values are clamped into safe ranges to keep weights stable.
+    """
+    global_map = {k: dict(v) for k, v in DEFAULT_SOURCE_RELIABILITY.items()}
+    if not path.exists():
+        out = {
+            "global": global_map,
+            "by_source_pos_year": {},
+            "by_source_year": {},
+            "meta": {
+                "global_keys": len(global_map),
+                "pos_year_rows": 0,
+                "has_pos_year_table": 0,
+            },
+        }
+        return out
+
+    with path.open() as f:
+        for row in csv.DictReader(f):
+            source = str(row.get("source", "")).strip()
+            if not source:
+                continue
+            hit_rate = _as_float(row.get("hit_rate"))
+            stability = _as_float(row.get("stability"))
+            sample_size = _as_float(row.get("sample_size"))
+            if hit_rate is None and stability is None and sample_size is None:
+                continue
+            current = global_map.get(source, {"hit_rate": 0.56, "stability": 0.66, "sample_size": 300})
+            if hit_rate is not None:
+                current["hit_rate"] = _clamp(float(hit_rate), 0.35, 0.85)
+            if stability is not None:
+                current["stability"] = _clamp(float(stability), 0.30, 0.95)
+            if sample_size is not None:
+                current["sample_size"] = max(1, int(sample_size))
+            global_map[source] = current
+
+    by_source_pos_year: dict[tuple[str, str], list[dict]] = {}
+    by_source_year: dict[str, list[dict]] = {}
+    pos_year_rows = 0
+    if pos_year_path.exists():
+        with pos_year_path.open() as f:
+            for row in csv.DictReader(f):
+                source = str(row.get("source", "")).strip()
+                position = normalize_pos(str(row.get("position", "")).strip())
+                year = _as_float(row.get("draft_year"))
+                hit_rate = _as_float(row.get("hit_rate"))
+                stability = _as_float(row.get("stability"))
+                sample_size = _as_float(row.get("sample_size"))
+                if not source or year is None or hit_rate is None:
+                    continue
+                payload = {
+                    "source": source,
+                    "position": position,
+                    "draft_year": int(year),
+                    "hit_rate": _clamp(float(hit_rate), 0.35, 0.85),
+                    "stability": _clamp(float(stability), 0.30, 0.95) if stability is not None else 0.66,
+                    "sample_size": max(1, int(sample_size)) if sample_size is not None else 120,
+                }
+                by_source_year.setdefault(source, []).append(payload)
+                if position:
+                    by_source_pos_year.setdefault((source, position), []).append(payload)
+                pos_year_rows += 1
+
+    return {
+        "global": global_map,
+        "by_source_pos_year": by_source_pos_year,
+        "by_source_year": by_source_year,
+        "meta": {
+            "global_keys": len(global_map),
+            "pos_year_rows": pos_year_rows,
+            "has_pos_year_table": 1 if pos_year_rows > 0 else 0,
+        },
+    }
+
+
+def _resolve_source_reliability(
+    *,
+    reliability_pack: dict,
+    source_key: str,
+    position: str,
+    draft_year: int,
+) -> dict:
+    global_map = reliability_pack.get("global", {}) if isinstance(reliability_pack, dict) else {}
+    by_source_pos_year = (
+        reliability_pack.get("by_source_pos_year", {}) if isinstance(reliability_pack, dict) else {}
+    )
+    by_source_year = reliability_pack.get("by_source_year", {}) if isinstance(reliability_pack, dict) else {}
+
+    base = dict(global_map.get(source_key, {"hit_rate": 0.56, "stability": 0.66, "sample_size": 300}))
+    base.setdefault("hit_rate", 0.56)
+    base.setdefault("stability", 0.66)
+    base.setdefault("sample_size", 300)
+    base["_layer"] = "global"
+    base["_selected_year"] = ""
+    base["_year_distance"] = ""
+
+    pos = normalize_pos(position)
+    candidates = list(by_source_pos_year.get((source_key, pos), []))
+    layer = "source_pos_year"
+    if not candidates:
+        candidates = list(by_source_year.get(source_key, []))
+        layer = "source_year"
+    if not candidates:
+        return base
+
+    def _cand_sort_key(c: dict) -> tuple[int, int]:
+        y = int(c.get("draft_year", draft_year))
+        n = int(c.get("sample_size", 0))
+        return (abs(y - draft_year), -n)
+
+    selected = sorted(candidates, key=_cand_sort_key)[0]
+    sel_year = int(selected.get("draft_year", draft_year))
+    year_distance = abs(sel_year - draft_year)
+
+    # Recency decay + sample-size shrinkage protects against overfitting historical noise.
+    recency_weight = _clamp(1.0 - (0.03 * year_distance), 0.70, 1.0)
+    sample_size = int(selected.get("sample_size", 120))
+    shrink = _clamp(sample_size / float(sample_size + 220), 0.15, 0.75) * recency_weight
+
+    hit_rate = ((1.0 - shrink) * float(base["hit_rate"])) + (shrink * float(selected.get("hit_rate", base["hit_rate"])))
+    stability = ((1.0 - shrink) * float(base["stability"])) + (
+        shrink * float(selected.get("stability", base["stability"]))
+    )
+
+    resolved = {
+        "hit_rate": _clamp(hit_rate, 0.35, 0.85),
+        "stability": _clamp(stability, 0.30, 0.95),
+        "sample_size": max(1, int(sample_size)),
+        "_layer": layer,
+        "_selected_year": sel_year,
+        "_year_distance": year_distance,
+        "_shrink": round(shrink, 4),
+        "_recency_weight": round(recency_weight, 4),
+    }
+    return resolved
+
+
+def _source_reliability_multiplier(reliability: dict | None) -> float:
+    if not reliability:
+        return 1.0
+
+    hit_rate = _clamp(float(reliability.get("hit_rate", 0.56)), 0.35, 0.85)
+    stability = _clamp(float(reliability.get("stability", 0.66)), 0.30, 0.95)
+    sample_size = max(1, int(float(reliability.get("sample_size", 300))))
+
+    # Keep multipliers narrow so source weighting is refined, not rewritten.
+    hit_mult = 0.88 + ((hit_rate - 0.50) * 1.00)  # ~0.73..1.23 before clamp
+    stability_mult = 0.90 + ((stability - 0.60) * 0.55)
+    if sample_size >= 1200:
+        sample_mult = 1.03
+    elif sample_size >= 600:
+        sample_mult = 1.00
+    elif sample_size >= 300:
+        sample_mult = 0.97
+    else:
+        sample_mult = 0.94
+
+    return round(_clamp(hit_mult * stability_mult * sample_mult, 0.82, 1.20), 3)
+
+
+def _append_prior_part(
+    *,
+    parts: list[tuple[float, float]],
+    diagnostics: dict,
+    source_key: str,
+    base_weight: float,
+    signal_value: float,
+    reliability_pack: dict,
+    position: str,
+    draft_year: int,
+) -> None:
+    reliability = _resolve_source_reliability(
+        reliability_pack=reliability_pack,
+        source_key=source_key,
+        position=position,
+        draft_year=draft_year,
+    )
+    multiplier = _source_reliability_multiplier(reliability)
+    effective_weight = base_weight * multiplier
+    parts.append((effective_weight, signal_value))
+    diagnostics[source_key] = {
+        "base_weight": round(base_weight, 4),
+        "multiplier": round(multiplier, 4),
+        "effective_weight": round(effective_weight, 4),
+        "layer": reliability.get("_layer", "global"),
+        "selected_year": reliability.get("_selected_year", ""),
+        "year_distance": reliability.get("_year_distance", ""),
+        "shrink": reliability.get("_shrink", ""),
+    }
+
+
+def _confidence_uncertainty_profile(
+    *,
+    final_grade: float,
+    evidence_missing_count: int,
+    risk_penalty: float,
+    consensus_source_count: int,
+    consensus_rank_std: float | None,
+    consensus_confidence_factor: float,
+    has_calibrated_prob: bool,
+) -> dict:
+    evidence_score = _clamp(((4 - evidence_missing_count) / 4.0) * 44.0, 6.0, 44.0)
+    source_coverage_score = _clamp((consensus_source_count / 5.0) * 24.0, 2.0, 24.0)
+    split_score = 10.0
+    if consensus_rank_std is not None:
+        split_score = _clamp(10.0 - (consensus_rank_std * 0.32), 0.0, 10.0)
+    consensus_score = (source_coverage_score + split_score) * _clamp(consensus_confidence_factor, 0.45, 1.05)
+    risk_score = _clamp(20.0 - (risk_penalty * 3.2), 0.0, 20.0)
+    calibration_score = 8.0 if has_calibrated_prob else 4.0
+
+    confidence = evidence_score + consensus_score + risk_score + calibration_score
+    if final_grade >= 82.0 and evidence_missing_count >= 2:
+        confidence -= 9.0
+    confidence = round(_clamp(confidence, 1.0, 99.0), 2)
+    uncertainty = round(100.0 - confidence, 2)
+
+    if final_grade >= 82.0 and evidence_missing_count >= 2:
+        variance_flag = "high_variance_thin_evidence"
+    elif uncertainty >= 58.0:
+        variance_flag = "high_variance"
+    elif uncertainty >= 40.0:
+        variance_flag = "medium_variance"
+    else:
+        variance_flag = "low_variance"
+
+    return {
+        "confidence_score": confidence,
+        "uncertainty_score": uncertainty,
+        "variance_flag": variance_flag,
+    }
 
 
 def _round_from_rank_band(consensus_rank: int) -> str:
@@ -273,8 +581,15 @@ def write_csv(path: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     if not rows:
         return
+    fieldnames = list(rows[0].keys())
+    seen = set(fieldnames)
+    for row in rows[1:]:
+        for key in row.keys():
+            if key not in seen:
+                fieldnames.append(key)
+                seen.add(key)
     with path.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
 
@@ -294,6 +609,42 @@ def write_top_board_md(path: Path, rows: list[dict], limit: int = 100) -> None:
             f"| {row['consensus_rank']} | {row['player_name']} | {row['position']} | {row['school']} | {row['final_grade']} | {row['round_value']} | {row['best_team_fit']} | {pff} | {ras} |"
         )
     path.write_text("\n".join(lines))
+
+
+def _run_locked_stability_checks(board_path: Path, watchlist_path: Path) -> None:
+    if not AUTO_WEEKLY_STABILITY_CHECK:
+        return
+
+    try:
+        from scripts.run_weekly_stability_check import run_check
+
+        report_txt, latest_txt = run_check(
+            board_path=board_path,
+            watchlist_path=watchlist_path,
+            snapshot_dir=OUTPUTS / "stability_snapshots",
+        )
+        print(f"Weekly stability report: {report_txt}")
+        print(f"Weekly stability latest: {latest_txt}")
+    except Exception as exc:
+        print(f"Weekly stability check skipped due to error: {exc}")
+        return
+
+    if not AUTO_DELTA_AUDIT_AFTER_BUILD:
+        return
+
+    try:
+        from scripts.run_delta_audit import run_audit
+
+        snapshots = sorted((OUTPUTS / "stability_snapshots").glob("big_board_2026_snapshot_*.csv"))
+        if len(snapshots) < 2:
+            print("Delta audit skipped: need at least 2 stability snapshots.")
+            return
+        previous = snapshots[-2]
+        txt_out, csv_out = run_audit(board_path, previous, top_n=25)
+        print(f"Delta audit report: {txt_out}")
+        print(f"Delta audit rows: {csv_out}")
+    except Exception as exc:
+        print(f"Delta audit skipped due to error: {exc}")
 
 
 
@@ -406,21 +757,109 @@ def _as_float(value) -> float | None:
         return None
 
 
+def _enforce_production_knn_history_qa(pack: dict) -> None:
+    """
+    Prevent accidental use of same-season fallback comps as historical comps.
+    """
+    meta = pack.get("meta", {}) if isinstance(pack, dict) else {}
+    if str(meta.get("status", "")) != "ok":
+        return
+
+    years_count = int(_as_float(meta.get("years_count")) or 0)
+    years_min = meta.get("years_min", "")
+    years_max = meta.get("years_max", "")
+    single_year = years_count <= 1 or (
+        str(years_min).strip() != "" and str(years_min) == str(years_max)
+    )
+    if not single_year:
+        return
+
+    msg = (
+        "Production percentile KNN QA failed: comps source is single-year only "
+        f"(years={years_min}-{years_max}, years_count={years_count}). "
+        "Historical comps require multi-year data. "
+        "Set ALLOW_SINGLE_YEAR_PRODUCTION_KNN=1 to override intentionally."
+    )
+    if ALLOW_SINGLE_YEAR_PRODUCTION_KNN:
+        print(f"WARNING: {msg}")
+        return
+    print(msg)
+    raise SystemExit(2)
+
+
 def _clamp(value: float, lo: float, hi: float) -> float:
     return max(lo, min(hi, value))
+
+
+def _language_feature_block(
+    *,
+    lang: dict,
+    lang_risk_hits: int,
+    risk_flags: list[int],
+    extra_risk_hits: list[int],
+) -> dict:
+    """
+    Derive simple, explainable language features with bounded influence.
+    """
+    word_count = int(_as_float(lang.get("lang_text_coverage")) or 0)
+    source_count = int(_as_float(lang.get("lang_source_count")) or 0)
+    traits = [
+        _as_float(lang.get("lang_trait_processing")) or 50.0,
+        _as_float(lang.get("lang_trait_technique")) or 50.0,
+        _as_float(lang.get("lang_trait_explosiveness")) or 50.0,
+        _as_float(lang.get("lang_trait_physicality")) or 50.0,
+        _as_float(lang.get("lang_trait_competitiveness")) or 50.0,
+        _as_float(lang.get("lang_trait_versatility")) or 50.0,
+    ]
+    positive_trait_rate = sum(1 for t in traits if float(t) >= 58.0) / len(traits)
+
+    risk_flag_values = [int(v) for v in risk_flags if v is not None]
+    developmental_flag_rate = (
+        sum(risk_flag_values) / len(risk_flag_values) if risk_flag_values else 0.0
+    )
+    total_risk_hits = max(0, int(lang_risk_hits) + sum(max(0, int(x)) for x in extra_risk_hits))
+    concern_rate = (total_risk_hits / max(40.0, float(word_count))) * 100.0 if word_count > 0 else 0.0
+
+    # Bounded language delta: refine, never rewrite rankings.
+    base_delta = (
+        ((positive_trait_rate * 100.0) - 50.0) * 0.020
+        - (developmental_flag_rate * 0.75)
+        - (_clamp(concern_rate, 0.0, 25.0) * 0.030)
+    )
+    source_conf = _clamp(float(source_count) / 3.0, 0.0, 1.0)
+    coverage_conf = _clamp(float(word_count) / 180.0, 0.0, 1.0)
+    confidence = max(0.0, source_conf * coverage_conf)
+    applied_delta = _clamp(base_delta * confidence, -0.9, 0.9)
+
+    return {
+        "lang_report_word_count": word_count,
+        "lang_positive_trait_rate": round(positive_trait_rate, 4),
+        "lang_developmental_flag_rate": round(developmental_flag_rate, 4),
+        "lang_concern_rate": round(concern_rate, 4),
+        "language_adjustment_raw": round(base_delta, 4),
+        "language_adjustment_confidence": round(confidence, 4),
+        "language_adjustment_applied": round(applied_delta, 4),
+        "language_adjustment_cap": 0.9,
+    }
 
 
 def _guardrail_production_component(position: str, raw_component: float) -> tuple[float, float]:
     neutral = PRODUCTION_SIGNAL_NEUTRAL
     if position == "QB":
         multiplier = PRODUCTION_SIGNAL_QB_MULTIPLIER
-        max_delta = PRODUCTION_SIGNAL_QB_MAX_DELTA
+        max_up_delta = PRODUCTION_SIGNAL_QB_MAX_DELTA
+        max_down_delta = PRODUCTION_SIGNAL_QB_MAX_DELTA
+    elif position in {"EDGE", "DT", "LB"}:
+        multiplier = PRODUCTION_SIGNAL_FRONT7_MULTIPLIER
+        max_up_delta = PRODUCTION_SIGNAL_FRONT7_MAX_UP_DELTA
+        max_down_delta = PRODUCTION_SIGNAL_FRONT7_MAX_DOWN_DELTA
     else:
         multiplier = PRODUCTION_SIGNAL_MULTIPLIER
-        max_delta = PRODUCTION_SIGNAL_MAX_DELTA
+        max_up_delta = PRODUCTION_SIGNAL_MAX_DELTA
+        max_down_delta = PRODUCTION_SIGNAL_MAX_DELTA
 
     delta = (float(raw_component) - neutral) * multiplier
-    guarded_delta = _clamp(delta, -abs(max_delta), abs(max_delta))
+    guarded_delta = _clamp(delta, -abs(max_down_delta), abs(max_up_delta))
     guarded_component = neutral + guarded_delta
     return guarded_component, guarded_delta
 
@@ -520,10 +959,12 @@ def _compute_formula_score(
     cfb_player_available: bool,
     cfb_prod_coverage_count: int,
     cfb_prod_reliability: float,
+    cfb_prod_quality_label: str,
     prior_signal: float,
     lang: dict,
     ras: dict,
     md_features: dict,
+    athletic_profile: dict,
     external_rank: int | None,
     analyst_score: float,
     espn_volatility_flag: bool,
@@ -537,6 +978,11 @@ def _compute_formula_score(
     atoz_risk_penalty: float,
     si_text_trait_signal: float,
     si_risk_penalty: float,
+    cbs_text_trait_signal: float,
+    cbs_risk_penalty: float,
+    years_played: float | None,
+    draft_age: float | None,
+    early_declare: bool,
 ) -> dict:
     film_trait = _as_float(grades.get("film_trait_score"))
     film_enabled = ENABLE_FILM_WEIGHTING
@@ -568,46 +1014,149 @@ def _compute_formula_score(
         trait_parts.append((0.04, atoz_text_trait_signal))
     if si_text_trait_signal > 0:
         trait_parts.append((0.02, si_text_trait_signal))
+    if cbs_text_trait_signal > 0:
+        trait_parts.append((0.05, cbs_text_trait_signal))
     trait_component = _weighted_mean(trait_parts) or (58.0 if position == "QB" else 60.0)
 
     prod_parts: list[tuple[float, float]] = []
+    pff_weight = 0.42
+    if position in {"EDGE", "DT", "LB"}:
+        pff_weight = 0.30
+    elif position in {"CB", "S"}:
+        pff_weight = 0.34
     if pff_grade is not None:
-        prod_parts.append((0.42, pff_grade))
+        prod_parts.append((pff_weight, pff_grade))
     prod_parts.append((0.24, espn_prod_signal))
     if pp_player_available:
         prod_parts.append((0.12, pp_skill_signal))
     if cfb_player_available:
         cov_boost = min(1.0, max(0.5, float(cfb_prod_coverage_count) / 3.0))
         reliability = max(0.0, min(1.0, float(cfb_prod_reliability)))
-        prod_parts.append((0.22 * cov_boost * reliability, cfb_prod_signal))
+        cfb_weight_base = 0.22
+        if position in {"EDGE", "DT", "LB"}:
+            cfb_weight_base = 0.07
+        elif position in {"CB", "S"}:
+            cfb_weight_base = 0.12
+        if str(cfb_prod_quality_label or "").strip().lower() == "proxy":
+            cfb_weight_base *= 0.80
+        prod_parts.append((cfb_weight_base * cov_boost * reliability, cfb_prod_signal))
     production_component_raw = _weighted_mean(prod_parts) or 62.0
     production_component, production_guardrail_delta = _guardrail_production_component(
         position, production_component_raw
     )
+    # Front-seven production is noisy year-to-year; compress its influence.
+    if position in {"EDGE", "DT", "LB"}:
+        production_component = PRODUCTION_SIGNAL_NEUTRAL + (
+            (production_component - PRODUCTION_SIGNAL_NEUTRAL) * 0.70
+        )
+        if (
+            cfb_player_available
+            and str(cfb_prod_quality_label or "").strip().lower() == "proxy"
+            and int(cfb_prod_coverage_count) <= 1
+        ):
+            production_component = min(production_component, 70.0)
+        production_guardrail_delta = production_component - PRODUCTION_SIGNAL_NEUTRAL
 
     official_ras = _as_float(ras.get("ras_estimate"))
     md_speed_pct = _as_float(md_features.get("md_speed_pct"))
     md_explosion_pct = _as_float(md_features.get("md_explosion_pct"))
     md_agility_pct = _as_float(md_features.get("md_agility_pct"))
 
-    # Critical: do not use size-only MockDraftable proxy as athleticism.
-    # Until official combine testing arrives, keep athletic component neutral.
-    if official_ras is not None:
+    # Legacy athletic fallback from MockDraftable composites (kept as fallback only).
+    legacy_athletic_parts: list[tuple[float, float]] = []
+    if md_speed_pct is not None:
+        legacy_athletic_parts.append((0.45, md_speed_pct))
+    if md_explosion_pct is not None:
+        legacy_athletic_parts.append((0.35, md_explosion_pct))
+    if md_agility_pct is not None:
+        legacy_athletic_parts.append((0.20, md_agility_pct))
+    legacy_athletic_component = _weighted_mean(legacy_athletic_parts)
+    if legacy_athletic_component is None:
+        legacy_athletic_component = 68.0 if position == "QB" else 70.0
+
+    # New position+era adjusted athletic profile.
+    athletic_profile_score = _as_float(athletic_profile.get("athletic_profile_score"))
+    athletic_profile_cov_count = int(_as_float(athletic_profile.get("athletic_metric_coverage_count")) or 0)
+    athletic_profile_cov_rate = float(_as_float(athletic_profile.get("athletic_metric_coverage_rate")) or 0.0)
+    athletic_profile_missing_penalty = float(_as_float(athletic_profile.get("athletic_missing_penalty")) or 0.0)
+    athletic_profile_variance_penalty = float(_as_float(athletic_profile.get("athletic_variance_penalty")) or 0.0)
+
+    athletic_evidence_count = max(athletic_profile_cov_count, len(legacy_athletic_parts))
+    athletic_cap_applied = ""
+    athletic_source = "neutral_default"
+    if official_ras is not None and athletic_profile_score is not None:
+        profile_w = _clamp(0.20 + (0.35 * athletic_profile_cov_rate), 0.20, 0.55)
+        athletic_component = ((1.0 - profile_w) * (official_ras * 10.0)) + (profile_w * athletic_profile_score)
+        athletic_source = "ras_plus_position_era_profile"
+    elif official_ras is not None:
         athletic_component = official_ras * 10.0
+        athletic_source = "ras_only"
+    elif athletic_profile_score is not None:
+        profile_w = _clamp(0.20 + (0.55 * athletic_profile_cov_rate), 0.20, 0.75)
+        athletic_component = (profile_w * athletic_profile_score) + ((1.0 - profile_w) * legacy_athletic_component)
+        athletic_source = "position_era_profile_plus_md"
     else:
-        athletic_parts: list[tuple[float, float]] = []
-        if md_speed_pct is not None:
-            athletic_parts.append((0.45, md_speed_pct))
-        if md_explosion_pct is not None:
-            athletic_parts.append((0.35, md_explosion_pct))
-        if md_agility_pct is not None:
-            athletic_parts.append((0.20, md_agility_pct))
-        athletic_component = _weighted_mean(athletic_parts)
-        if athletic_component is None:
-            athletic_component = 68.0 if position == "QB" else 70.0
+        athletic_component = legacy_athletic_component
+        athletic_source = "md_fallback"
+
+    if position in {"EDGE", "DT", "LB"}:
+        # Keep front-seven athletic upside from sparse testing in check.
+        if athletic_evidence_count <= 2:
+            capped = min(athletic_component, 86.0)
+            if capped < athletic_component:
+                athletic_component = capped
+                athletic_cap_applied = "front7_sparse_testing_cap_86"
 
     size_component = float(grades.get("size_score", 75.0) or 75.0)
     context_component = _class_context_score(class_year)
+    years_played_context_adjustment = 0.0
+    years_played_risk_adjustment = 0.0
+    years_played_bucket = ""
+    if years_played is not None:
+        yp = float(years_played)
+        if yp >= 4.0:
+            years_played_bucket = "4plus"
+            years_played_context_adjustment = 0.65
+            years_played_risk_adjustment = -0.10
+        elif yp >= 3.0:
+            years_played_bucket = "3"
+            years_played_context_adjustment = 0.20
+        elif yp > 0:
+            years_played_bucket = "2orless"
+            years_played_context_adjustment = -0.35
+            years_played_risk_adjustment = 0.18
+    context_component += years_played_context_adjustment
+
+    draft_age_context_adjustment = 0.0
+    draft_age_risk_adjustment = 0.0
+    draft_age_bucket = ""
+    if draft_age is not None:
+        da = float(draft_age)
+        if da < 21.0:
+            draft_age_bucket = "very_young"
+            draft_age_context_adjustment = 0.12
+            draft_age_risk_adjustment = 0.05
+        elif da <= 22.6:
+            draft_age_bucket = "prime"
+            draft_age_context_adjustment = 0.0
+        elif da <= 23.5:
+            draft_age_bucket = "older"
+            draft_age_context_adjustment = -0.08
+            draft_age_risk_adjustment = 0.04
+        else:
+            draft_age_bucket = "oldest"
+            draft_age_context_adjustment = -0.18
+            draft_age_risk_adjustment = 0.10
+    if ENABLE_DRAFT_AGE_SCORING:
+        context_component += draft_age_context_adjustment
+
+    early_declare_context_adjustment = 0.0
+    early_declare_risk_adjustment = 0.0
+    if early_declare:
+        early_declare_context_adjustment = 0.10
+        early_declare_risk_adjustment = -0.06
+    if ENABLE_EARLY_DECLARE_SCORING:
+        context_component += early_declare_context_adjustment
     if film_enabled and _as_float(grades.get("film_trait_coverage")) and float(grades.get("film_trait_coverage", 0.0) or 0.0) >= 0.75:
         context_component += 1.2
     if _as_float(lang.get("lang_text_coverage")) and float(lang.get("lang_text_coverage", 0.0) or 0.0) >= 120:
@@ -615,6 +1164,7 @@ def _compute_formula_score(
 
     has_testing_signal = (
         official_ras is not None
+        or athletic_profile_cov_count > 0
         or md_speed_pct is not None
         or md_explosion_pct is not None
         or md_agility_pct is not None
@@ -639,6 +1189,14 @@ def _compute_formula_score(
     risk_penalty += max(0.0, float(br_risk_penalty or 0.0))
     risk_penalty += max(0.0, float(atoz_risk_penalty or 0.0))
     risk_penalty += max(0.0, float(si_risk_penalty or 0.0))
+    risk_penalty += max(0.0, float(cbs_risk_penalty or 0.0))
+    risk_penalty += (0.35 * athletic_profile_missing_penalty)
+    risk_penalty += (0.25 * athletic_profile_variance_penalty)
+    risk_penalty += years_played_risk_adjustment
+    if ENABLE_DRAFT_AGE_SCORING:
+        risk_penalty += draft_age_risk_adjustment
+    if ENABLE_EARLY_DECLARE_SCORING:
+        risk_penalty += early_declare_risk_adjustment
     # Data-sufficiency penalty: sparse profiles should not sit near the top on neutral defaults.
     if position == "QB":
         risk_penalty += 0.55 * missing_signal_count
@@ -650,6 +1208,13 @@ def _compute_formula_score(
         risk_penalty += 0.22 * missing_signal_count
         if missing_signal_count >= 3:
             risk_penalty += 0.35
+        # Thin proxy production for non-QB profiles gets a small risk tax.
+        if (
+            cfb_player_available
+            and str(cfb_prod_quality_label or "").strip().lower() == "proxy"
+            and int(cfb_prod_coverage_count) <= 1
+        ):
+            risk_penalty += 0.45 if position in {"EDGE", "DT", "LB"} else 0.25
     if int(lang.get("lang_risk_flag", 0) or 0) == 1:
         risk_penalty += 0.6
     if position == "QB" and analyst_score < 40:
@@ -657,12 +1222,17 @@ def _compute_formula_score(
     if missing_signal_count >= 3:
         context_component -= 1.0 if position == "QB" else 0.5
 
+    trait_w, prod_w, athletic_w, size_w, context_w = 0.38, 0.24, 0.18, 0.10, 0.10
+    if position in {"EDGE", "DT", "LB"}:
+        # De-emphasize production for front-seven to avoid pass-rush stat spikes driving ranks.
+        trait_w, prod_w, athletic_w, size_w, context_w = 0.42, 0.18, 0.18, 0.10, 0.12
+
     raw_formula_score = (
-        0.38 * trait_component
-        + 0.24 * production_component
-        + 0.18 * athletic_component
-        + 0.10 * size_component
-        + 0.10 * context_component
+        (trait_w * trait_component)
+        + (prod_w * production_component)
+        + (athletic_w * athletic_component)
+        + (size_w * size_component)
+        + (context_w * context_component)
         - risk_penalty
     )
     # Calibrate to scouting-grade scale so round-value mapping is realistic.
@@ -673,8 +1243,31 @@ def _compute_formula_score(
     final_grade += float(POSITION_VALUE_ADJUSTMENT.get(position, 0.0))
     final_grade = max(55.0, min(95.0, final_grade))
 
+    evidence_missing_count = sum(
+        0 if present else 1
+        for present in (has_film_signal, has_language_signal, has_testing_signal, has_market_signal)
+    )
+    evidence_guardrail_penalty = 0.0
+    if final_grade >= UPSIDE_EVIDENCE_GUARDRAIL_ACTIVE_GRADE:
+        if official_ras is None and athletic_evidence_count <= 1 and evidence_missing_count >= 2:
+            evidence_guardrail_penalty = min(
+                UPSIDE_EVIDENCE_GUARDRAIL_MAX_PENALTY,
+                evidence_missing_count * UPSIDE_EVIDENCE_GUARDRAIL_PENALTY_PER_MISSING,
+            )
+            final_grade = max(55.0, min(95.0, final_grade - evidence_guardrail_penalty))
+
     floor = max(52.0, final_grade - (1.8 + risk_penalty))
     ceiling = min(97.0, final_grade + (2.0 if class_year.upper() in {"SO", "RSO", "JR", "RSJ"} else 1.3))
+
+    if position == "QB":
+        production_max_up_delta = PRODUCTION_SIGNAL_QB_MAX_DELTA
+        production_max_down_delta = PRODUCTION_SIGNAL_QB_MAX_DELTA
+    elif position in {"EDGE", "DT", "LB"}:
+        production_max_up_delta = PRODUCTION_SIGNAL_FRONT7_MAX_UP_DELTA
+        production_max_down_delta = PRODUCTION_SIGNAL_FRONT7_MAX_DOWN_DELTA
+    else:
+        production_max_up_delta = PRODUCTION_SIGNAL_MAX_DELTA
+        production_max_down_delta = PRODUCTION_SIGNAL_MAX_DELTA
 
     return {
         "formula_trait_component": round(trait_component, 2),
@@ -682,9 +1275,75 @@ def _compute_formula_score(
         "formula_production_component": round(production_component, 2),
         "formula_production_guardrail_delta": round(production_guardrail_delta, 2),
         "formula_athletic_component": round(athletic_component, 2),
+        "formula_athletic_evidence_count": athletic_evidence_count,
+        "formula_athletic_source": athletic_source,
+        "formula_athletic_cap_applied": athletic_cap_applied,
+        "athletic_profile_score": athletic_profile.get("athletic_profile_score", ""),
+        "athletic_speed_score": athletic_profile.get("athletic_speed_score", ""),
+        "athletic_explosion_score": athletic_profile.get("athletic_explosion_score", ""),
+        "athletic_agility_score": athletic_profile.get("athletic_agility_score", ""),
+        "athletic_size_adj_score": athletic_profile.get("athletic_size_adj_score", ""),
+        "athletic_metric_coverage_count": athletic_profile.get("athletic_metric_coverage_count", ""),
+        "athletic_metric_expected_count": athletic_profile.get("athletic_metric_expected_count", ""),
+        "athletic_metric_missing_count": athletic_profile.get("athletic_metric_missing_count", ""),
+        "athletic_metric_coverage_rate": athletic_profile.get("athletic_metric_coverage_rate", ""),
+        "athletic_missing_penalty": athletic_profile.get("athletic_missing_penalty", ""),
+        "athletic_variance_penalty": athletic_profile.get("athletic_variance_penalty", ""),
+        "athletic_hit_bin": athletic_profile.get("athletic_hit_bin", ""),
+        "athletic_hit_bin_sample_n": athletic_profile.get("athletic_hit_bin_sample_n", ""),
+        "athletic_hit_rate_round12_bin": athletic_profile.get("athletic_hit_rate_round12_bin", ""),
+        "athletic_hit_rate_top100_bin": athletic_profile.get("athletic_hit_rate_top100_bin", ""),
+        "athletic_comp_confidence": athletic_profile.get("athletic_comp_confidence", ""),
+        "athletic_nn_comp_1": athletic_profile.get("athletic_nn_comp_1", ""),
+        "athletic_nn_comp_1_year": athletic_profile.get("athletic_nn_comp_1_year", ""),
+        "athletic_nn_comp_1_picktotal": athletic_profile.get("athletic_nn_comp_1_picktotal", ""),
+        "athletic_nn_comp_1_similarity": athletic_profile.get("athletic_nn_comp_1_similarity", ""),
+        "athletic_nn_comp_2": athletic_profile.get("athletic_nn_comp_2", ""),
+        "athletic_nn_comp_2_year": athletic_profile.get("athletic_nn_comp_2_year", ""),
+        "athletic_nn_comp_2_picktotal": athletic_profile.get("athletic_nn_comp_2_picktotal", ""),
+        "athletic_nn_comp_2_similarity": athletic_profile.get("athletic_nn_comp_2_similarity", ""),
+        "athletic_nn_comp_3": athletic_profile.get("athletic_nn_comp_3", ""),
+        "athletic_nn_comp_3_year": athletic_profile.get("athletic_nn_comp_3_year", ""),
+        "athletic_nn_comp_3_picktotal": athletic_profile.get("athletic_nn_comp_3_picktotal", ""),
+        "athletic_nn_comp_3_similarity": athletic_profile.get("athletic_nn_comp_3_similarity", ""),
+        "athletic_pct_forty": athletic_profile.get("athletic_pct_forty", ""),
+        "athletic_pct_ten_split": athletic_profile.get("athletic_pct_ten_split", ""),
+        "athletic_pct_vertical": athletic_profile.get("athletic_pct_vertical", ""),
+        "athletic_pct_broad": athletic_profile.get("athletic_pct_broad", ""),
+        "athletic_pct_bench": athletic_profile.get("athletic_pct_bench", ""),
+        "athletic_pct_shuttle": athletic_profile.get("athletic_pct_shuttle", ""),
+        "athletic_pct_three_cone": athletic_profile.get("athletic_pct_three_cone", ""),
+        "athletic_pct_height_in": athletic_profile.get("athletic_pct_height_in", ""),
+        "athletic_pct_weight_lb": athletic_profile.get("athletic_pct_weight_lb", ""),
+        "athletic_pct_arm_in": athletic_profile.get("athletic_pct_arm_in", ""),
+        "athletic_pct_hand_in": athletic_profile.get("athletic_pct_hand_in", ""),
+        "athletic_z_forty": athletic_profile.get("athletic_z_forty", ""),
+        "athletic_z_ten_split": athletic_profile.get("athletic_z_ten_split", ""),
+        "athletic_z_vertical": athletic_profile.get("athletic_z_vertical", ""),
+        "athletic_z_broad": athletic_profile.get("athletic_z_broad", ""),
+        "athletic_z_bench": athletic_profile.get("athletic_z_bench", ""),
+        "athletic_z_shuttle": athletic_profile.get("athletic_z_shuttle", ""),
+        "athletic_z_three_cone": athletic_profile.get("athletic_z_three_cone", ""),
+        "athletic_z_height_in": athletic_profile.get("athletic_z_height_in", ""),
+        "athletic_z_weight_lb": athletic_profile.get("athletic_z_weight_lb", ""),
+        "athletic_z_arm_in": athletic_profile.get("athletic_z_arm_in", ""),
+        "athletic_z_hand_in": athletic_profile.get("athletic_z_hand_in", ""),
         "formula_size_component": round(size_component, 2),
         "formula_context_component": round(context_component, 2),
+        "formula_years_played": round(float(years_played), 2) if years_played is not None else "",
+        "formula_years_played_bucket": years_played_bucket,
+        "formula_years_played_context_adjustment": round(years_played_context_adjustment, 2),
+        "formula_years_played_risk_adjustment": round(years_played_risk_adjustment, 2),
+        "formula_draft_age": round(float(draft_age), 3) if draft_age is not None else "",
+        "formula_draft_age_bucket": draft_age_bucket,
+        "formula_draft_age_context_adjustment": round(draft_age_context_adjustment, 2),
+        "formula_draft_age_risk_adjustment": round(draft_age_risk_adjustment, 2),
+        "formula_early_declare": int(bool(early_declare)),
+        "formula_early_declare_context_adjustment": round(early_declare_context_adjustment, 2),
+        "formula_early_declare_risk_adjustment": round(early_declare_risk_adjustment, 2),
         "formula_risk_penalty": round(risk_penalty, 2),
+        "formula_evidence_missing_count": evidence_missing_count,
+        "formula_evidence_guardrail_penalty": round(evidence_guardrail_penalty, 2),
         "formula_raw_score": round(raw_formula_score, 2),
         "formula_calibrated_grade": round(calibrated_grade, 2),
         "formula_prior_signal": round(prior_signal, 2),
@@ -694,11 +1353,16 @@ def _compute_formula_score(
         "formula_ceiling": round(ceiling, 2),
         "formula_round_value": round_from_grade(final_grade),
         "weight_production_multiplier": round(
-            PRODUCTION_SIGNAL_QB_MULTIPLIER if position == "QB" else PRODUCTION_SIGNAL_MULTIPLIER, 3
+            PRODUCTION_SIGNAL_QB_MULTIPLIER
+            if position == "QB"
+            else PRODUCTION_SIGNAL_FRONT7_MULTIPLIER
+            if position in {"EDGE", "DT", "LB"}
+            else PRODUCTION_SIGNAL_MULTIPLIER,
+            3,
         ),
-        "weight_production_max_delta": round(
-            PRODUCTION_SIGNAL_QB_MAX_DELTA if position == "QB" else PRODUCTION_SIGNAL_MAX_DELTA, 2
-        ),
+        "weight_production_max_delta": round(production_max_up_delta, 2),
+        "weight_production_max_up_delta": round(production_max_up_delta, 2),
+        "weight_production_max_down_delta": round(production_max_down_delta, 2),
     }
 
 
@@ -806,6 +1470,229 @@ def _consensus_outlier_cap(
     if consensus_mean_rank > 105:
         return 79.5
     return None
+
+
+def _front7_pass_rush_inflation_penalty(
+    *,
+    position: str,
+    is_diamond_exception: bool,
+    production_component: float,
+    production_guardrail_delta: float,
+    consensus_mean_rank: float | None,
+    consensus_source_count: int,
+    consensus_rank_std: float | None,
+    cfb_prod_available: bool,
+    cfb_prod_quality_label: str,
+    cfb_prod_reliability: float,
+    cfb_prod_coverage_count: int,
+    evidence_missing_count: int,
+    roi_pick_band: str,
+    roi_adjustment_applied: float,
+    roi_sample_n: int,
+    roi_surplus_z: float | None,
+    calibrated_success_prob: str | float | None,
+) -> tuple[float, str]:
+    """
+    Production inflation brake for EDGE/DT/LB.
+    Uses ROI and calibration outputs so pass-rush spikes refine, not rewrite, ranks.
+    """
+    if position not in {"EDGE", "DT", "LB"} or is_diamond_exception:
+        return 0.0, ""
+
+    rank = float(consensus_mean_rank) if consensus_mean_rank is not None else None
+    prod_up = max(0.0, float(production_component) - PRODUCTION_SIGNAL_NEUTRAL)
+    prod_delta = max(0.0, float(production_guardrail_delta))
+    if prod_up < 1.15 and prod_delta < 0.75:
+        return 0.0, ""
+    confidence = _consensus_confidence_factor(
+        consensus_source_count=consensus_source_count,
+        consensus_rank_std=consensus_rank_std,
+    )
+
+    penalty = 0.0
+    reasons: list[str] = []
+
+    base = max(0.0, (prod_up - 1.0) * 0.12) + max(0.0, (prod_delta - 0.5) * 0.10)
+    penalty += base
+    if base > 0:
+        reasons.append(f"prod_up={prod_up:.2f}")
+
+    if rank is not None:
+        rank_mult = 0.0
+        if rank > 100:
+            rank_mult = 0.95
+        elif rank > 70:
+            rank_mult = 0.72
+        elif rank > 45:
+            rank_mult = 0.50
+        elif rank > 25:
+            rank_mult = 0.28
+        if rank_mult > 0:
+            r_pen = min(0.65, rank_mult * max(0.0, prod_up - 0.8) * 0.34)
+            penalty += r_pen
+            if r_pen > 0:
+                reasons.append(f"rank={rank:.1f}")
+
+    if consensus_source_count <= 2:
+        penalty += 0.12 * confidence
+        reasons.append("low_consensus_sources")
+
+    roi_band = str(roi_pick_band or "").strip().upper()
+    roi_adj = float(roi_adjustment_applied or 0.0)
+    if roi_adj > 0 and roi_band in {"R3", "R4", "R5+"}:
+        roi_pen = min(0.45, roi_adj * 2.6)
+        penalty += roi_pen
+        if roi_pen > 0:
+            reasons.append(f"roi_{roi_band}_plus")
+        if roi_sample_n < 40:
+            penalty += 0.14
+            reasons.append("roi_small_sample")
+        if roi_surplus_z is not None and float(roi_surplus_z) >= 1.2:
+            penalty += 0.10
+            reasons.append("roi_high_z")
+
+    quality = str(cfb_prod_quality_label or "").strip().lower()
+    if quality == "proxy" and float(cfb_prod_reliability or 0.0) <= 0.35 and prod_up >= 1.5:
+        penalty += 0.22
+        reasons.append("proxy_prod")
+    elif (not cfb_prod_available) and prod_up >= 2.0:
+        penalty += 0.16
+        reasons.append("no_cfb_prod")
+
+    # Extra sparse-profile brake: pass-rush spikes with thin evidence should not dominate top ranks.
+    if quality in {"proxy", "mixed"} and rank is not None and rank >= 60.0 and prod_up >= 1.3:
+        sparse_pen = 0.0
+        if float(cfb_prod_reliability or 0.0) <= 0.45:
+            sparse_pen += 0.12
+        if int(cfb_prod_coverage_count) <= 2:
+            sparse_pen += 0.10
+        if int(evidence_missing_count) >= 2:
+            sparse_pen += min(0.18, 0.07 * (int(evidence_missing_count) - 1))
+        if sparse_pen > 0:
+            penalty += sparse_pen * confidence
+            reasons.append("sparse_profile_brake")
+
+    prob = _as_float(calibrated_success_prob)
+    if prob is not None and rank is not None:
+        expected_floor = 0.60
+        if rank <= 20:
+            expected_floor = 0.84
+        elif rank <= 35:
+            expected_floor = 0.80
+        elif rank <= 50:
+            expected_floor = 0.76
+        elif rank <= 75:
+            expected_floor = 0.71
+        elif rank <= 100:
+            expected_floor = 0.66
+        if prob < expected_floor:
+            cal_pen = min(0.85, (expected_floor - prob) * 4.5)
+            penalty += cal_pen
+            if cal_pen > 0:
+                reasons.append(f"cal_prob<{expected_floor:.2f}")
+    elif rank is not None and rank > 40:
+        penalty += 0.10
+        reasons.append("no_cal_prob")
+
+    penalty = round(_clamp(penalty, 0.0, FRONT7_INFLATION_BRAKE_MAX), 4)
+    return penalty, ";".join(reasons)
+
+
+def _cb_nickel_inflation_penalty(
+    *,
+    position: str,
+    is_diamond_exception: bool,
+    height_in: int | None,
+    weight_lb: int | None,
+    production_component: float,
+    production_guardrail_delta: float,
+    consensus_mean_rank: float | None,
+    consensus_source_count: int,
+    consensus_rank_std: float | None,
+    cfb_prod_quality_label: str,
+    cfb_prod_reliability: float,
+    cfb_prod_coverage_count: int,
+    cfb_prod_proxy_fallback_features: int,
+    external_rank: int | None,
+    pff_grade: float | None,
+) -> tuple[float, str]:
+    """
+    Targeted inflation brake for smaller/nickel-style CB profiles when production signals
+    materially outrun consensus support. This is a soft penalty, not a hard cap.
+    """
+    if position != "CB" or is_diamond_exception:
+        return 0.0, ""
+    if consensus_mean_rank is None or consensus_source_count < 2:
+        return 0.0, ""
+
+    rank = float(consensus_mean_rank)
+    if rank <= 35.0:
+        return 0.0, ""
+    prod_up = max(0.0, float(production_component) - (PRODUCTION_SIGNAL_NEUTRAL + 0.6))
+    prod_delta = max(0.0, float(production_guardrail_delta))
+    if prod_up < 1.0 and prod_delta < 0.8:
+        return 0.0, ""
+
+    is_nickel_frame = False
+    if height_in is not None and weight_lb is not None:
+        is_nickel_frame = int(height_in) <= 71 and int(weight_lb) <= 192
+
+    # Only apply when consensus is meaningfully lower than model momentum,
+    # or when profile looks like a smaller nickel with outsized production lift.
+    if rank < 45.0 and not (is_nickel_frame and (prod_up >= 2.3 or prod_delta >= 1.9)):
+        return 0.0, ""
+
+    confidence = _consensus_confidence_factor(
+        consensus_source_count=consensus_source_count,
+        consensus_rank_std=consensus_rank_std,
+    )
+    penalty = 0.0
+    reasons: list[str] = []
+
+    if rank > 95.0:
+        penalty += 0.55
+    elif rank > 80.0:
+        penalty += 0.42
+    elif rank > 65.0:
+        penalty += 0.30
+    elif rank > 50.0:
+        penalty += 0.18
+
+    penalty += max(0.0, prod_up - 0.9) * 0.16
+    penalty += max(0.0, prod_delta - 0.5) * 0.14
+    if is_nickel_frame:
+        penalty += 0.14
+        reasons.append("nickel_frame")
+
+    quality = str(cfb_prod_quality_label or "").strip().lower()
+    if quality == "proxy":
+        penalty += 0.18
+        reasons.append("proxy_prod")
+    elif quality == "mixed" and float(cfb_prod_reliability or 0.0) <= 0.55:
+        penalty += 0.10
+        reasons.append("mixed_low_rel")
+
+    if int(cfb_prod_coverage_count) <= 2:
+        penalty += 0.12
+        reasons.append("thin_cfb_cov")
+    if int(cfb_prod_proxy_fallback_features) >= 1:
+        penalty += 0.10
+        reasons.append("proxy_fallback")
+
+    # Keep true independently-supported outliers alive.
+    if external_rank is not None and int(external_rank) <= 55:
+        penalty -= 0.22
+        reasons.append("ext_support")
+    if pff_grade is not None and float(pff_grade) >= 84.0:
+        penalty -= 0.18
+        reasons.append("pff_support")
+
+    penalty = _clamp(penalty * confidence, 0.0, NICKEL_CB_INFLATION_BRAKE_MAX)
+    if penalty <= 0:
+        return 0.0, ""
+    reasons.append(f"rank={rank:.1f}")
+    reasons.append(f"prod_up={prod_up:.2f}")
+    return round(penalty, 4), ";".join(reasons)
 
 
 def _diamond_exception_profile(
@@ -1075,6 +1962,79 @@ def _soft_ceiling_penalty(model_score: float, soft_target: float | None) -> floa
     return round(min(1.8, 0.55 * over), 2)
 
 
+def _consensus_tail_soft_penalty(
+    *,
+    position: str,
+    model_score: float,
+    consensus_mean_rank: float | None,
+    consensus_source_count: int,
+    consensus_rank_std: float | None,
+    external_rank: int | None,
+    pff_grade: float | None,
+    language_trait: float | None,
+    is_diamond_exception: bool,
+) -> tuple[float, float | None]:
+    """
+    Cross-position soft brake for consensus-tail profiles (mean rank ~90-150).
+    This is intentionally mild and support-aware so it refines, not rewrites, ranks.
+    """
+    if is_diamond_exception:
+        return 0.0, None
+    if consensus_mean_rank is None or consensus_source_count < 2:
+        return 0.0, None
+
+    mean_rank = float(consensus_mean_rank)
+    if mean_rank < 90.0 or mean_rank > 150.0:
+        return 0.0, None
+
+    confidence = _consensus_confidence_factor(
+        consensus_source_count=consensus_source_count,
+        consensus_rank_std=consensus_rank_std,
+    )
+
+    # Base target by consensus tail band.
+    if mean_rank > 135.0:
+        target = 78.8
+    elif mean_rank > 120.0:
+        target = 79.4
+    elif mean_rank > 105.0:
+        target = 80.0
+    else:
+        target = 80.6
+
+    # Premium positions can carry slightly higher model scores in this band.
+    if position == "QB":
+        target += 0.45
+    elif position in {"OT", "EDGE", "CB"}:
+        target += 0.20
+
+    # Independent support lifts target and avoids false suppression.
+    if external_rank is not None:
+        if external_rank <= 50:
+            target += 0.80
+        elif external_rank <= 75:
+            target += 0.45
+        elif external_rank <= 100:
+            target += 0.15
+    if pff_grade is not None:
+        if pff_grade >= 88.0:
+            target += 0.55
+        elif pff_grade >= 84.0:
+            target += 0.25
+    if language_trait is not None and language_trait >= 60.0:
+        target += 0.20
+
+    # Split boards => loosen braking.
+    target += (1.0 - confidence) * 0.50
+
+    if model_score <= target:
+        return 0.0, round(target, 2)
+
+    over = model_score - target
+    penalty = min(1.6, (0.55 * over * confidence) + (0.10 if mean_rank > 120.0 else 0.0))
+    return round(max(0.0, penalty), 2), round(target, 2)
+
+
 def _consensus_hard_cap(
     *,
     position: str,
@@ -1163,13 +2123,19 @@ def _cfb_prod_snapshot_label(position: str, cfb: dict) -> str:
             parts.append(f"QB EPA/play {cfb.get('cfb_qb_epa_per_play')}")
         if str(cfb.get("cfb_qb_pressure_signal", "")).strip():
             parts.append(f"QB pressure signal {cfb.get('cfb_qb_pressure_signal')}")
+        if str(cfb.get("cfb_opp_def_toughness_index", "")).strip():
+            parts.append(f"opp-def index {cfb.get('cfb_opp_def_toughness_index')}")
         return "; ".join(parts)
     if pos in {"WR", "TE"}:
         parts = []
         if str(cfb.get("cfb_wrte_yprr", "")).strip():
             parts.append(f"YPRR {cfb.get('cfb_wrte_yprr')}")
+        if str(cfb.get("cfb_wrte_targets_per_route", "")).strip():
+            parts.append(f"targets/route {cfb.get('cfb_wrte_targets_per_route')}")
         if str(cfb.get("cfb_wrte_target_share", "")).strip():
             parts.append(f"target share {cfb.get('cfb_wrte_target_share')}")
+        if str(cfb.get("cfb_opp_def_toughness_index", "")).strip():
+            parts.append(f"opp-def index {cfb.get('cfb_opp_def_toughness_index')}")
         return "; ".join(parts)
     if pos == "RB":
         parts = []
@@ -1177,14 +2143,85 @@ def _cfb_prod_snapshot_label(position: str, cfb: dict) -> str:
             parts.append(f"explosive run rate {cfb.get('cfb_rb_explosive_rate')}")
         if str(cfb.get("cfb_rb_missed_tackles_forced_per_touch", "")).strip():
             parts.append(f"MTF/touch {cfb.get('cfb_rb_missed_tackles_forced_per_touch')}")
+        if str(cfb.get("cfb_opp_def_toughness_index", "")).strip():
+            parts.append(f"opp-def index {cfb.get('cfb_opp_def_toughness_index')}")
         return "; ".join(parts)
     if pos == "EDGE":
-        val = cfb.get("cfb_edge_pressure_rate", "")
-        return f"pressure rate {val}" if str(val).strip() else ""
+        parts = []
+        if str(cfb.get("cfb_edge_pressure_rate", "")).strip():
+            parts.append(f"pressure/pr-snap {cfb.get('cfb_edge_pressure_rate')}")
+        if str(cfb.get("cfb_edge_sacks_per_pr_snap", "")).strip():
+            parts.append(f"sacks/pr-snap {cfb.get('cfb_edge_sacks_per_pr_snap')}")
+        return "; ".join(parts)
     if pos in {"CB", "S"}:
-        val = cfb.get("cfb_db_coverage_plays_per_target", "")
-        return f"coverage plays/target {val}" if str(val).strip() else ""
+        parts = []
+        if str(cfb.get("cfb_db_coverage_plays_per_target", "")).strip():
+            parts.append(f"coverage plays/target {cfb.get('cfb_db_coverage_plays_per_target')}")
+        if str(cfb.get("cfb_db_yards_allowed_per_coverage_snap", "")).strip():
+            parts.append(f"yards allowed/cov snap {cfb.get('cfb_db_yards_allowed_per_coverage_snap')}")
+        return "; ".join(parts)
     return ""
+
+
+def _cfb_proxy_audit_label(position: str, cfb: dict) -> str:
+    pos = normalize_pos(position)
+    if pos in {"WR", "TE"}:
+        val = str(cfb.get("cfb_wrte_targets_per_route", "")).strip()
+        src = str(cfb.get("cfb_wrte_targets_per_route_source", "")).strip()
+        wt = str(cfb.get("cfb_wrte_targets_per_route_weight", "")).strip()
+        if val:
+            return f"targets/route={val} source={src or 'unknown'} wt={wt or 'n/a'}"
+    if pos == "EDGE":
+        pr = str(cfb.get("cfb_edge_pressure_rate", "")).strip()
+        sk = str(cfb.get("cfb_edge_sacks_per_pr_snap", "")).strip()
+        src = str(cfb.get("cfb_edge_sacks_per_pr_snap_source", "")).strip()
+        pwt = str(cfb.get("cfb_edge_pressure_weight", "")).strip()
+        swt = str(cfb.get("cfb_edge_sack_weight", "")).strip()
+        parts = []
+        if pr:
+            parts.append(f"pressure/pr={pr}")
+        if sk:
+            parts.append(f"sacks/pr={sk}")
+        if src:
+            parts.append(f"sack_src={src}")
+        if pwt:
+            parts.append(f"p_wt={pwt}")
+        if swt:
+            parts.append(f"s_wt={swt}")
+        return " ".join(parts)
+    if pos in {"CB", "S"}:
+        yacs = str(cfb.get("cfb_db_yards_allowed_per_coverage_snap", "")).strip()
+        src = str(cfb.get("cfb_db_yards_allowed_per_cov_snap_source", "")).strip()
+        cwt = str(cfb.get("cfb_db_cov_weight", "")).strip()
+        ywt = str(cfb.get("cfb_db_yacs_weight", "")).strip()
+        if yacs:
+            return f"yards_allowed/cov={yacs} source={src or 'unknown'} cov_wt={cwt or 'n/a'} yacs_wt={ywt or 'n/a'}"
+    return ""
+
+
+def _cfb_proxy_fallback_heavy_flag(cfb: dict) -> tuple[int, str]:
+    quality = str(cfb.get("cfb_prod_quality_label", "")).strip().lower()
+    coverage = int(_as_float(cfb.get("cfb_prod_coverage_count")) or 0)
+    fallback_count = int(_as_float(cfb.get("cfb_prod_proxy_fallback_features")) or 0)
+    reliability = float(_as_float(cfb.get("cfb_prod_reliability")) or 0.0)
+
+    reasons = []
+    if quality == "proxy":
+        reasons.append("proxy")
+    if coverage <= CFB_PROXY_FALLBACK_HEAVY_MAX_COVERAGE:
+        reasons.append(f"low_cov:{coverage}")
+    if fallback_count >= CFB_PROXY_FALLBACK_HEAVY_MIN_FALLBACKS:
+        reasons.append(f"fallbacks:{fallback_count}")
+    if reliability <= CFB_PROXY_FALLBACK_HEAVY_MAX_RELIABILITY:
+        reasons.append(f"low_rel:{round(reliability,2)}")
+
+    heavy = (
+        quality == "proxy"
+        and coverage <= CFB_PROXY_FALLBACK_HEAVY_MAX_COVERAGE
+        and fallback_count >= CFB_PROXY_FALLBACK_HEAVY_MIN_FALLBACKS
+        and reliability <= CFB_PROXY_FALLBACK_HEAVY_MAX_RELIABILITY
+    )
+    return (1 if heavy else 0), ("|".join(reasons) if heavy else "")
 
 
 def _build_scouting_sections(
@@ -1220,6 +2257,9 @@ def _build_scouting_sections(
     cfb_prod_quality,
     cfb_prod_reliability,
     consensus_rank: int,
+    historical_combine_comp_1: str,
+    historical_combine_comp_1_year,
+    historical_combine_comp_1_similarity,
 ) -> dict:
     strength_stack = [
         _compact_text(kiper_strength_tags, 90),
@@ -1284,9 +2324,20 @@ def _build_scouting_sections(
         if concerns
         else "Development checkpoints: consistency, role expansion pace, and matchup stress handling."
     )
+    hist_comp_text = ""
+    if str(historical_combine_comp_1 or "").strip():
+        sim_txt = str(historical_combine_comp_1_similarity or "").strip()
+        year_txt = str(historical_combine_comp_1_year or "").strip()
+        hist_comp_text = f" Historical combine comp: {historical_combine_comp_1}"
+        if year_txt:
+            hist_comp_text += f" ({year_txt})"
+        if sim_txt:
+            hist_comp_text += f", similarity {sim_txt}"
+        hist_comp_text += "."
+
     projection = (
         f"Best early team fit: {best_team_fit}. Scheme path: {best_scheme_fit}. "
-        f"Expected early deployment: {best_role}."
+        f"Expected early deployment: {best_role}.{hist_comp_text}"
     )
 
     return {
@@ -1296,6 +2347,7 @@ def _build_scouting_sections(
         "scouting_production_snapshot": production_snapshot,
         "scouting_board_movement": move_text,
         "scouting_role_projection": projection,
+        "scouting_historical_athletic_comp": hist_comp_text.strip(),
     }
 
 
@@ -1375,6 +2427,13 @@ def main() -> None:
     tdn_ringer_pack = load_tdn_ringer_signals()
     consensus_pack = load_consensus_board_signals()
     cfb_prod_pack = load_cfb_production_signals(target_season=2025)
+    draft_age_pack = load_draft_age_signals()
+    early_declare_pack = load_early_declare_signals()
+    production_knn_pack = load_production_percentile_pack()
+    _enforce_production_knn_history_qa(production_knn_pack)
+    roi_prior_pack = load_position_roi_priors()
+    historical_combine_pack = load_historical_combine_profiles()
+    historical_athletic_pack = load_historical_athletic_context()
     mockdraftable_baselines = load_mockdraftable_baselines()
     ras_benchmarks = load_ras_benchmarks()
     espn_by_name_pos = espn_pack.get("by_name_pos", {})
@@ -1390,7 +2449,12 @@ def main() -> None:
     consensus_by_name = consensus_pack
     cfb_prod_by_name_pos = cfb_prod_pack.get("by_name_pos", {})
     cfb_prod_by_name = cfb_prod_pack.get("by_name", {})
+    draft_age_by_name_pos = draft_age_pack.get("by_name_pos", {})
+    draft_age_by_name = draft_age_pack.get("by_name", {})
+    early_declare_by_name_pos = early_declare_pack.get("by_name_pos", {})
+    early_declare_by_name = early_declare_pack.get("by_name", {})
     calibration_cfg = load_calibration_config()
+    source_reliability = _load_source_reliability_weights()
     has_espn_signals = bool(espn_by_name_pos)
     has_pp_signals = bool(pp_by_name_pos)
 
@@ -1417,6 +2481,8 @@ def main() -> None:
         tdn_ringer = tdn_ringer_by_name_pos.get((key, pos), tdn_ringer_by_name.get(key, {}))
         consensus = consensus_by_name.get(key, {})
         cfb = cfb_prod_by_name_pos.get((key, pos), cfb_prod_by_name.get(key, {}))
+        draft_age_row = draft_age_by_name_pos.get((key, pos), draft_age_by_name.get(key, {}))
+        early_declare_row = early_declare_by_name_pos.get((key, pos), early_declare_by_name.get(key, {}))
         _assert_no_team_metrics_in_player_feed(row["player_name"], cfb)
 
         seed_height_in = parse_height_to_inches(row["height"]) or POSITION_DEFAULT_FRAME.get(pos, (74, 220))[0]
@@ -1453,7 +2519,11 @@ def main() -> None:
         pp_breakout_signal = float(pp.get("pp_breakout_signal", 55.0) or 55.0)
         pp_dominator_signal = float(pp.get("pp_dominator_signal", 55.0) or 55.0)
         pp_risk_flag = bool(pp.get("pp_risk_flag", 0))
+        pp_early_declare_flag = int(_as_float(pp.get("pp_early_declare")) or 0)
         pp_player_available = bool(str(pp.get("pp_data_coverage", "")).strip())
+        early_declare_source_flag = int(_as_float(early_declare_row.get("early_declare")) or 0)
+        early_declare_flag = int(pp_early_declare_flag == 1 or early_declare_source_flag == 1)
+        combine_invited_flag = int(_as_float(early_declare_row.get("combine_invited")) or 0)
         cfb_prod_signal = float(_as_float(cfb.get("cfb_prod_signal")) or 55.0)
         cfb_player_available = bool(int(_as_float(cfb.get("cfb_prod_available")) or 0))
         cfb_prod_coverage_count = int(_as_float(cfb.get("cfb_prod_coverage_count")) or 0)
@@ -1472,12 +2542,26 @@ def main() -> None:
         tdn_grade_label_signal = float(tdn_ringer.get("tdn_grade_label_signal", 0.0) or 0.0)
         tdn_text_trait_signal = float(tdn_ringer.get("tdn_text_trait_signal", 0.0) or 0.0)
         tdn_risk_penalty = float(tdn_ringer.get("tdn_risk_penalty", 0.0) or 0.0)
+        tdn_risk_flag = int(_as_float(tdn_ringer.get("tdn_risk_flag")) or 0)
+        tdn_risk_hits = int(_as_float(tdn_ringer.get("tdn_risk_hits")) or 0)
         br_text_trait_signal = float(tdn_ringer.get("br_text_trait_signal", 0.0) or 0.0)
         br_risk_penalty = float(tdn_ringer.get("br_risk_penalty", 0.0) or 0.0)
+        br_risk_flag = int(_as_float(tdn_ringer.get("br_risk_flag")) or 0)
+        br_risk_hits = int(_as_float(tdn_ringer.get("br_risk_hits")) or 0)
         atoz_text_trait_signal = float(tdn_ringer.get("atoz_text_trait_signal", 0.0) or 0.0)
         atoz_risk_penalty = float(tdn_ringer.get("atoz_risk_penalty", 0.0) or 0.0)
+        atoz_risk_flag = int(_as_float(tdn_ringer.get("atoz_risk_flag")) or 0)
+        atoz_risk_hits = int(_as_float(tdn_ringer.get("atoz_risk_hits")) or 0)
         si_text_trait_signal = float(tdn_ringer.get("si_text_trait_signal", 0.0) or 0.0)
         si_risk_penalty = float(tdn_ringer.get("si_risk_penalty", 0.0) or 0.0)
+        si_risk_flag = int(_as_float(tdn_ringer.get("si_risk_flag")) or 0)
+        si_risk_hits = int(_as_float(tdn_ringer.get("si_risk_hits")) or 0)
+        cbs_rank_signal = float(tdn_ringer.get("cbs_rank_signal", 0.0) or 0.0)
+        cbs_wilson_rank_signal = float(tdn_ringer.get("cbs_wilson_rank_signal", 0.0) or 0.0)
+        cbs_text_trait_signal = float(tdn_ringer.get("cbs_text_trait_signal", 0.0) or 0.0)
+        cbs_risk_penalty = float(tdn_ringer.get("cbs_risk_penalty", 0.0) or 0.0)
+        cbs_risk_flag = int(_as_float(tdn_ringer.get("cbs_risk_flag")) or 0)
+        cbs_risk_hits = int(_as_float(tdn_ringer.get("cbs_risk_hits")) or 0)
         consensus_signal = float(consensus.get("consensus_signal", 0.0) or 0.0)
         consensus_mean_rank = consensus.get("consensus_mean_rank", "")
         consensus_rank_std = consensus.get("consensus_rank_std", "")
@@ -1566,7 +2650,82 @@ def main() -> None:
             "bench": combine.get("bench", ""),
         }
         md_features = compute_mockdraftable_composite(pos, md_meas, mockdraftable_baselines)
+        historical_combine_metrics = {
+            "height_in": float(effective_height_in) if effective_height_in is not None else None,
+            "weight_lb": float(effective_weight_lb) if effective_weight_lb is not None else None,
+            "arm_in": _as_float(combine.get("arm_in")),
+            "hand_in": _as_float(combine.get("hand_in")),
+            "forty": _as_float(combine.get("forty")),
+            "ten_split": _as_float(combine.get("ten_split")),
+            "vertical": _as_float(combine.get("vertical")),
+            "broad": _as_float(combine.get("broad")),
+            "three_cone": _as_float(combine.get("three_cone")),
+            "shuttle": _as_float(combine.get("shuttle")),
+            "bench": _as_float(combine.get("bench")),
+            "wingspan_in": _as_float(combine.get("wingspan_in")),
+        }
+        hist_comp_result = find_historical_combine_comps(
+            position=pos,
+            current_metrics=historical_combine_metrics,
+            pack=historical_combine_pack,
+            k=3,
+            min_overlap_metrics=3,
+        )
+        hist_comps = hist_comp_result.get("comps", [])
+        hist_comp_1 = hist_comps[0] if len(hist_comps) >= 1 else {}
+        hist_comp_2 = hist_comps[1] if len(hist_comps) >= 2 else {}
+        hist_comp_3 = hist_comps[2] if len(hist_comps) >= 3 else {}
+        prod_knn_result = find_production_percentile_comps(
+            player_name=row["player_name"],
+            position=pos,
+            pack=production_knn_pack,
+            target_season=2025,
+            k=3,
+            min_overlap=3,
+        )
+        prod_knn_comps = prod_knn_result.get("comps", [])
+        prod_knn_1 = prod_knn_comps[0] if len(prod_knn_comps) >= 1 else {}
+        prod_knn_2 = prod_knn_comps[1] if len(prod_knn_comps) >= 2 else {}
+        prod_knn_3 = prod_knn_comps[2] if len(prod_knn_comps) >= 3 else {}
+        # Prefer data-driven percentile-vector comp for explainer text; keep static comp as fallback.
+        if str(prod_knn_1.get("player_name", "")).strip():
+            comp["historical_comp"] = str(prod_knn_1.get("player_name", ""))
+            comp["comp_style"] = "production percentile vector nearest-neighbor"
+            sim = _as_float(prod_knn_1.get("similarity"))
+            if sim is not None:
+                if sim >= 86.0:
+                    comp["comp_confidence"] = "A"
+                elif sim >= 78.0:
+                    comp["comp_confidence"] = "B"
+                else:
+                    comp["comp_confidence"] = "C"
+        athletic_profile = evaluate_athletic_profile(
+            position=pos,
+            current_metrics=historical_combine_metrics,
+            pack=historical_athletic_pack,
+        )
         language_coverage_val = _as_float(lang.get("lang_text_coverage")) or 0.0
+        language_features = _language_feature_block(
+            lang=lang,
+            lang_risk_hits=int(_as_float(lang.get("lang_risk_hits")) or 0),
+            risk_flags=[
+                int(_as_float(lang.get("lang_risk_flag")) or 0),
+                int(espn_volatility_flag),
+                int(pp_risk_flag),
+                tdn_risk_flag,
+                br_risk_flag,
+                atoz_risk_flag,
+                si_risk_flag,
+                cbs_risk_flag,
+            ],
+            extra_risk_hits=[
+                tdn_risk_hits,
+                br_risk_hits,
+                atoz_risk_hits,
+                si_risk_hits,
+                cbs_risk_hits,
+            ],
+        )
 
         is_diamond_exception, diamond_exception_reasons = _diamond_exception_profile(
             position=pos,
@@ -1597,28 +2756,152 @@ def main() -> None:
 
         # Source-anchor blend.
         # New source weights in prior blend (inside weighted mean, not raw additive):
-        # TDN rank 0.08, Ringer rank 0.08, Bleacher rank 0.09, AtoZ rank 0.08, SI/FCS rank 0.03, TDN grade label 0.04.
-        prior_parts = [(0.20, max(1.0, min(100.0, seed_signal / 3.0)))]
+        # TDN rank 0.08, Ringer rank 0.08, Bleacher rank 0.09, AtoZ rank 0.08,
+        # SI/FCS rank 0.03, CBS rank 0.10, TDN grade label 0.04.
+        prior_parts: list[tuple[float, float]] = []
+        prior_diag: dict[str, dict] = {}
+        _append_prior_part(
+            parts=prior_parts,
+            diagnostics=prior_diag,
+            source_key="seed_rank",
+            base_weight=0.20,
+            signal_value=max(1.0, min(100.0, seed_signal / 3.0)),
+            reliability_pack=source_reliability,
+            position=pos,
+            draft_year=CURRENT_DRAFT_YEAR,
+        )
         if external_rank is not None:
-            prior_parts.append((0.24, max(1.0, min(100.0, external_rank_signal / 3.0))))
+            _append_prior_part(
+                parts=prior_parts,
+                diagnostics=prior_diag,
+                source_key="external_rank",
+                base_weight=0.24,
+                signal_value=max(1.0, min(100.0, external_rank_signal / 3.0)),
+                reliability_pack=source_reliability,
+                position=pos,
+                draft_year=CURRENT_DRAFT_YEAR,
+            )
         if analyst_score > 0:
-            prior_parts.append((0.14, max(1.0, min(100.0, analyst_score))))
+            _append_prior_part(
+                parts=prior_parts,
+                diagnostics=prior_diag,
+                source_key="analyst_rank",
+                base_weight=0.14,
+                signal_value=max(1.0, min(100.0, analyst_score)),
+                reliability_pack=source_reliability,
+                position=pos,
+                draft_year=CURRENT_DRAFT_YEAR,
+            )
         if consensus_signal > 0:
-            prior_parts.append((0.24, max(1.0, min(100.0, consensus_signal))))
+            _append_prior_part(
+                parts=prior_parts,
+                diagnostics=prior_diag,
+                source_key="consensus_rank",
+                base_weight=0.24,
+                signal_value=max(1.0, min(100.0, consensus_signal)),
+                reliability_pack=source_reliability,
+                position=pos,
+                draft_year=CURRENT_DRAFT_YEAR,
+            )
         if kiper_rank_signal > 0:
-            prior_parts.append((0.08, max(1.0, min(100.0, kiper_rank_signal))))
+            _append_prior_part(
+                parts=prior_parts,
+                diagnostics=prior_diag,
+                source_key="kiper_rank",
+                base_weight=0.08,
+                signal_value=max(1.0, min(100.0, kiper_rank_signal)),
+                reliability_pack=source_reliability,
+                position=pos,
+                draft_year=CURRENT_DRAFT_YEAR,
+            )
         if tdn_rank_signal > 0:
-            prior_parts.append((0.08, max(1.0, min(100.0, tdn_rank_signal))))
+            _append_prior_part(
+                parts=prior_parts,
+                diagnostics=prior_diag,
+                source_key="tdn_rank",
+                base_weight=0.08,
+                signal_value=max(1.0, min(100.0, tdn_rank_signal)),
+                reliability_pack=source_reliability,
+                position=pos,
+                draft_year=CURRENT_DRAFT_YEAR,
+            )
         if ringer_rank_signal > 0:
-            prior_parts.append((0.08, max(1.0, min(100.0, ringer_rank_signal))))
+            _append_prior_part(
+                parts=prior_parts,
+                diagnostics=prior_diag,
+                source_key="ringer_rank",
+                base_weight=0.08,
+                signal_value=max(1.0, min(100.0, ringer_rank_signal)),
+                reliability_pack=source_reliability,
+                position=pos,
+                draft_year=CURRENT_DRAFT_YEAR,
+            )
         if br_rank_signal > 0:
-            prior_parts.append((0.09, max(1.0, min(100.0, br_rank_signal))))
+            _append_prior_part(
+                parts=prior_parts,
+                diagnostics=prior_diag,
+                source_key="bleacher_rank",
+                base_weight=0.09,
+                signal_value=max(1.0, min(100.0, br_rank_signal)),
+                reliability_pack=source_reliability,
+                position=pos,
+                draft_year=CURRENT_DRAFT_YEAR,
+            )
         if atoz_rank_signal > 0:
-            prior_parts.append((0.08, max(1.0, min(100.0, atoz_rank_signal))))
+            _append_prior_part(
+                parts=prior_parts,
+                diagnostics=prior_diag,
+                source_key="atoz_rank",
+                base_weight=0.08,
+                signal_value=max(1.0, min(100.0, atoz_rank_signal)),
+                reliability_pack=source_reliability,
+                position=pos,
+                draft_year=CURRENT_DRAFT_YEAR,
+            )
         if si_rank_signal > 0:
-            prior_parts.append((0.03, max(1.0, min(100.0, si_rank_signal))))
+            _append_prior_part(
+                parts=prior_parts,
+                diagnostics=prior_diag,
+                source_key="si_rank",
+                base_weight=0.03,
+                signal_value=max(1.0, min(100.0, si_rank_signal)),
+                reliability_pack=source_reliability,
+                position=pos,
+                draft_year=CURRENT_DRAFT_YEAR,
+            )
+        if cbs_rank_signal > 0:
+            _append_prior_part(
+                parts=prior_parts,
+                diagnostics=prior_diag,
+                source_key="cbs_rank",
+                base_weight=0.10,
+                signal_value=max(1.0, min(100.0, cbs_rank_signal)),
+                reliability_pack=source_reliability,
+                position=pos,
+                draft_year=CURRENT_DRAFT_YEAR,
+            )
+        if cbs_wilson_rank_signal > 0:
+            _append_prior_part(
+                parts=prior_parts,
+                diagnostics=prior_diag,
+                source_key="cbs_wilson_rank",
+                base_weight=0.06,
+                signal_value=max(1.0, min(100.0, cbs_wilson_rank_signal)),
+                reliability_pack=source_reliability,
+                position=pos,
+                draft_year=CURRENT_DRAFT_YEAR,
+            )
         if tdn_grade_label_signal > 0:
-            prior_parts.append((0.04, max(1.0, min(100.0, tdn_grade_label_signal))))
+            _append_prior_part(
+                parts=prior_parts,
+                diagnostics=prior_diag,
+                source_key="tdn_grade_label",
+                base_weight=0.04,
+                signal_value=max(1.0, min(100.0, tdn_grade_label_signal)),
+                reliability_pack=source_reliability,
+                position=pos,
+                draft_year=CURRENT_DRAFT_YEAR,
+            )
         prior_signal = _weighted_mean(prior_parts) or max(1.0, min(100.0, seed_signal / 3.0))
 
         prior_anchor_adjustment = _consensus_anchor_adjustment(
@@ -1641,10 +2924,12 @@ def main() -> None:
             cfb_player_available=cfb_player_available,
             cfb_prod_coverage_count=cfb_prod_coverage_count,
             cfb_prod_reliability=cfb_prod_reliability,
+            cfb_prod_quality_label=str(cfb.get("cfb_prod_quality_label", "") or ""),
             prior_signal=prior_signal,
             lang=lang,
             ras=ras,
             md_features=md_features,
+            athletic_profile=athletic_profile,
             external_rank=external_rank,
             analyst_score=analyst_score,
             espn_volatility_flag=espn_volatility_flag,
@@ -1658,6 +2943,11 @@ def main() -> None:
             atoz_risk_penalty=atoz_risk_penalty,
             si_text_trait_signal=si_text_trait_signal,
             si_risk_penalty=si_risk_penalty,
+            cbs_text_trait_signal=cbs_text_trait_signal,
+            cbs_risk_penalty=cbs_risk_penalty,
+            years_played=_as_float(cfb.get("cfb_years_played")),
+            draft_age=_as_float(draft_age_row.get("draft_age")),
+            early_declare=bool(early_declare_flag),
         )
         language_trait = _as_float(lang.get("lang_trait_composite"))
         guardrail_penalty = _consensus_guardrail_penalty(
@@ -1727,6 +3017,33 @@ def main() -> None:
         if is_diamond_exception:
             soft_ceiling_penalty = round(soft_ceiling_penalty * 0.5, 2)
         model_score = max(55.0, min(95.0, model_score - soft_ceiling_penalty))
+        language_adjustment_applied = float(language_features.get("language_adjustment_applied", 0.0) or 0.0)
+        model_score = max(55.0, min(95.0, model_score + language_adjustment_applied))
+
+        roi_rank_reference = int(round(consensus_mean_rank_val)) if consensus_mean_rank_val is not None else int(row["rank_seed"])
+        roi_pick_band = pick_band_from_rank(max(1, min(300, roi_rank_reference)))
+        roi_row = roi_prior_pack.get((pos, roi_pick_band), {})
+        roi_base_adjustment = _clamp(float(_as_float(roi_row.get("roi_grade_adjustment")) or 0.0), -0.60, 0.60)
+        roi_conf_mult = 1.0 if consensus_source_count_val >= 2 else 0.75
+        roi_sample_n = int(_as_float(roi_row.get("sample_n")) or 0)
+        if roi_sample_n < 20:
+            roi_conf_mult *= 0.75
+        roi_adjustment_applied = round(roi_base_adjustment * roi_conf_mult, 4)
+        model_score = max(55.0, min(95.0, model_score + roi_adjustment_applied))
+
+        consensus_tail_penalty, consensus_tail_target = _consensus_tail_soft_penalty(
+            position=pos,
+            model_score=model_score,
+            consensus_mean_rank=consensus_mean_rank_val,
+            consensus_source_count=consensus_source_count_val,
+            consensus_rank_std=consensus_rank_std_val,
+            external_rank=external_rank,
+            pff_grade=pff_grade,
+            language_trait=language_trait,
+            is_diamond_exception=is_diamond_exception,
+        )
+        if consensus_tail_penalty > 0:
+            model_score = max(55.0, min(95.0, model_score - consensus_tail_penalty))
 
         hard_cap = _consensus_hard_cap(
             position=pos,
@@ -1781,6 +3098,84 @@ def main() -> None:
                 pff_grade=pff_grade,
             )
 
+        front7_inflation_penalty = 0.0
+        front7_inflation_reason = ""
+        front7_success_prob_before_brake = calibrated_success_prob
+        cb_nickel_inflation_penalty = 0.0
+        cb_nickel_inflation_reason = ""
+        if pos in {"EDGE", "DT", "LB"}:
+            front7_inflation_penalty, front7_inflation_reason = _front7_pass_rush_inflation_penalty(
+                position=pos,
+                is_diamond_exception=is_diamond_exception,
+                production_component=float(formula.get("formula_production_component", PRODUCTION_SIGNAL_NEUTRAL) or PRODUCTION_SIGNAL_NEUTRAL),
+                production_guardrail_delta=float(formula.get("formula_production_guardrail_delta", 0.0) or 0.0),
+                consensus_mean_rank=consensus_mean_rank_val,
+                consensus_source_count=consensus_source_count_val,
+                consensus_rank_std=consensus_rank_std_val,
+                cfb_prod_available=cfb_player_available,
+                cfb_prod_quality_label=str(cfb.get("cfb_prod_quality_label", "") or ""),
+                cfb_prod_reliability=float(_as_float(cfb.get("cfb_prod_reliability")) or 0.0),
+                cfb_prod_coverage_count=cfb_prod_coverage_count,
+                evidence_missing_count=int(formula.get("formula_evidence_missing_count", 0) or 0),
+                roi_pick_band=roi_pick_band,
+                roi_adjustment_applied=roi_adjustment_applied,
+                roi_sample_n=roi_sample_n,
+                roi_surplus_z=_as_float(roi_row.get("surplus_z")),
+                calibrated_success_prob=calibrated_success_prob,
+            )
+            if front7_inflation_penalty > 0:
+                model_score = max(55.0, min(95.0, model_score - front7_inflation_penalty))
+                if calibration_cfg is not None and calibration_cfg.sample_size > 0:
+                    calibrated_success_prob = calibrated_success_probability(
+                        grade=model_score,
+                        position=pos,
+                        config=calibration_cfg,
+                        ras_estimate=_as_float(ras.get("ras_estimate")),
+                        pff_grade=pff_grade,
+                    )
+        elif pos == "CB":
+            cb_nickel_inflation_penalty, cb_nickel_inflation_reason = _cb_nickel_inflation_penalty(
+                position=pos,
+                is_diamond_exception=is_diamond_exception,
+                height_in=effective_height_in,
+                weight_lb=effective_weight_lb,
+                production_component=float(
+                    formula.get("formula_production_component", PRODUCTION_SIGNAL_NEUTRAL) or PRODUCTION_SIGNAL_NEUTRAL
+                ),
+                production_guardrail_delta=float(formula.get("formula_production_guardrail_delta", 0.0) or 0.0),
+                consensus_mean_rank=consensus_mean_rank_val,
+                consensus_source_count=consensus_source_count_val,
+                consensus_rank_std=consensus_rank_std_val,
+                cfb_prod_quality_label=str(cfb.get("cfb_prod_quality_label", "") or ""),
+                cfb_prod_reliability=float(_as_float(cfb.get("cfb_prod_reliability")) or 0.0),
+                cfb_prod_coverage_count=cfb_prod_coverage_count,
+                cfb_prod_proxy_fallback_features=int(
+                    _as_float(cfb.get("cfb_prod_proxy_fallback_features")) or 0
+                ),
+                external_rank=external_rank,
+                pff_grade=pff_grade,
+            )
+            if cb_nickel_inflation_penalty > 0:
+                model_score = max(55.0, min(95.0, model_score - cb_nickel_inflation_penalty))
+                if calibration_cfg is not None and calibration_cfg.sample_size > 0:
+                    calibrated_success_prob = calibrated_success_probability(
+                        grade=model_score,
+                        position=pos,
+                        config=calibration_cfg,
+                        ras_estimate=_as_float(ras.get("ras_estimate")),
+                        pff_grade=pff_grade,
+                    )
+
+        confidence_profile = _confidence_uncertainty_profile(
+            final_grade=model_score,
+            evidence_missing_count=int(formula.get("formula_evidence_missing_count", 0) or 0),
+            risk_penalty=float(formula.get("formula_risk_penalty", 0.0) or 0.0),
+            consensus_source_count=consensus_source_count_val,
+            consensus_rank_std=consensus_rank_std_val,
+            consensus_confidence_factor=consensus_confidence_factor,
+            has_calibrated_prob=bool(calibrated_success_prob),
+        )
+
         scout_note = scouting_note(pos, model_score, row["rank_seed"])
         scouting_sections = _build_scouting_sections(
             name=row["player_name"],
@@ -1814,7 +3209,12 @@ def main() -> None:
             cfb_prod_quality=cfb.get("cfb_prod_quality_label", ""),
             cfb_prod_reliability=cfb.get("cfb_prod_reliability", ""),
             consensus_rank=row["rank_seed"],
+            historical_combine_comp_1=str(hist_comp_1.get("player_name", "")),
+            historical_combine_comp_1_year=hist_comp_1.get("year", ""),
+            historical_combine_comp_1_similarity=hist_comp_1.get("similarity", ""),
         )
+        cfb_proxy_audit = _cfb_proxy_audit_label(pos, cfb)
+        cfb_proxy_heavy_flag, cfb_proxy_heavy_reason = _cfb_proxy_fallback_heavy_flag(cfb)
 
         report = {
             **row,
@@ -1847,6 +3247,7 @@ def main() -> None:
             "consensus_board_sources": consensus_sources,
             "consensus_board_signal": round(consensus_signal, 2) if consensus_signal > 0 else "",
             "prior_anchor_adjustment": round(prior_anchor_adjustment, 2),
+            "prior_weight_total_effective": round(sum(weight for weight, _ in prior_parts), 4),
             "kiper_rank": kiper_rank,
             "kiper_prev_rank": kiper_prev_rank,
             "kiper_rank_delta": kiper_rank_delta,
@@ -1911,6 +3312,16 @@ def main() -> None:
             "si_strengths": tdn_ringer.get("si_strengths", ""),
             "si_concerns": tdn_ringer.get("si_concerns", ""),
             "si_summary": tdn_ringer.get("si_summary", ""),
+            "cbs_rank": tdn_ringer.get("cbs_rank", ""),
+            "cbs_rank_signal": round(cbs_rank_signal, 2) if cbs_rank_signal > 0 else "",
+            "cbs_wilson_rank": tdn_ringer.get("cbs_wilson_rank", ""),
+            "cbs_wilson_rank_signal": round(cbs_wilson_rank_signal, 2) if cbs_wilson_rank_signal > 0 else "",
+            "cbs_text_trait_signal": round(cbs_text_trait_signal, 2) if cbs_text_trait_signal > 0 else "",
+            "cbs_text_coverage": tdn_ringer.get("cbs_text_coverage", ""),
+            "cbs_risk_hits": tdn_ringer.get("cbs_risk_hits", ""),
+            "cbs_risk_flag": tdn_ringer.get("cbs_risk_flag", ""),
+            "cbs_risk_penalty": round(cbs_risk_penalty, 2) if cbs_risk_penalty > 0 else "",
+            "cbs_summary": tdn_ringer.get("cbs_summary", ""),
             "espn_source_year": espn.get("espn_source_year", ""),
             "espn_ovr_rank": espn.get("espn_ovr_rank", ""),
             "espn_pos_rank": espn.get("espn_pos_rank", ""),
@@ -1939,17 +3350,55 @@ def main() -> None:
             "pp_skill_signal": round(pp_skill_signal, 2) if pp_player_available else "",
             "pp_data_coverage": pp.get("pp_data_coverage", "") if pp_player_available else "",
             "pp_early_declare": pp.get("pp_early_declare", "") if pp_player_available else "",
+            "early_declare": early_declare_flag,
+            "early_declare_flag": early_declare_flag,
+            "early_declare_source_flag": early_declare_source_flag,
+            "early_declare_source_count": early_declare_row.get("early_declare_evidence_count", 0),
+            "early_declare_sources": early_declare_row.get("early_declare_sources", ""),
+            "early_declare_source_urls": early_declare_row.get("early_declare_source_urls", ""),
+            "combine_invited": combine_invited_flag,
+            "combine_invite_sources": early_declare_row.get("combine_invite_sources", ""),
+            "combine_invite_source_urls": early_declare_row.get("combine_invite_source_urls", ""),
             "pp_risk_flag": int(pp_risk_flag) if pp_player_available else "",
             "pp_profile_tier": pp.get("pp_profile_tier", ""),
             "pp_notes": pp.get("pp_notes", ""),
             "cfb_prod_signal": round(cfb_prod_signal, 2) if cfb_player_available else "",
+            "cfb_proxy_audit_summary": cfb_proxy_audit,
+            "cfb_proxy_fallback_heavy_flag": cfb_proxy_heavy_flag,
+            "cfb_proxy_fallback_heavy_reason": cfb_proxy_heavy_reason,
             "cfb_prod_signal_raw": cfb.get("cfb_prod_signal_raw", ""),
+            "cfb_prod_signal_contextual_raw": cfb.get("cfb_prod_signal_contextual_raw", ""),
+            "cfb_prod_percentile_signal": cfb.get("cfb_prod_percentile_signal", ""),
+            "cfb_prod_percentile_population_n": cfb.get("cfb_prod_percentile_population_n", ""),
+            "cfb_prod_usage_rate": cfb.get("cfb_prod_usage_rate", ""),
+            "cfb_prod_usage_multiplier": cfb.get("cfb_prod_usage_multiplier", ""),
+            "cfb_prod_context_conference": cfb.get("cfb_prod_context_conference", ""),
+            "cfb_opp_def_ppa_allowed_avg": cfb.get("cfb_opp_def_ppa_allowed_avg", ""),
+            "cfb_opp_def_success_rate_allowed_avg": cfb.get("cfb_opp_def_success_rate_allowed_avg", ""),
+            "cfb_opp_def_toughness_index": cfb.get("cfb_opp_def_toughness_index", ""),
+            "cfb_opp_def_adjustment_multiplier": cfb.get("cfb_opp_def_adjustment_multiplier", ""),
+            "cfb_opp_def_adjustment_delta": cfb.get("cfb_opp_def_adjustment_delta", ""),
+            "cfb_opp_def_context_applied": cfb.get("cfb_opp_def_context_applied", 0),
+            "cfb_opp_def_context_source": cfb.get("cfb_opp_def_context_source", ""),
             "cfb_prod_available": 1 if cfb_player_available else 0,
             "cfb_prod_coverage_count": cfb_prod_coverage_count,
             "cfb_prod_quality_label": cfb.get("cfb_prod_quality_label", ""),
             "cfb_prod_reliability": cfb.get("cfb_prod_reliability", ""),
             "cfb_prod_real_features": cfb.get("cfb_prod_real_features", ""),
             "cfb_prod_proxy_features": cfb.get("cfb_prod_proxy_features", ""),
+            "cfb_prod_proxy_fallback_features": cfb.get("cfb_prod_proxy_fallback_features", ""),
+            "cfb_years_played": cfb.get("cfb_years_played", ""),
+            "cfb_years_played_seasons": cfb.get("cfb_years_played_seasons", ""),
+            "cfb_years_played_source": cfb.get("cfb_years_played_source", ""),
+            "birth_date": draft_age_row.get("birth_date", ""),
+            "draft_age": draft_age_row.get("draft_age", ""),
+            "draft_age_source": draft_age_row.get("draft_age_source", ""),
+            "draft_age_source_url": draft_age_row.get("draft_age_source_url", ""),
+            "draft_age_ref_date": draft_age_row.get("draft_age_ref_date", ""),
+            "draft_age_available": draft_age_row.get("draft_age_available", 0),
+            "age": draft_age_row.get("draft_age", ""),
+            "cfb_nonpos_metrics_ignored_count": cfb.get("cfb_nonpos_metrics_ignored_count", ""),
+            "cfb_nonpos_metrics_ignored_fields": cfb.get("cfb_nonpos_metrics_ignored_fields", ""),
             "cfb_prod_provenance": cfb.get("cfb_prod_provenance", ""),
             "cfbfastr_p0_signal_raw": cfb.get("cfbfastr_p0_signal_raw", ""),
             "cfbfastr_p0_available": cfb.get("cfbfastr_p0_available", 0),
@@ -1961,17 +3410,31 @@ def main() -> None:
             "cfb_qb_pressure_signal": cfb.get("cfb_qb_pressure_signal", ""),
             "cfb_wrte_yprr_signal": cfb.get("cfb_wrte_yprr_signal", ""),
             "cfb_wrte_target_share_signal": cfb.get("cfb_wrte_target_share_signal", ""),
+            "cfb_wrte_targets_per_route_signal": cfb.get("cfb_wrte_targets_per_route_signal", ""),
             "cfb_rb_explosive_signal": cfb.get("cfb_rb_explosive_signal", ""),
             "cfb_rb_mtf_signal": cfb.get("cfb_rb_mtf_signal", ""),
             "cfb_edge_pressure_signal": cfb.get("cfb_edge_pressure_signal", ""),
+            "cfb_edge_sacks_per_pr_snap_signal": cfb.get("cfb_edge_sacks_per_pr_snap_signal", ""),
             "cfb_db_cov_plays_per_target_signal": cfb.get("cfb_db_cov_plays_per_target_signal", ""),
+            "cfb_db_yards_allowed_per_cov_snap_signal": cfb.get("cfb_db_yards_allowed_per_cov_snap_signal", ""),
             "cfb_qb_epa_per_play": cfb.get("cfb_qb_epa_per_play", ""),
             "cfb_wrte_yprr": cfb.get("cfb_wrte_yprr", ""),
             "cfb_wrte_target_share": cfb.get("cfb_wrte_target_share", ""),
+            "cfb_wrte_targets_per_route": cfb.get("cfb_wrte_targets_per_route", ""),
+            "cfb_wrte_targets_per_route_source": cfb.get("cfb_wrte_targets_per_route_source", ""),
+            "cfb_wrte_targets_per_route_weight": cfb.get("cfb_wrte_targets_per_route_weight", ""),
             "cfb_rb_explosive_rate": cfb.get("cfb_rb_explosive_rate", ""),
             "cfb_rb_missed_tackles_forced_per_touch": cfb.get("cfb_rb_missed_tackles_forced_per_touch", ""),
             "cfb_edge_pressure_rate": cfb.get("cfb_edge_pressure_rate", ""),
+            "cfb_edge_sacks_per_pr_snap": cfb.get("cfb_edge_sacks_per_pr_snap", ""),
+            "cfb_edge_sacks_per_pr_snap_source": cfb.get("cfb_edge_sacks_per_pr_snap_source", ""),
+            "cfb_edge_pressure_weight": cfb.get("cfb_edge_pressure_weight", ""),
+            "cfb_edge_sack_weight": cfb.get("cfb_edge_sack_weight", ""),
             "cfb_db_coverage_plays_per_target": cfb.get("cfb_db_coverage_plays_per_target", ""),
+            "cfb_db_yards_allowed_per_coverage_snap": cfb.get("cfb_db_yards_allowed_per_coverage_snap", ""),
+            "cfb_db_yards_allowed_per_cov_snap_source": cfb.get("cfb_db_yards_allowed_per_cov_snap_source", ""),
+            "cfb_db_cov_weight": cfb.get("cfb_db_cov_weight", ""),
+            "cfb_db_yacs_weight": cfb.get("cfb_db_yacs_weight", ""),
             "cfb_source": cfb.get("cfb_source", ""),
             "cfb_season": cfb.get("cfb_season", ""),
             "lang_source_count": lang.get("lang_source_count", ""),
@@ -1988,6 +3451,14 @@ def main() -> None:
             "lang_risk_flag": lang.get("lang_risk_flag", ""),
             "lang_trait_composite": lang.get("lang_trait_composite", ""),
             "lang_sources": lang.get("lang_sources", ""),
+            "lang_report_word_count": language_features.get("lang_report_word_count", 0),
+            "lang_positive_trait_rate": language_features.get("lang_positive_trait_rate", ""),
+            "lang_developmental_flag_rate": language_features.get("lang_developmental_flag_rate", ""),
+            "lang_concern_rate": language_features.get("lang_concern_rate", ""),
+            "language_adjustment_raw": language_features.get("language_adjustment_raw", ""),
+            "language_adjustment_confidence": language_features.get("language_adjustment_confidence", ""),
+            "language_adjustment_applied": language_adjustment_applied,
+            "language_adjustment_cap": language_features.get("language_adjustment_cap", ""),
             # combine fields
             "combine_source": combine.get("combine_source", ""),
             "combine_last_updated": combine.get("combine_last_updated", ""),
@@ -2013,24 +3484,84 @@ def main() -> None:
             "weight_prior_bleacher_rank": 0.09,
             "weight_prior_atoz_rank": 0.08,
             "weight_prior_si_rank": 0.03,
+            "weight_prior_cbs_rank": 0.10,
+            "weight_prior_cbs_wilson_rank": 0.06,
             "weight_prior_tdn_grade_label": 0.04,
+            "weight_prior_reliability_layers": "|".join(
+                sorted(
+                    {
+                        str(v.get("layer", "")).strip()
+                        for v in prior_diag.values()
+                        if str(v.get("layer", "")).strip()
+                    }
+                )
+            ),
+            "weight_prior_reliability_year_min": (
+                min(
+                    int(v.get("selected_year"))
+                    for v in prior_diag.values()
+                    if str(v.get("selected_year", "")).strip()
+                )
+                if any(str(v.get("selected_year", "")).strip() for v in prior_diag.values())
+                else ""
+            ),
+            "weight_prior_reliability_year_max": (
+                max(
+                    int(v.get("selected_year"))
+                    for v in prior_diag.values()
+                    if str(v.get("selected_year", "")).strip()
+                )
+                if any(str(v.get("selected_year", "")).strip() for v in prior_diag.values())
+                else ""
+            ),
+            "weight_prior_seed_multiplier": prior_diag.get("seed_rank", {}).get("multiplier", ""),
+            "weight_prior_external_multiplier": prior_diag.get("external_rank", {}).get("multiplier", ""),
+            "weight_prior_analyst_multiplier": prior_diag.get("analyst_rank", {}).get("multiplier", ""),
+            "weight_prior_consensus_multiplier": prior_diag.get("consensus_rank", {}).get("multiplier", ""),
+            "weight_prior_kiper_multiplier": prior_diag.get("kiper_rank", {}).get("multiplier", ""),
+            "weight_prior_tdn_multiplier": prior_diag.get("tdn_rank", {}).get("multiplier", ""),
+            "weight_prior_ringer_multiplier": prior_diag.get("ringer_rank", {}).get("multiplier", ""),
+            "weight_prior_bleacher_multiplier": prior_diag.get("bleacher_rank", {}).get("multiplier", ""),
+            "weight_prior_atoz_multiplier": prior_diag.get("atoz_rank", {}).get("multiplier", ""),
+            "weight_prior_si_multiplier": prior_diag.get("si_rank", {}).get("multiplier", ""),
+            "weight_prior_cbs_multiplier": prior_diag.get("cbs_rank", {}).get("multiplier", ""),
+            "weight_prior_cbs_wilson_multiplier": prior_diag.get("cbs_wilson_rank", {}).get("multiplier", ""),
+            "weight_prior_tdn_grade_multiplier": prior_diag.get("tdn_grade_label", {}).get("multiplier", ""),
             "weight_trait_tdn_text": 0.05,
             "weight_trait_bleacher_text": 0.04,
             "weight_trait_atoz_text": 0.04,
             "weight_trait_si_text": 0.02,
+            "weight_trait_cbs_text": 0.05,
             "formula_guardrail_penalty": round(guardrail_penalty, 2),
             "formula_drift_penalty": round(drift_penalty, 2),
             "formula_consensus_confidence_factor": round(consensus_confidence_factor, 3),
             "formula_midband_brake_penalty": round(midband_brake_penalty, 2),
             "formula_soft_ceiling_target": round(soft_ceiling_target, 2) if soft_ceiling_target is not None else "",
             "formula_soft_ceiling_penalty": round(soft_ceiling_penalty, 2),
+            "formula_language_adjustment": round(language_adjustment_applied, 4),
             "formula_top75_gate_penalty": round(top75_gate_penalty, 2),
             "formula_hard_cap": round(hard_cap, 2) if hard_cap is not None else "",
             "formula_consensus_outlier_cap": round(outlier_cap, 2) if outlier_cap is not None else "",
             "formula_hard_cap_penalty": round(cap_penalty, 2),
+            "formula_consensus_tail_soft_target": consensus_tail_target if consensus_tail_target is not None else "",
+            "formula_consensus_tail_soft_penalty": round(consensus_tail_penalty, 2),
+            "formula_front7_inflation_penalty": round(front7_inflation_penalty, 2),
+            "formula_front7_inflation_reason": front7_inflation_reason,
+            "formula_front7_success_prob_pre_brake": front7_success_prob_before_brake,
+            "formula_cb_nickel_inflation_penalty": round(cb_nickel_inflation_penalty, 2),
+            "formula_cb_nickel_inflation_reason": cb_nickel_inflation_reason,
+            "roi_pick_band": roi_pick_band,
+            "roi_prior_sample_n": roi_sample_n,
+            "roi_prior_weighted_mean_surplus": roi_row.get("weighted_mean_surplus", ""),
+            "roi_prior_surplus_z": roi_row.get("surplus_z", ""),
+            "roi_prior_adjustment": round(roi_base_adjustment, 4),
+            "roi_prior_adjustment_applied": roi_adjustment_applied,
             "is_diamond_exception": 1 if is_diamond_exception else 0,
             "diamond_exception_reasons": diamond_exception_reasons,
             "contrarian_score": round(contrarian_score, 2),
+            "confidence_score": confidence_profile["confidence_score"],
+            "uncertainty_score": confidence_profile["uncertainty_score"],
+            "variance_flag": confidence_profile["variance_flag"],
             "calibration_position_delta": round(calibration_pos_delta, 4) if calibration_cfg is not None else "",
             "calibration_grade_adjustment": round(calibration_grade_adjustment, 2) if calibration_cfg is not None else "",
             "calibrated_success_prob": calibrated_success_prob,
@@ -2044,9 +3575,13 @@ def main() -> None:
                     52.0,
                     float(formula["formula_floor"])
                     + calibration_grade_adjustment
+                    + language_adjustment_applied
                     - guardrail_penalty
                     - (0.7 * soft_ceiling_penalty)
-                    - (0.8 * cap_penalty),
+                    - (0.8 * cap_penalty)
+                    - (0.8 * consensus_tail_penalty)
+                    - (0.85 * front7_inflation_penalty)
+                    - (0.75 * cb_nickel_inflation_penalty),
                 ),
                 2,
             ),
@@ -2055,9 +3590,13 @@ def main() -> None:
                     55.0,
                     float(formula["formula_ceiling"])
                     + calibration_grade_adjustment
+                    + language_adjustment_applied
                     - (0.5 * guardrail_penalty)
                     - (0.5 * soft_ceiling_penalty)
-                    - (0.5 * cap_penalty),
+                    - (0.5 * cap_penalty)
+                    - (0.6 * consensus_tail_penalty)
+                    - (0.60 * front7_inflation_penalty)
+                    - (0.55 * cb_nickel_inflation_penalty),
                 ),
                 2,
             ),
@@ -2074,6 +3613,55 @@ def main() -> None:
             "ras_meets_elite_target": meets_elite,
             "ras_benchmark_sample_n": ras_bench.get("sample_n_all", ""),
             **ras_comps,
+            "historical_combine_merge_key": build_combine_merge_key(
+                player_name=row["player_name"],
+                position=pos,
+                school=row.get("school", ""),
+                year=2026,
+            ),
+            "historical_combine_source": historical_combine_pack.get("meta", {}).get("path", ""),
+            "historical_combine_candidate_count": hist_comp_result.get("candidate_count", 0),
+            "historical_combine_overlap_min": hist_comp_result.get("used_overlap_min", ""),
+            "historical_combine_comp_1": hist_comp_1.get("player_name", ""),
+            "historical_combine_comp_1_year": hist_comp_1.get("year", ""),
+            "historical_combine_comp_1_school": hist_comp_1.get("school", ""),
+            "historical_combine_comp_1_similarity": hist_comp_1.get("similarity", ""),
+            "historical_combine_comp_1_overlap_metrics": hist_comp_1.get("overlap_metrics", ""),
+            "historical_combine_comp_1_athlete_id": hist_comp_1.get("athlete_id", ""),
+            "historical_combine_comp_1_merge_key": hist_comp_1.get("merge_key", ""),
+            "historical_combine_comp_2": hist_comp_2.get("player_name", ""),
+            "historical_combine_comp_2_year": hist_comp_2.get("year", ""),
+            "historical_combine_comp_2_school": hist_comp_2.get("school", ""),
+            "historical_combine_comp_2_similarity": hist_comp_2.get("similarity", ""),
+            "historical_combine_comp_2_overlap_metrics": hist_comp_2.get("overlap_metrics", ""),
+            "historical_combine_comp_2_athlete_id": hist_comp_2.get("athlete_id", ""),
+            "historical_combine_comp_2_merge_key": hist_comp_2.get("merge_key", ""),
+            "historical_combine_comp_3": hist_comp_3.get("player_name", ""),
+            "historical_combine_comp_3_year": hist_comp_3.get("year", ""),
+            "historical_combine_comp_3_school": hist_comp_3.get("school", ""),
+            "historical_combine_comp_3_similarity": hist_comp_3.get("similarity", ""),
+            "historical_combine_comp_3_overlap_metrics": hist_comp_3.get("overlap_metrics", ""),
+            "historical_combine_comp_3_athlete_id": hist_comp_3.get("athlete_id", ""),
+            "historical_combine_comp_3_merge_key": hist_comp_3.get("merge_key", ""),
+            "production_knn_source": prod_knn_result.get("source", ""),
+            "production_knn_candidate_mode": prod_knn_result.get("candidate_mode", ""),
+            "production_knn_target_year": prod_knn_result.get("target_year", ""),
+            "production_knn_vector_coverage": prod_knn_result.get("coverage", 0),
+            "production_knn_vector_metric_count": prod_knn_result.get("metric_count", 0),
+            "production_knn_baseline_metrics": ";".join(PROD_POSITION_BASELINES.get(pos, [])),
+            "production_knn_reverse_metrics": ";".join(sorted(PROD_REVERSE_METRICS)),
+            "production_knn_comp_1": prod_knn_1.get("player_name", ""),
+            "production_knn_comp_1_year": prod_knn_1.get("year", ""),
+            "production_knn_comp_1_similarity": prod_knn_1.get("similarity", ""),
+            "production_knn_comp_1_overlap_metrics": prod_knn_1.get("overlap_metrics", ""),
+            "production_knn_comp_2": prod_knn_2.get("player_name", ""),
+            "production_knn_comp_2_year": prod_knn_2.get("year", ""),
+            "production_knn_comp_2_similarity": prod_knn_2.get("similarity", ""),
+            "production_knn_comp_2_overlap_metrics": prod_knn_2.get("overlap_metrics", ""),
+            "production_knn_comp_3": prod_knn_3.get("player_name", ""),
+            "production_knn_comp_3_year": prod_knn_3.get("year", ""),
+            "production_knn_comp_3_similarity": prod_knn_3.get("similarity", ""),
+            "production_knn_comp_3_overlap_metrics": prod_knn_3.get("overlap_metrics", ""),
             "scouting_notes": scout_note,
             **scouting_sections,
             "headshot_url": "",
@@ -2130,6 +3718,50 @@ def main() -> None:
     write_csv(OUTPUTS / "big_board_2026.csv", final_rows)
     write_top_board_md(OUTPUTS / "big_board_2026_top100.md", final_rows, 100)
 
+    cfb_proxy_watchlist_rows = []
+    for row in final_rows:
+        if int(row.get("cfb_proxy_fallback_heavy_flag", 0) or 0) != 1:
+            continue
+        cfb_proxy_watchlist_rows.append(
+            {
+                "consensus_rank": row.get("consensus_rank", ""),
+                "player_name": row.get("player_name", ""),
+                "position": row.get("position", ""),
+                "school": row.get("school", ""),
+                "final_grade": row.get("final_grade", ""),
+                "cfb_prod_quality_label": row.get("cfb_prod_quality_label", ""),
+                "cfb_prod_reliability": row.get("cfb_prod_reliability", ""),
+                "cfb_prod_coverage_count": row.get("cfb_prod_coverage_count", ""),
+                "cfb_prod_proxy_fallback_features": row.get("cfb_prod_proxy_fallback_features", ""),
+                "cfb_proxy_fallback_heavy_reason": row.get("cfb_proxy_fallback_heavy_reason", ""),
+                "cfb_proxy_audit_summary": row.get("cfb_proxy_audit_summary", ""),
+            }
+        )
+    cfb_proxy_watchlist_rows.sort(
+        key=lambda x: int(_as_float(x.get("consensus_rank")) or 9999)
+    )
+    write_csv(OUTPUTS / "cfb_proxy_fallback_watchlist_2026.csv", cfb_proxy_watchlist_rows)
+    watch_lines = [
+        "CFB Proxy Fallback Watchlist (2026)",
+        "",
+        "Rank | Player | Pos | Rel | Cov | Fallbacks | Reason | Audit",
+    ]
+    for row in cfb_proxy_watchlist_rows[:200]:
+        watch_lines.append(
+            f"{row['consensus_rank']} | {row['player_name']} | {row['position']} | "
+            f"{row['cfb_prod_reliability']} | {row['cfb_prod_coverage_count']} | "
+            f"{row['cfb_prod_proxy_fallback_features']} | {row['cfb_proxy_fallback_heavy_reason']} | "
+            f"{row['cfb_proxy_audit_summary']}"
+        )
+    (OUTPUTS / "cfb_proxy_fallback_watchlist_2026.txt").write_text("\n".join(watch_lines))
+    if CFB_PROXY_FALLBACK_FAIL_ON_HEAVY and cfb_proxy_watchlist_rows:
+        print(
+            "CFB proxy fallback QA failed: "
+            f"{len(cfb_proxy_watchlist_rows)} heavy rows. "
+            f"See {OUTPUTS / 'cfb_proxy_fallback_watchlist_2026.csv'}"
+        )
+        raise SystemExit(2)
+
     watchlist_rows = []
     for row in final_rows:
         mean_rank = _as_float(row.get("consensus_board_mean_rank"))
@@ -2172,6 +3804,11 @@ def main() -> None:
     with (OUTPUTS / "big_board_2026.json").open("w") as f:
         json.dump(final_rows, f, indent=2)
 
+    _run_locked_stability_checks(
+        board_path=OUTPUTS / "big_board_2026.csv",
+        watchlist_path=OUTPUTS / "contrarian_watchlist_2026.csv",
+    )
+
     print(f"Seed rows (raw): {len(raw_seed)}")
     print(f"Removed returning players: {len(removed_returning)}")
     print(f"Removed already-drafted NFL players: {len(removed_already_drafted)}")
@@ -2188,9 +3825,32 @@ def main() -> None:
     print(f"PlayerProfiler signals loaded: {len(pp_by_name_pos)}")
     print(f"Analyst language signals loaded: {len(lang_by_name_pos)}")
     print(f"Kiper structured signals loaded: {len(kiper_by_name_pos)}")
-    print(f"TDN/Ringer/Bleacher/AtoZ/SI signals loaded: {len(tdn_ringer_by_name_pos)}")
+    print(f"TDN/Ringer/Bleacher/AtoZ/SI/CBS/CBSWilson signals loaded: {len(tdn_ringer_by_name_pos)}")
     print(f"Consensus board signals loaded: {len(consensus_by_name)}")
     print(f"CFB production signals loaded: {len(cfb_prod_by_name_pos)}")
+    sr_meta = source_reliability.get("meta", {}) if isinstance(source_reliability, dict) else {}
+    print(
+        "Source reliability loaded: "
+        f"global={sr_meta.get('global_keys', 0)} "
+        f"pos_year_rows={sr_meta.get('pos_year_rows', 0)} "
+        f"has_pos_year={sr_meta.get('has_pos_year_table', 0)}"
+    )
+    print(
+        "Historical combine profiles loaded: "
+        f"{historical_combine_pack.get('meta', {}).get('rows', 0)} "
+        f"(positions={historical_combine_pack.get('meta', {}).get('positions', 0)})"
+    )
+    print(
+        "Historical athletic context loaded: "
+        f"{historical_athletic_pack.get('meta', {}).get('rows', 0)} "
+        f"(positions={historical_athletic_pack.get('meta', {}).get('positions', 0)})"
+    )
+    prod_knn_meta = production_knn_pack.get("meta", {})
+    print(
+        "Production percentile KNN context loaded: "
+        f"{prod_knn_meta.get('rows', 0)} "
+        f"(positions={prod_knn_meta.get('positions', 0)} years={prod_knn_meta.get('years_min', '')}-{prod_knn_meta.get('years_max', '')})"
+    )
     cfb_meta = cfb_prod_pack.get("meta", {})
     print(
         "CFBfastr P0 signals: "
@@ -2201,6 +3861,37 @@ def main() -> None:
         f"cap={cfb_meta.get('cfbfastr_p0_max_delta', '')} "
         f"qb_cap={cfb_meta.get('cfbfastr_p0_qb_max_delta', '')}"
     )
+    print(
+        "CFBD opponent-defense context: "
+        f"available={cfb_meta.get('cfb_opp_def_context_available', 0)} "
+        f"applied={cfb_meta.get('cfb_opp_def_context_applied', 0)} "
+        f"cap={cfb_meta.get('cfb_opp_def_adj_max_delta', '')}"
+    )
+    print(f"CFBD years_played available: {cfb_meta.get('cfb_years_played_available', 0)}")
+    da_meta = draft_age_pack.get("meta", {})
+    print(
+        "Draft age signals: "
+        f"valid_birthdates={da_meta.get('valid_birthdates', 0)} "
+        f"matched_name_pos={da_meta.get('matched_name_pos', 0)} "
+        f"ref_date={da_meta.get('draft_date', '')} "
+        f"scoring={'on' if ENABLE_DRAFT_AGE_SCORING else 'off'}"
+    )
+    ed_meta = early_declare_pack.get("meta", {})
+    print(
+        "Early declare signals: "
+        f"official_rows={ed_meta.get('official_rows', 0)} "
+        f"espn_rows={ed_meta.get('espn_underclass_rows', 0)} "
+        f"combine_rows={ed_meta.get('combine_invite_rows', 0)} "
+        f"matched_name_pos={ed_meta.get('matched_name_pos', 0)} "
+        f"scoring={'on' if ENABLE_EARLY_DECLARE_SCORING else 'off'}"
+    )
+    print(
+        "CFB non-position metrics ignored (audit only): "
+        f"rows={cfb_meta.get('cfb_nonpos_metrics_ignored_rows', 0)} "
+        f"total_values={cfb_meta.get('cfb_nonpos_metrics_ignored_total', 0)}"
+    )
+    proxy_heavy_count = sum(1 for r in final_rows if int(r.get("cfb_proxy_fallback_heavy_flag", 0) or 0) == 1)
+    print(f"CFB proxy fallback watchlist rows: {proxy_heavy_count}")
     if calibration_cfg is None:
         print("Historical calibration: not loaded (run scripts/calibrate_historical_model.py after real outcomes import)")
     else:

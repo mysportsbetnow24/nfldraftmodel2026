@@ -1,258 +1,258 @@
-round,pick,overall_pick,team,original_pick_owner,acquired_via,player_name,position,school,final_grade,round_value
-1,1,1,LV,LV,,Fernando Mendoza,QB,Indiana,84.24,Round 1-2
-1,2,2,NYJ,NYJ,,Francis Mauigoa,OT,Miami (FL) Hurricanes,84.31,Round 1
-1,3,3,ARI,ARI,,David Bailey,EDGE,Texas Tech,85.53,Round 1
-1,4,4,TEN,TEN,,Rueben Bain Jr.,EDGE,Miami (FL) Hurricanes,84.96,Round 1
-1,5,5,NYG,NYG,,Spencer Fano,OT,Utah,83.9,Round 2-3
-1,6,6,CLE,CLE,,Carnell Tate,WR,Ohio State,83.79,Round 2-3
-1,7,7,WAS,WAS,,Akheem Mesidor,EDGE,Miami (FL) Hurricanes,84.8,Round 1
-1,8,8,NO,NO,,Arvell Reese,EDGE,Ohio State,84.17,Round 1-2
-1,9,9,KC,KC,,Kadyn Proctor,OT,Alabama,83.48,Round 2-3
-1,10,10,CIN,CIN,,Mansoor Delane,CB,LSU Tigers,84.35,Round 1
-1,11,11,MIA,MIA,,Caleb Downs,S,Ohio State,84.96,Round 1
-1,12,12,DAL,DAL,,Jeremiyah Love,RB,Notre Dame,84.61,Round 1
-1,13,13,LAR,ATL,LAR g ATL (2025 Draft trade),Keionte Scott,CB,Miami (FL) Hurricanes,84.29,Round 1
-1,14,14,BAL,BAL,,Avieon Terrell,CB,Clemson,83.7,Round 2-3
-1,15,15,TB,TB,,Keldric Faulk,EDGE,Auburn,83.64,Round 2-3
-1,16,16,NYJ,IND,NYJ g IND (A Gardner),Jordyn Tyson,WR,Arizona State,83.37,Round 2-3
-1,17,17,DET,DET,,Chris Johnson,CB,San Diego State Aztecs,83.53,Round 2-3
-1,18,18,MIN,MIN,,Keith Abney II,CB,Arizona State Sun Devils,83.44,Round 2-3
-1,19,19,CAR,CAR,,Romello Height,EDGE,Texas Tech Red Raiders,83.28,Round 2-3
-1,20,20,DAL,GB,DAL g GB (M Parsons),Christen Miller,DT,Georgia Bulldogs,83.02,Round 2-3
-1,21,21,PIT,PIT,,Kayden McDonald,DT,Ohio State Buckeyes,82.77,Round 2-3
-1,22,22,LAC,LAC,,Peter Woods,DT,Clemson,82.72,Round 2-3
-1,23,23,PHI,PHI,,Zion Young,EDGE,Missouri Tigers,82.99,Round 2-3
-1,24,24,CLE,JAX,CLE g JAX (2025 Draft Trade),Denzel Boston,WR,Washington,83.02,Round 2-3
-1,25,25,CHI,CHI,,Monroe Freeling,OT,Georgia,82.19,Round 3-4
-1,26,26,BUF,BUF,,Emmanuel McNeil-Warren,S,Toledo Rockets,83.36,Round 2-3
-1,27,27,SF,SF,,Brian Parker II,OT,Duke Blue Devils,81.87,Round 3-4
-1,28,28,HOU,HOU,,Sonny Styles,LB,Ohio State,83.55,Round 2-3
-1,29,29,LAR,LAR,,Olaivavega Ioane,IOL,Penn State Nittany Lions,84.12,Round 1-2
-1,30,30,DEN,DEN,,Makai Lemon,WR,USC Trojans,82.89,Round 2-3
-1,31,31,NE,NE,,Caleb Lomu,OT,Utah,81.66,Round 3-4
-1,32,32,SEA,SEA,,Dillon Thieneman,S,Oregon,83.13,Round 2-3
-2,1,33,NYJ,NYJ,,A.J. Haulcy,S,LSU Tigers,82.9,Round 2-3
-2,2,34,ARI,ARI,,Gabe Jacas,EDGE,Illinois Fighting Illini,82.45,Round 2-3
-2,3,35,TEN,TEN,,Nyck Harbor,WR,South Carolina,82.33,Round 2-3
-2,4,36,LV,LV,,Colton Hood,CB,Tennessee Volunteers,82.36,Round 2-3
-2,5,37,NYG,NYG,,Gennings Dunker,OT,Iowa Hawkeyes,81.37,Round 3-4
-2,6,38,HOU,WAS,HOU g WAS (L Tunsil),C.J. Allen,LB,Georgia,82.66,Round 2-3
-2,7,39,CLE,CLE,,Elijah Sarratt,WR,Indiana Hoosiers,81.7,Round 3-4
-2,8,40,KC,KC,,T.J. Parker,EDGE,Clemson,82.41,Round 2-3
-2,9,41,CIN,CIN,,Joshua Josephs,EDGE,Tennessee Volunteers,82.27,Round 2-3
-2,10,42,NO,NO,,Derrick Moore,EDGE,Michigan,82.27,Round 2-3
-2,11,43,MIA,MIA,,LT Overton,EDGE,Alabama,82.22,Round 2-3
-2,12,44,NYJ,DAL,NYJ g DAL (Q Williams),Cashius Howell,EDGE,Texas A&M Aggies,82.2,Round 2-3
-2,13,45,BAL,BAL,,Brandon Cisse,CB,South Carolina Gamecocks,81.86,Round 3-4
-2,14,46,TB,TB,,R Mason Thomas,EDGE,Oklahoma,81.87,Round 3-4
-2,15,47,IND,IND,,Kenyon Sadiq,TE,Oregon,81.68,Round 3-4
-2,16,48,ATL,ATL,,Jermod McCoy,CB,Tennessee,81.49,Round 3-4
-2,17,49,DET,DET,,Emmanuel Pregnon,IOL,Oregon Ducks,82.48,Round 2-3
-2,18,50,MIN,MIN,,D'Angelo Ponds,CB,Indiana Hoosiers,81.38,Round 3-4
-2,19,51,CAR,CAR,,Omar Cooper Jr.,WR,Indiana Hoosiers,81.68,Round 3-4
-2,20,52,GB,GB,,Chandler Rivers,CB,Duke,80.56,Round 3-4
-2,21,53,PIT,PIT,,Lee Hunter,DT,Texas Tech Red Raiders,81.35,Round 3-4
-2,22,54,PHI,PHI,,Jacob Rodriguez,LB,Texas Tech Red Raiders,82.09,Round 3-4
-2,23,55,LAC,LAC,,Eli Stowers,TE,Vanderbilt,81.54,Round 3-4
-2,24,56,JAX,JAX,,KC Concepcion,WR,Texas A&M Aggies,81.28,Round 3-4
-2,25,57,CHI,CHI,,Blake Miller,OT,Clemson Tigers,80.64,Round 3-4
-2,26,58,SF,SF,,Austin Barber,OT,Florida,80.55,Round 3-4
-2,27,59,HOU,HOU,,Chris Bell,WR,Louisville,81.06,Round 3-4
-2,28,60,BUF,BUF,,Dontay Corleone,DT,Cincinnati Bearcats,80.04,Round 3-4
-2,29,61,LAR,LAR,,Caleb Tiernan,OT,Northwestern Wildcats,80.36,Round 3-4
-2,30,62,DEN,DEN,,Chris Brazzell II,WR,Tennessee Volunteers,80.64,Round 3-4
-2,31,63,NE,NE,,Jadarian Price,RB,Notre Dame Fighting Irish,81.81,Round 3-4
-2,32,64,SEA,SEA,,Anthony Hill Jr.,LB,Texas Longhorns,81.52,Round 3-4
-3,1,65,ARI,ARI,,Anthony Lucas,EDGE,USC Trojans,80.54,Round 3-4
-3,2,66,TEN,TEN,,Kevin Concepcion,WR,Texas A&M,80.49,Round 3-4
-3,3,67,LV,LV,,Zakee Wheatley,S,Penn State Nittany Lions,80.6,Round 3-4
-3,4,68,PHI,NYJ,PHI g NYJ (H Reddick),Dani Dennis-Sutton,EDGE,Penn State Nittany Lions,80.43,Round 3-4
-3,5,69,HOU,NYG,HOU g NYG (2025 Draft Trade),Caleb Banks,DT,Florida Gators,79.7,Round 4-5
-3,6,70,CLE,CLE,,Skyler Bell,WR,Connecticut Huskies,80.29,Round 3-4
-3,7,71,WAS,WAS,,Sam Hecht,IOL,Kansas State Wildcats,80.96,Round 3-4
-3,8,72,CIN,CIN,,Davison Igbinosun,CB,Ohio State,79.88,Round 4-5
-3,9,73,NO,NO,,Chase Bisontis,IOL,Texas A&M,80.66,Round 3-4
-3,10,74,KC,KC,,Skyler Gill-Howard,DT,Texas Tech Red Raiders,79.5,Round 4-5
-3,11,75,MIA,MIA,,Deontae Lawson,LB,Alabama,80.55,Round 3-4
-3,12,76,PIT,DAL,PIT g DAL (G Pickens),Gracen Halton,DT,Oklahoma Sooners,79.5,Round 4-5
-3,13,77,ATL,ATL,,Jaishawn Barham,EDGE,Michigan Wolverines,79.5,Round 4-5
-3,14,78,BAL,BAL,,DJ McKinney,CB,Colorado,79.44,Round 4-5
-3,15,79,TB,TB,,Eugene Asante,LB,Auburn,80.53,Round 3-4
-3,16,80,IND,IND,,Justin Joly,TE,North Carolina State Wolfpack,80.03,Round 3-4
-3,17,81,JAX,DET,JAX g DET (NFL Draft Trade),Julian Neal,CB,Arkansas Razorbacks,79.42,Round 4-5
-3,18,82,MIN,MIN,,Takye Heath,CB,Georgia Tech,79.37,Round 4-5
-3,19,83,CAR,CAR,,Malachi Fields,WR,Notre Dame Fighting Irish,79.98,Round 4-5
-3,20,84,GB,GB,,Daylen Everette,CB,Georgia,79.35,Round 4-5
-3,21,85,PIT,PIT,,Domonique Orange,DT,Iowa State Cyclones,79.28,Round 4-5
-3,22,86,LAC,LAC,,Jake Golday,LB,Cincinnati Bearcats,80.32,Round 3-4
-3,23,87,MIA,PHI,MIA g PHI (J Phillips),Genesis Smith,S,Arizona Wildcats,80.0,Round 3-4
-3,24,88,JAX,JAX,,Will Lee III,CB,Texas A&M Aggies,78.41,Round 4-5
-3,25,89,CHI,CHI,,Isaiah World,OT,Oregon,78.33,Round 4-5
-3,26,90,MIA,HOU,MIA g HOU (2025 Draft Trade),Bud Clark,S,TCU Horned Frogs,79.99,Round 4-5
-3,27,91,BUF,BUF,,Kamari Ramsey,S,USC Trojans,79.95,Round 4-5
-3,28,92,SF,SF,,Hollin Pierce,OT,Rutgers,78.06,Round 4-5
-3,29,93,LAR,LAR,,Max Iheanachor,OT,Arizona State Sun Devils,78.03,Round 4-5
-3,30,94,DEN,DEN,,CJ Daniels,WR,Miami (FL) Hurricanes,79.48,Round 4-5
-3,31,95,NE,NE,,J.C. Davis,OT,Illinois Fighting Illini,78.0,Round 4-5
-3,32,96,SEA,SEA,,Xavier Chaplin,OT,Auburn,77.97,Round 4-5
-3,33,97,MIN,MIN,Proj. Compensatory Pick,Xavier Scott,CB,Illinois Fighting Illini,78.04,Round 4-5
-3,34,98,PHI,PHI,Proj. Compensatory Pick,Jalon Kilgore,CB,South Carolina Gamecocks,77.54,Round 4-5
-3,35,99,PIT,PIT,Proj. Compensatory Pick,Jermayne Lole,DT,Louisville,77.86,Round 4-5
-3,36,100,JAX,DET,JAX g DET (NFL Draft Trade),Malik Muhammad,CB,Texas,77.34,Round 4-5
-4,1,101,TEN,TEN,,Ty Simpson,QB,Alabama Crimson Tide,78.43,Round 4-5
-4,2,102,LV,LV,,Trinidad Chambliss,QB,Mississippi Rebels,78.19,Round 4-5
-4,3,103,NYJ,NYJ,,Drew Shelton,OT,Penn State Nittany Lions,77.38,Round 4-5
-4,4,104,ARI,ARI,,Mikail Kamara,EDGE,Indiana Hoosiers,79.36,Round 4-5
-4,5,105,NYG,NYG,,LaNorris Sellers,QB,South Carolina,77.5,Round 4-5
-4,6,106,HOU,WAS,HOU g WAS (L Tunsil),Darrell Jackson Jr.,DT,Florida State,77.78,Round 4-5
-4,7,107,CLE,CLE,,Zachariah Branch,WR,Georgia,79.4,Round 4-5
-4,8,108,DEN,NO,DEN g NO (D Vele),Emmett Johnson,RB,Nebraska Cornhuskers,80.08,Round 3-4
-4,9,109,KC,KC,,Kage Casey,OT,Boise State,77.25,Round 4-5
-4,10,110,CIN,CIN,,Brady Latham,IOL,Arkansas,80.01,Round 3-4
-4,11,111,MIA,MIA,,Jude Bowry,OT,Boston College Eagles,77.08,Round 4-5
-4,12,112,DAL,DAL,,Jonah Coleman,RB,Washington Huskies,79.53,Round 4-5
-4,13,113,IND,IND,,Jack Endries,TE,Texas Longhorns,79.32,Round 4-5
-4,14,114,ATL,ATL,,T.J. Searcy,EDGE,Texas A&M,79.18,Round 4-5
-4,15,115,BAL,BAL,,Josiah Trotter,LB,Missouri Tigers,79.83,Round 4-5
-4,16,116,TB,TB,,Kaimon Rucker,EDGE,North Carolina,79.14,Round 4-5
-4,17,117,MIN,MIN,,Taurean York,LB,Texas A&M Aggies,79.5,Round 4-5
-4,18,118,DET,DET,,Malachi Lawrence,EDGE,UCF Knights,78.0,Round 4-5
-4,19,119,CAR,CAR,,Tyreak Sapp,EDGE,Florida,77.63,Round 4-5
-4,20,120,GB,GB,,Tim Keenan III,DT,Alabama Crimson Tide,77.42,Round 4-5
-4,21,121,PIT,PIT,,David Oke,DT,Arkansas Razorbacks,77.22,Round 4-5
-4,22,122,PHI,PHI,,CJ Mims,EDGE,West Virginia,77.14,Round 4-5
-4,23,123,LAC,LAC,,Michael Trigg,TE,Baylor Bears,78.74,Round 4-5
-4,24,124,LV,JAX,LV g JAX (J Meyers),Drew Allar,QB,Penn State,77.21,Round 4-5
-4,25,125,NE,KC,NE g CHI t KC (2025 Draft Trade),Aamil Wagner,OT,Notre Dame,76.61,Round 4-5
-4,26,126,BUF,BUF,,Dominic Gooden,DT,Oklahoma,77.2,Round 4-5
-4,27,127,SF,SF,,Hezekiah Masses,CB,California Golden Bears,76.49,Round 4-5
-4,28,128,HOU,HOU,,Gabriel Brownlow-Dindy,DT,South Carolina,77.15,Round 4-5
-4,29,129,CHI,LAR,CHI g LAR (2025 Draft Trade),Domata Peko Jr.,DT,UCLA,76.84,Round 4-5
-4,30,130,DEN,DEN,,Germie Bernard,WR,Alabama,79.2,Round 4-5
-4,31,131,NE,NE,,Darris Smith,EDGE,LSU,77.05,Round 4-5
-4,32,132,NO,SEA,NO g SEA (R Shaheed),Cade Klubnik,QB,Clemson,76.72,Round 4-5
-4,33,133,SF,SF,Proj. Compensatory Pick,Nadame Tucker,EDGE,Western Michigan Broncos,77.0,Round 4-5
-4,34,134,LV,LV,Proj. Compensatory Pick,Tacario Davis,CB,Washington,76.32,Round 4-5
-4,35,135,PIT,PIT,Proj. Compensatory Pick,Tre Williams,DT,Clemson,76.73,Round 4-5
-4,36,136,NO,NO,Proj. Compensatory Pick,Jeremiah Alexander,EDGE,Alabama,76.8,Round 4-5
-4,37,137,PHI,PHI,Proj. Compensatory Pick,Ricardo Jones Jr.,CB,Purdue,76.25,Round 4-5
-4,38,138,SF,SF,Proj. Compensatory Pick,Jeremiah Wilson,CB,Florida State,76.22,Round 4-5
-5,1,139,CLE,LV,CLE g LV (K Pickett),Evan Stewart,WR,Oregon,79.14,Round 4-5
-5,2,140,TEN,BAL,TEN g NYJ t BAL (2025 Draft Trade),Deion Burks,WR,Oklahoma Sooners,79.12,Round 4-5
-5,3,141,ARI,ARI,,Denairius Gray,CB,Florida,76.21,Round 4-5
-5,4,142,LAR,TEN,LAR g TEN (E Jones),Samari Matthews,CB,Texas A&M,76.2,Round 4-5
-5,5,143,NYG,NYG,,Michael Taaffe,S,Texas Longhorns,79.5,Round 4-5
-5,6,144,CLE,CLE,,Ja'Kobi Lane,WR,USC,78.96,Round 4-5
-5,7,145,WAS,WAS,,Tyreak Chappell,CB,South Carolina,76.18,Round 4-5
-5,8,146,KC,KC,,Ted Hurst,WR,Georgia State Panthers,78.76,Round 4-5
-5,9,147,CLE,CIN,CLE g CIN (J Flacco),Antonio Williams,WR,Clemson,78.53,Round 4-5
-5,10,148,NO,NO,,Carson Beck,QB,Miami (FL) Hurricanes,75.79,Round 5-6
-5,11,149,MIA,MIA,,Albert Regis,DT,Texas A&M Aggies,75.77,Round 5-6
-5,12,150,DAL,DAL,,Kaytron Allen,RB,Penn State Nittany Lions,79.42,Round 4-5
-5,13,151,PHI,ATL,PHI g ATL(2025 Draft Trade),Ashton Stamps,CB,LSU,76.13,Round 4-5
-5,14,152,BAL,BAL,,Earnest Greene III,OT,Georgia,75.66,Round 5-6
-5,15,153,TB,TB,,Ja'Keem Jackson,CB,Florida,76.09,Round 4-5
-5,16,154,IND,IND,,Jordan Shaw,CB,Washington,76.07,Round 4-5
-5,17,155,DET,DET,,Lorenzo Styles Jr.,CB,Ohio State,76.05,Round 4-5
-5,18,156,CAR,MIN,CAR g MIN (A Theilen),De'Zhaun Stribling,WR,Mississippi Rebels,78.0,Round 4-5
-5,19,157,CAR,CAR,,Brenen Thompson,WR,Mississippi State Bulldogs,76.84,Round 4-5
-5,20,158,GB,GB,,Kani Walker,CB,Oregon,76.04,Round 4-5
-5,21,159,PIT,PIT,,Eric McAlister,WR,TCU Horned Frogs,75.99,Round 5-6
-5,22,160,BAL,LAC,BAL g LAC (A Gilman),Toriano Pride Jr.,CB,Missouri,76.02,Round 4-5
-5,23,161,MIN,PHI,MIN g PHI (S Howell),Tyler Collins,CB,Mississippi State,75.96,Round 5-6
-5,24,162,JAX,JAX,,Devon Marshall,CB,North Carolina State Wolfpack,75.95,Round 5-6
-5,25,163,CHI,CHI,,Treyveon McGee,CB,Georgia,75.93,Round 5-6
-5,26,164,JAX,PHI,JAX g SF t PHI (B Huff/T Bigsby),Jadon Canady,CB,Oregon Ducks,75.37,Round 5-6
-5,27,165,HOU,PHI,HOU g HOU t PHI(C Gardner-Johnson/JMetchie),Nic Anderson,WR,Oklahoma,75.24,Round 5-6
-5,28,166,BUF,BUF,,Garrett Nussmeier,QB,LSU,75.35,Round 5-6
-5,29,167,LAR,LAR,,Johntay Cook,WR,Texas,75.22,Round 5-6
-5,30,168,DEN,DEN,,Isaiah Sategna,WR,Arkansas,75.19,Round 5-6
-5,31,169,NE,NE,,Thaddeus Dixon,CB,North Carolina Tar Heels,75.0,Round 5-6
-5,32,170,NO,SEA,NO g SEA (R Shaheed),Bishop Fitzgerald,S,USC Trojans,76.96,Round 4-5
-5,33,171,SF,SF,Proj. Compensatory Pick,Isaac Smith,S,Mississippi State,76.55,Round 4-5
-5,34,172,BAL,BAL,Proj. Compensatory Pick,Jermaine Mathews Jr.,CB,Ohio State Buckeyes,74.84,Round 5-6
-5,35,173,BAL,BAL,Proj. Compensatory Pick,Dakaari Nelson,S,Penn State,76.53,Round 4-5
-5,36,174,LV,LV,Proj. Compensatory Pick,Tyre West,DT,Indiana,74.68,Round 5-6
-5,37,175,NYJ,NYJ,Proj. Compensatory Pick,Kevin Coleman Jr.,WR,Missouri Tigers,74.63,Round 5-6
-5,38,176,KC,KC,Proj. Compensatory Pick,Keon Sabb,S,Alabama,76.52,Round 4-5
-5,39,177,DAL,DAL,Proj. Compensatory Pick,Nicholas Singleton,RB,Penn State,78.44,Round 4-5
-5,40,178,NYJ,NYJ,Proj. Compensatory Pick,Trey Zuhn III,OT,Texas A&M Aggies,74.34,Round 5-6
-5,41,179,PHI,PHI,Proj. Compensatory Pick,Branson Combs,S,Wake Forest,76.48,Round 4-5
-6,1,180,LV,LV,LAR g NYJ t CLE t JAX (J Meyers),Gunner Stockton,QB,Georgia,73.96,Round 5-6
-6,2,181,ARI,ARI,,Aaron Anderson,WR,LSU Tigers,73.93,Round 5-6
-6,3,182,TEN,TEN,,DeMonte Capehart,DT,Clemson Tigers,73.92,Round 5-6
-6,4,183,LV,LV,,Max Llewellyn,EDGE,Iowa Hawkeyes,73.88,Round 5-6
-6,5,184,NYG,NYG,,Treydan Stukes,CB,Arizona Wildcats,73.88,Round 5-6
-6,6,185,WAS,WAS,,J. Michael Sturdivant,WR,Florida Gators,73.86,Round 5-6
-6,7,186,SEA,CLE,SEA g CLE (N Harris),Jaden Rashada,QB,Sacramento State,73.83,Round 5-6
-6,8,187,CIN,CIN,,Conner Weigman,QB,Houston,73.82,Round 5-6
-6,9,188,NO,NO,,Jake Slaughter,IOL,Florida,79.38,Round 4-5
-6,10,189,NE,KC,NE g KC (J Uche),Keon Wylie,S,Texas Tech,76.46,Round 4-5
-6,11,190,NYG,MIA,NYG G MIA (D Waller),Jalyn Phillips,S,Georgia,74.76,Round 5-6
-6,12,191,NYG,DAL,NYG g DAL (J Phillips),Justin Flowe,LB,Arizona,78.28,Round 4-5
-6,13,192,TEN,NYJ,TEN g BAL t NYJ (2025 Draft Trade/J Brownlee),Kyle Louis,LB,Pittsburgh Panthers,77.41,Round 4-5
-6,14,193,TB,TB,,Connor Lew,IOL,Auburn Tigers,79.14,Round 4-5
-6,15,194,MIN,IND,MIN g IND (M Blackmon),Eugene Brooks III,IOL,Oklahoma,78.99,Round 4-5
-6,16,195,ATL,ATL,,Cole Wisniewski,S,Texas Tech Red Raiders,73.29,Round 5-6
-6,17,196,SF,MIN,SF g MIN t HOU t MIN (Various),Max Klare,TE,Purdue,77.18,Round 4-5
-6,18,197,CIN,CLE,CIN g DET t CLE (J Flacco),Ephesians Prysock,CB,Washington Huskies,73.24,Round 5-6
-6,19,198,CAR,CAR,,Chase Roberts,WR,BYU Cougars,73.23,Round 5-6
-6,20,199,GB,GB,,Rayshaun Benny,DT,Michigan Wolverines,73.21,Round 5-6
-6,21,200,NE,PIT,NE g PIT (K Duggar),Elijah Pritchett,OT,Nebraska Cornhuskers,73.2,Round 5-6
-6,22,201,JAX,HOU,JAX g PHI t HOU (T Bigsby),Peyton Bowen,S,Oklahoma Sooners,73.18,Round 5-6
-6,23,202,LAC,LAC,,Sam Roush,TE,Stanford Cardinal,77.15,Round 4-5
-6,24,203,DET,JAX,DET g JAX (2025 Draft Trade),Zxavian Harris,DT,Mississippi Rebels,73.12,Round 5-6
-6,25,204,CLE,CHI,CLE g CHI (J Tryon),Jalen Stroman,S,Notre Dame Fighting Irish,73.13,Round 5-6
-6,26,205,LAR,HOU,LAR g HOU (B Skowronek),Harold Perkins Jr.,LB,LSU,77.14,Round 4-5
-6,27,206,NYJ,BUF,NYJ g BUF (B Codrington),Eric Rivers,WR,Georgia Tech Yellow Jackets,73.05,Round 5-6
-6,28,207,WAS,SF,WAS g SF (B Robinson),Tommy Castellanos,QB,Florida State Seminoles,72.99,Round 5-6
-6,29,208,LAR,TEN,LAR g LAR t TEN (T White/ E Jones),Raesjon Davis,LB,USC,75.6,Round 5-6
-6,30,209,BAL,PHI,BAL g DEN t NYJ t MIN t PHI(J Alexander/Various),Keeshawn Silver,DT,USC,72.89,Round 5-6
-6,31,210,NE,NE,,Domani Jackson,CB,Alabama,72.86,Round 5-6
-6,32,211,DET,JAX,DET g SEA t JAX(R Robertson-Harris/T Patrick),Raion Strader,CB,Auburn Tigers,72.73,Round 5-6
-6,33,212,DET,DET,Proj. Compensatory Pick,Keylan Rutledge,IOL,Georgia Tech Yellow Jackets,78.46,Round 4-5
-6,34,213,PIT,PIT,Proj. Compensatory Pick,Dametrious Crownover,OT,Texas A&M Aggies,72.61,Round 5-6
-6,35,214,PIT,PIT,Proj. Compensatory Pick,Josh Cameron,WR,Baylor Bears,72.65,Round 5-6
-6,36,215,DAL,DAL,Proj. Compensatory Pick,Seth McGowan,RB,Kentucky Wildcats,77.97,Round 4-5
-6,37,216,IND,IND,Proj. Compensatory Pick,Joe Royer,TE,Cincinnati Bearcats,76.75,Round 4-5
-7,1,217,ARI,ARI,,Barion Brown,WR,LSU,72.5,Round 5-6
-7,2,218,NYJ,TEN,NYJ g TEN (J Brownlee),TJ Hall,CB,Iowa Hawkeyes,72.33,Round 5-6
-7,3,219,LV,LV,,Reggie Virgil,WR,Texas Tech Red Raiders,72.28,Round 5-6
-7,4,220,BUF,NYJ,BUF g NYJ (B Codrington),Tre Smith,EDGE,Arizona Wildcats,72.15,Round 5-6
-7,5,221,CIN,DAL,CIN g NYG t DAL (J Phillips/L Wilson),Mo Westmoreland,EDGE,Tulane Green Wave,72.13,Round 5-6
-7,6,222,DET,CLE,DET g CLE (Z Smith),Ryan Baer,OT,Pittsburgh Panthers,71.91,Round 6-7
-7,7,223,WAS,WAS,,Oscar Delp,TE,Georgia,75.78,Round 5-6
-7,8,224,PIT,NE,PIT g NO t NE (D Godchaux/K Duggar),Ernest Hausmann,LB,Michigan,75.58,Round 5-6
-7,9,225,DAL,KC,DAL g KC (P Hendershot cond),Daniel Harris,CB,Georgia Bulldogs,71.41,Round 6-7
-7,10,226,CIN,CIN,,Josh Cuevas,TE,Alabama Crimson Tide,75.4,Round 5-6
-7,11,227,MIA,MIA,,Vincent Anthony Jr.,EDGE,Duke Blue Devils,71.28,Round 6-7
-7,12,228,BUF,DAL,BUF g DAL (K Elam),Anthony Smith,WR,East Carolina Pirates,71.24,Round 6-7
-7,13,229,TB,TB,,Dean Miller,EDGE,Kansas Jayhawks,71.23,Round 6-7
-7,14,230,IND,IND,,Eli Raridon,TE,Notre Dame,75.17,Round 5-6
-7,15,231,ATL,ATL,,Devonte Ross,WR,Penn State Nittany Lions,70.83,Round 6-7
-7,16,232,LAR,BAL,LAR g BAL (T White),Jeff Persi,OT,Pittsburgh Panthers,70.82,Round 6-7
-7,17,233,JAX,DET,JAX g DET (R Patterson),Zane Durant,DT,Penn State,70.9,Round 6-7
-7,18,234,MIN,MIN,,Fa'alili Fa'amoe,OT,Wake Forest Demon Deacons,70.75,Round 6-7
-7,19,235,MIN,CAR,MIN g CAR (A Thielen),Amari Jackson,CB,Boston College Eagles,70.75,Round 6-7
-7,20,236,GB,GB,,Caleb Douglas,WR,Texas Tech Red Raiders,70.69,Round 6-7
-7,21,237,PIT,PIT,,TJ Guy,EDGE,Michigan Wolverines,70.79,Round 6-7
-7,22,238,TEN,LAC,TEN g LAC (E Molden),Lewis Bond,WR,Boston College Eagles,70.66,Round 6-7
-7,23,239,CHI,CLE,CHI g PHI t JAX t CLE (various),Deven Eastern,DT,Minnesota Golden Gophers,70.65,Round 6-7
-7,24,240,MIN,JAX,MIN g JAX (C Robinson),Beau Stephens,IOL,Iowa Hawkeyes,78.0,Round 4-5
-7,25,241,CHI,CHI,,Stephen Hall,CB,Missouri Tigers,70.61,Round 6-7
-7,26,242,NYJ,CLE,NYJ g BUF t CLE (A Cooper/J Briggs),Gunner Maldonado,S,Kansas State Wildcats,70.61,Round 6-7
-7,27,243,HOU,SF,HOU g SF (K Davis),Miller Moss,QB,Louisville,70.61,Round 6-7
-7,28,244,MIN,HOU,MIN g HOU (C Akers),Pat Coogan,IOL,Indiana Hoosiers,77.39,Round 4-5
-7,29,245,JAX,HOU,JAX G LAR t HOU (C Kirk),Keyron Crawford,EDGE,Auburn Tigers,70.58,Round 6-7
-7,30,246,DEN,DEN,,DaShawn Jones,CB,Alabama Crimson Tide,70.58,Round 6-7
-7,31,247,SF,NE,SF g NE (K White),Jimmori Robinson,EDGE,West Virginia Mountaineers,70.58,Round 6-7
-7,32,248,CLE,SEA,CLE g SEA (N Harris),Nikai Martinez,S,Michigan State Spartans,70.56,Round 6-7
-7,33,249,BAL,BAL,Proj. Compensatory Pick,Jalon Daniels,QB,Kansas Jayhawks,70.54,Round 6-7
-7,34,250,LAR,LAR,Proj. Compensatory Pick,Martavius French,LB,Tennessee,75.54,Round 5-6
-7,35,251,DEN,DEN,Proj. Compensatory Pick,Donavon Greene,WR,Virginia Tech Hokies,70.53,Round 6-7
-7,36,252,BAL,BAL,Proj. Compensatory Pick,Chris Hilton Jr.,WR,LSU Tigers,70.53,Round 6-7
-7,37,253,IND,IND,Proj. Compensatory Pick,Arlis Boardingham,TE,Florida,74.47,Round 5-6
-7,38,254,GB,GB,Proj. Compensatory Pick,James Thompson Jr.,DT,Illinois Fighting Illini,70.46,Round 6-7
-7,39,255,DEN,DEN,Proj. Compensatory Pick,Oscar Cardenas,TE,UTSA,74.36,Round 5-6
-7,40,256,LAR,LAR,Proj. Compensatory Pick,Shedrick Shropshire,LB,TCU,75.51,Round 5-6
-7,41,257,GB,GB,Proj. Compensatory Pick,Robert Spears-Jennings,S,Oklahoma Sooners,70.52,Round 6-7
+round,pick,overall_pick,team,original_pick_owner,acquired_via,player_name,position,school,final_grade,round_value,team_athletic_bias_enabled,team_athletic_fit_modifier,team_athletic_target_ras,player_athletic_proxy,player_athletic_source,team_athletic_tier,team_athletic_threshold_mode,team_athletic_threshold_confidence,team_athletic_bias_reason
+1,1,1,LV,LV,,Fernando Mendoza,QB,Indiana,81.14,Round 2-3,0,0.0,,,none,,,,disabled
+1,2,2,NYJ,NYJ,,Francis Mauigoa,OT,Miami (FL) Hurricanes,82.59,Round 1-2,0,0.0,,,none,,,,disabled
+1,3,3,ARI,ARI,,Cashius Howell,EDGE,Texas A&M Aggies,83.76,Round 1-2,0,0.0,,,none,,,,disabled
+1,4,4,TEN,TEN,,R Mason Thomas,EDGE,Oklahoma,82.78,Round 1-2,0,0.0,,,none,,,,disabled
+1,5,5,NYG,NYG,,Kadyn Proctor,OT,Alabama,82.36,Round 1-2,0,0.0,,,none,,,,disabled
+1,6,6,CLE,CLE,,Carnell Tate,WR,Ohio State,81.98,Round 2-3,0,0.0,,,none,,,,disabled
+1,7,7,WAS,WAS,,Brian Parker II,OT,Duke Blue Devils,81.56,Round 2-3,0,0.0,,,none,,,,disabled
+1,8,8,NO,NO,,David Bailey,EDGE,Texas Tech,82.38,Round 1-2,0,0.0,,,none,,,,disabled
+1,9,9,KC,KC,,Monroe Freeling,OT,Georgia,80.85,Round 2-3,0,0.0,,,none,,,,disabled
+1,10,10,CIN,CIN,,Mansoor Delane,CB,LSU Tigers,82.07,Round 1-2,0,0.0,,,none,,,,disabled
+1,11,11,MIA,MIA,,Caleb Downs,S,Ohio State,82.33,Round 1-2,0,0.0,,,none,,,,disabled
+1,12,12,DAL,DAL,,Jeremiyah Love,RB,Notre Dame,83.18,Round 1-2,0,0.0,,,none,,,,disabled
+1,13,13,LAR,ATL,LAR g ATL (2025 Draft trade),Keionte Scott,CB,Miami (FL) Hurricanes,81.76,Round 2-3,0,0.0,,,none,,,,disabled
+1,14,14,BAL,BAL,,Caleb Lomu,OT,Utah,80.44,Round 2-3,0,0.0,,,none,,,,disabled
+1,15,15,TB,TB,,Keldric Faulk,EDGE,Auburn,81.33,Round 2-3,0,0.0,,,none,,,,disabled
+1,16,16,NYJ,IND,NYJ g IND (A Gardner),Emmanuel McNeil-Warren,S,Toledo Rockets,81.7,Round 2-3,0,0.0,,,none,,,,disabled
+1,17,17,DET,DET,,Zion Young,EDGE,Missouri Tigers,81.28,Round 2-3,0,0.0,,,none,,,,disabled
+1,18,18,MIN,MIN,,Christen Miller,DT,Georgia Bulldogs,81.09,Round 2-3,0,0.0,,,none,,,,disabled
+1,19,19,CAR,CAR,,Romello Height,EDGE,Texas Tech Red Raiders,81.13,Round 2-3,0,0.0,,,none,,,,disabled
+1,20,20,DAL,GB,DAL g GB (M Parsons),Kayden McDonald,DT,Ohio State Buckeyes,80.9,Round 2-3,0,0.0,,,none,,,,disabled
+1,21,21,PIT,PIT,,Caleb Banks,DT,Florida Gators,80.81,Round 2-3,0,0.0,,,none,,,,disabled
+1,22,22,LAC,LAC,,Dillon Thieneman,S,Oregon,81.66,Round 2-3,0,0.0,,,none,,,,disabled
+1,23,23,PHI,PHI,,Akheem Mesidor,EDGE,Miami (FL) Hurricanes,80.24,Round 2-3,0,0.0,,,none,,,,disabled
+1,24,24,CLE,JAX,CLE g JAX (2025 Draft Trade),Makai Lemon,WR,USC Trojans,81.42,Round 2-3,0,0.0,,,none,,,,disabled
+1,25,25,CHI,CHI,,Spencer Fano,OT,Utah,80.13,Round 2-3,0,0.0,,,none,,,,disabled
+1,26,26,BUF,BUF,,Peter Woods,DT,Clemson,80.4,Round 2-3,0,0.0,,,none,,,,disabled
+1,27,27,SF,SF,,Blake Miller,OT,Clemson Tigers,79.51,Round 4-5,0,0.0,,,none,,,,disabled
+1,28,28,HOU,HOU,,Denzel Boston,WR,Washington,81.24,Round 2-3,0,0.0,,,none,,,,disabled
+1,29,29,LAR,LAR,,Arvell Reese,LB,Ohio State Buckeyes,81.79,Round 2-3,0,0.0,,,none,,,,disabled
+1,30,30,DEN,DEN,,Nyck Harbor,WR,South Carolina,81.22,Round 2-3,0,0.0,,,none,,,,disabled
+1,31,31,NE,NE,,Jordyn Tyson,WR,Arizona State,80.97,Round 2-3,0,0.0,,,none,,,,disabled
+1,32,32,SEA,SEA,,C.J. Allen,LB,Georgia,81.55,Round 2-3,0,0.0,,,none,,,,disabled
+2,1,33,NYJ,NYJ,,Skyler Bell,WR,Connecticut Huskies,80.86,Round 2-3,0,0.0,,,none,,,,disabled
+2,2,34,ARI,ARI,,Dani Dennis-Sutton,EDGE,Penn State Nittany Lions,80.17,Round 2-3,0,0.0,,,none,,,,disabled
+2,3,35,TEN,TEN,,Ty Simpson,QB,Alabama Crimson Tide,79.26,Round 4-5,0,0.0,,,none,,,,disabled
+2,4,36,LV,LV,,Colton Hood,CB,Tennessee Volunteers,80.23,Round 2-3,0,0.0,,,none,,,,disabled
+2,5,37,NYG,NYG,,Sonny Styles,LB,Ohio State,81.26,Round 2-3,0,0.0,,,none,,,,disabled
+2,6,38,HOU,WAS,HOU g WAS (L Tunsil),Omar Cooper Jr.,WR,Indiana Hoosiers,80.2,Round 2-3,0,0.0,,,none,,,,disabled
+2,7,39,CLE,CLE,,Olaivavega Ioane,IOL,Penn State Nittany Lions,81.05,Round 2-3,0,0.0,,,none,,,,disabled
+2,8,40,KC,KC,,Emmanuel Pregnon,IOL,Oregon Ducks,80.53,Round 2-3,0,0.0,,,none,,,,disabled
+2,9,41,CIN,CIN,,Avieon Terrell,CB,Clemson,80.11,Round 3-4,0,0.0,,,none,,,,disabled
+2,10,42,NO,NO,,Rueben Bain Jr.,EDGE,Miami (FL) Hurricanes,80.01,Round 3-4,0,0.0,,,none,,,,disabled
+2,11,43,MIA,MIA,,A.J. Haulcy,S,LSU Tigers,80.12,Round 2-3,0,0.0,,,none,,,,disabled
+2,12,44,NYJ,DAL,NYJ g DAL (Q Williams),Daylen Everette,CB,Georgia,79.96,Round 4-5,0,0.0,,,none,,,,disabled
+2,13,45,BAL,BAL,,Brandon Cisse,CB,South Carolina Gamecocks,79.84,Round 4-5,0,0.0,,,none,,,,disabled
+2,14,46,TB,TB,,Mikail Kamara,EDGE,Indiana Hoosiers,79.59,Round 4-5,0,0.0,,,none,,,,disabled
+2,15,47,IND,IND,,Keith Abney II,CB,Arizona State Sun Devils,79.25,Round 4-5,0,0.0,,,none,,,,disabled
+2,16,48,ATL,ATL,,T.J. Parker,EDGE,Clemson,79.52,Round 4-5,0,0.0,,,none,,,,disabled
+2,17,49,DET,DET,,T.J. Searcy,EDGE,Texas A&M,79.29,Round 4-5,0,0.0,,,none,,,,disabled
+2,18,50,MIN,MIN,,Jermod McCoy,CB,Tennessee,79.23,Round 4-5,0,0.0,,,none,,,,disabled
+2,19,51,CAR,CAR,,Gabe Jacas,EDGE,Illinois Fighting Illini,79.12,Round 4-5,0,0.0,,,none,,,,disabled
+2,20,52,GB,GB,,Lee Hunter,DT,Texas Tech Red Raiders,79.82,Round 4-5,0,0.0,,,none,,,,disabled
+2,21,53,PIT,PIT,,Gracen Halton,DT,Oklahoma Sooners,79.13,Round 4-5,0,0.0,,,none,,,,disabled
+2,22,54,PHI,PHI,,Kaimon Rucker,EDGE,North Carolina,79.12,Round 4-5,0,0.0,,,none,,,,disabled
+2,23,55,LAC,LAC,,Jack Endries,TE,Texas Longhorns,79.24,Round 4-5,0,0.0,,,none,,,,disabled
+2,24,56,JAX,JAX,,DJ McKinney,CB,Colorado,79.05,Round 4-5,0,0.0,,,none,,,,disabled
+2,25,57,CHI,CHI,,Eugene Asante,LB,Auburn,80.22,Round 2-3,0,0.0,,,none,,,,disabled
+2,26,58,SF,SF,,Takye Heath,CB,Georgia Tech,78.89,Round 4-5,0,0.0,,,none,,,,disabled
+2,27,59,HOU,HOU,,Skyler Gill-Howard,DT,Texas Tech Red Raiders,79.03,Round 4-5,0,0.0,,,none,,,,disabled
+2,28,60,BUF,BUF,,Chris Johnson,CB,San Diego State Aztecs,78.87,Round 4-5,0,0.0,,,none,,,,disabled
+2,29,61,LAR,LAR,,Anthony Hill Jr.,LB,Texas Longhorns,79.47,Round 4-5,0,0.0,,,none,,,,disabled
+2,30,62,DEN,DEN,,Kevin Concepcion,WR,Texas A&M,79.15,Round 4-5,0,0.0,,,none,,,,disabled
+2,31,63,NE,NE,,Isaiah World,OT,Oregon,78.12,Round 4-5,0,0.0,,,none,,,,disabled
+2,32,64,SEA,SEA,,Kaytron Allen,RB,Penn State Nittany Lions,79.76,Round 4-5,0,0.0,,,none,,,,disabled
+3,1,65,ARI,ARI,,D'Angelo Ponds,CB,Indiana Hoosiers,78.85,Round 4-5,0,0.0,,,none,,,,disabled
+3,2,66,TEN,TEN,,Josiah Trotter,LB,Missouri Tigers,79.33,Round 4-5,0,0.0,,,none,,,,disabled
+3,3,67,LV,LV,,Kenyon Sadiq,TE,Oregon,79.22,Round 4-5,0,0.0,,,none,,,,disabled
+3,4,68,PHI,NYJ,PHI g NYJ (H Reddick),Derrick Moore,EDGE,Michigan,78.84,Round 4-5,0,0.0,,,none,,,,disabled
+3,5,69,HOU,NYG,HOU g NYG (2025 Draft Trade),Jermayne Lole,DT,Louisville,78.64,Round 4-5,0,0.0,,,none,,,,disabled
+3,6,70,CLE,CLE,,CJ Daniels,WR,Miami (FL) Hurricanes,78.72,Round 4-5,0,0.0,,,none,,,,disabled
+3,7,71,WAS,WAS,,LT Overton,EDGE,Alabama,78.74,Round 4-5,0,0.0,,,none,,,,disabled
+3,8,72,CIN,CIN,,Nicholas Singleton,RB,Penn State,79.09,Round 4-5,0,0.0,,,none,,,,disabled
+3,9,73,NO,NO,,Justin Flowe,LB,Arizona,78.88,Round 4-5,0,0.0,,,none,,,,disabled
+3,10,74,KC,KC,,Albert Regis,DT,Texas A&M Aggies,78.64,Round 4-5,0,0.0,,,none,,,,disabled
+3,11,75,MIA,MIA,,Michael Taaffe,S,Texas Longhorns,78.57,Round 4-5,0,0.0,,,none,,,,disabled
+3,12,76,PIT,DAL,PIT g DAL (G Pickens),Tim Keenan III,DT,Alabama Crimson Tide,78.47,Round 4-5,0,0.0,,,none,,,,disabled
+3,13,77,ATL,ATL,,Tyreak Sapp,EDGE,Florida,78.09,Round 4-5,0,0.0,,,none,,,,disabled
+3,14,78,BAL,BAL,,Xavier Scott,CB,Illinois Fighting Illini,77.68,Round 4-5,0,0.0,,,none,,,,disabled
+3,15,79,TB,TB,,Malachi Lawrence,EDGE,UCF Knights,78.09,Round 4-5,0,0.0,,,none,,,,disabled
+3,16,80,IND,IND,,Eli Stowers,TE,Vanderbilt,77.86,Round 4-5,0,0.0,,,none,,,,disabled
+3,17,81,JAX,DET,JAX g DET (NFL Draft Trade),Chris Brazzell II,WR,Tennessee Volunteers,78.46,Round 4-5,0,0.0,,,none,,,,disabled
+3,18,82,MIN,MIN,,David Oke,DT,Arkansas Razorbacks,78.29,Round 4-5,0,0.0,,,none,,,,disabled
+3,19,83,CAR,CAR,,Evan Stewart,WR,Oregon,78.3,Round 4-5,0,0.0,,,none,,,,disabled
+3,20,84,GB,GB,,Hollin Pierce,OT,Rutgers,77.82,Round 4-5,0,0.0,,,none,,,,disabled
+3,21,85,PIT,PIT,,Gabriel Brownlow-Dindy,DT,South Carolina,77.9,Round 4-5,0,0.0,,,none,,,,disabled
+3,22,86,LAC,LAC,,Jake Golday,LB,Cincinnati Bearcats,78.58,Round 4-5,0,0.0,,,none,,,,disabled
+3,23,87,MIA,PHI,MIA g PHI (J Phillips),Gennings Dunker,OT,Iowa Hawkeyes,77.79,Round 4-5,0,0.0,,,none,,,,disabled
+3,24,88,JAX,JAX,,Zachariah Branch,WR,Georgia,78.25,Round 4-5,0,0.0,,,none,,,,disabled
+3,25,89,CHI,CHI,,J.C. Davis,OT,Illinois Fighting Illini,77.77,Round 4-5,0,0.0,,,none,,,,disabled
+3,26,90,MIA,HOU,MIA g HOU (2025 Draft Trade),Xavier Chaplin,OT,Auburn,77.65,Round 4-5,0,0.0,,,none,,,,disabled
+3,27,91,BUF,BUF,,Dominic Gooden,DT,Oklahoma,77.72,Round 4-5,0,0.0,,,none,,,,disabled
+3,28,92,SF,SF,,Langston Jones,OT,Lehigh,77.39,Round 4-5,0,0.0,,,none,,,,disabled
+3,29,93,LAR,LAR,,Caleb Tiernan,OT,Northwestern Wildcats,77.1,Round 4-5,0,0.0,,,none,,,,disabled
+3,30,94,DEN,DEN,,Deion Burks,WR,Oklahoma Sooners,78.06,Round 4-5,0,0.0,,,none,,,,disabled
+3,31,95,NE,NE,,Drew Shelton,OT,Penn State Nittany Lions,77.08,Round 4-5,0,0.0,,,none,,,,disabled
+3,32,96,SEA,SEA,,Jonah Coleman,RB,Washington Huskies,78.5,Round 4-5,0,0.0,,,none,,,,disabled
+3,33,97,MIN,MIN,Proj. Compensatory Pick,Davison Igbinosun,CB,Ohio State,76.67,Round 4-5,0,0.0,,,none,,,,disabled
+3,34,98,PHI,PHI,Proj. Compensatory Pick,Matayo Uiagalelei,EDGE,Oregon,77.48,Round 4-5,0,0.0,,,none,,,,disabled
+3,35,99,PIT,PIT,Proj. Compensatory Pick,Domata Peko Jr.,DT,UCLA,77.7,Round 4-5,0,0.0,,,none,,,,disabled
+3,36,100,JAX,DET,JAX g DET (NFL Draft Trade),Malachi Fields,WR,Notre Dame Fighting Irish,78.06,Round 4-5,0,0.0,,,none,,,,disabled
+4,1,101,TEN,TEN,,Drew Allar,QB,Penn State,77.04,Round 4-5,0,0.0,,,none,,,,disabled
+4,2,102,LV,LV,,Julian Neal,CB,Arkansas Razorbacks,76.62,Round 4-5,0,0.0,,,none,,,,disabled
+4,3,103,NYJ,NYJ,,Eugene Brooks III,IOL,Oklahoma,78.51,Round 4-5,0,0.0,,,none,,,,disabled
+4,4,104,ARI,ARI,,Joshua Josephs,EDGE,Tennessee Volunteers,77.33,Round 4-5,0,0.0,,,none,,,,disabled
+4,5,105,NYG,NYG,,Harold Perkins Jr.,LB,LSU,78.35,Round 4-5,0,0.0,,,none,,,,disabled
+4,6,106,HOU,WAS,HOU g WAS (L Tunsil),DeMonte Capehart,DT,Clemson Tigers,77.64,Round 4-5,0,0.0,,,none,,,,disabled
+4,7,107,CLE,CLE,,Elijah Sarratt,WR,Indiana Hoosiers,77.79,Round 4-5,0,0.0,,,none,,,,disabled
+4,8,108,DEN,NO,DEN g NO (D Vele),Chris Bell,WR,Louisville,77.78,Round 4-5,0,0.0,,,none,,,,disabled
+4,9,109,KC,KC,,Domonique Orange,DT,Iowa State Cyclones,77.56,Round 4-5,0,0.0,,,none,,,,disabled
+4,10,110,CIN,CIN,,Anthony Lucas,EDGE,USC Trojans,77.16,Round 4-5,0,0.0,,,none,,,,disabled
+4,11,111,MIA,MIA,,Seth McGowan,RB,Kentucky Wildcats,78.3,Round 4-5,0,0.0,,,none,,,,disabled
+4,12,112,DAL,DAL,,Jadarian Price,RB,Notre Dame Fighting Irish,78.1,Round 4-5,0,0.0,,,none,,,,disabled
+4,13,113,IND,IND,,Justin Joly,TE,North Carolina State Wolfpack,77.1,Round 4-5,0,0.0,,,none,,,,disabled
+4,14,114,ATL,ATL,,CJ Mims,EDGE,West Virginia,77.13,Round 4-5,0,0.0,,,none,,,,disabled
+4,15,115,BAL,BAL,,Aamil Wagner,OT,Notre Dame,76.36,Round 4-5,0,0.0,,,none,,,,disabled
+4,16,116,TB,TB,,Darris Smith,EDGE,LSU,76.89,Round 4-5,0,0.0,,,none,,,,disabled
+4,17,117,MIN,MIN,,Brady Latham,IOL,Arkansas,78.44,Round 4-5,0,0.0,,,none,,,,disabled
+4,18,118,DET,DET,,Jeremiah Alexander,EDGE,Alabama,76.51,Round 4-5,0,0.0,,,none,,,,disabled
+4,19,119,CAR,CAR,,Eric Singleton Jr.,WR,Auburn,77.64,Round 4-5,0,0.0,,,none,,,,disabled
+4,20,120,GB,GB,,Austin Barber,OT,Florida,76.25,Round 4-5,0,0.0,,,none,,,,disabled
+4,21,121,PIT,PIT,,A'Mauri Washington,DT,Oregon,77.31,Round 4-5,0,0.0,,,none,,,,disabled
+4,22,122,PHI,PHI,,Max Iheanachor,OT,Arizona State Sun Devils,76.22,Round 4-5,0,0.0,,,none,,,,disabled
+4,23,123,LAC,LAC,,Sam Roush,TE,Stanford Cardinal,77.02,Round 4-5,0,0.0,,,none,,,,disabled
+4,24,124,LV,JAX,LV g JAX (J Meyers),LaNorris Sellers,QB,South Carolina,76.54,Round 4-5,0,0.0,,,none,,,,disabled
+4,25,125,NE,KC,NE g CHI t KC (2025 Draft Trade),De'Zhaun Stribling,WR,Mississippi Rebels,77.54,Round 4-5,0,0.0,,,none,,,,disabled
+4,26,126,BUF,BUF,,Mateen Ibirogba,DT,Wake Forest,77.27,Round 4-5,0,0.0,,,none,,,,disabled
+4,27,127,SF,SF,,Trevor Goosby,OT,Texas,76.01,Round 4-5,0,0.0,,,none,,,,disabled
+4,28,128,HOU,HOU,,Tre Williams,DT,Clemson,77.13,Round 4-5,0,0.0,,,none,,,,disabled
+4,29,129,CHI,LAR,CHI g LAR (2025 Draft Trade),Nick Barrett,DT,South Carolina,76.97,Round 4-5,0,0.0,,,none,,,,disabled
+4,30,130,DEN,DEN,,KC Concepcion,WR,Texas A&M Aggies,77.13,Round 4-5,0,0.0,,,none,,,,disabled
+4,31,131,NE,NE,,Daniel Sobkowicz,WR,Illinois State,76.96,Round 4-5,0,0.0,,,none,,,,disabled
+4,32,132,NO,SEA,NO g SEA (R Shaheed),Cade Klubnik,QB,Clemson,76.07,Round 4-5,0,0.0,,,none,,,,disabled
+4,33,133,SF,SF,Proj. Compensatory Pick,Denairius Gray,CB,Florida,76.14,Round 4-5,0,0.0,,,none,,,,disabled
+4,34,134,LV,LV,Proj. Compensatory Pick,Ja'Keem Jackson,CB,Florida,76.01,Round 4-5,0,0.0,,,none,,,,disabled
+4,35,135,PIT,PIT,Proj. Compensatory Pick,Dontay Corleone,DT,Cincinnati Bearcats,76.88,Round 4-5,0,0.0,,,none,,,,disabled
+4,36,136,NO,NO,Proj. Compensatory Pick,Chandler Rivers,CB,Duke,75.98,Round 5-6,0,0.0,,,none,,,,disabled
+4,37,137,PHI,PHI,Proj. Compensatory Pick,Tyler Collins,CB,Mississippi State,75.88,Round 5-6,0,0.0,,,none,,,,disabled
+4,38,138,SF,SF,Proj. Compensatory Pick,Ricardo Jones Jr.,CB,Purdue,75.86,Round 5-6,0,0.0,,,none,,,,disabled
+5,1,139,CLE,LV,CLE g LV (K Pickett),Michael Briscoe,WR,Cal Poly,76.96,Round 4-5,0,0.0,,,none,,,,disabled
+5,2,140,TEN,BAL,TEN g NYJ t BAL (2025 Draft Trade),Treyvhon Saunders,WR,Colgate,76.96,Round 4-5,0,0.0,,,none,,,,disabled
+5,3,141,ARI,ARI,,Samari Matthews,CB,Texas A&M,75.81,Round 5-6,0,0.0,,,none,,,,disabled
+5,4,142,LAR,TEN,LAR g TEN (E Jones),Christian Thomas,LB,Maine,78.11,Round 4-5,0,0.0,,,none,,,,disabled
+5,5,143,NYG,NYG,,Tyreak Chappell,CB,South Carolina,75.73,Round 5-6,0,0.0,,,none,,,,disabled
+5,6,144,CLE,CLE,,Ted Hurst,WR,Georgia State Panthers,76.22,Round 4-5,0,0.0,,,none,,,,disabled
+5,7,145,WAS,WAS,,Toriano Pride Jr.,CB,Missouri,75.68,Round 5-6,0,0.0,,,none,,,,disabled
+5,8,146,KC,KC,,Darrell Jackson Jr.,DT,Florida State,75.94,Round 5-6,0,0.0,,,none,,,,disabled
+5,9,147,CLE,CIN,CLE g CIN (J Flacco),Eric McAlister,WR,TCU Horned Frogs,75.61,Round 5-6,0,0.0,,,none,,,,disabled
+5,10,148,NO,NO,,Quincy Rhodes Jr.,EDGE,Arkansas,75.49,Round 5-6,0,0.0,,,none,,,,disabled
+5,11,149,MIA,MIA,,Bear Alexander,DT,Oregon,75.94,Round 5-6,0,0.0,,,none,,,,disabled
+5,12,150,DAL,DAL,,Justice Boone,RB,Colorado,78.03,Round 4-5,0,0.0,,,none,,,,disabled
+5,13,151,PHI,ATL,PHI g ATL(2025 Draft Trade),Jordan Shaw,CB,Washington,75.54,Round 5-6,0,0.0,,,none,,,,disabled
+5,14,152,BAL,BAL,,Earnest Greene III,OT,Georgia,75.39,Round 5-6,0,0.0,,,none,,,,disabled
+5,15,153,TB,TB,,Lorenzo Styles Jr.,CB,Ohio State,75.51,Round 5-6,0,0.0,,,none,,,,disabled
+5,16,154,IND,IND,,Kani Walker,CB,Oregon,75.5,Round 5-6,0,0.0,,,none,,,,disabled
+5,17,155,DET,DET,,Jeremiah Wilson,CB,Florida State,75.4,Round 5-6,0,0.0,,,none,,,,disabled
+5,18,156,CAR,MIN,CAR g MIN (A Theilen),Bryce Lance,WR,North Dakota State,75.55,Round 5-6,0,0.0,,,none,,,,disabled
+5,19,157,CAR,CAR,,Antonio Williams,WR,Clemson,75.47,Round 5-6,0,0.0,,,none,,,,disabled
+5,20,158,GB,GB,,Jadon Canady,CB,Oregon Ducks,75.35,Round 5-6,0,0.0,,,none,,,,disabled
+5,21,159,PIT,PIT,,David Gusta,DT,Kentucky,75.44,Round 5-6,0,0.0,,,none,,,,disabled
+5,22,160,BAL,LAC,BAL g LAC (A Gilman),Ashton Stamps,CB,LSU,75.23,Round 5-6,0,0.0,,,none,,,,disabled
+5,23,161,MIN,PHI,MIN g PHI (S Howell),Tyre West,DT,Indiana,75.18,Round 5-6,0,0.0,,,none,,,,disabled
+5,24,162,JAX,JAX,,Treyveon McGee,CB,Georgia,75.05,Round 5-6,0,0.0,,,none,,,,disabled
+5,25,163,CHI,CHI,,Hero Kanu,DT,Texas,75.11,Round 5-6,0,0.0,,,none,,,,disabled
+5,26,164,JAX,PHI,JAX g SF t PHI (B Huff/T Bigsby),Ja'Kobi Lane,WR,USC,75.04,Round 5-6,0,0.0,,,none,,,,disabled
+5,27,165,HOU,PHI,HOU g HOU t PHI(C Gardner-Johnson/JMetchie),Zane Durant,DT,Penn State,75.06,Round 5-6,0,0.0,,,none,,,,disabled
+5,28,166,BUF,BUF,,Zakee Wheatley,S,Penn State Nittany Lions,77.41,Round 4-5,0,0.0,,,none,,,,disabled
+5,29,167,LAR,LAR,,Makhi Hughes,RB,Oregon,78.02,Round 4-5,0,0.0,,,none,,,,disabled
+5,30,168,DEN,DEN,,Josh Cuevas,TE,Alabama Crimson Tide,76.65,Round 4-5,0,0.0,,,none,,,,disabled
+5,31,169,NE,NE,,Conner Weigman,QB,Houston,75.03,Round 5-6,0,0.0,,,none,,,,disabled
+5,32,170,NO,SEA,NO g SEA (R Shaheed),Trinidad Chambliss,QB,Mississippi Rebels,74.91,Round 5-6,0,0.0,,,none,,,,disabled
+5,33,171,SF,SF,Proj. Compensatory Pick,Thaddeus Dixon,CB,North Carolina Tar Heels,74.85,Round 5-6,0,0.0,,,none,,,,disabled
+5,34,172,BAL,BAL,Proj. Compensatory Pick,Germie Bernard,WR,Alabama,74.81,Round 5-6,0,0.0,,,none,,,,disabled
+5,35,173,BAL,BAL,Proj. Compensatory Pick,Oscar Delp,TE,Georgia,75.47,Round 5-6,0,0.0,,,none,,,,disabled
+5,36,174,LV,LV,Proj. Compensatory Pick,Emmett Johnson,RB,Nebraska Cornhuskers,77.52,Round 4-5,0,0.0,,,none,,,,disabled
+5,37,175,NYJ,NYJ,Proj. Compensatory Pick,Dakaari Nelson,S,Penn State,77.09,Round 4-5,0,0.0,,,none,,,,disabled
+5,38,176,KC,KC,Proj. Compensatory Pick,Nic Anderson,WR,Oklahoma,74.64,Round 5-6,0,0.0,,,none,,,,disabled
+5,39,177,DAL,DAL,Proj. Compensatory Pick,Barika Kpeenu,RB,North Dakota State,76.61,Round 4-5,0,0.0,,,none,,,,disabled
+5,40,178,NYJ,NYJ,Proj. Compensatory Pick,Jermaine Mathews Jr.,CB,Ohio State Buckeyes,74.56,Round 5-6,0,0.0,,,none,,,,disabled
+5,41,179,PHI,PHI,Proj. Compensatory Pick,Rodney Hammond Jr.,RB,Sacramento State,76.61,Round 4-5,0,0.0,,,none,,,,disabled
+6,1,180,LV,LV,LAR g NYJ t CLE t JAX (J Meyers),Gunner Stockton,QB,Georgia,74.67,Round 5-6,0,0.0,,,none,,,,disabled
+6,2,181,ARI,ARI,,Carson Beck,QB,Miami (FL) Hurricanes,74.45,Round 5-6,0,0.0,,,none,,,,disabled
+6,3,182,TEN,TEN,,Garrett Nussmeier,QB,LSU,74.44,Round 5-6,0,0.0,,,none,,,,disabled
+6,4,183,LV,LV,,Roman Hemby,RB,Indiana,75.77,Round 5-6,0,0.0,,,none,,,,disabled
+6,5,184,NYG,NYG,,Malik Muhammad,CB,Texas,74.37,Round 5-6,0,0.0,,,none,,,,disabled
+6,6,185,WAS,WAS,,Will Lee III,CB,Texas A&M Aggies,74.24,Round 5-6,0,0.0,,,none,,,,disabled
+6,7,186,SEA,CLE,SEA g CLE (N Harris),Johntay Cook,WR,Texas,74.24,Round 5-6,0,0.0,,,none,,,,disabled
+6,8,187,CIN,CIN,,Clev Lubin,EDGE,Louisville,74.12,Round 5-6,0,0.0,,,none,,,,disabled
+6,9,188,NO,NO,,Zxavian Harris,DT,Mississippi Rebels,74.11,Round 5-6,0,0.0,,,none,,,,disabled
+6,10,189,NE,KC,NE g KC (J Uche),Keeshawn Silver,DT,USC,74.01,Round 5-6,0,0.0,,,none,,,,disabled
+6,11,190,NYG,MIA,NYG G MIA (D Waller),Devin Moore,CB,Florida,74.01,Round 5-6,0,0.0,,,none,,,,disabled
+6,12,191,NYG,DAL,NYG g DAL (J Phillips),Le'Veon Moss,RB,Texas A&M,75.73,Round 5-6,0,0.0,,,none,,,,disabled
+6,13,192,TEN,NYJ,TEN g BAL t NYJ (2025 Draft Trade/J Brownlee),Isaiah Sategna,WR,Arkansas,73.95,Round 5-6,0,0.0,,,none,,,,disabled
+6,14,193,TB,TB,,Chase Bisontis,IOL,Texas A&M,76.99,Round 4-5,0,0.0,,,none,,,,disabled
+6,15,194,MIN,IND,MIN g IND (M Blackmon),Beau Stephens,IOL,Iowa Hawkeyes,76.67,Round 4-5,0,0.0,,,none,,,,disabled
+6,16,195,ATL,ATL,,Hollywood Smothers,RB,N.C. State,74.01,Round 5-6,0,0.0,,,none,,,,disabled
+6,17,196,SF,MIN,SF g MIN t HOU t MIN (Various),Jaydn Ott,RB,Oklahoma,73.81,Round 5-6,0,0.0,,,none,,,,disabled
+6,18,197,CIN,CLE,CIN g DET t CLE (J Flacco),Derek Robertson,QB,Monmouth,73.74,Round 5-6,0,0.0,,,none,,,,disabled
+6,19,198,CAR,CAR,,Jaden Rashada,QB,Sacramento State,73.71,Round 5-6,0,0.0,,,none,,,,disabled
+6,20,199,GB,GB,,Mike Washington Jr.,RB,Arkansas Razorbacks,73.72,Round 5-6,0,0.0,,,none,,,,disabled
+6,21,200,NE,PIT,NE g PIT (K Duggar),Genesis Smith,S,Arizona Wildcats,77.0,Round 4-5,0,0.0,,,none,,,,disabled
+6,22,201,JAX,HOU,JAX g PHI t HOU (T Bigsby),Keagen Trost,OT,Missouri,73.63,Round 5-6,0,0.0,,,none,,,,disabled
+6,23,202,LAC,LAC,,Eli Raridon,TE,Notre Dame,75.26,Round 5-6,0,0.0,,,none,,,,disabled
+6,24,203,DET,JAX,DET g JAX (2025 Draft Trade),Bryce Lovett,IOL,NC State,76.6,Round 4-5,0,0.0,,,none,,,,disabled
+6,25,204,CLE,CHI,CLE g CHI (J Tryon),Keon Wylie,S,Texas Tech,76.89,Round 4-5,0,0.0,,,none,,,,disabled
+6,26,205,LAR,HOU,LAR g HOU (B Skowronek),Anto Saka,EDGE,Northwestern,73.51,Round 5-6,0,0.0,,,none,,,,disabled
+6,27,206,NYJ,BUF,NYJ g BUF (B Codrington),Max Llewellyn,EDGE,Iowa Hawkeyes,73.51,Round 5-6,0,0.0,,,none,,,,disabled
+6,28,207,WAS,SF,WAS g SF (B Robinson),Charles Demmings,CB,Stephen F. Austin,73.5,Round 5-6,0,0.0,,,none,,,,disabled
+6,29,208,LAR,TEN,LAR g LAR t TEN (T White/ E Jones),Taurean York,LB,Texas A&M Aggies,77.78,Round 4-5,0,0.0,,,none,,,,disabled
+6,30,209,BAL,PHI,BAL g DEN t NYJ t MIN t PHI(J Alexander/Various),J. Michael Sturdivant,WR,Florida Gators,73.46,Round 5-6,0,0.0,,,none,,,,disabled
+6,31,210,NE,NE,,Aaron Anderson,WR,LSU Tigers,73.45,Round 5-6,0,0.0,,,none,,,,disabled
+6,32,211,DET,JAX,DET g SEA t JAX(R Robertson-Harris/T Patrick),Sam Hecht,IOL,Kansas State Wildcats,76.59,Round 4-5,0,0.0,,,none,,,,disabled
+6,33,212,DET,DET,Proj. Compensatory Pick,Addison Nichols,IOL,Arkansas,76.59,Round 4-5,0,0.0,,,none,,,,disabled
+6,34,213,PIT,PIT,Proj. Compensatory Pick,Max Klare,TE,Purdue,75.14,Round 5-6,0,0.0,,,none,,,,disabled
+6,35,214,PIT,PIT,Proj. Compensatory Pick,AJ Harris,CB,Penn State,73.32,Round 5-6,0,0.0,,,none,,,,disabled
+6,36,215,DAL,DAL,Proj. Compensatory Pick,Michael Trigg,TE,Baylor Bears,74.75,Round 5-6,0,0.0,,,none,,,,disabled
+6,37,216,IND,IND,Proj. Compensatory Pick,Arlis Boardingham,TE,Florida,73.86,Round 5-6,0,0.0,,,none,,,,disabled
+7,1,217,ARI,ARI,,Branson Combs,S,Wake Forest,76.8,Round 4-5,0,0.0,,,none,,,,disabled
+7,2,218,NYJ,TEN,NYJ g TEN (J Brownlee),Keon Sabb,S,Alabama,76.71,Round 4-5,0,0.0,,,none,,,,disabled
+7,3,219,LV,LV,,Elijah Pritchett,OT,Nebraska Cornhuskers,73.11,Round 5-6,0,0.0,,,none,,,,disabled
+7,4,220,BUF,NYJ,BUF g NYJ (B Codrington),Isaac Smith,S,Mississippi State,76.63,Round 4-5,0,0.0,,,none,,,,disabled
+7,5,221,CIN,DAL,CIN g NYG t DAL (J Phillips/L Wilson),Bud Clark,S,TCU Horned Frogs,76.15,Round 4-5,0,0.0,,,none,,,,disabled
+7,6,222,DET,CLE,DET g CLE (Z Smith),Ethan Burke,EDGE,Texas,72.93,Round 5-6,0,0.0,,,none,,,,disabled
+7,7,223,WAS,WAS,,Jude Bowry,OT,Boston College Eagles,72.84,Round 5-6,0,0.0,,,none,,,,disabled
+7,8,224,PIT,NE,PIT g NO t NE (D Godchaux/K Duggar),Tacario Davis,CB,Washington,72.82,Round 5-6,0,0.0,,,none,,,,disabled
+7,9,225,DAL,KC,DAL g KC (P Hendershot cond),Jalyn Phillips,S,Georgia,75.63,Round 5-6,0,0.0,,,none,,,,disabled
+7,10,226,CIN,CIN,,Hezekiah Masses,CB,California Golden Bears,72.78,Round 5-6,0,0.0,,,none,,,,disabled
+7,11,227,MIA,MIA,,Kage Casey,OT,Boise State,72.76,Round 5-6,0,0.0,,,none,,,,disabled
+7,12,228,BUF,DAL,BUF g DAL (K Elam),Jalon Kilgore,S,South Carolina,74.92,Round 5-6,0,0.0,,,none,,,,disabled
+7,13,229,TB,TB,,Kade Pieper,IOL,Iowa,76.56,Round 4-5,0,0.0,,,none,,,,disabled
+7,14,230,IND,IND,,Tanner Koziol,TE,Houston,73.82,Round 5-6,0,0.0,,,none,,,,disabled
+7,15,231,ATL,ATL,,Demond Claiborne,RB,Wake Forest,72.68,Round 5-6,0,0.0,,,none,,,,disabled
+7,16,232,LAR,BAL,LAR g BAL (T White),Deontae Lawson,LB,Alabama,76.99,Round 4-5,0,0.0,,,none,,,,disabled
+7,17,233,JAX,DET,JAX g DET (R Patterson),Dante Moore,QB,Oregon,72.74,Round 5-6,0,0.0,,,none,,,,disabled
+7,18,234,MIN,MIN,,Timothy McKay,IOL,NC State,76.43,Round 4-5,0,0.0,,,none,,,,disabled
+7,19,235,MIN,CAR,MIN g CAR (A Thielen),Domani Jackson,CB,Alabama,72.53,Round 5-6,0,0.0,,,none,,,,disabled
+7,20,236,GB,GB,,Tommy Castellanos,QB,Florida State Seminoles,72.65,Round 5-6,0,0.0,,,none,,,,disabled
+7,21,237,PIT,PIT,,Chase Roberts,WR,BYU Cougars,72.47,Round 5-6,0,0.0,,,none,,,,disabled
+7,22,238,TEN,LAC,TEN g LAC (E Molden),Michael Wortham,WR,Montana,72.45,Round 5-6,0,0.0,,,none,,,,disabled
+7,23,239,CHI,CLE,CHI g PHI t JAX t CLE (various),Raion Strader,CB,Auburn Tigers,72.43,Round 5-6,0,0.0,,,none,,,,disabled
+7,24,240,MIN,JAX,MIN g JAX (C Robinson),Joe Crocker Jr.,IOL,Auburn,76.41,Round 4-5,0,0.0,,,none,,,,disabled
+7,25,241,CHI,CHI,,John Mateer,QB,Oklahoma,72.42,Round 5-6,0,0.0,,,none,,,,disabled
+7,26,242,NYJ,CLE,NYJ g BUF t CLE (A Cooper/J Briggs),Brenen Thompson,WR,Mississippi State Bulldogs,72.25,Round 5-6,0,0.0,,,none,,,,disabled
+7,27,243,HOU,SF,HOU g SF (K Davis),Josh Hoover,QB,TCU,72.27,Round 5-6,0,0.0,,,none,,,,disabled
+7,28,244,MIN,HOU,MIN g HOU (C Akers),Cole Payton,QB,North Dakota State,72.21,Round 5-6,0,0.0,,,none,,,,disabled
+7,29,245,JAX,HOU,JAX G LAR t HOU (C Kirk),Eli Heidenreich,RB,Navy Midshipmen,72.13,Round 5-6,0,0.0,,,none,,,,disabled
+7,30,246,DEN,DEN,,Oscar Cardenas,TE,UTSA,73.55,Round 5-6,0,0.0,,,none,,,,disabled
+7,31,247,SF,NE,SF g NE (K White),Terrance Carter Jr.,TE,Texas Tech,73.42,Round 5-6,0,0.0,,,none,,,,disabled
+7,32,248,CLE,SEA,CLE g SEA (N Harris),Nate Boerkircher,TE,Texas A&M Aggies,73.4,Round 5-6,0,0.0,,,none,,,,disabled
+7,33,249,BAL,BAL,Proj. Compensatory Pick,Marlin Klein,TE,Michigan Wolverines,73.33,Round 5-6,0,0.0,,,none,,,,disabled
+7,34,250,LAR,LAR,Proj. Compensatory Pick,Jaishawn Barham,LB,Michigan,76.74,Round 4-5,0,0.0,,,none,,,,disabled
+7,35,251,DEN,DEN,Proj. Compensatory Pick,Reggie Virgil,WR,Texas Tech Red Raiders,71.87,Round 6-7,0,0.0,,,none,,,,disabled
+7,36,252,BAL,BAL,Proj. Compensatory Pick,Kaelon Black,RB,Indiana Hoosiers,71.94,Round 6-7,0,0.0,,,none,,,,disabled
+7,37,253,IND,IND,Proj. Compensatory Pick,Dallen Bentley,TE,Utah Utes,73.31,Round 5-6,0,0.0,,,none,,,,disabled
+7,38,254,GB,GB,Proj. Compensatory Pick,Ryan Baer,OT,Pittsburgh Panthers,71.79,Round 6-7,0,0.0,,,none,,,,disabled
+7,39,255,DEN,DEN,Proj. Compensatory Pick,Rohan Jones,TE,Arkansas Razorbacks,73.08,Round 5-6,0,0.0,,,none,,,,disabled
+7,40,256,LAR,LAR,Proj. Compensatory Pick,Ernest Hausmann,LB,Michigan,76.59,Round 4-5,0,0.0,,,none,,,,disabled
+7,41,257,GB,GB,Proj. Compensatory Pick,Robert Henry Jr.,RB,UTSA Roadrunners,71.76,Round 6-7,0,0.0,,,none,,,,disabled

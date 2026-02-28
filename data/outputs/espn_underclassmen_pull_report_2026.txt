@@ -1,0 +1,8 @@
+ESPN Underclassmen Pull Report (2026)
+
+url: https://www.espn.com/nfl/story/_/id/47600173
+declared_reference_rows: 63
+rows_parsed: 14
+output: /Users/nickholz/nfldraftmodel2026/data/sources/manual/espn_underclassmen_2026.csv
+method: official_name_match_in_espn_story
+note: verify rows manually after each cycle update.

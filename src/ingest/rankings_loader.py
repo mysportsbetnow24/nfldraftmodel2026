@@ -30,9 +30,16 @@ POS_MAP = {
     "IDL": "DT",
     "G": "IOL",
     "C": "IOL",
+    "OG": "IOL",
+    "OC": "IOL",
+    "OL": "IOL",
     "T": "OT",
+    "LT": "OT",
+    "RT": "OT",
     "HB": "RB",
     "FB": "RB",
+    "FS": "S",
+    "SS": "S",
 }
 
 

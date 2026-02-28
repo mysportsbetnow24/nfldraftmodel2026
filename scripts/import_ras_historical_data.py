@@ -268,6 +268,61 @@ def _write_csv(path: Path, rows: list[dict], fields: list[str]) -> None:
         w.writerows(rows)
 
 
+def _read_existing_hist_rows(path: Path) -> list[dict]:
+    if not path.exists():
+        return []
+    with path.open() as f:
+        rows = list(csv.DictReader(f))
+    out = []
+    for row in rows:
+        out.append(
+            {
+                "player_name": str(row.get("player_name", "")).strip(),
+                "player_key": canonical_player_name(row.get("player_key") or row.get("player_name", "")),
+                "school": str(row.get("school", "")).strip(),
+                "school_key": _norm_school(row.get("school_key") or row.get("school", "")),
+                "position_raw": str(row.get("position_raw", "")).strip(),
+                "position": normalize_pos(row.get("position", "")),
+                "year": _to_int(row.get("year")),
+                "ras_score": round(float(_to_float(row.get("ras_score")) or 0.0), 2),
+                "source_url": str(row.get("source_url", "")).strip(),
+            }
+        )
+    return [r for r in out if r.get("player_key") and r.get("position") and r.get("ras_score", 0) > 0]
+
+
+def _merge_historical_rows(existing_rows: list[dict], new_rows: list[dict]) -> tuple[list[dict], int]:
+    """Merge existing + new rows by identity key; new rows overwrite existing on conflict."""
+    by_key: dict[tuple[str, int | None, str, str], dict] = {}
+    for row in existing_rows:
+        key = (
+            row.get("player_key", ""),
+            row.get("year"),
+            row.get("position", ""),
+            row.get("school_key", ""),
+        )
+        by_key[key] = row
+    before = len(by_key)
+    for row in new_rows:
+        key = (
+            row.get("player_key", ""),
+            row.get("year"),
+            row.get("position", ""),
+            row.get("school_key", ""),
+        )
+        by_key[key] = row
+    merged = list(by_key.values())
+    merged.sort(
+        key=lambda r: (
+            int(r.get("year") or 0),
+            str(r.get("position", "")),
+            str(r.get("player_name", "")),
+        )
+    )
+    added = max(0, len(by_key) - before)
+    return merged, added
+
+
 def _build_benchmarks(ras_rows: list[dict]) -> list[dict]:
     by_pos: dict[str, list[dict]] = defaultdict(list)
     for row in ras_rows:
@@ -351,6 +406,11 @@ def _write_report(
 def main() -> None:
     p = argparse.ArgumentParser(description="Import historical RAS CSV and project benchmarks into model inputs.")
     p.add_argument("--input", type=str, default=str(DOWNLOAD_DEFAULT), help="Path to downloaded RAS CSV.")
+    p.add_argument(
+        "--replace-historical",
+        action="store_true",
+        help="Replace historical DB with input rows only (default is safe merge).",
+    )
     p.add_argument("--overwrite-existing", action="store_true", help="Overwrite existing ras_official in combine file.")
     p.add_argument(
         "--min-year",
@@ -364,9 +424,15 @@ def main() -> None:
     if not input_path.exists():
         raise SystemExit(f"RAS CSV not found: {input_path}")
 
-    ras_rows = _read_ras_csv(input_path)
-    if not ras_rows:
+    input_rows = _read_ras_csv(input_path)
+    if not input_rows:
         raise SystemExit("No valid RAS rows parsed from input CSV.")
+    existing_rows = _read_existing_hist_rows(HIST_OUT)
+    if args.replace_historical:
+        ras_rows = input_rows
+        merged_added = 0
+    else:
+        ras_rows, merged_added = _merge_historical_rows(existing_rows, input_rows)
 
     _write_csv(
         HIST_OUT,
@@ -509,6 +575,10 @@ def main() -> None:
     )
 
     print(f"RAS rows loaded: {len(ras_rows)}")
+    print(f"Input rows parsed: {len(input_rows)}")
+    print(f"Existing historical rows before merge: {len(existing_rows)}")
+    print(f"Rows added from input merge: {merged_added}")
+    print(f"Historical mode: {'replace' if args.replace_historical else 'merge'}")
     print(f"Benchmarks written: {BENCH_OUT}")
     print(f"Historical DB written: {HIST_OUT}")
     print(f"2026 match report: {MATCH_OUT}")

@@ -1,0 +1,2 @@
+player_name,school,position,birth_date,draft_age,espn_player_id,source_url,source,pull_method,status
+Prospect Example,Example School,QB,2004-06-12,21.863,4426338,https://www.espn.com/nfl/player/stats/_/id/4426338/type/college-football,espn_player_page,manual,ok

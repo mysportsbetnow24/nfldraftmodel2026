@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import json
 import math
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -65,9 +66,140 @@ def _pct_rank(value: float | None, values: list[float]) -> float:
     return idx / float(len(sorted_vals) - 1)
 
 
+def _inv_pct_rank(value: float | None, values: list[float]) -> float:
+    # Lower-is-better percentile helper (e.g. defensive PPA/success allowed).
+    return 1.0 - _pct_rank(value, values)
+
+
 def _load_json_data(path: Path) -> list[dict]:
     payload = json.loads(path.read_text())
     return list(payload.get("data", []))
+
+
+def _season_from_path(path: Path, prefix: str) -> int | None:
+    m = re.search(rf"{re.escape(prefix)}_(\d{{4}})\.json$", path.name)
+    if not m:
+        return None
+    try:
+        return int(m.group(1))
+    except ValueError:
+        return None
+
+
+def _is_meaningful_stat_row(category: str, stat_type: str, value: float) -> bool:
+    c = str(category or "").strip().lower()
+    s = str(stat_type or "").strip().upper()
+    v = float(value)
+    thresholds = {
+        ("passing", "ATT"): 20.0,
+        ("rushing", "CAR"): 25.0,
+        ("receiving", "REC"): 8.0,
+        ("defensive", "TOT"): 15.0,
+        ("defensive", "SOLO"): 8.0,
+        ("defensive", "AST"): 6.0,
+        ("defensive", "TFL"): 4.0,
+        ("defensive", "SACKS"): 1.0,
+        ("defensive", "PD"): 2.0,
+        ("interceptions", "INT"): 1.0,
+    }
+    threshold = thresholds.get((c, s))
+    if threshold is not None:
+        return v >= threshold
+    if c in {"passing", "rushing", "receiving", "defensive"} and v >= 30.0:
+        return True
+    return False
+
+
+def _build_years_played_index() -> dict[str, dict]:
+    """
+    Count unique seasons with meaningful participation from available local CFBD files:
+    - player_season_stats_<year>.json
+    - player_ppa_<year>.json
+    - player_usage_<year>.json (optional, if pulled)
+    """
+    player_years: dict[str, set[int]] = defaultdict(set)
+    player_sources: dict[str, set[str]] = defaultdict(set)
+
+    stats_files = sorted(CFBD_DIR.glob("player_season_stats_*.json"))
+    ppa_files = sorted(CFBD_DIR.glob("player_ppa_*.json"))
+    usage_files = sorted(CFBD_DIR.glob("player_usage_*.json"))
+
+    for path in stats_files:
+        year = _season_from_path(path, "player_season_stats")
+        if year is None:
+            continue
+        for row in _load_json_data(path):
+            name_key = canonical_player_name(row.get("player", ""))
+            if not name_key:
+                continue
+            stat = _safe_float(row.get("stat"))
+            if stat is None:
+                continue
+            if _is_meaningful_stat_row(row.get("category", ""), row.get("statType", ""), stat):
+                player_years[name_key].add(year)
+                player_sources[name_key].add("cfbd_player_season_stats")
+
+    for path in ppa_files:
+        year = _season_from_path(path, "player_ppa")
+        if year is None:
+            continue
+        for row in _load_json_data(path):
+            name_key = canonical_player_name(row.get("name", ""))
+            if not name_key:
+                continue
+            avg = row.get("averagePPA", {}) or {}
+            total = row.get("totalPPA", {}) or {}
+            avg_all = _safe_float(avg.get("all"))
+            total_all = _safe_float(total.get("all"))
+            meaningful = False
+            if avg_all is not None and abs(avg_all) >= 0.02:
+                meaningful = True
+            if total_all is not None and abs(total_all) >= 1.0:
+                meaningful = True
+            if meaningful:
+                player_years[name_key].add(year)
+                player_sources[name_key].add("cfbd_player_ppa")
+
+    for path in usage_files:
+        year = _season_from_path(path, "player_usage")
+        if year is None:
+            continue
+        for row in _load_json_data(path):
+            name_key = canonical_player_name(
+                row.get("name") or row.get("player") or row.get("playerName") or row.get("athlete") or ""
+            )
+            if not name_key:
+                continue
+            meaningful = False
+            for key, raw in row.items():
+                lk = str(key or "").lower()
+                if not any(tok in lk for tok in ("usage", "share", "rate", "snap")):
+                    continue
+                val = _safe_float(raw)
+                if val is None:
+                    continue
+                if 0.0 <= val <= 1.0 and val >= 0.03:
+                    meaningful = True
+                    break
+                if "snap" in lk and val >= 10:
+                    meaningful = True
+                    break
+                if val >= 3.0:
+                    meaningful = True
+                    break
+            if meaningful:
+                player_years[name_key].add(year)
+                player_sources[name_key].add("cfbd_player_usage")
+
+    out: dict[str, dict] = {}
+    for name_key, years in player_years.items():
+        seasons = sorted(int(y) for y in years)
+        out[name_key] = {
+            "years_played": len(seasons),
+            "years_played_seasons": "|".join(str(y) for y in seasons),
+            "years_played_source": "|".join(sorted(player_sources.get(name_key, set()))),
+        }
+    return out
 
 
 def _load_board() -> dict[str, str]:
@@ -143,17 +275,83 @@ def _is_populated(value) -> bool:
     return str(value or "").strip() != ""
 
 
+def _build_opponent_defense_context(team_adv_rows: list[dict], adv_game_rows: list[dict]) -> dict[str, dict]:
+    team_defense: dict[str, dict] = {}
+    for row in team_adv_rows:
+        team = str(row.get("team", "")).strip()
+        if not team:
+            continue
+        defense = row.get("defense", {}) or {}
+        def_ppa = _safe_float(defense.get("ppa"))
+        def_success = _safe_float(defense.get("successRate"))
+        if def_ppa is None or def_success is None:
+            continue
+        team_defense[team] = {
+            "def_ppa_allowed": def_ppa,
+            "def_success_rate_allowed": def_success,
+        }
+
+    opps_by_team: dict[str, list[str]] = defaultdict(list)
+    for row in adv_game_rows:
+        team = str(row.get("team", "")).strip()
+        opp = str(row.get("opponent", "")).strip()
+        if not team or not opp or team == opp:
+            continue
+        opps_by_team[team].append(opp)
+
+    raw: dict[str, dict] = {}
+    for team, opps in opps_by_team.items():
+        opp_ppa_vals: list[float] = []
+        opp_sr_vals: list[float] = []
+        for opp in opps:
+            opp_def = team_defense.get(opp)
+            if not opp_def:
+                continue
+            opp_ppa_vals.append(float(opp_def["def_ppa_allowed"]))
+            opp_sr_vals.append(float(opp_def["def_success_rate_allowed"]))
+        if not opp_ppa_vals or not opp_sr_vals:
+            continue
+        raw[team] = {
+            "opp_def_ppa_allowed_avg": sum(opp_ppa_vals) / len(opp_ppa_vals),
+            "opp_def_success_rate_allowed_avg": sum(opp_sr_vals) / len(opp_sr_vals),
+            "games_with_context": len(opp_ppa_vals),
+        }
+
+    ppa_pop = [float(v["opp_def_ppa_allowed_avg"]) for v in raw.values()]
+    sr_pop = [float(v["opp_def_success_rate_allowed_avg"]) for v in raw.values()]
+
+    out: dict[str, dict] = {}
+    for team, payload in raw.items():
+        ppa_tough = _inv_pct_rank(float(payload["opp_def_ppa_allowed_avg"]), ppa_pop)
+        sr_tough = _inv_pct_rank(float(payload["opp_def_success_rate_allowed_avg"]), sr_pop)
+        toughness = _clamp((0.55 * ppa_tough) + (0.45 * sr_tough), 0.0, 1.0)
+        # Keep adjustment narrow so this refines production and never rewrites it.
+        multiplier = _clamp(1.0 + ((toughness - 0.5) * 0.20), 0.90, 1.10)
+        out[team] = {
+            **payload,
+            "opp_def_toughness_index": round(toughness, 4),
+            "opp_def_adjustment_multiplier": round(multiplier, 4),
+        }
+    return out
+
+
 def main() -> None:
     player_stats_path = CFBD_DIR / "player_season_stats_2025.json"
     player_ppa_path = CFBD_DIR / "player_ppa_2025.json"
+    team_adv_path = CFBD_DIR / "team_advanced_stats_2025.json"
+    adv_game_path = CFBD_DIR / "advanced_game_stats_2025.json"
     if not player_stats_path.exists() or not player_ppa_path.exists():
         raise SystemExit("Missing CFBD source files. Pull player_season_stats and player_ppa first.")
 
     board_map = _load_board()
     stats_rows = _load_json_data(player_stats_path)
     ppa_rows = _load_json_data(player_ppa_path)
+    team_adv_rows = _load_json_data(team_adv_path) if team_adv_path.exists() else []
+    adv_game_rows = _load_json_data(adv_game_path) if adv_game_path.exists() else []
     stats_by_player, team_rec_totals = _aggregate_stats(stats_rows)
     ppa_by_player = _aggregate_ppa(ppa_rows)
+    opp_def_context_by_team = _build_opponent_defense_context(team_adv_rows, adv_game_rows)
+    years_played_index = _build_years_played_index()
 
     # Build percentile pools for proxy rate metrics.
     edge_pressures: list[float] = []
@@ -196,6 +394,9 @@ def main() -> None:
             "school": team,
             "position": board_pos,
             "season": 2025,
+            "years_played": "",
+            "years_played_seasons": "",
+            "years_played_source": "",
             "qb_qbr": "",
             "qb_epa_per_play": "",
             "qb_success_rate": "",
@@ -204,10 +405,19 @@ def main() -> None:
             "qb_under_pressure_success_rate": "",
             "yprr": "",
             "target_share": "",
+            "targets_per_route_run": "",
             "explosive_run_rate": "",
             "missed_tackles_forced_per_touch": "",
             "pressure_rate": "",
+            "pressures_per_pass_rush_snap": "",
+            "sacks_per_pass_rush_snap": "",
             "coverage_plays_per_target": "",
+            "yards_allowed_per_coverage_snap": "",
+            "opp_def_ppa_allowed_avg": "",
+            "opp_def_success_rate_allowed_avg": "",
+            "opp_def_toughness_index": "",
+            "opp_def_adjustment_multiplier": "",
+            "opp_def_context_source": "",
             "cfb_prod_quality_label": "",
             "cfb_prod_reliability": "",
             "cfb_prod_real_features": "",
@@ -215,6 +425,25 @@ def main() -> None:
             "cfb_prod_provenance": "cfbd_stats+cfbd_ppa_proxy",
             "source": "CFBD_2025_proxy_extract",
         }
+        yp = years_played_index.get(name_key)
+        if yp:
+            row["years_played"] = yp.get("years_played", "")
+            row["years_played_seasons"] = yp.get("years_played_seasons", "")
+            row["years_played_source"] = yp.get("years_played_source", "")
+
+        opp_ctx = opp_def_context_by_team.get(team, {})
+        if opp_ctx:
+            row["opp_def_ppa_allowed_avg"] = round(float(opp_ctx.get("opp_def_ppa_allowed_avg", 0.0)), 4)
+            row["opp_def_success_rate_allowed_avg"] = round(
+                float(opp_ctx.get("opp_def_success_rate_allowed_avg", 0.0)),
+                4,
+            )
+            row["opp_def_toughness_index"] = round(float(opp_ctx.get("opp_def_toughness_index", 0.5)), 4)
+            row["opp_def_adjustment_multiplier"] = round(
+                float(opp_ctx.get("opp_def_adjustment_multiplier", 1.0)),
+                4,
+            )
+            row["opp_def_context_source"] = "cfbd_team_advanced_stats+advanced_game_stats"
 
         if board_pos == "QB":
             att = _get_stat(stats or {}, "passing", "ATT") or 0.0
@@ -261,6 +490,15 @@ def main() -> None:
                 row["yprr"] = round(_clamp(yprr_proxy, 0.8, 3.5), 3)
             if rec is not None and team and team_rec_totals.get(team, 0.0) > 0:
                 row["target_share"] = round(_clamp(rec / team_rec_totals[team], 0.03, 0.60), 4)
+            wr_usage = _safe_float((ppa or {}).get("avg_all"))
+            target_share = _safe_float(row.get("target_share"))
+            if wr_usage is not None and target_share is not None:
+                # Proxy route involvement from overall PPA context when explicit routes are unavailable.
+                route_share_proxy = _clamp(0.18 + (wr_usage * 0.45), 0.18, 0.78)
+                if route_share_proxy >= 0.45:
+                    row["targets_per_route_run"] = round(_clamp(target_share / route_share_proxy, 0.08, 0.38), 4)
+                else:
+                    row["targets_per_route_run"] = round(_clamp(0.07 + (0.85 * target_share), 0.08, 0.34), 4)
 
         elif board_pos == "RB":
             ypc = _get_stat(stats or {}, "rushing", "YPC")
@@ -272,16 +510,23 @@ def main() -> None:
                 row["explosive_run_rate"] = round(_clamp(base, 0.04, 0.26), 4)
 
         elif board_pos == "EDGE":
-            pressures = (_get_stat(stats or {}, "defensive", "QB HUR") or 0.0) + (_get_stat(stats or {}, "defensive", "SACKS") or 0.0)
+            sacks = (_get_stat(stats or {}, "defensive", "SACKS") or 0.0)
+            hurries = (_get_stat(stats or {}, "defensive", "QB HUR") or 0.0)
+            pressures = hurries + sacks
             if pressures > 0:
                 pr = 0.05 + (0.20 * _pct_rank(pressures, edge_pressures))
                 row["pressure_rate"] = round(_clamp(pr, 0.05, 0.26), 4)
+                row["pressures_per_pass_rush_snap"] = row["pressure_rate"]
+                finish = _clamp((sacks / pressures) if pressures > 0 else 0.20, 0.08, 0.40)
+                row["sacks_per_pass_rush_snap"] = round(_clamp(float(pr) * finish, 0.010, 0.075), 4)
 
         elif board_pos in {"CB", "S"}:
             cov_plays = (_get_stat(stats or {}, "defensive", "PD") or 0.0) + (_get_stat(stats or {}, "interceptions", "INT") or 0.0)
             if cov_plays > 0:
                 cpt = 0.06 + (0.24 * _pct_rank(cov_plays, db_cov))
                 row["coverage_plays_per_target"] = round(_clamp(cpt, 0.06, 0.32), 4)
+                norm = _clamp((float(cpt) - 0.08) / 0.22, 0.0, 1.0)
+                row["yards_allowed_per_coverage_snap"] = round(_clamp(1.85 - (1.10 * norm), 0.55, 1.85), 4)
 
         # This extractor currently produces proxy metrics (not charting-grade true stats).
         if board_pos == "QB":
@@ -294,13 +539,13 @@ def main() -> None:
                 "qb_under_pressure_success_rate",
             ]
         elif board_pos in {"WR", "TE"}:
-            proxy_fields = ["yprr", "target_share"]
+            proxy_fields = ["yprr", "target_share", "targets_per_route_run"]
         elif board_pos == "RB":
             proxy_fields = ["explosive_run_rate", "missed_tackles_forced_per_touch"]
         elif board_pos == "EDGE":
-            proxy_fields = ["pressure_rate"]
+            proxy_fields = ["pressure_rate", "pressures_per_pass_rush_snap", "sacks_per_pass_rush_snap"]
         elif board_pos in {"CB", "S"}:
-            proxy_fields = ["coverage_plays_per_target"]
+            proxy_fields = ["coverage_plays_per_target", "yards_allowed_per_coverage_snap"]
         else:
             proxy_fields = []
 
@@ -329,6 +574,9 @@ def main() -> None:
                 "school",
                 "position",
                 "season",
+                "years_played",
+                "years_played_seasons",
+                "years_played_source",
                 "qb_qbr",
                 "qb_epa_per_play",
                 "qb_success_rate",
@@ -337,10 +585,19 @@ def main() -> None:
                 "qb_under_pressure_success_rate",
                 "yprr",
                 "target_share",
+                "targets_per_route_run",
                 "explosive_run_rate",
                 "missed_tackles_forced_per_touch",
                 "pressure_rate",
+                "pressures_per_pass_rush_snap",
+                "sacks_per_pass_rush_snap",
                 "coverage_plays_per_target",
+                "yards_allowed_per_coverage_snap",
+                "opp_def_ppa_allowed_avg",
+                "opp_def_success_rate_allowed_avg",
+                "opp_def_toughness_index",
+                "opp_def_adjustment_multiplier",
+                "opp_def_context_source",
                 "cfb_prod_quality_label",
                 "cfb_prod_reliability",
                 "cfb_prod_real_features",
@@ -354,9 +611,15 @@ def main() -> None:
 
     by_pos = defaultdict(int)
     quality_counts = defaultdict(int)
+    opp_ctx_rows = 0
+    years_played_rows = 0
     for r in out_rows:
         by_pos[r["position"]] += 1
         quality_counts[r.get("cfb_prod_quality_label", "unknown")] += 1
+        if _is_populated(r.get("opp_def_toughness_index")):
+            opp_ctx_rows += 1
+        if _is_populated(r.get("years_played")):
+            years_played_rows += 1
 
     lines = [
         "CFBD 2025 Production Extraction Report",
@@ -364,6 +627,8 @@ def main() -> None:
         f"board_players_targeted: {len(board_map)}",
         f"players_matched_cfbd: {matched}",
         f"rows_written: {len(out_rows)}",
+        f"rows_with_opp_def_context: {opp_ctx_rows}",
+        f"rows_with_years_played: {years_played_rows}",
         "notes: CFBD does not expose true YPRR/targets/missed_tackles/coverage_targets directly; proxy fields were generated.",
         "",
         "rows_by_position:",

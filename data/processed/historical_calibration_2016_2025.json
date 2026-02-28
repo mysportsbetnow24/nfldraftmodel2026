@@ -1,0 +1,129 @@
+{
+  "intercept": -8.994193,
+  "slope": 0.125449,
+  "position_additive": {
+    "QB": -0.12,
+    "EDGE": 0.0109,
+    "RB": 0.0506,
+    "CB": 0.0217,
+    "OT": -0.0289,
+    "DT": 0.0797,
+    "S": 0.0717,
+    "WR": -0.041,
+    "IOL": -0.0657,
+    "TE": 0.0109,
+    "LB": 0.1104,
+    "K": 0.0,
+    "P": 0.0,
+    "LS": 0.0,
+    "DL": -0.12
+  },
+  "sample_size": 2051,
+  "data_source": "leagify_2015_2023",
+  "grade_bins": [
+    {
+      "bin": 1,
+      "grade_min": 87.33,
+      "grade_max": 95.0,
+      "sample_size": 170,
+      "hit_rate": 0.7665,
+      "avg_career_value": 27.68
+    },
+    {
+      "bin": 2,
+      "grade_min": 83.8,
+      "grade_max": 87.33,
+      "sample_size": 170,
+      "hit_rate": 0.781,
+      "avg_career_value": 19.93
+    },
+    {
+      "bin": 3,
+      "grade_min": 81.11,
+      "grade_max": 83.8,
+      "sample_size": 170,
+      "hit_rate": 0.7725,
+      "avg_career_value": 17.47
+    },
+    {
+      "bin": 4,
+      "grade_min": 78.76,
+      "grade_max": 81.11,
+      "sample_size": 170,
+      "hit_rate": 0.7434,
+      "avg_career_value": 15.88
+    },
+    {
+      "bin": 5,
+      "grade_min": 76.5,
+      "grade_max": 78.76,
+      "sample_size": 170,
+      "hit_rate": 0.6612,
+      "avg_career_value": 12.36
+    },
+    {
+      "bin": 6,
+      "grade_min": 74.41,
+      "grade_max": 76.5,
+      "sample_size": 170,
+      "hit_rate": 0.6295,
+      "avg_career_value": 9.06
+    },
+    {
+      "bin": 7,
+      "grade_min": 72.44,
+      "grade_max": 74.4,
+      "sample_size": 170,
+      "hit_rate": 0.5611,
+      "avg_career_value": 7.72
+    },
+    {
+      "bin": 8,
+      "grade_min": 70.45,
+      "grade_max": 72.44,
+      "sample_size": 170,
+      "hit_rate": 0.5762,
+      "avg_career_value": 9.01
+    },
+    {
+      "bin": 9,
+      "grade_min": 68.46,
+      "grade_max": 70.45,
+      "sample_size": 170,
+      "hit_rate": 0.4366,
+      "avg_career_value": 6.68
+    },
+    {
+      "bin": 10,
+      "grade_min": 66.45,
+      "grade_max": 68.46,
+      "sample_size": 170,
+      "hit_rate": 0.4365,
+      "avg_career_value": 5.22
+    },
+    {
+      "bin": 11,
+      "grade_min": 64.3,
+      "grade_max": 66.45,
+      "sample_size": 170,
+      "hit_rate": 0.3476,
+      "avg_career_value": 3.59
+    },
+    {
+      "bin": 12,
+      "grade_min": 62.0,
+      "grade_max": 64.3,
+      "sample_size": 170,
+      "hit_rate": 0.2917,
+      "avg_career_value": 3.43
+    },
+    {
+      "bin": 13,
+      "grade_min": 61.39,
+      "grade_max": 62.0,
+      "sample_size": 11,
+      "hit_rate": 0.122,
+      "avg_career_value": 1.15
+    }
+  ]
+}

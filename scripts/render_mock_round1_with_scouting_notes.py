@@ -103,6 +103,9 @@ def _build_paragraph(pick_row: dict, board_row: dict, team_profile: dict) -> str
     best_scheme = board_row.get("best_scheme_fit", "multiple fronts")
     core_stat_name = board_row.get("core_stat_name", "Core Translation Metric")
     core_stat_value = board_row.get("core_stat_value", "N/A")
+    hist_comp = (board_row.get("historical_combine_comp_1") or "").strip()
+    hist_comp_year = (board_row.get("historical_combine_comp_1_year") or "").strip()
+    hist_comp_similarity = (board_row.get("historical_combine_comp_1_similarity") or "").strip()
 
     trait_score = _to_float(board_row.get("trait_score", "0"))
     production_score = _to_float(board_row.get("production_score", "0"))
@@ -126,6 +129,15 @@ def _build_paragraph(pick_row: dict, board_row: dict, team_profile: dict) -> str
         + (f" (multi-board mean {consensus_mean})" if consensus_mean else "")
         + "."
     )
+    if hist_comp:
+        hist_comp_line = f"Historical combine comp: {hist_comp}"
+        if hist_comp_year:
+            hist_comp_line += f" ({hist_comp_year})"
+        if hist_comp_similarity:
+            hist_comp_line += f", similarity {hist_comp_similarity}"
+        hist_comp_line += "."
+    else:
+        hist_comp_line = "Historical combine comp: pending until more verified testing metrics are available."
 
     return (
         f"Pick {overall_pick}: {team} selects {player} ({position}, {school}). "
@@ -135,6 +147,7 @@ def _build_paragraph(pick_row: dict, board_row: dict, team_profile: dict) -> str
         f"His scoring profile is trait {trait_score:.1f}, production {production_score:.1f}, athletic {athletic_score:.1f}, "
         f"size {size_score:.1f}, and context {context_score:.1f}, with a risk penalty of {risk_penalty:.1f}. "
         f"Unique differentiator: {core_stat_name} ({core_stat_value}). "
+        f"{hist_comp_line} "
         f"{need_fit} "
         f"{concerns}"
     )
@@ -173,6 +186,9 @@ def main() -> None:
         out_row["best_role"] = board_row.get("best_role", "")
         out_row["best_scheme_fit"] = board_row.get("best_scheme_fit", "")
         out_row["consensus_rank"] = board_row.get("consensus_rank", "")
+        out_row["historical_combine_comp_1"] = board_row.get("historical_combine_comp_1", "")
+        out_row["historical_combine_comp_1_year"] = board_row.get("historical_combine_comp_1_year", "")
+        out_row["historical_combine_comp_1_similarity"] = board_row.get("historical_combine_comp_1_similarity", "")
         enriched_rows.append(out_row)
 
         paragraphs.append(paragraph)
@@ -204,4 +220,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

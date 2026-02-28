@@ -1,0 +1,23 @@
+Source Reliability Reweighting Update (2026-02-28)
+
+What is now active
+- Prior blend source weights now resolve with source + position + draft-year context (with fallback).
+- Runtime path: source-position-year table -> source-year table -> global source defaults.
+- Resolver applies recency decay and shrinkage to avoid overfitting noisy historical cells.
+- If the pos-year table is missing, model automatically uses global source reliability only.
+
+Data table loaded
+- file: data/sources/manual/source_reliability_by_pos_year_2016_2025.csv
+- rows: 1950
+- sources: 13
+- positions: 15
+- years: 2016-2025
+- imputed rows (forward-filled years): 494
+
+Build status
+- build_big_board.py now prints: Source reliability loaded: global=..., pos_year_rows=..., has_pos_year=...
+
+Tuning knobs
+- DRAFT_YEAR env controls runtime year selection (default 2026).
+- source_reliability_weights_2026.csv remains the global anchor table.
+- source_reliability_by_pos_year_2016_2025.csv is the historical refinement layer.

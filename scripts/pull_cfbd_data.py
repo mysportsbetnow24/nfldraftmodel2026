@@ -22,6 +22,7 @@ DATASET_CHOICES = [
     "team_advanced_stats",
     "advanced_game_stats",
     "player_ppa",
+    "player_usage",
     "team_ppa",
     "games",
     "team_game_stats",

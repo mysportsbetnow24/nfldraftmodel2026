@@ -1,0 +1,14 @@
+source,hit_rate,stability,sample_size,notes
+seed_rank,0.58,0.76,3000,baseline seed signal
+external_rank,0.61,0.82,1200,external board anchor
+analyst_rank,0.57,0.70,1500,aggregated analyst seed
+consensus_rank,0.64,0.86,1800,cross-source consensus aggregate
+kiper_rank,0.62,0.78,900,structured rank source
+tdn_rank,0.56,0.66,600,source-specific rank signal
+ringer_rank,0.56,0.66,600,source-specific rank signal
+bleacher_rank,0.57,0.68,700,source-specific rank signal
+atoz_rank,0.54,0.62,500,source-specific rank signal
+si_rank,0.53,0.61,400,source-specific rank signal
+cbs_rank,0.58,0.74,800,source-specific rank signal
+cbs_wilson_rank,0.59,0.75,800,source-specific rank signal
+tdn_grade_label,0.55,0.64,450,grade-label translation signal

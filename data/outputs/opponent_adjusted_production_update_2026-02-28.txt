@@ -1,0 +1,31 @@
+Opponent-Adjusted Production Update (2026-02-28)
+
+What was added
+- Opponent defensive strength context from CFBD team defense metrics (EPA/ppa allowed + success rate allowed).
+- Production adjustment applied only for offense positions (QB/WR/TE/RB).
+- Neutral fallback: if context is missing, adjustment = 0 (no penalty).
+- Hard cap: per-player adjustment delta is limited to +/- 2.4 production-signal points.
+
+Coverage
+- cfb_production_2025 rows: 240
+- rows with opponent context: 236
+- opp_def_toughness_index median: 0.5736
+- opp_def_adjustment_multiplier range: 0.9062 to 1.0990
+- board rows with non-zero adjustment: 140
+
+Largest absolute adjustments on current board
+- Daniel Sobkowicz (WR): delta +2.38, opp_index 0.9952, cfb_prod_signal 57.7
+- Derek Robertson (QB): delta -2.25, opp_index 0.0312, cfb_prod_signal 66.91
+- Treyvhon Saunders (WR): delta -2.23, opp_index 0.0356, cfb_prod_signal 53.79
+- Skyler Bell (WR): delta -2.05, opp_index 0.0721, cfb_prod_signal 61.53
+- Joe Fagnano (QB): delta -2.05, opp_index 0.0721, cfb_prod_signal 65.56
+- Michael Briscoe (WR): delta +1.98, opp_index 0.9124, cfb_prod_signal 62.87
+- Chase Roberts (WR): delta +1.77, opp_index 0.8683, cfb_prod_signal 56.85
+- Carsen Ryan (TE): delta +1.77, opp_index 0.8683, cfb_prod_signal 58.62
+- Eli Heidenreich (RB): delta -1.74, opp_index 0.1378, cfb_prod_signal 63.41
+- Jalon Daniels (QB): delta +1.69, opp_index 0.8524, cfb_prod_signal 62.98
+- Emmanuel Henderson Jr. (WR): delta +1.69, opp_index 0.8524, cfb_prod_signal 60.41
+- Zavion Thomas (WR): delta +1.65, opp_index 0.8437, cfb_prod_signal 51.18
+- Nic Anderson (WR): delta +1.65, opp_index 0.8437, cfb_prod_signal 49.17
+- Garrett Nussmeier (QB): delta +1.65, opp_index 0.8437, cfb_prod_signal 54.59
+- Chris Hilton Jr. (WR): delta +1.65, opp_index 0.8437, cfb_prod_signal 50.57

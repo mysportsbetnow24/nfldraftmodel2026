@@ -1,0 +1,186 @@
+article_rank,team_name,team,need_rank,need_raw,need_norm,need_weight,source_url,pulled_on
+1,Raiders,LV,1,QB,QB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+1,Raiders,LV,2,LG,IOL,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+1,Raiders,LV,3,LB,LB,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+1,Raiders,LV,4,DT,DT,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+1,Raiders,LV,5,C,IOL,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+1,Raiders,LV,6,RT,OT,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+1,Raiders,LV,7,WR,WR,0.35,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+2,Jets,NYJ,1,QB,QB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+2,Jets,NYJ,2,OG,IOL,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+2,Jets,NYJ,3,DT,DT,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+2,Jets,NYJ,4,EDGE,EDGE,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+2,Jets,NYJ,5,Outside CB,CB,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+3,Cardinals,ARI,1,QB,QB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+3,Cardinals,ARI,2,RT,OT,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+3,Cardinals,ARI,3,RB,RB,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+3,Cardinals,ARI,4,FS,S,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+3,Cardinals,ARI,5,LB,LB,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+4,Titans,TEN,1,EDGE,EDGE,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+4,Titans,TEN,2,Outside WR,WR,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+4,Titans,TEN,3,RG,IOL,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+4,Titans,TEN,4,Outside CB,CB,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+5,Giants,NYG,1,RT,OT,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+5,Giants,NYG,2,RG,IOL,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+5,Giants,NYG,3,WR,WR,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+5,Giants,NYG,4,Outside CB,CB,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+5,Giants,NYG,5,LB,LB,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+5,Giants,NYG,6,DT,DT,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+5,Giants,NYG,7,CB,CB,0.35,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+6,Browns,CLE,1,QB,QB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+6,Browns,CLE,2,RT,OT,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+6,Browns,CLE,3,RG,IOL,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+6,Browns,CLE,4,LG,IOL,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+6,Browns,CLE,5,C,IOL,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+6,Browns,CLE,6,Slot CB,CB,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+6,Browns,CLE,7,WR,WR,0.35,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+6,Browns,CLE,8,LB,LB,0.3,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+7,Commanders,WAS,1,Outside WR,WR,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+7,Commanders,WAS,2,EDGE,EDGE,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+7,Commanders,WAS,3,LB,LB,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+7,Commanders,WAS,4,Slot WR,WR,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+7,Commanders,WAS,5,LG,IOL,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+8,Saints,NO,1,LG,IOL,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+8,Saints,NO,2,DT,DT,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+8,Saints,NO,3,EDGE,EDGE,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+8,Saints,NO,4,WR,WR,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+8,Saints,NO,5,Slot CB,CB,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+8,Saints,NO,6,LB,LB,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+8,Saints,NO,7,RB,RB,0.35,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+9,Chiefs,KC,1,Outside CB,CB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+9,Chiefs,KC,2,FS,S,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+9,Chiefs,KC,3,RB,RB,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+9,Chiefs,KC,4,EDGE,EDGE,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+9,Chiefs,KC,5,X WR,WR,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+10,Bengals,CIN,1,DT,DT,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+10,Bengals,CIN,2,FS,S,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+10,Bengals,CIN,3,RG,IOL,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+10,Bengals,CIN,4,CB,CB,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+10,Bengals,CIN,5,LB,LB,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+10,Bengals,CIN,6,EDGE,EDGE,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+11,Dolphins,MIA,1,QB,QB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+11,Dolphins,MIA,2,EDGE,EDGE,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+11,Dolphins,MIA,3,Outside WR,WR,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+11,Dolphins,MIA,4,Outside CB,CB,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+11,Dolphins,MIA,5,Slot CB,CB,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+11,Dolphins,MIA,6,RG,IOL,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+12,Cowboys,DAL,1,Outside CB,CB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+12,Cowboys,DAL,2,Outside WR,WR,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+12,Cowboys,DAL,3,EDGE,EDGE,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+12,Cowboys,DAL,4,RB,RB,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+12,Cowboys,DAL,5,LB,LB,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+12,Cowboys,DAL,6,FS,S,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+13,Falcons,ATL,1,DT,DT,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+13,Falcons,ATL,2,LB,LB,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+13,Falcons,ATL,3,TE,TE,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+13,Falcons,ATL,4,QB,QB,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+13,Falcons,ATL,5,WR,WR,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+13,Falcons,ATL,6,Outside CB,CB,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+14,Ravens,BAL,1,DT,DT,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+14,Ravens,BAL,2,C,IOL,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+14,Ravens,BAL,3,EDGE,EDGE,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+14,Ravens,BAL,4,FS,S,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+14,Ravens,BAL,5,Outside WR,WR,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+14,Ravens,BAL,6,TE,TE,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+14,Ravens,BAL,7,Outside CB,CB,0.35,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+15,Buccaneers,TB,1,EDGE,EDGE,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+15,Buccaneers,TB,2,DT,DT,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+15,Buccaneers,TB,3,TE,TE,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+15,Buccaneers,TB,4,LB,LB,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+15,Buccaneers,TB,5,X WR,WR,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+15,Buccaneers,TB,6,Outside CB,CB,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+16,Colts,IND,1,QB,QB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+16,Colts,IND,2,RT,OT,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+16,Colts,IND,3,EDGE,EDGE,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+16,Colts,IND,4,SS,S,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+16,Colts,IND,5,Outside WR,WR,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+16,Colts,IND,6,LB,LB,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+17,Lions,DET,1,EDGE,EDGE,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+17,Lions,DET,2,DT,DT,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+17,Lions,DET,3,LB,LB,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+17,Lions,DET,4,Slot CB,CB,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+17,Lions,DET,5,LT,OT,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+17,Lions,DET,6,C/RG,IOL,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+18,Vikings,MIN,1,QB,QB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+18,Vikings,MIN,2,FS,S,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+18,Vikings,MIN,3,CB,CB,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+18,Vikings,MIN,4,LB,LB,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+18,Vikings,MIN,5,Slot WR,WR,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+19,Panthers,CAR,1,C,IOL,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+19,Panthers,CAR,2,LB,LB,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+19,Panthers,CAR,3,FS,S,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+19,Panthers,CAR,4,EDGE,EDGE,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+19,Panthers,CAR,5,Slot CB,CB,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+19,Panthers,CAR,6,DT,DT,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+20,Packers,GB,1,DT,DT,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+20,Packers,GB,2,LB,LB,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+20,Packers,GB,3,Outside CB,CB,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+20,Packers,GB,4,LT,OT,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+20,Packers,GB,5,RG,IOL,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+21,Steelers,PIT,1,QB,QB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+21,Steelers,PIT,2,LG,IOL,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+21,Steelers,PIT,3,Outside CB,CB,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+21,Steelers,PIT,4,WR,WR,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+21,Steelers,PIT,5,DT,DT,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+22,Chargers,LAC,1,EDGE,EDGE,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+22,Chargers,LAC,2,LG,IOL,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+22,Chargers,LAC,3,C,IOL,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+22,Chargers,LAC,4,RG,IOL,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+22,Chargers,LAC,5,DT,DT,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+22,Chargers,LAC,6,FS,S,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+23,Eagles,PHI,1,RG,IOL,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+23,Eagles,PHI,2,Outside CB,CB,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+23,Eagles,PHI,3,TE,TE,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+23,Eagles,PHI,4,RT,OT,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+23,Eagles,PHI,5,LG,IOL,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+23,Eagles,PHI,6,FS,S,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+24,Jaguars,JAX,1,LB,LB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+24,Jaguars,JAX,2,Outside CB,CB,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+24,Jaguars,JAX,3,FS,S,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+24,Jaguars,JAX,4,DT,DT,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+24,Jaguars,JAX,5,RB,RB,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+25,Bears,CHI,1,Outside CB,CB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+25,Bears,CHI,2,EDGE,EDGE,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+25,Bears,CHI,3,DT,DT,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+25,Bears,CHI,4,FS,S,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+25,Bears,CHI,5,SS,S,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+25,Bears,CHI,6,LB,LB,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+26,Bills,BUF,1,EDGE,EDGE,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+26,Bills,BUF,2,LG,IOL,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+26,Bills,BUF,3,C,IOL,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+26,Bills,BUF,4,Outside WR,WR,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+26,Bills,BUF,5,DT,DT,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+26,Bills,BUF,6,Slot CB,CB,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+26,Bills,BUF,7,LB,LB,0.35,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+27,49ers,SF,1,Outside WR,WR,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+27,49ers,SF,2,LG,IOL,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+27,49ers,SF,3,DT,DT,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+27,49ers,SF,4,C,IOL,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+27,49ers,SF,5,Outside CB,CB,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+28,Texans,HOU,1,RG,IOL,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+28,Texans,HOU,2,DT,DT,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+28,Texans,HOU,3,RB,RB,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+28,Texans,HOU,4,SS,S,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+28,Texans,HOU,5,RT,OT,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+28,Texans,HOU,6,C,IOL,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+29,Rams,LAR,1,Outside CB,CB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+29,Rams,LAR,2,FS,S,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+29,Rams,LAR,3,WR,WR,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+29,Rams,LAR,4,RT,OT,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+29,Rams,LAR,5,C,IOL,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+30,Broncos,DEN,1,DT,DT,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+30,Broncos,DEN,2,LB,LB,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+30,Broncos,DEN,3,TE,TE,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+30,Broncos,DEN,4,RB,RB,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+30,Broncos,DEN,5,Slot WR,WR,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+31,Patriots,NE,1,EDGE,EDGE,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+31,Patriots,NE,2,FS,S,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+31,Patriots,NE,3,RT,OT,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+31,Patriots,NE,4,C,IOL,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+31,Patriots,NE,5,TE,TE,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+31,Patriots,NE,6,NT,DT,0.42,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+32,Seahawks,SEA,1,Outside CB,CB,1.0,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+32,Seahawks,SEA,2,EDGE,EDGE,0.85,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+32,Seahawks,SEA,3,RB,RB,0.72,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+32,Seahawks,SEA,4,FS,S,0.6,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26
+32,Seahawks,SEA,5,RG,IOL,0.5,https://underdognetwork.com/football/news/2026-nfl-team-needs,2026-02-26

@@ -69,6 +69,7 @@ def load_historical_rows(
                         "starter_seasons": int(float(row.get("starter_seasons", 0) or 0)),
                         "second_contract": int(float(row.get("second_contract", 0) or 0)),
                         "success_label": int(float(row["success_label"])),
+                        "sample_weight": max(0.01, float(row.get("sample_weight", 1.0) or 1.0)),
                         "data_source": data_source,
                     }
                 )
@@ -93,12 +94,13 @@ def fit_logistic_grade(rows: List[dict], iterations: int = 1500, lr: float = 0.0
         for r in rows:
             x = float(r["model_grade"])
             y = float(r["success_label"])
+            w = float(r.get("sample_weight", 1.0) or 1.0)
             pred = _sigmoid(intercept + slope * x)
             err = pred - y
-            grad_b += err
-            grad_w += err * x
+            grad_b += err * w
+            grad_w += err * x * w
 
-        n = max(1, len(rows))
+        n = max(1.0, sum(float(r.get("sample_weight", 1.0) or 1.0) for r in rows))
         intercept -= lr * (grad_b / n)
         slope -= lr * (grad_w / n)
 
@@ -117,8 +119,18 @@ def position_additives(rows: List[dict], intercept: float, slope: float) -> Dict
             out[pos] = 0.0
             continue
 
-        obs = sum(float(g["success_label"]) for g in group) / len(group)
-        exp = sum(_sigmoid(intercept + slope * float(g["model_grade"])) for g in group) / len(group)
+        den = sum(float(g.get("sample_weight", 1.0) or 1.0) for g in group)
+        if den <= 0:
+            out[pos] = 0.0
+            continue
+        obs = sum(float(g["success_label"]) * float(g.get("sample_weight", 1.0) or 1.0) for g in group) / den
+        exp = (
+            sum(
+                _sigmoid(intercept + slope * float(g["model_grade"])) * float(g.get("sample_weight", 1.0) or 1.0)
+                for g in group
+            )
+            / den
+        )
         out[pos] = round(_clamp(obs - exp, -0.12, 0.12), 4)
 
     return out
@@ -143,8 +155,16 @@ def calibration_bins(rows: List[dict], bins: int = 12) -> List[dict]:
                 "grade_min": round(min(g["model_grade"] for g in grp), 2),
                 "grade_max": round(max(g["model_grade"] for g in grp), 2),
                 "sample_size": len(grp),
-                "hit_rate": round(sum(g["success_label"] for g in grp) / len(grp), 4),
-                "avg_career_value": round(sum(g["career_value"] for g in grp) / len(grp), 2),
+                "hit_rate": round(
+                    sum(g["success_label"] * float(g.get("sample_weight", 1.0) or 1.0) for g in grp)
+                    / max(1.0, sum(float(g.get("sample_weight", 1.0) or 1.0) for g in grp)),
+                    4,
+                ),
+                "avg_career_value": round(
+                    sum(float(g["career_value"]) * float(g.get("sample_weight", 1.0) or 1.0) for g in grp)
+                    / max(1.0, sum(float(g.get("sample_weight", 1.0) or 1.0) for g in grp)),
+                    2,
+                ),
             }
         )
     return out
@@ -178,16 +198,21 @@ def year_based_backtest(rows: List[dict], min_train_rows: int = 250) -> List[dic
 
         probs: List[float] = []
         labels: List[float] = []
+        weights: List[float] = []
         for r in test:
             base = _sigmoid(b0 + b1 * float(r["model_grade"]))
             p = _clamp(base + float(pos_adj.get(r["position"], 0.0)), 0.02, 0.98)
             probs.append(p)
             labels.append(float(r["success_label"]))
+            weights.append(float(r.get("sample_weight", 1.0) or 1.0))
 
-        brier = sum((p - y) ** 2 for p, y in zip(probs, labels)) / len(labels)
-        accuracy = sum((1 if p >= 0.5 else 0) == int(y) for p, y in zip(probs, labels)) / len(labels)
-        avg_prob = sum(probs) / len(probs)
-        obs_rate = sum(labels) / len(labels)
+        wden = max(1.0, sum(weights))
+        brier = sum(((p - y) ** 2) * w for p, y, w in zip(probs, labels, weights)) / wden
+        accuracy = (
+            sum(((1 if p >= 0.5 else 0) == int(y)) * w for p, y, w in zip(probs, labels, weights)) / wden
+        )
+        avg_prob = sum(p * w for p, w in zip(probs, weights)) / wden
+        obs_rate = sum(y * w for y, w in zip(labels, weights)) / wden
 
         report_rows.append(
             {

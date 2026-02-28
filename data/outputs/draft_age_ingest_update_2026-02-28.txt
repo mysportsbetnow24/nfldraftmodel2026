@@ -1,0 +1,33 @@
+Draft Age Feature Added
+
+What was added
+- New loader: src/ingest/draft_age_loader.py
+- New pull script: scripts/pull_espn_birthdates.py
+- New templates:
+  - data/sources/manual/espn_player_urls_2026_template.csv
+  - data/sources/manual/espn_birthdates_2026_template.csv
+- build_big_board now exports:
+  - birth_date, draft_age, draft_age_source, draft_age_source_url, draft_age_ref_date, draft_age_available
+  - formula_draft_age, formula_draft_age_bucket, formula_draft_age_context_adjustment, formula_draft_age_risk_adjustment
+
+Draft date reference
+- 2026-04-23 (can override with DRAFT_DATE env var)
+
+Scoring behavior
+- Draft-age scoring is OFF by default to avoid rewriting board behavior.
+- Enable with: ENABLE_DRAFT_AGE_SCORING=1
+
+How to populate from ESPN pages
+1) Copy template to working input file:
+   cp data/sources/manual/espn_player_urls_2026_template.csv data/sources/manual/espn_player_urls_2026.csv
+2) Fill player URLs (and optional manual birth_date values).
+3) Dry run:
+   python3 scripts/pull_espn_birthdates.py --input data/sources/manual/espn_player_urls_2026.csv
+4) Execute pull:
+   python3 scripts/pull_espn_birthdates.py --input data/sources/manual/espn_player_urls_2026.csv --execute
+5) Rebuild board:
+   ALLOW_SINGLE_YEAR_PRODUCTION_KNN=1 python3 scripts/build_big_board.py
+
+Notes
+- qb_epa_per_pl alias support is active and maps to qb_epa_per_play.
+- Non-position metrics are audited as ignored and do not affect unrelated positions.

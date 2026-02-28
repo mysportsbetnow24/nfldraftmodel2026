@@ -1,0 +1,27 @@
+2026 Mock Athletic-Bias Delta Audit
+
+Round 1 changed picks: 2 / 32
+Players moved up: 1
+Players moved down: 1
+Players entered Round 1: 0
+Players exited Round 1: 0
+
+Top Upward Movers (pick delta prev-minus-curr):
+- Caleb Banks (DT): 21 -> 20 [up_1]
+
+Top Downward Movers (pick delta prev-minus-curr):
+- Kayden McDonald (DT): 20 -> 21 [down_1]
+
+Top Team/Position Athletic Impact (avg modifier):
+- ARI EDGE: avg_mod 0.0207, avg_abs_mod 0.0207, avg_conf 0.714
+- TB EDGE: avg_mod 0.0149, avg_abs_mod 0.0149, avg_conf 0.429
+- DAL DT: avg_mod 0.0123, avg_abs_mod 0.0123, avg_conf 0.286
+- CLE WR: avg_mod 0.0118, avg_abs_mod 0.0118, avg_conf 0.571
+- HOU WR: avg_mod 0.01, avg_abs_mod 0.01, avg_conf 0.429
+- WAS OT: avg_mod -0.0084, avg_abs_mod 0.0084, avg_conf 0.3
+- CIN CB: avg_mod -0.0082, avg_abs_mod 0.0082, avg_conf 0.286
+- BAL OT: avg_mod -0.0082, avg_abs_mod 0.0082, avg_conf 0.286
+- PHI EDGE: avg_mod -0.0082, avg_abs_mod 0.0082, avg_conf 0.286
+- TEN EDGE: avg_mod 0.0081, avg_abs_mod 0.0081, avg_conf 0.0
+- NYJ OT: avg_mod -0.0066, avg_abs_mod 0.0066, avg_conf 0.143
+- KC OT: avg_mod -0.0066, avg_abs_mod 0.0066, avg_conf 0.143

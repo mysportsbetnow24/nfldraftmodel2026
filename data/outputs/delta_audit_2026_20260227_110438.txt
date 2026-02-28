@@ -1,0 +1,49 @@
+2026 DELTA AUDIT
+
+Current board: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
+Previous board: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260226_203658.csv
+Rows compared: 412
+
+Top Risers (prev rank - curr rank > 0)
+1. Albert Regis (DT) 191 -> 100 (+91); driver: athletic (up 8.00) [ath 8.0, prod 0.58, prior 0.14, guardrail 0.0]
+2. Ty Simpson (QB) 114 -> 37 (+77); driver: prior (up 3.29) [ath 0.0, prod 2.55, prior 3.29, guardrail 0.0]
+3. DeMonte Capehart (DT) 226 -> 175 (+51); driver: athletic (up 8.00) [ath 8.0, prod 0.99, prior 0.16, guardrail 0.0]
+4. Kaimon Rucker (EDGE) 105 -> 60 (+45); driver: production (up 0.70) [ath 0.0, prod 0.7, prior 0.53, guardrail 0.0]
+5. Harold Perkins Jr. (LB) 152 -> 108 (+44); driver: production (up 1.45) [ath 0.0, prod 1.45, prior -0.1, guardrail 0.0]
+6. Jermayne Lole (DT) 130 -> 87 (+43); driver: production (up 0.70) [ath 0.0, prod 0.7, prior 0.28, guardrail 0.0]
+7. Mikail Kamara (EDGE) 98 -> 57 (+41); driver: production (up 0.81) [ath 0.0, prod 0.81, prior 0.32, guardrail 0.0]
+8. Zachariah Branch (WR) 95 -> 55 (+40); driver: prior (up 1.18) [ath 0.0, prod 0.2, prior 1.18, guardrail 0.0]
+9. Justin Flowe (LB) 117 -> 77 (+40); driver: production (up 0.70) [ath 0.0, prod 0.7, prior 0.38, guardrail 0.0]
+10. Dominic Gooden (DT) 150 -> 112 (+38); driver: production (up 0.70) [ath 0.0, prod 0.7, prior 0.15, guardrail 0.0]
+11. CJ Mims (EDGE) 154 -> 116 (+38); driver: production (up 0.70) [ath 0.0, prod 0.7, prior 0.1, guardrail 0.0]
+12. Jack Endries (TE) 100 -> 63 (+37); driver: production (up 0.44) [ath 0.0, prod 0.44, prior 0.43, guardrail 0.0]
+13. Deion Burks (WR) 107 -> 70 (+37); driver: prior (up 0.34) [ath 0.0, prod 0.0, prior 0.34, guardrail 0.0]
+14. Eugene Brooks III (IOL) 108 -> 71 (+37); driver: prior (up 0.57) [ath 0.0, prod 0.0, prior 0.57, guardrail 0.0]
+15. Seth McGowan (RB) 128 -> 91 (+37); driver: production (up 0.36) [ath 0.0, prod 0.36, prior 0.3, guardrail 0.0]
+16. Evan Stewart (WR) 104 -> 68 (+36); driver: prior (up 0.54) [ath 0.0, prod 0.0, prior 0.54, guardrail 0.0]
+17. Makhi Hughes (RB) 129 -> 93 (+36); driver: prior (up 0.47) [ath 0.0, prod 0.0, prior 0.47, guardrail 0.0]
+18. David Oke (DT) 146 -> 110 (+36); driver: production (up 1.40) [ath 0.0, prod 1.4, prior 0.29, guardrail 0.0]
+19. Gabriel Brownlow-Dindy (DT) 151 -> 115 (+36); driver: production (up 0.70) [ath 0.0, prod 0.7, prior 0.14, guardrail 0.0]
+20. Domata Peko Jr. (DT) 161 -> 125 (+36); driver: production (up 0.70) [ath 0.0, prod 0.7, prior 0.07, guardrail 0.0]
+
+Top Fallers (prev rank - curr rank < 0)
+1. Kyle Louis (LB) 137 -> 304 (-167); driver: athletic (down 13.75) [ath -13.75, prod 0.51, prior -3.2, guardrail -0.4]
+2. Jacob Rodriguez (LB) 41 -> 199 (-158); driver: athletic (down 13.75) [ath -13.75, prod -4.34, prior -0.91, guardrail 0.0]
+3. Nadame Tucker (EDGE) 158 -> 312 (-154); driver: production (down 6.34) [ath 0.0, prod -6.34, prior -3.76, guardrail 0.18]
+4. Kamari Ramsey (S) 80 -> 223 (-143); driver: production (down 0.74) [ath 0.0, prod -0.74, prior 0.68, guardrail 0.0]
+5. Xavian Sorey Jr. (LB) 319 -> 459 (-140); driver: athletic (down 70.00) [ath -70.0, prod 0.7, prior -2.56, guardrail -0.4]
+6. Keyron Crawford (EDGE) 294 -> 426 (-132); driver: prior (up 4.79) [ath 0.0, prod -0.47, prior 4.79, guardrail 0.0]
+7. Bishop Fitzgerald (S) 159 -> 288 (-129); driver: prior (down 3.53) [ath 0.0, prod -1.32, prior -3.53, guardrail -0.4]
+8. Rayshaun Benny (DT) 241 -> 364 (-123); driver: production (down 0.81) [ath 0.0, prod -0.81, prior -0.57, guardrail -0.4]
+9. Mike Washington Jr. (RB) 142 -> 259 (-117); driver: prior (down 4.08) [ath 0.0, prod 0.0, prior -4.08, guardrail -0.4]
+10. J'Mari Taylor (RB) 235 -> 352 (-117); driver: prior (down 3.91) [ath 0.0, prod 0.45, prior -3.91, guardrail -0.4]
+11. Will Lee III (CB) 115 -> 231 (-116); driver: production (down 0.88) [ath 0.0, prod -0.88, prior -0.43, guardrail -0.4]
+12. Bud Clark (S) 89 -> 202 (-113); driver: prior (down 4.39) [ath 0.0, prod -1.16, prior -4.39, guardrail 0.09]
+13. Joe Royer (TE) 165 -> 278 (-113); driver: prior (down 4.43) [ath 0.0, prod 0.0, prior -4.43, guardrail -0.4]
+14. Keylan Rutledge (IOL) 112 -> 224 (-112); driver: prior (down 3.77) [ath 0.0, prod 0.0, prior -3.77, guardrail -0.4]
+15. Trey Zuhn III (IOL) 220 -> 332 (-112); driver: prior (up 3.84) [ath 0.0, prod 0.0, prior 3.84, guardrail -1.12]
+16. Jake Slaughter (IOL) 94 -> 205 (-111); driver: prior (down 4.04) [ath 0.0, prod 0.0, prior -4.04, guardrail -0.4]
+17. Logan Jones (IOL) 182 -> 293 (-111); driver: prior (down 3.38) [ath 0.0, prod 0.0, prior -3.38, guardrail -0.4]
+18. Jalon Kilgore (S) 134 -> 243 (-109); driver: prior (down 2.02) [ath 0.0, prod -0.96, prior -2.02, guardrail 0.02]
+19. Kage Casey (OT) 144 -> 253 (-109); driver: prior (down 2.39) [ath 0.0, prod 0.0, prior -2.39, guardrail -0.4]
+20. Brenen Thompson (WR) 160 -> 269 (-109); driver: prior (down 3.32) [ath 0.0, prod 0.32, prior -3.32, guardrail -0.4]

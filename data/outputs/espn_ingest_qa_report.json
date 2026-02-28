@@ -1,22 +1,29 @@
 {
-  "status": "missing_prospects",
+  "status": "ok",
   "dataset_base_dir": "/Users/nickholz/nfldraftmodel2026/data/sources/external/espn_nfl_draft_prospect_data",
   "files": {
-    "prospects": "",
-    "profiles": "",
-    "college_qbr": "",
-    "college_stats": "",
-    "ids": ""
+    "prospects": "/Users/nickholz/nfldraftmodel2026/data/sources/external/espn_nfl_draft_prospect_data/nfl_draft_prospects.csv",
+    "profiles": "/Users/nickholz/nfldraftmodel2026/data/sources/external/espn_nfl_draft_prospect_data/nfl_draft_profiles.csv",
+    "college_qbr": "/Users/nickholz/nfldraftmodel2026/data/sources/external/espn_nfl_draft_prospect_data/college_qbr.csv",
+    "college_stats": "/Users/nickholz/nfldraftmodel2026/data/sources/external/espn_nfl_draft_prospect_data/college_stats.csv",
+    "ids": "/Users/nickholz/nfldraftmodel2026/data/sources/external/espn_nfl_draft_prospect_data/ids.csv"
   },
   "row_counts": {
-    "prospects": 0,
-    "profiles": 0,
-    "college_qbr": 0,
-    "college_stats": 0,
-    "ids": 0
+    "prospects": 643,
+    "profiles": 643,
+    "college_qbr": 25,
+    "college_stats": 2678,
+    "ids": 643
   },
   "signal_meta": {
-    "status": "missing_prospects"
+    "status": "ok",
+    "target_year": 2026,
+    "prospects_rows": 643,
+    "profiles_rows": 643,
+    "qbr_rows": 25,
+    "college_stats_rows": 2678,
+    "matched_name_pos": 643,
+    "matched_name": 643
   },
   "useful_fields": {
     "prospects": [
@@ -78,12 +85,123 @@
   ],
   "qa_checks": {
     "player_id_duplicates_by_year": 0,
-    "profile_text_nonempty_rows": 0,
+    "profile_text_nonempty_rows": 643,
     "join_coverage": {
-      "board_rows": 462,
-      "name_pos_join_rate": 0.0,
-      "name_only_join_rate": 0.0
+      "board_rows": 412,
+      "name_pos_join_rate": 0.9903,
+      "name_only_join_rate": 1.0
     }
   },
-  "missingness_by_year_position": []
+  "missingness_by_year_position": [
+    {
+      "draft_year": 2026,
+      "position": "CB",
+      "sample": 83,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.3012,
+      "missing_weight": 0.3012
+    },
+    {
+      "draft_year": 2026,
+      "position": "DT",
+      "sample": 56,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.3393,
+      "missing_weight": 0.3393
+    },
+    {
+      "draft_year": 2026,
+      "position": "EDGE",
+      "sample": 68,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.3529,
+      "missing_weight": 0.3529
+    },
+    {
+      "draft_year": 2026,
+      "position": "IOL",
+      "sample": 73,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.3288,
+      "missing_weight": 0.3288
+    },
+    {
+      "draft_year": 2026,
+      "position": "LB",
+      "sample": 48,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.375,
+      "missing_weight": 0.375
+    },
+    {
+      "draft_year": 2026,
+      "position": "OT",
+      "sample": 54,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.2963,
+      "missing_weight": 0.2963
+    },
+    {
+      "draft_year": 2026,
+      "position": "QB",
+      "sample": 36,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.1667,
+      "missing_weight": 0.1667
+    },
+    {
+      "draft_year": 2026,
+      "position": "RB",
+      "sample": 47,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.2128,
+      "missing_weight": 0.2128
+    },
+    {
+      "draft_year": 2026,
+      "position": "S",
+      "sample": 47,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.234,
+      "missing_weight": 0.234
+    },
+    {
+      "draft_year": 2026,
+      "position": "TE",
+      "sample": 43,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.2093,
+      "missing_weight": 0.2093
+    },
+    {
+      "draft_year": 2026,
+      "position": "WR",
+      "sample": 88,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.3295,
+      "missing_weight": 0.3295
+    }
+  ]
 }

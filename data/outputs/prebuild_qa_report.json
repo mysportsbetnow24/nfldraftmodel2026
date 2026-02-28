@@ -1,6 +1,6 @@
 {
   "status": "pass",
-  "checked_at_utc": "2026-02-26T06:25:08.265990+00:00",
+  "checked_at_utc": "2026-02-28T04:31:04.773639+00:00",
   "paths": {
     "seed_path": "/Users/nickholz/nfldraftmodel2026/data/processed/prospect_seed_2026.csv",
     "combine_path": "/Users/nickholz/nfldraftmodel2026/data/sources/manual/combine_2026_results.csv",
@@ -8,7 +8,7 @@
   },
   "counts": {
     "seed_rows": 192,
-    "combine_rows": 5,
+    "combine_rows": 36,
     "errors": 0,
     "warnings": 0
   },

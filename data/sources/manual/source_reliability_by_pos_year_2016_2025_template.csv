@@ -1,0 +1,4 @@
+source,position,draft_year,hit_rate,stability,sample_size,hist_success_rate_raw,hist_success_rate_shrunk,hist_quality_multiplier,hist_row_count,method
+consensus_rank,QB,2025,0.67,0.88,120,0.62,0.60,1.05,42,base_source_weight_x_historical_pos_year_success
+consensus_rank,EDGE,2024,0.63,0.85,110,0.56,0.57,0.98,38,base_source_weight_x_historical_pos_year_success
+kiper_rank,CB,2023,0.61,0.78,85,0.59,0.58,1.01,44,manual_override_from_historical_backtest

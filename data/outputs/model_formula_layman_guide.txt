@@ -1,0 +1,156 @@
+NFL Draft Model Formula Guide (Layman's Terms)
+Updated: 2026-02-27
+
+1) Big Picture
+- The model does two things:
+- It builds an internal football grade from traits, production, athletic profile, size, context, and risk.
+- It blends that with outside market evidence (consensus boards + analyst ranks) so outliers are controlled.
+
+2) Final Grade Flow
+- Step A: Build prior signal (market/analyst anchor), 1-100 scale.
+- Step B: Build core components:
+- trait_component
+- production_component
+- athletic_component
+- size_component
+- context_component
+- risk_penalty
+- Step C: Raw formula score = weighted components minus risk.
+- Step D: Convert raw score to grade scale (55-95), then blend with prior grade.
+- Step E: Apply guardrails/caps (consensus drift, soft/hard caps, outlier gates).
+- Step F: Sort by final grade for board rank.
+
+3) Core Formula (Current)
+- raw_formula_score =
+- trait_w * trait_component
+- + prod_w * production_component
+- + athletic_w * athletic_component
+- + size_w * size_component
+- + context_w * context_component
+- - risk_penalty
+
+- calibrated_grade = clamp(1.22 * raw_formula_score - 2.0, 55, 95)
+- prior_grade = clamp(60 + 0.33 * prior_signal, 55, 95)
+- formula_score = clamp(0.72 * calibrated_grade + 0.28 * prior_grade + position_value_adjustment, 55, 95)
+
+4) Component Weights
+- Default positions:
+- trait 0.38
+- production 0.24
+- athletic 0.18
+- size 0.10
+- context 0.10
+
+- Front-7 (EDGE/DT/LB):
+- trait 0.42
+- production 0.18
+- athletic 0.18
+- size 0.10
+- context 0.12
+
+5) What Each Component Means
+- prior_signal: What the market and analysts already think.
+- trait_component: Tape/scouting language quality (how skills translate).
+- production_component: On-field output signals (PFF + ESPN + CFB/PP where present).
+- athletic_component: Movement/testing profile (official RAS preferred).
+- size_component: How body type fits NFL standards for that position.
+- context_component: Experience/class + information confidence context.
+- risk_penalty: Volatility, sparse profile, and uncertainty deductions.
+
+6) Prior Signal Inputs (Weighted Blend)
+- Seed rank signal
+- External rank signal
+- Analyst aggregate signal
+- Consensus board signal
+- Kiper rank signal
+- TDN rank signal
+- Ringer rank signal
+- Bleacher rank signal
+- AtoZ rank signal
+- SI rank signal
+- CBS rank signal
+- CBS Wilson rank signal
+- TDN grade-label signal
+- Then a consensus anchor adjustment is applied to reduce seed-vs-market drift.
+
+7) Production Logic (Current)
+- Production starts from weighted parts:
+- PFF grade (0.42 default, 0.30 front-7, 0.34 CB/S)
+- ESPN production signal (0.24)
+- PlayerProfiler skill signal (0.12 when available)
+- CFB production signal (reliability and coverage adjusted)
+
+- Production guardrail (anti-overweight):
+- Neutral center = 70
+- Multipliers:
+- QB 0.74
+- Front-7 0.68
+- Others 0.82
+- Max movement caps apply (front-7 upside capped tighter).
+- Front-7 gets extra compression after guardrail.
+- Thin proxy front-7 production is capped.
+
+8) Athletic Logic (Current)
+- If official RAS exists:
+- athletic_component = RAS * 10
+- If no official RAS:
+- use MockDraftable component percentiles (speed/explosion/agility)
+- Front-7 evidence cap:
+- 1 athletic evidence metric: cap at 78
+- 2 metrics: cap at 86
+
+- Purpose: prevent one fast split from looking like elite complete athleticism.
+
+9) Size Logic
+- Position-specific thresholds are used (not one global standard).
+- Below threshold gets penalized more heavily.
+- Above threshold gets only mild penalties past a soft upper range.
+
+10) Risk and Data Sufficiency
+- Risk adds penalties for:
+- volatility/inconsistency flags
+- missing evidence types
+- thin proxy-only production
+- QB uncertainty (stricter)
+
+- Evidence guardrail:
+- If final grade is high but evidence is thin, apply small confidence haircut.
+
+11) Post-Formula Guardrails (Board Control)
+- formula_guardrail_penalty: suppress weak-consensus outliers.
+- formula_drift_penalty: penalize large seed-vs-consensus drift.
+- formula_midband_brake_penalty: mild brake in consensus mid-range.
+- formula_top75_gate_penalty: gate for very low-consensus players (unless exception).
+- formula_soft_ceiling_penalty: soft ceiling in selected mid-bands.
+- formula_hard_cap_penalty: hard cap if consensus support is too weak.
+- formula_consensus_outlier_cap: broad ceiling for persistent low-consensus names.
+- is_diamond_exception: allows verified contrarian profiles to pass with reduced brakes.
+
+12) Position Value Adjustment
+- Small bonus/penalty by position after formula blend:
+- QB +0.35, OT +0.25, EDGE +0.25, CB +0.20, WR +0.15
+- DT +0.10, S +0.10, LB +0.05
+- TE -0.15, IOL -0.25, RB -0.80
+
+13) Legacy vs Active Fields
+- Legacy diagnostic fields still exist:
+- trait_score, production_score, athletic_score, final_grade (from base grade module)
+- Active ranking pipeline uses:
+- formula_* fields plus guardrail/cap penalties in build_big_board.py.
+
+14) Practical Read of a Player Row
+- Check these first:
+- final_grade (current model result)
+- formula_trait_component
+- formula_production_component
+- formula_athletic_component
+- formula_risk_penalty
+- formula_prior_grade
+- formula_guardrail_penalty
+- formula_drift_penalty
+- formula_midband_brake_penalty
+- formula_soft_ceiling_penalty
+- formula_hard_cap_penalty
+- consensus_board_mean_rank / consensus_board_source_count
+- formula_evidence_guardrail_penalty
+

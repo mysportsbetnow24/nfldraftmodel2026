@@ -1,0 +1,3 @@
+CFB Proxy Fallback Watchlist (2026)
+
+Rank | Player | Pos | Rel | Cov | Fallbacks | Reason | Audit

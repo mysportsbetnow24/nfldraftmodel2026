@@ -1,0 +1,33 @@
+round,pick,overall_pick_off,team_off,player_off,position_off,overall_pick_on,team_on,player_on,position_on,changed,athletic_modifier_on,athletic_target_ras_on,athletic_proxy_on,athletic_source_on,athletic_tier_on,athletic_threshold_mode_on,athletic_threshold_confidence_on,athletic_reason_on
+1,1,1,LV,Fernando Mendoza,QB,1,LV,Fernando Mendoza,QB,0,-0.0054,7.4,6.86,formula_athletic_component,C Balanced,position,0.0,position_delta_-0.54_scale_0.18_cap_0.01
+1,2,2,NYJ,Francis Mauigoa,OT,2,NYJ,Francis Mauigoa,OT,0,-0.0066,7.68,6.89,formula_athletic_component,A Athlete-lean,position,0.143,position_delta_-0.79_scale_0.22_cap_0.012
+1,3,3,ARI,Cashius Howell,EDGE,3,ARI,Cashius Howell,EDGE,0,0.0207,6.9,8.91,formula_athletic_component,B Balanced-athletic,position,0.714,position_delta_2.01_scale_0.46_cap_0.021
+1,4,4,TEN,R Mason Thomas,EDGE,4,TEN,R Mason Thomas,EDGE,0,0.0081,7.1,8.71,formula_athletic_component,D Film/production-tolerant,position,0.0,position_delta_1.61_scale_0.18_cap_0.01
+1,5,5,NYG,Kadyn Proctor,OT,5,NYG,Kadyn Proctor,OT,0,-0.0054,8.0,7.11,formula_athletic_component,A Athlete-lean,position,0.0,position_delta_-0.89_scale_0.18_cap_0.01
+1,6,6,CLE,Carnell Tate,WR,6,CLE,Carnell Tate,WR,0,0.0118,6.13,6.86,formula_athletic_component,D Film/production-tolerant,position,0.571,position_delta_0.73_scale_0.39_cap_0.019
+1,7,7,WAS,Brian Parker II,OT,7,WAS,Brian Parker II,OT,0,-0.0084,7.7,6.89,formula_athletic_component,B Balanced-athletic,bucket,0.3,bucket_delta_-0.81_scale_0.28_cap_0.012
+1,8,8,NO,David Bailey,EDGE,8,NO,David Bailey,EDGE,0,0.0054,8.3,8.9,formula_athletic_component,A+ Athlete-heavy,position,0.0,position_delta_0.6_scale_0.18_cap_0.01
+1,9,9,KC,Monroe Freeling,OT,9,KC,Monroe Freeling,OT,0,-0.0066,7.44,6.89,formula_athletic_component,B Balanced-athletic,position,0.143,position_delta_-0.55_scale_0.22_cap_0.012
+1,10,10,CIN,Keionte Scott,CB,10,CIN,Keionte Scott,CB,0,-0.0082,7.65,6.77,formula_athletic_component,A Athlete-lean,position,0.286,position_delta_-0.88_scale_0.27_cap_0.015
+1,11,11,MIA,Caleb Downs,S,11,MIA,Caleb Downs,S,0,-0.0054,7.8,6.8,formula_athletic_component,A+ Athlete-heavy,position,0.0,position_delta_-1.0_scale_0.18_cap_0.01
+1,12,12,DAL,Jeremiyah Love,RB,12,DAL,Jeremiyah Love,RB,0,0.0,7.0,6.84,formula_athletic_component,A Athlete-lean,position,0.0,position_delta_-0.16_scale_0.18_cap_0.01
+1,13,13,LAR,Mansoor Delane,CB,13,LAR,Mansoor Delane,CB,0,-0.0041,7.09,6.77,formula_athletic_component,C Balanced,position,0.286,position_delta_-0.32_scale_0.27_cap_0.015
+1,14,14,BAL,Caleb Lomu,OT,14,BAL,Caleb Lomu,OT,0,-0.0082,7.68,6.75,formula_athletic_component,A+ Athlete-heavy,position,0.286,position_delta_-0.93_scale_0.27_cap_0.015
+1,15,15,TB,Romello Height,EDGE,15,TB,Romello Height,EDGE,0,0.0149,7.02,8.89,formula_athletic_component,B Balanced-athletic,position,0.429,position_delta_1.87_scale_0.33_cap_0.017
+1,16,16,NYJ,Makai Lemon,WR,16,NYJ,Makai Lemon,WR,0,-0.0041,7.2,6.83,formula_athletic_component,A Athlete-lean,position,0.286,position_delta_-0.37_scale_0.27_cap_0.015
+1,17,17,DET,Keldric Faulk,EDGE,17,DET,Keldric Faulk,EDGE,0,0.0041,6.87,7.08,formula_athletic_component,D Film/production-tolerant,position,0.286,position_delta_0.21_scale_0.27_cap_0.015
+1,18,18,MIN,Christen Miller,DT,18,MIN,Christen Miller,DT,0,0.0,6.7,6.82,formula_athletic_component,D Film/production-tolerant,position,0.0,position_delta_0.12_scale_0.18_cap_0.01
+1,19,19,CAR,Denzel Boston,WR,19,CAR,Denzel Boston,WR,0,0.0,7.18,7.01,formula_athletic_component,B Balanced-athletic,position,0.143,position_delta_-0.17_scale_0.22_cap_0.012
+1,20,20,DAL,Kayden McDonald,DT,20,DAL,Caleb Banks,DT,1,0.0123,7.23,8.74,formula_athletic_component,A Athlete-lean,position,0.286,position_delta_1.51_scale_0.27_cap_0.015
+1,21,21,PIT,Caleb Banks,DT,21,PIT,Kayden McDonald,DT,1,0.0,6.71,6.82,formula_athletic_component,C Balanced,position,0.286,position_delta_0.11_scale_0.27_cap_0.015
+1,22,22,LAC,Emmanuel McNeil-Warren,S,22,LAC,Emmanuel McNeil-Warren,S,0,0.0,6.89,6.8,formula_athletic_component,C Balanced,position,0.143,position_delta_-0.09_scale_0.22_cap_0.012
+1,23,23,PHI,Zion Young,EDGE,23,PHI,Zion Young,EDGE,0,-0.0082,7.47,6.92,formula_athletic_component,A Athlete-lean,position,0.286,position_delta_-0.55_scale_0.27_cap_0.015
+1,24,24,CLE,Nyck Harbor,WR,24,CLE,Nyck Harbor,WR,0,0.0118,6.13,6.83,formula_athletic_component,D Film/production-tolerant,position,0.571,position_delta_0.7_scale_0.39_cap_0.019
+1,25,25,CHI,Spencer Fano,OT,25,CHI,Spencer Fano,OT,0,-0.0066,7.46,6.67,formula_athletic_component,B Balanced-athletic,position,0.143,position_delta_-0.79_scale_0.22_cap_0.012
+1,26,26,BUF,Dillon Thieneman,S,26,BUF,Dillon Thieneman,S,0,0.0033,6.63,6.83,formula_athletic_component,D Film/production-tolerant,position,0.143,position_delta_0.2_scale_0.22_cap_0.012
+1,27,27,SF,Blake Miller,OT,27,SF,Blake Miller,OT,0,-0.0054,7.4,6.89,formula_athletic_component,C Balanced,position,0.0,position_delta_-0.51_scale_0.18_cap_0.01
+1,28,28,HOU,Skyler Bell,WR,28,HOU,Skyler Bell,WR,0,0.01,6.31,6.83,formula_athletic_component,D Film/production-tolerant,position,0.429,position_delta_0.52_scale_0.33_cap_0.017
+1,29,29,LAR,Arvell Reese,LB,29,LAR,Arvell Reese,LB,0,0.0,7.0,6.86,formula_athletic_component,C Balanced,position,0.0,position_delta_-0.14_scale_0.18_cap_0.01
+1,30,30,DEN,Jordyn Tyson,WR,30,DEN,Jordyn Tyson,WR,0,0.0,6.86,6.79,formula_athletic_component,B Balanced-athletic,position,0.429,position_delta_-0.07_scale_0.33_cap_0.017
+1,31,31,NE,C.J. Allen,LB,31,NE,C.J. Allen,LB,0,-0.0042,7.0,6.78,formula_athletic_component,C Balanced,bucket,0.3,bucket_delta_-0.22_scale_0.28_cap_0.012
+1,32,32,SEA,Peter Woods,DT,32,SEA,Peter Woods,DT,0,-0.0054,7.5,6.9,formula_athletic_component,A Athlete-lean,position,0.0,position_delta_-0.6_scale_0.18_cap_0.01

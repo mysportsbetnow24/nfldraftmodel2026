@@ -1,0 +1,41 @@
+Historical Combine Integration Report (2026)
+
+Source file: /Users/nickholz/nfldraftmodel2026/data/sources/external/combine_data_unique_athlete_id_step4.csv
+Historical rows loaded: 8195
+Normalized positions available: 14
+
+Board rows: 459
+Rows with historical combine comp1: 23
+Minimum overlap rule: 3 combine metrics
+
+New board fields:
+- historical_combine_merge_key
+- historical_combine_source
+- historical_combine_candidate_count
+- historical_combine_overlap_min
+- historical_combine_comp_1
+- historical_combine_comp_1_year
+- historical_combine_comp_1_school
+- historical_combine_comp_1_similarity
+- historical_combine_comp_1_overlap_metrics
+- historical_combine_comp_2
+- historical_combine_comp_2_similarity
+- historical_combine_comp_3
+- historical_combine_comp_3_similarity
+
+Top matched players by current board rank:
+- #6 Cashius Howell (EDGE): Jah Joyner (2025) sim=98.76 overlap=3
+- #8 David Bailey (EDGE): Malachi Lawrence (2025) sim=97.97 overlap=3
+- #13 R Mason Thomas (EDGE): Maurice Falls (2015) sim=98.23 overlap=3
+- #38 Romello Height (EDGE): Andre Branch (2012) sim=97.6 overlap=3
+- #49 Sonny Styles (LB): Arvell Reese (2025) sim=98.63 overlap=3
+- #61 Caleb Banks (DT): Jay Bromley (2014) sim=98.55 overlap=3
+- #88 Anthony Hill Jr. (LB): Jeff Tarpinian (2011) sim=97.1 overlap=4
+- #100 Albert Regis (DT): Lamarr Houston (2010) sim=97.34 overlap=3
+- #114 Jake Golday (LB): Teddye Buchanan (2025) sim=97.35 overlap=4
+- #136 Gracen Halton (DT): Quinnen Williams (2019) sim=98.83 overlap=3
+- #175 DeMonte Capehart (DT): Quinnen Williams (2019) sim=98.52 overlap=3
+- #178 Malachi Lawrence (EDGE): Boye Mafe (2022) sim=98.37 overlap=3
+- #199 Jacob Rodriguez (LB): Joe Walker (2016) sim=96.04 overlap=4
+- #216 Nick Barrett (DT): Abdullah Anderson (2018) sim=97.98 overlap=3
+- #252 David Gusta (DT): Lamarr Houston (2010) sim=97.34 overlap=3

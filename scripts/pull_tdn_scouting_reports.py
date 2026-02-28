@@ -264,6 +264,15 @@ def parse_tdn_report(page_html: str, source_url: str, snapshot_date: str) -> dic
     if summary:
         report_text_parts.append(f"Summary: {summary}.")
     report_text = " ".join(report_text_parts).strip()
+    if not report_text:
+        # Last-resort fallback so report_text is never empty for language ingestion.
+        compact = [ln for ln in lines if len(ln) >= 35][:6]
+        report_text = " ".join(compact).strip()
+    if not report_text and name and pos:
+        report_text = (
+            f"TDN scouting entry for {name} ({pos}, {school}). "
+            "Detailed strengths and concerns pending richer extraction."
+        )
 
     return {
         "source": TDN_SOURCE,
@@ -467,13 +476,31 @@ def main() -> None:
             try:
                 page_html = _fetch(url)
                 parsed = parse_tdn_report(page_html, source_url=url, snapshot_date=snapshot_date)
-                # Allow metadata overrides from URL CSV when parser misses fields.
-                if not parsed.get("player_name"):
-                    parsed["player_name"] = _safe_str(row.get("player_name"))
-                if not parsed.get("position"):
-                    parsed["position"] = normalize_pos(_safe_str(row.get("position")).upper())
-                if not parsed.get("school"):
-                    parsed["school"] = _safe_str(row.get("school"))
+                # URL CSV metadata is authoritative when provided.
+                csv_name = _safe_str(row.get("player_name"))
+                csv_pos = normalize_pos(_safe_str(row.get("position")).upper())
+                csv_school = _safe_str(row.get("school"))
+                csv_rank = _to_int(row.get("source_rank", row.get("rank", "")))
+                if csv_name:
+                    parsed["player_name"] = csv_name
+                elif not parsed.get("player_name"):
+                    parsed["player_name"] = csv_name
+                if csv_pos:
+                    parsed["position"] = csv_pos
+                elif not parsed.get("position"):
+                    parsed["position"] = csv_pos
+                if csv_school:
+                    parsed["school"] = csv_school
+                elif not parsed.get("school"):
+                    parsed["school"] = csv_school
+                if csv_rank is not None:
+                    parsed["source_rank"] = csv_rank
+                    parsed["tdn_overall_rank"] = csv_rank
+                if not _safe_str(parsed.get("report_text")) and _safe_str(parsed.get("player_name")) and _safe_str(parsed.get("position")):
+                    parsed["report_text"] = (
+                        f"TDN scouting entry for {parsed['player_name']} ({parsed['position']}, {parsed.get('school','')}). "
+                        "Detailed strengths and concerns pending richer extraction."
+                    )
                 if parsed.get("player_name") and parsed.get("position"):
                     rows.append(parsed)
                 else:

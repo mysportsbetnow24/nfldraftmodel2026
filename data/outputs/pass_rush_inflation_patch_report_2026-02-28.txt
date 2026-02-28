@@ -1,0 +1,46 @@
+Pass-rush inflation patch report (2026-02-28)
+
+Code changes:
+- scripts/build_big_board.py
+  - Added front-seven inflation brake using:
+    - production lift above neutral
+    - consensus band/source depth
+    - ROI prior context (band/sample/surplus_z)
+    - calibration success probability check
+  - New output columns:
+    - formula_front7_inflation_penalty
+    - formula_front7_inflation_reason
+    - formula_front7_success_prob_pre_brake
+
+Targeted players (before -> after):
+
+1) Cashius Howell (EDGE)
+- consensus_rank: 1 -> 1
+- final_grade: 83.56 -> 83.56
+- front7_inflation_penalty: 0.00
+- reason: (none)
+- note: not currently a production-inflation case in this model run.
+
+2) R Mason Thomas (EDGE)
+- consensus_rank: 4 -> 4
+- final_grade: 82.84 -> 82.79
+- front7_inflation_penalty: 0.04
+- reason: prod_up=0.87;rank=40.6
+
+3) Romello Height (EDGE)
+- consensus_rank: 7 -> 23
+- final_grade: 82.49 -> 81.13
+- front7_inflation_penalty: 1.35
+- reason: prod_up=2.66;rank=65.0;roi_R3_plus;roi_small_sample;no_cfb_prod
+
+Additional observed front-seven effects (examples):
+- David Bailey: penalty 0.58 (prod_up/no_cfb_prod)
+- Akheem Mesidor: penalty 0.58 (prod_up/no_cfb_prod)
+- Rueben Bain Jr.: penalty 0.67 (prod_up/no_cfb_prod + calibration floor miss)
+
+Rebuilt outputs:
+- data/outputs/big_board_2026.csv
+- data/outputs/mock_2026_round1.csv
+- data/outputs/mock_2026_7round.csv
+- data/outputs/mock_2026_round1_with_scouting_notes.csv
+- data/outputs/mock_2026_round1_with_scouting_notes.txt

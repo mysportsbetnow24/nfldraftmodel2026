@@ -1,0 +1,82 @@
+kpolimis nfl-combine-evaluation: metric signal scan vs draft pick (1999-2015)
+signal > 0 means metric moves in expected direction for earlier picks
+
+[CB] top expected signals:
+- heightinchestotal (higher_better): signal=0.201, corr_picktotal=-0.201, n=342
+- weight (higher_better): signal=0.171, corr_picktotal=-0.171, n=342
+- threecone (lower_better): signal=0.102, corr_picktotal=0.102, n=342
+- bench (higher_better): signal=0.057, corr_picktotal=-0.057, n=342
+- vertical (higher_better): signal=0.052, corr_picktotal=-0.052, n=342
+- broad (higher_better): signal=0.052, corr_picktotal=-0.052, n=342
+
+[DT] top expected signals:
+- bench (higher_better): signal=0.202, corr_picktotal=-0.202, n=238
+- arms (higher_better): signal=0.185, corr_picktotal=-0.185, n=238
+- hands (higher_better): signal=0.180, corr_picktotal=-0.180, n=238
+- weight (higher_better): signal=0.075, corr_picktotal=-0.075, n=238
+- twentyss (lower_better): signal=0.056, corr_picktotal=0.056, n=238
+- fortyyd (lower_better): signal=0.000, corr_picktotal=0.000, n=238
+
+[EDGE] top expected signals:
+- heightinchestotal (higher_better): signal=0.134, corr_picktotal=-0.134, n=528
+- weight (higher_better): signal=0.092, corr_picktotal=-0.092, n=528
+- vertical (higher_better): signal=0.071, corr_picktotal=-0.071, n=528
+- hands (higher_better): signal=0.045, corr_picktotal=-0.045, n=528
+- arms (higher_better): signal=0.043, corr_picktotal=-0.043, n=528
+- fortyyd (lower_better): signal=0.035, corr_picktotal=0.035, n=528
+
+[LB] top expected signals:
+- vertical (higher_better): signal=0.075, corr_picktotal=-0.075, n=135
+- threecone (lower_better): signal=0.013, corr_picktotal=0.013, n=135
+- bench (higher_better): signal=0.013, corr_picktotal=-0.013, n=135
+- fortyyd (lower_better): signal=-0.007, corr_picktotal=-0.007, n=135
+- tenyd (lower_better): signal=-0.013, corr_picktotal=-0.013, n=135
+- broad (higher_better): signal=-0.016, corr_picktotal=0.016, n=135
+
+[OT] top expected signals:
+- fortyyd (lower_better): signal=0.096, corr_picktotal=0.096, n=260
+- arms (higher_better): signal=0.077, corr_picktotal=-0.077, n=260
+- hands (higher_better): signal=0.077, corr_picktotal=-0.077, n=260
+- twentyss (lower_better): signal=0.068, corr_picktotal=0.068, n=260
+- bench (higher_better): signal=0.068, corr_picktotal=-0.068, n=260
+- weight (higher_better): signal=0.043, corr_picktotal=-0.043, n=260
+
+[QB] top expected signals:
+- weight (higher_better): signal=0.211, corr_picktotal=-0.211, n=169
+- twentyss (lower_better): signal=0.198, corr_picktotal=0.198, n=169
+- heightinchestotal (higher_better): signal=0.155, corr_picktotal=-0.155, n=169
+- tenyd (lower_better): signal=0.004, corr_picktotal=0.004, n=169
+- fortyyd (lower_better): signal=-0.028, corr_picktotal=-0.028, n=169
+- bench (higher_better): signal=-0.032, corr_picktotal=0.032, n=169
+
+[RB] top expected signals:
+- twentyss (lower_better): signal=0.109, corr_picktotal=0.109, n=295
+- tenyd (lower_better): signal=0.098, corr_picktotal=0.098, n=295
+- fortyyd (lower_better): signal=0.058, corr_picktotal=0.058, n=295
+- threecone (lower_better): signal=0.022, corr_picktotal=0.022, n=295
+- hands (higher_better): signal=0.019, corr_picktotal=-0.019, n=295
+- arms (higher_better): signal=0.016, corr_picktotal=-0.016, n=295
+
+[S] top expected signals:
+- twentyss (lower_better): signal=0.112, corr_picktotal=0.112, n=246
+- hands (higher_better): signal=0.058, corr_picktotal=-0.058, n=246
+- arms (higher_better): signal=0.057, corr_picktotal=-0.057, n=246
+- weight (higher_better): signal=0.041, corr_picktotal=-0.041, n=246
+- vertical (higher_better): signal=0.013, corr_picktotal=-0.013, n=246
+- broad (higher_better): signal=0.008, corr_picktotal=-0.008, n=246
+
+[TE] top expected signals:
+- bench (higher_better): signal=0.191, corr_picktotal=-0.191, n=170
+- fortyyd (lower_better): signal=0.139, corr_picktotal=0.139, n=170
+- twentyss (lower_better): signal=0.107, corr_picktotal=0.107, n=170
+- heightinchestotal (higher_better): signal=0.085, corr_picktotal=-0.085, n=170
+- vertical (higher_better): signal=0.083, corr_picktotal=-0.083, n=170
+- weight (higher_better): signal=0.055, corr_picktotal=-0.055, n=170
+
+[WR] top expected signals:
+- fortyyd (lower_better): signal=0.118, corr_picktotal=0.118, n=397
+- weight (higher_better): signal=0.085, corr_picktotal=-0.085, n=397
+- hands (higher_better): signal=0.070, corr_picktotal=-0.070, n=397
+- heightinchestotal (higher_better): signal=0.069, corr_picktotal=-0.069, n=397
+- bench (higher_better): signal=0.061, corr_picktotal=-0.061, n=397
+- arms (higher_better): signal=0.054, corr_picktotal=-0.054, n=397

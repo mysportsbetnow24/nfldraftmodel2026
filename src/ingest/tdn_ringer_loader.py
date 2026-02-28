@@ -15,12 +15,15 @@ TDN_STRUCTURED_PATH = ROOT / "data" / "processed" / "tdn_scouting_structured_202
 BR_STRUCTURED_PATH = ROOT / "data" / "processed" / "bleacher_scouting_structured_2026.csv"
 ATOZ_STRUCTURED_PATH = ROOT / "data" / "processed" / "atoz_scouting_structured_2026.csv"
 SI_STRUCTURED_PATH = ROOT / "data" / "processed" / "si_fcs_scouting_structured_2026.csv"
+CBS_STRUCTURED_PATH = ROOT / "data" / "processed" / "cbs_scouting_structured_2026.csv"
 
 TDN_SOURCE = "TDN_Scouting_2026"
 RINGER_SOURCE = "Ringer_NFL_Draft_Guide_2026"
 BR_SOURCE = "Bleacher_Report_2026"
 ATOZ_SOURCE = "AtoZ_Scouting_2026"
 SI_SOURCE = "SI_FCS_Scouting_2026"
+CBS_SOURCE = "CBS_BigBoard_2026"
+CBS_WILSON_SOURCE = "CBS_Wilson_BigBoard_2026"
 
 
 def _to_int(value) -> int | None:
@@ -122,6 +125,8 @@ def _load_source_rank_rows(path: Path) -> dict[str, dict[Tuple[str, str], dict]]
         BR_SOURCE: {},
         ATOZ_SOURCE: {},
         SI_SOURCE: {},
+        CBS_SOURCE: {},
+        CBS_WILSON_SOURCE: {},
     }
     if not path.exists():
         return source_maps
@@ -195,12 +200,14 @@ def load_tdn_ringer_signals(
     br_structured_path: Path | None = None,
     atoz_structured_path: Path | None = None,
     si_structured_path: Path | None = None,
+    cbs_structured_path: Path | None = None,
 ) -> dict:
     analyst_seed_path = analyst_seed_path or ANALYST_SEED_PATH
     tdn_structured_path = tdn_structured_path or TDN_STRUCTURED_PATH
     br_structured_path = br_structured_path or BR_STRUCTURED_PATH
     atoz_structured_path = atoz_structured_path or ATOZ_STRUCTURED_PATH
     si_structured_path = si_structured_path or SI_STRUCTURED_PATH
+    cbs_structured_path = cbs_structured_path or CBS_STRUCTURED_PATH
 
     seed_maps = _load_source_rank_rows(analyst_seed_path)
     tdn_seed_by_name_pos = seed_maps.get(TDN_SOURCE, {})
@@ -208,6 +215,8 @@ def load_tdn_ringer_signals(
     br_seed_by_name_pos = seed_maps.get(BR_SOURCE, {})
     atoz_seed_by_name_pos = seed_maps.get(ATOZ_SOURCE, {})
     si_seed_by_name_pos = seed_maps.get(SI_SOURCE, {})
+    cbs_seed_by_name_pos = seed_maps.get(CBS_SOURCE, {})
+    cbs_wilson_seed_by_name_pos = seed_maps.get(CBS_WILSON_SOURCE, {})
 
     tdn_struct_by_name_pos: dict[Tuple[str, str], dict] = {}
     if tdn_structured_path.exists():
@@ -264,6 +273,14 @@ def load_tdn_ringer_signals(
         rank_key="si_rank",
         prefix="si",
     )
+    cbs_struct_by_name_pos = _load_structured_text_signals(
+        path=cbs_structured_path,
+        strength_key="cbs_strengths",
+        concern_key="cbs_concerns",
+        summary_key="cbs_summary",
+        rank_key="cbs_rank",
+        prefix="cbs",
+    )
 
     keys = (
         set(tdn_seed_by_name_pos.keys())
@@ -271,10 +288,13 @@ def load_tdn_ringer_signals(
         | set(br_seed_by_name_pos.keys())
         | set(atoz_seed_by_name_pos.keys())
         | set(si_seed_by_name_pos.keys())
+        | set(cbs_seed_by_name_pos.keys())
+        | set(cbs_wilson_seed_by_name_pos.keys())
         | set(tdn_struct_by_name_pos.keys())
         | set(br_struct_by_name_pos.keys())
         | set(atoz_struct_by_name_pos.keys())
         | set(si_struct_by_name_pos.keys())
+        | set(cbs_struct_by_name_pos.keys())
     )
     by_name_pos: Dict[Tuple[str, str], dict] = {}
     by_name: Dict[str, dict] = {}
@@ -284,10 +304,13 @@ def load_tdn_ringer_signals(
         br_seed = br_seed_by_name_pos.get(key, {})
         atoz_seed = atoz_seed_by_name_pos.get(key, {})
         si_seed = si_seed_by_name_pos.get(key, {})
+        cbs_seed = cbs_seed_by_name_pos.get(key, {})
+        cbs_wilson_seed = cbs_wilson_seed_by_name_pos.get(key, {})
         tdn_struct = tdn_struct_by_name_pos.get(key, {})
         br_struct = br_struct_by_name_pos.get(key, {})
         atoz_struct = atoz_struct_by_name_pos.get(key, {})
         si_struct = si_struct_by_name_pos.get(key, {})
+        cbs_struct = cbs_struct_by_name_pos.get(key, {})
 
         payload = {
             "tdn_rank": tdn_seed.get("source_rank", ""),
@@ -300,6 +323,10 @@ def load_tdn_ringer_signals(
             "atoz_rank_signal": round(float(atoz_seed.get("rank_signal", 0.0) or 0.0), 2),
             "si_rank": si_seed.get("source_rank", si_struct.get("si_rank", "")),
             "si_rank_signal": round(float(si_seed.get("rank_signal", 0.0) or 0.0), 2),
+            "cbs_rank": cbs_seed.get("source_rank", cbs_struct.get("cbs_rank", "")),
+            "cbs_rank_signal": round(float(cbs_seed.get("rank_signal", 0.0) or 0.0), 2),
+            "cbs_wilson_rank": cbs_wilson_seed.get("source_rank", ""),
+            "cbs_wilson_rank_signal": round(float(cbs_wilson_seed.get("rank_signal", 0.0) or 0.0), 2),
             "tdn_grade_label": tdn_struct.get("tdn_grade_label", ""),
             "tdn_grade_round": tdn_struct.get("tdn_grade_round", ""),
             "tdn_grade_label_signal": round(float(tdn_struct.get("tdn_grade_label_signal", 0.0) or 0.0), 2),
@@ -335,6 +362,12 @@ def load_tdn_ringer_signals(
             "si_strengths": si_struct.get("si_strengths", ""),
             "si_concerns": si_struct.get("si_concerns", ""),
             "si_summary": si_struct.get("si_summary", ""),
+            "cbs_text_trait_signal": round(float(cbs_struct.get("cbs_text_trait_signal", 0.0) or 0.0), 2),
+            "cbs_text_coverage": cbs_struct.get("cbs_text_coverage", ""),
+            "cbs_risk_hits": cbs_struct.get("cbs_risk_hits", ""),
+            "cbs_risk_flag": cbs_struct.get("cbs_risk_flag", ""),
+            "cbs_risk_penalty": round(float(cbs_struct.get("cbs_risk_penalty", 0.0) or 0.0), 2),
+            "cbs_summary": cbs_struct.get("cbs_summary", ""),
         }
         by_name_pos[key] = payload
         cur = by_name.get(key[0])
@@ -347,10 +380,13 @@ def load_tdn_ringer_signals(
                 + float(cur.get("br_rank_signal", 0.0) or 0.0)
                 + float(cur.get("atoz_rank_signal", 0.0) or 0.0)
                 + float(cur.get("si_rank_signal", 0.0) or 0.0)
+                + float(cur.get("cbs_rank_signal", 0.0) or 0.0)
+                + float(cur.get("cbs_wilson_rank_signal", 0.0) or 0.0)
                 + float(cur.get("tdn_text_trait_signal", 0.0) or 0.0)
                 + float(cur.get("br_text_trait_signal", 0.0) or 0.0)
                 + float(cur.get("atoz_text_trait_signal", 0.0) or 0.0)
                 + float(cur.get("si_text_trait_signal", 0.0) or 0.0)
+                + float(cur.get("cbs_text_trait_signal", 0.0) or 0.0)
             )
             new_score = (
                 float(payload.get("tdn_rank_signal", 0.0) or 0.0)
@@ -358,10 +394,13 @@ def load_tdn_ringer_signals(
                 + float(payload.get("br_rank_signal", 0.0) or 0.0)
                 + float(payload.get("atoz_rank_signal", 0.0) or 0.0)
                 + float(payload.get("si_rank_signal", 0.0) or 0.0)
+                + float(payload.get("cbs_rank_signal", 0.0) or 0.0)
+                + float(payload.get("cbs_wilson_rank_signal", 0.0) or 0.0)
                 + float(payload.get("tdn_text_trait_signal", 0.0) or 0.0)
                 + float(payload.get("br_text_trait_signal", 0.0) or 0.0)
                 + float(payload.get("atoz_text_trait_signal", 0.0) or 0.0)
                 + float(payload.get("si_text_trait_signal", 0.0) or 0.0)
+                + float(payload.get("cbs_text_trait_signal", 0.0) or 0.0)
             )
             if new_score > cur_score:
                 by_name[key[0]] = payload
@@ -375,9 +414,12 @@ def load_tdn_ringer_signals(
             "br_seed_rows": len(br_seed_by_name_pos),
             "atoz_seed_rows": len(atoz_seed_by_name_pos),
             "si_seed_rows": len(si_seed_by_name_pos),
+            "cbs_seed_rows": len(cbs_seed_by_name_pos),
+            "cbs_wilson_seed_rows": len(cbs_wilson_seed_by_name_pos),
             "tdn_struct_rows": len(tdn_struct_by_name_pos),
             "br_struct_rows": len(br_struct_by_name_pos),
             "atoz_struct_rows": len(atoz_struct_by_name_pos),
             "si_struct_rows": len(si_struct_by_name_pos),
+            "cbs_struct_rows": len(cbs_struct_by_name_pos),
         },
     }

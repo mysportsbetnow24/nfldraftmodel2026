@@ -22,6 +22,11 @@ def main() -> None:
         action="store_true",
         help="Enable synthetic trade-down heuristics (default off, strict draft order).",
     )
+    parser.add_argument(
+        "--team-athletic-bias",
+        action="store_true",
+        help="Enable soft team-athletic-threshold fit modifier in pick scoring.",
+    )
     args = parser.parse_args()
 
     board = load_board()
@@ -29,6 +34,7 @@ def main() -> None:
         board,
         rounds=7,
         allow_simulated_trades=args.allow_simulated_trades,
+        enable_team_athletic_bias=args.team_athletic_bias,
     )
 
     write_csv(OUT / "mock_2026_round1.csv", round1)
@@ -38,6 +44,7 @@ def main() -> None:
     print(f"Round 1 picks: {len(round1)}")
     print(f"7-round picks: {len(full7)}")
     print(f"Trade events: {len(trades)}")
+    print(f"Team athletic bias enabled: {int(args.team_athletic_bias)}")
 
 
 if __name__ == "__main__":

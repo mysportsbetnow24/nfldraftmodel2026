@@ -1,10 +1,10 @@
 # RAS Import Report (2026)
 
-- run_at_utc: `2026-02-26T00:26:31.459802+00:00`
-- input_csv: `/Users/nickholz/Downloads/New Menu Table (no draft).csv`
-- ras_rows_loaded: `24556`
+- run_at_utc: `2026-02-28T03:55:04.441418+00:00`
+- input_csv: `/Users/nickholz/Downloads/2025 Draft Class.csv`
+- ras_rows_loaded: `24510`
 - benchmark_positions: `11`
-- 2026_seed_players_checked: `193`
+- 2026_seed_players_checked: `192`
 - combine_rows_updated: `0`
 - combine_rows_added: `5`
 
@@ -12,17 +12,17 @@
 
 | Pos | N | Starter Target | Impact Target | Elite Target |
 |---|---:|---:|---:|---:|
-| CB | 2761 | 5.14 | 6.71 | 8.59 |
-| DT | 2033 | 5.15 | 7.02 | 8.69 |
-| EDGE | 2030 | 5.14 | 6.99 | 8.78 |
-| IOL | 1736 | 5.35 | 7.23 | 8.94 |
-| LB | 3203 | 5.14 | 6.86 | 8.54 |
-| OT | 1501 | 5.97 | 7.80 | 9.14 |
-| QB | 1048 | 6.07 | 7.31 | 8.82 |
-| RB | 2645 | 5.00 | 6.76 | 8.51 |
-| S | 2445 | 4.86 | 6.48 | 8.47 |
-| TE | 1338 | 5.51 | 7.01 | 8.62 |
-| WR | 3816 | 5.22 | 6.80 | 8.56 |
+| CB | 2748 | 5.15 | 6.73 | 8.59 |
+| DT | 2026 | 5.15 | 7.03 | 8.69 |
+| EDGE | 2024 | 5.14 | 7.00 | 8.79 |
+| IOL | 1785 | 5.36 | 7.21 | 8.93 |
+| LB | 3192 | 5.15 | 6.86 | 8.54 |
+| OT | 1493 | 5.97 | 7.81 | 9.14 |
+| QB | 1045 | 6.08 | 7.31 | 8.82 |
+| RB | 2634 | 5.01 | 6.77 | 8.51 |
+| S | 2430 | 4.86 | 6.49 | 8.47 |
+| TE | 1329 | 5.54 | 7.04 | 8.62 |
+| WR | 3804 | 5.22 | 6.80 | 8.56 |
 
 ## Top Unmatched 2026 Prospects
 

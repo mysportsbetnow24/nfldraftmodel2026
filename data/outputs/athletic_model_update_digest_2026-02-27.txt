@@ -1,0 +1,52 @@
+Athletic Model Update (2026-02-27)
+
+Implemented features:
+1) Position-adjusted + era-adjusted athletic scoring
+- Source: data/sources/external/nfl-combine-evaluation/data/NFLCombineStats1999-2015.csv
+- Logic: blended percentile + z-score by position and modern era (recent years weighted higher).
+
+2) Event composites
+- speed: forty, ten_split
+- explosion: vertical, broad, bench
+- agility: shuttle, three_cone
+- size-adjusted: height, weight, arms, hands
+- Final athletic profile score uses position-specific event weights.
+
+3) Historical hit-rate bins (combine profile -> draft capital outcomes)
+- Bin by athletic profile decile.
+- Outputs per bin:
+  - athletic_hit_rate_round12_bin (proxy hit: pick <= 64)
+  - athletic_hit_rate_top100_bin (proxy hit: pick <= 100)
+  - athletic_hit_bin_sample_n
+
+4) Nearest-neighbor athletic comps
+- Objective nearest neighbors from historical combine vectors (position matched).
+- Outputs:
+  - athletic_nn_comp_1/2/3 + year + picktotal + similarity
+  - athletic_comp_confidence
+
+5) Missing-data handling (neutral defaults + variance penalty)
+- Sparse profiles regress toward neutral athletic score instead of spiking.
+- Mild penalties exported:
+  - athletic_missing_penalty
+  - athletic_variance_penalty
+- Penalties are applied in formula as guarded risk terms.
+
+Where integrated:
+- New module: src/ingest/athletic_profile_loader.py
+- Wired into board build: scripts/build_big_board.py
+
+Key output columns now available in big_board:
+- athletic_profile_score
+- athletic_speed_score
+- athletic_explosion_score
+- athletic_agility_score
+- athletic_size_adj_score
+- athletic_metric_coverage_count / expected_count / missing_count / coverage_rate
+- athletic_missing_penalty / athletic_variance_penalty
+- athletic_hit_bin / athletic_hit_bin_sample_n
+- athletic_hit_rate_round12_bin / athletic_hit_rate_top100_bin
+- athletic_comp_confidence
+- athletic_nn_comp_1..3 (+ year/picktotal/similarity)
+- formula_athletic_source
+- athletic_pct_* and athletic_z_* metric diagnostics

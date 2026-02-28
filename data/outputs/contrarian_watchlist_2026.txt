@@ -1,18 +1,23 @@
 2026 Contrarian Watchlist (Diamond Exceptions)
 
 Rank | Player | Pos | School | Board | Consensus Mean | Score | Reasons
-1. Keeshawn Silver | DT | USC | #253 | mean 277.5 | 92.26 | dislocation=230.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-2. Harold Perkins Jr. | LB | LSU | #153 | mean 127.5 | 91.76 | dislocation=109.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-3. Isaiah World | OT | Oregon | #117 | mean 101.33 | 91.74 | dislocation=86.3;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-4. Jaydn Ott | RB | Oklahoma | #234 | mean 249.5 | 90.97 | dislocation=185.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-5. Aamil Wagner | OT | Notre Dame | #166 | mean 162.67 | 90.86 | dislocation=118.7;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-6. Austin Barber | OT | Florida | #65 | mean 107.0 | 90.43 | dislocation=80.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-7. Miller Moss | QB | Louisville | #284 | mean 334.5 | 90.36 | dislocation=263.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-8. Oscar Delp | TE | Georgia | #192 | mean 145.33 | 90.35 | dislocation=104.3;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-9. Barion Brown | WR | LSU | #259 | mean 281.0 | 89.72 | dislocation=199.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-10. Tacario Davis | CB | Washington | #173 | mean 158.33 | 89.55 | dislocation=102.3;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-11. Nicholas Singleton | RB | Penn State | #114 | mean 109.5 | 89.33 | dislocation=77.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-12. Le'Veon Moss | RB | Texas A&M | #196 | mean 189.5 | 89.06 | dislocation=123.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-13. Roman Hemby | RB | Indiana | #198 | mean 197.0 | 88.49 | dislocation=124.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-14. Demond Claiborne | RB | Wake Forest | #182 | mean 156.0 | 87.58 | dislocation=89.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-15. Davison Igbinosun | CB | Ohio State | #82 | mean 104.0 | 87.38 | dislocation=53.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+1. Cole Payton | QB | North Dakota State | #287 | mean 183.5 | 93.08 | dislocation=148.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+2. Keeshawn Silver | DT | USC | #233 | mean 307.5 | 92.26 | dislocation=260.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+3. Isaiah World | OT | Oregon | #86 | mean 102.33 | 91.79 | dislocation=87.3;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+4. Harold Perkins Jr. | LB | LSU | #81 | mean 127.5 | 91.76 | dislocation=109.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+5. Bryce Lance | WR | North Dakota State | #187 | mean 150.0 | 91.22 | dislocation=112.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+6. Jalon Kilgore | S | South Carolina | #212 | mean 122.67 | 91.06 | dislocation=96.7;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+7. Jaydn Ott | RB | Oklahoma | #239 | mean 255.0 | 90.97 | dislocation=191.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+8. Aamil Wagner | OT | Notre Dame | #159 | mean 159.67 | 90.71 | dislocation=115.7;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+9. Austin Barber | OT | Florida | #162 | mean 107.0 | 90.43 | dislocation=80.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+10. Oscar Delp | TE | Georgia | #192 | mean 146.67 | 90.42 | dislocation=105.7;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+11. Miller Moss | QB | Louisville | #357 | mean 335.0 | 90.36 | dislocation=264.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+12. Kendal Daniels | LB | Oklahoma | #301 | mean 288.0 | 90.05 | dislocation=213.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+13. Barion Brown | WR | LSU | #300 | mean 275.5 | 89.72 | dislocation=193.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+14. Tacario Davis | CB | Washington | #268 | mean 160.33 | 89.65 | dislocation=104.3;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+15. Nicholas Singleton | RB | Penn State | #62 | mean 109.5 | 89.33 | dislocation=77.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+16. Le'Veon Moss | RB | Texas A&M | #181 | mean 192.5 | 89.21 | dislocation=126.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+17. Roman Hemby | RB | Indiana | #180 | mean 195.5 | 88.41 | dislocation=122.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+18. Daylen Everette | CB | Georgia | #43 | mean 101.0 | 87.53 | dislocation=53.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+19. Davison Igbinosun | CB | Ohio State | #141 | mean 105.0 | 87.43 | dislocation=54.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+20. Demond Claiborne | RB | Wake Forest | #273 | mean 151.67 | 87.37 | dislocation=84.7;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2

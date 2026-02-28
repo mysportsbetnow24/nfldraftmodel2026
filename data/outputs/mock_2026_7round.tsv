@@ -1,0 +1,258 @@
+round	pick	overall_pick	team	original_pick_owner	acquired_via	player_name	position	school	final_grade	round_value	team_athletic_bias_enabled	team_athletic_fit_modifier	team_athletic_target_ras	player_athletic_proxy	player_athletic_source	team_athletic_tier	team_athletic_bias_reason
+1	1	1	LV	LV		Cashius Howell	EDGE	Texas A&M Aggies	83.56	Round 1-2	1	0.045	7.26	8.91	formula_athletic_component	C Balanced	delta_1.65
+1	2	2	NYJ	NYJ		Francis Mauigoa	OT	Miami (FL) Hurricanes	82.59	Round 1-2	1	-0.03	7.68	6.89	formula_athletic_component	A Athlete-lean	delta_-0.79
+1	3	3	ARI	ARI		R Mason Thomas	EDGE	Oklahoma	82.79	Round 1-2	1	0.045	6.9	8.71	formula_athletic_component	B Balanced-athletic	delta_1.8
+1	4	4	TEN	TEN		David Bailey	EDGE	Texas Tech	82.38	Round 1-2	1	0.045	7.1	8.9	formula_athletic_component	D Film/production-tolerant	delta_1.8
+1	5	5	NYG	NYG		Kadyn Proctor	OT	Alabama	82.36	Round 1-2	1	-0.03	8.0	7.11	formula_athletic_component	A Athlete-lean	delta_-0.89
+1	6	6	CLE	CLE		Carnell Tate	WR	Ohio State	82.27	Round 2-3	1	0.03	6.13	6.86	formula_athletic_component	D Film/production-tolerant	delta_0.73
+1	7	7	WAS	WAS		Brian Parker II	OT	Duke Blue Devils	81.84	Round 2-3	1	-0.03	7.7	6.89	formula_athletic_component	B Balanced-athletic	delta_-0.81
+1	8	8	NO	NO		Fernando Mendoza	QB	Indiana	81.32	Round 2-3	1	-0.03	7.5	6.86	formula_athletic_component	A+ Athlete-heavy	delta_-0.64
+1	9	9	KC	KC		Keionte Scott	CB	Miami (FL) Hurricanes	82.84	Round 1-2	1	0.0	6.92	6.77	formula_athletic_component	B Balanced-athletic	delta_-0.15
+1	10	10	CIN	CIN		Mansoor Delane	CB	LSU Tigers	82.05	Round 2-3	1	-0.03	7.65	6.77	formula_athletic_component	A Athlete-lean	delta_-0.88
+1	11	11	MIA	MIA		Caleb Downs	S	Ohio State	82.36	Round 1-2	1	-0.03	7.8	6.8	formula_athletic_component	A+ Athlete-heavy	delta_-1.0
+1	12	12	DAL	DAL		Jeremiyah Love	RB	Notre Dame	83.47	Round 1-2	1	0.0	7.0	6.84	formula_athletic_component	A Athlete-lean	delta_-0.16
+1	13	13	LAR	ATL	LAR g ATL (2025 Draft trade)	Arvell Reese	LB	Ohio State Buckeyes	81.78	Round 2-3	1	0.0	7.0	6.86	formula_athletic_component	C Balanced	delta_-0.14
+1	14	14	BAL	BAL		Monroe Freeling	OT	Georgia	80.85	Round 2-3	1	-0.03	7.68	6.89	formula_athletic_component	A+ Athlete-heavy	delta_-0.79
+1	15	15	TB	TB		Romello Height	EDGE	Texas Tech Red Raiders	81.13	Round 2-3	1	0.045	7.02	8.89	formula_athletic_component	B Balanced-athletic	delta_1.87
+1	16	16	NYJ	IND	NYJ g IND (A Gardner)	Makai Lemon	WR	USC Trojans	81.66	Round 2-3	1	-0.015	7.2	6.83	formula_athletic_component	A Athlete-lean	delta_-0.37
+1	17	17	DET	DET		Keldric Faulk	EDGE	Auburn	81.12	Round 2-3	1	0.015	6.87	7.08	formula_athletic_component	D Film/production-tolerant	delta_0.21
+1	18	18	MIN	MIN		Caleb Banks	DT	Florida Gators	80.81	Round 2-3	1	0.045	6.7	8.74	formula_athletic_component	D Film/production-tolerant	delta_2.04
+1	19	19	CAR	CAR		Denzel Boston	WR	Washington	81.43	Round 2-3	1	0.0	7.18	7.01	formula_athletic_component	B Balanced-athletic	delta_-0.17
+1	20	20	DAL	GB	DAL g GB (M Parsons)	Christen Miller	DT	Georgia Bulldogs	81.1	Round 2-3	1	-0.015	7.23	6.82	formula_athletic_component	A Athlete-lean	delta_-0.41
+1	21	21	PIT	PIT		Kayden McDonald	DT	Ohio State Buckeyes	80.9	Round 2-3	1	0.0	6.71	6.82	formula_athletic_component	C Balanced	delta_0.11
+1	22	22	LAC	LAC		Emmanuel McNeil-Warren	S	Toledo Rockets	81.7	Round 2-3	1	0.0	6.89	6.8	formula_athletic_component	C Balanced	delta_-0.09
+1	23	23	PHI	PHI		Zion Young	EDGE	Missouri Tigers	80.98	Round 2-3	1	-0.03	7.47	6.92	formula_athletic_component	A Athlete-lean	delta_-0.55
+1	24	24	CLE	JAX	CLE g JAX (2025 Draft Trade)	Nyck Harbor	WR	South Carolina	81.4	Round 2-3	1	0.03	6.13	6.83	formula_athletic_component	D Film/production-tolerant	delta_0.7
+1	25	25	CHI	CHI		Caleb Lomu	OT	Utah	80.43	Round 2-3	1	-0.03	7.46	6.75	formula_athletic_component	B Balanced-athletic	delta_-0.71
+1	26	26	BUF	BUF		Dillon Thieneman	S	Oregon	81.66	Round 2-3	1	0.015	6.63	6.83	formula_athletic_component	D Film/production-tolerant	delta_0.2
+1	27	27	SF	SF		Spencer Fano	OT	Utah	80.13	Round 2-3	1	-0.03	7.4	6.67	formula_athletic_component	C Balanced	delta_-0.73
+1	28	28	HOU	HOU		Skyler Bell	WR	Connecticut Huskies	81.34	Round 2-3	1	0.03	6.31	6.83	formula_athletic_component	D Film/production-tolerant	delta_0.52
+1	29	29	LAR	LAR		C.J. Allen	LB	Georgia	81.54	Round 2-3	1	-0.015	7.0	6.78	formula_athletic_component	C Balanced	delta_-0.22
+1	30	30	DEN	DEN		Jordyn Tyson	WR	Arizona State	81.22	Round 2-3	1	0.0	6.86	6.79	formula_athletic_component	B Balanced-athletic	delta_-0.07
+1	31	31	NE	NE		Blake Miller	OT	Clemson Tigers	79.51	Round 4-5	1	-0.015	7.22	6.89	formula_athletic_component	C Balanced	delta_-0.33
+1	32	32	SEA	SEA		Olaivavega Ioane	IOL	Penn State Nittany Lions	81.05	Round 2-3	1	0.0	6.75	6.76	formula_athletic_component	A Athlete-lean	delta_0.01
+2	1	33	NYJ	NYJ		Omar Cooper Jr.	WR	Indiana Hoosiers	80.36	Round 2-3	1	-0.015	7.2	6.83	formula_athletic_component	A Athlete-lean	delta_-0.37
+2	2	34	ARI	ARI		Akheem Mesidor	EDGE	Miami (FL) Hurricanes	80.25	Round 2-3	1	0.0	6.9	6.92	formula_athletic_component	B Balanced-athletic	delta_0.02
+2	3	35	TEN	TEN		Sonny Styles	LB	Ohio State	81.26	Round 2-3	1	0.0	6.5	6.31	formula_athletic_component	D Film/production-tolerant	delta_-0.19
+2	4	36	LV	LV		Colton Hood	CB	Tennessee Volunteers	80.2	Round 2-3	1	-0.03	7.33	6.77	formula_athletic_component	C Balanced	delta_-0.56
+2	5	37	NYG	NYG		Eugene Asante	LB	Auburn	80.22	Round 2-3	1	0.045	7.13	8.4	ras_estimate	A Athlete-lean	delta_1.27
+2	6	38	HOU	WAS	HOU g WAS (L Tunsil)	Peter Woods	DT	Clemson	80.41	Round 2-3	1	0.015	6.56	6.9	formula_athletic_component	D Film/production-tolerant	delta_0.34
+2	7	39	CLE	CLE		Emmanuel Pregnon	IOL	Oregon Ducks	80.53	Round 2-3	1	0.03	6.18	6.76	formula_athletic_component	D Film/production-tolerant	delta_0.58
+2	8	40	KC	KC		A.J. Haulcy	S	LSU Tigers	80.11	Round 2-3	1	0.0	6.95	6.8	formula_athletic_component	B Balanced-athletic	delta_-0.15
+2	9	41	CIN	CIN		Avieon Terrell	CB	Clemson	80.09	Round 2-3	1	-0.03	7.65	6.67	formula_athletic_component	A Athlete-lean	delta_-0.98
+2	10	42	NO	NO		Rueben Bain Jr.	EDGE	Miami (FL) Hurricanes	80.01	Round 3-4	1	-0.045	8.3	6.92	formula_athletic_component	A+ Athlete-heavy	delta_-1.38
+2	11	43	MIA	MIA		Lee Hunter	DT	Texas Tech Red Raiders	79.82	Round 4-5	1	-0.03	7.8	6.82	formula_athletic_component	A+ Athlete-heavy	delta_-0.98
+2	12	44	NYJ	DAL	NYJ g DAL (Q Williams)	Dani Dennis-Sutton	EDGE	Penn State Nittany Lions	79.97	Round 4-5	1	-0.03	7.81	6.92	formula_athletic_component	A Athlete-lean	delta_-0.89
+2	13	45	BAL	BAL		Chris Johnson	CB	San Diego State Aztecs	79.95	Round 4-5	1	-0.03	7.6	6.77	formula_athletic_component	A+ Athlete-heavy	delta_-0.83
+2	14	46	TB	TB		Mikail Kamara	EDGE	Indiana Hoosiers	79.59	Round 4-5	1	0.0	7.02	6.92	formula_athletic_component	B Balanced-athletic	delta_-0.1
+2	15	47	IND	IND		Daylen Everette	CB	Georgia	79.91	Round 4-5	1	-0.03	7.86	6.89	formula_athletic_component	A+ Athlete-heavy	delta_-0.97
+2	16	48	ATL	ATL		D'Angelo Ponds	CB	Indiana Hoosiers	79.88	Round 4-5	1	0.0	6.64	6.77	formula_athletic_component	D Film/production-tolerant	delta_0.13
+2	17	49	DET	DET		Brandon Cisse	CB	South Carolina Gamecocks	79.82	Round 4-5	1	0.015	6.51	6.77	formula_athletic_component	D Film/production-tolerant	delta_0.26
+2	18	50	MIN	MIN		Keith Abney II	CB	Arizona State Sun Devils	79.57	Round 4-5	1	0.015	6.35	6.77	formula_athletic_component	D Film/production-tolerant	delta_0.42
+2	19	51	CAR	CAR		T.J. Parker	EDGE	Clemson	79.31	Round 4-5	1	-0.03	7.7	6.88	formula_athletic_component	B Balanced-athletic	delta_-0.82
+2	20	52	GB	GB		Jermod McCoy	CB	Tennessee	79.24	Round 4-5	1	-0.015	7.19	6.91	formula_athletic_component	C Balanced	delta_-0.28
+2	21	53	PIT	PIT		Gracen Halton	DT	Oklahoma Sooners	79.13	Round 4-5	1	0.045	6.71	8.79	formula_athletic_component	C Balanced	delta_2.08
+2	22	54	PHI	PHI		DJ McKinney	CB	Colorado	79.24	Round 4-5	1	-0.03	7.73	6.83	formula_athletic_component	A Athlete-lean	delta_-0.9
+2	23	55	LAC	LAC		Jack Endries	TE	Texas Longhorns	79.49	Round 4-5	1	0.015	6.6	6.87	formula_athletic_component	C Balanced	delta_0.27
+2	24	56	JAX	JAX		Takye Heath	CB	Georgia Tech	79.08	Round 4-5	1	-0.03	7.34	6.78	formula_athletic_component	B Balanced-athletic	delta_-0.56
+2	25	57	CHI	CHI		Albert Regis	DT	Texas A&M Aggies	78.64	Round 4-5	1	0.045	7.08	8.78	formula_athletic_component	B Balanced-athletic	delta_1.7
+2	26	58	SF	SF		Kaytron Allen	RB	Penn State Nittany Lions	79.9	Round 4-5	1	0.015	6.58	6.82	formula_athletic_component	C Balanced	delta_0.24
+2	27	59	HOU	HOU		Skyler Gill-Howard	DT	Texas Tech Red Raiders	79.03	Round 4-5	1	0.015	6.56	6.82	formula_athletic_component	D Film/production-tolerant	delta_0.26
+2	28	60	BUF	BUF		Kenyon Sadiq	TE	Oregon	79.47	Round 4-5	1	0.015	6.3	6.66	formula_athletic_component	D Film/production-tolerant	delta_0.36
+2	29	61	LAR	LAR		Josiah Trotter	LB	Missouri Tigers	79.32	Round 4-5	1	0.0	7.0	6.86	formula_athletic_component	C Balanced	delta_-0.14
+2	30	62	DEN	DEN		Kevin Concepcion	WR	Texas A&M	79.34	Round 4-5	1	-0.015	6.86	6.64	formula_athletic_component	B Balanced-athletic	delta_-0.22
+2	31	63	NE	NE		Ty Simpson	QB	Alabama Crimson Tide	79.38	Round 4-5	1	0.0	6.82	6.77	formula_athletic_component	C Balanced	delta_-0.05
+2	32	64	SEA	SEA		Nicholas Singleton	RB	Penn State	79.34	Round 4-5	1	0.0	6.85	6.99	formula_athletic_component	A Athlete-lean	delta_0.14
+3	1	65	ARI	ARI		Gabe Jacas	EDGE	Illinois Fighting Illini	79.12	Round 4-5	1	0.0	6.9	6.92	formula_athletic_component	B Balanced-athletic	delta_0.02
+3	2	66	TEN	TEN		CJ Daniels	WR	Miami (FL) Hurricanes	78.93	Round 4-5	1	0.03	6.01	6.83	formula_athletic_component	D Film/production-tolerant	delta_0.82
+3	3	67	LV	LV		Anthony Hill Jr.	LB	Texas Longhorns	79.48	Round 4-5	1	-0.03	7.0	6.12	formula_athletic_component	C Balanced	delta_-0.88
+3	4	68	PHI	NYJ	PHI g NYJ (H Reddick)	T.J. Searcy	EDGE	Texas A&M	79.09	Round 4-5	1	-0.015	7.47	7.03	formula_athletic_component	A Athlete-lean	delta_-0.44
+3	5	69	HOU	NYG	HOU g NYG (2025 Draft Trade)	Jermayne Lole	DT	Louisville	78.64	Round 4-5	1	0.015	6.56	6.86	formula_athletic_component	D Film/production-tolerant	delta_0.3
+3	6	70	CLE	CLE		Chris Brazzell II	WR	Tennessee Volunteers	78.62	Round 4-5	1	0.03	6.13	6.83	formula_athletic_component	D Film/production-tolerant	delta_0.7
+3	7	71	WAS	WAS		Kaimon Rucker	EDGE	North Carolina	79.12	Round 4-5	1	-0.03	7.32	6.82	formula_athletic_component	B Balanced-athletic	delta_-0.5
+3	8	72	CIN	CIN		Derrick Moore	EDGE	Michigan	79.0	Round 4-5	1	-0.015	7.2	6.98	formula_athletic_component	A Athlete-lean	delta_-0.22
+3	9	73	NO	NO		LT Overton	EDGE	Alabama	78.75	Round 4-5	1	-0.045	8.3	7.07	formula_athletic_component	A+ Athlete-heavy	delta_-1.23
+3	10	74	KC	KC		Tim Keenan III	DT	Alabama Crimson Tide	78.47	Round 4-5	1	-0.015	7.2	6.82	formula_athletic_component	B Balanced-athletic	delta_-0.38
+3	11	75	MIA	MIA		Michael Taaffe	S	Texas Longhorns	78.57	Round 4-5	1	-0.03	7.8	6.8	formula_athletic_component	A+ Athlete-heavy	delta_-1.0
+3	12	76	PIT	DAL	PIT g DAL (G Pickens)	David Oke	DT	Arkansas Razorbacks	78.29	Round 4-5	1	0.0	6.71	6.82	formula_athletic_component	C Balanced	delta_0.11
+3	13	77	ATL	ATL		Malachi Lawrence	EDGE	UCF Knights	78.03	Round 4-5	1	0.045	6.45	8.94	formula_athletic_component	D Film/production-tolerant	delta_2.49
+3	14	78	BAL	BAL		Brady Latham	IOL	Arkansas	78.44	Round 4-5	1	0.045	6.86	8.77	ras_estimate	A+ Athlete-heavy	delta_1.91
+3	15	79	TB	TB		Eugene Brooks III	IOL	Oklahoma	78.51	Round 4-5	1	0.015	6.73	6.95	formula_athletic_component	B Balanced-athletic	delta_0.22
+3	16	80	IND	IND		Eli Stowers	TE	Vanderbilt	78.0	Round 4-5	1	-0.03	7.21	6.65	formula_athletic_component	A+ Athlete-heavy	delta_-0.56
+3	17	81	JAX	DET	JAX g DET (NFL Draft Trade)	Xavier Scott	CB	Illinois Fighting Illini	77.68	Round 4-5	1	-0.03	7.34	6.77	formula_athletic_component	B Balanced-athletic	delta_-0.57
+3	18	82	MIN	MIN		Justin Flowe	LB	Arizona	78.88	Round 4-5	1	0.0	6.59	6.74	formula_athletic_component	D Film/production-tolerant	delta_0.15
+3	19	83	CAR	CAR		Zachariah Branch	WR	Georgia	78.47	Round 4-5	1	-0.03	7.18	6.62	formula_athletic_component	B Balanced-athletic	delta_-0.56
+3	20	84	GB	GB		Isaiah World	OT	Oregon	78.12	Round 4-5	1	-0.015	7.18	6.97	formula_athletic_component	C Balanced	delta_-0.21
+3	21	85	PIT	PIT		DeMonte Capehart	DT	Clemson Tigers	77.64	Round 4-5	1	0.045	6.71	8.78	formula_athletic_component	C Balanced	delta_2.07
+3	22	86	LAC	LAC		Justin Joly	TE	North Carolina State Wolfpack	77.34	Round 4-5	1	0.015	6.6	6.87	formula_athletic_component	C Balanced	delta_0.27
+3	23	87	MIA	PHI	MIA g PHI (J Phillips)	Hollin Pierce	OT	Rutgers	77.82	Round 4-5	1	-0.03	8.04	7.13	formula_athletic_component	A+ Athlete-heavy	delta_-0.91
+3	24	88	JAX	JAX		Malachi Fields	WR	Notre Dame Fighting Irish	78.38	Round 4-5	1	-0.015	7.12	6.83	formula_athletic_component	B Balanced-athletic	delta_-0.29
+3	25	89	CHI	CHI		Xavier Chaplin	OT	Auburn	77.65	Round 4-5	1	-0.015	7.46	7.08	formula_athletic_component	B Balanced-athletic	delta_-0.38
+3	26	90	MIA	HOU	MIA g HOU (2025 Draft Trade)	Jonah Coleman	RB	Washington Huskies	78.78	Round 4-5	1	-0.015	7.23	6.82	formula_athletic_component	A+ Athlete-heavy	delta_-0.41
+3	27	91	BUF	BUF		Nick Barrett	DT	South Carolina	76.96	Round 4-5	1	0.045	6.7	8.72	formula_athletic_component	D Film/production-tolerant	delta_2.02
+3	28	92	SF	SF		Seth McGowan	RB	Kentucky Wildcats	78.57	Round 4-5	1	0.015	6.58	6.82	formula_athletic_component	C Balanced	delta_0.24
+3	29	93	LAR	LAR		Jake Golday	LB	Cincinnati Bearcats	78.58	Round 4-5	1	-0.03	7.0	6.1	formula_athletic_component	C Balanced	delta_-0.9
+3	30	94	DEN	DEN		Deion Burks	WR	Oklahoma Sooners	78.25	Round 4-5	1	0.0	6.86	6.83	formula_athletic_component	B Balanced-athletic	delta_-0.03
+3	31	95	NE	NE		Evan Stewart	WR	Oregon	78.3	Round 4-5	1	0.0	6.46	6.66	formula_athletic_component	C Balanced	delta_0.2
+3	32	96	SEA	SEA		Gennings Dunker	OT	Iowa Hawkeyes	77.79	Round 4-5	1	-0.03	7.72	6.89	formula_athletic_component	A Athlete-lean	delta_-0.83
+3	33	97	MIN	MIN	Proj. Compensatory Pick	Makhi Hughes	RB	Oregon	78.42	Round 4-5	1	0.03	6.3	6.85	formula_athletic_component	D Film/production-tolerant	delta_0.55
+3	34	98	PHI	PHI	Proj. Compensatory Pick	Tyreak Sapp	EDGE	Florida	78.09	Round 4-5	1	-0.03	7.47	6.91	formula_athletic_component	A Athlete-lean	delta_-0.56
+3	35	99	PIT	PIT	Proj. Compensatory Pick	Domata Peko Jr.	DT	UCLA	77.7	Round 4-5	1	0.015	6.71	6.93	formula_athletic_component	C Balanced	delta_0.22
+3	36	100	JAX	DET	JAX g DET (NFL Draft Trade)	Chris Bell	WR	Louisville	78.0	Round 4-5	1	0.0	7.12	7.01	formula_athletic_component	B Balanced-athletic	delta_-0.11
+4	1	101	TEN	TEN		Drew Allar	QB	Penn State	77.16	Round 4-5	1	0.0	6.98	6.95	formula_athletic_component	D Film/production-tolerant	delta_-0.04
+4	2	102	LV	LV		Davison Igbinosun	CB	Ohio State	76.64	Round 4-5	1	-0.015	7.33	6.97	formula_athletic_component	C Balanced	delta_-0.36
+4	3	103	NYJ	NYJ		J.C. Davis	OT	Illinois Fighting Illini	77.77	Round 4-5	1	-0.03	7.68	6.89	formula_athletic_component	A Athlete-lean	delta_-0.79
+4	4	104	ARI	ARI		Matayo Uiagalelei	EDGE	Oregon	77.47	Round 4-5	1	0.0	6.9	6.92	formula_athletic_component	B Balanced-athletic	delta_0.02
+4	5	105	NYG	NYG		Jadarian Price	RB	Notre Dame Fighting Irish	78.41	Round 4-5	1	0.0	6.77	6.82	formula_athletic_component	A Athlete-lean	delta_0.05
+4	6	106	HOU	WAS	HOU g WAS (L Tunsil)	Gabriel Brownlow-Dindy	DT	South Carolina	77.9	Round 4-5	1	0.015	6.56	6.86	formula_athletic_component	D Film/production-tolerant	delta_0.3
+4	7	107	CLE	CLE		Elijah Sarratt	WR	Indiana Hoosiers	77.98	Round 4-5	1	0.03	6.13	6.83	formula_athletic_component	D Film/production-tolerant	delta_0.7
+4	8	108	DEN	NO	DEN g NO (D Vele)	Eric Singleton Jr.	WR	Auburn	77.82	Round 4-5	1	0.0	6.86	6.83	formula_athletic_component	B Balanced-athletic	delta_-0.03
+4	9	109	KC	KC		Langston Jones	OT	Lehigh	77.39	Round 4-5	1	-0.03	7.44	6.89	formula_athletic_component	B Balanced-athletic	delta_-0.55
+4	10	110	CIN	CIN		Julian Neal	CB	Arkansas Razorbacks	76.57	Round 4-5	1	-0.03	7.65	6.77	formula_athletic_component	A Athlete-lean	delta_-0.88
+4	11	111	MIA	MIA		Caleb Tiernan	OT	Northwestern Wildcats	77.1	Round 4-5	1	-0.045	8.04	6.89	formula_athletic_component	A+ Athlete-heavy	delta_-1.15
+4	12	112	DAL	DAL		Justice Boone	RB	Colorado	78.03	Round 4-5	1	-0.015	7.0	6.72	formula_athletic_component	A Athlete-lean	delta_-0.28
+4	13	113	IND	IND		Sam Roush	TE	Stanford Cardinal	77.21	Round 4-5	1	-0.015	7.21	6.87	formula_athletic_component	A+ Athlete-heavy	delta_-0.34
+4	14	114	ATL	ATL		Joshua Josephs	EDGE	Tennessee Volunteers	77.32	Round 4-5	1	0.015	6.45	6.92	formula_athletic_component	D Film/production-tolerant	delta_0.47
+4	15	115	BAL	BAL		Drew Shelton	OT	Penn State Nittany Lions	77.08	Round 4-5	1	-0.03	7.68	6.89	formula_athletic_component	A+ Athlete-heavy	delta_-0.79
+4	16	116	TB	TB		CJ Mims	EDGE	West Virginia	77.13	Round 4-5	1	0.0	7.02	6.88	formula_athletic_component	B Balanced-athletic	delta_-0.14
+4	17	117	MIN	MIN		Dominic Gooden	DT	Oklahoma	77.72	Round 4-5	1	0.0	6.7	6.71	formula_athletic_component	D Film/production-tolerant	delta_0.01
+4	18	118	DET	DET		Anthony Lucas	EDGE	USC Trojans	76.95	Round 4-5	1	0.0	6.87	6.92	formula_athletic_component	D Film/production-tolerant	delta_0.05
+4	19	119	CAR	CAR		Darris Smith	EDGE	LSU	76.69	Round 4-5	1	-0.03	7.7	6.9	formula_athletic_component	B Balanced-athletic	delta_-0.8
+4	20	120	GB	GB		Aamil Wagner	OT	Notre Dame	76.36	Round 4-5	1	-0.015	7.18	6.72	formula_athletic_component	C Balanced	delta_-0.46
+4	21	121	PIT	PIT		Domonique Orange	DT	Iowa State Cyclones	77.56	Round 4-5	1	0.0	6.71	6.82	formula_athletic_component	C Balanced	delta_0.11
+4	22	122	PHI	PHI		Jeremiah Alexander	EDGE	Alabama	76.51	Round 4-5	1	-0.03	7.47	6.7	formula_athletic_component	A Athlete-lean	delta_-0.77
+4	23	123	LAC	LAC		Josh Cuevas	TE	Alabama Crimson Tide	76.92	Round 4-5	1	0.015	6.6	6.87	formula_athletic_component	C Balanced	delta_0.27
+4	24	124	LV	JAX	LV g JAX (J Meyers)	LaNorris Sellers	QB	South Carolina	76.54	Round 4-5	1	-0.03	7.4	6.77	formula_athletic_component	C Balanced	delta_-0.63
+4	25	125	NE	KC	NE g CHI t KC (2025 Draft Trade)	Austin Barber	OT	Florida	76.25	Round 4-5	1	-0.015	7.22	6.88	formula_athletic_component	C Balanced	delta_-0.34
+4	26	126	BUF	BUF		A'Mauri Washington	DT	Oregon	77.3	Round 4-5	1	0.0	6.7	6.82	formula_athletic_component	D Film/production-tolerant	delta_0.12
+4	27	127	SF	SF		Max Iheanachor	OT	Arizona State Sun Devils	76.22	Round 4-5	1	-0.03	7.4	6.89	formula_athletic_component	C Balanced	delta_-0.51
+4	28	128	HOU	HOU		Mateen Ibirogba	DT	Wake Forest	77.26	Round 4-5	1	0.015	6.56	6.82	formula_athletic_component	D Film/production-tolerant	delta_0.26
+4	29	129	CHI	LAR	CHI g LAR (2025 Draft Trade)	Trevor Goosby	OT	Texas	76.01	Round 4-5	1	-0.03	7.46	6.89	formula_athletic_component	B Balanced-athletic	delta_-0.57
+4	30	130	DEN	DEN		De'Zhaun Stribling	WR	Mississippi Rebels	77.67	Round 4-5	1	0.0	6.86	6.83	formula_athletic_component	B Balanced-athletic	delta_-0.03
+4	31	131	NE	NE		Daniel Sobkowicz	WR	Illinois State	77.14	Round 4-5	1	0.015	6.46	6.83	formula_athletic_component	C Balanced	delta_0.37
+4	32	132	NO	SEA	NO g SEA (R Shaheed)	Cade Klubnik	QB	Clemson	76.16	Round 4-5	1	-0.03	7.5	6.51	formula_athletic_component	A+ Athlete-heavy	delta_-0.99
+4	33	133	SF	SF	Proj. Compensatory Pick	Denairius Gray	CB	Florida	76.14	Round 4-5	1	0.015	6.73	7.0	formula_athletic_component	C Balanced	delta_0.27
+4	34	134	LV	LV	Proj. Compensatory Pick	Ja'Keem Jackson	CB	Florida	76.01	Round 4-5	1	-0.015	7.33	7.0	formula_athletic_component	C Balanced	delta_-0.33
+4	35	135	PIT	PIT	Proj. Compensatory Pick	Darrell Jackson Jr.	DT	Florida State	75.94	Round 5-6	1	0.015	6.71	7.08	formula_athletic_component	C Balanced	delta_0.37
+4	36	136	NO	NO	Proj. Compensatory Pick	Harold Perkins Jr.	LB	LSU	78.35	Round 4-5	1	-0.03	7.4	6.66	formula_athletic_component	A+ Athlete-heavy	delta_-0.74
+4	37	137	PHI	PHI	Proj. Compensatory Pick	Jadon Canady	CB	Oregon Ducks	75.88	Round 5-6	1	-0.03	7.73	6.77	formula_athletic_component	A Athlete-lean	delta_-0.96
+4	38	138	SF	SF	Proj. Compensatory Pick	Tyler Collins	CB	Mississippi State	75.88	Round 5-6	1	0.015	6.73	7.0	formula_athletic_component	C Balanced	delta_0.27
+5	1	139	CLE	LV	CLE g LV (K Pickett)	Michael Briscoe	WR	Cal Poly	77.14	Round 4-5	1	0.03	6.13	6.83	formula_athletic_component	D Film/production-tolerant	delta_0.7
+5	2	140	TEN	BAL	TEN g NYJ t BAL (2025 Draft Trade)	Treyvhon Saunders	WR	Colgate	77.14	Round 4-5	1	0.03	6.01	6.83	formula_athletic_component	D Film/production-tolerant	delta_0.82
+5	3	141	ARI	ARI		Ricardo Jones Jr.	CB	Purdue	75.86	Round 5-6	1	-0.015	7.27	6.8	formula_athletic_component	B Balanced-athletic	delta_-0.47
+5	4	142	LAR	TEN	LAR g TEN (E Jones)	Christian Thomas	LB	Maine	78.11	Round 4-5	1	0.0	7.0	6.86	formula_athletic_component	C Balanced	delta_-0.14
+5	5	143	NYG	NYG		Samari Matthews	CB	Texas A&M	75.8	Round 5-6	1	-0.015	7.27	6.8	formula_athletic_component	A Athlete-lean	delta_-0.47
+5	6	144	CLE	CLE		KC Concepcion	WR	Texas A&M Aggies	77.13	Round 4-5	1	0.03	6.13	6.83	formula_athletic_component	D Film/production-tolerant	delta_0.7
+5	7	145	WAS	WAS		Ted Hurst	WR	Georgia State Panthers	76.46	Round 4-5	1	0.015	6.54	6.83	formula_athletic_component	B Balanced-athletic	delta_0.29
+5	8	146	KC	KC		Dontay Corleone	DT	Cincinnati Bearcats	76.88	Round 4-5	1	-0.015	7.2	6.82	formula_athletic_component	B Balanced-athletic	delta_-0.38
+5	9	147	CLE	CIN	CLE g CIN (J Flacco)	Bryce Lance	WR	North Dakota State	75.79	Round 5-6	1	0.03	6.13	6.83	formula_athletic_component	D Film/production-tolerant	delta_0.7
+5	10	148	NO	NO		Eric McAlister	WR	TCU Horned Frogs	75.77	Round 5-6	1	-0.03	7.43	6.83	formula_athletic_component	A+ Athlete-heavy	delta_-0.6
+5	11	149	MIA	MIA		Bear Alexander	DT	Oregon	75.93	Round 5-6	1	-0.03	7.8	6.82	formula_athletic_component	A+ Athlete-heavy	delta_-0.98
+5	12	150	DAL	DAL		Emmett Johnson	RB	Nebraska Cornhuskers	77.8	Round 4-5	1	0.0	7.0	6.82	formula_athletic_component	A Athlete-lean	delta_-0.18
+5	13	151	PHI	ATL	PHI g ATL(2025 Draft Trade)	Quincy Rhodes Jr.	EDGE	Arkansas	75.48	Round 5-6	1	-0.03	7.47	6.92	formula_athletic_component	A Athlete-lean	delta_-0.55
+5	14	152	BAL	BAL		Chandler Rivers	CB	Duke	75.95	Round 5-6	1	-0.03	7.6	6.62	formula_athletic_component	A+ Athlete-heavy	delta_-0.98
+5	15	153	TB	TB		Tyreak Chappell	CB	South Carolina	75.73	Round 5-6	1	-0.03	7.7	6.77	formula_athletic_component	B Balanced-athletic	delta_-0.93
+5	16	154	IND	IND		Oscar Delp	TE	Georgia	75.66	Round 5-6	1	-0.015	7.21	6.8	formula_athletic_component	A+ Athlete-heavy	delta_-0.41
+5	17	155	DET	DET		Toriano Pride Jr.	CB	Missouri	75.67	Round 5-6	1	0.015	6.51	6.83	formula_athletic_component	D Film/production-tolerant	delta_0.32
+5	18	156	CAR	MIN	CAR g MIN (A Theilen)	Antonio Williams	WR	Clemson	75.75	Round 5-6	1	-0.03	7.18	6.68	formula_athletic_component	B Balanced-athletic	delta_-0.5
+5	19	157	CAR	CAR		David Gusta	DT	Kentucky	75.42	Round 5-6	1	0.045	7.03	8.78	formula_athletic_component	B Balanced-athletic	delta_1.75
+5	20	158	GB	GB		Jordan Shaw	CB	Washington	75.51	Round 5-6	1	-0.015	7.19	6.83	formula_athletic_component	C Balanced	delta_-0.36
+5	21	159	PIT	PIT		Tre Williams	DT	Clemson	77.13	Round 4-5	1	0.0	6.71	6.65	formula_athletic_component	C Balanced	delta_-0.06
+5	22	160	BAL	LAC	BAL g LAC (A Gilman)	Earnest Greene III	OT	Georgia	75.39	Round 5-6	1	-0.03	7.68	6.77	formula_athletic_component	A+ Athlete-heavy	delta_-0.91
+5	23	161	MIN	PHI	MIN g PHI (S Howell)	Lorenzo Styles Jr.	CB	Ohio State	75.48	Round 5-6	1	0.015	6.35	6.82	formula_athletic_component	D Film/production-tolerant	delta_0.47
+5	24	162	JAX	JAX		Kani Walker	CB	Oregon	75.47	Round 5-6	1	-0.03	7.34	6.83	formula_athletic_component	B Balanced-athletic	delta_-0.51
+5	25	163	CHI	CHI		Tyre West	DT	Indiana	75.18	Round 5-6	1	-0.015	7.08	6.78	formula_athletic_component	B Balanced-athletic	delta_-0.3
+5	26	164	JAX	PHI	JAX g SF t PHI (B Huff/T Bigsby)	Jeremiah Wilson	CB	Florida State	75.37	Round 5-6	1	-0.03	7.34	6.65	formula_athletic_component	B Balanced-athletic	delta_-0.69
+5	27	165	HOU	PHI	HOU g HOU t PHI(C Gardner-Johnson/JMetchie)	Zane Durant	DT	Penn State	75.06	Round 5-6	1	0.045	6.56	8.55	formula_athletic_component	D Film/production-tolerant	delta_1.99
+5	28	166	BUF	BUF		Hero Kanu	DT	Texas	75.09	Round 5-6	1	0.0	6.7	6.82	formula_athletic_component	D Film/production-tolerant	delta_0.12
+5	29	167	LAR	LAR		Ashton Stamps	CB	LSU	75.19	Round 5-6	1	-0.015	7.09	6.6	formula_athletic_component	C Balanced	delta_-0.49
+5	30	168	DEN	DEN		Ja'Kobi Lane	WR	USC	75.23	Round 5-6	1	0.0	6.86	6.91	formula_athletic_component	B Balanced-athletic	delta_0.05
+5	31	169	NE	NE		Germie Bernard	WR	Alabama	75.05	Round 5-6	1	0.015	6.46	6.86	formula_athletic_component	C Balanced	delta_0.4
+5	32	170	NO	SEA	NO g SEA (R Shaheed)	Trinidad Chambliss	QB	Mississippi Rebels	75.1	Round 5-6	1	-0.03	7.5	6.77	formula_athletic_component	A+ Athlete-heavy	delta_-0.73
+5	33	171	SF	SF	Proj. Compensatory Pick	Treyveon McGee	CB	Georgia	75.02	Round 5-6	1	0.0	6.73	6.62	formula_athletic_component	C Balanced	delta_-0.12
+5	34	172	BAL	BAL	Proj. Compensatory Pick	Trey Moore	LB	Texas Longhorns	75.36	Round 5-6	1	0.045	7.8	8.86	formula_athletic_component	A+ Athlete-heavy	delta_1.06
+5	35	173	BAL	BAL	Proj. Compensatory Pick	Le'Veon Moss	RB	Texas A&M	76.01	Round 4-5	1	0.0	7.14	6.96	formula_athletic_component	A+ Athlete-heavy	delta_-0.18
+5	36	174	LV	LV	Proj. Compensatory Pick	Conner Weigman	QB	Houston	75.04	Round 5-6	1	-0.03	7.4	6.76	formula_athletic_component	C Balanced	delta_-0.64
+5	37	175	NYJ	NYJ	Proj. Compensatory Pick	Dakaari Nelson	S	Penn State	77.09	Round 4-5	1	0.0	7.07	7.02	formula_athletic_component	A Athlete-lean	delta_-0.05
+5	38	176	KC	KC	Proj. Compensatory Pick	Nic Anderson	WR	Oklahoma	74.83	Round 5-6	1	0.015	6.67	7.05	formula_athletic_component	B Balanced-athletic	delta_0.38
+5	39	177	DAL	DAL	Proj. Compensatory Pick	Barika Kpeenu	RB	North Dakota State	77.01	Round 4-5	1	0.0	7.0	6.82	formula_athletic_component	A Athlete-lean	delta_-0.18
+5	40	178	NYJ	NYJ	Proj. Compensatory Pick	Keon Wylie	S	Texas Tech	76.89	Round 4-5	1	0.0	7.07	6.94	formula_athletic_component	A Athlete-lean	delta_-0.13
+5	41	179	PHI	PHI	Proj. Compensatory Pick	Thaddeus Dixon	CB	North Carolina Tar Heels	74.82	Round 5-6	1	-0.03	7.73	6.77	formula_athletic_component	A Athlete-lean	delta_-0.96
+6	1	180	LV	LV	LAR g NYJ t CLE t JAX (J Meyers)	Gunner Stockton	QB	Georgia	74.88	Round 5-6	1	-0.03	7.4	6.59	formula_athletic_component	C Balanced	delta_-0.81
+6	2	181	ARI	ARI		Jermaine Mathews Jr.	CB	Ohio State Buckeyes	74.53	Round 5-6	1	-0.03	7.27	6.77	formula_athletic_component	B Balanced-athletic	delta_-0.5
+6	3	182	TEN	TEN		Carson Beck	QB	Miami (FL) Hurricanes	74.64	Round 5-6	1	-0.015	6.98	6.77	formula_athletic_component	D Film/production-tolerant	delta_-0.21
+6	4	183	LV	LV		Garrett Nussmeier	QB	LSU	74.51	Round 5-6	1	-0.03	7.4	6.5	formula_athletic_component	C Balanced	delta_-0.9
+6	5	184	NYG	NYG		Zakee Wheatley	S	Penn State Nittany Lions	77.45	Round 4-5	1	0.0	6.91	6.8	formula_athletic_component	A Athlete-lean	delta_-0.11
+6	6	185	WAS	WAS		Malik Muhammad	CB	Texas	74.33	Round 5-6	1	-0.03	7.49	6.83	formula_athletic_component	B Balanced-athletic	delta_-0.66
+6	7	186	SEA	CLE	SEA g CLE (N Harris)	Johntay Cook	WR	Texas	74.24	Round 5-6	1	-0.015	7.17	6.69	formula_athletic_component	A Athlete-lean	delta_-0.48
+6	8	187	CIN	CIN		Will Lee III	CB	Texas A&M Aggies	74.2	Round 5-6	1	-0.03	7.65	6.77	formula_athletic_component	A Athlete-lean	delta_-0.88
+6	9	188	NO	NO		Devin Moore	CB	Florida	74.19	Round 5-6	1	-0.045	7.84	6.77	formula_athletic_component	A+ Athlete-heavy	delta_-1.07
+6	10	189	NE	KC	NE g KC (J Uche)	Isaiah Sategna	WR	Arkansas	74.14	Round 5-6	1	0.0	6.46	6.65	formula_athletic_component	C Balanced	delta_0.19
+6	11	190	NYG	MIA	NYG G MIA (D Waller)	Clev Lubin	EDGE	Louisville	74.11	Round 5-6	1	-0.03	7.74	6.92	formula_athletic_component	A Athlete-lean	delta_-0.82
+6	12	191	NYG	DAL	NYG g DAL (J Phillips)	Zxavian Harris	DT	Mississippi Rebels	74.11	Round 5-6	1	-0.03	7.5	6.82	formula_athletic_component	A Athlete-lean	delta_-0.68
+6	13	192	TEN	NYJ	TEN g BAL t NYJ (2025 Draft Trade/J Brownlee)	Keeshawn Silver	DT	USC	74.0	Round 5-6	1	0.015	6.7	7.04	formula_athletic_component	D Film/production-tolerant	delta_0.34
+6	14	193	TB	TB		Chase Bisontis	IOL	Texas A&M	76.99	Round 4-5	1	0.015	6.73	7.05	formula_athletic_component	B Balanced-athletic	delta_0.32
+6	15	194	MIN	IND	MIN g IND (M Blackmon)	Beau Stephens	IOL	Iowa Hawkeyes	76.66	Round 4-5	1	0.03	6.21	6.76	formula_athletic_component	D Film/production-tolerant	delta_0.55
+6	16	195	ATL	ATL		Rodney Hammond Jr.	RB	Sacramento State	77.01	Round 4-5	1	0.03	6.32	6.82	formula_athletic_component	D Film/production-tolerant	delta_0.5
+6	17	196	SF	MIN	SF g MIN t HOU t MIN (Various)	Roman Hemby	RB	Indiana	75.97	Round 5-6	1	0.015	6.58	6.86	formula_athletic_component	C Balanced	delta_0.28
+6	18	197	CIN	CLE	CIN g DET t CLE (J Flacco)	Hollywood Smothers	RB	N.C. State	73.99	Round 5-6	1	0.0	6.98	6.82	formula_athletic_component	A Athlete-lean	delta_-0.16
+6	19	198	CAR	CAR		Jaydn Ott	RB	Oklahoma	73.81	Round 5-6	1	0.0	6.74	6.84	formula_athletic_component	B Balanced-athletic	delta_0.1
+6	20	199	GB	GB		Mike Washington Jr.	RB	Arkansas Razorbacks	73.71	Round 5-6	1	0.015	6.55	6.82	formula_athletic_component	C Balanced	delta_0.27
+6	21	200	NE	PIT	NE g PIT (K Duggar)	Derek Robertson	QB	Monmouth	73.92	Round 5-6	1	0.0	6.82	6.77	formula_athletic_component	C Balanced	delta_-0.05
+6	22	201	JAX	HOU	JAX g PHI t HOU (T Bigsby)	Aaron Anderson	WR	LSU Tigers	73.68	Round 5-6	1	-0.015	7.12	6.83	formula_athletic_component	B Balanced-athletic	delta_-0.29
+6	23	202	LAC	LAC		Eli Raridon	TE	Notre Dame	75.5	Round 5-6	1	0.015	6.6	6.93	formula_athletic_component	C Balanced	delta_0.33
+6	24	203	DET	JAX	DET g JAX (2025 Draft Trade)	Charles Demmings	CB	Stephen F. Austin	73.67	Round 5-6	1	0.015	6.51	6.77	formula_athletic_component	D Film/production-tolerant	delta_0.26
+6	25	204	CLE	CHI	CLE g CHI (J Tryon)	Keagen Trost	OT	Missouri	73.63	Round 5-6	1	-0.015	7.1	6.89	formula_athletic_component	D Film/production-tolerant	delta_-0.21
+6	26	205	LAR	HOU	LAR g HOU (B Skowronek)	Taurean York	LB	Texas A&M Aggies	77.78	Round 4-5	1	0.0	7.0	6.86	formula_athletic_component	C Balanced	delta_-0.14
+6	27	206	NYJ	BUF	NYJ g BUF (B Codrington)	Branson Combs	S	Wake Forest	76.8	Round 4-5	1	0.0	7.07	6.87	formula_athletic_component	A Athlete-lean	delta_-0.2
+6	28	207	WAS	SF	WAS g SF (B Robinson)	Jaden Rashada	QB	Sacramento State	73.9	Round 5-6	1	-0.03	7.43	6.71	formula_athletic_component	B Balanced-athletic	delta_-0.72
+6	29	208	LAR	TEN	LAR g LAR t TEN (T White/ E Jones)	Deontae Lawson	LB	Alabama	76.99	Round 4-5	1	0.0	7.0	6.91	formula_athletic_component	C Balanced	delta_-0.09
+6	30	209	BAL	PHI	BAL g DEN t NYJ t MIN t PHI(J Alexander/Various)	Max Llewellyn	EDGE	Iowa Hawkeyes	73.51	Round 5-6	1	-0.03	7.76	6.92	formula_athletic_component	A+ Athlete-heavy	delta_-0.84
+6	31	210	NE	NE		Bryce Lovett	IOL	NC State	76.6	Round 4-5	1	0.045	5.97	7.05	formula_athletic_component	C Balanced	delta_1.08
+6	32	211	DET	JAX	DET g SEA t JAX(R Robertson-Harris/T Patrick)	Anto Saka	EDGE	Northwestern	73.5	Round 5-6	1	0.0	6.87	6.92	formula_athletic_component	D Film/production-tolerant	delta_0.05
+6	33	212	DET	DET	Proj. Compensatory Pick	AJ Harris	CB	Penn State	73.49	Round 5-6	1	0.015	6.51	6.77	formula_athletic_component	D Film/production-tolerant	delta_0.26
+6	34	213	PIT	PIT	Proj. Compensatory Pick	Michael Trigg	TE	Baylor Bears	74.99	Round 5-6	1	0.015	6.57	6.87	formula_athletic_component	C Balanced	delta_0.3
+6	35	214	PIT	PIT	Proj. Compensatory Pick	J. Michael Sturdivant	WR	Florida Gators	73.46	Round 5-6	1	0.0	6.77	6.83	formula_athletic_component	C Balanced	delta_0.06
+6	36	215	DAL	DAL	Proj. Compensatory Pick	Max Klare	TE	Purdue	75.38	Round 5-6	1	0.0	6.86	6.68	formula_athletic_component	A Athlete-lean	delta_-0.18
+6	37	216	IND	IND	Proj. Compensatory Pick	Tanner Koziol	TE	Houston	73.97	Round 5-6	1	-0.015	7.21	6.96	formula_athletic_component	A+ Athlete-heavy	delta_-0.25
+7	1	217	ARI	ARI		Joe Crocker Jr.	IOL	Auburn	76.41	Round 4-5	1	0.03	6.51	7.05	formula_athletic_component	B Balanced-athletic	delta_0.54
+7	2	218	NYJ	TEN	NYJ g TEN (J Brownlee)	Keon Sabb	S	Alabama	76.68	Round 4-5	1	0.0	7.07	6.91	formula_athletic_component	A Athlete-lean	delta_-0.16
+7	3	219	LV	LV		Jalon Kilgore	S	South Carolina	74.85	Round 5-6	1	0.015	6.72	7.04	formula_athletic_component	C Balanced	delta_0.32
+7	4	220	BUF	NYJ	BUF g NYJ (B Codrington)	Isaac Smith	S	Mississippi State	76.6	Round 4-5	1	0.015	6.63	6.84	formula_athletic_component	D Film/production-tolerant	delta_0.21
+7	5	221	CIN	DAL	CIN g NYG t DAL (J Phillips/L Wilson)	Elijah Pritchett	OT	Nebraska Cornhuskers	73.11	Round 5-6	1	-0.03	7.79	6.89	formula_athletic_component	A Athlete-lean	delta_-0.9
+7	6	222	DET	CLE	DET g CLE (Z Smith)	Addison Nichols	IOL	Arkansas	76.59	Round 4-5	1	0.03	6.31	7.0	formula_athletic_component	D Film/production-tolerant	delta_0.69
+7	7	223	WAS	WAS		Demond Claiborne	RB	Wake Forest	73.0	Round 5-6	1	0.0	6.8	6.73	formula_athletic_component	B Balanced-athletic	delta_-0.07
+7	8	224	PIT	NE	PIT g NO t NE (D Godchaux/K Duggar)	Ethan Burke	EDGE	Texas	72.92	Round 5-6	1	-0.015	7.14	6.92	formula_athletic_component	C Balanced	delta_-0.22
+7	9	225	DAL	KC	DAL g KC (P Hendershot cond)	Jude Bowry	OT	Boston College Eagles	72.84	Round 5-6	1	-0.015	7.34	6.89	formula_athletic_component	A Athlete-lean	delta_-0.45
+7	10	226	CIN	CIN		Ar'maj Reed-Adams	IOL	Texas A&M	74.94	Round 5-6	1	0.015	6.84	7.04	formula_athletic_component	A Athlete-lean	delta_0.21
+7	11	227	MIA	MIA		Genesis Smith	S	Arizona Wildcats	76.96	Round 4-5	1	-0.03	7.8	6.8	formula_athletic_component	A+ Athlete-heavy	delta_-1.0
+7	12	228	BUF	DAL	BUF g DAL (K Elam)	Tacario Davis	CB	Washington	72.78	Round 5-6	1	0.015	6.6	7.03	formula_athletic_component	D Film/production-tolerant	delta_0.43
+7	13	229	TB	TB		Sam Hecht	IOL	Kansas State Wildcats	76.59	Round 4-5	1	0.0	6.73	6.76	formula_athletic_component	B Balanced-athletic	delta_0.03
+7	14	230	IND	IND		Hezekiah Masses	CB	California Golden Bears	72.73	Round 5-6	1	-0.045	7.86	6.77	formula_athletic_component	A+ Athlete-heavy	delta_-1.09
+7	15	231	ATL	ATL		Chase Roberts	WR	BYU Cougars	72.73	Round 5-6	1	0.0	6.63	6.83	formula_athletic_component	D Film/production-tolerant	delta_0.2
+7	16	232	LAR	BAL	LAR g BAL (T White)	Kage Casey	OT	Boise State	72.75	Round 5-6	1	-0.03	7.4	6.73	formula_athletic_component	C Balanced	delta_-0.67
+7	17	233	JAX	DET	JAX g DET (R Patterson)	Jaishawn Barham	LB	Michigan	76.74	Round 4-5	1	0.0	6.94	6.86	formula_athletic_component	B Balanced-athletic	delta_-0.08
+7	18	234	MIN	MIN		Kade Pieper	IOL	Iowa	76.55	Round 4-5	1	0.03	6.21	6.76	formula_athletic_component	D Film/production-tolerant	delta_0.55
+7	19	235	MIN	CAR	MIN g CAR (A Thielen)	Timothy McKay	IOL	NC State	76.43	Round 4-5	1	0.03	6.21	6.93	formula_athletic_component	D Film/production-tolerant	delta_0.72
+7	20	236	GB	GB		Michael Wortham	WR	Montana	72.62	Round 5-6	1	0.03	6.26	6.83	formula_athletic_component	C Balanced	delta_0.57
+7	21	237	PIT	PIT		Tanner Miller	IOL	Michigan	76.19	Round 4-5	1	0.015	6.46	6.7	formula_athletic_component	C Balanced	delta_0.24
+7	22	238	TEN	LAC	TEN g LAC (E Molden)	Dante Moore	QB	Oregon	72.92	Round 5-6	1	-0.015	6.98	6.77	formula_athletic_component	D Film/production-tolerant	delta_-0.21
+7	23	239	CHI	CLE	CHI g PHI t JAX t CLE (various)	Domani Jackson	CB	Alabama	72.55	Round 5-6	1	-0.015	7.42	6.96	formula_athletic_component	B Balanced-athletic	delta_-0.46
+7	24	240	MIN	JAX	MIN g JAX (C Robinson)	Cayden Green	IOL	Missouri	75.57	Round 5-6	1	0.03	6.21	6.76	formula_athletic_component	D Film/production-tolerant	delta_0.55
+7	25	241	CHI	CHI		Raion Strader	CB	Auburn Tigers	72.4	Round 5-6	1	-0.03	7.42	6.77	formula_athletic_component	B Balanced-athletic	delta_-0.65
+7	26	242	NYJ	CLE	NYJ g BUF t CLE (A Cooper/J Briggs)	Bud Clark	S	TCU Horned Frogs	76.1	Round 4-5	1	-0.015	7.07	6.8	formula_athletic_component	A Athlete-lean	delta_-0.27
+7	27	243	HOU	SF	HOU g SF (K Davis)	Brenen Thompson	WR	Mississippi State Bulldogs	72.39	Round 5-6	1	0.03	6.31	6.83	formula_athletic_component	D Film/production-tolerant	delta_0.52
+7	28	244	MIN	HOU	MIN g HOU (C Akers)	Iapani Laloulu	IOL	Oregon	75.21	Round 5-6	1	0.03	6.21	6.76	formula_athletic_component	D Film/production-tolerant	delta_0.55
+7	29	245	JAX	HOU	JAX G LAR t HOU (C Kirk)	Eli Heidenreich	RB	Navy Midshipmen	72.32	Round 5-6	1	0.015	6.48	6.82	formula_athletic_component	B Balanced-athletic	delta_0.34
+7	30	246	DEN	DEN		Arlis Boardingham	TE	Florida	73.86	Round 5-6	1	0.0	6.8	6.8	formula_athletic_component	B Balanced-athletic	delta_0.0
+7	31	247	SF	NE	SF g NE (K White)	Kaelon Black	RB	Indiana Hoosiers	72.18	Round 5-6	1	0.015	6.58	6.82	formula_athletic_component	C Balanced	delta_0.24
+7	32	248	CLE	SEA	CLE g SEA (N Harris)	Tommy Castellanos	QB	Florida State Seminoles	72.65	Round 5-6	1	-0.015	7.1	6.77	formula_athletic_component	D Film/production-tolerant	delta_-0.33
+7	33	249	BAL	BAL	Proj. Compensatory Pick	Nate Boerkircher	TE	Texas A&M Aggies	73.66	Round 5-6	1	-0.015	7.16	6.87	formula_athletic_component	A+ Athlete-heavy	delta_-0.29
+7	34	250	LAR	LAR	Proj. Compensatory Pick	Ernest Hausmann	LB	Michigan	76.59	Round 4-5	1	0.0	7.0	6.9	formula_athletic_component	C Balanced	delta_-0.1
+7	35	251	DEN	DEN	Proj. Compensatory Pick	Barion Brown	WR	LSU	71.94	Round 6-7	1	0.0	6.86	6.73	formula_athletic_component	B Balanced-athletic	delta_-0.13
+7	36	252	BAL	BAL	Proj. Compensatory Pick	Reggie Virgil	WR	Texas Tech Red Raiders	71.87	Round 6-7	1	-0.015	7.13	6.83	formula_athletic_component	A+ Athlete-heavy	delta_-0.3
+7	37	253	IND	IND	Proj. Compensatory Pick	Marlin Klein	TE	Michigan Wolverines	73.52	Round 5-6	1	-0.015	7.21	6.87	formula_athletic_component	A+ Athlete-heavy	delta_-0.34
+7	38	254	GB	GB	Proj. Compensatory Pick	Dallen Bentley	TE	Utah Utes	73.51	Round 5-6	1	0.015	6.6	6.87	formula_athletic_component	C Balanced	delta_0.27
+7	39	255	DEN	DEN	Proj. Compensatory Pick	Oscar Cardenas	TE	UTSA	73.55	Round 5-6	1	0.0	6.8	6.68	formula_athletic_component	B Balanced-athletic	delta_-0.12
+7	40	256	LAR	LAR	Proj. Compensatory Pick	Ryan Baer	OT	Pittsburgh Panthers	71.79	Round 6-7	1	-0.03	7.4	6.89	formula_athletic_component	C Balanced	delta_-0.51
+7	41	257	GB	GB	Proj. Compensatory Pick	Robert Henry Jr.	RB	UTSA Roadrunners	71.76	Round 6-7	1	0.015	6.55	6.82	formula_athletic_component	C Balanced	delta_0.27

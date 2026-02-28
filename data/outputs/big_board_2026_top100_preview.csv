@@ -1,0 +1,101 @@
+consensus_rank,player_name,position,school,final_grade,round_value,consensus_board_mean_rank,consensus_board_rank_std,consensus_board_source_count,formula_score,formula_production_component,formula_trait_component,formula_athletic_component,formula_risk_penalty,language_adjustment_applied,best_team_fit,variance_flag
+1,Carnell Tate,WR,Ohio State,82.67,Round 1-2,8.0,1.1,5,83.03,73.92,53.04,70.0,0.44,-0.3556,CLE,high_variance_thin_evidence
+2,Keionte Scott,CB,Miami (FL) Hurricanes,82.65,Round 1-2,52.0,4.85,4,82.92,74.05,59.47,70.0,0.69,-0.158,JAX,high_variance_thin_evidence
+3,Jeremiyah Love,RB,Notre Dame,82.57,Round 1-2,5.12,2.89,8,82.83,76.45,53.54,70.0,0.44,-0.2593,DAL,high_variance_thin_evidence
+4,Francis Mauigoa,OT,Miami (FL) Hurricanes,82.26,Round 1-2,7.83,3.18,6,82.52,72.1,53.29,70.0,0.44,-0.2593,LAR,high_variance_thin_evidence
+5,Makai Lemon,WR,USC Trojans,82.11,Round 1-2,11.4,1.2,5,82.57,75.43,51.97,70.0,0.44,-0.4556,CLE,high_variance_thin_evidence
+6,Mansoor Delane,CB,LSU Tigers,81.94,Round 1-2,10.0,1.67,5,82.28,74.62,52.45,70.0,0.69,-0.3444,JAX,low_variance
+7,Brian Parker II,OT,Duke Blue Devils,81.94,Round 1-2,100.33,16.36,3,81.94,73.62,60.0,70.0,1.01,0.0,LAR,medium_variance
+8,Cashius Howell,EDGE,Texas A&M Aggies,81.9,Round 1-2,20.4,3.98,5,82.29,69.76,52.09,78.0,0.67,-0.3944,ATL,low_variance
+9,Caleb Downs,S,Ohio State,81.83,Round 2-3,3.9,2.47,10,82.11,73.05,51.0,70.0,0.69,-0.2833,MIA,low_variance
+10,Jordyn Tyson,WR,Arizona State,81.73,Round 2-3,12.33,3.59,6,82.14,70.81,52.58,70.0,0.44,-0.4056,CLE,low_variance
+11,Skyler Bell,WR,Connecticut Huskies,81.72,Round 2-3,90.67,8.5,3,81.72,71.13,60.0,70.0,1.01,0.0,CLE,medium_variance
+12,Kadyn Proctor,OT,Alabama,81.68,Round 2-3,21.83,9.48,6,82.15,73.82,51.52,70.0,0.44,-0.4667,LAR,low_variance
+13,R Mason Thomas,EDGE,Oklahoma,81.61,Round 2-3,40.6,2.33,5,82.0,70.87,52.12,78.0,0.22,-0.3889,ATL,low_variance
+14,Denzel Boston,WR,Washington,81.6,Round 2-3,20.8,3.71,5,81.91,73.74,52.49,70.0,0.44,-0.3111,CLE,low_variance
+15,Olaivavega Ioane,IOL,Penn State Nittany Lions,81.58,Round 2-3,15.75,4.02,4,81.83,70.75,54.61,70.0,0.44,-0.2519,DET,low_variance
+16,Dillon Thieneman,S,Oregon,81.48,Round 2-3,32.6,5.5,5,81.95,74.74,54.35,70.0,0.69,-0.4722,MIA,low_variance
+17,David Bailey,EDGE,Texas Tech,81.32,Round 2-3,5.43,2.19,7,82.22,72.66,52.28,78.0,1.22,-0.9,ATL,low_variance
+18,Emmanuel Pregnon,IOL,Oregon Ducks,81.31,Round 2-3,43.0,2.55,4,81.58,74.14,52.17,70.0,0.44,-0.2389,DET,low_variance
+19,Nyck Harbor,WR,South Carolina,81.25,Round 2-3,8.0,0.0,1,81.25,63.0,60.0,70.0,1.23,0.0,CLE,high_variance
+20,Zion Young,EDGE,Missouri Tigers,81.2,Round 2-3,41.2,4.12,5,81.68,70.0,56.45,70.0,0.89,-0.4815,ATL,low_variance
+21,Arvell Reese,LB,Ohio State Buckeyes,81.19,Round 2-3,2.57,0.9,7,81.41,68.52,51.67,70.0,0.44,-0.2222,LAR,low_variance
+22,Emmanuel McNeil-Warren,S,Toledo Rockets,81.17,Round 2-3,26.4,7.81,5,81.56,75.19,52.0,70.0,0.69,-0.3944,MIA,low_variance
+23,Fernando Mendoza,QB,Indiana,81.11,Round 2-3,2.14,1.88,7,82.01,76.0,52.26,68.0,1.6,-0.9,LV,low_variance
+24,Monroe Freeling,OT,Georgia,81.09,Round 2-3,25.4,2.42,5,81.56,66.62,53.55,70.0,0.44,-0.4722,LAR,low_variance
+25,C.J. Allen,LB,Georgia,81.07,Round 2-3,28.0,4.15,5,81.43,68.41,53.48,70.0,0.44,-0.3611,LAR,low_variance
+26,Keldric Faulk,EDGE,Auburn,80.97,Round 2-3,18.8,5.19,5,81.35,68.35,52.57,70.0,0.89,-0.3778,ATL,low_variance
+27,Omar Cooper Jr.,WR,Indiana Hoosiers,80.95,Round 2-3,41.4,12.6,5,81.33,73.25,51.75,70.0,0.44,-0.3778,CLE,low_variance
+28,Akheem Mesidor,EDGE,Miami (FL) Hurricanes,80.92,Round 2-3,23.6,4.8,5,81.33,72.66,53.87,70.0,0.94,-0.4101,ATL,low_variance
+29,Caleb Lomu,OT,Utah,80.89,Round 2-3,21.83,6.57,6,81.12,64.64,52.71,70.0,0.44,-0.2296,LAR,low_variance
+30,Eugene Asante,LB,Auburn,80.86,Round 2-3,,,,81.26,63.7,60.0,84.0,1.01,0.0,LAR,high_variance
+31,Romello Height,EDGE,Texas Tech Red Raiders,80.81,Round 2-3,65.0,10.03,3,81.25,72.66,50.53,78.0,0.44,-0.0648,ATL,low_variance
+32,Rueben Bain Jr.,EDGE,Miami (FL) Hurricanes,80.78,Round 2-3,5.0,2.58,6,81.68,72.66,52.8,70.0,1.34,-0.9,ATL,low_variance
+33,Kayden McDonald,DT,Ohio State Buckeyes,80.77,Round 2-3,29.2,4.71,5,81.15,71.19,52.21,70.0,0.44,-0.3833,BUF,low_variance
+34,Spencer Fano,OT,Utah,80.71,Round 2-3,12.2,4.83,5,81.61,72.83,52.36,70.0,1.34,-0.9,LAR,low_variance
+35,Avieon Terrell,CB,Clemson,80.69,Round 2-3,21.17,7.65,6,81.59,71.21,52.33,70.0,1.19,-0.9,JAX,low_variance
+36,Christen Miller,DT,Georgia Bulldogs,80.65,Round 2-3,39.4,5.75,5,81.04,70.66,53.85,70.0,0.44,-0.3889,BUF,low_variance
+37,Colton Hood,CB,Tennessee Volunteers,80.65,Round 2-3,32.4,8.55,5,81.05,69.2,53.0,70.0,0.69,-0.4,JAX,low_variance
+38,Kevin Concepcion,WR,Texas A&M,80.59,Round 2-3,26.0,0.0,1,80.99,63.0,60.0,70.0,1.23,0.0,CLE,high_variance
+39,Ty Simpson,QB,Alabama Crimson Tide,80.35,Round 2-3,35.6,5.46,5,80.88,74.14,50.43,68.0,1.1,-0.5278,LV,low_variance
+40,Kenyon Sadiq,TE,Oregon,80.27,Round 2-3,18.6,2.87,5,80.7,64.89,54.13,70.0,0.44,-0.4333,IND,low_variance
+41,D'Angelo Ponds,CB,Indiana Hoosiers,80.25,Round 3-4,53.0,2.94,3,80.79,74.25,51.09,70.0,0.69,-0.3111,JAX,low_variance
+42,Brandon Cisse,CB,South Carolina Gamecocks,80.19,Round 3-4,33.6,1.96,5,80.66,67.28,53.0,70.0,0.69,-0.4722,JAX,low_variance
+43,Brady Latham,IOL,Arkansas,80.03,Round 3-4,,,,80.43,63.0,60.0,87.7,1.01,0.0,DET,high_variance
+44,Peter Woods,DT,Clemson,80.02,Round 3-4,14.38,10.44,8,80.92,67.41,51.97,70.0,0.94,-0.9,BUF,low_variance
+45,Chris Johnson,CB,San Diego State Aztecs,79.97,Round 4-5,49.33,4.03,3,80.16,75.04,50.96,70.0,1.26,-0.1111,JAX,medium_variance
+46,Blake Miller,OT,Clemson Tigers,79.96,Round 4-5,43.2,17.79,5,80.63,69.96,52.29,70.0,0.44,-0.4056,LAR,low_variance
+47,Daylen Everette,CB,Georgia,79.75,Round 4-5,101.0,21.18,3,80.27,64.75,60.0,70.0,1.26,0.0,JAX,medium_variance
+48,Dani Dennis-Sutton,EDGE,Penn State Nittany Lions,79.65,Round 4-5,84.67,3.3,3,80.83,69.47,60.0,70.0,1.46,0.0,ATL,medium_variance
+49,A.J. Haulcy,S,LSU Tigers,79.62,Round 4-5,52.0,7.12,3,79.97,72.67,50.97,70.0,1.26,-0.1,MIA,medium_variance
+50,Keith Abney II,CB,Arizona State Sun Devils,79.59,Round 4-5,46.0,8.04,3,79.69,72.75,51.04,70.0,1.01,-0.1037,JAX,medium_variance
+51,Sonny Styles,LB,Ohio State,79.54,Round 4-5,9.0,2.45,5,79.88,71.72,53.11,56.25,0.22,-0.3444,LAR,low_variance
+52,DJ McKinney,CB,Colorado,79.5,Round 4-5,,,,79.9,63.0,60.0,70.0,1.23,0.0,JAX,high_variance
+53,Mikail Kamara,EDGE,Indiana Hoosiers,79.5,Round 4-5,123.67,24.23,3,80.4,67.33,60.0,70.0,1.01,0.0,ATL,high_variance
+54,Skyler Gill-Howard,DT,Texas Tech Red Raiders,79.5,Round 4-5,125.0,13.93,3,80.77,71.75,60.0,70.0,1.01,0.0,BUF,medium_variance
+55,Kaytron Allen,RB,Penn State Nittany Lions,79.5,Round 4-5,121.67,4.19,3,80.63,74.64,60.0,70.0,1.01,0.0,DAL,medium_variance
+56,Kaimon Rucker,EDGE,North Carolina,79.49,Round 4-5,,,,79.89,63.7,60.0,70.0,1.23,0.0,ATL,high_variance
+57,T.J. Parker,EDGE,Clemson,79.48,Round 4-5,26.33,9.99,6,80.38,69.63,51.36,70.0,1.39,-0.9,ATL,low_variance
+58,Jermod McCoy,CB,Tennessee,79.46,Round 4-5,12.4,1.2,5,80.36,63.0,52.64,70.0,0.94,-0.9,JAX,low_variance
+59,Jack Endries,TE,Texas Longhorns,79.46,Round 4-5,101.0,21.35,3,79.86,63.57,60.0,70.0,1.01,0.0,IND,medium_variance
+60,CJ Daniels,WR,Miami (FL) Hurricanes,79.46,Round 4-5,114.67,30.09,3,80.36,65.66,60.0,70.0,1.01,0.0,CLE,high_variance
+61,Takye Heath,CB,Georgia Tech,79.42,Round 4-5,,,,79.82,63.0,60.0,70.0,1.23,0.0,JAX,high_variance
+62,Lee Hunter,DT,Texas Tech Red Raiders,79.38,Round 4-5,33.8,8.91,5,79.83,69.71,51.33,70.0,0.44,-0.45,BUF,low_variance
+63,Zachariah Branch,WR,Georgia,79.38,Round 4-5,57.25,15.48,4,80.11,70.26,55.23,70.0,0.44,-0.1691,CLE,low_variance
+64,Gabe Jacas,EDGE,Illinois Fighting Illini,79.35,Round 4-5,48.5,5.94,4,80.38,69.02,53.9,70.0,0.44,-0.1136,ATL,low_variance
+65,Evan Stewart,WR,Oregon,79.19,Round 4-5,,,,79.59,63.0,60.0,70.0,1.23,0.0,CLE,high_variance
+66,T.J. Searcy,EDGE,Texas A&M,79.13,Round 4-5,,,,79.53,63.7,60.0,70.0,1.68,0.0,ATL,high_variance
+67,Derrick Moore,EDGE,Michigan,79.13,Round 4-5,62.0,2.94,3,79.82,70.0,56.34,70.0,1.39,-0.2538,ATL,low_variance
+68,Eugene Brooks III,IOL,Oklahoma,79.04,Round 4-5,,,,79.44,63.0,60.0,70.0,1.23,0.0,DET,high_variance
+69,Deion Burks,WR,Oklahoma Sooners,78.98,Round 4-5,82.5,20.22,4,80.21,63.0,58.37,70.0,0.44,-0.137,CLE,low_variance
+70,Malachi Fields,WR,Notre Dame Fighting Irish,78.96,Round 4-5,53.8,21.65,5,79.87,68.08,53.7,70.0,0.44,-0.4222,CLE,low_variance
+71,Caleb Banks,DT,Florida Gators,78.89,Round 4-5,27.6,6.12,5,79.46,66.51,47.99,78.0,1.12,-0.5694,BUF,low_variance
+72,Chris Brazzell II,WR,Tennessee Volunteers,78.86,Round 4-5,62.5,12.5,2,79.56,69.92,51.07,70.0,1.01,-0.1037,CLE,medium_variance
+73,Josiah Trotter,LB,Missouri Tigers,78.71,Round 4-5,59.25,6.18,4,79.6,67.62,52.68,70.0,0.44,-0.2741,LAR,low_variance
+74,Eli Stowers,TE,Vanderbilt,78.65,Round 4-5,56.67,9.53,3,79.84,70.76,51.71,70.0,0.44,-0.3333,IND,low_variance
+75,Justin Flowe,LB,Arizona,78.61,Round 4-5,,,,79.01,63.7,60.0,70.0,1.23,0.0,LAR,high_variance
+76,Nicholas Singleton,RB,Penn State,78.56,Round 4-5,109.5,0.5,2,79.81,68.1,60.0,70.0,1.01,0.0,DAL,medium_variance
+77,LT Overton,EDGE,Alabama,78.37,Round 4-5,36.4,24.41,5,78.39,65.29,50.19,70.0,1.01,-0.0241,ATL,medium_variance
+78,Isaiah World,OT,Oregon,78.32,Round 4-5,102.33,8.34,3,79.69,63.0,60.0,70.0,1.01,0.0,LAR,medium_variance
+79,Chris Bell,WR,Louisville,78.3,Round 4-5,45.67,6.94,3,78.83,70.76,50.65,70.0,0.44,-0.0796,CLE,low_variance
+80,Jonah Coleman,RB,Washington Huskies,78.28,Round 4-5,77.33,2.49,3,79.64,70.68,53.49,70.0,0.44,-0.2296,DAL,low_variance
+81,Gennings Dunker,OT,Iowa Hawkeyes,78.26,Round 4-5,64.0,13.93,3,79.54,71.79,51.96,70.0,0.44,-0.1525,LAR,low_variance
+82,Elijah Sarratt,WR,Indiana Hoosiers,78.22,Round 4-5,63.0,2.16,3,78.89,72.27,50.19,70.0,1.01,-0.0241,CLE,medium_variance
+83,Eric Singleton Jr.,WR,Auburn,78.19,Round 4-5,,,,78.27,63.0,51.71,70.0,1.01,-0.0759,CLE,high_variance
+84,Jermayne Lole,DT,Louisville,78.18,Round 4-5,,,,78.58,63.7,60.0,70.0,1.23,0.0,BUF,high_variance
+85,Jadarian Price,RB,Notre Dame Fighting Irish,78.16,Round 4-5,51.5,5.72,4,79.44,69.17,53.04,70.0,0.44,-0.4722,DAL,low_variance
+86,KC Concepcion,WR,Texas A&M Aggies,78.14,Round 4-5,27.5,3.2,4,78.54,69.91,49.61,70.0,2.64,-0.3962,CLE,low_variance
+87,Hollin Pierce,OT,Rutgers,78.09,Round 4-5,,,,78.49,63.0,60.0,70.0,1.23,0.0,LAR,high_variance
+88,Seth McGowan,RB,Kentucky Wildcats,78.07,Round 4-5,127.0,32.0,2,78.79,64.54,60.0,70.0,1.01,0.0,DAL,high_variance
+89,Joshua Josephs,EDGE,Tennessee Volunteers,78.05,Round 4-5,68.67,6.13,3,79.49,71.35,51.45,70.0,0.94,-0.73,ATL,low_variance
+90,Makhi Hughes,RB,Oregon,78.0,Round 4-5,,,,78.4,63.0,60.0,70.0,1.23,0.0,DAL,high_variance
+91,De'Zhaun Stribling,WR,Mississippi Rebels,78.0,Round 4-5,148.5,41.5,2,80.22,69.04,60.0,70.0,1.01,0.0,CLE,high_variance
+92,J.C. Davis,OT,Illinois Fighting Illini,78.0,Round 4-5,135.67,19.26,3,81.66,74.82,60.0,70.0,1.01,0.0,LAR,medium_variance
+93,Michael Taaffe,S,Texas Longhorns,78.0,Round 4-5,130.33,18.26,3,80.88,73.29,60.0,70.0,1.26,0.0,MIA,medium_variance
+94,Xavier Chaplin,OT,Auburn,77.99,Round 4-5,,,,78.39,63.0,60.0,70.0,1.23,0.0,LAR,high_variance
+95,Anthony Hill Jr.,LB,Texas Longhorns,77.9,Round 4-5,34.5,12.69,6,78.17,67.57,52.61,56.25,0.22,-0.2741,LAR,low_variance
+96,Langston Jones,OT,Lehigh,77.86,Round 4-5,,,,77.87,63.0,46.99,70.0,1.23,-0.0064,LAR,high_variance
+97,Albert Regis,DT,Texas A&M Aggies,77.83,Round 4-5,154.67,26.04,3,81.45,67.57,60.0,78.0,0.44,0.0,BUF,medium_variance
+98,Justice Boone,RB,Colorado,77.81,Round 4-5,,,,78.21,63.0,60.0,70.0,1.23,0.0,DAL,high_variance
+99,Tyreak Sapp,EDGE,Florida,77.79,Round 4-5,134.0,25.92,3,79.56,65.52,60.0,70.0,1.46,0.0,ATL,high_variance
+100,Daniel Sobkowicz,WR,Illinois State,77.76,Round 4-5,,,,77.77,63.0,46.99,70.0,1.23,-0.0064,CLE,high_variance

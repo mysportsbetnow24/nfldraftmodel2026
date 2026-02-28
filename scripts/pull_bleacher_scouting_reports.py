@@ -408,15 +408,20 @@ def main() -> None:
             try:
                 page_html = _fetch(url)
                 parsed = parse_br_report(page_html, source_url=url, snapshot_date=snapshot_date)
-                if not parsed.get("player_name"):
-                    parsed["player_name"] = _safe_str(row.get("player_name"))
-                if not parsed.get("position"):
-                    parsed["position"] = normalize_pos(_safe_str(row.get("position")).upper())
-                if not parsed.get("school"):
-                    parsed["school"] = _safe_str(row.get("school"))
-                if not parsed.get("source_rank"):
-                    parsed["source_rank"] = _to_int(row.get("source_rank", row.get("rank", ""))) or ""
-                    parsed["br_rank"] = parsed["source_rank"]
+                # URL CSV metadata is authoritative when provided.
+                csv_name = _safe_str(row.get("player_name"))
+                csv_pos = normalize_pos(_safe_str(row.get("position")).upper())
+                csv_school = _safe_str(row.get("school"))
+                csv_rank = _to_int(row.get("source_rank", row.get("rank", "")))
+                if csv_name:
+                    parsed["player_name"] = csv_name
+                if csv_pos:
+                    parsed["position"] = csv_pos
+                if csv_school:
+                    parsed["school"] = csv_school
+                if csv_rank is not None:
+                    parsed["source_rank"] = csv_rank
+                    parsed["br_rank"] = csv_rank
                 if parsed.get("player_name") and parsed.get("position"):
                     rows.append(parsed)
                 else:

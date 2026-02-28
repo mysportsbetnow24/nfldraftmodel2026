@@ -1,0 +1,32 @@
+LIVE PULL STATUS - 2026-02-26
+
+Generated: 2026-02-26T20:37:15
+
+CFBD usage: 14/? calls used
+Combine rows in manual file: 5
+  - forty: 0 populated
+  - ten_split: 0 populated
+  - vertical: 0 populated
+  - broad: 0 populated
+  - shuttle: 0 populated
+  - three_cone: 0 populated
+  - bench: 0 populated
+  - height_in: 0 populated
+  - weight_lb: 0 populated
+  - arm_in: 0 populated
+  - hand_in: 0 populated
+
+Live pulls completed:
+- CFBD player_ppa_2025.json refreshed
+- CFBD player_season_stats_2025.json refreshed
+- Consensus big boards refreshed (Tankathon/NFLMock/Athletic/Ringer + local seeds)
+- Drafttek draft order/trades refreshed
+- MockDraftable position baselines refreshed
+- UnderDog team-needs parser patched and refreshed (32 teams)
+- Analyst language refreshed (ESPN + Daniel Jeremiah)
+- TDN/Bleacher/SI structured pulls refreshed
+- Big board/mock/reports rebuilt
+
+Live pulls not fully available:
+- Kiper structured pull requires manual CSV: data/sources/manual/kiper_2026_board.csv
+- Public 2026 combine endpoint tested (nflcombineresults.com) returned 0 rows across all positions at pull time

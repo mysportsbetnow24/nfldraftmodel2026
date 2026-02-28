@@ -1,0 +1,55 @@
+Snap-Normalized Proxy Integration Digest (2026-02-28)
+
+Added proxy metrics (partial, capped impact):
+- EDGE: pressures/pass-rush snap + sacks/pass-rush snap
+- WR/TE: targets per route run
+- CB/S: yards allowed per coverage snap
+
+WR/TE targets_per_route: n=78
+  min=0.0955 p50=0.2119 p90=0.2984 max=0.3400
+WR/TE targets_per_route signal: n=78
+  min=20.0000 p50=54.9700 p90=82.0000 max=95.0000
+EDGE sacks_per_pr_snap: n=18
+  min=0.0371 p50=0.0468 p90=0.0491 max=0.0500
+EDGE sacks_per_pr_snap signal: n=18
+  min=56.6400 p50=77.4300 p90=82.3600 max=84.2900
+CB/S yards_allowed_per_cov_snap: n=67
+  min=0.7500 p50=0.8360 p90=1.0605 max=1.1970
+CB/S yards_allowed_per_cov_snap signal: n=67
+  min=56.1800 p50=77.8400 p90=82.5200 max=83.0000
+
+Top EDGE by sacks_per_pr_snap:
+  Nadame Tucker: 0.0500 | consensus 309 | grade 71.37
+  Zion Young: 0.0497 | consensus 27 | grade 80.98
+  Darris Smith: 0.0491 | consensus 142 | grade 76.69
+  Cashius Howell: 0.0491 | consensus 1 | grade 83.56
+  Dani Dennis-Sutton: 0.0489 | consensus 42 | grade 79.96
+  Keyron Crawford: 0.0486 | consensus 419 | grade 65.3
+  Derrick Moore: 0.0480 | consensus 68 | grade 79.0
+  T.J. Parker: 0.0478 | consensus 59 | grade 79.31
+  Malachi Lawrence: 0.0468 | consensus 95 | grade 78.03
+  Anthony Lucas: 0.0468 | consensus 136 | grade 76.94
+
+Top WR/TE by targets_per_route:
+  Skyler Bell (WR): 0.3400 | consensus 19 | grade 81.38
+  Jalen Walthall (WR): 0.3400 | consensus 404 | grade 66.29
+  Lewis Bond (WR): 0.3336 | consensus 334 | grade 70.26
+  Tanner Koziol (TE): 0.3299 | consensus 237 | grade 74.0
+  Kevin Coleman Jr. (WR): 0.3150 | consensus 315 | grade 71.0
+  Zachariah Branch (WR): 0.3099 | consensus 79 | grade 78.55
+  Makai Lemon (WR): 0.3098 | consensus 14 | grade 81.68
+  Hank Beatty (WR): 0.3071 | consensus 379 | grade 68.02
+  Chris Bell (WR): 0.2984 | consensus 96 | grade 78.03
+  Isaiah Sategna (WR): 0.2800 | consensus 233 | grade 74.14
+
+Best CB/S by lowest yards_allowed_per_cov_snap:
+  Hezekiah Masses (CB): 0.7500 | consensus 274 | grade 72.73
+  Devon Marshall (CB): 0.7500 | consensus 302 | grade 71.67
+  Josh Moten (CB): 0.7510 | consensus 385 | grade 67.49
+  Mansoor Delane (CB): 0.7545 | consensus 10 | grade 82.05
+  D'Angelo Ponds (CB): 0.7580 | consensus 46 | grade 79.88
+  Julian Neal (CB): 0.7580 | consensus 151 | grade 76.57
+  Kani Walker (CB): 0.7580 | consensus 196 | grade 75.47
+  Jalon Kilgore (S): 0.7580 | consensus 218 | grade 74.85
+  Chris Johnson (CB): 0.7635 | consensus 43 | grade 79.94
+  Bud Clark (S): 0.7635 | consensus 170 | grade 76.1

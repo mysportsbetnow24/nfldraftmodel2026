@@ -1,0 +1,9 @@
+NFL Combine Invites Pull Report (2026)
+
+url: https://www.nfl.com/news/nfl-combine-full-list-of-draft-prospects-invited-to-2026-scouting-event
+rows_parsed: 320
+rows_marked_early_declare: 55
+declared_source: /Users/nickholz/nfldraftmodel2026/data/sources/manual/declared_underclassmen_2026_official.csv
+output: /Users/nickholz/nfldraftmodel2026/data/sources/manual/nfl_combine_invites_2026.csv
+method: ldjson_article_body_parser
+note: verify rows manually after each cycle update.

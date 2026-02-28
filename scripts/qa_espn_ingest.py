@@ -72,13 +72,20 @@ def _write_md(path: Path, report: dict) -> None:
 def main() -> None:
     p = argparse.ArgumentParser(description="Run ESPN ingest QA checks and join coverage report")
     p.add_argument("--target-year", type=int, default=2026)
+    p.add_argument("--base-dir", type=str, default="", help="Optional ESPN dataset directory override")
     p.add_argument("--board", type=str, default=str(DEFAULT_BOARD))
     p.add_argument("--out-json", type=str, default=str(DEFAULT_OUT_JSON))
     p.add_argument("--out-md", type=str, default=str(DEFAULT_OUT_MD))
     args = p.parse_args()
 
     board_rows = _load_board_rows(Path(args.board))
-    report = write_espn_qa_report(Path(args.out_json), board_rows=board_rows, target_year=args.target_year)
+    base_dir = Path(args.base_dir) if args.base_dir else None
+    report = write_espn_qa_report(
+        Path(args.out_json),
+        board_rows=board_rows,
+        target_year=args.target_year,
+        base_dir=base_dir,
+    )
     _write_md(Path(args.out_md), report)
 
     print(f"QA JSON: {args.out_json}")

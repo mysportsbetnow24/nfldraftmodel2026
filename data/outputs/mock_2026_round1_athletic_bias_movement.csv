@@ -1,0 +1,33 @@
+player_name,position,team_off,overall_pick_off,team_on,overall_pick_on,pick_delta_prev_minus_curr,movement
+Caleb Banks,DT,PIT,21,DAL,20,1,up_1
+Kayden McDonald,DT,DAL,20,PIT,21,-1,down_1
+Arvell Reese,LB,LAR,29,LAR,29,0,no_change
+Blake Miller,OT,SF,27,SF,27,0,no_change
+Brian Parker II,OT,WAS,7,WAS,7,0,no_change
+C.J. Allen,LB,NE,31,NE,31,0,no_change
+Caleb Downs,S,MIA,11,MIA,11,0,no_change
+Caleb Lomu,OT,BAL,14,BAL,14,0,no_change
+Carnell Tate,WR,CLE,6,CLE,6,0,no_change
+Cashius Howell,EDGE,ARI,3,ARI,3,0,no_change
+Christen Miller,DT,MIN,18,MIN,18,0,no_change
+David Bailey,EDGE,NO,8,NO,8,0,no_change
+Denzel Boston,WR,CAR,19,CAR,19,0,no_change
+Dillon Thieneman,S,BUF,26,BUF,26,0,no_change
+Emmanuel McNeil-Warren,S,LAC,22,LAC,22,0,no_change
+Fernando Mendoza,QB,LV,1,LV,1,0,no_change
+Francis Mauigoa,OT,NYJ,2,NYJ,2,0,no_change
+Jeremiyah Love,RB,DAL,12,DAL,12,0,no_change
+Jordyn Tyson,WR,DEN,30,DEN,30,0,no_change
+Kadyn Proctor,OT,NYG,5,NYG,5,0,no_change
+Keionte Scott,CB,CIN,10,CIN,10,0,no_change
+Keldric Faulk,EDGE,DET,17,DET,17,0,no_change
+Makai Lemon,WR,NYJ,16,NYJ,16,0,no_change
+Mansoor Delane,CB,LAR,13,LAR,13,0,no_change
+Monroe Freeling,OT,KC,9,KC,9,0,no_change
+Nyck Harbor,WR,CLE,24,CLE,24,0,no_change
+Peter Woods,DT,SEA,32,SEA,32,0,no_change
+R Mason Thomas,EDGE,TEN,4,TEN,4,0,no_change
+Romello Height,EDGE,TB,15,TB,15,0,no_change
+Skyler Bell,WR,HOU,28,HOU,28,0,no_change
+Spencer Fano,OT,CHI,25,CHI,25,0,no_change
+Zion Young,EDGE,PHI,23,PHI,23,0,no_change

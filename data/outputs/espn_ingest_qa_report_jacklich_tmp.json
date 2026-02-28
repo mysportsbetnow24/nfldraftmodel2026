@@ -1,0 +1,7617 @@
+{
+  "status": "ok",
+  "dataset_base_dir": "/tmp/nfl-draft-data",
+  "files": {
+    "prospects": "/tmp/nfl-draft-data/nfl_draft_prospects.csv",
+    "profiles": "/tmp/nfl-draft-data/nfl_draft_profiles.csv",
+    "college_qbr": "/tmp/nfl-draft-data/college_qbr.csv",
+    "college_stats": "/tmp/nfl-draft-data/college_statistics.csv",
+    "ids": "/tmp/nfl-draft-data/ids.csv"
+  },
+  "row_counts": {
+    "prospects": 13354,
+    "profiles": 12905,
+    "college_qbr": 2049,
+    "college_stats": 66672,
+    "ids": 236
+  },
+  "signal_meta": {
+    "status": "ok",
+    "target_year": 2026,
+    "prospects_rows": 13354,
+    "profiles_rows": 12905,
+    "qbr_rows": 2049,
+    "college_stats_rows": 66672,
+    "matched_name_pos": 13287,
+    "matched_name": 12935
+  },
+  "useful_fields": {
+    "prospects": [
+      "player_id",
+      "player_name",
+      "school",
+      "position",
+      "draft_year",
+      "ovr_rk",
+      "pos_rk",
+      "grade",
+      "height_in",
+      "weight_lb",
+      "draft_round",
+      "overall_pick",
+      "draft_team"
+    ],
+    "profiles": [
+      "player_id",
+      "player_name",
+      "school",
+      "position",
+      "text1",
+      "text2",
+      "text3",
+      "text4"
+    ],
+    "college_qbr": [
+      "player_id",
+      "player_name",
+      "school",
+      "position",
+      "season",
+      "qbr",
+      "epa_per_play"
+    ],
+    "college_stats": [
+      "player_id",
+      "player_name",
+      "school",
+      "position",
+      "season",
+      "stat_name",
+      "stat_value"
+    ],
+    "ids": [
+      "player_id",
+      "player_name",
+      "school",
+      "espn_id"
+    ]
+  },
+  "rejected_field_categories": [
+    "headshots/images/urls",
+    "biographical narrative fields that are not numeric features",
+    "social/profile links",
+    "post-draft descriptive text fields",
+    "duplicate identifier columns that do not improve joins"
+  ],
+  "qa_checks": {
+    "player_id_duplicates_by_year": 0,
+    "profile_text_nonempty_rows": 12905,
+    "join_coverage": {
+      "board_rows": 412,
+      "name_pos_join_rate": 0.0,
+      "name_only_join_rate": 0.0194
+    }
+  },
+  "missingness_by_year_position": [
+    {
+      "draft_year": 1967,
+      "position": "DEFENSIVE BACK",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1967,
+      "position": "DEFENSIVE END",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1967,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1967,
+      "position": "LINEBACKER",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1967,
+      "position": "NA",
+      "sample": 8,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1967,
+      "position": "OFFENSIVE GUARD",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1967,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1967,
+      "position": "PLACE KICKER",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1967,
+      "position": "QUARTERBACK",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1967,
+      "position": "RUNNING BACK",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1967,
+      "position": "TIGHT END",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1967,
+      "position": "WIDE RECEIVER",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1968,
+      "position": "DEFENSIVE BACK",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1968,
+      "position": "DEFENSIVE END",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1968,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1968,
+      "position": "LINEBACKER",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1968,
+      "position": "NA",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1968,
+      "position": "OFFENSIVE GUARD",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1968,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1968,
+      "position": "PLACE KICKER",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1968,
+      "position": "QUARTERBACK",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1968,
+      "position": "RUNNING BACK",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1968,
+      "position": "TIGHT END",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1968,
+      "position": "WIDE RECEIVER",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1969,
+      "position": "DEFENSIVE BACK",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1969,
+      "position": "DEFENSIVE END",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1969,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1969,
+      "position": "LINEBACKER",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1969,
+      "position": "NA",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1969,
+      "position": "OFFENSIVE GUARD",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1969,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1969,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1969,
+      "position": "QUARTERBACK",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1969,
+      "position": "RUNNING BACK",
+      "sample": 35,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1969,
+      "position": "TIGHT END",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1969,
+      "position": "WIDE RECEIVER",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1970,
+      "position": "DEFENSIVE BACK",
+      "sample": 33,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1970,
+      "position": "DEFENSIVE END",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1970,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1970,
+      "position": "LINEBACKER",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1970,
+      "position": "NA",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1970,
+      "position": "OFFENSIVE GUARD",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1970,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1970,
+      "position": "PLACE KICKER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1970,
+      "position": "PUNTER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1970,
+      "position": "QUARTERBACK",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1970,
+      "position": "RUNNING BACK",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1970,
+      "position": "TIGHT END",
+      "sample": 8,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1970,
+      "position": "WIDE RECEIVER",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1971,
+      "position": "DEFENSIVE BACK",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1971,
+      "position": "DEFENSIVE END",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1971,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 8,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1971,
+      "position": "LINEBACKER",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1971,
+      "position": "NA",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1971,
+      "position": "OFFENSIVE GUARD",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1971,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1971,
+      "position": "PLACE KICKER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1971,
+      "position": "QUARTERBACK",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1971,
+      "position": "RUNNING BACK",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1971,
+      "position": "TIGHT END",
+      "sample": 8,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1971,
+      "position": "WIDE RECEIVER",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1972,
+      "position": "DEFENSIVE BACK",
+      "sample": 35,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1972,
+      "position": "DEFENSIVE END",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1972,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1972,
+      "position": "LINEBACKER",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1972,
+      "position": "NA",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1972,
+      "position": "OFFENSIVE GUARD",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1972,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1972,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1972,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1972,
+      "position": "QUARTERBACK",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1972,
+      "position": "RUNNING BACK",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1972,
+      "position": "TIGHT END",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1972,
+      "position": "WIDE RECEIVER",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1973,
+      "position": "DEFENSIVE BACK",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1973,
+      "position": "DEFENSIVE END",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1973,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1973,
+      "position": "LINEBACKER",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1973,
+      "position": "NA",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1973,
+      "position": "OFFENSIVE GUARD",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1973,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1973,
+      "position": "PUNTER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1973,
+      "position": "QUARTERBACK",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1973,
+      "position": "RUNNING BACK",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1973,
+      "position": "TIGHT END",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1973,
+      "position": "WIDE RECEIVER",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1974,
+      "position": "DEFENSIVE BACK",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1974,
+      "position": "DEFENSIVE END",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1974,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1974,
+      "position": "LINEBACKER",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1974,
+      "position": "NA",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1974,
+      "position": "OFFENSIVE GUARD",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1974,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1974,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1974,
+      "position": "QUARTERBACK",
+      "sample": 8,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1974,
+      "position": "RUNNING BACK",
+      "sample": 33,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1974,
+      "position": "TIGHT END",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1974,
+      "position": "WIDE RECEIVER",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1975,
+      "position": "DEFENSIVE BACK",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1975,
+      "position": "DEFENSIVE END",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1975,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1975,
+      "position": "LINEBACKER",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1975,
+      "position": "NA",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1975,
+      "position": "OFFENSIVE GUARD",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1975,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1975,
+      "position": "PLACE KICKER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1975,
+      "position": "PUNTER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1975,
+      "position": "QUARTERBACK",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1975,
+      "position": "RUNNING BACK",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1975,
+      "position": "TIGHT END",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1975,
+      "position": "WIDE RECEIVER",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1976,
+      "position": "DEFENSIVE BACK",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1976,
+      "position": "DEFENSIVE END",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1976,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1976,
+      "position": "LINEBACKER",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1976,
+      "position": "NA",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1976,
+      "position": "OFFENSIVE GUARD",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1976,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1976,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1976,
+      "position": "PUNTER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1976,
+      "position": "QUARTERBACK",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1976,
+      "position": "RUNNING BACK",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1976,
+      "position": "TIGHT END",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1976,
+      "position": "WIDE RECEIVER",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1977,
+      "position": "DEFENSIVE BACK",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1977,
+      "position": "DEFENSIVE END",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1977,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1977,
+      "position": "LINEBACKER",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1977,
+      "position": "NA",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1977,
+      "position": "OFFENSIVE GUARD",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1977,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1977,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1977,
+      "position": "PUNTER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1977,
+      "position": "QUARTERBACK",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1977,
+      "position": "RUNNING BACK",
+      "sample": 33,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1977,
+      "position": "TIGHT END",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1977,
+      "position": "WIDE RECEIVER",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1978,
+      "position": "DEFENSIVE BACK",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1978,
+      "position": "DEFENSIVE END",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1978,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1978,
+      "position": "LINEBACKER",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1978,
+      "position": "NA",
+      "sample": 8,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1978,
+      "position": "OFFENSIVE GUARD",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1978,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1978,
+      "position": "PUNTER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1978,
+      "position": "QUARTERBACK",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1978,
+      "position": "RUNNING BACK",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1978,
+      "position": "TIGHT END",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1978,
+      "position": "WIDE RECEIVER",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1979,
+      "position": "DEFENSIVE BACK",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1979,
+      "position": "DEFENSIVE END",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1979,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1979,
+      "position": "LINEBACKER",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1979,
+      "position": "NA",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1979,
+      "position": "OFFENSIVE GUARD",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1979,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1979,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1979,
+      "position": "PUNTER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1979,
+      "position": "QUARTERBACK",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1979,
+      "position": "RUNNING BACK",
+      "sample": 31,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1979,
+      "position": "TIGHT END",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1979,
+      "position": "WIDE RECEIVER",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1980,
+      "position": "DEFENSIVE BACK",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1980,
+      "position": "DEFENSIVE END",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1980,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1980,
+      "position": "LINEBACKER",
+      "sample": 31,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1980,
+      "position": "NA",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1980,
+      "position": "OFFENSIVE GUARD",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1980,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1980,
+      "position": "PLACE KICKER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1980,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1980,
+      "position": "QUARTERBACK",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1980,
+      "position": "RUNNING BACK",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1980,
+      "position": "TIGHT END",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1980,
+      "position": "WIDE RECEIVER",
+      "sample": 19,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1981,
+      "position": "DEFENSIVE BACK",
+      "sample": 33,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1981,
+      "position": "DEFENSIVE END",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1981,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1981,
+      "position": "LINEBACKER",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1981,
+      "position": "NA",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1981,
+      "position": "OFFENSIVE GUARD",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1981,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1981,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1981,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1981,
+      "position": "QUARTERBACK",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1981,
+      "position": "RUNNING BACK",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1981,
+      "position": "TIGHT END",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1981,
+      "position": "WIDE RECEIVER",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1982,
+      "position": "DEFENSIVE BACK",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1982,
+      "position": "DEFENSIVE END",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1982,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1982,
+      "position": "LINEBACKER",
+      "sample": 38,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1982,
+      "position": "NA",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1982,
+      "position": "OFFENSIVE GUARD",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1982,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1982,
+      "position": "PLACE KICKER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1982,
+      "position": "PUNTER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1982,
+      "position": "QUARTERBACK",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1982,
+      "position": "RUNNING BACK",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1982,
+      "position": "TIGHT END",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1982,
+      "position": "WIDE RECEIVER",
+      "sample": 19,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1983,
+      "position": "DEFENSIVE BACK",
+      "sample": 36,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1983,
+      "position": "DEFENSIVE END",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1983,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1983,
+      "position": "LINEBACKER",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1983,
+      "position": "NA",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1983,
+      "position": "OFFENSIVE GUARD",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1983,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1983,
+      "position": "PLACE KICKER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1983,
+      "position": "PUNTER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1983,
+      "position": "QUARTERBACK",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1983,
+      "position": "RUNNING BACK",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1983,
+      "position": "TIGHT END",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1983,
+      "position": "WIDE RECEIVER",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1984,
+      "position": "DEFENSIVE BACK",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1984,
+      "position": "DEFENSIVE END",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1984,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1984,
+      "position": "LINEBACKER",
+      "sample": 38,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1984,
+      "position": "NA",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1984,
+      "position": "OFFENSIVE GUARD",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1984,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1984,
+      "position": "PLACE KICKER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1984,
+      "position": "PUNTER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1984,
+      "position": "QUARTERBACK",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1984,
+      "position": "RUNNING BACK",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1984,
+      "position": "TIGHT END",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1984,
+      "position": "WIDE RECEIVER",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1985,
+      "position": "DEFENSIVE BACK",
+      "sample": 36,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1985,
+      "position": "DEFENSIVE END",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1985,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1985,
+      "position": "LINEBACKER",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1985,
+      "position": "NA",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1985,
+      "position": "OFFENSIVE GUARD",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1985,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 19,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1985,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1985,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1985,
+      "position": "QUARTERBACK",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1985,
+      "position": "RUNNING BACK",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1985,
+      "position": "TIGHT END",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1985,
+      "position": "WIDE RECEIVER",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1986,
+      "position": "DEFENSIVE BACK",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1986,
+      "position": "DEFENSIVE END",
+      "sample": 19,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1986,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1986,
+      "position": "LINEBACKER",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1986,
+      "position": "NA",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1986,
+      "position": "OFFENSIVE GUARD",
+      "sample": 8,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1986,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1986,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1986,
+      "position": "PUNTER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1986,
+      "position": "QUARTERBACK",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1986,
+      "position": "RUNNING BACK",
+      "sample": 31,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1986,
+      "position": "TIGHT END",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1986,
+      "position": "WIDE RECEIVER",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1987,
+      "position": "DEFENSIVE BACK",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1987,
+      "position": "DEFENSIVE END",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1987,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1987,
+      "position": "LINEBACKER",
+      "sample": 33,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1987,
+      "position": "NA",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1987,
+      "position": "OFFENSIVE GUARD",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1987,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1987,
+      "position": "PLACE KICKER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1987,
+      "position": "PUNTER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1987,
+      "position": "QUARTERBACK",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1987,
+      "position": "RUNNING BACK",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1987,
+      "position": "TIGHT END",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1987,
+      "position": "WIDE RECEIVER",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1989,
+      "position": "DEFENSIVE BACK",
+      "sample": 40,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1989,
+      "position": "DEFENSIVE END",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1989,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1989,
+      "position": "LINEBACKER",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1989,
+      "position": "NA",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1989,
+      "position": "OFFENSIVE GUARD",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1989,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1989,
+      "position": "PLACE KICKER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1989,
+      "position": "PUNTER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1989,
+      "position": "QUARTERBACK",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1989,
+      "position": "RUNNING BACK",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1989,
+      "position": "TIGHT END",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1989,
+      "position": "WIDE RECEIVER",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1990,
+      "position": "DEFENSIVE BACK",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1990,
+      "position": "DEFENSIVE END",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1990,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1990,
+      "position": "LINEBACKER",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1990,
+      "position": "NA",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1990,
+      "position": "OFFENSIVE GUARD",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1990,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1990,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1990,
+      "position": "QUARTERBACK",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1990,
+      "position": "RUNNING BACK",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1990,
+      "position": "TIGHT END",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1990,
+      "position": "WIDE RECEIVER",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1991,
+      "position": "DEFENSIVE BACK",
+      "sample": 39,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1991,
+      "position": "DEFENSIVE END",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1991,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1991,
+      "position": "LINEBACKER",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1991,
+      "position": "NA",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1991,
+      "position": "OFFENSIVE GUARD",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1991,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1991,
+      "position": "PLACE KICKER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1991,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1991,
+      "position": "QUARTERBACK",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1991,
+      "position": "RUNNING BACK",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1991,
+      "position": "TIGHT END",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1991,
+      "position": "WIDE RECEIVER",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1992,
+      "position": "DEFENSIVE BACK",
+      "sample": 41,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1992,
+      "position": "DEFENSIVE END",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1992,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1992,
+      "position": "LINEBACKER",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1992,
+      "position": "NA",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1992,
+      "position": "OFFENSIVE GUARD",
+      "sample": 8,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1992,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1992,
+      "position": "PLACE KICKER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1992,
+      "position": "QUARTERBACK",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1992,
+      "position": "RUNNING BACK",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1992,
+      "position": "TIGHT END",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1992,
+      "position": "WIDE RECEIVER",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1993,
+      "position": "DEFENSIVE BACK",
+      "sample": 39,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1993,
+      "position": "DEFENSIVE END",
+      "sample": 19,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1993,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 8,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1993,
+      "position": "LINEBACKER",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1993,
+      "position": "NA",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1993,
+      "position": "OFFENSIVE GUARD",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1993,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1993,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1993,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1993,
+      "position": "QUARTERBACK",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1993,
+      "position": "RUNNING BACK",
+      "sample": 19,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1993,
+      "position": "TIGHT END",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1993,
+      "position": "WIDE RECEIVER",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1994,
+      "position": "DEFENSIVE BACK",
+      "sample": 34,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1994,
+      "position": "DEFENSIVE END",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1994,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1994,
+      "position": "LINEBACKER",
+      "sample": 35,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1994,
+      "position": "NA",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1994,
+      "position": "OFFENSIVE GUARD",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1994,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 19,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1994,
+      "position": "PLACE KICKER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1994,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1994,
+      "position": "QUARTERBACK",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1994,
+      "position": "RUNNING BACK",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1994,
+      "position": "TIGHT END",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1994,
+      "position": "WIDE RECEIVER",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1995,
+      "position": "DEFENSIVE BACK",
+      "sample": 44,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1995,
+      "position": "DEFENSIVE END",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1995,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1995,
+      "position": "LINEBACKER",
+      "sample": 35,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1995,
+      "position": "NA",
+      "sample": 8,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1995,
+      "position": "OFFENSIVE GUARD",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1995,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1995,
+      "position": "PLACE KICKER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1995,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1995,
+      "position": "QUARTERBACK",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1995,
+      "position": "RUNNING BACK",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1995,
+      "position": "TIGHT END",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1995,
+      "position": "WIDE RECEIVER",
+      "sample": 31,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1997,
+      "position": "DEFENSIVE BACK",
+      "sample": 50,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1997,
+      "position": "DEFENSIVE END",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1997,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1997,
+      "position": "LINEBACKER",
+      "sample": 38,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1997,
+      "position": "NA",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1997,
+      "position": "OFFENSIVE GUARD",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1997,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 19,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1997,
+      "position": "PLACE KICKER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1997,
+      "position": "PUNTER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1997,
+      "position": "QUARTERBACK",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1997,
+      "position": "RUNNING BACK",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1997,
+      "position": "TIGHT END",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1997,
+      "position": "WIDE RECEIVER",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1998,
+      "position": "DEFENSIVE BACK",
+      "sample": 43,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1998,
+      "position": "DEFENSIVE END",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1998,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1998,
+      "position": "LINEBACKER",
+      "sample": 31,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1998,
+      "position": "NA",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1998,
+      "position": "OFFENSIVE GUARD",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1998,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1998,
+      "position": "QUARTERBACK",
+      "sample": 8,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1998,
+      "position": "RUNNING BACK",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1998,
+      "position": "TIGHT END",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1998,
+      "position": "WIDE RECEIVER",
+      "sample": 31,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1999,
+      "position": "DEFENSIVE BACK",
+      "sample": 45,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1999,
+      "position": "DEFENSIVE END",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1999,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1999,
+      "position": "LINEBACKER",
+      "sample": 33,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1999,
+      "position": "NA",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1999,
+      "position": "OFFENSIVE GUARD",
+      "sample": 19,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1999,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1999,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1999,
+      "position": "PUNTER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1999,
+      "position": "QUARTERBACK",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1999,
+      "position": "RUNNING BACK",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1999,
+      "position": "TIGHT END",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 1999,
+      "position": "WIDE RECEIVER",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2000,
+      "position": "DEFENSIVE BACK",
+      "sample": 52,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2000,
+      "position": "DEFENSIVE END",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2000,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2000,
+      "position": "LINEBACKER",
+      "sample": 31,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2000,
+      "position": "NA",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2000,
+      "position": "OFFENSIVE GUARD",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2000,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2000,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2000,
+      "position": "PUNTER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2000,
+      "position": "QUARTERBACK",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2000,
+      "position": "RUNNING BACK",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2000,
+      "position": "TIGHT END",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2000,
+      "position": "WIDE RECEIVER",
+      "sample": 33,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2001,
+      "position": "DEFENSIVE BACK",
+      "sample": 45,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2001,
+      "position": "DEFENSIVE END",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2001,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2001,
+      "position": "LINEBACKER",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2001,
+      "position": "NA",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2001,
+      "position": "OFFENSIVE GUARD",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2001,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 19,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2001,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2001,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2001,
+      "position": "QUARTERBACK",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2001,
+      "position": "RUNNING BACK",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2001,
+      "position": "TIGHT END",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2001,
+      "position": "WIDE RECEIVER",
+      "sample": 34,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2002,
+      "position": "DEFENSIVE BACK",
+      "sample": 53,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2002,
+      "position": "DEFENSIVE END",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2002,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2002,
+      "position": "LINEBACKER",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2002,
+      "position": "NA",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2002,
+      "position": "OFFENSIVE GUARD",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2002,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2002,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2002,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2002,
+      "position": "QUARTERBACK",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2002,
+      "position": "RUNNING BACK",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2002,
+      "position": "TIGHT END",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2002,
+      "position": "WIDE RECEIVER",
+      "sample": 34,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2003,
+      "position": "DEFENSIVE BACK",
+      "sample": 49,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2003,
+      "position": "DEFENSIVE END",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2003,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2003,
+      "position": "LINEBACKER",
+      "sample": 31,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2003,
+      "position": "NA",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2003,
+      "position": "OFFENSIVE GUARD",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2003,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2003,
+      "position": "PLACE KICKER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2003,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2003,
+      "position": "QUARTERBACK",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2003,
+      "position": "RUNNING BACK",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2003,
+      "position": "TIGHT END",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2003,
+      "position": "WIDE RECEIVER",
+      "sample": 36,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "CORNERBACK",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "DEFENSIVE BACK",
+      "sample": 47,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "DEFENSIVE END",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 35,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "FULLBACK",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "INSIDE LINEBACKER",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "LINEBACKER",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "LONG SNAPPER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "NA",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "OFFENSIVE GUARD",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "PLACE KICKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "PUNTER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "QUARTERBACK",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "RUNNING BACK",
+      "sample": 34,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "SAFETY",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "TIGHT END",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2004,
+      "position": "WIDE RECEIVER",
+      "sample": 50,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "CORNERBACK",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "DEFENSIVE BACK",
+      "sample": 50,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "DEFENSIVE END",
+      "sample": 33,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "FULLBACK",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "INSIDE LINEBACKER",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "KICK RETURNER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "LINEBACKER",
+      "sample": 36,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "LONG SNAPPER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "NA",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "OFFENSIVE GUARD",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "PLACE KICKER",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "PUNTER",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "QUARTERBACK",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "RUNNING BACK",
+      "sample": 34,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "SAFETY",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "TIGHT END",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2005,
+      "position": "WIDE RECEIVER",
+      "sample": 43,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "CORNERBACK",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "DEFENSIVE BACK",
+      "sample": 49,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "DEFENSIVE END",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "LINEBACKER",
+      "sample": 33,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "NA",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "OFFENSIVE GUARD",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "PLACE KICKER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "QUARTERBACK",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "RUNNING BACK",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "SAFETY",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "TIGHT END",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2006,
+      "position": "WIDE RECEIVER",
+      "sample": 31,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "CORNERBACK",
+      "sample": 8,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "DEFENSIVE BACK",
+      "sample": 50,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "DEFENSIVE END",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "FULLBACK",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "INSIDE LINEBACKER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "LINEBACKER",
+      "sample": 35,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "LONG SNAPPER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "NA",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "OFFENSIVE GUARD",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "PLACE KICKER",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "PUNTER",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "QUARTERBACK",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "RUNNING BACK",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "SAFETY",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "TIGHT END",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2007,
+      "position": "WIDE RECEIVER",
+      "sample": 42,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "CORNERBACK",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "DEFENSIVE END",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "FULLBACK",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "INSIDE LINEBACKER",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "LONG SNAPPER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "NA",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "OFFENSIVE GUARD",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "PLACE KICKER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "PUNTER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "QUARTERBACK",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "RUNNING BACK",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "SAFETY",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "TIGHT END",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2008,
+      "position": "WIDE RECEIVER",
+      "sample": 35,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "CORNERBACK",
+      "sample": 39,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "DEFENSIVE END",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "FULLBACK",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "INSIDE LINEBACKER",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "LONG SNAPPER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "NA",
+      "sample": 7,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "OFFENSIVE GUARD",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "PLACE KICKER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "QUARTERBACK",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "RUNNING BACK",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "SAFETY",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "TIGHT END",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2009,
+      "position": "WIDE RECEIVER",
+      "sample": 38,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "CORNERBACK",
+      "sample": 34,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "DEFENSIVE END",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "FULLBACK",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "INSIDE LINEBACKER",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "KICK RETURNER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "NA",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "OFFENSIVE GUARD",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "PUNTER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "QUARTERBACK",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "RUNNING BACK",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "SAFETY",
+      "sample": 19,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "TIGHT END",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2010,
+      "position": "WIDE RECEIVER",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "CORNERBACK",
+      "sample": 39,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "DEFENSIVE BACK",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "DEFENSIVE END",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "FULLBACK",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "INSIDE LINEBACKER",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "LINEBACKER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "NA",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "OFFENSIVE GUARD",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "PLACE KICKER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "PUNTER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "QUARTERBACK",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "RUNNING BACK",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "SAFETY",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "TIGHT END",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2011,
+      "position": "WIDE RECEIVER",
+      "sample": 42,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "CORNERBACK",
+      "sample": 38,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "DEFENSIVE END",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "FULLBACK",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "INSIDE LINEBACKER",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "NA",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "OFFENSIVE GUARD",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "PLACE KICKER",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "PUNTER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "QUARTERBACK",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "RUNNING BACK",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "SAFETY",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "TIGHT END",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2012,
+      "position": "WIDE RECEIVER",
+      "sample": 40,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "CORNERBACK",
+      "sample": 37,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "DEFENSIVE END",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "FULLBACK",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "INSIDE LINEBACKER",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "NA",
+      "sample": 6,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "OFFENSIVE GUARD",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 23,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "PLACE KICKER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "PUNTER",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "QUARTERBACK",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "RUNNING BACK",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "SAFETY",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "TIGHT END",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2013,
+      "position": "WIDE RECEIVER",
+      "sample": 36,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "CORNERBACK",
+      "sample": 43,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "DEFENSIVE END",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 31,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "FULLBACK",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "INSIDE LINEBACKER",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "NA",
+      "sample": 14,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "OFFENSIVE GUARD",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 33,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "PLACE KICKER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "PUNTER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "QUARTERBACK",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "RUNNING BACK",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "SAFETY",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "TIGHT END",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2014,
+      "position": "WIDE RECEIVER",
+      "sample": 46,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "CENTER",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "CORNERBACK",
+      "sample": 40,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "DEFENSIVE END",
+      "sample": 34,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "FULLBACK",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "INSIDE LINEBACKER",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "LINEBACKER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "LONG SNAPPER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "OFFENSIVE GUARD",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "PLACE KICKER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "PUNTER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "QUARTERBACK",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "RUNNING BACK",
+      "sample": 34,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "SAFETY",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "TIGHT END",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2015,
+      "position": "WIDE RECEIVER",
+      "sample": 53,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "CENTER",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "CORNERBACK",
+      "sample": 43,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "DEFENSIVE END",
+      "sample": 35,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 31,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "FULLBACK",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "INSIDE LINEBACKER",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "LONG SNAPPER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "OFFENSIVE GUARD",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "PLACE KICKER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "PUNTER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "QUARTERBACK",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "RUNNING BACK",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "SAFETY",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "TIGHT END",
+      "sample": 16,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2016,
+      "position": "WIDE RECEIVER",
+      "sample": 58,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "CENTER",
+      "sample": 10,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "CORNERBACK",
+      "sample": 39,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "DEFENSIVE END",
+      "sample": 34,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "FULLBACK",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "INSIDE LINEBACKER",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "LONG SNAPPER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "OFFENSIVE GUARD",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "PLACE KICKER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "PUNTER",
+      "sample": 3,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "QUARTERBACK",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "RUNNING BACK",
+      "sample": 33,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "SAFETY",
+      "sample": 34,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "TIGHT END",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2017,
+      "position": "WIDE RECEIVER",
+      "sample": 58,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "CENTER",
+      "sample": 12,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "CORNERBACK",
+      "sample": 52,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "DEFENSIVE END",
+      "sample": 31,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 36,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "FULLBACK",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "INSIDE LINEBACKER",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "LONG SNAPPER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "NA",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "OFFENSIVE GUARD",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 31,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "PUNTER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "QUARTERBACK",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "RUNNING BACK",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "SAFETY",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "TIGHT END",
+      "sample": 19,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2018,
+      "position": "WIDE RECEIVER",
+      "sample": 44,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "CENTER",
+      "sample": 8,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "CORNERBACK",
+      "sample": 46,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "DEFENSIVE END",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 28,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "FULLBACK",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "INSIDE LINEBACKER",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "LONG SNAPPER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "OFFENSIVE GUARD",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 33,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "PLACE KICKER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "PUNTER",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "QUARTERBACK",
+      "sample": 13,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "RUNNING BACK",
+      "sample": 35,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "SAFETY",
+      "sample": 38,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "TIGHT END",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2019,
+      "position": "WIDE RECEIVER",
+      "sample": 55,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "CENTER",
+      "sample": 11,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "CORNERBACK",
+      "sample": 38,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "DEFENSIVE END",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "INSIDE LINEBACKER",
+      "sample": 24,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "LONG SNAPPER",
+      "sample": 1,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "OFFENSIVE GUARD",
+      "sample": 22,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "PLACE KICKER",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "PUNTER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "QUARTERBACK",
+      "sample": 18,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "RUNNING BACK",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "SAFETY",
+      "sample": 30,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "TIGHT END",
+      "sample": 21,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "position": "WIDE RECEIVER",
+      "sample": 49,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "CENTER",
+      "sample": 9,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "CORNERBACK",
+      "sample": 48,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "DEFENSIVE END",
+      "sample": 27,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "DEFENSIVE TACKLE",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "FULLBACK",
+      "sample": 2,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "INSIDE LINEBACKER",
+      "sample": 25,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "LONG SNAPPER",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "OFFENSIVE GUARD",
+      "sample": 20,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "OFFENSIVE TACKLE",
+      "sample": 32,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "OUTSIDE LINEBACKER",
+      "sample": 17,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "PLACE KICKER",
+      "sample": 5,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "PUNTER",
+      "sample": 4,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "QUARTERBACK",
+      "sample": 15,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "RUNNING BACK",
+      "sample": 26,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "SAFETY",
+      "sample": 29,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "TIGHT END",
+      "sample": 19,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    },
+    {
+      "draft_year": 2021,
+      "position": "WIDE RECEIVER",
+      "sample": 58,
+      "missing_ovr_rk": 0.0,
+      "missing_pos_rk": 0.0,
+      "missing_grade": 0.0,
+      "missing_height": 0.0,
+      "missing_weight": 0.0
+    }
+  ]
+}

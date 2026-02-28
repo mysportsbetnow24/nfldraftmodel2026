@@ -707,9 +707,13 @@ def _missingness(values: Iterable[object]) -> float:
     return round(missing / len(values), 4)
 
 
-def build_espn_feature_qa_report(board_rows: List[dict] | None = None, target_year: int = DEFAULT_SIGNAL_YEAR) -> dict:
-    raw = load_espn_raw_tables()
-    signals = load_espn_player_signals(target_year=target_year)
+def build_espn_feature_qa_report(
+    board_rows: List[dict] | None = None,
+    target_year: int = DEFAULT_SIGNAL_YEAR,
+    base_dir: Path | None = None,
+) -> dict:
+    raw = load_espn_raw_tables(base_dir=base_dir)
+    signals = load_espn_player_signals(target_year=target_year, base_dir=base_dir)
 
     prospects = raw["prospects"]
     profiles = raw["profiles"]
@@ -802,8 +806,13 @@ def build_espn_feature_qa_report(board_rows: List[dict] | None = None, target_ye
     }
 
 
-def write_espn_qa_report(path: Path, board_rows: List[dict] | None = None, target_year: int = DEFAULT_SIGNAL_YEAR) -> dict:
-    report = build_espn_feature_qa_report(board_rows=board_rows, target_year=target_year)
+def write_espn_qa_report(
+    path: Path,
+    board_rows: List[dict] | None = None,
+    target_year: int = DEFAULT_SIGNAL_YEAR,
+    base_dir: Path | None = None,
+) -> dict:
+    report = build_espn_feature_qa_report(board_rows=board_rows, target_year=target_year, base_dir=base_dir)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w") as f:
         json.dump(report, f, indent=2)

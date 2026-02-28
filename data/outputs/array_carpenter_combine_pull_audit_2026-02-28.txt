@@ -1,0 +1,38 @@
+Array-Carter combine pull audit (2026-02-28)
+
+Source URL:
+https://raw.githubusercontent.com/array-carpenter/nfl-draft-data/master/combine_data_unique_athlete_id_step4.csv
+
+Local file updated:
+data/sources/external/combine_data_unique_athlete_id_step4.csv
+
+Previous local hash (before pull):
+1c148efaa3edaba94a44a1d4fa6659bfaf93df2a
+
+Latest upstream hash:
+6c1db786ba8f5558621a9b5d1c736c9a7b382b9d
+
+Rows (excluding header):
+8198
+
+Columns:
+19
+
+Year range:
+2007-2025
+
+Top positions by count:
+WR 1118
+CB 875
+RB 680
+DT 647
+DE 635
+OT 584
+OLB 529
+OG 490
+TE 441
+QB 419
+
+Post-pull actions:
+- Rebuilt big board via scripts/build_big_board.py
+- Historical combine pack load in build confirmed: 8195 profile rows (positions=14)

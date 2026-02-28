@@ -1,0 +1,45 @@
+Percentile + Baseline + Reverse + KNN Logic (2026-02-28)
+
+Implemented in:
+- src/ingest/production_percentile_comps_loader.py
+- scripts/build_big_board.py
+
+1) Per-season normalization before percentiles
+- For each (position, season, metric), values are collected into a season-specific distribution.
+- Each player metric is converted to percentile within that exact season+position bucket.
+- This prevents cross-era inflation and keeps percentiles era-aware.
+
+2) Position-specific feature baselines (POSITION_BASELINES)
+- QB: passing_ypa, passing_pct, passing_td, passing_int, rushing_yds, rushing_td, fumbles_fum
+- RB: rushing_ypc, rushing_yds, rushing_td, receiving_rec, receiving_yds, fumbles_fum
+- WR: receiving_rec, receiving_yds, receiving_td, receiving_ypr, fumbles_fum
+- TE: receiving_rec, receiving_yds, receiving_td, receiving_ypr, fumbles_fum
+- EDGE: defensive_tfl, defensive_sacks, defensive_qb_hur, defensive_tot, fumbles_fum
+- DT: defensive_tfl, defensive_sacks, defensive_qb_hur, defensive_tot
+- LB: defensive_tfl, defensive_sacks, defensive_qb_hur, defensive_tot, interceptions_int, defensive_pd
+- CB: interceptions_int, defensive_pd, defensive_tot, interceptions_avg
+- S: interceptions_int, defensive_pd, defensive_tot, interceptions_avg
+
+3) Reverse-direction handling (lower is better)
+- Implemented for production risk metrics:
+  - passing_int
+  - fumbles_fum
+- Athletic reverse handling already exists in athletic profile module for:
+  - forty, ten_split, three_cone, shuttle
+
+4) KNN comps on percentile vectors (explainer-only)
+- KNN is computed on position baseline percentile vectors.
+- Distance: euclidean on percentile vector (scaled), with minimum overlap requirement.
+- Output fields added to board:
+  - production_knn_comp_1/2/3 (+year/similarity/overlap)
+  - production_knn_vector_coverage
+  - production_knn_vector_metric_count
+  - production_knn_candidate_mode
+  - production_knn_baseline_metrics
+  - production_knn_reverse_metrics
+- No grade weight added from these comps (explanatory layer only).
+
+Current source status:
+- data/sources/external/filtered_player_stats_full.csv currently contains season year 2025 only in this environment.
+- Therefore KNN comp mode is often: same_season_fallback
+- If multi-year historical rows are added, mode will use historical_only where available.

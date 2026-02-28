@@ -1,0 +1,36 @@
+CFB Proxy Audit Fields (Added)
+
+Purpose
+- Show exactly which proxy metrics were used for each player.
+- Show whether a metric came from direct row input or fallback derivation.
+- Show conservative sub-metric weights when fallback logic was triggered.
+
+New columns in big_board_2026.csv
+- cfb_proxy_audit_summary
+- cfb_prod_proxy_fallback_features
+- cfb_wrte_targets_per_route_source
+- cfb_wrte_targets_per_route_weight
+- cfb_edge_sacks_per_pr_snap_source
+- cfb_edge_pressure_weight
+- cfb_edge_sack_weight
+- cfb_db_yards_allowed_per_cov_snap_source
+- cfb_db_cov_weight
+- cfb_db_yacs_weight
+
+Conservative fallback logic
+- WR/TE targets_per_route_run:
+  - direct weight: 0.20
+  - derived fallback weight: 0.10
+- EDGE sacks_per_pass_rush_snap:
+  - direct sack weight: 0.28
+  - derived from sacks/pressures: 0.16
+  - derived from pressure-only conversion: 0.08
+  - pressure weight is rebalanced to (1 - sack_weight)
+- CB/S yards_allowed_per_coverage_snap:
+  - direct yacs weight: 0.45
+  - derived fallback yacs weight: 0.20
+  - coverage weight is rebalanced to (1 - yacs_weight)
+
+Missing-data behavior
+- No hard penalty for missing proxies.
+- Neutral handling remains in place via cfb_prod_quality/reliability and guarded downstream blending.

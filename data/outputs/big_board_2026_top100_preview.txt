@@ -1,0 +1,103 @@
+2026 Big Board Top 100 (Updated)
+
+Rank | Player | Pos | School | Grade | Round | EarlyDeclare | CombineInvited
+1 | Cashius Howell | EDGE | Texas A&M Aggies | 83.76 | Round 1-2 | 0 | 1
+2 | Jeremiyah Love | RB | Notre Dame | 83.18 | Round 1-2 | 1 | 1
+3 | Keionte Scott | CB | Miami (FL) Hurricanes | 82.84 | Round 1-2 | 0 | 1
+4 | R Mason Thomas | EDGE | Oklahoma | 82.78 | Round 1-2 | 0 | 1
+5 | Francis Mauigoa | OT | Miami (FL) Hurricanes | 82.59 | Round 1-2 | 0 | 1
+6 | David Bailey | EDGE | Texas Tech | 82.38 | Round 1-2 | 0 | 1
+7 | Kadyn Proctor | OT | Alabama | 82.36 | Round 1-2 | 1 | 0
+8 | Caleb Downs | S | Ohio State | 82.33 | Round 1-2 | 1 | 1
+9 | Mansoor Delane | CB | LSU Tigers | 82.07 | Round 2-3 | 0 | 1
+10 | Carnell Tate | WR | Ohio State | 81.98 | Round 2-3 | 1 | 1
+11 | Brian Parker II | OT | Duke Blue Devils | 81.84 | Round 2-3 | 0 | 1
+12 | Arvell Reese | LB | Ohio State Buckeyes | 81.79 | Round 2-3 | 1 | 1
+13 | Emmanuel McNeil-Warren | S | Toledo Rockets | 81.7 | Round 2-3 | 0 | 1
+14 | Dillon Thieneman | S | Oregon | 81.66 | Round 2-3 | 1 | 1
+15 | C.J. Allen | LB | Georgia | 81.55 | Round 2-3 | 1 | 1
+16 | Makai Lemon | WR | USC Trojans | 81.42 | Round 2-3 | 1 | 1
+17 | Keldric Faulk | EDGE | Auburn | 81.33 | Round 2-3 | 1 | 1
+18 | Zion Young | EDGE | Missouri Tigers | 81.28 | Round 2-3 | 0 | 1
+19 | Sonny Styles | LB | Ohio State | 81.26 | Round 2-3 | 0 | 1
+20 | Denzel Boston | WR | Washington | 81.24 | Round 2-3 | 1 | 1
+21 | Nyck Harbor | WR | South Carolina | 81.22 | Round 2-3 | 0 | 0
+22 | Fernando Mendoza | QB | Indiana | 81.14 | Round 2-3 | 0 | 1
+23 | Romello Height | EDGE | Texas Tech Red Raiders | 81.13 | Round 2-3 | 0 | 1
+24 | Skyler Bell | WR | Connecticut Huskies | 81.13 | Round 2-3 | 0 | 1
+25 | Christen Miller | DT | Georgia Bulldogs | 81.09 | Round 2-3 | 1 | 0
+26 | Olaivavega Ioane | IOL | Penn State Nittany Lions | 81.05 | Round 2-3 | 1 | 1
+27 | Jordyn Tyson | WR | Arizona State | 80.97 | Round 2-3 | 1 | 1
+28 | Kayden McDonald | DT | Ohio State Buckeyes | 80.9 | Round 2-3 | 1 | 0
+29 | Monroe Freeling | OT | Georgia | 80.85 | Round 2-3 | 1 | 0
+30 | Caleb Banks | DT | Florida Gators | 80.81 | Round 2-3 | 0 | 1
+31 | Emmanuel Pregnon | IOL | Oregon Ducks | 80.53 | Round 2-3 | 0 | 1
+32 | Caleb Lomu | OT | Utah | 80.44 | Round 2-3 | 1 | 0
+33 | Peter Woods | DT | Clemson | 80.4 | Round 2-3 | 1 | 0
+34 | Akheem Mesidor | EDGE | Miami (FL) Hurricanes | 80.24 | Round 2-3 | 0 | 1
+35 | Colton Hood | CB | Tennessee Volunteers | 80.23 | Round 2-3 | 1 | 1
+36 | Eugene Asante | LB | Auburn | 80.22 | Round 2-3 | 0 | 0
+37 | Omar Cooper Jr. | WR | Indiana Hoosiers | 80.2 | Round 2-3 | 0 | 1
+38 | Dani Dennis-Sutton | EDGE | Penn State Nittany Lions | 80.17 | Round 2-3 | 0 | 1
+39 | Spencer Fano | OT | Utah | 80.13 | Round 2-3 | 1 | 0
+40 | A.J. Haulcy | S | LSU Tigers | 80.12 | Round 2-3 | 0 | 1
+41 | Avieon Terrell | CB | Clemson | 80.11 | Round 3-4 | 1 | 1
+42 | Rueben Bain Jr. | EDGE | Miami (FL) Hurricanes | 80.01 | Round 3-4 | 0 | 1
+43 | Daylen Everette | CB | Georgia | 79.96 | Round 4-5 | 0 | 1
+44 | Chris Johnson | CB | San Diego State Aztecs | 79.96 | Round 4-5 | 0 | 1
+45 | D'Angelo Ponds | CB | Indiana Hoosiers | 79.9 | Round 4-5 | 0 | 1
+46 | Brandon Cisse | CB | South Carolina Gamecocks | 79.84 | Round 4-5 | 1 | 1
+47 | Lee Hunter | DT | Texas Tech Red Raiders | 79.82 | Round 4-5 | 0 | 1
+48 | Kaytron Allen | RB | Penn State Nittany Lions | 79.76 | Round 4-5 | 0 | 1
+49 | Mikail Kamara | EDGE | Indiana Hoosiers | 79.59 | Round 4-5 | 0 | 0
+50 | Keith Abney II | CB | Arizona State Sun Devils | 79.56 | Round 4-5 | 0 | 1
+51 | T.J. Parker | EDGE | Clemson | 79.52 | Round 4-5 | 1 | 1
+52 | Blake Miller | OT | Clemson Tigers | 79.51 | Round 4-5 | 0 | 1
+53 | Anthony Hill Jr. | LB | Texas Longhorns | 79.47 | Round 4-5 | 0 | 1
+54 | Josiah Trotter | LB | Missouri Tigers | 79.33 | Round 4-5 | 1 | 1
+55 | T.J. Searcy | EDGE | Texas A&M | 79.29 | Round 4-5 | 0 | 0
+56 | Ty Simpson | QB | Alabama Crimson Tide | 79.26 | Round 4-5 | 1 | 1
+57 | Jack Endries | TE | Texas Longhorns | 79.24 | Round 4-5 | 1 | 1
+58 | Jermod McCoy | CB | Tennessee | 79.23 | Round 4-5 | 1 | 1
+59 | Kenyon Sadiq | TE | Oregon | 79.22 | Round 4-5 | 1 | 1
+60 | Kevin Concepcion | WR | Texas A&M | 79.15 | Round 4-5 | 0 | 0
+61 | Gracen Halton | DT | Oklahoma Sooners | 79.13 | Round 4-5 | 0 | 1
+62 | Gabe Jacas | EDGE | Illinois Fighting Illini | 79.12 | Round 4-5 | 0 | 1
+63 | Kaimon Rucker | EDGE | North Carolina | 79.12 | Round 4-5 | 0 | 0
+64 | Nicholas Singleton | RB | Penn State | 79.09 | Round 4-5 | 0 | 1
+65 | DJ McKinney | CB | Colorado | 79.05 | Round 4-5 | 0 | 0
+66 | Derrick Moore | EDGE | Michigan | 79.04 | Round 4-5 | 0 | 1
+67 | Skyler Gill-Howard | DT | Texas Tech Red Raiders | 79.03 | Round 4-5 | 0 | 1
+68 | Takye Heath | CB | Georgia Tech | 78.89 | Round 4-5 | 0 | 0
+69 | Justin Flowe | LB | Arizona | 78.88 | Round 4-5 | 0 | 0
+70 | LT Overton | EDGE | Alabama | 78.74 | Round 4-5 | 0 | 1
+71 | CJ Daniels | WR | Miami (FL) Hurricanes | 78.72 | Round 4-5 | 0 | 1
+72 | Jermayne Lole | DT | Louisville | 78.64 | Round 4-5 | 0 | 0
+73 | Albert Regis | DT | Texas A&M Aggies | 78.64 | Round 4-5 | 0 | 1
+74 | Jake Golday | LB | Cincinnati Bearcats | 78.58 | Round 4-5 | 0 | 1
+75 | Michael Taaffe | S | Texas Longhorns | 78.57 | Round 4-5 | 0 | 1
+76 | Eugene Brooks III | IOL | Oklahoma | 78.51 | Round 4-5 | 0 | 0
+77 | Jonah Coleman | RB | Washington Huskies | 78.5 | Round 4-5 | 0 | 1
+78 | Tim Keenan III | DT | Alabama Crimson Tide | 78.47 | Round 4-5 | 0 | 1
+79 | Chris Brazzell II | WR | Tennessee Volunteers | 78.46 | Round 4-5 | 0 | 1
+80 | Brady Latham | IOL | Arkansas | 78.44 | Round 4-5 | 0 | 0
+81 | Harold Perkins Jr. | LB | LSU | 78.35 | Round 4-5 | 0 | 1
+82 | Evan Stewart | WR | Oregon | 78.3 | Round 4-5 | 0 | 0
+83 | Seth McGowan | RB | Kentucky Wildcats | 78.3 | Round 4-5 | 0 | 1
+84 | David Oke | DT | Arkansas Razorbacks | 78.29 | Round 4-5 | 0 | 0
+85 | Zachariah Branch | WR | Georgia | 78.25 | Round 4-5 | 1 | 1
+86 | Isaiah World | OT | Oregon | 78.12 | Round 4-5 | 0 | 0
+87 | Christian Thomas | LB | Maine | 78.11 | Round 4-5 | 0 | 0
+88 | Jadarian Price | RB | Notre Dame Fighting Irish | 78.1 | Round 4-5 | 1 | 1
+89 | Tyreak Sapp | EDGE | Florida | 78.09 | Round 4-5 | 0 | 1
+90 | Malachi Lawrence | EDGE | UCF Knights | 78.09 | Round 4-5 | 0 | 1
+91 | Deion Burks | WR | Oklahoma Sooners | 78.06 | Round 4-5 | 0 | 1
+92 | Malachi Fields | WR | Notre Dame Fighting Irish | 78.06 | Round 4-5 | 0 | 1
+93 | Justice Boone | RB | Colorado | 78.03 | Round 4-5 | 0 | 0
+94 | Makhi Hughes | RB | Oregon | 78.02 | Round 4-5 | 0 | 0
+95 | Gabriel Brownlow-Dindy | DT | South Carolina | 77.9 | Round 4-5 | 0 | 0
+96 | Eli Stowers | TE | Vanderbilt | 77.86 | Round 4-5 | 0 | 1
+97 | Hollin Pierce | OT | Rutgers | 77.82 | Round 4-5 | 0 | 0
+98 | Elijah Sarratt | WR | Indiana Hoosiers | 77.79 | Round 4-5 | 0 | 1
+99 | Gennings Dunker | OT | Iowa Hawkeyes | 77.79 | Round 4-5 | 0 | 1
+100 | Taurean York | LB | Texas A&M Aggies | 77.78 | Round 4-5 | 1 | 1

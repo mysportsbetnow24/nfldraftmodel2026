@@ -184,6 +184,7 @@ DATASET_ENDPOINTS = {
     "team_advanced_stats": "/stats/season/advanced",
     "advanced_game_stats": "/stats/game/advanced",
     "player_ppa": "/ppa/players/season",
+    "player_usage": "/player/usage",
     "team_ppa": "/ppa/teams",
     "games": "/games",
     "team_game_stats": "/games/teams",

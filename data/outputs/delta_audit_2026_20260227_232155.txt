@@ -1,0 +1,29 @@
+2026 DELTA AUDIT
+
+Current board: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
+Previous board: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260227_232118.csv
+Rows compared: 459
+
+Top Risers (prev rank - curr rank > 0)
+1. Mansoor Delane (CB) 27 -> 8 (+19); driver: guardrail_relief (up 1.10) [ath 0.0, prod 0.0, prior 0.0, guardrail 1.1]
+
+Top Fallers (prev rank - curr rank < 0)
+1. Carnell Tate (WR) 8 -> 9 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+2. Brian Parker II (OT) 9 -> 10 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+3. Arvell Reese (LB) 10 -> 11 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+4. Keionte Scott (CB) 11 -> 12 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+5. Emmanuel McNeil-Warren (S) 12 -> 13 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+6. Dillon Thieneman (S) 13 -> 14 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+7. C.J. Allen (LB) 14 -> 15 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+8. Makai Lemon (WR) 15 -> 16 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+9. Keldric Faulk (EDGE) 16 -> 17 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+10. Zion Young (EDGE) 17 -> 18 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+11. Sonny Styles (LB) 18 -> 19 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+12. Denzel Boston (WR) 19 -> 20 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+13. Nyck Harbor (WR) 20 -> 21 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+14. Fernando Mendoza (QB) 21 -> 22 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+15. Romello Height (EDGE) 22 -> 23 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+16. Skyler Bell (WR) 23 -> 24 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+17. Christen Miller (DT) 24 -> 25 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+18. Olaivavega Ioane (IOL) 25 -> 26 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+19. Jordyn Tyson (WR) 26 -> 27 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]

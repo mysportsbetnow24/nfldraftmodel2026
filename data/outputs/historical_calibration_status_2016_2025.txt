@@ -1,0 +1,16 @@
+Historical calibration status: BLOCKED
+Date: 2026-02-27
+
+Reason:
+- Missing required input file:
+  data/sources/manual/historical_draft_outcomes_2016_2025.csv
+
+Required columns:
+- draft_year, overall_pick, draft_round, position, model_grade, ras, pff_grade,
+  career_value, starter_seasons, second_contract, success_label, data_source
+
+Notes:
+- Year-based leakage-safe backtest is already implemented in scripts/calibrate_historical_model.py
+  via src/modeling/calibration.py::year_based_backtest.
+- Once this CSV is added, run:
+  python3 scripts/calibrate_historical_model.py

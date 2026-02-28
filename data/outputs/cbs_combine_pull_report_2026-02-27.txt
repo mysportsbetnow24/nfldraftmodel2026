@@ -1,0 +1,14 @@
+CBS combine pull timestamp: 2026-02-27T02:55:40.666265+00:00
+Input source: local_html:/tmp/cbs_combine_2026_live.html
+Measurements parsed: 32
+Players total in combine CSV: 36
+Players created: 1
+Fields updated: 1
+Metric updates:
+  forty: 1
+  ten_split: 0
+  vertical: 0
+  broad: 0
+  shuttle: 0
+  three_cone: 0
+  bench: 0

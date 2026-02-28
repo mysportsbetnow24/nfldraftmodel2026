@@ -1,0 +1,47 @@
+Early Declare Feature Summary (2026)
+
+board_rows: 459
+early_declare_count: 49
+combine_invited_count: 254
+
+Top 40 by board with flags:
+#1 Cashius Howell (EDGE, Texas A&M Aggies) | early_declare=0 | combine_invited=1 | ed_sources=
+#2 Jeremiyah Love (RB, Notre Dame) | early_declare=1 | combine_invited=1 | ed_sources=official_declared_special_eligibility|nfl_combine_invite_2026
+#3 Keionte Scott (CB, Miami (FL) Hurricanes) | early_declare=0 | combine_invited=1 | ed_sources=
+#4 R Mason Thomas (EDGE, Oklahoma) | early_declare=0 | combine_invited=1 | ed_sources=
+#5 Francis Mauigoa (OT, Miami (FL) Hurricanes) | early_declare=0 | combine_invited=1 | ed_sources=
+#6 David Bailey (EDGE, Texas Tech) | early_declare=0 | combine_invited=1 | ed_sources=
+#7 Kadyn Proctor (OT, Alabama) | early_declare=1 | combine_invited=0 | ed_sources=official_declared_degree_complete
+#8 Caleb Downs (S, Ohio State) | early_declare=1 | combine_invited=1 | ed_sources=official_declared_special_eligibility|espn_underclassmen_2026|nfl_combine_invite_2026
+#9 Mansoor Delane (CB, LSU Tigers) | early_declare=0 | combine_invited=1 | ed_sources=
+#10 Carnell Tate (WR, Ohio State) | early_declare=1 | combine_invited=1 | ed_sources=official_declared_special_eligibility|nfl_combine_invite_2026
+#11 Brian Parker II (OT, Duke Blue Devils) | early_declare=0 | combine_invited=1 | ed_sources=
+#12 Arvell Reese (LB, Ohio State Buckeyes) | early_declare=1 | combine_invited=1 | ed_sources=official_declared_special_eligibility|nfl_combine_invite_2026
+#13 Emmanuel McNeil-Warren (S, Toledo Rockets) | early_declare=0 | combine_invited=1 | ed_sources=
+#14 Dillon Thieneman (S, Oregon) | early_declare=1 | combine_invited=1 | ed_sources=official_declared_special_eligibility|espn_underclassmen_2026|nfl_combine_invite_2026
+#15 C.J. Allen (LB, Georgia) | early_declare=1 | combine_invited=1 | ed_sources=official_declared_special_eligibility|espn_underclassmen_2026|nfl_combine_invite_2026
+#16 Makai Lemon (WR, USC Trojans) | early_declare=1 | combine_invited=1 | ed_sources=official_declared_special_eligibility|espn_underclassmen_2026|nfl_combine_invite_2026
+#17 Keldric Faulk (EDGE, Auburn) | early_declare=1 | combine_invited=1 | ed_sources=official_declared_special_eligibility|nfl_combine_invite_2026
+#18 Zion Young (EDGE, Missouri Tigers) | early_declare=0 | combine_invited=1 | ed_sources=
+#19 Sonny Styles (LB, Ohio State) | early_declare=0 | combine_invited=1 | ed_sources=
+#20 Denzel Boston (WR, Washington) | early_declare=1 | combine_invited=1 | ed_sources=official_declared_special_eligibility|nfl_combine_invite_2026
+#21 Nyck Harbor (WR, South Carolina) | early_declare=0 | combine_invited=0 | ed_sources=
+#22 Fernando Mendoza (QB, Indiana) | early_declare=0 | combine_invited=1 | ed_sources=
+#23 Romello Height (EDGE, Texas Tech Red Raiders) | early_declare=0 | combine_invited=1 | ed_sources=
+#24 Skyler Bell (WR, Connecticut Huskies) | early_declare=0 | combine_invited=1 | ed_sources=
+#25 Christen Miller (DT, Georgia Bulldogs) | early_declare=1 | combine_invited=0 | ed_sources=official_declared_degree_complete
+#26 Olaivavega Ioane (IOL, Penn State Nittany Lions) | early_declare=1 | combine_invited=1 | ed_sources=official_declared_special_eligibility|nfl_combine_invite_2026
+#27 Jordyn Tyson (WR, Arizona State) | early_declare=1 | combine_invited=1 | ed_sources=official_declared_special_eligibility|nfl_combine_invite_2026
+#28 Kayden McDonald (DT, Ohio State Buckeyes) | early_declare=1 | combine_invited=0 | ed_sources=official_declared_special_eligibility|espn_underclassmen_2026
+#29 Monroe Freeling (OT, Georgia) | early_declare=1 | combine_invited=0 | ed_sources=official_declared_special_eligibility
+#30 Caleb Banks (DT, Florida Gators) | early_declare=0 | combine_invited=1 | ed_sources=
+#31 Emmanuel Pregnon (IOL, Oregon Ducks) | early_declare=0 | combine_invited=1 | ed_sources=
+#32 Caleb Lomu (OT, Utah) | early_declare=1 | combine_invited=0 | ed_sources=official_declared_special_eligibility
+#33 Peter Woods (DT, Clemson) | early_declare=1 | combine_invited=0 | ed_sources=official_declared_degree_complete
+#34 Akheem Mesidor (EDGE, Miami (FL) Hurricanes) | early_declare=0 | combine_invited=1 | ed_sources=
+#35 Colton Hood (CB, Tennessee Volunteers) | early_declare=1 | combine_invited=1 | ed_sources=official_declared_special_eligibility|nfl_combine_invite_2026
+#36 Eugene Asante (LB, Auburn) | early_declare=0 | combine_invited=0 | ed_sources=
+#37 Omar Cooper Jr. (WR, Indiana Hoosiers) | early_declare=0 | combine_invited=1 | ed_sources=
+#38 Dani Dennis-Sutton (EDGE, Penn State Nittany Lions) | early_declare=0 | combine_invited=1 | ed_sources=
+#39 Spencer Fano (OT, Utah) | early_declare=1 | combine_invited=0 | ed_sources=official_declared_special_eligibility
+#40 A.J. Haulcy (S, LSU Tigers) | early_declare=0 | combine_invited=1 | ed_sources=

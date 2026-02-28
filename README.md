@@ -129,6 +129,20 @@ What is intentionally not used (for noise/leakage control):
 - Non-predictive biography metadata
 - Post-draft outcome fields as features (kept as targets only in historical splits)
 
+## JackLich dataset sync (same schema)
+
+You can sync the `JackLich10/nfl-draft-data` CSV layout directly into the ESPN ingest directory:
+
+```bash
+# Clone/copy source files into data/sources/external/nfl-draft-data
+python3 scripts/sync_jacklich_nfl_draft_data.py --execute
+
+# Validate against your board joins
+python3 scripts/qa_espn_ingest.py --target-year 2026 --base-dir data/sources/external/nfl-draft-data
+```
+
+This uses the same file style (`nfl_draft_prospects.csv`, `nfl_draft_profiles.csv`, `college_qbr.csv`, `college_statistics.csv`, `ids.csv`) and maps it into your existing ESPN signal pipeline.
+
 ## PlayerProfiler manual import (Breakout Age + Dominator)
 
 Populate:

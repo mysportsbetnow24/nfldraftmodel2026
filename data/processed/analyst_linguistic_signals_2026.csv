@@ -1,56 +1,195 @@
 player_key,position,player_name,school,lang_source_count,lang_text_coverage,lang_trait_processing,lang_trait_technique,lang_trait_explosiveness,lang_trait_physicality,lang_trait_competitiveness,lang_trait_versatility,lang_miller_keyword_hits,lang_miller_coverage,lang_risk_hits,lang_risk_flag,lang_trait_composite,lang_sources
-akheem mesidor,EDGE,Akheem Mesidor,Miami,2,104,53.5,50.0,57.0,57.0,64.0,53.5,0,0.05,0,0,58.33,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-anthony hill jr,LB,Anthony Hill Jr,Texas,2,125,55.75,48.75,66.25,52.25,48.75,52.25,0,0.0625,0,0,56.1,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-antonio williams,WR,Antonio Williams,Clemson,1,125,50.0,50.0,50.0,50.0,57.0,50.0,2,0.2857,0,0,57.26,NFL_Daniel_Jeremiah_2026
+aj harris,CB,AJ Harris,Penn State,1,52,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,51.16,CBS_BigBoard_2026
+aj haulcy,S,A.J. Haulcy,LSU,2,27,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0556,0,0,51.27,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+akheem mesidor,EDGE,Akheem Mesidor,Miami (Fla.),4,62,51.75,50.0,53.5,55.25,57.0,51.75,0,0.025,0,0,54.65,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+alex harkey,IOL,Alex Harkey,Oregon,1,40,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.89,CBS_BigBoard_2026
+amauri washington,DT,A'Mauri Washington,Oregon,1,30,50.0,50.0,50.0,50.0,50.0,50.0,1,0.1111,0,0,52.0,CBS_BigBoard_2026
+anez cooper,IOL,Anez Cooper,Miami,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+anthony hill jr,LB,Anthony Hill Jr.,Texas,4,74,52.88,49.38,58.12,51.12,49.38,51.12,0,0.0312,0,0,53.3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+anthony lucas,EDGE,Anthony Lucas,USC,1,34,50.0,50.0,50.0,50.0,50.0,57.0,0,0.0,0,0,51.81,CBS_BigBoard_2026
+anto saka,EDGE,Anto Saka,Northwestern,1,43,47.5,47.5,47.5,47.5,47.5,47.5,0,0.0,1,0,45.96,CBS_BigBoard_2026
+antonio williams,WR,Antonio Williams,Clemson,3,62,50.0,50.0,50.0,50.0,52.33,50.0,1,0.0952,0,0,52.87,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|NFL_Daniel_Jeremiah_2026
 arvell reese,EDGE,Arvell Reese,Ohio State,2,118,50.0,50.0,71.0,60.5,50.0,53.5,2,0.15,0,0,59.66,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-avieon terrell,CB,Avieon Terrell,Clemson,2,126,53.5,50.0,53.5,50.0,53.5,60.5,0,0.0,0,0,56.13,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-blake miller,OT,Blake Miller,Clemson,2,103,55.75,48.75,52.25,59.25,48.75,48.75,0,0.0556,0,0,53.95,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-brandon cisse,CB,Brandon Cisse,South Carolina,2,119,50.0,50.0,57.0,50.0,50.0,60.5,1,0.1,0,0,56.47,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-caleb banks,DT,Caleb Banks,Florida,2,120,47.5,47.5,47.5,58.0,47.5,47.5,1,0.1111,1,0,50.56,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-caleb downs,S,Caleb Downs,Ohio State,2,120,62.75,52.25,52.25,48.75,48.75,55.75,2,0.2222,0,0,57.9,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-caleb lomu,OT,Caleb Lomu,Utah,2,96,53.5,50.0,50.0,64.0,50.0,50.0,0,0.0556,0,0,55.6,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-carnell tate,WR,Carnell Tate,Ohio State,2,109,50.0,57.0,57.0,50.0,50.0,50.0,0,0.0,0,0,54.88,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-cashius howell,EDGE,Cashius Howell,Texas A&M,2,117,54.5,51.0,58.0,54.5,51.0,51.0,1,0.1,1,1,54.58,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-chase bisontis,IOL,Chase Bisontis,Texas A&M,1,139,50.0,50.0,50.0,57.0,50.0,95.0,1,0.1,0,0,62.09,ESPN_Jordan_Reid_2026
-christen miller,DT,Christen Miller,Georgia,2,114,50.0,57.0,53.5,50.0,53.5,53.5,2,0.2222,0,0,58.17,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-cj allen,LB,CJ Allen,Georgia,2,112,57.0,50.0,60.5,50.0,53.5,50.0,2,0.1875,0,0,58.23,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-colton hood,CB,Colton Hood,Tennessee,2,122,50.0,50.0,57.0,50.0,53.5,53.5,2,0.2,0,0,57.22,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-dangelo ponds,CB,D'Angelo Ponds,Indiana,1,93,50.0,50.0,50.0,50.0,50.0,50.0,1,0.1,0,0,53.27,ESPN_Jordan_Reid_2026
-david bailey,EDGE,David Bailey,Texas Tech,2,111,50.0,50.0,74.5,53.5,57.0,60.5,1,0.1,0,0,60.49,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+arvell reese,LB,Arvell Reese,Ohio State,5,40,50.0,50.0,52.8,50.0,50.0,51.4,0,0.05,0,0,52.11,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|FantasyPros_Scouting_2026|Ringer_NFL_Draft_Guide_2026|Yahoo_Nate_Tice_2026
+austin barber,OT,Austin Barber,Florida,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+avieon terrell,CB,Avieon Terrell,Clemson,6,1653,51.92,49.58,50.75,49.58,50.75,53.08,0,0.0333,0,0,53.05,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026
+barika kpeenu,RB,Barika Kpeenu,North Dakota State,1,3,47.5,47.5,47.5,54.5,47.5,47.5,0,0.0,1,0,46.12,SI_FCS_Scouting_2026
+bear alexander,DT,Bear Alexander,Oregon,1,39,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.87,CBS_BigBoard_2026
+beau stephens,IOL,Beau Stephens,Iowa,2,4941,52.25,48.75,48.75,59.25,55.75,55.75,1,0.1,0,0,56.22,Bleacher_Report_2026|CBS_Wilson_BigBoard_2026
+bishop fitzgerald,S,Bishop Fitzgerald,USC,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+blake miller,OT,Blake Miller,Clemson,3,73,53.83,49.17,51.5,56.17,49.17,49.17,0,0.037,0,0,52.73,CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+brandon cisse,CB,Brandon Cisse,South Carolina,5,85,51.4,50.0,52.8,50.0,50.0,55.6,1,0.06,0,0,54.14,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026
+brenen thompson,WR,Brenen Thompson,Mississippi State,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+bryce lance,WR,Bryce Lance,North Dakota State,1,3,47.5,47.5,47.5,54.5,47.5,47.5,0,0.0,1,0,46.12,SI_FCS_Scouting_2026
+bud clark,S,Bud Clark,TCU,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+caleb banks,DT,Caleb Banks,Florida,5,80,47.5,47.5,47.5,53.1,47.5,47.5,0,0.0444,1,0,48.15,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026
+caleb downs,DB,Caleb Downs,Ohio State,1,112,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,52.49,FantasyPros_Scouting_2026
+caleb downs,S,Caleb Downs,Ohio State,7,48,53.29,50.29,50.29,50.29,49.29,51.29,1,0.0635,0,0,51.99,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026|Ringer_NFL_Draft_Guide_2026|TDN_Scouting_2026|Yahoo_Nate_Tice_2026
+caleb lomu,OT,Caleb Lomu,Utah,4,62,51.75,50.0,50.0,58.75,50.0,50.0,0,0.0278,0,0,53.38,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+caleb tiernan,OT,Caleb Tiernan,Northwestern,2,32,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.71,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+carnell tate,WR,Carnell Tate,Ohio State,6,64,50.0,52.33,57.0,50.0,50.0,50.0,0,0.0476,0,0,53.52,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026
+carson beck,QB,Carson Beck,Miami,2,63,57.0,50.0,50.0,50.0,50.0,50.0,1,0.1,0,0,54.0,CBS_Wilson_BigBoard_2026|FantasyPros_Scouting_2026
+carter smith,IOL,Carter Smith,Indiana,1,44,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.98,CBS_BigBoard_2026
+cashius howell,EDGE,Cashius Howell,Texas A&M,4,71,52.25,50.5,54.0,52.25,50.5,50.5,0,0.05,0,0,52.57,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+cayden green,IOL,Cayden Green,Missouri,1,46,50.0,50.0,50.0,57.0,50.0,50.0,1,0.1,0,0,53.27,CBS_BigBoard_2026
+chandler rivers,CB,Chandler Rivers,Duke,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+charles demmings,CB,Charles Demmings,Stephen F. Austin,1,3,47.5,47.5,47.5,54.5,47.5,47.5,0,0.0,1,0,46.12,SI_FCS_Scouting_2026
+chase bisontis,IOL,Chase Bisontis,Texas A&M,2,86,50.0,50.0,50.0,53.5,50.0,72.5,0,0.05,0,0,56.41,CBS_BigBoard_2026|ESPN_Jordan_Reid_2026
+chris bell,WR,Chris Bell,Louisville,1,43,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.96,CBS_BigBoard_2026
+chris brazzell ii,WR,Chris Brazzell II,Tennessee,2,28,50.0,50.0,53.5,50.0,50.0,50.0,0,0.0,0,0,51.16,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+chris johnson,CB,Chris Johnson,San Diego State,2,30,50.0,50.0,50.0,50.0,50.0,50.0,0,0.05,0,0,51.26,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+chris mcclellan,DT,Chris McClellan,Missouri,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+christen miller,DT,Christen Miller,Georgia,4,70,51.75,53.5,51.75,50.0,51.75,51.75,1,0.1389,0,0,55.06,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+christian thomas,LB,Christian Thomas,Maine,1,3,47.5,47.5,47.5,54.5,47.5,47.5,0,0.0,1,0,46.12,SI_FCS_Scouting_2026
+cj allen,LB,CJ Allen,Georgia,6,65,53.5,50.0,54.67,51.17,51.17,50.0,1,0.1458,0,0,54.95,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026
+clev lubin,EDGE,Clev Lubin,Louisville,1,54,57.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,52.6,CBS_BigBoard_2026
+cole payton,QB,Cole Payton,North Dakota State,1,3,47.5,47.5,47.5,54.5,47.5,47.5,0,0.0,1,0,46.12,SI_FCS_Scouting_2026
+colton hood,CB,Colton Hood,Tennessee,4,72,50.0,50.0,53.5,50.0,51.75,53.5,1,0.1,0,0,54.1,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+connor lew,IOL,Connor Lew,Auburn,2,23,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.51,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+dametrious crownover,OT,Dametrious Crownover,Texas A&M,1,15,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.33,CBS_Wilson_BigBoard_2026
+dangelo ponds,CB,D'Angelo Ponds,Indiana,3,56,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0333,0,0,51.64,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026
+daniel sobkowicz,WR,Daniel Sobkowicz,Illinois State,1,3,47.5,47.5,47.5,54.5,47.5,47.5,0,0.0,1,0,46.12,SI_FCS_Scouting_2026
+dante moore,QB,Dante Moore,Oregon,1,33,47.5,47.5,47.5,47.5,47.5,47.5,0,0.0,1,0,45.73,CBS_BigBoard_2026
+darrell jackson jr,DT,Darrell Jackson Jr.,Florida State,1,15,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.33,CBS_Wilson_BigBoard_2026
+david bailey,EDGE,David Bailey,Texas Tech,8,1290,50.25,50.25,56.38,51.12,52.0,52.0,0,0.0375,0,0,53.59,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026|Ringer_NFL_Draft_Guide_2026|Yahoo_Nate_Tice_2026
+david gusta,DT,David Gusta,Kentucky,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+davison igbinosun,CB,Davison Igbinosun,Ohio State,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
 deion burks,WR,Deion Burks,Oklahoma,1,111,50.0,57.0,64.0,57.0,50.0,57.0,1,0.1429,0,0,59.78,NFL_Daniel_Jeremiah_2026
-denzel boston,WR,Denzel Boston,Washington,2,109,48.75,48.75,52.25,55.75,52.25,59.25,1,0.1429,0,0,55.31,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-dillon thieneman,S,Dillon Thieneman,Oregon,2,110,57.0,50.0,53.5,53.5,50.0,53.5,2,0.2222,0,0,58.1,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-emmanuel mcneil-warren,S,Emmanuel McNeil-Warren,Toledo,2,118,50.0,50.0,53.5,50.0,50.0,50.0,2,0.2222,0,0,55.8,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-emmanuel pregnon,IOL,Emmanuel Pregnon,Oregon,1,77,50.0,50.0,50.0,64.0,50.0,64.0,1,0.1,0,0,57.11,ESPN_Jordan_Reid_2026
-fernando mendoza,QB,Fernando Mendoza,Indiana,2,136,53.5,50.0,50.0,53.5,64.0,50.0,1,0.1,0,0,57.53,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-francis mauigoa,OT,Francis Mauigoa,Miami,2,120,50.0,50.0,53.5,71.0,50.0,53.5,1,0.1111,0,0,58.2,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-gabe jacas,EDGE,Gabe Jacas,Illinois,1,80,57.0,50.0,57.0,71.0,50.0,50.0,1,0.1,0,0,58.58,ESPN_Jordan_Reid_2026
-jadarian price,RB,Jadarian Price,Notre Dame,1,147,50.0,50.0,57.0,57.0,50.0,57.0,6,0.6667,0,0,64.42,NFL_Daniel_Jeremiah_2026
-jake golday,LB,Jake Golday,Cincinnati,2,105,52.25,48.75,55.75,48.75,48.75,48.75,1,0.125,0,0,53.08,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-jeremiyah love,RB,Jeremiyah Love,Notre Dame,2,119,50.0,50.0,64.0,50.0,57.0,57.0,2,0.1666,0,0,58.84,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-jermod mccoy,CB,Jermod McCoy,Tennessee,2,125,50.0,50.0,53.5,50.0,53.5,50.0,2,0.15,0,0,55.63,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-jordyn tyson,WR,Jordyn Tyson,Arizona State,2,111,50.0,50.0,64.0,50.0,50.0,53.5,0,0.0714,0,0,55.95,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-josiah trotter,LB,Josiah Trotter,Missouri,1,96,61.5,47.5,47.5,54.5,47.5,54.5,3,0.375,1,0,56.53,ESPN_Jordan_Reid_2026
-kadyn proctor,OT,Kadyn Proctor,Alabama,2,134,50.0,53.5,53.5,53.5,50.0,50.0,0,0.0,0,0,54.73,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-kayden mcdonald,DT,Kayden McDonald,Ohio State,2,91,50.0,50.0,50.0,64.0,50.0,50.0,0,0.0556,0,0,54.79,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-kc concepcion,WR,KC Concepcion,Texas A&M,2,90,48.75,48.75,62.75,48.75,48.75,48.75,0,0.0714,0,0,52.45,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+demond claiborne,RB,Demond Claiborne,Wake Forest,1,34,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.76,CBS_BigBoard_2026
+denzel boston,WR,Denzel Boston,Washington,5,56,50.9,49.5,50.9,52.3,50.9,55.1,0,0.0572,0,0,52.88,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026
+deontae lawson,LB,Deontae Lawson,Alabama,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+derek robertson,QB,Derek Robertson,Monmouth,1,3,47.5,47.5,47.5,54.5,47.5,47.5,0,0.0,1,0,46.12,SI_FCS_Scouting_2026
+derrick moore,EDGE,Derrick Moore,Michigan,1,9876,54.5,47.5,61.5,54.5,47.5,54.5,1,0.1,1,0,57.8,Bleacher_Report_2026
+deven eastern,DT,Deven Eastern,Minnesota,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+devin moore,CB,Devin Moore,Florida,2,24,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.52,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+devon marshall,CB,Devon Marshall,NC State,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+dillon thieneman,S,Dillon Thieneman,Oregon,3,85,54.67,50.0,52.33,52.33,50.0,52.33,2,0.1852,0,0,56.1,CBS_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+domonique orange,DT,Domonique Orange,Iowa State,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+dontay corleone,DT,Dontay Corleone,Cincinnati,1,39,50.0,50.0,57.0,50.0,50.0,50.0,0,0.0,0,0,51.92,CBS_BigBoard_2026
+eli stowers,TE,Eli Stowers,Vanderbilt,3,60,50.0,50.0,54.67,50.0,50.0,50.0,0,0.0303,0,0,52.4,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|FantasyPros_Scouting_2026
+elijah sarratt,WR,Elijah Sarratt,Indiana,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+emmanuel henderson jr,WR,Emmanuel Henderson Jr.,Kansas,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+emmanuel mcneil-warren,DB,Emmanuel McNeil-Warren,Toledo,1,117,50.0,50.0,64.0,50.0,50.0,50.0,0,0.0,0,0,54.7,FantasyPros_Scouting_2026
+emmanuel mcneil-warren,S,Emmanuel McNeil-Warren,Toledo,4,71,50.0,50.0,51.75,50.0,50.0,50.0,1,0.1111,0,0,53.18,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+emmanuel pregnon,IOL,Emmanuel Pregnon,Oregon,3,43,50.0,50.0,50.0,54.67,50.0,54.67,0,0.0333,0,0,52.75,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026
+emmett johnson,RB,Emmett Johnson,Nebraska,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+ephesians prysock,CB,Ephesians Prysock,Washington,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+eric rivers,WR,Eric Rivers,Georgia Tech,1,44,50.0,50.0,57.0,50.0,50.0,50.0,0,0.0,0,0,52.03,CBS_BigBoard_2026
+eric singleton jr,WR,Eric Singleton Jr.,Auburn,1,41,50.0,50.0,57.0,50.0,50.0,50.0,0,0.0,0,0,51.96,CBS_BigBoard_2026
+ethan burke,EDGE,Ethan Burke,Texas,1,28,50.0,50.0,50.0,57.0,50.0,50.0,0,0.0,0,0,51.67,CBS_BigBoard_2026
+fernando carmona,IOL,Fernando Carmona,Arkansas,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+fernando mendoza,QB,Fernando Mendoza,Indiana,9,973,54.11,50.22,49.44,51.0,52.56,49.44,1,0.0556,0,0,53.22,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026|Ringer_NFL_Draft_Guide_2026|TDN_Scouting_2026|Yahoo_Nate_Tice_2026
+francis mauigoa,OT,Francis Mauigoa,Miami (Fla.),6,70,50.0,50.0,52.33,59.33,50.0,52.33,0,0.0556,0,0,54.31,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026
+gabe jacas,EDGE,Gabe Jacas,Illinois,2,46,53.5,50.0,53.5,60.5,50.0,50.0,0,0.05,0,0,54.44,CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026
+genesis smith,S,Genesis Smith,Arizona,2,27,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.6,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+gennings dunker,IOL,Gennings Dunker,Iowa,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+gennings dunker,OT,Gennings Dunker,Iowa,1,119,47.5,47.5,54.5,54.5,47.5,61.5,0,0.0,1,0,51.84,FantasyPros_Scouting_2026
+germie bernard,WR,Germie Bernard,Alabama,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+gracen halton,DT,Gracen Halton,Oklahoma,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+hero kanu,DT,Hero Kanu,Texas,1,41,50.0,50.0,50.0,50.0,50.0,50.0,1,0.1111,0,0,52.24,CBS_BigBoard_2026
+hezekiah masses,CB,Hezekiah Masses,California,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+hollywood smothers,RB,Hollywood Smothers,N.C. State,1,32,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.71,CBS_BigBoard_2026
+iapani laloulu,IOL,Iapani Laloulu,Oregon,1,36,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.8,CBS_BigBoard_2026
+jacob rodriguez,LB,Jacob Rodriguez,Texas Tech,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+jadarian price,RB,Jadarian Price,Notre Dame,4,85,49.38,49.38,54.62,51.12,49.38,51.12,2,0.2222,0,0,54.61,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026
+jahiem lawson,EDGE,Jahiem Lawson,Clemson,1,49,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,51.09,CBS_BigBoard_2026
+jaishawn barham,LB,Jaishawn Barham,Michigan,2,28,53.5,50.0,50.0,50.0,50.0,53.5,0,0.0,0,0,51.85,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+jake golday,LB,Jake Golday,Cincinnati,3,77,51.5,49.17,53.83,49.17,49.17,49.17,1,0.0833,0,0,52.22,CBS_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+jake slaughter,IOL,Jake Slaughter,Florida,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+jakobi lane,WR,Ja'Kobi Lane,USC,1,25,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.56,CBS_BigBoard_2026
+jalen mcmurray,S,Jalen McMurray,Tennessee,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+jalen walthall,WR,Jalen Walthall,Incarnate Word,1,3,47.5,47.5,47.5,54.5,47.5,47.5,0,0.0,1,0,46.12,SI_FCS_Scouting_2026
+jalon kilgore,S,Jalon Kilgore,South Carolina,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+jamel johnson,S,Jamel Johnson,TCU,1,51,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,51.13,CBS_BigBoard_2026
+jeremiah wright,IOL,Jeremiah Wright,Auburn,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+jeremiyah love,RB,Jeremiyah Love,Notre Dame,6,70,50.0,50.0,58.17,51.17,52.33,52.33,0,0.0555,0,0,54.33,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026
+jermod mccoy,CB,Jermod McCoy,Tennessee,5,1981,50.9,49.5,52.3,49.5,50.9,49.5,1,0.1,0,0,53.69,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+jmari taylor,RB,J'Mari Taylor,Virginia,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+joe royer,TE,Joe Royer,Cincinnati,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+john mateer,QB,John Mateer,Oklahoma,1,41,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.91,CBS_BigBoard_2026
+jonah coleman,RB,Jonah Coleman,Washington,2,62,50.0,53.5,53.5,53.5,50.0,50.0,1,0.1111,0,0,54.45,CBS_Wilson_BigBoard_2026|FantasyPros_Scouting_2026
+jordan hudson,WR,Jordan Hudson,SMU,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+jordyn tyson,WR,Jordyn Tyson,Arizona State,5,73,50.0,50.0,57.0,50.0,51.4,51.4,0,0.0286,0,0,53.43,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026
+josh cameron,WR,Josh Cameron,Baylor,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+josh hoover,QB,Josh Hoover,TCU,1,39,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.87,CBS_BigBoard_2026
+joshua josephs,EDGE,Joshua Josephs,Tennessee,2,4964,52.25,48.75,48.75,52.25,48.75,48.75,0,0.0,0,0,52.12,Bleacher_Report_2026|CBS_BigBoard_2026
+josiah trotter,LB,Josiah Trotter,Missouri,2,74,55.75,48.75,48.75,52.25,48.75,52.25,2,0.1875,0,0,53.85,CBS_BigBoard_2026|ESPN_Jordan_Reid_2026
+jude bowry,OT,Jude Bowry,Boston College,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+julian neal,CB,Julian Neal,Arkansas,2,28,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.62,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+justin jefferson,LB,Justin Jefferson,Alabama,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+justin joly,TE,Justin Joly,NC State,1,9931,54.5,47.5,54.5,47.5,47.5,47.5,3,0.2727,1,0,56.72,Bleacher_Report_2026
+kade pieper,IOL,Kade Pieper,Iowa,1,50,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,51.11,CBS_BigBoard_2026
+kadyn proctor,IOL,Kadyn Proctor,Alabama,1,44,50.0,50.0,50.0,50.0,50.0,71.0,0,0.0,0,0,54.13,CBS_BigBoard_2026
+kadyn proctor,OT,Kadyn Proctor,Alabama,5,84,49.5,50.9,50.9,53.7,49.5,49.5,0,0.0,0,0,51.99,CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026
+kage casey,OT,Kage Casey,Boise State,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+kamari ramsey,DB,Kamari Ramsey,USC,1,178,45.0,45.0,45.0,45.0,45.0,45.0,0,0.0,2,1,43.96,FantasyPros_Scouting_2026
+kayden mcdonald,DT,Kayden McDonald,Ohio State,5,69,50.0,50.0,50.0,55.6,50.0,50.0,0,0.0444,0,0,52.92,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026
+kc concepcion,WR,KC Concepcion,Texas A&M,4,55,48.75,48.75,55.75,48.75,48.75,48.75,0,0.0357,0,0,50.19,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+keagen trost,OT,Keagen Trost,Missouri,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
 keionte scott,CB,Keionte Scott,Miami,1,128,57.0,57.0,78.0,50.0,50.0,50.0,2,0.2,0,0,62.24,NFL_Daniel_Jeremiah_2026
-keldric faulk,EDGE,Keldric Faulk,Auburn,2,124,57.0,50.0,53.5,50.0,53.5,67.5,0,0.05,0,0,58.42,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-kenyon sadiq,TE,Kenyon Sadiq,Oregon,2,118,50.0,50.0,60.5,50.0,57.0,53.5,3,0.2727,0,0,59.03,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-lee hunter,DT,Lee Hunter,Texas Tech,2,136,48.75,52.25,52.25,48.75,48.75,48.75,2,0.1667,0,0,53.74,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-makai lemon,WR,Makai Lemon,USC,2,126,48.75,48.75,52.25,48.75,52.25,48.75,0,0.0714,0,0,52.2,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-malachi fields,WR,Malachi Fields,Notre Dame,2,106,50.0,53.5,53.5,57.0,60.5,50.0,0,0.0,0,0,56.22,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-mansoor delane,CB,Mansoor Delane,LSU,2,104,57.0,50.0,57.0,50.0,50.0,50.0,2,0.15,0,0,56.55,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-max iheanachor,OT,Max Iheanachor,Arizona State,2,137,46.25,49.75,46.25,56.75,46.25,46.25,0,0.0556,2,1,48.48,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-monroe freeling,OT,Monroe Freeling,Georgia,2,122,53.5,53.5,57.0,57.0,50.0,50.0,0,0.0,0,0,56.2,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-olaivavega ioane,IOL,Olaivavega Ioane,Penn State,2,114,53.5,50.0,57.0,74.5,53.5,53.5,2,0.2,0,0,61.42,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-omar cooper jr,WR,Omar Cooper Jr,Indiana,2,112,48.75,48.75,59.25,55.75,52.25,52.25,0,0.0,0,0,53.67,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-peter woods,DT,Peter Woods,Clemson,2,120,50.0,53.5,53.5,57.0,53.5,53.5,1,0.1111,0,0,57.34,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-r mason thomas,EDGE,R Mason Thomas,Oklahoma,2,112,48.75,48.75,55.75,48.75,52.25,55.75,0,0.05,0,0,53.22,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-rueben bain jr,EDGE,Rueben Bain Jr,Miami,2,126,48.75,52.25,55.75,66.25,52.25,48.75,0,0.05,0,0,55.81,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-sonny styles,LB,Sonny Styles,Ohio State,2,108,59.25,48.75,52.25,52.25,48.75,48.75,2,0.25,0,0,56.06,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-spencer fano,OT,Spencer Fano,Utah,2,112,50.0,50.0,60.5,64.0,50.0,53.5,1,0.1111,0,0,58.02,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-tj parker,EDGE,T.J. Parker,Clemson,2,138,47.5,47.5,54.5,65.0,47.5,58.0,2,0.15,1,1,55.12,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
-ty simpson,QB,Ty Simpson,Alabama,2,149,45.0,48.5,45.0,52.0,45.0,48.5,1,0.1,2,1,46.78,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+keionte scott,S,Keionte Scott,Miami (Fla.),2,27,50.0,50.0,50.0,50.0,53.5,50.0,0,0.0,0,0,51.12,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+keith abney ii,CB,Keith Abney II,Arizona State,2,28,50.0,50.0,50.0,50.0,53.5,50.0,0,0.0,0,0,51.13,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+keldric faulk,EDGE,Keldric Faulk,Auburn,7,65,53.64,49.64,51.64,52.64,50.64,56.64,0,0.0143,0,0,53.64,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026|TDN_Scouting_2026|Yahoo_Nate_Tice_2026
+kendal daniels,LB,Kendal Daniels,Oklahoma,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+kenyon sadiq,TE,Kenyon Sadiq,Oregon,5,78,50.0,50.0,55.6,51.4,52.8,51.4,2,0.1636,0,0,55.37,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026
+kevin coleman jr,WR,Kevin Coleman Jr.,Missouri,1,42,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.93,CBS_BigBoard_2026
+keylan rutledge,IOL,Keylan Rutledge,Georgia Tech,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+keyron crawford,EDGE,Keyron Crawford,Auburn,1,13,47.5,47.5,47.5,47.5,47.5,47.5,0,0.0,1,0,45.29,CBS_Wilson_BigBoard_2026
+kyle louis,LB,Kyle Louis,Pittsburgh,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+langston jones,OT,Langston Jones,Lehigh,1,3,47.5,47.5,47.5,54.5,47.5,47.5,0,0.0,1,0,46.12,SI_FCS_Scouting_2026
+lee hunter,DT,Lee Hunter,Texas Tech,4,81,49.38,51.12,51.12,49.38,49.38,49.38,1,0.0833,0,0,52.17,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+logan jones,IOL,Logan Jones,Iowa,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+lt overton,DT,LT Overton,Alabama,1,46,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,51.02,CBS_BigBoard_2026
+lt overton,EDGE,LT Overton,Alabama,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+makai lemon,WR,Makai Lemon,USC,5,82,52.3,49.5,50.9,49.5,52.3,50.9,0,0.0286,0,0,52.57,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026
+malachi fields,WR,Malachi Fields,Notre Dame,3,76,50.0,52.33,52.33,54.67,57.0,50.0,0,0.0,0,0,54.25,CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+malachi lawrence,EDGE,Malachi Lawrence,UCF,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+malik muhammad,CB,Malik Muhammad,Texas,2,27,50.0,50.0,50.0,50.0,50.0,53.5,0,0.0,0,0,51.12,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+mansoor delane,CB,Mansoor Delane,LSU,4,62,53.5,50.0,53.5,50.0,50.0,50.0,1,0.075,0,0,53.5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+matayo uiagalelei,EDGE,Matayo Uiagalelei,Oregon,2,4932,55.75,48.75,52.25,52.25,48.75,48.75,0,0.0,0,0,53.3,Bleacher_Report_2026|CBS_BigBoard_2026
+mateen ibirogba,DT,Mateen Ibirogba,Wake Forest,1,35,57.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,52.18,CBS_BigBoard_2026
+max iheanachor,OT,Max Iheanachor,Arizona State,3,96,47.5,49.83,47.5,54.5,47.5,47.5,0,0.037,1,0,49.09,CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+max klare,TE,Max Klare,Ohio State,1,44,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.98,CBS_BigBoard_2026
+michael briscoe,WR,Michael Briscoe,Cal Poly,1,3,47.5,47.5,47.5,54.5,47.5,47.5,0,0.0,1,0,46.12,SI_FCS_Scouting_2026
+michael trigg,TE,Michael Trigg,Baylor,2,72,46.25,46.25,49.75,46.25,53.25,46.25,1,0.0909,2,1,46.77,CBS_BigBoard_2026|FantasyPros_Scouting_2026
+michael wortham,WR,Michael Wortham,Montana,1,3,47.5,47.5,47.5,54.5,47.5,47.5,0,0.0,1,0,46.12,SI_FCS_Scouting_2026
+mike washington jr,RB,Mike Washington Jr.,Arkansas,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+monroe freeling,OT,Monroe Freeling,Georgia,3,85,52.33,52.33,54.67,54.67,50.0,50.0,0,0.0,0,0,54.23,CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+nadame tucker,EDGE,Nadame Tucker,Western Michigan,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+nick barrett,DT,Nick Barrett,South Carolina,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+olaivavega ioane,IOL,Olaivavega Ioane,Penn State,4,68,51.75,50.0,53.5,62.25,51.75,51.75,1,0.1,0,0,55.95,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+omar cooper jr,WR,Omar Cooper Jr.,Indiana,4,68,49.38,49.38,54.62,52.88,51.12,51.12,0,0.0,0,0,52.11,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+parker brailsford,IOL,Parker Brailsford,Alabama,1,34,50.0,50.0,50.0,50.0,50.0,57.0,0,0.0,0,0,51.81,CBS_BigBoard_2026
+pat coogan,IOL,Pat Coogan,Indiana,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+peter woods,DT,Peter Woods,Clemson,8,1292,52.0,50.25,50.25,53.75,50.25,51.12,0,0.0417,0,0,53.05,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026|TDN_Scouting_2026|Yahoo_Nate_Tice_2026
+quincy rhodes jr,EDGE,Quincy Rhodes Jr.,Arkansas,1,38,47.5,47.5,47.5,47.5,47.5,54.5,0,0.0,1,0,46.89,CBS_BigBoard_2026
+r mason thomas,EDGE,R Mason Thomas,Oklahoma,4,70,49.38,49.38,54.62,49.38,51.12,52.88,0,0.05,0,0,52.48,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026
+rayshaun benny,DT,Rayshaun Benny,Michigan,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+red murdock,LB,Red Murdock,Buffalo,1,49,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,51.09,CBS_BigBoard_2026
+rodney hammond jr,RB,Rodney Hammond Jr.,Sacramento State,1,3,47.5,47.5,47.5,54.5,47.5,47.5,0,0.0,1,0,46.12,SI_FCS_Scouting_2026
+romello height,EDGE,Romello Height,Texas Tech,1,35,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.78,CBS_BigBoard_2026
+rueben bain jr,EDGE,Rueben Bain Jr.,Miami,6,1717,51.5,50.33,52.67,55.0,51.5,49.17,0,0.0167,0,0,53.52,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026
+sam hecht,IOL,Sam Hecht,Kansas State,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+sawyer robertson,QB,Sawyer Robertson,Baylor,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+sonny styles,LB,Sonny Styles,Ohio State,6,62,54.25,49.58,51.92,51.92,49.58,51.92,1,0.1458,0,0,54.27,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026
+spencer fano,IOL,Spencer Fano,Utah,1,30,50.0,50.0,50.0,50.0,50.0,57.0,0,0.0,0,0,51.72,CBS_BigBoard_2026
+spencer fano,OT,Spencer Fano,Utah,5,2019,50.4,49.0,53.2,54.6,51.8,50.4,0,0.0444,0,0,53.23,Bleacher_Report_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026
+suntarine perkins,LB,Suntarine Perkins,Ole Miss,1,47,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,51.04,CBS_BigBoard_2026
+tacario davis,CB,Tacario Davis,Washington,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+taurean york,LB,Taurean York,Texas A&M,1,15,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.33,CBS_Wilson_BigBoard_2026
+ted hurst,WR,Ted Hurst,Georgia State,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+terrance carter jr,TE,Terrance Carter Jr.,Texas Tech,2,24,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.55,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+tj hall,CB,TJ Hall,Iowa,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+tj parker,EDGE,T.J. Parker,Clemson,6,1711,49.5,48.33,50.67,57.67,48.33,51.83,0,0.05,1,0,52.06,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026|TDN_Scouting_2026
+trevor goosby,OT,Trevor Goosby,Texas,1,49,47.5,47.5,47.5,47.5,47.5,47.5,0,0.0,1,0,46.09,CBS_BigBoard_2026
+trey zuhn iii,IOL,Trey Zuhn III,Texas A&M,2,26,53.5,50.0,50.0,50.0,50.0,53.5,0,0.0,0,0,51.8,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
+treydan stukes,CB,Treydan Stukes,Arizona,1,13,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.29,CBS_Wilson_BigBoard_2026
+treyvhon saunders,WR,Treyvhon Saunders,Colgate,1,3,47.5,47.5,47.5,54.5,47.5,47.5,0,0.0,1,0,46.12,SI_FCS_Scouting_2026
+trinidad chambliss,QB,Trinidad Chambliss,Ole Miss,1,9861,54.5,47.5,47.5,47.5,47.5,47.5,0,0.0,1,0,52.4,Bleacher_Report_2026
+ty simpson,QB,Ty Simpson,Alabama,5,92,50.8,50.8,48.0,50.8,48.0,49.4,1,0.08,1,0,50.75,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|FantasyPros_Scouting_2026|NFL_Daniel_Jeremiah_2026
+vj payne,S,VJ Payne,Kansas State,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
+will lee iii,CB,Will Lee III,Texas A&M,1,16,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.36,CBS_Wilson_BigBoard_2026
+xavian sorey jr,LB,Xavian Sorey Jr.,Arkansas,1,14,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.31,CBS_Wilson_BigBoard_2026
 zachariah branch,WR,Zachariah Branch,Georgia,1,137,50.0,50.0,64.0,50.0,50.0,57.0,0,0.0,0,0,56.19,NFL_Daniel_Jeremiah_2026
+zakee wheatley,S,Zakee Wheatley,Penn State,2,20,50.0,50.0,50.0,50.0,50.0,50.0,0,0.0,0,0,50.44,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026
 zion young,EDGE,Zion Young,Missouri,2,130,50.0,50.0,57.0,53.5,57.0,57.0,1,0.1,0,0,57.77,ESPN_Jordan_Reid_2026|NFL_Daniel_Jeremiah_2026

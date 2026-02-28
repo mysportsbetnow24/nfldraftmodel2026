@@ -58,7 +58,9 @@ MODEL_POSITIONS = ["QB", "RB", "WR", "TE", "OT", "IOL", "EDGE", "DT", "LB", "CB"
 _NEED_WEIGHTS = [1.00, 0.85, 0.72, 0.60, 0.50, 0.42, 0.35, 0.30]
 
 _TEAM_NEEDS_PATTERN = re.compile(
-    r"(?:^|\n)\s*\d+\.\s*##\s*([A-Za-z0-9&.' -]+?)\s+Team Needs\s*\(([^)]*)\)",
+    # Supports both legacy markdown format and current plain-text heading format:
+    # "1. ## Raiders Team Needs (...)" OR "Raiders Team Needs (...)"
+    r"(?:^|\n)\s*(?:\d+\.\s*##\s*)?([A-Za-z0-9&.' -]+?)\s+Team Needs\s*\(([^)]*)\)",
     flags=re.IGNORECASE,
 )
 
