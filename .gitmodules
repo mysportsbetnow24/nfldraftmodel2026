@@ -1,0 +1,7 @@
+[submodule "data/sources/external/historical-nfl-draft-data"]
+	path = data/sources/external/historical-nfl-draft-data
+	url = https://github.com/Leagify/historical-nfl-draft-data.git
+
+[submodule "data/sources/external/nfl-combine-evaluation"]
+	path = data/sources/external/nfl-combine-evaluation
+	url = https://github.com/kpolimis/nfl-combine-evaluation.git
