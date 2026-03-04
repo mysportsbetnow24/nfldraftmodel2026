@@ -4,45 +4,89 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>2026 NFL Mock Draft Round 1 | Scouting Grade</title>
-  <meta name="description" content="2026 NFL Mock Draft Round 1 from Scouting Grade. Read our latest first-round projection with model context, prospect value, and team-fit notes." />
+  <meta name="description" content="2026 NFL Mock Draft Round 1 with projected picks, player grades, and round projections from Scouting Grade." />
   <link rel="canonical" href="https://www.scoutinggrade.com/2026-nfl-mock-draft-round-1.html" />
   <style>
     :root {
-      --bg: #f3efe7;
+      --bg: #f1f5fb;
       --paper: #ffffff;
-      --ink: #141414;
-      --line: #1f2933;
-      --accent: #0f4c5c;
-      --muted: #5a6772;
+      --ink: #0d1117;
+      --line: #d6dde8;
+      --muted: #596377;
+      --accent: #0d4f6b;
+      --accent-2: #1f4e2f;
+      --shadow: 0 24px 48px rgba(7, 17, 35, 0.12);
     }
     * { box-sizing: border-box; }
-    body { margin: 0; padding: 1rem; font-family: Arial, sans-serif; color: var(--ink); background: var(--bg); }
-    .card { max-width: 980px; margin: 0 auto; background: var(--paper); border: 1px solid var(--line); padding: 1rem; }
-    h1 { margin: 0 0 0.6rem; }
-    p { color: var(--muted); line-height: 1.6; }
-    .row { margin: 0.9rem 0; }
-    .btn { display: inline-block; margin-right: 0.5rem; margin-top: 0.4rem; padding: 0.45rem 0.7rem; border: 1px solid var(--line); text-decoration: none; color: var(--ink); background: #f8fafb; }
-    code { display: block; padding: 0.55rem; border: 1px solid #ccd3d9; background: #f7f9fa; word-break: break-word; }
-  </style>
+    body {
+      margin: 0;
+      padding: 1rem;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 6% -4%, rgba(13,79,107,0.14), transparent 30%),
+        radial-gradient(circle at 98% 0%, rgba(31,78,47,0.16), transparent 26%),
+        repeating-linear-gradient(135deg, rgba(16,96,56,0.05) 0, rgba(16,96,56,0.05) 8px, rgba(255,255,255,0) 8px, rgba(255,255,255,0) 18px),
+        linear-gradient(180deg, #f4f7fb 0%, #edf4ee 100%);
+    }
+    .card {
+      max-width: 1220px;
+      margin: 0 auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.1rem;
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0 0 0.42rem; font-size: 2.2rem; letter-spacing: -0.02em; line-height: 1.05; }
+    p { color: var(--muted); line-height: 1.6; max-width: 95ch; }
+    .controls { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; margin: 0.8rem 0; }
+    .controls input, .controls select {
+      border: 1px solid #c7d1df;
+      border-radius: 11px;
+      padding: 0.55rem 0.66rem;
+      font-size: 0.92rem;
+      min-width: 220px;
+      background: #fbfdff;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 0.82rem;
+      border: 1px solid #c6d1de;
+      border-radius: 11px;
+      text-decoration: none;
+      color: var(--ink);
+      background: #f8fafb;
+      font-weight: 650;
+    }
+    .hint { font-size: 0.9rem; color: var(--muted); margin: 0.35rem 0; }
+    table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 0.88rem; }
+    th, td { border: 1px solid #d5dde8; padding: 0.35rem 0.42rem; text-align: left; vertical-align: top; word-break: break-word; }
+    th { background: #edf3f9; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; color: #16344a; }
+    #teamSummary { margin-top: 1rem; border: 1px solid var(--line); border-radius: 14px; padding: 0.8rem; background: #fafcfd; }
+    #teamSummary h2 { margin: 0 0 0.55rem; font-size: 1rem; }
+    #teamSummary ul { margin: 0; padding-left: 1.15rem; line-height: 1.45; }
+    @media (max-width: 860px) {
+      body { padding: 0.55rem; }
+      th, td { font-size: 0.8rem; }
+      .controls input, .controls select { min-width: 100%; }
+    }
+    </style>
 </head>
 <body>
   <main class="card">
     <h1>2026 NFL Mock Draft (Round 1)</h1>
-    <p>
-      This page tracks our current first-round projection for the 2026 NFL Draft using the Scouting Grade model pipeline.
-      Rankings are blended with team context, positional value, and guardrails designed to keep outlier picks realistic.
-    </p>
-    <p>
-      Public mode is read-only and raw file downloads are disabled. The board refreshes as our internal model updates
-      with new athletic, production, and scouting evidence.
-    </p>
-    <div class="row">
-      <a class="btn" href="index.html">Back To Hub</a>
-    </div>
-    <div class="row">
-      <strong>Status</strong>
-      <code>Public read-only page. Internal editing and raw data access are restricted.</code>
-    </div>
+    <p>Latest first-round projection from the Scouting Grade model. This is the current public snapshot and updates with each model cycle.</p>
+    <p class="hint">Picks: 32 | Last update: 2026-03-04 07:14 UTC</p>
+    <div class="controls"><a class="btn" href="index.html">Back To Hub</a></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Pick</th><th>Team</th><th>Player</th><th>Pos</th><th>School</th><th>Grade</th><th>Projection</th>
+        </tr>
+      </thead>
+      <tbody><tr><td>1</td><td>LV</td><td>Fernando Mendoza</td><td>QB</td><td>Indiana</td><td>80.61</td><td>Round 3-4</td></tr><tr><td>2</td><td>NYJ</td><td>Dillon Thieneman</td><td>S</td><td>Oregon</td><td>84.59</td><td>Round 1</td></tr><tr><td>3</td><td>ARI</td><td>Dani Dennis-Sutton</td><td>EDGE</td><td>Penn State Nittany Lions</td><td>83.38</td><td>Round 1-2</td></tr><tr><td>4</td><td>TEN</td><td>Jordyn Tyson</td><td>WR</td><td>Arizona State</td><td>84.26</td><td>Round 1</td></tr><tr><td>5</td><td>NYG</td><td>Kadyn Proctor</td><td>OT</td><td>Alabama</td><td>84.66</td><td>Round 1</td></tr><tr><td>6</td><td>CLE</td><td>Skyler Bell</td><td>WR</td><td>Connecticut Huskies</td><td>82.78</td><td>Round 2-3</td></tr><tr><td>7</td><td>WAS</td><td>David Bailey</td><td>EDGE</td><td>Texas Tech</td><td>81.66</td><td>Round 2-3</td></tr><tr><td>8</td><td>NO</td><td>Jeremiyah Love</td><td>RB</td><td>Notre Dame</td><td>84.55</td><td>Round 1</td></tr><tr><td>9</td><td>KC</td><td>Monroe Freeling</td><td>OT</td><td>Georgia</td><td>84.22</td><td>Round 1</td></tr><tr><td>10</td><td>CIN</td><td>Caleb Lomu</td><td>OT</td><td>Utah</td><td>83.62</td><td>Round 2-3</td></tr><tr><td>11</td><td>MIA</td><td>Spencer Fano</td><td>OT</td><td>Utah</td><td>82.57</td><td>Round 2-3</td></tr><tr><td>12</td><td>DAL</td><td>Daylen Everette</td><td>CB</td><td>Georgia</td><td>83.94</td><td>Round 1-2</td></tr><tr><td>13</td><td>LAR</td><td>Francis Mauigoa</td><td>OT</td><td>Miami (FL) Hurricanes</td><td>82.45</td><td>Round 2-3</td></tr><tr><td>14</td><td>BAL</td><td>Brian Parker II</td><td>OT</td><td>Duke Blue Devils</td><td>81.35</td><td>Round 2-3</td></tr><tr><td>15</td><td>TB</td><td>Tyreak Sapp</td><td>EDGE</td><td>Florida</td><td>81.85</td><td>Round 2-3</td></tr><tr><td>16</td><td>NYJ</td><td>Sonny Styles</td><td>LB</td><td>Ohio State</td><td>85.11</td><td>Round 1</td></tr><tr><td>17</td><td>DET</td><td>Gabe Jacas</td><td>EDGE</td><td>Illinois Fighting Illini</td><td>81.34</td><td>Round 2-3</td></tr><tr><td>18</td><td>MIN</td><td>Keionte Scott</td><td>CB</td><td>Miami (FL) Hurricanes</td><td>82.29</td><td>Round 2-3</td></tr><tr><td>19</td><td>CAR</td><td>T.J. Parker</td><td>EDGE</td><td>Clemson</td><td>81.48</td><td>Round 2-3</td></tr><tr><td>20</td><td>DAL</td><td>Christen Miller</td><td>DT</td><td>Georgia Bulldogs</td><td>80.95</td><td>Round 2-3</td></tr><tr><td>21</td><td>PIT</td><td>Zachariah Branch</td><td>WR</td><td>Georgia</td><td>80.32</td><td>Round 2-3</td></tr><tr><td>22</td><td>LAC</td><td>Kenyon Sadiq</td><td>TE</td><td>Oregon</td><td>81.47</td><td>Round 2-3</td></tr><tr><td>23</td><td>PHI</td><td>Zion Young</td><td>EDGE</td><td>Missouri Tigers</td><td>81.26</td><td>Round 2-3</td></tr><tr><td>24</td><td>CLE</td><td>Blake Miller</td><td>OT</td><td>Clemson Tigers</td><td>80.93</td><td>Round 2-3</td></tr><tr><td>25</td><td>CHI</td><td>Brandon Cisse</td><td>CB</td><td>South Carolina Gamecocks</td><td>82.17</td><td>Round 2-3</td></tr><tr><td>26</td><td>BUF</td><td>Anthony Hill Jr.</td><td>LB</td><td>Texas Longhorns</td><td>83.29</td><td>Round 2-3</td></tr><tr><td>27</td><td>SF</td><td>J.C. Davis</td><td>OT</td><td>Illinois Fighting Illini</td><td>79.69</td><td>Round 4-5</td></tr><tr><td>28</td><td>HOU</td><td>Kayden McDonald</td><td>DT</td><td>Ohio State Buckeyes</td><td>80.72</td><td>Round 2-3</td></tr><tr><td>29</td><td>LAR</td><td>D&#x27;Angelo Ponds</td><td>CB</td><td>Indiana Hoosiers</td><td>81.74</td><td>Round 2-3</td></tr><tr><td>30</td><td>DEN</td><td>Deion Burks</td><td>WR</td><td>Oklahoma Sooners</td><td>80.59</td><td>Round 2-3</td></tr><tr><td>31</td><td>NE</td><td>Arvell Reese</td><td>LB</td><td>Ohio State Buckeyes</td><td>83.1</td><td>Round 2-3</td></tr><tr><td>32</td><td>SEA</td><td>Caleb Tiernan</td><td>OT</td><td>Northwestern Wildcats</td><td>79.76</td><td>Round 4-5</td></tr></tbody>
+    </table>
   </main>
 </body>
 </html>

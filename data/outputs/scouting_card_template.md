@@ -13,7 +13,7 @@
 
 ## Athletic + Data Snapshot
 - Testing Line:
-- Composite Signals (RAS, MockDraftable, PFF, PlayerProfiler):
+- Composite Signals (RAS + PFF Grade):
 
 ## Core Trait Grades (5.0-9.5)
 - Personal/Behavior:
@@ -23,27 +23,6 @@
 - Production:
 - Mental/Learning:
 - Injury History:
-
-## Film Sub-Trait Matrix (Position-Specific)
-- Sub-trait 1:
-- Sub-trait 2:
-- Sub-trait 3:
-- Sub-trait 4:
-- Sub-trait 5:
-- Sub-trait 6:
-- Weighted Film Grade:
-
-## All-22 Focus (Top 10)
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
 
 ## Risk + Verification
 - Medical/Character:
@@ -56,6 +35,5 @@
 - Primary Concerns:
 - 2025 Production Snapshot:
 - Board Movement:
-- Analyst Source Snapshot:
 - Role / Scheme Projection:
 - Value Range:

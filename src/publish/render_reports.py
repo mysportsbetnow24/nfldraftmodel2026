@@ -4,6 +4,7 @@ import csv
 import html
 import json
 import re
+import shutil
 from pathlib import Path
 
 
@@ -12,6 +13,11 @@ BOARD_PATH = ROOT / "data" / "processed" / "big_board_2026.csv"
 OUT_DIR = ROOT / "data" / "outputs" / "player_reports_html"
 INDEX_PATH = ROOT / "data" / "outputs" / "reports_index.html"
 BLANK_TEMPLATE_PATH = ROOT / "data" / "outputs" / "scouting_card_template.html"
+DOCS_DIR = ROOT / "docs"
+DOCS_REPORTS_DIR = DOCS_DIR / "player_reports_html"
+DOCS_INDEX_PATH = DOCS_DIR / "reports_index.html"
+DOCS_BLANK_TEMPLATE_PATH = DOCS_DIR / "scouting_card_template.html"
+PRIVATE_ALL22_PATH = ROOT / "data" / "outputs" / "private" / "all22_focus_private_2026.csv"
 MAX_REPORTS = 300
 TEMPLATE_MD_PATH = ROOT / "data" / "outputs" / "scouting_card_template.md"
 
@@ -237,6 +243,71 @@ def _first_non_empty(*values: str) -> str:
     return ""
 
 
+def _decoded_text(value: str | None) -> str:
+    return html.unescape(str(value or "")).strip()
+
+
+def _humanize_label(value: str | None) -> str:
+    text = _decoded_text(value).replace("_", " ")
+    text = re.sub(r"\s+", " ", text).strip()
+    if not text:
+        return ""
+    # Preserve mixed-case labels; title-case snake_case style values.
+    if text == text.lower():
+        return text.title()
+    return text
+
+
+def _format_numeric(raw: str | None, digits: int = 1) -> str:
+    text = _decoded_text(raw)
+    if not text:
+        return "Pending"
+    try:
+        return f"{float(text):.{digits}f}"
+    except (TypeError, ValueError):
+        match = re.search(r"-?\d+(?:\.\d+)?", text)
+        if not match:
+            return "Pending"
+        return f"{float(match.group(0)):.{digits}f}"
+
+
+def _format_weight(raw: str | None) -> str:
+    text = _decoded_text(raw)
+    if not text:
+        return "Pending"
+    try:
+        return str(int(round(float(text))))
+    except (TypeError, ValueError):
+        match = re.search(r"\d+(?:\.\d+)?", text)
+        if not match:
+            return "Pending"
+        return str(int(round(float(match.group(0)))))
+
+
+def _format_height(raw_height: str | None, raw_height_in: str | None = None) -> str:
+    text = _decoded_text(raw_height)
+    if text:
+        m = re.search(r"(\d)\s*['ft]+\s*(\d{1,2})", text.lower())
+        if m:
+            return f"{int(m.group(1))}-{int(m.group(2))}"
+        m = re.search(r"(\d)\s*-\s*(\d{1,2})", text)
+        if m:
+            return f"{int(m.group(1))}-{int(m.group(2))}"
+        if re.fullmatch(r"\d{2,3}(?:\.\d+)?", text):
+            inches = int(round(float(text)))
+            return f"{inches // 12}-{inches % 12}"
+        return text
+
+    inches_text = _decoded_text(raw_height_in)
+    if inches_text:
+        try:
+            inches = int(round(float(inches_text)))
+            return f"{inches // 12}-{inches % 12}"
+        except (TypeError, ValueError):
+            pass
+    return "Pending"
+
+
 def _position_family(position: str) -> str:
     pos = str(position or "").upper().strip()
     if pos == "QB":
@@ -314,7 +385,6 @@ def _trait_rows(row: dict) -> list[tuple[str, float, str]]:
     risk_penalty = _to_float(row, "risk_penalty", 2.0)
 
     ras = _first_non_empty(row.get("ras_estimate", ""), "Pending")
-    md_comp = _first_non_empty(row.get("md_composite", ""), "Pending")
     film_cov = _first_non_empty(row.get("film_trait_coverage", ""), "0")
 
     pp_breakout = _first_non_empty(row.get("pp_breakout_age", ""), "N/A")
@@ -333,7 +403,7 @@ def _trait_rows(row: dict) -> list[tuple[str, float, str]]:
         (
             "Athletic Ability",
             _card_grade((athletic_score * 0.7) + (size_score * 0.3)),
-            f"Athletic score {athletic_score:.1f}; RAS {ras}; MockDraftable composite {md_comp}.",
+            f"Athletic score {athletic_score:.1f}; RAS {ras}.",
         ),
         (
             "Strength & Explosion",
@@ -380,7 +450,7 @@ def _summary_sections(row: dict) -> list[tuple[str, str]]:
     ceiling = _to_float(row, "ceiling_grade", min(95.0, final_grade + 2.0))
     rank = row.get("consensus_rank", "")
     best_role = row.get("best_role", "")
-    scheme_fit = row.get("best_scheme_fit", "")
+    scheme_fit = _humanize_label(row.get("best_scheme_fit", ""))
     team_fit = row.get("best_team_fit", "")
     comp = row.get("historical_comp", "")
     note = row.get("scouting_notes", "")
@@ -393,7 +463,6 @@ def _summary_sections(row: dict) -> list[tuple[str, str]]:
 
     pp_sig = _first_non_empty(row.get("pp_skill_signal", ""), "N/A")
     ras = _first_non_empty(row.get("ras_estimate", "Pending"), "Pending")
-    md = _first_non_empty(row.get("md_composite", "Pending"), "Pending")
 
     summary_intro = _first_non_empty(
         row.get("scouting_report_summary", ""),
@@ -416,8 +485,8 @@ def _summary_sections(row: dict) -> list[tuple[str, str]]:
         row.get("scouting_primary_concerns", ""),
         (
             f"Key development stress points: tighten play-to-play consistency, verify processing under pressure, and resolve any "
-            f"volatile outcomes flagged by contextual risk. Athletic markers currently read RAS {ras} and MockDraftable {md}, "
-            f"while PlayerProfiler skill signal sits at {pp_sig}. "
+            f"volatile outcomes flagged by contextual risk. Athletic and production context currently reflect RAS {ras} and "
+            f"PFF grade alignment, with overall skill signal at {pp_sig}. "
             f"{'Structured concern tags: ' + kiper_concern_tags + '.' if kiper_concern_tags else ''}"
         ),
     )
@@ -458,15 +527,6 @@ def _summary_sections(row: dict) -> list[tuple[str, str]]:
         ),
     )
 
-    analyst_snapshot = (
-        f"Kiper {kiper_rank}; "
-        f"TDN {row.get('tdn_rank','') or 'N/A'}; "
-        f"Ringer {row.get('ringer_rank','') or 'N/A'}; "
-        f"Bleacher {row.get('br_rank','') or 'N/A'}; "
-        f"AtoZ {row.get('atoz_rank','') or 'N/A'}; "
-        f"SI/FCS {row.get('si_rank','') or 'N/A'}."
-    )
-
     value = (
         f"Floor/Ceiling framework: floor {floor:.2f}, ceiling {ceiling:.2f}. Current card band: "
         f"{_grade_band(_card_grade(final_grade))}."
@@ -478,7 +538,6 @@ def _summary_sections(row: dict) -> list[tuple[str, str]]:
         ("Primary Concerns", concerns),
         ("2025 Production Snapshot", production_snapshot),
         ("Board Movement", board_movement),
-        ("Analyst Source Snapshot", analyst_snapshot),
         ("Role / Scheme Projection", role_scheme_projection),
         ("Value Range", value),
     ]
@@ -502,8 +561,8 @@ def _player_card(row: dict) -> str:
     school = html.escape(row.get("school", ""))
     pos = html.escape(row.get("position", ""))
     class_year = html.escape(row.get("class_year", ""))
-    height = html.escape(str(row.get("height", "")))
-    weight = html.escape(str(row.get("weight_lb_effective", row.get("weight_lb", ""))))
+    height = _format_height(row.get("height", ""), row.get("combine_height_in", ""))
+    weight = _format_weight(_first_non_empty(row.get("weight_lb_effective", ""), row.get("combine_weight_lb", ""), row.get("weight_lb", "")))
     rank = html.escape(str(row.get("consensus_rank", "")))
     age = _first_non_empty(row.get("age", ""), "Pending")
     dob = _first_non_empty(row.get("birth_date", ""), "Pending")
@@ -513,9 +572,12 @@ def _player_card(row: dict) -> str:
     card_grade = _card_grade(final_grade)
     grade_band = _grade_band(card_grade)
 
-    team_fit = html.escape(row.get("best_team_fit", ""))
-    scheme_fit = html.escape(row.get("best_scheme_fit", ""))
-    role = html.escape(row.get("best_role", ""))
+    team_fit_text = _humanize_label(row.get("best_team_fit", ""))
+    scheme_fit_text = _humanize_label(row.get("best_scheme_fit", ""))
+    role_text = _humanize_label(row.get("best_role", ""))
+    team_fit = html.escape(team_fit_text)
+    scheme_fit = html.escape(scheme_fit_text)
+    role = html.escape(role_text)
 
     headshot = html.escape(row.get("headshot_url", ""))
     if headshot:
@@ -535,21 +597,9 @@ def _player_card(row: dict) -> str:
             "</tr>"
         )
 
-    film_rows, film_weighted = _film_subtraits(row)
-    film_html = []
-    for idx, (label, weight_pct, score, note) in enumerate(film_rows, start=1):
-        film_html.append(
-            "<tr class='film-row'>"
-            f"<td class='label'>{html.escape(label)}:</td>"
-            f"<td class='score film-weight'>{weight_pct * 100:.0f}%</td>"
-            f"<td class='score'>{_editable_cell(f'{score:.1f}', f'film.{idx}.score')}</td>"
-            f"<td class='notes' colspan='4'>{_editable_cell(note, f'film.{idx}.notes')}</td>"
-            "</tr>"
-        )
-
-    arm_length = _safe_float_str(row, "arm_length_in", 1)
-    hand_size = _safe_float_str(row, "hand_size_in", 1)
-    wingspan = _safe_float_str(row, "wingspan_in", 1)
+    arm_length = _format_numeric(_first_non_empty(row.get("combine_arm_in", ""), row.get("arm_length_in", "")), 1)
+    hand_size = _format_numeric(_first_non_empty(row.get("combine_hand_in", ""), row.get("hand_size_in", "")), 1)
+    wingspan = _format_numeric(row.get("wingspan_in", ""), 1)
 
     forty = _safe_float_str(row, "forty_yard", 2)
     split_10 = _safe_float_str(row, "split_10", 2)
@@ -560,25 +610,14 @@ def _player_card(row: dict) -> str:
     bench = _safe_float_str(row, "bench_reps", 0)
 
     ras = _first_non_empty(row.get("ras_estimate", ""), "Pending")
-    ras_starter_target = _first_non_empty(row.get("ras_benchmark_starter_target", ""), "N/A")
-    ras_impact_target = _first_non_empty(row.get("ras_benchmark_impact_target", ""), "N/A")
-    ras_target_line = f"Starter>={ras_starter_target}, Impact>={ras_impact_target}"
-    md_composite = _first_non_empty(row.get("md_composite", ""), "Pending")
+    ras_starter_target = _first_non_empty(row.get("ras_benchmark_starter_target", ""), "")
+    ras_impact_target = _first_non_empty(row.get("ras_benchmark_impact_target", ""), "")
+    ras_target_line = f" (Starter>={ras_starter_target}, Impact>={ras_impact_target})" if (ras_starter_target and ras_impact_target) else ""
     pff_grade = _safe_float_str(row, "pff_grade", 1)
-    pp_signal = _first_non_empty(row.get("pp_skill_signal", ""), "N/A")
-    source_signal_line = (
-        f"Kiper {_first_non_empty(row.get('kiper_rank', ''), 'N/A')} | "
-        f"TDN {_first_non_empty(row.get('tdn_rank', ''), 'N/A')} | "
-        f"Ringer {_first_non_empty(row.get('ringer_rank', ''), 'N/A')} | "
-        f"Bleacher {_first_non_empty(row.get('br_rank', ''), 'N/A')} | "
-        f"AtoZ {_first_non_empty(row.get('atoz_rank', ''), 'N/A')} | "
-        f"SI/FCS {_first_non_empty(row.get('si_rank', ''), 'N/A')}"
-    )
 
-    all22_text = _all22_focus(row.get("position", ""))
     verification_note = _first_non_empty(
         row.get("verification_notes", ""),
-        "Cross-check with combine medical, interview, and full-season All-22 cutups before lock.",
+        "Cross-check with combine medical, interview, and full-season tape cutups before lock.",
     )
     development_plan = _first_non_empty(
         row.get("development_plan", ""),
@@ -614,8 +653,6 @@ def _player_card(row: dict) -> str:
         "br_rank": row.get("br_rank", ""),
         "atoz_rank": row.get("atoz_rank", ""),
         "si_rank": row.get("si_rank", ""),
-        "md_composite": row.get("md_composite", ""),
-        "film_weighted_grade": film_weighted,
         "source_confidence": source_confidence,
     }
 
@@ -658,7 +695,7 @@ def _player_card(row: dict) -> str:
       </tr>
       <tr>
         <td class="label">Alignment/Scheme:</td>
-        <td colspan="6">{_editable_cell(row.get('best_scheme_fit',''), 'info.alignment')}</td>
+        <td colspan="6">{_editable_cell(scheme_fit_text, 'info.alignment')}</td>
       </tr>
       <tr>
         <td class="label">Games Watched:</td>
@@ -680,29 +717,9 @@ def _player_card(row: dict) -> str:
       </tr>
       <tr>
         <td class="label">Composite Signals:</td>
-        <td colspan="6">{_editable_cell(f"RAS {ras} ({ras_target_line}) | MockDraftable {md_composite} | PFF Grade {pff_grade} | PlayerProfiler Signal {pp_signal}", 'athletic.composites')}</td>
-      </tr>
-      <tr>
-        <td class="label">Scouting Sources:</td>
-        <td colspan="6">{_editable_cell(source_signal_line, 'athletic.scouting_sources')}</td>
+        <td colspan="6">{_editable_cell(f"RAS {ras}{ras_target_line} | PFF Grade {pff_grade}", 'athletic.composites')}</td>
       </tr>
       {''.join(trait_html)}
-      <tr class="section"><th colspan="7">Film Sub-Trait Matrix</th></tr>
-      <tr class="subhead">
-        <td class="label">Sub-Trait</td>
-        <td class="score">Wt</td>
-        <td class="score">Score</td>
-        <td class="label" colspan="4">Translation Note</td>
-      </tr>
-      {''.join(film_html)}
-      <tr>
-        <td class="label">Weighted Film Grade:</td>
-        <td colspan="6">{_editable_cell(f"{film_weighted:.2f}", 'film.weighted_grade')}</td>
-      </tr>
-      <tr class="section"><th colspan="7">All-22 Focus (Top 10)</th></tr>
-      <tr>
-        <td colspan="7" class="summary-cell compact">{_editable_cell(all22_text, 'all22.top10', tag='div', cls='editable block')}</td>
-      </tr>
       <tr class="section"><th colspan="7">Risk + Verification</th></tr>
       <tr>
         <td class="label">Medical/Character:</td>
@@ -732,99 +749,97 @@ def _player_card(row: dict) -> str:
 
 def _css() -> str:
     return """
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=Merriweather:wght@300;400;700&display=swap');
-
 :root {
-  --ink: #161616;
-  --steel: #5e6872;
-  --line: #2a2a2a;
-  --paper: #f9f7f2;
+  --ink: #0e1116;
+  --muted: #5f6673;
+  --line: #d8dee8;
+  --paper: #fbfcff;
   --panel: #ffffff;
-  --header: #b7b7b7;
-  --accent: #0d3b4f;
+  --header: #ecf2f8;
+  --accent: #0a4f6b;
+  --accent-2: #19442a;
+  --shadow: 0 22px 48px rgba(8, 16, 34, 0.12);
 }
 
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  padding: 2rem;
+  padding: 1.25rem;
   color: var(--ink);
   background:
-    radial-gradient(circle at 20% 10%, rgba(13,59,79,0.08), transparent 45%),
-    radial-gradient(circle at 82% 12%, rgba(111,87,44,0.10), transparent 42%),
-    var(--paper);
-  font-family: 'Merriweather', serif;
+    radial-gradient(circle at 6% -4%, rgba(10,79,107,0.16), transparent 30%),
+    radial-gradient(circle at 95% 0%, rgba(25,68,42,0.16), transparent 26%),
+    repeating-linear-gradient(135deg, rgba(16,96,56,0.05) 0, rgba(16,96,56,0.05) 8px, rgba(255,255,255,0) 8px, rgba(255,255,255,0) 18px),
+    linear-gradient(180deg, #f4f7fb 0%, #edf5ef 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .scout-card {
-  max-width: 1040px;
+  max-width: 1160px;
   margin: 0 auto 2rem;
-  border: 1.6px solid var(--line);
+  border: 1px solid var(--line);
   background: var(--panel);
-  box-shadow: 0 16px 42px rgba(0,0,0,0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 .masthead {
   display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 1rem;
-  padding: 1rem 1.2rem;
-  border-bottom: 1.2px solid var(--line);
-  background: linear-gradient(90deg, #e7ecef, #f4f5f1);
+  grid-template-columns: 1fr 340px;
+  gap: 1.1rem;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(10,79,107,0.18), transparent 30%),
+    linear-gradient(100deg, #f5f9fd, #f4f8f2);
 }
 
 .identity { display: flex; gap: 1rem; align-items: center; }
-.headshot { width: 104px; height: 104px; object-fit: cover; border: 1px solid var(--line); }
+.headshot { width: 108px; height: 108px; object-fit: cover; border: 1px solid #b8c7d8; border-radius: 14px; }
 .placeholder { display:flex; align-items:center; justify-content:center; font-size: 0.8rem; color: #555; background:#ececec; }
 h1 {
   margin: 0;
-  font-family: 'Barlow Condensed', sans-serif;
   font-size: 2rem;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
 }
-.stack { margin: 0.28rem 0; color: #2d2d2d; font-size: 0.94rem; }
-.fit-box { border: 1px solid #a4adb6; padding: 0.7rem; font-size: 0.9rem; background: #fbfcfd; }
+.stack { margin: 0.32rem 0; color: #24303d; font-size: 0.95rem; }
+.fit-box { border: 1px solid #c8d5e3; border-radius: 14px; padding: 0.75rem 0.8rem; font-size: 0.9rem; background: #fff; }
 .fit-box p { margin: 0.35rem 0; }
 
-.sheet { padding: 0.8rem 1rem 1rem; }
+.sheet { padding: 0.95rem 1rem 1rem; }
 .info-table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
 }
-.info-table td, .info-table th { border: 1px solid var(--line); padding: 0.2rem 0.35rem; vertical-align: top; }
+.info-table td, .info-table th { border: 1px solid #d3dbe6; padding: 0.34rem 0.45rem; vertical-align: top; }
 .info-table .section th {
   background: var(--header);
-  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 750;
   text-align: left;
-  font-size: 1.15rem;
-  letter-spacing: 0.02em;
+  font-size: 1.06rem;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
+  color: #1a2f43;
 }
 .info-table .label {
   width: 170px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.05rem;
+  font-weight: 700;
+  font-size: 0.91rem;
 }
-.info-table .score { width: 70px; text-align: center; font-weight: 700; }
-.info-table .notes { font-size: 0.9rem; line-height: 1.35; }
-.info-table .subhead td {
-  background: #eceff2;
-  font-family: 'Barlow Condensed', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-}
-.film-row .film-weight { color: #374754; font-weight: 700; }
+.info-table .score { width: 74px; text-align: center; font-weight: 700; }
+.info-table .notes { font-size: 0.9rem; line-height: 1.4; }
 .summary-cell { padding: 0.7rem; min-height: 280px; }
-.summary-cell.compact { min-height: 0; padding: 0.45rem 0.7rem; }
 .summary-cell h4 {
-  margin: 0.5rem 0 0.2rem;
-  font-family: 'Barlow Condensed', sans-serif;
+  margin: 0.6rem 0 0.22rem;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  font-size: 1rem;
+  letter-spacing: 0.015em;
+  font-size: 0.93rem;
+  color: #254360;
 }
 
 .editable {
@@ -835,13 +850,9 @@ h1 {
 }
 .editable.block {
   display: block;
-  min-height: 2.4rem;
+  min-height: 2.05rem;
   padding: 0.2rem 0.25rem;
   white-space: pre-wrap;
-}
-.editable:focus {
-  background: #f7f1c6;
-  box-shadow: inset 0 0 0 1px #b79b41;
 }
 
 .controls {
@@ -850,45 +861,50 @@ h1 {
   padding: 0.8rem 1rem 1rem;
 }
 .btn {
-  border: 1px solid #253442;
-  background: #173548;
+  border: 1px solid #2e4c62;
+  background: #214965;
   color: #fff;
   padding: 0.45rem 0.7rem;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 650;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   cursor: pointer;
+  border-radius: 9px;
 }
-.btn.reset { background: #5b4a2c; border-color: #5b4a2c; }
+.btn.reset { background: #6d5128; border-color: #6d5128; }
 .btn.export { background: #2f5f38; border-color: #2f5f38; }
 .btn.html { background: #374754; border-color: #374754; }
 
 .index-card {
-  max-width: 980px;
+  max-width: 1080px;
   margin: 0 auto;
-  border: 1.5px solid var(--line);
+  border: 1px solid #d2dae6;
+  border-radius: 20px;
   background: #fff;
-  padding: 1rem;
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
 }
 .index-card h1 {
-  font-size: 2.1rem;
+  font-size: 2.15rem;
+  letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
 }
 #reportSearch {
   width: 100%;
-  padding: 0.55rem;
-  border: 1px solid #5c646c;
+  padding: 0.62rem;
+  border: 1px solid #c1cddd;
+  border-radius: 11px;
   margin: 0.5rem 0 0.8rem;
-  font-family: 'Merriweather', serif;
+  font-family: inherit;
 }
 .index-list { margin: 0; padding-left: 1.2rem; line-height: 1.65; }
-.index-list a { color: #133f5a; text-decoration: none; }
+.index-list a { color: #164e71; text-decoration: none; font-weight: 520; }
 .index-list a:hover { text-decoration: underline; }
 
 @media (max-width: 860px) {
-  body { padding: 0.7rem; }
+  body { padding: 0.6rem; }
   .masthead { grid-template-columns: 1fr; }
-  .info-table .label { width: 120px; }
+  .info-table .label { width: 124px; }
 }
 """.strip()
 
@@ -1003,7 +1019,7 @@ def _blank_template_markdown() -> str:
 
 ## Athletic + Data Snapshot
 - Testing Line:
-- Composite Signals (RAS, MockDraftable, PFF, PlayerProfiler):
+- Composite Signals (RAS + PFF Grade):
 
 ## Core Trait Grades (5.0-9.5)
 - Personal/Behavior:
@@ -1013,27 +1029,6 @@ def _blank_template_markdown() -> str:
 - Production:
 - Mental/Learning:
 - Injury History:
-
-## Film Sub-Trait Matrix (Position-Specific)
-- Sub-trait 1:
-- Sub-trait 2:
-- Sub-trait 3:
-- Sub-trait 4:
-- Sub-trait 5:
-- Sub-trait 6:
-- Weighted Film Grade:
-
-## All-22 Focus (Top 10)
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
 
 ## Risk + Verification
 - Medical/Character:
@@ -1046,10 +1041,38 @@ def _blank_template_markdown() -> str:
 - Primary Concerns:
 - 2025 Production Snapshot:
 - Board Movement:
-- Analyst Source Snapshot:
 - Role / Scheme Projection:
 - Value Range:
 """.strip() + "\n"
+
+
+def _write_private_all22(rows: list[dict]) -> None:
+    PRIVATE_ALL22_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with PRIVATE_ALL22_PATH.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=["player_uid", "player_name", "position", "school", "all22_focus_top10"],
+        )
+        writer.writeheader()
+        for row in rows:
+            writer.writerow(
+                {
+                    "player_uid": row.get("player_uid", ""),
+                    "player_name": row.get("player_name", ""),
+                    "position": row.get("position", ""),
+                    "school": row.get("school", ""),
+                    "all22_focus_top10": _all22_focus(row.get("position", "")),
+                }
+            )
+
+
+def _sync_reports_to_docs() -> None:
+    DOCS_REPORTS_DIR.parent.mkdir(parents=True, exist_ok=True)
+    if DOCS_REPORTS_DIR.exists():
+        shutil.rmtree(DOCS_REPORTS_DIR)
+    shutil.copytree(OUT_DIR, DOCS_REPORTS_DIR)
+    shutil.copy2(INDEX_PATH, DOCS_INDEX_PATH)
+    shutil.copy2(BLANK_TEMPLATE_PATH, DOCS_BLANK_TEMPLATE_PATH)
 
 
 def render_reports() -> None:
@@ -1099,8 +1122,7 @@ def render_reports() -> None:
     index_body = f"""
 <section class="index-card">
   <h1>2026 Scouting Cards</h1>
-  <p>Scout-style cards with model-backed grades and narrative sections. Public mode is read-only.</p>
-  <p><a href="scouting_card_template.html">Open Blank Scouting Card Template</a></p>
+  <p>Scout-style cards with model-backed grades and narrative sections.</p>
   <input id="reportSearch" placeholder="Search by player, school, or position" />
   <ul class="index-list" id="reportList">{''.join(list_items)}</ul>
 </section>
@@ -1129,6 +1151,8 @@ if (input && list) {{
         )
     )
     TEMPLATE_MD_PATH.write_text(_blank_template_markdown())
+    _write_private_all22(rows)
+    _sync_reports_to_docs()
 
 
 if __name__ == "__main__":

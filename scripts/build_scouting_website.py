@@ -97,44 +97,48 @@ def _build_home_html(top_rows: list[dict]) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NF Draft Hub 2026</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Public+Sans:wght@300;400;600;700&display=swap');
     :root {{
-      --bg: #f3efe7;
+      --bg: #f1f5fb;
       --paper: #ffffff;
-      --ink: #141414;
-      --line: #1f2933;
-      --accent: #0f4c5c;
-      --accent2: #884c26;
-      --muted: #5a6772;
+      --ink: #0d1117;
+      --line: #d6dde8;
+      --accent: #0d4f6b;
+      --muted: #596377;
+      --shadow: 0 24px 48px rgba(7, 17, 35, 0.12);
     }}
     * {{ box-sizing: border-box; }}
     body {{
       margin: 0;
-      font-family: 'Public Sans', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 10% 12%, rgba(15,76,92,0.10), transparent 34%),
-        radial-gradient(circle at 84% 7%, rgba(136,76,38,0.10), transparent 32%),
-        var(--bg);
+        radial-gradient(circle at 6% -4%, rgba(13,79,107,0.14), transparent 30%),
+        radial-gradient(circle at 98% 0%, rgba(31,78,47,0.16), transparent 26%),
+        repeating-linear-gradient(135deg, rgba(16,96,56,0.05) 0, rgba(16,96,56,0.05) 8px, rgba(255,255,255,0) 8px, rgba(255,255,255,0) 18px),
+        linear-gradient(180deg, #f4f7fb 0%, #edf4ee 100%);
       padding: 1.1rem;
     }}
     .shell {{
       max-width: 1240px;
       margin: 0 auto;
-      border: 1.5px solid var(--line);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
       background: var(--paper);
-      box-shadow: 0 14px 36px rgba(0,0,0,0.14);
+      box-shadow: var(--shadow);
     }}
     .hero {{
-      border-bottom: 1.5px solid var(--line);
-      padding: 1rem 1.2rem;
-      background: linear-gradient(100deg, #eef3f4, #f8f4ed);
+      border-bottom: 1px solid var(--line);
+      padding: 1.1rem 1.25rem;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(10,79,107,0.18), transparent 30%),
+        linear-gradient(100deg, #f5f9fd, #f4f8f2);
     }}
     .hero h1 {{
       margin: 0;
-      font-family: 'Archivo Black', sans-serif;
-      letter-spacing: 0.02em;
-      font-size: 2rem;
+      letter-spacing: -0.02em;
+      font-size: 2.2rem;
+      line-height: 1.05;
     }}
     .hero p {{ margin: 0.45rem 0 0; color: var(--muted); }}
     .links {{
@@ -145,11 +149,12 @@ def _build_home_html(top_rows: list[dict]) -> str:
     }}
     .links a {{
       text-decoration: none;
-      border: 1px solid var(--line);
+      border: 1px solid #c6d1de;
+      border-radius: 11px;
       background: #f8fafb;
       color: var(--ink);
-      padding: 0.45rem 0.65rem;
-      font-weight: 600;
+      padding: 0.5rem 0.75rem;
+      font-weight: 650;
       font-size: 0.92rem;
     }}
     .links a.primary {{
@@ -164,12 +169,13 @@ def _build_home_html(top_rows: list[dict]) -> str:
       padding: 0.95rem 1rem 1rem;
     }}
     .panel {{
-      border: 1px solid var(--line);
+      border: 1px solid #d5dde8;
+      border-radius: 14px;
       padding: 0.8rem;
+      background: #fff;
     }}
     .panel h2 {{
       margin: 0 0 0.5rem;
-      font-family: 'Archivo Black', sans-serif;
       font-size: 1.1rem;
       letter-spacing: 0.01em;
     }}
@@ -180,8 +186,9 @@ def _build_home_html(top_rows: list[dict]) -> str:
     }}
     #search {{
       width: 100%;
-      border: 1px solid #2c3b47;
-      padding: 0.55rem;
+      border: 1px solid #c7d1df;
+      border-radius: 11px;
+      padding: 0.6rem;
       font-size: 0.94rem;
       margin: 0 0 0.6rem;
     }}
@@ -192,17 +199,18 @@ def _build_home_html(top_rows: list[dict]) -> str:
       font-size: 0.88rem;
     }}
     th, td {{
-      border: 1px solid #24303a;
+      border: 1px solid #d5dde8;
       padding: 0.35rem 0.4rem;
       text-align: left;
       vertical-align: top;
       word-wrap: break-word;
     }}
     th {{
-      background: #e6ebef;
+      background: #edf3f9;
       font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.03em;
+      color: #16344a;
     }}
     @media (max-width: 780px) {{
       body {{ padding: 0.55rem; }}
@@ -215,24 +223,17 @@ def _build_home_html(top_rows: list[dict]) -> str:
   <main class="shell">
     <section class="hero">
       <h1>NFL Draft Hub 2026</h1>
-      <p>Editable scouting cards + model board + mock outputs. Built for weekly updates and publishing.</p>
+      <p>Model board, mock drafts, and scouting cards in a clean, fast public format.</p>
       <div class="links">
         <a class="primary" href="reports_index.html">Open Scouting Cards</a>
-        <a href="scouting_card_template.html">Blank Card Template</a>
-        <a href="big_board_2026.csv">Big Board CSV</a>
-        <a href="big_board_2026_rank_vs_consensus.csv">Rank vs Consensus CSV</a>
-        <a href="mock_2026_round1.csv">Round 1 Mock CSV</a>
-        <a href="mock_2026_7round.csv">7-Round Mock CSV</a>
+        <a href="2026-nfl-draft-big-board.html">Big Board Page</a>
+        <a href="data_rank_vs_consensus.html">Rank vs Consensus Page</a>
+        <a href="2026-nfl-mock-draft-round-1.html">Round 1 Mock Page</a>
+        <a href="2026-nfl-7-round-mock-draft.html">7-Round Mock Page</a>
       </div>
     </section>
 
     <section class="grid">
-      <article class="panel">
-        <h2>How To Use This</h2>
-        <p class="hint">1) Open <strong>Scouting Cards</strong> and edit fields directly. 2) Click <strong>Save Local Edit</strong> on each card. 3) Export JSON/HTML when you are ready to publish.</p>
-        <p class="hint">For a shared multi-user workflow later, add Supabase/Firebase and store notes server-side instead of local browser storage.</p>
-      </article>
-
       <article class="panel">
         <h2>Top Board Snapshot</h2>
         <input id="search" placeholder="Search player, school, or position..." />
