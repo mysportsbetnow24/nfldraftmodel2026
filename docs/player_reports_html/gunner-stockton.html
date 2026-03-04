@@ -281,8 +281,6 @@ h1 {
   <section class="controls">
     <button type="button" class="btn save">Save Local Edit</button>
     <button type="button" class="btn reset">Reset To Model</button>
-    <button type="button" class="btn export">Export JSON</button>
-    <button type="button" class="btn html">Export HTML</button>
   </section>
 
   <script type="application/json" class="model-snapshot">{&quot;player_uid&quot;: &quot;45-gunner-stockton&quot;, &quot;player_name&quot;: &quot;Gunner Stockton&quot;, &quot;position&quot;: &quot;QB&quot;, &quot;school&quot;: &quot;Georgia&quot;, &quot;consensus_rank&quot;: &quot;213&quot;, &quot;final_grade&quot;: &quot;75.05&quot;, &quot;round_value&quot;: &quot;Round 5-6&quot;, &quot;ras_estimate&quot;: &quot;&quot;, &quot;pp_skill_signal&quot;: &quot;&quot;, &quot;kiper_rank&quot;: &quot;&quot;, &quot;kiper_rank_delta&quot;: &quot;&quot;, &quot;tdn_rank&quot;: &quot;&quot;, &quot;ringer_rank&quot;: &quot;&quot;, &quot;br_rank&quot;: &quot;&quot;, &quot;atoz_rank&quot;: &quot;&quot;, &quot;si_rank&quot;: &quot;&quot;, &quot;md_composite&quot;: &quot;6.61&quot;, &quot;film_weighted_grade&quot;: 8.72, &quot;source_confidence&quot;: &quot;Medium confidence - model and available film align; pending combine + interview stack.&quot;}</script>
@@ -321,16 +319,6 @@ h1 {
     localStorage.removeItem(storageKey);
     window.location.reload();
   }
-
-  function exportJSON() {
-    const modelTag = card.querySelector('.model-snapshot');
-    let modelSnapshot = {};
-    if (modelTag) {
-      try {
-        modelSnapshot = JSON.parse(modelTag.textContent);
-      } catch (err) {
-        modelSnapshot = {};
-      }
     }
 
     const payload = {
@@ -351,19 +339,6 @@ h1 {
     URL.revokeObjectURL(url);
   }
 
-  function exportHTML() {
-    const doc = '<!doctype html>\n' + document.documentElement.outerHTML;
-    const blob = new Blob([doc], { type: 'text/html;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${uid}-scouting-card.html`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }
-
   const existing = localStorage.getItem(storageKey);
   if (existing) {
     try {
@@ -375,13 +350,10 @@ h1 {
 
   const btnSave = card.querySelector('.btn.save');
   const btnReset = card.querySelector('.btn.reset');
-  const btnExport = card.querySelector('.btn.export');
-  const btnHtml = card.querySelector('.btn.html');
 
   if (btnSave) btnSave.addEventListener('click', saveLocal);
   if (btnReset) btnReset.addEventListener('click', resetLocal);
-  if (btnExport) btnExport.addEventListener('click', exportJSON);
-  if (btnHtml) btnHtml.addEventListener('click', exportHTML);
 })();</script>
+<script src="../assets/owner_edit_lock.js"></script>
 </body>
 </html>

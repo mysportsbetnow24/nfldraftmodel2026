@@ -1,0 +1,8 @@
+Extreme Rank Jump Watchlist (No Evidence Increase)
+
+Previous snapshot: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260304_000235.csv
+Threshold rank rise: 55
+Flagged rows: 2
+
+Antonio Williams | WR | 191 -> 111 (+80) | conf 76.55->76.55 | miss 1.0->1.0 | score=76.42; prior_signal=57.58; trait:-6.88 | prior:+1.42 | risk:-0.91 | language:-0.41
+Max Klare | TE | 210 -> 132 (+78) | conf 66.44->66.44 | miss 1.18->1.18 | score=76.22; prior_signal=64.96; trait:-7.35 | prior:+6.07 | production:-1.51 | risk:-0.41

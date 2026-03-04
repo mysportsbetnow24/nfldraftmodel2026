@@ -71,6 +71,34 @@
       gap: 0.75rem;
       padding: 0.95rem 1rem 1rem;
     }
+    .dataset-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      padding: 0.95rem 1rem 0.2rem;
+    }
+    .dataset-card {
+      display: block;
+      border: 1px solid var(--line);
+      background: #f8fafb;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0.8rem;
+    }
+    .dataset-card:hover {
+      background: #eef4f8;
+    }
+    .dataset-card h3 {
+      margin: 0;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+    }
+    .dataset-card p {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
     .panel {
       border: 1px solid var(--line);
       padding: 0.8rem;
@@ -116,6 +144,7 @@
       body { padding: 0.55rem; }
       .hero h1 { font-size: 1.55rem; }
       th, td { font-size: 0.8rem; }
+      .dataset-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -123,21 +152,40 @@
   <main class="shell">
     <section class="hero">
       <h1>NFL Draft Hub 2026</h1>
-      <p>Editable scouting cards + model board + mock outputs. Built for weekly updates and publishing.</p>
+      <p>Owner-locked scouting cards + model board + mock outputs. Built for weekly updates and publishing.</p>
       <div class="links">
         <a class="primary" href="reports_index.html">Open Scouting Cards</a>
         <a href="scouting_card_template.html">Blank Card Template</a>
-        <a href="big_board_2026.csv">Big Board CSV</a>
-        <a href="big_board_2026_rank_vs_consensus.csv">Rank vs Consensus CSV</a>
-        <a href="mock_2026_round1.csv">Round 1 Mock CSV</a>
-        <a href="mock_2026_7round.csv">7-Round Mock CSV</a>
+        <a href="data_big_board.html">Big Board Data Page</a>
+        <a href="data_rank_vs_consensus.html">Rank vs Consensus Page</a>
+        <a href="data_mock_round1.html">Round 1 Mock Page</a>
+        <a href="data_mock_7round.html">7-Round Mock Page</a>
       </div>
+    </section>
+
+    <section class="dataset-grid">
+      <a class="dataset-card" href="data_big_board.html">
+        <h3>Big Board Data</h3>
+        <p>Open the dedicated page for public data access status and board notes.</p>
+      </a>
+      <a class="dataset-card" href="data_rank_vs_consensus.html">
+        <h3>Rank vs Consensus</h3>
+        <p>Open the page for model-vs-market comparison access status and notes.</p>
+      </a>
+      <a class="dataset-card" href="data_mock_round1.html">
+        <h3>Round 1 Mock Data</h3>
+        <p>Open the page for round 1 mock access status and publication notes.</p>
+      </a>
+      <a class="dataset-card" href="data_mock_7round.html">
+        <h3>7-Round Mock Data</h3>
+        <p>Open the page for full mock access status and publication notes.</p>
+      </a>
     </section>
 
     <section class="grid">
       <article class="panel">
         <h2>How To Use This</h2>
-        <p class="hint">1) Open <strong>Scouting Cards</strong> and edit fields directly. 2) Click <strong>Save Local Edit</strong> on each card. 3) Export JSON/HTML when you are ready to publish.</p>
+        <p class="hint">1) Open <strong>Scouting Cards</strong>. 2) Public visitors are read-only. 3) Owner edits are handled in the private admin workflow.</p>
         <p class="hint">For a shared multi-user workflow later, add Supabase/Firebase and store notes server-side instead of local browser storage.</p>
       </article>
 

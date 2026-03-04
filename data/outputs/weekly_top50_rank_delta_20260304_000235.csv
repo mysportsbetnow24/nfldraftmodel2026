@@ -1,0 +1,51 @@
+player_name,position,curr_rank,prev_rank,rank_change_prev_minus_curr,curr_grade,curr_round_value,consensus_mean_rank,midband_brake_penalty,soft_ceiling_penalty,consensus_tail_soft_penalty,front7_inflation_penalty,cb_nickel_inflation_penalty
+Sonny Styles,LB,1,1,0,85.11,Round 1,11.0,0.0,0.0,0.0,0.19,0.0
+Dillon Thieneman,S,2,5,3,84.59,Round 1,38.75,0.0,0.0,0.0,0.0,0.0
+Kadyn Proctor,OT,3,2,-1,84.66,Round 1,19.5,0.0,0.0,0.0,0.0,0.0
+Jeremiyah Love,RB,4,3,-1,84.55,Round 1,6.22,0.0,0.0,0.0,0.0,0.0
+Monroe Freeling,OT,5,6,1,84.22,Round 1,27.75,0.0,0.0,0.0,0.0,0.0
+Daylen Everette,CB,6,8,2,83.94,Round 1-2,72.0,0.0,0.0,0.0,0.0,0.0
+Jordyn Tyson,WR,7,4,-3,84.26,Round 1,12.67,0.0,0.0,0.0,0.0,0.0
+Dani Dennis-Sutton,EDGE,8,11,3,83.38,Round 1-2,89.0,0.0,0.0,0.0,0.0,0.0
+Caleb Lomu,OT,9,7,-2,83.62,Round 2-3,19.67,0.0,0.0,0.0,0.0,0.0
+Anthony Hill Jr.,LB,10,10,0,83.29,Round 2-3,41.17,0.0,0.0,0.0,0.0,0.0
+Skyler Bell,WR,11,15,4,82.78,Round 2-3,79.0,0.0,0.0,0.0,0.0,0.0
+Arvell Reese,LB,12,9,-3,83.1,Round 2-3,3.62,0.0,0.0,0.0,0.0,0.0
+Spencer Fano,OT,13,13,0,82.57,Round 2-3,21.71,0.0,0.0,0.0,0.0,0.0
+Keionte Scott,CB,14,19,5,82.29,Round 2-3,61.0,0.24,0.0,0.0,0.0,0.73
+Francis Mauigoa,OT,15,12,-3,82.45,Round 2-3,7.86,0.0,0.0,0.0,0.0,0.0
+Brandon Cisse,CB,16,16,0,82.17,Round 2-3,37.4,0.0,0.0,0.0,0.0,0.0
+Tyreak Sapp,EDGE,17,24,7,81.85,Round 2-3,98.0,0.0,0.0,0.0,0.0,0.0
+D'Angelo Ponds,CB,18,22,4,81.74,Round 2-3,55.5,0.28,0.0,0.0,0.0,1.05
+Olaivavega Ioane,IOL,19,17,-2,81.87,Round 2-3,16.4,0.0,0.0,0.0,0.0,0.0
+David Bailey,EDGE,20,20,0,81.66,Round 2-3,15.56,0.0,0.0,0.0,0.51,0.0
+Brian Parker II,OT,21,35,14,81.35,Round 2-3,99.0,0.0,0.0,0.0,0.0,0.0
+Caleb Downs,S,22,14,-8,81.89,Round 2-3,3.42,0.0,0.0,0.0,0.0,0.0
+Mansoor Delane,CB,23,18,-5,81.77,Round 2-3,15.4,0.0,0.0,0.0,0.0,0.0
+Gabe Jacas,EDGE,24,31,7,81.34,Round 2-3,68.67,0.34,0.0,0.0,0.0,0.0
+Kenyon Sadiq,TE,25,23,-2,81.47,Round 2-3,28.0,0.0,0.0,0.0,0.0,0.0
+Josiah Trotter,LB,26,27,1,81.37,Round 2-3,53.0,0.41,0.0,0.0,0.0,0.0
+T.J. Parker,EDGE,27,21,-6,81.48,Round 2-3,30.86,0.0,0.0,0.0,0.0,0.0
+Zion Young,EDGE,28,28,0,81.26,Round 2-3,44.0,0.05,0.0,0.0,0.0,0.0
+Mikail Kamara,EDGE,29,37,8,80.95,Round 2-3,96.0,0.0,0.0,0.0,0.0,0.0
+Eugene Asante,LB,30,39,9,80.93,Round 2-3,,0.0,0.0,0.0,0.0,0.0
+Emmanuel Pregnon,IOL,31,29,-2,81.11,Round 2-3,33.5,0.0,0.0,0.0,0.0,0.0
+Blake Miller,OT,32,36,4,80.93,Round 2-3,43.75,0.27,0.0,0.0,0.0,0.0
+C.J. Allen,LB,33,25,-8,81.1,Round 2-3,27.33,0.0,0.0,0.0,0.0,0.0
+Christen Miller,DT,34,33,-1,80.95,Round 2-3,49.6,0.12,0.0,0.0,0.0,0.0
+Deion Burks,WR,35,40,5,80.59,Round 2-3,68.0,0.61,0.0,0.0,0.0,0.0
+Makai Lemon,WR,36,26,-10,80.98,Round 2-3,13.0,0.0,0.0,0.0,0.0,0.0
+Kaytron Allen,RB,37,44,7,80.4,Round 2-3,116.0,0.0,0.0,0.0,0.0,0.0
+Zachariah Branch,WR,38,47,9,80.32,Round 2-3,67.0,0.6,0.0,0.0,0.0,0.0
+Kayden McDonald,DT,39,34,-5,80.72,Round 2-3,29.6,0.0,0.0,0.0,0.11,0.0
+Nyck Harbor,WR,40,30,-10,80.86,Round 2-3,8.0,0.0,0.0,0.0,0.0,0.0
+CJ Daniels,WR,41,45,4,80.21,Round 3-4,73.0,0.0,0.0,0.0,0.0,0.0
+Lorenzo Styles Jr.,CB,42,68,26,80.21,Round 3-4,,0.0,0.0,0.0,0.0,0.0
+Fernando Mendoza,QB,43,32,-11,80.61,Round 3-4,1.7,0.0,0.0,0.0,0.0,0.0
+Jack Endries,TE,44,46,2,80.06,Round 3-4,71.0,0.0,0.0,0.0,0.0,0.0
+Michael Taaffe,S,45,57,12,79.83,Round 4-5,120.0,0.0,0.0,0.0,0.0,0.0
+J.C. Davis,OT,46,59,13,79.69,Round 4-5,111.0,0.0,0.0,0.0,0.0,0.0
+Ja'Kobi Lane,WR,47,55,8,79.76,Round 4-5,63.0,0.6,0.0,0.0,0.0,0.0
+Jake Golday,LB,48,43,-5,79.98,Round 4-5,43.5,0.18,0.0,0.0,0.0,0.0
+Austin Barber,OT,49,64,15,79.6,Round 4-5,115.0,0.0,0.0,0.0,0.0,0.0
+Chase Bisontis,IOL,50,60,10,79.6,Round 4-5,74.67,0.83,0.0,0.0,0.0,0.0

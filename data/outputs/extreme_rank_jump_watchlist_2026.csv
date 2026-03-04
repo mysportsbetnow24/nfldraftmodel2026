@@ -1,0 +1,3 @@
+player_name,position,prev_rank,curr_rank,rank_rise,prev_confidence,curr_confidence,prev_evidence_missing,curr_evidence_missing,prev_cfb_cov,curr_cfb_cov,prev_testing_status,curr_testing_status,rank_driver_summary
+Antonio Williams,WR,191,111,80,76.55,76.55,1.0,1.0,3,3,reported,reported,score=76.42; prior_signal=57.58; trait:-6.88 | prior:+1.42 | risk:-0.91 | language:-0.41
+Max Klare,TE,210,132,78,66.44,66.44,1.18,1.18,3,3,pending,pending,score=76.22; prior_signal=64.96; trait:-7.35 | prior:+6.07 | production:-1.51 | risk:-0.41

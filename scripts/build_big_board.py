@@ -85,21 +85,34 @@ PRODUCTION_SIGNAL_MAX_DELTA = float(os.getenv("PRODUCTION_SIGNAL_MAX_DELTA", "7.
 PRODUCTION_SIGNAL_QB_MULTIPLIER = float(os.getenv("PRODUCTION_SIGNAL_QB_MULTIPLIER", "0.74"))
 PRODUCTION_SIGNAL_QB_MAX_DELTA = float(os.getenv("PRODUCTION_SIGNAL_QB_MAX_DELTA", "6.0"))
 PRODUCTION_SIGNAL_FRONT7_MULTIPLIER = float(
-    os.getenv("PRODUCTION_SIGNAL_FRONT7_MULTIPLIER", "0.68")
+    os.getenv("PRODUCTION_SIGNAL_FRONT7_MULTIPLIER", "0.64")
 )
 PRODUCTION_SIGNAL_FRONT7_MAX_UP_DELTA = float(
-    os.getenv("PRODUCTION_SIGNAL_FRONT7_MAX_UP_DELTA", "3.8")
+    os.getenv("PRODUCTION_SIGNAL_FRONT7_MAX_UP_DELTA", "3.4")
 )
 PRODUCTION_SIGNAL_FRONT7_MAX_DOWN_DELTA = float(
     os.getenv("PRODUCTION_SIGNAL_FRONT7_MAX_DOWN_DELTA", "9.0")
 )
-FRONT7_INFLATION_BRAKE_MAX = float(os.getenv("FRONT7_INFLATION_BRAKE_MAX", "1.45"))
-NICKEL_CB_INFLATION_BRAKE_MAX = float(os.getenv("NICKEL_CB_INFLATION_BRAKE_MAX", "1.20"))
+FRONT7_INFLATION_BRAKE_MAX = float(os.getenv("FRONT7_INFLATION_BRAKE_MAX", "1.70"))
+NICKEL_CB_INFLATION_BRAKE_MAX = float(os.getenv("NICKEL_CB_INFLATION_BRAKE_MAX", "1.30"))
 AUTO_WEEKLY_STABILITY_CHECK = str(
     os.getenv("AUTO_WEEKLY_STABILITY_CHECK", "1")
 ).strip().lower() in {"1", "true", "yes", "y"}
 AUTO_DELTA_AUDIT_AFTER_BUILD = str(
     os.getenv("AUTO_DELTA_AUDIT_AFTER_BUILD", "1")
+).strip().lower() in {"1", "true", "yes", "y"}
+GRADE_CALIBRATED_BLEND = float(os.getenv("GRADE_CALIBRATED_BLEND", "0.78"))
+GRADE_PRIOR_BLEND = float(os.getenv("GRADE_PRIOR_BLEND", "0.22"))
+RANK_UNCERTAINTY_DRAG_WEIGHT = float(os.getenv("RANK_UNCERTAINTY_DRAG_WEIGHT", "0.035"))
+RANK_PRIOR_OVERHANG_DRAG_WEIGHT = float(os.getenv("RANK_PRIOR_OVERHANG_DRAG_WEIGHT", "0.20"))
+RANK_PRIOR_OVERHANG_SCALE = float(os.getenv("RANK_PRIOR_OVERHANG_SCALE", "5.0"))
+RANK_CONSENSUS_REALIGN_MAX = float(os.getenv("RANK_CONSENSUS_REALIGN_MAX", "2.10"))
+RANK_CONSENSUS_REALIGN_DEADBAND = float(os.getenv("RANK_CONSENSUS_REALIGN_DEADBAND", "20.0"))
+RANK_CONSENSUS_REALIGN_SCALE = float(os.getenv("RANK_CONSENSUS_REALIGN_SCALE", "120.0"))
+EXTREME_RANK_DELTA_MIN_RISE = int(os.getenv("EXTREME_RANK_DELTA_MIN_RISE", "55"))
+EXTREME_RANK_DELTA_MAX_ALLOWED = int(os.getenv("EXTREME_RANK_DELTA_MAX_ALLOWED", "6"))
+EXTREME_RANK_DELTA_FAIL_ON_TRIGGER = str(
+    os.getenv("EXTREME_RANK_DELTA_FAIL_ON_TRIGGER", "0")
 ).strip().lower() in {"1", "true", "yes", "y"}
 UPSIDE_EVIDENCE_GUARDRAIL_ACTIVE_GRADE = float(
     os.getenv("UPSIDE_EVIDENCE_GUARDRAIL_ACTIVE_GRADE", "82.0")
@@ -677,6 +690,139 @@ def _run_locked_stability_checks(board_path: Path, watchlist_path: Path) -> None
     except Exception as exc:
         print(f"Delta audit skipped due to error: {exc}")
 
+def _build_rank_driver_summary(
+    *,
+    model_score: float,
+    formula: dict,
+    prior_signal: float,
+    language_adjustment_applied: float,
+    guardrail_penalty: float,
+    drift_penalty: float,
+    soft_ceiling_penalty: float,
+    cap_penalty: float,
+    consensus_tail_penalty: float,
+    front7_inflation_penalty: float,
+    cb_nickel_inflation_penalty: float,
+) -> str:
+    risk_penalty = float(formula.get("formula_risk_penalty", 0.0) or 0.0)
+    prod_component = float(
+        formula.get("formula_production_component", PRODUCTION_SIGNAL_NEUTRAL) or PRODUCTION_SIGNAL_NEUTRAL
+    )
+    ath_component = float(formula.get("formula_athletic_component", 70.0) or 70.0)
+    trait_component = float(formula.get("formula_trait_component", 70.0) or 70.0)
+    prior_grade = float(formula.get("formula_prior_grade", 70.0) or 70.0)
+    calibrated_grade = float(formula.get("formula_calibrated_grade", 70.0) or 70.0)
+    components = [
+        ("trait", (trait_component - 70.0) * 0.38),
+        ("production", (prod_component - 70.0) * 0.24),
+        ("athletic", (ath_component - 70.0) * 0.18),
+        ("prior", (prior_grade - calibrated_grade)),
+        ("language", float(language_adjustment_applied)),
+        ("risk", -risk_penalty),
+        (
+            "guardrail",
+            -(
+                float(guardrail_penalty)
+                + float(drift_penalty)
+                + float(soft_ceiling_penalty)
+                + float(cap_penalty)
+                + float(consensus_tail_penalty)
+                + float(front7_inflation_penalty)
+                + float(cb_nickel_inflation_penalty)
+            ),
+        ),
+    ]
+    top = sorted(components, key=lambda x: abs(float(x[1])), reverse=True)[:4]
+    return (
+        f"score={round(float(model_score),2)};"
+        f" prior_signal={round(float(prior_signal),2)};"
+        " "
+        + " | ".join(f"{k}:{v:+.2f}" for k, v in top)
+    ).strip()
+
+
+def _run_extreme_rank_delta_gate(
+    *,
+    current_rows: list[dict],
+    snapshot_dir: Path,
+    min_rise: int = EXTREME_RANK_DELTA_MIN_RISE,
+) -> tuple[list[dict], Path | None]:
+    board_snaps = sorted(snapshot_dir.glob("big_board_2026_snapshot_*.csv"))
+    if not board_snaps:
+        return [], None
+    prev_path = board_snaps[-1]
+    with prev_path.open() as f:
+        prev_rows = list(csv.DictReader(f))
+    prev_idx = {
+        canonical_player_name(r.get("player_name", "")): r
+        for r in prev_rows
+        if str(r.get("player_name", "")).strip()
+    }
+
+    flagged: list[dict] = []
+    for row in current_rows:
+        name = str(row.get("player_name", "")).strip()
+        if not name:
+            continue
+        key = canonical_player_name(name)
+        prev = prev_idx.get(key)
+        if not prev:
+            continue
+        curr_rank = int(_as_float(row.get("consensus_rank")) or 9999)
+        prev_rank = int(_as_float(prev.get("consensus_rank")) or 9999)
+        if curr_rank >= 9999 or prev_rank >= 9999:
+            continue
+        rise = prev_rank - curr_rank
+        if rise < int(min_rise):
+            continue
+
+        curr_conf = float(_as_float(row.get("confidence_score")) or 0.0)
+        prev_conf = float(_as_float(prev.get("confidence_score")) or 0.0)
+        curr_missing = float(
+            _as_float(row.get("formula_evidence_missing_count_weighted"))
+            or _as_float(row.get("formula_evidence_missing_count"))
+            or 0.0
+        )
+        prev_missing = float(
+            _as_float(prev.get("formula_evidence_missing_count_weighted"))
+            or _as_float(prev.get("formula_evidence_missing_count"))
+            or 0.0
+        )
+        curr_cov = int(_as_float(row.get("cfb_prod_coverage_count")) or 0)
+        prev_cov = int(_as_float(prev.get("cfb_prod_coverage_count")) or 0)
+        curr_testing = str(row.get("combine_testing_status") or "").strip().lower()
+        prev_testing = str(prev.get("combine_testing_status") or "").strip().lower()
+
+        evidence_improved = (
+            (curr_conf - prev_conf >= 5.0)
+            or (prev_missing - curr_missing >= 0.75)
+            or (curr_cov - prev_cov >= 2)
+            or (prev_testing in {"pending", "unknown", "dnp"} and curr_testing == "reported")
+        )
+        if evidence_improved:
+            continue
+
+        flagged.append(
+            {
+                "player_name": name,
+                "position": row.get("position", ""),
+                "prev_rank": prev_rank,
+                "curr_rank": curr_rank,
+                "rank_rise": rise,
+                "prev_confidence": round(prev_conf, 2),
+                "curr_confidence": round(curr_conf, 2),
+                "prev_evidence_missing": round(prev_missing, 2),
+                "curr_evidence_missing": round(curr_missing, 2),
+                "prev_cfb_cov": prev_cov,
+                "curr_cfb_cov": curr_cov,
+                "prev_testing_status": prev_testing,
+                "curr_testing_status": curr_testing,
+                "rank_driver_summary": row.get("rank_driver_summary", ""),
+            }
+        )
+
+    flagged.sort(key=lambda r: int(r.get("rank_rise", 0)), reverse=True)
+    return flagged, prev_path
 
 
 def _scale_waa(pff_waa: float | None) -> float:
@@ -1305,7 +1451,15 @@ def _compute_formula_score(
     calibrated_grade = (1.22 * raw_formula_score) - 2.0
     calibrated_grade = max(55.0, min(95.0, calibrated_grade))
     prior_grade = max(55.0, min(95.0, 60.0 + 0.33 * prior_signal))
-    final_grade = (0.72 * calibrated_grade) + (0.28 * prior_grade)
+    calibrated_blend = _clamp(float(GRADE_CALIBRATED_BLEND), 0.60, 0.90)
+    prior_blend = _clamp(float(GRADE_PRIOR_BLEND), 0.10, 0.40)
+    blend_total = calibrated_blend + prior_blend
+    if blend_total <= 0:
+        calibrated_blend, prior_blend = 0.78, 0.22
+    else:
+        calibrated_blend = calibrated_blend / blend_total
+        prior_blend = prior_blend / blend_total
+    final_grade = (calibrated_blend * calibrated_grade) + (prior_blend * prior_grade)
     final_grade += float(POSITION_VALUE_ADJUSTMENT.get(position, 0.0))
     final_grade = max(55.0, min(95.0, final_grade))
 
@@ -1914,6 +2068,56 @@ def _consensus_confidence_factor(
         split_factor = 0.62
 
     return round(_clamp(source_factor * split_factor, 0.45, 1.05), 3)
+
+
+def _rank_sort_consensus_realign_adjustment(
+    *,
+    position: str,
+    rank_seed: int,
+    consensus_mean_rank: float | None,
+    consensus_source_count: int,
+    consensus_rank_std: float | None,
+) -> float:
+    """
+    Soft ranking-only nudge that reduces extreme model-vs-consensus dislocation.
+    This does not change final_grade/model_score; it only affects rank ordering.
+    """
+    if consensus_mean_rank is None or consensus_source_count < 2:
+        return 0.0
+
+    dislocation = float(consensus_mean_rank) - float(rank_seed)
+    deadband = max(0.0, float(RANK_CONSENSUS_REALIGN_DEADBAND))
+    if abs(dislocation) <= deadband:
+        return 0.0
+
+    confidence = _consensus_confidence_factor(
+        consensus_source_count=consensus_source_count,
+        consensus_rank_std=consensus_rank_std,
+    )
+    position_multiplier = {
+        "QB": 0.85,
+        "OT": 0.95,
+        "EDGE": 0.95,
+        "CB": 0.95,
+        "WR": 1.0,
+        "DT": 1.0,
+        "LB": 1.0,
+        "S": 1.05,
+        "IOL": 1.0,
+        "RB": 1.15,
+        "TE": 1.10,
+    }.get(position, 1.0)
+
+    scale = max(1.0, float(RANK_CONSENSUS_REALIGN_SCALE))
+    max_adjustment = max(0.0, float(RANK_CONSENSUS_REALIGN_MAX))
+    magnitude = min(max_adjustment, ((abs(dislocation) - deadband) / scale) * max_adjustment)
+    adjustment = magnitude * confidence * position_multiplier
+
+    # Positive dislocation means model seed is much better than consensus.
+    # Apply a drag. Negative dislocation gets a small upward nudge.
+    if dislocation > 0:
+        adjustment *= -1.0
+    return round(adjustment, 4)
 
 
 def _midband_consensus_brake_penalty(
@@ -3750,6 +3954,52 @@ def main() -> None:
             **scouting_sections,
             "headshot_url": "",
         }
+        prior_overhang = max(
+            0.0,
+            float(report.get("formula_prior_grade", 0.0) or 0.0)
+            - float(report.get("formula_calibrated_grade", 0.0) or 0.0),
+        )
+        uncertainty_drag = max(
+            0.0,
+            float(report.get("uncertainty_score", 0.0) or 0.0) - 55.0,
+        ) * float(RANK_UNCERTAINTY_DRAG_WEIGHT)
+        prior_drag = (
+            (prior_overhang / max(1.0, float(RANK_PRIOR_OVERHANG_SCALE)))
+            * float(RANK_PRIOR_OVERHANG_DRAG_WEIGHT)
+        )
+        rank_sort_consensus_realign_adjustment = _rank_sort_consensus_realign_adjustment(
+            position=pos,
+            rank_seed=int(row["rank_seed"]),
+            consensus_mean_rank=consensus_mean_rank_val,
+            consensus_source_count=consensus_source_count_val,
+            consensus_rank_std=consensus_rank_std_val,
+        )
+        rank_sort_score = (
+            float(report.get("consensus_score", 0.0) or 0.0)
+            - uncertainty_drag
+            - prior_drag
+            + rank_sort_consensus_realign_adjustment
+        )
+        report["rank_sort_score"] = round(rank_sort_score, 4)
+        report["rank_sort_uncertainty_drag"] = round(uncertainty_drag, 4)
+        report["rank_sort_prior_overhang"] = round(prior_overhang, 4)
+        report["rank_sort_prior_drag"] = round(prior_drag, 4)
+        report["rank_sort_consensus_realign_adjustment"] = round(
+            rank_sort_consensus_realign_adjustment, 4
+        )
+        report["rank_driver_summary"] = _build_rank_driver_summary(
+            model_score=float(report.get("consensus_score", 0.0) or 0.0),
+            formula=formula,
+            prior_signal=prior_signal,
+            language_adjustment_applied=language_adjustment_applied,
+            guardrail_penalty=float(guardrail_penalty),
+            drift_penalty=float(drift_penalty),
+            soft_ceiling_penalty=float(soft_ceiling_penalty),
+            cap_penalty=float(cap_penalty),
+            consensus_tail_penalty=float(consensus_tail_penalty),
+            front7_inflation_penalty=float(front7_inflation_penalty),
+            cb_nickel_inflation_penalty=float(cb_nickel_inflation_penalty),
+        )
         enriched.append(report)
 
     # Safety dedupe after enrichment.
@@ -3774,7 +4024,13 @@ def main() -> None:
             final_map[key] = row
 
     final_rows = list(final_map.values())
-    final_rows.sort(key=lambda x: x["consensus_score"], reverse=True)
+    final_rows.sort(
+        key=lambda x: (
+            float(x.get("rank_sort_score", x.get("consensus_score", 0.0)) or 0.0),
+            float(x.get("consensus_score", 0.0) or 0.0),
+        ),
+        reverse=True,
+    )
     for i, row in enumerate(final_rows, start=1):
         row["consensus_rank"] = i
 
@@ -3885,6 +4141,37 @@ def main() -> None:
         )
     (OUTPUTS / "contrarian_watchlist_2026.txt").write_text("\n".join(watchlist_lines))
 
+    extreme_rows, extreme_prev = _run_extreme_rank_delta_gate(
+        current_rows=final_rows,
+        snapshot_dir=OUTPUTS / "stability_snapshots",
+    )
+    write_csv(OUTPUTS / "extreme_rank_jump_watchlist_2026.csv", extreme_rows)
+    extreme_lines = [
+        "Extreme Rank Jump Watchlist (No Evidence Increase)",
+        "",
+        f"Previous snapshot: {extreme_prev if extreme_prev else 'none'}",
+        f"Threshold rank rise: {EXTREME_RANK_DELTA_MIN_RISE}",
+        f"Flagged rows: {len(extreme_rows)}",
+        "",
+    ]
+    for row in extreme_rows[:80]:
+        extreme_lines.append(
+            f"{row.get('player_name','')} | {row.get('position','')} | "
+            f"{row.get('prev_rank','')} -> {row.get('curr_rank','')} "
+            f"(+{row.get('rank_rise','')}) | conf {row.get('prev_confidence','')}->{row.get('curr_confidence','')} "
+            f"| miss {row.get('prev_evidence_missing','')}->{row.get('curr_evidence_missing','')} "
+            f"| {row.get('rank_driver_summary','')}"
+        )
+    (OUTPUTS / "extreme_rank_jump_watchlist_2026.txt").write_text("\n".join(extreme_lines))
+    if EXTREME_RANK_DELTA_FAIL_ON_TRIGGER and len(extreme_rows) > EXTREME_RANK_DELTA_MAX_ALLOWED:
+        print(
+            "Extreme rank jump QA failed: "
+            f"{len(extreme_rows)} rows exceed no-evidence-rise gate "
+            f"(max_allowed={EXTREME_RANK_DELTA_MAX_ALLOWED}). "
+            f"See {OUTPUTS / 'extreme_rank_jump_watchlist_2026.csv'}"
+        )
+        raise SystemExit(2)
+
     with (OUTPUTS / "big_board_2026.json").open("w") as f:
         json.dump(final_rows, f, indent=2)
 
@@ -3976,6 +4263,12 @@ def main() -> None:
     )
     proxy_heavy_count = sum(1 for r in final_rows if int(r.get("cfb_proxy_fallback_heavy_flag", 0) or 0) == 1)
     print(f"CFB proxy fallback watchlist rows: {proxy_heavy_count}")
+    print(
+        "Extreme rank-jump QA: "
+        f"rows={len(extreme_rows)} "
+        f"min_rise={EXTREME_RANK_DELTA_MIN_RISE} "
+        f"fail_mode={int(EXTREME_RANK_DELTA_FAIL_ON_TRIGGER)}"
+    )
     if calibration_cfg is None:
         print("Historical calibration: not loaded (run scripts/calibrate_historical_model.py after real outcomes import)")
     else:

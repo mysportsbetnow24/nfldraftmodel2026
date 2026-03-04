@@ -1,0 +1,50 @@
+Rank Alignment Tuning - BEFORE (2026-03-04)
+rows_with_consensus_sources>=2: 144
+mean_abs_rank_dislocation: 111.98
+median_abs_rank_dislocation: 94.34
+count_model_much_higher_delta_gt_80: 0
+count_model_much_lower_delta_lt_-80: 74
+
+Top 20 model much higher vs consensus (delta = consensus_mean_rank - model_rank):
+  66.0 | # 49 | Austin Barber | OT | mean=115.0 | src=2 | std=3.0
+  47.0 | # 14 | Keionte Scott | CB | mean=61.0 | src=4 | std=18.4
+  44.7 | # 24 | Gabe Jacas | EDGE | mean=68.67 | src=3 | std=36.38
+  37.5 | # 18 | D'Angelo Ponds | CB | mean=55.5 | src=4 | std=10.9
+  36.8 | #  2 | Dillon Thieneman | S | mean=38.75 | src=4 | std=15.51
+  33.0 | # 35 | Deion Burks | WR | mean=68.0 | src=2 | std=19.0
+  31.2 | # 10 | Anthony Hill Jr. | LB | mean=41.17 | src=6 | std=23.23
+  29.0 | # 38 | Zachariah Branch | WR | mean=67.0 | src=2 | std=17.0
+  27.0 | # 26 | Josiah Trotter | LB | mean=53.0 | src=3 | std=4.97
+  24.7 | # 50 | Chase Bisontis | IOL | mean=74.67 | src=3 | std=21.01
+  22.8 | #  5 | Monroe Freeling | OT | mean=27.75 | src=4 | std=3.34
+  21.4 | # 16 | Brandon Cisse | CB | mean=37.4 | src=5 | std=15.37
+  16.5 | #  3 | Kadyn Proctor | OT | mean=19.5 | src=8 | std=10.56
+  16.0 | # 28 | Zion Young | EDGE | mean=44.0 | src=3 | std=2.94
+  16.0 | # 47 | Ja'Kobi Lane | WR | mean=63.0 | src=3 | std=53.56
+  15.6 | # 34 | Christen Miller | DT | mean=49.6 | src=5 | std=20.92
+  11.8 | # 32 | Blake Miller | OT | mean=43.75 | src=4 | std=19.97
+  10.7 | #  9 | Caleb Lomu | OT | mean=19.67 | src=6 | std=7.5
+  10.7 | # 51 | Caleb Tiernan | OT | mean=61.67 | src=3 | std=6.6
+  10.0 | #  1 | Sonny Styles | LB | mean=11.0 | src=6 | std=8.6
+
+Top 20 model much lower vs consensus:
+-338.5 | #413 | Devin Moore | CB | mean=74.5 | src=2 | std=24.5
+-330.2 | #384 | LT Overton | EDGE | mean=53.8 | src=5 | std=44.98
+-302.0 | #432 | J'Mari Taylor | RB | mean=130.0 | src=2 | std=15.0
+-299.5 | #401 | Hezekiah Masses | CB | mean=101.5 | src=2 | std=40.5
+-298.5 | #446 | TJ Hall | CB | mean=147.5 | src=2 | std=82.5
+-290.0 | #449 | Deven Eastern | DT | mean=159.0 | src=2 | std=63.0
+-288.0 | #452 | Sawyer Robertson | QB | mean=164.0 | src=2 | std=60.0
+-286.0 | #428 | Dametrious Crownover | OT | mean=142.0 | src=2 | std=69.0
+-280.6 | #327 | Lee Hunter | DT | mean=46.4 | src=5 | std=19.79
+-280.0 | #417 | Kevin Coleman Jr. | WR | mean=137.0 | src=2 | std=51.0
+-280.0 | #448 | Xavian Sorey Jr. | LB | mean=168.0 | src=2 | std=65.0
+-279.0 | #440 | Josh Cameron | WR | mean=161.0 | src=2 | std=53.0
+-275.0 | #454 | Fernando Carmona | IOL | mean=179.0 | src=2 | std=116.0
+-273.5 | #444 | Jeremiah Wright | IOL | mean=170.5 | src=2 | std=115.5
+-270.0 | #360 | Will Lee III | CB | mean=90.0 | src=2 | std=12.0
+-266.0 | #403 | Nadame Tucker | EDGE | mean=137.0 | src=2 | std=21.0
+-262.5 | #419 | Rayshaun Benny | DT | mean=156.5 | src=2 | std=68.5
+-261.5 | #453 | Keyron Crawford | EDGE | mean=191.5 | src=2 | std=129.5
+-261.0 | #431 | VJ Payne | S | mean=170.0 | src=2 | std=94.0
+-250.5 | #338 | Taurean York | LB | mean=87.5 | src=2 | std=7.5

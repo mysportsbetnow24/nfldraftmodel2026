@@ -728,8 +728,6 @@ def _player_card(row: dict) -> str:
   <section class="controls">
     <button type="button" class="btn save">Save Local Edit</button>
     <button type="button" class="btn reset">Reset To Model</button>
-    <button type="button" class="btn export">Export JSON</button>
-    <button type="button" class="btn html">Export HTML</button>
   </section>
 
   <script type="application/json" class="model-snapshot">{html.escape(json.dumps(model_snapshot))}</script>
@@ -937,48 +935,6 @@ def _js() -> str:
     window.location.reload();
   }
 
-  function exportJSON() {
-    const modelTag = card.querySelector('.model-snapshot');
-    let modelSnapshot = {};
-    if (modelTag) {
-      try {
-        modelSnapshot = JSON.parse(modelTag.textContent);
-      } catch (err) {
-        modelSnapshot = {};
-      }
-    }
-
-    const payload = {
-      exported_at: new Date().toISOString(),
-      player_uid: uid,
-      model_snapshot: modelSnapshot,
-      scouting_card: collectEdits(),
-    };
-
-    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${uid}-scouting-card.json`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }
-
-  function exportHTML() {
-    const doc = '<!doctype html>\\n' + document.documentElement.outerHTML;
-    const blob = new Blob([doc], { type: 'text/html;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${uid}-scouting-card.html`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }
-
   const existing = localStorage.getItem(storageKey);
   if (existing) {
     try {
@@ -990,13 +946,8 @@ def _js() -> str:
 
   const btnSave = card.querySelector('.btn.save');
   const btnReset = card.querySelector('.btn.reset');
-  const btnExport = card.querySelector('.btn.export');
-  const btnHtml = card.querySelector('.btn.html');
-
   if (btnSave) btnSave.addEventListener('click', saveLocal);
   if (btnReset) btnReset.addEventListener('click', resetLocal);
-  if (btnExport) btnExport.addEventListener('click', exportJSON);
-  if (btnHtml) btnHtml.addEventListener('click', exportHTML);
 })();
 """.strip()
 
@@ -1153,7 +1104,7 @@ def render_reports() -> None:
     index_body = f"""
 <section class="index-card">
   <h1>2026 Scouting Cards</h1>
-  <p>Editable, scout-style cards with model-backed grades and narrative sections.</p>
+  <p>Scout-style cards with model-backed grades and narrative sections. Public mode is read-only.</p>
   <p><a href="scouting_card_template.html">Open Blank Scouting Card Template</a></p>
   <input id="reportSearch" placeholder="Search by player, school, or position" />
   <ul class="index-list" id="reportList">{''.join(list_items)}</ul>
