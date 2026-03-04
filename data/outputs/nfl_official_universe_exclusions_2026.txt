@@ -1,0 +1,74 @@
+NFL.com Official Universe Exclusions (2026)
+
+official_universe_size: 319
+excluded_count: 69
+
+Addison Nichols
+Arlis Boardingham
+Ashton Stamps
+Brady Latham
+Branson Combs
+Bryce Foster
+Bryce Lovett
+CJ Mims
+Conner Weigman
+Connor Tollison
+DJ McKinney
+Dakaari Nelson
+Dane Key
+Darris Smith
+Dasan McCullough
+Denairius Gray
+Domata Peko Jr.
+Earnest Greene III
+Ernest Hausmann
+Ethan Onianwa
+Eugene Asante
+Eugene Brooks III
+Evan Stewart
+Gabriel Brownlow-Dindy
+Holden Staes
+Hollin Pierce
+Isaac Smith
+Isaiah Paul
+Isaiah Sategna
+Isaiah World
+Ja'Keem Jackson
+Jaden Rashada
+Jalyn Phillips
+Jaydn Ott
+Jeremiah Alexander
+Jeremiah Wilson
+Jermayne Lole
+Joe Crocker Jr.
+Johntay Cook
+Jordan Shaw
+Justice Boone
+Justin Flowe
+Kaimon Rucker
+Kani Walker
+Keeshawn Silver
+Keon Sabb
+Keon Wylie
+Kevin Concepcion
+Makhi Hughes
+Martavius French
+Miller Moss
+Nic Anderson
+Nolan Rucci
+Oscar Cardenas
+Popo Aumavae
+Raesjon Davis
+Ricardo Jones Jr.
+Samari Matthews
+Shedrick Shropshire
+Takye Heath
+Tanner Miller
+Timothy McKay
+Tre Williams
+Treyveon McGee
+Tyler Collins
+Tyre West
+Tyreak Chappell
+Tysheem Johnson
+Xavier Chaplin

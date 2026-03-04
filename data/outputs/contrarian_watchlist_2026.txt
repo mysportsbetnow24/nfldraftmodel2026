@@ -1,9 +1,9 @@
 2026 Contrarian Watchlist (Diamond Exceptions)
 
 Rank | Player | Pos | School | Board | Consensus Mean | Score | Reasons
-1. Jalon Kilgore | S | South Carolina | #114 | mean 124.0 | 90.56 | dislocation=98.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
-2. Austin Barber | OT | Florida | #137 | mean 115.0 | 90.33 | dislocation=88.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
-3. Cole Payton | QB | North Dakota State | #254 | mean 117.5 | 89.63 | dislocation=82.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-4. Kendal Daniels | LB | Oklahoma | #275 | mean 187.0 | 87.85 | dislocation=112.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-5. Davison Igbinosun | CB | Ohio State | #162 | mean 105.0 | 86.92 | dislocation=54.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
-6. Tacario Davis | CB | Washington | #163 | mean 114.0 | 86.79 | dislocation=58.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
+1. Jalon Kilgore | S | South Carolina | #80 | mean 124.0 | 90.56 | dislocation=98.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
+2. Austin Barber | OT | Florida | #96 | mean 115.0 | 90.33 | dislocation=88.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
+3. Cole Payton | QB | North Dakota State | #159 | mean 117.5 | 89.63 | dislocation=82.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+4. Kendal Daniels | LB | Oklahoma | #175 | mean 187.0 | 87.85 | dislocation=112.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+5. Davison Igbinosun | CB | Ohio State | #109 | mean 105.0 | 86.92 | dislocation=54.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
+6. Tacario Davis | CB | Washington | #110 | mean 114.0 | 86.79 | dislocation=58.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3

@@ -60,6 +60,7 @@ SOURCE_RELIABILITY_PATH = ROOT / "data" / "sources" / "manual" / "source_reliabi
 SOURCE_RELIABILITY_POS_YEAR_PATH = (
     ROOT / "data" / "sources" / "manual" / "source_reliability_by_pos_year_2016_2025.csv"
 )
+NFL_OFFICIAL_PROSPECT_PATH = ROOT / "data" / "sources" / "manual" / "nfl_combine_invites_2026.csv"
 CURRENT_DRAFT_YEAR = int(os.getenv("DRAFT_YEAR", "2026"))
 
 POSITION_DEFAULT_FRAME = {
@@ -79,6 +80,9 @@ POSITION_DEFAULT_FRAME = {
 ALLOWED_POSITIONS = set(POSITION_DEFAULT_FRAME.keys())
 ENABLE_SOURCE_UNIVERSE_EXPANSION = True
 ENFORCE_2026_EVIDENCE_UNIVERSE = False
+ENFORCE_NFL_OFFICIAL_UNIVERSE = str(
+    os.getenv("ENFORCE_NFL_OFFICIAL_UNIVERSE", "1")
+).strip().lower() in {"1", "true", "yes", "y"}
 ENABLE_FILM_WEIGHTING = False
 PRODUCTION_SIGNAL_NEUTRAL = float(os.getenv("PRODUCTION_SIGNAL_NEUTRAL", "70.0"))
 PRODUCTION_SIGNAL_MULTIPLIER = float(os.getenv("PRODUCTION_SIGNAL_MULTIPLIER", "0.82"))
@@ -539,10 +543,12 @@ def augment_seed_with_external_and_analyst(
     analyst_rows: list[dict],
     returning_names: set[str] | None = None,
     already_drafted_names: set[str] | None = None,
+    allowed_names: set[str] | None = None,
 ) -> tuple[list[dict], int, int, int]:
     merged = list(seed_rows)
     returning_names = returning_names or set()
     already_drafted_names = already_drafted_names or set()
+    allowed_names = allowed_names or set()
     existing = {(canonical_player_name(r["player_name"]), normalize_pos(r["pos_raw"])) for r in merged}
     next_id = max((r["seed_row_id"] for r in merged), default=0) + 1
 
@@ -561,6 +567,9 @@ def augment_seed_with_external_and_analyst(
             skipped_ineligible += 1
             continue
         if key[0] in already_drafted_names:
+            skipped_ineligible += 1
+            continue
+        if allowed_names and key[0] not in allowed_names:
             skipped_ineligible += 1
             continue
         if not player_name or key in existing:
@@ -599,6 +608,9 @@ def augment_seed_with_external_and_analyst(
             skipped_ineligible += 1
             continue
         if key[0] in already_drafted_names:
+            skipped_ineligible += 1
+            continue
+        if allowed_names and key[0] not in allowed_names:
             skipped_ineligible += 1
             continue
         if not player_name or key in existing:
@@ -886,7 +898,12 @@ def _build_allowed_universe_names(
     external_rows: list[dict],
     analyst_rows: list[dict],
     declared_underclassmen: set[str],
+    nfl_official_names: set[str] | None = None,
 ) -> set[str]:
+    nfl_official_names = nfl_official_names or set()
+    if ENFORCE_NFL_OFFICIAL_UNIVERSE and nfl_official_names:
+        return set(nfl_official_names)
+
     allowed: set[str] = set(declared_underclassmen)
     for row in external_rows:
         name = canonical_player_name(row.get("player_name", ""))
@@ -897,6 +914,40 @@ def _build_allowed_universe_names(
         if name:
             allowed.add(name)
     return allowed
+
+
+def _load_nfl_official_universe_names(path: Path = NFL_OFFICIAL_PROSPECT_PATH) -> set[str]:
+    """
+    Load the authoritative 2026 prospect universe from NFL.com source rows
+    (currently combine invite pull file). This is used as a hard allowlist
+    when ENFORCE_NFL_OFFICIAL_UNIVERSE is enabled.
+    """
+    if not path.exists():
+        return set()
+
+    names: set[str] = set()
+    with path.open() as f:
+        for row in csv.DictReader(f):
+            name = str(row.get("player_name", "")).strip()
+            if not name:
+                continue
+            lower = name.lower()
+            # Drop parser artifact rows from article body extraction.
+            if any(
+                token in lower
+                for token in [
+                    "the nfl released the list of players invited",
+                    "here are the invitees",
+                    "sorted by position",
+                ]
+            ):
+                continue
+            if len(name.split()) < 2:
+                continue
+            key = canonical_player_name(name)
+            if key:
+                names.add(key)
+    return names
 
 
 def _position_evidence_score(
@@ -2885,6 +2936,7 @@ def main() -> None:
     returning_names = load_returning_to_school()
     declared_underclassmen = load_declared_underclassmen()
     already_drafted_names = load_already_in_nfl_exclusions()
+    nfl_official_universe_names = _load_nfl_official_universe_names()
     analyst_rows = load_analyst_rows()
     analyst_pos_votes = _build_analyst_pos_votes(analyst_rows)
     external_board_rows = load_external_big_board_rows()
@@ -2892,6 +2944,7 @@ def main() -> None:
         external_rows=external_board_rows,
         analyst_rows=analyst_rows,
         declared_underclassmen=declared_underclassmen,
+        nfl_official_names=nfl_official_universe_names,
     )
 
     seed_all = read_seed(PROCESSED / "prospect_seed_2026.csv")
@@ -2911,10 +2964,26 @@ def main() -> None:
         if not (is_senior_class(row["class_year"]) or name_key in declared_underclassmen):
             removed_ineligible_class.append(row["player_name"])
             continue
+        if ENFORCE_NFL_OFFICIAL_UNIVERSE and name_key not in nfl_official_universe_names:
+            removed_outside_universe.append(row["player_name"])
+            continue
         if ENFORCE_2026_EVIDENCE_UNIVERSE and name_key not in allowed_universe_names:
             removed_outside_universe.append(row["player_name"])
             continue
         raw_seed.append(row)
+
+    if ENFORCE_NFL_OFFICIAL_UNIVERSE:
+        excl_path = OUTPUTS / "nfl_official_universe_exclusions_2026.txt"
+        unique_removed = sorted({str(x).strip() for x in removed_outside_universe if str(x).strip()})
+        excl_lines = [
+            "NFL.com Official Universe Exclusions (2026)",
+            "",
+            f"official_universe_size: {len(nfl_official_universe_names)}",
+            f"excluded_count: {len(unique_removed)}",
+            "",
+        ]
+        excl_lines.extend(unique_removed)
+        excl_path.write_text("\n".join(excl_lines))
 
     if ENABLE_SOURCE_UNIVERSE_EXPANSION:
         expanded_seed, added_external, added_analyst, skipped_ineligible = augment_seed_with_external_and_analyst(
@@ -2923,6 +2992,7 @@ def main() -> None:
             analyst_rows=analyst_rows,
             returning_names=returning_names,
             already_drafted_names=already_drafted_names,
+            allowed_names=allowed_universe_names if (ENFORCE_NFL_OFFICIAL_UNIVERSE or ENFORCE_2026_EVIDENCE_UNIVERSE) else None,
         )
     else:
         expanded_seed = list(raw_seed)
@@ -2931,6 +3001,11 @@ def main() -> None:
         skipped_ineligible = 0
 
     seed = dedupe_seed_rows(expanded_seed)
+    if ENFORCE_NFL_OFFICIAL_UNIVERSE and nfl_official_universe_names:
+        seed = [
+            row for row in seed
+            if canonical_player_name(row.get("player_name", "")) in nfl_official_universe_names
+        ]
 
     analyst_scores = analyst_aggregate_score(analyst_rows)
     external_board = load_external_big_board()
@@ -3308,7 +3383,10 @@ def main() -> None:
                 position=pos,
                 draft_year=CURRENT_DRAFT_YEAR,
             )
-        if consensus_signal > 0:
+        # Consensus board signal should only anchor priors when at least two
+        # independent sources agree. Single-source rows are kept for diagnostics,
+        # but not trusted enough to steer the board/mocks.
+        if consensus_signal > 0 and consensus_source_count_val >= 2:
             _append_prior_part(
                 parts=prior_parts,
                 diagnostics=prior_diag,
@@ -4455,7 +4533,10 @@ def main() -> None:
     print(f"Removed returning players: {len(removed_returning)}")
     print(f"Removed already-drafted NFL players: {len(removed_already_drafted)}")
     print(f"Removed by class/declare eligibility: {len(removed_ineligible_class)}")
-    if ENFORCE_2026_EVIDENCE_UNIVERSE:
+    if ENFORCE_NFL_OFFICIAL_UNIVERSE:
+        print(f"NFL.com official prospect universe loaded: {len(nfl_official_universe_names)}")
+        print(f"Removed outside NFL.com prospect universe: {len(removed_outside_universe)}")
+    elif ENFORCE_2026_EVIDENCE_UNIVERSE:
         print(f"Removed outside 2026 evidence universe: {len(removed_outside_universe)}")
     print(f"Seed rows (expanded): {len(expanded_seed)}")
     print(f"Added from external board: {added_external}")

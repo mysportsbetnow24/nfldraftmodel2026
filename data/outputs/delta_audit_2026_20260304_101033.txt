@@ -1,0 +1,34 @@
+2026 DELTA AUDIT
+
+Current board: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
+Previous board: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260304_093716.csv
+Rows compared: 263
+
+Top Risers (prev rank - curr rank > 0)
+1. Bauer Sharp (TE) 443 -> 252 (+191); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+2. Garrett DiGiorgio (IOL) 444 -> 253 (+191); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+3. Colbie Young (WR) 445 -> 254 (+191); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+4. Avery Smith (CB) 446 -> 255 (+191); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+5. Harrison Wallace III (WR) 447 -> 256 (+191); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+6. Keyron Crawford (EDGE) 448 -> 257 (+191); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+7. Sawyer Robertson (QB) 449 -> 258 (+191); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+8. Chris Hilton Jr. (WR) 450 -> 259 (+191); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+9. Fernando Carmona (IOL) 451 -> 260 (+191); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+10. Jackie Marshall (EDGE) 452 -> 261 (+191); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+11. Caullin Lacy (WR) 453 -> 262 (+191); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+12. Chris McClellan (DT) 454 -> 263 (+191); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+13. Xavian Sorey Jr. (LB) 439 -> 249 (+190); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+14. Gary Smith III (DT) 440 -> 250 (+190); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+15. Deven Eastern (DT) 441 -> 251 (+190); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+16. Adam Randall (RB) 435 -> 246 (+189); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+17. Jeremiah Wright (IOL) 436 -> 247 (+189); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+18. TJ Hall (CB) 437 -> 248 (+189); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+19. Jam Miller (RB) 433 -> 245 (+188); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+20. Brandon Cleveland (DT) 430 -> 243 (+187); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+21. Aaron Anderson (WR) 431 -> 244 (+187); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+22. Dillon Wade (IOL) 419 -> 241 (+178); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+23. Cameron Ball (DT) 420 -> 242 (+178); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+24. Barion Brown (WR) 415 -> 238 (+177); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+25. Dillon Bell (WR) 416 -> 239 (+177); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+
+Top Fallers (prev rank - curr rank < 0)

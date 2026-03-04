@@ -1291,6 +1291,36 @@ def _pick_score(
         player=player,
         round_no=round_no,
     )
+    thin_evidence_guardrail_modifier = 0.0
+    thin_evidence_guardrail_reason = "none"
+    if round_no <= 2:
+        source_count = int(_to_float(player.get("consensus_board_source_count")) or 0)
+        external_rank = _to_float(player.get("external_rank"))
+        pff_grade = _to_float(player.get("pff_grade"))
+        cfb_prod_available = int(_to_float(player.get("cfb_prod_available")) or 0)
+        board_rank = int(_to_float(player.get("consensus_rank")) or 999)
+        grade = float(_to_float(player.get("final_grade")) or 0.0)
+        conference = str(player.get("cfb_prod_context_conference", "") or "").strip().upper()
+
+        strong_independent_support = (
+            (external_rank is not None and external_rank <= 75.0)
+            or (pff_grade is not None and pff_grade >= 78.0)
+            or cfb_prod_available == 1
+            or (board_rank <= 20 and grade >= 90.0)
+        )
+        thin_consensus_only = source_count <= 1 and not strong_independent_support
+        if thin_consensus_only:
+            base_penalty = -0.16 if round_no == 1 else -0.08
+            # Extra check for profiles with unknown conference context in player production feed.
+            if not conference:
+                base_penalty -= 0.03 if round_no == 1 else 0.02
+            thin_evidence_guardrail_modifier = max(-0.24, base_penalty)
+            thin_evidence_guardrail_reason = (
+                f"thin_evidence_src{source_count}"
+                f"|ext={'none' if external_rank is None else round(float(external_rank),1)}"
+                f"|pff={'none' if pff_grade is None else round(float(pff_grade),1)}"
+                f"|cfb={cfb_prod_available}"
+            )
     demand_node = team_position_demand_plan.get((str(team_code).upper(), str(pos).upper()), {}) or {}
     position_value_modifier = 0.0
     if pos == "OT":
@@ -1338,6 +1368,7 @@ def _pick_score(
         + demand_bias["modifier"]
         + qb_realism_bias["modifier"]
         + value_curve_bias["modifier"]
+        + thin_evidence_guardrail_modifier
         + position_value_modifier
     )
     need_component = (0.30 * team_fit) + float(demand_bias.get("modifier", 0.0) or 0.0)
@@ -1351,6 +1382,7 @@ def _pick_score(
         float(intra_draft_bias.get("modifier", 0.0) or 0.0)
         + float(qb_realism_bias.get("modifier", 0.0) or 0.0)
         + float(value_curve_bias.get("modifier", 0.0) or 0.0)
+        + float(thin_evidence_guardrail_modifier)
     )
     investment_component = float(investment_bias.get("modifier", 0.0) or 0.0)
     athletic_component = float(athletic_bias.get("modifier", 0.0) or 0.0)
@@ -1374,6 +1406,7 @@ def _pick_score(
                     f"intra={intra_draft_bias.get('reason','')}"
                     f"|curve={value_curve_bias.get('reason','')}"
                     f"|qb={qb_realism_bias.get('reason','')}"
+                    f"|evidence={thin_evidence_guardrail_reason}"
                 )
 
     return (
