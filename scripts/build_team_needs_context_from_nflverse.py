@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse
 import csv
 from collections import defaultdict
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from pathlib import Path
 
 import polars as pl
@@ -21,6 +21,8 @@ OUT_PATH = ROOT / "data" / "sources" / "team_needs_context_2026.csv"
 REPORT_PATH = ROOT / "data" / "outputs" / "team_needs_context_from_nflverse_report_2026-02-28.md"
 
 MODEL_POSITIONS = ["QB", "RB", "WR", "TE", "OT", "IOL", "EDGE", "DT", "LB", "CB", "S"]
+STARTERS_BY_POSITION = {"QB": 1, "RB": 1, "WR": 2, "TE": 1, "OT": 2, "IOL": 3, "EDGE": 2, "DT": 2, "LB": 2, "CB": 2, "S": 2}
+AGE_CLIFF_BY_POSITION = {"QB": 33, "RB": 27, "WR": 29, "TE": 30, "OT": 31, "IOL": 31, "EDGE": 30, "DT": 30, "LB": 29, "CB": 29, "S": 30}
 
 POS_MAP = {
     "QB": "QB",
@@ -127,6 +129,25 @@ def _read_team_profiles(path: Path) -> list[str]:
     return sorted(set(teams))
 
 
+def _parse_date(value: str | None) -> date | None:
+    txt = str(value or "").strip()
+    if not txt:
+        return None
+    for fmt in ("%Y-%m-%d", "%m/%d/%Y"):
+        try:
+            return datetime.strptime(txt, fmt).date()
+        except ValueError:
+            continue
+    return None
+
+
+def _age_on_jan1(birth: date | None, year: int) -> float | None:
+    if birth is None:
+        return None
+    ref = date(int(year), 1, 1)
+    return round((ref - birth).days / 365.25, 3)
+
+
 def _split_semis(value: str) -> list[str]:
     txt = str(value or "").strip()
     if not txt:
@@ -194,13 +215,14 @@ def _build_contract_metrics(contracts: pl.DataFrame, players: pl.DataFrame, targ
     if contracts.is_empty():
         return {}
 
-    player_team = {}
+    player_info = {}
     if not players.is_empty():
-        for row in players.select(["gsis_id", "latest_team"]).iter_rows(named=True):
+        for row in players.select(["gsis_id", "latest_team", "birth_date"]).iter_rows(named=True):
             gid = str(row.get("gsis_id", "")).strip()
             team = str(row.get("latest_team", "")).strip().upper()
+            birth = _parse_date(row.get("birth_date"))
             if gid and team:
-                player_team[gid] = team
+                player_info[gid] = {"team": team, "birth_date": birth}
 
     grouped: dict[tuple[str, str], list[dict]] = defaultdict(list)
     for row in contracts.iter_rows(named=True):
@@ -210,26 +232,43 @@ def _build_contract_metrics(contracts: pl.DataFrame, players: pl.DataFrame, targ
         if pos not in MODEL_POSITIONS:
             continue
         gid = str(row.get("gsis_id", "")).strip()
-        team = player_team.get(gid, "")
+        info = player_info.get(gid, {})
+        team = str(info.get("team", "")).strip().upper()
         if not team:
             team = _norm_team_name_to_abbr(row.get("team", ""))
         if not team:
             continue
-        grouped[(team, pos)].append(row)
+        grouped[(team, pos)].append(
+            {
+                "contract": row,
+                "birth_date": info.get("birth_date") or _parse_date(row.get("date_of_birth")),
+            }
+        )
 
     out: dict[tuple[str, str], dict] = {}
     for key, rows in grouped.items():
+        team, pos = key
         total_apy = 0.0
         fa_apy = 0.0
         cy_apy = 0.0
         total_players = len(rows)
         fa_count = 0
         cy_count = 0
-        for r in rows:
+        starter_pool: list[dict] = []
+        for node in rows:
+            r = node["contract"]
             year_signed = r.get("year_signed")
             years = r.get("years")
             apy = float(r.get("apy") or 0.0)
             total_apy += max(0.0, apy)
+            starter_pool.append(
+                {
+                    "apy": max(0.0, apy),
+                    "year_signed": year_signed,
+                    "years": years,
+                    "birth_date": node.get("birth_date"),
+                }
+            )
             if year_signed is None or years is None:
                 continue
             end_year = int(year_signed) + int(years) - 1
@@ -249,10 +288,75 @@ def _build_contract_metrics(contracts: pl.DataFrame, players: pl.DataFrame, targ
             free_agent_pressure = _clamp(fa_count / total_players)
             contract_year_pressure = _clamp(cy_count / total_players)
 
+        starter_n = int(STARTERS_BY_POSITION.get(pos, 2))
+        starters = sorted(
+            starter_pool,
+            key=lambda x: (float(x.get("apy", 0.0) or 0.0), -int(x.get("years") or 0)),
+            reverse=True,
+        )[:starter_n]
+        starter_value_total = sum(float(s.get("apy", 0.0) or 0.0) for s in starters)
+        if starter_value_total <= 0:
+            starter_value_total = float(max(1, len(starters)))
+
+        cliff_threshold = float(AGE_CLIFF_BY_POSITION.get(pos, 30))
+        cliff1_val = 0.0
+        cliff2_val = 0.0
+        cliff1_count = 0
+        cliff2_count = 0
+        starter_age_vals: list[float] = []
+
+        for s in starters:
+            year_signed = s.get("year_signed")
+            years = s.get("years")
+            end_year = None
+            if year_signed is not None and years is not None:
+                end_year = int(year_signed) + int(years) - 1
+            birth = s.get("birth_date")
+            age_y1 = _age_on_jan1(birth, target_year) if isinstance(birth, date) else None
+            age_y2 = _age_on_jan1(birth, target_year + 1) if isinstance(birth, date) else None
+            if age_y1 is not None:
+                starter_age_vals.append(float(age_y1))
+
+            risk1 = False
+            risk2 = False
+            if end_year is not None:
+                risk1 = risk1 or (end_year <= target_year)
+                risk2 = risk2 or (end_year <= (target_year + 1))
+            if age_y1 is not None:
+                risk1 = risk1 or (age_y1 >= cliff_threshold)
+            if age_y2 is not None:
+                risk2 = risk2 or (age_y2 >= cliff_threshold)
+
+            starter_weight = float(s.get("apy", 0.0) or 0.0)
+            if starter_weight <= 0:
+                starter_weight = 1.0
+            if risk1:
+                cliff1_val += starter_weight
+                cliff1_count += 1
+            if risk2:
+                cliff2_val += starter_weight
+                cliff2_count += 1
+
+        starter_cliff_1y_pressure = _clamp(cliff1_val / max(1e-9, starter_value_total))
+        starter_cliff_2y_pressure = _clamp(cliff2_val / max(1e-9, starter_value_total))
+        starter_age_avg = (
+            round(sum(starter_age_vals) / max(1, len(starter_age_vals)), 3) if starter_age_vals else ""
+        )
+
+        future_need_pressure_1y = _clamp((0.65 * contract_year_pressure) + (0.35 * starter_cliff_1y_pressure))
+        future_need_pressure_2y = _clamp((0.55 * free_agent_pressure) + (0.45 * starter_cliff_2y_pressure))
+
         out[key] = {
             "contract_player_count": total_players,
             "free_agent_pressure": round(free_agent_pressure, 4),
             "contract_year_pressure": round(contract_year_pressure, 4),
+            "starter_cliff_1y_pressure": round(starter_cliff_1y_pressure, 4),
+            "starter_cliff_2y_pressure": round(starter_cliff_2y_pressure, 4),
+            "future_need_pressure_1y": round(future_need_pressure_1y, 4),
+            "future_need_pressure_2y": round(future_need_pressure_2y, 4),
+            "starter_cliff_1y_count": int(cliff1_count),
+            "starter_cliff_2y_count": int(cliff2_count),
+            "starter_age_avg": starter_age_avg,
             "fa_count": fa_count,
             "contract_year_count": cy_count,
         }
@@ -416,6 +520,13 @@ def main() -> None:
                     "contract_player_count": int(c.get("contract_player_count", 0)),
                     "fa_count": int(c.get("fa_count", 0)),
                     "contract_year_count": int(c.get("contract_year_count", 0)),
+                    "starter_cliff_1y_pressure": c.get("starter_cliff_1y_pressure", ""),
+                    "starter_cliff_2y_pressure": c.get("starter_cliff_2y_pressure", ""),
+                    "future_need_pressure_1y": c.get("future_need_pressure_1y", ""),
+                    "future_need_pressure_2y": c.get("future_need_pressure_2y", ""),
+                    "starter_cliff_1y_count": int(c.get("starter_cliff_1y_count", 0)),
+                    "starter_cliff_2y_count": int(c.get("starter_cliff_2y_count", 0)),
+                    "starter_age_avg": c.get("starter_age_avg", ""),
                     "deployment_share": d.get("deployment_share", ""),
                     "deployment_ratio": d.get("deployment_ratio", ""),
                     "avg_pass_rushers": d.get("avg_pass_rushers", ""),
@@ -448,6 +559,8 @@ def main() -> None:
         "",
         "- `depth_chart_pressure` combines roster depth/experience and deployment intensity.",
         "- `free_agent_pressure` and `contract_year_pressure` are built from active contract term exposure.",
+        "- `starter_cliff_1y_pressure` / `starter_cliff_2y_pressure` capture starter-level age+contract cliff risk.",
+        "- `future_need_pressure_1y` / `future_need_pressure_2y` blend contract runway with starter cliff exposure.",
         "- `starter_quality` is roster-based so high pressure does not require poor current quality.",
     ]
     args.report.parent.mkdir(parents=True, exist_ok=True)

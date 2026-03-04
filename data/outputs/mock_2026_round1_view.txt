@@ -1,0 +1,34 @@
+2026 MOCK DRAFT - ROUND 1 (UPDATED)
+pick | team | player | pos | school
+1 | LV | Kadyn Proctor | OT | Alabama
+2 | NYJ | Daylen Everette | CB | Georgia
+3 | ARI | Rueben Bain Jr. | EDGE | Miami (FL) Hurricanes
+4 | TEN | T.J. Searcy | EDGE | Texas A&M
+5 | NYG | Monroe Freeling | OT | Georgia
+6 | CLE | Caleb Lomu | OT | Utah
+7 | WAS | Anthony Hill Jr. | LB | Texas Longhorns
+8 | NO | Zion Young | EDGE | Missouri Tigers
+9 | KC | Makai Lemon | WR | USC Trojans
+10 | CIN | Carnell Tate | WR | Ohio State
+11 | MIA | Kenyon Sadiq | TE | Oregon
+12 | DAL | Nicholas Singleton | RB | Penn State
+13 | LAR | Chris Brazzell II | WR | Tennessee Volunteers
+14 | BAL | Mansoor Delane | CB | LSU Tigers
+15 | TB | T.J. Parker | EDGE | Clemson
+16 | NYJ | Christen Miller | DT | Georgia Bulldogs
+17 | DET | R Mason Thomas | EDGE | Oklahoma
+18 | MIN | Akheem Mesidor | EDGE | Miami (FL) Hurricanes
+19 | CAR | Dillon Thieneman | S | Oregon
+20 | DAL | David Bailey | EDGE | Texas Tech
+21 | PIT | Peter Woods | DT | Clemson
+22 | LAC | Colton Hood | CB | Tennessee Volunteers
+23 | PHI | Spencer Fano | OT | Utah
+24 | CLE | Skyler Bell | WR | Connecticut Huskies
+25 | CHI | Harold Perkins Jr. | LB | LSU
+26 | BUF | Cashius Howell | EDGE | Texas A&M Aggies
+27 | SF | Aamil Wagner | OT | Notre Dame
+28 | HOU | Seth McGowan | RB | Kentucky Wildcats
+29 | LAR | Austin Barber | OT | Florida
+30 | DEN | Francis Mauigoa | OT | Miami (FL) Hurricanes
+31 | NE | Keionte Scott | CB | Miami (FL) Hurricanes
+32 | SEA | Blake Miller | OT | Clemson Tigers

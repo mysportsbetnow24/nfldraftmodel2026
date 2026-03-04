@@ -1,0 +1,34 @@
+2026 DELTA AUDIT
+
+Current board: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
+Previous board: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260228_195810.csv
+Rows compared: 457
+
+Top Risers (prev rank - curr rank > 0)
+1. Red Murdock (LB) 248 -> 246 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+2. Max Llewellyn (EDGE) 249 -> 247 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+3. J. Michael Sturdivant (WR) 250 -> 248 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+4. Aaron Anderson (WR) 251 -> 249 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+5. Anto Saka (EDGE) 252 -> 250 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+6. Nate Boerkircher (TE) 253 -> 251 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+7. Terrance Carter Jr. (TE) 254 -> 252 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+8. AJ Harris (CB) 255 -> 253 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+9. Marlin Klein (TE) 256 -> 254 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+10. Peyton Bowen (S) 257 -> 255 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+11. Dallen Bentley (TE) 258 -> 256 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+12. Elijah Pritchett (OT) 259 -> 257 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+13. Cole Wisniewski (S) 260 -> 258 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+14. Rohan Jones (TE) 261 -> 259 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+15. Alex Harkey (IOL) 262 -> 260 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+16. Kyle Louis (LB) 263 -> 261 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+17. Kage Casey (OT) 264 -> 262 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+18. Jude Bowry (OT) 265 -> 263 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+19. Bishop Fitzgerald (S) 266 -> 264 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+20. Carter Smith (IOL) 267 -> 265 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+21. Ethan Burke (EDGE) 268 -> 266 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+22. Hezekiah Masses (CB) 269 -> 267 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+23. Jalen Stroman (S) 270 -> 268 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+24. Demond Claiborne (RB) 271 -> 269 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+25. Tacario Davis (CB) 272 -> 270 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+
+Top Fallers (prev rank - curr rank < 0)

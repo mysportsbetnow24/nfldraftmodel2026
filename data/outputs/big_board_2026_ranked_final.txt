@@ -1,0 +1,457 @@
+2026 BIG BOARD (FINAL RANK)
+
+  1. Sonny Styles | LB | Ohio State | Grade 85.53 | final_rank=1 | seed=97
+  2. Kadyn Proctor | OT | Alabama | Grade 85.1 | final_rank=2 | seed=9
+  3. Jeremiyah Love | RB | Notre Dame | Grade 85.1 | final_rank=3 | seed=16
+  4. Jordyn Tyson | WR | Arizona State | Grade 84.75 | final_rank=4 | seed=12
+  5. Dillon Thieneman | S | Oregon | Grade 84.6 | final_rank=5 | seed=190
+  6. Monroe Freeling | OT | Georgia | Grade 84.59 | final_rank=6 | seed=34
+  7. Caleb Lomu | OT | Utah | Grade 84.16 | final_rank=7 | seed=17
+  8. Daylen Everette | CB | Georgia | Grade 83.92 | final_rank=8 | seed=48
+  9. Arvell Reese | LB | Ohio State Buckeyes | Grade 83.86 | final_rank=9 | seed=15
+ 10. Anthony Hill Jr. | LB | Texas Longhorns | Grade 83.61 | final_rank=10 | seed=48
+ 11. Dani Dennis-Sutton | EDGE | Penn State Nittany Lions | Grade 83.26 | final_rank=11 | seed=94
+ 12. Francis Mauigoa | OT | Miami (FL) Hurricanes | Grade 83.18 | final_rank=12 | seed=23
+ 13. Spencer Fano | OT | Utah | Grade 82.99 | final_rank=13 | seed=107
+ 14. Caleb Downs | S | Ohio State | Grade 82.74 | final_rank=14 | seed=5
+ 15. Skyler Bell | WR | Connecticut Huskies | Grade 82.74 | final_rank=15 | seed=85
+ 16. Brandon Cisse | CB | South Carolina Gamecocks | Grade 82.59 | final_rank=16 | seed=41
+ 17. Olaivavega Ioane | IOL | Penn State Nittany Lions | Grade 82.47 | final_rank=17 | seed=32
+ 18. Mansoor Delane | CB | LSU Tigers | Grade 82.44 | final_rank=18 | seed=24
+ 19. Keionte Scott | CB | Miami (FL) Hurricanes | Grade 82.41 | final_rank=19 | seed=58
+ 20. David Bailey | EDGE | Texas Tech | Grade 82.1 | final_rank=20 | seed=158
+ 21. T.J. Parker | EDGE | Clemson | Grade 82.03 | final_rank=21 | seed=11
+ 22. D'Angelo Ponds | CB | Indiana Hoosiers | Grade 81.92 | final_rank=22 | seed=60
+ 23. Kenyon Sadiq | TE | Oregon | Grade 81.92 | final_rank=23 | seed=86
+ 24. Tyreak Sapp | EDGE | Florida | Grade 81.76 | final_rank=24 | seed=84
+ 25. C.J. Allen | LB | Georgia | Grade 81.75 | final_rank=25 | seed=40
+ 26. Makai Lemon | WR | USC Trojans | Grade 81.69 | final_rank=26 | seed=21
+ 27. Josiah Trotter | LB | Missouri Tigers | Grade 81.68 | final_rank=27 | seed=67
+ 28. Zion Young | EDGE | Missouri Tigers | Grade 81.63 | final_rank=28 | seed=53
+ 29. Emmanuel Pregnon | IOL | Oregon Ducks | Grade 81.61 | final_rank=29 | seed=52
+ 30. Nyck Harbor | WR | South Carolina | Grade 81.6 | final_rank=30 | seed=40
+ 31. Gabe Jacas | EDGE | Illinois Fighting Illini | Grade 81.48 | final_rank=31 | seed=49
+ 32. Fernando Mendoza | QB | Indiana | Grade 81.47 | final_rank=32 | seed=1
+ 33. Christen Miller | DT | Georgia Bulldogs | Grade 81.42 | final_rank=33 | seed=39
+ 34. Kayden McDonald | DT | Ohio State Buckeyes | Grade 81.37 | final_rank=34 | seed=31
+ 35. Brian Parker II | OT | Duke Blue Devils | Grade 81.32 | final_rank=35 | seed=103
+ 36. Blake Miller | OT | Clemson Tigers | Grade 81.26 | final_rank=36 | seed=83
+ 37. Mikail Kamara | EDGE | Indiana Hoosiers | Grade 80.92 | final_rank=37 | seed=100
+ 38. Keldric Faulk | EDGE | Auburn | Grade 80.78 | final_rank=38 | seed=14
+ 39. Eugene Asante | LB | Auburn | Grade 80.76 | final_rank=39 | seed=94
+ 40. Deion Burks | WR | Oklahoma Sooners | Grade 80.71 | final_rank=40 | seed=92
+ 41. Peter Woods | DT | Clemson | Grade 80.58 | final_rank=41 | seed=4
+ 42. Emmanuel McNeil-Warren | S | Toledo Rockets | Grade 80.55 | final_rank=42 | seed=43
+ 43. Jake Golday | LB | Cincinnati Bearcats | Grade 80.51 | final_rank=43 | seed=64
+ 44. Kaytron Allen | RB | Penn State Nittany Lions | Grade 80.4 | final_rank=44 | seed=119
+ 45. CJ Daniels | WR | Miami (FL) Hurricanes | Grade 80.37 | final_rank=45 | seed=79
+ 46. Jack Endries | TE | Texas Longhorns | Grade 80.25 | final_rank=46 | seed=77
+ 47. Zachariah Branch | WR | Georgia | Grade 80.14 | final_rank=47 | seed=266
+ 48. Akheem Mesidor | EDGE | Miami (FL) Hurricanes | Grade 80.12 | final_rank=48 | seed=41
+ 49. Rueben Bain Jr. | EDGE | Miami (FL) Hurricanes | Grade 80.06 | final_rank=49 | seed=14
+ 50. Caleb Tiernan | OT | Northwestern Wildcats | Grade 80.06 | final_rank=50 | seed=61
+ 51. Chris Brazzell II | WR | Tennessee Volunteers | Grade 80.06 | final_rank=51 | seed=81
+ 52. Colton Hood | CB | Tennessee Volunteers | Grade 80.04 | final_rank=52 | seed=55
+ 53. Cashius Howell | EDGE | Texas A&M Aggies | Grade 79.99 | final_rank=53 | seed=26
+ 54. Omar Cooper Jr. | WR | Indiana Hoosiers | Grade 79.98 | final_rank=54 | seed=64
+ 55. Ja'Kobi Lane | WR | USC | Grade 79.95 | final_rank=55 | seed=20
+ 56. R Mason Thomas | EDGE | Oklahoma | Grade 79.81 | final_rank=56 | seed=30
+ 57. Michael Taaffe | S | Texas Longhorns | Grade 79.74 | final_rank=57 | seed=122
+ 58. Ty Simpson | QB | Alabama Crimson Tide | Grade 79.67 | final_rank=58 | seed=42
+ 59. J.C. Davis | OT | Illinois Fighting Illini | Grade 79.62 | final_rank=59 | seed=114
+ 60. Chase Bisontis | IOL | Texas A&M | Grade 79.58 | final_rank=60 | seed=123
+ 61. Kaimon Rucker | EDGE | North Carolina | Grade 79.54 | final_rank=61 | seed=50
+ 62. DJ McKinney | CB | Colorado | Grade 79.47 | final_rank=62 | seed=35
+ 63. Bryce Lance | WR | North Dakota State | Grade 79.47 | final_rank=63 | seed=38
+ 64. Austin Barber | OT | Florida | Grade 79.41 | final_rank=64 | seed=27
+ 65. Romello Height | EDGE | Texas Tech Red Raiders | Grade 79.41 | final_rank=65 | seed=59
+ 66. Eli Stowers | TE | Vanderbilt | Grade 79.4 | final_rank=66 | seed=21
+ 67. Dasan McCullough | LB | Oklahoma | Grade 79.39 | final_rank=67 | seed=100
+ 68. Lorenzo Styles Jr. | CB | Ohio State | Grade 79.39 | final_rank=68 | seed=225
+ 69. Justin Flowe | LB | Arizona | Grade 79.35 | final_rank=69 | seed=91
+ 70. Nicholas Singleton | RB | Penn State | Grade 79.34 | final_rank=70 | seed=32
+ 71. Takye Heath | CB | Georgia Tech | Grade 79.34 | final_rank=71 | seed=42
+ 72. Chris Johnson | CB | San Diego State Aztecs | Grade 79.32 | final_rank=72 | seed=63
+ 73. De'Zhaun Stribling | WR | Mississippi Rebels | Grade 79.32 | final_rank=73 | seed=110
+ 74. Jalen Stroman | S | Notre Dame Fighting Irish | Grade 79.3 | final_rank=74 | seed=135
+ 75. Eugene Brooks III | IOL | Oklahoma | Grade 79.15 | final_rank=75 | seed=38
+ 76. Charles Demmings | CB | Stephen F. Austin | Grade 79.15 | final_rank=76 | seed=38
+ 77. Aamil Wagner | OT | Notre Dame | Grade 79.13 | final_rank=77 | seed=44
+ 78. Aiden Fisher | LB | Indiana Hoosiers | Grade 79.06 | final_rank=78 | seed=132
+ 79. Brady Latham | IOL | Arkansas | Grade 79.04 | final_rank=79 | seed=147
+ 80. Jermayne Lole | DT | Louisville | Grade 79.02 | final_rank=80 | seed=120
+ 81. Jonah Coleman | RB | Washington Huskies | Grade 78.94 | final_rank=81 | seed=84
+ 82. Seth McGowan | RB | Kentucky Wildcats | Grade 78.9 | final_rank=82 | seed=99
+ 83. Eli Raridon | TE | Notre Dame | Grade 78.87 | final_rank=83 | seed=294
+ 84. Evan Stewart | WR | Oregon | Grade 78.82 | final_rank=84 | seed=46
+ 85. Christian Thomas | LB | Maine | Grade 78.8 | final_rank=85 | seed=38
+ 86. Isaiah World | OT | Oregon | Grade 78.79 | final_rank=86 | seed=15
+ 87. Harold Perkins Jr. | LB | LSU | Grade 78.79 | final_rank=87 | seed=18
+ 88. Sam Roush | TE | Stanford Cardinal | Grade 78.79 | final_rank=88 | seed=105
+ 89. Chandler Rivers | CB | Duke | Grade 78.69 | final_rank=89 | seed=52
+ 90. David Oke | DT | Arkansas Razorbacks | Grade 78.68 | final_rank=90 | seed=144
+ 91. Albert Regis | DT | Texas A&M Aggies | Grade 78.66 | final_rank=91 | seed=121
+ 92. Kevin Concepcion | WR | Texas A&M | Grade 78.65 | final_rank=92 | seed=31
+ 93. Xavier Scott | CB | Illinois Fighting Illini | Grade 78.59 | final_rank=93 | seed=107
+ 94. Domonique Orange | DT | Iowa State Cyclones | Grade 78.54 | final_rank=94 | seed=72
+ 95. Thaddeus Dixon | CB | North Carolina Tar Heels | Grade 78.54 | final_rank=95 | seed=128
+ 96. Derrick Moore | EDGE | Michigan | Grade 78.54 | final_rank=96 | seed=172
+ 97. Justice Boone | RB | Colorado | Grade 78.51 | final_rank=97 | seed=75
+ 98. Caleb Banks | DT | Florida Gators | Grade 78.48 | final_rank=98 | seed=28
+ 99. Langston Jones | OT | Lehigh | Grade 78.45 | final_rank=99 | seed=38
+100. Makhi Hughes | RB | Oregon | Grade 78.42 | final_rank=100 | seed=65
+101. Jake Slaughter | IOL | Florida | Grade 78.37 | final_rank=101 | seed=129
+102. Denzel Boston | WR | Washington | Grade 78.36 | final_rank=102 | seed=25
+103. A'Mauri Washington | DT | Oregon | Grade 78.36 | final_rank=103 | seed=91
+104. Mateen Ibirogba | DT | Wake Forest | Grade 78.36 | final_rank=104 | seed=96
+105. Davison Igbinosun | CB | Ohio State | Grade 78.35 | final_rank=105 | seed=51
+106. Eric McAlister | WR | TCU Horned Frogs | Grade 78.33 | final_rank=106 | seed=129
+107. Eric Singleton Jr. | WR | Auburn | Grade 78.29 | final_rank=107 | seed=70
+108. DeMonte Capehart | DT | Clemson Tigers | Grade 78.29 | final_rank=108 | seed=171
+109. Gabriel Brownlow-Dindy | DT | South Carolina | Grade 78.28 | final_rank=109 | seed=159
+110. Hollin Pierce | OT | Rutgers | Grade 78.24 | final_rank=110 | seed=117
+111. Jager Burton | IOL | Kentucky Wildcats | Grade 78.22 | final_rank=111 | seed=138
+112. Joshua Josephs | EDGE | Tennessee Volunteers | Grade 78.2 | final_rank=112 | seed=68
+113. Avieon Terrell | CB | Clemson | Grade 78.18 | final_rank=113 | seed=6
+114. Trey Moore | LB | Texas Longhorns | Grade 78.16 | final_rank=114 | seed=140
+115. Max Iheanachor | OT | Arizona State Sun Devils | Grade 78.12 | final_rank=115 | seed=70
+116. Tyre West | DT | Indiana | Grade 78.11 | final_rank=116 | seed=164
+117. Xavier Chaplin | OT | Auburn | Grade 78.1 | final_rank=117 | seed=122
+118. Malachi Lawrence | EDGE | UCF Knights | Grade 78.09 | final_rank=118 | seed=154
+119. Tanner Koziol | TE | Houston | Grade 78.09 | final_rank=119 | seed=289
+120. Domata Peko Jr. | DT | UCLA | Grade 78.03 | final_rank=120 | seed=176
+121. Carnell Tate | WR | Ohio State | Grade 78.01 | final_rank=121 | seed=13
+122. Gennings Dunker | OT | Iowa Hawkeyes | Grade 78.0 | final_rank=122 | seed=88
+123. Elijah Sarratt | WR | Indiana Hoosiers | Grade 77.93 | final_rank=123 | seed=73
+124. Matayo Uiagalelei | EDGE | Oregon | Grade 77.87 | final_rank=124 | seed=59
+125. Kade Pieper | IOL | Iowa | Grade 77.83 | final_rank=125 | seed=80
+126. A.J. Haulcy | S | LSU Tigers | Grade 77.82 | final_rank=126 | seed=51
+127. Ar'maj Reed-Adams | IOL | Texas A&M | Grade 77.81 | final_rank=127 | seed=126
+128. Genesis Smith | S | Arizona Wildcats | Grade 77.77 | final_rank=128 | seed=108
+129. Chris Bell | WR | Louisville | Grade 77.75 | final_rank=129 | seed=269
+130. Jadon Canady | CB | Oregon Ducks | Grade 77.73 | final_rank=130 | seed=184
+131. Deontae Lawson | LB | Alabama | Grade 77.68 | final_rank=131 | seed=96
+132. Jeff Caldwell | WR | Cincinnati Bearcats | Grade 77.67 | final_rank=132 | seed=178
+133. Malik Muhammad | CB | Texas | Grade 77.66 | final_rank=133 | seed=228
+134. Tre Williams | DT | Clemson | Grade 77.65 | final_rank=134 | seed=182
+135. Cole Brevard | DT | Texas Longhorns | Grade 77.59 | final_rank=135 | seed=166
+136. Darrell Jackson Jr. | DT | Florida State | Grade 77.58 | final_rank=136 | seed=7
+137. Tacario Davis | CB | Washington | Grade 77.54 | final_rank=137 | seed=56
+138. Cade Klubnik | QB | Clemson | Grade 77.54 | final_rank=138 | seed=61
+139. Drew Allar | QB | Penn State | Grade 77.53 | final_rank=139 | seed=62
+140. CJ Mims | EDGE | West Virginia | Grade 77.5 | final_rank=140 | seed=168
+141. David Gusta | DT | Kentucky | Grade 77.46 | final_rank=141 | seed=119
+142. KC Concepcion | WR | Texas A&M Aggies | Grade 77.41 | final_rank=142 | seed=36
+143. Dontay Corleone | DT | Cincinnati Bearcats | Grade 77.4 | final_rank=143 | seed=62
+144. Dakaari Nelson | S | Penn State | Grade 77.37 | final_rank=144 | seed=193
+145. Barika Kpeenu | RB | North Dakota State | Grade 77.36 | final_rank=145 | seed=38
+146. Daniel Sobkowicz | WR | Illinois State | Grade 77.36 | final_rank=146 | seed=38
+147. Michael Briscoe | WR | Cal Poly | Grade 77.36 | final_rank=147 | seed=38
+148. Michael Wortham | WR | Montana | Grade 77.36 | final_rank=148 | seed=38
+149. Rodney Hammond Jr. | RB | Sacramento State | Grade 77.36 | final_rank=149 | seed=38
+150. Treyvhon Saunders | WR | Colgate | Grade 77.36 | final_rank=150 | seed=38
+151. Drew Shelton | OT | Penn State Nittany Lions | Grade 77.36 | final_rank=151 | seed=144
+152. Jalon Kilgore | S | South Carolina | Grade 77.33 | final_rank=152 | seed=26
+153. Zxavian Harris | DT | Mississippi Rebels | Grade 77.3 | final_rank=153 | seed=182
+154. Keagen Trost | OT | Missouri | Grade 77.28 | final_rank=154 | seed=102
+155. Jadarian Price | RB | Notre Dame Fighting Irish | Grade 77.27 | final_rank=155 | seed=66
+156. Cayden Green | IOL | Missouri | Grade 77.25 | final_rank=156 | seed=102
+157. Darris Smith | EDGE | LSU | Grade 77.24 | final_rank=157 | seed=170
+158. Keon Wylie | S | Texas Tech | Grade 77.22 | final_rank=158 | seed=197
+159. Trevor Goosby | OT | Texas | Grade 77.21 | final_rank=159 | seed=69
+160. Addison Nichols | IOL | Arkansas | Grade 77.19 | final_rank=160 | seed=134
+161. Bryce Lovett | IOL | NC State | Grade 77.17 | final_rank=161 | seed=137
+162. Branson Combs | S | Wake Forest | Grade 77.17 | final_rank=162 | seed=196
+163. Zane Durant | DT | Penn State | Grade 77.14 | final_rank=163 | seed=88
+164. DJ Campbell | IOL | Texas Longhorns | Grade 77.14 | final_rank=164 | seed=127
+165. Skyler Gill-Howard | DT | Texas Tech Red Raiders | Grade 77.11 | final_rank=165 | seed=110
+166. Timothy McKay | IOL | NC State | Grade 77.08 | final_rank=166 | seed=136
+167. Bear Alexander | DT | Oregon | Grade 77.07 | final_rank=167 | seed=108
+168. Keon Sabb | S | Alabama | Grade 77.05 | final_rank=168 | seed=194
+169. Isaac Smith | S | Mississippi State | Grade 77.03 | final_rank=169 | seed=192
+170. Ted Hurst | WR | Georgia State Panthers | Grade 76.99 | final_rank=170 | seed=150
+171. Jeremiah Alexander | EDGE | Alabama | Grade 76.99 | final_rank=171 | seed=177
+172. Jacob Rodriguez | LB | Texas Tech Red Raiders | Grade 76.98 | final_rank=172 | seed=95
+173. Joe Crocker Jr. | IOL | Auburn | Grade 76.97 | final_rank=173 | seed=148
+174. Ernest Hausmann | LB | Michigan | Grade 76.94 | final_rank=174 | seed=243
+175. Anthony Lucas | EDGE | USC Trojans | Grade 76.9 | final_rank=175 | seed=75
+176. Nolan Rucci | OT | Penn State | Grade 76.9 | final_rank=176 | seed=149
+177. Mike Washington Jr. | RB | Arkansas Razorbacks | Grade 76.89 | final_rank=177 | seed=142
+178. Raesjon Davis | LB | USC | Grade 76.86 | final_rank=178 | seed=242
+179. Le'Veon Moss | RB | Texas A&M | Grade 76.8 | final_rank=179 | seed=66
+180. Martavius French | LB | Tennessee | Grade 76.76 | final_rank=180 | seed=245
+181. Kobe Baynes | IOL | Kansas Jayhawks | Grade 76.73 | final_rank=181 | seed=152
+182. Cole Wisniewski | S | Texas Tech Red Raiders | Grade 76.73 | final_rank=182 | seed=198
+183. Shedrick Shropshire | LB | TCU | Grade 76.73 | final_rank=183 | seed=246
+184. Jermod McCoy | CB | Tennessee | Grade 76.69 | final_rank=184 | seed=33
+185. Bud Clark | S | TCU Horned Frogs | Grade 76.68 | final_rank=185 | seed=112
+186. Garrett Nussmeier | QB | LSU | Grade 76.67 | final_rank=186 | seed=58
+187. Keith Abney II | CB | Arizona State Sun Devils | Grade 76.64 | final_rank=187 | seed=44
+188. Jaeden Roberts | IOL | Alabama | Grade 76.64 | final_rank=188 | seed=125
+189. George Gumbs Jr. | EDGE | Florida Gators | Grade 76.64 | final_rank=189 | seed=170
+190. Roman Hemby | RB | Indiana | Grade 76.61 | final_rank=190 | seed=73
+191. Iapani Laloulu | IOL | Oregon | Grade 76.61 | final_rank=191 | seed=98
+192. John Michael Gyllenborg | TE | Wyoming Cowboys | Grade 76.61 | final_rank=192 | seed=167
+193. Popo Aumavae | LB | Oregon | Grade 76.6 | final_rank=193 | seed=248
+194. Max Klare | TE | Purdue | Grade 76.59 | final_rank=194 | seed=300
+195. Jaishawn Barham | LB | Michigan | Grade 76.57 | final_rank=195 | seed=142
+196. LaNorris Sellers | QB | South Carolina | Grade 76.54 | final_rank=196 | seed=35
+197. Tysheem Johnson | LB | Oregon | Grade 76.53 | final_rank=197 | seed=250
+198. Antonio Williams | WR | Clemson | Grade 76.51 | final_rank=198 | seed=267
+199. Marlin Klein | TE | Michigan Wolverines | Grade 76.48 | final_rank=199 | seed=111
+200. Denairius Gray | CB | Florida | Grade 76.43 | final_rank=200 | seed=213
+201. Toriano Pride Jr. | CB | Missouri | Grade 76.43 | final_rank=201 | seed=227
+202. Hero Kanu | DT | Texas | Grade 76.42 | final_rank=202 | seed=139
+203. Gracen Halton | DT | Oklahoma Sooners | Grade 76.3 | final_rank=203 | seed=118
+204. Ja'Keem Jackson | CB | Florida | Grade 76.3 | final_rank=204 | seed=223
+205. Ricardo Jones Jr. | CB | Purdue | Grade 76.28 | final_rank=205 | seed=211
+206. Quincy Rhodes Jr. | EDGE | Arkansas | Grade 76.26 | final_rank=206 | seed=82
+207. Samari Matthews | CB | Texas A&M | Grade 76.22 | final_rank=207 | seed=214
+208. Cyrus Allen | WR | Cincinnati Bearcats | Grade 76.2 | final_rank=208 | seed=163
+209. Tyreak Chappell | CB | South Carolina | Grade 76.17 | final_rank=209 | seed=218
+210. Tyler Collins | CB | Mississippi State | Grade 76.17 | final_rank=210 | seed=230
+211. Justin Joly | TE | North Carolina State Wolfpack | Grade 76.16 | final_rank=211 | seed=91
+212. Sam Hecht | IOL | Kansas State Wildcats | Grade 76.14 | final_rank=212 | seed=98
+213. Suntarine Perkins | LB | Ole Miss | Grade 76.09 | final_rank=213 | seed=140
+214. Isaiah Nwokobia | S | SMU Mustangs | Grade 76.09 | final_rank=214 | seed=179
+215. Ethan Burke | EDGE | Texas | Grade 76.08 | final_rank=215 | seed=124
+216. Germie Bernard | WR | Alabama | Grade 76.08 | final_rank=216 | seed=265
+217. Eric Rivers | WR | Georgia Tech Yellow Jackets | Grade 76.06 | final_rank=217 | seed=133
+218. Earnest Greene III | OT | Georgia | Grade 76.04 | final_rank=218 | seed=113
+219. Bryce Boettcher | LB | Oregon Ducks | Grade 76.04 | final_rank=219 | seed=204
+220. Taylen Green | QB | Arkansas Razorbacks | Grade 76.04 | final_rank=220 | seed=221
+221. Jamel Johnson | S | TCU | Grade 76.03 | final_rank=221 | seed=134
+222. Jalyn Phillips | S | Georgia | Grade 75.94 | final_rank=222 | seed=189
+223. Michael Trigg | TE | Baylor Bears | Grade 75.93 | final_rank=223 | seed=80
+224. Alex Harkey | IOL | Oregon | Grade 75.93 | final_rank=224 | seed=115
+225. Jordan Shaw | CB | Washington | Grade 75.93 | final_rank=225 | seed=224
+226. Jeremiah Wilson | CB | Florida State | Grade 75.91 | final_rank=226 | seed=216
+227. Kani Walker | CB | Oregon | Grade 75.9 | final_rank=227 | seed=226
+228. Red Murdock | LB | Buffalo | Grade 75.85 | final_rank=228 | seed=145
+229. Jaydn Ott | RB | Oklahoma | Grade 75.84 | final_rank=229 | seed=64
+230. Demond Claiborne | RB | Wake Forest | Grade 75.79 | final_rank=230 | seed=67
+231. Ashton Stamps | CB | LSU | Grade 75.77 | final_rank=231 | seed=215
+232. Beau Stephens | IOL | Iowa Hawkeyes | Grade 75.7 | final_rank=232 | seed=131
+233. Clev Lubin | EDGE | Louisville | Grade 75.7 | final_rank=233 | seed=155
+234. Cole Payton | QB | North Dakota State | Grade 75.64 | final_rank=234 | seed=35
+235. Eli Heidenreich | RB | Navy Midshipmen | Grade 75.64 | final_rank=235 | seed=217
+236. TJ Guy | EDGE | Michigan Wolverines | Grade 75.59 | final_rank=236 | seed=195
+237. Treyveon McGee | CB | Georgia | Grade 75.58 | final_rank=237 | seed=229
+238. Xavier Nwankpa | S | Iowa | Grade 75.57 | final_rank=238 | seed=95
+239. Josh Cuevas | TE | Alabama Crimson Tide | Grade 75.54 | final_rank=239 | seed=116
+240. Trinidad Chambliss | QB | Mississippi Rebels | Grade 75.47 | final_rank=240 | seed=74
+241. Hollywood Smothers | RB | N.C. State | Grade 75.47 | final_rank=241 | seed=116
+242. Pat Coogan | IOL | Indiana Hoosiers | Grade 75.47 | final_rank=242 | seed=149
+243. Desmond Reid | RB | Pittsburgh Panthers | Grade 75.45 | final_rank=243 | seed=177
+244. James Thompson Jr. | DT | Illinois Fighting Illini | Grade 75.45 | final_rank=244 | seed=213
+245. Emmett Johnson | RB | Nebraska Cornhuskers | Grade 75.42 | final_rank=245 | seed=87
+246. Jalen McMurray | S | Tennessee | Grade 75.37 | final_rank=246 | seed=131
+247. Jahiem Lawson | EDGE | Clemson | Grade 75.37 | final_rank=247 | seed=150
+248. Connor Lew | IOL | Auburn Tigers | Grade 75.35 | final_rank=248 | seed=71
+249. Dae'Quan Wright | TE | Mississippi Rebels | Grade 75.26 | final_rank=249 | seed=161
+250. Quintayvious Hutchins | EDGE | Boston College Eagles | Grade 75.11 | final_rank=250 | seed=162
+251. Jude Bowry | OT | Boston College Eagles | Grade 75.09 | final_rank=251 | seed=130
+252. Zavion Thomas | WR | LSU Tigers | Grade 75.05 | final_rank=252 | seed=172
+253. Lee Hunter | DT | Texas Tech Red Raiders | Grade 75.04 | final_rank=253 | seed=57
+254. Carson Beck | QB | Miami (FL) Hurricanes | Grade 75.02 | final_rank=254 | seed=96
+255. Jermaine Mathews Jr. | CB | Ohio State Buckeyes | Grade 74.99 | final_rank=255 | seed=190
+256. Malachi Fields | WR | Notre Dame Fighting Irish | Grade 74.98 | final_rank=256 | seed=101
+257. Josh Moten | CB | Southern Miss Golden Eagles | Grade 74.9 | final_rank=257 | seed=228
+258. Nic Anderson | WR | Oklahoma | Grade 74.89 | final_rank=258 | seed=264
+259. Isaiah Paul | LB | Baylor | Grade 74.88 | final_rank=259 | seed=240
+260. Nick Barrett | DT | South Carolina | Grade 74.87 | final_rank=260 | seed=105
+261. Julian Neal | CB | Arkansas Razorbacks | Grade 74.85 | final_rank=261 | seed=126
+262. AJ Harris | CB | Penn State | Grade 74.84 | final_rank=262 | seed=152
+263. Micah Morris | IOL | Georgia Bulldogs | Grade 74.77 | final_rank=263 | seed=241
+264. Dallen Bentley | TE | Utah Utes | Grade 74.75 | final_rank=264 | seed=191
+265. Devon Marshall | CB | North Carolina State Wolfpack | Grade 74.74 | final_rank=265 | seed=176
+266. Jalen Walthall | WR | Incarnate Word | Grade 74.72 | final_rank=266 | seed=38
+267. Patrick Payton | EDGE | LSU | Grade 74.72 | final_rank=267 | seed=92
+268. J. Michael Sturdivant | WR | Florida Gators | Grade 74.72 | final_rank=268 | seed=199
+269. Johntay Cook | WR | Texas | Grade 74.72 | final_rank=269 | seed=268
+270. Robert Spears-Jennings | S | Oklahoma Sooners | Grade 74.71 | final_rank=270 | seed=183
+271. Kaelon Black | RB | Indiana Hoosiers | Grade 74.6 | final_rank=271 | seed=222
+272. Carter Smith | IOL | Indiana | Grade 74.56 | final_rank=272 | seed=149
+273. Zakee Wheatley | S | Penn State Nittany Lions | Grade 74.53 | final_rank=273 | seed=97
+274. Tanner Miller | IOL | Michigan | Grade 74.48 | final_rank=274 | seed=127
+275. Devonta Smith | CB | Notre Dame Fighting Irish | Grade 74.47 | final_rank=275 | seed=205
+276. Isaiah Sategna | WR | Arkansas | Grade 74.45 | final_rank=276 | seed=270
+277. Justin Jefferson | LB | Alabama | Grade 74.42 | final_rank=277 | seed=181
+278. Anto Saka | EDGE | Northwestern | Grade 74.37 | final_rank=278 | seed=121
+279. Lander Barton | LB | Utah Utes | Grade 74.33 | final_rank=279 | seed=242
+280. Terrance Carter Jr. | TE | Texas Tech | Grade 74.32 | final_rank=280 | seed=132
+281. Jordan Hudson | WR | SMU | Grade 74.32 | final_rank=281 | seed=134
+282. Mason Reiger | EDGE | Wisconsin Badgers | Grade 74.3 | final_rank=282 | seed=249
+283. Dane Key | WR | Georgia | Grade 74.29 | final_rank=283 | seed=263
+284. Parker Brailsford | IOL | Alabama | Grade 74.26 | final_rank=284 | seed=128
+285. Arlis Boardingham | TE | Florida | Grade 74.26 | final_rank=285 | seed=293
+286. Owen Heinecke | LB | Oklahoma Sooners | Grade 74.23 | final_rank=286 | seed=200
+287. Jalen Catalon | S | Missouri Tigers | Grade 74.22 | final_rank=287 | seed=231
+288. Conner Weigman | QB | Houston | Grade 74.19 | final_rank=288 | seed=60
+289. Eric O'Neill | EDGE | Rutgers Scarlet Knights | Grade 74.15 | final_rank=289 | seed=237
+290. Kamari Ramsey | S | USC Trojans | Grade 74.13 | final_rank=290 | seed=69
+291. Logan Fano | EDGE | Utah Utes | Grade 74.13 | final_rank=291 | seed=238
+292. Keeshawn Silver | DT | USC | Grade 74.1 | final_rank=292 | seed=47
+293. Taurean York | LB | Texas A&M Aggies | Grade 74.09 | final_rank=293 | seed=86
+294. Tim Keenan III | DT | Alabama Crimson Tide | Grade 74.06 | final_rank=294 | seed=133
+295. Anez Cooper | IOL | Miami | Grade 74.06 | final_rank=295 | seed=151
+296. Robert Henry Jr. | RB | UTSA Roadrunners | Grade 74.05 | final_rank=296 | seed=193
+297. Terion Stewart | RB | Virginia Tech Hokies | Grade 74.03 | final_rank=297 | seed=201
+298. Oscar Cardenas | TE | UTSA | Grade 74.03 | final_rank=298 | seed=296
+299. Rahsul Faison | RB | South Carolina Gamecocks | Grade 73.99 | final_rank=299 | seed=208
+300. Holden Staes | TE | Tennessee | Grade 73.99 | final_rank=300 | seed=290
+301. Keylan Rutledge | IOL | Georgia Tech Yellow Jackets | Grade 73.98 | final_rank=301 | seed=134
+302. Max Llewellyn | EDGE | Iowa Hawkeyes | Grade 73.98 | final_rank=302 | seed=179
+303. DJ Harvey | CB | USC Trojans | Grade 73.98 | final_rank=303 | seed=202
+304. Domani Jackson | CB | Alabama | Grade 73.97 | final_rank=304 | seed=212
+305. Kyle Louis | LB | Pittsburgh Panthers | Grade 73.85 | final_rank=305 | seed=160
+306. Lewis Bond | WR | Boston College Eagles | Grade 73.82 | final_rank=306 | seed=220
+307. Jalon Daniels | QB | Kansas Jayhawks | Grade 73.8 | final_rank=307 | seed=175
+308. Keyshawn James-Newby | EDGE | New Mexico Lobos | Grade 73.8 | final_rank=308 | seed=252
+309. Trey Zuhn III | IOL | Texas A&M | Grade 73.73 | final_rank=309 | seed=114
+310. Peyton Bowen | S | Oklahoma Sooners | Grade 73.73 | final_rank=310 | seed=243
+311. Noah Thomas | WR | Georgia Bulldogs | Grade 73.72 | final_rank=311 | seed=197
+312. Kendal Daniels | LB | Oklahoma | Grade 73.7 | final_rank=312 | seed=75
+313. Elijah Pritchett | OT | Nebraska Cornhuskers | Grade 73.67 | final_rank=313 | seed=234
+314. Ceyair Wright | CB | Nebraska Cornhuskers | Grade 73.64 | final_rank=314 | seed=210
+315. Noah Whittington | RB | Oregon Ducks | Grade 73.64 | final_rank=315 | seed=267
+316. Derek Robertson | QB | Monmouth | Grade 73.56 | final_rank=316 | seed=38
+317. LT Overton | EDGE | Alabama | Grade 73.54 | final_rank=317 | seed=23
+318. Chase Roberts | WR | BYU Cougars | Grade 73.53 | final_rank=318 | seed=164
+319. Rohan Jones | TE | Arkansas Razorbacks | Grade 73.46 | final_rank=319 | seed=300
+320. Eric Gentry | LB | USC Trojans | Grade 73.35 | final_rank=320 | seed=262
+321. Jalen Huskey | S | Maryland Terrapins | Grade 73.34 | final_rank=321 | seed=294
+322. John Mateer | QB | Oklahoma | Grade 73.2 | final_rank=322 | seed=106
+323. Will Lee III | CB | Texas A&M Aggies | Grade 73.19 | final_rank=323 | seed=106
+324. Joe Royer | TE | Cincinnati Bearcats | Grade 73.16 | final_rank=324 | seed=120
+325. Jeadyn Lukus | CB | Clemson Tigers | Grade 73.16 | final_rank=325 | seed=225
+326. Caleb Douglas | WR | Texas Tech Red Raiders | Grade 73.1 | final_rank=326 | seed=194
+327. Trebor Pena | WR | Penn State Nittany Lions | Grade 73.1 | final_rank=327 | seed=240
+328. Carsen Ryan | TE | BYU Cougars | Grade 73.04 | final_rank=328 | seed=263
+329. Scooby Williams | LB | Texas A&M Aggies | Grade 73.03 | final_rank=329 | seed=286
+330. Lake McRee | TE | USC Trojans | Grade 72.96 | final_rank=330 | seed=203
+331. Landon Robinson | DT | Navy Midshipmen | Grade 72.92 | final_rank=331 | seed=282
+332. Jaden Rashada | QB | Sacramento State | Grade 72.91 | final_rank=332 | seed=59
+333. Raion Strader | CB | Auburn Tigers | Grade 72.88 | final_rank=333 | seed=236
+334. Tommy Castellanos | QB | Florida State Seminoles | Grade 72.86 | final_rank=334 | seed=227
+335. Tyreek Chappell | CB | Texas A&M Aggies | Grade 72.86 | final_rank=335 | seed=236
+336. Ethan Onianwa | IOL | Ohio State Buckeyes | Grade 72.76 | final_rank=336 | seed=223
+337. Hank Beatty | WR | Illinois Fighting Illini | Grade 72.74 | final_rank=337 | seed=277
+338. Logan Jones | IOL | Iowa Hawkeyes | Grade 72.72 | final_rank=338 | seed=174
+339. Ephesians Prysock | CB | Washington Huskies | Grade 72.71 | final_rank=339 | seed=207
+340. Chip Trayanum | RB | Toledo Rockets | Grade 72.65 | final_rank=340 | seed=247
+341. Nate Boerkircher | TE | Texas A&M Aggies | Grade 72.56 | final_rank=341 | seed=180
+342. Dante Moore | QB | Oregon | Grade 72.55 | final_rank=342 | seed=46
+343. Brenen Thompson | WR | Mississippi State Bulldogs | Grade 72.55 | final_rank=343 | seed=181
+344. Jerry Wilson | CB | Florida State Seminoles | Grade 72.53 | final_rank=344 | seed=248
+345. Athan Kaliakmanis | QB | Rutgers Scarlet Knights | Grade 72.49 | final_rank=345 | seed=254
+346. Ben Bell | EDGE | Virginia Tech Hokies | Grade 72.48 | final_rank=346 | seed=266
+347. Seydou Traore | TE | Mississippi State Bulldogs | Grade 72.45 | final_rank=347 | seed=235
+348. Treydan Stukes | CB | Arizona Wildcats | Grade 72.44 | final_rank=348 | seed=278
+349. Devin Moore | CB | Florida | Grade 72.38 | final_rank=349 | seed=92
+350. Kage Casey | OT | Boise State | Grade 72.36 | final_rank=350 | seed=143
+351. Ryan Baer | OT | Pittsburgh Panthers | Grade 72.36 | final_rank=351 | seed=300
+352. Jaden Dugger | LB | Louisiana Ragin' Cajuns | Grade 72.32 | final_rank=352 | seed=297
+353. Micah Pettus | OT | Florida State Seminoles | Grade 72.31 | final_rank=353 | seed=274
+354. Bryce Foster | IOL | Kansas | Grade 72.3 | final_rank=354 | seed=124
+355. Vincent Anthony Jr. | EDGE | Duke Blue Devils | Grade 72.3 | final_rank=355 | seed=202
+356. Hezekiah Masses | CB | California Golden Bears | Grade 72.29 | final_rank=356 | seed=143
+357. Diego Pavia | QB | Vanderbilt Commodores | Grade 72.27 | final_rank=357 | seed=233
+358. Wesley Bissainthe | LB | Miami (FL) Hurricanes | Grade 72.23 | final_rank=358 | seed=300
+359. Tre Smith | EDGE | Arizona Wildcats | Grade 72.21 | final_rank=359 | seed=300
+360. Mo Westmoreland | EDGE | Tulane Green Wave | Grade 72.19 | final_rank=360 | seed=300
+361. Miles Kitselman | TE | Tennessee Volunteers | Grade 72.16 | final_rank=361 | seed=151
+362. Josh Hoover | QB | TCU | Grade 72.15 | final_rank=362 | seed=100
+363. Connor Tollison | IOL | Missouri | Grade 72.15 | final_rank=363 | seed=146
+364. Fa'alili Fa'amoe | OT | Wake Forest Demon Deacons | Grade 72.11 | final_rank=364 | seed=213
+365. Ahmaad Moses | S | SMU Mustangs | Grade 72.03 | final_rank=365 | seed=300
+366. RJ Maryland | TE | SMU | Grade 71.95 | final_rank=366 | seed=295
+367. Riley Mahlman | OT | Wisconsin Badgers | Grade 71.94 | final_rank=367 | seed=258
+368. Bishop Fitzgerald | S | USC Trojans | Grade 71.91 | final_rank=368 | seed=165
+369. Jack Pyburn | EDGE | LSU Tigers | Grade 71.78 | final_rank=369 | seed=292
+370. Nadame Tucker | EDGE | Western Michigan Broncos | Grade 71.76 | final_rank=370 | seed=157
+371. Jake Retzlaff | QB | Tulane Green Wave | Grade 71.74 | final_rank=371 | seed=244
+372. Daniel Harris | CB | Georgia Bulldogs | Grade 71.73 | final_rank=372 | seed=259
+373. Joe Fagnano | QB | Connecticut Huskies | Grade 71.71 | final_rank=373 | seed=251
+374. Caden Barnett | IOL | Wyoming Cowboys | Grade 71.71 | final_rank=374 | seed=260
+375. Dean Miller | EDGE | Kansas Jayhawks | Grade 71.64 | final_rank=375 | seed=300
+376. Joshua Braun | IOL | Kentucky Wildcats | Grade 71.63 | final_rank=376 | seed=229
+377. Austin Brown | S | Wisconsin Badgers | Grade 71.51 | final_rank=377 | seed=279
+378. Luke Petitbon | IOL | Florida State Seminoles | Grade 71.47 | final_rank=378 | seed=271
+379. Dean Connors | RB | Houston Cougars | Grade 71.45 | final_rank=379 | seed=271
+380. Davion Carter | IOL | Texas Tech Red Raiders | Grade 71.44 | final_rank=380 | seed=268
+381. Reggie Virgil | WR | Texas Tech Red Raiders | Grade 71.35 | final_rank=381 | seed=211
+382. DQ Smith | S | South Carolina Gamecocks | Grade 71.32 | final_rank=382 | seed=300
+383. Nikai Martinez | S | Michigan State Spartans | Grade 71.31 | final_rank=383 | seed=287
+384. Damonic Williams | DT | Oklahoma Sooners | Grade 71.31 | final_rank=384 | seed=300
+385. Jimmori Robinson | EDGE | West Virginia Mountaineers | Grade 71.3 | final_rank=385 | seed=300
+386. Jeff Persi | OT | Pittsburgh Panthers | Grade 71.27 | final_rank=386 | seed=282
+387. Gunner Maldonado | S | Kansas State Wildcats | Grade 71.22 | final_rank=387 | seed=300
+388. Luke Altmyer | QB | Illinois Fighting Illini | Grade 71.17 | final_rank=388 | seed=214
+389. Mel Brown | RB | Connecticut Huskies | Grade 71.16 | final_rank=389 | seed=280
+390. Tomas Rimac | IOL | Virginia Tech Hokies | Grade 71.13 | final_rank=390 | seed=257
+391. Riley Nowakowski | TE | Indiana Hoosiers | Grade 71.12 | final_rank=391 | seed=239
+392. Anthony Smith | WR | East Carolina Pirates | Grade 71.05 | final_rank=392 | seed=300
+393. Kevin Coleman Jr. | WR | Missouri Tigers | Grade 71.04 | final_rank=393 | seed=185
+394. Tristan Leigh | OT | Clemson Tigers | Grade 71.03 | final_rank=394 | seed=300
+395. CJ Donaldson | RB | Ohio State Buckeyes | Grade 70.9 | final_rank=395 | seed=288
+396. Jamal Haynes | RB | Georgia Tech Yellow Jackets | Grade 70.88 | final_rank=396 | seed=250
+397. Jack Velling | TE | Michigan State Spartans | Grade 70.81 | final_rank=397 | seed=269
+398. Jaren Kanak | TE | Oklahoma Sooners | Grade 70.8 | final_rank=398 | seed=248
+399. Mason Randolph | IOL | Boise State Broncos | Grade 70.77 | final_rank=399 | seed=300
+400. Squirrel White | WR | Florida State Seminoles | Grade 70.75 | final_rank=400 | seed=273
+401. Stephen Hall | CB | Missouri Tigers | Grade 70.74 | final_rank=401 | seed=293
+402. Vinny Anthony II | WR | Wisconsin Badgers | Grade 70.73 | final_rank=402 | seed=215
+403. Jaylon Guilbeau | CB | Texas Longhorns | Grade 70.73 | final_rank=403 | seed=300
+404. DaShawn Jones | CB | Alabama Crimson Tide | Grade 70.7 | final_rank=404 | seed=300
+405. Amari Jackson | CB | Boston College Eagles | Grade 70.7 | final_rank=405 | seed=300
+406. Behren Morton | QB | Texas Tech Red Raiders | Grade 70.65 | final_rank=406 | seed=272
+407. Diego Pounds | OT | Mississippi Rebels | Grade 70.63 | final_rank=407 | seed=290
+408. Devonte Ross | WR | Penn State Nittany Lions | Grade 70.63 | final_rank=408 | seed=300
+409. Rayshaun Benny | DT | Michigan Wolverines | Grade 70.61 | final_rank=409 | seed=219
+410. Devin Mockobee | RB | Purdue Boilermakers | Grade 70.6 | final_rank=410 | seed=300
+411. Emmanuel Henderson Jr. | WR | Kansas | Grade 70.49 | final_rank=411 | seed=179
+412. Miller Moss | QB | Louisville | Grade 70.45 | final_rank=412 | seed=71
+413. Dillon Wade | IOL | Auburn Tigers | Grade 70.4 | final_rank=413 | seed=300
+414. Dillon Bell | WR | Georgia Bulldogs | Grade 70.37 | final_rank=414 | seed=246
+415. Jaren Kump | IOL | Utah Utes | Grade 70.36 | final_rank=415 | seed=298
+416. J'Mari Taylor | RB | Virginia Cavaliers | Grade 70.34 | final_rank=416 | seed=145
+417. Logan Diggs | RB | Mississippi Rebels | Grade 70.33 | final_rank=417 | seed=296
+418. Jeremiah Franklin | TE | Boston College Eagles | Grade 70.31 | final_rank=418 | seed=289
+419. Donavon Greene | WR | Virginia Tech Hokies | Grade 70.31 | final_rank=419 | seed=300
+420. Daniel King | IOL | North Carolina Tar Heels | Grade 70.31 | final_rank=420 | seed=300
+421. Josh Thompson | IOL | LSU Tigers | Grade 70.28 | final_rank=421 | seed=291
+422. Dametrious Crownover | OT | Texas A&M Aggies | Grade 70.24 | final_rank=422 | seed=206
+423. Tanner Arkin | TE | Illinois Fighting Illini | Grade 70.24 | final_rank=423 | seed=300
+424. Izavion Miller | IOL | Auburn Tigers | Grade 70.23 | final_rank=424 | seed=300
+425. Cameron Ball | DT | Arkansas Razorbacks | Grade 70.19 | final_rank=425 | seed=284
+426. Mark Gronowski | QB | Iowa Hawkeyes | Grade 70.01 | final_rank=426 | seed=300
+427. Aaron Anderson | WR | LSU Tigers | Grade 69.94 | final_rank=427 | seed=147
+428. Al-Jay Henderson | RB | Buffalo Bulls | Grade 69.87 | final_rank=428 | seed=300
+429. Brandon Cleveland | DT | North Carolina State Wolfpack | Grade 69.77 | final_rank=429 | seed=270
+430. Jam Miller | RB | Alabama Crimson Tide | Grade 69.72 | final_rank=430 | seed=256
+431. VJ Payne | S | Kansas State Wildcats | Grade 69.55 | final_rank=431 | seed=255
+432. Kyron Drones | QB | Virginia Tech Hokies | Grade 69.48 | final_rank=432 | seed=253
+433. Maverick McIvor | QB | Western Kentucky Hilltoppers | Grade 69.44 | final_rank=433 | seed=300
+434. Adam Randall | RB | Clemson Tigers | Grade 69.38 | final_rank=434 | seed=285
+435. Josh Cameron | WR | Baylor Bears | Grade 68.99 | final_rank=435 | seed=209
+436. Walker Eget | QB | San Jose State Spartans | Grade 68.86 | final_rank=436 | seed=300
+437. Bauer Sharp | TE | LSU Tigers | Grade 68.84 | final_rank=437 | seed=300
+438. Gary Smith III | DT | UCLA Bruins | Grade 68.79 | final_rank=438 | seed=276
+439. Garrett DiGiorgio | IOL | UCLA Bruins | Grade 68.7 | final_rank=439 | seed=300
+440. Grayson James | QB | Boston College Eagles | Grade 68.51 | final_rank=440 | seed=295
+441. Barion Brown | WR | LSU | Grade 68.33 | final_rank=441 | seed=82
+442. TJ Hall | CB | Iowa Hawkeyes | Grade 68.18 | final_rank=442 | seed=224
+443. Jeremiah Wright | IOL | Auburn Tigers | Grade 68.12 | final_rank=443 | seed=275
+444. Colbie Young | WR | Georgia Bulldogs | Grade 67.99 | final_rank=444 | seed=300
+445. Avery Smith | CB | Toledo Rockets | Grade 67.86 | final_rank=445 | seed=300
+446. Harrison Wallace III | WR | Mississippi Rebels | Grade 67.67 | final_rank=446 | seed=281
+447. Xavian Sorey Jr. | LB | Arkansas Razorbacks | Grade 67.54 | final_rank=447 | seed=226
+448. Deven Eastern | DT | Minnesota Golden Gophers | Grade 67.28 | final_rank=448 | seed=216
+449. Chris Hilton Jr. | WR | LSU Tigers | Grade 67.18 | final_rank=449 | seed=300
+450. Sawyer Robertson | QB | Baylor Bears | Grade 65.96 | final_rank=450 | seed=218
+451. Jackie Marshall | EDGE | Baylor Bears | Grade 65.95 | final_rank=451 | seed=299
+452. Fernando Carmona | IOL | Arkansas Razorbacks | Grade 65.75 | final_rank=452 | seed=283
+453. Caullin Lacy | WR | Louisville Cardinals | Grade 65.75 | final_rank=453 | seed=294
+454. Keyron Crawford | EDGE | Auburn Tigers | Grade 65.72 | final_rank=454 | seed=300
+455. Chris McClellan | DT | Missouri Tigers | Grade 64.21 | final_rank=455 | seed=300

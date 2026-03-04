@@ -1,4 +1,4 @@
-source,position,draft_year,hit_rate,stability,sample_size,hist_success_rate_raw,hist_success_rate_shrunk,hist_quality_multiplier,hist_row_count,method
-consensus_rank,QB,2025,0.67,0.88,120,0.62,0.60,1.05,42,base_source_weight_x_historical_pos_year_success
-consensus_rank,EDGE,2024,0.63,0.85,110,0.56,0.57,0.98,38,base_source_weight_x_historical_pos_year_success
-kiper_rank,CB,2023,0.61,0.78,85,0.59,0.58,1.01,44,manual_override_from_historical_backtest
+source,position,draft_year,hit_rate,stability,sample_size,pick_slot_mae,top32_hit_rate,top100_hit_rate,rank_corr,success_rate,quality_score,hist_success_rate_raw,hist_success_rate_shrunk,hist_quality_multiplier,hist_row_count,panel_cell_count,window_start_year,window_end_year,method
+consensus_rank,QB,2025,0.6732,0.8021,120,18.4,0.72,0.84,0.58,0.63,0.7211,0.62,0.60,1.05,42,86,2022,2025,hierarchical_source_position_rank_panel_shrinkage
+consensus_rank,EDGE,2024,0.6394,0.7812,110,22.1,0.65,0.79,0.46,0.57,0.6648,0.56,0.57,0.98,38,73,2021,2024,hierarchical_source_position_rank_panel_shrinkage
+kiper_rank,CB,2023,0.6112,0.7425,85,26.7,0.54,0.76,0.39,0.55,0.6025,0.59,0.58,1.01,44,51,2020,2023,hierarchical_source_position_rank_panel_shrinkage

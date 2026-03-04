@@ -1,0 +1,16 @@
+array-carpenter combine sync @ 2026-03-04T00:40:03.728833+00:00
+pro_day_path: /tmp/array_carpenter_refresh/combine_pro_day.csv
+official_path: /tmp/array_carpenter_refresh/combine_official.csv
+hist_out: /Users/nickholz/nfldraftmodel2026/data/sources/external/combine_data_unique_athlete_id_step4.csv
+combine_2026_out: /Users/nickholz/nfldraftmodel2026/data/sources/manual/combine_2026_results.csv
+
+base_pro_day_rows: 8449
+official_rows: 6568
+official_new_rows_added: 645
+official_missing_fields_filled: 4572
+merged_rows_written: 9060
+
+rows_2026_in_source: 323
+combine_rows_total: 329
+combine_rows_created: 0
+combine_field_updates: 0

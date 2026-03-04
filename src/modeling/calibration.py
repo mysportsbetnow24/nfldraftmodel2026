@@ -12,6 +12,7 @@ from typing import Dict, List, Tuple
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_HISTORICAL_PATH = ROOT / "data" / "sources" / "manual" / "historical_draft_outcomes_2016_2025.csv"
 DEFAULT_CALIBRATION_PATH = ROOT / "data" / "processed" / "historical_calibration_2016_2025.json"
+PICK_ERROR_POSITIONS = ("QB", "OT", "EDGE", "CB")
 
 
 @dataclass
@@ -21,6 +22,7 @@ class CalibrationConfig:
     position_additive: Dict[str, float]
     sample_size: int
     data_source: str
+    pick_projection: Dict[str, object] | None = None
 
 
 
@@ -31,6 +33,13 @@ def _sigmoid(x: float) -> float:
 
 def _clamp(v: float, lo: float, hi: float) -> float:
     return max(lo, min(hi, v))
+
+
+def _weighted_mean(vals: List[float], wts: List[float]) -> float:
+    den = sum(wts)
+    if den <= 0:
+        return 0.0
+    return sum(v * w for v, w in zip(vals, wts)) / den
 
 
 
@@ -174,6 +183,7 @@ def calibration_bins(rows: List[dict], bins: int = 12) -> List[dict]:
 def build_config(rows: List[dict]) -> CalibrationConfig:
     b0, b1 = fit_logistic_grade(rows)
     pos_adj = position_additives(rows, b0, b1)
+    pick_proj = fit_pick_projection(rows)
     source = rows[0].get("data_source", "manual") if rows else "manual"
     return CalibrationConfig(
         intercept=round(b0, 6),
@@ -181,6 +191,7 @@ def build_config(rows: List[dict]) -> CalibrationConfig:
         position_additive=pos_adj,
         sample_size=len(rows),
         data_source=source,
+        pick_projection=pick_proj,
     )
 
 
@@ -228,6 +239,195 @@ def year_based_backtest(rows: List[dict], min_train_rows: int = 250) -> List[dic
     return report_rows
 
 
+def _predict_pick_slot(
+    grade: float,
+    position: str,
+    intercept: float,
+    slope: float,
+    pos_additive: Dict[str, float],
+) -> float:
+    pos = str(position or "").strip().upper()
+    # Higher grades should map to earlier draft slots.
+    pred = float(intercept) + (float(slope) * (95.0 - float(grade))) + float(pos_additive.get(pos, 0.0))
+    return _clamp(pred, 1.0, 262.0)
+
+
+def _evaluate_pick_projection(
+    rows: List[dict],
+    intercept: float,
+    slope: float,
+    pos_additive: Dict[str, float],
+) -> dict:
+    if not rows:
+        return {
+            "pick_slot_mae": 999.0,
+            "pick_slot_rmse": 999.0,
+            "top32_hit_rate": 0.0,
+            "top32_precision": 0.0,
+            "top32_recall": 0.0,
+            "top32_f1": 0.0,
+            "pos_mae_avg_qb_ot_edge_cb": 999.0,
+            "objective": 999.0,
+        }
+
+    errs: List[float] = []
+    sqerrs: List[float] = []
+    weights: List[float] = []
+    tp = 0.0
+    fp = 0.0
+    fn = 0.0
+    pos_errs: Dict[str, List[float]] = defaultdict(list)
+    pos_wts: Dict[str, List[float]] = defaultdict(list)
+
+    for r in rows:
+        w = float(r.get("sample_weight", 1.0) or 1.0)
+        actual = float(r.get("overall_pick", 262) or 262)
+        pred = _predict_pick_slot(
+            grade=float(r.get("model_grade", 75.0) or 75.0),
+            position=str(r.get("position", "")).upper(),
+            intercept=intercept,
+            slope=slope,
+            pos_additive=pos_additive,
+        )
+        err = abs(pred - actual)
+        errs.append(err)
+        sqerrs.append((pred - actual) ** 2)
+        weights.append(w)
+
+        pred_top = pred <= 32.0
+        actual_top = actual <= 32.0
+        if pred_top and actual_top:
+            tp += w
+        elif pred_top and not actual_top:
+            fp += w
+        elif (not pred_top) and actual_top:
+            fn += w
+
+        pos = str(r.get("position", "")).upper()
+        if pos in PICK_ERROR_POSITIONS:
+            pos_errs[pos].append(err)
+            pos_wts[pos].append(w)
+
+    mae = _weighted_mean(errs, weights)
+    rmse = math.sqrt(_weighted_mean(sqerrs, weights))
+    precision = tp / max(1e-9, tp + fp)
+    recall = tp / max(1e-9, tp + fn)
+    f1 = (2.0 * precision * recall) / max(1e-9, precision + recall)
+    hit_rate = tp / max(1e-9, tp + fn)
+
+    pos_maes: List[float] = []
+    for pos in PICK_ERROR_POSITIONS:
+        if pos_errs.get(pos):
+            pos_maes.append(_weighted_mean(pos_errs[pos], pos_wts[pos]))
+    pos_mae_avg = sum(pos_maes) / len(pos_maes) if pos_maes else mae
+
+    # Objective combines requested optimization goals.
+    norm_mae = mae / 40.0
+    norm_pos = pos_mae_avg / 40.0
+    top_pen = 1.0 - hit_rate
+    objective = (0.55 * norm_mae) + (0.25 * top_pen) + (0.20 * norm_pos)
+
+    return {
+        "pick_slot_mae": round(mae, 3),
+        "pick_slot_rmse": round(rmse, 3),
+        "top32_hit_rate": round(hit_rate, 4),
+        "top32_precision": round(precision, 4),
+        "top32_recall": round(recall, 4),
+        "top32_f1": round(f1, 4),
+        "pos_mae_avg_qb_ot_edge_cb": round(pos_mae_avg, 3),
+        "objective": round(objective, 5),
+    }
+
+
+def fit_pick_projection(rows: List[dict]) -> Dict[str, object]:
+    if not rows:
+        return {
+            "intercept": 10.0,
+            "slope": 5.2,
+            "position_slot_additive": {},
+            "train_metrics": _evaluate_pick_projection([], 10.0, 5.2, {}),
+        }
+
+    best = None
+    # Coarse grid first, then local refinement.
+    for intercept in [x / 2.0 for x in range(-32, 61)]:  # -16.0 .. 30.0
+        for slope in [x / 20.0 for x in range(50, 191)]:  # 2.5 .. 9.5
+            base_res: Dict[str, List[float]] = defaultdict(list)
+            base_wts: Dict[str, List[float]] = defaultdict(list)
+            all_res: List[float] = []
+            all_wts: List[float] = []
+            for r in rows:
+                pos = str(r.get("position", "")).upper()
+                actual = float(r.get("overall_pick", 262) or 262)
+                grade = float(r.get("model_grade", 75.0) or 75.0)
+                wt = float(r.get("sample_weight", 1.0) or 1.0)
+                base_pred = _clamp(intercept + (slope * (95.0 - grade)), 1.0, 262.0)
+                residual = actual - base_pred
+                base_res[pos].append(residual)
+                base_wts[pos].append(wt)
+                all_res.append(residual)
+                all_wts.append(wt)
+
+            pos_add = {}
+            global_res = _weighted_mean(all_res, all_wts) if all_res else 0.0
+            for pos, vals in base_res.items():
+                if len(vals) < 40:
+                    continue
+                adj_raw = _weighted_mean(vals, base_wts[pos]) - global_res
+                adj = 0.65 * adj_raw
+                pos_add[pos] = round(_clamp(adj, -10.0, 10.0), 3)
+
+            metrics = _evaluate_pick_projection(rows, intercept, slope, pos_add)
+            pos_reg = 0.0009 * (
+                (sum(abs(float(v)) for v in pos_add.values()) / max(1, len(pos_add))) if pos_add else 0.0
+            )
+            cand = (
+                float(metrics["objective"]) + float(pos_reg),
+                intercept,
+                slope,
+                pos_add,
+                metrics,
+            )
+            if best is None or cand[0] < best[0]:
+                best = cand
+
+    assert best is not None
+    _, best_i, best_s, best_add, best_metrics = best
+    return {
+        "intercept": round(best_i, 4),
+        "slope": round(best_s, 4),
+        "position_slot_additive": best_add,
+        "train_metrics": best_metrics,
+    }
+
+
+def year_based_pick_backtest(rows: List[dict], min_train_rows: int = 250) -> List[dict]:
+    years = sorted({int(r["draft_year"]) for r in rows})
+    out: List[dict] = []
+    for holdout_year in years:
+        train = [r for r in rows if int(r["draft_year"]) < holdout_year]
+        test = [r for r in rows if int(r["draft_year"]) == holdout_year]
+        if len(train) < min_train_rows or not test:
+            continue
+
+        cfg = fit_pick_projection(train)
+        intercept = float(cfg.get("intercept", 10.0))
+        slope = float(cfg.get("slope", 5.2))
+        pos_add = {str(k): float(v) for k, v in (cfg.get("position_slot_additive", {}) or {}).items()}
+
+        m = _evaluate_pick_projection(test, intercept, slope, pos_add)
+        row = {
+            "holdout_year": holdout_year,
+            "train_rows": len(train),
+            "test_rows": len(test),
+            "intercept": round(intercept, 4),
+            "slope": round(slope, 4),
+            **m,
+        }
+        out.append(row)
+    return out
+
+
 
 def save_calibration_outputs(rows: List[dict], config: CalibrationConfig, output_path: Path = DEFAULT_CALIBRATION_PATH) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -239,6 +439,7 @@ def save_calibration_outputs(rows: List[dict], config: CalibrationConfig, output
         "position_additive": config.position_additive,
         "sample_size": config.sample_size,
         "data_source": config.data_source,
+        "pick_projection": config.pick_projection or {},
         "grade_bins": bins,
     }
     with output_path.open("w") as f:
@@ -266,6 +467,7 @@ def load_calibration_config(path: Path = DEFAULT_CALIBRATION_PATH) -> Calibratio
         position_additive={k: float(v) for k, v in payload.get("position_additive", {}).items()},
         sample_size=int(payload.get("sample_size", 0)),
         data_source=payload.get("data_source", "manual"),
+        pick_projection=payload.get("pick_projection", {}),
     )
 
 
@@ -294,3 +496,26 @@ def calibrated_success_probability(
 
     prob = _clamp(base + pos_delta + ras_delta + pff_delta, 0.02, 0.98)
     return round(prob, 4)
+
+
+def calibrated_pick_slot(
+    grade: float,
+    position: str,
+    config: CalibrationConfig | None,
+) -> float:
+    if config is None or not isinstance(config.pick_projection, dict):
+        return round(_clamp(10.0 + (5.2 * (95.0 - float(grade))), 1.0, 262.0), 2)
+    pick_cfg = config.pick_projection
+    intercept = float(pick_cfg.get("intercept", 10.0) or 10.0)
+    slope = float(pick_cfg.get("slope", 5.2) or 5.2)
+    pos_add = pick_cfg.get("position_slot_additive", {}) or {}
+    if not isinstance(pos_add, dict):
+        pos_add = {}
+    pred = _predict_pick_slot(
+        grade=float(grade),
+        position=str(position).upper(),
+        intercept=intercept,
+        slope=slope,
+        pos_additive={str(k): float(v) for k, v in pos_add.items()},
+    )
+    return round(pred, 2)

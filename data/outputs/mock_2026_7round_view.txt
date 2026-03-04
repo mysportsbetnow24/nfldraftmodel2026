@@ -1,0 +1,259 @@
+2026 MOCK DRAFT - 7 ROUNDS (UPDATED)
+round | overall_pick | team | player | pos | school
+1 | 1 | LV | Kadyn Proctor | OT | Alabama
+1 | 2 | NYJ | Daylen Everette | CB | Georgia
+1 | 3 | ARI | Rueben Bain Jr. | EDGE | Miami (FL) Hurricanes
+1 | 4 | TEN | T.J. Searcy | EDGE | Texas A&M
+1 | 5 | NYG | Monroe Freeling | OT | Georgia
+1 | 6 | CLE | Caleb Lomu | OT | Utah
+1 | 7 | WAS | Anthony Hill Jr. | LB | Texas Longhorns
+1 | 8 | NO | Zion Young | EDGE | Missouri Tigers
+1 | 9 | KC | Makai Lemon | WR | USC Trojans
+1 | 10 | CIN | Carnell Tate | WR | Ohio State
+1 | 11 | MIA | Kenyon Sadiq | TE | Oregon
+1 | 12 | DAL | Nicholas Singleton | RB | Penn State
+1 | 13 | LAR | Chris Brazzell II | WR | Tennessee Volunteers
+1 | 14 | BAL | Mansoor Delane | CB | LSU Tigers
+1 | 15 | TB | T.J. Parker | EDGE | Clemson
+1 | 16 | NYJ | Christen Miller | DT | Georgia Bulldogs
+1 | 17 | DET | R Mason Thomas | EDGE | Oklahoma
+1 | 18 | MIN | Akheem Mesidor | EDGE | Miami (FL) Hurricanes
+1 | 19 | CAR | Dillon Thieneman | S | Oregon
+1 | 20 | DAL | David Bailey | EDGE | Texas Tech
+1 | 21 | PIT | Peter Woods | DT | Clemson
+1 | 22 | LAC | Colton Hood | CB | Tennessee Volunteers
+1 | 23 | PHI | Spencer Fano | OT | Utah
+1 | 24 | CLE | Skyler Bell | WR | Connecticut Huskies
+1 | 25 | CHI | Harold Perkins Jr. | LB | LSU
+1 | 26 | BUF | Cashius Howell | EDGE | Texas A&M Aggies
+1 | 27 | SF | Aamil Wagner | OT | Notre Dame
+1 | 28 | HOU | Seth McGowan | RB | Kentucky Wildcats
+1 | 29 | LAR | Austin Barber | OT | Florida
+1 | 30 | DEN | Francis Mauigoa | OT | Miami (FL) Hurricanes
+1 | 31 | NE | Keionte Scott | CB | Miami (FL) Hurricanes
+1 | 32 | SEA | Blake Miller | OT | Clemson Tigers
+2 | 33 | NYJ | Sonny Styles | LB | Ohio State
+2 | 34 | ARI | Caleb Downs | S | Ohio State
+2 | 35 | TEN | Brady Latham | IOL | Arkansas
+2 | 36 | LV | Kayden McDonald | DT | Ohio State Buckeyes
+2 | 37 | NYG | DJ McKinney | CB | Colorado
+2 | 38 | HOU | Arvell Reese | LB | Ohio State Buckeyes
+2 | 39 | CLE | Takye Heath | CB | Georgia Tech
+2 | 40 | KC | A.J. Haulcy | S | LSU Tigers
+2 | 41 | CIN | Fernando Mendoza | QB | Indiana
+2 | 42 | NO | C.J. Allen | LB | Georgia
+2 | 43 | MIA | Kaimon Rucker | EDGE | North Carolina
+2 | 44 | NYJ | Emmanuel McNeil-Warren | S | Toledo Rockets
+2 | 45 | BAL | Brian Parker II | OT | Duke Blue Devils
+2 | 46 | TB | Ty Simpson | QB | Alabama Crimson Tide
+2 | 47 | IND | Omar Cooper Jr. | WR | Indiana Hoosiers
+2 | 48 | ATL | Dani Dennis-Sutton | EDGE | Penn State Nittany Lions
+2 | 49 | DET | Lorenzo Styles Jr. | CB | Ohio State
+2 | 50 | MIN | Mateen Ibirogba | DT | Wake Forest
+2 | 51 | CAR | LT Overton | EDGE | Alabama
+2 | 52 | GB | Eugene Asante | LB | Auburn
+2 | 53 | PIT | Langston Jones | OT | Lehigh
+2 | 54 | PHI | Nyck Harbor | WR | South Carolina
+2 | 55 | LAC | Zane Durant | DT | Penn State
+2 | 56 | JAX | Jeremiyah Love | RB | Notre Dame
+2 | 57 | CHI | Emmanuel Pregnon | IOL | Oregon Ducks
+2 | 58 | SF | Chase Bisontis | IOL | Texas A&M
+2 | 59 | HOU | Jermayne Lole | DT | Louisville
+2 | 60 | BUF | Christian Thomas | LB | Maine
+2 | 61 | LAR | Anthony Lucas | EDGE | USC Trojans
+2 | 62 | DEN | Zachariah Branch | WR | Georgia
+2 | 63 | NE | Gabriel Brownlow-Dindy | DT | South Carolina
+2 | 64 | SEA | CJ Daniels | WR | Miami (FL) Hurricanes
+3 | 65 | ARI | Isaiah World | OT | Oregon
+3 | 66 | TEN | Eli Stowers | TE | Vanderbilt
+3 | 67 | LV | Darris Smith | EDGE | LSU
+3 | 68 | PHI | Justice Boone | RB | Colorado
+3 | 69 | HOU | David Oke | DT | Arkansas Razorbacks
+3 | 70 | CLE | Justin Flowe | LB | Arizona
+3 | 71 | WAS | Daniel Sobkowicz | WR | Illinois State
+3 | 72 | CIN | Joshua Josephs | EDGE | Tennessee Volunteers
+3 | 73 | NO | Jake Slaughter | IOL | Florida
+3 | 74 | KC | Hollin Pierce | OT | Rutgers
+3 | 75 | MIA | Mikail Kamara | EDGE | Indiana Hoosiers
+3 | 76 | PIT | Derrick Moore | EDGE | Michigan
+3 | 77 | ATL | Treyvhon Saunders | WR | Colgate
+3 | 78 | BAL | Ja'Kobi Lane | WR | USC
+3 | 79 | TB | Makhi Hughes | RB | Oregon
+3 | 80 | IND | Addison Nichols | IOL | Arkansas
+3 | 81 | JAX | Xavier Scott | CB | Illinois Fighting Illini
+3 | 82 | MIN | Kaytron Allen | RB | Penn State Nittany Lions
+3 | 83 | CAR | Eugene Brooks III | IOL | Oklahoma
+3 | 84 | GB | Chandler Rivers | CB | Duke
+3 | 85 | PIT | Deion Burks | WR | Oklahoma Sooners
+3 | 86 | LAC | Kade Pieper | IOL | Iowa
+3 | 87 | MIA | Elijah Sarratt | WR | Indiana Hoosiers
+3 | 88 | JAX | Dontay Corleone | DT | Cincinnati Bearcats
+3 | 89 | CHI | Dominic Gooden | DT | Oklahoma
+3 | 90 | MIA | Raesjon Davis | LB | USC
+3 | 91 | BUF | Evan Stewart | WR | Oregon
+3 | 92 | SF | Xavier Chaplin | OT | Auburn
+3 | 93 | LAR | Michael Taaffe | S | Texas Longhorns
+3 | 94 | DEN | Davison Igbinosun | CB | Ohio State
+3 | 95 | NE | Nate Boerkircher | TE | Texas A&M Aggies
+3 | 96 | SEA | Tre Williams | DT | Clemson
+3 | 97 | MIN | Deontae Lawson | LB | Alabama
+3 | 98 | PHI | Timothy McKay | IOL | NC State
+3 | 99 | PIT | Devin Moore | CB | Florida
+3 | 100 | JAX | Lee Hunter | DT | Texas Tech Red Raiders
+4 | 101 | TEN | Kevin Concepcion | WR | Texas A&M
+4 | 102 | LV | Dakaari Nelson | S | Penn State
+4 | 103 | NYJ | Jake Golday | LB | Cincinnati Bearcats
+4 | 104 | ARI | Chris Bell | WR | Louisville
+4 | 105 | NYG | Darrell Jackson Jr. | DT | Florida State
+4 | 106 | HOU | Shedrick Shropshire | LB | TCU
+4 | 107 | CLE | Tyreak Chappell | CB | South Carolina
+4 | 108 | DEN | Jacob Rodriguez | LB | Texas Tech Red Raiders
+4 | 109 | KC | Bear Alexander | DT | Oregon
+4 | 110 | CIN | Chris Johnson | CB | San Diego State Aztecs
+4 | 111 | MIA | J.C. Davis | OT | Illinois Fighting Illini
+4 | 112 | DAL | Jack Endries | TE | Texas Longhorns
+4 | 113 | IND | Denairius Gray | CB | Florida
+4 | 114 | ATL | A'Mauri Washington | DT | Oregon
+4 | 115 | BAL | Joe Crocker Jr. | IOL | Auburn
+4 | 116 | TB | Drew Shelton | OT | Penn State Nittany Lions
+4 | 117 | MIN | Malik Muhammad | CB | Texas
+4 | 118 | DET | Eli Raridon | TE | Notre Dame
+4 | 119 | CAR | Tim Keenan III | DT | Alabama Crimson Tide
+4 | 120 | GB | Jalyn Phillips | S | Georgia
+4 | 121 | PIT | Keon Wylie | S | Texas Tech
+4 | 122 | PHI | Julian Neal | CB | Arkansas Razorbacks
+4 | 123 | LAC | Justin Joly | TE | North Carolina State Wolfpack
+4 | 124 | LV | Kani Walker | CB | Oregon
+4 | 125 | NE | Aiden Fisher | LB | Indiana Hoosiers
+4 | 126 | BUF | Bryce Lance | WR | North Dakota State
+4 | 127 | SF | Popo Aumavae | LB | Oregon
+4 | 128 | HOU | Quincy Rhodes Jr. | EDGE | Arkansas
+4 | 129 | CHI | Trevor Goosby | OT | Texas
+4 | 130 | DEN | Tyre West | DT | Indiana
+4 | 131 | NE | Jalon Kilgore | S | South Carolina
+4 | 132 | NO | Sam Roush | TE | Stanford Cardinal
+4 | 133 | SF | Eric McAlister | WR | TCU Horned Frogs
+4 | 134 | LV | Domani Jackson | CB | Alabama
+4 | 135 | PIT | Germie Bernard | WR | Alabama
+4 | 136 | NO | Antonio Williams | WR | Clemson
+4 | 137 | PHI | CJ Mims | EDGE | West Virginia
+4 | 138 | SF | Tanner Koziol | TE | Houston
+5 | 139 | CLE | Hero Kanu | DT | Texas
+5 | 140 | TEN | Martavius French | LB | Tennessee
+5 | 141 | ARI | Tysheem Johnson | LB | Oregon
+5 | 142 | LAR | Ja'Keem Jackson | CB | Florida
+5 | 143 | NYG | Connor Lew | IOL | Auburn Tigers
+5 | 144 | CLE | Rodney Hammond Jr. | RB | Sacramento State
+5 | 145 | WAS | Olaivavega Ioane | IOL | Penn State Nittany Lions
+5 | 146 | KC | Max Iheanachor | OT | Arizona State Sun Devils
+5 | 147 | CLE | Xavier Nwankpa | S | Iowa
+5 | 148 | NO | Ashton Stamps | CB | LSU
+5 | 149 | MIA | Trinidad Chambliss | QB | Mississippi Rebels
+5 | 150 | DAL | Jordan Shaw | CB | Washington
+5 | 151 | PHI | Keldric Faulk | EDGE | Auburn
+5 | 152 | BAL | Domata Peko Jr. | DT | UCLA
+5 | 153 | TB | Tacario Davis | CB | Washington
+5 | 154 | IND | LaNorris Sellers | QB | South Carolina
+5 | 155 | DET | Matayo Uiagalelei | EDGE | Oregon
+5 | 156 | CAR | Treyveon McGee | CB | Georgia
+5 | 157 | CAR | Toriano Pride Jr. | CB | Missouri
+5 | 158 | GB | Roman Hemby | RB | Indiana
+5 | 159 | PIT | Ernest Hausmann | LB | Michigan
+5 | 160 | BAL | Drew Allar | QB | Penn State
+5 | 161 | MIN | Gennings Dunker | OT | Iowa Hawkeyes
+5 | 162 | JAX | Isaac Smith | S | Mississippi State
+5 | 163 | CHI | Branson Combs | S | Wake Forest
+5 | 164 | JAX | Jermaine Mathews Jr. | CB | Ohio State Buckeyes
+5 | 165 | HOU | Garrett Nussmeier | QB | LSU
+5 | 166 | BUF | Bryce Lovett | IOL | NC State
+5 | 167 | LAR | Pat Coogan | IOL | Indiana Hoosiers
+5 | 168 | DEN | Arlis Boardingham | TE | Florida
+5 | 169 | NE | Isaiah Sategna | WR | Arkansas
+5 | 170 | NO | Eric Singleton Jr. | WR | Auburn
+5 | 171 | SF | Avieon Terrell | CB | Clemson
+5 | 172 | BAL | Oscar Cardenas | TE | UTSA
+5 | 173 | BAL | Jaishawn Barham | LB | Michigan
+5 | 174 | LV | Cade Klubnik | QB | Clemson
+5 | 175 | NYJ | Jordyn Tyson | WR | Arizona State
+5 | 176 | KC | Jadarian Price | RB | Notre Dame Fighting Irish
+5 | 177 | DAL | Jadon Canady | CB | Oregon Ducks
+5 | 178 | NYJ | Jeremiah Alexander | EDGE | Alabama
+5 | 179 | PHI | Peyton Bowen | S | Oklahoma Sooners
+6 | 180 | LV | Nic Anderson | WR | Oklahoma
+6 | 181 | ARI | Conner Weigman | QB | Houston
+6 | 182 | TEN | KC Concepcion | WR | Texas A&M Aggies
+6 | 183 | LV | Red Murdock | LB | Buffalo
+6 | 184 | NYG | Jalon Daniels | QB | Kansas Jayhawks
+6 | 185 | WAS | Rohan Jones | TE | Arkansas Razorbacks
+6 | 186 | SEA | Jeremiah Wilson | CB | Florida State
+6 | 187 | CIN | Carter Smith | IOL | Indiana
+6 | 188 | NO | AJ Harris | CB | Penn State
+6 | 189 | NE | Jaydn Ott | RB | Oklahoma
+6 | 190 | NYG | Gracen Halton | DT | Oklahoma Sooners
+6 | 191 | NYG | Hollywood Smothers | RB | N.C. State
+6 | 192 | TEN | Albert Regis | DT | Texas A&M Aggies
+6 | 193 | TB | Suntarine Perkins | LB | Ole Miss
+6 | 194 | MIN | Will Lee III | CB | Texas A&M Aggies
+6 | 195 | ATL | Dasan McCullough | LB | Oklahoma
+6 | 196 | SF | Jamel Johnson | S | TCU
+6 | 197 | CIN | Jalen Stroman | S | Notre Dame Fighting Irish
+6 | 198 | CAR | Malachi Lawrence | EDGE | UCF Knights
+6 | 199 | GB | DeMonte Capehart | DT | Clemson Tigers
+6 | 200 | NE | Brenen Thompson | WR | Mississippi State Bulldogs
+6 | 201 | JAX | Ricardo Jones Jr. | CB | Purdue
+6 | 202 | LAC | Romello Height | EDGE | Texas Tech Red Raiders
+6 | 203 | DET | Keylan Rutledge | IOL | Georgia Tech Yellow Jackets
+6 | 204 | CLE | Johntay Cook | WR | Texas
+6 | 205 | LAR | Demond Claiborne | RB | Wake Forest
+6 | 206 | NYJ | Mike Washington Jr. | RB | Arkansas Razorbacks
+6 | 207 | WAS | Tyler Collins | CB | Mississippi State
+6 | 208 | LAR | Jaden Rashada | QB | Sacramento State
+6 | 209 | BAL | Beau Stephens | IOL | Iowa Hawkeyes
+6 | 210 | NE | Taurean York | LB | Texas A&M Aggies
+6 | 211 | DET | Ryan Baer | OT | Pittsburgh Panthers
+6 | 212 | DET | Joe Royer | TE | Cincinnati Bearcats
+6 | 213 | PIT | Elijah Pritchett | OT | Nebraska Cornhuskers
+6 | 214 | PIT | Iapani Laloulu | IOL | Oregon
+6 | 215 | DAL | Bud Clark | S | TCU Horned Frogs
+6 | 216 | IND | Earnest Greene III | OT | Georgia
+7 | 217 | ARI | Tanner Miller | IOL | Michigan
+7 | 218 | NYJ | Cole Wisniewski | S | Texas Tech Red Raiders
+7 | 219 | LV | Nick Barrett | DT | South Carolina
+7 | 220 | BUF | Keon Sabb | S | Alabama
+7 | 221 | CIN | Kage Casey | OT | Boise State
+7 | 222 | DET | De'Zhaun Stribling | WR | Mississippi Rebels
+7 | 223 | WAS | Zxavian Harris | DT | Mississippi Rebels
+7 | 224 | PIT | Domonique Orange | DT | Iowa State Cyclones
+7 | 225 | DAL | Keeshawn Silver | DT | USC
+7 | 226 | CIN | Dallen Bentley | TE | Utah Utes
+7 | 227 | MIA | Ar'maj Reed-Adams | IOL | Texas A&M
+7 | 228 | BUF | Barika Kpeenu | RB | North Dakota State
+7 | 229 | TB | Ethan Burke | EDGE | Texas
+7 | 230 | IND | Lander Barton | LB | Utah Utes
+7 | 231 | ATL | Brandon Cisse | CB | South Carolina Gamecocks
+7 | 232 | LAR | Keith Abney II | CB | Arizona State Sun Devils
+7 | 233 | JAX | Bryce Boettcher | LB | Oregon Ducks
+7 | 234 | MIN | Brandon Cleveland | DT | North Carolina State Wolfpack
+7 | 235 | MIN | Tyreak Sapp | EDGE | Florida
+7 | 236 | GB | Jude Bowry | OT | Boston College Eagles
+7 | 237 | PIT | Daniel Harris | CB | Georgia Bulldogs
+7 | 238 | TEN | Dean Miller | EDGE | Kansas Jayhawks
+7 | 239 | CHI | Gabe Jacas | EDGE | Illinois Fighting Illini
+7 | 240 | MIN | Kamari Ramsey | S | USC Trojans
+7 | 241 | CHI | Jonah Coleman | RB | Washington Huskies
+7 | 242 | NYJ | Josh Hoover | QB | TCU
+7 | 243 | HOU | Michael Briscoe | WR | Cal Poly
+7 | 244 | MIN | Genesis Smith | S | Arizona Wildcats
+7 | 245 | JAX | Dante Moore | QB | Oregon
+7 | 246 | DEN | Parker Brailsford | IOL | Alabama
+7 | 247 | SF | Kaelon Black | RB | Indiana Hoosiers
+7 | 248 | CLE | Carson Beck | QB | Miami (FL) Hurricanes
+7 | 249 | BAL | Robert Henry Jr. | RB | UTSA Roadrunners
+7 | 250 | LAR | Max Llewellyn | EDGE | Iowa Hawkeyes
+7 | 251 | DEN | Michael Trigg | TE | Baylor Bears
+7 | 252 | BAL | Tre Smith | EDGE | Arizona Wildcats
+7 | 253 | IND | James Thompson Jr. | DT | Illinois Fighting Illini
+7 | 254 | GB | Devon Marshall | CB | North Carolina State Wolfpack
+7 | 255 | DEN | Denzel Boston | WR | Washington
+7 | 256 | LAR | Jeff Persi | OT | Pittsburgh Panthers
+7 | 257 | GB | DJ Campbell | IOL | Texas Longhorns

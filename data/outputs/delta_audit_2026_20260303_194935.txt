@@ -1,0 +1,34 @@
+2026 DELTA AUDIT
+
+Current board: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
+Previous board: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260303_194619.csv
+Rows compared: 455
+
+Top Risers (prev rank - curr rank > 0)
+1. Ja'Kobi Lane (WR) 82 -> 81 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+2. Aamil Wagner (OT) 83 -> 82 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+3. Xavier Scott (CB) 84 -> 83 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+4. Xavier Chaplin (OT) 85 -> 84 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+5. Jack Endries (TE) 86 -> 85 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+6. Eric Singleton Jr. (WR) 87 -> 86 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+7. Domata Peko Jr. (DT) 88 -> 87 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+8. Domonique Orange (DT) 89 -> 88 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+9. Chris Bell (WR) 90 -> 89 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+10. Eli Raridon (TE) 91 -> 90 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+11. Denzel Boston (WR) 92 -> 91 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+12. Langston Jones (OT) 93 -> 92 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+13. Matayo Uiagalelei (EDGE) 94 -> 93 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+14. J.C. Davis (OT) 95 -> 94 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+15. A'Mauri Washington (DT) 96 -> 95 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+16. Mateen Ibirogba (DT) 97 -> 96 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+17. Tre Williams (DT) 98 -> 97 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+18. Anthony Lucas (EDGE) 99 -> 98 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+19. Devin Moore (CB) 100 -> 99 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+20. Gennings Dunker (OT) 101 -> 100 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+21. CJ Mims (EDGE) 102 -> 101 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+22. Sam Roush (TE) 103 -> 102 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+23. KC Concepcion (WR) 104 -> 103 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+24. Joshua Josephs (EDGE) 105 -> 104 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+25. Caleb Banks (DT) 106 -> 105 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+
+Top Fallers (prev rank - curr rank < 0)

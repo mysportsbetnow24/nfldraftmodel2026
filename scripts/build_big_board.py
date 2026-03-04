@@ -121,10 +121,29 @@ CFB_PROXY_FALLBACK_HEAVY_MAX_RELIABILITY = float(os.getenv("CFB_PROXY_FALLBACK_H
 CFB_PROXY_FALLBACK_FAIL_ON_HEAVY = str(
     os.getenv("CFB_PROXY_FALLBACK_FAIL_ON_HEAVY", "0")
 ).strip().lower() in {"1", "true", "yes", "y"}
+ATHLETIC_MISSING_RISK_WEIGHT = float(os.getenv("ATHLETIC_MISSING_RISK_WEIGHT", "0.12"))
+ATHLETIC_VARIANCE_RISK_WEIGHT = float(os.getenv("ATHLETIC_VARIANCE_RISK_WEIGHT", "0.08"))
+TESTING_MISSING_SIGNAL_WEIGHT_QB = float(os.getenv("TESTING_MISSING_SIGNAL_WEIGHT_QB", "0.35"))
+TESTING_MISSING_SIGNAL_WEIGHT_NON_QB = float(os.getenv("TESTING_MISSING_SIGNAL_WEIGHT_NON_QB", "0.10"))
+TESTING_MISSING_SIGNAL_WEIGHT_PENDING_QB = float(os.getenv("TESTING_MISSING_SIGNAL_WEIGHT_PENDING_QB", "0.08"))
+TESTING_MISSING_SIGNAL_WEIGHT_PENDING_NON_QB = float(os.getenv("TESTING_MISSING_SIGNAL_WEIGHT_PENDING_NON_QB", "0.03"))
+TESTING_MISSING_SIGNAL_WEIGHT_DNP_QB = float(os.getenv("TESTING_MISSING_SIGNAL_WEIGHT_DNP_QB", "0.20"))
+TESTING_MISSING_SIGNAL_WEIGHT_DNP_NON_QB = float(os.getenv("TESTING_MISSING_SIGNAL_WEIGHT_DNP_NON_QB", "0.08"))
+EVIDENCE_GUARDRAIL_TESTING_MISSING_WEIGHT = float(
+    os.getenv("EVIDENCE_GUARDRAIL_TESTING_MISSING_WEIGHT", "0.35")
+)
+EVIDENCE_GUARDRAIL_TESTING_MISSING_WEIGHT_PENDING = float(
+    os.getenv("EVIDENCE_GUARDRAIL_TESTING_MISSING_WEIGHT_PENDING", "0.18")
+)
+EVIDENCE_GUARDRAIL_TESTING_MISSING_WEIGHT_DNP = float(
+    os.getenv("EVIDENCE_GUARDRAIL_TESTING_MISSING_WEIGHT_DNP", "0.45")
+)
+ATHLETIC_MISSING_RISK_FACTOR_PENDING = float(os.getenv("ATHLETIC_MISSING_RISK_FACTOR_PENDING", "0.25"))
+ATHLETIC_MISSING_RISK_FACTOR_DNP = float(os.getenv("ATHLETIC_MISSING_RISK_FACTOR_DNP", "0.70"))
 
 POSITION_VALUE_ADJUSTMENT = {
     "QB": 0.35,
-    "OT": 0.25,
+    "OT": 0.45,
     "EDGE": 0.25,
     "CB": 0.20,
     "WR": 0.15,
@@ -132,7 +151,7 @@ POSITION_VALUE_ADJUSTMENT = {
     "S": 0.10,
     "LB": 0.05,
     "TE": -0.15,
-    "IOL": -0.25,
+    "IOL": 0.05,
     "RB": -0.80,
 }
 
@@ -383,6 +402,8 @@ def _confidence_uncertainty_profile(
     consensus_rank_std: float | None,
     consensus_confidence_factor: float,
     has_calibrated_prob: bool,
+    testing_missing_weight: float = 0.0,
+    testing_missing_status: str = "reported",
 ) -> dict:
     evidence_score = _clamp(((4 - evidence_missing_count) / 4.0) * 44.0, 6.0, 44.0)
     source_coverage_score = _clamp((consensus_source_count / 5.0) * 24.0, 2.0, 24.0)
@@ -394,6 +415,16 @@ def _confidence_uncertainty_profile(
     calibration_score = 8.0 if has_calibrated_prob else 4.0
 
     confidence = evidence_score + consensus_score + risk_score + calibration_score
+    status = str(testing_missing_status or "").strip().lower()
+    testing_confidence_penalty = 0.0
+    if testing_missing_weight > 0:
+        if status == "pending":
+            testing_confidence_penalty = _clamp(0.8 + (testing_missing_weight * 6.0), 0.6, 2.2)
+        elif status == "dnp":
+            testing_confidence_penalty = _clamp(1.4 + (testing_missing_weight * 7.5), 1.2, 3.6)
+        else:
+            testing_confidence_penalty = _clamp(1.2 + (testing_missing_weight * 8.0), 1.0, 3.2)
+    confidence -= testing_confidence_penalty
     if final_grade >= 82.0 and evidence_missing_count >= 2:
         confidence -= 9.0
     confidence = round(_clamp(confidence, 1.0, 99.0), 2)
@@ -983,6 +1014,9 @@ def _compute_formula_score(
     years_played: float | None,
     draft_age: float | None,
     early_declare: bool,
+    combine_testing_status: str,
+    combine_testing_event_count: int,
+    combine_invited: bool,
 ) -> dict:
     film_trait = _as_float(grades.get("film_trait_score"))
     film_enabled = ENABLE_FILM_WEIGHTING
@@ -1164,10 +1198,7 @@ def _compute_formula_score(
 
     has_testing_signal = (
         official_ras is not None
-        or athletic_profile_cov_count > 0
-        or md_speed_pct is not None
-        or md_explosion_pct is not None
-        or md_agility_pct is not None
+        or int(combine_testing_event_count or 0) > 0
     )
 
     film_coverage = _as_float(grades.get("film_trait_coverage")) or 0.0
@@ -1175,9 +1206,44 @@ def _compute_formula_score(
     has_film_signal = film_enabled and film_trait is not None and film_coverage >= 0.45
     has_language_signal = language_trait is not None and lang_text_coverage >= 40.0
     has_market_signal = external_rank is not None
-    missing_signal_count = sum(
-        0 if present else 1 for present in (has_film_signal, has_language_signal, has_testing_signal, has_market_signal)
+    testing_status_norm = str(combine_testing_status or "").strip().lower()
+    if testing_status_norm not in {"reported", "pending", "dnp", "unknown"}:
+        testing_status_norm = "unknown"
+    if has_testing_signal and testing_status_norm in {"pending", "unknown"}:
+        testing_status_norm = "reported"
+    if (not has_testing_signal) and combine_invited and testing_status_norm == "unknown":
+        testing_status_norm = "pending"
+
+    missing_non_testing_count = sum(
+        0 if present else 1 for present in (has_film_signal, has_language_signal, has_market_signal)
     )
+    testing_missing_count = 0 if has_testing_signal else 1
+    if testing_missing_count == 0:
+        testing_missing_weight = 0.0
+        evidence_testing_missing_weight = 0.0
+        athletic_missing_risk_factor = 1.0
+    elif testing_status_norm == "pending":
+        testing_missing_weight = (
+            TESTING_MISSING_SIGNAL_WEIGHT_PENDING_QB
+            if position == "QB"
+            else TESTING_MISSING_SIGNAL_WEIGHT_PENDING_NON_QB
+        )
+        evidence_testing_missing_weight = EVIDENCE_GUARDRAIL_TESTING_MISSING_WEIGHT_PENDING
+        athletic_missing_risk_factor = ATHLETIC_MISSING_RISK_FACTOR_PENDING
+    elif testing_status_norm == "dnp":
+        testing_missing_weight = (
+            TESTING_MISSING_SIGNAL_WEIGHT_DNP_QB
+            if position == "QB"
+            else TESTING_MISSING_SIGNAL_WEIGHT_DNP_NON_QB
+        )
+        evidence_testing_missing_weight = EVIDENCE_GUARDRAIL_TESTING_MISSING_WEIGHT_DNP
+        athletic_missing_risk_factor = ATHLETIC_MISSING_RISK_FACTOR_DNP
+    else:
+        testing_missing_weight = TESTING_MISSING_SIGNAL_WEIGHT_QB if position == "QB" else TESTING_MISSING_SIGNAL_WEIGHT_NON_QB
+        evidence_testing_missing_weight = EVIDENCE_GUARDRAIL_TESTING_MISSING_WEIGHT
+        athletic_missing_risk_factor = 1.0
+    missing_signal_count = missing_non_testing_count + (testing_missing_weight * testing_missing_count)
+    missing_signal_count_raw = missing_non_testing_count + testing_missing_count
 
     risk_penalty = 0.0
     if espn_volatility_flag:
@@ -1190,8 +1256,8 @@ def _compute_formula_score(
     risk_penalty += max(0.0, float(atoz_risk_penalty or 0.0))
     risk_penalty += max(0.0, float(si_risk_penalty or 0.0))
     risk_penalty += max(0.0, float(cbs_risk_penalty or 0.0))
-    risk_penalty += (0.35 * athletic_profile_missing_penalty)
-    risk_penalty += (0.25 * athletic_profile_variance_penalty)
+    risk_penalty += (ATHLETIC_MISSING_RISK_WEIGHT * athletic_profile_missing_penalty * athletic_missing_risk_factor)
+    risk_penalty += (ATHLETIC_VARIANCE_RISK_WEIGHT * athletic_profile_variance_penalty * athletic_missing_risk_factor)
     risk_penalty += years_played_risk_adjustment
     if ENABLE_DRAFT_AGE_SCORING:
         risk_penalty += draft_age_risk_adjustment
@@ -1200,13 +1266,13 @@ def _compute_formula_score(
     # Data-sufficiency penalty: sparse profiles should not sit near the top on neutral defaults.
     if position == "QB":
         risk_penalty += 0.55 * missing_signal_count
-        if missing_signal_count >= 3:
+        if missing_non_testing_count >= 3:
             risk_penalty += 0.8
         if not (has_film_signal or has_language_signal or has_testing_signal or has_market_signal):
             risk_penalty += 1.2
     else:
         risk_penalty += 0.22 * missing_signal_count
-        if missing_signal_count >= 3:
+        if missing_non_testing_count >= 3:
             risk_penalty += 0.35
         # Thin proxy production for non-QB profiles gets a small risk tax.
         if (
@@ -1219,7 +1285,7 @@ def _compute_formula_score(
         risk_penalty += 0.6
     if position == "QB" and analyst_score < 40:
         risk_penalty += 0.4
-    if missing_signal_count >= 3:
+    if missing_non_testing_count >= 3:
         context_component -= 1.0 if position == "QB" else 0.5
 
     trait_w, prod_w, athletic_w, size_w, context_w = 0.38, 0.24, 0.18, 0.10, 0.10
@@ -1243,16 +1309,17 @@ def _compute_formula_score(
     final_grade += float(POSITION_VALUE_ADJUSTMENT.get(position, 0.0))
     final_grade = max(55.0, min(95.0, final_grade))
 
-    evidence_missing_count = sum(
-        0 if present else 1
-        for present in (has_film_signal, has_language_signal, has_testing_signal, has_market_signal)
+    evidence_missing_count_raw = missing_non_testing_count + testing_missing_count
+    evidence_missing_count_adjusted = missing_non_testing_count + (
+        evidence_testing_missing_weight if testing_missing_count else 0.0
     )
+    evidence_missing_count = int(round(evidence_missing_count_adjusted))
     evidence_guardrail_penalty = 0.0
     if final_grade >= UPSIDE_EVIDENCE_GUARDRAIL_ACTIVE_GRADE:
-        if official_ras is None and athletic_evidence_count <= 1 and evidence_missing_count >= 2:
+        if official_ras is None and athletic_evidence_count <= 1 and evidence_missing_count_adjusted >= 2.0:
             evidence_guardrail_penalty = min(
                 UPSIDE_EVIDENCE_GUARDRAIL_MAX_PENALTY,
-                evidence_missing_count * UPSIDE_EVIDENCE_GUARDRAIL_PENALTY_PER_MISSING,
+                evidence_missing_count_adjusted * UPSIDE_EVIDENCE_GUARDRAIL_PENALTY_PER_MISSING,
             )
             final_grade = max(55.0, min(95.0, final_grade - evidence_guardrail_penalty))
 
@@ -1341,8 +1408,15 @@ def _compute_formula_score(
         "formula_early_declare": int(bool(early_declare)),
         "formula_early_declare_context_adjustment": round(early_declare_context_adjustment, 2),
         "formula_early_declare_risk_adjustment": round(early_declare_risk_adjustment, 2),
+        "formula_testing_missing_status": testing_status_norm,
+        "formula_testing_missing_weight": round(testing_missing_weight, 3),
+        "formula_athletic_missing_risk_factor": round(athletic_missing_risk_factor, 3),
         "formula_risk_penalty": round(risk_penalty, 2),
+        "formula_missing_signal_count_raw": missing_signal_count_raw,
+        "formula_missing_signal_count_weighted": round(missing_signal_count, 2),
         "formula_evidence_missing_count": evidence_missing_count,
+        "formula_evidence_missing_count_raw": evidence_missing_count_raw,
+        "formula_evidence_missing_count_weighted": round(evidence_missing_count_adjusted, 2),
         "formula_evidence_guardrail_penalty": round(evidence_guardrail_penalty, 2),
         "formula_raw_score": round(raw_formula_score, 2),
         "formula_calibrated_grade": round(calibrated_grade, 2),
@@ -2948,6 +3022,9 @@ def main() -> None:
             years_played=_as_float(cfb.get("cfb_years_played")),
             draft_age=_as_float(draft_age_row.get("draft_age")),
             early_declare=bool(early_declare_flag),
+            combine_testing_status=str(combine.get("combine_testing_status", "") or ""),
+            combine_testing_event_count=int(_as_float(combine.get("combine_testing_event_count")) or 0),
+            combine_invited=bool(combine_invited_flag),
         )
         language_trait = _as_float(lang.get("lang_trait_composite"))
         guardrail_penalty = _consensus_guardrail_penalty(
@@ -3174,6 +3251,8 @@ def main() -> None:
             consensus_rank_std=consensus_rank_std_val,
             consensus_confidence_factor=consensus_confidence_factor,
             has_calibrated_prob=bool(calibrated_success_prob),
+            testing_missing_weight=float(formula.get("formula_testing_missing_weight", 0.0) or 0.0),
+            testing_missing_status=str(formula.get("formula_testing_missing_status", "") or ""),
         )
 
         scout_note = scouting_note(pos, model_score, row["rank_seed"])
@@ -3474,6 +3553,11 @@ def main() -> None:
             "combine_three_cone": combine.get("three_cone", ""),
             "combine_bench": combine.get("bench", ""),
             "combine_ras_official": combine.get("ras_official", ""),
+            "combine_testing_status": combine.get(
+                "combine_testing_status", formula.get("formula_testing_missing_status", "unknown")
+            ),
+            "combine_testing_event_count": combine.get("combine_testing_event_count", 0),
+            "combine_measurement_count": combine.get("combine_measurement_count", ""),
             **md_features,
             "film_traits_source": film.get("source", ""),
             "film_eval_date": film.get("eval_date", ""),

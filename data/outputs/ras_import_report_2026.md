@@ -1,28 +1,28 @@
 # RAS Import Report (2026)
 
-- run_at_utc: `2026-02-28T03:55:04.441418+00:00`
-- input_csv: `/Users/nickholz/Downloads/2025 Draft Class.csv`
-- ras_rows_loaded: `24510`
+- run_at_utc: `2026-03-04T00:40:57.926311+00:00`
+- input_csv: `/Users/nickholz/Downloads/New Menu Table (no draft) (1).csv`
+- ras_rows_loaded: `24682`
 - benchmark_positions: `11`
-- 2026_seed_players_checked: `192`
-- combine_rows_updated: `0`
+- 2026_seed_players_checked: `190`
+- combine_rows_updated: `36`
 - combine_rows_added: `5`
 
 ## Position Benchmarks (Starter/Impact/Elite Targets)
 
 | Pos | N | Starter Target | Impact Target | Elite Target |
 |---|---:|---:|---:|---:|
-| CB | 2748 | 5.15 | 6.73 | 8.59 |
-| DT | 2026 | 5.15 | 7.03 | 8.69 |
-| EDGE | 2024 | 5.14 | 7.00 | 8.79 |
-| IOL | 1785 | 5.36 | 7.21 | 8.93 |
-| LB | 3192 | 5.15 | 6.86 | 8.54 |
-| OT | 1493 | 5.97 | 7.81 | 9.14 |
-| QB | 1045 | 6.08 | 7.31 | 8.82 |
-| RB | 2634 | 5.01 | 6.77 | 8.51 |
-| S | 2430 | 4.86 | 6.49 | 8.47 |
-| TE | 1329 | 5.54 | 7.04 | 8.62 |
-| WR | 3804 | 5.22 | 6.80 | 8.56 |
+| CB | 2768 | 5.23 | 6.86 | 8.70 |
+| DT | 2040 | 5.18 | 7.10 | 8.74 |
+| EDGE | 2040 | 5.27 | 7.09 | 8.85 |
+| IOL | 1805 | 5.45 | 7.34 | 9.09 |
+| LB | 3205 | 5.19 | 6.91 | 8.58 |
+| OT | 1511 | 6.04 | 7.87 | 9.24 |
+| QB | 1051 | 6.11 | 7.37 | 8.94 |
+| RB | 2643 | 5.05 | 6.81 | 8.55 |
+| S | 2440 | 4.90 | 6.54 | 8.53 |
+| TE | 1347 | 5.72 | 7.23 | 8.74 |
+| WR | 3832 | 5.30 | 6.85 | 8.62 |
 
 ## Top Unmatched 2026 Prospects
 
@@ -35,16 +35,16 @@
 | Avieon Terrell | CB | Clemson |
 | Darrell Jackson Jr. | DT | Florida State |
 | Jeremiah Smith | WR | Ohio State |
-| Kadyn Proctor | OT | Alabama |
 | LaNorris Sellers | QB | South Carolina |
-| T.J. Parker | EDGE | Clemson |
 | Jordyn Tyson | WR | Arizona State |
 | Carnell Tate | WR | Ohio State |
 | Keldric Faulk | EDGE | Auburn |
 | Isaiah World | OT | Oregon |
 | Jeremiyah Love | RB | Notre Dame |
-| Caleb Lomu | OT | Utah |
 | Harold Perkins Jr. | LB | LSU |
 | Jordyn Bugg | DT | LSU |
-| Ja'Kobi Lane | WR | USC |
-| Eli Stowers | TE | Vanderbilt |
+| Rueben Bain Jr. | EDGE | Miami (FL) |
+| LT Overton | EDGE | Alabama |
+| Justice Haynes | RB | Michigan |
+| Denzel Boston | WR | Washington |
+| Eli Holstein | QB | Pittsburgh |

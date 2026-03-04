@@ -110,6 +110,10 @@ def load_team_needs_context(path: Path | None = None) -> Dict[Tuple[str, str], d
                 "depth_chart_pressure": _clamp(_to_float(row.get("depth_chart_pressure"), 0.5)),
                 "free_agent_pressure": _clamp(_to_float(row.get("free_agent_pressure"), 0.5)),
                 "contract_year_pressure": _clamp(_to_float(row.get("contract_year_pressure"), 0.5)),
+                "starter_cliff_1y_pressure": _clamp(_to_float(row.get("starter_cliff_1y_pressure"), 0.5)),
+                "starter_cliff_2y_pressure": _clamp(_to_float(row.get("starter_cliff_2y_pressure"), 0.5)),
+                "future_need_pressure_1y": _clamp(_to_float(row.get("future_need_pressure_1y"), 0.5)),
+                "future_need_pressure_2y": _clamp(_to_float(row.get("future_need_pressure_2y"), 0.5)),
                 "starter_quality": _clamp(_to_float(row.get("starter_quality"), 0.5)),
             }
     return out
@@ -142,8 +146,21 @@ def role_pressure_score(
     depth = float(ctx["depth_chart_pressure"])
     fa = float(ctx["free_agent_pressure"])
     contract = float(ctx["contract_year_pressure"])
+    cliff_1y = float(ctx.get("starter_cliff_1y_pressure", 0.5))
+    cliff_2y = float(ctx.get("starter_cliff_2y_pressure", 0.5))
+    future_1y = float(ctx.get("future_need_pressure_1y", 0.5))
+    future_2y = float(ctx.get("future_need_pressure_2y", 0.5))
     starter_q = float(ctx["starter_quality"])
-    pressure = 0.40 * depth + 0.30 * fa + 0.25 * contract + 0.05 * (1.0 - starter_q)
+    pressure = (
+        0.30 * depth
+        + 0.18 * fa
+        + 0.16 * contract
+        + 0.12 * cliff_1y
+        + 0.08 * cliff_2y
+        + 0.11 * future_1y
+        + 0.03 * future_2y
+        + 0.02 * (1.0 - starter_q)
+    )
     return round(_clamp(pressure), 4)
 
 

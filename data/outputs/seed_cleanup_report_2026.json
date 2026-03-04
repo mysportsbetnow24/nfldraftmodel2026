@@ -1,10 +1,10 @@
 {
-  "cleaned_at_utc": "2026-02-26T04:05:42.735819+00:00",
-  "seed_path": "/Users/nickholz/nfldraftmodel2026/data/processed/prospect_seed_2026.csv",
-  "output_path": "/Users/nickholz/nfldraftmodel2026/data/processed/prospect_seed_2026.csv",
+  "cleaned_at_utc": "2026-03-04T00:49:30.604459+00:00",
+  "seed_path": "data/processed/prospect_seed_2026.csv",
+  "output_path": "data/processed/prospect_seed_2026.csv",
   "counts": {
-    "before_rows": 193,
-    "after_rows": 192,
+    "before_rows": 189,
+    "after_rows": 188,
     "removed_returning_rows": 0,
     "removed_already_drafted_rows": 1,
     "removed_duplicate_rows": 0
@@ -12,11 +12,11 @@
   "removed_returning_players": [],
   "removed_already_drafted_players": [
     {
-      "player_name": "Luke Kandra",
-      "school": "Cincinnati",
+      "player_name": "Dominic Gooden",
+      "school": "Oklahoma",
       "class_year": "SR",
-      "rank_seed": "53",
-      "seed_row_id": "53"
+      "rank_seed": "156",
+      "seed_row_id": "156"
     }
   ],
   "removed_duplicate_rows": []

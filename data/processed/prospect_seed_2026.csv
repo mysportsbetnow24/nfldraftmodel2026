@@ -37,11 +37,9 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 38,Eugene Brooks III,Oklahoma,IOLG,"6'4""",325,SR,DraftTek_Top300_2026,38
 39,Nyck Harbor,South Carolina,WRX,"6'5""",243,JR,DraftTek_Top300_2026,39
 40,C.J. Allen,Georgia,LBILB,"6'1""",235,JR,DraftTek_Top300_2026,40
-41,Oscar Delp,Georgia,TEY,"6'5""",245,SR,DraftTek_Top300_2026,41
 42,Takye Heath,Georgia Tech,CBN,"6'0""",185,SR,DraftTek_Top300_2026,42
 43,Leo Delaney,Michigan,OT,"6'6""",309,JR,DraftTek_Top300_2026,43
 44,Aamil Wagner,Notre Dame,OT,"6'6""",292,SR,DraftTek_Top300_2026,44
-45,Gunner Stockton,Georgia,QB,"6'1""",220,SR,DraftTek_Top300_2026,45
 46,Evan Stewart,Oregon,WRZ,"6'0""",175,SR,DraftTek_Top300_2026,46
 47,Keeshawn Silver,USC,DT1T,"6'4""",336,SR,DraftTek_Top300_2026,47
 48,Daylen Everette,Georgia,CBN,"6'1""",190,SR,DraftTek_Top300_2026,48
@@ -50,7 +48,6 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 51,Davison Igbinosun,Ohio State,CBN,"6'2""",193,SR,DraftTek_Top300_2026,51
 52,Chandler Rivers,Duke,CBN,"5'10""",180,SR,DraftTek_Top300_2026,52
 54,Quinten Joyner,Texas Tech,RB,"5'11""",210,JR,DraftTek_Top300_2026,54
-55,T.J. Searcy,Texas A&M,EDGE,"6'5""",270,SR,DraftTek_Top300_2026,55
 56,Tacario Davis,Washington,CBN,"6'4""",195,SR,DraftTek_Top300_2026,56
 57,Dante Moore,Oregon,QB,"6'3""",210,JR,DraftTek_Top300_2026,57
 58,Garrett Nussmeier,LSU,QB,"6'2""",200,SR,DraftTek_Top300_2026,58
@@ -122,7 +119,6 @@ rank_seed,player_name,school,pos_raw,height,weight_lb,class_year,source_primary,
 149,Nolan Rucci,Penn State,OT,"6'8""",317,SR,DraftTek_Top300_2026,149
 150,Colin Nova,NC State,IOLC,"6'3""",302,RJR,DraftTek_Top300_2026,150
 155,Elijah Rushing,Oregon,EDGE,"6'6""",260,RSO,DraftTek_Top300_2026,155
-156,Dominic Gooden,Oklahoma,DT3T,"6'2""",300,SR,DraftTek_Top300_2026,156
 158,David Bailey,Texas Tech,EDGE,"6'4""",250,SR,DraftTek_Top300_2026,158
 159,Gabriel Brownlow-Dindy,South Carolina,DT1T,"6'3""",310,SR,DraftTek_Top300_2026,159
 164,Tyre West,Indiana,DT3T,"6'3""",300,SR,DraftTek_Top300_2026,164

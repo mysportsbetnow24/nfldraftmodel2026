@@ -1,0 +1,456 @@
+model_rank,player_name,position,school,final_grade,round_value,consensus_rank,formula_score,pick_score,best_team_fit
+1,Fernando Mendoza,QB,Indiana,81.47,Round 2-3,31,82.97,,LV
+2,Peter Woods,DT,Clemson,80.6,Round 2-3,39,80.82,,HOU
+3,Caleb Downs,S,Ohio State,82.73,Round 2-3,13,82.6,,MIA
+4,Avieon Terrell,CB,Clemson,78.24,Round 4-5,90,79.09,,JAX
+5,Darrell Jackson Jr.,DT,Florida State,76.18,Round 4-5,177,78.48,,HOU
+6,Kadyn Proctor,OT,Alabama,85.08,Round 1,3,85.47,,LAR
+7,T.J. Parker,EDGE,Clemson,82.06,Round 2-3,20,82.81,,ATL
+8,Jordyn Tyson,WR,Arizona State,84.76,Round 1,4,85.78,,CLE
+9,Carnell Tate,WR,Ohio State,78.03,Round 4-5,99,79.0,,CLE
+10,Keldric Faulk,EDGE,Auburn,80.79,Round 2-3,36,81.01,,ATL
+11,Rueben Bain Jr.,EDGE,Miami (FL) Hurricanes,80.15,Round 3-4,44,81.55,,ATL
+12,Arvell Reese,LB,Ohio State Buckeyes,83.87,Round 1-2,8,83.14,,LAR
+13,Isaiah World,OT,Oregon,78.73,Round 4-5,74,80.47,,LAR
+14,Jeremiyah Love,RB,Notre Dame,85.11,Round 1,2,84.65,,DAL
+15,Caleb Lomu,OT,Utah,84.15,Round 1,7,84.31,,LAR
+16,Harold Perkins Jr.,LB,LSU,78.75,Round 4-5,73,79.41,,LAR
+17,Ja'Kobi Lane,WR,USC,78.19,Round 4-5,92,81.59,,CLE
+18,Makai Lemon,WR,USC Trojans,81.72,Round 2-3,24,82.79,,CLE
+19,Eli Stowers,TE,Vanderbilt,80.75,Round 2-3,38,81.91,,LAC
+20,Francis Mauigoa,OT,Miami (FL) Hurricanes,83.18,Round 2-3,11,83.37,,LAR
+21,LT Overton,EDGE,Alabama,73.95,Round 5-6,244,73.94,,ATL
+22,Mansoor Delane,CB,LSU Tigers,82.5,Round 2-3,15,82.79,,JAX
+23,Denzel Boston,WR,Washington,78.39,Round 4-5,85,79.32,,CLE
+24,Cashius Howell,EDGE,Texas A&M Aggies,80.04,Round 3-4,47,80.28,,ATL
+25,Jalon Kilgore,S,South Carolina,77.12,Round 4-5,138,78.25,,MIA
+26,Austin Barber,OT,Florida,79.62,Round 4-5,56,81.3,,LAR
+27,Caleb Banks,DT,Florida Gators,78.51,Round 4-5,78,78.4,,HOU
+28,R Mason Thomas,EDGE,Oklahoma,79.86,Round 4-5,53,80.26,,ATL
+29,Kayden McDonald,DT,Ohio State Buckeyes,81.38,Round 2-3,33,81.22,,HOU
+30,Kevin Concepcion,WR,Texas A&M,79.65,Round 4-5,55,80.6,,CLE
+31,Olaivavega Ioane,IOL,Penn State Nittany Lions,82.47,Round 2-3,16,83.29,,DET
+32,Nicholas Singleton,RB,Penn State,79.39,Round 4-5,61,80.07,,DAL
+33,Jermod McCoy,CB,Tennessee,76.79,Round 4-5,152,77.64,,JAX
+34,Monroe Freeling,OT,Georgia,84.62,Round 1,6,85.02,,LAR
+35,DJ McKinney,CB,Colorado,79.47,Round 4-5,60,79.73,,JAX
+36,LaNorris Sellers,QB,South Carolina,76.54,Round 4-5,164,79.41,,LV
+37,Cole Payton,QB,North Dakota State,73.69,Round 5-6,253,77.67,,LV
+38,KC Concepcion,WR,Texas A&M Aggies,77.45,Round 4-5,119,78.46,,CLE
+39,Eugene Brooks III,IOL,Oklahoma,79.15,Round 4-5,67,79.88,,DET
+40,Christian Thomas,LB,Maine,78.49,Round 4-5,80,77.54,,LAR
+41,Langston Jones,OT,Lehigh,77.95,Round 4-5,106,78.13,,LAR
+42,Daniel Sobkowicz,WR,Illinois State,77.36,Round 4-5,123,77.59,,CLE
+43,Michael Briscoe,WR,Cal Poly,77.36,Round 4-5,124,77.59,,CLE
+44,Treyvhon Saunders,WR,Colgate,77.36,Round 4-5,125,77.59,,CLE
+45,Bryce Lance,WR,North Dakota State,77.32,Round 4-5,127,79.33,,CLE
+46,Barika Kpeenu,RB,North Dakota State,77.01,Round 4-5,146,76.41,,DAL
+47,Rodney Hammond Jr.,RB,Sacramento State,77.01,Round 4-5,147,76.41,,DAL
+48,Charles Demmings,CB,Stephen F. Austin,75.2,Round 5-6,208,75.78,,JAX
+49,Michael Wortham,WR,Montana,72.97,Round 5-6,263,73.95,,CLE
+50,Derek Robertson,QB,Monmouth,72.88,Round 5-6,265,75.34,,LV
+51,Jalen Walthall,WR,Incarnate Word,63.96,UDFA,438,71.97,,CLE
+52,Christen Miller,DT,Georgia Bulldogs,81.62,Round 2-3,28,81.15,,HOU
+53,C.J. Allen,LB,Georgia,81.74,Round 2-3,23,81.15,,LAR
+54,Nyck Harbor,WR,South Carolina,81.6,Round 2-3,29,82.15,,CLE
+55,Brandon Cisse,CB,South Carolina Gamecocks,82.63,Round 2-3,14,82.97,,JAX
+56,Akheem Mesidor,EDGE,Miami (FL) Hurricanes,80.54,Round 3-4,41,81.37,,ATL
+57,Takye Heath,CB,Georgia Tech,79.34,Round 4-5,64,79.6,,JAX
+58,Ty Simpson,QB,Alabama Crimson Tide,79.17,Round 4-5,65,80.78,,LV
+59,Emmanuel McNeil-Warren,S,Toledo Rockets,80.56,Round 2-3,40,80.54,,MIA
+60,Aamil Wagner,OT,Notre Dame,78.16,Round 4-5,93,80.35,,LAR
+61,Keith Abney II,CB,Arizona State Sun Devils,77.78,Round 4-5,108,78.06,,JAX
+62,Evan Stewart,WR,Oregon,78.82,Round 4-5,71,79.44,,CLE
+63,Dante Moore,QB,Oregon,71.88,Round 6-7,291,74.41,,LV
+64,Keeshawn Silver,DT,USC,74.34,Round 5-6,235,76.72,,HOU
+65,Anthony Hill Jr.,LB,Texas Longhorns,83.66,Round 2-3,9,82.96,,LAR
+66,Daylen Everette,CB,Georgia,83.35,Round 2-3,10,83.76,,JAX
+67,Gabe Jacas,EDGE,Illinois Fighting Illini,81.7,Round 2-3,25,82.7,,ATL
+68,Kaimon Rucker,EDGE,North Carolina,79.54,Round 4-5,58,79.89,,ATL
+69,Davison Igbinosun,CB,Ohio State,78.26,Round 4-5,89,79.24,,JAX
+70,A.J. Haulcy,S,LSU Tigers,77.69,Round 4-5,111,77.46,,MIA
+71,Emmanuel Pregnon,IOL,Oregon Ducks,81.52,Round 2-3,30,82.06,,DET
+72,Chandler Rivers,CB,Duke,78.4,Round 4-5,83,80.14,,JAX
+73,Zion Young,EDGE,Missouri Tigers,81.7,Round 2-3,26,82.17,,ATL
+74,Colton Hood,CB,Tennessee Volunteers,80.03,Round 3-4,48,80.38,,JAX
+75,Tacario Davis,CB,Washington,75.89,Round 5-6,194,78.32,,JAX
+76,Lee Hunter,DT,Texas Tech Red Raiders,75.35,Round 5-6,206,74.95,,HOU
+77,Keionte Scott,CB,Miami (FL) Hurricanes,82.4,Round 2-3,17,83.48,,JAX
+78,Garrett Nussmeier,QB,LSU,74.81,Round 5-6,219,79.49,,LV
+79,Romello Height,EDGE,Texas Tech Red Raiders,78.71,Round 4-5,75,80.3,,ATL
+80,Matayo Uiagalelei,EDGE,Oregon,77.82,Round 4-5,107,78.5,,ATL
+81,Jaden Rashada,QB,Sacramento State,72.91,Round 5-6,264,75.96,,LV
+82,D'Angelo Ponds,CB,Indiana Hoosiers,82.0,Round 2-3,22,83.46,,JAX
+83,Conner Weigman,QB,Houston,74.19,Round 5-6,239,77.24,,LV
+84,Caleb Tiernan,OT,Northwestern Wildcats,80.11,Round 3-4,45,81.36,,LAR
+85,Cade Klubnik,QB,Clemson,76.63,Round 4-5,159,80.47,,LV
+86,Drew Allar,QB,Penn State,77.23,Round 4-5,130,80.57,,LV
+87,Dontay Corleone,DT,Cincinnati Bearcats,77.02,Round 4-5,145,77.97,,HOU
+88,Chris Johnson,CB,San Diego State Aztecs,79.72,Round 4-5,54,80.75,,JAX
+89,Jake Golday,LB,Cincinnati Bearcats,80.22,Round 3-4,43,80.08,,LAR
+90,Omar Cooper Jr.,WR,Indiana Hoosiers,79.97,Round 4-5,50,80.53,,CLE
+91,Jaydn Ott,RB,Oklahoma,74.26,Round 5-6,237,76.57,,DAL
+92,Makhi Hughes,RB,Oregon,78.42,Round 4-5,82,78.03,,DAL
+93,Jadarian Price,RB,Notre Dame Fighting Irish,77.35,Round 4-5,126,77.97,,DAL
+94,Le'Veon Moss,RB,Texas A&M,75.93,Round 5-6,190,78.09,,DAL
+95,Josiah Trotter,LB,Missouri Tigers,81.41,Round 2-3,32,81.33,,LAR
+96,Demond Claiborne,RB,Wake Forest,74.29,Round 5-6,236,75.96,,DAL
+97,Joshua Josephs,EDGE,Tennessee Volunteers,77.44,Round 4-5,120,79.35,,ATL
+98,Trevor Goosby,OT,Texas,76.57,Round 4-5,163,76.86,,LAR
+99,Kamari Ramsey,S,USC Trojans,73.38,Round 5-6,258,74.27,,MIA
+100,Max Iheanachor,OT,Arizona State Sun Devils,78.11,Round 4-5,94,79.14,,LAR
+101,Eric Singleton Jr.,WR,Auburn,78.03,Round 4-5,100,78.43,,CLE
+102,Connor Lew,IOL,Auburn Tigers,75.61,Round 5-6,201,77.57,,DET
+103,Miller Moss,QB,Louisville,69.78,Round 6-7,338,74.25,,LV
+104,Domonique Orange,DT,Iowa State Cyclones,78.02,Round 4-5,103,78.18,,HOU
+105,Elijah Sarratt,WR,Indiana Hoosiers,78.32,Round 4-5,87,79.18,,CLE
+106,Roman Hemby,RB,Indiana,76.16,Round 4-5,181,78.1,,DAL
+107,Trinidad Chambliss,QB,Mississippi Rebels,75.1,Round 5-6,213,78.84,,LV
+108,Justice Boone,RB,Colorado,78.51,Round 4-5,79,78.12,,DAL
+109,Anthony Lucas,EDGE,USC Trojans,77.56,Round 4-5,116,78.21,,ATL
+110,Kendal Daniels,LB,Oklahoma,72.32,Round 5-6,280,74.35,,LAR
+111,Jack Endries,TE,Texas Longhorns,79.96,Round 4-5,51,80.34,,LAC
+112,CJ Daniels,WR,Miami (FL) Hurricanes,79.17,Round 4-5,66,80.6,,CLE
+113,Kade Pieper,IOL,Iowa,77.29,Round 4-5,128,77.7,,DET
+114,Michael Trigg,TE,Baylor Bears,74.73,Round 5-6,223,76.38,,LAC
+115,Chris Brazzell II,WR,Tennessee Volunteers,79.51,Round 4-5,59,80.4,,CLE
+116,Quincy Rhodes Jr.,EDGE,Arkansas,75.82,Round 5-6,195,75.73,,ATL
+117,Barion Brown,WR,LSU,60.3,UDFA,455,72.55,,CLE
+118,Blake Miller,OT,Clemson Tigers,81.28,Round 2-3,34,82.1,,LAR
+119,Jonah Coleman,RB,Washington Huskies,78.39,Round 4-5,86,78.84,,DAL
+120,Tyreak Sapp,EDGE,Florida,78.09,Round 4-5,97,81.45,,ATL
+121,Skyler Bell,WR,Connecticut Huskies,81.67,Round 2-3,27,82.92,,CLE
+122,Kenyon Sadiq,TE,Oregon,82.04,Round 2-3,21,82.59,,LAC
+123,Taurean York,LB,Texas A&M Aggies,75.41,Round 5-6,204,74.73,,LAR
+124,Emmett Johnson,RB,Nebraska Cornhuskers,75.2,Round 5-6,209,75.3,,DAL
+125,Zane Durant,DT,Penn State,78.77,Round 4-5,72,80.09,,HOU
+126,Gennings Dunker,OT,Iowa Hawkeyes,77.54,Round 4-5,117,78.98,,LAR
+127,Justin Flowe,LB,Arizona,79.35,Round 4-5,63,78.93,,LAR
+128,A'Mauri Washington,DT,Oregon,77.71,Round 4-5,110,76.99,,HOU
+129,Justin Joly,TE,North Carolina State Wolfpack,77.09,Round 4-5,139,78.3,,LAC
+130,Deion Burks,WR,Oklahoma Sooners,80.09,Round 3-4,46,81.65,,CLE
+131,Devin Moore,CB,Florida,71.86,Round 6-7,292,73.63,,JAX
+132,Patrick Payton,EDGE,LSU,66.87,UDFA,387,77.7,,ATL
+133,Dani Dennis-Sutton,EDGE,Penn State Nittany Lions,82.12,Round 2-3,19,83.09,,ATL
+134,Eugene Asante,LB,Auburn,80.76,Round 2-3,37,80.34,,LAR
+135,Jacob Rodriguez,LB,Texas Tech Red Raiders,77.38,Round 4-5,121,78.38,,LAR
+136,Xavier Nwankpa,S,Iowa,77.07,Round 4-5,142,79.89,,MIA
+137,Mateen Ibirogba,DT,Wake Forest,77.67,Round 4-5,112,76.96,,HOU
+138,Deontae Lawson,LB,Alabama,77.21,Round 4-5,133,77.91,,LAR
+139,Carson Beck,QB,Miami (FL) Hurricanes,74.89,Round 5-6,216,78.91,,LV
+140,Sonny Styles,LB,Ohio State,85.56,Round 1,1,85.16,,LAR
+141,Zakee Wheatley,S,Penn State Nittany Lions,74.4,Round 5-6,232,75.05,,MIA
+142,Sam Hecht,IOL,Kansas State Wildcats,76.09,Round 4-5,183,76.76,,DET
+143,Iapani Laloulu,IOL,Oregon,75.95,Round 5-6,188,76.33,,DET
+144,Seth McGowan,RB,Kentucky Wildcats,78.03,Round 4-5,101,78.18,,DAL
+145,Mikail Kamara,EDGE,Indiana Hoosiers,79.59,Round 4-5,57,80.84,,ATL
+146,Dasan McCullough,LB,Oklahoma,76.64,Round 4-5,158,76.65,,LAR
+147,Josh Hoover,QB,TCU,71.41,Round 6-7,298,73.98,,LV
+148,Malachi Fields,WR,Notre Dame Fighting Irish,75.34,Round 5-6,207,76.43,,CLE
+149,Cayden Green,IOL,Missouri,76.32,Round 4-5,172,77.37,,DET
+150,Keagen Trost,OT,Missouri,74.92,Round 5-6,215,75.92,,LAR
+151,Brian Parker II,OT,Duke Blue Devils,81.22,Round 2-3,35,81.43,,LAR
+152,Sam Roush,TE,Stanford Cardinal,78.05,Round 4-5,98,79.93,,LAC
+153,Nick Barrett,DT,South Carolina,72.19,Round 5-6,285,72.46,,HOU
+154,Will Lee III,CB,Texas A&M Aggies,74.08,Round 5-6,242,75.85,,JAX
+155,John Mateer,QB,Oklahoma,72.62,Round 5-6,273,75.62,,LV
+156,Spencer Fano,OT,Utah,83.07,Round 2-3,12,83.9,,LAR
+157,Xavier Scott,CB,Illinois Fighting Illini,78.11,Round 4-5,95,79.72,,JAX
+158,Genesis Smith,S,Arizona Wildcats,78.44,Round 4-5,81,79.22,,MIA
+159,Bear Alexander,DT,Oregon,76.34,Round 4-5,171,76.0,,HOU
+160,De'Zhaun Stribling,WR,Mississippi Rebels,77.67,Round 4-5,113,80.67,,CLE
+161,Skyler Gill-Howard,DT,Texas Tech Red Raiders,76.52,Round 4-5,166,77.86,,HOU
+162,Marlin Klein,TE,Michigan Wolverines,72.24,Round 5-6,283,77.15,,LAC
+163,Bud Clark,S,TCU Horned Frogs,77.09,Round 4-5,140,77.74,,MIA
+164,Earnest Greene III,OT,Georgia,76.04,Round 4-5,186,78.62,,LAR
+165,J.C. Davis,OT,Illinois Fighting Illini,77.77,Round 4-5,109,80.46,,LAR
+166,Trey Zuhn III,IOL,Texas A&M,70.8,Round 6-7,313,76.78,,DET
+167,Alex Harkey,IOL,Oregon,73.59,Round 5-6,255,75.36,,DET
+168,Josh Cuevas,TE,Alabama Crimson Tide,74.74,Round 5-6,222,76.7,,LAC
+169,Hollywood Smothers,RB,N.C. State,74.4,Round 5-6,233,74.73,,DAL
+170,Hollin Pierce,OT,Rutgers,78.24,Round 4-5,91,78.98,,LAR
+171,Gracen Halton,DT,Oklahoma Sooners,75.71,Round 5-6,197,76.76,,HOU
+172,Kaytron Allen,RB,Penn State Nittany Lions,79.9,Round 4-5,52,80.76,,DAL
+173,David Gusta,DT,Kentucky,74.11,Round 5-6,240,74.78,,HOU
+174,Jermayne Lole,DT,Louisville,79.02,Round 4-5,69,78.61,,HOU
+175,Joe Royer,TE,Cincinnati Bearcats,72.83,Round 5-6,268,75.13,,LAC
+176,Albert Regis,DT,Texas A&M Aggies,76.25,Round 4-5,175,79.04,,HOU
+177,Anto Saka,EDGE,Northwestern,73.84,Round 5-6,246,74.25,,ATL
+178,Michael Taaffe,S,Texas Longhorns,78.57,Round 4-5,77,79.65,,MIA
+179,Xavier Chaplin,OT,Auburn,78.1,Round 4-5,96,78.84,,LAR
+180,Chase Bisontis,IOL,Texas A&M,80.02,Round 3-4,49,81.87,,DET
+181,Ethan Burke,EDGE,Texas,73.3,Round 5-6,259,74.77,,ATL
+182,Bryce Foster,IOL,Kansas,63.86,UDFA,439,76.17,,DET
+183,Jaeden Roberts,IOL,Alabama,72.69,Round 5-6,272,79.05,,DET
+184,Ar'maj Reed-Adams,IOL,Texas A&M,76.09,Round 4-5,184,79.92,,DET
+185,Julian Neal,CB,Arkansas Razorbacks,75.15,Round 5-6,210,76.19,,JAX
+186,DJ Campbell,IOL,Texas Longhorns,74.77,Round 5-6,221,78.91,,DET
+187,Tanner Miller,IOL,Michigan,74.48,Round 5-6,228,75.44,,DET
+188,Thaddeus Dixon,CB,North Carolina Tar Heels,76.17,Round 4-5,178,79.62,,JAX
+189,Parker Brailsford,IOL,Alabama,72.33,Round 5-6,279,76.53,,DET
+190,Jake Slaughter,IOL,Florida,78.4,Round 4-5,84,80.61,,DET
+191,Eric McAlister,WR,TCU Horned Frogs,76.06,Round 4-5,185,80.05,,CLE
+192,Jude Bowry,OT,Boston College Eagles,74.37,Round 5-6,234,77.07,,LAR
+193,Beau Stephens,IOL,Iowa Hawkeyes,75.13,Round 5-6,212,77.31,,DET
+194,Jalen McMurray,S,Tennessee,71.79,Round 6-7,293,72.6,,MIA
+195,Aiden Fisher,LB,Indiana Hoosiers,76.63,Round 4-5,160,79.28,,LAR
+196,Terrance Carter Jr.,TE,Texas Tech,73.78,Round 5-6,249,74.63,,LAC
+197,Tim Keenan III,DT,Alabama Crimson Tide,73.75,Round 5-6,250,74.78,,HOU
+198,Eric Rivers,WR,Georgia Tech Yellow Jackets,72.06,Round 5-6,287,77.06,,CLE
+199,Addison Nichols,IOL,Arkansas,77.19,Round 4-5,135,78.15,,DET
+200,Jamel Johnson,S,TCU,75.14,Round 5-6,211,75.31,,MIA
+201,Keylan Rutledge,IOL,Georgia Tech Yellow Jackets,74.43,Round 5-6,231,76.83,,DET
+202,Jordan Hudson,WR,SMU,70.78,Round 6-7,314,72.58,,CLE
+203,Jalen Stroman,S,Notre Dame Fighting Irish,73.22,Round 5-6,261,79.22,,MIA
+204,Timothy McKay,IOL,NC State,77.08,Round 4-5,141,78.04,,DET
+205,Bryce Lovett,IOL,NC State,77.17,Round 4-5,136,78.13,,DET
+206,Jager Burton,IOL,Kentucky Wildcats,76.01,Round 4-5,187,80.12,,DET
+207,Hero Kanu,DT,Texas,75.5,Round 5-6,203,75.56,,HOU
+208,Suntarine Perkins,LB,Ole Miss,75.37,Round 5-6,205,75.2,,LAR
+209,Trey Moore,LB,Texas Longhorns,71.66,Round 6-7,295,77.75,,LAR
+210,Mike Washington Jr.,RB,Arkansas Razorbacks,76.78,Round 4-5,153,78.53,,DAL
+211,Jaishawn Barham,LB,Michigan,76.14,Round 4-5,182,76.43,,LAR
+212,Kage Casey,OT,Boise State,72.0,Round 5-6,288,75.3,,LAR
+213,Hezekiah Masses,CB,California Golden Bears,69.43,Round 6-7,348,73.09,,JAX
+214,David Oke,DT,Arkansas Razorbacks,78.68,Round 4-5,76,79.58,,HOU
+215,Drew Shelton,OT,Penn State Nittany Lions,77.22,Round 4-5,131,79.5,,LAR
+216,Red Murdock,LB,Buffalo,73.8,Round 5-6,248,74.3,,LAR
+217,J'Mari Taylor,RB,Virginia Cavaliers,66.96,UDFA,383,71.39,,DAL
+218,Connor Tollison,IOL,Missouri,63.74,UDFA,440,76.05,,DET
+219,Brady Latham,IOL,Arkansas,79.04,Round 4-5,68,80.0,,DET
+220,Aaron Anderson,WR,LSU Tigers,66.87,UDFA,388,71.79,,CLE
+221,Joe Crocker Jr.,IOL,Auburn,76.97,Round 4-5,149,77.93,,DET
+222,Pat Coogan,IOL,Indiana Hoosiers,74.52,Round 5-6,226,77.1,,DET
+223,Carter Smith,IOL,Indiana,73.29,Round 5-6,260,74.73,,DET
+224,Nolan Rucci,OT,Penn State,67.53,UDFA,374,78.19,,LAR
+225,Ted Hurst,WR,Georgia State Panthers,76.72,Round 4-5,157,77.83,,CLE
+226,Jahiem Lawson,EDGE,Clemson,71.97,Round 6-7,289,73.48,,ATL
+227,Anez Cooper,IOL,Miami,71.15,Round 6-7,308,73.04,,DET
+228,Miles Kitselman,TE,Tennessee Volunteers,62.18,UDFA,449,72.97,,LAC
+229,AJ Harris,CB,Penn State,73.75,Round 5-6,251,74.59,,JAX
+230,Kobe Baynes,IOL,Kansas Jayhawks,67.61,UDFA,371,78.09,,DET
+231,Malachi Lawrence,EDGE,UCF Knights,77.59,Round 4-5,115,79.09,,ATL
+232,Clev Lubin,EDGE,Louisville,74.46,Round 5-6,229,75.35,,ATL
+233,Nadame Tucker,EDGE,Western Michigan Broncos,69.04,Round 6-7,356,74.3,,ATL
+234,David Bailey,EDGE,Texas Tech,82.19,Round 2-3,18,83.51,,ATL
+235,Gabriel Brownlow-Dindy,DT,South Carolina,78.28,Round 4-5,88,77.89,,HOU
+236,Kyle Louis,LB,Pittsburgh Panthers,74.5,Round 5-6,227,75.81,,LAR
+237,Dae'Quan Wright,TE,Mississippi Rebels,72.73,Round 5-6,271,77.58,,LAC
+238,Quintayvious Hutchins,EDGE,Boston College Eagles,70.44,Round 6-7,323,76.85,,ATL
+239,Cyrus Allen,WR,Cincinnati Bearcats,69.48,Round 6-7,344,77.98,,CLE
+240,Tyre West,DT,Indiana,75.66,Round 5-6,199,75.9,,HOU
+241,Chase Roberts,WR,BYU Cougars,70.1,Round 6-7,332,75.78,,CLE
+242,Bishop Fitzgerald,S,USC Trojans,69.41,Round 6-7,349,72.86,,MIA
+243,Cole Brevard,DT,Texas Longhorns,69.23,Round 6-7,352,77.93,,HOU
+244,John Michael Gyllenborg,TE,Wyoming Cowboys,74.09,Round 5-6,241,78.97,,LAC
+245,CJ Mims,EDGE,West Virginia,77.5,Round 4-5,118,77.89,,ATL
+246,Darris Smith,EDGE,LSU,77.24,Round 4-5,129,77.63,,ATL
+247,George Gumbs Jr.,EDGE,Florida Gators,67.9,UDFA,367,77.79,,ATL
+248,DeMonte Capehart,DT,Clemson Tigers,76.37,Round 4-5,170,80.01,,HOU
+249,Derrick Moore,EDGE,Michigan,79.0,Round 4-5,70,80.34,,ATL
+250,Zavion Thomas,WR,LSU Tigers,69.56,Round 6-7,342,77.22,,CLE
+251,Logan Jones,IOL,Iowa Hawkeyes,72.38,Round 5-6,276,76.28,,DET
+252,Jalon Daniels,QB,Kansas Jayhawks,71.01,Round 6-7,310,78.38,,LV
+253,Domata Peko Jr.,DT,UCLA,78.03,Round 4-5,102,77.64,,HOU
+254,Devon Marshall,CB,North Carolina State Wolfpack,70.94,Round 6-7,311,76.83,,JAX
+255,Jeremiah Alexander,EDGE,Alabama,76.99,Round 4-5,148,77.38,,ATL
+256,Desmond Reid,RB,Pittsburgh Panthers,66.94,UDFA,385,75.93,,DAL
+257,Jeff Caldwell,WR,Cincinnati Bearcats,73.84,Round 5-6,247,80.23,,CLE
+258,Max Llewellyn,EDGE,Iowa Hawkeyes,71.3,Round 6-7,300,76.46,,ATL
+259,Emmanuel Henderson Jr.,WR,Kansas,69.57,Round 6-7,341,70.74,,CLE
+260,Isaiah Nwokobia,S,SMU Mustangs,67.12,UDFA,382,76.52,,MIA
+261,Nate Boerkircher,TE,Texas A&M Aggies,70.9,Round 6-7,312,75.36,,LAC
+262,Brenen Thompson,WR,Mississippi State Bulldogs,72.79,Round 5-6,269,76.2,,CLE
+263,Justin Jefferson,LB,Alabama,72.36,Round 5-6,277,72.8,,LAR
+264,Tre Williams,DT,Clemson,77.65,Round 4-5,114,77.26,,HOU
+265,Zxavian Harris,DT,Mississippi Rebels,74.79,Round 5-6,220,79.05,,HOU
+266,Robert Spears-Jennings,S,Oklahoma Sooners,71.46,Round 6-7,297,76.3,,MIA
+267,Jadon Canady,CB,Oregon Ducks,75.64,Round 5-6,200,79.51,,JAX
+268,Kevin Coleman Jr.,WR,Missouri Tigers,69.07,Round 6-7,355,74.12,,CLE
+269,Jalyn Phillips,S,Georgia,75.94,Round 5-6,189,75.69,,MIA
+270,Dillon Thieneman,S,Oregon,84.65,Round 1,5,84.54,,MIA
+271,Jermaine Mathews Jr.,CB,Ohio State Buckeyes,74.99,Round 5-6,214,77.39,,JAX
+272,Dallen Bentley,TE,Utah Utes,72.77,Round 5-6,270,77.55,,LAC
+273,Isaac Smith,S,Mississippi State,77.03,Round 4-5,144,76.78,,MIA
+274,Dakaari Nelson,S,Penn State,77.37,Round 4-5,122,77.12,,MIA
+275,Robert Henry Jr.,RB,UTSA Roadrunners,70.78,Round 6-7,315,76.03,,DAL
+276,Keon Sabb,S,Alabama,77.05,Round 4-5,143,76.8,,MIA
+277,Caleb Douglas,WR,Texas Tech Red Raiders,68.33,Round 6-7,363,75.39,,CLE
+278,TJ Guy,EDGE,Michigan Wolverines,71.29,Round 6-7,302,77.73,,ATL
+279,Branson Combs,S,Wake Forest,77.17,Round 4-5,137,76.92,,MIA
+280,Keon Wylie,S,Texas Tech,77.22,Round 4-5,132,76.97,,MIA
+281,Noah Thomas,WR,Georgia Bulldogs,65.46,UDFA,411,76.06,,CLE
+282,Cole Wisniewski,S,Texas Tech Red Raiders,73.56,Round 5-6,256,78.75,,MIA
+283,J. Michael Sturdivant,WR,Florida Gators,74.72,Round 5-6,224,78.22,,CLE
+284,Owen Heinecke,LB,Oklahoma Sooners,66.03,UDFA,396,75.21,,LAR
+285,Terion Stewart,RB,Virginia Tech Hokies,64.8,UDFA,421,75.58,,DAL
+286,Vincent Anthony Jr.,EDGE,Duke Blue Devils,69.6,Round 6-7,340,75.53,,ATL
+287,DJ Harvey,CB,USC Trojans,66.5,UDFA,393,76.15,,JAX
+288,Lake McRee,TE,USC Trojans,64.42,UDFA,429,75.08,,LAC
+289,Bryce Boettcher,LB,Oregon Ducks,73.94,Round 5-6,245,78.41,,LAR
+290,Devonta Smith,CB,Notre Dame Fighting Irish,70.57,Round 6-7,322,77.44,,JAX
+291,Dametrious Crownover,OT,Texas A&M Aggies,68.84,Round 6-7,358,74.23,,LAR
+292,Ephesians Prysock,CB,Washington Huskies,69.45,Round 6-7,346,74.83,,JAX
+293,Rahsul Faison,RB,South Carolina Gamecocks,65.37,UDFA,413,75.83,,DAL
+294,Josh Cameron,WR,Baylor Bears,68.57,Round 6-7,361,74.52,,CLE
+295,Ceyair Wright,CB,Nebraska Cornhuskers,67.58,UDFA,372,76.33,,JAX
+296,Ricardo Jones Jr.,CB,Purdue,76.28,Round 4-5,174,76.62,,JAX
+297,Reggie Virgil,WR,Texas Tech Red Raiders,69.87,Round 6-7,336,75.48,,CLE
+298,Domani Jackson,CB,Alabama,71.18,Round 6-7,306,76.47,,JAX
+299,Denairius Gray,CB,Florida,76.43,Round 4-5,168,76.77,,JAX
+300,James Thompson Jr.,DT,Illinois Fighting Illini,71.22,Round 6-7,304,77.77,,HOU
+301,Fa'alili Fa'amoe,OT,Wake Forest Demon Deacons,69.47,Round 6-7,345,75.68,,LAR
+302,Samari Matthews,CB,Texas A&M,76.22,Round 4-5,176,76.56,,JAX
+303,Luke Altmyer,QB,Illinois Fighting Illini,67.65,UDFA,370,75.87,,LV
+304,Ashton Stamps,CB,LSU,75.77,Round 5-6,196,76.11,,JAX
+305,Vinny Anthony II,WR,Wisconsin Badgers,66.66,UDFA,392,74.25,,CLE
+306,Jeremiah Wilson,CB,Florida State,75.91,Round 5-6,192,76.25,,JAX
+307,Deven Eastern,DT,Minnesota Golden Gophers,64.65,UDFA,425,71.03,,HOU
+308,Eli Heidenreich,RB,Navy Midshipmen,71.94,Round 6-7,290,77.83,,DAL
+309,Tyreak Chappell,CB,South Carolina,76.17,Round 4-5,179,76.51,,JAX
+310,Sawyer Robertson,QB,Baylor Bears,64.73,UDFA,423,72.94,,LV
+311,Rayshaun Benny,DT,Michigan Wolverines,69.96,Round 6-7,335,74.77,,HOU
+312,Lewis Bond,WR,Boston College Eagles,70.42,Round 6-7,324,77.55,,CLE
+313,Taylen Green,QB,Arkansas Razorbacks,73.18,Round 5-6,262,80.88,,LV
+314,Kaelon Black,RB,Indiana Hoosiers,72.25,Round 5-6,282,77.47,,DAL
+315,Ja'Keem Jackson,CB,Florida,76.3,Round 4-5,173,76.64,,JAX
+316,Ethan Onianwa,IOL,Ohio State Buckeyes,65.4,UDFA,412,75.63,,DET
+317,Jordan Shaw,CB,Washington,75.93,Round 5-6,191,76.27,,JAX
+318,TJ Hall,CB,Iowa Hawkeyes,64.79,UDFA,422,70.96,,JAX
+319,Lorenzo Styles Jr.,CB,Ohio State,79.39,Round 4-5,62,79.73,,JAX
+320,Jeadyn Lukus,CB,Clemson Tigers,68.31,Round 6-7,364,76.16,,JAX
+321,Kani Walker,CB,Oregon,75.9,Round 5-6,193,76.24,,JAX
+322,Xavian Sorey Jr.,LB,Arkansas Razorbacks,64.85,UDFA,418,71.28,,LAR
+323,Toriano Pride Jr.,CB,Missouri,76.43,Round 4-5,169,76.77,,JAX
+324,Tommy Castellanos,QB,Florida State Seminoles,72.86,Round 5-6,267,77.07,,LV
+325,Malik Muhammad,CB,Texas,77.21,Round 4-5,134,79.75,,JAX
+326,Josh Moten,CB,Southern Miss Golden Eagles,68.0,Round 6-7,366,76.97,,JAX
+327,Treyveon McGee,CB,Georgia,75.58,Round 5-6,202,75.92,,JAX
+328,Joshua Braun,IOL,Kentucky Wildcats,64.08,UDFA,436,74.54,,DET
+329,Tyler Collins,CB,Mississippi State,76.17,Round 4-5,180,76.51,,JAX
+330,Jalen Catalon,S,Missouri Tigers,69.28,Round 6-7,351,76.48,,MIA
+331,Diego Pavia,QB,Vanderbilt Commodores,64.83,UDFA,419,75.7,,LV
+332,Elijah Pritchett,OT,Nebraska Cornhuskers,73.67,Round 5-6,254,77.12,,LAR
+333,Seydou Traore,TE,Mississippi State Bulldogs,65.88,UDFA,401,75.22,,LAC
+334,Raion Strader,CB,Auburn Tigers,72.88,Round 5-6,266,76.15,,JAX
+335,Tyreek Chappell,CB,Texas A&M Aggies,64.7,UDFA,424,75.28,,JAX
+336,Eric O'Neill,EDGE,Rutgers Scarlet Knights,69.36,Round 6-7,350,77.25,,ATL
+337,Logan Fano,EDGE,Utah Utes,69.98,Round 6-7,334,77.46,,ATL
+338,Riley Nowakowski,TE,Indiana Hoosiers,67.46,UDFA,375,74.75,,LAC
+339,Isaiah Paul,LB,Baylor,74.88,Round 5-6,218,74.26,,LAR
+340,Trebor Pena,WR,Penn State Nittany Lions,65.06,UDFA,417,75.96,,CLE
+341,Micah Morris,IOL,Georgia Bulldogs,69.99,Round 6-7,333,78.27,,DET
+342,Raesjon Davis,LB,USC,76.86,Round 4-5,151,76.24,,LAR
+343,Lander Barton,LB,Utah Utes,72.52,Round 5-6,275,77.39,,LAR
+344,Ernest Hausmann,LB,Michigan,76.94,Round 4-5,150,76.32,,LAR
+345,Peyton Bowen,S,Oklahoma Sooners,73.73,Round 5-6,252,77.11,,MIA
+346,Jake Retzlaff,QB,Tulane Green Wave,63.15,UDFA,447,75.44,,LV
+347,Martavius French,LB,Tennessee,76.76,Round 4-5,154,76.14,,LAR
+348,Shedrick Shropshire,LB,TCU,76.73,Round 4-5,155,76.11,,LAR
+349,Dillon Bell,WR,Georgia Bulldogs,63.49,UDFA,442,74.09,,CLE
+350,Chip Trayanum,RB,Toledo Rockets,66.92,UDFA,386,75.86,,DAL
+351,Popo Aumavae,LB,Oregon,76.6,Round 4-5,161,75.98,,LAR
+352,Jerry Wilson,CB,Florida State Seminoles,65.47,UDFA,410,75.85,,JAX
+353,Jaren Kanak,TE,Oklahoma Sooners,63.41,UDFA,444,74.3,,LAC
+354,Mason Reiger,EDGE,Wisconsin Badgers,70.16,Round 6-7,331,78.01,,ATL
+355,Tysheem Johnson,LB,Oregon,76.53,Round 4-5,165,75.91,,LAR
+356,Jamal Haynes,RB,Georgia Tech Yellow Jackets,64.64,UDFA,426,74.03,,DAL
+357,Joe Fagnano,QB,Connecticut Huskies,65.68,UDFA,405,75.42,,LV
+358,Keyshawn James-Newby,EDGE,New Mexico Lobos,67.24,UDFA,379,77.18,,ATL
+359,Kyron Drones,QB,Virginia Tech Hokies,61.15,UDFA,453,73.54,,LV
+360,Athan Kaliakmanis,QB,Rutgers Scarlet Knights,65.79,UDFA,403,76.18,,LV
+361,VJ Payne,S,Kansas State Wildcats,67.34,UDFA,376,74.4,,MIA
+362,Jam Miller,RB,Alabama Crimson Tide,69.72,Round 6-7,339,73.42,,DAL
+363,Tomas Rimac,IOL,Virginia Tech Hokies,64.51,UDFA,427,75.07,,DET
+364,Riley Mahlman,OT,Wisconsin Badgers,67.54,UDFA,373,76.13,,LAR
+365,Daniel Harris,CB,Georgia Bulldogs,71.73,Round 6-7,294,75.7,,JAX
+366,Caden Barnett,IOL,Wyoming Cowboys,65.99,UDFA,397,75.77,,DET
+367,Eric Gentry,LB,USC Trojans,69.55,Round 6-7,343,76.6,,LAR
+368,Dane Key,WR,Georgia,70.39,Round 6-7,325,76.82,,CLE
+369,Carsen Ryan,TE,BYU Cougars,67.28,UDFA,377,76.44,,LAC
+370,Nic Anderson,WR,Oklahoma,74.89,Round 5-6,217,75.63,,CLE
+371,Germie Bernard,WR,Alabama,76.48,Round 4-5,167,77.88,,CLE
+372,Zachariah Branch,WR,Georgia,80.48,Round 3-4,42,81.39,,CLE
+373,Ben Bell,EDGE,Virginia Tech Hokies,65.15,UDFA,415,76.0,,ATL
+374,Antonio Williams,WR,Clemson,76.59,Round 4-5,162,78.15,,CLE
+375,Noah Whittington,RB,Oregon Ducks,69.12,Round 6-7,353,76.98,,DAL
+376,Johntay Cook,WR,Texas,74.72,Round 5-6,225,75.46,,CLE
+377,Davion Carter,IOL,Texas Tech Red Raiders,64.2,UDFA,435,75.43,,DET
+378,Chris Bell,WR,Louisville,77.99,Round 4-5,104,78.7,,CLE
+379,Jack Velling,TE,Michigan State Spartans,63.46,UDFA,443,74.5,,LAC
+380,Isaiah Sategna,WR,Arkansas,74.45,Round 5-6,230,75.19,,CLE
+381,Brandon Cleveland,DT,North Carolina State Wolfpack,65.25,UDFA,414,72.91,,HOU
+382,Dean Connors,RB,Houston Cougars,64.81,UDFA,420,74.75,,DAL
+383,Luke Petitbon,IOL,Florida State Seminoles,64.26,UDFA,433,75.49,,DET
+384,Behren Morton,QB,Texas Tech Red Raiders,65.97,UDFA,398,75.19,,LV
+385,Squirrel White,WR,Florida State Seminoles,64.49,UDFA,428,74.79,,CLE
+386,Micah Pettus,OT,Florida State Seminoles,65.71,UDFA,404,76.1,,LAR
+387,Jeremiah Wright,IOL,Auburn Tigers,65.49,UDFA,409,73.49,,DET
+388,Gary Smith III,DT,UCLA Bruins,64.23,UDFA,434,71.89,,HOU
+389,Hank Beatty,WR,Illinois Fighting Illini,68.2,Round 6-7,365,76.72,,CLE
+390,Treydan Stukes,CB,Arizona Wildcats,72.32,Round 5-6,281,77.82,,JAX
+391,Austin Brown,S,Wisconsin Badgers,66.95,UDFA,384,74.78,,MIA
+392,Mel Brown,RB,Connecticut Huskies,71.16,Round 6-7,307,74.86,,DAL
+393,Harrison Wallace III,WR,Mississippi Rebels,61.61,UDFA,450,71.79,,CLE
+394,Jeff Persi,OT,Pittsburgh Panthers,71.27,Round 6-7,303,75.42,,LAR
+395,Landon Robinson,DT,Navy Midshipmen,68.73,Round 6-7,359,76.39,,HOU
+396,Fernando Carmona,IOL,Arkansas Razorbacks,63.22,UDFA,446,71.75,,DET
+397,Cameron Ball,DT,Arkansas Razorbacks,65.96,UDFA,399,73.62,,HOU
+398,Adam Randall,RB,Clemson Tigers,65.59,UDFA,406,73.53,,DAL
+399,Scooby Williams,LB,Texas A&M Aggies,68.71,Round 6-7,360,76.15,,LAR
+400,Nikai Martinez,S,Michigan State Spartans,71.31,Round 6-7,299,74.69,,MIA
+401,CJ Donaldson,RB,Ohio State Buckeyes,65.51,UDFA,408,74.47,,DAL
+402,Tanner Koziol,TE,Houston,76.73,Round 4-5,156,81.22,,LAC
+403,Jeremiah Franklin,TE,Boston College Eagles,70.31,Round 6-7,328,74.48,,LAC
+404,Holden Staes,TE,Tennessee,72.56,Round 5-6,274,73.73,,LAC
+405,Diego Pounds,OT,Mississippi Rebels,66.2,UDFA,394,74.79,,LAR
+406,Josh Thompson,IOL,LSU Tigers,64.32,UDFA,431,74.56,,DET
+407,Jack Pyburn,EDGE,LSU Tigers,67.16,UDFA,381,75.68,,ATL
+408,Arlis Boardingham,TE,Florida,74.26,Round 5-6,238,74.8,,LAC
+409,Stephen Hall,CB,Missouri Tigers,70.74,Round 6-7,317,74.71,,JAX
+410,Eli Raridon,TE,Notre Dame,77.97,Round 4-5,105,80.25,,LAC
+411,Jalen Huskey,S,Maryland Terrapins,69.08,Round 6-7,354,76.58,,MIA
+412,Caullin Lacy,WR,Louisville Cardinals,61.23,UDFA,452,70.08,,CLE
+413,Grayson James,QB,Boston College Eagles,68.51,Round 6-7,362,73.22,,LV
+414,RJ Maryland,TE,SMU,67.28,UDFA,378,76.0,,LAC
+415,Oscar Cardenas,TE,UTSA,74.03,Round 5-6,243,74.57,,LAC
+416,Logan Diggs,RB,Mississippi Rebels,70.33,Round 6-7,327,74.03,,DAL
+417,Jaden Dugger,LB,Louisiana Ragin' Cajuns,67.85,UDFA,368,75.29,,LAR
+418,Jaren Kump,IOL,Utah Utes,70.36,Round 6-7,326,74.83,,DET
+419,Jackie Marshall,EDGE,Baylor Bears,60.31,UDFA,454,69.81,,ATL
+420,Max Klare,TE,Purdue,75.71,Round 5-6,198,76.81,,LAC
+421,Rohan Jones,TE,Arkansas Razorbacks,73.46,Round 5-6,257,76.83,,LAC
+422,Ryan Baer,OT,Pittsburgh Panthers,72.36,Round 5-6,278,76.51,,LAR
+423,Tre Smith,EDGE,Arizona Wildcats,72.21,Round 5-6,284,76.23,,ATL
+424,Mo Westmoreland,EDGE,Tulane Green Wave,72.19,Round 5-6,286,76.21,,ATL
+425,Dean Miller,EDGE,Kansas Jayhawks,71.64,Round 6-7,296,75.66,,ATL
+426,Jimmori Robinson,EDGE,West Virginia Mountaineers,71.3,Round 6-7,301,75.32,,ATL
+427,Gunner Maldonado,S,Kansas State Wildcats,71.22,Round 6-7,305,74.6,,MIA
+428,Anthony Smith,WR,East Carolina Pirates,71.05,Round 6-7,309,75.42,,CLE
+429,Mason Randolph,IOL,Boise State Broncos,70.77,Round 6-7,316,75.24,,DET
+430,Amari Jackson,CB,Boston College Eagles,70.7,Round 6-7,319,74.67,,JAX
+431,DaShawn Jones,CB,Alabama Crimson Tide,70.7,Round 6-7,318,74.67,,JAX
+432,Devonte Ross,WR,Penn State Nittany Lions,70.63,Round 6-7,320,75.0,,CLE
+433,Devin Mockobee,RB,Purdue Boilermakers,70.6,Round 6-7,321,74.3,,DAL
+434,Daniel King,IOL,North Carolina Tar Heels,70.31,Round 6-7,330,74.78,,DET
+435,Donavon Greene,WR,Virginia Tech Hokies,70.31,Round 6-7,329,74.68,,CLE
+436,Al-Jay Henderson,RB,Buffalo Bulls,69.87,Round 6-7,337,73.57,,DAL
+437,Maverick McIvor,QB,Western Kentucky Hilltoppers,69.44,Round 6-7,347,74.15,,LV
+438,Walker Eget,QB,San Jose State Spartans,68.86,Round 6-7,357,73.57,,LV
+439,Wesley Bissainthe,LB,Miami (FL) Hurricanes,67.76,UDFA,369,75.2,,LAR
+440,Chris Hilton Jr.,WR,LSU Tigers,67.18,UDFA,380,71.55,,CLE
+441,DQ Smith,S,South Carolina Gamecocks,66.86,UDFA,389,74.69,,MIA
+442,Damonic Williams,DT,Oklahoma Sooners,66.77,UDFA,390,74.43,,HOU
+443,Tristan Leigh,OT,Clemson Tigers,66.67,UDFA,391,75.26,,LAR
+444,Jaylon Guilbeau,CB,Texas Longhorns,66.18,UDFA,395,74.66,,JAX
+445,Dillon Wade,IOL,Auburn Tigers,65.92,UDFA,400,74.83,,DET
+446,Keyron Crawford,EDGE,Auburn Tigers,65.82,UDFA,402,72.43,,ATL
+447,Ahmaad Moses,S,SMU Mustangs,65.54,UDFA,407,75.17,,MIA
+448,Chris McClellan,DT,Missouri Tigers,65.07,UDFA,416,71.12,,HOU
+449,Izavion Miller,IOL,Auburn Tigers,64.41,UDFA,430,74.52,,DET
+450,Bauer Sharp,TE,LSU Tigers,64.28,UDFA,432,73.0,,LAC
+451,Mark Gronowski,QB,Iowa Hawkeyes,64.07,UDFA,437,74.31,,LV
+452,Tanner Arkin,TE,Illinois Fighting Illini,63.67,UDFA,441,74.17,,LAC
+453,Colbie Young,WR,Georgia Bulldogs,63.4,UDFA,445,72.25,,CLE
+454,Garrett DiGiorgio,IOL,UCLA Bruins,63.05,UDFA,448,73.03,,DET
+455,Avery Smith,CB,Toledo Rockets,61.44,UDFA,451,71.64,,JAX

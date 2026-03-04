@@ -69,6 +69,31 @@ _FRACTIONS = {
     "⅞": 0.875,
 }
 
+# Guardrail ranges keep malformed scraped baselines (e.g. height_mean=854) from poisoning athletic scores.
+_METRIC_SANITY_BOUNDS = {
+    "height": (64.0, 84.0, 0.1, 8.0),
+    "weight": (150.0, 390.0, 0.1, 80.0),
+    "wingspan": (68.0, 96.0, 0.1, 12.0),
+    "arm": (28.0, 40.0, 0.05, 4.0),
+    "hand": (7.0, 13.0, 0.01, 3.0),
+    "ten_split": (1.35, 2.40, 0.01, 0.70),
+    "twenty_split": (2.20, 3.70, 0.01, 0.80),
+    "forty": (4.20, 6.20, 0.01, 0.80),
+    "bench": (5.0, 55.0, 0.01, 15.0),
+    "vertical": (20.0, 50.0, 0.01, 10.0),
+    "broad": (80.0, 150.0, 0.01, 30.0),
+    "three_cone": (6.20, 9.00, 0.01, 1.20),
+    "shuttle": (3.70, 5.80, 0.01, 1.20),
+}
+
+
+def _metric_stats_are_sane(metric: str, mean: float, std: float) -> bool:
+    bounds = _METRIC_SANITY_BOUNDS.get(metric)
+    if not bounds:
+        return std > 0.0
+    mean_lo, mean_hi, std_lo, std_hi = bounds
+    return mean_lo <= mean <= mean_hi and std_lo <= std <= std_hi
+
 
 def _clean_text(value: str) -> str:
     value = html.unescape(value or "")
@@ -226,16 +251,9 @@ def write_position_baselines(rows: List[dict], path: Path = DEFAULT_BASELINES_PA
         writer.writerows(rows)
 
 
-def load_mockdraftable_baselines(path: Path | None = None) -> Dict[str, dict]:
-    if path is None:
-        if DEFAULT_BASELINES_PATH.exists():
-            path = DEFAULT_BASELINES_PATH
-        else:
-            path = FALLBACK_BASELINES_PATH
-
+def _load_baseline_file(path: Path) -> Dict[str, dict]:
     if not path.exists():
         return {}
-
     out: Dict[str, dict] = {}
     with path.open() as f:
         reader = csv.DictReader(f)
@@ -269,6 +287,8 @@ def load_mockdraftable_baselines(path: Path | None = None) -> Dict[str, dict]:
                     std = float(std_txt)
                 except ValueError:
                     continue
+                if not _metric_stats_are_sane(metric, mean, std):
+                    continue
                 metrics[metric] = {
                     "mean": mean,
                     "std": std,
@@ -281,5 +301,37 @@ def load_mockdraftable_baselines(path: Path | None = None) -> Dict[str, dict]:
                 "pulled_on": row.get("pulled_on", ""),
                 "metrics": metrics,
             }
-
     return out
+
+
+def load_mockdraftable_baselines(path: Path | None = None) -> Dict[str, dict]:
+    if path is None:
+        if DEFAULT_BASELINES_PATH.exists():
+            path = DEFAULT_BASELINES_PATH
+        else:
+            path = FALLBACK_BASELINES_PATH
+
+    primary = _load_baseline_file(path)
+    if path != DEFAULT_BASELINES_PATH or not FALLBACK_BASELINES_PATH.exists():
+        return primary
+
+    # If the latest scrape is malformed, merge in the known-good fallback by position.
+    fallback = _load_baseline_file(FALLBACK_BASELINES_PATH)
+    if not fallback:
+        return primary
+
+    merged: Dict[str, dict] = {}
+    for pos in set(primary.keys()) | set(fallback.keys()):
+        primary_row = primary.get(pos)
+        fallback_row = fallback.get(pos)
+        primary_count = len((primary_row or {}).get("metrics", {}))
+        fallback_count = len((fallback_row or {}).get("metrics", {}))
+
+        if primary_row and primary_count >= 6 and primary_count >= fallback_count:
+            merged[pos] = primary_row
+        elif fallback_row:
+            merged[pos] = fallback_row
+        elif primary_row:
+            merged[pos] = primary_row
+
+    return merged

@@ -1,0 +1,14 @@
+CBS combine pull timestamp: 2026-03-01T00:07:31.704188+00:00
+Input source: live_url:https://www.cbssports.com/nfl/news/nfl-combine-2026-live-updates-results-dl-edge-lb/live/
+Measurements parsed: 32
+Players total in combine CSV: 36
+Players created: 0
+Fields updated: 0
+Metric updates:
+  forty: 0
+  ten_split: 0
+  vertical: 0
+  broad: 0
+  shuttle: 0
+  three_cone: 0
+  bench: 0

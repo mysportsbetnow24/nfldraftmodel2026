@@ -20,6 +20,34 @@
   },
   "sample_size": 2051,
   "data_source": "leagify_2015_2023",
+  "pick_projection": {
+    "intercept": -16.0,
+    "slope": 7.15,
+    "position_slot_additive": {
+      "QB": 0.846,
+      "EDGE": -1.599,
+      "RB": 2.371,
+      "CB": -1.672,
+      "OT": -1.955,
+      "DT": -1.441,
+      "S": -0.092,
+      "WR": 0.268,
+      "IOL": -0.116,
+      "TE": -0.94,
+      "LB": 1.278,
+      "DL": 3.137
+    },
+    "train_metrics": {
+      "pick_slot_mae": 18.831,
+      "pick_slot_rmse": 21.493,
+      "top32_hit_rate": 0.3702,
+      "top32_precision": 0.9415,
+      "top32_recall": 0.3702,
+      "top32_f1": 0.5314,
+      "pos_mae_avg_qb_ot_edge_cb": 18.233,
+      "objective": 0.50755
+    }
+  },
   "grade_bins": [
     {
       "bin": 1,

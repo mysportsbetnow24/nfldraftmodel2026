@@ -239,16 +239,18 @@ def _compute_core(
     coverage_rate = (available_count / expected_count) if expected_count > 0 else 0.0
 
     # Neutral defaults + explicit variance penalty for sparse testing profiles.
-    # Sparse combine profiles should regress toward neutral, not crater.
-    if available_count <= 2:
-        blended_base = (0.25 * base_score) + (0.75 * 70.0)
+    # Players who skip testing should regress near-neutral rather than take a hard drop.
+    if available_count == 0:
+        blended_base = 70.0
+    elif available_count <= 2:
+        blended_base = (0.15 * base_score) + (0.85 * 70.0)
     else:
         blended_base = (coverage_rate * base_score) + ((1.0 - coverage_rate) * 70.0)
 
     missing_penalty = 0.0
-    if coverage_rate < 0.45:
-        missing_penalty = min(1.2, (0.45 - coverage_rate) * 2.0)
-    variance_penalty = min(0.8, missing_count * 0.08)
+    if coverage_rate < 0.20:
+        missing_penalty = min(0.45, (0.20 - coverage_rate) * 2.25)
+    variance_penalty = min(0.35, missing_count * 0.035)
 
     score = _clamp(blended_base - missing_penalty, 55.0, 95.0)
 
