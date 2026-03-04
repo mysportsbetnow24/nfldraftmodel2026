@@ -493,7 +493,7 @@ def _scout_scale_text() -> str:
 
 def _editable_cell(value: str, key: str, tag: str = "span", cls: str = "editable") -> str:
     safe = html.escape(str(value or ""))
-    return f'<{tag} class="{cls}" contenteditable="true" data-edit-key="{html.escape(key)}">{safe}</{tag}>'
+    return f'<{tag} class="{cls}" contenteditable="false" data-edit-key="{html.escape(key)}">{safe}</{tag}>'
 
 
 def _player_card(row: dict) -> str:
@@ -723,11 +723,6 @@ def _player_card(row: dict) -> str:
         </td>
       </tr>
     </table>
-  </section>
-
-  <section class="controls">
-    <button type="button" class="btn save">Save Local Edit</button>
-    <button type="button" class="btn reset">Reset To Model</button>
   </section>
 
   <script type="application/json" class="model-snapshot">{html.escape(json.dumps(model_snapshot))}</script>
@@ -1076,7 +1071,7 @@ def render_reports() -> None:
         page = _render_page(
             title=f"{row.get('player_name','Player')} | 2026 Scouting Card",
             body=_player_card(row),
-            include_js=True,
+            include_js=False,
         )
         out_path.write_text(page)
 
@@ -1130,7 +1125,7 @@ if (input && list) {{
         _render_page(
             "Blank Scouting Card Template",
             _blank_template_card(),
-            include_js=True,
+            include_js=False,
         )
     )
     TEMPLATE_MD_PATH.write_text(_blank_template_markdown())
