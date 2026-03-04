@@ -234,9 +234,9 @@ def _build_home_html(top_rows: list[dict]) -> str:
       <h1>NFL Draft Hub 2026</h1>
       <p>Model board, mock drafts, and scouting cards in a clean, fast public format.</p>
       <div class="links">
-        <a class="primary" href="reports_index.html">Open Scouting Cards</a>
-        <a href="2026-nfl-draft-big-board.html">Big Board Page</a>
-        <a href="data_rank_vs_consensus.html">Rank vs Consensus Page</a>
+        <a class="primary" href="reports_index.html">Scouting Cards</a>
+        <a href="2026-nfl-draft-big-board.html">Big Board</a>
+        <a href="data_rank_vs_consensus.html">Rank vs Consensus</a>
         <a href="2026-nfl-mock-draft-round-1.html">1st Round Mock</a>
         <a href="2026-nfl-7-round-mock-draft.html">7-Round Mock</a>
       </div>
