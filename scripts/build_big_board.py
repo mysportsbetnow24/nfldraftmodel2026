@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import json
 import os
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -93,8 +94,13 @@ PRODUCTION_SIGNAL_FRONT7_MAX_UP_DELTA = float(
 PRODUCTION_SIGNAL_FRONT7_MAX_DOWN_DELTA = float(
     os.getenv("PRODUCTION_SIGNAL_FRONT7_MAX_DOWN_DELTA", "9.0")
 )
-FRONT7_INFLATION_BRAKE_MAX = float(os.getenv("FRONT7_INFLATION_BRAKE_MAX", "1.70"))
-NICKEL_CB_INFLATION_BRAKE_MAX = float(os.getenv("NICKEL_CB_INFLATION_BRAKE_MAX", "1.30"))
+FRONT7_INFLATION_BRAKE_MAX = float(os.getenv("FRONT7_INFLATION_BRAKE_MAX", "2.10"))
+NICKEL_CB_INFLATION_BRAKE_MAX = float(os.getenv("NICKEL_CB_INFLATION_BRAKE_MAX", "1.55"))
+TRAIT_PROXY_ANCHOR_MAX_WEIGHT = float(os.getenv("TRAIT_PROXY_ANCHOR_MAX_WEIGHT", "0.70"))
+TRAIT_PROXY_ANCHOR_MID_WEIGHT = float(os.getenv("TRAIT_PROXY_ANCHOR_MID_WEIGHT", "0.34"))
+TRAIT_PROXY_ANCHOR_MIN_WEIGHT = float(os.getenv("TRAIT_PROXY_ANCHOR_MIN_WEIGHT", "0.18"))
+TRAIT_PROXY_ANCHOR_LOW_COVERAGE = float(os.getenv("TRAIT_PROXY_ANCHOR_LOW_COVERAGE", "90.0"))
+TRAIT_PROXY_ANCHOR_MID_COVERAGE = float(os.getenv("TRAIT_PROXY_ANCHOR_MID_COVERAGE", "180.0"))
 AUTO_WEEKLY_STABILITY_CHECK = str(
     os.getenv("AUTO_WEEKLY_STABILITY_CHECK", "1")
 ).strip().lower() in {"1", "true", "yes", "y"}
@@ -103,16 +109,16 @@ AUTO_DELTA_AUDIT_AFTER_BUILD = str(
 ).strip().lower() in {"1", "true", "yes", "y"}
 GRADE_CALIBRATED_BLEND = float(os.getenv("GRADE_CALIBRATED_BLEND", "0.78"))
 GRADE_PRIOR_BLEND = float(os.getenv("GRADE_PRIOR_BLEND", "0.22"))
-RANK_UNCERTAINTY_DRAG_WEIGHT = float(os.getenv("RANK_UNCERTAINTY_DRAG_WEIGHT", "0.035"))
-RANK_PRIOR_OVERHANG_DRAG_WEIGHT = float(os.getenv("RANK_PRIOR_OVERHANG_DRAG_WEIGHT", "0.20"))
+RANK_UNCERTAINTY_DRAG_WEIGHT = float(os.getenv("RANK_UNCERTAINTY_DRAG_WEIGHT", "0.022"))
+RANK_PRIOR_OVERHANG_DRAG_WEIGHT = float(os.getenv("RANK_PRIOR_OVERHANG_DRAG_WEIGHT", "0.11"))
 RANK_PRIOR_OVERHANG_SCALE = float(os.getenv("RANK_PRIOR_OVERHANG_SCALE", "5.0"))
-RANK_CONSENSUS_REALIGN_MAX = float(os.getenv("RANK_CONSENSUS_REALIGN_MAX", "2.10"))
+RANK_CONSENSUS_REALIGN_MAX = float(os.getenv("RANK_CONSENSUS_REALIGN_MAX", "1.55"))
 RANK_CONSENSUS_REALIGN_DEADBAND = float(os.getenv("RANK_CONSENSUS_REALIGN_DEADBAND", "20.0"))
 RANK_CONSENSUS_REALIGN_SCALE = float(os.getenv("RANK_CONSENSUS_REALIGN_SCALE", "120.0"))
 EXTREME_RANK_DELTA_MIN_RISE = int(os.getenv("EXTREME_RANK_DELTA_MIN_RISE", "55"))
 EXTREME_RANK_DELTA_MAX_ALLOWED = int(os.getenv("EXTREME_RANK_DELTA_MAX_ALLOWED", "6"))
 EXTREME_RANK_DELTA_FAIL_ON_TRIGGER = str(
-    os.getenv("EXTREME_RANK_DELTA_FAIL_ON_TRIGGER", "0")
+    os.getenv("EXTREME_RANK_DELTA_FAIL_ON_TRIGGER", "1")
 ).strip().lower() in {"1", "true", "yes", "y"}
 UPSIDE_EVIDENCE_GUARDRAIL_ACTIVE_GRADE = float(
     os.getenv("UPSIDE_EVIDENCE_GUARDRAIL_ACTIVE_GRADE", "82.0")
@@ -703,6 +709,7 @@ def _build_rank_driver_summary(
     consensus_tail_penalty: float,
     front7_inflation_penalty: float,
     cb_nickel_inflation_penalty: float,
+    bluechip_floor_lift: float,
 ) -> str:
     risk_penalty = float(formula.get("formula_risk_penalty", 0.0) or 0.0)
     prod_component = float(
@@ -719,6 +726,7 @@ def _build_rank_driver_summary(
         ("prior", (prior_grade - calibrated_grade)),
         ("language", float(language_adjustment_applied)),
         ("risk", -risk_penalty),
+        ("bluechip_floor", float(bluechip_floor_lift)),
         (
             "guardrail",
             -(
@@ -1179,6 +1187,8 @@ def _compute_formula_score(
     espn_trait_vals = [v for v in espn_trait_vals if v is not None]
     language_trait = _as_float(lang.get("lang_trait_composite"))
 
+    trait_proxy_component = float(_as_float(grades.get("trait_score")) or 70.0)
+    lang_text_coverage = _as_float(lang.get("lang_text_coverage")) or 0.0
     trait_parts: list[tuple[float, float]] = []
     if film_enabled and film_trait is not None:
         trait_parts.append((0.52, film_trait))
@@ -1196,7 +1206,30 @@ def _compute_formula_score(
         trait_parts.append((0.02, si_text_trait_signal))
     if cbs_text_trait_signal > 0:
         trait_parts.append((0.05, cbs_text_trait_signal))
-    trait_component = _weighted_mean(trait_parts) or (58.0 if position == "QB" else 60.0)
+    trait_component_raw = _weighted_mean(trait_parts) or (58.0 if position == "QB" else 60.0)
+    # Trait stability anchor: when language coverage is thin/noisy, keep an anchor to
+    # the core trait profile so blue-chip prospects don't collapse on parser noise.
+    if lang_text_coverage <= TRAIT_PROXY_ANCHOR_LOW_COVERAGE:
+        trait_anchor_weight = TRAIT_PROXY_ANCHOR_MID_WEIGHT
+    elif lang_text_coverage <= TRAIT_PROXY_ANCHOR_MID_COVERAGE:
+        trait_anchor_weight = (TRAIT_PROXY_ANCHOR_MIN_WEIGHT + TRAIT_PROXY_ANCHOR_MID_WEIGHT) / 2.0
+    else:
+        trait_anchor_weight = TRAIT_PROXY_ANCHOR_MIN_WEIGHT
+    if external_rank is not None and int(external_rank) <= 30 and analyst_score >= 70.0:
+        trait_anchor_weight += 0.34
+    elif external_rank is not None and int(external_rank) <= 60 and analyst_score >= 62.0:
+        trait_anchor_weight += 0.20
+    elif analyst_score >= 72.0 and prior_signal >= 82.0:
+        trait_anchor_weight += 0.14
+    trait_anchor_weight = _clamp(
+        trait_anchor_weight,
+        TRAIT_PROXY_ANCHOR_MIN_WEIGHT,
+        TRAIT_PROXY_ANCHOR_MAX_WEIGHT,
+    )
+    trait_component = (
+        (trait_anchor_weight * trait_proxy_component)
+        + ((1.0 - trait_anchor_weight) * trait_component_raw)
+    )
 
     prod_parts: list[tuple[float, float]] = []
     pff_weight = 0.42
@@ -1492,6 +1525,9 @@ def _compute_formula_score(
 
     return {
         "formula_trait_component": round(trait_component, 2),
+        "formula_trait_component_raw": round(trait_component_raw, 2),
+        "formula_trait_proxy_component": round(trait_proxy_component, 2),
+        "formula_trait_anchor_weight": round(trait_anchor_weight, 3),
         "formula_production_component_raw": round(production_component_raw, 2),
         "formula_production_component": round(production_component, 2),
         "formula_production_guardrail_delta": round(production_guardrail_delta, 2),
@@ -1730,7 +1766,7 @@ def _front7_pass_rush_inflation_penalty(
     rank = float(consensus_mean_rank) if consensus_mean_rank is not None else None
     prod_up = max(0.0, float(production_component) - PRODUCTION_SIGNAL_NEUTRAL)
     prod_delta = max(0.0, float(production_guardrail_delta))
-    if prod_up < 1.15 and prod_delta < 0.75:
+    if prod_up < 1.10 and prod_delta < 0.70:
         return 0.0, ""
     confidence = _consensus_confidence_factor(
         consensus_source_count=consensus_source_count,
@@ -1740,7 +1776,7 @@ def _front7_pass_rush_inflation_penalty(
     penalty = 0.0
     reasons: list[str] = []
 
-    base = max(0.0, (prod_up - 1.0) * 0.12) + max(0.0, (prod_delta - 0.5) * 0.10)
+    base = max(0.0, (prod_up - 0.95) * 0.15) + max(0.0, (prod_delta - 0.45) * 0.12)
     penalty += base
     if base > 0:
         reasons.append(f"prod_up={prod_up:.2f}")
@@ -1762,7 +1798,7 @@ def _front7_pass_rush_inflation_penalty(
                 reasons.append(f"rank={rank:.1f}")
 
     if consensus_source_count <= 2:
-        penalty += 0.12 * confidence
+        penalty += 0.18 * confidence
         reasons.append("low_consensus_sources")
 
     roi_band = str(roi_pick_band or "").strip().upper()
@@ -1780,22 +1816,22 @@ def _front7_pass_rush_inflation_penalty(
             reasons.append("roi_high_z")
 
     quality = str(cfb_prod_quality_label or "").strip().lower()
-    if quality == "proxy" and float(cfb_prod_reliability or 0.0) <= 0.35 and prod_up >= 1.5:
-        penalty += 0.22
+    if quality == "proxy" and float(cfb_prod_reliability or 0.0) <= 0.35 and prod_up >= 1.4:
+        penalty += 0.28
         reasons.append("proxy_prod")
     elif (not cfb_prod_available) and prod_up >= 2.0:
         penalty += 0.16
         reasons.append("no_cfb_prod")
 
     # Extra sparse-profile brake: pass-rush spikes with thin evidence should not dominate top ranks.
-    if quality in {"proxy", "mixed"} and rank is not None and rank >= 60.0 and prod_up >= 1.3:
+    if quality in {"proxy", "mixed"} and rank is not None and rank >= 55.0 and prod_up >= 1.2:
         sparse_pen = 0.0
         if float(cfb_prod_reliability or 0.0) <= 0.45:
-            sparse_pen += 0.12
+            sparse_pen += 0.16
         if int(cfb_prod_coverage_count) <= 2:
-            sparse_pen += 0.10
+            sparse_pen += 0.14
         if int(evidence_missing_count) >= 2:
-            sparse_pen += min(0.18, 0.07 * (int(evidence_missing_count) - 1))
+            sparse_pen += min(0.22, 0.08 * (int(evidence_missing_count) - 1))
         if sparse_pen > 0:
             penalty += sparse_pen * confidence
             reasons.append("sparse_profile_brake")
@@ -1858,7 +1894,7 @@ def _cb_nickel_inflation_penalty(
         return 0.0, ""
     prod_up = max(0.0, float(production_component) - (PRODUCTION_SIGNAL_NEUTRAL + 0.6))
     prod_delta = max(0.0, float(production_guardrail_delta))
-    if prod_up < 1.0 and prod_delta < 0.8:
+    if prod_up < 0.9 and prod_delta < 0.7:
         return 0.0, ""
 
     is_nickel_frame = False
@@ -1878,30 +1914,30 @@ def _cb_nickel_inflation_penalty(
     reasons: list[str] = []
 
     if rank > 95.0:
-        penalty += 0.55
+        penalty += 0.62
     elif rank > 80.0:
-        penalty += 0.42
+        penalty += 0.48
     elif rank > 65.0:
-        penalty += 0.30
+        penalty += 0.34
     elif rank > 50.0:
-        penalty += 0.18
+        penalty += 0.22
 
-    penalty += max(0.0, prod_up - 0.9) * 0.16
-    penalty += max(0.0, prod_delta - 0.5) * 0.14
+    penalty += max(0.0, prod_up - 0.85) * 0.19
+    penalty += max(0.0, prod_delta - 0.45) * 0.16
     if is_nickel_frame:
         penalty += 0.14
         reasons.append("nickel_frame")
 
     quality = str(cfb_prod_quality_label or "").strip().lower()
     if quality == "proxy":
-        penalty += 0.18
+        penalty += 0.24
         reasons.append("proxy_prod")
     elif quality == "mixed" and float(cfb_prod_reliability or 0.0) <= 0.55:
         penalty += 0.10
         reasons.append("mixed_low_rel")
 
     if int(cfb_prod_coverage_count) <= 2:
-        penalty += 0.12
+        penalty += 0.16
         reasons.append("thin_cfb_cov")
     if int(cfb_prod_proxy_fallback_features) >= 1:
         penalty += 0.10
@@ -2313,6 +2349,50 @@ def _consensus_tail_soft_penalty(
     return round(max(0.0, penalty), 2), round(target, 2)
 
 
+def _consensus_bluechip_floor(
+    *,
+    external_rank: int | None,
+    consensus_mean_rank: float | None,
+    consensus_source_count: int,
+    consensus_rank_std: float | None,
+    analyst_score: float,
+    pff_grade: float | None,
+) -> float | None:
+    """
+    Protect consensus-validated blue-chip profiles from collapsing due sparse/noisy
+    trait parsing or thin production artifacts.
+    """
+    anchor_rank = float(external_rank) if external_rank is not None else consensus_mean_rank
+    if anchor_rank is None:
+        return None
+    if consensus_source_count < 4 and external_rank is None:
+        return None
+    if analyst_score < 68.0:
+        return None
+
+    floor = None
+    if anchor_rank <= 5:
+        floor = 83.2
+    elif anchor_rank <= 10:
+        floor = 82.6
+    elif anchor_rank <= 16:
+        floor = 81.9
+    elif anchor_rank <= 24:
+        floor = 81.2
+    elif anchor_rank <= 32:
+        floor = 80.6
+    if floor is None:
+        return None
+
+    if pff_grade is not None and float(pff_grade) >= 86.0:
+        floor += 0.20
+    if consensus_rank_std is not None and float(consensus_rank_std) > 18.0:
+        floor -= 0.20
+    if consensus_source_count <= 4:
+        floor -= 0.10
+    return round(_clamp(floor, 80.4, 84.8), 2)
+
+
 def _consensus_hard_cap(
     *,
     position: str,
@@ -2539,22 +2619,129 @@ def _build_scouting_sections(
     historical_combine_comp_1_year,
     historical_combine_comp_1_similarity,
 ) -> dict:
-    strength_stack = [
-        _compact_text(kiper_strength_tags, 90),
-        _compact_text(tdn_strengths, 90),
-        _compact_text(br_strengths, 90),
-        _compact_text(atoz_strengths, 90),
-        _compact_text(si_strengths, 90),
-    ]
-    concern_stack = [
-        _compact_text(kiper_concern_tags, 90),
-        _compact_text(tdn_concerns, 90),
-        _compact_text(br_concerns, 90),
-        _compact_text(atoz_concerns, 90),
-        _compact_text(si_concerns, 90),
-    ]
-    strengths = [s for s in strength_stack if s]
-    concerns = [c for c in concern_stack if c]
+    pos = normalize_pos(position)
+    clean_role = " ".join(str(best_role or "").replace("_", " ").split()) or "Role TBD"
+    clean_scheme = " ".join(str(best_scheme_fit or "").replace("_", " ").split()) or "Scheme TBD"
+    clean_team = " ".join(str(best_team_fit or "").replace("_", " ").split()) or "Team TBD"
+
+    def _phrase_list(*raw_values: str, max_items: int = 8) -> list[str]:
+        out: list[str] = []
+        seen: set[str] = set()
+        for raw in raw_values:
+            txt = str(raw or "").replace("_", " ").replace("\n", " ").strip()
+            if not txt:
+                continue
+            parts = re.split(r"[|;/]|,\s*(?=[A-Za-z])", txt)
+            if len(parts) <= 1:
+                parts = [txt]
+            for part in parts:
+                phrase = " ".join(part.split()).strip(" .,-")
+                if not phrase:
+                    continue
+                lower = phrase.lower()
+                if lower in {"n/a", "na", "none", "pending", "unknown"}:
+                    continue
+                if len(phrase) > 100:
+                    phrase = phrase[:97].rstrip() + "..."
+                    lower = phrase.lower()
+                if lower in seen:
+                    continue
+                seen.add(lower)
+                out.append(phrase)
+                if len(out) >= max_items:
+                    return out
+        return out
+
+    strengths = _phrase_list(kiper_strength_tags, tdn_strengths, br_strengths, atoz_strengths, si_strengths, max_items=8)
+    concerns = _phrase_list(kiper_concern_tags, tdn_concerns, br_concerns, atoz_concerns, si_concerns, max_items=8)
+
+    wins_logic = {
+        "QB": "Film translation comes from timing/processing: ID leverage pre-snap, hold structure from the pocket, and create only when structure breaks.",
+        "RB": "Film translation comes from vision plus contact balance: press tracks, force linebacker displacement, then accelerate through daylight.",
+        "WR": "Film translation comes from route craft: release with a plan, manipulate leverage in stems, and separate at breakpoints with late hands.",
+        "TE": "Film translation comes from dual-phase utility: route detail vs coverage plus in-line toughness that keeps personnel groupings flexible.",
+        "OT": "Film translation comes from pass-pro consistency: set points, half-man leverage, and anchor recovery against speed-to-power.",
+        "IOL": "Film translation comes from interior control: hand placement, leverage, and communication to pass off stunts without leakage.",
+        "EDGE": "Film translation comes from rush sequencing: first-step threat, hand counters, and rush-to-contain discipline by game state.",
+        "DT": "Film translation comes from disruption and block control: strike timing, gap integrity, and pocket compression on long downs.",
+        "LB": "Film translation comes from read/trigger speed: sort run-pass keys early, fit cleanly, and carry routes with controlled angles.",
+        "CB": "Film translation comes from coverage mechanics: maintain leverage, transition cleanly, and finish at the catch point without panic.",
+        "S": "Film translation comes from range plus communication: rotate on time, overlap windows, and close space with controlled tackling angles.",
+    }
+
+    concern_logic = {
+        "QB": "Quarterback projection is most sensitive to pressure processing and turnover control when first-read windows close.",
+        "RB": "Running back projection is sensitive to passing-down value (route utility and pass pro) beyond pure carry production.",
+        "WR": "Receiver projection is sensitive to press answers and route precision versus NFL corner technique.",
+        "TE": "Tight end projection is sensitive to blocking consistency and route separation against man coverage.",
+        "OT": "Tackle projection is sensitive to hand timing and recovery footwork when rushers force second moves.",
+        "IOL": "Interior OL projection is sensitive to anchor durability and stunt communication under pressure fronts.",
+        "EDGE": "EDGE projection is sensitive to rush-plan depth; raw pressure volume without counters can flatten versus NFL tackles.",
+        "DT": "DT projection is sensitive to pad-level consistency and snap-to-snap motor in longer drives.",
+        "LB": "Linebacker projection is sensitive to coverage spacing discipline and mismatch handling in space.",
+        "CB": "Corner projection is sensitive to eye discipline and transition efficiency versus route combinations.",
+        "S": "Safety projection is sensitive to angle discipline and late-rotation communication under tempo.",
+    }
+    concern_depth = {
+        "QB": [
+            "Pocket disruption response must stay on schedule; drifting off platform creates NFL turnover windows.",
+            "Third-down decision speed versus disguised coverage is the key separator between starter and backup outcomes.",
+        ],
+        "RB": [
+            "Early-down production must be paired with dependable pass-protection reps to hold three-down value.",
+            "Contact balance has to translate against tighter NFL pursuit angles, not just open-lane college looks.",
+        ],
+        "WR": [
+            "Release plan versus press corners has to hold up when defenders force timing disruption at the line.",
+            "Route pacing and stem detail must stay efficient versus complex leverage rotations and trap coverages.",
+        ],
+        "TE": [
+            "Blocking strain has to stay consistent so personnel usage is not telegraphed by down/distance.",
+            "Separation profile versus man coverage must improve enough to avoid becoming only a schematic target.",
+        ],
+        "OT": [
+            "Hand timing and recovery mechanics must stay clean when rushers chain counters on long downs.",
+            "Anchor consistency versus NFL power fronts is the primary pass-game floor variable.",
+        ],
+        "IOL": [
+            "Interior communication versus games/stunts must be consistent to protect pocket depth for the QB.",
+            "Leverage and hand placement must hold late in reps against stronger NFL interior rushers.",
+        ],
+        "EDGE": [
+            "Rush plan depth has to expand beyond first move so pressure translates into consistent finish rate.",
+            "Run-game edge setting must stay disciplined to avoid being reduced to a package-only role.",
+        ],
+        "DT": [
+            "Pad-level consistency is required to convert flashes into down-to-down run-defense value.",
+            "Pass-rush impact must hold beyond first contact when NFL guards reset and anchor late.",
+        ],
+        "LB": [
+            "Coverage spacing discipline versus route combinations must be clean to avoid explosive seams.",
+            "Processing speed has to stay stable when offenses stress eye candy and tempo.",
+        ],
+        "CB": [
+            "Eye discipline through route breaks must tighten to limit transition losses against pro route pacing.",
+            "Tackle finish and block deconstruction must hold so offenses cannot isolate him in run support.",
+        ],
+        "S": [
+            "Communication and rotation timing must stay precise to avoid coverage busts in split-field structures.",
+            "Open-field tackling angles must remain controlled against NFL speed and spacing stress.",
+        ],
+    }
+
+    role_projection_logic = {
+        "QB": "For film-heavy evaluation: this role asks for rhythm passing on early downs, controlled aggression on explosives, and situational command on third down/two-minute.",
+        "RB": "For film-heavy evaluation: this role asks for box-count recognition, run-track efficiency, and enough receiving utility to stay on the field in sub packages.",
+        "WR": "For film-heavy evaluation: this role asks for separation creation by leverage, coverage-ID chemistry with the QB, and consistent finish through contact.",
+        "TE": "For film-heavy evaluation: this role asks for personnel multiplicity, where the same player can stress seams and still survive as a blocker.",
+        "OT": "For film-heavy evaluation: this role asks for stable pass sets versus wide alignments and run-game displacement without losing balance.",
+        "IOL": "For film-heavy evaluation: this role asks for interior pocket integrity, line-call chemistry, and efficient climb timing in zone/gap runs.",
+        "EDGE": "For film-heavy evaluation: this role asks for a complete four-down profile, combining rush productivity with edge-setting discipline versus the run.",
+        "DT": "For film-heavy evaluation: this role asks for early-down run control plus enough third-down pocket push to keep fronts multiple.",
+        "LB": "For film-heavy evaluation: this role asks for fit integrity, pursuit range, and route-distribution awareness in coverage.",
+        "CB": "For film-heavy evaluation: this role asks for leverage consistency across man/zone and reliable tackle finish when targeted in run support.",
+        "S": "For film-heavy evaluation: this role asks for rotation versatility, overlap range, and communication that prevents explosive busts.",
+    }
 
     if kiper_rank and kiper_rank_delta:
         try:
@@ -2589,20 +2776,66 @@ def _build_scouting_sections(
         production_parts.append(f"CFB quality {cfb_prod_quality} ({cfb_prod_reliability})")
     production_snapshot = "; ".join(production_parts) if production_parts else "Production snapshot pending structured statline import."
 
-    report = (
-        f"{name} ({position}, {school}) holds a model grade of {final_grade:.2f} with a {round_value} projection. "
-        f"Current board slot: {consensus_rank}. {scouting_notes}"
-    )
-    wins = (
-        f"Role fit: {best_role}. Preferred usage in {best_scheme_fit}. "
-        + (f"Traits repeatedly flagged: {', '.join(strengths[:3])}." if strengths else "Traits: leverage, processing, and role translation remain primary wins.")
-    )
-    primary_concerns = (
-        f"Development checkpoints: {', '.join(concerns[:3])}."
-        if concerns
-        else "Development checkpoints: consistency, role expansion pace, and matchup stress handling."
-    )
+    report_parts = [
+        f"{name} ({position}, {school}) carries a {final_grade:.2f} model grade with a current {round_value} projection.",
+        f"Current board slot: {consensus_rank}.",
+        f"Primary NFL pathway: {clean_role} in {clean_scheme}.",
+    ]
+    if str(scouting_notes or "").strip():
+        report_parts.append(_compact_text(scouting_notes, 220))
+    report_parts.append("How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.")
+    report = " ".join(report_parts)
+
+    wins_points: list[str] = []
+    wins_points.append(f"Usage fit: {clean_role} within {clean_scheme}.")
+    wins_points.append(wins_logic.get(pos, "Film translation is defined by repeatable technique, processing, and role clarity under NFL speed."))
+    if str(scouting_notes or "").strip():
+        wins_points.append("Model + film note: " + _compact_text(str(scouting_notes), 180).rstrip(".") + ".")
+    if strengths:
+        wins_points.append("Scout-logged strength indicators: " + "; ".join(strengths[:4]) + ".")
+    if pff_grade is not None:
+        wins_points.append(f"Last-season performance context: PFF grade {pff_grade:.1f}.")
+    elif str(cfb_prod_signal or "").strip():
+        wins_points.append(f"Production context: CFB signal {cfb_prod_signal}.")
+    if production_snapshot:
+        wins_points.append("Stat context: " + _compact_text(production_snapshot, 200) + ".")
+    wins = "\n".join(f"- {point}" for point in wins_points[:5])
+
+    concern_points: list[str] = []
+    concern_points.append(concern_logic.get(pos, "Projection risk centers on consistency, technical detail under stress, and speed of role adaptation."))
+    if clean_role != "Role TBD":
+        concern_points.append(
+            f"Role stress test: value is strongest in {clean_role.lower()}; projection gets thinner if usage expands too far outside that lane early."
+        )
+    if concerns:
+        for concern in concerns[:3]:
+            concern_points.append(f"Scouting concern to verify: {concern}.")
+    if str(cfb_prod_quality or "").strip().lower() == "proxy":
+        concern_points.append(f"Production evidence is proxy-heavy (reliability {cfb_prod_reliability or 'n/a'}), so film cross-check matters more.")
+    if pff_grade is None:
+        concern_points.append("No stable PFF grade loaded yet; track week-to-week consistency until the performance baseline is complete.")
+    if pos == "QB":
+        if not str(espn_qbr or "").strip():
+            concern_points.append("Missing ESPN QBR context increases uncertainty in down-to-down efficiency under pressure.")
+        if not str(espn_epa_per_play or "").strip():
+            concern_points.append("Missing EPA/play context limits separation of explosive production versus sustainable drive efficiency.")
+    if not concerns and pff_grade is not None and pff_grade < 75.0:
+        concern_points.append(f"PFF grade {pff_grade:.1f} suggests current performance volatility that needs film-confirmed cleanup.")
+    for fallback_concern in concern_depth.get(pos, []):
+        if len(concern_points) >= 6:
+            break
+        if fallback_concern not in concern_points:
+            concern_points.append(fallback_concern)
+    while len(concern_points) < 3:
+        concern_points.append(
+            "Projection variance remains moderate until more independent film and testing evidence is stacked."
+        )
+    primary_concerns = "\n".join(f"- {point}" for point in concern_points[:5])
+
     hist_comp_text = ""
+    if str(historical_combine_comp_1 or "").strip():
+        if str(historical_combine_comp_1).strip().lower() == str(name).strip().lower():
+            historical_combine_comp_1 = ""
     if str(historical_combine_comp_1 or "").strip():
         sim_txt = str(historical_combine_comp_1_similarity or "").strip()
         year_txt = str(historical_combine_comp_1_year or "").strip()
@@ -2613,10 +2846,13 @@ def _build_scouting_sections(
             hist_comp_text += f", similarity {sim_txt}"
         hist_comp_text += "."
 
-    projection = (
-        f"Best early team fit: {best_team_fit}. Scheme path: {best_scheme_fit}. "
-        f"Expected early deployment: {best_role}.{hist_comp_text}"
-    )
+    projection_parts = [
+        f"Best early team fit: {clean_team}. Scheme path: {clean_scheme}. Expected early deployment: {clean_role}.",
+        role_projection_logic.get(pos, "For film-heavy evaluation: this role asks for translatable execution against faster processing environments."),
+    ]
+    if hist_comp_text:
+        projection_parts.append(hist_comp_text.strip())
+    projection = " ".join(projection_parts)
 
     return {
         "scouting_report_summary": report,
@@ -3447,6 +3683,19 @@ def main() -> None:
                         pff_grade=pff_grade,
                     )
 
+        bluechip_floor = _consensus_bluechip_floor(
+            external_rank=external_rank,
+            consensus_mean_rank=consensus_mean_rank_val,
+            consensus_source_count=consensus_source_count_val,
+            consensus_rank_std=consensus_rank_std_val,
+            analyst_score=analyst_score,
+            pff_grade=pff_grade,
+        )
+        bluechip_floor_lift = 0.0
+        if bluechip_floor is not None and model_score < bluechip_floor:
+            bluechip_floor_lift = bluechip_floor - model_score
+            model_score = bluechip_floor
+
         confidence_profile = _confidence_uncertainty_profile(
             final_grade=model_score,
             evidence_missing_count=int(formula.get("formula_evidence_missing_count", 0) or 0),
@@ -3838,6 +4087,8 @@ def main() -> None:
             "formula_front7_success_prob_pre_brake": front7_success_prob_before_brake,
             "formula_cb_nickel_inflation_penalty": round(cb_nickel_inflation_penalty, 2),
             "formula_cb_nickel_inflation_reason": cb_nickel_inflation_reason,
+            "formula_bluechip_floor": round(bluechip_floor, 2) if bluechip_floor is not None else "",
+            "formula_bluechip_floor_lift": round(bluechip_floor_lift, 2),
             "roi_pick_band": roi_pick_band,
             "roi_prior_sample_n": roi_sample_n,
             "roi_prior_weighted_mean_surplus": roi_row.get("weighted_mean_surplus", ""),
@@ -3999,6 +4250,7 @@ def main() -> None:
             consensus_tail_penalty=float(consensus_tail_penalty),
             front7_inflation_penalty=float(front7_inflation_penalty),
             cb_nickel_inflation_penalty=float(cb_nickel_inflation_penalty),
+            bluechip_floor_lift=float(bluechip_floor_lift),
         )
         enriched.append(report)
 

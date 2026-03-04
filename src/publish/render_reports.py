@@ -258,6 +258,125 @@ def _humanize_label(value: str | None) -> str:
     return text
 
 
+def _clean_display_text(value: str | None) -> str:
+    text = _decoded_text(value)
+    if not text:
+        return ""
+    # Replace snake_case style tokens in scout text while preserving punctuation/newlines.
+    return re.sub(r"(?<=\w)_(?=\w)", " ", text)
+
+
+def _same_player_name(a: str | None, b: str | None) -> bool:
+    return _slugify(str(a or "")) == _slugify(str(b or ""))
+
+
+def _safe_year(raw: str | None) -> int | None:
+    text = str(raw or "").strip()
+    if not text:
+        return None
+    try:
+        year = int(float(text))
+    except (TypeError, ValueError):
+        return None
+    if 1900 <= year <= 2100:
+        return year
+    return None
+
+
+def _format_comp_name_year(name: str, year: int | None) -> str:
+    clean = _clean_display_text(name)
+    if not clean:
+        return ""
+    if year:
+        return f"{clean} ({year})"
+    return clean
+
+
+def _best_historical_comps(row: dict, player_name: str) -> tuple[str, str]:
+    candidates: list[tuple[str, int | None]] = []
+    for idx in (1, 2, 3):
+        candidates.append(
+            (
+                str(row.get(f"historical_combine_comp_{idx}", "") or ""),
+                _safe_year(row.get(f"historical_combine_comp_{idx}_year", "")),
+            )
+        )
+    candidates.append((str(row.get("scouting_historical_athletic_comp", "") or ""), None))
+    candidates.append((str(row.get("historical_comp", "") or ""), None))
+    # Fallbacks if combine comps are sparse.
+    for idx in (1, 2, 3):
+        candidates.append(
+            (
+                str(row.get(f"athletic_nn_comp_{idx}", "") or ""),
+                _safe_year(row.get(f"athletic_nn_comp_{idx}_year", "")),
+            )
+        )
+
+    filtered: list[str] = []
+    for comp_name, comp_year in candidates:
+        clean_name = _clean_display_text(comp_name)
+        if not clean_name:
+            continue
+        if _same_player_name(clean_name, player_name):
+            continue
+        # Keep historical comps historical by default.
+        if comp_year is not None and comp_year >= 2026:
+            continue
+        formatted = _format_comp_name_year(clean_name, comp_year)
+        if not formatted:
+            continue
+        if formatted in filtered:
+            continue
+        filtered.append(formatted)
+
+    if not filtered:
+        return ("Pending historical comp", "Pending historical comp")
+    if len(filtered) == 1:
+        return (filtered[0], filtered[0])
+    # Use first as ceiling archetype, second as floor archetype.
+    return (filtered[0], filtered[1])
+
+
+def _round_band_order() -> list[str]:
+    return [
+        "Round 1",
+        "Round 1-2",
+        "Round 2-3",
+        "Round 3-4",
+        "Round 4-5",
+        "Round 5-6",
+        "Round 6-7",
+        "Priority FA",
+    ]
+
+
+def _normalize_round_band(value: str | None) -> str:
+    text = _clean_display_text(value)
+    if not text:
+        return "Round 3-4"
+    text_l = text.lower()
+    if "priority" in text_l:
+        return "Priority FA"
+    m = re.search(r"round\s*(\d)(?:\s*[-/]\s*(\d))?", text_l)
+    if not m:
+        return "Round 3-4"
+    a = int(m.group(1))
+    b = int(m.group(2)) if m.group(2) else a
+    if a == b:
+        return f"Round {a}"
+    return f"Round {a}-{b}"
+
+
+def _shift_round_band(base_band: str, delta: int) -> str:
+    ordered = _round_band_order()
+    try:
+        idx = ordered.index(base_band)
+    except ValueError:
+        idx = ordered.index("Round 3-4")
+    moved = max(0, min(len(ordered) - 1, idx + delta))
+    return ordered[moved]
+
+
 def _format_numeric(raw: str | None, digits: int = 1) -> str:
     text = _decoded_text(raw)
     if not text:
@@ -449,17 +568,20 @@ def _summary_sections(row: dict) -> list[tuple[str, str]]:
     floor = _to_float(row, "floor_grade", max(70.0, final_grade - 2.0))
     ceiling = _to_float(row, "ceiling_grade", min(95.0, final_grade + 2.0))
     rank = row.get("consensus_rank", "")
-    best_role = row.get("best_role", "")
+    best_role = _humanize_label(row.get("best_role", ""))
     scheme_fit = _humanize_label(row.get("best_scheme_fit", ""))
-    team_fit = row.get("best_team_fit", "")
-    comp = row.get("historical_comp", "")
-    note = row.get("scouting_notes", "")
-    kiper_rank = _first_non_empty(row.get("kiper_rank", ""), "N/A")
-    kiper_prev_rank = _first_non_empty(row.get("kiper_prev_rank", ""), "")
-    kiper_delta = _first_non_empty(row.get("kiper_rank_delta", ""), "")
+    team_fit = _humanize_label(row.get("best_team_fit", ""))
+    note = _clean_display_text(row.get("scouting_notes", ""))
     kiper_strength_tags = _first_non_empty(row.get("kiper_strength_tags", ""), "")
     kiper_concern_tags = _first_non_empty(row.get("kiper_concern_tags", ""), "")
     kiper_statline_2025 = _first_non_empty(row.get("kiper_statline_2025", ""), "")
+    consensus_mean = _first_non_empty(row.get("consensus_board_mean_rank", ""), "")
+    consensus_std = _to_float(row, "consensus_board_rank_std", 0.0)
+
+    ceiling_comp, floor_comp = _best_historical_comps(row, name)
+    base_round_band = _normalize_round_band(row.get("round_value", ""))
+    ceiling_round_band = _shift_round_band(base_round_band, -1)
+    floor_round_band = _shift_round_band(base_round_band, +1)
 
     pp_sig = _first_non_empty(row.get("pp_skill_signal", ""), "N/A")
     ras = _first_non_empty(row.get("ras_estimate", "Pending"), "Pending")
@@ -477,7 +599,7 @@ def _summary_sections(row: dict) -> list[tuple[str, str]]:
         (
             f"Primary translatable strengths: {note}. "
             f"{'Structured trait tags: ' + kiper_strength_tags + '. ' if kiper_strength_tags else ''}"
-            f"The profile fits best in a {scheme_fit} environment, where {best_role.lower()} can be deployed without forcing role expansion too early."
+            f"The profile fits best in a {scheme_fit} environment, where {str(best_role).lower()} can be deployed without forcing role expansion too early."
         ),
     )
 
@@ -500,39 +622,30 @@ def _summary_sections(row: dict) -> list[tuple[str, str]]:
         ),
     )
 
-    board_movement = _first_non_empty(row.get("scouting_board_movement", ""), "")
+    board_movement = _clean_display_text(row.get("scouting_board_movement", ""))
+    if "kiper" in board_movement.lower():
+        board_movement = ""
     if not board_movement:
-        kiper_delta_num = _to_float(row, "kiper_rank_delta", 0.0)
-        if kiper_rank == "N/A":
-            board_movement = "No Kiper board movement data ingested yet for this player."
+        if consensus_mean:
+            board_movement = (
+                f"Consensus board context: mean rank {consensus_mean}. "
+                f"Board spread (std dev) {consensus_std:.1f}; lower spread indicates tighter agreement."
+            )
         else:
-            if kiper_delta and str(kiper_delta) not in {"0", "0.0"}:
-                direction = "up" if kiper_delta_num > 0 else "down"
-                delta_abs = str(abs(int(kiper_delta_num)))
-                board_movement = (
-                    f"Kiper board context: current rank {kiper_rank}"
-                    f"{f' (prev {kiper_prev_rank})' if kiper_prev_rank else ''}, moved {direction} {delta_abs} spots."
-                )
-            else:
-                board_movement = (
-                    f"Kiper board context: current rank {kiper_rank}"
-                    f"{f' (prev {kiper_prev_rank})' if kiper_prev_rank else ''}, stable movement."
-                )
+            board_movement = "Consensus movement context is limited; monitor updates as additional boards publish."
 
-    role_scheme_projection = _first_non_empty(
-        row.get("scouting_role_projection", ""),
-        (
-            f"NFL projection: {best_role}. Ideal early deployment comes with {team_fit} based on current roster/scheme assumptions. "
-            f"Best scheme fit: {scheme_fit}. Historical style comp: {comp}."
-        ),
+    role_scheme_projection = (
+        f"NFL projection: {best_role}. Ideal early deployment comes with {team_fit} based on current roster/scheme assumptions. "
+        f"Best scheme fit: {scheme_fit}. Historical combine comp: {ceiling_comp}."
     )
 
     value = (
-        f"Floor/Ceiling framework: floor {floor:.2f}, ceiling {ceiling:.2f}. Current card band: "
-        f"{_grade_band(_card_grade(final_grade))}."
+        f"Floor/Ceiling framework: floor {floor:.2f} ({floor_round_band}), ceiling {ceiling:.2f} ({ceiling_round_band}). "
+        f"Floor comp: {floor_comp}. Ceiling comp: {ceiling_comp}. "
+        f"Current card band: {_grade_band(_card_grade(final_grade))}."
     )
 
-    return [
+    sections = [
         ("Report", summary_intro),
         ("How He Wins", wins),
         ("Primary Concerns", concerns),
@@ -541,6 +654,7 @@ def _summary_sections(row: dict) -> list[tuple[str, str]]:
         ("Role / Scheme Projection", role_scheme_projection),
         ("Value Range", value),
     ]
+    return [(title, _clean_display_text(body)) for title, body in sections]
 
 
 def _scout_scale_text() -> str:
@@ -675,6 +789,7 @@ def _player_card(row: dict) -> str:
   </header>
 
   <section class="sheet">
+    <div class="table-wrap">
     <table class="info-table">
       <tr class="section"><th colspan="7">Player Information</th></tr>
       <tr>
@@ -740,6 +855,7 @@ def _player_card(row: dict) -> str:
         </td>
       </tr>
     </table>
+    </div>
   </section>
 
   <script type="application/json" class="model-snapshot">{html.escape(json.dumps(model_snapshot))}</script>
@@ -810,11 +926,18 @@ h1 {
 .fit-box p { margin: 0.35rem 0; }
 
 .sheet { padding: 0.95rem 1rem 1rem; }
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
 .info-table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   font-size: 0.93rem;
+  min-width: 980px;
 }
 .info-table td, .info-table th { border: 1px solid #d3dbe6; padding: 0.34rem 0.45rem; vertical-align: top; }
 .info-table .section th {
@@ -904,7 +1027,18 @@ h1 {
 @media (max-width: 860px) {
   body { padding: 0.6rem; }
   .masthead { grid-template-columns: 1fr; }
+  .identity { align-items: flex-start; }
+  .headshot { width: 86px; height: 86px; }
+  h1 { font-size: 1.55rem; }
+  .stack { font-size: 0.9rem; }
+  .fit-box { padding: 0.65rem 0.7rem; }
+  .sheet { padding: 0.75rem; }
   .info-table .label { width: 124px; }
+  .info-table { font-size: 0.84rem; min-width: 860px; }
+  .controls { flex-wrap: wrap; }
+  .btn { font-size: 0.8rem; padding: 0.42rem 0.62rem; }
+  .index-card { padding: 0.82rem; border-radius: 14px; }
+  .index-card h1 { font-size: 1.52rem; }
 }
 """.strip()
 

@@ -1,0 +1,9 @@
+2026 DELTA AUDIT
+
+Current board: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
+Previous board: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260304_081915.csv
+Rows compared: 455
+
+Top Risers (prev rank - curr rank > 0)
+
+Top Fallers (prev rank - curr rank < 0)

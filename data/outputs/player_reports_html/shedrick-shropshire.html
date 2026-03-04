@@ -65,11 +65,18 @@ h1 {
 .fit-box p { margin: 0.35rem 0; }
 
 .sheet { padding: 0.95rem 1rem 1rem; }
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
 .info-table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   font-size: 0.93rem;
+  min-width: 980px;
 }
 .info-table td, .info-table th { border: 1px solid #d3dbe6; padding: 0.34rem 0.45rem; vertical-align: top; }
 .info-table .section th {
@@ -159,7 +166,18 @@ h1 {
 @media (max-width: 860px) {
   body { padding: 0.6rem; }
   .masthead { grid-template-columns: 1fr; }
+  .identity { align-items: flex-start; }
+  .headshot { width: 86px; height: 86px; }
+  h1 { font-size: 1.55rem; }
+  .stack { font-size: 0.9rem; }
+  .fit-box { padding: 0.65rem 0.7rem; }
+  .sheet { padding: 0.75rem; }
   .info-table .label { width: 124px; }
+  .info-table { font-size: 0.84rem; min-width: 860px; }
+  .controls { flex-wrap: wrap; }
+  .btn { font-size: 0.8rem; padding: 0.42rem 0.62rem; }
+  .index-card { padding: 0.82rem; border-radius: 14px; }
+  .index-card h1 { font-size: 1.52rem; }
 }</style>
 </head>
 <body>
@@ -169,8 +187,8 @@ h1 {
       <div class="headshot placeholder">Headshot Placeholder</div>
       <div>
         <h1>Shedrick Shropshire</h1>
-        <p class="stack">LB | TCU | Class SR | Rank 145</p>
-        <p class="stack">Model Grade 77.38 | Card Grade <span class="editable" contenteditable="false" data-edit-key="grade.card">6.6</span> (Roster Competition)</p>
+        <p class="stack">LB | TCU | Class SR | Rank 197</p>
+        <p class="stack">Model Grade 79.36 | Card Grade <span class="editable" contenteditable="false" data-edit-key="grade.card">6.9</span> (Depth + Special Teams)</p>
       </div>
     </div>
     <div class="fit-box">
@@ -181,6 +199,7 @@ h1 {
   </header>
 
   <section class="sheet">
+    <div class="table-wrap">
     <table class="info-table">
       <tr class="section"><th colspan="7">Player Information</th></tr>
       <tr>
@@ -225,7 +244,7 @@ h1 {
         <td class="label">Composite Signals:</td>
         <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="athletic.composites">RAS Pending (Starter&gt;=5.19, Impact&gt;=6.91) | PFF Grade Pending</span></td>
       </tr>
-      <tr><td class='label'>Personal/Behavior:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.1.score">7.3</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.1.notes">Volatility indicator: No. Verify interviews, accountability, and role acceptance. Model final grade: 77.38 (Round 4-5).</span></td></tr><tr><td class='label'>Athletic Ability:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.2.score">6.1</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.2.notes">Athletic score 68.1; RAS Pending.</span></td></tr><tr><td class='label'>Strength &amp; Explosion:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.3.score">7.0</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.3.notes">Size score 89.9. Track contact power and force transfer on tape.</span></td></tr><tr><td class='label'>Competes:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.4.score">6.0</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.4.notes">Trait score 74.6; film coverage 0.0; competitive strain projects as translatable.</span></td></tr><tr><td class='label'>Production:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.5.score">5.9</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.5.notes">Production 73.5; Breakout age N/A; Dominator N/A; profile tier N/A.</span></td></tr><tr><td class='label'>Mental/Learning:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.6.score">5.9</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.6.notes">Context score 72.8. Processing and role communication need game-by-game verification.</span></td></tr><tr><td class='label'>Injury History:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.7.score">5.1</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.7.notes">Model risk flag: Manageable. Integrate medical stack once combine/club data is available.</span></td></tr>
+      <tr><td class='label'>Personal/Behavior:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.1.score">7.3</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.1.notes">Volatility indicator: No. Verify interviews, accountability, and role acceptance. Model final grade: 79.36 (Round 4-5).</span></td></tr><tr><td class='label'>Athletic Ability:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.2.score">6.1</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.2.notes">Athletic score 68.1; RAS Pending.</span></td></tr><tr><td class='label'>Strength &amp; Explosion:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.3.score">7.0</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.3.notes">Size score 89.9. Track contact power and force transfer on tape.</span></td></tr><tr><td class='label'>Competes:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.4.score">6.0</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.4.notes">Trait score 74.6; film coverage 0.0; competitive strain projects as translatable.</span></td></tr><tr><td class='label'>Production:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.5.score">5.9</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.5.notes">Production 73.5; Breakout age N/A; Dominator N/A; profile tier N/A.</span></td></tr><tr><td class='label'>Mental/Learning:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.6.score">5.9</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.6.notes">Context score 72.8. Processing and role communication need game-by-game verification.</span></td></tr><tr><td class='label'>Injury History:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.7.score">5.1</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.7.notes">Model risk flag: Manageable. Integrate medical stack once combine/club data is available.</span></td></tr>
       <tr class="section"><th colspan="7">Risk + Verification</th></tr>
       <tr>
         <td class="label">Medical/Character:</td>
@@ -242,13 +261,21 @@ h1 {
       <tr class="section"><th colspan="7">Player Summary</th></tr>
       <tr>
         <td colspan="7" class="summary-cell">
-          <h4>Report:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.1">Shedrick Shropshire (LB, TCU) holds a model grade of 77.38 with a Round 4-5 projection. Current board slot: 246. developmental contributor profile; processes quickly and closes efficiently. Seed rank 246 indicates current market confidence with developmental upside still available.</div><h4>How He Wins:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.2">Role fit: Run-and-hit communicator. Preferred usage in match_zone_blitz. Traits: leverage, processing, and role translation remain primary wins.</div><h4>Primary Concerns:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.3">Development checkpoints: consistency, role expansion pace, and matchup stress handling.</div><h4>2025 Production Snapshot:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.4">Production snapshot pending structured statline import.</div><h4>Board Movement:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.5">Kiper board movement unavailable for this player.</div><h4>Role / Scheme Projection:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.6">Best early team fit: LAR. Scheme path: match_zone_blitz. Expected early deployment: Run-and-hit communicator.</div><h4>Value Range:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.7">Floor/Ceiling framework: floor 74.38, ceiling 78.74. Current card band: Roster Competition.</div>
+          <h4>Report:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.1">Shedrick Shropshire (LB, TCU) carries a 79.36 model grade with a current Round 4-5 projection. Current board slot: 246. Primary NFL pathway: Run-and-hit communicator in match zone blitz. developmental contributor profile; processes quickly and closes efficiently. Seed rank 246 indicates current market confidence with developmental upside still available. How to read this card: &#x27;How He Wins&#x27; describes repeatable film traits; &#x27;Primary Concerns&#x27; lists failure points that can delay NFL translation.</div><h4>How He Wins:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.2">- Usage fit: Run-and-hit communicator within match zone blitz.
+- Film translation comes from read/trigger speed: sort run-pass keys early, fit cleanly, and carry routes with controlled angles.
+- Model + film note: developmental contributor profile; processes quickly and closes efficiently. Seed rank 246 indicates current market confidence with developmental upside still available.
+- Stat context: Production snapshot pending structured statline import..</div><h4>Primary Concerns:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.3">- Linebacker projection is sensitive to coverage spacing discipline and mismatch handling in space.
+- Role stress test: value is strongest in run-and-hit communicator; projection gets thinner if usage expands too far outside that lane early.
+- No stable PFF grade loaded yet; track week-to-week consistency until the performance baseline is complete.
+- Coverage spacing discipline versus route combinations must be clean to avoid explosive seams.
+- Processing speed has to stay stable when offenses stress eye candy and tempo.</div><h4>2025 Production Snapshot:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.4">Production snapshot pending structured statline import.</div><h4>Board Movement:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.5">Consensus movement context is limited; monitor updates as additional boards publish.</div><h4>Role / Scheme Projection:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.6">NFL projection: Run-and-hit communicator. Ideal early deployment comes with LAR based on current roster/scheme assumptions. Best scheme fit: Match Zone Blitz. Historical combine comp: Matt Milano-style.</div><h4>Value Range:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.7">Floor/Ceiling framework: floor 76.36 (Round 5-6), ceiling 80.72 (Round 3-4). Floor comp: Matt Milano-style. Ceiling comp: Matt Milano-style. Current card band: Depth + Special Teams.</div>
         </td>
       </tr>
     </table>
+    </div>
   </section>
 
-  <script type="application/json" class="model-snapshot">{&quot;player_uid&quot;: &quot;246-shedrick-shropshire&quot;, &quot;player_name&quot;: &quot;Shedrick Shropshire&quot;, &quot;position&quot;: &quot;LB&quot;, &quot;school&quot;: &quot;TCU&quot;, &quot;consensus_rank&quot;: &quot;145&quot;, &quot;final_grade&quot;: &quot;77.38&quot;, &quot;round_value&quot;: &quot;Round 4-5&quot;, &quot;ras_estimate&quot;: &quot;&quot;, &quot;pp_skill_signal&quot;: &quot;&quot;, &quot;kiper_rank&quot;: &quot;&quot;, &quot;kiper_rank_delta&quot;: &quot;&quot;, &quot;tdn_rank&quot;: &quot;&quot;, &quot;ringer_rank&quot;: &quot;&quot;, &quot;br_rank&quot;: &quot;&quot;, &quot;atoz_rank&quot;: &quot;&quot;, &quot;si_rank&quot;: &quot;&quot;, &quot;source_confidence&quot;: &quot;Medium confidence - model and available film align; pending combine + interview stack.&quot;}</script>
+  <script type="application/json" class="model-snapshot">{&quot;player_uid&quot;: &quot;246-shedrick-shropshire&quot;, &quot;player_name&quot;: &quot;Shedrick Shropshire&quot;, &quot;position&quot;: &quot;LB&quot;, &quot;school&quot;: &quot;TCU&quot;, &quot;consensus_rank&quot;: &quot;197&quot;, &quot;final_grade&quot;: &quot;79.36&quot;, &quot;round_value&quot;: &quot;Round 4-5&quot;, &quot;ras_estimate&quot;: &quot;&quot;, &quot;pp_skill_signal&quot;: &quot;&quot;, &quot;kiper_rank&quot;: &quot;&quot;, &quot;kiper_rank_delta&quot;: &quot;&quot;, &quot;tdn_rank&quot;: &quot;&quot;, &quot;ringer_rank&quot;: &quot;&quot;, &quot;br_rank&quot;: &quot;&quot;, &quot;atoz_rank&quot;: &quot;&quot;, &quot;si_rank&quot;: &quot;&quot;, &quot;source_confidence&quot;: &quot;Medium confidence - model and available film align; pending combine + interview stack.&quot;}</script>
 </article>
 
 </body>

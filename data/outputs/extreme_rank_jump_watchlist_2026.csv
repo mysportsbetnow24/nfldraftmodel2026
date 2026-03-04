@@ -1,3 +1,33 @@
 player_name,position,prev_rank,curr_rank,rank_rise,prev_confidence,curr_confidence,prev_evidence_missing,curr_evidence_missing,prev_cfb_cov,curr_cfb_cov,prev_testing_status,curr_testing_status,rank_driver_summary
-Antonio Williams,WR,191,111,80,76.55,76.55,1.0,1.0,3,3,reported,reported,score=76.42; prior_signal=57.58; trait:-6.88 | prior:+1.42 | risk:-0.91 | language:-0.41
-Max Klare,TE,210,132,78,66.44,66.44,1.18,1.18,3,3,pending,pending,score=76.22; prior_signal=64.96; trait:-7.35 | prior:+6.07 | production:-1.51 | risk:-0.41
+Ja'Kobi Lane,WR,147,56,91,46.99,46.99,2.0,2.0,3,3,reported,reported,score=84.67; prior_signal=72.69; prior:-3.62 | athletic:+3.06 | trait:-1.80 | guardrail:-1.46
+Jermod McCoy,CB,163,77,86,74.75,74.75,1.0,1.0,0,0,reported,reported,score=83.26; prior_signal=90.22; prior:+7.51 | athletic:-3.29 | production:-1.68 | trait:+1.40
+Jalon Kilgore,S,194,114,80,50.27,50.27,2.0,2.0,2,2,reported,reported,score=82.07; prior_signal=52.7; prior:-8.06 | guardrail:-2.45 | athletic:+2.21 | trait:-1.96
+Malik Muhammad,CB,195,119,76,60.2,60.2,2.0,2.0,2,2,reported,reported,score=80.17; prior_signal=59.75; prior:-3.92 | trait:-3.91 | athletic:+2.66 | guardrail:-2.01
+Aiden Fisher,LB,197,126,71,56.46,56.46,2.18,2.18,0,0,pending,pending,score=80.88; prior_signal=53.78; prior:-6.75 | guardrail:-3.23 | production:-0.83 | trait:-0.66
+Trey Moore,LB,198,127,71,57.44,57.44,2.0,2.0,0,0,reported,reported,score=80.88; prior_signal=51.33; prior:-6.52 | guardrail:-2.24 | athletic:-1.15 | production:-0.96
+Gracen Halton,DT,199,131,68,54.56,54.56,2.0,2.0,0,0,reported,reported,score=80.64; prior_signal=60.28; trait:-2.97 | prior:-1.86 | guardrail:-1.60 | athletic:-0.94
+David Oke,DT,202,134,68,55.31,55.31,2.35,2.35,0,0,unknown,unknown,score=80.64; prior_signal=50.01; prior:-8.24 | guardrail:-3.21 | trait:-0.79 | production:-0.74
+Albert Regis,DT,200,133,67,57.44,57.44,2.0,2.0,0,0,reported,reported,score=80.64; prior_signal=57.06; prior:-5.11 | guardrail:-3.10 | athletic:-1.15 | production:-0.55
+Genesis Smith,S,203,136,67,57.16,57.16,2.0,2.0,2,2,reported,reported,score=80.57; prior_signal=64.74; guardrail:-2.83 | trait:-2.80 | prior:-2.67 | athletic:+0.95
+Austin Barber,OT,204,137,67,63.07,63.07,2.0,2.0,0,0,reported,reported,score=81.27; prior_signal=56.38; prior:-10.06 | guardrail:-5.23 | athletic:+3.03 | trait:-1.88
+Michael Taaffe,S,205,138,67,56.83,56.83,2.0,2.0,2,2,reported,reported,score=80.57; prior_signal=56.58; prior:-5.38 | guardrail:-3.12 | athletic:-1.84 | production:+0.72
+Jalen Stroman,S,206,139,67,54.74,54.74,2.35,2.35,2,2,unknown,unknown,score=80.57; prior_signal=52.73; prior:-7.47 | guardrail:-3.48 | trait:-0.70 | risk:-0.67
+Nicholas Singleton,RB,208,141,67,55.08,55.08,2.18,2.18,1,1,pending,pending,score=80.4; prior_signal=64.3; prior:-4.88 | guardrail:-4.35 | risk:-0.88 | trait:+0.44
+Kaytron Allen,RB,209,142,67,55.08,55.08,2.18,2.18,1,1,pending,pending,score=80.4; prior_signal=57.62; prior:-7.65 | guardrail:-4.32 | production:+1.25 | risk:-0.88
+Isaiah World,OT,143,79,64,47.46,47.46,2.18,2.18,0,0,pending,pending,score=83.0; prior_signal=64.32; prior:-4.15 | production:-1.68 | guardrail:-1.57 | trait:+0.71
+Demond Claiborne,RB,212,148,64,53.0,53.0,2.0,2.0,1,1,reported,reported,score=80.38; prior_signal=61.78; trait:-2.33 | prior:-2.24 | guardrail:-1.80 | production:-1.31
+Keyshawn James-Newby,EDGE,437,373,64,55.31,55.31,2.35,2.35,0,0,unknown,unknown,score=74.4; prior_signal=17.92; prior:-18.51 | guardrail:-6.21 | trait:-1.92 | risk:-0.49
+Avieon Terrell,CB,141,78,63,79.63,79.63,1.0,1.0,2,2,reported,reported,score=83.21; prior_signal=89.26; prior:+7.17 | athletic:-3.12 | risk:-0.92 | language:-0.90
+Xavier Scott,CB,215,153,62,54.74,54.74,2.35,2.35,2,2,unknown,unknown,score=80.17; prior_signal=61.19; prior:-3.49 | guardrail:-3.06 | production:-1.49 | risk:-0.67
+Thaddeus Dixon,CB,216,154,62,56.83,56.83,2.0,2.0,2,2,reported,reported,score=80.17; prior_signal=54.9; prior:-6.26 | guardrail:-3.15 | production:-1.68 | athletic:+0.73
+Eli Raridon,TE,220,158,62,56.86,56.86,2.0,2.0,3,3,reported,reported,score=80.09; prior_signal=43.07; prior:-10.46 | athletic:+2.65 | trait:-2.44 | guardrail:-2.17
+Rueben Bain Jr.,EDGE,88,27,61,72.68,72.68,1.18,1.18,0,0,pending,pending,score=87.98; prior_signal=94.1; prior:+2.53 | trait:+1.77 | risk:-1.13 | language:-0.90
+Bud Clark,S,221,160,61,62.24,62.24,2.0,2.0,2,2,reported,reported,score=80.07; prior_signal=53.88; prior:-5.34 | trait:-2.90 | guardrail:-2.72 | risk:-0.64
+Sam Roush,TE,217,157,60,56.86,56.86,2.0,2.0,3,3,reported,reported,score=80.09; prior_signal=61.75; prior:-4.08 | guardrail:-3.36 | production:-1.68 | risk:-0.63
+Davison Igbinosun,CB,222,162,60,52.6,52.6,2.0,2.0,2,2,reported,reported,score=80.17; prior_signal=60.35; prior:-5.43 | guardrail:-4.27 | trait:-2.18 | athletic:+1.40
+Tacario Davis,CB,223,163,60,52.6,52.6,2.0,2.0,2,2,reported,reported,score=80.17; prior_signal=56.43; prior:-6.80 | guardrail:-4.04 | athletic:+3.15 | trait:-2.24
+Ted Hurst,WR,225,167,58,52.6,52.6,2.0,2.0,3,3,reported,reported,score=79.67; prior_signal=58.8; trait:-3.28 | prior:-2.95 | guardrail:-1.82 | risk:-0.64
+Harold Perkins Jr.,LB,127,71,56,47.46,47.46,2.18,2.18,0,0,pending,pending,score=83.52; prior_signal=56.5; prior:-7.04 | guardrail:-1.71 | production:-1.26 | trait:+0.59
+Conner Weigman,QB,420,364,56,27.68,27.68,3.35,3.35,2,2,unknown,unknown,score=75.04; prior_signal=62.34; guardrail:-4.99 | risk:-4.45 | athletic:-0.35 | prior:-0.21
+Bryce Foster,IOL,425,369,56,55.31,55.31,2.35,2.35,0,0,unknown,unknown,score=74.47; prior_signal=22.16; prior:-17.01 | guardrail:-5.71 | production:-1.20 | trait:-0.57
+Connor Tollison,IOL,426,370,56,55.31,55.31,2.35,2.35,0,0,unknown,unknown,score=74.47; prior_signal=25.73; prior:-14.86 | guardrail:-5.21 | production:-1.68 | trait:-0.82

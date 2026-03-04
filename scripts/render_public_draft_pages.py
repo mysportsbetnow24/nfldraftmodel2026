@@ -172,7 +172,8 @@ def _shell_styles() -> str:
       font-weight: 650;
     }
     .hint { font-size: 0.9rem; color: var(--muted); margin: 0.35rem 0; }
-    table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 0.88rem; }
+    .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 12px; }
+    table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 0.88rem; min-width: 860px; }
     th, td { border: 1px solid #d5dde8; padding: 0.35rem 0.42rem; text-align: left; vertical-align: top; word-break: break-word; }
     th { background: #edf3f9; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; color: #16344a; }
     #teamSummary { margin-top: 1rem; border: 1px solid var(--line); border-radius: 14px; padding: 0.8rem; background: #fafcfd; }
@@ -182,6 +183,8 @@ def _shell_styles() -> str:
       body { padding: 0.55rem; }
       th, td { font-size: 0.8rem; }
       .controls input, .controls select { min-width: 100%; }
+      .card { padding: 0.78rem; border-radius: 14px; }
+      h1 { font-size: 1.5rem; }
     }
     """
 
@@ -206,6 +209,7 @@ def _big_board_page(rows_html: str, total: int, built_at: str) -> str:
       <a class=\"btn\" href=\"index.html\">Back To Hub</a>
       <input id=\"boardSearch\" placeholder=\"Search player, school, or position...\" />
     </div>
+    <div class="table-wrap">
     <table>
       <thead>
         <tr>
@@ -214,6 +218,7 @@ def _big_board_page(rows_html: str, total: int, built_at: str) -> str:
       </thead>
       <tbody id=\"boardBody\">{rows_html}</tbody>
     </table>
+    </div>
   </main>
   <script>
     (function () {{
@@ -251,6 +256,7 @@ def _round1_page(rows_html: str, total: int, built_at: str) -> str:
     <p>Latest first-round projection from the Scouting Grade model. This is the current public snapshot and updates with each model cycle.</p>
     <p class=\"hint\">Picks: {total} | Last update: {built_at}</p>
     <div class=\"controls\"><a class=\"btn\" href=\"index.html\">Back To Hub</a></div>
+    <div class="table-wrap">
     <table>
       <thead>
         <tr>
@@ -259,6 +265,7 @@ def _round1_page(rows_html: str, total: int, built_at: str) -> str:
       </thead>
       <tbody>{rows_html}</tbody>
     </table>
+    </div>
   </main>
 </body>
 </html>
@@ -288,6 +295,7 @@ def _round7_page(rows_html: str, total: int, built_at: str) -> str:
       <span id=\"rowCount\" class=\"hint\"></span>
     </div>
 
+    <div class="table-wrap">
     <table>
       <thead>
         <tr>
@@ -296,6 +304,7 @@ def _round7_page(rows_html: str, total: int, built_at: str) -> str:
       </thead>
       <tbody id=\"round7Body\">{rows_html}</tbody>
     </table>
+    </div>
 
     <section id=\"teamSummary\">
       <h2>Team Draft Class View</h2>

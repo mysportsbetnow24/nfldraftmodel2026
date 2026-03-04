@@ -65,11 +65,18 @@ h1 {
 .fit-box p { margin: 0.35rem 0; }
 
 .sheet { padding: 0.95rem 1rem 1rem; }
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
 .info-table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   font-size: 0.93rem;
+  min-width: 980px;
 }
 .info-table td, .info-table th { border: 1px solid #d3dbe6; padding: 0.34rem 0.45rem; vertical-align: top; }
 .info-table .section th {
@@ -159,7 +166,18 @@ h1 {
 @media (max-width: 860px) {
   body { padding: 0.6rem; }
   .masthead { grid-template-columns: 1fr; }
+  .identity { align-items: flex-start; }
+  .headshot { width: 86px; height: 86px; }
+  h1 { font-size: 1.55rem; }
+  .stack { font-size: 0.9rem; }
+  .fit-box { padding: 0.65rem 0.7rem; }
+  .sheet { padding: 0.75rem; }
   .info-table .label { width: 124px; }
+  .info-table { font-size: 0.84rem; min-width: 860px; }
+  .controls { flex-wrap: wrap; }
+  .btn { font-size: 0.8rem; padding: 0.42rem 0.62rem; }
+  .index-card { padding: 0.82rem; border-radius: 14px; }
+  .index-card h1 { font-size: 1.52rem; }
 }</style>
 </head>
 <body>
@@ -169,8 +187,8 @@ h1 {
       <div class="headshot placeholder">Headshot Placeholder</div>
       <div>
         <h1>Zachariah Branch</h1>
-        <p class="stack">WR | Georgia | Class JR | Rank 21</p>
-        <p class="stack">Model Grade 80.32 | Card Grade <span class="editable" contenteditable="false" data-edit-key="grade.card">7.1</span> (Depth + Special Teams)</p>
+        <p class="stack">WR | Georgia | Class JR | Rank 81</p>
+        <p class="stack">Model Grade 82.01 | Card Grade <span class="editable" contenteditable="false" data-edit-key="grade.card">7.3</span> (NFL Contributor)</p>
       </div>
     </div>
     <div class="fit-box">
@@ -181,6 +199,7 @@ h1 {
   </header>
 
   <section class="sheet">
+    <div class="table-wrap">
     <table class="info-table">
       <tr class="section"><th colspan="7">Player Information</th></tr>
       <tr>
@@ -225,7 +244,7 @@ h1 {
         <td class="label">Composite Signals:</td>
         <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="athletic.composites">RAS 8.95 (Starter&gt;=5.3, Impact&gt;=6.85) | PFF Grade 82.0</span></td>
       </tr>
-      <tr><td class='label'>Personal/Behavior:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.1.score">7.3</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.1.notes">Volatility indicator: No. Verify interviews, accountability, and role acceptance. Model final grade: 80.32 (Round 2-3).</span></td></tr><tr><td class='label'>Athletic Ability:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.2.score">5.6</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.2.notes">Athletic score 65.4; RAS 8.95.</span></td></tr><tr><td class='label'>Strength &amp; Explosion:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.3.score">6.5</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.3.notes">Size score 86.0. Track contact power and force transfer on tape.</span></td></tr><tr><td class='label'>Competes:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.4.score">5.8</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.4.notes">Trait score 73.2; film coverage 0.0; competitive strain projects as translatable.</span></td></tr><tr><td class='label'>Production:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.5.score">5.5</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.5.notes">Production 71.2; Breakout age N/A; Dominator N/A; profile tier N/A.</span></td></tr><tr><td class='label'>Mental/Learning:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.6.score">5.7</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.6.notes">Context score 71.4. Processing and role communication need game-by-game verification.</span></td></tr><tr><td class='label'>Injury History:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.7.score">5.1</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.7.notes">Model risk flag: Manageable. Integrate medical stack once combine/club data is available.</span></td></tr>
+      <tr><td class='label'>Personal/Behavior:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.1.score">7.3</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.1.notes">Volatility indicator: No. Verify interviews, accountability, and role acceptance. Model final grade: 82.01 (Round 3-4).</span></td></tr><tr><td class='label'>Athletic Ability:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.2.score">5.6</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.2.notes">Athletic score 65.4; RAS 8.95.</span></td></tr><tr><td class='label'>Strength &amp; Explosion:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.3.score">6.5</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.3.notes">Size score 86.0. Track contact power and force transfer on tape.</span></td></tr><tr><td class='label'>Competes:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.4.score">5.8</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.4.notes">Trait score 73.2; film coverage 0.0; competitive strain projects as translatable.</span></td></tr><tr><td class='label'>Production:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.5.score">5.5</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.5.notes">Production 71.2; Breakout age N/A; Dominator N/A; profile tier N/A.</span></td></tr><tr><td class='label'>Mental/Learning:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.6.score">5.7</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.6.notes">Context score 71.4. Processing and role communication need game-by-game verification.</span></td></tr><tr><td class='label'>Injury History:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.7.score">5.1</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.7.notes">Model risk flag: Manageable. Integrate medical stack once combine/club data is available.</span></td></tr>
       <tr class="section"><th colspan="7">Risk + Verification</th></tr>
       <tr>
         <td class="label">Medical/Character:</td>
@@ -242,13 +261,22 @@ h1 {
       <tr class="section"><th colspan="7">Player Summary</th></tr>
       <tr>
         <td colspan="7" class="summary-cell">
-          <h4>Report:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.1">Zachariah Branch (WR, Georgia) holds a model grade of 80.32 with a Round 3-4 projection. Current board slot: 266. developmental contributor profile; creates separation and finishes at the catch point. Seed rank 266 indicates current market confidence with developmental upside still available.</div><h4>How He Wins:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.2">Role fit: Alignment-flexible target earner. Preferred usage in spread_vertical. Traits: leverage, processing, and role translation remain primary wins.</div><h4>Primary Concerns:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.3">Development checkpoints: consistency, role expansion pace, and matchup stress handling.</div><h4>2025 Production Snapshot:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.4">PFF grade 82.0; CFB prod signal 55.88; YPRR 1.75; targets/route 0.3099; target share 0.2822; opp-def index 0.4954; CFB quality proxy (0.53)</div><h4>Board Movement:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.5">Kiper board movement unavailable for this player.</div><h4>Role / Scheme Projection:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.6">Best early team fit: CLE. Scheme path: spread_vertical. Expected early deployment: Alignment-flexible target earner. Historical combine comp: Zachariah Branch (2026), similarity 98.51.</div><h4>Value Range:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.7">Floor/Ceiling framework: floor 78.70, ceiling 82.92. Current card band: Depth + Special Teams.</div>
+          <h4>Report:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.1">Zachariah Branch (WR, Georgia) carries a 82.01 model grade with a current Round 3-4 projection. Current board slot: 266. Primary NFL pathway: Alignment-flexible target earner in spread vertical. early contributor profile; creates separation and finishes at the catch point. Seed rank 266 indicates current market confidence with developmental upside still available. How to read this card: &#x27;How He Wins&#x27; describes repeatable film traits; &#x27;Primary Concerns&#x27; lists failure points that can delay NFL translation.</div><h4>How He Wins:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.2">- Usage fit: Alignment-flexible target earner within spread vertical.
+- Film translation comes from route craft: release with a plan, manipulate leverage in stems, and separate at breakpoints with late hands.
+- Model + film note: early contributor profile; creates separation and finishes at the catch point. Seed rank 266 indicates current market confidence with developmental upside still available.
+- Last-season performance context: PFF grade 82.0.
+- Stat context: PFF grade 82.0; CFB prod signal 55.88; YPRR 1.75; targets/route 0.3099; target share 0.2822; opp-def index 0.4954; CFB quality proxy (0.53).</div><h4>Primary Concerns:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.3">- Receiver projection is sensitive to press answers and route precision versus NFL corner technique.
+- Role stress test: value is strongest in alignment-flexible target earner; projection gets thinner if usage expands too far outside that lane early.
+- Production evidence is proxy-heavy (reliability 0.53), so film cross-check matters more.
+- Release plan versus press corners has to hold up when defenders force timing disruption at the line.
+- Route pacing and stem detail must stay efficient versus complex leverage rotations and trap coverages.</div><h4>2025 Production Snapshot:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.4">PFF grade 82.0; CFB prod signal 55.88; YPRR 1.75; targets/route 0.3099; target share 0.2822; opp-def index 0.4954; CFB quality proxy (0.53)</div><h4>Board Movement:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.5">Consensus board context: mean rank 67.0. Board spread (std dev) 17.0; lower spread indicates tighter agreement.</div><h4>Role / Scheme Projection:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.6">NFL projection: Alignment-flexible target earner. Ideal early deployment comes with CLE based on current roster/scheme assumptions. Best scheme fit: Spread Vertical. Historical combine comp: Sinorice Moss (2006).</div><h4>Value Range:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.7">Floor/Ceiling framework: floor 80.39 (Round 4-5), ceiling 84.61 (Round 2-3). Floor comp: Anthony Gould (2024). Ceiling comp: Sinorice Moss (2006). Current card band: NFL Contributor.</div>
         </td>
       </tr>
     </table>
+    </div>
   </section>
 
-  <script type="application/json" class="model-snapshot">{&quot;player_uid&quot;: &quot;266-zachariah-branch&quot;, &quot;player_name&quot;: &quot;Zachariah Branch&quot;, &quot;position&quot;: &quot;WR&quot;, &quot;school&quot;: &quot;Georgia&quot;, &quot;consensus_rank&quot;: &quot;21&quot;, &quot;final_grade&quot;: &quot;80.32&quot;, &quot;round_value&quot;: &quot;Round 2-3&quot;, &quot;ras_estimate&quot;: &quot;8.95&quot;, &quot;pp_skill_signal&quot;: &quot;&quot;, &quot;kiper_rank&quot;: &quot;&quot;, &quot;kiper_rank_delta&quot;: &quot;&quot;, &quot;tdn_rank&quot;: &quot;&quot;, &quot;ringer_rank&quot;: &quot;&quot;, &quot;br_rank&quot;: &quot;&quot;, &quot;atoz_rank&quot;: &quot;&quot;, &quot;si_rank&quot;: &quot;&quot;, &quot;source_confidence&quot;: &quot;Medium confidence - model and available film align; pending combine + interview stack.&quot;}</script>
+  <script type="application/json" class="model-snapshot">{&quot;player_uid&quot;: &quot;266-zachariah-branch&quot;, &quot;player_name&quot;: &quot;Zachariah Branch&quot;, &quot;position&quot;: &quot;WR&quot;, &quot;school&quot;: &quot;Georgia&quot;, &quot;consensus_rank&quot;: &quot;81&quot;, &quot;final_grade&quot;: &quot;82.01&quot;, &quot;round_value&quot;: &quot;Round 3-4&quot;, &quot;ras_estimate&quot;: &quot;8.95&quot;, &quot;pp_skill_signal&quot;: &quot;&quot;, &quot;kiper_rank&quot;: &quot;&quot;, &quot;kiper_rank_delta&quot;: &quot;&quot;, &quot;tdn_rank&quot;: &quot;&quot;, &quot;ringer_rank&quot;: &quot;&quot;, &quot;br_rank&quot;: &quot;&quot;, &quot;atoz_rank&quot;: &quot;&quot;, &quot;si_rank&quot;: &quot;&quot;, &quot;source_confidence&quot;: &quot;Medium confidence - model and available film align; pending combine + interview stack.&quot;}</script>
 </article>
 
 </body>

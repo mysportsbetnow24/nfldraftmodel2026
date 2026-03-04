@@ -65,11 +65,18 @@ h1 {
 .fit-box p { margin: 0.35rem 0; }
 
 .sheet { padding: 0.95rem 1rem 1rem; }
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
 .info-table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   font-size: 0.93rem;
+  min-width: 980px;
 }
 .info-table td, .info-table th { border: 1px solid #d3dbe6; padding: 0.34rem 0.45rem; vertical-align: top; }
 .info-table .section th {
@@ -159,7 +166,18 @@ h1 {
 @media (max-width: 860px) {
   body { padding: 0.6rem; }
   .masthead { grid-template-columns: 1fr; }
+  .identity { align-items: flex-start; }
+  .headshot { width: 86px; height: 86px; }
+  h1 { font-size: 1.55rem; }
+  .stack { font-size: 0.9rem; }
+  .fit-box { padding: 0.65rem 0.7rem; }
+  .sheet { padding: 0.75rem; }
   .info-table .label { width: 124px; }
+  .info-table { font-size: 0.84rem; min-width: 860px; }
+  .controls { flex-wrap: wrap; }
+  .btn { font-size: 0.8rem; padding: 0.42rem 0.62rem; }
+  .index-card { padding: 0.82rem; border-radius: 14px; }
+  .index-card h1 { font-size: 1.52rem; }
 }</style>
 </head>
 <body>
@@ -169,7 +187,7 @@ h1 {
       <div class="headshot placeholder">Headshot Placeholder</div>
       <div>
         <h1>Cade Klubnik</h1>
-        <p class="stack">QB | Clemson | Class SR | Rank 137</p>
+        <p class="stack">QB | Clemson | Class SR | Rank 261</p>
         <p class="stack">Model Grade 77.54 | Card Grade <span class="editable" contenteditable="false" data-edit-key="grade.card">6.6</span> (Roster Competition)</p>
       </div>
     </div>
@@ -181,6 +199,7 @@ h1 {
   </header>
 
   <section class="sheet">
+    <div class="table-wrap">
     <table class="info-table">
       <tr class="section"><th colspan="7">Player Information</th></tr>
       <tr>
@@ -242,13 +261,22 @@ h1 {
       <tr class="section"><th colspan="7">Player Summary</th></tr>
       <tr>
         <td colspan="7" class="summary-cell">
-          <h4>Report:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.1">Cade Klubnik (QB, Clemson) holds a model grade of 77.54 with a Round 4-5 projection. Current board slot: 61. developmental contributor profile; wins with timing and structure while retaining off-script creation. Seed rank 61 indicates current market confidence with developmental upside still available.</div><h4>How He Wins:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.2">Role fit: Franchise or high-end distributor. Preferred usage in spread_timing. Traits: leverage, processing, and role translation remain primary wins.</div><h4>Primary Concerns:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.3">Development checkpoints: consistency, role expansion pace, and matchup stress handling.</div><h4>2025 Production Snapshot:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.4">PFF grade 76.5; ESPN QBR 58.89; ESPN EPA/play 0.234; CFB prod signal 53.41; QB EPA/play 0.234; QB pressure signal 75.6; opp-def index 0.5046; CFB quality proxy (0.42)</div><h4>Board Movement:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.5">Kiper board movement unavailable for this player.</div><h4>Role / Scheme Projection:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.6">Best early team fit: LV. Scheme path: spread_timing. Expected early deployment: Franchise or high-end distributor. Historical combine comp: Cade Klubnik (2026), similarity 98.81.</div><h4>Value Range:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.7">Floor/Ceiling framework: floor 74.75, ceiling 80.09. Current card band: Roster Competition.</div>
+          <h4>Report:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.1">Cade Klubnik (QB, Clemson) carries a 77.54 model grade with a current Round 4-5 projection. Current board slot: 61. Primary NFL pathway: Franchise or high-end distributor in spread timing. developmental contributor profile; wins with timing and structure while retaining off-script creation. Seed rank 61 indicates current market confidence with developmental upside still available. How to read this card: &#x27;How He Wins&#x27; describes repeatable film traits; &#x27;Primary Concerns&#x27; lists failure points that can delay NFL translation.</div><h4>How He Wins:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.2">- Usage fit: Franchise or high-end distributor within spread timing.
+- Film translation comes from timing/processing: ID leverage pre-snap, hold structure from the pocket, and create only when structure breaks.
+- Model + film note: developmental contributor profile; wins with timing and structure while retaining off-script creation. Seed rank 61 indicates current market confidence with developmental upside.
+- Last-season performance context: PFF grade 76.5.
+- Stat context: PFF grade 76.5; ESPN QBR 58.89; ESPN EPA/play 0.234; CFB prod signal 53.41; QB EPA/play 0.234; QB pressure signal 75.6; opp-def index 0.5046; CFB quality proxy (0.42).</div><h4>Primary Concerns:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.3">- Quarterback projection is most sensitive to pressure processing and turnover control when first-read windows close.
+- Role stress test: value is strongest in franchise or high-end distributor; projection gets thinner if usage expands too far outside that lane early.
+- Production evidence is proxy-heavy (reliability 0.42), so film cross-check matters more.
+- Pocket disruption response must stay on schedule; drifting off platform creates NFL turnover windows.
+- Third-down decision speed versus disguised coverage is the key separator between starter and backup outcomes.</div><h4>2025 Production Snapshot:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.4">PFF grade 76.5; ESPN QBR 58.89; ESPN EPA/play 0.234; CFB prod signal 53.41; QB EPA/play 0.234; QB pressure signal 75.6; opp-def index 0.5046; CFB quality proxy (0.42)</div><h4>Board Movement:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.5">Consensus board context: mean rank 42.33. Board spread (std dev) 54.2; lower spread indicates tighter agreement.</div><h4>Role / Scheme Projection:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.6">NFL projection: Franchise or high-end distributor. Ideal early deployment comes with LV based on current roster/scheme assumptions. Best scheme fit: Spread Timing. Historical combine comp: Hutson Mason (2015).</div><h4>Value Range:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.7">Floor/Ceiling framework: floor 75.58 (Round 5-6), ceiling 82.15 (Round 3-4). Floor comp: Jesse Ertz (2018). Ceiling comp: Hutson Mason (2015). Current card band: Roster Competition.</div>
         </td>
       </tr>
     </table>
+    </div>
   </section>
 
-  <script type="application/json" class="model-snapshot">{&quot;player_uid&quot;: &quot;61-cade-klubnik&quot;, &quot;player_name&quot;: &quot;Cade Klubnik&quot;, &quot;position&quot;: &quot;QB&quot;, &quot;school&quot;: &quot;Clemson&quot;, &quot;consensus_rank&quot;: &quot;137&quot;, &quot;final_grade&quot;: &quot;77.54&quot;, &quot;round_value&quot;: &quot;Round 4-5&quot;, &quot;ras_estimate&quot;: &quot;&quot;, &quot;pp_skill_signal&quot;: &quot;&quot;, &quot;kiper_rank&quot;: &quot;&quot;, &quot;kiper_rank_delta&quot;: &quot;&quot;, &quot;tdn_rank&quot;: &quot;&quot;, &quot;ringer_rank&quot;: &quot;&quot;, &quot;br_rank&quot;: &quot;&quot;, &quot;atoz_rank&quot;: &quot;&quot;, &quot;si_rank&quot;: &quot;&quot;, &quot;source_confidence&quot;: &quot;Medium confidence - model and available film align; pending combine + interview stack.&quot;}</script>
+  <script type="application/json" class="model-snapshot">{&quot;player_uid&quot;: &quot;61-cade-klubnik&quot;, &quot;player_name&quot;: &quot;Cade Klubnik&quot;, &quot;position&quot;: &quot;QB&quot;, &quot;school&quot;: &quot;Clemson&quot;, &quot;consensus_rank&quot;: &quot;261&quot;, &quot;final_grade&quot;: &quot;77.54&quot;, &quot;round_value&quot;: &quot;Round 4-5&quot;, &quot;ras_estimate&quot;: &quot;&quot;, &quot;pp_skill_signal&quot;: &quot;&quot;, &quot;kiper_rank&quot;: &quot;&quot;, &quot;kiper_rank_delta&quot;: &quot;&quot;, &quot;tdn_rank&quot;: &quot;&quot;, &quot;ringer_rank&quot;: &quot;&quot;, &quot;br_rank&quot;: &quot;&quot;, &quot;atoz_rank&quot;: &quot;&quot;, &quot;si_rank&quot;: &quot;&quot;, &quot;source_confidence&quot;: &quot;Medium confidence - model and available film align; pending combine + interview stack.&quot;}</script>
 </article>
 
 </body>

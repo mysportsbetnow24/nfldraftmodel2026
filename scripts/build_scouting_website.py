@@ -197,6 +197,13 @@ def _build_home_html(top_rows: list[dict]) -> str:
       border-collapse: collapse;
       table-layout: fixed;
       font-size: 0.88rem;
+      min-width: 760px;
+    }}
+    .table-wrap {{
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 12px;
     }}
     th, td {{
       border: 1px solid #d5dde8;
@@ -215,6 +222,8 @@ def _build_home_html(top_rows: list[dict]) -> str:
     @media (max-width: 780px) {{
       body {{ padding: 0.55rem; }}
       .hero h1 {{ font-size: 1.55rem; }}
+      .links a {{ font-size: 0.86rem; }}
+      .panel {{ padding: 0.62rem; }}
       th, td {{ font-size: 0.8rem; }}
     }}
   </style>
@@ -228,8 +237,8 @@ def _build_home_html(top_rows: list[dict]) -> str:
         <a class="primary" href="reports_index.html">Open Scouting Cards</a>
         <a href="2026-nfl-draft-big-board.html">Big Board Page</a>
         <a href="data_rank_vs_consensus.html">Rank vs Consensus Page</a>
-        <a href="2026-nfl-mock-draft-round-1.html">Round 1 Mock Page</a>
-        <a href="2026-nfl-7-round-mock-draft.html">7-Round Mock Page</a>
+        <a href="2026-nfl-mock-draft-round-1.html">1st Round Mock</a>
+        <a href="2026-nfl-7-round-mock-draft.html">7-Round Mock</a>
       </div>
     </section>
 
@@ -237,6 +246,7 @@ def _build_home_html(top_rows: list[dict]) -> str:
       <article class="panel">
         <h2>Top Board Snapshot</h2>
         <input id="search" placeholder="Search player, school, or position..." />
+        <div class="table-wrap">
         <table>
           <thead>
             <tr>
@@ -253,6 +263,7 @@ def _build_home_html(top_rows: list[dict]) -> str:
             {''.join(lines)}
           </tbody>
         </table>
+        </div>
       </article>
     </section>
   </main>

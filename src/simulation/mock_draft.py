@@ -51,12 +51,12 @@ POSITION_CAP_GAIN = 0.016
 BUCKET_CAP = 0.012
 CURRENT_DRAFT_YEAR = 2026
 RECENT_INVESTMENT_LOOKBACK_YEARS = 3
-OT_VALUE_PREMIUM_EARLY = 0.030
-OT_VALUE_PREMIUM_MID = 0.024
-OT_VALUE_PREMIUM_LATE = 0.018
-IOL_VALUE_PREMIUM_EARLY = 0.020
-IOL_VALUE_PREMIUM_MID = 0.015
-IOL_VALUE_PREMIUM_LATE = 0.011
+OT_VALUE_PREMIUM_EARLY = 0.040
+OT_VALUE_PREMIUM_MID = 0.031
+OT_VALUE_PREMIUM_LATE = 0.022
+IOL_VALUE_PREMIUM_EARLY = 0.027
+IOL_VALUE_PREMIUM_MID = 0.020
+IOL_VALUE_PREMIUM_LATE = 0.014
 QB_VALUE_PREMIUM_EARLY = 0.050
 QB_VALUE_PREMIUM_MID = 0.033
 QB_VALUE_PREMIUM_LATE = 0.014
@@ -386,6 +386,15 @@ def _intra_draft_position_modifier(
             "same_pos_count_before": count,
             "first_round_taken": first_round if first_round < 99 else "",
             "reason": "qb_duplicate_block",
+        }
+
+    # Prevent unrealistic early duplicate classes at lower-value positions.
+    if pos in {"RB", "TE"} and count >= 1 and round_no <= 3:
+        return {
+            "modifier": -0.48,
+            "same_pos_count_before": count,
+            "first_round_taken": first_round if first_round < 99 else "",
+            "reason": f"{pos.lower()}_early_duplicate_block",
         }
 
     base = 0.09 if count == 1 else (0.17 if count == 2 else 0.24)
