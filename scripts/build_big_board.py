@@ -115,6 +115,8 @@ RANK_PRIOR_OVERHANG_SCALE = float(os.getenv("RANK_PRIOR_OVERHANG_SCALE", "5.0"))
 RANK_CONSENSUS_REALIGN_MAX = float(os.getenv("RANK_CONSENSUS_REALIGN_MAX", "1.55"))
 RANK_CONSENSUS_REALIGN_DEADBAND = float(os.getenv("RANK_CONSENSUS_REALIGN_DEADBAND", "20.0"))
 RANK_CONSENSUS_REALIGN_SCALE = float(os.getenv("RANK_CONSENSUS_REALIGN_SCALE", "120.0"))
+RANK_DRAG_CAP_BLUECHIP = float(os.getenv("RANK_DRAG_CAP_BLUECHIP", "0.30"))
+RANK_DRAG_CAP_HIGHGRADE = float(os.getenv("RANK_DRAG_CAP_HIGHGRADE", "0.58"))
 EXTREME_RANK_DELTA_MIN_RISE = int(os.getenv("EXTREME_RANK_DELTA_MIN_RISE", "55"))
 EXTREME_RANK_DELTA_MAX_ALLOWED = int(os.getenv("EXTREME_RANK_DELTA_MAX_ALLOWED", "6"))
 EXTREME_RANK_DELTA_FAIL_ON_TRIGGER = str(
@@ -4218,6 +4220,21 @@ def main() -> None:
             (prior_overhang / max(1.0, float(RANK_PRIOR_OVERHANG_SCALE)))
             * float(RANK_PRIOR_OVERHANG_DRAG_WEIGHT)
         )
+        # Fine-tune: cap rank drag for true blue-chip / high-grade profiles so
+        # noisy priors do not over-demote otherwise strong evaluations.
+        total_drag = uncertainty_drag + prior_drag
+        drag_cap = None
+        consensus_score_for_rank = float(report.get("consensus_score", 0.0) or 0.0)
+        if consensus_score_for_rank >= 88.0 or (external_rank is not None and external_rank <= 16):
+            drag_cap = float(RANK_DRAG_CAP_BLUECHIP)
+        elif consensus_score_for_rank >= 85.0 or (external_rank is not None and external_rank <= 40):
+            drag_cap = float(RANK_DRAG_CAP_HIGHGRADE)
+        if drag_cap is not None and total_drag > drag_cap and total_drag > 0:
+            scale = drag_cap / total_drag
+            uncertainty_drag *= scale
+            prior_drag *= scale
+            total_drag = drag_cap
+
         rank_sort_consensus_realign_adjustment = _rank_sort_consensus_realign_adjustment(
             position=pos,
             rank_seed=int(row["rank_seed"]),
@@ -4235,6 +4252,8 @@ def main() -> None:
         report["rank_sort_uncertainty_drag"] = round(uncertainty_drag, 4)
         report["rank_sort_prior_overhang"] = round(prior_overhang, 4)
         report["rank_sort_prior_drag"] = round(prior_drag, 4)
+        report["rank_sort_total_drag"] = round(total_drag, 4)
+        report["rank_sort_drag_cap"] = round(drag_cap, 4) if drag_cap is not None else ""
         report["rank_sort_consensus_realign_adjustment"] = round(
             rank_sort_consensus_realign_adjustment, 4
         )

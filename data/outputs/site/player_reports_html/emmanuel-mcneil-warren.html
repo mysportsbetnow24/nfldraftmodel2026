@@ -65,11 +65,18 @@ h1 {
 .fit-box p { margin: 0.35rem 0; }
 
 .sheet { padding: 0.95rem 1rem 1rem; }
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
 .info-table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   font-size: 0.93rem;
+  min-width: 980px;
 }
 .info-table td, .info-table th { border: 1px solid #d3dbe6; padding: 0.34rem 0.45rem; vertical-align: top; }
 .info-table .section th {
@@ -159,7 +166,18 @@ h1 {
 @media (max-width: 860px) {
   body { padding: 0.6rem; }
   .masthead { grid-template-columns: 1fr; }
+  .identity { align-items: flex-start; }
+  .headshot { width: 86px; height: 86px; }
+  h1 { font-size: 1.55rem; }
+  .stack { font-size: 0.9rem; }
+  .fit-box { padding: 0.65rem 0.7rem; }
+  .sheet { padding: 0.75rem; }
   .info-table .label { width: 124px; }
+  .info-table { font-size: 0.84rem; min-width: 860px; }
+  .controls { flex-wrap: wrap; }
+  .btn { font-size: 0.8rem; padding: 0.42rem 0.62rem; }
+  .index-card { padding: 0.82rem; border-radius: 14px; }
+  .index-card h1 { font-size: 1.52rem; }
 }</style>
 </head>
 <body>
@@ -169,8 +187,8 @@ h1 {
       <div class="headshot placeholder">Headshot Placeholder</div>
       <div>
         <h1>Emmanuel McNeil-Warren</h1>
-        <p class="stack">S | Toledo Rockets | Class SR | Rank 56</p>
-        <p class="stack">Model Grade 79.86 | Card Grade <span class="editable" contenteditable="false" data-edit-key="grade.card">7.0</span> (Depth + Special Teams)</p>
+        <p class="stack">S | Toledo Rockets | Class SR | Rank 29</p>
+        <p class="stack">Model Grade 87.63 | Card Grade <span class="editable" contenteditable="false" data-edit-key="grade.card">8.3</span> (High-End Starter)</p>
       </div>
     </div>
     <div class="fit-box">
@@ -181,6 +199,7 @@ h1 {
   </header>
 
   <section class="sheet">
+    <div class="table-wrap">
     <table class="info-table">
       <tr class="section"><th colspan="7">Player Information</th></tr>
       <tr>
@@ -225,7 +244,7 @@ h1 {
         <td class="label">Composite Signals:</td>
         <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="athletic.composites">RAS Pending (Starter&gt;=4.9, Impact&gt;=6.54) | PFF Grade 91.9</span></td>
       </tr>
-      <tr><td class='label'>Personal/Behavior:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.1.score">7.3</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.1.notes">Volatility indicator: No. Verify interviews, accountability, and role acceptance. Model final grade: 79.86 (Round 4-5).</span></td></tr><tr><td class='label'>Athletic Ability:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.2.score">8.3</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.2.notes">Athletic score 87.3; RAS Pending.</span></td></tr><tr><td class='label'>Strength &amp; Explosion:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.3.score">8.5</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.3.notes">Size score 90.0. Track contact power and force transfer on tape.</span></td></tr><tr><td class='label'>Competes:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.4.score">8.7</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.4.notes">Trait score 91.8; film coverage 0.0; competitive strain projects as translatable.</span></td></tr><tr><td class='label'>Production:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.5.score">8.6</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.5.notes">Production 89.8; Breakout age N/A; Dominator N/A; profile tier N/A.</span></td></tr><tr><td class='label'>Mental/Learning:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.6.score">8.5</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.6.notes">Context score 87.0. Processing and role communication need game-by-game verification.</span></td></tr><tr><td class='label'>Injury History:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.7.score">5.8</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.7.notes">Model risk flag: Manageable. Integrate medical stack once combine/club data is available.</span></td></tr>
+      <tr><td class='label'>Personal/Behavior:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.1.score">7.3</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.1.notes">Volatility indicator: No. Verify interviews, accountability, and role acceptance. Model final grade: 87.63 (Round 2-3).</span></td></tr><tr><td class='label'>Athletic Ability:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.2.score">8.3</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.2.notes">Athletic score 87.3; RAS Pending.</span></td></tr><tr><td class='label'>Strength &amp; Explosion:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.3.score">8.5</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.3.notes">Size score 90.0. Track contact power and force transfer on tape.</span></td></tr><tr><td class='label'>Competes:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.4.score">8.7</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.4.notes">Trait score 91.8; film coverage 0.0; competitive strain projects as translatable.</span></td></tr><tr><td class='label'>Production:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.5.score">8.6</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.5.notes">Production 89.8; Breakout age N/A; Dominator N/A; profile tier N/A.</span></td></tr><tr><td class='label'>Mental/Learning:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.6.score">8.5</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.6.notes">Context score 87.0. Processing and role communication need game-by-game verification.</span></td></tr><tr><td class='label'>Injury History:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.7.score">5.8</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.7.notes">Model risk flag: Manageable. Integrate medical stack once combine/club data is available.</span></td></tr>
       <tr class="section"><th colspan="7">Risk + Verification</th></tr>
       <tr>
         <td class="label">Medical/Character:</td>
@@ -242,13 +261,22 @@ h1 {
       <tr class="section"><th colspan="7">Player Summary</th></tr>
       <tr>
         <td colspan="7" class="summary-cell">
-          <h4>Report:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.1">Emmanuel McNeil-Warren (S, Toledo Rockets) holds a model grade of 79.86 with a Round 4-5 projection. Current board slot: 43. developmental contributor profile; eliminates explosives with range and communication. Seed rank 43 indicates current market confidence with developmental upside still available.</div><h4>How He Wins:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.2">Role fit: Coverage-adjustment back-end starter. Preferred usage in split_safety_multiplicity. Traits: leverage, processing, and role translation remain primary wins.</div><h4>Primary Concerns:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.3">Development checkpoints: consistency, role expansion pace, and matchup stress handling.</div><h4>2025 Production Snapshot:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.4">PFF grade 91.9; CFB prod signal 66.21; coverage plays/target 0.2924; yards allowed/cov snap 0.788; CFB quality proxy (0.42)</div><h4>Board Movement:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.5">Kiper board movement unavailable for this player.</div><h4>Role / Scheme Projection:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.6">Best early team fit: MIA. Scheme path: split_safety_multiplicity. Expected early deployment: Coverage-adjustment back-end starter. Historical combine comp: Emmanuel McNeil-Warren (2026), similarity 98.16.</div><h4>Value Range:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.7">Floor/Ceiling framework: floor 77.80, ceiling 81.32. Current card band: Depth + Special Teams.</div>
+          <h4>Report:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.1">Emmanuel McNeil-Warren (S, Toledo Rockets) carries a 87.63 model grade with a current Round 2-3 projection. Current board slot: 43. Primary NFL pathway: Coverage-adjustment back-end starter in split safety multiplicity. early contributor profile; eliminates explosives with range and communication. Seed rank 43 indicates current market confidence with developmental upside still available. How to read this card: &#x27;How He Wins&#x27; describes repeatable film traits; &#x27;Primary Concerns&#x27; lists failure points that can delay NFL translation.</div><h4>How He Wins:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.2">- Usage fit: Coverage-adjustment back-end starter within split safety multiplicity.
+- Film translation comes from range plus communication: rotate on time, overlap windows, and close space with controlled tackling angles.
+- Model + film note: early contributor profile; eliminates explosives with range and communication. Seed rank 43 indicates current market confidence with developmental upside still available.
+- Last-season performance context: PFF grade 91.9.
+- Stat context: PFF grade 91.9; CFB prod signal 66.21; coverage plays/target 0.2924; yards allowed/cov snap 0.788; CFB quality proxy (0.42).</div><h4>Primary Concerns:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.3">- Safety projection is sensitive to angle discipline and late-rotation communication under tempo.
+- Role stress test: value is strongest in coverage-adjustment back-end starter; projection gets thinner if usage expands too far outside that lane early.
+- Production evidence is proxy-heavy (reliability 0.42), so film cross-check matters more.
+- Communication and rotation timing must stay precise to avoid coverage busts in split-field structures.
+- Open-field tackling angles must remain controlled against NFL speed and spacing stress.</div><h4>2025 Production Snapshot:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.4">PFF grade 91.9; CFB prod signal 66.21; coverage plays/target 0.2924; yards allowed/cov snap 0.788; CFB quality proxy (0.42)</div><h4>Board Movement:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.5">Consensus board context: mean rank 27.6. Board spread (std dev) 8.8; lower spread indicates tighter agreement.</div><h4>Role / Scheme Projection:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.6">NFL projection: Coverage-adjustment back-end starter. Ideal early deployment comes with MIA based on current roster/scheme assumptions. Best scheme fit: Split Safety Multiplicity. Historical combine comp: Tommie Campbell (2011).</div><h4>Value Range:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.7">Floor/Ceiling framework: floor 85.58 (Round 3-4), ceiling 89.09 (Round 1-2). Floor comp: Smoke Monday (2022). Ceiling comp: Tommie Campbell (2011). Current card band: High-End Starter.</div>
         </td>
       </tr>
     </table>
+    </div>
   </section>
 
-  <script type="application/json" class="model-snapshot">{&quot;player_uid&quot;: &quot;315-emmanuel-mcneil-warren&quot;, &quot;player_name&quot;: &quot;Emmanuel McNeil-Warren&quot;, &quot;position&quot;: &quot;S&quot;, &quot;school&quot;: &quot;Toledo Rockets&quot;, &quot;consensus_rank&quot;: &quot;56&quot;, &quot;final_grade&quot;: &quot;79.86&quot;, &quot;round_value&quot;: &quot;Round 4-5&quot;, &quot;ras_estimate&quot;: &quot;&quot;, &quot;pp_skill_signal&quot;: &quot;&quot;, &quot;kiper_rank&quot;: &quot;&quot;, &quot;kiper_rank_delta&quot;: &quot;&quot;, &quot;tdn_rank&quot;: &quot;&quot;, &quot;ringer_rank&quot;: &quot;&quot;, &quot;br_rank&quot;: &quot;&quot;, &quot;atoz_rank&quot;: &quot;&quot;, &quot;si_rank&quot;: &quot;&quot;, &quot;source_confidence&quot;: &quot;Medium confidence - model and available film align; pending combine + interview stack.&quot;}</script>
+  <script type="application/json" class="model-snapshot">{&quot;player_uid&quot;: &quot;315-emmanuel-mcneil-warren&quot;, &quot;player_name&quot;: &quot;Emmanuel McNeil-Warren&quot;, &quot;position&quot;: &quot;S&quot;, &quot;school&quot;: &quot;Toledo Rockets&quot;, &quot;consensus_rank&quot;: &quot;29&quot;, &quot;final_grade&quot;: &quot;87.63&quot;, &quot;round_value&quot;: &quot;Round 2-3&quot;, &quot;ras_estimate&quot;: &quot;&quot;, &quot;pp_skill_signal&quot;: &quot;&quot;, &quot;kiper_rank&quot;: &quot;&quot;, &quot;kiper_rank_delta&quot;: &quot;&quot;, &quot;tdn_rank&quot;: &quot;&quot;, &quot;ringer_rank&quot;: &quot;&quot;, &quot;br_rank&quot;: &quot;&quot;, &quot;atoz_rank&quot;: &quot;&quot;, &quot;si_rank&quot;: &quot;&quot;, &quot;source_confidence&quot;: &quot;Medium confidence - model and available film align; pending combine + interview stack.&quot;}</script>
 </article>
 
 </body>

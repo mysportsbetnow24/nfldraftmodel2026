@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Eric Gentry | 2026 Scouting Card</title>
+  <title>Kyle Louis | 2026 Scouting Card</title>
   <style>:root {
   --ink: #0e1116;
   --muted: #5f6673;
@@ -65,11 +65,18 @@ h1 {
 .fit-box p { margin: 0.35rem 0; }
 
 .sheet { padding: 0.95rem 1rem 1rem; }
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
 .info-table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   font-size: 0.93rem;
+  min-width: 980px;
 }
 .info-table td, .info-table th { border: 1px solid #d3dbe6; padding: 0.34rem 0.45rem; vertical-align: top; }
 .info-table .section th {
@@ -159,18 +166,29 @@ h1 {
 @media (max-width: 860px) {
   body { padding: 0.6rem; }
   .masthead { grid-template-columns: 1fr; }
+  .identity { align-items: flex-start; }
+  .headshot { width: 86px; height: 86px; }
+  h1 { font-size: 1.55rem; }
+  .stack { font-size: 0.9rem; }
+  .fit-box { padding: 0.65rem 0.7rem; }
+  .sheet { padding: 0.75rem; }
   .info-table .label { width: 124px; }
+  .info-table { font-size: 0.84rem; min-width: 860px; }
+  .controls { flex-wrap: wrap; }
+  .btn { font-size: 0.8rem; padding: 0.42rem 0.62rem; }
+  .index-card { padding: 0.82rem; border-radius: 14px; }
+  .index-card h1 { font-size: 1.52rem; }
 }</style>
 </head>
 <body>
-<article class="scout-card" data-player-uid="499-eric-gentry">
+<article class="scout-card" data-player-uid="405-kyle-louis">
   <header class="masthead">
     <div class="identity">
       <div class="headshot placeholder">Headshot Placeholder</div>
       <div>
-        <h1>Eric Gentry</h1>
-        <p class="stack">LB | USC Trojans | Class SR | Rank 295</p>
-        <p class="stack">Model Grade 74.32 | Card Grade <span class="editable" contenteditable="false" data-edit-key="grade.card">6.1</span> (Priority Free Agent)</p>
+        <h1>Kyle Louis</h1>
+        <p class="stack">LB | Pittsburgh Panthers | Class SR | Rank 234</p>
+        <p class="stack">Model Grade 78.25 | Card Grade <span class="editable" contenteditable="false" data-edit-key="grade.card">6.7</span> (Roster Competition)</p>
       </div>
     </div>
     <div class="fit-box">
@@ -181,11 +199,12 @@ h1 {
   </header>
 
   <section class="sheet">
+    <div class="table-wrap">
     <table class="info-table">
       <tr class="section"><th colspan="7">Player Information</th></tr>
       <tr>
-        <td class="label">Name:</td><td><span class="editable" contenteditable="false" data-edit-key="info.name">Eric Gentry</span></td>
-        <td class="label">School:</td><td><span class="editable" contenteditable="false" data-edit-key="info.school">USC Trojans</span></td>
+        <td class="label">Name:</td><td><span class="editable" contenteditable="false" data-edit-key="info.name">Kyle Louis</span></td>
+        <td class="label">School:</td><td><span class="editable" contenteditable="false" data-edit-key="info.school">Pittsburgh Panthers</span></td>
         <td class="label">Position:</td><td><span class="editable" contenteditable="false" data-edit-key="info.position">LB</span></td>
         <td class="label">Jersey #: <span class="editable" contenteditable="false" data-edit-key="info.jersey"></span></td>
       </tr>
@@ -197,7 +216,7 @@ h1 {
       </tr>
       <tr>
         <td class="label">Size / Length:</td>
-        <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="info.size_length">6-2 | 221 lbs | Arms 35.0 in | Hands 10.5 in | Wingspan Pending in</span></td>
+        <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="info.size_length">6-2 | 220 lbs | Arms 31.2 in | Hands 9.5 in | Wingspan Pending in</span></td>
       </tr>
       <tr>
         <td class="label">Alignment/Scheme:</td>
@@ -223,9 +242,9 @@ h1 {
       </tr>
       <tr>
         <td class="label">Composite Signals:</td>
-        <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="athletic.composites">RAS Pending (Starter&gt;=5.19, Impact&gt;=6.91) | PFF Grade 71.3</span></td>
+        <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="athletic.composites">RAS Pending (Starter&gt;=5.19, Impact&gt;=6.91) | PFF Grade 73.1</span></td>
       </tr>
-      <tr><td class='label'>Personal/Behavior:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.1.score">7.3</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.1.notes">Volatility indicator: No. Verify interviews, accountability, and role acceptance. Model final grade: 74.32 (Round 5-6).</span></td></tr><tr><td class='label'>Athletic Ability:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.2.score">6.0</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.2.notes">Athletic score 67.8; RAS Pending.</span></td></tr><tr><td class='label'>Strength &amp; Explosion:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.3.score">6.9</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.3.notes">Size score 89.2. Track contact power and force transfer on tape.</span></td></tr><tr><td class='label'>Competes:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.4.score">5.8</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.4.notes">Trait score 73.2; film coverage 0.0; competitive strain projects as translatable.</span></td></tr><tr><td class='label'>Production:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.5.score">5.7</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.5.notes">Production 72.2; Breakout age N/A; Dominator N/A; profile tier N/A.</span></td></tr><tr><td class='label'>Mental/Learning:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.6.score">5.7</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.6.notes">Context score 71.7. Processing and role communication need game-by-game verification.</span></td></tr><tr><td class='label'>Injury History:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.7.score">5.1</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.7.notes">Model risk flag: Manageable. Integrate medical stack once combine/club data is available.</span></td></tr>
+      <tr><td class='label'>Personal/Behavior:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.1.score">7.3</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.1.notes">Volatility indicator: No. Verify interviews, accountability, and role acceptance. Model final grade: 78.25 (Round 4-5).</span></td></tr><tr><td class='label'>Athletic Ability:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.2.score">6.7</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.2.notes">Athletic score 75.0; RAS Pending.</span></td></tr><tr><td class='label'>Strength &amp; Explosion:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.3.score">7.2</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.3.notes">Size score 86.4. Track contact power and force transfer on tape.</span></td></tr><tr><td class='label'>Competes:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.4.score">7.1</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.4.notes">Trait score 81.9; film coverage 0.0; competitive strain projects as translatable.</span></td></tr><tr><td class='label'>Production:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.5.score">7.0</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.5.notes">Production 80.4; Breakout age N/A; Dominator N/A; profile tier N/A.</span></td></tr><tr><td class='label'>Mental/Learning:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.6.score">7.0</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.6.notes">Context score 78.8. Processing and role communication need game-by-game verification.</span></td></tr><tr><td class='label'>Injury History:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.7.score">5.8</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.7.notes">Model risk flag: Manageable. Integrate medical stack once combine/club data is available.</span></td></tr>
       <tr class="section"><th colspan="7">Risk + Verification</th></tr>
       <tr>
         <td class="label">Medical/Character:</td>
@@ -242,13 +261,22 @@ h1 {
       <tr class="section"><th colspan="7">Player Summary</th></tr>
       <tr>
         <td colspan="7" class="summary-cell">
-          <h4>Report:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.1">Eric Gentry (LB, USC Trojans) holds a model grade of 74.32 with a Round 5-6 projection. Current board slot: 262. developmental contributor profile; processes quickly and closes efficiently. Seed rank 262 indicates current market confidence with developmental upside still available.</div><h4>How He Wins:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.2">Role fit: Run-and-hit communicator. Preferred usage in match_zone_blitz. Traits: leverage, processing, and role translation remain primary wins.</div><h4>Primary Concerns:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.3">Development checkpoints: consistency, role expansion pace, and matchup stress handling.</div><h4>2025 Production Snapshot:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.4">PFF grade 71.3</div><h4>Board Movement:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.5">Kiper board movement unavailable for this player.</div><h4>Role / Scheme Projection:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.6">Best early team fit: LAR. Scheme path: match_zone_blitz. Expected early deployment: Run-and-hit communicator. Historical combine comp: Eric Gentry (2026), similarity 96.28.</div><h4>Value Range:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.7">Floor/Ceiling framework: floor 71.93, ceiling 77.50. Current card band: Priority Free Agent.</div>
+          <h4>Report:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.1">Kyle Louis (LB, Pittsburgh Panthers) carries a 78.25 model grade with a current Round 4-5 projection. Current board slot: 160. Primary NFL pathway: Run-and-hit communicator in match zone blitz. developmental contributor profile; processes quickly and closes efficiently. Seed rank 160 indicates current market confidence with developmental upside still available. How to read this card: &#x27;How He Wins&#x27; describes repeatable film traits; &#x27;Primary Concerns&#x27; lists failure points that can delay NFL translation.</div><h4>How He Wins:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.2">- Usage fit: Run-and-hit communicator within match zone blitz.
+- Film translation comes from read/trigger speed: sort run-pass keys early, fit cleanly, and carry routes with controlled angles.
+- Model + film note: developmental contributor profile; processes quickly and closes efficiently. Seed rank 160 indicates current market confidence with developmental upside still available.
+- Last-season performance context: PFF grade 73.1.
+- Stat context: PFF grade 73.1.</div><h4>Primary Concerns:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.3">- Linebacker projection is sensitive to coverage spacing discipline and mismatch handling in space.
+- Role stress test: value is strongest in run-and-hit communicator; projection gets thinner if usage expands too far outside that lane early.
+- PFF grade 73.1 suggests current performance volatility that needs film-confirmed cleanup.
+- Coverage spacing discipline versus route combinations must be clean to avoid explosive seams.
+- Processing speed has to stay stable when offenses stress eye candy and tempo.</div><h4>2025 Production Snapshot:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.4">PFF grade 73.1</div><h4>Board Movement:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.5">Consensus board context: mean rank 130.0. Board spread (std dev) 31.0; lower spread indicates tighter agreement.</div><h4>Role / Scheme Projection:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.6">NFL projection: Run-and-hit communicator. Ideal early deployment comes with LAR based on current roster/scheme assumptions. Best scheme fit: Match Zone Blitz. Historical combine comp: Nick Martin (2025).</div><h4>Value Range:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.7">Floor/Ceiling framework: floor 75.77 (Round 5-6), ceiling 80.69 (Round 3-4). Floor comp: Jahleel Culbreath. Ceiling comp: Nick Martin (2025). Current card band: Roster Competition.</div>
         </td>
       </tr>
     </table>
+    </div>
   </section>
 
-  <script type="application/json" class="model-snapshot">{&quot;player_uid&quot;: &quot;499-eric-gentry&quot;, &quot;player_name&quot;: &quot;Eric Gentry&quot;, &quot;position&quot;: &quot;LB&quot;, &quot;school&quot;: &quot;USC Trojans&quot;, &quot;consensus_rank&quot;: &quot;295&quot;, &quot;final_grade&quot;: &quot;74.32&quot;, &quot;round_value&quot;: &quot;Round 5-6&quot;, &quot;ras_estimate&quot;: &quot;&quot;, &quot;pp_skill_signal&quot;: &quot;&quot;, &quot;kiper_rank&quot;: &quot;&quot;, &quot;kiper_rank_delta&quot;: &quot;&quot;, &quot;tdn_rank&quot;: &quot;&quot;, &quot;ringer_rank&quot;: &quot;&quot;, &quot;br_rank&quot;: &quot;&quot;, &quot;atoz_rank&quot;: &quot;&quot;, &quot;si_rank&quot;: &quot;&quot;, &quot;source_confidence&quot;: &quot;Medium confidence - model and available film align; pending combine + interview stack.&quot;}</script>
+  <script type="application/json" class="model-snapshot">{&quot;player_uid&quot;: &quot;405-kyle-louis&quot;, &quot;player_name&quot;: &quot;Kyle Louis&quot;, &quot;position&quot;: &quot;LB&quot;, &quot;school&quot;: &quot;Pittsburgh Panthers&quot;, &quot;consensus_rank&quot;: &quot;234&quot;, &quot;final_grade&quot;: &quot;78.25&quot;, &quot;round_value&quot;: &quot;Round 4-5&quot;, &quot;ras_estimate&quot;: &quot;&quot;, &quot;pp_skill_signal&quot;: &quot;&quot;, &quot;kiper_rank&quot;: &quot;&quot;, &quot;kiper_rank_delta&quot;: &quot;&quot;, &quot;tdn_rank&quot;: &quot;&quot;, &quot;ringer_rank&quot;: &quot;&quot;, &quot;br_rank&quot;: &quot;&quot;, &quot;atoz_rank&quot;: &quot;&quot;, &quot;si_rank&quot;: &quot;&quot;, &quot;source_confidence&quot;: &quot;Medium confidence - model and available film align; pending combine + interview stack.&quot;}</script>
 </article>
 
 </body>

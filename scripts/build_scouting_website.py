@@ -95,7 +95,7 @@ def _build_home_html(top_rows: list[dict]) -> str:
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NF Draft Hub 2026</title>
+  <title>NFL Draft Hub 2026</title>
   <style>
     :root {{
       --bg: #f1f5fb;
