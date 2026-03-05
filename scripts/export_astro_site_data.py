@@ -4,7 +4,7 @@ from __future__ import annotations
 import csv
 import json
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 
@@ -16,7 +16,9 @@ BOARD_CSV = OUTPUTS / "big_board_2026.csv"
 ROUND1_CSV = OUTPUTS / "mock_2026_round1.csv"
 ROUND7_CSV = OUTPUTS / "mock_2026_7round.csv"
 TEAM_NEEDS_CSV = ROOT / "data" / "sources" / "team_needs_context_2026.csv"
-TEAM_NEEDS_ADJUSTMENTS_CSV = ROOT / "data" / "sources" / "team_needs_transaction_adjustments_2026.csv"
+CBS_TRANSACTIONS_CSV = ROOT / "data" / "processed" / "cbs_nfl_transactions_2026.csv"
+TRANSACTION_OVERRIDES_CSV = ROOT / "data" / "sources" / "manual" / "transactions_overrides_2026.csv"
+INSIDER_TRANSACTIONS_CSV = ROOT / "data" / "sources" / "manual" / "insider_transactions_feed_2026.csv"
 ESPN_PROSPECTS_CSV = ROOT / "data" / "sources" / "external" / "espn_nfl_draft_prospect_data" / "nfl_draft_prospects.csv"
 DELTA_AUDIT_LATEST_CSV = OUTPUTS / "delta_audit_2026_latest.csv"
 
@@ -200,6 +202,143 @@ def _read_csv(path: Path) -> list[dict]:
         return list(csv.DictReader(f))
 
 
+def _parse_event_date(value: str):
+    text = str(value or "").strip()
+    if not text:
+        return None
+    for fmt in ("%Y-%m-%d", "%B %d, %Y"):
+        try:
+            return datetime.strptime(text, fmt).date()
+        except ValueError:
+            continue
+    return None
+
+
+def _status_label(status: str) -> str:
+    raw = str(status or "").strip().lower()
+    if not raw:
+        return "Confirmed"
+    labels = {
+        "confirmed": "Confirmed",
+        "official": "Confirmed",
+        "rumored": "Rumored",
+        "signed": "Signed",
+        "re-signed": "Re-Signed",
+        "released": "Released",
+        "waived": "Waived",
+        "traded": "Traded",
+        "retired": "Retired",
+    }
+    return labels.get(raw, raw.replace("_", " ").title())
+
+
+def _build_public_transactions(window_days: int = 14) -> dict[str, list[dict]]:
+    min_date = datetime.now(timezone.utc).date() - timedelta(days=max(1, int(window_days)))
+    by_team: dict[str, list[dict]] = defaultdict(list)
+    seen: set[tuple[str, str, str, str, str]] = set()
+
+    def add_event(
+        *,
+        team: str,
+        event_date,
+        player_name: str,
+        position: str,
+        action_text: str,
+        status: str,
+        source_url: str,
+        source_account: str,
+    ) -> None:
+        team_code = str(team or "").strip().upper()
+        if not team_code or event_date is None or event_date < min_date:
+            return
+        player = str(player_name or "").strip()
+        pos = str(position or "").strip().upper()
+        action = str(action_text or "").strip()
+        status_raw = str(status or "").strip().lower() or "confirmed"
+        key = (team_code, event_date.isoformat(), player.lower(), action.lower(), status_raw)
+        if key in seen:
+            return
+        seen.add(key)
+
+        if player and pos and action:
+            label = f"{player} ({pos}) {action}"
+        elif player and action:
+            label = f"{player} {action}"
+        else:
+            label = action or player or "-"
+
+        by_team[team_code].append(
+            {
+                "event_date": event_date.isoformat(),
+                "status": _status_label(status_raw),
+                "label": label,
+                "source_url": str(source_url or "").strip(),
+                "source_account": str(source_account or "").strip(),
+            }
+        )
+
+    for row in _read_csv(CBS_TRANSACTIONS_CSV):
+        add_event(
+            team=row.get("team", ""),
+            event_date=_parse_event_date(row.get("event_date", "")),
+            player_name=row.get("player_name", ""),
+            position=row.get("position", ""),
+            action_text=row.get("action_text", ""),
+            status=row.get("transaction_status", "confirmed"),
+            source_url=row.get("source_url", ""),
+            source_account="CBS Sports",
+        )
+
+    for row in _read_csv(TRANSACTION_OVERRIDES_CSV):
+        event_date = _parse_event_date(row.get("event_date", ""))
+        player_name = row.get("player_name", "")
+        position = row.get("position", "")
+        action_text = row.get("action_text", "")
+        status = row.get("transaction_status", "confirmed")
+        source_url = row.get("source_url", "")
+        source_account = row.get("source_account", "Manual")
+        from_team = str(row.get("from_team", "")).strip().upper()
+        to_team = str(row.get("to_team", "")).strip().upper()
+        if from_team:
+            add_event(
+                team=from_team,
+                event_date=event_date,
+                player_name=player_name,
+                position=position,
+                action_text=action_text,
+                status=status,
+                source_url=source_url,
+                source_account=source_account,
+            )
+        if to_team:
+            add_event(
+                team=to_team,
+                event_date=event_date,
+                player_name=player_name,
+                position=position,
+                action_text=action_text,
+                status=status,
+                source_url=source_url,
+                source_account=source_account,
+            )
+
+    for row in _read_csv(INSIDER_TRANSACTIONS_CSV):
+        add_event(
+            team=row.get("team", ""),
+            event_date=_parse_event_date(row.get("event_date", "")),
+            player_name=row.get("player_name", ""),
+            position=row.get("position", ""),
+            action_text=row.get("action_text", ""),
+            status=row.get("transaction_status", "rumored"),
+            source_url=row.get("source_url", ""),
+            source_account=row.get("source_account", ""),
+        )
+
+    for team in list(by_team.keys()):
+        by_team[team] = sorted(by_team[team], key=lambda r: r.get("event_date", ""), reverse=True)
+    return by_team
+
+
 def _write_json(path: Path, payload) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2))
@@ -357,7 +496,7 @@ def export_round7_team_groups(round7_rows: list[dict]) -> dict[str, list[dict]]:
 
 def export_team_needs() -> list[dict]:
     rows = _read_csv(TEAM_NEEDS_CSV)
-    adjustments = _read_csv(TEAM_NEEDS_ADJUSTMENTS_CSV)
+    public_tx_by_team = _build_public_transactions(window_days=14)
 
     by_team: dict[str, list[dict]] = defaultdict(list)
     for row in rows:
@@ -377,13 +516,6 @@ def export_team_needs() -> list[dict]:
             }
         )
 
-    tx_by_team: dict[str, list[str]] = defaultdict(list)
-    for row in adjustments:
-        team = (row.get("team") or "").strip()
-        summary = (row.get("event_summary") or "").strip()
-        if team and summary:
-            tx_by_team[team].append(summary)
-
     out: list[dict] = []
     for team, items in sorted(by_team.items(), key=lambda x: x[0]):
         items = sorted(items, key=lambda x: x["need_score"], reverse=True)
@@ -391,7 +523,7 @@ def export_team_needs() -> list[dict]:
             {
                 "team": team,
                 "top_needs": items[:3],
-                "recent_transactions": tx_by_team.get(team, [])[:3],
+                "recent_transactions": public_tx_by_team.get(team, [])[:3],
             }
         )
     return out
