@@ -1,0 +1,50 @@
+import type { APIRoute } from "astro";
+import meta from "../data/build_meta.json";
+
+const ROUTES = [
+  "/",
+  "/2026-nfl-draft-big-board",
+  "/2026-nfl-mock-draft-round-1",
+  "/2026-nfl-7-round-mock-draft",
+  "/2026-nfl-player-comparison",
+  "/scouting-cards"
+];
+
+function xmlEscape(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+export const GET: APIRoute = ({ site }) => {
+  const base = (site ?? new URL("https://scoutinggrade.com")).toString().replace(/\/$/, "");
+  const lastmod = (meta as { generated_at?: string }).generated_at || new Date().toISOString();
+
+  const urls = ROUTES.map((path) => {
+    const loc = `${base}${path === "/" ? "/" : path}`;
+    return [
+      "  <url>",
+      `    <loc>${xmlEscape(loc)}</loc>`,
+      `    <lastmod>${xmlEscape(lastmod)}</lastmod>`,
+      "  </url>"
+    ].join("\n");
+  }).join("\n");
+
+  const body = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    urls,
+    "</urlset>",
+    ""
+  ].join("\n");
+
+  return new Response(body, {
+    headers: {
+      "Content-Type": "application/xml; charset=utf-8"
+    }
+  });
+};
+

@@ -13,7 +13,7 @@ const { title, description = "2026 NFL Draft big board, mocks, scouting cards, a
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={`https://www.scoutinggrade.com${Astro.url.pathname}`} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />
     <style>
       :root {
         --bg: #f3f5f8;
