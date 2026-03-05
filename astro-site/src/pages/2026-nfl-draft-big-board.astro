@@ -2,7 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import board from "../data/big_board_2026.json";
 const pageDescription = "Live 2026 NFL Draft big board from the Scouting Grade model with ranks, grades, and projection context.";
-const positions = Array.from(new Set((board || []).map((r: any) => r.position).filter(Boolean))).sort();
+const preferredPositionOrder = ["QB", "RB", "WR", "TE", "OT", "IOL", "DT", "EDGE", "LB", "CB", "S"];
+const boardPositions = Array.from(new Set((board || []).map((r: any) => r.position).filter(Boolean)));
+const positions = [
+  ...preferredPositionOrder.filter((p) => boardPositions.includes(p)),
+  ...boardPositions.filter((p) => !preferredPositionOrder.includes(p)).sort(),
+];
 const roundBands = Array.from(new Set((board || []).map((r: any) => r.round_value).filter(Boolean))).sort();
 const schools = Array.from(new Set((board || []).map((r: any) => r.school).filter(Boolean))).sort();
 const collectionSchema = {
@@ -19,43 +24,43 @@ const collectionSchema = {
 };
 ---
 <BaseLayout title="2026 NFL Draft Big Board | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
-  <section class="hero">
+  <section class="hero bigboard-hero">
     <h1>2026 NFL Draft Big Board</h1>
-    <p>Model-ranked prospects using production, athletic, context, and consensus signals with guardrails.</p>
+    <p>Live ranked board with scouting context, team-era lens, and weekly refreshes.</p>
   </section>
 
-  <section class="card" style="margin-bottom:1rem;">
-    <h2 style="margin:0 0 .45rem;">How To Use This Board</h2>
-    <p class="muted" style="margin:.2rem 0 .35rem;">
+  <section class="card bigboard-intro">
+    <h2>How To Use This Board</h2>
+    <p class="muted">
       This board ranks 2026 prospects by the current model output, then groups them with a round-value projection.
       Think of <strong>Grade</strong> as player quality and <strong>Round</strong> as expected draft range.
     </p>
-    <p class="muted" style="margin:.2rem 0 0;">
+    <p class="muted">
       Use search to quickly find a player, school, or position. The table updates instantly.
     </p>
   </section>
 
-  <section class="card">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.55rem;margin-bottom:1rem;">
+  <section class="card bigboard-card">
+    <div class="filters-grid">
       <input
         id="search"
         type="search"
         placeholder="Search player, school, or position..."
-        style="padding:.62rem .7rem;border:1px solid var(--line);border-radius:10px;min-width:220px;grid-column:span 2;"
+        class="control search-control"
       />
-      <select id="positionFilter" style="padding:.62rem .7rem;border:1px solid var(--line);border-radius:10px;">
+      <select id="positionFilter" class="control">
         <option value="">All Positions</option>
         {positions.map((p) => <option value={p}>{p}</option>)}
       </select>
-      <select id="roundFilter" style="padding:.62rem .7rem;border:1px solid var(--line);border-radius:10px;">
+      <select id="roundFilter" class="control">
         <option value="">All Round Bands</option>
         {roundBands.map((b) => <option value={b}>{b}</option>)}
       </select>
-      <select id="schoolFilter" style="padding:.62rem .7rem;border:1px solid var(--line);border-radius:10px;">
+      <select id="schoolFilter" class="control">
         <option value="">All Schools</option>
         {schools.map((s) => <option value={s}>{s}</option>)}
       </select>
-      <select id="sortBy" style="padding:.62rem .7rem;border:1px solid var(--line);border-radius:10px;">
+      <select id="sortBy" class="control">
         <option value="rank_asc">Sort: Rank (best first)</option>
         <option value="grade_desc">Sort: Grade (high to low)</option>
         <option value="consensus_asc">Sort: Consensus Mean (best first)</option>
@@ -63,12 +68,12 @@ const collectionSchema = {
       </select>
     </div>
 
-    <div style="display:flex;justify-content:space-between;gap:.65rem;align-items:center;flex-wrap:wrap;margin-bottom:.8rem;">
+    <div class="result-bar">
       <span id="resultCount" class="muted">Showing {board.length} of {board.length} prospects.</span>
-      <button id="resetFilters" type="button" style="border:1px solid var(--line);background:#fff;padding:.45rem .6rem;border-radius:10px;cursor:pointer;">Reset Filters</button>
+      <button id="resetFilters" type="button" class="reset-btn">Reset Filters</button>
     </div>
 
-    <div style="overflow:auto;border:1px solid var(--line);border-radius:12px;">
+    <div class="table-wrap">
       <table id="boardTable">
         <thead>
           <tr>
@@ -79,6 +84,8 @@ const collectionSchema = {
             <th>Grade</th>
             <th>Round</th>
             <th>Consensus Mean</th>
+            <th>Why Moved</th>
+            <th>QA</th>
           </tr>
         </thead>
         <tbody>
@@ -94,12 +101,20 @@ const collectionSchema = {
               data-name={r.player_name || ""}
             >
               <td>{r.consensus_rank}</td>
-              <td>{r.player_name}</td>
+              <td><a href={`/players/${r.slug}`} class="player-link">{r.player_name}</a></td>
               <td><span class="badge">{r.position}</span></td>
               <td>{r.school}</td>
               <td>{r.final_grade}</td>
               <td>{r.round_value}</td>
               <td>{r.consensus_board_mean_rank || ""}</td>
+              <td>
+                <span class="driver-badge {Number(r.top_rank_driver_delta) >= 0 ? 'up' : 'down'}">
+                  {String(r.top_rank_driver || "n/a").toUpperCase()} {Number(r.top_rank_driver_delta) >= 0 ? "+" : ""}{r.top_rank_driver_delta}
+                </span>
+              </td>
+              <td>
+                {r.low_evidence_flag ? <span class="qa-badge watch">Watch</span> : <span class="qa-badge ok">Clear</span>}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -108,11 +123,105 @@ const collectionSchema = {
   </section>
 
   <style>
+    .bigboard-hero h1 {
+      margin-bottom: .45rem;
+      letter-spacing: -.02em;
+    }
+    .bigboard-hero p {
+      max-width: 68ch;
+      font-size: 1.03rem;
+      line-height: 1.6;
+    }
+    .bigboard-intro {
+      margin-bottom: 1rem;
+      padding: 1.05rem 1.1rem;
+    }
+    .bigboard-intro h2 {
+      margin: 0 0 .55rem;
+      font-size: 1.2rem;
+      letter-spacing: -.01em;
+    }
+    .bigboard-intro .muted {
+      margin: .18rem 0 .32rem;
+      line-height: 1.62;
+    }
+    .bigboard-card {
+      padding: 1.05rem 1.1rem;
+    }
+    .filters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: .6rem;
+      margin-bottom: 1rem;
+    }
+    .control {
+      padding: .66rem .74rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      font: inherit;
+      color: inherit;
+      min-width: 0;
+    }
+    .search-control {
+      min-width: 240px;
+      grid-column: span 2;
+    }
+    .control:focus-visible {
+      outline: 2px solid rgba(25, 90, 173, .26);
+      outline-offset: 1px;
+    }
+    .result-bar {
+      display: flex;
+      justify-content: space-between;
+      gap: .65rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: .9rem;
+    }
+    .reset-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: .48rem .72rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .reset-btn:hover {
+      background: #f7fafc;
+    }
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+    }
+    .player-link {
+      color: var(--brand);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .player-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    #boardTable {
+      width: 100%;
+    }
+    #boardTable th,
+    #boardTable td {
+      padding: .66rem .72rem;
+      font-size: .93rem;
+      line-height: 1.35;
+      vertical-align: middle;
+    }
     #boardTable thead th {
       position: sticky;
       top: 0;
-      background: #f9fbfd;
+      background: #f8fbfe;
       z-index: 1;
+      font-weight: 700;
+      letter-spacing: .01em;
     }
     #boardTable tbody tr:nth-child(even) {
       background: #fcfdff;
@@ -120,8 +229,70 @@ const collectionSchema = {
     #boardTable tbody tr:hover {
       background: #f2f7fc;
     }
+    .driver-badge, .qa-badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: .18rem .48rem;
+      font-size: .72rem;
+      font-weight: 700;
+      border: 1px solid #ccd4df;
+      white-space: nowrap;
+    }
+    .driver-badge.up {
+      color: #0f7b6a;
+      border-color: #98d8cc;
+      background: #edf9f6;
+    }
+    .driver-badge.down {
+      color: #8a3f2f;
+      border-color: #e7c1b7;
+      background: #fdf1ee;
+    }
+    .qa-badge.ok {
+      color: #0f5d2e;
+      border-color: #a9d8b8;
+      background: #edf9f0;
+    }
+    .qa-badge.watch {
+      color: #7a4a06;
+      border-color: #ead1a2;
+      background: #fff8e8;
+    }
+    #resultCount {
+      font-size: .95rem;
+    }
+    @media (max-width: 1080px) {
+      .filters-grid {
+        grid-template-columns: repeat(2, minmax(160px, 1fr));
+      }
+      .search-control {
+        grid-column: 1 / -1;
+      }
+    }
     @media (max-width: 900px) {
-      #search { grid-column: span 1 !important; }
+      .bigboard-card,
+      .bigboard-intro {
+        padding: .9rem;
+      }
+      #boardTable th,
+      #boardTable td {
+        padding: .58rem .6rem;
+        font-size: .88rem;
+      }
+    }
+    @media (max-width: 720px) {
+      .filters-grid {
+        grid-template-columns: 1fr;
+      }
+      .search-control {
+        min-width: 0;
+      }
+      .bigboard-hero p {
+        font-size: .97rem;
+      }
+      .result-bar {
+        align-items: flex-start;
+      }
     }
   </style>
 
