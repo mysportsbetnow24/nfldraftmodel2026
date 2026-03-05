@@ -28,7 +28,15 @@
       }
     ],
     "recent_transactions": [
-      "2026-03-04 Kayvon Thibodeaux (traded)"
+      {
+        "event_date": "2026-03-04",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Kayvon Thibodeaux (DE) traded",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
     ]
   },
   {
@@ -150,7 +158,15 @@
       }
     ],
     "recent_transactions": [
-      "2026-03-04 Hayden Hatten (signed)"
+      {
+        "event_date": "2026-03-04",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Hayden Hatten (WR) signed",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
     ]
   },
   {
@@ -302,7 +318,15 @@
       }
     ],
     "recent_transactions": [
-      "2026-03-02 Ja'Quan McMillian (signed)"
+      {
+        "event_date": "2026-03-02",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Ja'Quan McMillian (CB) signed",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
     ]
   },
   {
@@ -454,8 +478,24 @@
       }
     ],
     "recent_transactions": [
-      "2026-03-04 Darnell Savage Jr. (released)",
-      "2026-03-03 George Kittle (traded)"
+      {
+        "event_date": "2026-03-04",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Darnell Savage Jr. (SS) released",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
+      {
+        "event_date": "2026-03-03",
+        "status": "Rumored",
+        "status_kind": "rumored",
+        "label": "George Kittle (TE) traded",
+        "affects_team_needs": false,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
     ]
   },
   {
@@ -487,8 +527,24 @@
       }
     ],
     "recent_transactions": [
-      "2026-03-04 Trent McDuffie (traded)",
-      "2026-03-04 Devin White (signed)"
+      {
+        "event_date": "2026-03-04",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Trent McDuffie (CB) traded",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/news/chiefs-trade-all-pro-cornerback-to-rams-as-defending-super-bowl-champs-load-up-in-the-2026-nfl-draft/",
+        "source_account": "CBS Sports"
+      },
+      {
+        "event_date": "2026-03-04",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Devin White (OLB) signed",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
     ]
   },
   {
@@ -520,7 +576,24 @@
       }
     ],
     "recent_transactions": [
-      "2026-03-03 Keenan Isaac (signed) | 2026-03-03 Ahkello Witherspoon (signed)"
+      {
+        "event_date": "2026-03-03",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Keenan Isaac (CB) signed",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
+      {
+        "event_date": "2026-03-03",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Ahkello Witherspoon (CB) signed",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
     ]
   },
   {
@@ -552,7 +625,24 @@
       }
     ],
     "recent_transactions": [
-      "2026-03-03 Fentrell Cypress II (signed) | 2026-03-04 Trent McDuffie (traded)"
+      {
+        "event_date": "2026-03-04",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Trent McDuffie (CB) traded",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/news/chiefs-trade-all-pro-cornerback-to-rams-as-defending-super-bowl-champs-load-up-in-the-2026-nfl-draft/",
+        "source_account": "CBS Sports"
+      },
+      {
+        "event_date": "2026-03-03",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Fentrell Cypress II (CB) signed",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
     ]
   },
   {
@@ -614,7 +704,15 @@
       }
     ],
     "recent_transactions": [
-      "2026-03-03 L'Jarius Sneed (traded)"
+      {
+        "event_date": "2026-03-03",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "L'Jarius Sneed (CB) traded",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
     ]
   },
   {
@@ -706,7 +804,15 @@
       }
     ],
     "recent_transactions": [
-      "2026-03-02 JuJu Smith-Schuster (signed)"
+      {
+        "event_date": "2026-03-02",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "JuJu Smith-Schuster (WR) signed",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
     ]
   },
   {
@@ -738,9 +844,33 @@
       }
     ],
     "recent_transactions": [
-      "2026-03-02 Myles Harden (signed)",
-      "2026-03-04 Kayvon Thibodeaux (traded)",
-      "2026-03-04 Jonathan Sutherland (signed)"
+      {
+        "event_date": "2026-03-04",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Kayvon Thibodeaux (DE) traded",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
+      {
+        "event_date": "2026-03-04",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Jonathan Sutherland (SS) signed",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
+      {
+        "event_date": "2026-03-02",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Myles Harden (CB) signed",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
     ]
   },
   {
@@ -802,7 +932,15 @@
       }
     ],
     "recent_transactions": [
-      "2026-03-02 Juwan Johnson (signed)"
+      {
+        "event_date": "2026-03-02",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Juwan Johnson (TE) signed",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
     ]
   },
   {
@@ -894,7 +1032,15 @@
       }
     ],
     "recent_transactions": [
-      "2026-03-03 George Kittle (traded)"
+      {
+        "event_date": "2026-03-03",
+        "status": "Rumored",
+        "status_kind": "rumored",
+        "label": "George Kittle (TE) traded",
+        "affects_team_needs": false,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
     ]
   },
   {
@@ -956,7 +1102,15 @@
       }
     ],
     "recent_transactions": [
-      "2026-03-03 L'Jarius Sneed (traded)"
+      {
+        "event_date": "2026-03-03",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "L'Jarius Sneed (CB) traded",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
     ]
   },
   {
