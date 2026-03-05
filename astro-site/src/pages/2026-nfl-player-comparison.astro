@@ -7,7 +7,7 @@ const pool = (board || []).slice(0, 180);
 <BaseLayout title="2026 NFL Player Comparison | Scouting Grade" description="Compare 2026 NFL Draft prospects side-by-side by grade, role, and summary signals.">
   <section class="hero">
     <h1>2026 NFL Player Comparison</h1>
-    <p>Quick side-by-side card view for up to 4 prospects.</p>
+    <p>Brief side-by-side snapshot: model rank/grade, PFF, traits, and RAS.</p>
   </section>
 
   <section class="card" style="margin-bottom:1rem;">
@@ -26,6 +26,22 @@ const pool = (board || []).slice(0, 180);
     pool.forEach((p) => { idx[p.player_uid] = p; });
     const slots = ["p1", "p2", "p3", "p4"].map((id) => document.getElementById(id));
     const cards = document.getElementById("cards");
+    const fmt = (v) => (v === null || v === undefined || v === "" ? "-" : String(v));
+    const pff = (p) => {
+      const n = Number(p.pff_grade || 0);
+      return n > 0 ? n.toFixed(1) : "-";
+    };
+    const trait = (p) => {
+      const n = Number(p.trait_score || 0);
+      return n > 0 ? n.toFixed(2) : "-";
+    };
+    const ras = (p) => {
+      const off = Number(p.combine_ras_official || 0);
+      if (off > 0) return off.toFixed(2);
+      const est = Number(p.ras_estimate || 0);
+      if (est > 0) return `${est.toFixed(2)} (est.)`;
+      return "-";
+    };
 
     const render = () => {
       const chosen = slots.map((el) => idx[el?.value]).filter(Boolean);
@@ -38,11 +54,13 @@ const pool = (board || []).slice(0, 180);
           <div class="muted">${p.school}</div>
           <div style="margin:.45rem 0;">
             <span class="badge">${p.position}</span>
-            <span class="badge">Rank ${p.consensus_rank}</span>
+            <span class="badge">Model Rank ${fmt(p.consensus_rank)}</span>
           </div>
-          <div><strong>Grade:</strong> ${p.final_grade}</div>
-          <div><strong>Round:</strong> ${p.round_value || ""}</div>
-          <div style="margin-top:.5rem;" class="muted">${(p.rank_driver_summary || "").slice(0, 170)}</div>
+          <div><strong>Model Grade:</strong> ${fmt(p.final_grade)}</div>
+          <div><strong>PFF Grade:</strong> ${pff(p)}</div>
+          <div><strong>Trait Score:</strong> ${trait(p)}</div>
+          <div><strong>RAS Score:</strong> ${ras(p)}</div>
+          <div class="muted" style="margin-top:.4rem;"><strong>Projected Range:</strong> ${fmt(p.round_value)}</div>
         `;
         cards.appendChild(div);
       });

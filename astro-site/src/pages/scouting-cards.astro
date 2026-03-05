@@ -1,0 +1,121 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import board from "../data/big_board_2026.json";
+
+const pool = (board || []).slice(0, 264);
+---
+<BaseLayout title="2026 NFL Scouting Cards | Scouting Grade" description="Scouting card snapshots for 2026 NFL Draft prospects, including report summary, wins, concerns, and role projection.">
+  <section class="hero">
+    <h1>2026 NFL Scouting Cards</h1>
+    <p>Search and review concise scouting snapshots for this class.</p>
+  </section>
+
+  <section class="card" style="margin-bottom:1rem;">
+    <label for="playerSearch" class="muted" style="display:block;margin-bottom:.35rem;">Search by player, school, or position</label>
+    <input id="playerSearch" type="search" placeholder="Start typing a name..." style="width:100%;padding:.55rem;border:1px solid var(--line);border-radius:8px;" />
+    <div style="margin-top:.75rem;overflow:auto;max-height:320px;border:1px solid var(--line);border-radius:10px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Pos</th>
+            <th>School</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody id="playerRows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="cardDetails">
+    <h2 id="playerTitle" style="margin:0 0 .35rem;">Select a player</h2>
+    <div id="playerMeta" class="muted" style="margin-bottom:.8rem;"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.55rem;margin-bottom:.9rem;">
+      <div class="card"><strong>Model Rank</strong><div id="dRank">-</div></div>
+      <div class="card"><strong>Model Grade</strong><div id="dGrade">-</div></div>
+      <div class="card"><strong>PFF Grade</strong><div id="dPff">-</div></div>
+      <div class="card"><strong>RAS Score</strong><div id="dRas">-</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr;gap:.75rem;">
+      <article class="card"><strong>Report Summary</strong><div id="dSummary" class="muted" style="margin-top:.4rem;"></div></article>
+      <article class="card"><strong>How He Wins</strong><div id="dWins" class="muted" style="margin-top:.4rem;white-space:pre-wrap;"></div></article>
+      <article class="card"><strong>Primary Concerns</strong><div id="dConcerns" class="muted" style="margin-top:.4rem;white-space:pre-wrap;"></div></article>
+      <article class="card"><strong>2025 Production Snapshot</strong><div id="dProd" class="muted" style="margin-top:.4rem;white-space:pre-wrap;"></div></article>
+      <article class="card"><strong>Role / Scheme Projection</strong><div id="dRole" class="muted" style="margin-top:.4rem;white-space:pre-wrap;"></div></article>
+    </div>
+  </section>
+
+  <script define:vars={{ pool }}>
+    const rowsRoot = document.getElementById("playerRows");
+    const search = document.getElementById("playerSearch");
+    const byUid = {};
+    pool.forEach((p) => { byUid[p.player_uid] = p; });
+
+    const fmt = (v) => {
+      if (v === null || v === undefined || v === "") return "-";
+      return String(v);
+    };
+
+    const rasScore = (p) => {
+      const official = Number(p.combine_ras_official || 0);
+      if (official > 0) return official.toFixed(2);
+      const est = Number(p.ras_estimate || 0);
+      if (est > 0) return est.toFixed(2);
+      return "-";
+    };
+
+    const renderList = () => {
+      const q = (search?.value || "").toLowerCase().trim();
+      const filtered = pool.filter((p) => {
+        if (!q) return true;
+        return (
+          (p.player_name || "").toLowerCase().includes(q) ||
+          (p.school || "").toLowerCase().includes(q) ||
+          (p.position || "").toLowerCase().includes(q)
+        );
+      });
+      rowsRoot.innerHTML = "";
+      filtered.slice(0, 200).forEach((p) => {
+        const tr = document.createElement("tr");
+        tr.style.cursor = "pointer";
+        tr.innerHTML = `
+          <td>${fmt(p.consensus_rank)}</td>
+          <td>${fmt(p.player_name)}</td>
+          <td><span class="badge">${fmt(p.position)}</span></td>
+          <td>${fmt(p.school)}</td>
+          <td>${fmt(p.final_grade)}</td>
+        `;
+        tr.addEventListener("click", () => showCard(p.player_uid));
+        rowsRoot.appendChild(tr);
+      });
+    };
+
+    const setText = (id, value) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    };
+
+    const showCard = (uid) => {
+      const p = byUid[uid];
+      if (!p) return;
+
+      setText("playerTitle", fmt(p.player_name));
+      setText("playerMeta", `${fmt(p.school)} · ${fmt(p.position)} · ${fmt(p.round_value)}`);
+      setText("dRank", fmt(p.consensus_rank));
+      setText("dGrade", fmt(p.final_grade));
+      setText("dPff", Number(p.pff_grade || 0) > 0 ? Number(p.pff_grade).toFixed(1) : "-");
+      setText("dRas", rasScore(p));
+      setText("dSummary", fmt(p.scouting_report_summary));
+      setText("dWins", fmt(p.scouting_why_he_wins));
+      setText("dConcerns", fmt(p.scouting_primary_concerns));
+      setText("dProd", fmt(p.scouting_production_snapshot));
+      setText("dRole", fmt(p.scouting_role_projection));
+    };
+
+    search?.addEventListener("input", renderList);
+    renderList();
+    if (pool.length) showCard(pool[0].player_uid);
+  </script>
+</BaseLayout>
