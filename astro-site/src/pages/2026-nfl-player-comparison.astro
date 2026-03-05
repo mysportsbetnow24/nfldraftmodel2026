@@ -2,8 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import board from "../data/big_board_2026.json";
 
-const pool = (board || []).slice(0, 180);
-const pageDescription = "Compare 2026 NFL Draft prospects side-by-side by model rank, grade, PFF, trait score, and RAS.";
+const pool = (board || []).slice(0, 220);
+const pageDescription = "Position-aware 2026 NFL Draft player comparison with production percentiles, traits, athletic profile, role fit, evidence confidence, and historical comps.";
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -20,148 +20,278 @@ const collectionSchema = {
 <BaseLayout title="2026 NFL Player Comparison | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
   <section class="hero">
     <h1>2026 NFL Player Comparison</h1>
-    <p>Brief side-by-side snapshot: model rank/grade, PFF, traits, and RAS.</p>
+    <p>Side-by-side view of model rank, grade, production context, role fit, evidence confidence, and historical comps.</p>
   </section>
 
-  <section class="card" style="margin-bottom:1rem;">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.65rem;">
-      <select id="p1"><option value="">Select Player 1</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
-      <select id="p2"><option value="">Select Player 2</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
-      <select id="p3"><option value="">Select Player 3</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
-      <select id="p4"><option value="">Select Player 4</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
+  <section class="card compare-controls">
+    <h2 class="section-title">Select Prospects</h2>
+    <div class="compare-grid">
+      <select id="p1" class="control"><option value="">Select Player 1</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
+      <select id="p2" class="control"><option value="">Select Player 2</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
+      <select id="p3" class="control"><option value="">Select Player 3</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
+      <select id="p4" class="control"><option value="">Select Player 4</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
     </div>
   </section>
 
-  <section id="cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.8rem;"></section>
+  <section id="cards" class="cards-grid"></section>
 
   <script define:vars={{ pool }}>
     const idx = {};
     pool.forEach((p) => { idx[p.player_uid] = p; });
     const slots = ["p1", "p2", "p3", "p4"].map((id) => document.getElementById(id));
     const cards = document.getElementById("cards");
-    const fmt = (v) => (v === null || v === undefined || v === "" ? "-" : String(v));
-    const pff = (p) => {
-      const n = Number(p.pff_grade || 0);
-      return n > 0 ? n.toFixed(1) : "-";
+
+    const PRODUCTION_CONFIG = {
+      QB: [
+        { key: "cfb_qb_epa_per_play", label: "EPA / Play", fmt: "dec2" },
+        { key: "cfb_qb_pressure_signal", label: "Pressure-to-Sack%", fmt: "dec2" },
+        { key: "cfb_qb_pass_td", label: "Pass TD", fmt: "int" },
+        { key: "cfb_qb_pass_int", label: "INT", fmt: "int" }
+      ],
+      WR: [
+        { key: "cfb_wrte_yprr", label: "Yards / Route Run", fmt: "dec2" },
+        { key: "cfb_wrte_target_share", label: "Target Share", fmt: "pct" },
+        { key: "cfb_wrte_rec_td", label: "Receiving TD", fmt: "int" },
+        { key: "cfb_wrte_rec_yds", label: "Receiving Yards", fmt: "int" }
+      ],
+      TE: [
+        { key: "cfb_wrte_yprr", label: "Yards / Route Run", fmt: "dec2" },
+        { key: "cfb_wrte_target_share", label: "Target Share", fmt: "pct" },
+        { key: "cfb_wrte_rec_td", label: "Receiving TD", fmt: "int" },
+        { key: "cfb_wrte_rec_yds", label: "Receiving Yards", fmt: "int" }
+      ],
+      RB: [
+        { key: "cfb_rb_explosive_rate", label: "Explosive Run Rate", fmt: "pct" },
+        { key: "cfb_rb_missed_tackles_forced_per_touch", label: "MTF / Touch", fmt: "dec2" },
+        { key: "cfb_rb_rush_td", label: "Rush TD", fmt: "int" },
+        { key: "cfb_rb_rush_yds", label: "Rush Yards", fmt: "int" }
+      ],
+      EDGE: [
+        { key: "cfb_edge_pressure_rate", label: "Pressure Rate", fmt: "pct" },
+        { key: "cfb_edge_sacks", label: "Sacks", fmt: "dec1" },
+        { key: "cfb_edge_qb_hurries", label: "QB Hurries", fmt: "dec1" },
+        { key: "cfb_edge_tfl", label: "TFL", fmt: "dec1" }
+      ],
+      DT: [
+        { key: "cfb_edge_pressure_rate", label: "Pressure Rate", fmt: "pct" },
+        { key: "cfb_edge_sacks", label: "Sacks", fmt: "dec1" },
+        { key: "cfb_edge_qb_hurries", label: "QB Hurries", fmt: "dec1" },
+        { key: "cfb_edge_tfl", label: "TFL", fmt: "dec1" }
+      ],
+      CB: [
+        { key: "cfb_db_int", label: "INT", fmt: "int" },
+        { key: "cfb_db_pbu", label: "PBU", fmt: "int" },
+        { key: "cfb_db_coverage_plays_per_target", label: "Plays on Ball / Target", fmt: "dec2" },
+        { key: "cfb_db_yards_allowed_per_coverage_snap", label: "Yards Allowed / Cov Snap", fmt: "dec2", lowerBetter: true }
+      ],
+      S: [
+        { key: "cfb_db_int", label: "INT", fmt: "int" },
+        { key: "cfb_db_pbu", label: "PBU", fmt: "int" },
+        { key: "cfb_db_coverage_plays_per_target", label: "Plays on Ball / Target", fmt: "dec2" },
+        { key: "cfb_db_yards_allowed_per_coverage_snap", label: "Yards Allowed / Cov Snap", fmt: "dec2", lowerBetter: true }
+      ]
     };
-    const trait = (p) => {
-      const n = Number(p.trait_score || 0);
-      return n > 0 ? n.toFixed(2) : "-";
+
+    const POSITION_GROUP_FALLBACK = {
+      OT: "OL",
+      IOL: "OL",
+      LB: "LB"
     };
-    const ras = (p) => {
-      const off = Number(p.combine_ras_official || 0);
-      if (off > 0) return off.toFixed(2);
-      const est = Number(p.ras_estimate || 0);
-      if (est > 0) return `${est.toFixed(2)} (est.)`;
-      return "-";
+
+    const fmtValue = (n, mode) => {
+      if (!Number.isFinite(n)) return "-";
+      if (mode === "int") return Math.round(n).toString();
+      if (mode === "pct") return `${(n * 100).toFixed(1)}%`;
+      if (mode === "dec1") return n.toFixed(1);
+      return n.toFixed(2);
     };
-    const rasRaw = (p) => {
-      const off = Number(p.combine_ras_official || 0);
-      if (off > 0) return off;
-      const est = Number(p.ras_estimate || 0);
-      return est > 0 ? est : 0;
+
+    const num = (v) => {
+      const n = Number(v);
+      return Number.isFinite(n) ? n : null;
     };
-    const pct = (value, min, max) => {
+
+    const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+    const toPct = (value, min, max) => {
       const n = Number(value);
-      if (!Number.isFinite(n) || n <= 0) return 0;
-      const p = ((n - min) / (max - min)) * 100;
-      return Math.max(0, Math.min(100, p));
+      if (!Number.isFinite(n)) return 0;
+      return clamp(((n - min) / (max - min)) * 100, 0, 100);
     };
-    const metricRow = (label, displayValue, widthPct, tone = "var(--brand)") => `
+
+    const evidenceState = (p) => {
+      const c = Number(p.confidence_score || 0);
+      if (p.low_evidence_flag) return { label: "Low", pct: Math.max(20, c), tone: "warn" };
+      if (c >= 75) return { label: "High", pct: c, tone: "good" };
+      if (c >= 50) return { label: "Medium", pct: c, tone: "info" };
+      return { label: "Low", pct: Math.max(20, c), tone: "warn" };
+    };
+
+    const parseTopDrivers = (summary) => {
+      const out = [];
+      String(summary || "").split("|").forEach((chunk) => {
+        const [k, v] = chunk.split(":");
+        const key = String(k || "").trim();
+        const val = Number((v || "").trim());
+        if (!key || !Number.isFinite(val)) return;
+        out.push({ key, val });
+      });
+      out.sort((a, b) => Math.abs(b.val) - Math.abs(a.val));
+      return out.slice(0, 3);
+    };
+
+    const sparkline = (ranks = []) => {
+      const points = ranks.map((r) => Number(r)).filter((n) => Number.isFinite(n) && n > 0);
+      if (points.length < 2) return `<div class="muted">Trend: limited history</div>`;
+      const w = 180;
+      const h = 42;
+      const min = Math.min(...points);
+      const max = Math.max(...points);
+      const span = Math.max(1, max - min);
+      const coords = points.map((r, i) => {
+        const x = (i / (points.length - 1)) * (w - 8) + 4;
+        const y = ((r - min) / span) * (h - 8) + 4;
+        return `${x.toFixed(1)},${y.toFixed(1)}`;
+      }).join(" ");
+      return `
+        <svg viewBox="0 0 ${w} ${h}" width="100%" height="42" aria-label="rank trend">
+          <polyline points="${coords}" fill="none" stroke="#245ea8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        </svg>
+      `;
+    };
+
+    const meterRow = (label, pct, valueText, tone = "var(--brand)") => `
       <div class="metric-row">
         <div class="metric-top">
           <span>${label}</span>
-          <strong>${displayValue}</strong>
+          <strong>${valueText}</strong>
         </div>
-        <div class="meter">
-          <div class="meter-fill" style="width:${widthPct.toFixed(1)}%;background:${tone};"></div>
-        </div>
+        <div class="meter"><div class="meter-fill" style="width:${clamp(pct, 0, 100).toFixed(1)}%;background:${tone};"></div></div>
       </div>
     `;
-    const radarSvg = (vals) => {
-      const angles = [-90, 0, 90, 180];
-      const cx = 62;
-      const cy = 62;
-      const radius = 46;
-      const point = (pct, angle) => {
-        const r = radius * (Math.max(0, Math.min(100, pct)) / 100);
-        const rad = (angle * Math.PI) / 180;
-        return `${(cx + Math.cos(rad) * r).toFixed(1)},${(cy + Math.sin(rad) * r).toFixed(1)}`;
-      };
-      const poly = vals.map((v, i) => point(v, angles[i])).join(" ");
-      const rings = [20, 40, 60, 80, 100].map((ring) => {
-        const rr = radius * (ring / 100);
-        const p = angles.map((a) => {
-          const rad = (a * Math.PI) / 180;
-          return `${(cx + Math.cos(rad) * rr).toFixed(1)},${(cy + Math.sin(rad) * rr).toFixed(1)}`;
-        }).join(" ");
-        return `<polygon points="${p}" fill="none" stroke="#d9e1ea" stroke-width="1"/>`;
+
+    const productionRows = (p) => {
+      const group = PRODUCTION_CONFIG[p.position] ? p.position : (POSITION_GROUP_FALLBACK[p.position] || "");
+      if (group === "OL") {
+        return `<div class="muted">Production block is limited for OL from public CFB stat feeds; lean on trait + role projection.</div>`;
+      }
+      if (group === "LB") {
+        return `<div class="muted">LB-specific public counting feed is thinner; cross-check role projection and trait profile.</div>`;
+      }
+      const cfg = PRODUCTION_CONFIG[group];
+      if (!cfg || cfg.length === 0) return `<div class="muted">Position-specific production data pending.</div>`;
+      const metrics = p.production_metrics || {};
+      const pcts = p.production_percentiles || {};
+      return cfg.map((m) => {
+        const raw = num(metrics[m.key]);
+        if (raw === null) return `<div class="muted metric-lite">${m.label}: -</div>`;
+        let pp = num(pcts[m.key]);
+        if (pp === null) pp = 50;
+        if (m.lowerBetter) pp = 100 - pp;
+        return meterRow(`${m.label} (${p.position})`, pp, `${fmtValue(raw, m.fmt)} · ${pp.toFixed(0)}th pct`, "#0f7b6a");
       }).join("");
-      const axes = angles.map((a) => {
-        const rad = (a * Math.PI) / 180;
-        const x = (cx + Math.cos(rad) * radius).toFixed(1);
-        const y = (cy + Math.sin(rad) * radius).toFixed(1);
-        return `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#d9e1ea" stroke-width="1"/>`;
-      }).join("");
-      return `
-        <svg viewBox="0 0 124 124" width="124" height="124" aria-label="player radar">
-          ${rings}
-          ${axes}
-          <polygon points="${poly}" fill="rgba(13,47,79,0.20)" stroke="var(--brand)" stroke-width="2"/>
-        </svg>
-      `;
+    };
+
+    const compLine = (title, comp, fallback) => {
+      if (!comp || !comp.name) return `<div class="muted">${title}: ${fallback || "-"}</div>`;
+      const sim = Number(comp.similarity);
+      const simText = Number.isFinite(sim) ? `${(sim * 100).toFixed(0)}%` : "-";
+      const yearText = comp.year ? ` (${comp.year})` : "";
+      return `<div class="comp-row"><span>${title}:</span> <strong>${comp.name}${yearText}</strong> <span class="muted">· ${simText} match</span></div>`;
+    };
+
+    const roleTags = (p) => {
+      const role = String(p.best_role || "Role pending");
+      const scheme = String(p.best_scheme_fit || "Scheme pending");
+      const tags = [];
+      const s = scheme.toLowerCase();
+      if (s.includes("zone")) tags.push("Zone");
+      if (s.includes("man")) tags.push("Man");
+      if (s.includes("gap")) tags.push("Gap");
+      if (s.includes("blitz")) tags.push("Pressure");
+      if (s.includes("run")) tags.push("Run-first");
+      return { role, scheme, tags };
     };
 
     const render = () => {
       const chosen = slots.map((el) => idx[el?.value]).filter(Boolean);
       cards.innerHTML = "";
       chosen.forEach((p) => {
-        const modelGrade = Number(p.final_grade || 0);
-        const pffGrade = Number(p.pff_grade || 0);
-        const traitScore = Number(p.trait_score || 0);
-        const rasScore = rasRaw(p);
-        const rankScore = Number.isFinite(Number(p.consensus_rank)) && Number(p.consensus_rank) > 0
-          ? Math.max(0, Math.min(100, ((300 - Number(p.consensus_rank)) / 300) * 100))
-          : 0;
-        const radar = radarSvg([
-          pct(modelGrade, 65, 95),
-          pct(pffGrade, 55, 95),
-          pct(traitScore, 70, 97),
-          pct(rasScore, 4, 10)
-        ]);
+        const grade = Number(p.final_grade || 0);
+        const pff = Number(p.pff_grade || 0);
+        const trait = Number(p.trait_score || 0);
+        const rasRaw = Number(p.combine_ras_official || 0) > 0 ? Number(p.combine_ras_official || 0) : Number(p.ras_estimate || 0);
+        const ras = rasRaw > 0 ? rasRaw.toFixed(2) : "-";
+        const evidence = evidenceState(p);
+        const topDrivers = parseTopDrivers(p.rank_driver_summary || "");
+        const move = Number(p.rank_move_window || 0);
+        const moveText = move > 0 ? `Up ${move}` : (move < 0 ? `Down ${Math.abs(move)}` : "Flat");
+        const role = roleTags(p);
+
+        const prodPctVals = Object.values(p.production_percentiles || {}).map((v) => Number(v)).filter((n) => Number.isFinite(n));
+        const productionPct = prodPctVals.length ? (prodPctVals.reduce((a, b) => a + b, 0) / prodPctVals.length) : 50;
+        const athleticPct = rasRaw > 0 ? toPct(rasRaw, 4, 10) : 50;
+        const traitPct = toPct(trait, 70, 97);
+        const evidencePct = clamp(Number(evidence.pct || 50), 0, 100);
+
         const div = document.createElement("article");
         div.className = "card compare-card";
         div.innerHTML = `
-          <h3 style="margin:0 0 .2rem;font-size:1.45rem;">${p.player_name}</h3>
-          <div class="muted">${p.school}</div>
-          <div style="margin:.6rem 0 .5rem;">
+          <div class="card-head">
+            <h3>${p.player_name}</h3>
             <span class="badge">${p.position}</span>
-            <span class="badge">Model Rank ${fmt(p.consensus_rank)}</span>
-            <span class="badge">${p.low_evidence_flag ? "QA Watch" : "QA Clear"}</span>
           </div>
-          <div class="muted" style="margin:0 0 .55rem;"><strong>Projected Range:</strong> ${fmt(p.round_value)}</div>
-          <div class="compare-viz-row">
-            <div class="radar-wrap">
-              ${radar}
-              <div class="radar-legend muted">G/P/T/R</div>
-            </div>
-            <div class="rank-snapshot">
-              <div class="muted">Board Strength</div>
-              <strong>${rankScore.toFixed(0)}</strong>
-            </div>
-          </div>
+          <div class="muted">${p.school}</div>
+          <div class="muted keyline">Model Rank ${p.consensus_rank} · Grade ${grade.toFixed(2)} · ${p.round_value || "-"}</div>
+
           <div class="metrics-wrap">
-            ${metricRow("Model Grade", fmt(p.final_grade), pct(modelGrade, 65, 95), "var(--brand)")}
-            ${metricRow("PFF Grade", pff(p), pct(pffGrade, 55, 95), "var(--accent)")}
-            ${metricRow("Trait Score", trait(p), pct(traitScore, 70, 97), "#0f7b6a")}
-            ${metricRow("RAS Score", ras(p), pct(rasScore, 4, 10), "#6b7280")}
+            ${meterRow("PFF Grade", toPct(pff, 55, 95), pff > 0 ? pff.toFixed(1) : "-", "var(--accent)")}
+            ${meterRow("Trait Score", traitPct, trait > 0 ? trait.toFixed(2) : "-", "var(--brand)")}
+            ${meterRow("RAS Score", athleticPct, ras, "#6b7280")}
+          </div>
+
+          <div class="subcard">
+            <div class="subhead">Translation Profile</div>
+            ${meterRow("Production Percentile", productionPct, `${productionPct.toFixed(0)}th pct`, "#0f7b6a")}
+            ${meterRow("Athletic Percentile", athleticPct, `${athleticPct.toFixed(0)}th pct`, "#425466")}
+            ${meterRow("Trait Percentile", traitPct, `${traitPct.toFixed(0)}th pct`, "#245ea8")}
+            ${meterRow("Evidence Confidence", evidencePct, evidence.label, evidence.tone === "good" ? "#138a4a" : (evidence.tone === "warn" ? "#b15518" : "#245ea8"))}
+          </div>
+
+          <div class="subcard">
+            <div class="subhead">Position Production Context</div>
+            ${productionRows(p)}
+          </div>
+
+          <div class="subcard">
+            <div class="subhead">Role / Scheme Fit</div>
+            <div><strong>${role.role}</strong></div>
+            <div class="muted">${role.scheme}</div>
+            <div class="chip-row">
+              ${(role.tags || []).map((t) => `<span class="chip info">${t}</span>`).join("") || `<span class="muted">No scheme tags</span>`}
+            </div>
+          </div>
+
+          <div class="subcard">
+            <div class="subhead">Rank Movement</div>
+            <div class="chip-row">
+              <span class="chip ${move > 0 ? "good" : move < 0 ? "warn" : "info"}">${moveText} (window)</span>
+              ${topDrivers.map((d) => `<span class="chip info">${d.key} ${d.val >= 0 ? "+" : ""}${d.val.toFixed(2)}</span>`).join("")}
+            </div>
+            ${sparkline(p.rank_history || [])}
+          </div>
+
+          <div class="subcard">
+            <div class="subhead">Historical Comp Panel</div>
+            ${compLine("Floor", p.historical_comp_floor, "Depth/rotation outcome")}
+            ${compLine("Median", p.historical_comp_median, "Starter outcome")}
+            ${compLine("Ceiling", p.historical_comp_ceiling, "Impact starter / all-pro ceiling")}
+            <div class="muted">Comp confidence: ${p.comp_confidence || "-"}</div>
           </div>
         `;
         cards.appendChild(div);
       });
     };
 
-    // Preload top prospects so page has immediate comparisons.
     if (pool[0] && slots[0] && !slots[0].value) slots[0].value = pool[0].player_uid;
     if (pool[1] && slots[1] && !slots[1].value) slots[1].value = pool[1].player_uid;
     if (pool[2] && slots[2] && !slots[2].value) slots[2].value = pool[2].player_uid;
@@ -172,59 +302,69 @@ const collectionSchema = {
   </script>
 
   <style>
+    .compare-controls {
+      margin-bottom: 1rem;
+    }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.65rem;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+      gap: 0.8rem;
+    }
     .compare-card {
-      padding: 1rem;
+      padding: 0.95rem;
+      display: grid;
+      gap: 0.62rem;
     }
-    .compare-viz-row {
+    .card-head {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: .7rem;
-      margin: .35rem 0 .55rem;
+      gap: 0.5rem;
+      align-items: baseline;
     }
-    .radar-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .2rem;
-      min-width: 130px;
+    .card-head h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.2;
     }
-    .radar-legend {
-      font-size: .72rem;
-      letter-spacing: .06em;
-      text-transform: uppercase;
+    .keyline {
+      font-size: 0.86rem;
     }
-    .rank-snapshot {
-      border: 1px solid #e6ebf1;
+    .subcard {
+      border: 1px solid #e5eaf0;
       border-radius: 10px;
-      padding: .45rem .55rem;
-      min-width: 96px;
-      text-align: center;
+      padding: 0.6rem;
       background: #fbfdff;
+      display: grid;
+      gap: 0.42rem;
     }
-    .rank-snapshot strong {
-      display: block;
-      font-size: 1.25rem;
-      margin-top: .18rem;
-      color: var(--brand);
+    .subhead {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #5c6473;
+      font-weight: 700;
     }
     .metrics-wrap {
       display: grid;
-      gap: .5rem;
-      margin-top: .4rem;
+      gap: 0.48rem;
     }
     .metric-row {
       border: 1px solid #e6ebf1;
       border-radius: 10px;
-      padding: .45rem .5rem;
+      padding: 0.45rem 0.5rem;
       background: #fbfdff;
     }
     .metric-top {
       display: flex;
       justify-content: space-between;
-      gap: .45rem;
-      font-size: .86rem;
-      margin-bottom: .28rem;
+      gap: 0.45rem;
+      font-size: 0.84rem;
+      margin-bottom: 0.28rem;
     }
     .meter {
       width: 100%;
@@ -238,16 +378,28 @@ const collectionSchema = {
       border-radius: 999px;
       transition: width .2s ease;
     }
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      align-items: center;
+    }
+    .comp-row {
+      display: flex;
+      gap: 0.35rem;
+      align-items: baseline;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
+    .metric-lite {
+      font-size: 0.86rem;
+    }
     @media (max-width: 760px) {
       .compare-card {
-        padding: .85rem;
+        padding: 0.8rem;
       }
-      .compare-viz-row {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .rank-snapshot {
-        width: 100%;
+      .cards-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -21,6 +22,31 @@ TRANSACTION_OVERRIDES_CSV = ROOT / "data" / "sources" / "manual" / "transactions
 INSIDER_TRANSACTIONS_CSV = ROOT / "data" / "sources" / "manual" / "insider_transactions_feed_2026.csv"
 ESPN_PROSPECTS_CSV = ROOT / "data" / "sources" / "external" / "espn_nfl_draft_prospect_data" / "nfl_draft_prospects.csv"
 DELTA_AUDIT_LATEST_CSV = OUTPUTS / "delta_audit_2026_latest.csv"
+STABILITY_SNAPSHOTS_DIR = OUTPUTS / "stability_snapshots"
+
+
+PRODUCTION_METRIC_KEYS = [
+    "cfb_qb_epa_per_play",
+    "cfb_qb_pressure_signal",
+    "cfb_qb_pass_td",
+    "cfb_qb_pass_int",
+    "cfb_wrte_yprr",
+    "cfb_wrte_target_share",
+    "cfb_wrte_rec_td",
+    "cfb_wrte_rec_yds",
+    "cfb_rb_explosive_rate",
+    "cfb_rb_missed_tackles_forced_per_touch",
+    "cfb_rb_rush_td",
+    "cfb_rb_rush_yds",
+    "cfb_edge_pressure_rate",
+    "cfb_edge_sacks",
+    "cfb_edge_qb_hurries",
+    "cfb_edge_tfl",
+    "cfb_db_coverage_plays_per_target",
+    "cfb_db_yards_allowed_per_coverage_snap",
+    "cfb_db_int",
+    "cfb_db_pbu",
+]
 
 
 CANONICAL_SCHOOL_ALIASES = {
@@ -180,6 +206,43 @@ def _norm_school_key(value: str) -> str:
 def _norm_player_key(value: str) -> str:
     text = str(value or "").strip().lower()
     return "".join(ch for ch in text if ch.isalnum())
+
+
+def _clean_token_label(value: str) -> str:
+    text = str(value or "").strip().replace("_", " ")
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def _pct_rank(value: float | None, values: list[float]) -> float | None:
+    if value is None or not values:
+        return None
+    ordered = sorted(values)
+    n = len(ordered)
+    if n == 0:
+        return None
+    count = 0
+    for v in ordered:
+        if v <= value:
+            count += 1
+    return round((count / n) * 100.0, 1)
+
+
+def _load_rank_history(window: int = 8) -> dict[str, list[int]]:
+    if not STABILITY_SNAPSHOTS_DIR.exists():
+        return {}
+    files = sorted(STABILITY_SNAPSHOTS_DIR.glob("big_board_2026_snapshot_*.csv"))
+    if not files:
+        return {}
+    files = files[-max(1, int(window)) :]
+    out: dict[str, list[int]] = defaultdict(list)
+    for path in files:
+        for row in _read_csv(path):
+            uid = str(row.get("player_uid", "")).strip()
+            rank = _safe_int(row.get("consensus_rank"), 0)
+            if uid and rank > 0:
+                out[uid].append(rank)
+    return out
 
 
 def _canonical_school_name(raw_school: str) -> str:
@@ -442,9 +505,24 @@ def _needs_score(row: dict) -> float:
 
 def export_board(player_school_map: dict[str, str]) -> list[dict]:
     rows = _read_csv(BOARD_CSV)
+
+    # Position-normalized metric populations for percentile context.
+    pos_metric_values: dict[str, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
+    for row in rows:
+        pos = str(row.get("position", "")).strip().upper()
+        if not pos:
+            continue
+        for key in PRODUCTION_METRIC_KEYS:
+            val = _safe_float(row.get(key))
+            if val is None:
+                continue
+            pos_metric_values[pos][key].append(float(val))
+
+    rank_history = _load_rank_history(window=8)
     out = []
     for row in rows:
         player_name = row.get("player_name", "")
+        pos = str(row.get("position", "")).strip().upper()
         school = player_school_map.get(_norm_player_key(player_name), "")
         if not school:
             school = _canonical_school_name(row.get("school", ""))
@@ -466,13 +544,56 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             ("pending structured" in production_snapshot.lower())
             or (pff_grade <= 0 and combine_ras_official <= 0 and ras_estimate <= 0)
         )
+        production_metrics: dict[str, float] = {}
+        production_percentiles: dict[str, float] = {}
+        for key in PRODUCTION_METRIC_KEYS:
+            v = _safe_float(row.get(key))
+            if v is None:
+                continue
+            production_metrics[key] = round(float(v), 4)
+            pop = pos_metric_values.get(pos, {}).get(key, [])
+            pct = _pct_rank(float(v), pop)
+            if pct is not None:
+                production_percentiles[key] = pct
+
+        uid = row.get("player_uid", "")
+        hist = rank_history.get(uid, [])
+        rank_move_window = 0
+        if len(hist) >= 2:
+            # Positive means moved up board (lower numeric rank).
+            rank_move_window = int(hist[0] - hist[-1])
+
+        raw_best_scheme = row.get("best_scheme_fit", "")
+        raw_best_role = row.get("best_role", "")
+
+        comp_items: list[dict] = []
+        for idx in (1, 2, 3):
+            name = str(row.get(f"historical_combine_comp_{idx}", "")).strip()
+            sim = _safe_float(row.get(f"historical_combine_comp_{idx}_similarity"))
+            year = _safe_int(row.get(f"historical_combine_comp_{idx}_year"), 0)
+            if name and _norm_player_key(name) != _norm_player_key(player_name):
+                comp_items.append(
+                    {
+                        "name": name,
+                        "similarity": round(float(sim), 3) if sim is not None else None,
+                        "year": year if year > 0 else None,
+                    }
+                )
+        comp_items = sorted(
+            comp_items,
+            key=lambda r: (r.get("similarity") is None, -(r.get("similarity") or 0.0)),
+        )
+        comp_ceiling = comp_items[0] if len(comp_items) >= 1 else {}
+        comp_median = comp_items[1] if len(comp_items) >= 2 else (comp_items[0] if len(comp_items) == 1 else {})
+        comp_floor = comp_items[-1] if len(comp_items) >= 2 else (comp_items[0] if len(comp_items) == 1 else {})
+
         out.append(
             {
                 "player_uid": row.get("player_uid", ""),
                 "slug": slug,
                 "consensus_rank": _safe_int(row.get("consensus_rank"), 9999),
                 "player_name": player_name,
-                "position": row.get("position", ""),
+                "position": pos,
                 "school": school,
                 "final_grade": round(_safe_float(row.get("final_grade")) or 0.0, 2),
                 "round_value": row.get("round_value", ""),
@@ -481,10 +602,22 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "trait_score": round(_safe_float(row.get("trait_score")) or 0.0, 2),
                 "combine_ras_official": combine_ras_official,
                 "ras_estimate": ras_estimate,
+                "confidence_score": round(_safe_float(row.get("confidence_score")) or 0.0, 2),
+                "uncertainty_score": round(_safe_float(row.get("uncertainty_score")) or 0.0, 2),
+                "best_role": _clean_token_label(raw_best_role),
+                "best_scheme_fit": _clean_token_label(raw_best_scheme),
                 "rank_driver_summary": rank_driver_summary,
                 "top_rank_driver": top_driver_key,
                 "top_rank_driver_delta": round(top_driver_delta, 2),
+                "rank_history": hist,
+                "rank_move_window": rank_move_window,
                 "low_evidence_flag": low_evidence_flag,
+                "production_metrics": production_metrics,
+                "production_percentiles": production_percentiles,
+                "historical_comp_floor": comp_floor,
+                "historical_comp_median": comp_median,
+                "historical_comp_ceiling": comp_ceiling,
+                "comp_confidence": str(row.get("comp_confidence", "")).strip(),
                 "scouting_report_summary": row.get("scouting_report_summary", ""),
                 "scouting_why_he_wins": row.get("scouting_why_he_wins", ""),
                 "scouting_primary_concerns": row.get("scouting_primary_concerns", ""),
