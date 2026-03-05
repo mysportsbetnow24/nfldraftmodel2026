@@ -20,48 +20,51 @@ const collectionSchema = {
     <p>Public high-level framework for reading the board, grades, and mock outputs.</p>
   </section>
 
-  <section class="card" style="display:grid;gap:.8rem;">
+  <section class="card methodology-grid">
     <article class="card">
-      <h2 style="margin:0 0 .4rem;">1) Evidence Categories</h2>
-      <p class="muted" style="margin:.2rem 0;">
+      <h2 class="method-heading">1) Evidence Categories</h2>
+      <p class="muted method-copy">
         We review multiple evidence buckets: college production context, athletic markers, role/trait translation signals,
         and external market context.
-      </p>
-      <p class="muted" style="margin:.45rem 0 0;">
-        Public weight bands (high level): board outcomes are primarily driven by on-field performance and translation traits,
-        with athletic and market context acting as calibration layers.
       </p>
     </article>
 
     <article class="card">
-      <h2 style="margin:0 0 .4rem;">2) Grade vs Rank</h2>
-      <p class="muted" style="margin:.2rem 0;">
+      <h2 class="method-heading">2) Grade vs Rank</h2>
+      <p class="muted method-copy">
         <strong>Grade</strong> is player-quality signal. <strong>Rank</strong> is ordering after additional context checks.
         That means two players with close grades can still sort differently.
       </p>
     </article>
 
     <article class="card">
-      <h2 style="margin:0 0 .4rem;">3) Mock Logic Philosophy</h2>
-      <p class="muted" style="margin:.2rem 0;">
+      <h2 class="method-heading">3) Mock Logic Philosophy</h2>
+      <p class="muted method-copy">
         Mock outputs balance board value with team context and positional economics. We aim for realistic team classes while still
         allowing variance and upside outcomes.
       </p>
     </article>
 
     <article class="card">
-      <h2 style="margin:0 0 .4rem;">4) Update Cadence</h2>
-      <p class="muted" style="margin:.2rem 0;">
+      <h2 class="method-heading">4) Update Cadence</h2>
+      <p class="muted method-copy">
         Public pages are refreshed in cycles as new data and news are incorporated. Check the weekly updates page for timestamps.
       </p>
     </article>
 
-    <article class="card">
-      <h2 style="margin:0 0 .4rem;">Guardrails and QA</h2>
-      <p class="muted" style="margin:.2rem 0;">
-        We apply guardrails to reduce noisy spikes, flag thin-evidence profiles, and keep high-variance outliers clearly labeled.
-        This helps keep the board stable while still surfacing upside cases.
-      </p>
-    </article>
   </section>
+
+  <style>
+    .methodology-grid {
+      display: grid;
+      gap: .8rem;
+    }
+    .method-heading {
+      margin: 0 0 .4rem;
+    }
+    .method-copy {
+      margin: .2rem 0;
+      line-height: 1.55;
+    }
+  </style>
 </BaseLayout>

@@ -24,11 +24,11 @@ const collectionSchema = {
 
   <section class="card">
     <div class="result-bar">
-      <h2 class="section-title" style="margin:0;">Latest Transactions</h2>
+      <h2 class="section-title section-no-margin">Latest Transactions</h2>
       <span class="muted">Only <strong>Confirmed</strong> items auto-adjust team-needs logic.</span>
     </div>
 
-    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.9rem;">
+    <div class="feed-filters">
       <button type="button" class="reset-btn is-active" data-feed-filter="all">All</button>
       <button type="button" class="reset-btn" data-feed-filter="confirmed">Confirmed</button>
       <button type="button" class="reset-btn" data-feed-filter="rumored">Rumored</button>
@@ -70,7 +70,7 @@ const collectionSchema = {
                 </td>
                 <td>
                   {tx.source_url ? (
-                    <a href={tx.source_url} target="_blank" rel="noopener noreferrer" style="color:var(--brand);text-decoration:none;">
+                    <a href={tx.source_url} target="_blank" rel="noopener noreferrer" class="source-link">
                       {tx.source_account || "Source"}
                     </a>
                   ) : (
@@ -108,10 +108,23 @@ const collectionSchema = {
   </script>
 
   <style>
+    .section-no-margin {
+      margin: 0;
+    }
+    .feed-filters {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-bottom: .9rem;
+    }
     .reset-btn.is-active {
       border-color: #8db4e2;
       background: #eef5fc;
       color: #1f4f84;
+    }
+    .source-link {
+      color: var(--brand);
+      text-decoration: none;
     }
   </style>
 </BaseLayout>

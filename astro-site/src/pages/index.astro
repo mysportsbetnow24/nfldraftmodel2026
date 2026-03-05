@@ -11,42 +11,42 @@ const top = (board || []).slice(0, 25);
     <p>Model-first big board, mock drafts, and scouting cards.</p>
   </section>
 
-  <section class="card" style="margin-bottom: 1rem;">
-    <h2 style="margin:0 0 .8rem;">Pages</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.7rem;">
-      <a class="card" href="/2026-nfl-draft-big-board" style="text-decoration:none;color:inherit;">
+  <section class="card page-grid-card">
+    <h2 class="section-title">Pages</h2>
+    <div class="page-grid">
+      <a class="card page-link" href="/2026-nfl-draft-big-board">
         <strong>2026 NFL Draft Big Board</strong><br />
         <span class="muted">Ranked prospects with grade + role context.</span>
       </a>
-      <a class="card" href="/2026-nfl-mock-draft" style="text-decoration:none;color:inherit;">
+      <a class="card page-link" href="/2026-nfl-mock-draft">
         <strong>2026 NFL Mock Draft</strong><br />
         <span class="muted">Landing page for round 1 and 7-round projections.</span>
       </a>
-      <a class="card" href="/2026-nfl-mock-draft-round-1" style="text-decoration:none;color:inherit;">
+      <a class="card page-link" href="/2026-nfl-mock-draft-round-1">
         <strong>2026 NFL Mock Draft (Round 1)</strong><br />
         <span class="muted">One-round projection with pick rationale.</span>
       </a>
-      <a class="card" href="/2026-nfl-7-round-mock-draft" style="text-decoration:none;color:inherit;">
+      <a class="card page-link" href="/2026-nfl-7-round-mock-draft">
         <strong>2026 7-Round NFL Mock Draft</strong><br />
         <span class="muted">Searchable by team for full draft classes.</span>
       </a>
-      <a class="card" href="/2026-nfl-player-comparison" style="text-decoration:none;color:inherit;">
+      <a class="card page-link" href="/2026-nfl-player-comparison">
         <strong>2026 NFL Player Comparison</strong><br />
         <span class="muted">Side-by-side snapshot of top prospects.</span>
       </a>
-      <a class="card" href="/nfl-team-needs-2026" style="text-decoration:none;color:inherit;">
+      <a class="card page-link" href="/nfl-team-needs-2026">
         <strong>NFL Team Needs 2026</strong><br />
         <span class="muted">High-level team need stack with transaction context.</span>
       </a>
-      <a class="card" href="/nfl-transactions-feed-2026" style="text-decoration:none;color:inherit;">
+      <a class="card page-link" href="/nfl-transactions-feed-2026">
         <strong>NFL Transactions Feed 2026</strong><br />
         <span class="muted">Confirmed vs rumored tracker with impact visibility.</span>
       </a>
-      <a class="card" href="/nfl-draft-methodology" style="text-decoration:none;color:inherit;">
+      <a class="card page-link" href="/nfl-draft-methodology">
         <strong>Evaluation Approach</strong><br />
         <span class="muted">Public high-level guide for reading grades and ranks.</span>
       </a>
-      <a class="card" href="/2026-nfl-draft-weekly-updates" style="text-decoration:none;color:inherit;">
+      <a class="card page-link" href="/2026-nfl-draft-weekly-updates">
         <strong>Weekly Updates</strong><br />
         <span class="muted">Latest refresh timestamps and model coverage snapshot.</span>
       </a>
@@ -54,11 +54,11 @@ const top = (board || []).slice(0, 25);
   </section>
 
   <section class="card">
-    <div style="display:flex;justify-content:space-between;gap:.6rem;align-items:end;flex-wrap:wrap;">
-      <h2 style="margin:0 0 .65rem;">Top Board Snapshot</h2>
+    <div class="result-bar">
+      <h2 class="section-title">Top Board Snapshot</h2>
       <span class="muted">Generated: {meta.generated_at || "pending sync-data"}</span>
     </div>
-    <div style="overflow:auto;">
+    <div class="table-wrap">
       <table>
         <thead>
           <tr>
@@ -85,4 +85,24 @@ const top = (board || []).slice(0, 25);
       </table>
     </div>
   </section>
+
+  <style>
+    .page-grid-card {
+      margin-bottom: 1rem;
+    }
+    .page-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.7rem;
+    }
+    .page-link {
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .15s ease, transform .15s ease;
+    }
+    .page-link:hover {
+      border-color: #b6c6da;
+      transform: translateY(-1px);
+    }
+  </style>
 </BaseLayout>

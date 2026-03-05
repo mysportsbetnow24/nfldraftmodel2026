@@ -4,6 +4,16 @@ import picks from "../data/mock_2026_7round.json";
 import byTeam from "../data/mock_2026_7round_by_team.json";
 
 const teams = Object.keys(byTeam || {}).sort();
+const preferredPositionOrder = ["QB", "RB", "WR", "TE", "OT", "IOL", "DT", "EDGE", "LB", "CB", "S"];
+const pickPositions = Array.from(new Set((picks || []).map((p: any) => p.position).filter(Boolean)));
+const positions = [
+  ...preferredPositionOrder.filter((p) => pickPositions.includes(p)),
+  ...pickPositions.filter((p) => !preferredPositionOrder.includes(p)).sort(),
+];
+const rounds = Array.from(
+  new Set((picks || []).map((p: any) => Number(p.round)).filter((r) => Number.isFinite(r) && r > 0))
+).sort((a, b) => a - b);
+const schools = Array.from(new Set((picks || []).map((p: any) => p.school).filter(Boolean))).sort();
 const pageDescription = "Complete 7-round mock draft with team filter to view full projected classes.";
 const collectionSchema = {
   "@context": "https://schema.org",
@@ -24,17 +34,43 @@ const collectionSchema = {
     <p>Full draft projection with team-level class filtering.</p>
   </section>
 
-  <section class="card" style="margin-bottom:1rem;">
-    <label for="teamFilter" class="muted">Filter By Team</label><br />
-    <select id="teamFilter" style="margin-top:.3rem;padding:.5rem .65rem;border:1px solid var(--line);border-radius:10px;min-width:220px;">
-      <option value="">All Teams</option>
-      {teams.map((team) => <option value={team}>{team}</option>)}
-    </select>
-    <div id="teamSummary" class="muted" style="margin-top:.5rem;">Showing all picks.</div>
+  <section class="card filter-card">
+    <h2 class="section-title">Filter And Sort</h2>
+    <div class="filters-grid">
+      <input id="searchFilter" type="search" placeholder="Search player, school, or position..." class="control search-control" />
+      <select id="teamFilter" class="control">
+        <option value="">All Teams</option>
+        {teams.map((team) => <option value={team}>{team}</option>)}
+      </select>
+      <select id="roundFilter" class="control">
+        <option value="">All Rounds</option>
+        {rounds.map((r) => <option value={String(r)}>{`Round ${r}`}</option>)}
+      </select>
+      <select id="positionFilter" class="control">
+        <option value="">All Positions</option>
+        {positions.map((p) => <option value={p}>{p}</option>)}
+      </select>
+      <select id="schoolFilter" class="control">
+        <option value="">All Schools</option>
+        {schools.map((s) => <option value={s}>{s}</option>)}
+      </select>
+      <select id="sortBy" class="control">
+        <option value="overall_asc">Sort: Overall pick (asc)</option>
+        <option value="overall_desc">Sort: Overall pick (desc)</option>
+        <option value="round_asc">Sort: Round then pick</option>
+        <option value="position_az">Sort: Position (A-Z)</option>
+        <option value="school_az">Sort: School (A-Z)</option>
+      </select>
+    </div>
+    <div class="result-bar">
+      <span id="teamSummary" class="muted">Showing all picks.</span>
+      <button id="resetFilters" type="button" class="reset-btn">Reset Filters</button>
+    </div>
   </section>
 
   <section class="card">
-    <div style="overflow:auto;">
+    <h2 class="section-title">7-Round Projection</h2>
+    <div class="table-wrap">
       <table id="mockTable">
         <thead>
           <tr>
@@ -49,7 +85,15 @@ const collectionSchema = {
         </thead>
         <tbody>
           {picks.map((p: any) => (
-            <tr data-team={p.team}>
+            <tr
+              data-team={p.team}
+              data-round={p.round}
+              data-position={p.position}
+              data-school={p.school}
+              data-overall={p.overall_pick}
+              data-player={p.player_name}
+              data-search={`${String(p.player_name || "")} ${String(p.position || "")} ${String(p.school || "")}`.toLowerCase()}
+            >
               <td>{p.overall_pick}</td>
               <td>{p.round}</td>
               <td>{p.team}</td>
@@ -65,36 +109,113 @@ const collectionSchema = {
   </section>
 
   <script define:vars={{ byTeam }}>
-    const filter = document.getElementById("teamFilter");
+    const searchFilter = document.getElementById("searchFilter");
+    const teamFilter = document.getElementById("teamFilter");
+    const roundFilter = document.getElementById("roundFilter");
+    const positionFilter = document.getElementById("positionFilter");
+    const schoolFilter = document.getElementById("schoolFilter");
+    const sortBy = document.getElementById("sortBy");
+    const resetFilters = document.getElementById("resetFilters");
     const rows = Array.from(document.querySelectorAll("#mockTable tbody tr"));
+    const tbody = document.querySelector("#mockTable tbody");
     const summary = document.getElementById("teamSummary");
 
+    const cmp = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
+
     const update = () => {
-      const team = filter?.value || "";
-      let shown = 0;
+      const team = teamFilter?.value || "";
+      const round = roundFilter?.value || "";
+      const pos = positionFilter?.value || "";
+      const school = schoolFilter?.value || "";
+      const q = (searchFilter?.value || "").toLowerCase().trim();
+      const sort = sortBy?.value || "overall_asc";
+
+      const filtered = rows.filter((row) => {
+        const hay = row.getAttribute("data-search") || "";
+        if (q && !hay.includes(q)) return false;
+        if (team && row.getAttribute("data-team") !== team) return false;
+        if (round && row.getAttribute("data-round") !== round) return false;
+        if (pos && row.getAttribute("data-position") !== pos) return false;
+        if (school && row.getAttribute("data-school") !== school) return false;
+        return true;
+      });
+
+      const sorted = [...filtered].sort((a, b) => {
+        const aOverall = Number(a.getAttribute("data-overall") || 9999);
+        const bOverall = Number(b.getAttribute("data-overall") || 9999);
+        const aRound = Number(a.getAttribute("data-round") || 99);
+        const bRound = Number(b.getAttribute("data-round") || 99);
+        const aPos = a.getAttribute("data-position") || "";
+        const bPos = b.getAttribute("data-position") || "";
+        const aSchool = a.getAttribute("data-school") || "";
+        const bSchool = b.getAttribute("data-school") || "";
+
+        if (sort === "overall_desc") return bOverall - aOverall;
+        if (sort === "round_asc") return (aRound - bRound) || (aOverall - bOverall);
+        if (sort === "position_az") return cmp(aPos, bPos) || (aOverall - bOverall);
+        if (sort === "school_az") return cmp(aSchool, bSchool) || (aOverall - bOverall);
+        return aOverall - bOverall;
+      });
+
       rows.forEach((row) => {
-        const keep = !team || row.getAttribute("data-team") === team;
-        row.style.display = keep ? "" : "none";
-        if (keep) shown += 1;
+        row.style.display = "none";
+      });
+      sorted.forEach((row) => {
+        row.style.display = "";
+        if (tbody) tbody.appendChild(row);
+      });
+
+      let shown = 0;
+      sorted.forEach(() => {
+        shown += 1;
       });
 
       if (!summary) return;
-      if (!team) {
+      if (!q && !team && !round && !pos && !school) {
         summary.textContent = `Showing all picks (${shown}).`;
         return;
       }
-      const cls = byTeam[team] || [];
-      const byPos = {};
-      cls.forEach((p) => {
-        byPos[p.position] = (byPos[p.position] || 0) + 1;
-      });
-      const posTxt = Object.entries(byPos).map(([k, v]) => `${k} ${v}`).join(", ");
-      summary.textContent = `${team}: ${cls.length} picks (${posTxt || "no picks"}).`;
+
+      const parts = [];
+      if (team) {
+        const cls = byTeam[team] || [];
+        const byPos = {};
+        cls.forEach((p) => {
+          byPos[p.position] = (byPos[p.position] || 0) + 1;
+        });
+        const posTxt = Object.entries(byPos).map(([k, v]) => `${k} ${v}`).join(", ");
+        parts.push(`${team}: ${cls.length} picks (${posTxt || "no picks"})`);
+      }
+      if (round) parts.push(`Round ${round}`);
+      if (pos) parts.push(pos);
+      if (school) parts.push(school);
+      if (q) parts.push(`search: ${q}`);
+      summary.textContent = `Showing ${shown} picks${parts.length ? " · " + parts.join(" · ") : ""}.`;
     };
 
-    if (filter) {
-      filter.addEventListener("change", update);
-      update();
+    [searchFilter, teamFilter, roundFilter, positionFilter, schoolFilter, sortBy].forEach((el) => {
+      if (el) el.addEventListener("change", update);
+      if (el) el.addEventListener("input", update);
+    });
+
+    if (resetFilters) {
+      resetFilters.addEventListener("click", () => {
+        if (searchFilter) searchFilter.value = "";
+        if (teamFilter) teamFilter.value = "";
+        if (roundFilter) roundFilter.value = "";
+        if (positionFilter) positionFilter.value = "";
+        if (schoolFilter) schoolFilter.value = "";
+        if (sortBy) sortBy.value = "overall_asc";
+        update();
+      });
     }
+
+    update();
   </script>
+
+  <style>
+    .filter-card {
+      margin-bottom: 1rem;
+    }
+  </style>
 </BaseLayout>

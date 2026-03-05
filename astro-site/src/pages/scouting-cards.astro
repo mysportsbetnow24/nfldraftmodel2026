@@ -23,10 +23,10 @@ const collectionSchema = {
     <p>Search and review concise scouting snapshots for this class.</p>
   </section>
 
-  <section class="card" style="margin-bottom:1rem;">
-    <label for="playerSearch" class="muted" style="display:block;margin-bottom:.35rem;">Search by player, school, or position</label>
-    <input id="playerSearch" type="search" placeholder="Start typing a name..." style="width:100%;padding:.55rem;border:1px solid var(--line);border-radius:8px;" />
-    <div style="margin-top:.75rem;overflow:auto;max-height:320px;border:1px solid var(--line);border-radius:10px;">
+  <section class="card search-card">
+    <label for="playerSearch" class="muted search-label">Search by player, school, or position</label>
+    <input id="playerSearch" type="search" placeholder="Start typing a name..." class="control search-control" />
+    <div class="list-wrap">
       <table>
         <thead>
           <tr>
@@ -43,21 +43,21 @@ const collectionSchema = {
   </section>
 
   <section class="card" id="cardDetails">
-    <h2 id="playerTitle" style="margin:0 0 .35rem;">Select a player</h2>
-    <div id="playerMeta" class="muted" style="margin-bottom:.8rem;"></div>
-    <p style="margin:.2rem 0 .9rem;"><a id="playerLink" href="/2026-nfl-draft-big-board" style="color:var(--brand);font-weight:700;text-decoration:none;">Open full player page →</a></p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.55rem;margin-bottom:.9rem;">
+    <h2 id="playerTitle" class="player-title">Select a player</h2>
+    <div id="playerMeta" class="muted player-meta"></div>
+    <p class="player-link-wrap"><a id="playerLink" href="/2026-nfl-draft-big-board" class="player-link">Open full player page →</a></p>
+    <div class="stats-grid">
       <div class="card"><strong>Model Rank</strong><div id="dRank">-</div></div>
       <div class="card"><strong>Model Grade</strong><div id="dGrade">-</div></div>
       <div class="card"><strong>PFF Grade</strong><div id="dPff">-</div></div>
       <div class="card"><strong>RAS Score</strong><div id="dRas">-</div></div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr;gap:.75rem;">
-      <article class="card"><strong>Report Summary</strong><div id="dSummary" class="muted" style="margin-top:.4rem;"></div></article>
-      <article class="card"><strong>How He Wins</strong><div id="dWins" class="muted" style="margin-top:.4rem;white-space:pre-wrap;"></div></article>
-      <article class="card"><strong>Primary Concerns</strong><div id="dConcerns" class="muted" style="margin-top:.4rem;white-space:pre-wrap;"></div></article>
-      <article class="card"><strong>2025 Production Snapshot</strong><div id="dProd" class="muted" style="margin-top:.4rem;white-space:pre-wrap;"></div></article>
-      <article class="card"><strong>Role / Scheme Projection</strong><div id="dRole" class="muted" style="margin-top:.4rem;white-space:pre-wrap;"></div></article>
+    <div class="detail-grid">
+      <article class="card"><strong>Report Summary</strong><div id="dSummary" class="muted detail-text"></div></article>
+      <article class="card"><strong>How He Wins</strong><div id="dWins" class="muted detail-text pre-wrap"></div></article>
+      <article class="card"><strong>Primary Concerns</strong><div id="dConcerns" class="muted detail-text pre-wrap"></div></article>
+      <article class="card"><strong>2025 Production Snapshot</strong><div id="dProd" class="muted detail-text pre-wrap"></div></article>
+      <article class="card"><strong>Role / Scheme Projection</strong><div id="dRole" class="muted detail-text pre-wrap"></div></article>
     </div>
   </section>
 
@@ -134,4 +134,59 @@ const collectionSchema = {
     renderList();
     if (pool.length) showCard(pool[0].player_uid);
   </script>
+
+  <style>
+    .search-card {
+      margin-bottom: 1rem;
+    }
+    .search-label {
+      display: block;
+      margin-bottom: .35rem;
+    }
+    .search-control {
+      width: 100%;
+    }
+    .list-wrap {
+      margin-top: .75rem;
+      overflow: auto;
+      max-height: 320px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+    }
+    .player-title {
+      margin: 0 0 .35rem;
+    }
+    .player-meta {
+      margin-bottom: .8rem;
+    }
+    .player-link-wrap {
+      margin: .2rem 0 .9rem;
+    }
+    .player-link {
+      color: var(--brand);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .player-link:hover {
+      text-decoration: underline;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: .55rem;
+      margin-bottom: .9rem;
+    }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .75rem;
+    }
+    .detail-text {
+      margin-top: .4rem;
+    }
+    .pre-wrap {
+      white-space: pre-wrap;
+    }
+  </style>
 </BaseLayout>

@@ -47,8 +47,8 @@ const hasMedicalCharacterRisk = riskKeywords.some((k) => concernsText.toLowerCas
     <p>{player.position} · {player.school} · 2026 NFL Draft Prospect</p>
   </section>
 
-  <section class="card" style="margin-bottom:1rem;">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.55rem;">
+  <section class="card summary-card">
+    <div class="stat-grid">
       <div class="card"><strong>Model Rank</strong><div>{player.consensus_rank}</div></div>
       <div class="card"><strong>Model Grade</strong><div>{player.final_grade}</div></div>
       <div class="card"><strong>Round Range</strong><div>{player.round_value}</div></div>
@@ -56,40 +56,79 @@ const hasMedicalCharacterRisk = riskKeywords.some((k) => concernsText.toLowerCas
       <div class="card"><strong>Trait Score</strong><div>{Number(player.trait_score || 0) > 0 ? Number(player.trait_score).toFixed(2) : "-"}</div></div>
       <div class="card"><strong>RAS Score</strong><div>{ras}</div></div>
     </div>
-    <div style="margin-top:.7rem;display:flex;gap:.5rem;flex-wrap:wrap;">
+    <div class="badge-row">
       <span class="badge">Top Driver: {String(player.top_rank_driver || "n/a").toUpperCase()} ({Number(player.top_rank_driver_delta) >= 0 ? "+" : ""}{player.top_rank_driver_delta})</span>
       {hasMedicalCharacterRisk ? <span class="badge warn">Risk Watch: medical/character item noted</span> : null}
     </div>
   </section>
 
-  <section class="card" style="display:grid;gap:.75rem;">
+  <section class="card detail-grid">
     <article class="card">
-      <h2 style="margin:0 0 .35rem;">Report Summary</h2>
-      <p class="muted" style="margin:.15rem 0;">{player.scouting_report_summary || "Summary pending."}</p>
+      <h2 class="block-title">Report Summary</h2>
+      <p class="muted block-copy">{player.scouting_report_summary || "Summary pending."}</p>
     </article>
     <article class="card">
-      <h2 style="margin:0 0 .35rem;">How He Wins</h2>
-      <div class="muted" style="white-space:pre-wrap;">{player.scouting_why_he_wins || "Context pending."}</div>
+      <h2 class="block-title">How He Wins</h2>
+      <div class="muted pre-wrap">{player.scouting_why_he_wins || "Context pending."}</div>
     </article>
     <article class="card">
-      <h2 style="margin:0 0 .35rem;">Primary Concerns</h2>
-      <div class="muted" style="white-space:pre-wrap;">{player.scouting_primary_concerns || "Concerns pending."}</div>
+      <h2 class="block-title">Primary Concerns</h2>
+      <div class="muted pre-wrap">{player.scouting_primary_concerns || "Concerns pending."}</div>
     </article>
     <article class="card">
-      <h2 style="margin:0 0 .35rem;">2025 Production Snapshot</h2>
-      <div class="muted" style="white-space:pre-wrap;">{player.scouting_production_snapshot || "Production snapshot pending."}</div>
+      <h2 class="block-title">2025 Production Snapshot</h2>
+      <div class="muted pre-wrap">{player.scouting_production_snapshot || "Production snapshot pending."}</div>
     </article>
     <article class="card">
-      <h2 style="margin:0 0 .35rem;">Role / Scheme Projection</h2>
-      <div class="muted" style="white-space:pre-wrap;">{player.scouting_role_projection || "Projection pending."}</div>
+      <h2 class="block-title">Role / Scheme Projection</h2>
+      <div class="muted pre-wrap">{player.scouting_role_projection || "Projection pending."}</div>
     </article>
   </section>
 
-  <section class="card" style="margin-top:1rem;">
-    <a href="/2026-nfl-draft-big-board" style="color:var(--brand);font-weight:700;text-decoration:none;">← Back to Big Board</a>
+  <section class="card back-card">
+    <a href="/2026-nfl-draft-big-board" class="back-link">← Back to Big Board</a>
   </section>
 
   <style>
+    .summary-card {
+      margin-bottom: 1rem;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: .55rem;
+    }
+    .badge-row {
+      margin-top: .7rem;
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+    .detail-grid {
+      display: grid;
+      gap: .75rem;
+    }
+    .block-title {
+      margin: 0 0 .35rem;
+    }
+    .block-copy {
+      margin: .15rem 0;
+      line-height: 1.55;
+    }
+    .pre-wrap {
+      white-space: pre-wrap;
+    }
+    .back-card {
+      margin-top: 1rem;
+    }
+    .back-link {
+      color: var(--brand);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
     .badge.warn {
       color: #7a4a06;
       border-color: #ead1a2;

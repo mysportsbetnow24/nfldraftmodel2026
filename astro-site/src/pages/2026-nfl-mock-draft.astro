@@ -47,6 +47,7 @@ const collectionSchema = {
   <section class="card">
     <h2 class="section-title">Round 1 Projection</h2>
     <div class="filters-grid">
+      <input id="searchFilter" type="search" placeholder="Search player, school, or position..." class="control search-control" />
       <select id="teamFilter" class="control">
         <option value="">All Teams</option>
         {teams.map((team) => <option value={team}>{team}</option>)}
@@ -92,6 +93,7 @@ const collectionSchema = {
               data-school={p.school}
               data-pick={p.overall_pick}
               data-grade={p.final_grade}
+              data-search={`${String(p.player_name || "")} ${String(p.position || "")} ${String(p.school || "")}`.toLowerCase()}
             >
               <td>{p.overall_pick}</td>
               <td>{p.team}</td>
@@ -109,6 +111,7 @@ const collectionSchema = {
 
   <script>
     (() => {
+      const searchFilter = document.getElementById("searchFilter");
       const teamFilter = document.getElementById("teamFilter");
       const positionFilter = document.getElementById("positionFilter");
       const schoolFilter = document.getElementById("schoolFilter");
@@ -124,9 +127,12 @@ const collectionSchema = {
         const team = teamFilter?.value || "";
         const pos = positionFilter?.value || "";
         const school = schoolFilter?.value || "";
+        const q = (searchFilter?.value || "").toLowerCase().trim();
         const sort = sortBy?.value || "pick_asc";
 
         const filtered = rows.filter((row) => {
+          const hay = row.getAttribute("data-search") || "";
+          if (q && !hay.includes(q)) return false;
           if (team && row.getAttribute("data-team") !== team) return false;
           if (pos && row.getAttribute("data-position") !== pos) return false;
           if (school && row.getAttribute("data-school") !== school) return false;
@@ -164,16 +170,19 @@ const collectionSchema = {
           if (team) parts.push(team);
           if (pos) parts.push(pos);
           if (school) parts.push(school);
+          if (q) parts.push(`search: ${q}`);
           summary.textContent = `Showing ${sorted.length} picks${parts.length ? " · " + parts.join(" · ") : ""}.`;
         }
       }
 
-      [teamFilter, positionFilter, schoolFilter, sortBy].forEach((el) => {
+      [searchFilter, teamFilter, positionFilter, schoolFilter, sortBy].forEach((el) => {
         if (el) el.addEventListener("change", update);
+        if (el) el.addEventListener("input", update);
       });
 
       if (resetFilters) {
         resetFilters.addEventListener("click", () => {
+          if (searchFilter) searchFilter.value = "";
           if (teamFilter) teamFilter.value = "";
           if (positionFilter) positionFilter.value = "";
           if (schoolFilter) schoolFilter.value = "";
@@ -207,6 +216,16 @@ const collectionSchema = {
       grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 0.6rem;
       margin-bottom: 0.95rem;
+    }
+    .search-control {
+      min-width: 240px;
+      grid-column: span 2;
+    }
+    @media (max-width: 900px) {
+      .search-control {
+        grid-column: 1 / -1;
+        min-width: 0;
+      }
     }
   </style>
 </BaseLayout>
