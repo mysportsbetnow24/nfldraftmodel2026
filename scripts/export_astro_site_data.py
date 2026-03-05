@@ -210,6 +210,19 @@ def _norm_player_key(value: str) -> str:
     return "".join(ch for ch in text if ch.isalnum())
 
 
+def _norm_comp_identity_key(value: str) -> str:
+    text = str(value or "").strip().lower()
+    if not text:
+        return ""
+    # Treat suffix variants as the same player (e.g., "Jr.", "III").
+    tokens = re.sub(r"[^a-z0-9\s]", " ", text).split()
+    suffix_tokens = {"jr", "sr", "ii", "iii", "iv", "v"}
+    filtered = [tok for tok in tokens if tok not in suffix_tokens]
+    if not filtered:
+        filtered = tokens
+    return "".join(filtered)
+
+
 def _clean_token_label(value: str) -> str:
     text = str(value or "").strip().replace("_", " ")
     text = re.sub(r"\s+", " ", text).strip()
@@ -574,18 +587,22 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
 
         comp_items: list[dict] = []
         seen_comp_names: set[str] = set()
+        player_name_key = _norm_player_key(player_name)
+        player_identity_key = _norm_comp_identity_key(player_name)
         for idx in (1, 2, 3):
             name = str(row.get(f"historical_combine_comp_{idx}", "")).strip()
             sim = _safe_float(row.get(f"historical_combine_comp_{idx}_similarity"))
             year = _safe_int(row.get(f"historical_combine_comp_{idx}_year"), 0)
             name_key = _norm_player_key(name)
+            identity_key = _norm_comp_identity_key(name)
             if (
                 name
-                and name_key != _norm_player_key(player_name)
+                and name_key != player_name_key
+                and identity_key != player_identity_key
                 and (year <= 0 or year < CURRENT_DRAFT_YEAR)
-                and name_key not in seen_comp_names
+                and identity_key not in seen_comp_names
             ):
-                seen_comp_names.add(name_key)
+                seen_comp_names.add(identity_key)
                 comp_items.append(
                     {
                         "name": name,
@@ -598,8 +615,8 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             key=lambda r: (r.get("similarity") is None, -(r.get("similarity") or 0.0)),
         )
         comp_ceiling = comp_items[0] if len(comp_items) >= 1 else {}
-        comp_median = comp_items[1] if len(comp_items) >= 2 else (comp_items[0] if len(comp_items) == 1 else {})
-        comp_floor = comp_items[-1] if len(comp_items) >= 2 else (comp_items[0] if len(comp_items) == 1 else {})
+        comp_median = comp_items[1] if len(comp_items) >= 3 else {}
+        comp_floor = comp_items[-1] if len(comp_items) >= 2 else {}
 
         out.append(
             {

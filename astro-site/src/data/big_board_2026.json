@@ -97,11 +97,7 @@
       "similarity": 91.22,
       "year": 2006
     },
-    "historical_comp_median": {
-      "name": "Kenneth Murray, Jr.",
-      "similarity": 91.31,
-      "year": 2020
-    },
+    "historical_comp_median": {},
     "historical_comp_ceiling": {
       "name": "Kenneth Murray",
       "similarity": 91.31,
@@ -2489,15 +2485,11 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Earl Bostick Jr.",
-      "similarity": 94.34,
-      "year": 2023
-    },
-    "historical_comp_median": {
       "name": "Earl Bostick",
       "similarity": 94.35,
       "year": 2023
     },
+    "historical_comp_median": {},
     "historical_comp_ceiling": {
       "name": "Ben Riva",
       "similarity": 94.99,
@@ -3839,11 +3831,7 @@
       "similarity": 89.98,
       "year": 2025
     },
-    "historical_comp_median": {
-      "name": "Calvin Austin III",
-      "similarity": 90.71,
-      "year": 2022
-    },
+    "historical_comp_median": {},
     "historical_comp_ceiling": {
       "name": "Calvin Austin",
       "similarity": 90.71,
@@ -5039,15 +5027,11 @@
       "cfb_db_pbu": 100.0
     },
     "historical_comp_floor": {
-      "name": "Ronnie Hickman Jr.",
-      "similarity": 93.27,
-      "year": 2023
-    },
-    "historical_comp_median": {
       "name": "Kevin Winston Jr.",
       "similarity": 93.8,
       "year": 2025
     },
+    "historical_comp_median": {},
     "historical_comp_ceiling": {
       "name": "Ronnie Hickman",
       "similarity": 97.09,
@@ -6115,11 +6099,7 @@
       "similarity": 96.18,
       "year": 2009
     },
-    "historical_comp_median": {
-      "name": "John Metchie III",
-      "similarity": 98.82,
-      "year": 2022
-    },
+    "historical_comp_median": {},
     "historical_comp_ceiling": {
       "name": "John Metchie",
       "similarity": 98.84,
@@ -7607,15 +7587,11 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Byron Murphy",
-      "similarity": 91.39,
-      "year": 2024
-    },
-    "historical_comp_median": {
       "name": "Byron Murphy II",
       "similarity": 92.7,
       "year": 2024
     },
+    "historical_comp_median": {},
     "historical_comp_ceiling": {
       "name": "Greg Milhouse",
       "similarity": 93.84,
@@ -11221,11 +11197,7 @@
       "similarity": 91.87,
       "year": 2015
     },
-    "historical_comp_median": {
-      "name": "DreQuan Hoskey",
-      "similarity": 91.87,
-      "year": 2015
-    },
+    "historical_comp_median": {},
     "historical_comp_ceiling": {
       "name": "Kris Abrams-Draine",
       "similarity": 92.49,
@@ -11799,15 +11771,11 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Brian Asamoah",
-      "similarity": 91.38,
-      "year": 2022
-    },
-    "historical_comp_median": {
       "name": "Brian Asamoah II",
       "similarity": 93.18,
       "year": 2022
     },
+    "historical_comp_median": {},
     "historical_comp_ceiling": {
       "name": "Buddy Johnson",
       "similarity": 94.07,
@@ -14981,11 +14949,7 @@
       "similarity": 95.62,
       "year": 2009
     },
-    "historical_comp_median": {
-      "name": "John Metchie III",
-      "similarity": 95.67,
-      "year": 2022
-    },
+    "historical_comp_median": {},
     "historical_comp_ceiling": {
       "name": "John Metchie",
       "similarity": 95.69,
@@ -15757,15 +15721,11 @@
       "cfb_db_pbu": 60.0
     },
     "historical_comp_floor": {
-      "name": "Verone McKinley",
-      "similarity": 91.13,
-      "year": 2022
-    },
-    "historical_comp_median": {
       "name": "Verone McKinley III",
       "similarity": 91.14,
       "year": 2022
     },
+    "historical_comp_median": {},
     "historical_comp_ceiling": {
       "name": "David Sims",
       "similarity": 91.63,
@@ -16607,11 +16567,7 @@
       "similarity": 94.73,
       "year": 2017
     },
-    "historical_comp_median": {
-      "name": "Marvin Mims",
-      "similarity": 96.68,
-      "year": 2023
-    },
+    "historical_comp_median": {},
     "historical_comp_ceiling": {
       "name": "Marvin Mims Jr.",
       "similarity": 96.68,
