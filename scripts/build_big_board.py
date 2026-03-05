@@ -3000,6 +3000,47 @@ def _cfb_prod_snapshot_label(position: str, cfb: dict) -> str:
         if str(cfb.get("cfb_edge_sacks_per_pr_snap", "")).strip():
             parts.append(f"sacks/pr-snap {cfb.get('cfb_edge_sacks_per_pr_snap')}")
         return "; ".join(parts)
+    if pos == "DT":
+        sacks = _fmt_int(cfb.get("cfb_edge_sacks"))
+        hurries = _fmt_int(cfb.get("cfb_edge_qb_hurries"))
+        tfl = _fmt_int(cfb.get("cfb_edge_tfl"))
+        tackles = _fmt_int(cfb.get("cfb_edge_tackles"))
+        parts = []
+        if tackles:
+            parts.append(f"tackles {tackles}")
+        if tfl:
+            parts.append(f"TFL {tfl}")
+        if sacks:
+            parts.append(f"sacks {sacks}")
+        if hurries:
+            parts.append(f"QB hurries {hurries}")
+        if parts:
+            return "; ".join(parts)
+        if str(cfb.get("cfb_opp_def_toughness_index", "")).strip():
+            return f"opp-def index {cfb.get('cfb_opp_def_toughness_index')}"
+        return ""
+    if pos == "LB":
+        tackles = _fmt_int(cfb.get("cfb_db_tackles")) or _fmt_int(cfb.get("cfb_edge_tackles"))
+        tfl = _fmt_int(cfb.get("cfb_db_tfl")) or _fmt_int(cfb.get("cfb_edge_tfl"))
+        sacks = _fmt_int(cfb.get("cfb_edge_sacks"))
+        itc = _fmt_int(cfb.get("cfb_db_int"))
+        pbu = _fmt_int(cfb.get("cfb_db_pbu"))
+        parts = []
+        if tackles:
+            parts.append(f"tackles {tackles}")
+        if tfl:
+            parts.append(f"TFL {tfl}")
+        if sacks:
+            parts.append(f"sacks {sacks}")
+        if itc:
+            parts.append(f"INT {itc}")
+        if pbu:
+            parts.append(f"PBUs {pbu}")
+        if parts:
+            return "; ".join(parts)
+        if str(cfb.get("cfb_opp_def_toughness_index", "")).strip():
+            return f"opp-def index {cfb.get('cfb_opp_def_toughness_index')}"
+        return ""
     if pos in {"CB", "S"}:
         itc = _fmt_int(cfb.get("cfb_db_int"))
         pbu = _fmt_int(cfb.get("cfb_db_pbu"))
@@ -3022,6 +3063,17 @@ def _cfb_prod_snapshot_label(position: str, cfb: dict) -> str:
             parts.append(f"coverage plays/target {cfb.get('cfb_db_coverage_plays_per_target')}")
         if str(cfb.get("cfb_db_yards_allowed_per_coverage_snap", "")).strip():
             parts.append(f"yards allowed/cov snap {cfb.get('cfb_db_yards_allowed_per_coverage_snap')}")
+        return "; ".join(parts)
+    if pos in {"OT", "IOL"}:
+        years = _fmt_int(cfb.get("cfb_years_played"))
+        quality = str(cfb.get("cfb_prod_quality_label", "")).strip().lower()
+        parts = []
+        if years:
+            parts.append(f"seasons played {years}")
+        if quality in {"real", "hybrid", "proxy"}:
+            parts.append(f"production profile {quality}")
+        if str(cfb.get("cfb_opp_def_toughness_index", "")).strip():
+            parts.append(f"opp-def index {cfb.get('cfb_opp_def_toughness_index')}")
         return "; ".join(parts)
     return ""
 
@@ -3299,17 +3351,15 @@ def _build_scouting_sections(
             stat_parts.append(f"ESPN QBR {espn_qbr}")
         if str(espn_epa_per_play or "").strip():
             stat_parts.append(f"ESPN EPA/play {espn_epa_per_play}")
-    if str(cfb_prod_quality or "").strip():
-        stat_parts.append(f"CFB quality {cfb_prod_quality} ({cfb_prod_reliability})")
     stat_parts = [p for p in stat_parts if p]
     # Keep stable ordering and remove exact duplicates.
     stat_parts = list(dict.fromkeys(stat_parts))
     pff_line = f"PFF grade {pff_grade:.1f}" if pff_grade is not None else "PFF grade pending"
     if stat_parts:
         stat_line = "Stat context: " + _compact_text("; ".join(stat_parts), 260)
+        production_snapshot = pff_line + "\n" + stat_line
     else:
-        stat_line = "Stat context: pending structured 2025 counting-stat import."
-    production_snapshot = pff_line + "\n" + stat_line
+        production_snapshot = pff_line
 
     report_parts = [
         f"{name} ({position}, {school}) carries a {final_grade:.2f} model grade with a current {round_value} projection.",
@@ -3477,7 +3527,7 @@ def _build_scouting_sections(
         if year_txt:
             hist_comp_text += f" ({year_txt})"
         if sim_txt:
-            hist_comp_text += f", similarity {sim_txt}"
+            hist_comp_text += f", athletic-profile match {sim_txt}%"
         hist_comp_text += "."
 
     projection_parts = [
@@ -3669,6 +3719,7 @@ def main() -> None:
             height_in=effective_height_in,
             weight_lb=effective_weight_lb,
             film_subtraits=film.get("traits", {}),
+            production_context=cfb,
         )
 
         seed_signal = float(301 - row["rank_seed"])
@@ -3801,7 +3852,12 @@ def main() -> None:
                 + 0.05 * waa_signal
             )
 
-        fit_team, fit_score = best_team_fit(pos)
+        fit_team, fit_score = best_team_fit(
+            pos,
+            role_hint=str(grades.get("best_role", "") or ""),
+            scheme_hint=str(grades.get("best_scheme_fit", "") or ""),
+            athletic_score=float(_as_float(grades.get("athletic_score")) or 0.0),
+        )
         comp = assign_comp(pos, row["rank_seed"])
         ras, ras_comps = _official_ras_fields(pos, combine)
         ras_score_val = _as_float(ras.get("ras_estimate"))
@@ -3851,6 +3907,8 @@ def main() -> None:
             position=pos,
             current_metrics=historical_combine_metrics,
             pack=historical_combine_pack,
+            player_name=row["player_name"],
+            max_year_exclusive=CURRENT_DRAFT_YEAR,
             k=3,
             min_overlap_metrics=3,
         )
@@ -3865,6 +3923,7 @@ def main() -> None:
             target_season=2025,
             k=3,
             min_overlap=3,
+            allow_same_season_fallback=False,
         )
         prod_knn_comps = prod_knn_result.get("comps", [])
         prod_knn_1 = prod_knn_comps[0] if len(prod_knn_comps) >= 1 else {}
@@ -4642,8 +4701,16 @@ def main() -> None:
             "cfb_wrte_targets_per_route_signal": cfb.get("cfb_wrte_targets_per_route_signal", ""),
             "cfb_rb_explosive_signal": cfb.get("cfb_rb_explosive_signal", ""),
             "cfb_rb_mtf_signal": cfb.get("cfb_rb_mtf_signal", ""),
+            "cfb_rb_yac_per_att_signal": cfb.get("cfb_rb_yac_per_att_signal", ""),
+            "cfb_rb_target_share_signal": cfb.get("cfb_rb_target_share_signal", ""),
+            "cfb_rb_receiving_eff_signal": cfb.get("cfb_rb_receiving_eff_signal", ""),
             "cfb_edge_pressure_signal": cfb.get("cfb_edge_pressure_signal", ""),
             "cfb_edge_sacks_per_pr_snap_signal": cfb.get("cfb_edge_sacks_per_pr_snap_signal", ""),
+            "cfb_lb_signal": cfb.get("cfb_lb_signal", ""),
+            "cfb_lb_tackle_signal": cfb.get("cfb_lb_tackle_signal", ""),
+            "cfb_lb_tfl_signal": cfb.get("cfb_lb_tfl_signal", ""),
+            "cfb_lb_rush_impact_signal": cfb.get("cfb_lb_rush_impact_signal", ""),
+            "cfb_ol_proxy_signal": cfb.get("cfb_ol_proxy_signal", ""),
             "cfb_db_cov_plays_per_target_signal": cfb.get("cfb_db_cov_plays_per_target_signal", ""),
             "cfb_db_yards_allowed_per_cov_snap_signal": cfb.get("cfb_db_yards_allowed_per_cov_snap_signal", ""),
             "cfb_qb_epa_per_play": cfb.get("cfb_qb_epa_per_play", ""),
@@ -4652,6 +4719,7 @@ def main() -> None:
             "cfb_qb_pass_yds": cfb.get("cfb_qb_pass_yds", ""),
             "cfb_qb_pass_td": cfb.get("cfb_qb_pass_td", ""),
             "cfb_qb_pass_int": cfb.get("cfb_qb_pass_int", ""),
+            "cfb_qb_int_rate": cfb.get("cfb_qb_int_rate", ""),
             "cfb_qb_rush_yds": cfb.get("cfb_qb_rush_yds", ""),
             "cfb_qb_rush_td": cfb.get("cfb_qb_rush_td", ""),
             "cfb_wrte_yprr": cfb.get("cfb_wrte_yprr", ""),
@@ -4664,12 +4732,27 @@ def main() -> None:
             "cfb_wrte_rec_td": cfb.get("cfb_wrte_rec_td", ""),
             "cfb_rb_explosive_rate": cfb.get("cfb_rb_explosive_rate", ""),
             "cfb_rb_missed_tackles_forced_per_touch": cfb.get("cfb_rb_missed_tackles_forced_per_touch", ""),
+            "cfb_rb_yards_after_contact_per_attempt": cfb.get("cfb_rb_yards_after_contact_per_attempt", ""),
+            "cfb_rb_target_share": cfb.get("cfb_rb_target_share", ""),
+            "cfb_rb_receiving_efficiency": cfb.get("cfb_rb_receiving_efficiency", ""),
+            "cfb_rb_target_share_source": cfb.get("cfb_rb_target_share_source", ""),
             "cfb_rb_rush_att": cfb.get("cfb_rb_rush_att", ""),
             "cfb_rb_rush_yds": cfb.get("cfb_rb_rush_yds", ""),
             "cfb_rb_rush_td": cfb.get("cfb_rb_rush_td", ""),
             "cfb_rb_rec": cfb.get("cfb_rb_rec", ""),
             "cfb_rb_rec_yds": cfb.get("cfb_rb_rec_yds", ""),
             "cfb_rb_rec_td": cfb.get("cfb_rb_rec_td", ""),
+            "cfb_lb_tackles": cfb.get("cfb_lb_tackles", ""),
+            "cfb_lb_tfl": cfb.get("cfb_lb_tfl", ""),
+            "cfb_lb_sacks": cfb.get("cfb_lb_sacks", ""),
+            "cfb_lb_qb_hurries": cfb.get("cfb_lb_qb_hurries", ""),
+            "cfb_lb_usage_rate": cfb.get("cfb_lb_usage_rate", ""),
+            "cfb_lb_def_snaps": cfb.get("cfb_lb_def_snaps", ""),
+            "cfb_lb_rate_source": cfb.get("cfb_lb_rate_source", ""),
+            "cfb_ol_years_played": cfb.get("cfb_ol_years_played", ""),
+            "cfb_ol_starts": cfb.get("cfb_ol_starts", ""),
+            "cfb_ol_usage_rate": cfb.get("cfb_ol_usage_rate", ""),
+            "cfb_ol_proxy_quality_label": cfb.get("cfb_ol_proxy_quality_label", ""),
             "cfb_edge_pressure_rate": cfb.get("cfb_edge_pressure_rate", ""),
             "cfb_edge_sacks_per_pr_snap": cfb.get("cfb_edge_sacks_per_pr_snap", ""),
             "cfb_edge_sacks_per_pr_snap_source": cfb.get("cfb_edge_sacks_per_pr_snap_source", ""),

@@ -52,7 +52,7 @@ CORE_STAT_BY_POS = {
 
 
 SCHEME_FIT_BY_POS = {
-    "QB": "spread_timing",
+    "QB": "Timing-spread distributor framework",
     "RB": "wide_zone",
     "WR": "spread_vertical",
     "TE": "multiple_attach_detach",
@@ -67,7 +67,7 @@ SCHEME_FIT_BY_POS = {
 
 
 ROLE_BY_POS = {
-    "QB": "Franchise or high-end distributor",
+    "QB": "Starting QB profile (role lane pending)",
     "RB": "Primary committee back with passing-down utility",
     "WR": "Alignment-flexible target earner",
     "TE": "In-line + move mismatch",
@@ -79,6 +79,301 @@ ROLE_BY_POS = {
     "CB": "Outside starter with matchup flexibility",
     "S": "Coverage-adjustment back-end starter",
 }
+
+
+def _safe_trait_value(subtraits: Mapping[str, float], key: str) -> Optional[float]:
+    raw = subtraits.get(key)
+    if raw is None:
+        return None
+    try:
+        return float(raw)
+    except (TypeError, ValueError):
+        return None
+
+
+def _safe_prod_value(prod: Mapping[str, object], *keys: str) -> Optional[float]:
+    for key in keys:
+        raw = prod.get(key)
+        if raw is None:
+            continue
+        txt = str(raw).strip()
+        if not txt:
+            continue
+        try:
+            return float(txt)
+        except (TypeError, ValueError):
+            continue
+    return None
+
+
+def _avg_defined(values: list[Optional[float]]) -> Optional[float]:
+    usable = [v for v in values if v is not None]
+    if not usable:
+        return None
+    return sum(usable) / len(usable)
+
+
+def _infer_lb_role_and_scheme(
+    *,
+    height_in: int,
+    weight_lb: int,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+) -> tuple[str, str]:
+    """
+    Role/scheme inference for off-ball linebackers.
+    Keeps labels scouting-native while avoiding one-size-fits-all defaults.
+    """
+    processing = _safe_trait_value(film_subtraits, "processing")
+    trigger = _safe_trait_value(film_subtraits, "trigger")
+    range_score = _safe_trait_value(film_subtraits, "range")
+    decon = _safe_trait_value(film_subtraits, "block_deconstruction")
+    coverage = _safe_trait_value(film_subtraits, "coverage")
+    tackling = _safe_trait_value(film_subtraits, "tackling")
+
+    coverage_profile = _avg_defined([coverage, range_score, trigger])
+    box_profile = _avg_defined([processing, decon, tackling])
+    pressure_profile = _avg_defined([trigger, decon, processing])
+
+    xl_frame = weight_lb >= 240
+    big_frame = weight_lb >= 235
+    light_frame = weight_lb <= 227
+    long_frame = height_in >= 75
+    explosive_athlete = athletic_score >= 88.0
+    mobile_athlete = athletic_score >= 85.0
+    limited_athlete = athletic_score < 81.0
+
+    # Film-first role classification when sub-trait coverage exists.
+    if coverage_profile is not None and coverage_profile >= 82.0 and (light_frame or (mobile_athlete and long_frame)):
+        return ("STAR overhang coverage backer", "Big-nickel overhang match")
+    if coverage_profile is not None and coverage_profile >= 78.0 and (light_frame or mobile_athlete):
+        return ("Coverage WILL backer", "Two-high match zone")
+    if pressure_profile is not None and pressure_profile >= 79.0 and mobile_athlete and (big_frame or long_frame):
+        return ("Pressure SAM backer", "Sim-pressure multiple front")
+    if box_profile is not None and box_profile >= 77.0 and xl_frame:
+        return ("MIKE thumper (stack-and-shed)", "Single-high run-fit zone match")
+    if box_profile is not None and box_profile >= 75.0 and big_frame:
+        return ("Stack-and-shed MIKE backer", "Base over-under run fit")
+    if trigger is not None and trigger >= 79.0 and mobile_athlete and not big_frame:
+        return ("Run-and-chase WILL backer", "Pursuit-heavy split-safety fit")
+
+    # Fallback classification for sparse film traits.
+    if light_frame and explosive_athlete:
+        if long_frame:
+            return ("STAR overhang coverage backer", "Big-nickel overhang match")
+        return ("Coverage WILL backer", "Two-high match zone")
+    if light_frame and mobile_athlete:
+        return ("Coverage WILL backer", "Two-high match zone")
+    if light_frame:
+        return ("Run-and-chase WILL backer", "Split-safety pursuit fit")
+    if big_frame and mobile_athlete:
+        return ("Pressure SAM backer", "Sim-pressure multiple front")
+    if xl_frame or (big_frame and limited_athlete):
+        return ("MIKE thumper (stack-and-shed)", "Single-high run-fit zone match")
+    if big_frame:
+        return ("Stack-and-shed MIKE backer", "Base over-under run fit")
+    if mobile_athlete:
+        return ("Run-and-chase WILL backer", "Pursuit-heavy split-safety fit")
+    return ("Balanced MIKE/WILL communicator", "Match-zone multiple")
+
+
+def _infer_rb_role_and_scheme(
+    *,
+    height_in: int,
+    weight_lb: int,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
+) -> tuple[str, str]:
+    """
+    Role/scheme inference for running backs.
+    Keeps labels scouting-native while distinguishing archetypes beyond committee defaults.
+    """
+    vision = _safe_trait_value(film_subtraits, "vision")
+    burst = _safe_trait_value(film_subtraits, "burst")
+    contact_balance = _safe_trait_value(film_subtraits, "contact_balance")
+    lateral = _safe_trait_value(film_subtraits, "lateral_agility")
+    pass_pro = _safe_trait_value(film_subtraits, "pass_pro")
+    receiving = _safe_trait_value(film_subtraits, "receiving")
+
+    power_profile = _avg_defined([contact_balance, vision, pass_pro])
+    space_profile = _avg_defined([burst, lateral, receiving])
+    three_down_profile = _avg_defined([vision, pass_pro, receiving, burst])
+
+    heavy_back = weight_lb >= 222
+    compact_back = weight_lb <= 202
+    dense_back = weight_lb >= 216
+    explosive = athletic_score >= 88.0
+    dynamic = athletic_score >= 85.0
+    limited = athletic_score < 81.0
+
+    prod = production_context or {}
+    explosive_rate = _safe_prod_value(prod, "cfb_rb_explosive_rate", "explosive_run_rate")
+    mtf_per_touch = _safe_prod_value(
+        prod,
+        "cfb_rb_missed_tackles_forced_per_touch",
+        "missed_tackles_forced_per_touch",
+    )
+    yac_per_att = _safe_prod_value(
+        prod,
+        "cfb_rb_yards_after_contact_per_attempt",
+        "cfb_rb_yac_per_att",
+        "rb_yards_after_contact_per_attempt",
+        "rb_yac_per_att",
+    )
+    rb_target_share = _safe_prod_value(prod, "cfb_rb_target_share", "rb_target_share", "target_share")
+    rb_receiving_eff = _safe_prod_value(
+        prod,
+        "cfb_rb_receiving_efficiency",
+        "rb_receiving_efficiency",
+        "cfb_rb_yards_per_reception",
+        "rb_yards_per_reception",
+    )
+
+    explosive_prod = explosive_rate is not None and explosive_rate >= 0.155
+    tackle_break_prod = mtf_per_touch is not None and mtf_per_touch >= 0.24
+    yac_prod = yac_per_att is not None and yac_per_att >= 3.15
+    receiving_volume_prod = rb_target_share is not None and rb_target_share >= 0.10
+    receiving_eff_prod = rb_receiving_eff is not None and rb_receiving_eff >= 8.6
+    weak_explosive_prod = explosive_rate is not None and explosive_rate < 0.11
+    weak_tackle_break_prod = mtf_per_touch is not None and mtf_per_touch < 0.18
+
+    rb_prod_flags = sum(
+        int(flag)
+        for flag in [explosive_prod, tackle_break_prod, yac_prod, receiving_volume_prod, receiving_eff_prod]
+    )
+
+    # Production-supported overrides (requires multiple positive signals).
+    if rb_prod_flags >= 3 and dynamic and weight_lb >= 205:
+        if dense_back and (explosive_prod or yac_prod):
+            return ("Do-it-all juggernaut", "Gap-zone hybrid feature run game")
+        return ("Primary every-down creator", "Wide-zone/play-action feature back")
+    if rb_prod_flags >= 2 and compact_back and dynamic and (receiving_volume_prod or receiving_eff_prod):
+        return ("Shifty scat back", "Spread-space angle/screen package")
+    if rb_prod_flags >= 2 and heavy_back and (tackle_break_prod or yac_prod):
+        return ("Classic two-down bruiser", "Gap/power downhill run menu")
+
+    # Film-led mapping when charted traits exist.
+    if three_down_profile is not None and three_down_profile >= 80.0 and dynamic and weight_lb >= 205:
+        if dense_back and explosive:
+            return ("Do-it-all juggernaut", "Gap-zone hybrid feature run game")
+        return ("Primary every-down creator", "Wide-zone/play-action feature back")
+    if space_profile is not None and space_profile >= 80.0 and compact_back and dynamic:
+        return ("Shifty scat back", "Spread-space angle/screen package")
+    if space_profile is not None and space_profile >= 78.0 and dynamic:
+        return ("Explosive one-cut slasher", "Wide-zone one-cut system")
+    if power_profile is not None and power_profile >= 78.0 and heavy_back:
+        return ("Classic two-down bruiser", "Gap/power downhill run menu")
+    if receiving is not None and pass_pro is not None and receiving >= 78.0 and pass_pro >= 74.0:
+        return ("Passing-down mismatch back", "Empty/gun pass-game backfield usage")
+    if power_profile is not None and power_profile >= 74.0 and dense_back:
+        return ("Early-down grinder", "Inside-zone/gap rotation")
+
+    # Sparse-trait fallback.
+    if weak_explosive_prod and weak_tackle_break_prod and not dynamic:
+        return ("Primary committee back with passing-down utility", "Wide-zone committee")
+    if explosive and dense_back:
+        return ("Do-it-all juggernaut", "Gap-zone hybrid feature run game")
+    if explosive and weight_lb >= 204:
+        return ("Primary every-down creator", "Wide-zone/play-action feature back")
+    if compact_back and dynamic:
+        return ("Shifty scat back", "Spread-space angle/screen package")
+    if heavy_back and (dynamic or not limited):
+        return ("Classic two-down bruiser", "Gap/power downhill run menu")
+    if heavy_back:
+        return ("Early-down grinder", "Inside-zone/gap rotation")
+    if dynamic:
+        return ("Explosive one-cut slasher", "Wide-zone one-cut system")
+    return ("Primary committee back with passing-down utility", "Wide-zone committee")
+
+
+def _infer_qb_role_and_scheme(
+    *,
+    height_in: int,
+    weight_lb: int,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+) -> tuple[str, str]:
+    """
+    Role/scheme inference for quarterbacks.
+    Keeps public labels scouting-native and avoids a single default archetype.
+    """
+    processing = _safe_trait_value(film_subtraits, "processing")
+    accuracy = _safe_trait_value(film_subtraits, "accuracy")
+    arm_talent = _safe_trait_value(film_subtraits, "arm_talent")
+    creation = _safe_trait_value(film_subtraits, "creation")
+    pocket = _safe_trait_value(film_subtraits, "pocket_presence")
+    situational = _safe_trait_value(film_subtraits, "situational_command")
+
+    distributor_profile = _avg_defined([processing, accuracy, pocket, situational])
+    creator_profile = _avg_defined([creation, arm_talent, situational])
+    pure_arm_profile = _avg_defined([arm_talent, creation])
+    structure_profile = _avg_defined([processing, pocket, accuracy])
+
+    plus_athlete = athletic_score >= 88.0
+    good_athlete = athletic_score >= 84.0
+    limited_athlete = athletic_score < 80.0
+    prototype_frame = height_in >= 75 and weight_lb >= 220
+
+    if distributor_profile is not None and distributor_profile >= 81.0 and good_athlete:
+        if creation is not None and creation >= 78.0:
+            return ("Franchise dual-threat creator", "Spread/RPO vertical-play-action")
+        return ("Franchise timing distributor", "West Coast timing spread")
+    if creator_profile is not None and creator_profile >= 80.0 and plus_athlete:
+        return ("Dual-threat shot-play creator", "Spread/RPO vertical-play-action")
+    if pure_arm_profile is not None and pure_arm_profile >= 80.0 and (arm_talent or 0.0) >= 82.0:
+        return ("Vertical drive-starter", "Play-action deep-shot structure")
+    if structure_profile is not None and structure_profile >= 76.0 and not limited_athlete:
+        return ("Rhythm-and-timing starter", "Quick-game progression spread")
+    if structure_profile is not None and structure_profile >= 74.0 and limited_athlete:
+        return ("Pocket distributor", "Play-action under-center progression")
+    if creator_profile is not None and creator_profile >= 74.0 and good_athlete:
+        return ("Developmental creator with upside", "Spread movement-passer package")
+
+    if plus_athlete and prototype_frame:
+        return ("Developmental dual-threat upside QB", "Spread/RPO vertical-play-action")
+    if good_athlete:
+        return ("Developmental creator with upside", "Spread movement-passer package")
+    if limited_athlete:
+        return ("Developmental pocket backup profile", "Quick-game progression spread")
+    return ("Starter-caliber distributor profile", "Timing-spread distributor framework")
+
+
+def _infer_role_and_scheme(
+    *,
+    position: str,
+    height_in: int,
+    weight_lb: int,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
+) -> tuple[str, str]:
+    if position == "QB":
+        return _infer_qb_role_and_scheme(
+            height_in=height_in,
+            weight_lb=weight_lb,
+            athletic_score=athletic_score,
+            film_subtraits=film_subtraits,
+        )
+    if position == "RB":
+        return _infer_rb_role_and_scheme(
+            height_in=height_in,
+            weight_lb=weight_lb,
+            athletic_score=athletic_score,
+            film_subtraits=film_subtraits,
+            production_context=production_context,
+        )
+    if position == "LB":
+        return _infer_lb_role_and_scheme(
+            height_in=height_in,
+            weight_lb=weight_lb,
+            athletic_score=athletic_score,
+            film_subtraits=film_subtraits,
+        )
+    return (
+        ROLE_BY_POS.get(position, "Depth and developmental value"),
+        SCHEME_FIT_BY_POS.get(position, "multiple"),
+    )
 
 
 def _size_score(position: str, height_in: int, weight_lb: int) -> float:
@@ -177,11 +472,13 @@ def grade_player(
     height_in: int,
     weight_lb: int,
     film_subtraits: Optional[Mapping[str, float]] = None,
+    production_context: Optional[Mapping[str, object]] = None,
 ) -> dict:
     weights = POSITION_WEIGHTS[position]
+    film_inputs = film_subtraits or {}
 
     trait_proxy = _trait_proxy_score(position, rank_seed)
-    film_eval = score_film_traits(position, film_subtraits or {})
+    film_eval = score_film_traits(position, film_inputs)
 
     if film_eval["film_trait_score"] is not None:
         film_weight = _film_trait_blend_weight(film_eval["film_trait_coverage"])
@@ -195,6 +492,14 @@ def grade_player(
     size = _size_score(position, height_in, weight_lb)
     context = _context_score(rank_seed)
     risk = _risk_penalty(class_year, rank_seed)
+    best_role, best_scheme_fit = _infer_role_and_scheme(
+        position=position,
+        height_in=height_in,
+        weight_lb=weight_lb,
+        athletic_score=ath,
+        film_subtraits=film_inputs,
+        production_context=production_context or {},
+    )
 
     final_grade = (
         weights["trait"] * trait
@@ -231,8 +536,8 @@ def grade_player(
         "psi": round(psi, 2),
         "core_stat_name": core_stat_name,
         "core_stat_value": core_stat_value,
-        "best_role": ROLE_BY_POS.get(position, "Depth and developmental value"),
-        "best_scheme_fit": SCHEME_FIT_BY_POS.get(position, "multiple"),
+        "best_role": best_role,
+        "best_scheme_fit": best_scheme_fit,
     }
 
 

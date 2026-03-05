@@ -18,7 +18,7 @@ DEFAULT_PATH_CANDIDATES = [
     PROCESSED_DIR / "cfb_production_features_2025.csv",
 ]
 
-TARGET_POSITIONS = {"QB", "WR", "TE", "RB", "EDGE", "CB", "S"}
+TARGET_POSITIONS = {"QB", "WR", "TE", "RB", "EDGE", "LB", "CB", "S", "OT", "IOL"}
 P0_BLEND_WEIGHT = float(os.getenv("CFBFASTR_P0_BLEND_WEIGHT", "0.35"))
 P0_MAX_DELTA = float(os.getenv("CFBFASTR_P0_MAX_DELTA", "4.0"))
 P0_QB_MAX_DELTA = float(os.getenv("CFBFASTR_P0_QB_MAX_DELTA", "3.0"))
@@ -98,8 +98,41 @@ POSITION_SCOPE_KEYS = {
         "edge_pressures",
         "edge_sacks",
     },
+    "LB": {
+        "lb_usage_rate",
+        "defense_snap_rate",
+        "defensive_snap_rate",
+        "lb_def_snaps",
+        "defensive_snaps",
+        "edge_tackles",
+        "edge_tfl",
+        "edge_sacks",
+        "edge_qb_hurries",
+        "db_tackles",
+        "db_tfl",
+        "db_int",
+        "db_pbu",
+    },
     "CB": {"coverage_plays_per_target", "yards_allowed_per_coverage_snap"},
     "S": {"coverage_plays_per_target", "yards_allowed_per_coverage_snap"},
+    "OT": {
+        "years_played",
+        "ol_usage_rate",
+        "offense_snap_rate",
+        "offensive_snap_rate",
+        "ol_starts",
+        "career_starts",
+        "starts",
+    },
+    "IOL": {
+        "years_played",
+        "ol_usage_rate",
+        "offense_snap_rate",
+        "offensive_snap_rate",
+        "ol_starts",
+        "career_starts",
+        "starts",
+    },
 }
 ALL_SCOPE_KEYS = sorted({k for keys in POSITION_SCOPE_KEYS.values() for k in keys})
 
@@ -209,7 +242,9 @@ def _legacy_position_signal(
     wrte_sig: float | None,
     rb_sig: float | None,
     edge_sig: float | None,
+    lb_sig: float | None,
     db_sig: float | None,
+    ol_proxy_sig: float | None,
 ) -> float | None:
     if position == "QB":
         return _weighted_mean(
@@ -224,8 +259,12 @@ def _legacy_position_signal(
         return rb_sig
     if position == "EDGE":
         return edge_sig
+    if position == "LB":
+        return lb_sig
     if position in {"CB", "S"}:
         return db_sig
+    if position in {"OT", "IOL"}:
+        return ol_proxy_sig
     return None
 
 
@@ -238,8 +277,28 @@ def _usage_rate(position: str, row: dict) -> float | None:
         return _first_float(row, ["rb_usage_rate", "rb_usage", "usage_rate"])
     if position == "EDGE":
         return _first_float(row, ["edge_usage_rate", "pass_rush_snap_rate", "usage_rate"])
+    if position == "LB":
+        return _first_float(
+            row,
+            [
+                "lb_usage_rate",
+                "defense_snap_rate",
+                "defensive_snap_rate",
+                "usage_rate",
+            ],
+        )
     if position in {"CB", "S"}:
         return _first_float(row, ["db_usage_rate", "coverage_snap_rate", "usage_rate"])
+    if position in {"OT", "IOL"}:
+        return _first_float(
+            row,
+            [
+                "ol_usage_rate",
+                "offense_snap_rate",
+                "offensive_snap_rate",
+                "usage_rate",
+            ],
+        )
     return None
 
 
@@ -254,8 +313,12 @@ def _usage_context_multiplier(position: str, usage: float | None) -> float:
         floor, target, min_mult = 0.08, 0.30, 0.74
     elif position == "EDGE":
         floor, target, min_mult = 0.12, 0.45, 0.80
+    elif position == "LB":
+        floor, target, min_mult = 0.28, 0.82, 0.82
     elif position in {"CB", "S"}:
         floor, target, min_mult = 0.25, 0.75, 0.82
+    elif position in {"OT", "IOL"}:
+        floor, target, min_mult = 0.42, 0.90, 0.86
     else:
         floor, target, min_mult = 0.10, 0.30, 0.84
     scaled = _clamp((float(usage) - floor) / max(0.01, (target - floor)), 0.0, 1.0)
@@ -426,17 +489,29 @@ def _qb_eff_signal(row: dict) -> tuple[float | None, float | None]:
     qbr = _first_float(row, ["qb_qbr", "qbr", "espn_qbr"])
     epa = _first_float(row, ["qb_epa_per_play", "qb_epa_per_pl", "epa_per_play", "qb_efficiency"])
     success = _first_float(row, ["qb_success_rate", "success_rate"])
+    qb_pass_int = _first_float(row, ["qb_pass_int", "cfb_qb_pass_int"])
+    qb_pass_att = _first_float(row, ["qb_pass_att", "cfb_qb_pass_att"])
 
     parts = []
     qbr_sig = _score_linear(qbr, 45.0, 90.0)
     if qbr_sig is not None:
-        parts.append((0.45, qbr_sig))
+        parts.append((0.38, qbr_sig))
     epa_sig = _score_linear(epa, -0.20, 0.45)
     if epa_sig is not None:
-        parts.append((0.35, epa_sig))
+        parts.append((0.30, epa_sig))
     succ_sig = _score_linear(success, 0.35, 0.60)
     if succ_sig is not None:
-        parts.append((0.20, succ_sig))
+        parts.append((0.17, succ_sig))
+    int_sig = None
+    if qb_pass_int is not None and qb_pass_att is not None and qb_pass_att >= 120:
+        # Lower interception rate should score better for QB efficiency context.
+        int_rate = qb_pass_int / max(qb_pass_att, 1.0)
+        int_sig = _score_inverse(int_rate, 0.045, 0.010)
+    elif qb_pass_int is not None:
+        # Fallback when attempts are missing: still apply a bounded turnover penalty.
+        int_sig = _score_inverse(qb_pass_int, 14.0, 3.0)
+    if int_sig is not None:
+        parts.append((0.15, int_sig))
     return _weighted_mean(parts), epa
 
 
@@ -527,7 +602,7 @@ def _wrte_signal(
     return _weighted_mean(parts), yprr, target_share, targets_per_route, diag
 
 
-def _rb_signal(row: dict) -> tuple[float | None, float | None, float | None]:
+def _rb_signal(row: dict) -> tuple[float | None, float | None, float | None, float | None, float | None, float | None, dict]:
     explosive_rate = _first_float(row, ["explosive_run_rate", "explosive_rate"])
     mtf = _first_float(
         row,
@@ -537,14 +612,142 @@ def _rb_signal(row: dict) -> tuple[float | None, float | None, float | None]:
             "mtf_per_touch",
         ],
     )
+    rb_yac_per_att = _first_float(
+        row,
+        [
+            "rb_yards_after_contact_per_attempt",
+            "rb_yac_per_att",
+            "yards_after_contact_per_attempt",
+            "yac_per_attempt",
+        ],
+    )
+    rb_target_share = _first_float(row, ["rb_target_share", "target_share_rb", "target_share"])
+    rb_target_share_source = "direct"
+    if rb_target_share is None:
+        rb_rec = _first_float(row, ["rb_rec", "cfb_rb_rec"])
+        rb_rush_att = _first_float(row, ["rb_rush_att", "cfb_rb_rush_att"])
+        if rb_rec is not None and rb_rush_att is not None and (rb_rec + rb_rush_att) > 0:
+            # Conservative usage proxy when true target share is unavailable.
+            rb_target_share = _clamp(rb_rec / (rb_rec + rb_rush_att), 0.03, 0.22)
+            rb_target_share_source = "derived_rec_share_of_touches"
+        else:
+            rb_target_share_source = "missing"
+    rb_rec_yds = _first_float(row, ["rb_rec_yds", "cfb_rb_rec_yds"])
+    rb_rec = _first_float(row, ["rb_rec", "cfb_rb_rec"])
+    rb_receiving_eff = None
+    if rb_rec_yds is not None and rb_rec is not None and rb_rec > 0:
+        rb_receiving_eff = rb_rec_yds / rb_rec
+
     explosive_sig = _score_linear(explosive_rate, 0.06, 0.22)
     mtf_sig = _score_linear(mtf, 0.08, 0.35)
+    yac_sig = _score_linear(rb_yac_per_att, 2.0, 4.2)
+    target_share_sig = _score_linear(rb_target_share, 0.05, 0.16)
+    receiving_eff_sig = _score_linear(rb_receiving_eff, 5.5, 11.5)
     parts = []
     if explosive_sig is not None:
-        parts.append((0.55, explosive_sig))
+        parts.append((0.38, explosive_sig))
     if mtf_sig is not None:
-        parts.append((0.45, mtf_sig))
-    return _weighted_mean(parts), explosive_rate, mtf
+        parts.append((0.27, mtf_sig))
+    if yac_sig is not None:
+        parts.append((0.18, yac_sig))
+    if target_share_sig is not None:
+        parts.append((0.09, target_share_sig))
+    if receiving_eff_sig is not None:
+        parts.append((0.08, receiving_eff_sig))
+    diag = {
+        "rb_available_count": int(explosive_rate is not None)
+        + int(mtf is not None)
+        + int(rb_yac_per_att is not None)
+        + int(rb_target_share is not None)
+        + int(rb_receiving_eff is not None),
+        "rb_target_share_source": rb_target_share_source,
+    }
+    return _weighted_mean(parts), explosive_rate, mtf, rb_yac_per_att, rb_target_share, rb_receiving_eff, diag
+
+
+def _lb_signal(row: dict) -> tuple[float | None, float | None, float | None, float | None, float | None, float | None, float | None, dict]:
+    lb_snaps = _first_float(
+        row,
+        [
+            "lb_def_snaps",
+            "defensive_snaps",
+            "def_snaps",
+            "snap_count",
+        ],
+    )
+    lb_usage = _first_float(
+        row,
+        [
+            "lb_usage_rate",
+            "defensive_snap_rate",
+            "defense_snap_rate",
+            "usage_rate",
+        ],
+    )
+    tackles = _first_float(row, ["lb_tackles", "db_tackles", "edge_tackles"])
+    tfl = _first_float(row, ["lb_tfl", "db_tfl", "edge_tfl"])
+    sacks = _first_float(row, ["lb_sacks", "edge_sacks", "sacks"])
+    hurries = _first_float(row, ["lb_qb_hurries", "edge_qb_hurries", "qb_hurries"])
+    pbu = _first_float(row, ["lb_pbu", "db_pbu", "pbu"])
+    ints = _first_float(row, ["lb_int", "db_int", "interceptions"])
+
+    tackle_rate = None
+    tfl_rate = None
+    rush_impact_rate = None
+    if lb_snaps is not None and lb_snaps >= 120:
+        tackle_rate = tackles / lb_snaps if tackles is not None else None
+        tfl_rate = tfl / lb_snaps if tfl is not None else None
+        rush_impact_rate = ((sacks or 0.0) + (hurries or 0.0)) / lb_snaps
+
+    tackle_sig = _score_linear(tackle_rate, 0.055, 0.145) if tackle_rate is not None else _score_linear(tackles, 34.0, 112.0)
+    tfl_sig = _score_linear(tfl_rate, 0.006, 0.028) if tfl_rate is not None else _score_linear(tfl, 3.0, 16.0)
+    rush_sig = _score_linear(rush_impact_rate, 0.015, 0.085) if rush_impact_rate is not None else _score_linear(((sacks or 0.0) + (hurries or 0.0)), 6.0, 28.0)
+    ball_sig = _score_linear(((ints or 0.0) + (pbu or 0.0)), 1.0, 8.0)
+
+    parts = []
+    if tackle_sig is not None:
+        parts.append((0.34, tackle_sig))
+    if tfl_sig is not None:
+        parts.append((0.24, tfl_sig))
+    if rush_sig is not None:
+        parts.append((0.24, rush_sig))
+    if ball_sig is not None:
+        parts.append((0.18, ball_sig))
+
+    diag = {
+        "lb_available_count": int(tackles is not None)
+        + int(tfl is not None)
+        + int((sacks is not None) or (hurries is not None))
+        + int((ints is not None) or (pbu is not None))
+        + int(lb_snaps is not None)
+        + int(lb_usage is not None),
+        "lb_rate_source": "snap_normalized" if lb_snaps is not None and lb_snaps >= 120 else "counting_fallback",
+    }
+    return _weighted_mean(parts), tackles, tfl, sacks, hurries, lb_usage, lb_snaps, diag
+
+
+def _ol_proxy_signal(row: dict) -> tuple[float | None, float | None, float | None, float | None, dict]:
+    years_played = _first_float(row, ["years_played", "cfb_years_played"])
+    starts = _first_float(row, ["ol_starts", "career_starts", "starts", "season_starts"])
+    usage = _first_float(row, ["ol_usage_rate", "offensive_snap_rate", "offense_snap_rate", "usage_rate"])
+
+    years_sig = _score_linear(years_played, 1.0, 5.0)
+    starts_sig = _score_linear(starts, 6.0, 46.0)
+    usage_sig = _score_linear(usage, 0.42, 0.92)
+
+    parts = []
+    if years_sig is not None:
+        parts.append((0.46, years_sig))
+    if starts_sig is not None:
+        parts.append((0.34, starts_sig))
+    if usage_sig is not None:
+        parts.append((0.20, usage_sig))
+
+    diag = {
+        "ol_available_count": int(years_played is not None) + int(starts is not None) + int(usage is not None),
+        "ol_proxy_quality_label": "proxy_supported" if len(parts) >= 2 else "proxy_thin" if len(parts) == 1 else "missing",
+    }
+    return _weighted_mean(parts), years_played, starts, usage, diag
 
 
 def _edge_signal(row: dict) -> tuple[float | None, float | None, float | None, dict]:
@@ -793,9 +996,11 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
         qb_eff_sig, _qb_epa = _qb_eff_signal(row)
         qb_pressure_sig = _qb_pressure_signal(row)
         wrte_sig, _yprr, _target_share, _targets_per_route, _wrte_diag = _wrte_signal(row)
-        rb_sig, _explosive_rate, _mtf = _rb_signal(row)
+        rb_sig, _explosive_rate, _mtf, _rb_yac_per_att, _rb_target_share, _rb_receiving_eff, _rb_diag = _rb_signal(row)
         edge_sig, _pressure_rate, _sacks_per_pr_snap, _edge_diag = _edge_signal(row)
+        lb_sig, _lb_tackles, _lb_tfl, _lb_sacks, _lb_hurries, _lb_usage, _lb_snaps, _lb_diag = _lb_signal(row)
         db_sig, _cov_plays_per_target, _yards_allowed_per_cov_snap, _db_diag = _db_signal(row)
+        ol_proxy_sig, _ol_years, _ol_starts, _ol_usage, _ol_diag = _ol_proxy_signal(row)
         legacy_sig = _legacy_position_signal(
             position=position,
             qb_eff_sig=qb_eff_sig,
@@ -803,7 +1008,9 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             wrte_sig=wrte_sig,
             rb_sig=rb_sig,
             edge_sig=edge_sig,
+            lb_sig=lb_sig,
             db_sig=db_sig,
+            ol_proxy_sig=ol_proxy_sig,
         )
         if legacy_sig is None:
             continue
@@ -835,9 +1042,11 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
         qb_eff_sig, qb_epa = _qb_eff_signal(row)
         qb_pressure_sig = _qb_pressure_signal(row)
         wrte_sig, yprr, target_share, targets_per_route, wrte_diag = _wrte_signal(row)
-        rb_sig, explosive_rate, mtf = _rb_signal(row)
+        rb_sig, explosive_rate, mtf, rb_yac_per_att, rb_target_share, rb_receiving_eff, rb_diag = _rb_signal(row)
         edge_sig, pressure_rate, sacks_per_pr_snap, edge_diag = _edge_signal(row)
+        lb_sig, lb_tackles, lb_tfl, lb_sacks, lb_hurries, lb_usage_rate, lb_def_snaps, lb_diag = _lb_signal(row)
         db_sig, cov_plays_per_target, yards_allowed_per_cov_snap, db_diag = _db_signal(row)
+        ol_proxy_sig, ol_years_played, ol_starts, ol_usage_rate, ol_diag = _ol_proxy_signal(row)
 
         cfb_prod_signal_legacy = _legacy_position_signal(
             position=position,
@@ -846,7 +1055,9 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             wrte_sig=wrte_sig,
             rb_sig=rb_sig,
             edge_sig=edge_sig,
+            lb_sig=lb_sig,
             db_sig=db_sig,
+            ol_proxy_sig=ol_proxy_sig,
         )
 
         # Coverage count is position-specific to avoid unrelated feature inflation.
@@ -857,13 +1068,17 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             coverage_count = int(wrte_diag.get("wrte_available_count", 0) or 0)
             fallback_metric_count = int(wrte_diag.get("wrte_fallback_count", 0) or 0)
         elif position == "RB":
-            coverage_count = int(explosive_rate is not None) + int(mtf is not None)
+            coverage_count = int(rb_diag.get("rb_available_count", 0) or 0)
         elif position == "EDGE":
             coverage_count = int(edge_diag.get("edge_available_count", 0) or 0)
             fallback_metric_count = int(edge_diag.get("edge_fallback_count", 0) or 0)
+        elif position == "LB":
+            coverage_count = int(lb_diag.get("lb_available_count", 0) or 0)
         elif position in {"CB", "S"}:
             coverage_count = int(db_diag.get("db_available_count", 0) or 0)
             fallback_metric_count = int(db_diag.get("db_fallback_count", 0) or 0)
+        elif position in {"OT", "IOL"}:
+            coverage_count = int(ol_diag.get("ol_available_count", 0) or 0)
         else:
             coverage_count = 0
 
@@ -926,6 +1141,9 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
         qb_pass_yds = _first_float(row, ["qb_pass_yds", "cfb_qb_pass_yds"])
         qb_pass_td = _first_float(row, ["qb_pass_td", "cfb_qb_pass_td"])
         qb_pass_int = _first_float(row, ["qb_pass_int", "cfb_qb_pass_int"])
+        qb_int_rate = None
+        if qb_pass_int is not None and qb_pass_att is not None and qb_pass_att > 0:
+            qb_int_rate = qb_pass_int / qb_pass_att
         qb_rush_yds = _first_float(row, ["qb_rush_yds", "cfb_qb_rush_yds"])
         qb_rush_td = _first_float(row, ["qb_rush_td", "cfb_qb_rush_td"])
         wrte_rec = _first_float(row, ["wrte_rec", "cfb_wrte_rec"])
@@ -1009,10 +1227,45 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             else "",
             "cfb_rb_explosive_signal": round(_score_linear(explosive_rate, 0.06, 0.22), 2) if explosive_rate is not None else "",
             "cfb_rb_mtf_signal": round(_score_linear(mtf, 0.08, 0.35), 2) if mtf is not None else "",
+            "cfb_rb_yac_per_att_signal": round(_score_linear(rb_yac_per_att, 2.0, 4.2), 2)
+            if rb_yac_per_att is not None
+            else "",
+            "cfb_rb_target_share_signal": round(_score_linear(rb_target_share, 0.05, 0.16), 2)
+            if rb_target_share is not None
+            else "",
+            "cfb_rb_receiving_eff_signal": round(_score_linear(rb_receiving_eff, 5.5, 11.5), 2)
+            if rb_receiving_eff is not None
+            else "",
             "cfb_edge_pressure_signal": round(edge_sig, 2) if edge_sig is not None else "",
             "cfb_edge_sacks_per_pr_snap_signal": round(_score_linear(sacks_per_pr_snap, 0.02, 0.055), 2)
             if sacks_per_pr_snap is not None
             else "",
+            "cfb_lb_signal": round(lb_sig, 2) if lb_sig is not None else "",
+            "cfb_lb_tackle_signal": round(
+                _score_linear((lb_tackles / lb_def_snaps), 0.055, 0.145)
+                if (lb_tackles is not None and lb_def_snaps is not None and lb_def_snaps >= 120)
+                else _score_linear(lb_tackles, 34.0, 112.0),
+                2,
+            )
+            if lb_tackles is not None
+            else "",
+            "cfb_lb_tfl_signal": round(
+                _score_linear((lb_tfl / lb_def_snaps), 0.006, 0.028)
+                if (lb_tfl is not None and lb_def_snaps is not None and lb_def_snaps >= 120)
+                else _score_linear(lb_tfl, 3.0, 16.0),
+                2,
+            )
+            if lb_tfl is not None
+            else "",
+            "cfb_lb_rush_impact_signal": round(
+                _score_linear(((lb_sacks or 0.0) + (lb_hurries or 0.0)) / lb_def_snaps, 0.015, 0.085)
+                if (lb_def_snaps is not None and lb_def_snaps >= 120)
+                else _score_linear((lb_sacks or 0.0) + (lb_hurries or 0.0), 6.0, 28.0),
+                2,
+            )
+            if (lb_sacks is not None or lb_hurries is not None)
+            else "",
+            "cfb_ol_proxy_signal": round(ol_proxy_sig, 2) if ol_proxy_sig is not None else "",
             "cfb_db_cov_plays_per_target_signal": round(db_sig, 2) if db_sig is not None else "",
             "cfb_db_yards_allowed_per_cov_snap_signal": round(_score_inverse(yards_allowed_per_cov_snap, 1.80, 0.55), 2)
             if yards_allowed_per_cov_snap is not None
@@ -1023,6 +1276,7 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             "cfb_qb_pass_yds": int(round(qb_pass_yds)) if qb_pass_yds is not None else "",
             "cfb_qb_pass_td": int(round(qb_pass_td)) if qb_pass_td is not None else "",
             "cfb_qb_pass_int": int(round(qb_pass_int)) if qb_pass_int is not None else "",
+            "cfb_qb_int_rate": round(qb_int_rate, 4) if qb_int_rate is not None else "",
             "cfb_qb_rush_yds": int(round(qb_rush_yds)) if qb_rush_yds is not None else "",
             "cfb_qb_rush_td": int(round(qb_rush_td)) if qb_rush_td is not None else "",
             "cfb_wrte_yprr": round(yprr, 3) if yprr is not None else "",
@@ -1035,12 +1289,27 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             "cfb_wrte_rec_td": int(round(wrte_rec_td)) if wrte_rec_td is not None else "",
             "cfb_rb_explosive_rate": round(explosive_rate, 4) if explosive_rate is not None else "",
             "cfb_rb_missed_tackles_forced_per_touch": round(mtf, 4) if mtf is not None else "",
+            "cfb_rb_yards_after_contact_per_attempt": round(rb_yac_per_att, 4) if rb_yac_per_att is not None else "",
+            "cfb_rb_target_share": round(rb_target_share, 4) if rb_target_share is not None else "",
+            "cfb_rb_receiving_efficiency": round(rb_receiving_eff, 4) if rb_receiving_eff is not None else "",
+            "cfb_rb_target_share_source": rb_diag.get("rb_target_share_source", ""),
             "cfb_rb_rush_att": int(round(rb_rush_att)) if rb_rush_att is not None else "",
             "cfb_rb_rush_yds": int(round(rb_rush_yds)) if rb_rush_yds is not None else "",
             "cfb_rb_rush_td": int(round(rb_rush_td)) if rb_rush_td is not None else "",
             "cfb_rb_rec": int(round(rb_rec)) if rb_rec is not None else "",
             "cfb_rb_rec_yds": int(round(rb_rec_yds)) if rb_rec_yds is not None else "",
             "cfb_rb_rec_td": int(round(rb_rec_td)) if rb_rec_td is not None else "",
+            "cfb_lb_tackles": int(round(lb_tackles)) if lb_tackles is not None else "",
+            "cfb_lb_tfl": int(round(lb_tfl)) if lb_tfl is not None else "",
+            "cfb_lb_sacks": round(lb_sacks, 1) if lb_sacks is not None else "",
+            "cfb_lb_qb_hurries": int(round(lb_hurries)) if lb_hurries is not None else "",
+            "cfb_lb_usage_rate": round(lb_usage_rate, 4) if lb_usage_rate is not None else "",
+            "cfb_lb_def_snaps": int(round(lb_def_snaps)) if lb_def_snaps is not None else "",
+            "cfb_lb_rate_source": lb_diag.get("lb_rate_source", ""),
+            "cfb_ol_years_played": int(round(ol_years_played)) if ol_years_played is not None else "",
+            "cfb_ol_starts": int(round(ol_starts)) if ol_starts is not None else "",
+            "cfb_ol_usage_rate": round(ol_usage_rate, 4) if ol_usage_rate is not None else "",
+            "cfb_ol_proxy_quality_label": ol_diag.get("ol_proxy_quality_label", ""),
             "cfb_edge_pressure_rate": round(pressure_rate, 4) if pressure_rate is not None else "",
             "cfb_edge_sacks_per_pr_snap": round(sacks_per_pr_snap, 4) if sacks_per_pr_snap is not None else "",
             "cfb_edge_sacks_per_pr_snap_source": edge_diag.get("edge_sacks_per_pr_snap_source", ""),
