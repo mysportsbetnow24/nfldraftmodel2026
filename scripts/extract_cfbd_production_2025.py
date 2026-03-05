@@ -413,6 +413,30 @@ def main() -> None:
             "sacks_per_pass_rush_snap": "",
             "coverage_plays_per_target": "",
             "yards_allowed_per_coverage_snap": "",
+            "qb_pass_att": "",
+            "qb_pass_comp": "",
+            "qb_pass_yds": "",
+            "qb_pass_td": "",
+            "qb_pass_int": "",
+            "qb_rush_yds": "",
+            "qb_rush_td": "",
+            "wrte_rec": "",
+            "wrte_rec_yds": "",
+            "wrte_rec_td": "",
+            "rb_rush_att": "",
+            "rb_rush_yds": "",
+            "rb_rush_td": "",
+            "rb_rec": "",
+            "rb_rec_yds": "",
+            "rb_rec_td": "",
+            "edge_sacks": "",
+            "edge_qb_hurries": "",
+            "edge_tfl": "",
+            "edge_tackles": "",
+            "db_int": "",
+            "db_pbu": "",
+            "db_tackles": "",
+            "db_tfl": "",
             "opp_def_ppa_allowed_avg": "",
             "opp_def_success_rate_allowed_avg": "",
             "opp_def_toughness_index": "",
@@ -451,11 +475,28 @@ def main() -> None:
             ypa = _get_stat(stats or {}, "passing", "YPA")
             td = _get_stat(stats or {}, "passing", "TD") or 0.0
             ints = _get_stat(stats or {}, "passing", "INT") or 0.0
+            pass_yds = _get_stat(stats or {}, "passing", "YDS")
+            rush_yds = _get_stat(stats or {}, "rushing", "YDS")
+            rush_td = _get_stat(stats or {}, "rushing", "TD")
             ppa_pass = _safe_float((ppa or {}).get("avg_pass"))
             ppa_pd = _safe_float((ppa or {}).get("avg_pd"))
             ppa_sd = _safe_float((ppa or {}).get("avg_sd"))
             comp_pct = (comp / att) if att > 0 else None
             td_rate = (td / att) if att > 0 else None
+            if att > 0:
+                row["qb_pass_att"] = int(round(att))
+            if comp > 0:
+                row["qb_pass_comp"] = int(round(comp))
+            if pass_yds is not None:
+                row["qb_pass_yds"] = int(round(pass_yds))
+            if td > 0:
+                row["qb_pass_td"] = int(round(td))
+            if ints >= 0:
+                row["qb_pass_int"] = int(round(ints))
+            if rush_yds is not None:
+                row["qb_rush_yds"] = int(round(rush_yds))
+            if rush_td is not None:
+                row["qb_rush_td"] = int(round(rush_td))
 
             if att >= 50:
                 qbr_proxy = 50.0
@@ -485,6 +526,14 @@ def main() -> None:
         elif board_pos in {"WR", "TE"}:
             rec = _get_stat(stats or {}, "receiving", "REC")
             ypr = _get_stat(stats or {}, "receiving", "YPR")
+            rec_yds = _get_stat(stats or {}, "receiving", "YDS")
+            rec_td = _get_stat(stats or {}, "receiving", "TD")
+            if rec is not None:
+                row["wrte_rec"] = int(round(rec))
+            if rec_yds is not None:
+                row["wrte_rec_yds"] = int(round(rec_yds))
+            if rec_td is not None:
+                row["wrte_rec_td"] = int(round(rec_td))
             if ypr is not None:
                 yprr_proxy = 0.35 + (0.14 * ypr)
                 row["yprr"] = round(_clamp(yprr_proxy, 0.8, 3.5), 3)
@@ -501,6 +550,24 @@ def main() -> None:
                     row["targets_per_route_run"] = round(_clamp(0.07 + (0.85 * target_share), 0.08, 0.34), 4)
 
         elif board_pos == "RB":
+            car = _get_stat(stats or {}, "rushing", "CAR")
+            yds = _get_stat(stats or {}, "rushing", "YDS")
+            td = _get_stat(stats or {}, "rushing", "TD")
+            rec = _get_stat(stats or {}, "receiving", "REC")
+            rec_yds = _get_stat(stats or {}, "receiving", "YDS")
+            rec_td = _get_stat(stats or {}, "receiving", "TD")
+            if car is not None:
+                row["rb_rush_att"] = int(round(car))
+            if yds is not None:
+                row["rb_rush_yds"] = int(round(yds))
+            if td is not None:
+                row["rb_rush_td"] = int(round(td))
+            if rec is not None:
+                row["rb_rec"] = int(round(rec))
+            if rec_yds is not None:
+                row["rb_rec_yds"] = int(round(rec_yds))
+            if rec_td is not None:
+                row["rb_rec_td"] = int(round(rec_td))
             ypc = _get_stat(stats or {}, "rushing", "YPC")
             ppa_rush = _safe_float((ppa or {}).get("avg_rush"))
             if ypc is not None:
@@ -512,6 +579,16 @@ def main() -> None:
         elif board_pos == "EDGE":
             sacks = (_get_stat(stats or {}, "defensive", "SACKS") or 0.0)
             hurries = (_get_stat(stats or {}, "defensive", "QB HUR") or 0.0)
+            tfl = (_get_stat(stats or {}, "defensive", "TFL") or 0.0)
+            tackles = (_get_stat(stats or {}, "defensive", "TOT") or 0.0)
+            if sacks > 0:
+                row["edge_sacks"] = int(round(sacks))
+            if hurries > 0:
+                row["edge_qb_hurries"] = int(round(hurries))
+            if tfl > 0:
+                row["edge_tfl"] = int(round(tfl))
+            if tackles > 0:
+                row["edge_tackles"] = int(round(tackles))
             pressures = hurries + sacks
             if pressures > 0:
                 pr = 0.05 + (0.20 * _pct_rank(pressures, edge_pressures))
@@ -522,6 +599,18 @@ def main() -> None:
 
         elif board_pos in {"CB", "S"}:
             cov_plays = (_get_stat(stats or {}, "defensive", "PD") or 0.0) + (_get_stat(stats or {}, "interceptions", "INT") or 0.0)
+            ints = (_get_stat(stats or {}, "interceptions", "INT") or 0.0)
+            pbu = (_get_stat(stats or {}, "defensive", "PD") or 0.0)
+            tackles = (_get_stat(stats or {}, "defensive", "TOT") or 0.0)
+            tfl = (_get_stat(stats or {}, "defensive", "TFL") or 0.0)
+            if ints > 0:
+                row["db_int"] = int(round(ints))
+            if pbu > 0:
+                row["db_pbu"] = int(round(pbu))
+            if tackles > 0:
+                row["db_tackles"] = int(round(tackles))
+            if tfl > 0:
+                row["db_tfl"] = int(round(tfl))
             if cov_plays > 0:
                 cpt = 0.06 + (0.24 * _pct_rank(cov_plays, db_cov))
                 row["coverage_plays_per_target"] = round(_clamp(cpt, 0.06, 0.32), 4)
@@ -593,6 +682,30 @@ def main() -> None:
                 "sacks_per_pass_rush_snap",
                 "coverage_plays_per_target",
                 "yards_allowed_per_coverage_snap",
+                "qb_pass_att",
+                "qb_pass_comp",
+                "qb_pass_yds",
+                "qb_pass_td",
+                "qb_pass_int",
+                "qb_rush_yds",
+                "qb_rush_td",
+                "wrte_rec",
+                "wrte_rec_yds",
+                "wrte_rec_td",
+                "rb_rush_att",
+                "rb_rush_yds",
+                "rb_rush_td",
+                "rb_rec",
+                "rb_rec_yds",
+                "rb_rec_td",
+                "edge_sacks",
+                "edge_qb_hurries",
+                "edge_tfl",
+                "edge_tackles",
+                "db_int",
+                "db_pbu",
+                "db_tackles",
+                "db_tfl",
                 "opp_def_ppa_allowed_avg",
                 "opp_def_success_rate_allowed_avg",
                 "opp_def_toughness_index",

@@ -921,6 +921,30 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
         years_played_source = str(row.get("years_played_source", "")).strip()
         if years_played is not None:
             years_played_available += 1
+        qb_pass_att = _first_float(row, ["qb_pass_att", "cfb_qb_pass_att"])
+        qb_pass_comp = _first_float(row, ["qb_pass_comp", "cfb_qb_pass_comp"])
+        qb_pass_yds = _first_float(row, ["qb_pass_yds", "cfb_qb_pass_yds"])
+        qb_pass_td = _first_float(row, ["qb_pass_td", "cfb_qb_pass_td"])
+        qb_pass_int = _first_float(row, ["qb_pass_int", "cfb_qb_pass_int"])
+        qb_rush_yds = _first_float(row, ["qb_rush_yds", "cfb_qb_rush_yds"])
+        qb_rush_td = _first_float(row, ["qb_rush_td", "cfb_qb_rush_td"])
+        wrte_rec = _first_float(row, ["wrte_rec", "cfb_wrte_rec"])
+        wrte_rec_yds = _first_float(row, ["wrte_rec_yds", "cfb_wrte_rec_yds"])
+        wrte_rec_td = _first_float(row, ["wrte_rec_td", "cfb_wrte_rec_td"])
+        rb_rush_att = _first_float(row, ["rb_rush_att", "cfb_rb_rush_att"])
+        rb_rush_yds = _first_float(row, ["rb_rush_yds", "cfb_rb_rush_yds"])
+        rb_rush_td = _first_float(row, ["rb_rush_td", "cfb_rb_rush_td"])
+        rb_rec = _first_float(row, ["rb_rec", "cfb_rb_rec"])
+        rb_rec_yds = _first_float(row, ["rb_rec_yds", "cfb_rb_rec_yds"])
+        rb_rec_td = _first_float(row, ["rb_rec_td", "cfb_rb_rec_td"])
+        edge_sacks_count = _first_float(row, ["edge_sacks", "cfb_edge_sacks"])
+        edge_qb_hurries = _first_float(row, ["edge_qb_hurries", "cfb_edge_qb_hurries"])
+        edge_tfl = _first_float(row, ["edge_tfl", "cfb_edge_tfl"])
+        edge_tackles = _first_float(row, ["edge_tackles", "cfb_edge_tackles"])
+        db_int = _first_float(row, ["db_int", "cfb_db_int"])
+        db_pbu = _first_float(row, ["db_pbu", "cfb_db_pbu"])
+        db_tackles = _first_float(row, ["db_tackles", "cfb_db_tackles"])
+        db_tfl = _first_float(row, ["db_tfl", "cfb_db_tfl"])
         ignored_count = int(scope_diag.get("cfb_nonpos_metrics_ignored_count", 0) or 0)
         if ignored_count > 0:
             nonpos_metrics_ignored_rows += 1
@@ -994,18 +1018,38 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             if yards_allowed_per_cov_snap is not None
             else "",
             "cfb_qb_epa_per_play": round(qb_epa, 4) if qb_epa is not None else "",
+            "cfb_qb_pass_att": int(round(qb_pass_att)) if qb_pass_att is not None else "",
+            "cfb_qb_pass_comp": int(round(qb_pass_comp)) if qb_pass_comp is not None else "",
+            "cfb_qb_pass_yds": int(round(qb_pass_yds)) if qb_pass_yds is not None else "",
+            "cfb_qb_pass_td": int(round(qb_pass_td)) if qb_pass_td is not None else "",
+            "cfb_qb_pass_int": int(round(qb_pass_int)) if qb_pass_int is not None else "",
+            "cfb_qb_rush_yds": int(round(qb_rush_yds)) if qb_rush_yds is not None else "",
+            "cfb_qb_rush_td": int(round(qb_rush_td)) if qb_rush_td is not None else "",
             "cfb_wrte_yprr": round(yprr, 3) if yprr is not None else "",
             "cfb_wrte_target_share": round(target_share, 4) if target_share is not None else "",
             "cfb_wrte_targets_per_route": round(targets_per_route, 4) if targets_per_route is not None else "",
             "cfb_wrte_targets_per_route_source": wrte_diag.get("wrte_targets_per_route_source", ""),
             "cfb_wrte_targets_per_route_weight": wrte_diag.get("wrte_targets_per_route_weight", ""),
+            "cfb_wrte_rec": int(round(wrte_rec)) if wrte_rec is not None else "",
+            "cfb_wrte_rec_yds": int(round(wrte_rec_yds)) if wrte_rec_yds is not None else "",
+            "cfb_wrte_rec_td": int(round(wrte_rec_td)) if wrte_rec_td is not None else "",
             "cfb_rb_explosive_rate": round(explosive_rate, 4) if explosive_rate is not None else "",
             "cfb_rb_missed_tackles_forced_per_touch": round(mtf, 4) if mtf is not None else "",
+            "cfb_rb_rush_att": int(round(rb_rush_att)) if rb_rush_att is not None else "",
+            "cfb_rb_rush_yds": int(round(rb_rush_yds)) if rb_rush_yds is not None else "",
+            "cfb_rb_rush_td": int(round(rb_rush_td)) if rb_rush_td is not None else "",
+            "cfb_rb_rec": int(round(rb_rec)) if rb_rec is not None else "",
+            "cfb_rb_rec_yds": int(round(rb_rec_yds)) if rb_rec_yds is not None else "",
+            "cfb_rb_rec_td": int(round(rb_rec_td)) if rb_rec_td is not None else "",
             "cfb_edge_pressure_rate": round(pressure_rate, 4) if pressure_rate is not None else "",
             "cfb_edge_sacks_per_pr_snap": round(sacks_per_pr_snap, 4) if sacks_per_pr_snap is not None else "",
             "cfb_edge_sacks_per_pr_snap_source": edge_diag.get("edge_sacks_per_pr_snap_source", ""),
             "cfb_edge_pressure_weight": edge_diag.get("edge_pressure_weight", ""),
             "cfb_edge_sack_weight": edge_diag.get("edge_sack_weight", ""),
+            "cfb_edge_sacks": int(round(edge_sacks_count)) if edge_sacks_count is not None else "",
+            "cfb_edge_qb_hurries": int(round(edge_qb_hurries)) if edge_qb_hurries is not None else "",
+            "cfb_edge_tfl": int(round(edge_tfl)) if edge_tfl is not None else "",
+            "cfb_edge_tackles": int(round(edge_tackles)) if edge_tackles is not None else "",
             "cfb_db_coverage_plays_per_target": round(cov_plays_per_target, 4) if cov_plays_per_target is not None else "",
             "cfb_db_yards_allowed_per_coverage_snap": round(yards_allowed_per_cov_snap, 4)
             if yards_allowed_per_cov_snap is not None
@@ -1013,6 +1057,10 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             "cfb_db_yards_allowed_per_cov_snap_source": db_diag.get("db_yards_allowed_per_cov_snap_source", ""),
             "cfb_db_cov_weight": db_diag.get("db_cov_weight", ""),
             "cfb_db_yacs_weight": db_diag.get("db_yacs_weight", ""),
+            "cfb_db_int": int(round(db_int)) if db_int is not None else "",
+            "cfb_db_pbu": int(round(db_pbu)) if db_pbu is not None else "",
+            "cfb_db_tackles": int(round(db_tackles)) if db_tackles is not None else "",
+            "cfb_db_tfl": int(round(db_tfl)) if db_tfl is not None else "",
             "cfb_source": cfb_source,
             "cfb_season": season,
         }

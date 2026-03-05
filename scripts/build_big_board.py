@@ -121,6 +121,16 @@ RANK_CONSENSUS_REALIGN_DEADBAND = float(os.getenv("RANK_CONSENSUS_REALIGN_DEADBA
 RANK_CONSENSUS_REALIGN_SCALE = float(os.getenv("RANK_CONSENSUS_REALIGN_SCALE", "120.0"))
 RANK_DRAG_CAP_BLUECHIP = float(os.getenv("RANK_DRAG_CAP_BLUECHIP", "0.30"))
 RANK_DRAG_CAP_HIGHGRADE = float(os.getenv("RANK_DRAG_CAP_HIGHGRADE", "0.58"))
+BLUECHIP_RANK_PROTECTION_ENABLED = str(
+    os.getenv("BLUECHIP_RANK_PROTECTION_ENABLED", "1")
+).strip().lower() in {"1", "true", "yes", "y"}
+BLUECHIP_RANK_PROTECTION_MAX = float(os.getenv("BLUECHIP_RANK_PROTECTION_MAX", "1.15"))
+TOP50_EVIDENCE_APPLY_TOP_N = int(os.getenv("TOP50_EVIDENCE_APPLY_TOP_N", "50"))
+TOP50_EVIDENCE_MIN_SIGNALS = int(os.getenv("TOP50_EVIDENCE_MIN_SIGNALS", "2"))
+TOP50_EVIDENCE_BRAKE_BASE = float(os.getenv("TOP50_EVIDENCE_BRAKE_BASE", "1.05"))
+TOP50_EVIDENCE_BRAKE_PER_MISSING = float(os.getenv("TOP50_EVIDENCE_BRAKE_PER_MISSING", "0.75"))
+TOP50_EVIDENCE_BRAKE_MAX = float(os.getenv("TOP50_EVIDENCE_BRAKE_MAX", "2.4"))
+TOP50_EVIDENCE_REBALANCE_PASSES = int(os.getenv("TOP50_EVIDENCE_REBALANCE_PASSES", "5"))
 EXTREME_RANK_DELTA_MIN_RISE = int(os.getenv("EXTREME_RANK_DELTA_MIN_RISE", "55"))
 EXTREME_RANK_DELTA_MAX_ALLOWED = int(os.getenv("EXTREME_RANK_DELTA_MAX_ALLOWED", "6"))
 EXTREME_RANK_DELTA_FAIL_ON_TRIGGER = str(
@@ -145,6 +155,9 @@ CFB_PROXY_FALLBACK_HEAVY_MIN_FALLBACKS = int(os.getenv("CFB_PROXY_FALLBACK_HEAVY
 CFB_PROXY_FALLBACK_HEAVY_MAX_RELIABILITY = float(os.getenv("CFB_PROXY_FALLBACK_HEAVY_MAX_RELIABILITY", "0.45"))
 CFB_PROXY_FALLBACK_FAIL_ON_HEAVY = str(
     os.getenv("CFB_PROXY_FALLBACK_FAIL_ON_HEAVY", "0")
+).strip().lower() in {"1", "true", "yes", "y"}
+FAIL_ON_POSTBUILD_INELIGIBLE = str(
+    os.getenv("FAIL_ON_POSTBUILD_INELIGIBLE", "1")
 ).strip().lower() in {"1", "true", "yes", "y"}
 ATHLETIC_MISSING_RISK_WEIGHT = float(os.getenv("ATHLETIC_MISSING_RISK_WEIGHT", "0.12"))
 ATHLETIC_VARIANCE_RISK_WEIGHT = float(os.getenv("ATHLETIC_VARIANCE_RISK_WEIGHT", "0.08"))
@@ -724,6 +737,8 @@ def _build_rank_driver_summary(
     front7_inflation_penalty: float,
     cb_nickel_inflation_penalty: float,
     bluechip_floor_lift: float,
+    top50_evidence_brake_penalty: float,
+    bluechip_rank_protection_adjustment: float,
 ) -> str:
     risk_penalty = float(formula.get("formula_risk_penalty", 0.0) or 0.0)
     prod_component = float(
@@ -741,6 +756,8 @@ def _build_rank_driver_summary(
         ("language", float(language_adjustment_applied)),
         ("risk", -risk_penalty),
         ("bluechip_floor", float(bluechip_floor_lift)),
+        ("bluechip_rank_protect", float(bluechip_rank_protection_adjustment)),
+        ("top50_evidence_brake", -float(top50_evidence_brake_penalty)),
         (
             "guardrail",
             -(
@@ -2209,6 +2226,336 @@ def _rank_sort_consensus_realign_adjustment(
     return round(adjustment, 4)
 
 
+def _has_espn_trait_evidence(espn_row: dict) -> bool:
+    trait_keys = (
+        "espn_trait_processing",
+        "espn_trait_separation",
+        "espn_trait_play_strength",
+        "espn_trait_motor",
+        "espn_trait_instincts",
+    )
+    for key in trait_keys:
+        val = _as_float(espn_row.get(key))
+        if val is not None:
+            return True
+    return bool(str(espn_row.get("espn_text_coverage", "")).strip())
+
+
+def _top50_independent_evidence_signals(
+    *,
+    consensus_source_count: int,
+    external_rank: int | None,
+    pff_grade: float | None,
+    cfb_prod_available: bool,
+    espn_row: dict,
+) -> tuple[int, str]:
+    """
+    Returns independent-signal count/labels used for top-50 rank-only evidence guardrails.
+    """
+    labels: list[str] = []
+    if int(consensus_source_count) >= 2:
+        labels.append("consensus_multi_source")
+    if external_rank is not None:
+        labels.append("external_rank")
+    if pff_grade is not None or bool(cfb_prod_available):
+        labels.append("production")
+    if _has_espn_trait_evidence(espn_row):
+        labels.append("espn_traits")
+    return len(labels), ";".join(labels)
+
+
+def _top50_evidence_rank_brake_penalty(signal_count: int) -> float:
+    missing = max(0, int(TOP50_EVIDENCE_MIN_SIGNALS) - int(signal_count))
+    if missing <= 0:
+        return 0.0
+    # Soft ranking-only brake. One missing independent signal gets a mild drag;
+    # zero evidence gets a stronger drag while still allowing elite profiles through.
+    penalty = float(TOP50_EVIDENCE_BRAKE_BASE) + max(0, missing - 1) * float(TOP50_EVIDENCE_BRAKE_PER_MISSING)
+    return round(_clamp(penalty, 0.0, float(TOP50_EVIDENCE_BRAKE_MAX)), 4)
+
+
+def _apply_top50_evidence_rank_brake(final_rows: list[dict]) -> None:
+    if not final_rows:
+        return
+    if TOP50_EVIDENCE_APPLY_TOP_N <= 0 or TOP50_EVIDENCE_MIN_SIGNALS <= 0:
+        return
+
+    top_n = max(1, int(TOP50_EVIDENCE_APPLY_TOP_N))
+    for row in final_rows:
+        base = float(
+            _as_float(row.get("rank_sort_score_base"))
+            or _as_float(row.get("rank_sort_score"))
+            or _as_float(row.get("consensus_score"))
+            or 0.0
+        )
+        row["rank_sort_score_base"] = round(base, 4)
+        row["rank_sort_score"] = round(base, 4)
+        row["top50_evidence_brake_penalty"] = 0.0
+        row["top50_evidence_brake_applied"] = 0
+        row["top50_evidence_brake_reason"] = ""
+
+    penalized_keys_prev: set[str] = set()
+    for _ in range(max(1, int(TOP50_EVIDENCE_REBALANCE_PASSES))):
+        final_rows.sort(
+            key=lambda x: (
+                float(x.get("rank_sort_score", x.get("consensus_score", 0.0)) or 0.0),
+                float(x.get("consensus_score", 0.0) or 0.0),
+            ),
+            reverse=True,
+        )
+        penalized: dict[str, float] = {}
+        for row in final_rows[:top_n]:
+            signal_count = int(_as_float(row.get("top50_evidence_signal_count")) or 0)
+            penalty = _top50_evidence_rank_brake_penalty(signal_count)
+            if penalty <= 0:
+                continue
+            penalized[canonical_player_name(row.get("player_name", ""))] = penalty
+
+        penalized_keys = set(penalized.keys())
+        if penalized_keys == penalized_keys_prev:
+            break
+        penalized_keys_prev = penalized_keys
+
+        for row in final_rows:
+            base = float(
+                _as_float(row.get("rank_sort_score_base"))
+                or _as_float(row.get("rank_sort_score"))
+                or _as_float(row.get("consensus_score"))
+                or 0.0
+            )
+            row["rank_sort_score"] = round(base, 4)
+            row["top50_evidence_brake_penalty"] = 0.0
+            row["top50_evidence_brake_applied"] = 0
+            row["top50_evidence_brake_reason"] = ""
+
+        for row in final_rows:
+            key = canonical_player_name(row.get("player_name", ""))
+            penalty = penalized.get(key)
+            if penalty is None:
+                continue
+            base = float(
+                _as_float(row.get("rank_sort_score_base"))
+                or _as_float(row.get("rank_sort_score"))
+                or _as_float(row.get("consensus_score"))
+                or 0.0
+            )
+            row["top50_evidence_brake_penalty"] = round(penalty, 4)
+            row["top50_evidence_brake_applied"] = 1
+            row["top50_evidence_brake_reason"] = (
+                f"top{top_n}_evidence_lt_{TOP50_EVIDENCE_MIN_SIGNALS}"
+            )
+            row["rank_sort_score"] = round(base - float(penalty), 4)
+            summary = str(row.get("rank_driver_summary", "")).strip()
+            if summary:
+                row["rank_driver_summary"] = (
+                    f"{summary} | top50_evidence_brake:{-float(penalty):+.2f}"
+                )
+
+
+def _bluechip_rank_protection_adjustment(
+    *,
+    consensus_score: float,
+    external_rank: int | None,
+    consensus_mean_rank: float | None,
+    consensus_source_count: int,
+    uncertainty_score: float,
+    rank_sort_total_drag: float,
+    evidence_signal_count: int,
+) -> float:
+    """
+    Rank-only soft lift for high-grade, market-supported profiles that can be
+    over-demoted by thin/noisy rank drag effects.
+    """
+    if not BLUECHIP_RANK_PROTECTION_ENABLED:
+        return 0.0
+    if consensus_score < 84.0:
+        return 0.0
+    if evidence_signal_count < 2:
+        return 0.0
+
+    strong_market = False
+    if external_rank is not None and int(external_rank) <= 45:
+        strong_market = True
+    if (
+        consensus_mean_rank is not None
+        and consensus_source_count >= 3
+        and float(consensus_mean_rank) <= 45.0
+    ):
+        strong_market = True
+    if not strong_market:
+        return 0.0
+
+    if rank_sort_total_drag < 0.55 and uncertainty_score < 60.0:
+        return 0.0
+
+    if consensus_score >= 88.0:
+        base = 0.65
+    elif consensus_score >= 86.0:
+        base = 0.5
+    else:
+        base = 0.35
+
+    if external_rank is not None and int(external_rank) <= 20:
+        base += 0.2
+    elif (
+        consensus_mean_rank is not None
+        and consensus_source_count >= 4
+        and float(consensus_mean_rank) <= 20.0
+    ):
+        base += 0.2
+
+    pressure = max(0.0, rank_sort_total_drag - 0.55)
+    adj = base + (0.35 * pressure)
+    return round(_clamp(adj, 0.0, BLUECHIP_RANK_PROTECTION_MAX), 4)
+
+
+def _write_rank_vs_consensus_outputs(final_rows: list[dict]) -> None:
+    rows = []
+    for row in final_rows:
+        mean_rank = _as_float(row.get("consensus_board_mean_rank"))
+        if mean_rank is None:
+            continue
+        model_rank = int(_as_float(row.get("consensus_rank")) or 9999)
+        if model_rank >= 9999:
+            continue
+        delta = float(mean_rank) - float(model_rank)
+        rows.append(
+            {
+                "consensus_rank": model_rank,
+                "player_name": row.get("player_name", ""),
+                "position": row.get("position", ""),
+                "school": row.get("school", ""),
+                "final_grade": row.get("final_grade", ""),
+                "consensus_board_mean_rank": round(float(mean_rank), 2),
+                "consensus_board_source_count": row.get("consensus_board_source_count", ""),
+                "consensus_board_rank_std": row.get("consensus_board_rank_std", ""),
+                "rank_delta_consensus_minus_model": round(delta, 2),
+                "rank_delta_abs": round(abs(delta), 2),
+                "model_higher_than_consensus": 1 if delta > 0 else 0,
+                "model_lower_than_consensus": 1 if delta < 0 else 0,
+                "confidence_score": row.get("confidence_score", ""),
+                "uncertainty_score": row.get("uncertainty_score", ""),
+                "top50_evidence_signal_count": row.get("top50_evidence_signal_count", ""),
+                "top50_evidence_brake_penalty": row.get("top50_evidence_brake_penalty", ""),
+                "bluechip_rank_protection_adjustment": row.get("bluechip_rank_protection_adjustment", ""),
+                "rank_driver_summary": row.get("rank_driver_summary", ""),
+            }
+        )
+
+    rows.sort(
+        key=lambda r: (
+            float(_as_float(r.get("rank_delta_abs")) or 0.0),
+            -int(_as_float(r.get("consensus_rank")) or 9999),
+        ),
+        reverse=True,
+    )
+    write_csv(OUTPUTS / "big_board_2026_rank_vs_consensus.csv", rows)
+
+    top100 = [
+        r
+        for r in rows
+        if int(_as_float(r.get("consensus_rank")) or 9999) <= 100
+    ]
+    top100.sort(
+        key=lambda r: float(_as_float(r.get("rank_delta_abs")) or 0.0),
+        reverse=True,
+    )
+    write_csv(OUTPUTS / "top100_disagreement_audit_2026.csv", top100)
+
+    lines = [
+        "Top-100 Disagreement Audit (Model Rank vs Consensus Mean Rank)",
+        "",
+        f"Rows: {len(top100)}",
+        "",
+        "ModelRank | Player | Pos | Grade | ConsensusMean | Delta(consensus-model) | AbsDelta | Sources | Driver",
+    ]
+    for row in top100[:120]:
+        lines.append(
+            f"{row['consensus_rank']} | {row['player_name']} | {row['position']} | {row['final_grade']} | "
+            f"{row['consensus_board_mean_rank']} | {row['rank_delta_consensus_minus_model']} | "
+            f"{row['rank_delta_abs']} | {row['consensus_board_source_count']} | {row['rank_driver_summary']}"
+        )
+    (OUTPUTS / "top100_disagreement_audit_2026.txt").write_text("\n".join(lines))
+
+
+def _run_postbuild_eligibility_qa(
+    *,
+    final_rows: list[dict],
+    returning_names: set[str],
+    declared_underclassmen: set[str],
+    already_drafted_names: set[str],
+) -> None:
+    failures: list[dict] = []
+    for row in final_rows:
+        name = str(row.get("player_name", "")).strip()
+        name_key = canonical_player_name(name)
+        class_year = str(row.get("class_year", "")).strip().upper()
+        if name_key in returning_names:
+            failures.append(
+                {
+                    "player_name": name,
+                    "position": row.get("position", ""),
+                    "school": row.get("school", ""),
+                    "class_year": class_year,
+                    "reason": "returning_to_school",
+                }
+            )
+        if name_key in already_drafted_names:
+            failures.append(
+                {
+                    "player_name": name,
+                    "position": row.get("position", ""),
+                    "school": row.get("school", ""),
+                    "class_year": class_year,
+                    "reason": "already_in_nfl",
+                }
+            )
+        if not (is_senior_class(class_year) or name_key in declared_underclassmen):
+            failures.append(
+                {
+                    "player_name": name,
+                    "position": row.get("position", ""),
+                    "school": row.get("school", ""),
+                    "class_year": class_year,
+                    "reason": "non_senior_not_declared",
+                }
+            )
+
+    failures.sort(key=lambda r: (r.get("reason", ""), r.get("player_name", "")))
+    qa_csv_path = OUTPUTS / "postbuild_ineligible_players_qa_2026.csv"
+    if failures:
+        write_csv(qa_csv_path, failures)
+    else:
+        qa_csv_path.parent.mkdir(parents=True, exist_ok=True)
+        with qa_csv_path.open("w", newline="") as f:
+            writer = csv.DictWriter(
+                f,
+                fieldnames=["player_name", "position", "school", "class_year", "reason"],
+            )
+            writer.writeheader()
+    qa_lines = [
+        "Postbuild Ineligible Player QA (2026)",
+        "",
+        f"Rows: {len(failures)}",
+        "",
+        "Reason | Player | Pos | School | ClassYear",
+    ]
+    for row in failures[:250]:
+        qa_lines.append(
+            f"{row.get('reason','')} | {row.get('player_name','')} | {row.get('position','')} | "
+            f"{row.get('school','')} | {row.get('class_year','')}"
+        )
+    (OUTPUTS / "postbuild_ineligible_players_qa_2026.txt").write_text("\n".join(qa_lines))
+
+    if FAIL_ON_POSTBUILD_INELIGIBLE and failures:
+        print(
+            "Postbuild ineligible-player QA failed: "
+            f"{len(failures)} rows. "
+            f"See {qa_csv_path}"
+        )
+        raise SystemExit(2)
+
+
 def _midband_consensus_brake_penalty(
     *,
     position: str,
@@ -2527,17 +2874,65 @@ def _compact_text(value: str, max_chars: int = 180) -> str:
 
 
 def _cfb_prod_snapshot_label(position: str, cfb: dict) -> str:
+    def _fmt_int(value) -> str:
+        val = _as_float(value)
+        if val is None:
+            return ""
+        return f"{int(round(val)):,}"
+
     pos = normalize_pos(position)
     if pos == "QB":
+        yds = _fmt_int(cfb.get("cfb_qb_pass_yds"))
+        td = _fmt_int(cfb.get("cfb_qb_pass_td"))
+        itc = _fmt_int(cfb.get("cfb_qb_pass_int"))
+        comp = _fmt_int(cfb.get("cfb_qb_pass_comp"))
+        att = _fmt_int(cfb.get("cfb_qb_pass_att"))
+        rush_yds = _fmt_int(cfb.get("cfb_qb_rush_yds"))
+        rush_td = _fmt_int(cfb.get("cfb_qb_rush_td"))
         parts = []
+        if yds:
+            parts.append(f"passing yards {yds}")
+        if td or itc:
+            if td and itc:
+                parts.append(f"pass TD-INT {td}-{itc}")
+            elif td:
+                parts.append(f"pass TD {td}")
+            else:
+                parts.append(f"INT {itc}")
+        if comp and att:
+            parts.append(f"completions/attempts {comp}/{att}")
+        if rush_yds or rush_td:
+            rush = []
+            if rush_yds:
+                rush.append(f"{rush_yds} rush yds")
+            if rush_td:
+                rush.append(f"{rush_td} rush TD")
+            parts.append(", ".join(rush))
+        if parts:
+            return "; ".join(parts)
+        # Fallback to existing context if counting stats are unavailable.
+        fallback = []
         if str(cfb.get("cfb_qb_epa_per_play", "")).strip():
-            parts.append(f"QB EPA/play {cfb.get('cfb_qb_epa_per_play')}")
+            fallback.append(f"QB EPA/play {cfb.get('cfb_qb_epa_per_play')}")
         if str(cfb.get("cfb_qb_pressure_signal", "")).strip():
-            parts.append(f"QB pressure signal {cfb.get('cfb_qb_pressure_signal')}")
+            fallback.append(f"QB pressure signal {cfb.get('cfb_qb_pressure_signal')}")
         if str(cfb.get("cfb_opp_def_toughness_index", "")).strip():
-            parts.append(f"opp-def index {cfb.get('cfb_opp_def_toughness_index')}")
-        return "; ".join(parts)
+            fallback.append(f"opp-def index {cfb.get('cfb_opp_def_toughness_index')}")
+        return "; ".join(fallback)
     if pos in {"WR", "TE"}:
+        rec = _fmt_int(cfb.get("cfb_wrte_rec"))
+        yds = _fmt_int(cfb.get("cfb_wrte_rec_yds"))
+        td = _fmt_int(cfb.get("cfb_wrte_rec_td"))
+        parts = []
+        if rec:
+            parts.append(f"receptions {rec}")
+        if yds:
+            parts.append(f"receiving yards {yds}")
+        if td:
+            parts.append(f"receiving TD {td}")
+        if parts:
+            return "; ".join(parts)
+        # Fallback to existing context if counting stats are unavailable.
         parts = []
         if str(cfb.get("cfb_wrte_yprr", "")).strip():
             parts.append(f"YPRR {cfb.get('cfb_wrte_yprr')}")
@@ -2549,6 +2944,31 @@ def _cfb_prod_snapshot_label(position: str, cfb: dict) -> str:
             parts.append(f"opp-def index {cfb.get('cfb_opp_def_toughness_index')}")
         return "; ".join(parts)
     if pos == "RB":
+        att = _fmt_int(cfb.get("cfb_rb_rush_att"))
+        yds = _fmt_int(cfb.get("cfb_rb_rush_yds"))
+        td = _fmt_int(cfb.get("cfb_rb_rush_td"))
+        rec = _fmt_int(cfb.get("cfb_rb_rec"))
+        rec_yds = _fmt_int(cfb.get("cfb_rb_rec_yds"))
+        rec_td = _fmt_int(cfb.get("cfb_rb_rec_td"))
+        parts = []
+        if att:
+            parts.append(f"rush attempts {att}")
+        if yds:
+            parts.append(f"rush yards {yds}")
+        if td:
+            parts.append(f"rush TD {td}")
+        if rec or rec_yds or rec_td:
+            rec_parts = []
+            if rec:
+                rec_parts.append(f"{rec} rec")
+            if rec_yds:
+                rec_parts.append(f"{rec_yds} rec yds")
+            if rec_td:
+                rec_parts.append(f"{rec_td} rec TD")
+            parts.append(", ".join(rec_parts))
+        if parts:
+            return "; ".join(parts)
+        # Fallback to existing context if counting stats are unavailable.
         parts = []
         if str(cfb.get("cfb_rb_explosive_rate", "")).strip():
             parts.append(f"explosive run rate {cfb.get('cfb_rb_explosive_rate')}")
@@ -2558,6 +2978,22 @@ def _cfb_prod_snapshot_label(position: str, cfb: dict) -> str:
             parts.append(f"opp-def index {cfb.get('cfb_opp_def_toughness_index')}")
         return "; ".join(parts)
     if pos == "EDGE":
+        sacks = _fmt_int(cfb.get("cfb_edge_sacks"))
+        hurries = _fmt_int(cfb.get("cfb_edge_qb_hurries"))
+        tfl = _fmt_int(cfb.get("cfb_edge_tfl"))
+        tackles = _fmt_int(cfb.get("cfb_edge_tackles"))
+        parts = []
+        if sacks:
+            parts.append(f"sacks {sacks}")
+        if hurries:
+            parts.append(f"QB hurries {hurries}")
+        if tfl:
+            parts.append(f"TFL {tfl}")
+        if tackles:
+            parts.append(f"tackles {tackles}")
+        if parts:
+            return "; ".join(parts)
+        # Fallback to existing context if counting stats are unavailable.
         parts = []
         if str(cfb.get("cfb_edge_pressure_rate", "")).strip():
             parts.append(f"pressure/pr-snap {cfb.get('cfb_edge_pressure_rate')}")
@@ -2565,6 +3001,22 @@ def _cfb_prod_snapshot_label(position: str, cfb: dict) -> str:
             parts.append(f"sacks/pr-snap {cfb.get('cfb_edge_sacks_per_pr_snap')}")
         return "; ".join(parts)
     if pos in {"CB", "S"}:
+        itc = _fmt_int(cfb.get("cfb_db_int"))
+        pbu = _fmt_int(cfb.get("cfb_db_pbu"))
+        tackles = _fmt_int(cfb.get("cfb_db_tackles"))
+        tfl = _fmt_int(cfb.get("cfb_db_tfl"))
+        parts = []
+        if itc:
+            parts.append(f"INT {itc}")
+        if pbu:
+            parts.append(f"PBUs {pbu}")
+        if tackles:
+            parts.append(f"tackles {tackles}")
+        if tfl:
+            parts.append(f"TFL {tfl}")
+        if parts:
+            return "; ".join(parts)
+        # Fallback to existing context if counting stats are unavailable.
         parts = []
         if str(cfb.get("cfb_db_coverage_plays_per_target", "")).strip():
             parts.append(f"coverage plays/target {cfb.get('cfb_db_coverage_plays_per_target')}")
@@ -2812,22 +3264,27 @@ def _build_scouting_sections(
     else:
         move_text = "Kiper board movement unavailable for this player."
 
-    production_parts = []
-    if kiper_statline_2025:
-        production_parts.append(kiper_statline_2025)
-    if pff_grade is not None:
-        production_parts.append(f"PFF grade {pff_grade:.1f}")
-    if str(espn_qbr or "").strip():
-        production_parts.append(f"ESPN QBR {espn_qbr}")
-    if str(espn_epa_per_play or "").strip():
-        production_parts.append(f"ESPN EPA/play {espn_epa_per_play}")
-    if str(cfb_prod_signal or "").strip():
-        production_parts.append(f"CFB prod signal {cfb_prod_signal}")
+    stat_parts: list[str] = []
+    if str(kiper_statline_2025 or "").strip():
+        stat_parts.append(str(kiper_statline_2025).strip().rstrip("."))
     if str(cfb_prod_label or "").strip():
-        production_parts.append(str(cfb_prod_label))
+        stat_parts.append(str(cfb_prod_label).strip().rstrip("."))
+    if pos == "QB":
+        if str(espn_qbr or "").strip():
+            stat_parts.append(f"ESPN QBR {espn_qbr}")
+        if str(espn_epa_per_play or "").strip():
+            stat_parts.append(f"ESPN EPA/play {espn_epa_per_play}")
     if str(cfb_prod_quality or "").strip():
-        production_parts.append(f"CFB quality {cfb_prod_quality} ({cfb_prod_reliability})")
-    production_snapshot = "; ".join(production_parts) if production_parts else "Production snapshot pending structured statline import."
+        stat_parts.append(f"CFB quality {cfb_prod_quality} ({cfb_prod_reliability})")
+    stat_parts = [p for p in stat_parts if p]
+    # Keep stable ordering and remove exact duplicates.
+    stat_parts = list(dict.fromkeys(stat_parts))
+    pff_line = f"PFF grade {pff_grade:.1f}" if pff_grade is not None else "PFF grade pending"
+    if stat_parts:
+        stat_line = "Stat context: " + _compact_text("; ".join(stat_parts), 260)
+    else:
+        stat_line = "Stat context: pending structured 2025 counting-stat import."
+    production_snapshot = pff_line + "\n" + stat_line
 
     report_parts = [
         f"{name} ({position}, {school}) carries a {final_grade:.2f} model grade with a current {round_value} projection.",
@@ -2846,12 +3303,6 @@ def _build_scouting_sections(
         wins_points.append("Model + film note: " + _compact_text(str(scouting_notes), 180).rstrip(".") + ".")
     if strengths:
         wins_points.append("Scout-logged strength indicators: " + "; ".join(strengths[:4]) + ".")
-    if pff_grade is not None:
-        wins_points.append(f"Last-season performance context: PFF grade {pff_grade:.1f}.")
-    elif str(cfb_prod_signal or "").strip():
-        wins_points.append(f"Production context: CFB signal {cfb_prod_signal}.")
-    if production_snapshot:
-        wins_points.append("Stat context: " + _compact_text(production_snapshot, 200) + ".")
     wins = "\n".join(f"- {point}" for point in wins_points[:5])
 
     concern_points: list[str] = []
@@ -3161,6 +3612,17 @@ def main() -> None:
         consensus_mean_rank_val = _as_float(consensus_mean_rank)
         consensus_rank_std_val = _as_float(consensus_rank_std)
         consensus_source_count_val = int(_as_float(consensus_source_count) or 0)
+        top50_evidence_signal_count, top50_evidence_signal_labels = _top50_independent_evidence_signals(
+            consensus_source_count=consensus_source_count_val,
+            external_rank=external_rank,
+            pff_grade=pff_grade,
+            cfb_prod_available=cfb_player_available,
+            espn_row=espn,
+        )
+        top50_evidence_missing_signals = max(
+            0,
+            int(TOP50_EVIDENCE_MIN_SIGNALS) - int(top50_evidence_signal_count),
+        )
 
         # Market score is kept for diagnostics only.
         if has_espn_signals and has_pp_signals and pp_player_available:
@@ -4030,23 +4492,47 @@ def main() -> None:
             "cfb_db_cov_plays_per_target_signal": cfb.get("cfb_db_cov_plays_per_target_signal", ""),
             "cfb_db_yards_allowed_per_cov_snap_signal": cfb.get("cfb_db_yards_allowed_per_cov_snap_signal", ""),
             "cfb_qb_epa_per_play": cfb.get("cfb_qb_epa_per_play", ""),
+            "cfb_qb_pass_att": cfb.get("cfb_qb_pass_att", ""),
+            "cfb_qb_pass_comp": cfb.get("cfb_qb_pass_comp", ""),
+            "cfb_qb_pass_yds": cfb.get("cfb_qb_pass_yds", ""),
+            "cfb_qb_pass_td": cfb.get("cfb_qb_pass_td", ""),
+            "cfb_qb_pass_int": cfb.get("cfb_qb_pass_int", ""),
+            "cfb_qb_rush_yds": cfb.get("cfb_qb_rush_yds", ""),
+            "cfb_qb_rush_td": cfb.get("cfb_qb_rush_td", ""),
             "cfb_wrte_yprr": cfb.get("cfb_wrte_yprr", ""),
             "cfb_wrte_target_share": cfb.get("cfb_wrte_target_share", ""),
             "cfb_wrte_targets_per_route": cfb.get("cfb_wrte_targets_per_route", ""),
             "cfb_wrte_targets_per_route_source": cfb.get("cfb_wrte_targets_per_route_source", ""),
             "cfb_wrte_targets_per_route_weight": cfb.get("cfb_wrte_targets_per_route_weight", ""),
+            "cfb_wrte_rec": cfb.get("cfb_wrte_rec", ""),
+            "cfb_wrte_rec_yds": cfb.get("cfb_wrte_rec_yds", ""),
+            "cfb_wrte_rec_td": cfb.get("cfb_wrte_rec_td", ""),
             "cfb_rb_explosive_rate": cfb.get("cfb_rb_explosive_rate", ""),
             "cfb_rb_missed_tackles_forced_per_touch": cfb.get("cfb_rb_missed_tackles_forced_per_touch", ""),
+            "cfb_rb_rush_att": cfb.get("cfb_rb_rush_att", ""),
+            "cfb_rb_rush_yds": cfb.get("cfb_rb_rush_yds", ""),
+            "cfb_rb_rush_td": cfb.get("cfb_rb_rush_td", ""),
+            "cfb_rb_rec": cfb.get("cfb_rb_rec", ""),
+            "cfb_rb_rec_yds": cfb.get("cfb_rb_rec_yds", ""),
+            "cfb_rb_rec_td": cfb.get("cfb_rb_rec_td", ""),
             "cfb_edge_pressure_rate": cfb.get("cfb_edge_pressure_rate", ""),
             "cfb_edge_sacks_per_pr_snap": cfb.get("cfb_edge_sacks_per_pr_snap", ""),
             "cfb_edge_sacks_per_pr_snap_source": cfb.get("cfb_edge_sacks_per_pr_snap_source", ""),
             "cfb_edge_pressure_weight": cfb.get("cfb_edge_pressure_weight", ""),
             "cfb_edge_sack_weight": cfb.get("cfb_edge_sack_weight", ""),
+            "cfb_edge_sacks": cfb.get("cfb_edge_sacks", ""),
+            "cfb_edge_qb_hurries": cfb.get("cfb_edge_qb_hurries", ""),
+            "cfb_edge_tfl": cfb.get("cfb_edge_tfl", ""),
+            "cfb_edge_tackles": cfb.get("cfb_edge_tackles", ""),
             "cfb_db_coverage_plays_per_target": cfb.get("cfb_db_coverage_plays_per_target", ""),
             "cfb_db_yards_allowed_per_coverage_snap": cfb.get("cfb_db_yards_allowed_per_coverage_snap", ""),
             "cfb_db_yards_allowed_per_cov_snap_source": cfb.get("cfb_db_yards_allowed_per_cov_snap_source", ""),
             "cfb_db_cov_weight": cfb.get("cfb_db_cov_weight", ""),
             "cfb_db_yacs_weight": cfb.get("cfb_db_yacs_weight", ""),
+            "cfb_db_int": cfb.get("cfb_db_int", ""),
+            "cfb_db_pbu": cfb.get("cfb_db_pbu", ""),
+            "cfb_db_tackles": cfb.get("cfb_db_tackles", ""),
+            "cfb_db_tfl": cfb.get("cfb_db_tfl", ""),
             "cfb_source": cfb.get("cfb_source", ""),
             "cfb_season": cfb.get("cfb_season", ""),
             "lang_source_count": lang.get("lang_source_count", ""),
@@ -4326,6 +4812,17 @@ def main() -> None:
             - prior_drag
             + rank_sort_consensus_realign_adjustment
         )
+        bluechip_rank_protection_adjustment = _bluechip_rank_protection_adjustment(
+            consensus_score=float(report.get("consensus_score", 0.0) or 0.0),
+            external_rank=external_rank,
+            consensus_mean_rank=consensus_mean_rank_val,
+            consensus_source_count=consensus_source_count_val,
+            uncertainty_score=float(report.get("uncertainty_score", 0.0) or 0.0),
+            rank_sort_total_drag=float(total_drag),
+            evidence_signal_count=top50_evidence_signal_count,
+        )
+        rank_sort_score += bluechip_rank_protection_adjustment
+        report["rank_sort_score_base"] = round(rank_sort_score, 4)
         report["rank_sort_score"] = round(rank_sort_score, 4)
         report["rank_sort_uncertainty_drag"] = round(uncertainty_drag, 4)
         report["rank_sort_prior_overhang"] = round(prior_overhang, 4)
@@ -4334,6 +4831,16 @@ def main() -> None:
         report["rank_sort_drag_cap"] = round(drag_cap, 4) if drag_cap is not None else ""
         report["rank_sort_consensus_realign_adjustment"] = round(
             rank_sort_consensus_realign_adjustment, 4
+        )
+        report["top50_evidence_signal_count"] = top50_evidence_signal_count
+        report["top50_evidence_signal_labels"] = top50_evidence_signal_labels
+        report["top50_evidence_min_required"] = int(TOP50_EVIDENCE_MIN_SIGNALS)
+        report["top50_evidence_missing_signals"] = top50_evidence_missing_signals
+        report["top50_evidence_brake_penalty"] = 0.0
+        report["top50_evidence_brake_applied"] = 0
+        report["top50_evidence_brake_reason"] = ""
+        report["bluechip_rank_protection_adjustment"] = round(
+            bluechip_rank_protection_adjustment, 4
         )
         report["rank_driver_summary"] = _build_rank_driver_summary(
             model_score=float(report.get("consensus_score", 0.0) or 0.0),
@@ -4348,6 +4855,8 @@ def main() -> None:
             front7_inflation_penalty=float(front7_inflation_penalty),
             cb_nickel_inflation_penalty=float(cb_nickel_inflation_penalty),
             bluechip_floor_lift=float(bluechip_floor_lift),
+            top50_evidence_brake_penalty=0.0,
+            bluechip_rank_protection_adjustment=float(bluechip_rank_protection_adjustment),
         )
         enriched.append(report)
 
@@ -4373,6 +4882,7 @@ def main() -> None:
             final_map[key] = row
 
     final_rows = list(final_map.values())
+    _apply_top50_evidence_rank_brake(final_rows)
     final_rows.sort(
         key=lambda x: (
             float(x.get("rank_sort_score", x.get("consensus_score", 0.0)) or 0.0),
@@ -4403,9 +4913,53 @@ def main() -> None:
         row["round_value_rank_band"] = rank_band
         row["round_value"] = _blend_round_projection(grade_only, rank_band, rank)
 
+    # Refresh scouting sections after final rank assignment so cards always show
+    # the live model slot (not seed rank / stale prior rank).
+    for row in final_rows:
+        pos = normalize_pos(str(row.get("position", "")))
+        pff_grade_val = _as_float(row.get("pff_grade"))
+        sections = _build_scouting_sections(
+            name=str(row.get("player_name", "")),
+            position=pos,
+            school=str(row.get("school", "")),
+            final_grade=float(_as_float(row.get("final_grade")) or 0.0),
+            round_value=str(row.get("round_value", "")),
+            best_role=str(row.get("best_role", "")),
+            best_scheme_fit=str(row.get("best_scheme_fit", "")),
+            best_team_fit=str(row.get("best_team_fit", "")),
+            scouting_notes=str(row.get("scouting_notes", "")),
+            kiper_rank=str(row.get("kiper_rank", "")),
+            kiper_prev_rank=str(row.get("kiper_prev_rank", "")),
+            kiper_rank_delta=str(row.get("kiper_rank_delta", "")),
+            kiper_strength_tags=str(row.get("kiper_strength_tags", "")),
+            kiper_concern_tags=str(row.get("kiper_concern_tags", "")),
+            kiper_statline_2025=str(row.get("kiper_statline_2025", "")),
+            tdn_strengths=str(row.get("tdn_strengths", "")),
+            tdn_concerns=str(row.get("tdn_concerns", "")),
+            br_strengths=str(row.get("br_strengths", "")),
+            br_concerns=str(row.get("br_concerns", "")),
+            atoz_strengths=str(row.get("atoz_strengths", "")),
+            atoz_concerns=str(row.get("atoz_concerns", "")),
+            si_strengths=str(row.get("si_strengths", "")),
+            si_concerns=str(row.get("si_concerns", "")),
+            pff_grade=pff_grade_val,
+            espn_qbr=row.get("espn_qbr", ""),
+            espn_epa_per_play=row.get("espn_epa_per_play", ""),
+            cfb_prod_signal=row.get("cfb_prod_signal", ""),
+            cfb_prod_label=_cfb_prod_snapshot_label(pos, row),
+            cfb_prod_quality=row.get("cfb_prod_quality_label", ""),
+            cfb_prod_reliability=row.get("cfb_prod_reliability", ""),
+            consensus_rank=int(row.get("consensus_rank", row.get("rank_seed", 9999)) or 9999),
+            historical_combine_comp_1=str(row.get("historical_combine_comp_1", "")),
+            historical_combine_comp_1_year=row.get("historical_combine_comp_1_year", ""),
+            historical_combine_comp_1_similarity=row.get("historical_combine_comp_1_similarity", ""),
+        )
+        row.update(sections)
+
     write_csv(PROCESSED / "big_board_2026.csv", final_rows)
     write_csv(OUTPUTS / "big_board_2026.csv", final_rows)
     write_top_board_md(OUTPUTS / "big_board_2026_top100.md", final_rows, 100)
+    _write_rank_vs_consensus_outputs(final_rows)
 
     cfb_proxy_watchlist_rows = []
     for row in final_rows:
@@ -4521,6 +5075,13 @@ def main() -> None:
         )
         raise SystemExit(2)
 
+    _run_postbuild_eligibility_qa(
+        final_rows=final_rows,
+        returning_names=returning_names,
+        declared_underclassmen=declared_underclassmen,
+        already_drafted_names=already_drafted_names,
+    )
+
     with (OUTPUTS / "big_board_2026.json").open("w") as f:
         json.dump(final_rows, f, indent=2)
 
@@ -4615,6 +5176,9 @@ def main() -> None:
     )
     proxy_heavy_count = sum(1 for r in final_rows if int(r.get("cfb_proxy_fallback_heavy_flag", 0) or 0) == 1)
     print(f"CFB proxy fallback watchlist rows: {proxy_heavy_count}")
+    print(f"Rank vs consensus audit: {OUTPUTS / 'big_board_2026_rank_vs_consensus.csv'}")
+    print(f"Top-100 disagreement audit: {OUTPUTS / 'top100_disagreement_audit_2026.csv'}")
+    print(f"Postbuild ineligible QA: {OUTPUTS / 'postbuild_ineligible_players_qa_2026.csv'}")
     print(
         "Extreme rank-jump QA: "
         f"rows={len(extreme_rows)} "

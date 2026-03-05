@@ -1,21 +1,20 @@
 CFBD 2025 Production Extraction Report
 
-board_players_targeted: 302
-players_matched_cfbd: 240
-rows_written: 240
-rows_with_opp_def_context: 236
-rows_with_years_played: 238
+board_players_targeted: 172
+players_matched_cfbd: 147
+rows_written: 147
+rows_with_opp_def_context: 145
+rows_with_years_played: 147
 notes: CFBD does not expose true YPRR/targets/missed_tackles/coverage_targets directly; proxy fields were generated.
 
 rows_by_position:
-- CB: 49
-- EDGE: 18
-- QB: 31
-- RB: 27
-- S: 29
-- TE: 29
-- WR: 57
+- CB: 26
+- EDGE: 14
+- QB: 14
+- RB: 17
+- S: 16
+- TE: 22
+- WR: 38
 
 quality_counts:
-- missing: 7
-- proxy: 233
+- proxy: 147
