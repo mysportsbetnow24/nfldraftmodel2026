@@ -3,15 +3,20 @@ interface Props {
   title: string;
   description?: string;
   collectionSchema?: Record<string, unknown> | null;
+  ogImage?: string;
+  ogType?: "website" | "article";
 }
 
 const {
   title,
   description = "2026 NFL Draft big board, mocks, scouting cards, and player comparison tools.",
-  collectionSchema = null
+  collectionSchema = null,
+  ogImage = "/og-default.svg",
+  ogType = "website"
 } = Astro.props;
 const siteUrl = (Astro.site ?? new URL("https://scoutinggrade.com")).toString().replace(/\/$/, "");
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const ogImageUrl = new URL(ogImage, siteUrl).toString();
 const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -27,6 +32,19 @@ const webSiteSchema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Scouting Grade" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Scouting Grade - 2026 NFL Draft data and scouting hub" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content="Scouting Grade - 2026 NFL Draft data and scouting hub" />
     <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
     {collectionSchema && <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />}
     <style>

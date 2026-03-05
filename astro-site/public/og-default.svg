@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Scouting Grade 2026 NFL Draft">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2942" />
+      <stop offset="100%" stop-color="#113f66" />
+    </linearGradient>
+    <radialGradient id="glow" cx="20%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#2fd07a" stop-opacity="0.34" />
+      <stop offset="100%" stop-color="#2fd07a" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+  <g fill="#eaf0f6">
+    <text x="80" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700">Scouting Grade</text>
+    <text x="80" y="282" font-family="Segoe UI, Arial, sans-serif" font-size="70" font-weight="800">2026 NFL Draft Hub</text>
+    <text x="80" y="350" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="500" fill="#c8d5e2">Big Board · Mock Drafts · Scouting Cards · Player Compare</text>
+  </g>
+  <g transform="translate(880 170)">
+    <circle cx="110" cy="110" r="108" fill="none" stroke="#89a3be" stroke-width="4" />
+    <path d="M110 8c-31 20-54 60-54 102s23 82 54 102c31-20 54-60 54-102S141 28 110 8z" fill="none" stroke="#89a3be" stroke-width="3"/>
+    <path d="M14 110h192M110 14v192" stroke="#89a3be" stroke-width="3"/>
+    <circle cx="110" cy="110" r="8" fill="#2fd07a" />
+  </g>
+</svg>
