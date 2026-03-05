@@ -17,7 +17,7 @@ const collectionSchema = {
 };
 ---
 <BaseLayout title="NFL Transactions Feed 2026 | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
-  <section class="hero">
+  <section class="hero hero--data">
     <h1>NFL Transactions Feed 2026</h1>
     <p>Confirmed and rumored transaction stream with clear impact flags.</p>
   </section>
@@ -107,24 +107,4 @@ const collectionSchema = {
     })();
   </script>
 
-  <style>
-    .section-no-margin {
-      margin: 0;
-    }
-    .feed-filters {
-      display: flex;
-      gap: .5rem;
-      flex-wrap: wrap;
-      margin-bottom: .9rem;
-    }
-    .reset-btn.is-active {
-      border-color: #8db4e2;
-      background: #eef5fc;
-      color: #1f4f84;
-    }
-    .source-link {
-      color: var(--brand);
-      text-decoration: none;
-    }
-  </style>
 </BaseLayout>

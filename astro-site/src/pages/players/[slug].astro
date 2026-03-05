@@ -42,7 +42,7 @@ const riskKeywords = [
 const hasMedicalCharacterRisk = riskKeywords.some((k) => concernsText.toLowerCase().includes(k));
 ---
 <BaseLayout title={`${player.player_name} | 2026 NFL Draft Scouting Report`} description={pageDescription} collectionSchema={collectionSchema}>
-  <section class="hero">
+  <section class="hero hero--data">
     <h1>{player.player_name}</h1>
     <p>{player.position} · {player.school} · 2026 NFL Draft Prospect</p>
   </section>
@@ -89,50 +89,4 @@ const hasMedicalCharacterRisk = riskKeywords.some((k) => concernsText.toLowerCas
     <a href="/2026-nfl-draft-big-board" class="back-link">← Back to Big Board</a>
   </section>
 
-  <style>
-    .summary-card {
-      margin-bottom: 1rem;
-    }
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: .55rem;
-    }
-    .badge-row {
-      margin-top: .7rem;
-      display: flex;
-      gap: .5rem;
-      flex-wrap: wrap;
-    }
-    .detail-grid {
-      display: grid;
-      gap: .75rem;
-    }
-    .block-title {
-      margin: 0 0 .35rem;
-    }
-    .block-copy {
-      margin: .15rem 0;
-      line-height: 1.55;
-    }
-    .pre-wrap {
-      white-space: pre-wrap;
-    }
-    .back-card {
-      margin-top: 1rem;
-    }
-    .back-link {
-      color: var(--brand);
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .back-link:hover {
-      text-decoration: underline;
-    }
-    .badge.warn {
-      color: #7a4a06;
-      border-color: #ead1a2;
-      background: #fff8e8;
-    }
-  </style>
 </BaseLayout>

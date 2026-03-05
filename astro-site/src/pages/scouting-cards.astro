@@ -18,7 +18,7 @@ const collectionSchema = {
 };
 ---
 <BaseLayout title="2026 NFL Scouting Cards | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
-  <section class="hero">
+  <section class="hero hero--data">
     <h1>2026 NFL Scouting Cards</h1>
     <p>Search and review concise scouting snapshots for this class.</p>
   </section>
@@ -135,58 +135,4 @@ const collectionSchema = {
     if (pool.length) showCard(pool[0].player_uid);
   </script>
 
-  <style>
-    .search-card {
-      margin-bottom: 1rem;
-    }
-    .search-label {
-      display: block;
-      margin-bottom: .35rem;
-    }
-    .search-control {
-      width: 100%;
-    }
-    .list-wrap {
-      margin-top: .75rem;
-      overflow: auto;
-      max-height: 320px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: #fff;
-    }
-    .player-title {
-      margin: 0 0 .35rem;
-    }
-    .player-meta {
-      margin-bottom: .8rem;
-    }
-    .player-link-wrap {
-      margin: .2rem 0 .9rem;
-    }
-    .player-link {
-      color: var(--brand);
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .player-link:hover {
-      text-decoration: underline;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: .55rem;
-      margin-bottom: .9rem;
-    }
-    .detail-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: .75rem;
-    }
-    .detail-text {
-      margin-top: .4rem;
-    }
-    .pre-wrap {
-      white-space: pre-wrap;
-    }
-  </style>
 </BaseLayout>
