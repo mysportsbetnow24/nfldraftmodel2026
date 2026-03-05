@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import board from "../data/big_board_2026.json";
+
+const pool = (board || []).slice(0, 180);
+---
+<BaseLayout title="2026 NFL Player Comparison | Scouting Grade" description="Compare 2026 NFL Draft prospects side-by-side by grade, role, and summary signals.">
+  <section class="hero">
+    <h1>2026 NFL Player Comparison</h1>
+    <p>Quick side-by-side card view for up to 4 prospects.</p>
+  </section>
+
+  <section class="card" style="margin-bottom:1rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.65rem;">
+      <select id="p1"><option value="">Select Player 1</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
+      <select id="p2"><option value="">Select Player 2</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
+      <select id="p3"><option value="">Select Player 3</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
+      <select id="p4"><option value="">Select Player 4</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
+    </div>
+  </section>
+
+  <section id="cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.8rem;"></section>
+
+  <script define:vars={{ pool }}>
+    const idx = {};
+    pool.forEach((p) => { idx[p.player_uid] = p; });
+    const slots = ["p1", "p2", "p3", "p4"].map((id) => document.getElementById(id));
+    const cards = document.getElementById("cards");
+
+    const render = () => {
+      const chosen = slots.map((el) => idx[el?.value]).filter(Boolean);
+      cards.innerHTML = "";
+      chosen.forEach((p) => {
+        const div = document.createElement("article");
+        div.className = "card";
+        div.innerHTML = `
+          <h3 style="margin:0 0 .2rem;">${p.player_name}</h3>
+          <div class="muted">${p.school}</div>
+          <div style="margin:.45rem 0;">
+            <span class="badge">${p.position}</span>
+            <span class="badge">Rank ${p.consensus_rank}</span>
+          </div>
+          <div><strong>Grade:</strong> ${p.final_grade}</div>
+          <div><strong>Round:</strong> ${p.round_value || ""}</div>
+          <div style="margin-top:.5rem;" class="muted">${(p.rank_driver_summary || "").slice(0, 170)}</div>
+        `;
+        cards.appendChild(div);
+      });
+    };
+
+    slots.forEach((el) => el?.addEventListener("change", render));
+    render();
+  </script>
+</BaseLayout>

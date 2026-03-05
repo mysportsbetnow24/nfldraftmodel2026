@@ -1,0 +1,18 @@
+{
+  "name": "scoutinggrade-astro-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync-data": "python3 ../scripts/export_astro_site_data.py",
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:cloudflare": "astro build",
+    "preview": "astro preview",
+    "predev": "npm run sync-data",
+    "prebuild": "npm run sync-data"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}

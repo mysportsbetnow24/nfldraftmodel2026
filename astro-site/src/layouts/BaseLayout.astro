@@ -1,0 +1,149 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "2026 NFL Draft big board, mocks, scouting cards, and player comparison tools." } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={`https://www.scoutinggrade.com${Astro.url.pathname}`} />
+    <style>
+      :root {
+        --bg: #f3f5f8;
+        --surface: #ffffff;
+        --line: #d8dce2;
+        --ink: #111827;
+        --muted: #5c6473;
+        --brand: #0d2f4f;
+        --accent: #138a4a;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "SF Pro Text", "Segoe UI", Inter, system-ui, sans-serif;
+        background:
+          radial-gradient(circle at 10% 0%, rgba(13,47,79,0.08), transparent 45%),
+          radial-gradient(circle at 90% 10%, rgba(19,138,74,0.08), transparent 40%),
+          var(--bg);
+      }
+      .shell {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.25rem;
+      }
+      .header {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.8rem 0;
+      }
+      .brand {
+        font-size: 1.55rem;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+      }
+      .brand a { color: var(--ink); text-decoration: none; }
+      .nav {
+        display: flex;
+        gap: 0.45rem;
+        flex-wrap: wrap;
+      }
+      .nav a {
+        text-decoration: none;
+        color: var(--brand);
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 999px;
+        padding: 0.45rem 0.72rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+      .hero {
+        border: 1px solid var(--line);
+        background: linear-gradient(135deg, #0e2238, #0f3b63);
+        color: #fff;
+        border-radius: 18px;
+        padding: 1.45rem;
+        margin-bottom: 1rem;
+      }
+      .hero h1 {
+        margin: 0 0 0.35rem;
+        font-size: clamp(1.55rem, 4vw, 2.5rem);
+        line-height: 1.08;
+      }
+      .hero p {
+        margin: 0;
+        color: rgba(255,255,255,0.9);
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 0.95rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.92rem;
+      }
+      thead th {
+        text-align: left;
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted);
+        border-bottom: 1px solid var(--line);
+        padding: 0.55rem 0.45rem;
+      }
+      tbody td {
+        border-bottom: 1px solid #edf0f4;
+        padding: 0.52rem 0.45rem;
+      }
+      tbody tr:hover { background: #f8fafc; }
+      .muted { color: var(--muted); }
+      .badge {
+        display: inline-block;
+        padding: 0.2rem 0.45rem;
+        border-radius: 999px;
+        border: 1px solid #c7cfda;
+        font-size: 0.76rem;
+        font-weight: 700;
+      }
+      .footer {
+        color: var(--muted);
+        font-size: 0.82rem;
+        padding: 1rem 0 2rem;
+      }
+      @media (max-width: 820px) {
+        .shell { padding: 0.7rem; }
+        table { font-size: 0.84rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="header">
+        <div class="brand"><a href="/">Scouting Grade</a></div>
+        <nav class="nav">
+          <a href="/2026-nfl-draft-big-board">Big Board</a>
+          <a href="/2026-nfl-mock-draft-round-1">1st Round Mock</a>
+          <a href="/2026-nfl-7-round-mock-draft">7-Round Mock</a>
+          <a href="/2026-nfl-player-comparison">Player Compare</a>
+          <a href="/reports_index.html">Scouting Cards</a>
+        </nav>
+      </header>
+      <slot />
+      <footer class="footer">Scouting Grade · Data-driven NFL Draft modeling and scouting synthesis.</footer>
+    </div>
+  </body>
+</html>

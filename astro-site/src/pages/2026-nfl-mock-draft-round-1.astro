@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import picks from "../data/mock_2026_round1.json";
+---
+<BaseLayout title="2026 NFL Mock Draft Round 1 | Scouting Grade" description="Round 1 2026 NFL mock draft with pick order, team, player, and model grade.">
+  <section class="hero">
+    <h1>2026 NFL Mock Draft (Round 1)</h1>
+    <p>Latest first-round projection from the current model and team-need logic.</p>
+  </section>
+
+  <section class="card">
+    <div style="overflow:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Pick</th>
+            <th>Team</th>
+            <th>Player</th>
+            <th>Pos</th>
+            <th>School</th>
+            <th>Grade</th>
+            <th>Round Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {picks.map((p: any) => (
+            <tr>
+              <td>{p.overall_pick}</td>
+              <td>{p.team}</td>
+              <td>{p.player_name}</td>
+              <td><span class="badge">{p.position}</span></td>
+              <td>{p.school}</td>
+              <td>{p.final_grade}</td>
+              <td>{p.round_value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>

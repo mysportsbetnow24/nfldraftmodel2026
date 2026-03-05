@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import board from "../data/big_board_2026.json";
+---
+<BaseLayout title="2026 NFL Draft Big Board | Scouting Grade" description="Live 2026 NFL Draft big board from the Scouting Grade model with ranks, grades, and projection context.">
+  <section class="hero">
+    <h1>2026 NFL Draft Big Board</h1>
+    <p>Model-ranked prospects using production, athletic, context, and consensus signals with guardrails.</p>
+  </section>
+
+  <section class="card">
+    <div style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin-bottom:.7rem;">
+      <input id="search" type="search" placeholder="Search player, school, or position..." style="padding:.55rem .65rem;border:1px solid var(--line);border-radius:10px;min-width:280px;" />
+      <span class="muted">Rows: {board.length}</span>
+    </div>
+    <div style="overflow:auto;">
+      <table id="boardTable">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Pos</th>
+            <th>School</th>
+            <th>Grade</th>
+            <th>Round</th>
+            <th>Consensus Mean</th>
+          </tr>
+        </thead>
+        <tbody>
+          {board.map((r: any) => (
+            <tr data-search={`${r.player_name} ${r.position} ${r.school}`.toLowerCase()}>
+              <td>{r.consensus_rank}</td>
+              <td>{r.player_name}</td>
+              <td><span class="badge">{r.position}</span></td>
+              <td>{r.school}</td>
+              <td>{r.final_grade}</td>
+              <td>{r.round_value}</td>
+              <td>{r.consensus_board_mean_rank || ""}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    const input = document.getElementById("search");
+    const rows = Array.from(document.querySelectorAll("#boardTable tbody tr"));
+    if (input) {
+      input.addEventListener("input", (e) => {
+        const q = (e.target?.value || "").toLowerCase().trim();
+        rows.forEach((row) => {
+          const hay = row.getAttribute("data-search") || "";
+          row.style.display = q && !hay.includes(q) ? "none" : "";
+        });
+      });
+    }
+  </script>
+</BaseLayout>

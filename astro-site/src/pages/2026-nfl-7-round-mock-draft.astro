@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import picks from "../data/mock_2026_7round.json";
+import byTeam from "../data/mock_2026_7round_by_team.json";
+
+const teams = Object.keys(byTeam || {}).sort();
+---
+<BaseLayout title="2026 7-Round NFL Mock Draft | Scouting Grade" description="Complete 7-round mock draft with team filter to view full projected classes.">
+  <section class="hero">
+    <h1>2026 7-Round NFL Mock Draft</h1>
+    <p>Full draft projection with team-level class filtering.</p>
+  </section>
+
+  <section class="card" style="margin-bottom:1rem;">
+    <label for="teamFilter" class="muted">Filter By Team</label><br />
+    <select id="teamFilter" style="margin-top:.3rem;padding:.5rem .65rem;border:1px solid var(--line);border-radius:10px;min-width:220px;">
+      <option value="">All Teams</option>
+      {teams.map((team) => <option value={team}>{team}</option>)}
+    </select>
+    <div id="teamSummary" class="muted" style="margin-top:.5rem;">Showing all picks.</div>
+  </section>
+
+  <section class="card">
+    <div style="overflow:auto;">
+      <table id="mockTable">
+        <thead>
+          <tr>
+            <th>Overall</th>
+            <th>Round</th>
+            <th>Team</th>
+            <th>Player</th>
+            <th>Pos</th>
+            <th>School</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          {picks.map((p: any) => (
+            <tr data-team={p.team}>
+              <td>{p.overall_pick}</td>
+              <td>{p.round}</td>
+              <td>{p.team}</td>
+              <td>{p.player_name}</td>
+              <td><span class="badge">{p.position}</span></td>
+              <td>{p.school}</td>
+              <td>{p.final_grade}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script define:vars={{ byTeam }}>
+    const filter = document.getElementById("teamFilter");
+    const rows = Array.from(document.querySelectorAll("#mockTable tbody tr"));
+    const summary = document.getElementById("teamSummary");
+
+    const update = () => {
+      const team = filter?.value || "";
+      let shown = 0;
+      rows.forEach((row) => {
+        const keep = !team || row.getAttribute("data-team") === team;
+        row.style.display = keep ? "" : "none";
+        if (keep) shown += 1;
+      });
+
+      if (!summary) return;
+      if (!team) {
+        summary.textContent = `Showing all picks (${shown}).`;
+        return;
+      }
+      const cls = byTeam[team] || [];
+      const byPos = {};
+      cls.forEach((p) => {
+        byPos[p.position] = (byPos[p.position] || 0) + 1;
+      });
+      const posTxt = Object.entries(byPos).map(([k, v]) => `${k} ${v}`).join(", ");
+      summary.textContent = `${team}: ${cls.length} picks (${posTxt || "no picks"}).`;
+    };
+
+    if (filter) {
+      filter.addEventListener("change", update);
+      update();
+    }
+  </script>
+</BaseLayout>

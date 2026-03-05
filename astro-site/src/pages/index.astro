@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import board from "../data/big_board_2026.json";
+import meta from "../data/build_meta.json";
+
+const top = (board || []).slice(0, 25);
+---
+<BaseLayout title="NFL Draft Hub 2026 | Scouting Grade" description="2026 NFL Draft big board, round 1 mock, 7-round mock, and player scouting cards.">
+  <section class="hero">
+    <h1>NFL Draft Hub 2026</h1>
+    <p>Model-first big board, mock drafts, and scouting cards. Updated from your local data pipeline.</p>
+  </section>
+
+  <section class="card" style="margin-bottom: 1rem;">
+    <h2 style="margin:0 0 .8rem;">Pages</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.7rem;">
+      <a class="card" href="/2026-nfl-draft-big-board" style="text-decoration:none;color:inherit;">
+        <strong>2026 NFL Draft Big Board</strong><br />
+        <span class="muted">Ranked prospects with grade + role context.</span>
+      </a>
+      <a class="card" href="/2026-nfl-mock-draft-round-1" style="text-decoration:none;color:inherit;">
+        <strong>2026 NFL Mock Draft (Round 1)</strong><br />
+        <span class="muted">One-round projection with pick rationale.</span>
+      </a>
+      <a class="card" href="/2026-nfl-7-round-mock-draft" style="text-decoration:none;color:inherit;">
+        <strong>2026 7-Round NFL Mock Draft</strong><br />
+        <span class="muted">Searchable by team for full draft classes.</span>
+      </a>
+      <a class="card" href="/2026-nfl-player-comparison" style="text-decoration:none;color:inherit;">
+        <strong>2026 NFL Player Comparison</strong><br />
+        <span class="muted">Side-by-side snapshot of top prospects.</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="card">
+    <div style="display:flex;justify-content:space-between;gap:.6rem;align-items:end;flex-wrap:wrap;">
+      <h2 style="margin:0 0 .65rem;">Top Board Snapshot</h2>
+      <span class="muted">Generated: {meta.generated_at || "pending sync-data"}</span>
+    </div>
+    <div style="overflow:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Pos</th>
+            <th>School</th>
+            <th>Grade</th>
+            <th>Round</th>
+          </tr>
+        </thead>
+        <tbody>
+          {top.map((r: any) => (
+            <tr>
+              <td>{r.consensus_rank}</td>
+              <td>{r.player_name}</td>
+              <td><span class="badge">{r.position}</span></td>
+              <td>{r.school}</td>
+              <td>{r.final_grade}</td>
+              <td>{r.round_value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>
