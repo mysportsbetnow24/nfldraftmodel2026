@@ -17,4 +17,4 @@ rows_by_position:
 - WR: 38
 
 quality_counts:
-- proxy: 147
+- mixed: 147

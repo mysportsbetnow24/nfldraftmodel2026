@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jam Miller | 2026 Scouting Card</title>
+  <style>:root {
+  --ink: #0e1116;
+  --muted: #5f6673;
+  --line: #d8dee8;
+  --paper: #fbfcff;
+  --panel: #ffffff;
+  --header: #ecf2f8;
+  --accent: #0a4f6b;
+  --accent-2: #19442a;
+  --shadow: 0 22px 48px rgba(8, 16, 34, 0.12);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 1.25rem;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 6% -4%, rgba(10,79,107,0.16), transparent 30%),
+    radial-gradient(circle at 95% 0%, rgba(25,68,42,0.16), transparent 26%),
+    repeating-linear-gradient(135deg, rgba(16,96,56,0.05) 0, rgba(16,96,56,0.05) 8px, rgba(255,255,255,0) 8px, rgba(255,255,255,0) 18px),
+    linear-gradient(180deg, #f4f7fb 0%, #edf5ef 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.scout-card {
+  max-width: 1160px;
+  margin: 0 auto 2rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.1rem;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(10,79,107,0.18), transparent 30%),
+    linear-gradient(100deg, #f5f9fd, #f4f8f2);
+}
+
+.identity { display: flex; gap: 1rem; align-items: center; }
+.headshot { width: 108px; height: 108px; object-fit: cover; border: 1px solid #b8c7d8; border-radius: 14px; }
+.placeholder { display:flex; align-items:center; justify-content:center; font-size: 0.8rem; color: #555; background:#ececec; }
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.stack { margin: 0.32rem 0; color: #24303d; font-size: 0.95rem; }
+.fit-box { border: 1px solid #c8d5e3; border-radius: 14px; padding: 0.75rem 0.8rem; font-size: 0.9rem; background: #fff; }
+.fit-box p { margin: 0.35rem 0; }
+
+.sheet { padding: 0.95rem 1rem 1rem; }
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.93rem;
+  min-width: 980px;
+}
+.info-table td, .info-table th { border: 1px solid #d3dbe6; padding: 0.34rem 0.45rem; vertical-align: top; }
+.info-table .section th {
+  background: var(--header);
+  font-weight: 750;
+  text-align: left;
+  font-size: 1.06rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #1a2f43;
+}
+.info-table .label {
+  width: 170px;
+  font-weight: 700;
+  font-size: 0.91rem;
+}
+.info-table .score { width: 74px; text-align: center; font-weight: 700; }
+.info-table .notes { font-size: 0.9rem; line-height: 1.4; }
+.summary-cell { padding: 0.7rem; min-height: 280px; }
+.summary-cell h4 {
+  margin: 0.6rem 0 0.22rem;
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  font-size: 0.93rem;
+  color: #254360;
+}
+
+.editable {
+  outline: none;
+  min-height: 1.05rem;
+  display: inline-block;
+  width: 100%;
+}
+.editable.block {
+  display: block;
+  min-height: 2.05rem;
+  padding: 0.2rem 0.25rem;
+  white-space: pre-wrap;
+}
+
+.controls {
+  display: flex;
+  gap: 0.65rem;
+  padding: 0.8rem 1rem 1rem;
+}
+.btn {
+  border: 1px solid #2e4c62;
+  background: #214965;
+  color: #fff;
+  padding: 0.45rem 0.7rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  border-radius: 9px;
+}
+.btn.reset { background: #6d5128; border-color: #6d5128; }
+.btn.export { background: #2f5f38; border-color: #2f5f38; }
+.btn.html { background: #374754; border-color: #374754; }
+
+.index-card {
+  max-width: 1080px;
+  margin: 0 auto;
+  border: 1px solid #d2dae6;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
+}
+.index-card h1 {
+  font-size: 2.15rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+#reportSearch {
+  width: 100%;
+  padding: 0.62rem;
+  border: 1px solid #c1cddd;
+  border-radius: 11px;
+  margin: 0.5rem 0 0.8rem;
+  font-family: inherit;
+}
+.index-list { margin: 0; padding-left: 1.2rem; line-height: 1.65; }
+.index-list a { color: #164e71; text-decoration: none; font-weight: 520; }
+.index-list a:hover { text-decoration: underline; }
+
+@media (max-width: 860px) {
+  body { padding: 0.6rem; }
+  .masthead { grid-template-columns: 1fr; }
+  .identity { align-items: flex-start; }
+  .headshot { width: 86px; height: 86px; }
+  h1 { font-size: 1.55rem; }
+  .stack { font-size: 0.9rem; }
+  .fit-box { padding: 0.65rem 0.7rem; }
+  .sheet { padding: 0.75rem; }
+  .info-table .label { width: 124px; }
+  .info-table { font-size: 0.84rem; min-width: 860px; }
+  .controls { flex-wrap: wrap; }
+  .btn { font-size: 0.8rem; padding: 0.42rem 0.62rem; }
+  .index-card { padding: 0.82rem; border-radius: 14px; }
+  .index-card h1 { font-size: 1.52rem; }
+}</style>
+</head>
+<body>
+<article class="scout-card" data-player-uid="455-jam-miller">
+  <header class="masthead">
+    <div class="identity">
+      <div class="headshot placeholder">Headshot Placeholder</div>
+      <div>
+        <h1>Jam Miller</h1>
+        <p class="stack">RB | Alabama Crimson Tide | Class SR | Rank 210</p>
+        <p class="stack">Model Grade 72.24 | Card Grade <span class="editable" contenteditable="false" data-edit-key="grade.card">5.7</span> (Priority Free Agent)</p>
+      </div>
+    </div>
+    <div class="fit-box">
+      <p><strong>Best Team Fit:</strong> DAL</p>
+      <p><strong>Best Scheme Fit:</strong> Wide Zone</p>
+      <p><strong>Projected Role:</strong> Primary committee back with passing-down utility</p>
+    </div>
+  </header>
+
+  <section class="sheet">
+    <div class="table-wrap">
+    <table class="info-table">
+      <tr class="section"><th colspan="7">Player Information</th></tr>
+      <tr>
+        <td class="label">Name:</td><td><span class="editable" contenteditable="false" data-edit-key="info.name">Jam Miller</span></td>
+        <td class="label">School:</td><td><span class="editable" contenteditable="false" data-edit-key="info.school">Alabama Crimson Tide</span></td>
+        <td class="label">Position:</td><td><span class="editable" contenteditable="false" data-edit-key="info.position">RB</span></td>
+        <td class="label">Jersey #: <span class="editable" contenteditable="false" data-edit-key="info.jersey"></span></td>
+      </tr>
+      <tr>
+        <td class="label">Class / Age:</td>
+        <td colspan="2"><span class="editable" contenteditable="false" data-edit-key="info.class_age">SR / Pending</span></td>
+        <td class="label">DOB:</td>
+        <td colspan="3"><span class="editable" contenteditable="false" data-edit-key="info.dob">Pending</span></td>
+      </tr>
+      <tr>
+        <td class="label">Size / Length:</td>
+        <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="info.size_length">5-11 | 209 lbs | Arms 30.4 in | Hands 8.8 in | Wingspan Pending in</span></td>
+      </tr>
+      <tr>
+        <td class="label">Alignment/Scheme:</td>
+        <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="info.alignment">Wide Zone</span></td>
+      </tr>
+      <tr>
+        <td class="label">Games Watched:</td>
+        <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="info.games_watched"></span></td>
+      </tr>
+      <tr>
+        <td class="label">Major Factors:</td>
+        <td class="label" style="text-align:center; width:60px;">#</td>
+        <td colspan="5"><span class="editable" contenteditable="false" data-edit-key="info.major_factors">Model, film, production, athletic profile, context.</span></td>
+      </tr>
+      <tr>
+        <td class="label">Grading Scale:</td>
+        <td colspan="6">9.2-9.5 Rare/Blue-Chip | 8.8-9.1 Pro Bowl Ceiling | 8.3-8.7 High-End Starter | 7.8-8.2 Quality Starter | 7.3-7.7 Contributor | 6.8-7.2 Depth/ST | 6.3-6.7 Roster Competition | &lt;6.3 Priority FA</td>
+      </tr>
+      <tr class="section"><th colspan="7">Athletic + Data Snapshot</th></tr>
+      <tr>
+        <td class="label">Testing Line:</td>
+        <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="athletic.testing">40 Pending | 10-split Pending | Vert Pending | Broad Pending | Shuttle Pending | 3-Cone Pending | Bench Pending</span></td>
+      </tr>
+      <tr>
+        <td class="label">Composite Signals:</td>
+        <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="athletic.composites">RAS Pending (Starter&gt;=5.05, Impact&gt;=6.81) | PFF Grade 66.2</span></td>
+      </tr>
+      <tr><td class='label'>Personal/Behavior:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.1.score">7.3</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.1.notes">Volatility indicator: No. Verify interviews, accountability, and role acceptance. Model final grade: 72.24 (Round 5-6).</span></td></tr><tr><td class='label'>Athletic Ability:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.2.score">6.0</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.2.notes">Athletic score 67.2; RAS Pending.</span></td></tr><tr><td class='label'>Strength &amp; Explosion:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.3.score">7.0</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.3.notes">Size score 90.0. Track contact power and force transfer on tape.</span></td></tr><tr><td class='label'>Competes:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.4.score">5.9</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.4.notes">Trait score 73.7; film coverage 0.0; competitive strain projects as translatable.</span></td></tr><tr><td class='label'>Production:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.5.score">5.8</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.5.notes">Production 72.7; Breakout age N/A; Dominator N/A; profile tier N/A.</span></td></tr><tr><td class='label'>Mental/Learning:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.6.score">5.8</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.6.notes">Context score 72.1. Processing and role communication need game-by-game verification.</span></td></tr><tr><td class='label'>Injury History:</td><td class='score'><span class="editable" contenteditable="false" data-edit-key="trait.7.score">5.1</span></td><td class='notes'><span class="editable" contenteditable="false" data-edit-key="trait.7.notes">Model risk flag: Manageable. Integrate medical stack once combine/club data is available.</span></td></tr>
+      <tr class="section"><th colspan="7">Risk + Verification</th></tr>
+      <tr>
+        <td class="label">Medical/Character:</td>
+        <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="risk.verification">Cross-check with combine medical, interview, and full-season tape cutups before lock.</span></td>
+      </tr>
+      <tr>
+        <td class="label">Development Plan:</td>
+        <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="risk.development_plan">Year 1: role-specific package + special teams utility where applicable. Year 2: expand responsibility into full-time snaps.</span></td>
+      </tr>
+      <tr>
+        <td class="label">Source Confidence:</td>
+        <td colspan="6"><span class="editable" contenteditable="false" data-edit-key="risk.source_confidence">Medium confidence - model and available film align; pending combine + interview stack.</span></td>
+      </tr>
+      <tr class="section"><th colspan="7">Player Summary</th></tr>
+      <tr>
+        <td colspan="7" class="summary-cell">
+          <h4>Report:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.1">Jam Miller (RB, Alabama Crimson Tide) carries a 72.24 model grade with a current Round 5-6 projection. Current board slot: 210. Primary NFL pathway: Primary committee back with passing-down utility in wide zone. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 256 indicates current market confidence with developmental upside still available. How to read this card: &#x27;How He Wins&#x27; describes repeatable film traits; &#x27;Primary Concerns&#x27; lists failure points that can delay NFL translation.</div><h4>How He Wins:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.2">- Usage fit: Primary committee back with passing-down utility within wide zone.
+- Film translation comes from vision plus contact balance: press tracks, force linebacker displacement, then accelerate through daylight.
+- Model + film note: developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 256 indicates current market confidence with developmental upside still available.</div><h4>Primary Concerns:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.3">- Running back projection is sensitive to passing-down value (route utility and pass pro) beyond pure carry production.
+- Role stress test: value is strongest in primary committee back with passing-down utility; projection gets thinner if usage expands too far outside that lane early.
+- PFF grade 66.2 suggests current performance volatility that needs film-confirmed cleanup.
+- Early-down production must be paired with dependable pass-protection reps to hold three-down value.
+- Contact balance has to translate against tighter NFL pursuit angles, not just open-lane college looks.</div><h4>2025 Production Snapshot:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.4">PFF grade 66.2
+Stat context: pending structured 2025 counting-stat import.</div><h4>Board Movement:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.5">Consensus board context: mean rank 265.0. Board spread (std dev) 0.0; lower spread indicates tighter agreement.</div><h4>Role / Scheme Projection:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.6">NFL projection: Primary committee back with passing-down utility. Ideal early deployment comes with DAL based on current roster/scheme assumptions. Best scheme fit: Wide Zone. Historical combine comp: Thomas Jones (2000).</div><h4>Value Range:</h4><div class="editable block" contenteditable="false" data-edit-key="summary.7">Floor/Ceiling framework: floor 70.06 (Round 6-7), ceiling 75.63 (Round 4-5). Floor comp: Sevarian Edwards (2024). Ceiling comp: Thomas Jones (2000). Current card band: Priority Free Agent.</div>
+        </td>
+      </tr>
+    </table>
+    </div>
+  </section>
+
+  <script type="application/json" class="model-snapshot">{&quot;player_uid&quot;: &quot;455-jam-miller&quot;, &quot;player_name&quot;: &quot;Jam Miller&quot;, &quot;position&quot;: &quot;RB&quot;, &quot;school&quot;: &quot;Alabama Crimson Tide&quot;, &quot;consensus_rank&quot;: &quot;210&quot;, &quot;final_grade&quot;: &quot;72.24&quot;, &quot;round_value&quot;: &quot;Round 5-6&quot;, &quot;ras_estimate&quot;: &quot;&quot;, &quot;pp_skill_signal&quot;: &quot;&quot;, &quot;kiper_rank&quot;: &quot;&quot;, &quot;kiper_rank_delta&quot;: &quot;&quot;, &quot;tdn_rank&quot;: &quot;&quot;, &quot;ringer_rank&quot;: &quot;&quot;, &quot;br_rank&quot;: &quot;&quot;, &quot;atoz_rank&quot;: &quot;&quot;, &quot;si_rank&quot;: &quot;&quot;, &quot;source_confidence&quot;: &quot;Medium confidence - model and available film align; pending combine + interview stack.&quot;}</script>
+</article>
+
+</body>
+</html>

@@ -275,6 +275,10 @@ def _is_populated(value) -> bool:
     return str(value or "").strip() != ""
 
 
+def _count_populated(payload: dict, keys: list[str]) -> int:
+    return sum(1 for key in keys if _is_populated(payload.get(key)))
+
+
 def _build_opponent_defense_context(team_adv_rows: list[dict], adv_game_rows: list[dict]) -> dict[str, dict]:
     team_defense: dict[str, dict] = {}
     for row in team_adv_rows:
@@ -617,7 +621,8 @@ def main() -> None:
                 norm = _clamp((float(cpt) - 0.08) / 0.22, 0.0, 1.0)
                 row["yards_allowed_per_coverage_snap"] = round(_clamp(1.85 - (1.10 * norm), 0.55, 1.85), 4)
 
-        # This extractor currently produces proxy metrics (not charting-grade true stats).
+        # Proxy metrics are useful, but explicit counting stats should be recognized
+        # as real evidence so downstream concern text doesn't overstate proxy risk.
         if board_pos == "QB":
             proxy_fields = [
                 "qb_qbr",
@@ -627,20 +632,40 @@ def main() -> None:
                 "qb_under_pressure_epa",
                 "qb_under_pressure_success_rate",
             ]
+            real_fields = [
+                "qb_pass_att",
+                "qb_pass_comp",
+                "qb_pass_yds",
+                "qb_pass_td",
+                "qb_pass_int",
+                "qb_rush_yds",
+                "qb_rush_td",
+            ]
         elif board_pos in {"WR", "TE"}:
             proxy_fields = ["yprr", "target_share", "targets_per_route_run"]
+            real_fields = ["wrte_rec", "wrte_rec_yds", "wrte_rec_td"]
         elif board_pos == "RB":
             proxy_fields = ["explosive_run_rate", "missed_tackles_forced_per_touch"]
+            real_fields = ["rb_rush_att", "rb_rush_yds", "rb_rush_td", "rb_rec", "rb_rec_yds", "rb_rec_td"]
         elif board_pos == "EDGE":
             proxy_fields = ["pressure_rate", "pressures_per_pass_rush_snap", "sacks_per_pass_rush_snap"]
+            real_fields = ["edge_sacks", "edge_qb_hurries", "edge_tfl", "edge_tackles"]
         elif board_pos in {"CB", "S"}:
             proxy_fields = ["coverage_plays_per_target", "yards_allowed_per_coverage_snap"]
+            real_fields = ["db_int", "db_pbu", "db_tackles", "db_tfl"]
         else:
             proxy_fields = []
+            real_fields = []
 
         proxy_count = sum(1 for f in proxy_fields if _is_populated(row.get(f)))
-        real_count = 0
-        if proxy_count > 0:
+        real_count = _count_populated(row, real_fields)
+        if real_count >= 2 and proxy_count >= 1:
+            quality_label = "mixed"
+            reliability = round(min(0.82, 0.56 + (0.05 * real_count) + (0.03 * proxy_count)), 2)
+        elif real_count >= 2:
+            quality_label = "real"
+            reliability = round(min(0.90, 0.62 + (0.06 * real_count)), 2)
+        elif proxy_count > 0:
             quality_label = "proxy"
             reliability = round(min(0.60, 0.35 + (0.06 * proxy_count)), 2)
         else:
