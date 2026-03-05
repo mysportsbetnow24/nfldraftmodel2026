@@ -3123,6 +3123,31 @@ def _build_scouting_sections(
     historical_combine_comp_1: str,
     historical_combine_comp_1_year,
     historical_combine_comp_1_similarity,
+    combine_height_in,
+    combine_weight_lb,
+    combine_arm_in,
+    athletic_pct_forty,
+    athletic_pct_ten_split,
+    athletic_pct_vertical,
+    athletic_pct_broad,
+    athletic_pct_shuttle,
+    athletic_pct_three_cone,
+    athletic_pct_weight_lb,
+    athletic_pct_arm_in,
+    cfb_qb_epa_per_play,
+    cfb_qb_pressure_signal,
+    cfb_qb_pass_int,
+    cfb_wrte_yprr,
+    cfb_wrte_target_share,
+    cfb_rb_explosive_rate,
+    cfb_rb_missed_tackles_forced_per_touch,
+    cfb_edge_pressure_rate,
+    cfb_edge_sacks_per_pr_snap,
+    cfb_edge_qb_hurries,
+    cfb_db_coverage_plays_per_target,
+    cfb_db_yards_allowed_per_coverage_snap,
+    cfb_db_int,
+    cfb_db_pbu,
 ) -> dict:
     pos = normalize_pos(position)
     clean_role = " ".join(str(best_role or "").replace("_", " ").split()) or "Role TBD"
@@ -3175,17 +3200,17 @@ def _build_scouting_sections(
     }
 
     concern_logic = {
-        "QB": "Quarterback projection is most sensitive to pressure processing and turnover control when first-read windows close.",
-        "RB": "Running back projection is sensitive to passing-down value (route utility and pass pro) beyond pure carry production.",
-        "WR": "Receiver projection is sensitive to press answers and route precision versus NFL corner technique.",
-        "TE": "Tight end projection is sensitive to blocking consistency and route separation against man coverage.",
-        "OT": "Tackle projection is sensitive to hand timing and recovery footwork when rushers force second moves.",
-        "IOL": "Interior OL projection is sensitive to anchor durability and stunt communication under pressure fronts.",
-        "EDGE": "EDGE projection is sensitive to rush-plan depth; raw pressure volume without counters can flatten versus NFL tackles.",
-        "DT": "DT projection is sensitive to pad-level consistency and snap-to-snap motor in longer drives.",
-        "LB": "Linebacker projection is sensitive to coverage spacing discipline and mismatch handling in space.",
-        "CB": "Corner projection is sensitive to eye discipline and transition efficiency versus route combinations.",
-        "S": "Safety projection is sensitive to angle discipline and late-rotation communication under tempo.",
+        "QB": "QB projection risk is driven by anticipation timing, pressure response, and turnover discipline.",
+        "RB": "RB projection risk is driven by burst creation, tackle-breaking translation, and passing-down value.",
+        "WR": "WR projection risk is driven by release efficiency, separation detail, and route precision under press.",
+        "TE": "TE projection risk is driven by separation quality against man and functional in-line consistency.",
+        "OT": "OT projection risk is driven by length/anchor thresholds and recovery movement versus speed-to-power.",
+        "IOL": "IOL projection risk is driven by anchor strength and movement mechanics versus interior games.",
+        "EDGE": "EDGE projection risk is driven by first-step burst, bend/cornering, and rush-plan finish rate.",
+        "DT": "DT projection risk is driven by block anchor and pass-rush conversion quality from interior alignments.",
+        "LB": "LB projection risk is driven by trigger/space movement and block deconstruction consistency.",
+        "CB": "CB projection risk is driven by speed/leverage recovery and ball production at the catch point.",
+        "S": "S projection risk is driven by range/transition speed and ball-finish consistency in split-field work.",
     }
     concern_depth = {
         "QB": [
@@ -3305,17 +3330,121 @@ def _build_scouting_sections(
         wins_points.append("Scout-logged strength indicators: " + "; ".join(strengths[:4]) + ".")
     wins = "\n".join(f"- {point}" for point in wins_points[:5])
 
+    def _f(value):
+        val = _as_float(value)
+        return float(val) if val is not None else None
+
     concern_points: list[str] = []
-    concern_points.append(concern_logic.get(pos, "Projection risk centers on consistency, technical detail under stress, and speed of role adaptation."))
+    concern_points.append(concern_logic.get(pos, "Projection risk centers on consistency under NFL speed, stress, and role expansion."))
+
+    # Position-specific concern logic from measurable signals.
+    arm_pct = _f(athletic_pct_arm_in)
+    weight_pct = _f(athletic_pct_weight_lb)
+    vert_pct = _f(athletic_pct_vertical)
+    broad_pct = _f(athletic_pct_broad)
+    shuttle_pct = _f(athletic_pct_shuttle)
+    cone_pct = _f(athletic_pct_three_cone)
+    forty_pct = _f(athletic_pct_forty)
+    ten_pct = _f(athletic_pct_ten_split)
+
+    qb_epa = _f(cfb_qb_epa_per_play)
+    qb_press = _f(cfb_qb_pressure_signal)
+    qb_int = _f(cfb_qb_pass_int)
+    wr_yprr = _f(cfb_wrte_yprr)
+    wr_share = _f(cfb_wrte_target_share)
+    rb_explosive = _f(cfb_rb_explosive_rate)
+    rb_mtf = _f(cfb_rb_missed_tackles_forced_per_touch)
+    edge_pr = _f(cfb_edge_pressure_rate)
+    edge_sacks_pr = _f(cfb_edge_sacks_per_pr_snap)
+    edge_hurries = _f(cfb_edge_qb_hurries)
+    db_plays_ball = _f(cfb_db_coverage_plays_per_target)
+    db_yards_cov = _f(cfb_db_yards_allowed_per_coverage_snap)
+    db_int = _f(cfb_db_int)
+    db_pbu = _f(cfb_db_pbu)
+
+    if pos == "QB":
+        if qb_epa is not None and qb_epa < 0.08:
+            concern_points.append(f"Anticipation/processing consistency is below top-tier starter range (EPA/play {qb_epa:.2f}), which can cap ceiling.")
+        if qb_press is not None and qb_press < 0.0:
+            concern_points.append("Pressure response profile trends negative, suggesting pocket drift/late-trigger risk versus NFL pressure looks.")
+        if qb_int is not None and qb_int >= 10:
+            concern_points.append(f"Turnover risk needs cleanup ({int(round(qb_int))} INT) before high-leverage starter projection is stable.")
+    elif pos == "RB":
+        if rb_explosive is not None and rb_explosive < 0.12:
+            concern_points.append(f"Lack of explosive-run creation ({rb_explosive*100:.1f}% explosive rate) narrows home-run ceiling.")
+        if rb_mtf is not None and rb_mtf < 0.20:
+            concern_points.append(f"Contact-creation efficiency is modest (MTF/touch {rb_mtf:.2f}), limiting independent yardage profile.")
+        if ten_pct is not None and ten_pct < 40:
+            concern_points.append("Short-area burst (10-split percentile) is below ideal three-down threshold.")
+    elif pos in {"WR", "TE"}:
+        if wr_yprr is not None and wr_yprr < 2.0:
+            concern_points.append(f"Route-level efficiency is light for top projection tiers (YPRR {wr_yprr:.2f}).")
+        if wr_share is not None and wr_share < 0.20:
+            concern_points.append(f"Target-earning rate ({wr_share*100:.1f}% share) suggests volume translation risk against NFL coverage.")
+        if cone_pct is not None and cone_pct < 35:
+            concern_points.append("Change-of-direction profile is below ideal separator threshold, raising route-precision volatility.")
+        if pos == "WR" and arm_pct is not None and arm_pct < 20:
+            concern_points.append("Short-arm profile can compress catch-radius margin at the boundary and through contact.")
+    elif pos == "OT":
+        if arm_pct is not None and arm_pct < 20:
+            concern_points.append("Short-arm profile for tackle projects to tighter recovery windows versus long-edge rushers.")
+        if shuttle_pct is not None and shuttle_pct < 35:
+            concern_points.append("Lateral recovery movement is below ideal tackle threshold, which can stress pass-pro consistency.")
+        if weight_pct is not None and weight_pct < 25:
+            concern_points.append("Play-mass profile is light for NFL tackle anchor demands against speed-to-power.")
+    elif pos == "IOL":
+        if weight_pct is not None and weight_pct < 25:
+            concern_points.append("Interior anchor mass is light versus NFL power fronts, creating pocket-depth stress risk.")
+        if shuttle_pct is not None and shuttle_pct < 35:
+            concern_points.append("Short-area movement profile may limit recovery against interior stunts/games.")
+    elif pos == "EDGE":
+        if edge_pr is not None and edge_pr < 0.14:
+            concern_points.append(f"Pressure rate ({edge_pr*100:.1f}%) is below premium EDGE translation zone.")
+        if edge_sacks_pr is not None and edge_sacks_pr < 0.020:
+            concern_points.append(f"Finish rate (sacks/pass-rush snap {edge_sacks_pr:.3f}) is light for high-ceiling rusher projection.")
+        if (vert_pct is not None and vert_pct < 40) or (broad_pct is not None and broad_pct < 40):
+            concern_points.append("Burst/explosion profile is below ideal EDGE threshold, which can limit first-step stress.")
+        if (cone_pct is not None and cone_pct < 35) or (shuttle_pct is not None and shuttle_pct < 35):
+            concern_points.append("Bend/cornering indicators are modest, which can cap true speed-to-dip conversion.")
+        if edge_hurries is not None and edge_hurries < 20:
+            concern_points.append(f"Total hurry volume ({edge_hurries:.1f}) leaves less evidence of sustained rush disruption.")
+    elif pos == "DT":
+        if edge_pr is not None and edge_pr < 0.10:
+            concern_points.append(f"Interior pressure rate ({edge_pr*100:.1f}%) suggests limited pass-rush ceiling without role tailoring.")
+        if weight_pct is not None and weight_pct < 30:
+            concern_points.append("Interior mass profile is light for consistent NFL anchor control on early downs.")
+        if vert_pct is not None and vert_pct < 35:
+            concern_points.append("Lower-body explosion is below preferred interior disruption threshold.")
+    elif pos == "LB":
+        if shuttle_pct is not None and shuttle_pct < 35:
+            concern_points.append("Space-change profile is below ideal linebacker threshold, stressing mismatch coverage range.")
+        if weight_pct is not None and weight_pct < 20:
+            concern_points.append("Play-strength profile can limit block deconstruction consistency at NFL second level.")
+    elif pos == "CB":
+        if forty_pct is not None and forty_pct < 35:
+            concern_points.append("Long-speed percentile is below ideal outside-CB threshold, increasing vertical stress risk.")
+        if arm_pct is not None and arm_pct < 20:
+            concern_points.append("Short-arm profile can limit catch-point disruption margin versus NFL size/length.")
+        if db_plays_ball is not None and db_plays_ball < 0.22:
+            concern_points.append(f"Ball-production rate (plays on ball/target {db_plays_ball:.2f}) is below premium outside-CB bands.")
+        if db_yards_cov is not None and db_yards_cov > 1.30:
+            concern_points.append(f"Coverage efficiency ({db_yards_cov:.2f} yards/cov snap) needs tighter leverage-to-finish translation.")
+        if (db_int is not None and db_int < 1) and (db_pbu is not None and db_pbu < 5):
+            concern_points.append("Limited pure ball-finish production (INT/PBU) keeps takeaway ceiling less certain.")
+    elif pos == "S":
+        if forty_pct is not None and forty_pct < 35:
+            concern_points.append("Range-speed profile is below ideal safety threshold for deep-half overlap demands.")
+        if db_plays_ball is not None and db_plays_ball < 0.20:
+            concern_points.append(f"Plays-on-ball rate ({db_plays_ball:.2f} per target) is light for top-end safety projection.")
+        if db_yards_cov is not None and db_yards_cov > 1.30:
+            concern_points.append(f"Coverage efficiency ({db_yards_cov:.2f} yards/cov snap) suggests transition/angle cleanup.")
     if clean_role != "Role TBD":
         concern_points.append(
             f"Role stress test: value is strongest in {clean_role.lower()}; projection gets thinner if usage expands too far outside that lane early."
         )
     if concerns:
-        for concern in concerns[:3]:
+        for concern in concerns[:2]:
             concern_points.append(f"Scouting concern to verify: {concern}.")
-    if str(cfb_prod_quality or "").strip().lower() == "proxy":
-        concern_points.append(f"Production evidence is proxy-heavy (reliability {cfb_prod_reliability or 'n/a'}), so film cross-check matters more.")
     if pff_grade is None:
         concern_points.append("No stable PFF grade loaded yet; track week-to-week consistency until the performance baseline is complete.")
     if pos == "QB":
@@ -3325,14 +3454,15 @@ def _build_scouting_sections(
             concern_points.append("Missing EPA/play context limits separation of explosive production versus sustainable drive efficiency.")
     if not concerns and pff_grade is not None and pff_grade < 75.0:
         concern_points.append(f"PFF grade {pff_grade:.1f} suggests current performance volatility that needs film-confirmed cleanup.")
-    for fallback_concern in concern_depth.get(pos, []):
-        if len(concern_points) >= 6:
-            break
-        if fallback_concern not in concern_points:
-            concern_points.append(fallback_concern)
+    if len(concern_points) < 3:
+        for fallback_concern in concern_depth.get(pos, []):
+            if len(concern_points) >= 3:
+                break
+            if fallback_concern not in concern_points:
+                concern_points.append(fallback_concern)
     while len(concern_points) < 3:
         concern_points.append(
-            "Projection variance remains moderate until more independent film and testing evidence is stacked."
+            "Projection variance remains moderate until independent film and role-specific evidence stacks further."
         )
     primary_concerns = "\n".join(f"- {point}" for point in concern_points[:5])
 
@@ -4286,6 +4416,31 @@ def main() -> None:
             historical_combine_comp_1=str(hist_comp_1.get("player_name", "")),
             historical_combine_comp_1_year=hist_comp_1.get("year", ""),
             historical_combine_comp_1_similarity=hist_comp_1.get("similarity", ""),
+            combine_height_in=combine.get("combine_height_in", ""),
+            combine_weight_lb=combine.get("combine_weight_lb", ""),
+            combine_arm_in=combine.get("combine_arm_in", ""),
+            athletic_pct_forty=athletic_profile.get("athletic_pct_forty", ""),
+            athletic_pct_ten_split=athletic_profile.get("athletic_pct_ten_split", ""),
+            athletic_pct_vertical=athletic_profile.get("athletic_pct_vertical", ""),
+            athletic_pct_broad=athletic_profile.get("athletic_pct_broad", ""),
+            athletic_pct_shuttle=athletic_profile.get("athletic_pct_shuttle", ""),
+            athletic_pct_three_cone=athletic_profile.get("athletic_pct_three_cone", ""),
+            athletic_pct_weight_lb=athletic_profile.get("athletic_pct_weight_lb", ""),
+            athletic_pct_arm_in=athletic_profile.get("athletic_pct_arm_in", ""),
+            cfb_qb_epa_per_play=cfb.get("cfb_qb_epa_per_play", ""),
+            cfb_qb_pressure_signal=cfb.get("cfb_qb_pressure_signal", ""),
+            cfb_qb_pass_int=cfb.get("cfb_qb_pass_int", ""),
+            cfb_wrte_yprr=cfb.get("cfb_wrte_yprr", ""),
+            cfb_wrte_target_share=cfb.get("cfb_wrte_target_share", ""),
+            cfb_rb_explosive_rate=cfb.get("cfb_rb_explosive_rate", ""),
+            cfb_rb_missed_tackles_forced_per_touch=cfb.get("cfb_rb_missed_tackles_forced_per_touch", ""),
+            cfb_edge_pressure_rate=cfb.get("cfb_edge_pressure_rate", ""),
+            cfb_edge_sacks_per_pr_snap=cfb.get("cfb_edge_sacks_per_pr_snap", ""),
+            cfb_edge_qb_hurries=cfb.get("cfb_edge_qb_hurries", ""),
+            cfb_db_coverage_plays_per_target=cfb.get("cfb_db_coverage_plays_per_target", ""),
+            cfb_db_yards_allowed_per_coverage_snap=cfb.get("cfb_db_yards_allowed_per_coverage_snap", ""),
+            cfb_db_int=cfb.get("cfb_db_int", ""),
+            cfb_db_pbu=cfb.get("cfb_db_pbu", ""),
         )
         cfb_proxy_audit = _cfb_proxy_audit_label(pos, cfb)
         cfb_proxy_heavy_flag, cfb_proxy_heavy_reason = _cfb_proxy_fallback_heavy_flag(cfb)
@@ -4953,6 +5108,31 @@ def main() -> None:
             historical_combine_comp_1=str(row.get("historical_combine_comp_1", "")),
             historical_combine_comp_1_year=row.get("historical_combine_comp_1_year", ""),
             historical_combine_comp_1_similarity=row.get("historical_combine_comp_1_similarity", ""),
+            combine_height_in=row.get("combine_height_in", ""),
+            combine_weight_lb=row.get("combine_weight_lb", ""),
+            combine_arm_in=row.get("combine_arm_in", ""),
+            athletic_pct_forty=row.get("athletic_pct_forty", ""),
+            athletic_pct_ten_split=row.get("athletic_pct_ten_split", ""),
+            athletic_pct_vertical=row.get("athletic_pct_vertical", ""),
+            athletic_pct_broad=row.get("athletic_pct_broad", ""),
+            athletic_pct_shuttle=row.get("athletic_pct_shuttle", ""),
+            athletic_pct_three_cone=row.get("athletic_pct_three_cone", ""),
+            athletic_pct_weight_lb=row.get("athletic_pct_weight_lb", ""),
+            athletic_pct_arm_in=row.get("athletic_pct_arm_in", ""),
+            cfb_qb_epa_per_play=row.get("cfb_qb_epa_per_play", ""),
+            cfb_qb_pressure_signal=row.get("cfb_qb_pressure_signal", ""),
+            cfb_qb_pass_int=row.get("cfb_qb_pass_int", ""),
+            cfb_wrte_yprr=row.get("cfb_wrte_yprr", ""),
+            cfb_wrte_target_share=row.get("cfb_wrte_target_share", ""),
+            cfb_rb_explosive_rate=row.get("cfb_rb_explosive_rate", ""),
+            cfb_rb_missed_tackles_forced_per_touch=row.get("cfb_rb_missed_tackles_forced_per_touch", ""),
+            cfb_edge_pressure_rate=row.get("cfb_edge_pressure_rate", ""),
+            cfb_edge_sacks_per_pr_snap=row.get("cfb_edge_sacks_per_pr_snap", ""),
+            cfb_edge_qb_hurries=row.get("cfb_edge_qb_hurries", ""),
+            cfb_db_coverage_plays_per_target=row.get("cfb_db_coverage_plays_per_target", ""),
+            cfb_db_yards_allowed_per_coverage_snap=row.get("cfb_db_yards_allowed_per_coverage_snap", ""),
+            cfb_db_int=row.get("cfb_db_int", ""),
+            cfb_db_pbu=row.get("cfb_db_pbu", ""),
         )
         row.update(sections)
 
