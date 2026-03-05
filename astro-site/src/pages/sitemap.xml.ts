@@ -7,7 +7,9 @@ const ROUTES = [
   "/2026-nfl-mock-draft-round-1",
   "/2026-nfl-7-round-mock-draft",
   "/2026-nfl-player-comparison",
-  "/scouting-cards"
+  "/scouting-cards",
+  "/nfl-draft-methodology",
+  "/2026-nfl-draft-weekly-updates"
 ];
 
 function xmlEscape(value: string): string {
@@ -47,4 +49,3 @@ export const GET: APIRoute = ({ site }) => {
     }
   });
 };
-

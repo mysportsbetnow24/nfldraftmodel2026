@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import meta from "../data/build_meta.json";
+
+const pageDescription = "Weekly Scouting Grade updates for the 2026 NFL Draft board and mock drafts, including refresh timestamps and model coverage stats.";
+const generatedAt = (meta as any)?.generated_at || "";
+const rows = (meta as any)?.rows || {};
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "2026 NFL Draft Weekly Updates",
+  url: "https://scoutinggrade.com/2026-nfl-draft-weekly-updates",
+  description: pageDescription,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Scouting Grade",
+    url: "https://scoutinggrade.com"
+  }
+};
+---
+<BaseLayout title="2026 NFL Draft Weekly Updates | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
+  <section class="hero">
+    <h1>2026 NFL Draft Weekly Updates</h1>
+    <p>Tracking each public refresh of the big board, mock drafts, and coverage depth.</p>
+  </section>
+
+  <section class="card" style="margin-bottom:1rem;">
+    <h2 style="margin:0 0 .55rem;">Latest Public Refresh</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.55rem;">
+      <div class="card"><strong>Generated (UTC)</strong><div class="muted">{generatedAt || "Pending"}</div></div>
+      <div class="card"><strong>Board Rows</strong><div class="muted">{rows.board ?? "-"}</div></div>
+      <div class="card"><strong>Round 1 Picks</strong><div class="muted">{rows.round1 ?? "-"}</div></div>
+      <div class="card"><strong>7-Round Picks</strong><div class="muted">{rows.round7 ?? "-"}</div></div>
+    </div>
+  </section>
+
+  <section class="card" style="display:grid;gap:.8rem;">
+    <article class="card">
+      <h3 style="margin:0 0 .4rem;">What This Page Is For</h3>
+      <p class="muted" style="margin:.2rem 0;">
+        This is the public change-log surface for model refreshes. Use it to quickly verify when the latest board and mocks were published.
+      </p>
+    </article>
+    <article class="card">
+      <h3 style="margin:0 0 .4rem;">Current Focus</h3>
+      <p class="muted" style="margin:.2rem 0;">
+        Ongoing tuning emphasizes evidence-backed ranking stability, position-value realism in mocks, and stronger handling of sparse profiles.
+      </p>
+    </article>
+    <article class="card">
+      <h3 style="margin:0 0 .4rem;">Next Planned Refresh</h3>
+      <p class="muted" style="margin:.2rem 0;">
+        Next update window targets new declarations/transactions and model tuning deltas after the latest public board audit cycle.
+      </p>
+    </article>
+  </section>
+</BaseLayout>
+

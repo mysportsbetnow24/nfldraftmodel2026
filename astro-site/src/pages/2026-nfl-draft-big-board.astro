@@ -2,6 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import board from "../data/big_board_2026.json";
 const pageDescription = "Live 2026 NFL Draft big board from the Scouting Grade model with ranks, grades, and projection context.";
+const positions = Array.from(new Set((board || []).map((r: any) => r.position).filter(Boolean))).sort();
+const roundBands = Array.from(new Set((board || []).map((r: any) => r.round_value).filter(Boolean))).sort();
+const schools = Array.from(new Set((board || []).map((r: any) => r.school).filter(Boolean))).sort();
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -33,15 +36,38 @@ const collectionSchema = {
   </section>
 
   <section class="card">
-    <div style="display:flex;gap:.65rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.55rem;margin-bottom:1rem;">
       <input
         id="search"
         type="search"
         placeholder="Search player, school, or position..."
-        style="padding:.62rem .7rem;border:1px solid var(--line);border-radius:10px;min-width:300px;max-width:520px;width:100%;"
+        style="padding:.62rem .7rem;border:1px solid var(--line);border-radius:10px;min-width:220px;grid-column:span 2;"
       />
-      <span class="muted">Total Prospects: {board.length}</span>
+      <select id="positionFilter" style="padding:.62rem .7rem;border:1px solid var(--line);border-radius:10px;">
+        <option value="">All Positions</option>
+        {positions.map((p) => <option value={p}>{p}</option>)}
+      </select>
+      <select id="roundFilter" style="padding:.62rem .7rem;border:1px solid var(--line);border-radius:10px;">
+        <option value="">All Round Bands</option>
+        {roundBands.map((b) => <option value={b}>{b}</option>)}
+      </select>
+      <select id="schoolFilter" style="padding:.62rem .7rem;border:1px solid var(--line);border-radius:10px;">
+        <option value="">All Schools</option>
+        {schools.map((s) => <option value={s}>{s}</option>)}
+      </select>
+      <select id="sortBy" style="padding:.62rem .7rem;border:1px solid var(--line);border-radius:10px;">
+        <option value="rank_asc">Sort: Rank (best first)</option>
+        <option value="grade_desc">Sort: Grade (high to low)</option>
+        <option value="consensus_asc">Sort: Consensus Mean (best first)</option>
+        <option value="name_asc">Sort: Name (A-Z)</option>
+      </select>
     </div>
+
+    <div style="display:flex;justify-content:space-between;gap:.65rem;align-items:center;flex-wrap:wrap;margin-bottom:.8rem;">
+      <span id="resultCount" class="muted">Showing {board.length} of {board.length} prospects.</span>
+      <button id="resetFilters" type="button" style="border:1px solid var(--line);background:#fff;padding:.45rem .6rem;border-radius:10px;cursor:pointer;">Reset Filters</button>
+    </div>
+
     <div style="overflow:auto;border:1px solid var(--line);border-radius:12px;">
       <table id="boardTable">
         <thead>
@@ -57,7 +83,16 @@ const collectionSchema = {
         </thead>
         <tbody>
           {board.map((r: any) => (
-            <tr data-search={`${r.player_name} ${r.position} ${r.school}`.toLowerCase()}>
+            <tr
+              data-search={`${r.player_name} ${r.position} ${r.school}`.toLowerCase()}
+              data-rank={r.consensus_rank}
+              data-grade={r.final_grade}
+              data-consensus={r.consensus_board_mean_rank || 9999}
+              data-position={r.position || ""}
+              data-round={r.round_value || ""}
+              data-school={r.school || ""}
+              data-name={r.player_name || ""}
+            >
               <td>{r.consensus_rank}</td>
               <td>{r.player_name}</td>
               <td><span class="badge">{r.position}</span></td>
@@ -85,19 +120,77 @@ const collectionSchema = {
     #boardTable tbody tr:hover {
       background: #f2f7fc;
     }
+    @media (max-width: 900px) {
+      #search { grid-column: span 1 !important; }
+    }
   </style>
 
   <script>
     const input = document.getElementById("search");
+    const positionFilter = document.getElementById("positionFilter");
+    const roundFilter = document.getElementById("roundFilter");
+    const schoolFilter = document.getElementById("schoolFilter");
+    const sortBy = document.getElementById("sortBy");
+    const resetBtn = document.getElementById("resetFilters");
+    const resultCount = document.getElementById("resultCount");
+    const tbody = document.querySelector("#boardTable tbody");
     const rows = Array.from(document.querySelectorAll("#boardTable tbody tr"));
-    if (input) {
-      input.addEventListener("input", (e) => {
-        const q = (e.target?.value || "").toLowerCase().trim();
-        rows.forEach((row) => {
-          const hay = row.getAttribute("data-search") || "";
-          row.style.display = q && !hay.includes(q) ? "none" : "";
-        });
+
+    const num = (value, fallback = 0) => {
+      const n = Number(value);
+      return Number.isFinite(n) ? n : fallback;
+    };
+
+    const applyFiltersAndSort = () => {
+      const q = (input?.value || "").toLowerCase().trim();
+      const pos = positionFilter?.value || "";
+      const rnd = roundFilter?.value || "";
+      const school = schoolFilter?.value || "";
+      const sort = sortBy?.value || "rank_asc";
+
+      const filtered = rows.filter((row) => {
+        const hay = row.getAttribute("data-search") || "";
+        const rowPos = row.getAttribute("data-position") || "";
+        const rowRound = row.getAttribute("data-round") || "";
+        const rowSchool = row.getAttribute("data-school") || "";
+        return (
+          (!q || hay.includes(q)) &&
+          (!pos || rowPos === pos) &&
+          (!rnd || rowRound === rnd) &&
+          (!school || rowSchool === school)
+        );
       });
-    }
+
+      filtered.sort((a, b) => {
+        if (sort === "grade_desc") return num(b.getAttribute("data-grade"), -9999) - num(a.getAttribute("data-grade"), -9999);
+        if (sort === "consensus_asc") return num(a.getAttribute("data-consensus"), 9999) - num(b.getAttribute("data-consensus"), 9999);
+        if (sort === "name_asc") return (a.getAttribute("data-name") || "").localeCompare(b.getAttribute("data-name") || "");
+        return num(a.getAttribute("data-rank"), 9999) - num(b.getAttribute("data-rank"), 9999);
+      });
+
+      rows.forEach((row) => row.style.display = "none");
+      filtered.forEach((row) => {
+        row.style.display = "";
+        tbody?.appendChild(row);
+      });
+
+      if (resultCount) resultCount.textContent = `Showing ${filtered.length} of ${rows.length} prospects.`;
+    };
+
+    [input, positionFilter, roundFilter, schoolFilter, sortBy].forEach((el) => {
+      el?.addEventListener("input", applyFiltersAndSort);
+      el?.addEventListener("change", applyFiltersAndSort);
+    });
+
+    resetBtn?.addEventListener("click", () => {
+      if (input) input.value = "";
+      if (positionFilter) positionFilter.value = "";
+      if (roundFilter) roundFilter.value = "";
+      if (schoolFilter) schoolFilter.value = "";
+      if (sortBy) sortBy.value = "rank_asc";
+      applyFiltersAndSort();
+    });
+
+    applyFiltersAndSort();
   </script>
 </BaseLayout>

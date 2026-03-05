@@ -55,31 +55,102 @@ const collectionSchema = {
       if (est > 0) return `${est.toFixed(2)} (est.)`;
       return "-";
     };
+    const rasRaw = (p) => {
+      const off = Number(p.combine_ras_official || 0);
+      if (off > 0) return off;
+      const est = Number(p.ras_estimate || 0);
+      return est > 0 ? est : 0;
+    };
+    const pct = (value, min, max) => {
+      const n = Number(value);
+      if (!Number.isFinite(n) || n <= 0) return 0;
+      const p = ((n - min) / (max - min)) * 100;
+      return Math.max(0, Math.min(100, p));
+    };
+    const metricRow = (label, displayValue, widthPct, tone = "var(--brand)") => `
+      <div class="metric-row">
+        <div class="metric-top">
+          <span>${label}</span>
+          <strong>${displayValue}</strong>
+        </div>
+        <div class="meter">
+          <div class="meter-fill" style="width:${widthPct.toFixed(1)}%;background:${tone};"></div>
+        </div>
+      </div>
+    `;
 
     const render = () => {
       const chosen = slots.map((el) => idx[el?.value]).filter(Boolean);
       cards.innerHTML = "";
       chosen.forEach((p) => {
+        const modelGrade = Number(p.final_grade || 0);
+        const pffGrade = Number(p.pff_grade || 0);
+        const traitScore = Number(p.trait_score || 0);
+        const rasScore = rasRaw(p);
         const div = document.createElement("article");
-        div.className = "card";
+        div.className = "card compare-card";
         div.innerHTML = `
-          <h3 style="margin:0 0 .2rem;">${p.player_name}</h3>
+          <h3 style="margin:0 0 .2rem;font-size:1.45rem;">${p.player_name}</h3>
           <div class="muted">${p.school}</div>
-          <div style="margin:.45rem 0;">
+          <div style="margin:.6rem 0 .5rem;">
             <span class="badge">${p.position}</span>
             <span class="badge">Model Rank ${fmt(p.consensus_rank)}</span>
           </div>
-          <div><strong>Model Grade:</strong> ${fmt(p.final_grade)}</div>
-          <div><strong>PFF Grade:</strong> ${pff(p)}</div>
-          <div><strong>Trait Score:</strong> ${trait(p)}</div>
-          <div><strong>RAS Score:</strong> ${ras(p)}</div>
-          <div class="muted" style="margin-top:.4rem;"><strong>Projected Range:</strong> ${fmt(p.round_value)}</div>
+          <div class="muted" style="margin:0 0 .55rem;"><strong>Projected Range:</strong> ${fmt(p.round_value)}</div>
+          <div class="metrics-wrap">
+            ${metricRow("Model Grade", fmt(p.final_grade), pct(modelGrade, 65, 95), "var(--brand)")}
+            ${metricRow("PFF Grade", pff(p), pct(pffGrade, 55, 95), "var(--accent)")}
+            ${metricRow("Trait Score", trait(p), pct(traitScore, 70, 97), "#0f7b6a")}
+            ${metricRow("RAS Score", ras(p), pct(rasScore, 4, 10), "#6b7280")}
+          </div>
         `;
         cards.appendChild(div);
       });
     };
 
+    // Preload top prospects so page has immediate comparisons.
+    if (pool[0] && slots[0] && !slots[0].value) slots[0].value = pool[0].player_uid;
+    if (pool[1] && slots[1] && !slots[1].value) slots[1].value = pool[1].player_uid;
+    if (pool[2] && slots[2] && !slots[2].value) slots[2].value = pool[2].player_uid;
+    if (pool[3] && slots[3] && !slots[3].value) slots[3].value = pool[3].player_uid;
+
     slots.forEach((el) => el?.addEventListener("change", render));
     render();
   </script>
+
+  <style>
+    .compare-card {
+      padding: 1rem;
+    }
+    .metrics-wrap {
+      display: grid;
+      gap: .5rem;
+      margin-top: .4rem;
+    }
+    .metric-row {
+      border: 1px solid #e6ebf1;
+      border-radius: 10px;
+      padding: .45rem .5rem;
+      background: #fbfdff;
+    }
+    .metric-top {
+      display: flex;
+      justify-content: space-between;
+      gap: .45rem;
+      font-size: .86rem;
+      margin-bottom: .28rem;
+    }
+    .meter {
+      width: 100%;
+      background: #ebeff4;
+      border-radius: 999px;
+      height: 8px;
+      overflow: hidden;
+    }
+    .meter-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width .2s ease;
+    }
+  </style>
 </BaseLayout>

@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageDescription = "High-level methodology behind Scouting Grade's 2026 NFL Draft model: what data types are considered and how to interpret outputs.";
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "NFL Draft Methodology",
+  url: "https://scoutinggrade.com/nfl-draft-methodology",
+  description: pageDescription,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Scouting Grade",
+    url: "https://scoutinggrade.com"
+  }
+};
+---
+<BaseLayout title="NFL Draft Methodology | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
+  <section class="hero">
+    <h1>How We Evaluate Prospects</h1>
+    <p>Public high-level framework for reading the board, grades, and mock outputs.</p>
+  </section>
+
+  <section class="card" style="display:grid;gap:.8rem;">
+    <article class="card">
+      <h2 style="margin:0 0 .4rem;">1) Evidence Categories</h2>
+      <p class="muted" style="margin:.2rem 0;">
+        We review multiple evidence buckets: college production context, athletic markers, role/trait translation signals,
+        and external market context. We do not rely on any single source in isolation.
+      </p>
+    </article>
+
+    <article class="card">
+      <h2 style="margin:0 0 .4rem;">2) Grade vs Rank</h2>
+      <p class="muted" style="margin:.2rem 0;">
+        <strong>Grade</strong> is player-quality signal. <strong>Rank</strong> is ordering after additional context checks.
+        That means two players with close grades can still sort differently.
+      </p>
+    </article>
+
+    <article class="card">
+      <h2 style="margin:0 0 .4rem;">3) Mock Logic Philosophy</h2>
+      <p class="muted" style="margin:.2rem 0;">
+        Mock outputs balance board value with team context and positional economics. We aim for realistic team classes while still
+        allowing variance and upside outcomes.
+      </p>
+    </article>
+
+    <article class="card">
+      <h2 style="margin:0 0 .4rem;">4) Update Cadence</h2>
+      <p class="muted" style="margin:.2rem 0;">
+        Public pages are refreshed in cycles as new data and news are incorporated. Check the weekly updates page for timestamps.
+      </p>
+    </article>
+
+    <article class="card">
+      <h2 style="margin:0 0 .4rem;">5) What Is Private</h2>
+      <p class="muted" style="margin:.2rem 0;">
+        Proprietary feature engineering, exact weighting, and internal calibration logic are intentionally not published.
+        This page is a reader guide, not a full system specification.
+      </p>
+    </article>
+  </section>
+</BaseLayout>
