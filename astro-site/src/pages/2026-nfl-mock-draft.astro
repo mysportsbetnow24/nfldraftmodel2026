@@ -1,6 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import round1 from "../data/mock_2026_round1.json";
+
+const preferredPositionOrder = ["QB", "RB", "WR", "TE", "OT", "IOL", "DT", "EDGE", "LB", "CB", "S"];
+const round1Positions = Array.from(new Set((round1 || []).map((p: any) => p.position).filter(Boolean)));
+const positions = [
+  ...preferredPositionOrder.filter((p) => round1Positions.includes(p)),
+  ...round1Positions.filter((p) => !preferredPositionOrder.includes(p)).sort(),
+];
+const teams = Array.from(new Set((round1 || []).map((p: any) => p.team).filter(Boolean))).sort();
+const schools = Array.from(new Set((round1 || []).map((p: any) => p.school).filter(Boolean))).sort();
+
 const pageDescription = "2026 NFL mock draft hub with first-round and full 7-round projections, updated from the latest Scouting Grade model cycle.";
 const collectionSchema = {
   "@context": "https://schema.org",
@@ -14,7 +24,6 @@ const collectionSchema = {
     url: "https://scoutinggrade.com"
   }
 };
-const top10 = (round1 || []).slice(0, 10);
 ---
 <BaseLayout title="2026 NFL Mock Draft | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
   <section class="hero">
@@ -22,13 +31,13 @@ const top10 = (round1 || []).slice(0, 10);
     <p>Use the round-by-round links below for full class projections and team-level draft views.</p>
   </section>
 
-  <section class="card" style="margin-bottom:1rem;">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.7rem;">
-      <a class="card" href="/2026-nfl-mock-draft-round-1" style="text-decoration:none;color:inherit;">
+  <section class="card mock-links">
+    <div class="link-grid">
+      <a class="card link-card" href="/2026-nfl-mock-draft-round-1">
         <strong>1st Round Mock</strong><br />
         <span class="muted">Top-32 projection with current model context.</span>
       </a>
-      <a class="card" href="/2026-nfl-7-round-mock-draft" style="text-decoration:none;color:inherit;">
+      <a class="card link-card" href="/2026-nfl-7-round-mock-draft">
         <strong>7-Round Mock</strong><br />
         <span class="muted">Complete mock with team filter for full classes.</span>
       </a>
@@ -36,31 +45,168 @@ const top10 = (round1 || []).slice(0, 10);
   </section>
 
   <section class="card">
-    <h2 style="margin:0 0 .6rem;">Round 1 Snapshot (Top 10)</h2>
-    <div style="overflow:auto;">
-      <table>
+    <h2 class="section-title">Round 1 Projection</h2>
+    <div class="filters-grid">
+      <select id="teamFilter" class="control">
+        <option value="">All Teams</option>
+        {teams.map((team) => <option value={team}>{team}</option>)}
+      </select>
+      <select id="positionFilter" class="control">
+        <option value="">All Positions</option>
+        {positions.map((p) => <option value={p}>{p}</option>)}
+      </select>
+      <select id="schoolFilter" class="control">
+        <option value="">All Schools</option>
+        {schools.map((s) => <option value={s}>{s}</option>)}
+      </select>
+      <select id="sortBy" class="control">
+        <option value="pick_asc">Sort: Pick (asc)</option>
+        <option value="pick_desc">Sort: Pick (desc)</option>
+        <option value="grade_desc">Sort: Grade (desc)</option>
+        <option value="position_az">Sort: Position (A-Z)</option>
+        <option value="school_az">Sort: School (A-Z)</option>
+      </select>
+    </div>
+    <div class="result-bar">
+      <span id="summaryText" class="muted">Showing all round 1 picks.</span>
+      <button id="resetFilters" type="button" class="reset-btn">Reset Filters</button>
+    </div>
+    <div class="table-wrap">
+      <table id="round1MockTable">
         <thead>
           <tr>
             <th>Pick</th>
             <th>Team</th>
             <th>Player</th>
             <th>Pos</th>
+            <th>School</th>
             <th>Grade</th>
+            <th>Round Value</th>
           </tr>
         </thead>
         <tbody>
-          {top10.map((p: any) => (
-            <tr>
+          {round1.map((p: any) => (
+            <tr
+              data-team={p.team}
+              data-position={p.position}
+              data-school={p.school}
+              data-pick={p.overall_pick}
+              data-grade={p.final_grade}
+            >
               <td>{p.overall_pick}</td>
               <td>{p.team}</td>
               <td>{p.player_name}</td>
               <td><span class="badge">{p.position}</span></td>
+              <td>{p.school}</td>
               <td>{p.final_grade}</td>
+              <td>{p.round_value}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
   </section>
-</BaseLayout>
 
+  <script>
+    (() => {
+      const teamFilter = document.getElementById("teamFilter");
+      const positionFilter = document.getElementById("positionFilter");
+      const schoolFilter = document.getElementById("schoolFilter");
+      const sortBy = document.getElementById("sortBy");
+      const resetFilters = document.getElementById("resetFilters");
+      const summary = document.getElementById("summaryText");
+      const tbody = document.querySelector("#round1MockTable tbody");
+      const rows = Array.from(document.querySelectorAll("#round1MockTable tbody tr"));
+
+      const cmp = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
+
+      function update() {
+        const team = teamFilter?.value || "";
+        const pos = positionFilter?.value || "";
+        const school = schoolFilter?.value || "";
+        const sort = sortBy?.value || "pick_asc";
+
+        const filtered = rows.filter((row) => {
+          if (team && row.getAttribute("data-team") !== team) return false;
+          if (pos && row.getAttribute("data-position") !== pos) return false;
+          if (school && row.getAttribute("data-school") !== school) return false;
+          return true;
+        });
+
+        const sorted = [...filtered].sort((a, b) => {
+          const aPick = Number(a.getAttribute("data-pick") || 9999);
+          const bPick = Number(b.getAttribute("data-pick") || 9999);
+          const aGrade = Number(a.getAttribute("data-grade") || 0);
+          const bGrade = Number(b.getAttribute("data-grade") || 0);
+          const aPos = a.getAttribute("data-position") || "";
+          const bPos = b.getAttribute("data-position") || "";
+          const aSchool = a.getAttribute("data-school") || "";
+          const bSchool = b.getAttribute("data-school") || "";
+
+          if (sort === "pick_desc") return bPick - aPick;
+          if (sort === "grade_desc") return bGrade - aGrade || (aPick - bPick);
+          if (sort === "position_az") return cmp(aPos, bPos) || (aPick - bPick);
+          if (sort === "school_az") return cmp(aSchool, bSchool) || (aPick - bPick);
+          return aPick - bPick;
+        });
+
+        rows.forEach((row) => {
+          row.style.display = "none";
+        });
+
+        sorted.forEach((row) => {
+          row.style.display = "";
+          if (tbody) tbody.appendChild(row);
+        });
+
+        if (summary) {
+          const parts = [];
+          if (team) parts.push(team);
+          if (pos) parts.push(pos);
+          if (school) parts.push(school);
+          summary.textContent = `Showing ${sorted.length} picks${parts.length ? " · " + parts.join(" · ") : ""}.`;
+        }
+      }
+
+      [teamFilter, positionFilter, schoolFilter, sortBy].forEach((el) => {
+        if (el) el.addEventListener("change", update);
+      });
+
+      if (resetFilters) {
+        resetFilters.addEventListener("click", () => {
+          if (teamFilter) teamFilter.value = "";
+          if (positionFilter) positionFilter.value = "";
+          if (schoolFilter) schoolFilter.value = "";
+          if (sortBy) sortBy.value = "pick_asc";
+          update();
+        });
+      }
+
+      update();
+    })();
+  </script>
+
+  <style>
+    .mock-links { margin-bottom: 1rem; }
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.7rem;
+    }
+    .link-card {
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .15s ease, transform .15s ease;
+    }
+    .link-card:hover {
+      border-color: #b6c6da;
+      transform: translateY(-1px);
+    }
+    .filters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 0.95rem;
+    }
+  </style>
+</BaseLayout>
