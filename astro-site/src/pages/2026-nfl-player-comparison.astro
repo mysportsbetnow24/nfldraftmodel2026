@@ -3,8 +3,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import board from "../data/big_board_2026.json";
 
 const pool = (board || []).slice(0, 180);
+const pageDescription = "Compare 2026 NFL Draft prospects side-by-side by model rank, grade, PFF, trait score, and RAS.";
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "2026 NFL Player Comparison",
+  url: "https://scoutinggrade.com/2026-nfl-player-comparison",
+  description: pageDescription,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Scouting Grade",
+    url: "https://scoutinggrade.com"
+  }
+};
 ---
-<BaseLayout title="2026 NFL Player Comparison | Scouting Grade" description="Compare 2026 NFL Draft prospects side-by-side by grade, role, and summary signals.">
+<BaseLayout title="2026 NFL Player Comparison | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
   <section class="hero">
     <h1>2026 NFL Player Comparison</h1>
     <p>Brief side-by-side snapshot: model rank/grade, PFF, traits, and RAS.</p>

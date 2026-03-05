@@ -1,8 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import board from "../data/big_board_2026.json";
+const pageDescription = "Live 2026 NFL Draft big board from the Scouting Grade model with ranks, grades, and projection context.";
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "2026 NFL Draft Big Board",
+  url: "https://scoutinggrade.com/2026-nfl-draft-big-board",
+  description: pageDescription,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Scouting Grade",
+    url: "https://scoutinggrade.com"
+  }
+};
 ---
-<BaseLayout title="2026 NFL Draft Big Board | Scouting Grade" description="Live 2026 NFL Draft big board from the Scouting Grade model with ranks, grades, and projection context.">
+<BaseLayout title="2026 NFL Draft Big Board | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
   <section class="hero">
     <h1>2026 NFL Draft Big Board</h1>
     <p>Model-ranked prospects using production, athletic, context, and consensus signals with guardrails.</p>

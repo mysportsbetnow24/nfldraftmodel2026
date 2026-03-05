@@ -3,8 +3,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import board from "../data/big_board_2026.json";
 
 const pool = (board || []).slice(0, 264);
+const pageDescription = "Scouting card snapshots for 2026 NFL Draft prospects with summary, wins, concerns, production, and role projection.";
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "2026 NFL Scouting Cards",
+  url: "https://scoutinggrade.com/scouting-cards",
+  description: pageDescription,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Scouting Grade",
+    url: "https://scoutinggrade.com"
+  }
+};
 ---
-<BaseLayout title="2026 NFL Scouting Cards | Scouting Grade" description="Scouting card snapshots for 2026 NFL Draft prospects, including report summary, wins, concerns, and role projection.">
+<BaseLayout title="2026 NFL Scouting Cards | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
   <section class="hero">
     <h1>2026 NFL Scouting Cards</h1>
     <p>Search and review concise scouting snapshots for this class.</p>

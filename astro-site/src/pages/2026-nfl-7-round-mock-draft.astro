@@ -4,8 +4,21 @@ import picks from "../data/mock_2026_7round.json";
 import byTeam from "../data/mock_2026_7round_by_team.json";
 
 const teams = Object.keys(byTeam || {}).sort();
+const pageDescription = "Complete 7-round mock draft with team filter to view full projected classes.";
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "2026 7-Round NFL Mock Draft",
+  url: "https://scoutinggrade.com/2026-nfl-7-round-mock-draft",
+  description: pageDescription,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Scouting Grade",
+    url: "https://scoutinggrade.com"
+  }
+};
 ---
-<BaseLayout title="2026 7-Round NFL Mock Draft | Scouting Grade" description="Complete 7-round mock draft with team filter to view full projected classes.">
+<BaseLayout title="2026 7-Round NFL Mock Draft | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
   <section class="hero">
     <h1>2026 7-Round NFL Mock Draft</h1>
     <p>Full draft projection with team-level class filtering.</p>

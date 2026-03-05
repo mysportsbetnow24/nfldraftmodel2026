@@ -2,9 +2,22 @@
 interface Props {
   title: string;
   description?: string;
+  collectionSchema?: Record<string, unknown> | null;
 }
 
-const { title, description = "2026 NFL Draft big board, mocks, scouting cards, and player comparison tools." } = Astro.props;
+const {
+  title,
+  description = "2026 NFL Draft big board, mocks, scouting cards, and player comparison tools.",
+  collectionSchema = null
+} = Astro.props;
+const siteUrl = (Astro.site ?? new URL("https://scoutinggrade.com")).toString().replace(/\/$/, "");
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Scouting Grade",
+  url: siteUrl
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -13,7 +26,9 @@ const { title, description = "2026 NFL Draft big board, mocks, scouting cards, a
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />
+    <link rel="canonical" href={canonicalUrl} />
+    <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
+    {collectionSchema && <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />}
     <style>
       :root {
         --bg: #f3f5f8;
