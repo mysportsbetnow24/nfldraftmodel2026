@@ -229,6 +229,36 @@ def _clean_token_label(value: str) -> str:
     return text
 
 
+def _norm_similarity_pct(value) -> float | None:
+    sim = _safe_float(value)
+    if sim is None:
+        return None
+    if sim <= 0:
+        return None
+    if sim <= 1.0:
+        sim *= 100.0
+    elif sim <= 10.0:
+        sim *= 10.0
+    return max(0.0, min(100.0, float(sim)))
+
+
+def _comp_blend_weights(position: str) -> tuple[float, float]:
+    pos = str(position or "").upper()
+    # Athletic translation is generally stronger for trench/front-seven roles,
+    # while production patterns are more predictive for skill players/QBs.
+    if pos == "QB":
+        return (0.55, 0.45)
+    if pos in {"RB", "WR", "TE"}:
+        return (0.60, 0.40)
+    if pos in {"OT", "IOL"}:
+        return (0.72, 0.28)
+    if pos in {"EDGE", "DT", "LB"}:
+        return (0.70, 0.30)
+    if pos in {"CB", "S"}:
+        return (0.62, 0.38)
+    return (0.65, 0.35)
+
+
 def _pct_rank(value: float | None, values: list[float]) -> float | None:
     if value is None or not values:
         return None
@@ -589,27 +619,95 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         seen_comp_names: set[str] = set()
         player_name_key = _norm_player_key(player_name)
         player_identity_key = _norm_comp_identity_key(player_name)
-        for idx in (1, 2, 3):
-            name = str(row.get(f"historical_combine_comp_{idx}", "")).strip()
-            sim = _safe_float(row.get(f"historical_combine_comp_{idx}_similarity"))
-            year = _safe_int(row.get(f"historical_combine_comp_{idx}_year"), 0)
-            name_key = _norm_player_key(name)
-            identity_key = _norm_comp_identity_key(name)
+        comp_blend: dict[str, dict] = {}
+
+        def _ingest_comp(name: str, year_value, sim_value, source: str, is_production: bool) -> None:
+            comp_name = str(name or "").strip()
+            if not comp_name:
+                return
+            name_key = _norm_player_key(comp_name)
+            identity_key = _norm_comp_identity_key(comp_name)
             if (
-                name
-                and name_key != player_name_key
-                and identity_key != player_identity_key
-                and (year <= 0 or year < CURRENT_DRAFT_YEAR)
-                and identity_key not in seen_comp_names
+                not identity_key
+                or name_key == player_name_key
+                or identity_key == player_identity_key
             ):
-                seen_comp_names.add(identity_key)
-                comp_items.append(
-                    {
-                        "name": name,
-                        "similarity": round(float(sim), 3) if sim is not None else None,
-                        "year": year if year > 0 else None,
-                    }
-                )
+                return
+            year = _safe_int(year_value, 0)
+            if year > 0 and year >= CURRENT_DRAFT_YEAR:
+                return
+            sim = _norm_similarity_pct(sim_value)
+            if sim is None:
+                return
+            slot = comp_blend.get(identity_key)
+            if slot is None:
+                slot = {
+                    "name": comp_name,
+                    "year": year if year > 0 else None,
+                    "ath_sims": [],
+                    "prod_sims": [],
+                    "sources": set(),
+                }
+                comp_blend[identity_key] = slot
+            else:
+                # Prefer names with more tokens (usually less ambiguous).
+                if len(comp_name.split()) > len(str(slot.get("name", "")).split()):
+                    slot["name"] = comp_name
+                existing_year = slot.get("year")
+                if (existing_year is None or existing_year <= 0) and year > 0:
+                    slot["year"] = year
+            slot["sources"].add(source)
+            if is_production:
+                slot["prod_sims"].append(sim)
+            else:
+                slot["ath_sims"].append(sim)
+
+        for idx in (1, 2, 3):
+            _ingest_comp(
+                row.get(f"historical_combine_comp_{idx}", ""),
+                row.get(f"historical_combine_comp_{idx}_year", ""),
+                row.get(f"historical_combine_comp_{idx}_similarity", ""),
+                source="historical_combine",
+                is_production=False,
+            )
+            _ingest_comp(
+                row.get(f"athletic_nn_comp_{idx}", ""),
+                row.get(f"athletic_nn_comp_{idx}_year", ""),
+                row.get(f"athletic_nn_comp_{idx}_similarity", ""),
+                source="athletic_nn",
+                is_production=False,
+            )
+            _ingest_comp(
+                row.get(f"production_knn_comp_{idx}", ""),
+                row.get(f"production_knn_comp_{idx}_year", ""),
+                row.get(f"production_knn_comp_{idx}_similarity", ""),
+                source="production_knn",
+                is_production=True,
+            )
+
+        ath_w, prod_w = _comp_blend_weights(pos)
+        for identity_key, slot in comp_blend.items():
+            ath_sim = max(slot.get("ath_sims") or []) if slot.get("ath_sims") else None
+            prod_sim = max(slot.get("prod_sims") or []) if slot.get("prod_sims") else None
+            if ath_sim is not None and prod_sim is not None:
+                blend_score = (ath_w * ath_sim) + (prod_w * prod_sim)
+            elif ath_sim is not None:
+                blend_score = ath_sim * 0.94
+            elif prod_sim is not None:
+                blend_score = prod_sim * 0.90
+            else:
+                continue
+            if identity_key in seen_comp_names:
+                continue
+            seen_comp_names.add(identity_key)
+            comp_items.append(
+                {
+                    "name": slot.get("name", ""),
+                    "similarity": round(blend_score, 3),
+                    "year": slot.get("year"),
+                }
+            )
+
         comp_items = sorted(
             comp_items,
             key=lambda r: (r.get("similarity") is None, -(r.get("similarity") or 0.0)),

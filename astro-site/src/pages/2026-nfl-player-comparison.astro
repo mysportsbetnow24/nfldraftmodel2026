@@ -248,7 +248,7 @@ const collectionSchema = {
       const sim = Number.isFinite(simRaw) ? (simRaw <= 1 ? simRaw * 100 : simRaw) : null;
       const simText = sim !== null ? `${sim.toFixed(1)}%` : "-";
       const yearText = comp.year ? ` (${comp.year})` : "";
-      return `<div class="comp-row"><span>${title}:</span> <strong>${comp.name}${yearText}</strong> <span class="muted">· ${simText} athletic-profile similarity</span></div>`;
+      return `<div class="comp-row"><span>${title}:</span> <strong>${comp.name}${yearText}</strong> <span class="muted">· ${simText} profile similarity</span></div>`;
     };
 
     const roleTags = (p) => {
