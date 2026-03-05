@@ -7,7 +7,7 @@
     "sync-data": "python3 ../scripts/export_astro_site_data.py",
     "dev": "astro dev",
     "build": "astro build",
-    "build:cloudflare": "astro build",
+    "build:cloudflare": "npm run sync-data && astro build",
     "preview": "astro preview",
     "predev": "npm run sync-data",
     "prebuild": "npm run sync-data"
