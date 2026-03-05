@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import teamNeeds from "../data/team_needs_2026.json";
 
-const pageDescription = "NFL team needs for the 2026 draft cycle using roster pressure, contract horizon, and transaction-adjusted context.";
+const pageDescription = "NFL team needs for the 2026 draft cycle using roster pressure and contract-horizon context.";
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -19,11 +19,12 @@ const collectionSchema = {
 <BaseLayout title="NFL Team Needs 2026 | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
   <section class="hero">
     <h1>NFL Team Needs 2026</h1>
-    <p>Team-by-team need view using roster pressure and transaction context. Public view is high-level by design.</p>
+    <p>Team-by-team need view using roster pressure and contract horizon context.</p>
   </section>
 
   <section class="card">
-    <div style="overflow:auto;">
+    <h2 class="section-title">Team Need Snapshot</h2>
+    <div class="table-wrap">
       <table>
         <thead>
           <tr>
@@ -31,7 +32,6 @@ const collectionSchema = {
             <th>Top Need 1</th>
             <th>Top Need 2</th>
             <th>Top Need 3</th>
-            <th>Recent Transactions (sample)</th>
           </tr>
         </thead>
         <tbody>
@@ -50,7 +50,6 @@ const collectionSchema = {
                 {row.top_needs?.[2]?.position || "-"}
                 {row.top_needs?.[2] ? <span class="muted"> ({Number(row.top_needs[2].need_score).toFixed(2)})</span> : ""}
               </td>
-              <td class="muted">{(row.recent_transactions || []).join(" | ") || "-"}</td>
             </tr>
           ))}
         </tbody>
@@ -58,4 +57,3 @@ const collectionSchema = {
     </div>
   </section>
 </BaseLayout>
-

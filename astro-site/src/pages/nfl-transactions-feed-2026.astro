@@ -52,12 +52,14 @@ const collectionSchema = {
             const statusText = String(tx.status || "Updated");
             const affectsNeeds = Boolean(tx.affects_team_needs);
             const chipTone = statusKind === "confirmed" ? "good" : (statusKind === "rumored" ? "warn" : "info");
+            const itemLabel = String(tx.label || "-");
+            const displayLabel = statusKind === "rumored" ? `Rumor: ${itemLabel}` : itemLabel;
             return (
               <tr data-status={statusKind}>
                 <td>{tx.event_date || "-"}</td>
                 <td><strong>{tx.team || "-"}</strong></td>
                 <td>
-                  <div>{tx.label || "-"}</div>
+                  <div>{displayLabel}</div>
                   <div class="muted">{tx.position ? `POS: ${tx.position}` : ""}</div>
                 </td>
                 <td><span class={`chip ${chipTone}`}>{statusText}</span></td>

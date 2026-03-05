@@ -1,6 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import picks from "../data/mock_2026_round1.json";
+
+const preferredPositionOrder = ["QB", "RB", "WR", "TE", "OT", "IOL", "DT", "EDGE", "LB", "CB", "S"];
+const round1Positions = Array.from(new Set((picks || []).map((p: any) => p.position).filter(Boolean)));
+const positions = [
+  ...preferredPositionOrder.filter((p) => round1Positions.includes(p)),
+  ...round1Positions.filter((p) => !preferredPositionOrder.includes(p)).sort(),
+];
+const teams = Array.from(new Set((picks || []).map((p: any) => p.team).filter(Boolean))).sort();
+const schools = Array.from(new Set((picks || []).map((p: any) => p.school).filter(Boolean))).sort();
+
 const pageDescription = "Round 1 2026 NFL mock draft with pick order, team, player, and model grade.";
 const collectionSchema = {
   "@context": "https://schema.org",
@@ -21,9 +31,39 @@ const collectionSchema = {
     <p>Latest first-round projection from the current model and team-need logic.</p>
   </section>
 
+  <section class="card" style="margin-bottom:1rem;">
+    <h2 class="section-title">Filter And Sort</h2>
+    <div class="filters-grid">
+      <select id="teamFilter" class="control">
+        <option value="">All Teams</option>
+        {teams.map((team) => <option value={team}>{team}</option>)}
+      </select>
+      <select id="positionFilter" class="control">
+        <option value="">All Positions</option>
+        {positions.map((p) => <option value={p}>{p}</option>)}
+      </select>
+      <select id="schoolFilter" class="control">
+        <option value="">All Schools</option>
+        {schools.map((s) => <option value={s}>{s}</option>)}
+      </select>
+      <select id="sortBy" class="control">
+        <option value="pick_asc">Sort: Pick (asc)</option>
+        <option value="pick_desc">Sort: Pick (desc)</option>
+        <option value="grade_desc">Sort: Grade (desc)</option>
+        <option value="position_az">Sort: Position (A-Z)</option>
+        <option value="school_az">Sort: School (A-Z)</option>
+      </select>
+    </div>
+    <div class="result-bar">
+      <span id="summaryText" class="muted">Showing all round 1 picks.</span>
+      <button id="resetFilters" type="button" class="reset-btn">Reset Filters</button>
+    </div>
+  </section>
+
   <section class="card">
-    <div style="overflow:auto;">
-      <table>
+    <h2 class="section-title">Round 1 Projection</h2>
+    <div class="table-wrap">
+      <table id="round1MockTable">
         <thead>
           <tr>
             <th>Pick</th>
@@ -37,7 +77,13 @@ const collectionSchema = {
         </thead>
         <tbody>
           {picks.map((p: any) => (
-            <tr>
+            <tr
+              data-team={p.team}
+              data-position={p.position}
+              data-school={p.school}
+              data-pick={p.overall_pick}
+              data-grade={p.final_grade}
+            >
               <td>{p.overall_pick}</td>
               <td>{p.team}</td>
               <td>{p.player_name}</td>
@@ -51,4 +97,83 @@ const collectionSchema = {
       </table>
     </div>
   </section>
+
+  <script>
+    (() => {
+      const teamFilter = document.getElementById("teamFilter");
+      const positionFilter = document.getElementById("positionFilter");
+      const schoolFilter = document.getElementById("schoolFilter");
+      const sortBy = document.getElementById("sortBy");
+      const resetFilters = document.getElementById("resetFilters");
+      const summary = document.getElementById("summaryText");
+      const tbody = document.querySelector("#round1MockTable tbody");
+      const rows = Array.from(document.querySelectorAll("#round1MockTable tbody tr"));
+
+      const cmp = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
+
+      function update() {
+        const team = teamFilter?.value || "";
+        const pos = positionFilter?.value || "";
+        const school = schoolFilter?.value || "";
+        const sort = sortBy?.value || "pick_asc";
+
+        const filtered = rows.filter((row) => {
+          if (team && row.getAttribute("data-team") !== team) return false;
+          if (pos && row.getAttribute("data-position") !== pos) return false;
+          if (school && row.getAttribute("data-school") !== school) return false;
+          return true;
+        });
+
+        const sorted = [...filtered].sort((a, b) => {
+          const aPick = Number(a.getAttribute("data-pick") || 9999);
+          const bPick = Number(b.getAttribute("data-pick") || 9999);
+          const aGrade = Number(a.getAttribute("data-grade") || 0);
+          const bGrade = Number(b.getAttribute("data-grade") || 0);
+          const aPos = a.getAttribute("data-position") || "";
+          const bPos = b.getAttribute("data-position") || "";
+          const aSchool = a.getAttribute("data-school") || "";
+          const bSchool = b.getAttribute("data-school") || "";
+
+          if (sort === "pick_desc") return bPick - aPick;
+          if (sort === "grade_desc") return bGrade - aGrade || (aPick - bPick);
+          if (sort === "position_az") return cmp(aPos, bPos) || (aPick - bPick);
+          if (sort === "school_az") return cmp(aSchool, bSchool) || (aPick - bPick);
+          return aPick - bPick;
+        });
+
+        rows.forEach((row) => {
+          row.style.display = "none";
+        });
+
+        sorted.forEach((row) => {
+          row.style.display = "";
+          if (tbody) tbody.appendChild(row);
+        });
+
+        if (summary) {
+          const parts = [];
+          if (team) parts.push(team);
+          if (pos) parts.push(pos);
+          if (school) parts.push(school);
+          summary.textContent = `Showing ${sorted.length} picks${parts.length ? " · " + parts.join(" · ") : ""}.`;
+        }
+      }
+
+      [teamFilter, positionFilter, schoolFilter, sortBy].forEach((el) => {
+        if (el) el.addEventListener("change", update);
+      });
+
+      if (resetFilters) {
+        resetFilters.addEventListener("click", () => {
+          if (teamFilter) teamFilter.value = "";
+          if (positionFilter) positionFilter.value = "";
+          if (schoolFilter) schoolFilter.value = "";
+          if (sortBy) sortBy.value = "pick_asc";
+          update();
+        });
+      }
+
+      update();
+    })();
+  </script>
 </BaseLayout>
