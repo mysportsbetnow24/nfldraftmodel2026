@@ -9,11 +9,11 @@
   --brand-2: #1f5ea8;
   --accent: #17a34a;
   --accent-2: #0ea5e9;
-  --ui-cta-bg: #fff1e8;
-  --ui-cta-border: #f7b07b;
-  --ui-cta-ink: #8e3a11;
-  --ui-cta-hover-bg: #ffe4d2;
-  --ui-cta-hover-border: #ee914d;
+  --ui-cta-bg: #e9f3ff;
+  --ui-cta-border: #a9c6e6;
+  --ui-cta-ink: #143b64;
+  --ui-cta-hover-bg: #deeeff;
+  --ui-cta-hover-border: #86add7;
 
   --radius-sm: 10px;
   --radius-md: 14px;
@@ -76,14 +76,14 @@ body {
   padding: 0.45rem 0.72rem;
   font-size: 0.9rem;
   font-weight: 650;
-  box-shadow: 0 1px 0 rgba(142, 58, 17, 0.08);
+  box-shadow: 0 1px 0 rgba(20, 59, 100, 0.1);
   transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.12s ease;
 }
 
 .nav a:hover {
   border-color: var(--ui-cta-hover-border);
   background: var(--ui-cta-hover-bg);
-  color: #7b2f0c;
+  color: #102f4f;
   transform: translateY(-1px);
 }
 
@@ -594,6 +594,35 @@ tbody tr:hover {
 
 .muted {
   color: var(--muted);
+}
+
+.page-grid-card {
+  margin-bottom: 1rem;
+}
+
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.7rem;
+}
+
+.page-link {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #b9cde4;
+  background: linear-gradient(135deg, #f8fcff 0%, #eef6ff 62%, #ecfaf3 100%);
+  box-shadow: 0 6px 18px rgba(15, 45, 74, 0.06);
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.page-link strong {
+  color: #103457;
+}
+
+.page-link:hover {
+  border-color: #80a9d4;
+  box-shadow: 0 10px 22px rgba(31, 94, 168, 0.15);
+  transform: translateY(-1px);
 }
 
 .footer {
