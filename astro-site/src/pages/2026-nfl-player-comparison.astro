@@ -18,9 +18,9 @@ const collectionSchema = {
 };
 ---
 <BaseLayout title="2026 NFL Player Comparison | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
-  <section class="hero">
+  <section class="hero hero--data compare-hero">
     <h1>2026 NFL Player Comparison</h1>
-    <p>Side-by-side view of model rank, grade, production context, role fit, evidence confidence, and historical comps.</p>
+    <p>Side-by-side view of rank, grade, key signals, translation profile, and historical comp context.</p>
   </section>
 
   <section class="card compare-controls">
@@ -33,7 +33,7 @@ const collectionSchema = {
     </div>
   </section>
 
-  <section id="cards" class="cards-grid"></section>
+  <section id="cards" class="cards-grid compare-cards"></section>
 
   <script define:vars={{ pool }}>
     const idx = {};
@@ -159,6 +159,57 @@ const collectionSchema = {
       `;
     };
 
+    const radarSvg = (values) => {
+      const labels = ["Production", "Athletic", "Traits", "Evidence"];
+      const w = 280;
+      const h = 280;
+      const cx = 140;
+      const cy = 140;
+      const maxR = 92;
+      const rings = [20, 40, 60, 80, 100];
+
+      const pointAt = (pct, i) => {
+        const angle = (-90 + i * 90) * (Math.PI / 180);
+        const radius = (clamp(pct, 0, 100) / 100) * maxR;
+        const x = cx + Math.cos(angle) * radius;
+        const y = cy + Math.sin(angle) * radius;
+        return [x, y];
+      };
+
+      const poly = values.map((v, i) => pointAt(v, i).map((n) => n.toFixed(1)).join(",")).join(" ");
+
+      const ringPolys = rings.map((pct) => {
+        const pts = [0, 1, 2, 3]
+          .map((i) => pointAt(pct, i).map((n) => n.toFixed(1)).join(","))
+          .join(" ");
+        return `<polygon points="${pts}" fill="none" stroke="#d4deea" stroke-width="1"/>`;
+      }).join("");
+
+      const axes = [0, 1, 2, 3].map((i) => {
+        const [x, y] = pointAt(100, i);
+        return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#d4deea" stroke-width="1"/>`;
+      }).join("");
+
+      const labelNodes = [
+        [cx, cy - maxR - 14],
+        [cx + maxR + 18, cy + 4],
+        [cx, cy + maxR + 18],
+        [cx - maxR - 18, cy + 4]
+      ].map((pos, i) => {
+        const anchor = i === 0 || i === 2 ? "middle" : (i === 1 ? "start" : "end");
+        return `<text x="${pos[0]}" y="${pos[1]}" fill="#4b5563" font-size="11" text-anchor="${anchor}">${labels[i]}</text>`;
+      }).join("");
+
+      return `
+        <svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Translation profile radar">
+          ${ringPolys}
+          ${axes}
+          <polygon points="${poly}" fill="rgba(31, 94, 168, 0.22)" stroke="#1f5ea8" stroke-width="2"/>
+          ${labelNodes}
+        </svg>
+      `;
+    };
+
     const meterRow = (label, pct, valueText, tone = "var(--brand)") => `
       <div class="metric-row">
         <div class="metric-top">
@@ -172,10 +223,10 @@ const collectionSchema = {
     const productionRows = (p) => {
       const group = PRODUCTION_CONFIG[p.position] ? p.position : (POSITION_GROUP_FALLBACK[p.position] || "");
       if (group === "OL") {
-        return `<div class="muted">Production block is limited for OL from public CFB stat feeds; lean on trait + role projection.</div>`;
+        return `<div class="muted">Public OL counting stats are limited; lean on trait profile and role projection.</div>`;
       }
       if (group === "LB") {
-        return `<div class="muted">LB-specific public counting feed is thinner; cross-check role projection and trait profile.</div>`;
+        return `<div class="muted">LB-specific public counting feeds are thinner; use role and trait context.</div>`;
       }
       const cfg = PRODUCTION_CONFIG[group];
       if (!cfg || cfg.length === 0) return `<div class="muted">Position-specific production data pending.</div>`;
@@ -236,25 +287,31 @@ const collectionSchema = {
         const div = document.createElement("article");
         div.className = "card compare-card";
         div.innerHTML = `
-          <div class="card-head">
-            <h3>${p.player_name}</h3>
-            <span class="badge">${p.position}</span>
+          <div class="profile-strip">
+            <div class="card-head">
+              <h3>${p.player_name}</h3>
+              <span class="badge">${p.position}</span>
+            </div>
+            <div class="muted">${p.school}</div>
+            <div class="muted keyline">Model Rank ${p.consensus_rank} · Grade ${grade.toFixed(2)} · ${p.round_value || "-"}</div>
+            <div class="kpi-row">
+              <span class="chip info">Rank ${p.consensus_rank}</span>
+              <span class="chip info">PFF ${pff > 0 ? pff.toFixed(1) : "-"}</span>
+              <span class="chip info">RAS ${ras}</span>
+              <span class="chip ${evidence.tone === "good" ? "good" : (evidence.tone === "warn" ? "warn" : "info")}">Evidence ${evidence.label}</span>
+            </div>
           </div>
-          <div class="muted">${p.school}</div>
-          <div class="muted keyline">Model Rank ${p.consensus_rank} · Grade ${grade.toFixed(2)} · ${p.round_value || "-"}</div>
 
-          <div class="metrics-wrap">
-            ${meterRow("PFF Grade", toPct(pff, 55, 95), pff > 0 ? pff.toFixed(1) : "-", "var(--accent)")}
-            ${meterRow("Trait Score", traitPct, trait > 0 ? trait.toFixed(2) : "-", "var(--brand)")}
-            ${meterRow("RAS Score", athleticPct, ras, "#6b7280")}
-          </div>
-
-          <div class="subcard">
-            <div class="subhead">Translation Profile</div>
-            ${meterRow("Production Percentile", productionPct, `${productionPct.toFixed(0)}th pct`, "#0f7b6a")}
-            ${meterRow("Athletic Percentile", athleticPct, `${athleticPct.toFixed(0)}th pct`, "#425466")}
-            ${meterRow("Trait Percentile", traitPct, `${traitPct.toFixed(0)}th pct`, "#245ea8")}
-            ${meterRow("Evidence Confidence", evidencePct, evidence.label, evidence.tone === "good" ? "#138a4a" : (evidence.tone === "warn" ? "#b15518" : "#245ea8"))}
+          <div class="translation-block">
+            <div class="radar-wrap">
+              ${radarSvg([productionPct, athleticPct, traitPct, evidencePct])}
+            </div>
+            <div class="bar-metrics">
+              ${meterRow("Production Percentile", productionPct, `${productionPct.toFixed(0)}th pct`, "#0f7b6a")}
+              ${meterRow("Athletic Percentile", athleticPct, `${athleticPct.toFixed(0)}th pct`, "#425466")}
+              ${meterRow("Trait Percentile", traitPct, `${traitPct.toFixed(0)}th pct`, "#245ea8")}
+              ${meterRow("Evidence Confidence", evidencePct, evidence.label, evidence.tone === "good" ? "#138a4a" : (evidence.tone === "warn" ? "#b15518" : "#245ea8"))}
+            </div>
           </div>
 
           <div class="subcard">
@@ -262,30 +319,32 @@ const collectionSchema = {
             ${productionRows(p)}
           </div>
 
-          <div class="subcard">
-            <div class="subhead">Role / Scheme Fit</div>
-            <div><strong>${role.role}</strong></div>
-            <div class="muted">${role.scheme}</div>
-            <div class="chip-row">
-              ${(role.tags || []).map((t) => `<span class="chip info">${t}</span>`).join("") || `<span class="muted">No scheme tags</span>`}
+          <div class="scout-block">
+            <div class="subcard">
+              <div class="subhead">Role / Scheme Fit</div>
+              <div><strong>${role.role}</strong></div>
+              <div class="muted">${role.scheme}</div>
+              <div class="chip-row">
+                ${(role.tags || []).map((t) => `<span class="chip info">${t}</span>`).join("") || `<span class="muted">No scheme tags</span>`}
+              </div>
             </div>
-          </div>
 
-          <div class="subcard">
-            <div class="subhead">Rank Movement</div>
-            <div class="chip-row">
-              <span class="chip ${move > 0 ? "good" : move < 0 ? "warn" : "info"}">${moveText} (window)</span>
-              ${topDrivers.map((d) => `<span class="chip info">${d.key} ${d.val >= 0 ? "+" : ""}${d.val.toFixed(2)}</span>`).join("")}
+            <div class="subcard">
+              <div class="subhead">Rank Movement</div>
+              <div class="chip-row">
+                <span class="chip ${move > 0 ? "good" : move < 0 ? "warn" : "info"}">${moveText} (window)</span>
+                ${topDrivers.map((d) => `<span class="chip info">${d.key} ${d.val >= 0 ? "+" : ""}${d.val.toFixed(2)}</span>`).join("")}
+              </div>
+              ${sparkline(p.rank_history || [])}
             </div>
-            ${sparkline(p.rank_history || [])}
-          </div>
 
-          <div class="subcard">
-            <div class="subhead">Historical Comp Panel</div>
-            ${compLine("Floor", p.historical_comp_floor, "Depth/rotation outcome")}
-            ${compLine("Median", p.historical_comp_median, "Starter outcome")}
-            ${compLine("Ceiling", p.historical_comp_ceiling, "Impact starter / all-pro ceiling")}
-            <div class="muted">Comp confidence: ${p.comp_confidence || "-"}</div>
+            <div class="subcard">
+              <div class="subhead">Historical Comp Panel</div>
+              ${compLine("Floor", p.historical_comp_floor, "Depth/rotation outcome")}
+              ${compLine("Median", p.historical_comp_median, "Starter outcome")}
+              ${compLine("Ceiling", p.historical_comp_ceiling, "Impact starter / all-pro ceiling")}
+              <div class="muted">Comp confidence: ${p.comp_confidence || "-"}</div>
+            </div>
           </div>
         `;
         cards.appendChild(div);
@@ -300,107 +359,4 @@ const collectionSchema = {
     slots.forEach((el) => el?.addEventListener("change", render));
     render();
   </script>
-
-  <style>
-    .compare-controls {
-      margin-bottom: 1rem;
-    }
-    .compare-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.65rem;
-    }
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
-      gap: 0.8rem;
-    }
-    .compare-card {
-      padding: 0.95rem;
-      display: grid;
-      gap: 0.62rem;
-    }
-    .card-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 0.5rem;
-      align-items: baseline;
-    }
-    .card-head h3 {
-      margin: 0;
-      font-size: 1.2rem;
-      line-height: 1.2;
-    }
-    .keyline {
-      font-size: 0.86rem;
-    }
-    .subcard {
-      border: 1px solid #e5eaf0;
-      border-radius: 10px;
-      padding: 0.6rem;
-      background: #fbfdff;
-      display: grid;
-      gap: 0.42rem;
-    }
-    .subhead {
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #5c6473;
-      font-weight: 700;
-    }
-    .metrics-wrap {
-      display: grid;
-      gap: 0.48rem;
-    }
-    .metric-row {
-      border: 1px solid #e6ebf1;
-      border-radius: 10px;
-      padding: 0.45rem 0.5rem;
-      background: #fbfdff;
-    }
-    .metric-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 0.45rem;
-      font-size: 0.84rem;
-      margin-bottom: 0.28rem;
-    }
-    .meter {
-      width: 100%;
-      background: #ebeff4;
-      border-radius: 999px;
-      height: 8px;
-      overflow: hidden;
-    }
-    .meter-fill {
-      height: 100%;
-      border-radius: 999px;
-      transition: width .2s ease;
-    }
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
-      align-items: center;
-    }
-    .comp-row {
-      display: flex;
-      gap: 0.35rem;
-      align-items: baseline;
-      flex-wrap: wrap;
-      font-size: 0.9rem;
-    }
-    .metric-lite {
-      font-size: 0.86rem;
-    }
-    @media (max-width: 760px) {
-      .compare-card {
-        padding: 0.8rem;
-      }
-      .cards-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </BaseLayout>
