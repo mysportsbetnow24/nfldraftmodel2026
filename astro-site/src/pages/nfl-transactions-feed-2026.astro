@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import transactions from "../data/transactions_feed_2026.json";
+
+const pageDescription = "NFL transactions tracker for the 2026 cycle with Confirmed vs Rumored status and team-needs impact visibility.";
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "NFL Transactions Feed 2026",
+  url: "https://scoutinggrade.com/nfl-transactions-feed-2026",
+  description: pageDescription,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Scouting Grade",
+    url: "https://scoutinggrade.com"
+  }
+};
+---
+<BaseLayout title="NFL Transactions Feed 2026 | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
+  <section class="hero">
+    <h1>NFL Transactions Feed 2026</h1>
+    <p>Confirmed and rumored transaction stream with clear impact flags.</p>
+  </section>
+
+  <section class="card">
+    <div class="result-bar">
+      <h2 class="section-title" style="margin:0;">Latest Transactions</h2>
+      <span class="muted">Only <strong>Confirmed</strong> items auto-adjust team-needs logic.</span>
+    </div>
+
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.9rem;">
+      <button type="button" class="reset-btn is-active" data-feed-filter="all">All</button>
+      <button type="button" class="reset-btn" data-feed-filter="confirmed">Confirmed</button>
+      <button type="button" class="reset-btn" data-feed-filter="rumored">Rumored</button>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Team</th>
+            <th>Player / Action</th>
+            <th>Status</th>
+            <th>Team Needs Impact</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody id="transactionsRows">
+          {(transactions || []).map((tx: any) => {
+            const statusKind = String(tx.status_kind || "other").toLowerCase();
+            const statusText = String(tx.status || "Updated");
+            const affectsNeeds = Boolean(tx.affects_team_needs);
+            const chipTone = statusKind === "confirmed" ? "good" : (statusKind === "rumored" ? "warn" : "info");
+            return (
+              <tr data-status={statusKind}>
+                <td>{tx.event_date || "-"}</td>
+                <td><strong>{tx.team || "-"}</strong></td>
+                <td>
+                  <div>{tx.label || "-"}</div>
+                  <div class="muted">{tx.position ? `POS: ${tx.position}` : ""}</div>
+                </td>
+                <td><span class={`chip ${chipTone}`}>{statusText}</span></td>
+                <td>
+                  <span class={`chip ${affectsNeeds ? "good" : "info"}`}>
+                    {affectsNeeds ? "Affects team needs" : "No auto-impact"}
+                  </span>
+                </td>
+                <td>
+                  {tx.source_url ? (
+                    <a href={tx.source_url} target="_blank" rel="noopener noreferrer" style="color:var(--brand);text-decoration:none;">
+                      {tx.source_account || "Source"}
+                    </a>
+                  ) : (
+                    <span>{tx.source_account || "-"}</span>
+                  )}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    (() => {
+      const buttons = Array.from(document.querySelectorAll("[data-feed-filter]"));
+      const rows = Array.from(document.querySelectorAll("#transactionsRows tr"));
+
+      function applyFilter(filter) {
+        rows.forEach((row) => {
+          const status = (row.getAttribute("data-status") || "other").toLowerCase();
+          const show = filter === "all" || status === filter;
+          row.style.display = show ? "" : "none";
+        });
+        buttons.forEach((btn) => btn.classList.toggle("is-active", btn.getAttribute("data-feed-filter") === filter));
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          applyFilter(btn.getAttribute("data-feed-filter") || "all");
+        });
+      });
+    })();
+  </script>
+
+  <style>
+    .reset-btn.is-active {
+      border-color: #8db4e2;
+      background: #eef5fc;
+      color: #1f4f84;
+    }
+  </style>
+</BaseLayout>

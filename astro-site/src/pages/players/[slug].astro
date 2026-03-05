@@ -24,6 +24,22 @@ const collectionSchema = {
   }
 };
 const ras = Number(player.combine_ras_official || 0) > 0 ? Number(player.combine_ras_official).toFixed(2) : (Number(player.ras_estimate || 0) > 0 ? `${Number(player.ras_estimate).toFixed(2)} (est.)` : "-");
+const concernsText = String(player.scouting_primary_concerns || "");
+const riskKeywords = [
+  "medical",
+  "character",
+  "off-field",
+  "discipline",
+  "legal",
+  "suspension",
+  "injury concern",
+  "concussion",
+  "acl",
+  "mcl",
+  "achilles",
+  "fracture",
+];
+const hasMedicalCharacterRisk = riskKeywords.some((k) => concernsText.toLowerCase().includes(k));
 ---
 <BaseLayout title={`${player.player_name} | 2026 NFL Draft Scouting Report`} description={pageDescription} collectionSchema={collectionSchema}>
   <section class="hero">
@@ -42,7 +58,7 @@ const ras = Number(player.combine_ras_official || 0) > 0 ? Number(player.combine
     </div>
     <div style="margin-top:.7rem;display:flex;gap:.5rem;flex-wrap:wrap;">
       <span class="badge">Top Driver: {String(player.top_rank_driver || "n/a").toUpperCase()} ({Number(player.top_rank_driver_delta) >= 0 ? "+" : ""}{player.top_rank_driver_delta})</span>
-      {player.low_evidence_flag ? <span class="badge warn">QA Watch: thinner evidence profile</span> : <span class="badge ok">QA: evidence coverage clear</span>}
+      {hasMedicalCharacterRisk ? <span class="badge warn">Risk Watch: medical/character item noted</span> : null}
     </div>
   </section>
 
@@ -79,11 +95,5 @@ const ras = Number(player.combine_ras_official || 0) > 0 ? Number(player.combine
       border-color: #ead1a2;
       background: #fff8e8;
     }
-    .badge.ok {
-      color: #0f5d2e;
-      border-color: #a9d8b8;
-      background: #edf9f0;
-    }
   </style>
 </BaseLayout>
-

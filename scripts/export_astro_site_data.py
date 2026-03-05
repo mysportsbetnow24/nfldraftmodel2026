@@ -166,6 +166,11 @@ def _safe_int(value, default: int = 0) -> int:
     return int(round(val))
 
 
+def _is_truthy(value: str) -> bool:
+    text = str(value or "").strip().lower()
+    return text in {"1", "true", "yes", "y", "on"}
+
+
 def _norm_school_key(value: str) -> str:
     text = str(value or "").strip().lower()
     cleaned = "".join(ch for ch in text if ch.isalnum() or ch.isspace())
@@ -232,9 +237,18 @@ def _status_label(status: str) -> str:
     return labels.get(raw, raw.replace("_", " ").title())
 
 
-def _build_public_transactions(window_days: int = 14) -> dict[str, list[dict]]:
+def _status_kind(status: str) -> str:
+    raw = str(status or "").strip().lower()
+    if raw in {"rumored", "rumour", "speculative", "unconfirmed"}:
+        return "rumored"
+    if raw in {"confirmed", "official", "signed", "re-signed", "released", "waived", "traded", "retired", "activated"}:
+        return "confirmed"
+    return "other"
+
+
+def _build_transactions_feed(window_days: int = 14) -> list[dict]:
     min_date = datetime.now(timezone.utc).date() - timedelta(days=max(1, int(window_days)))
-    by_team: dict[str, list[dict]] = defaultdict(list)
+    events: list[dict] = []
     seen: set[tuple[str, str, str, str, str]] = set()
 
     def add_event(
@@ -247,6 +261,7 @@ def _build_public_transactions(window_days: int = 14) -> dict[str, list[dict]]:
         status: str,
         source_url: str,
         source_account: str,
+        affects_team_needs: bool,
     ) -> None:
         team_code = str(team or "").strip().upper()
         if not team_code or event_date is None or event_date < min_date:
@@ -267,11 +282,17 @@ def _build_public_transactions(window_days: int = 14) -> dict[str, list[dict]]:
         else:
             label = action or player or "-"
 
-        by_team[team_code].append(
+        events.append(
             {
+                "team": team_code,
                 "event_date": event_date.isoformat(),
                 "status": _status_label(status_raw),
+                "status_kind": _status_kind(status_raw),
                 "label": label,
+                "player_name": player,
+                "position": pos,
+                "action_text": action,
+                "affects_team_needs": bool(affects_team_needs),
                 "source_url": str(source_url or "").strip(),
                 "source_account": str(source_account or "").strip(),
             }
@@ -287,6 +308,7 @@ def _build_public_transactions(window_days: int = 14) -> dict[str, list[dict]]:
             status=row.get("transaction_status", "confirmed"),
             source_url=row.get("source_url", ""),
             source_account="CBS Sports",
+            affects_team_needs=True,
         )
 
     for row in _read_csv(TRANSACTION_OVERRIDES_CSV):
@@ -295,6 +317,9 @@ def _build_public_transactions(window_days: int = 14) -> dict[str, list[dict]]:
         position = row.get("position", "")
         action_text = row.get("action_text", "")
         status = row.get("transaction_status", "confirmed")
+        status_kind = _status_kind(status)
+        apply_raw = row.get("apply_to_team_needs", "")
+        affects_team_needs = _is_truthy(apply_raw) if str(apply_raw or "").strip() else (status_kind == "confirmed")
         source_url = row.get("source_url", "")
         source_account = row.get("source_account", "Manual")
         from_team = str(row.get("from_team", "")).strip().upper()
@@ -309,6 +334,7 @@ def _build_public_transactions(window_days: int = 14) -> dict[str, list[dict]]:
                 status=status,
                 source_url=source_url,
                 source_account=source_account,
+                affects_team_needs=affects_team_needs,
             )
         if to_team:
             add_event(
@@ -320,22 +346,44 @@ def _build_public_transactions(window_days: int = 14) -> dict[str, list[dict]]:
                 status=status,
                 source_url=source_url,
                 source_account=source_account,
+                affects_team_needs=affects_team_needs,
             )
 
     for row in _read_csv(INSIDER_TRANSACTIONS_CSV):
+        status = row.get("transaction_status", "rumored")
+        status_kind = _status_kind(status)
+        apply_raw = row.get("apply_to_team_needs", "")
+        affects_team_needs = _is_truthy(apply_raw) if str(apply_raw or "").strip() else (status_kind == "confirmed")
         add_event(
             team=row.get("team", ""),
             event_date=_parse_event_date(row.get("event_date", "")),
             player_name=row.get("player_name", ""),
             position=row.get("position", ""),
             action_text=row.get("action_text", ""),
-            status=row.get("transaction_status", "rumored"),
+            status=status,
             source_url=row.get("source_url", ""),
             source_account=row.get("source_account", ""),
+            affects_team_needs=affects_team_needs,
         )
 
-    for team in list(by_team.keys()):
-        by_team[team] = sorted(by_team[team], key=lambda r: r.get("event_date", ""), reverse=True)
+    events.sort(key=lambda r: (r.get("event_date", ""), r.get("team", "")), reverse=True)
+    return events
+
+
+def _build_public_transactions(window_days: int = 14) -> dict[str, list[dict]]:
+    by_team: dict[str, list[dict]] = defaultdict(list)
+    for event in _build_transactions_feed(window_days=window_days):
+        by_team[event.get("team", "")].append(
+            {
+                "event_date": event.get("event_date", ""),
+                "status": event.get("status", ""),
+                "status_kind": event.get("status_kind", ""),
+                "label": event.get("label", ""),
+                "affects_team_needs": bool(event.get("affects_team_needs")),
+                "source_url": event.get("source_url", ""),
+                "source_account": event.get("source_account", ""),
+            }
+        )
     return by_team
 
 
@@ -581,6 +629,7 @@ def main() -> None:
     by_team = export_round7_team_groups(round7)
     team_needs = export_team_needs()
     weekly_changes = export_weekly_changes(board)
+    transactions_feed = _build_transactions_feed(window_days=21)
 
     _write_json(ASTRO_DATA / "big_board_2026.json", board)
     _write_json(ASTRO_DATA / "mock_2026_round1.json", round1)
@@ -588,6 +637,7 @@ def main() -> None:
     _write_json(ASTRO_DATA / "mock_2026_7round_by_team.json", by_team)
     _write_json(ASTRO_DATA / "team_needs_2026.json", team_needs)
     _write_json(ASTRO_DATA / "weekly_changes_2026.json", weekly_changes)
+    _write_json(ASTRO_DATA / "transactions_feed_2026.json", transactions_feed)
     _write_json(
         ASTRO_DATA / "build_meta.json",
         {
@@ -602,6 +652,7 @@ def main() -> None:
     print(f"Wrote {ASTRO_DATA / 'mock_2026_7round_by_team.json'} ({len(by_team)} teams)")
     print(f"Wrote {ASTRO_DATA / 'team_needs_2026.json'} ({len(team_needs)} teams)")
     print(f"Wrote {ASTRO_DATA / 'weekly_changes_2026.json'}")
+    print(f"Wrote {ASTRO_DATA / 'transactions_feed_2026.json'} ({len(transactions_feed)} rows)")
     print(f"Wrote {ASTRO_DATA / 'build_meta.json'}")
 
 

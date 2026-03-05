@@ -127,6 +127,78 @@ const generatedAt = (meta as { generated_at?: string }).generated_at || "";
         border-radius: 14px;
         padding: 0.95rem;
       }
+      .section-title {
+        margin: 0 0 0.65rem;
+        font-size: 1.2rem;
+        letter-spacing: -0.01em;
+      }
+      .table-wrap {
+        overflow: auto;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+      }
+      .filters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 0.6rem;
+        margin-bottom: 0.95rem;
+      }
+      .control {
+        padding: 0.66rem 0.74rem;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #fff;
+        font: inherit;
+        color: inherit;
+        min-width: 0;
+      }
+      .control:focus-visible {
+        outline: 2px solid rgba(25, 90, 173, 0.26);
+        outline-offset: 1px;
+      }
+      .result-bar {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.65rem;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 0.9rem;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        border: 1px solid #ccd4df;
+        padding: 0.12rem 0.45rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+      .chip.info {
+        color: #245ea8;
+        border-color: #b9cfe9;
+        background: #eef5fc;
+      }
+      .chip.good {
+        color: #0f5d2e;
+        border-color: #a9d8b8;
+        background: #edf9f0;
+      }
+      .chip.warn {
+        color: #8a3f2f;
+        border-color: #e7c1b7;
+        background: #fdf1ee;
+      }
+      .reset-btn {
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 0.48rem 0.72rem;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .reset-btn:hover { background: #f7fafc; }
       table {
         width: 100%;
         border-collapse: collapse;
@@ -163,6 +235,7 @@ const generatedAt = (meta as { generated_at?: string }).generated_at || "";
       @media (max-width: 820px) {
         .shell { padding: 0.7rem; }
         table { font-size: 0.84rem; }
+        .filters-grid { grid-template-columns: 1fr; }
       }
     </style>
   </head>
@@ -175,6 +248,7 @@ const generatedAt = (meta as { generated_at?: string }).generated_at || "";
           <a href="/2026-nfl-mock-draft">Mock Draft</a>
           <a href="/2026-nfl-7-round-mock-draft">7-Round Mock</a>
           <a href="/nfl-team-needs-2026">Team Needs</a>
+          <a href="/nfl-transactions-feed-2026">Transactions</a>
           <a href="/2026-nfl-player-comparison">Player Compare</a>
           <a href="/scouting-cards">Scouting Cards</a>
           <a href="/nfl-draft-methodology">Approach</a>
