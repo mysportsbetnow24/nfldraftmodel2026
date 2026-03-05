@@ -1,12 +1,15 @@
 import type { APIRoute } from "astro";
 import meta from "../data/build_meta.json";
+import board from "../data/big_board_2026.json";
 
 const ROUTES = [
   "/",
   "/2026-nfl-draft-big-board",
+  "/2026-nfl-mock-draft",
   "/2026-nfl-mock-draft-round-1",
   "/2026-nfl-7-round-mock-draft",
   "/2026-nfl-player-comparison",
+  "/nfl-team-needs-2026",
   "/scouting-cards",
   "/nfl-draft-methodology",
   "/2026-nfl-draft-weekly-updates"
@@ -24,8 +27,12 @@ function xmlEscape(value: string): string {
 export const GET: APIRoute = ({ site }) => {
   const base = (site ?? new URL("https://scoutinggrade.com")).toString().replace(/\/$/, "");
   const lastmod = (meta as { generated_at?: string }).generated_at || new Date().toISOString();
+  const playerRoutes = (board as any[])
+    .map((p: any) => p?.slug ? `/players/${p.slug}` : "")
+    .filter(Boolean);
+  const allRoutes = [...ROUTES, ...playerRoutes];
 
-  const urls = ROUTES.map((path) => {
+  const urls = allRoutes.map((path) => {
     const loc = `${base}${path === "/" ? "/" : path}`;
     return [
       "  <url>",

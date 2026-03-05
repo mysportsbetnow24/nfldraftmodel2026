@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import teamNeeds from "../data/team_needs_2026.json";
+
+const pageDescription = "NFL team needs for the 2026 draft cycle using roster pressure, contract horizon, and transaction-adjusted context.";
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "NFL Team Needs 2026",
+  url: "https://scoutinggrade.com/nfl-team-needs-2026",
+  description: pageDescription,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Scouting Grade",
+    url: "https://scoutinggrade.com"
+  }
+};
+---
+<BaseLayout title="NFL Team Needs 2026 | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
+  <section class="hero">
+    <h1>NFL Team Needs 2026</h1>
+    <p>Team-by-team need view using roster pressure and transaction context. Public view is high-level by design.</p>
+  </section>
+
+  <section class="card">
+    <div style="overflow:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Top Need 1</th>
+            <th>Top Need 2</th>
+            <th>Top Need 3</th>
+            <th>Recent Transactions (sample)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {(teamNeeds || []).map((row: any) => (
+            <tr>
+              <td><strong>{row.team}</strong></td>
+              <td>
+                {row.top_needs?.[0]?.position || "-"}
+                {row.top_needs?.[0] ? <span class="muted"> ({Number(row.top_needs[0].need_score).toFixed(2)})</span> : ""}
+              </td>
+              <td>
+                {row.top_needs?.[1]?.position || "-"}
+                {row.top_needs?.[1] ? <span class="muted"> ({Number(row.top_needs[1].need_score).toFixed(2)})</span> : ""}
+              </td>
+              <td>
+                {row.top_needs?.[2]?.position || "-"}
+                {row.top_needs?.[2] ? <span class="muted"> ({Number(row.top_needs[2].need_score).toFixed(2)})</span> : ""}
+              </td>
+              <td class="muted">{(row.recent_transactions || []).join(" | ") || "-"}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>
+

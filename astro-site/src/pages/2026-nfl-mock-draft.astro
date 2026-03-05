@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import round1 from "../data/mock_2026_round1.json";
+const pageDescription = "2026 NFL mock draft hub with first-round and full 7-round projections, updated from the latest Scouting Grade model cycle.";
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "2026 NFL Mock Draft",
+  url: "https://scoutinggrade.com/2026-nfl-mock-draft",
+  description: pageDescription,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Scouting Grade",
+    url: "https://scoutinggrade.com"
+  }
+};
+const top10 = (round1 || []).slice(0, 10);
+---
+<BaseLayout title="2026 NFL Mock Draft | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
+  <section class="hero">
+    <h1>2026 NFL Mock Draft</h1>
+    <p>Use the round-by-round links below for full class projections and team-level draft views.</p>
+  </section>
+
+  <section class="card" style="margin-bottom:1rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.7rem;">
+      <a class="card" href="/2026-nfl-mock-draft-round-1" style="text-decoration:none;color:inherit;">
+        <strong>1st Round Mock</strong><br />
+        <span class="muted">Top-32 projection with current model context.</span>
+      </a>
+      <a class="card" href="/2026-nfl-7-round-mock-draft" style="text-decoration:none;color:inherit;">
+        <strong>7-Round Mock</strong><br />
+        <span class="muted">Complete mock with team filter for full classes.</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 style="margin:0 0 .6rem;">Round 1 Snapshot (Top 10)</h2>
+    <div style="overflow:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Pick</th>
+            <th>Team</th>
+            <th>Player</th>
+            <th>Pos</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          {top10.map((p: any) => (
+            <tr>
+              <td>{p.overall_pick}</td>
+              <td>{p.team}</td>
+              <td>{p.player_name}</td>
+              <td><span class="badge">{p.position}</span></td>
+              <td>{p.final_grade}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>
+

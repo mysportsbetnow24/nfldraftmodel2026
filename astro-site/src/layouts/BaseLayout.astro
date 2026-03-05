@@ -1,4 +1,6 @@
 ---
+import meta from "../data/build_meta.json";
+
 interface Props {
   title: string;
   description?: string;
@@ -23,6 +25,7 @@ const webSiteSchema = {
   name: "Scouting Grade",
   url: siteUrl
 };
+const generatedAt = (meta as { generated_at?: string }).generated_at || "";
 ---
 <!doctype html>
 <html lang="en">
@@ -169,8 +172,9 @@ const webSiteSchema = {
         <div class="brand"><a href="/">Scouting Grade</a></div>
         <nav class="nav">
           <a href="/2026-nfl-draft-big-board">Big Board</a>
-          <a href="/2026-nfl-mock-draft-round-1">1st Round Mock</a>
+          <a href="/2026-nfl-mock-draft">Mock Draft</a>
           <a href="/2026-nfl-7-round-mock-draft">7-Round Mock</a>
+          <a href="/nfl-team-needs-2026">Team Needs</a>
           <a href="/2026-nfl-player-comparison">Player Compare</a>
           <a href="/scouting-cards">Scouting Cards</a>
           <a href="/nfl-draft-methodology">Approach</a>
@@ -178,7 +182,10 @@ const webSiteSchema = {
         </nav>
       </header>
       <slot />
-      <footer class="footer">Scouting Grade · Data-driven NFL Draft modeling and scouting synthesis.</footer>
+      <footer class="footer">
+        Scouting Grade · Data-driven NFL Draft modeling and scouting synthesis.
+        {generatedAt && <span> · Last updated (UTC): {generatedAt}</span>}
+      </footer>
     </div>
   </body>
 </html>

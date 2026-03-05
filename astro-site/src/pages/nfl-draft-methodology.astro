@@ -25,7 +25,11 @@ const collectionSchema = {
       <h2 style="margin:0 0 .4rem;">1) Evidence Categories</h2>
       <p class="muted" style="margin:.2rem 0;">
         We review multiple evidence buckets: college production context, athletic markers, role/trait translation signals,
-        and external market context. We do not rely on any single source in isolation.
+        and external market context.
+      </p>
+      <p class="muted" style="margin:.45rem 0 0;">
+        Public weight bands (high level): board outcomes are primarily driven by on-field performance and translation traits,
+        with athletic and market context acting as calibration layers.
       </p>
     </article>
 
@@ -53,10 +57,10 @@ const collectionSchema = {
     </article>
 
     <article class="card">
-      <h2 style="margin:0 0 .4rem;">5) What Is Private</h2>
+      <h2 style="margin:0 0 .4rem;">Guardrails and QA</h2>
       <p class="muted" style="margin:.2rem 0;">
-        Proprietary feature engineering, exact weighting, and internal calibration logic are intentionally not published.
-        This page is a reader guide, not a full system specification.
+        We apply guardrails to reduce noisy spikes, flag thin-evidence profiles, and keep high-variance outliers clearly labeled.
+        This helps keep the board stable while still surfacing upside cases.
       </p>
     </article>
   </section>

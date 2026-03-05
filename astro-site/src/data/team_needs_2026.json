@@ -1,0 +1,992 @@
+[
+  {
+    "team": "ARI",
+    "top_needs": [
+      {
+        "position": "RB",
+        "need_score": 0.6637,
+        "depth_chart_pressure": 0.124,
+        "future_need_pressure_1y": 0.934,
+        "future_need_pressure_2y": 0.911,
+        "starter_quality": 0.734
+      },
+      {
+        "position": "QB",
+        "need_score": 0.609,
+        "depth_chart_pressure": 0.324,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.45,
+        "starter_quality": 0.604
+      },
+      {
+        "position": "LB",
+        "need_score": 0.6083,
+        "depth_chart_pressure": 0.188,
+        "future_need_pressure_1y": 0.937,
+        "future_need_pressure_2y": 0.663,
+        "starter_quality": 0.645
+      }
+    ],
+    "recent_transactions": [
+      "2026-03-04 Kayvon Thibodeaux (traded)"
+    ]
+  },
+  {
+    "team": "ATL",
+    "top_needs": [
+      {
+        "position": "LB",
+        "need_score": 0.586,
+        "depth_chart_pressure": 0.068,
+        "future_need_pressure_1y": 0.96,
+        "future_need_pressure_2y": 0.752,
+        "starter_quality": 0.852
+      },
+      {
+        "position": "RB",
+        "need_score": 0.583,
+        "depth_chart_pressure": 0.24,
+        "future_need_pressure_1y": 0.924,
+        "future_need_pressure_2y": 0.515,
+        "starter_quality": 0.509
+      },
+      {
+        "position": "TE",
+        "need_score": 0.555,
+        "depth_chart_pressure": 0.133,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.512,
+        "starter_quality": 0.693
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "BAL",
+    "top_needs": [
+      {
+        "position": "IOL",
+        "need_score": 0.687,
+        "depth_chart_pressure": 0.113,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.913,
+        "starter_quality": 0.72
+      },
+      {
+        "position": "RB",
+        "need_score": 0.5438,
+        "depth_chart_pressure": 0.081,
+        "future_need_pressure_1y": 0.969,
+        "future_need_pressure_2y": 0.613,
+        "starter_quality": 0.863
+      },
+      {
+        "position": "CB",
+        "need_score": 0.5178,
+        "depth_chart_pressure": 0.018,
+        "future_need_pressure_1y": 0.789,
+        "future_need_pressure_2y": 0.825,
+        "starter_quality": 0.963
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "BUF",
+    "top_needs": [
+      {
+        "position": "IOL",
+        "need_score": 0.5144,
+        "depth_chart_pressure": 0.139,
+        "future_need_pressure_1y": 0.729,
+        "future_need_pressure_2y": 0.699,
+        "starter_quality": 0.753
+      },
+      {
+        "position": "TE",
+        "need_score": 0.5086,
+        "depth_chart_pressure": 0.151,
+        "future_need_pressure_1y": 0.91,
+        "future_need_pressure_2y": 0.45,
+        "starter_quality": 0.66
+      },
+      {
+        "position": "S",
+        "need_score": 0.4801,
+        "depth_chart_pressure": 0.022,
+        "future_need_pressure_1y": 0.81,
+        "future_need_pressure_2y": 0.689,
+        "starter_quality": 0.955
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "CAR",
+    "top_needs": [
+      {
+        "position": "OT",
+        "need_score": 0.5496,
+        "depth_chart_pressure": 0.06,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.616,
+        "starter_quality": 0.861
+      },
+      {
+        "position": "QB",
+        "need_score": 0.507,
+        "depth_chart_pressure": 0.137,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.45,
+        "starter_quality": 0.969
+      },
+      {
+        "position": "LB",
+        "need_score": 0.478,
+        "depth_chart_pressure": 0.041,
+        "future_need_pressure_1y": 0.712,
+        "future_need_pressure_2y": 0.758,
+        "starter_quality": 0.916
+      }
+    ],
+    "recent_transactions": [
+      "2026-03-04 Hayden Hatten (signed)"
+    ]
+  },
+  {
+    "team": "CHI",
+    "top_needs": [
+      {
+        "position": "S",
+        "need_score": 0.6522,
+        "depth_chart_pressure": 0.051,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.928,
+        "starter_quality": 0.903
+      },
+      {
+        "position": "LB",
+        "need_score": 0.5354,
+        "depth_chart_pressure": 0.139,
+        "future_need_pressure_1y": 0.976,
+        "future_need_pressure_2y": 0.49,
+        "starter_quality": 0.74
+      },
+      {
+        "position": "RB",
+        "need_score": 0.5023,
+        "depth_chart_pressure": 0.107,
+        "future_need_pressure_1y": 0.904,
+        "future_need_pressure_2y": 0.518,
+        "starter_quality": 0.79
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "CIN",
+    "top_needs": [
+      {
+        "position": "S",
+        "need_score": 0.6025,
+        "depth_chart_pressure": 0.114,
+        "future_need_pressure_1y": 0.935,
+        "future_need_pressure_2y": 0.761,
+        "starter_quality": 0.786
+      },
+      {
+        "position": "IOL",
+        "need_score": 0.5726,
+        "depth_chart_pressure": 0.07,
+        "future_need_pressure_1y": 0.907,
+        "future_need_pressure_2y": 0.779,
+        "starter_quality": 0.886
+      },
+      {
+        "position": "CB",
+        "need_score": 0.5465,
+        "depth_chart_pressure": 0.039,
+        "future_need_pressure_1y": 0.944,
+        "future_need_pressure_2y": 0.706,
+        "starter_quality": 0.921
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "CLE",
+    "top_needs": [
+      {
+        "position": "S",
+        "need_score": 0.6384,
+        "depth_chart_pressure": 0.049,
+        "future_need_pressure_1y": 0.96,
+        "future_need_pressure_2y": 0.935,
+        "starter_quality": 0.907
+      },
+      {
+        "position": "TE",
+        "need_score": 0.6283,
+        "depth_chart_pressure": 0.05,
+        "future_need_pressure_1y": 0.94,
+        "future_need_pressure_2y": 0.922,
+        "starter_quality": 0.891
+      },
+      {
+        "position": "IOL",
+        "need_score": 0.6148,
+        "depth_chart_pressure": 0.034,
+        "future_need_pressure_1y": 0.953,
+        "future_need_pressure_2y": 0.9,
+        "starter_quality": 0.943
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "DAL",
+    "top_needs": [
+      {
+        "position": "LB",
+        "need_score": 0.529,
+        "depth_chart_pressure": 0.058,
+        "future_need_pressure_1y": 0.8,
+        "future_need_pressure_2y": 0.783,
+        "starter_quality": 0.886
+      },
+      {
+        "position": "S",
+        "need_score": 0.4862,
+        "depth_chart_pressure": 0.128,
+        "future_need_pressure_1y": 0.629,
+        "future_need_pressure_2y": 0.742,
+        "starter_quality": 0.762
+      },
+      {
+        "position": "WR",
+        "need_score": 0.2649,
+        "depth_chart_pressure": 0.017,
+        "future_need_pressure_1y": 0.464,
+        "future_need_pressure_2y": 0.46,
+        "starter_quality": 0.968
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "DEN",
+    "top_needs": [
+      {
+        "position": "TE",
+        "need_score": 0.6208,
+        "depth_chart_pressure": 0.211,
+        "future_need_pressure_1y": 0.965,
+        "future_need_pressure_2y": 0.622,
+        "starter_quality": 0.567
+      },
+      {
+        "position": "RB",
+        "need_score": 0.5981,
+        "depth_chart_pressure": 0.121,
+        "future_need_pressure_1y": 0.885,
+        "future_need_pressure_2y": 0.79,
+        "starter_quality": 0.764
+      },
+      {
+        "position": "QB",
+        "need_score": 0.4887,
+        "depth_chart_pressure": 0.246,
+        "future_need_pressure_1y": 0.744,
+        "future_need_pressure_2y": 0.504,
+        "starter_quality": 0.752
+      }
+    ],
+    "recent_transactions": [
+      "2026-03-02 Ja'Quan McMillian (signed)"
+    ]
+  },
+  {
+    "team": "DET",
+    "top_needs": [
+      {
+        "position": "TE",
+        "need_score": 0.6436,
+        "depth_chart_pressure": 0.264,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.581,
+        "starter_quality": 0.51
+      },
+      {
+        "position": "RB",
+        "need_score": 0.5884,
+        "depth_chart_pressure": 0.11,
+        "future_need_pressure_1y": 0.921,
+        "future_need_pressure_2y": 0.735,
+        "starter_quality": 0.769
+      },
+      {
+        "position": "IOL",
+        "need_score": 0.4163,
+        "depth_chart_pressure": 0.02,
+        "future_need_pressure_1y": 0.84,
+        "future_need_pressure_2y": 0.449,
+        "starter_quality": 0.959
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "GB",
+    "top_needs": [
+      {
+        "position": "TE",
+        "need_score": 0.6202,
+        "depth_chart_pressure": 0.191,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.608,
+        "starter_quality": 0.582
+      },
+      {
+        "position": "LB",
+        "need_score": 0.5308,
+        "depth_chart_pressure": 0.104,
+        "future_need_pressure_1y": 0.839,
+        "future_need_pressure_2y": 0.672,
+        "starter_quality": 0.785
+      },
+      {
+        "position": "WR",
+        "need_score": 0.5284,
+        "depth_chart_pressure": 0.16,
+        "future_need_pressure_1y": 0.737,
+        "future_need_pressure_2y": 0.626,
+        "starter_quality": 0.692
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "HOU",
+    "top_needs": [
+      {
+        "position": "OT",
+        "need_score": 0.6378,
+        "depth_chart_pressure": 0.038,
+        "future_need_pressure_1y": 0.952,
+        "future_need_pressure_2y": 0.96,
+        "starter_quality": 0.93
+      },
+      {
+        "position": "RB",
+        "need_score": 0.632,
+        "depth_chart_pressure": 0.065,
+        "future_need_pressure_1y": 0.951,
+        "future_need_pressure_2y": 0.899,
+        "starter_quality": 0.866
+      },
+      {
+        "position": "S",
+        "need_score": 0.5389,
+        "depth_chart_pressure": 0.028,
+        "future_need_pressure_1y": 0.844,
+        "future_need_pressure_2y": 0.809,
+        "starter_quality": 0.942
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "IND",
+    "top_needs": [
+      {
+        "position": "RB",
+        "need_score": 0.7035,
+        "depth_chart_pressure": 0.153,
+        "future_need_pressure_1y": 0.962,
+        "future_need_pressure_2y": 0.942,
+        "starter_quality": 0.653
+      },
+      {
+        "position": "LB",
+        "need_score": 0.6907,
+        "depth_chart_pressure": 0.333,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.618,
+        "starter_quality": 0.409
+      },
+      {
+        "position": "IOL",
+        "need_score": 0.5939,
+        "depth_chart_pressure": 0.01,
+        "future_need_pressure_1y": 0.954,
+        "future_need_pressure_2y": 0.875,
+        "starter_quality": 0.979
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "JAX",
+    "top_needs": [
+      {
+        "position": "LB",
+        "need_score": 0.5478,
+        "depth_chart_pressure": 0.133,
+        "future_need_pressure_1y": 0.952,
+        "future_need_pressure_2y": 0.551,
+        "starter_quality": 0.72
+      },
+      {
+        "position": "TE",
+        "need_score": 0.536,
+        "depth_chart_pressure": 0.105,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.519,
+        "starter_quality": 0.809
+      },
+      {
+        "position": "RB",
+        "need_score": 0.5259,
+        "depth_chart_pressure": 0.116,
+        "future_need_pressure_1y": 0.799,
+        "future_need_pressure_2y": 0.678,
+        "starter_quality": 0.745
+      }
+    ],
+    "recent_transactions": [
+      "2026-03-04 Darnell Savage Jr. (released)",
+      "2026-03-03 George Kittle (traded)"
+    ]
+  },
+  {
+    "team": "KC",
+    "top_needs": [
+      {
+        "position": "TE",
+        "need_score": 0.6153,
+        "depth_chart_pressure": 0.092,
+        "future_need_pressure_1y": 0.949,
+        "future_need_pressure_2y": 0.818,
+        "starter_quality": 0.832
+      },
+      {
+        "position": "S",
+        "need_score": 0.5901,
+        "depth_chart_pressure": 0.053,
+        "future_need_pressure_1y": 0.908,
+        "future_need_pressure_2y": 0.844,
+        "starter_quality": 0.887
+      },
+      {
+        "position": "RB",
+        "need_score": 0.5558,
+        "depth_chart_pressure": 0.085,
+        "future_need_pressure_1y": 0.792,
+        "future_need_pressure_2y": 0.824,
+        "starter_quality": 0.827
+      }
+    ],
+    "recent_transactions": [
+      "2026-03-04 Trent McDuffie (traded)",
+      "2026-03-04 Devin White (signed)"
+    ]
+  },
+  {
+    "team": "LAC",
+    "top_needs": [
+      {
+        "position": "RB",
+        "need_score": 0.594,
+        "depth_chart_pressure": 0.196,
+        "future_need_pressure_1y": 0.788,
+        "future_need_pressure_2y": 0.785,
+        "starter_quality": 0.682
+      },
+      {
+        "position": "IOL",
+        "need_score": 0.5876,
+        "depth_chart_pressure": 0.113,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.635,
+        "starter_quality": 0.732
+      },
+      {
+        "position": "TE",
+        "need_score": 0.5339,
+        "depth_chart_pressure": 0.055,
+        "future_need_pressure_1y": 0.931,
+        "future_need_pressure_2y": 0.654,
+        "starter_quality": 0.875
+      }
+    ],
+    "recent_transactions": [
+      "2026-03-03 Keenan Isaac (signed) | 2026-03-03 Ahkello Witherspoon (signed)"
+    ]
+  },
+  {
+    "team": "LAR",
+    "top_needs": [
+      {
+        "position": "CB",
+        "need_score": 0.375,
+        "depth_chart_pressure": 0.5,
+        "future_need_pressure_1y": 0.0,
+        "future_need_pressure_2y": 0.0,
+        "starter_quality": 0.5
+      },
+      {
+        "position": "DT",
+        "need_score": 0.375,
+        "depth_chart_pressure": 0.5,
+        "future_need_pressure_1y": 0.0,
+        "future_need_pressure_2y": 0.0,
+        "starter_quality": 0.5
+      },
+      {
+        "position": "EDGE",
+        "need_score": 0.375,
+        "depth_chart_pressure": 0.5,
+        "future_need_pressure_1y": 0.0,
+        "future_need_pressure_2y": 0.0,
+        "starter_quality": 0.5
+      }
+    ],
+    "recent_transactions": [
+      "2026-03-03 Fentrell Cypress II (signed) | 2026-03-04 Trent McDuffie (traded)"
+    ]
+  },
+  {
+    "team": "LV",
+    "top_needs": [
+      {
+        "position": "LB",
+        "need_score": 0.6753,
+        "depth_chart_pressure": 0.264,
+        "future_need_pressure_1y": 0.859,
+        "future_need_pressure_2y": 0.814,
+        "starter_quality": 0.473
+      },
+      {
+        "position": "CB",
+        "need_score": 0.638,
+        "depth_chart_pressure": 0.213,
+        "future_need_pressure_1y": 0.849,
+        "future_need_pressure_2y": 0.787,
+        "starter_quality": 0.54
+      },
+      {
+        "position": "S",
+        "need_score": 0.6171,
+        "depth_chart_pressure": 0.23,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.559,
+        "starter_quality": 0.581
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "MIA",
+    "top_needs": [
+      {
+        "position": "TE",
+        "need_score": 0.6238,
+        "depth_chart_pressure": 0.113,
+        "future_need_pressure_1y": 0.869,
+        "future_need_pressure_2y": 0.889,
+        "starter_quality": 0.768
+      },
+      {
+        "position": "CB",
+        "need_score": 0.5862,
+        "depth_chart_pressure": 0.024,
+        "future_need_pressure_1y": 0.965,
+        "future_need_pressure_2y": 0.82,
+        "starter_quality": 0.952
+      },
+      {
+        "position": "IOL",
+        "need_score": 0.5631,
+        "depth_chart_pressure": 0.11,
+        "future_need_pressure_1y": 0.953,
+        "future_need_pressure_2y": 0.634,
+        "starter_quality": 0.787
+      }
+    ],
+    "recent_transactions": [
+      "2026-03-03 L'Jarius Sneed (traded)"
+    ]
+  },
+  {
+    "team": "MIN",
+    "top_needs": [
+      {
+        "position": "LB",
+        "need_score": 0.5737,
+        "depth_chart_pressure": 0.104,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.625,
+        "starter_quality": 0.807
+      },
+      {
+        "position": "RB",
+        "need_score": 0.5517,
+        "depth_chart_pressure": 0.108,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.559,
+        "starter_quality": 0.809
+      },
+      {
+        "position": "TE",
+        "need_score": 0.4143,
+        "depth_chart_pressure": 0.069,
+        "future_need_pressure_1y": 0.772,
+        "future_need_pressure_2y": 0.468,
+        "starter_quality": 0.855
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "NE",
+    "top_needs": [
+      {
+        "position": "TE",
+        "need_score": 0.5335,
+        "depth_chart_pressure": 0.048,
+        "future_need_pressure_1y": 0.964,
+        "future_need_pressure_2y": 0.633,
+        "starter_quality": 0.9
+      },
+      {
+        "position": "S",
+        "need_score": 0.5047,
+        "depth_chart_pressure": 0.082,
+        "future_need_pressure_1y": 0.894,
+        "future_need_pressure_2y": 0.573,
+        "starter_quality": 0.829
+      },
+      {
+        "position": "LB",
+        "need_score": 0.4275,
+        "depth_chart_pressure": 0.107,
+        "future_need_pressure_1y": 0.745,
+        "future_need_pressure_2y": 0.475,
+        "starter_quality": 0.779
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "NO",
+    "top_needs": [
+      {
+        "position": "RB",
+        "need_score": 0.6072,
+        "depth_chart_pressure": 0.051,
+        "future_need_pressure_1y": 0.957,
+        "future_need_pressure_2y": 0.851,
+        "starter_quality": 0.914
+      },
+      {
+        "position": "LB",
+        "need_score": 0.545,
+        "depth_chart_pressure": 0.056,
+        "future_need_pressure_1y": 0.916,
+        "future_need_pressure_2y": 0.706,
+        "starter_quality": 0.894
+      },
+      {
+        "position": "IOL",
+        "need_score": 0.4923,
+        "depth_chart_pressure": 0.044,
+        "future_need_pressure_1y": 0.978,
+        "future_need_pressure_2y": 0.503,
+        "starter_quality": 0.898
+      }
+    ],
+    "recent_transactions": [
+      "2026-03-02 JuJu Smith-Schuster (signed)"
+    ]
+  },
+  {
+    "team": "NYG",
+    "top_needs": [
+      {
+        "position": "QB",
+        "need_score": 0.6353,
+        "depth_chart_pressure": 0.276,
+        "future_need_pressure_1y": 0.853,
+        "future_need_pressure_2y": 0.758,
+        "starter_quality": 0.7
+      },
+      {
+        "position": "IOL",
+        "need_score": 0.5462,
+        "depth_chart_pressure": 0.057,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.619,
+        "starter_quality": 0.893
+      },
+      {
+        "position": "LB",
+        "need_score": 0.5408,
+        "depth_chart_pressure": 0.115,
+        "future_need_pressure_1y": 0.963,
+        "future_need_pressure_2y": 0.549,
+        "starter_quality": 0.759
+      }
+    ],
+    "recent_transactions": [
+      "2026-03-02 Myles Harden (signed)",
+      "2026-03-04 Kayvon Thibodeaux (traded)",
+      "2026-03-04 Jonathan Sutherland (signed)"
+    ]
+  },
+  {
+    "team": "NYJ",
+    "top_needs": [
+      {
+        "position": "RB",
+        "need_score": 0.5946,
+        "depth_chart_pressure": 0.149,
+        "future_need_pressure_1y": 0.799,
+        "future_need_pressure_2y": 0.83,
+        "starter_quality": 0.709
+      },
+      {
+        "position": "TE",
+        "need_score": 0.5583,
+        "depth_chart_pressure": 0.214,
+        "future_need_pressure_1y": 0.809,
+        "future_need_pressure_2y": 0.614,
+        "starter_quality": 0.58
+      },
+      {
+        "position": "S",
+        "need_score": 0.5316,
+        "depth_chart_pressure": 0.152,
+        "future_need_pressure_1y": 0.774,
+        "future_need_pressure_2y": 0.601,
+        "starter_quality": 0.681
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "PHI",
+    "top_needs": [
+      {
+        "position": "TE",
+        "need_score": 0.6484,
+        "depth_chart_pressure": 0.089,
+        "future_need_pressure_1y": 0.946,
+        "future_need_pressure_2y": 0.915,
+        "starter_quality": 0.822
+      },
+      {
+        "position": "OT",
+        "need_score": 0.5416,
+        "depth_chart_pressure": 0.009,
+        "future_need_pressure_1y": 0.961,
+        "future_need_pressure_2y": 0.723,
+        "starter_quality": 0.987
+      },
+      {
+        "position": "RB",
+        "need_score": 0.5067,
+        "depth_chart_pressure": 0.091,
+        "future_need_pressure_1y": 0.969,
+        "future_need_pressure_2y": 0.48,
+        "starter_quality": 0.8
+      }
+    ],
+    "recent_transactions": [
+      "2026-03-02 Juwan Johnson (signed)"
+    ]
+  },
+  {
+    "team": "PIT",
+    "top_needs": [
+      {
+        "position": "QB",
+        "need_score": 0.6462,
+        "depth_chart_pressure": 0.162,
+        "future_need_pressure_1y": 0.965,
+        "future_need_pressure_2y": 0.846,
+        "starter_quality": 0.926
+      },
+      {
+        "position": "S",
+        "need_score": 0.601,
+        "depth_chart_pressure": 0.024,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.823,
+        "starter_quality": 0.95
+      },
+      {
+        "position": "OT",
+        "need_score": 0.5563,
+        "depth_chart_pressure": 0.098,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.584,
+        "starter_quality": 0.813
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "SEA",
+    "top_needs": [
+      {
+        "position": "RB",
+        "need_score": 0.6474,
+        "depth_chart_pressure": 0.228,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.632,
+        "starter_quality": 0.527
+      },
+      {
+        "position": "CB",
+        "need_score": 0.5209,
+        "depth_chart_pressure": 0.054,
+        "future_need_pressure_1y": 0.95,
+        "future_need_pressure_2y": 0.605,
+        "starter_quality": 0.895
+      },
+      {
+        "position": "IOL",
+        "need_score": 0.4931,
+        "depth_chart_pressure": 0.03,
+        "future_need_pressure_1y": 0.813,
+        "future_need_pressure_2y": 0.708,
+        "starter_quality": 0.932
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "SF",
+    "top_needs": [
+      {
+        "position": "RB",
+        "need_score": 0.6083,
+        "depth_chart_pressure": 0.043,
+        "future_need_pressure_1y": 0.945,
+        "future_need_pressure_2y": 0.878,
+        "starter_quality": 0.927
+      },
+      {
+        "position": "IOL",
+        "need_score": 0.4668,
+        "depth_chart_pressure": 0.058,
+        "future_need_pressure_1y": 0.802,
+        "future_need_pressure_2y": 0.605,
+        "starter_quality": 0.891
+      },
+      {
+        "position": "S",
+        "need_score": 0.3677,
+        "depth_chart_pressure": 0.091,
+        "future_need_pressure_1y": 0.574,
+        "future_need_pressure_2y": 0.419,
+        "starter_quality": 0.817
+      }
+    ],
+    "recent_transactions": [
+      "2026-03-03 George Kittle (traded)"
+    ]
+  },
+  {
+    "team": "TB",
+    "top_needs": [
+      {
+        "position": "TE",
+        "need_score": 0.6578,
+        "depth_chart_pressure": 0.293,
+        "future_need_pressure_1y": 0.838,
+        "future_need_pressure_2y": 0.727,
+        "starter_quality": 0.369
+      },
+      {
+        "position": "LB",
+        "need_score": 0.6002,
+        "depth_chart_pressure": 0.048,
+        "future_need_pressure_1y": 0.908,
+        "future_need_pressure_2y": 0.883,
+        "starter_quality": 0.905
+      },
+      {
+        "position": "QB",
+        "need_score": 0.5741,
+        "depth_chart_pressure": 0.253,
+        "future_need_pressure_1y": 0.982,
+        "future_need_pressure_2y": 0.482,
+        "starter_quality": 0.747
+      }
+    ],
+    "recent_transactions": []
+  },
+  {
+    "team": "TEN",
+    "top_needs": [
+      {
+        "position": "IOL",
+        "need_score": 0.5453,
+        "depth_chart_pressure": 0.025,
+        "future_need_pressure_1y": 0.894,
+        "future_need_pressure_2y": 0.769,
+        "starter_quality": 0.919
+      },
+      {
+        "position": "RB",
+        "need_score": 0.5233,
+        "depth_chart_pressure": 0.166,
+        "future_need_pressure_1y": 0.881,
+        "future_need_pressure_2y": 0.501,
+        "starter_quality": 0.637
+      },
+      {
+        "position": "LB",
+        "need_score": 0.2865,
+        "depth_chart_pressure": 0.053,
+        "future_need_pressure_1y": 0.399,
+        "future_need_pressure_2y": 0.535,
+        "starter_quality": 0.894
+      }
+    ],
+    "recent_transactions": [
+      "2026-03-03 L'Jarius Sneed (traded)"
+    ]
+  },
+  {
+    "team": "WAS",
+    "top_needs": [
+      {
+        "position": "RB",
+        "need_score": 0.6455,
+        "depth_chart_pressure": 0.115,
+        "future_need_pressure_1y": 0.928,
+        "future_need_pressure_2y": 0.886,
+        "starter_quality": 0.775
+      },
+      {
+        "position": "OT",
+        "need_score": 0.6314,
+        "depth_chart_pressure": 0.078,
+        "future_need_pressure_1y": 0.91,
+        "future_need_pressure_2y": 0.909,
+        "starter_quality": 0.796
+      },
+      {
+        "position": "S",
+        "need_score": 0.6083,
+        "depth_chart_pressure": 0.133,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.678,
+        "starter_quality": 0.747
+      }
+    ],
+    "recent_transactions": []
+  }
+]

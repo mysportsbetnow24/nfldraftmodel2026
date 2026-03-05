@@ -45,6 +45,7 @@ const collectionSchema = {
   <section class="card" id="cardDetails">
     <h2 id="playerTitle" style="margin:0 0 .35rem;">Select a player</h2>
     <div id="playerMeta" class="muted" style="margin-bottom:.8rem;"></div>
+    <p style="margin:.2rem 0 .9rem;"><a id="playerLink" href="/2026-nfl-draft-big-board" style="color:var(--brand);font-weight:700;text-decoration:none;">Open full player page →</a></p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.55rem;margin-bottom:.9rem;">
       <div class="card"><strong>Model Rank</strong><div id="dRank">-</div></div>
       <div class="card"><strong>Model Grade</strong><div id="dGrade">-</div></div>
@@ -116,6 +117,8 @@ const collectionSchema = {
 
       setText("playerTitle", fmt(p.player_name));
       setText("playerMeta", `${fmt(p.school)} · ${fmt(p.position)} · ${fmt(p.round_value)}`);
+      const link = document.getElementById("playerLink");
+      if (link && p.slug) link.href = `/players/${p.slug}`;
       setText("dRank", fmt(p.consensus_rank));
       setText("dGrade", fmt(p.final_grade));
       setText("dPff", Number(p.pff_grade || 0) > 0 ? Number(p.pff_grade).toFixed(1) : "-");

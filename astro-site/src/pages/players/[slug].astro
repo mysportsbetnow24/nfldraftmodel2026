@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import board from "../../data/big_board_2026.json";
+
+export function getStaticPaths() {
+  return (board || []).map((p: any) => ({
+    params: { slug: p.slug },
+    props: { player: p }
+  }));
+}
+
+const { player } = Astro.props;
+const pageDescription = `${player.player_name} scouting report and model snapshot for the 2026 NFL Draft.`;
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  name: `${player.player_name} Scouting Report`,
+  url: `https://scoutinggrade.com/players/${player.slug}`,
+  description: pageDescription,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Scouting Grade",
+    url: "https://scoutinggrade.com"
+  }
+};
+const ras = Number(player.combine_ras_official || 0) > 0 ? Number(player.combine_ras_official).toFixed(2) : (Number(player.ras_estimate || 0) > 0 ? `${Number(player.ras_estimate).toFixed(2)} (est.)` : "-");
+---
+<BaseLayout title={`${player.player_name} | 2026 NFL Draft Scouting Report`} description={pageDescription} collectionSchema={collectionSchema}>
+  <section class="hero">
+    <h1>{player.player_name}</h1>
+    <p>{player.position} · {player.school} · 2026 NFL Draft Prospect</p>
+  </section>
+
+  <section class="card" style="margin-bottom:1rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.55rem;">
+      <div class="card"><strong>Model Rank</strong><div>{player.consensus_rank}</div></div>
+      <div class="card"><strong>Model Grade</strong><div>{player.final_grade}</div></div>
+      <div class="card"><strong>Round Range</strong><div>{player.round_value}</div></div>
+      <div class="card"><strong>PFF Grade</strong><div>{Number(player.pff_grade || 0) > 0 ? Number(player.pff_grade).toFixed(1) : "-"}</div></div>
+      <div class="card"><strong>Trait Score</strong><div>{Number(player.trait_score || 0) > 0 ? Number(player.trait_score).toFixed(2) : "-"}</div></div>
+      <div class="card"><strong>RAS Score</strong><div>{ras}</div></div>
+    </div>
+    <div style="margin-top:.7rem;display:flex;gap:.5rem;flex-wrap:wrap;">
+      <span class="badge">Top Driver: {String(player.top_rank_driver || "n/a").toUpperCase()} ({Number(player.top_rank_driver_delta) >= 0 ? "+" : ""}{player.top_rank_driver_delta})</span>
+      {player.low_evidence_flag ? <span class="badge warn">QA Watch: thinner evidence profile</span> : <span class="badge ok">QA: evidence coverage clear</span>}
+    </div>
+  </section>
+
+  <section class="card" style="display:grid;gap:.75rem;">
+    <article class="card">
+      <h2 style="margin:0 0 .35rem;">Report Summary</h2>
+      <p class="muted" style="margin:.15rem 0;">{player.scouting_report_summary || "Summary pending."}</p>
+    </article>
+    <article class="card">
+      <h2 style="margin:0 0 .35rem;">How He Wins</h2>
+      <div class="muted" style="white-space:pre-wrap;">{player.scouting_why_he_wins || "Context pending."}</div>
+    </article>
+    <article class="card">
+      <h2 style="margin:0 0 .35rem;">Primary Concerns</h2>
+      <div class="muted" style="white-space:pre-wrap;">{player.scouting_primary_concerns || "Concerns pending."}</div>
+    </article>
+    <article class="card">
+      <h2 style="margin:0 0 .35rem;">2025 Production Snapshot</h2>
+      <div class="muted" style="white-space:pre-wrap;">{player.scouting_production_snapshot || "Production snapshot pending."}</div>
+    </article>
+    <article class="card">
+      <h2 style="margin:0 0 .35rem;">Role / Scheme Projection</h2>
+      <div class="muted" style="white-space:pre-wrap;">{player.scouting_role_projection || "Projection pending."}</div>
+    </article>
+  </section>
+
+  <section class="card" style="margin-top:1rem;">
+    <a href="/2026-nfl-draft-big-board" style="color:var(--brand);font-weight:700;text-decoration:none;">← Back to Big Board</a>
+  </section>
+
+  <style>
+    .badge.warn {
+      color: #7a4a06;
+      border-color: #ead1a2;
+      background: #fff8e8;
+    }
+    .badge.ok {
+      color: #0f5d2e;
+      border-color: #a9d8b8;
+      background: #edf9f0;
+    }
+  </style>
+</BaseLayout>
+

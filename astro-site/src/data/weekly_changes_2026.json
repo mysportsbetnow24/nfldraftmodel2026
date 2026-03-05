@@ -1,0 +1,126 @@
+{
+  "delta_source": "delta_audit_2026_latest.csv",
+  "risers": [
+    {
+      "player_name": "Julian Neal",
+      "position": "CB",
+      "school": "Arkansas Razorbacks",
+      "rank_delta_prev_minus_curr": 8,
+      "top_driver": "production (up 0.96)"
+    },
+    {
+      "player_name": "D'Angelo Ponds",
+      "position": "CB",
+      "school": "Indiana Hoosiers",
+      "rank_delta_prev_minus_curr": 5,
+      "top_driver": "production (up 0.67)"
+    },
+    {
+      "player_name": "Emmett Johnson",
+      "position": "RB",
+      "school": "Nebraska Cornhuskers",
+      "rank_delta_prev_minus_curr": 5,
+      "top_driver": "production (down 0.41)"
+    },
+    {
+      "player_name": "Brenen Thompson",
+      "position": "WR",
+      "school": "Mississippi State Bulldogs",
+      "rank_delta_prev_minus_curr": 5,
+      "top_driver": "production (up 1.38)"
+    },
+    {
+      "player_name": "Eli Heidenreich",
+      "position": "RB",
+      "school": "Navy Midshipmen",
+      "rank_delta_prev_minus_curr": 4,
+      "top_driver": "production (up 0.02)"
+    },
+    {
+      "player_name": "Skyler Bell",
+      "position": "WR",
+      "school": "Connecticut Huskies",
+      "rank_delta_prev_minus_curr": 3,
+      "top_driver": "production (up 0.56)"
+    },
+    {
+      "player_name": "Treydan Stukes",
+      "position": "CB",
+      "school": "Arizona Wildcats",
+      "rank_delta_prev_minus_curr": 3,
+      "top_driver": "production (up 0.34)"
+    },
+    {
+      "player_name": "Noah Whittington",
+      "position": "RB",
+      "school": "Oregon Ducks",
+      "rank_delta_prev_minus_curr": 3,
+      "top_driver": "production (up 0.32)"
+    }
+  ],
+  "fallers": [
+    {
+      "player_name": "Antonio Williams",
+      "position": "WR",
+      "school": "Clemson Tigers",
+      "rank_delta_prev_minus_curr": -8,
+      "top_driver": "production (down 2.16)"
+    },
+    {
+      "player_name": "Justin Joly",
+      "position": "TE",
+      "school": "North Carolina State Wolfpack",
+      "rank_delta_prev_minus_curr": -8,
+      "top_driver": "production (down 1.21)"
+    },
+    {
+      "player_name": "Germie Bernard",
+      "position": "WR",
+      "school": "Alabama Crimson Tide",
+      "rank_delta_prev_minus_curr": -6,
+      "top_driver": "production (down 0.97)"
+    },
+    {
+      "player_name": "Desmond Reid",
+      "position": "RB",
+      "school": "Pittsburgh Panthers",
+      "rank_delta_prev_minus_curr": -6,
+      "top_driver": "production (down 2.80)"
+    },
+    {
+      "player_name": "Aaron Anderson",
+      "position": "WR",
+      "school": "LSU Tigers",
+      "rank_delta_prev_minus_curr": -5,
+      "top_driver": "production (down 1.41)"
+    },
+    {
+      "player_name": "Malachi Fields",
+      "position": "WR",
+      "school": "Notre Dame Fighting Irish",
+      "rank_delta_prev_minus_curr": -4,
+      "top_driver": "production (down 0.53)"
+    },
+    {
+      "player_name": "Garrett Nussmeier",
+      "position": "QB",
+      "school": "LSU Tigers",
+      "rank_delta_prev_minus_curr": -4,
+      "top_driver": "production (down 0.98)"
+    },
+    {
+      "player_name": "Riley Nowakowski",
+      "position": "TE",
+      "school": "Indiana Hoosiers",
+      "rank_delta_prev_minus_curr": -4,
+      "top_driver": "production (down 1.63)"
+    }
+  ],
+  "summary": {
+    "movers_total": 114,
+    "risers_total": 60,
+    "fallers_total": 54,
+    "qa_watch_total": 122,
+    "qa_clear_total": 142
+  }
+}

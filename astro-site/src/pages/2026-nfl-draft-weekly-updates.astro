@@ -1,10 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import meta from "../data/build_meta.json";
+import weekly from "../data/weekly_changes_2026.json";
 
 const pageDescription = "Weekly Scouting Grade updates for the 2026 NFL Draft board and mock drafts, including refresh timestamps and model coverage stats.";
 const generatedAt = (meta as any)?.generated_at || "";
 const rows = (meta as any)?.rows || {};
+const summary = (weekly as any)?.summary || {};
+const risers = (weekly as any)?.risers || [];
+const fallers = (weekly as any)?.fallers || [];
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -41,18 +45,49 @@ const collectionSchema = {
         This is the public change-log surface for model refreshes. Use it to quickly verify when the latest board and mocks were published.
       </p>
     </article>
-    <article class="card">
-      <h3 style="margin:0 0 .4rem;">Current Focus</h3>
-      <p class="muted" style="margin:.2rem 0;">
-        Ongoing tuning emphasizes evidence-backed ranking stability, position-value realism in mocks, and stronger handling of sparse profiles.
-      </p>
-    </article>
-    <article class="card">
-      <h3 style="margin:0 0 .4rem;">Next Planned Refresh</h3>
-      <p class="muted" style="margin:.2rem 0;">
-        Next update window targets new declarations/transactions and model tuning deltas after the latest public board audit cycle.
-      </p>
-    </article>
+  </section>
+
+  <section class="card" style="margin-top:1rem;">
+    <h2 style="margin:0 0 .55rem;">What Changed This Week</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.55rem;margin-bottom:.7rem;">
+      <div class="card"><strong>Total Movers</strong><div class="muted">{summary.movers_total ?? 0}</div></div>
+      <div class="card"><strong>Risers</strong><div class="muted">{summary.risers_total ?? 0}</div></div>
+      <div class="card"><strong>Fallers</strong><div class="muted">{summary.fallers_total ?? 0}</div></div>
+      <div class="card"><strong>QA Watch Profiles</strong><div class="muted">{summary.qa_watch_total ?? 0}</div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.7rem;">
+      <article class="card">
+        <h3 style="margin:0 0 .5rem;">Top Risers</h3>
+        {risers.length === 0 ? (
+          <p class="muted" style="margin:.2rem 0;">No rank movers logged in this cycle.</p>
+        ) : (
+          <ul style="margin:.2rem 0;padding-left:1rem;">
+            {risers.map((r: any) => (
+              <li style="margin:.2rem 0;">
+                <strong>{r.player_name}</strong> ({r.position}) · +{r.rank_delta_prev_minus_curr}
+                <span class="muted"> · {r.top_driver || "driver update"}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </article>
+
+      <article class="card">
+        <h3 style="margin:0 0 .5rem;">Top Fallers</h3>
+        {fallers.length === 0 ? (
+          <p class="muted" style="margin:.2rem 0;">No downward movers logged in this cycle.</p>
+        ) : (
+          <ul style="margin:.2rem 0;padding-left:1rem;">
+            {fallers.map((r: any) => (
+              <li style="margin:.2rem 0;">
+                <strong>{r.player_name}</strong> ({r.position}) · {r.rank_delta_prev_minus_curr}
+                <span class="muted"> · {r.top_driver || "driver update"}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </article>
+    </div>
   </section>
 </BaseLayout>
-
