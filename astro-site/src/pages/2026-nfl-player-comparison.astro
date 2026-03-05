@@ -46,7 +46,7 @@ const collectionSchema = {
         { key: "cfb_qb_epa_per_play", label: "EPA / Play", fmt: "dec2" },
         { key: "cfb_qb_pressure_signal", label: "Pressure-to-Sack%", fmt: "dec2" },
         { key: "cfb_qb_pass_td", label: "Pass TD", fmt: "int" },
-        { key: "cfb_qb_pass_int", label: "INT", fmt: "int" }
+        { key: "cfb_qb_int_rate", label: "INT Rate", fmt: "pct", lowerBetter: true }
       ],
       WR: [
         { key: "cfb_wrte_yprr", label: "Yards / Route Run", fmt: "dec2" },
@@ -244,10 +244,11 @@ const collectionSchema = {
 
     const compLine = (title, comp, fallback) => {
       if (!comp || !comp.name) return `<div class="muted">${title}: ${fallback || "-"}</div>`;
-      const sim = Number(comp.similarity);
-      const simText = Number.isFinite(sim) ? `${(sim * 100).toFixed(0)}%` : "-";
+      const simRaw = Number(comp.similarity);
+      const sim = Number.isFinite(simRaw) ? (simRaw <= 1 ? simRaw * 100 : simRaw) : null;
+      const simText = sim !== null ? `${sim.toFixed(1)}%` : "-";
       const yearText = comp.year ? ` (${comp.year})` : "";
-      return `<div class="comp-row"><span>${title}:</span> <strong>${comp.name}${yearText}</strong> <span class="muted">· ${simText} match</span></div>`;
+      return `<div class="comp-row"><span>${title}:</span> <strong>${comp.name}${yearText}</strong> <span class="muted">· ${simText} athletic-profile similarity</span></div>`;
     };
 
     const roleTags = (p) => {

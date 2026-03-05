@@ -25,6 +25,7 @@ TEAM_ATHLETIC_THRESHOLDS_PATH = ROOT / "data" / "outputs" / "team_athletic_thres
 TEAM_ATHLETIC_THRESHOLDS_BY_POS_PATH = ROOT / "data" / "outputs" / "team_athletic_thresholds_2026_by_position.csv"
 NFLVERSE_PLAYERS_PATH = ROOT / "data" / "sources" / "external" / "nflverse" / "players.parquet"
 TEAM_NEEDS_CONTEXT_PATH = ROOT / "data" / "sources" / "team_needs_context_2026.csv"
+TEAM_NEEDS_TXN_ADJUSTMENTS_PATH = ROOT / "data" / "sources" / "team_needs_transaction_adjustments_2026.csv"
 
 POSITION_ATHLETIC_BUCKET = {
     "QB": "premium",
@@ -820,6 +821,16 @@ def load_team_position_demand_plan(
             )
             out[(team, pos)] = node
 
+    txn_adjustments: Dict[Tuple[str, str], dict] = {}
+    if TEAM_NEEDS_TXN_ADJUSTMENTS_PATH.exists():
+        with TEAM_NEEDS_TXN_ADJUSTMENTS_PATH.open() as f:
+            for row in csv.DictReader(f):
+                team = str(row.get("team", "")).strip().upper()
+                pos = str(row.get("position", "")).strip().upper()
+                if not team or pos not in MODEL_POSITIONS:
+                    continue
+                txn_adjustments[(team, pos)] = row
+
     if not context_path.exists():
         return out
 
@@ -830,7 +841,32 @@ def load_team_position_demand_plan(
             team_row = team_map.get(team)
             if not team_row or pos not in MODEL_POSITIONS:
                 continue
-            out[(team, pos)] = _demand_target_for_row(team_row, pos, row)
+            adjusted = dict(row)
+            txn = txn_adjustments.get((team, pos))
+            if txn:
+                depth = _to_float(adjusted.get("depth_chart_pressure")) or 0.5
+                f1 = _to_float(adjusted.get("future_need_pressure_1y")) or 0.5
+                f2 = _to_float(adjusted.get("future_need_pressure_2y")) or 0.5
+                starter = _to_float(adjusted.get("starter_quality")) or 0.5
+                roster = _to_float(adjusted.get("roster_player_count"))
+                if roster is None:
+                    roster = POSITION_ROSTER_BASELINE.get(pos, 5.0)
+
+                depth += (_to_float(txn.get("depth_delta")) or 0.0)
+                f1 += (_to_float(txn.get("future_need_1y_delta")) or 0.0)
+                f2 += (_to_float(txn.get("future_need_2y_delta")) or 0.0)
+                starter += (_to_float(txn.get("starter_quality_delta")) or 0.0)
+                roster += (_to_float(txn.get("roster_count_delta")) or 0.0)
+
+                adjusted["depth_chart_pressure"] = max(0.0, min(1.0, depth))
+                adjusted["future_need_pressure_1y"] = max(0.0, min(1.0, f1))
+                adjusted["future_need_pressure_2y"] = max(0.0, min(1.0, f2))
+                adjusted["starter_quality"] = max(0.0, min(1.0, starter))
+                adjusted["roster_player_count"] = max(1.0, roster)
+                adjusted["transaction_count"] = txn.get("transaction_count", "0")
+                adjusted["transaction_event_summary"] = txn.get("event_summary", "")
+
+            out[(team, pos)] = _demand_target_for_row(team_row, pos, adjusted)
     return out
 
 

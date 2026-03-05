@@ -23,6 +23,7 @@ INSIDER_TRANSACTIONS_CSV = ROOT / "data" / "sources" / "manual" / "insider_trans
 ESPN_PROSPECTS_CSV = ROOT / "data" / "sources" / "external" / "espn_nfl_draft_prospect_data" / "nfl_draft_prospects.csv"
 DELTA_AUDIT_LATEST_CSV = OUTPUTS / "delta_audit_2026_latest.csv"
 STABILITY_SNAPSHOTS_DIR = OUTPUTS / "stability_snapshots"
+CURRENT_DRAFT_YEAR = 2026
 
 
 PRODUCTION_METRIC_KEYS = [
@@ -30,6 +31,7 @@ PRODUCTION_METRIC_KEYS = [
     "cfb_qb_pressure_signal",
     "cfb_qb_pass_td",
     "cfb_qb_pass_int",
+    "cfb_qb_int_rate",
     "cfb_wrte_yprr",
     "cfb_wrte_target_share",
     "cfb_wrte_rec_td",
@@ -481,6 +483,16 @@ def _top_driver(summary: str) -> tuple[str, float]:
     return key, keep[key]
 
 
+def _slugify_player(name: str) -> str:
+    return (
+        (name or "")
+        .lower()
+        .replace(" ", "-")
+        .replace(".", "")
+        .replace("'", "")
+    )
+
+
 def _needs_score(row: dict) -> float:
     depth = _safe_float(row.get("depth_chart_pressure")) or 0.0
     fa = _safe_float(row.get("free_agent_pressure")) or 0.0
@@ -527,13 +539,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         if not school:
             school = _canonical_school_name(row.get("school", ""))
 
-        slug = (
-            (player_name or "")
-            .lower()
-            .replace(" ", "-")
-            .replace(".", "")
-            .replace("'", "")
-        )
+        slug = _slugify_player(player_name)
         rank_driver_summary = row.get("rank_driver_summary", "")
         top_driver_key, top_driver_delta = _top_driver(rank_driver_summary)
         pff_grade = round(_safe_float(row.get("pff_grade")) or 0.0, 2)
@@ -567,11 +573,19 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         raw_best_role = row.get("best_role", "")
 
         comp_items: list[dict] = []
+        seen_comp_names: set[str] = set()
         for idx in (1, 2, 3):
             name = str(row.get(f"historical_combine_comp_{idx}", "")).strip()
             sim = _safe_float(row.get(f"historical_combine_comp_{idx}_similarity"))
             year = _safe_int(row.get(f"historical_combine_comp_{idx}_year"), 0)
-            if name and _norm_player_key(name) != _norm_player_key(player_name):
+            name_key = _norm_player_key(name)
+            if (
+                name
+                and name_key != _norm_player_key(player_name)
+                and (year <= 0 or year < CURRENT_DRAFT_YEAR)
+                and name_key not in seen_comp_names
+            ):
+                seen_comp_names.add(name_key)
                 comp_items.append(
                     {
                         "name": name,
@@ -631,17 +645,31 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
 
 
 def export_mock(path: Path) -> list[dict]:
-    return export_mock_with_school_map(path, {})
+    return export_mock_with_school_map(path, {}, {})
 
 
-def export_mock_with_school_map(path: Path, player_school_map: dict[str, str]) -> list[dict]:
+def export_mock_with_school_map(
+    path: Path,
+    player_school_map: dict[str, str],
+    player_url_map: dict[str, str] | None = None,
+) -> list[dict]:
     rows = _read_csv(path)
     out = []
+    player_url_map = player_url_map or {}
     for row in rows:
         player_name = row.get("player_name", "")
+        name_key = _norm_player_key(player_name)
         school = player_school_map.get(_norm_player_key(player_name), "")
         if not school:
             school = _canonical_school_name(row.get("school", ""))
+        player_uid = row.get("player_uid", "")
+        player_report_url = ""
+        if player_uid and str(player_uid).strip() in player_url_map:
+            player_report_url = player_url_map[str(player_uid).strip()]
+        elif name_key in player_url_map:
+            player_report_url = player_url_map[name_key]
+        else:
+            player_report_url = f"/players/{_slugify_player(player_name)}"
 
         out.append(
             {
@@ -649,8 +677,9 @@ def export_mock_with_school_map(path: Path, player_school_map: dict[str, str]) -
                 "pick": _safe_int(row.get("pick"), 0),
                 "overall_pick": _safe_int(row.get("overall_pick"), 0),
                 "team": row.get("team", ""),
-                "player_uid": row.get("player_uid", ""),
+                "player_uid": player_uid,
                 "player_name": player_name,
+                "player_report_url": player_report_url,
                 "position": row.get("position", ""),
                 "school": school,
                 "final_grade": round(_safe_float(row.get("final_grade")) or 0.0, 2),
@@ -757,8 +786,17 @@ def export_weekly_changes(board_rows: list[dict]) -> dict:
 def main() -> None:
     player_school_map = _load_player_school_map()
     board = export_board(player_school_map)
-    round1 = export_mock_with_school_map(ROUND1_CSV, player_school_map)
-    round7 = export_mock_with_school_map(ROUND7_CSV, player_school_map)
+    player_url_map = {}
+    for row in board:
+        uid = str(row.get("player_uid", "")).strip()
+        url = str(row.get("player_report_url", "")).strip()
+        if uid and url:
+            player_url_map[uid] = url
+        name_key = _norm_player_key(row.get("player_name", ""))
+        if name_key and url:
+            player_url_map[name_key] = url
+    round1 = export_mock_with_school_map(ROUND1_CSV, player_school_map, player_url_map)
+    round7 = export_mock_with_school_map(ROUND7_CSV, player_school_map, player_url_map)
     by_team = export_round7_team_groups(round7)
     team_needs = export_team_needs()
     weekly_changes = export_weekly_changes(board)

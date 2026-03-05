@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import datetime as dt
 import html
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,6 +20,7 @@ BIG_BOARD_SLUG = "2026-nfl-draft-big-board.html"
 ROUND1_SLUG = "2026-nfl-mock-draft-round-1.html"
 ROUND7_SLUG = "2026-nfl-7-round-mock-draft.html"
 LEGACY_ROUND7 = "data_mock_7round.html"
+COMPARE_SLUG = "2026-nfl-player-comparison.html"
 
 
 def _read_csv(path: Path) -> list[dict[str, str]]:
@@ -44,13 +46,17 @@ def _esc(value: str | None) -> str:
     return html.escape(str(value or ""))
 
 
-def _build_big_board_rows(rows: list[dict[str, str]]) -> str:
+def _ordered_board_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     def key(row: dict[str, str]) -> tuple[float, float, str]:
         rank_sort = _to_float(row.get("rank_sort_score"), 0.0)
         grade = _to_float(row.get("final_grade"), 0.0)
         return (rank_sort, grade, row.get("player_name", ""))
 
-    ordered = sorted(rows, key=key, reverse=True)
+    return sorted(rows, key=key, reverse=True)
+
+
+def _build_big_board_rows(rows: list[dict[str, str]]) -> str:
+    ordered = _ordered_board_rows(rows)
 
     out = []
     for idx, row in enumerate(ordered, start=1):
@@ -382,6 +388,389 @@ def _round7_page(rows_html: str, total: int, built_at: str) -> str:
 """
 
 
+def _clean_snippet(value: str | None, limit: int = 210) -> str:
+    if not value:
+        return ""
+    txt = str(value).replace("\r", "\n")
+    first = ""
+    for line in txt.splitlines():
+        line = line.strip().lstrip("-").strip()
+        if line:
+            first = line
+            break
+    if not first:
+        first = " ".join(txt.split())
+    first = " ".join(first.split())
+    if len(first) > limit:
+        first = first[: limit - 1].rstrip() + "..."
+    return first
+
+
+def _comparison_dataset(rows: list[dict[str, str]]) -> list[dict[str, object]]:
+    data: list[dict[str, object]] = []
+    for idx, row in enumerate(_ordered_board_rows(rows), start=1):
+        metric_trait = _to_float(row.get("trait_score"), 0.0)
+        metric_prod = _to_float(row.get("production_score"), 0.0)
+        metric_ath = _to_float(row.get("athletic_profile_score"), 0.0) or _to_float(row.get("athletic_score"), 0.0)
+        metric_size = _to_float(row.get("size_score"), 0.0)
+        metric_ctx = _to_float(row.get("context_score"), 0.0)
+        metric_conf = _to_float(row.get("confidence_score"), 0.0)
+        data.append(
+            {
+                "slug": str(row.get("player_uid", "")).strip(),
+                "name": str(row.get("player_name", "")).strip(),
+                "school": str(row.get("school", "")).strip(),
+                "position": str(row.get("position", "")).strip().upper(),
+                "model_rank": idx,
+                "consensus_rank": _to_int(row.get("consensus_rank"), 0),
+                "consensus_mean": _to_float(row.get("consensus_board_mean_rank"), 0.0),
+                "grade": round(_to_float(row.get("final_grade"), 0.0), 2),
+                "round_value": str(row.get("round_value", "")).strip(),
+                "best_role": str(row.get("best_role", "")).strip(),
+                "best_scheme_fit": str(row.get("best_scheme_fit", "")).strip().replace("_", " "),
+                "why_wins": _clean_snippet(row.get("scouting_why_he_wins")),
+                "primary_concern": _clean_snippet(row.get("scouting_primary_concerns")),
+                "metrics": {
+                    "Trait": round(metric_trait, 2),
+                    "Production": round(metric_prod, 2),
+                    "Athletic": round(metric_ath, 2),
+                    "Size": round(metric_size, 2),
+                    "Context": round(metric_ctx, 2),
+                    "Confidence": round(metric_conf, 2),
+                },
+            }
+        )
+    return data
+
+
+def _comparison_page(rows: list[dict[str, str]], built_at: str) -> str:
+    dataset = _comparison_dataset(rows)[:300]
+    dataset_json = json.dumps(dataset, separators=(",", ":"))
+    return f"""<!doctype html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"utf-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+  <title>2026 NFL Draft Player Comparison Tool | Scouting Grade</title>
+  <meta name=\"description\" content=\"Compare 2026 NFL Draft prospects side-by-side with model grade, consensus rank, radar visuals, and trait-level metrics.\" />
+  <link rel=\"canonical\" href=\"https://www.scoutinggrade.com/{COMPARE_SLUG}\" />
+  <style>{_shell_styles()}
+    .compare-shell {{
+      display: grid;
+      gap: 0.75rem;
+    }}
+    .compare-controls {{
+      display: grid;
+      grid-template-columns: repeat(4, minmax(180px, 1fr));
+      gap: 0.55rem;
+      align-items: end;
+    }}
+    .compare-controls select, .compare-controls input {{
+      width: 100%;
+      border: 1px solid #c7d1df;
+      border-radius: 11px;
+      padding: 0.55rem 0.66rem;
+      font-size: 0.92rem;
+      background: #fbfdff;
+    }}
+    .compare-grid {{
+      display: grid;
+      gap: 0.65rem;
+      grid-template-columns: repeat(4, minmax(220px, 1fr));
+    }}
+    .p-card {{
+      border: 1px solid #d5dde8;
+      border-radius: 16px;
+      padding: 0.72rem;
+      background: #fff;
+      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }}
+    .p-top h2 {{
+      margin: 0;
+      font-size: 1.34rem;
+      letter-spacing: -0.015em;
+      line-height: 1.12;
+    }}
+    .p-sub {{
+      margin: 0.2rem 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }}
+    .badge {{
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #cbd5e2;
+      border-radius: 999px;
+      padding: 0.18rem 0.54rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      width: fit-content;
+      background: #f8fafb;
+    }}
+    .grade {{
+      font-size: 3rem;
+      line-height: 1;
+      font-weight: 800;
+      color: #178b4a;
+      letter-spacing: -0.03em;
+      margin: 0.15rem 0 0;
+    }}
+    .rankline {{
+      margin: 0;
+      color: #3a4658;
+      font-size: 0.83rem;
+    }}
+    .radar-wrap {{
+      border: 1px solid #e1e6ef;
+      border-radius: 12px;
+      padding: 0.38rem;
+      background: #fcfdff;
+    }}
+    .bars {{
+      margin-top: 0.08rem;
+      display: grid;
+      gap: 0.26rem;
+    }}
+    .bar-row {{
+      display: grid;
+      grid-template-columns: 82px 1fr 44px;
+      gap: 0.38rem;
+      align-items: center;
+      font-size: 0.78rem;
+      color: #3a4658;
+    }}
+    .bar-track {{
+      height: 8px;
+      border-radius: 999px;
+      background: #e8edf4;
+      overflow: hidden;
+    }}
+    .bar-fill {{
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #1ea35a, #168f4b);
+    }}
+    .why, .concern {{
+      margin: 0;
+      font-size: 0.79rem;
+      line-height: 1.38;
+      color: #2d3947;
+    }}
+    .section-label {{
+      margin: 0.06rem 0 0;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #536178;
+      font-weight: 700;
+    }}
+    @media (max-width: 1220px) {{
+      .compare-grid {{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }}
+      .compare-controls {{ grid-template-columns: repeat(2, minmax(180px, 1fr)); }}
+    }}
+    @media (max-width: 760px) {{
+      .compare-grid {{ grid-template-columns: 1fr; }}
+      .compare-controls {{ grid-template-columns: 1fr; }}
+      .p-card {{ min-height: 0; }}
+      .grade {{ font-size: 2.35rem; }}
+      .bar-row {{ grid-template-columns: 78px 1fr 40px; }}
+    }}
+  </style>
+</head>
+<body>
+  <main class=\"card\">
+    <h1>2026 NFL Draft Player Comparison Tool</h1>
+    <p>Compare up to four prospects side by side using model grade, consensus context, radar profile, and trait-level component scores.</p>
+    <p class=\"hint\">Profiles loaded: {len(dataset)} | Last update: {built_at}</p>
+    <div class=\"controls\">
+      <a class=\"btn\" href=\"index.html\">Back To Hub</a>
+      <input id=\"cmpSearch\" placeholder=\"Filter player list by name, school, or position...\" />
+    </div>
+    <section class=\"compare-shell\">
+      <div class=\"compare-controls\">
+        <select id=\"p1\"></select>
+        <select id=\"p2\"></select>
+        <select id=\"p3\"></select>
+        <select id=\"p4\"></select>
+      </div>
+      <div class=\"compare-grid\">
+        <article class=\"p-card\" id=\"card1\"></article>
+        <article class=\"p-card\" id=\"card2\"></article>
+        <article class=\"p-card\" id=\"card3\"></article>
+        <article class=\"p-card\" id=\"card4\"></article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (() => {{
+      const DATA = {dataset_json};
+      const METRIC_KEYS = ['Trait','Production','Athletic','Size','Context','Confidence'];
+      const DEFAULT_SLUGS = DATA.slice(0,4).map((p) => p.slug);
+      const bySlug = new Map(DATA.map((p) => [p.slug, p]));
+
+      function makeOption(player) {{
+        const o = document.createElement('option');
+        o.value = player.slug;
+        o.textContent = '#' + player.model_rank + ' ' + player.name + ' | ' + player.position + ' | ' + player.school;
+        return o;
+      }}
+
+      function setSelectOptions(select, query, keepSlug) {{
+        const q = (query || '').trim().toLowerCase();
+        const filtered = !q
+          ? DATA
+          : DATA.filter((p) => (p.name + ' ' + p.school + ' ' + p.position).toLowerCase().includes(q));
+        select.innerHTML = '';
+        filtered.forEach((p) => select.appendChild(makeOption(p)));
+        if (keepSlug && filtered.some((p) => p.slug === keepSlug)) {{
+          select.value = keepSlug;
+        }} else if (!select.value && filtered.length) {{
+          select.value = filtered[0].slug;
+        }}
+      }}
+
+      function radarCanvas(player, idx) {{
+        const canvas = document.createElement('canvas');
+        canvas.width = 300;
+        canvas.height = 220;
+        canvas.id = 'radar' + idx;
+        requestAnimationFrame(() => drawRadar(canvas, player));
+        return canvas;
+      }}
+
+      function drawRadar(canvas, player) {{
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+        const cx = 150;
+        const cy = 106;
+        const radius = 76;
+        const vals = METRIC_KEYS.map((k) => Math.max(0, Math.min(100, Number(player.metrics[k] || 0))));
+        const rings = 5;
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.strokeStyle = '#d7dfea';
+        ctx.lineWidth = 1;
+        for (let i = 1; i <= rings; i += 1) {{
+          const r = (radius / rings) * i;
+          ctx.beginPath();
+          for (let j = 0; j < METRIC_KEYS.length; j += 1) {{
+            const a = (Math.PI * 2 * j / METRIC_KEYS.length) - Math.PI / 2;
+            const x = cx + (Math.cos(a) * r);
+            const y = cy + (Math.sin(a) * r);
+            if (j === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }}
+          ctx.closePath();
+          ctx.stroke();
+        }}
+        for (let j = 0; j < METRIC_KEYS.length; j += 1) {{
+          const a = (Math.PI * 2 * j / METRIC_KEYS.length) - Math.PI / 2;
+          const x = cx + (Math.cos(a) * radius);
+          const y = cy + (Math.sin(a) * radius);
+          ctx.beginPath();
+          ctx.moveTo(cx, cy);
+          ctx.lineTo(x, y);
+          ctx.strokeStyle = '#e2e8f2';
+          ctx.stroke();
+          ctx.fillStyle = '#5b6678';
+          ctx.font = '11px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
+          ctx.textAlign = x < cx - 8 ? 'right' : (x > cx + 8 ? 'left' : 'center');
+          ctx.fillText(METRIC_KEYS[j].slice(0, 3).toUpperCase(), cx + (Math.cos(a) * (radius + 16)), cy + (Math.sin(a) * (radius + 16)));
+        }}
+        ctx.beginPath();
+        vals.forEach((v, j) => {{
+          const a = (Math.PI * 2 * j / METRIC_KEYS.length) - Math.PI / 2;
+          const r = radius * (v / 100);
+          const x = cx + (Math.cos(a) * r);
+          const y = cy + (Math.sin(a) * r);
+          if (j === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }});
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(13,79,107,0.18)';
+        ctx.strokeStyle = '#0d4f6b';
+        ctx.lineWidth = 2;
+        ctx.fill();
+        ctx.stroke();
+      }}
+
+      function renderCard(slot, player, idx) {{
+        if (!player) {{
+          slot.innerHTML = '<p class=\"hint\">Select a player.</p>';
+          return;
+        }}
+        const bars = METRIC_KEYS.map((k) => {{
+          const v = Math.max(0, Math.min(100, Number(player.metrics[k] || 0)));
+          return `<div class=\"bar-row\"><span>${{k}}</span><div class=\"bar-track\"><div class=\"bar-fill\" style=\"width:${{v}}%\"></div></div><strong>${{v.toFixed(0)}}</strong></div>`;
+        }}).join('');
+        slot.innerHTML = `
+          <div class=\"p-top\">
+            <h2>${{player.name}}</h2>
+            <p class=\"p-sub\">${{player.school}}</p>
+            <span class=\"badge\">${{player.position}}</span>
+            <p class=\"grade\">${{Number(player.grade).toFixed(1)}}</p>
+            <p class=\"rankline\">Model #${{player.model_rank}} | Consensus #${{player.consensus_rank || '-'}} | Mean ${{
+              player.consensus_mean ? Number(player.consensus_mean).toFixed(1) : '-'
+            }}</p>
+            <p class=\"rankline\">${{player.round_value}} | Role: ${{player.best_role || 'Projection pending'}}</p>
+            <p class=\"rankline\">Scheme fit: ${{player.best_scheme_fit || 'Flexible'}}</p>
+          </div>
+          <div class=\"radar-wrap\" id=\"radarWrap${{idx}}\"></div>
+          <div class=\"bars\">${{bars}}</div>
+          <p class=\"section-label\">How He Wins</p>
+          <p class=\"why\">${{player.why_wins || 'Film-based translatable strengths are still being updated.'}}</p>
+          <p class=\"section-label\">Primary Concern</p>
+          <p class=\"concern\">${{player.primary_concern || 'No major concern flagged in current snapshot.'}}</p>
+        `;
+        const wrap = slot.querySelector('#radarWrap' + idx);
+        if (wrap) wrap.appendChild(radarCanvas(player, idx));
+      }}
+
+      const selects = [1,2,3,4].map((n) => document.getElementById('p' + n));
+      const cards = [1,2,3,4].map((n) => document.getElementById('card' + n));
+      const search = document.getElementById('cmpSearch');
+      if (!selects.every(Boolean) || !cards.every(Boolean) || !search) return;
+
+      function syncSelects(query) {{
+        selects.forEach((s) => setSelectOptions(s, query, s.value));
+      }}
+
+      function updateCards() {{
+        selects.forEach((s, i) => {{
+          renderCard(cards[i], bySlug.get(s.value), i + 1);
+        }});
+      }}
+
+      const params = new URLSearchParams(window.location.search);
+      const initial = [
+        params.get('p1') || DEFAULT_SLUGS[0] || '',
+        params.get('p2') || DEFAULT_SLUGS[1] || '',
+        params.get('p3') || DEFAULT_SLUGS[2] || '',
+        params.get('p4') || DEFAULT_SLUGS[3] || '',
+      ];
+
+      syncSelects('');
+      selects.forEach((s, i) => {{
+        if (initial[i] && bySlug.has(initial[i])) s.value = initial[i];
+        s.addEventListener('change', updateCards);
+      }});
+      search.addEventListener('input', () => {{
+        const held = selects.map((s) => s.value);
+        syncSelects(search.value);
+        selects.forEach((s, i) => {{
+          if (held[i] && Array.from(s.options).some((o) => o.value === held[i])) s.value = held[i];
+        }});
+        updateCards();
+      }});
+      updateCards();
+    }})();
+  </script>
+</body>
+</html>
+"""
+
+
 def _legacy_redirect() -> str:
     return f"""<!doctype html>
 <html lang=\"en\">
@@ -411,6 +800,7 @@ def render() -> None:
     big_board_html = _big_board_page(_build_big_board_rows(board_rows), len(board_rows), built_at)
     round1_html = _round1_page(_build_round1_rows(round1_rows), len(round1_rows), built_at)
     round7_html = _round7_page(_build_round7_rows(round7_rows), len(round7_rows), built_at)
+    compare_html = _comparison_page(board_rows, built_at)
     redirect_html = _legacy_redirect()
 
     for dest in TARGET_DIRS:
@@ -418,6 +808,7 @@ def render() -> None:
         (dest / BIG_BOARD_SLUG).write_text(big_board_html, encoding="utf-8")
         (dest / ROUND1_SLUG).write_text(round1_html, encoding="utf-8")
         (dest / ROUND7_SLUG).write_text(round7_html, encoding="utf-8")
+        (dest / COMPARE_SLUG).write_text(compare_html, encoding="utf-8")
         (dest / LEGACY_ROUND7).write_text(redirect_html, encoding="utf-8")
 
     print("Rendered public data pages:")
@@ -425,6 +816,7 @@ def render() -> None:
         print(f"- {dest / BIG_BOARD_SLUG}")
         print(f"- {dest / ROUND1_SLUG}")
         print(f"- {dest / ROUND7_SLUG}")
+        print(f"- {dest / COMPARE_SLUG}")
         print(f"- {dest / LEGACY_ROUND7} (redirect)")
 
 

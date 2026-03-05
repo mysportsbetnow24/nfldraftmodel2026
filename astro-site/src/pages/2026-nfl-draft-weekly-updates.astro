@@ -28,9 +28,9 @@ const collectionSchema = {
     <p>Tracking each public refresh of the big board, mock drafts, and coverage depth.</p>
   </section>
 
-  <section class="card" style="margin-bottom:1rem;">
-    <h2 style="margin:0 0 .55rem;">Latest Public Refresh</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.55rem;">
+  <section class="card updates-section">
+    <h2 class="section-title">Latest Public Refresh</h2>
+    <div class="mini-grid">
       <div class="card"><strong>Generated (UTC)</strong><div class="muted">{generatedAt || "Pending"}</div></div>
       <div class="card"><strong>Board Rows</strong><div class="muted">{rows.board ?? "-"}</div></div>
       <div class="card"><strong>Round 1 Picks</strong><div class="muted">{rows.round1 ?? "-"}</div></div>
@@ -38,33 +38,32 @@ const collectionSchema = {
     </div>
   </section>
 
-  <section class="card" style="display:grid;gap:.8rem;">
+  <section class="card single-note">
     <article class="card">
-      <h3 style="margin:0 0 .4rem;">What This Page Is For</h3>
-      <p class="muted" style="margin:.2rem 0;">
+      <h3 class="subhead">What This Page Is For</h3>
+      <p class="muted note-text">
         This is the public change-log surface for model refreshes. Use it to quickly verify when the latest board and mocks were published.
       </p>
     </article>
   </section>
 
-  <section class="card" style="margin-top:1rem;">
-    <h2 style="margin:0 0 .55rem;">What Changed This Week</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.55rem;margin-bottom:.7rem;">
+  <section class="card updates-section">
+    <h2 class="section-title">What Changed This Week</h2>
+    <div class="mini-grid movers-grid">
       <div class="card"><strong>Total Movers</strong><div class="muted">{summary.movers_total ?? 0}</div></div>
       <div class="card"><strong>Risers</strong><div class="muted">{summary.risers_total ?? 0}</div></div>
       <div class="card"><strong>Fallers</strong><div class="muted">{summary.fallers_total ?? 0}</div></div>
-      <div class="card"><strong>QA Watch Profiles</strong><div class="muted">{summary.qa_watch_total ?? 0}</div></div>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.7rem;">
+    <div class="lists-grid">
       <article class="card">
-        <h3 style="margin:0 0 .5rem;">Top Risers</h3>
+        <h3 class="subhead">Top Risers</h3>
         {risers.length === 0 ? (
-          <p class="muted" style="margin:.2rem 0;">No rank movers logged in this cycle.</p>
+          <p class="muted note-text">No rank movers logged in this cycle.</p>
         ) : (
-          <ul style="margin:.2rem 0;padding-left:1rem;">
+          <ul class="change-list">
             {risers.map((r: any) => (
-              <li style="margin:.2rem 0;">
+              <li>
                 <strong>{r.player_name}</strong> ({r.position}) · +{r.rank_delta_prev_minus_curr}
                 <span class="muted"> · {r.top_driver || "driver update"}</span>
               </li>
@@ -74,13 +73,13 @@ const collectionSchema = {
       </article>
 
       <article class="card">
-        <h3 style="margin:0 0 .5rem;">Top Fallers</h3>
+        <h3 class="subhead">Top Fallers</h3>
         {fallers.length === 0 ? (
-          <p class="muted" style="margin:.2rem 0;">No downward movers logged in this cycle.</p>
+          <p class="muted note-text">No downward movers logged in this cycle.</p>
         ) : (
-          <ul style="margin:.2rem 0;padding-left:1rem;">
+          <ul class="change-list">
             {fallers.map((r: any) => (
-              <li style="margin:.2rem 0;">
+              <li>
                 <strong>{r.player_name}</strong> ({r.position}) · {r.rank_delta_prev_minus_curr}
                 <span class="muted"> · {r.top_driver || "driver update"}</span>
               </li>
@@ -90,4 +89,48 @@ const collectionSchema = {
       </article>
     </div>
   </section>
+
+  <style>
+    .updates-section {
+      margin-top: 1rem;
+    }
+    .updates-section:first-of-type {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.55rem;
+    }
+    .single-note {
+      display: grid;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .subhead {
+      margin: 0 0 0.45rem;
+      font-size: 1.02rem;
+    }
+    .note-text {
+      margin: 0.2rem 0;
+      line-height: 1.55;
+    }
+    .movers-grid {
+      margin-bottom: 0.7rem;
+    }
+    .lists-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.7rem;
+    }
+    .change-list {
+      margin: 0.2rem 0;
+      padding-left: 1rem;
+      line-height: 1.55;
+    }
+    .change-list li {
+      margin: 0.2rem 0;
+    }
+  </style>
 </BaseLayout>

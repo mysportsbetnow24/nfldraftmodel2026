@@ -9,6 +9,11 @@
   --brand-2: #1f5ea8;
   --accent: #17a34a;
   --accent-2: #0ea5e9;
+  --ui-cta-bg: #fff1e8;
+  --ui-cta-border: #f7b07b;
+  --ui-cta-ink: #8e3a11;
+  --ui-cta-hover-bg: #ffe4d2;
+  --ui-cta-hover-border: #ee914d;
 
   --radius-sm: 10px;
   --radius-md: 14px;
@@ -64,18 +69,22 @@ body {
 
 .nav a {
   text-decoration: none;
-  color: var(--brand);
-  border: 1px solid var(--line);
-  background: #fff;
+  color: var(--ui-cta-ink);
+  border: 1px solid var(--ui-cta-border);
+  background: var(--ui-cta-bg);
   border-radius: 999px;
   padding: 0.45rem 0.72rem;
   font-size: 0.9rem;
   font-weight: 650;
+  box-shadow: 0 1px 0 rgba(142, 58, 17, 0.08);
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.12s ease;
 }
 
 .nav a:hover {
-  border-color: #b7c8da;
-  background: #f7fbff;
+  border-color: var(--ui-cta-hover-border);
+  background: var(--ui-cta-hover-bg);
+  color: #7b2f0c;
+  transform: translateY(-1px);
 }
 
 .hero {

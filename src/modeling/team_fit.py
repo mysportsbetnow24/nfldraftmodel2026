@@ -207,7 +207,72 @@ def gm_tendency_score(team_row: dict, position: str) -> float:
     return 0.72
 
 
-def best_team_fit(position: str) -> Tuple[str, float]:
+def _lb_role_scheme_bonus(team_row: dict, role_hint: str, scheme_hint: str, athletic_score: float | None) -> float:
+    """
+    Small additive bonus so off-ball LB team fit is role-aware (not position-only).
+    Keeps impact bounded so need/scheme/GM priors still dominate.
+    """
+    role = str(role_hint or "").lower()
+    scheme = str(scheme_hint or "").lower()
+    def_scheme = str(team_row.get("def_scheme", "")).strip().lower()
+    gm = str(team_row.get("gm_profile", "")).strip().lower()
+
+    bonus = 0.0
+
+    if any(token in role for token in {"coverage", "will", "overhang", "star"}):
+        if def_scheme in {"4-2-5", "multiple"}:
+            bonus += 0.090
+        elif def_scheme in {"4-3"}:
+            bonus += 0.040
+        elif def_scheme in {"3-4"}:
+            bonus -= 0.100
+
+    if any(token in role for token in {"mike", "thumper", "stack-and-shed"}):
+        if def_scheme in {"3-4", "4-3"}:
+            bonus += 0.070
+        elif def_scheme in {"multiple"}:
+            bonus += 0.035
+        elif def_scheme in {"4-2-5"}:
+            bonus -= 0.050
+
+    if any(token in role for token in {"sam", "pressure"}):
+        if def_scheme in {"3-4", "multiple"}:
+            bonus += 0.080
+        elif def_scheme in {"4-3"}:
+            bonus -= 0.040
+
+    if "run-and-chase" in role and def_scheme in {"4-2-5", "4-3", "multiple"}:
+        bonus += 0.030
+
+    if "sim-pressure" in scheme and def_scheme in {"3-4", "multiple"}:
+        bonus += 0.035
+    elif "sim-pressure" in scheme and def_scheme in {"4-3"}:
+        bonus -= 0.025
+    if any(token in scheme for token in {"two-high", "split-safety", "match"}) and def_scheme in {"4-2-5", "multiple"}:
+        bonus += 0.030
+    elif any(token in scheme for token in {"two-high", "split-safety"}) and def_scheme in {"3-4"}:
+        bonus -= 0.030
+    if "single-high" in scheme and def_scheme in {"3-4", "4-3"}:
+        bonus += 0.015
+    elif "single-high" in scheme and def_scheme in {"4-2-5"}:
+        bonus -= 0.015
+
+    if athletic_score is not None:
+        if athletic_score >= 87.0 and gm in {"speed_priority", "traits_speed"}:
+            bonus += 0.015
+        elif athletic_score <= 80.0 and gm in {"trench_focus", "bpa_trenches"}:
+            bonus += 0.010
+
+    return max(-0.12, min(0.12, bonus))
+
+
+def best_team_fit(
+    position: str,
+    *,
+    role_hint: str = "",
+    scheme_hint: str = "",
+    athletic_score: float | None = None,
+) -> Tuple[str, float]:
     ctx_map = load_team_needs_context()
     best_team = ""
     best_score = -1.0
@@ -218,6 +283,13 @@ def best_team_fit(position: str) -> Tuple[str, float]:
             + 0.15 * 0.75
             + 0.10 * gm_tendency_score(row, position)
         )
+        if position == "LB":
+            score += _lb_role_scheme_bonus(
+                row,
+                role_hint=role_hint,
+                scheme_hint=scheme_hint,
+                athletic_score=athletic_score,
+            )
         if score > best_score:
             best_score = score
             best_team = row["team"]

@@ -97,7 +97,13 @@ const collectionSchema = {
               <td>{p.overall_pick}</td>
               <td>{p.round}</td>
               <td>{p.team}</td>
-              <td>{p.player_name}</td>
+              <td>
+                {p.player_report_url ? (
+                  <a class="player-link" href={p.player_report_url}>{p.player_name}</a>
+                ) : (
+                  p.player_name
+                )}
+              </td>
               <td><span class="badge">{p.position}</span></td>
               <td>{p.school}</td>
               <td>{p.final_grade}</td>

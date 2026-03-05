@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUTS = ROOT / "data" / "outputs"
 SITE_DIR = OUTPUTS / "site"
+DOCS_DIR = ROOT / "docs"
 
 BOARD_PATH = OUTPUTS / "big_board_2026.csv"
 RANK_VS_CONSENSUS_PATH = OUTPUTS / "big_board_2026_rank_vs_consensus.csv"
@@ -19,6 +20,14 @@ ROUND7_PATH = OUTPUTS / "mock_2026_7round.csv"
 REPORTS_INDEX_PATH = OUTPUTS / "reports_index.html"
 CARD_TEMPLATE_PATH = OUTPUTS / "scouting_card_template.html"
 PLAYER_REPORTS_DIR = OUTPUTS / "player_reports_html"
+PUBLIC_PAGE_FILES = [
+    "2026-nfl-draft-big-board.html",
+    "2026-nfl-mock-draft-round-1.html",
+    "2026-nfl-7-round-mock-draft.html",
+    "2026-nfl-player-comparison.html",
+    "data_mock_7round.html",
+    "data_rank_vs_consensus.html",
+]
 
 
 def _to_int(value: str | None, default: int = 999999) -> int:
@@ -237,6 +246,7 @@ def _build_home_html(top_rows: list[dict]) -> str:
         <a class="primary" href="reports_index.html">Scouting Cards</a>
         <a href="2026-nfl-draft-big-board.html">Big Board</a>
         <a href="data_rank_vs_consensus.html">Rank vs Consensus</a>
+        <a href="2026-nfl-player-comparison.html">Player Comparison</a>
         <a href="2026-nfl-mock-draft-round-1.html">1st Round Mock</a>
         <a href="2026-nfl-7-round-mock-draft.html">7-Round Mock</a>
       </div>
@@ -330,6 +340,10 @@ def build_site(max_rows: int) -> None:
     _copy_file(ROUND7_PATH, SITE_DIR / "mock_2026_7round.csv")
     if RANK_VS_CONSENSUS_PATH.exists():
         _copy_file(RANK_VS_CONSENSUS_PATH, SITE_DIR / "big_board_2026_rank_vs_consensus.csv")
+    for page_name in PUBLIC_PAGE_FILES:
+        src = DOCS_DIR / page_name
+        if src.exists():
+            _copy_file(src, SITE_DIR / page_name)
     _copy_tree(PLAYER_REPORTS_DIR, SITE_DIR / "player_reports_html")
 
     top_rows = _load_top_board_rows(BOARD_PATH, max_rows=max_rows)

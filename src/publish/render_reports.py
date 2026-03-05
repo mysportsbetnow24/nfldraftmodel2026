@@ -293,48 +293,115 @@ def _format_comp_name_year(name: str, year: int | None) -> str:
 
 
 def _best_historical_comps(row: dict, player_name: str) -> tuple[str, str]:
-    candidates: list[tuple[str, int | None]] = []
+    def _safe_pick(raw: str | None) -> int | None:
+        text = str(raw or "").strip()
+        if not text:
+            return None
+        try:
+            val = int(float(text))
+        except (TypeError, ValueError):
+            return None
+        if 1 <= val <= 300:
+            return val
+        return None
+
+    candidates: list[dict] = []
     for idx in (1, 2, 3):
         candidates.append(
-            (
-                str(row.get(f"historical_combine_comp_{idx}", "") or ""),
-                _safe_year(row.get(f"historical_combine_comp_{idx}_year", "")),
-            )
+            {
+                "name": str(row.get(f"historical_combine_comp_{idx}", "") or ""),
+                "year": _safe_year(row.get(f"historical_combine_comp_{idx}_year", "")),
+                "pick_total": _safe_pick(row.get(f"historical_combine_comp_{idx}_picktotal", "")),
+            }
         )
-    candidates.append((str(row.get("scouting_historical_athletic_comp", "") or ""), None))
-    candidates.append((str(row.get("historical_comp", "") or ""), None))
+    candidates.append(
+        {
+            "name": str(row.get("scouting_historical_athletic_comp", "") or ""),
+            "year": None,
+            "pick_total": None,
+        }
+    )
+    candidates.append(
+        {
+            "name": str(row.get("historical_comp", "") or ""),
+            "year": None,
+            "pick_total": None,
+        }
+    )
     # Fallbacks if combine comps are sparse.
     for idx in (1, 2, 3):
         candidates.append(
-            (
-                str(row.get(f"athletic_nn_comp_{idx}", "") or ""),
-                _safe_year(row.get(f"athletic_nn_comp_{idx}_year", "")),
-            )
+            {
+                "name": str(row.get(f"athletic_nn_comp_{idx}", "") or ""),
+                "year": _safe_year(row.get(f"athletic_nn_comp_{idx}_year", "")),
+                "pick_total": _safe_pick(row.get(f"athletic_nn_comp_{idx}_picktotal", "")),
+            }
         )
 
-    filtered: list[str] = []
-    for comp_name, comp_year in candidates:
-        clean_name = _clean_display_text(comp_name)
+    filtered: list[dict] = []
+    seen_names: set[str] = set()
+    for cand in candidates:
+        clean_name = _clean_display_text(cand["name"])
         if not clean_name:
             continue
         if _same_player_name(clean_name, player_name):
             continue
-        # Keep historical comps historical by default.
+        comp_year = cand["year"]
         if comp_year is not None and comp_year >= 2026:
             continue
-        formatted = _format_comp_name_year(clean_name, comp_year)
-        if not formatted:
+        key = _slugify(clean_name)
+        if key in seen_names:
             continue
-        if formatted in filtered:
-            continue
-        filtered.append(formatted)
+        seen_names.add(key)
+        cand["clean_name"] = clean_name
+        cand["display"] = _format_comp_name_year(clean_name, comp_year)
+        filtered.append(cand)
 
     if not filtered:
-        return ("Pending historical comp", "Pending historical comp")
-    if len(filtered) == 1:
-        return (filtered[0], filtered[0])
-    # Use first as ceiling archetype, second as floor archetype.
-    return (filtered[0], filtered[1])
+        return ("Pending historical comp", "Pending lower-range historical comp")
+
+    final_grade = _to_float(row, "final_grade", 78.0)
+    if final_grade >= 90.0:
+        ceiling_pick_cap = 40
+    elif final_grade >= 86.0:
+        ceiling_pick_cap = 80
+    elif final_grade >= 82.0:
+        ceiling_pick_cap = 120
+    else:
+        ceiling_pick_cap = 170
+
+    # Better comps have lower pick_total; unknown pick_total ranked after known.
+    ranked_best = sorted(
+        filtered,
+        key=lambda c: (
+            c["pick_total"] is None,
+            c["pick_total"] if c["pick_total"] is not None else 9999,
+            c["display"],
+        ),
+    )
+    elite_candidates = [
+        c
+        for c in ranked_best
+        if c["pick_total"] is not None and c["pick_total"] <= ceiling_pick_cap
+    ]
+    ceiling = elite_candidates[0] if elite_candidates else ranked_best[0]
+
+    remaining = [c for c in filtered if c["display"] != ceiling["display"]]
+    if not remaining:
+        return (ceiling["display"], "Pending lower-range historical comp")
+
+    # Floor comp should be a lower-quality historical outcome than ceiling.
+    ranked_floor = sorted(
+        remaining,
+        key=lambda c: (
+            c["pick_total"] is None,
+            c["pick_total"] if c["pick_total"] is not None else 9999,
+            c["display"],
+        ),
+        reverse=True,
+    )
+    floor = ranked_floor[0]
+    return (ceiling["display"], floor["display"])
 
 
 def _round_band_order() -> list[str]:
