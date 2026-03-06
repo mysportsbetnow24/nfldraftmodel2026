@@ -75,6 +75,194 @@ const traitRaw = Number(player.trait_score || 0);
 const traitPct = Number.isFinite(traitRaw) && traitRaw > 0 ? Math.max(0, Math.min(100, ((traitRaw - 70) / 27) * 100)) : 50;
 const marketRaw = Number(player.market_signal_pct || 50);
 const marketPct = Number.isFinite(marketRaw) ? Math.max(0, Math.min(100, marketRaw)) : 50;
+const productionMetrics = player.production_metrics || {};
+const productionPercentiles = player.production_percentiles || {};
+
+const METRIC_CONFIG: Record<string, Array<{ key: string; label: string; fmt: string; lowerBetter?: boolean }>> = {
+  QB: [
+    { key: "sg_qb_pass_grade", label: "Pass Grade", fmt: "dec1" },
+    { key: "sg_qb_btt_rate", label: "Big-Time Throw Rate", fmt: "pct100" },
+    { key: "sg_qb_twp_rate", label: "Turnover-Worthy Play Rate", fmt: "pct100", lowerBetter: true },
+    { key: "sg_qb_pressure_to_sack_rate", label: "Pressure-to-Sack Rate", fmt: "pct100", lowerBetter: true },
+    { key: "sg_qb_pressure_grade", label: "Under-Pressure Grade", fmt: "dec1" },
+  ],
+  RB: [
+    { key: "sg_rb_run_grade", label: "Run Grade", fmt: "dec1" },
+    { key: "sg_rb_elusive_rating", label: "Elusive Rating", fmt: "dec1" },
+    { key: "sg_rb_yco_attempt", label: "Yards After Contact / Att", fmt: "dec2" },
+    { key: "sg_rb_explosive_rate", label: "Explosive Run Rate", fmt: "pct100" },
+    { key: "sg_rb_breakaway_percent", label: "Breakaway Rate", fmt: "pct100" },
+  ],
+  WR: [
+    { key: "sg_wrte_route_grade", label: "Route Grade", fmt: "dec1" },
+    { key: "sg_wrte_yprr", label: "Yards / Route Run", fmt: "dec2" },
+    { key: "sg_wrte_targets_per_route", label: "Targets / Route", fmt: "dec3" },
+    { key: "sg_wrte_man_yprr", label: "Man YPRR", fmt: "dec2" },
+    { key: "sg_wrte_zone_yprr", label: "Zone YPRR", fmt: "dec2" },
+  ],
+  TE: [
+    { key: "sg_wrte_route_grade", label: "Route Grade", fmt: "dec1" },
+    { key: "sg_wrte_yprr", label: "Yards / Route Run", fmt: "dec2" },
+    { key: "sg_wrte_targets_per_route", label: "Targets / Route", fmt: "dec3" },
+    { key: "sg_wrte_man_yprr", label: "Man YPRR", fmt: "dec2" },
+    { key: "sg_wrte_zone_yprr", label: "Zone YPRR", fmt: "dec2" },
+  ],
+  EDGE: [
+    { key: "sg_dl_pass_rush_grade", label: "Pass Rush Grade", fmt: "dec1" },
+    { key: "sg_dl_true_pass_set_win_rate", label: "True Pass Set Win Rate", fmt: "pct100" },
+    { key: "sg_dl_true_pass_set_prp", label: "True Pass Set PRP", fmt: "dec1" },
+    { key: "sg_dl_total_pressures", label: "Total Pressures", fmt: "int" },
+    { key: "sg_front_run_def_grade", label: "Run Defense Grade", fmt: "dec1" },
+  ],
+  DT: [
+    { key: "sg_dl_pass_rush_grade", label: "Pass Rush Grade", fmt: "dec1" },
+    { key: "sg_dl_true_pass_set_win_rate", label: "True Pass Set Win Rate", fmt: "pct100" },
+    { key: "sg_dl_true_pass_set_prp", label: "True Pass Set PRP", fmt: "dec1" },
+    { key: "sg_dl_total_pressures", label: "Total Pressures", fmt: "int" },
+    { key: "sg_front_run_def_grade", label: "Run Defense Grade", fmt: "dec1" },
+  ],
+  LB: [
+    { key: "sg_def_run_grade", label: "Run Defense Grade", fmt: "dec1" },
+    { key: "sg_def_coverage_grade", label: "Coverage Grade", fmt: "dec1" },
+    { key: "sg_def_tackle_grade", label: "Tackle Grade", fmt: "dec1" },
+    { key: "sg_def_missed_tackle_rate", label: "Missed Tackle Rate", fmt: "pct100", lowerBetter: true },
+    { key: "sg_front_stop_percent", label: "Stop Rate", fmt: "pct100" },
+  ],
+  CB: [
+    { key: "sg_cov_grade", label: "Coverage Grade", fmt: "dec1" },
+    { key: "sg_cov_forced_incompletion_rate", label: "Forced Incompletion Rate", fmt: "pct100" },
+    { key: "sg_cov_snaps_per_target", label: "Coverage Snaps / Target", fmt: "dec1" },
+    { key: "sg_cov_yards_per_snap", label: "Yards / Coverage Snap", fmt: "dec2", lowerBetter: true },
+    { key: "sg_cov_qb_rating_against", label: "QB Rating Against", fmt: "dec1", lowerBetter: true },
+  ],
+  S: [
+    { key: "sg_cov_grade", label: "Coverage Grade", fmt: "dec1" },
+    { key: "sg_cov_forced_incompletion_rate", label: "Forced Incompletion Rate", fmt: "pct100" },
+    { key: "sg_cov_snaps_per_target", label: "Coverage Snaps / Target", fmt: "dec1" },
+    { key: "sg_cov_yards_per_snap", label: "Yards / Coverage Snap", fmt: "dec2", lowerBetter: true },
+    { key: "sg_cov_qb_rating_against", label: "QB Rating Against", fmt: "dec1", lowerBetter: true },
+  ],
+  OT: [
+    { key: "sg_ol_pass_block_grade", label: "Pass Block Grade", fmt: "dec1" },
+    { key: "sg_ol_run_block_grade", label: "Run Block Grade", fmt: "dec1" },
+    { key: "sg_ol_pbe", label: "Pass Block Efficiency", fmt: "dec1" },
+    { key: "sg_ol_pressure_allowed_rate", label: "Pressure Allowed Rate", fmt: "pct", lowerBetter: true },
+    { key: "sg_ol_versatility_count", label: "Alignment Versatility", fmt: "int" },
+  ],
+  IOL: [
+    { key: "sg_ol_pass_block_grade", label: "Pass Block Grade", fmt: "dec1" },
+    { key: "sg_ol_run_block_grade", label: "Run Block Grade", fmt: "dec1" },
+    { key: "sg_ol_pbe", label: "Pass Block Efficiency", fmt: "dec1" },
+    { key: "sg_ol_pressure_allowed_rate", label: "Pressure Allowed Rate", fmt: "pct", lowerBetter: true },
+    { key: "sg_ol_versatility_count", label: "Alignment Versatility", fmt: "int" },
+  ],
+};
+
+const COUNTING_CONFIG: Record<string, Array<{ key: string; label: string; fmt: string }>> = {
+  QB: [
+    { key: "cfb_qb_pass_td", label: "Pass TD", fmt: "int" },
+    { key: "cfb_qb_pass_int", label: "INT", fmt: "int" },
+    { key: "cfb_qb_pass_yds", label: "Pass Yards", fmt: "int" },
+    { key: "cfb_qb_rush_yds", label: "Rush Yards", fmt: "int" },
+  ],
+  RB: [
+    { key: "cfb_rb_rush_yds", label: "Rush Yards", fmt: "int" },
+    { key: "cfb_rb_rush_td", label: "Rush TD", fmt: "int" },
+    { key: "cfb_rb_rec", label: "Receptions", fmt: "int" },
+    { key: "cfb_rb_rec_yds", label: "Rec Yards", fmt: "int" },
+  ],
+  WR: [
+    { key: "cfb_wrte_rec", label: "Receptions", fmt: "int" },
+    { key: "cfb_wrte_rec_yds", label: "Rec Yards", fmt: "int" },
+    { key: "cfb_wrte_rec_td", label: "Rec TD", fmt: "int" },
+  ],
+  TE: [
+    { key: "cfb_wrte_rec", label: "Receptions", fmt: "int" },
+    { key: "cfb_wrte_rec_yds", label: "Rec Yards", fmt: "int" },
+    { key: "cfb_wrte_rec_td", label: "Rec TD", fmt: "int" },
+  ],
+  EDGE: [
+    { key: "cfb_edge_sacks", label: "Sacks", fmt: "dec1" },
+    { key: "cfb_edge_qb_hurries", label: "QB Hurries", fmt: "int" },
+    { key: "cfb_edge_tfl", label: "TFL", fmt: "int" },
+    { key: "cfb_edge_tackles", label: "Tackles", fmt: "int" },
+  ],
+  DT: [
+    { key: "cfb_edge_sacks", label: "Sacks", fmt: "dec1" },
+    { key: "cfb_edge_qb_hurries", label: "QB Hurries", fmt: "int" },
+    { key: "cfb_edge_tfl", label: "TFL", fmt: "int" },
+    { key: "cfb_edge_tackles", label: "Tackles", fmt: "int" },
+  ],
+  LB: [
+    { key: "cfb_lb_tackles", label: "Tackles", fmt: "int" },
+    { key: "cfb_lb_tfl", label: "TFL", fmt: "int" },
+    { key: "cfb_lb_sacks", label: "Sacks", fmt: "dec1" },
+    { key: "cfb_lb_qb_hurries", label: "QB Hurries", fmt: "int" },
+  ],
+  CB: [
+    { key: "cfb_db_int", label: "INT", fmt: "int" },
+    { key: "cfb_db_pbu", label: "PBU", fmt: "int" },
+    { key: "cfb_db_tackles", label: "Tackles", fmt: "int" },
+    { key: "cfb_db_tfl", label: "TFL", fmt: "int" },
+  ],
+  S: [
+    { key: "cfb_db_int", label: "INT", fmt: "int" },
+    { key: "cfb_db_pbu", label: "PBU", fmt: "int" },
+    { key: "cfb_db_tackles", label: "Tackles", fmt: "int" },
+    { key: "cfb_db_tfl", label: "TFL", fmt: "int" },
+  ],
+  OT: [
+    { key: "cfb_ol_years_played", label: "Years Played", fmt: "int" },
+    { key: "cfb_ol_starts", label: "Starts", fmt: "int" },
+  ],
+  IOL: [
+    { key: "cfb_ol_years_played", label: "Years Played", fmt: "int" },
+    { key: "cfb_ol_starts", label: "Starts", fmt: "int" },
+  ],
+};
+
+const formatMetricValue = (n: number, mode: string) => {
+  if (!Number.isFinite(n)) return "-";
+  if (mode === "int") return Math.round(n).toString();
+  if (mode === "pct") return `${(n * 100).toFixed(1)}%`;
+  if (mode === "pct100") return `${n.toFixed(1)}%`;
+  if (mode === "dec1") return n.toFixed(1);
+  if (mode === "dec3") return n.toFixed(3);
+  return n.toFixed(2);
+};
+
+const metricRows = (config: Array<{ key: string; label: string; fmt: string; lowerBetter?: boolean }>) =>
+  config
+    .map((m) => {
+      const raw = Number(productionMetrics[m.key]);
+      if (!Number.isFinite(raw)) return null;
+      let pct = Number(productionPercentiles[m.key]);
+      if (!Number.isFinite(pct)) pct = 50;
+      if (m.lowerBetter) pct = 100 - pct;
+      pct = Math.max(0, Math.min(100, pct));
+      return { ...m, raw, pct };
+    })
+    .filter(Boolean);
+
+const countingRows = (config: Array<{ key: string; label: string; fmt: string }>) =>
+  config
+    .map((m) => {
+      const raw = Number(productionMetrics[m.key]);
+      if (!Number.isFinite(raw)) return null;
+      return { ...m, raw };
+    })
+    .filter(Boolean);
+
+const advancedRows = metricRows(METRIC_CONFIG[player.position] || []);
+const countRows = countingRows(COUNTING_CONFIG[player.position] || []);
+const compLine = (title: string, comp: any, fallback: string) => {
+  if (!comp || !comp.name) return `${title}: ${fallback}`;
+  const simRaw = Number(comp.similarity);
+  const sim = Number.isFinite(simRaw) ? (simRaw <= 1 ? simRaw * 100 : simRaw) : null;
+  const simText = sim !== null ? `${sim.toFixed(1)}%` : "-";
+  const yearText = comp.year ? ` (${comp.year})` : "";
+  return `${title}: ${comp.name}${yearText} · ${simText} profile similarity`;
+};
 ---
 <BaseLayout
   title={`${player.player_name} Scouting Report 2026 NFL Draft | Scouting Grade`}
@@ -147,9 +335,31 @@ const marketPct = Number.isFinite(marketRaw) ? Math.max(0, Math.min(100, marketR
     </article>
     <article class="card">
       <h2 class="block-title">2025 Production Snapshot</h2>
+      {advancedRows.length ? (
+        <div class="bar-metrics">
+          {advancedRows.map((m:any) => (
+            <div class="metric-row">
+              <div class="metric-top"><span>{m.label}</span><strong>{formatMetricValue(m.raw, m.fmt)} · {m.pct.toFixed(0)}th pct</strong></div>
+              <div class="meter"><div class="meter-fill" style={`width:${m.pct.toFixed(1)}%;background:#0f7b6a;`}></div></div>
+            </div>
+          ))}
+        </div>
+      ) : null}
+      {countRows.length ? (
+        <div class="chip-row" style="margin-top:0.9rem;">
+          {countRows.map((m:any) => <span class="chip info">{m.label}: {formatMetricValue(m.raw, m.fmt)}</span>)}
+        </div>
+      ) : null}
       {String(player.scouting_production_snapshot || "").trim() ? (
-        <div class="muted pre-wrap">{player.scouting_production_snapshot}</div>
+        <div class="muted pre-wrap" style="margin-top:0.9rem;">{player.scouting_production_snapshot}</div>
       ) : <div class="muted pre-wrap">2025 production snapshot is updating; final context will appear after next refresh.</div>}
+    </article>
+    <article class="card">
+      <h2 class="block-title">Historical Comp Panel</h2>
+      <div class="muted pre-wrap">{compLine("Floor", player.historical_comp_floor, "Depth / rotation outcome")}</div>
+      <div class="muted pre-wrap">{compLine("Median", player.historical_comp_median, "Starter outcome")}</div>
+      <div class="muted pre-wrap">{compLine("Ceiling", player.historical_comp_ceiling, "Impact starter / all-pro ceiling")}</div>
+      <div class="muted pre-wrap" style="margin-top:0.65rem;">Comp confidence: {player.comp_confidence || "-"}</div>
     </article>
     <article class="card">
       <h2 class="block-title">Role / Scheme Projection</h2>

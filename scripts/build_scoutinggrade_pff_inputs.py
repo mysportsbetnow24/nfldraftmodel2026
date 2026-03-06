@@ -174,10 +174,24 @@ def _infer_player_id(row: dict, by_exact: dict, by_name_pos: dict, by_name: dict
     pid = _single_or_blank(by_name_pos.get((k_exact[0], k_exact[1]), set()))
     if pid:
         return pid, "name_pos"
-    pid = _single_or_blank(by_name.get(k_exact[0], set()))
-    if pid:
-        return pid, "name_only"
     return "", ""
+
+
+def _row_matches_expected(expected: dict, row: dict) -> bool:
+    expected_name = canonical_player_name(expected.get("player_name", ""))
+    expected_pos = _norm_pos(expected.get("position", ""))
+    expected_school = _norm_school(expected.get("school", ""))
+    row_name = canonical_player_name(str(row.get("player", "")).strip())
+    row_pos = _norm_pos(row.get("position", ""))
+    row_school = _norm_school(row.get("team_name", ""))
+
+    if not expected_name or not row_name or expected_name != row_name:
+        return False
+    if expected_pos and row_pos and expected_pos != row_pos:
+        return False
+    if expected_school and row_school and expected_school != row_school:
+        return False
+    return True
 
 
 def _rate(numerator: float | None, denominator: float | None) -> float | None:
@@ -206,6 +220,7 @@ def build() -> None:
     master_rows: list[dict] = []
     missing_pid_rows: list[dict] = []
     matched_pids: set[str] = set()
+    expected_by_pid: dict[str, dict] = {}
 
     for row in pff_board_rows:
         out_row = {
@@ -223,6 +238,11 @@ def build() -> None:
         pid, match_type = _infer_player_id(out_row, by_exact, by_name_pos, by_name)
         if pid:
             matched_pids.add(pid)
+            expected_by_pid[pid] = {
+                "player_name": out_row["Player"],
+                "position": out_row["Pos"],
+                "school": out_row["School"],
+            }
         else:
             missing_pid_rows.append(
                 {
@@ -254,6 +274,8 @@ def build() -> None:
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("passing_summary", [])):
         if pid not in metrics_by_pid:
             continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
         m = metrics_by_pid[pid]
         m.update(
             {
@@ -273,6 +295,8 @@ def build() -> None:
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("passing_pressure", [])):
         if pid not in metrics_by_pid:
             continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
         m = metrics_by_pid[pid]
         for src, dest in [
             ("pressure_grades_pass", "sg_qb_pressure_grade"),
@@ -289,6 +313,8 @@ def build() -> None:
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("passing_concept", [])):
         if pid not in metrics_by_pid:
             continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
         m = metrics_by_pid[pid]
         for src, dest in [
             ("no_screen_grades_pass", "sg_qb_no_screen_grade"),
@@ -302,6 +328,8 @@ def build() -> None:
 
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("time_in_pocket", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
         m = metrics_by_pid[pid]
         for src, dest in [
@@ -317,6 +345,8 @@ def build() -> None:
 
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("rushing_summary", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
         m = metrics_by_pid[pid]
         routes = _safe_float(row.get("routes"))
@@ -342,6 +372,8 @@ def build() -> None:
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("receiving_summary", [])):
         if pid not in metrics_by_pid:
             continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
         m = metrics_by_pid[pid]
         targets = _safe_float(row.get("targets"))
         routes = _safe_float(row.get("routes"))
@@ -366,6 +398,8 @@ def build() -> None:
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("receiving_scheme", [])):
         if pid not in metrics_by_pid:
             continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
         metrics_by_pid[pid].update(
             {
                 "sg_wrte_man_yprr": row.get("man_yprr", ""),
@@ -376,6 +410,8 @@ def build() -> None:
 
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("offense_blocking", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
         m = metrics_by_pid[pid]
         pressures_allowed = _safe_float(row.get("pressures_allowed"))
@@ -401,6 +437,8 @@ def build() -> None:
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("pass_rush_summary", [])):
         if pid not in metrics_by_pid:
             continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
         metrics_by_pid[pid].update(
             {
                 "player_name": row.get("player", metrics_by_pid[pid].get("player_name", "")),
@@ -419,6 +457,8 @@ def build() -> None:
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("run_defense_summary", [])):
         if pid not in metrics_by_pid:
             continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
         metrics_by_pid[pid].update(
             {
                 "sg_front_run_def_grade": row.get("grades_run_defense", metrics_by_pid[pid].get("sg_front_run_def_grade", "")),
@@ -429,6 +469,8 @@ def build() -> None:
 
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("defense_summary", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
         metrics_by_pid[pid].update(
             {
@@ -451,6 +493,8 @@ def build() -> None:
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("defense_coverage_summary", [])):
         if pid not in metrics_by_pid:
             continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
         metrics_by_pid[pid].update(
             {
                 "sg_cov_grade": row.get("grades_coverage_defense", ""),
@@ -466,6 +510,8 @@ def build() -> None:
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("defense_coverage_scheme", [])):
         if pid not in metrics_by_pid:
             continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
         metrics_by_pid[pid].update(
             {
                 "sg_cov_man_grade": row.get("man_grades_coverage_defense", ""),
@@ -479,6 +525,8 @@ def build() -> None:
 
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("slot_coverage", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
         metrics_by_pid[pid].update(
             {
