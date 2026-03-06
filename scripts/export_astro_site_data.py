@@ -553,30 +553,35 @@ def _player_designation(
 ) -> str:
     if not has_contract:
         return "FA"
+    starter_cutoff = int(STARTERS_BY_POSITION.get(model_position, 1))
+    is_top_starter = depth_rank <= starter_cutoff
     veteran_inference = (
         years_exp <= 1
         and (
-            (age is not None and age >= 26)
-            or (contract_years > 0 and contract_years <= 3 and (apy_pct >= 25.0 or (apy_m or 0.0) >= 2.5))
-            or ((apy_m or 0.0) >= 5.0)
+            (age is not None and age >= 28)
+            or (contract_years > 0 and contract_years <= 3 and ((apy_m or 0.0) >= 4.0))
+            or ((apy_m or 0.0) >= 8.0)
         )
     )
     effective_years_exp = years_exp if years_exp > 0 else (4 if veteran_inference else 0)
-    if apy_pct >= 97.0 and effective_years_exp >= 6:
+    if is_top_starter and apy_pct >= 97.0 and effective_years_exp >= 6:
         return "HOF Path"
-    if apy_pct >= 90.0:
+    if is_top_starter and apy_pct >= 90.0 and effective_years_exp >= 3:
         return "All-Pro"
-    if apy_pct >= 75.0:
+    if is_top_starter and apy_pct >= 75.0 and (effective_years_exp >= 2 or (apy_m or 0.0) >= 10.0):
         return "Franchise Cornerstone"
-    if apy_pct >= 55.0:
+    if is_top_starter and apy_pct >= 65.0 and 3 <= effective_years_exp <= 9:
         return "In His Prime Star"
-    if age is not None and age >= 33 and (effective_years_exp >= 8 or veteran_inference):
+    if is_top_starter and (
+        (age is not None and age >= 33 and effective_years_exp >= 8)
+        or (veteran_inference and (apy_m or 0.0) >= 8.0 and contract_years <= 2)
+    ):
         return "Older Mentor"
     if years_exp <= 1 and not veteran_inference:
         if draft_number is not None and draft_number > 0 and draft_number <= 32:
             return "Blue Chip Prospect"
         return "Prospect"
-    if depth_rank <= int(STARTERS_BY_POSITION.get(model_position, 1)):
+    if is_top_starter:
         return "Starter"
     return "Backup"
 
