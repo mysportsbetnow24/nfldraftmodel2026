@@ -2061,6 +2061,8 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
     # Position-normalized metric populations for percentile context.
     pos_metric_values: dict[str, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
     pos_athletic_profile_values: dict[str, list[float]] = defaultdict(list)
+    pos_trait_values: dict[str, list[float]] = defaultdict(list)
+    pos_market_values: dict[str, list[float]] = defaultdict(list)
     for row in rows:
         pos = str(row.get("position", "")).strip().upper()
         if not pos:
@@ -2068,6 +2070,14 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         athletic_profile_score = _safe_float(row.get("athletic_profile_score"))
         if athletic_profile_score is not None and athletic_profile_score > 0:
             pos_athletic_profile_values[pos].append(float(athletic_profile_score))
+        trait_score = _safe_float(row.get("trait_score"))
+        if trait_score is not None and trait_score > 0:
+            pos_trait_values[pos].append(float(trait_score))
+        consensus_rank_value = _safe_float(row.get("consensus_board_mean_rank"))
+        if consensus_rank_value is None or consensus_rank_value <= 0:
+            consensus_rank_value = float(_safe_int(row.get("consensus_rank"), 0))
+        if consensus_rank_value and consensus_rank_value > 0:
+            pos_market_values[pos].append(float(consensus_rank_value))
         for key in PRODUCTION_METRIC_KEYS:
             val = _safe_float(row.get(key))
             if val is None:
@@ -2097,6 +2107,11 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             float(athletic_profile_score),
             pos_athletic_profile_values.get(pos, []),
         ) if athletic_profile_score is not None and athletic_profile_score > 0 else None
+        trait_score = _safe_float(row.get("trait_score"))
+        trait_percentile = _pct_rank(
+            float(trait_score),
+            pos_trait_values.get(pos, []),
+        ) if trait_score is not None and trait_score > 0 else None
         advanced_metric_cards, advanced_metrics, advanced_percentiles = _build_metric_cards(
             row=row,
             position=pos,
@@ -2266,7 +2281,8 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         consensus_mean_rank_val = _safe_float(row.get("consensus_board_mean_rank"))
         if consensus_mean_rank_val is None or consensus_mean_rank_val <= 0:
             consensus_mean_rank_val = float(_safe_int(row.get("consensus_rank"), 9999))
-        market_rank_pct = _pct_rank(consensus_mean_rank_val, consensus_mean_population) if consensus_mean_population else 50.0
+        market_population = pos_market_values.get(pos) or consensus_mean_population
+        market_rank_pct = _pct_rank(consensus_mean_rank_val, market_population) if market_population else 50.0
         market_signal_pct = 100.0 - float(market_rank_pct)
 
         out.append(
@@ -2283,6 +2299,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "market_signal_pct": round(market_signal_pct, 1),
                 "pff_grade": pff_grade,
                 "trait_score": round(_safe_float(row.get("trait_score")) or 0.0, 2),
+                "trait_percentile": trait_percentile,
                 "athletic_profile_score": round(float(athletic_profile_score), 3) if athletic_profile_score is not None and athletic_profile_score > 0 else None,
                 "athletic_metric_coverage_rate": round(float(athletic_metric_coverage_rate), 4) if athletic_metric_coverage_rate is not None and athletic_metric_coverage_rate >= 0 else None,
                 "athletic_percentile": athletic_percentile,
