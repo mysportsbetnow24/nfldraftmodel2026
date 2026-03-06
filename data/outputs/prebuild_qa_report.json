@@ -1,6 +1,6 @@
 {
   "status": "pass",
-  "checked_at_utc": "2026-03-06T02:31:23.346815+00:00",
+  "checked_at_utc": "2026-03-06T04:03:06.348681+00:00",
   "paths": {
     "seed_path": "/Users/nickholz/nfldraftmodel2026/data/processed/prospect_seed_2026.csv",
     "combine_path": "/Users/nickholz/nfldraftmodel2026/data/sources/manual/combine_2026_results.csv",

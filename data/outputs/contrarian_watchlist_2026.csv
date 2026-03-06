@@ -1,15 +1,15 @@
 player_name,position,school,consensus_rank,contrarian_rank,final_grade,consensus_board_mean_rank,consensus_board_source_count,contrarian_score,diamond_exception_reasons
-Harold Perkins Jr.,LB,LSU,87,2,80.88,133.0,2,91.89,dislocation=115.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-Cole Payton,QB,North Dakota State,140,4,78.04,129.33,3,90.72,dislocation=94.3;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+Harold Perkins Jr.,LB,LSU,90,2,80.88,133.0,2,91.89,dislocation=115.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+Cole Payton,QB,North Dakota State,141,4,78.04,129.33,3,90.72,dislocation=94.3;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
 Austin Barber,OT,Florida,85,5,81.27,112.25,4,90.69,dislocation=85.2;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
-Jalon Kilgore,S,South Carolina,77,6,82.07,116.25,4,90.67,dislocation=90.2;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
-Kendal Daniels,LB,Oklahoma,164,7,77.38,224.67,3,90.23,dislocation=149.7;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-Aamil Wagner,OT,Notre Dame,113,8,79.77,145.67,3,90.11,dislocation=101.7;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
-Nicholas Singleton,RB,Penn State,79,11,81.9,113.0,2,89.49,dislocation=81.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-Roman Hemby,RB,Indiana,154,12,78.4,215.0,2,89.34,dislocation=142.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+Jalon Kilgore,S,South Carolina,78,6,82.07,116.25,4,90.67,dislocation=90.2;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
+Kendal Daniels,LB,Oklahoma,165,7,77.38,224.67,3,90.23,dislocation=149.7;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+Aamil Wagner,OT,Notre Dame,115,8,79.77,145.67,3,90.11,dislocation=101.7;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
+Nicholas Singleton,RB,Penn State,80,11,81.9,113.0,2,89.49,dislocation=81.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+Roman Hemby,RB,Indiana,155,12,78.4,215.0,2,89.34,dislocation=142.0;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
 Bryce Lance,WR,North Dakota State,81,13,81.17,107.75,4,89.21,dislocation=69.8;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-Xavier Nwankpa,S,Iowa,170,17,77.07,254.5,2,88.61,dislocation=159.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
-Le'Veon Moss,RB,Texas A&M,124,23,79.4,175.5,2,88.24,dislocation=109.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
-Tacario Davis,CB,Washington,92,29,80.17,113.75,4,87.27,dislocation=57.8;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
-Demond Claiborne,RB,Wake Forest,95,52,80.1,119.5,4,85.58,dislocation=52.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
-Zane Durant,DT,Penn State,120,60,79.14,157.33,3,84.78,dislocation=69.3;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
+Xavier Nwankpa,S,Iowa,173,17,77.07,254.5,2,88.61,dislocation=159.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
+Le'Veon Moss,RB,Texas A&M,125,23,79.4,175.5,2,88.24,dislocation=109.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=2
+Tacario Davis,CB,Washington,96,29,80.17,113.75,4,87.27,dislocation=57.8;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
+Demond Claiborne,RB,Wake Forest,88,52,80.46,119.5,4,85.58,dislocation=52.5;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
+Zane Durant,DT,Penn State,121,60,79.14,157.33,3,84.78,dislocation=69.3;prod>=85;trait>=82;athletic>=83_or_ras_impact;risk<=2.2;coverage_points=3
