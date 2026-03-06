@@ -35,6 +35,8 @@ NFLVERSE_DIR = ROOT / "data" / "sources" / "external" / "nflverse"
 NFLVERSE_ROSTERS = NFLVERSE_DIR / "rosters_weekly.parquet"
 NFLVERSE_CONTRACTS = NFLVERSE_DIR / "contracts.parquet"
 NFLVERSE_PLAYERS = NFLVERSE_DIR / "players.parquet"
+HISTORICAL_DRAFT_COMPILATION = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "notebook" / "compilations" / "drafts2015To2022.csv"
+HISTORICAL_DRAFT_REFINED = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "old-data" / "pfr-compilations" / "2014To2018Drafts-refined.csv"
 
 
 PRODUCTION_METRIC_KEYS = [
@@ -1456,6 +1458,70 @@ def _write_json(path: Path, payload) -> None:
     path.write_text(json.dumps(payload, indent=2))
 
 
+def _public_comp_dict(comp: dict) -> dict:
+    if not comp:
+        return {}
+    return {
+        "name": comp.get("name", ""),
+        "similarity": comp.get("similarity"),
+        "year": comp.get("year"),
+    }
+
+
+def _load_historical_comp_outcomes() -> dict[tuple[str, int], dict]:
+    sources = [HISTORICAL_DRAFT_COMPILATION, HISTORICAL_DRAFT_REFINED]
+    outcomes: dict[tuple[str, int], dict] = {}
+    for path in sources:
+        if not path.exists():
+            continue
+        with path.open() as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                name = str(row.get("Player") or row.get("player_name") or "").strip()
+                year = _safe_int(row.get("DraftYear") or row.get("Year"), 0)
+                if not name or year <= 0 or year >= CURRENT_DRAFT_YEAR:
+                    continue
+                key = (_norm_comp_identity_key(name), year)
+                drav = _safe_float(row.get("DrAV") or row.get("career_value"))
+                wav = _safe_float(row.get("wAV") or row.get("CarAV"))
+                value_per_year = _safe_float(row.get("ValuePerYear"))
+                starter_seasons = _safe_float(row.get("St"))
+                pro_bowls = _safe_float(row.get("PB"))
+                all_pros = _safe_float(row.get("AP1"))
+                games = _safe_float(row.get("G"))
+                outcome_score = 0.0
+                if drav is not None:
+                    outcome_score += min(float(drav), 70.0) / 70.0 * 48.0
+                elif wav is not None:
+                    outcome_score += min(float(wav), 90.0) / 90.0 * 40.0
+                if value_per_year is not None:
+                    outcome_score += min(float(value_per_year), 12.0) / 12.0 * 18.0
+                if starter_seasons is not None:
+                    outcome_score += min(float(starter_seasons), 8.0) / 8.0 * 12.0
+                if pro_bowls is not None:
+                    outcome_score += min(float(pro_bowls), 8.0) / 8.0 * 12.0
+                if all_pros is not None:
+                    outcome_score += min(float(all_pros), 4.0) / 4.0 * 10.0
+                if games is not None:
+                    outcome_score += min(float(games), 120.0) / 120.0 * 6.0
+                existing = outcomes.get(key)
+                payload = {
+                    "name": name,
+                    "year": year,
+                    "drav": drav,
+                    "wav": wav,
+                    "value_per_year": value_per_year,
+                    "starter_seasons": starter_seasons,
+                    "pro_bowls": pro_bowls,
+                    "all_pros": all_pros,
+                    "games": games,
+                    "outcome_score": round(outcome_score, 3),
+                }
+                if existing is None or float(payload["outcome_score"]) > float(existing.get("outcome_score", 0.0) or 0.0):
+                    outcomes[key] = payload
+    return outcomes
+
+
 def _parse_rank_components(summary: str) -> dict[str, float]:
     out: dict[str, float] = {}
     if not summary:
@@ -1516,6 +1582,7 @@ def _needs_score(row: dict) -> float:
 
 def export_board(player_school_map: dict[str, str]) -> list[dict]:
     rows = _read_csv(BOARD_CSV)
+    comp_outcomes = _load_historical_comp_outcomes()
     consensus_mean_population = [
         float(_safe_float(row.get("consensus_board_mean_rank")) or 0.0)
         for row in rows
@@ -1668,11 +1735,13 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             if identity_key in seen_comp_names:
                 continue
             seen_comp_names.add(identity_key)
+            outcome = comp_outcomes.get((identity_key, int(slot.get("year") or 0)), {})
             comp_items.append(
                 {
                     "name": slot.get("name", ""),
                     "similarity": round(blend_score, 3),
                     "year": slot.get("year"),
+                    "outcome_score": outcome.get("outcome_score"),
                 }
             )
 
@@ -1680,7 +1749,20 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             comp_items,
             key=lambda r: (r.get("similarity") is None, -(r.get("similarity") or 0.0)),
         )
-        if len(comp_items) >= 3:
+        outcome_pool = [item for item in comp_items[:10] if item.get("outcome_score") is not None]
+        if len(outcome_pool) >= 3:
+            outcome_sorted = sorted(
+                outcome_pool,
+                key=lambda r: (
+                    float(r.get("outcome_score") or 0.0),
+                    -(r.get("similarity") or 0.0),
+                ),
+            )
+            mid_idx = len(outcome_sorted) // 2
+            comp_floor = outcome_sorted[0]
+            comp_median = outcome_sorted[mid_idx]
+            comp_ceiling = outcome_sorted[-1]
+        elif len(comp_items) >= 3:
             mid_idx = len(comp_items) // 2
             comp_ceiling = comp_items[0]
             comp_median = comp_items[mid_idx]
@@ -1735,9 +1817,9 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "low_evidence_flag": low_evidence_flag,
                 "production_metrics": production_metrics,
                 "production_percentiles": production_percentiles,
-                "historical_comp_floor": comp_floor,
-                "historical_comp_median": comp_median,
-                "historical_comp_ceiling": comp_ceiling,
+                "historical_comp_floor": _public_comp_dict(comp_floor),
+                "historical_comp_median": _public_comp_dict(comp_median),
+                "historical_comp_ceiling": _public_comp_dict(comp_ceiling),
                 "comp_confidence": str(row.get("comp_confidence", "")).strip(),
                 "scouting_report_summary": row.get("scouting_report_summary", ""),
                 "scouting_why_he_wins": row.get("scouting_why_he_wins", ""),

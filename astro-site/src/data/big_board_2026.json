@@ -39,9 +39,9 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Leon Williams",
-      "similarity": 80.267,
-      "year": 2006
+      "name": "Baron Browning",
+      "similarity": 80.624,
+      "year": 2021
     },
     "historical_comp_median": {
       "name": "Jamin Davis",
@@ -49,8 +49,8 @@
       "year": 2021
     },
     "historical_comp_ceiling": {
-      "name": "Tipa Galeai",
-      "similarity": 81.348,
+      "name": "Isaiah Simmons",
+      "similarity": 81.319,
       "year": 2020
     },
     "comp_confidence": "B",
@@ -101,19 +101,19 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Leon Williams",
-      "similarity": 85.747,
-      "year": 2006
-    },
-    "historical_comp_median": {
-      "name": "Isaiah Simmons",
-      "similarity": 88.783,
-      "year": 2020
-    },
-    "historical_comp_ceiling": {
       "name": "Troy Andersen",
       "similarity": 90.87,
       "year": 2022
+    },
+    "historical_comp_median": {
+      "name": "Kenneth Murray, Jr.",
+      "similarity": 85.831,
+      "year": 2020
+    },
+    "historical_comp_ceiling": {
+      "name": "Isaiah Simmons",
+      "similarity": 88.783,
+      "year": 2020
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Arvell Reese (LB, Ohio State Buckeyes) carries a 94.46 model grade with a current Round 1 projection. Current board slot: 2. Primary NFL pathway: Pressure SAM backer in Sim-pressure multiple front. instant starter profile; processes quickly and closes efficiently. Seed rank 15 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -235,9 +235,9 @@
       "year": 2020
     },
     "historical_comp_ceiling": {
-      "name": "Joe Thomas",
-      "similarity": 88.379,
-      "year": 2007
+      "name": "Kaleb McGary",
+      "similarity": 87.777,
+      "year": 2019
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Monroe Freeling (OT, Georgia) carries a 93.88 model grade with a current Round 1 projection. Current board slot: 4. Primary NFL pathway: Starting tackle with pass-pro floor in zone power hybrid. instant starter profile; has playable pass-pro mechanics with growth runway. Seed rank 34 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -2607,19 +2607,19 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Orie Lemon",
-      "similarity": 89.093,
-      "year": 2011
+      "name": "Ty Summers",
+      "similarity": 90.259,
+      "year": 2019
     },
     "historical_comp_median": {
-      "name": "Kion Wilson",
-      "similarity": 89.789,
-      "year": 2010
+      "name": "Bryce Hager",
+      "similarity": 90.531,
+      "year": 2015
     },
     "historical_comp_ceiling": {
-      "name": "Thomas Williams",
-      "similarity": 91.753,
-      "year": 2008
+      "name": "Roquan Smith",
+      "similarity": 89.554,
+      "year": 2018
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Josiah Trotter (LB, Missouri Tigers) carries a 86.24 model grade with a current Round 2-3 projection. Current board slot: 37. Primary NFL pathway: Stack-and-shed MIKE backer in Base over-under run fit. early contributor profile; processes quickly and closes efficiently. Seed rank 67 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -3109,19 +3109,19 @@
       "cfb_ol_proxy_signal": 92.3
     },
     "historical_comp_floor": {
-      "name": "Rejzohn Wright",
-      "similarity": 88.031,
-      "year": 2023
-    },
-    "historical_comp_median": {
       "name": "Chris Wilcox",
       "similarity": 89.46,
       "year": 2021
     },
+    "historical_comp_median": {
+      "name": "Bryce Hall",
+      "similarity": 88.219,
+      "year": 2020
+    },
     "historical_comp_ceiling": {
-      "name": "Tariq Castro-Fields",
-      "similarity": 93.004,
-      "year": 2022
+      "name": "Eli Apple",
+      "similarity": 90.437,
+      "year": 2016
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Daylen Everette (CB, Georgia) carries a 85.64 model grade with a current Round 2-3 projection. Current board slot: 44. Primary NFL pathway: Outside starter with matchup flexibility in press match. early contributor profile; matches routes with disciplined leverage. Seed rank 48 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -3195,19 +3195,19 @@
       "cfb_ol_proxy_signal": 100.0
     },
     "historical_comp_floor": {
-      "name": "Landon Jackson",
-      "similarity": 88.36,
-      "year": 2025
-    },
-    "historical_comp_median": {
-      "name": "Shemar Stewart",
-      "similarity": 89.178,
-      "year": 2025
-    },
-    "historical_comp_ceiling": {
       "name": "Kemoko Turay",
       "similarity": 92.073,
       "year": 2018
+    },
+    "historical_comp_median": {
+      "name": "Chase Young",
+      "similarity": 89.676,
+      "year": 2020
+    },
+    "historical_comp_ceiling": {
+      "name": "Danielle Hunter",
+      "similarity": 89.911,
+      "year": 2015
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Dani Dennis-Sutton (EDGE, Penn State Nittany Lions) carries a 85.36 model grade with a current Round 2-3 projection. Current board slot: 45. Primary NFL pathway: Three-down pressure creator in multiple front pass rush. early contributor profile; produces pressure through get-off and counters. Seed rank 94 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -3257,19 +3257,19 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Carter Coughlin",
-      "similarity": 85.39,
-      "year": 2020
+      "name": "Darrian Beavers",
+      "similarity": 87.317,
+      "year": 2022
     },
     "historical_comp_median": {
-      "name": "Carson Schwesinger",
-      "similarity": 86.894,
-      "year": 2025
-    },
-    "historical_comp_ceiling": {
       "name": "Chad Muma",
       "similarity": 87.58,
       "year": 2022
+    },
+    "historical_comp_ceiling": {
+      "name": "Carter Coughlin",
+      "similarity": 85.39,
+      "year": 2020
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Jake Golday (LB, Cincinnati Bearcats) carries a 85.10 model grade with a current Round 2-3 projection. Current board slot: 46. Primary NFL pathway: Pressure SAM backer in Sim-pressure multiple front. early contributor profile; processes quickly and closes efficiently. Seed rank 64 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -3833,19 +3833,19 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Larry Borom",
-      "similarity": 87.73,
-      "year": 2021
-    },
-    "historical_comp_median": {
-      "name": "Steve Hutchinson",
-      "similarity": 88.426,
-      "year": 2001
-    },
-    "historical_comp_ceiling": {
       "name": "Luke Goedeke",
       "similarity": 90.014,
       "year": 2022
+    },
+    "historical_comp_median": {
+      "name": "Teven Jenkins",
+      "similarity": 88.943,
+      "year": 2021
+    },
+    "historical_comp_ceiling": {
+      "name": "Larry Borom",
+      "similarity": 87.73,
+      "year": 2021
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Chase Bisontis (IOL, Texas A&M) carries a 83.49 model grade with a current Round 3-4 projection. Current board slot: 54. Primary NFL pathway: Starter with interior pocket-control value in inside zone gap. early contributor profile; stabilizes interior pocket depth and run fits. Seed rank 123 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -4236,14 +4236,14 @@
       "year": 2021
     },
     "historical_comp_median": {
-      "name": "Scotty McGee",
-      "similarity": 88.172,
-      "year": 2010
-    },
-    "historical_comp_ceiling": {
       "name": "Josiah Scott",
       "similarity": 92.082,
       "year": 2020
+    },
+    "historical_comp_ceiling": {
+      "name": "Jason Verrett",
+      "similarity": 89.77,
+      "year": 2014
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Chandler Rivers (CB, Duke) carries a 83.31 model grade with a current Round 3-4 projection. Current board slot: 59. Primary NFL pathway: Outside starter with matchup flexibility in press match. early contributor profile; matches routes with disciplined leverage. Seed rank 52 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -4695,19 +4695,19 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Colin McCarthy",
-      "similarity": 87.881,
-      "year": 2011
+      "name": "Clay Johnston",
+      "similarity": 89.159,
+      "year": 2020
     },
     "historical_comp_median": {
-      "name": "Drue Tranquill",
-      "similarity": 88.539,
-      "year": 2019
-    },
-    "historical_comp_ceiling": {
       "name": "Ernest Jones",
       "similarity": 89.573,
       "year": 2021
+    },
+    "historical_comp_ceiling": {
+      "name": "Drue Tranquill",
+      "similarity": 88.539,
+      "year": 2019
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Jacob Rodriguez (LB, Texas Tech Red Raiders) carries a 82.44 model grade with a current Round 3-4 projection. Current board slot: 66. Primary NFL pathway: Balanced MIKE/WILL communicator in Match-zone multiple. early contributor profile; processes quickly and closes efficiently. Seed rank 95 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -5065,18 +5065,18 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Leonard Williams",
-      "similarity": 86.33,
-      "year": 2015
-    },
-    "historical_comp_median": {
       "name": "Nazair Jones",
       "similarity": 88.868,
       "year": 2017
     },
-    "historical_comp_ceiling": {
+    "historical_comp_median": {
       "name": "Carl Davis",
       "similarity": 91.086,
+      "year": 2015
+    },
+    "historical_comp_ceiling": {
+      "name": "Leonard Williams",
+      "similarity": 86.33,
       "year": 2015
     },
     "comp_confidence": "A",
@@ -5145,19 +5145,19 @@
       "cfb_ol_proxy_signal": 92.3
     },
     "historical_comp_floor": {
+      "name": "Andrew Booth",
+      "similarity": 91.594,
+      "year": 2022
+    },
+    "historical_comp_median": {
+      "name": "Kendall Sheffield",
+      "similarity": 90.184,
+      "year": 2019
+    },
+    "historical_comp_ceiling": {
       "name": "Marshon Lattimore",
       "similarity": 86.339,
       "year": 2017
-    },
-    "historical_comp_median": {
-      "name": "Antonio Phillips",
-      "similarity": 89.902,
-      "year": 2021
-    },
-    "historical_comp_ceiling": {
-      "name": "Carrington Valentine",
-      "similarity": 93.004,
-      "year": 2023
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Lorenzo Styles Jr. (CB, Ohio State) carries a 82.01 model grade with a current Round 3-4 projection. Current board slot: 72. Primary NFL pathway: Outside starter with matchup flexibility in press match. early contributor profile; matches routes with disciplined leverage. Seed rank 225 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -5345,8 +5345,8 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Alex Bookser",
-      "similarity": 86.113,
+      "name": "Andre Dillard",
+      "similarity": 88.238,
       "year": 2019
     },
     "historical_comp_median": {
@@ -5355,9 +5355,9 @@
       "year": 2020
     },
     "historical_comp_ceiling": {
-      "name": "Jarriel King",
-      "similarity": 88.755,
-      "year": 2011
+      "name": "Brandon Scherff",
+      "similarity": 86.969,
+      "year": 2015
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Max Iheanachor (OT, Arizona State Sun Devils) carries a 81.56 model grade with a current Round 3-4 projection. Current board slot: 75. Primary NFL pathway: Starting tackle with pass-pro floor in zone power hybrid. developmental contributor profile; has playable pass-pro mechanics with growth runway. Seed rank 70 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -5953,19 +5953,19 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Nick Vigil",
-      "similarity": 86.809,
-      "year": 2016
-    },
-    "historical_comp_median": {
-      "name": "Danny Batten",
-      "similarity": 87.881,
-      "year": 2010
-    },
-    "historical_comp_ceiling": {
       "name": "Garret Wallow",
       "similarity": 91.876,
       "year": 2021
+    },
+    "historical_comp_median": {
+      "name": "Raekwon McMillan",
+      "similarity": 88.398,
+      "year": 2017
+    },
+    "historical_comp_ceiling": {
+      "name": "Nick Vigil",
+      "similarity": 86.809,
+      "year": 2016
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Jaishawn Barham (LB, Michigan) carries a 80.38 model grade with a current Round 3-4 projection. Current board slot: 83. Primary NFL pathway: MIKE thumper (stack-and-shed) in Single-high run-fit zone match. developmental contributor profile; processes quickly and closes efficiently. Seed rank 142 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -6020,14 +6020,14 @@
       "year": 2019
     },
     "historical_comp_median": {
-      "name": "Kelvin Banks Jr.",
-      "similarity": 89.535,
-      "year": 2025
-    },
-    "historical_comp_ceiling": {
       "name": "Le'Raven Clark",
       "similarity": 91.763,
       "year": 2016
+    },
+    "historical_comp_ceiling": {
+      "name": "Taylor Moton",
+      "similarity": 89.62,
+      "year": 2017
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Gennings Dunker (OT, Iowa Hawkeyes) carries a 80.50 model grade with a current Round 3-4 projection. Current board slot: 84. Primary NFL pathway: Starting tackle with pass-pro floor in zone power hybrid. developmental contributor profile; has playable pass-pro mechanics with growth runway. Seed rank 88 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -7587,19 +7587,19 @@
       "cfb_ol_proxy_signal": 40.9
     },
     "historical_comp_floor": {
-      "name": "Tyler Higbee",
-      "similarity": 84.468,
-      "year": 2016
-    },
-    "historical_comp_median": {
-      "name": "Luke Musgrave",
-      "similarity": 86.63,
-      "year": 2023
-    },
-    "historical_comp_ceiling": {
       "name": "Stephen Sullivan",
       "similarity": 88.116,
       "year": 2020
+    },
+    "historical_comp_median": {
+      "name": "Isaiah Likely",
+      "similarity": 87.514,
+      "year": 2022
+    },
+    "historical_comp_ceiling": {
+      "name": "Tyler Higbee",
+      "similarity": 84.468,
+      "year": 2016
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Eli Raridon (TE, Notre Dame) carries a 78.09 model grade with a current Round 4-5 projection. Current board slot: 106. Primary NFL pathway: In-line + move mismatch in multiple attach detach. developmental contributor profile; projects as a mismatch in multiple alignments. Seed rank 294 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -7872,14 +7872,14 @@
       "year": 2020
     },
     "historical_comp_median": {
-      "name": "Spencer Adkins",
-      "similarity": 83.359,
-      "year": 2009
+      "name": "Jabrill Peppers",
+      "similarity": 84.074,
+      "year": 2017
     },
     "historical_comp_ceiling": {
-      "name": "Nick Martin",
-      "similarity": 87.129,
-      "year": 2025
+      "name": "Devin Bush",
+      "similarity": 83.143,
+      "year": 2019
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Kyle Louis (LB, Pittsburgh Panthers) carries a 78.84 model grade with a current Round 4-5 projection. Current board slot: 110. Primary NFL pathway: Run-and-chase WILL backer in Split-safety pursuit fit. developmental contributor profile; processes quickly and closes efficiently. Seed rank 160 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -8539,9 +8539,9 @@
       "cfb_ol_proxy_signal": 11.5
     },
     "historical_comp_floor": {
-      "name": "Mike Jackson",
-      "similarity": 86.715,
-      "year": 2019
+      "name": "Jaylen Watson",
+      "similarity": 87.119,
+      "year": 2022
     },
     "historical_comp_median": {
       "name": "Blessuan Austin",
@@ -8663,19 +8663,19 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Ryan Ramczyk",
-      "similarity": 88.247,
-      "year": 2017
+      "name": "Rasheed Walker",
+      "similarity": 89.394,
+      "year": 2022
     },
     "historical_comp_median": {
-      "name": "Kendrick Rogers",
-      "similarity": 89.573,
-      "year": 2001
-    },
-    "historical_comp_ceiling": {
       "name": "Brandon Scherff",
       "similarity": 90.334,
       "year": 2015
+    },
+    "historical_comp_ceiling": {
+      "name": "Ryan Ramczyk",
+      "similarity": 88.247,
+      "year": 2017
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Jude Bowry (OT, Boston College Eagles) carries a 78.74 model grade with a current Round 4-5 projection. Current board slot: 122. Primary NFL pathway: Starting tackle with pass-pro floor in zone power hybrid. developmental contributor profile; has playable pass-pro mechanics with growth runway. Seed rank 130 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -9125,14 +9125,14 @@
       "cfb_ol_proxy_signal": 53.8
     },
     "historical_comp_floor": {
-      "name": "Artez Brown",
-      "similarity": 87.147,
-      "year": 2015
+      "name": "Coby Bryant",
+      "similarity": 89.563,
+      "year": 2022
     },
     "historical_comp_median": {
-      "name": "Jeremy Lane",
-      "similarity": 89.168,
-      "year": 2012
+      "name": "Kevin Johnson",
+      "similarity": 88.849,
+      "year": 2015
     },
     "historical_comp_ceiling": {
       "name": "Isaiah Oliver",
@@ -9879,19 +9879,19 @@
       "cfb_ol_proxy_signal": 76.3
     },
     "historical_comp_floor": {
-      "name": "Jacob Cowing",
-      "similarity": 86.33,
-      "year": 2024
+      "name": "Calvin Austin",
+      "similarity": 86.489,
+      "year": 2022
     },
     "historical_comp_median": {
-      "name": "Marquise Brown",
-      "similarity": 87.326,
-      "year": 2019
-    },
-    "historical_comp_ceiling": {
       "name": "J.J. Nelson",
       "similarity": 87.57,
       "year": 2015
+    },
+    "historical_comp_ceiling": {
+      "name": "Marquise Brown",
+      "similarity": 87.326,
+      "year": 2019
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Brenen Thompson (WR, Mississippi State Bulldogs) carries a 77.49 model grade with a current Round 4-5 projection. Current board slot: 138. Primary NFL pathway: Alignment-flexible target earner in spread vertical. developmental contributor profile; creates separation and finishes at the catch point. Seed rank 181 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -9957,9 +9957,9 @@
       "cfb_ol_proxy_signal": 28.9
     },
     "historical_comp_floor": {
-      "name": "Arian Smith",
-      "similarity": 87.956,
-      "year": 2025
+      "name": "Darnell Mooney",
+      "similarity": 89.902,
+      "year": 2020
     },
     "historical_comp_median": {
       "name": "Jaylen Waddle",
@@ -9967,9 +9967,9 @@
       "year": 2021
     },
     "historical_comp_ceiling": {
-      "name": "Darnell Mooney",
-      "similarity": 89.902,
-      "year": 2020
+      "name": "Marquise Brown",
+      "similarity": 88.51,
+      "year": 2019
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Eric Rivers (WR, Georgia Tech Yellow Jackets) carries a 77.67 model grade with a current Round 4-5 projection. Current board slot: 139. Primary NFL pathway: Alignment-flexible target earner in spread vertical. developmental contributor profile; creates separation and finishes at the catch point. Seed rank 133 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -10099,19 +10099,19 @@
       "cfb_ol_proxy_signal": 50.0
     },
     "historical_comp_floor": {
-      "name": "Jalen Hurts",
-      "similarity": 81.639,
-      "year": 2020
-    },
-    "historical_comp_median": {
       "name": "Joe Reed",
       "similarity": 82.814,
       "year": 2020
     },
-    "historical_comp_ceiling": {
+    "historical_comp_median": {
       "name": "Justin Fields",
       "similarity": 87.204,
       "year": 2021
+    },
+    "historical_comp_ceiling": {
+      "name": "Jalen Hurts",
+      "similarity": 81.639,
+      "year": 2020
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Cole Payton (QB, North Dakota State) carries a 78.04 model grade with a current Round 4-5 projection. Current board slot: 141. Primary NFL pathway: Dynamic spread starter in Spread/RPO movement-launch attack. developmental contributor profile; wins with timing and structure while retaining off-script creation. Seed rank 35 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -10691,13 +10691,13 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "JJ Dielman",
-      "similarity": 88.407,
-      "year": 2017
+      "name": "Simon Stepaniak",
+      "similarity": 88.736,
+      "year": 2020
     },
     "historical_comp_median": {
-      "name": "Jessamen Dunker",
-      "similarity": 89.338,
+      "name": "Forrest Lamp",
+      "similarity": 91.077,
       "year": 2017
     },
     "historical_comp_ceiling": {
@@ -13445,19 +13445,19 @@
       "cfb_ol_proxy_signal": 92.3
     },
     "historical_comp_floor": {
-      "name": "Sauce Gardner",
-      "similarity": 87.749,
-      "year": 2022
-    },
-    "historical_comp_median": {
       "name": "Dontae Johnson",
       "similarity": 87.815,
       "year": 2014
     },
-    "historical_comp_ceiling": {
+    "historical_comp_median": {
       "name": "Kevin King",
       "similarity": 89.92,
       "year": 2017
+    },
+    "historical_comp_ceiling": {
+      "name": "Sauce Gardner",
+      "similarity": 87.749,
+      "year": 2022
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Ephesians Prysock (CB, Washington Huskies) carries a 74.51 model grade with a current Round 5-6 projection. Current board slot: 188. Primary NFL pathway: Outside starter with matchup flexibility in press match. developmental contributor profile; matches routes with disciplined leverage. Seed rank 207 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -13713,19 +13713,19 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Eric Kendricks",
-      "similarity": 87.025,
-      "year": 2015
-    },
-    "historical_comp_median": {
       "name": "Buddy Johnson",
       "similarity": 88.426,
       "year": 2021
     },
+    "historical_comp_median": {
+      "name": "Brian Asamoah II",
+      "similarity": 88.886,
+      "year": 2022
+    },
     "historical_comp_ceiling": {
-      "name": "Nickolas Martin",
-      "similarity": 90.531,
-      "year": 2025
+      "name": "Eric Kendricks",
+      "similarity": 87.025,
+      "year": 2015
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Justin Jefferson (LB, Alabama) carries a 74.40 model grade with a current Round 5-6 projection. Current board slot: 192. Primary NFL pathway: Run-and-chase WILL backer in Split-safety pursuit fit. developmental contributor profile; processes quickly and closes efficiently. Seed rank 181 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -14343,19 +14343,19 @@
       "cfb_ol_proxy_signal": 53.8
     },
     "historical_comp_floor": {
-      "name": "Kendall Sheffield",
-      "similarity": 90.381,
+      "name": "Kadar Hollman",
+      "similarity": 90.55,
       "year": 2019
     },
     "historical_comp_median": {
-      "name": "A.J. Jefferson",
-      "similarity": 92.609,
-      "year": 2010
+      "name": "Derion Kendrick",
+      "similarity": 92.938,
+      "year": 2022
     },
     "historical_comp_ceiling": {
-      "name": "Josh Thompson",
-      "similarity": 93.041,
-      "year": 2022
+      "name": "Kendall Sheffield",
+      "similarity": 90.381,
+      "year": 2019
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Domani Jackson (CB, Alabama) carries a 73.70 model grade with a current Round 5-6 projection. Current board slot: 201. Primary NFL pathway: Outside starter with matchup flexibility in press match. developmental contributor profile; matches routes with disciplined leverage. Seed rank 212 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -15157,19 +15157,19 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Bilal Powell",
-      "similarity": 87.975,
-      "year": 2011
+      "name": "Jordan Scarlett",
+      "similarity": 90.945,
+      "year": 2019
     },
     "historical_comp_median": {
-      "name": "Thomas Jones",
-      "similarity": 89.845,
-      "year": 2000
+      "name": "Jerome Ford",
+      "similarity": 88.125,
+      "year": 2022
     },
     "historical_comp_ceiling": {
-      "name": "Sevarian Edwards",
-      "similarity": 92.167,
-      "year": 2024
+      "name": "Dalvin Cook",
+      "similarity": 90.221,
+      "year": 2017
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Jam Miller (RB, Alabama Crimson Tide) carries a 72.24 model grade with a current Round 5-6 projection. Current board slot: 212. Primary NFL pathway: Primary committee back with passing-down utility in Wide-zone committee. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 256 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -15456,14 +15456,14 @@
       "year": 2019
     },
     "historical_comp_median": {
-      "name": "Ray Rice",
-      "similarity": 90.362,
-      "year": 2008
-    },
-    "historical_comp_ceiling": {
       "name": "Deandre Washington",
       "similarity": 93.474,
       "year": 2016
+    },
+    "historical_comp_ceiling": {
+      "name": "James White",
+      "similarity": 89.62,
+      "year": 2014
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Noah Whittington (RB, Oregon Ducks) carries a 72.03 model grade with a current Round 5-6 projection. Current board slot: 216. Primary NFL pathway: Primary committee back with passing-down utility in Wide-zone committee. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 267 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -16117,9 +16117,9 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Joe Toledo",
-      "similarity": 85.86,
-      "year": 2006
+      "name": "Austin Jackson",
+      "similarity": 86.424,
+      "year": 2020
     },
     "historical_comp_median": {
       "name": "Landon Dickerson",
@@ -16127,9 +16127,9 @@
       "year": 2021
     },
     "historical_comp_ceiling": {
-      "name": "Stephen Berg",
-      "similarity": 89.375,
-      "year": 2007
+      "name": "Penei Sewell",
+      "similarity": 86.8,
+      "year": 2021
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Micah Morris (IOL, Georgia Bulldogs) carries a 71.29 model grade with a current Round 6-7 projection. Current board slot: 225. Primary NFL pathway: Starter with interior pocket-control value in inside zone gap. developmental contributor profile; stabilizes interior pocket depth and run fits. Seed rank 241 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -16619,19 +16619,19 @@
       "cfb_ol_proxy_signal": 11.5
     },
     "historical_comp_floor": {
+      "name": "Marquez White",
+      "similarity": 89.667,
+      "year": 2017
+    },
+    "historical_comp_median": {
       "name": "Donnie Lewis",
       "similarity": 87.232,
       "year": 2019
     },
-    "historical_comp_median": {
+    "historical_comp_ceiling": {
       "name": "Derek Stingley",
       "similarity": 88.868,
       "year": 2022
-    },
-    "historical_comp_ceiling": {
-      "name": "Anwar Phillips",
-      "similarity": 89.883,
-      "year": 2006
     },
     "comp_confidence": "C",
     "scouting_report_summary": "TJ Hall (CB, Iowa Hawkeyes) carries a 69.52 model grade with a current Round 6-7 projection. Current board slot: 232. Primary NFL pathway: Outside starter with matchup flexibility in press match. developmental contributor profile; matches routes with disciplined leverage. Seed rank 224 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -16686,9 +16686,9 @@
       "year": 2019
     },
     "historical_comp_median": {
-      "name": "Trey Lewis",
-      "similarity": 87.918,
-      "year": 2007
+      "name": "Willie Henry",
+      "similarity": 87.157,
+      "year": 2016
     },
     "historical_comp_ceiling": {
       "name": "Carlos Watkins",
