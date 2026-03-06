@@ -33,6 +33,7 @@ CURRENT_DRAFT_YEAR = 2026
 NFLVERSE_DIR = ROOT / "data" / "sources" / "external" / "nflverse"
 NFLVERSE_ROSTERS = NFLVERSE_DIR / "rosters_weekly.parquet"
 NFLVERSE_CONTRACTS = NFLVERSE_DIR / "contracts.parquet"
+NFLVERSE_PLAYERS = NFLVERSE_DIR / "players.parquet"
 
 
 PRODUCTION_METRIC_KEYS = [
@@ -225,7 +226,14 @@ def _norm_school_key(value: str) -> str:
 
 def _norm_player_key(value: str) -> str:
     text = str(value or "").strip().lower()
-    return "".join(ch for ch in text if ch.isalnum())
+    if not text:
+        return ""
+    tokens = re.sub(r"[^a-z0-9\s]", " ", text).split()
+    suffix_tokens = {"jr", "sr", "ii", "iii", "iv", "v"}
+    filtered = [tok for tok in tokens if tok not in suffix_tokens]
+    if not filtered:
+        filtered = tokens
+    return "".join(filtered)
 
 
 def _norm_comp_identity_key(value: str) -> str:
@@ -689,6 +697,51 @@ def _build_team_depth_context() -> dict[str, dict]:
     subset = subset.filter(pl.col("week") == latest_week)
     subset = subset.unique(subset=["team", "gsis_id"], keep="first")
 
+    players_master_by_name: dict[str, dict] = {}
+    if NFLVERSE_PLAYERS.exists():
+        players_master = pl.read_parquet(NFLVERSE_PLAYERS)
+        if not players_master.is_empty():
+            for row in players_master.iter_rows(named=True):
+                name = str(row.get("display_name") or row.get("football_name") or "").strip()
+                key = _norm_player_key(name)
+                if not key:
+                    continue
+                existing = players_master_by_name.get(key)
+                rookie_season = _safe_int(row.get("rookie_season"), 0)
+                years_of_experience = _safe_int(row.get("years_of_experience"), 0)
+                draft_pick = _safe_int(row.get("draft_pick"), 0)
+                latest_team = str(row.get("latest_team") or "").strip().upper()
+                status = str(row.get("status") or "").strip().upper()
+                payload = {
+                    "display_name": name,
+                    "latest_team": latest_team,
+                    "status": status,
+                    "rookie_season": rookie_season,
+                    "years_of_experience": years_of_experience,
+                    "draft_pick": draft_pick,
+                    "birth_date": str(row.get("birth_date") or "").strip(),
+                    "position": str(row.get("position") or "").strip().upper(),
+                }
+                if existing is None:
+                    players_master_by_name[key] = payload
+                    continue
+                existing_score = (
+                    1 if str(existing.get("latest_team") or "").strip() else 0,
+                    1 if str(existing.get("status") or "").strip() in {"ACT", "RES", "INA", "DEV", "EXE", "SUS", "RSR", "RSN"} else 0,
+                    int(existing.get("rookie_season") or 0),
+                    int(existing.get("years_of_experience") or 0),
+                    -(int(existing.get("draft_pick") or 9999)),
+                )
+                new_score = (
+                    1 if latest_team else 0,
+                    1 if status in {"ACT", "RES", "INA", "DEV", "EXE", "SUS", "RSR", "RSN"} else 0,
+                    rookie_season,
+                    years_of_experience,
+                    -(draft_pick or 9999),
+                )
+                if new_score > existing_score:
+                    players_master_by_name[key] = payload
+
     contract_rows = []
     apy_pool_by_pos: dict[str, list[float]] = defaultdict(list)
     contract_by_gsis: dict[str, dict] = {}
@@ -859,6 +912,14 @@ def _build_team_depth_context() -> dict[str, dict]:
         player_key = _norm_player_key(player_name)
         roster_info = roster_lookup_by_team.get(team, {}).get(player_key, {})
         contract = contract_by_name.get(player_key)
+        player_master = players_master_by_name.get(player_key, {})
+        latest_team_match = (
+            bool(player_master)
+            and str(player_master.get("latest_team") or "").strip().upper() == team
+            and str(player_master.get("status") or "").strip().upper() not in {"RET", "CUT"}
+        )
+        if not roster_info and not contract and not latest_team_match:
+            continue
         apy = _safe_float(contract.get("apy")) if contract else _safe_float(roster_info.get("apy_m"))
         apy_pct = (
             _pct_score(apy, apy_pool_by_pos.get(model_pos, []))
@@ -866,11 +927,15 @@ def _build_team_depth_context() -> dict[str, dict]:
             else float(roster_info.get("apy_pct") or 0.0)
         )
         years_left = _safe_int(contract.get("years"), 0) if contract else 0
-        has_contract = bool(contract) or bool(roster_info)
+        has_contract = bool(contract) or bool(roster_info) or latest_team_match
         if contract:
             contract_label = f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
         elif roster_info:
             contract_label = str(roster_info.get("contract_label") or "Rostered")
+        elif latest_team_match and _safe_int(player_master.get("rookie_season"), 0) >= 2025:
+            contract_label = "Rookie deal"
+        elif latest_team_match:
+            contract_label = "Rostered"
         else:
             contract_label = "FA"
 
@@ -878,9 +943,9 @@ def _build_team_depth_context() -> dict[str, dict]:
             "player_name": player_name,
             "position": model_pos,
             "depth_chart_position": slot,
-            "years_exp": _safe_int(roster_info.get("years_exp"), 0),
-            "age": roster_info.get("age", ""),
-            "draft_number": roster_info.get("draft_number", ""),
+            "years_exp": _safe_int(roster_info.get("years_exp"), 0) or _safe_int(player_master.get("years_of_experience"), 0),
+            "age": roster_info.get("age", "") or _parse_birth_years(player_master.get("birth_date", "")) or "",
+            "draft_number": roster_info.get("draft_number", "") or _safe_int(player_master.get("draft_pick"), 0) or "",
             "contract_years": years_left if contract else _safe_int(roster_info.get("contract_years"), 0),
             "has_contract": has_contract,
             "contract_label": contract_label,
