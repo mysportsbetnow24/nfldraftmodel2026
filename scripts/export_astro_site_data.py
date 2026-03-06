@@ -17,6 +17,7 @@ except Exception:  # pragma: no cover
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUTS = ROOT / "data" / "outputs"
 ASTRO_DATA = ROOT / "astro-site" / "src" / "data"
+INTERNAL_OUTPUTS = OUTPUTS / "internal"
 
 BOARD_CSV = OUTPUTS / "big_board_2026.csv"
 ROUND1_CSV = OUTPUTS / "mock_2026_round1.csv"
@@ -897,6 +898,7 @@ def _build_team_depth_context() -> dict[str, dict]:
     espn_by_team_pos: dict[tuple[str, str], list[dict]] = defaultdict(list)
     espn_by_team_slot: dict[tuple[str, str], list[dict]] = defaultdict(list)
     espn_defense_groups_by_team: dict[str, list[str]] = defaultdict(list)
+    skipped_espn_rows: list[dict] = []
     for row in espn_depth_rows:
         team = str(row.get("team") or "").strip().upper()
         player_name = str(row.get("player_name") or "").strip()
@@ -919,6 +921,16 @@ def _build_team_depth_context() -> dict[str, dict]:
             and str(player_master.get("status") or "").strip().upper() not in {"RET", "CUT"}
         )
         if not roster_info and not contract and not latest_team_match:
+            skipped_espn_rows.append(
+                {
+                    "team": team,
+                    "player_name": player_name,
+                    "position_slot": slot,
+                    "model_position": model_pos,
+                    "reason": "no_roster_contract_or_players_match",
+                    "espn_rank": _safe_int(row.get("rank"), 99),
+                }
+            )
             continue
         apy = _safe_float(contract.get("apy")) if contract else _safe_float(roster_info.get("apy_m"))
         apy_pct = (
@@ -1133,6 +1145,41 @@ def _build_team_depth_context() -> dict[str, dict]:
             "free_agents": free_agents[:8],
             "young_players_on_rise": youth,
         }
+
+    INTERNAL_OUTPUTS.mkdir(parents=True, exist_ok=True)
+    qa_md = INTERNAL_OUTPUTS / "espn_depth_chart_publish_qa_2026.md"
+    lines = [
+        "# ESPN Depth Chart Publish QA",
+        "",
+        f"- Generated: {datetime.now(timezone.utc).isoformat()}",
+        f"- ESPN rows scanned: {len(espn_depth_rows)}",
+        f"- ESPN rows skipped before publish: {len(skipped_espn_rows)}",
+        "",
+    ]
+    if skipped_espn_rows:
+        lines.extend(
+            [
+                "| Team | Player | Slot | Model Pos | Reason | ESPN Rank |",
+                "| --- | --- | --- | --- | --- | --- |",
+            ]
+        )
+        for row in sorted(
+            skipped_espn_rows,
+            key=lambda r: (str(r.get("team", "")), str(r.get("model_position", "")), int(r.get("espn_rank", 99)), str(r.get("player_name", ""))),
+        )[:500]:
+            lines.append(
+                f"| {row.get('team','')} | {row.get('player_name','')} | {row.get('position_slot','')} | {row.get('model_position','')} | {row.get('reason','')} | {row.get('espn_rank','')} |"
+            )
+        if len(skipped_espn_rows) > 500:
+            lines.extend(
+                [
+                    "",
+                    f"_Truncated to first 500 skipped rows; total skipped rows: {len(skipped_espn_rows)}._",
+                ]
+            )
+    else:
+        lines.append("No skipped ESPN depth-chart rows.")
+    qa_md.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return out
 
 
@@ -1154,7 +1201,7 @@ def _comp_blend_weights(position: str) -> tuple[float, float]:
     # Athletic translation is generally stronger for trench/front-seven roles,
     # while production patterns are more predictive for skill players/QBs.
     if pos == "QB":
-        return (0.55, 0.45)
+        return (0.35, 0.65)
     if pos in {"RB", "WR", "TE"}:
         return (0.60, 0.40)
     if pos in {"OT", "IOL"}:
@@ -1477,10 +1524,14 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
 
     # Position-normalized metric populations for percentile context.
     pos_metric_values: dict[str, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
+    pos_athletic_profile_values: dict[str, list[float]] = defaultdict(list)
     for row in rows:
         pos = str(row.get("position", "")).strip().upper()
         if not pos:
             continue
+        athletic_profile_score = _safe_float(row.get("athletic_profile_score"))
+        if athletic_profile_score is not None and athletic_profile_score > 0:
+            pos_athletic_profile_values[pos].append(float(athletic_profile_score))
         for key in PRODUCTION_METRIC_KEYS:
             val = _safe_float(row.get(key))
             if val is None:
@@ -1500,10 +1551,16 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         rank_driver_summary = row.get("rank_driver_summary", "")
         top_driver_key, top_driver_delta = _top_driver(rank_driver_summary)
         pff_grade = round(_safe_float(row.get("pff_grade")) or 0.0, 2)
+        athletic_profile_score = _safe_float(row.get("athletic_profile_score"))
+        athletic_metric_coverage_rate = _safe_float(row.get("athletic_metric_coverage_rate"))
         combine_ras_official = round(_safe_float(row.get("combine_ras_official")) or 0.0, 2)
         ras_estimate = round(_safe_float(row.get("ras_estimate")) or 0.0, 2)
         production_snapshot = _clean_public_snapshot(row.get("scouting_production_snapshot", "") or "")
         low_evidence_flag = pff_grade <= 0 and combine_ras_official <= 0 and ras_estimate <= 0
+        athletic_percentile = _pct_rank(
+            float(athletic_profile_score),
+            pos_athletic_profile_values.get(pos, []),
+        ) if athletic_profile_score is not None and athletic_profile_score > 0 else None
         production_metrics: dict[str, float] = {}
         production_percentiles: dict[str, float] = {}
         for key in PRODUCTION_METRIC_KEYS:
@@ -1661,6 +1718,9 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "market_signal_pct": round(market_signal_pct, 1),
                 "pff_grade": pff_grade,
                 "trait_score": round(_safe_float(row.get("trait_score")) or 0.0, 2),
+                "athletic_profile_score": round(float(athletic_profile_score), 3) if athletic_profile_score is not None and athletic_profile_score > 0 else None,
+                "athletic_metric_coverage_rate": round(float(athletic_metric_coverage_rate), 4) if athletic_metric_coverage_rate is not None and athletic_metric_coverage_rate >= 0 else None,
+                "athletic_percentile": athletic_percentile,
                 "combine_ras_official": combine_ras_official,
                 "ras_estimate": ras_estimate,
                 "confidence_score": round(_safe_float(row.get("confidence_score")) or 0.0, 2),

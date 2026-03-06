@@ -305,7 +305,8 @@ const collectionSchema = {
 
         const prodPctVals = Object.values(p.production_percentiles || {}).map((v) => Number(v)).filter((n) => Number.isFinite(n));
         const productionPct = prodPctVals.length ? (prodPctVals.reduce((a, b) => a + b, 0) / prodPctVals.length) : 50;
-        const athleticPct = rasRaw > 0 ? toPct(rasRaw, 4, 10) : 50;
+        const athleticPctRaw = num(p.athletic_percentile);
+        const athleticPct = athleticPctRaw === null ? (rasRaw > 0 ? toPct(rasRaw, 4, 10) : 50) : clamp(athleticPctRaw, 0, 100);
         const traitPct = toPct(trait, 70, 97);
         const marketPct = clamp(Number(market.pct || 50), 0, 100);
 

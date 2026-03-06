@@ -335,43 +335,97 @@ def _infer_qb_role_and_scheme(
     structure_profile = _avg_defined([processing, pocket, accuracy])
     prod = production_context or {}
     qb_epa = _safe_prod_value(prod, "cfb_qb_epa_per_play", "qb_epa_per_play", "qb_epa_per_pl")
-    qb_pressure_to_sack = _safe_prod_value(prod, "cfb_qb_pressure_signal", "qb_pressure_to_sack_rate")
+    qb_pressure_signal = _safe_prod_value(prod, "cfb_qb_pressure_signal")
     qb_pass_td = _safe_prod_value(prod, "cfb_qb_pass_td", "qb_pass_td")
     qb_int = _safe_prod_value(prod, "cfb_qb_pass_int", "qb_pass_int")
     qb_int_rate = _safe_prod_value(prod, "cfb_qb_int_rate", "qb_int_rate")
 
-    plus_athlete = athletic_score >= 88.0
-    good_athlete = athletic_score >= 84.0
-    limited_athlete = athletic_score < 80.0
+    elite_athlete = athletic_score >= 74.0
+    plus_athlete = athletic_score >= 70.0
+    good_athlete = athletic_score >= 64.0
+    limited_athlete = athletic_score < 58.0
     prototype_frame = height_in >= 75 and weight_lb >= 220
-    secure_ball = (qb_int_rate is not None and qb_int_rate <= 0.022) or (qb_int is not None and qb_int <= 8.0)
-    turnover_prone = (qb_int_rate is not None and qb_int_rate >= 0.032) or (qb_int is not None and qb_int >= 12.0)
-    efficient_passer = qb_epa is not None and qb_epa >= 0.16
-    unstable_under_pressure = qb_pressure_to_sack is not None and qb_pressure_to_sack >= 23.0
+    secure_ball = (qb_int_rate is not None and qb_int_rate <= 0.018) or (qb_int is not None and qb_int <= 6.0)
+    turnover_prone = (qb_int_rate is not None and qb_int_rate >= 0.027) or (qb_int is not None and qb_int >= 10.0)
+    efficient_passer = qb_epa is not None and qb_epa >= 0.34
+    solid_passer = qb_epa is not None and qb_epa >= 0.26
+    elite_under_pressure = qb_pressure_signal is not None and qb_pressure_signal >= 84.0
+    stable_under_pressure = qb_pressure_signal is not None and qb_pressure_signal >= 72.0
+    shaky_under_pressure = qb_pressure_signal is not None and qb_pressure_signal <= 50.0
 
-    if distributor_profile is not None and distributor_profile >= 81.0 and good_athlete and (secure_ball or efficient_passer):
-        if creation is not None and creation >= 78.0:
-            return ("Franchise dual-threat creator", "Spread/RPO vertical-play-action")
-        return ("Franchise timing distributor", "West Coast timing spread")
-    if creator_profile is not None and creator_profile >= 80.0 and plus_athlete and not turnover_prone:
-        return ("Dual-threat shot-play creator", "Spread/RPO vertical-play-action")
-    if pure_arm_profile is not None and pure_arm_profile >= 80.0 and (arm_talent or 0.0) >= 82.0 and (secure_ball or efficient_passer):
-        return ("Vertical drive-starter", "Play-action deep-shot structure")
-    if structure_profile is not None and structure_profile >= 76.0 and not limited_athlete and not unstable_under_pressure:
-        return ("Rhythm-and-timing starter", "Quick-game progression spread")
-    if structure_profile is not None and structure_profile >= 74.0 and limited_athlete and secure_ball:
-        return ("Pocket distributor", "Play-action under-center progression")
-    if turnover_prone or unstable_under_pressure:
-        return ("Developmental backup profile", "Half-field progression + protection menu")
-    if creator_profile is not None and creator_profile >= 74.0 and good_athlete:
-        return ("Developmental creator with upside", "Spread movement-passer package")
-
-    if plus_athlete and prototype_frame:
+    if (
+        distributor_profile is not None
+        and distributor_profile >= 84.0
+        and secure_ball
+        and (efficient_passer or elite_under_pressure)
+    ):
+        if creation is not None and creation >= 79.0 and good_athlete:
+            return ("Franchise dual-threat creator", "Spread/RPO movement-launch attack")
+        return ("Franchise field general", "West Coast spread / full-field progression")
+    if (
+        creator_profile is not None
+        and creator_profile >= 81.0
+        and plus_athlete
+        and not turnover_prone
+        and stable_under_pressure
+    ):
+        return ("Dual-threat pressure creator", "Spread/RPO movement-launch attack")
+    if (
+        pure_arm_profile is not None
+        and pure_arm_profile >= 80.0
+        and (arm_talent or 0.0) >= 82.0
+        and (efficient_passer or solid_passer)
+        and not turnover_prone
+    ):
+        return ("Vertical pocket aggressor", "Play-action vertical shot offense")
+    if (
+        structure_profile is not None
+        and structure_profile >= 80.0
+        and secure_ball
+        and stable_under_pressure
+    ):
+        return ("High-end structure distributor", "West Coast spread / quick-game progression")
+    if (
+        structure_profile is not None
+        and structure_profile >= 76.0
+        and secure_ball
+        and (stable_under_pressure or solid_passer)
+    ):
+        return ("Timing-and-rhythm distributor", "Quick-game spread / progression menu")
+    if (
+        creator_profile is not None
+        and creator_profile >= 76.0
+        and good_athlete
+        and not turnover_prone
+    ):
+        return ("Movement-passer starter", "Boot/play-action spread")
+    if (
+        structure_profile is not None
+        and structure_profile >= 74.0
+        and prototype_frame
+        and secure_ball
+    ):
+        return ("Play-action drive starter", "Under-center play-action progression")
+    if turnover_prone and shaky_under_pressure:
+        return ("High-variance developmental passer", "Half-field progression + shot-play menu")
+    if efficient_passer and secure_ball and stable_under_pressure:
+        if plus_athlete:
+            return ("Dynamic spread starter", "Spread/RPO movement-launch attack")
+        return ("High-end structure distributor", "West Coast spread / full-field progression")
+    if solid_passer and secure_ball and not turnover_prone:
+        if good_athlete:
+            return ("Movement-passer starter", "Boot/play-action spread")
+        if prototype_frame:
+            return ("Play-action drive starter", "Under-center play-action progression")
+        return ("Timing-and-rhythm distributor", "Quick-game spread / progression menu")
+    if plus_athlete and not turnover_prone:
+        return ("Developmental live-arm creator", "Movement-passer package")
+    if elite_athlete and prototype_frame and (creation or 0.0) >= 74.0:
         return ("Developmental dual-threat upside QB", "Spread/RPO vertical-play-action")
-    if good_athlete:
-        return ("Developmental creator with upside", "Spread movement-passer package")
-    if limited_athlete:
-        return ("Developmental pocket backup profile", "Quick-game progression spread")
+    if creator_profile is not None and creator_profile >= 72.0 and good_athlete:
+        return ("Developmental live-arm creator", "Movement-passer package")
+    if limited_athlete and secure_ball:
+        return ("Low-variance reserve distributor", "Quick-game backup structure")
     return ("Starter-caliber distributor profile", "Timing-spread distributor framework")
 
 
