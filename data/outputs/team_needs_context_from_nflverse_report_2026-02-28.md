@@ -1,11 +1,11 @@
 # Team Needs Context Build Report (NFLverse)
 
-- Built at: `2026-03-06T04:58:14.378157+00:00`
+- Built at: `2026-03-06T05:03:17.805736+00:00`
 - Output: `/Users/nickholz/nfldraftmodel2026/data/sources/team_needs_context_2026.csv`
 - Target year: `2026`
 - Teams: `32`
 - Rows: `352`
-- ESPN depth-chart overrides used: `285`
+- ESPN depth-chart overrides used: `352`
 
 ## Input Files
 
