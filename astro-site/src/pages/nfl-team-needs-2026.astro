@@ -69,6 +69,24 @@ const sortedTeams = [...rows]
   .filter(Boolean)
   .sort((a, b) => a.localeCompare(b));
 
+const teamOptions = sortedTeams.map((team) => {
+  const aliases = TEAM_SEARCH_ALIASES[team] || [team];
+  const display = aliases.find((item) => {
+    const upper = String(item || "").toUpperCase();
+    return upper !== team.toUpperCase() && !upper.startsWith(team.toUpperCase());
+  }) || team;
+  return { team, display };
+});
+
+const normalizeSearch = (value: string | number | null | undefined) => {
+  return String(value || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+};
+
 function designationClass(label: string) {
   return `designation designation--${String(label || "backup")
     .toLowerCase()
@@ -114,9 +132,11 @@ function lanePlayers(lane: any) {
         placeholder="Search team, position need, or player..."
         autocomplete="off"
       />
-      <select class="control" id="team-needs-team">
+    <select class="control" id="team-needs-team">
         <option value="">All Teams</option>
-        {sortedTeams.map((team) => <option value={team}>{team}</option>)}
+        {teamOptions.map((entry) => (
+          <option value={entry.team}>{entry.team} — {entry.display}</option>
+        ))}
       </select>
     </div>
   </section>
@@ -418,12 +438,12 @@ function lanePlayers(lane: any) {
       if (!searchEl || !teamEl || cards.length === 0) return;
 
       const applyFilters = () => {
-        const search = String((searchEl as HTMLInputElement).value || "").toLowerCase().trim();
+        const search = normalizeSearch((searchEl as HTMLInputElement).value || "");
         const team = String((teamEl as HTMLSelectElement).value || "").trim().toLowerCase();
 
         for (const card of cards) {
           const cardTeam = String(card.getAttribute("data-team") || "").toLowerCase();
-          const hay = String(card.getAttribute("data-search") || "");
+          const hay = normalizeSearch(card.getAttribute("data-search"));
           const teamOk = !team || cardTeam === team;
           const searchOk = !search || hay.includes(search);
           (card as HTMLElement).style.display = teamOk && searchOk ? "" : "none";
