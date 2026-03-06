@@ -437,6 +437,15 @@ function lanePlayers(lane: any) {
 
       if (!searchEl || !teamEl || cards.length === 0) return;
 
+      const normalizeSearch = (value) => {
+        return String(value || "")
+          .toLowerCase()
+          .normalize("NFKD")
+          .replace(/[^a-z0-9]+/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      };
+
       const applyFilters = () => {
         const search = normalizeSearch((searchEl as HTMLInputElement).value || "");
         const team = String((teamEl as HTMLSelectElement).value || "").trim().toLowerCase();
