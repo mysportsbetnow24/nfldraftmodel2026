@@ -17,6 +17,7 @@ DEFAULT_PATH_CANDIDATES = [
     MANUAL_DIR / "cfb_production_2025.csv",
     PROCESSED_DIR / "cfb_production_features_2025.csv",
 ]
+SG_ADVANCED_PATH = MANUAL_DIR / "scoutinggrade_advanced_2025.csv"
 
 TARGET_POSITIONS = {"QB", "WR", "TE", "RB", "EDGE", "DT", "LB", "CB", "S", "OT", "IOL"}
 P0_BLEND_WEIGHT = float(os.getenv("CFBFASTR_P0_BLEND_WEIGHT", "0.35"))
@@ -58,6 +59,14 @@ POSITION_SCOPE_KEYS = {
         "opp_def_success_rate_allowed_avg",
         "opp_def_toughness_index",
         "opp_def_adjustment_multiplier",
+        "sg_qb_pass_grade",
+        "sg_qb_btt_rate",
+        "sg_qb_twp_rate",
+        "sg_qb_pressure_to_sack_rate",
+        "sg_qb_pressure_grade",
+        "sg_qb_blitz_grade",
+        "sg_qb_no_screen_grade",
+        "sg_qb_quick_qb_rating",
     },
     "WR": {
         "yprr",
@@ -74,6 +83,13 @@ POSITION_SCOPE_KEYS = {
         "opp_def_success_rate_allowed_avg",
         "opp_def_toughness_index",
         "opp_def_adjustment_multiplier",
+        "sg_wrte_route_grade",
+        "sg_wrte_yprr",
+        "sg_wrte_targets_per_route",
+        "sg_wrte_man_yprr",
+        "sg_wrte_zone_yprr",
+        "sg_wrte_contested_catch_rate",
+        "sg_wrte_drop_rate",
     },
     "TE": {
         "yprr",
@@ -90,6 +106,13 @@ POSITION_SCOPE_KEYS = {
         "opp_def_success_rate_allowed_avg",
         "opp_def_toughness_index",
         "opp_def_adjustment_multiplier",
+        "sg_rb_run_grade",
+        "sg_rb_elusive_rating",
+        "sg_rb_yco_attempt",
+        "sg_rb_explosive_rate",
+        "sg_rb_breakaway_percent",
+        "sg_rb_targets_per_route",
+        "sg_rb_yprr",
     },
     "RB": {
         "explosive_run_rate",
@@ -116,6 +139,13 @@ POSITION_SCOPE_KEYS = {
         "game_consistency_index",
         "late_season_trend_index",
         "top_defense_performance_index",
+        "sg_dl_pass_rush_grade",
+        "sg_dl_pass_rush_win_rate",
+        "sg_dl_prp",
+        "sg_dl_true_pass_set_win_rate",
+        "sg_dl_true_pass_set_prp",
+        "sg_front_run_def_grade",
+        "sg_front_stop_percent",
     },
     "DT": {
         "pressure_rate",
@@ -128,6 +158,13 @@ POSITION_SCOPE_KEYS = {
         "game_consistency_index",
         "late_season_trend_index",
         "top_defense_performance_index",
+        "sg_dl_pass_rush_grade",
+        "sg_dl_pass_rush_win_rate",
+        "sg_dl_prp",
+        "sg_dl_true_pass_set_win_rate",
+        "sg_dl_true_pass_set_prp",
+        "sg_front_run_def_grade",
+        "sg_front_stop_percent",
     },
     "LB": {
         "lb_usage_rate",
@@ -146,6 +183,13 @@ POSITION_SCOPE_KEYS = {
         "game_consistency_index",
         "late_season_trend_index",
         "top_defense_performance_index",
+        "sg_def_run_grade",
+        "sg_def_coverage_grade",
+        "sg_def_tackle_grade",
+        "sg_def_missed_tackle_rate",
+        "sg_front_stop_percent",
+        "sg_cov_yards_per_snap",
+        "sg_cov_qb_rating_against",
     },
     "CB": {
         "coverage_plays_per_target",
@@ -153,6 +197,14 @@ POSITION_SCOPE_KEYS = {
         "game_consistency_index",
         "late_season_trend_index",
         "top_defense_performance_index",
+        "sg_cov_grade",
+        "sg_cov_forced_incompletion_rate",
+        "sg_cov_snaps_per_target",
+        "sg_cov_yards_per_snap",
+        "sg_cov_qb_rating_against",
+        "sg_cov_man_grade",
+        "sg_cov_zone_grade",
+        "sg_slot_cov_yards_per_snap",
     },
     "S": {
         "coverage_plays_per_target",
@@ -160,6 +212,14 @@ POSITION_SCOPE_KEYS = {
         "game_consistency_index",
         "late_season_trend_index",
         "top_defense_performance_index",
+        "sg_cov_grade",
+        "sg_cov_forced_incompletion_rate",
+        "sg_cov_snaps_per_target",
+        "sg_cov_yards_per_snap",
+        "sg_cov_qb_rating_against",
+        "sg_cov_man_grade",
+        "sg_cov_zone_grade",
+        "sg_slot_cov_yards_per_snap",
     },
     "OT": {
         "years_played",
@@ -169,6 +229,11 @@ POSITION_SCOPE_KEYS = {
         "ol_starts",
         "career_starts",
         "starts",
+        "sg_ol_pass_block_grade",
+        "sg_ol_run_block_grade",
+        "sg_ol_pbe",
+        "sg_ol_pressure_allowed_rate",
+        "sg_ol_versatility_count",
     },
     "IOL": {
         "years_played",
@@ -178,6 +243,11 @@ POSITION_SCOPE_KEYS = {
         "ol_starts",
         "career_starts",
         "starts",
+        "sg_ol_pass_block_grade",
+        "sg_ol_run_block_grade",
+        "sg_ol_pbe",
+        "sg_ol_pressure_allowed_rate",
+        "sg_ol_versatility_count",
     },
 }
 ALL_SCOPE_KEYS = sorted({k for keys in POSITION_SCOPE_KEYS.values() for k in keys})
@@ -911,6 +981,202 @@ def _db_signal(row: dict) -> tuple[float | None, float | None, float | None, dic
     return _weighted_mean(parts), cov_plays_per_target, yards_allowed_per_cov_snap, diag
 
 
+SG_ADV_BLEND_WEIGHTS = {
+    "QB": 0.58,
+    "RB": 0.55,
+    "WR": 0.58,
+    "TE": 0.58,
+    "EDGE": 0.60,
+    "DT": 0.60,
+    "LB": 0.56,
+    "CB": 0.60,
+    "S": 0.60,
+    "OT": 0.72,
+    "IOL": 0.72,
+}
+
+
+def _sg_qb_signal(row: dict) -> tuple[float | None, int]:
+    parts = []
+    grade = _score_linear(_first_float(row, ["sg_qb_pass_grade"]), 55.0, 92.0)
+    if grade is not None:
+        parts.append((0.28, grade))
+    btt = _score_linear(_first_float(row, ["sg_qb_btt_rate"]), 1.0, 8.0)
+    if btt is not None:
+        parts.append((0.12, btt))
+    twp = _score_inverse(_first_float(row, ["sg_qb_twp_rate"]), 0.06, 0.01)
+    if twp is not None:
+        parts.append((0.16, twp))
+    p2s = _score_inverse(
+        _first_float(row, ["sg_qb_pressure_to_sack_rate", "sg_qb_pressure_pressure_to_sack_rate"]),
+        0.30,
+        0.10,
+    )
+    if p2s is not None:
+        parts.append((0.14, p2s))
+    pressure_grade = _score_linear(_first_float(row, ["sg_qb_pressure_grade"]), 40.0, 90.0)
+    if pressure_grade is not None:
+        parts.append((0.12, pressure_grade))
+    blitz_grade = _score_linear(_first_float(row, ["sg_qb_blitz_grade"]), 45.0, 90.0)
+    if blitz_grade is not None:
+        parts.append((0.08, blitz_grade))
+    ns_grade = _score_linear(_first_float(row, ["sg_qb_no_screen_grade"]), 50.0, 90.0)
+    if ns_grade is not None:
+        parts.append((0.05, ns_grade))
+    quick = _score_linear(_first_float(row, ["sg_qb_quick_qb_rating"]), 60.0, 145.0)
+    if quick is not None:
+        parts.append((0.05, quick))
+    return _weighted_mean(parts), len(parts)
+
+
+def _sg_wrte_signal(row: dict) -> tuple[float | None, int]:
+    parts = []
+    route_grade = _score_linear(_first_float(row, ["sg_wrte_route_grade"]), 55.0, 92.0)
+    if route_grade is not None:
+        parts.append((0.28, route_grade))
+    yprr = _score_linear(_first_float(row, ["sg_wrte_yprr"]), 0.8, 3.2)
+    if yprr is not None:
+        parts.append((0.20, yprr))
+    tpr = _score_linear(_first_float(row, ["sg_wrte_targets_per_route"]), 0.10, 0.34)
+    if tpr is not None:
+        parts.append((0.18, tpr))
+    man = _score_linear(_first_float(row, ["sg_wrte_man_yprr"]), 0.6, 3.0)
+    if man is not None:
+        parts.append((0.12, man))
+    zone = _score_linear(_first_float(row, ["sg_wrte_zone_yprr"]), 0.6, 3.0)
+    if zone is not None:
+        parts.append((0.08, zone))
+    contested = _score_linear(_first_float(row, ["sg_wrte_contested_catch_rate"]), 0.25, 0.70)
+    if contested is not None:
+        parts.append((0.06, contested))
+    drop = _score_inverse(_first_float(row, ["sg_wrte_drop_rate"]), 0.12, 0.02)
+    if drop is not None:
+        parts.append((0.08, drop))
+    return _weighted_mean(parts), len(parts)
+
+
+def _sg_rb_signal(row: dict) -> tuple[float | None, int]:
+    parts = []
+    run_grade = _score_linear(_first_float(row, ["sg_rb_run_grade"]), 55.0, 92.0)
+    if run_grade is not None:
+        parts.append((0.18, run_grade))
+    elusive = _score_linear(_first_float(row, ["sg_rb_elusive_rating"]), 20.0, 130.0)
+    if elusive is not None:
+        parts.append((0.22, elusive))
+    yco = _score_linear(_first_float(row, ["sg_rb_yco_attempt"]), 1.5, 5.0)
+    if yco is not None:
+        parts.append((0.18, yco))
+    explosive = _score_linear(_first_float(row, ["sg_rb_explosive_rate"]), 5.0, 40.0)
+    if explosive is not None:
+        parts.append((0.16, explosive))
+    breakaway = _score_linear(_first_float(row, ["sg_rb_breakaway_percent"]), 10.0, 55.0)
+    if breakaway is not None:
+        parts.append((0.14, breakaway))
+    receiving = _score_linear(_first_float(row, ["sg_rb_targets_per_route"]), 0.03, 0.22)
+    if receiving is not None:
+        parts.append((0.12, receiving))
+    return _weighted_mean(parts), len(parts)
+
+
+def _sg_dl_signal(row: dict) -> tuple[float | None, int]:
+    parts = []
+    rush_grade = _score_linear(_first_float(row, ["sg_dl_pass_rush_grade"]), 55.0, 92.0)
+    if rush_grade is not None:
+        parts.append((0.24, rush_grade))
+    win = _score_linear(
+        _first_float(row, ["sg_dl_true_pass_set_win_rate", "sg_dl_pass_rush_win_rate"]),
+        5.0,
+        28.0,
+    )
+    if win is not None:
+        parts.append((0.24, win))
+    prp = _score_linear(_first_float(row, ["sg_dl_true_pass_set_prp", "sg_dl_prp"]), 4.0, 15.0)
+    if prp is not None:
+        parts.append((0.20, prp))
+    pressures = _score_linear(_first_float(row, ["sg_dl_true_pass_set_total_pressures", "sg_dl_total_pressures"]), 5.0, 70.0)
+    if pressures is not None:
+        parts.append((0.12, pressures))
+    run_grade = _score_linear(_first_float(row, ["sg_front_run_def_grade"]), 40.0, 85.0)
+    if run_grade is not None:
+        parts.append((0.12, run_grade))
+    stops = _score_linear(_first_float(row, ["sg_front_stop_percent"]), 3.0, 12.0)
+    if stops is not None:
+        parts.append((0.08, stops))
+    return _weighted_mean(parts), len(parts)
+
+
+def _sg_lb_signal(row: dict) -> tuple[float | None, int]:
+    parts = []
+    run_grade = _score_linear(_first_float(row, ["sg_def_run_grade"]), 45.0, 90.0)
+    if run_grade is not None:
+        parts.append((0.20, run_grade))
+    cov_grade = _score_linear(_first_float(row, ["sg_def_coverage_grade"]), 40.0, 90.0)
+    if cov_grade is not None:
+        parts.append((0.22, cov_grade))
+    tackle_grade = _score_linear(_first_float(row, ["sg_def_tackle_grade"]), 45.0, 90.0)
+    if tackle_grade is not None:
+        parts.append((0.12, tackle_grade))
+    missed = _score_inverse(_first_float(row, ["sg_def_missed_tackle_rate"]), 0.25, 0.05)
+    if missed is not None:
+        parts.append((0.12, missed))
+    stop = _score_linear(_first_float(row, ["sg_front_stop_percent"]), 3.0, 12.0)
+    if stop is not None:
+        parts.append((0.14, stop))
+    ypcs = _score_inverse(_first_float(row, ["sg_cov_yards_per_snap"]), 2.0, 0.4)
+    if ypcs is not None:
+        parts.append((0.10, ypcs))
+    qbr = _score_inverse(_first_float(row, ["sg_cov_qb_rating_against"]), 130.0, 40.0)
+    if qbr is not None:
+        parts.append((0.10, qbr))
+    return _weighted_mean(parts), len(parts)
+
+
+def _sg_db_signal(row: dict) -> tuple[float | None, int]:
+    parts = []
+    cov_grade = _score_linear(_first_float(row, ["sg_cov_grade"]), 45.0, 92.0)
+    if cov_grade is not None:
+        parts.append((0.26, cov_grade))
+    fi = _score_linear(_first_float(row, ["sg_cov_forced_incompletion_rate"]), 0.05, 0.30)
+    if fi is not None:
+        parts.append((0.16, fi))
+    spt = _score_linear(_first_float(row, ["sg_cov_snaps_per_target"]), 2.0, 18.0)
+    if spt is not None:
+        parts.append((0.14, spt))
+    ypcs = _score_inverse(_first_float(row, ["sg_cov_yards_per_snap"]), 2.0, 0.30)
+    if ypcs is not None:
+        parts.append((0.18, ypcs))
+    qbr = _score_inverse(_first_float(row, ["sg_cov_qb_rating_against"]), 140.0, 35.0)
+    if qbr is not None:
+        parts.append((0.14, qbr))
+    man = _score_linear(_first_float(row, ["sg_cov_man_grade"]), 40.0, 90.0)
+    if man is not None:
+        parts.append((0.06, man))
+    zone = _score_linear(_first_float(row, ["sg_cov_zone_grade"]), 40.0, 90.0)
+    if zone is not None:
+        parts.append((0.06, zone))
+    return _weighted_mean(parts), len(parts)
+
+
+def _sg_ol_signal(row: dict) -> tuple[float | None, int]:
+    parts = []
+    pass_grade = _score_linear(_first_float(row, ["sg_ol_pass_block_grade"]), 50.0, 90.0)
+    if pass_grade is not None:
+        parts.append((0.34, pass_grade))
+    run_grade = _score_linear(_first_float(row, ["sg_ol_run_block_grade"]), 45.0, 90.0)
+    if run_grade is not None:
+        parts.append((0.18, run_grade))
+    pbe = _score_linear(_first_float(row, ["sg_ol_pbe"]), 94.0, 99.8)
+    if pbe is not None:
+        parts.append((0.28, pbe))
+    pressure_rate = _score_inverse(_first_float(row, ["sg_ol_pressure_allowed_rate"]), 0.08, 0.0)
+    if pressure_rate is not None:
+        parts.append((0.14, pressure_rate))
+    versatility = _score_linear(_first_float(row, ["sg_ol_versatility_count"]), 1.0, 4.0)
+    if versatility is not None:
+        parts.append((0.06, versatility))
+    return _weighted_mean(parts), len(parts)
+
+
 def _qb_p0_signal(row: dict) -> tuple[float | None, int]:
     ppa_overall = _first_float(row, ["qb_ppa_overall", "ppa_overall", "qb_ppa_all"])
     ppa_pass = _first_float(row, ["qb_ppa_passing", "ppa_passing", "qb_ppa_pass"])
@@ -1041,6 +1307,40 @@ def _load_rows(path: Path | None) -> list[dict]:
         return list(csv.DictReader(f))
 
 
+def _merge_scoutinggrade_advanced_rows(rows: list[dict], target_season: int) -> list[dict]:
+    if not SG_ADVANCED_PATH.exists():
+        return rows
+
+    merged: dict[tuple[str, str], dict] = {}
+    for row in rows:
+        name = canonical_player_name(str(row.get("player_name", "")).strip())
+        pos = normalize_pos(str(row.get("position", "")).strip())
+        season = int(_safe_float(row.get("season")) or target_season)
+        if not name or not pos or season != target_season:
+            continue
+        merged[(name, pos)] = dict(row)
+
+    with SG_ADVANCED_PATH.open() as f:
+        for row in csv.DictReader(f):
+            name = canonical_player_name(str(row.get("player_name", "")).strip())
+            pos = normalize_pos(str(row.get("position", "")).strip())
+            season = int(_safe_float(row.get("season")) or target_season)
+            if not name or not pos or season != target_season:
+                continue
+            cur = merged.get((name, pos), {})
+            base = dict(cur) if cur else {
+                "player_name": row.get("player_name", ""),
+                "school": row.get("school", ""),
+                "position": pos,
+                "season": target_season,
+            }
+            for key, value in row.items():
+                if value not in {"", None}:
+                    base[key] = value
+            merged[(name, pos)] = base
+    return list(merged.values())
+
+
 def _discover_path(path: Path | None = None) -> Path | None:
     if path is not None:
         return path
@@ -1053,6 +1353,7 @@ def _discover_path(path: Path | None = None) -> Path | None:
 def load_cfb_production_signals(path: Path | None = None, target_season: int = 2025) -> dict:
     src_path = _discover_path(path)
     rows = _load_rows(src_path)
+    rows = _merge_scoutinggrade_advanced_rows(rows, target_season)
     if not rows:
         return {
             "by_name_pos": {},
@@ -1119,6 +1420,7 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
     nonpos_metrics_ignored_rows = 0
     nonpos_metrics_ignored_total = 0
     years_played_available = 0
+    sg_advanced_matches = 0
 
     for row in seasonal_rows:
         name = str(row.get("player_name", "")).strip()
@@ -1137,6 +1439,22 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
         lb_sig, lb_tackles, lb_tfl, lb_sacks, lb_hurries, lb_usage_rate, lb_def_snaps, lb_diag = _lb_signal(row)
         db_sig, cov_plays_per_target, yards_allowed_per_cov_snap, db_diag = _db_signal(row)
         ol_proxy_sig, ol_years_played, ol_starts, ol_usage_rate, ol_diag = _ol_proxy_signal(row)
+        sg_signal = None
+        sg_cov = 0
+        if position == "QB":
+            sg_signal, sg_cov = _sg_qb_signal(row)
+        elif position in {"WR", "TE"}:
+            sg_signal, sg_cov = _sg_wrte_signal(row)
+        elif position == "RB":
+            sg_signal, sg_cov = _sg_rb_signal(row)
+        elif position in {"EDGE", "DT"}:
+            sg_signal, sg_cov = _sg_dl_signal(row)
+        elif position == "LB":
+            sg_signal, sg_cov = _sg_lb_signal(row)
+        elif position in {"CB", "S"}:
+            sg_signal, sg_cov = _sg_db_signal(row)
+        elif position in {"OT", "IOL"}:
+            sg_signal, sg_cov = _sg_ol_signal(row)
 
         cfb_prod_signal_legacy = _legacy_position_signal(
             position=position,
@@ -1171,8 +1489,11 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             coverage_count = int(ol_diag.get("ol_available_count", 0) or 0)
         else:
             coverage_count = 0
+        coverage_count += sg_cov
         if position in {"QB", "WR", "TE", "RB", "EDGE", "DT", "LB", "CB", "S"}:
             coverage_count += _game_ctx_cov
+        if sg_cov > 0:
+            sg_advanced_matches += 1
 
         p0_signal = None
         p0_cov = 0
@@ -1199,6 +1520,15 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
                 ((1.0 - CFB_PERCENTILE_BLEND_WEIGHT) * float(cfb_prod_contextual_signal))
                 + (CFB_PERCENTILE_BLEND_WEIGHT * float(percentile_signal))
             )
+        if sg_signal is not None:
+            sg_weight = float(SG_ADV_BLEND_WEIGHTS.get(position, 0.55))
+            if cfb_prod_contextual_signal is not None:
+                cfb_prod_contextual_signal = (
+                    ((1.0 - sg_weight) * float(cfb_prod_contextual_signal))
+                    + (sg_weight * float(sg_signal))
+                )
+            else:
+                cfb_prod_contextual_signal = 55.0 + ((float(sg_signal) - 55.0) * 0.92)
         if cfb_prod_contextual_signal is not None and game_ctx_sig is not None:
             game_weight = 0.14 if position in {"QB", "WR", "TE", "RB"} else 0.12 if position in {"EDGE", "DT", "LB", "CB", "S"} else 0.0
             if game_weight > 0:
@@ -1285,6 +1615,11 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             "cfb_prod_signal_raw": round(cfb_prod_signal_legacy, 2) if cfb_prod_signal_legacy is not None else "",
             "cfb_prod_signal_contextual_raw": round(cfb_prod_contextual_signal, 2)
             if cfb_prod_contextual_signal is not None
+            else "",
+            "sg_advanced_signal": round(sg_signal, 2) if sg_signal is not None else "",
+            "sg_advanced_available_count": sg_cov,
+            "sg_advanced_source": "scoutinggrade_advanced_2025"
+            if sg_cov > 0
             else "",
             "cfb_prod_percentile_signal": round(percentile_signal, 2) if percentile_signal is not None else "",
             "cfb_prod_percentile_population_n": len(pop_for_percentile),
@@ -1477,5 +1812,6 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             "cfb_nonpos_metrics_ignored_rows": nonpos_metrics_ignored_rows,
             "cfb_nonpos_metrics_ignored_total": nonpos_metrics_ignored_total,
             "cfb_years_played_available": years_played_available,
+            "sg_advanced_matches": sg_advanced_matches,
         },
     }

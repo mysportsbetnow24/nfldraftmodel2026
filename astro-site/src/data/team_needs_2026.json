@@ -953,16 +953,16 @@
               "apy_m": 1.0
             },
             {
-              "player_name": "Elijah Dotson",
+              "player_name": "Jase McClellan",
               "position": "RB",
               "depth_rank": 4,
               "designation": "FA",
               "role_label": "RB4",
               "detail_label": "RB4 | FA",
-              "meta_label": "1 yrs exp | Age 27",
+              "meta_label": "Age 23",
               "contract_label": "FA",
-              "years_exp": 1,
-              "age": 27,
+              "years_exp": 0,
+              "age": 23,
               "apy_m": ""
             }
           ]
@@ -1501,12 +1501,25 @@
         "apy_m": ""
       },
       {
-        "player_name": "Elijah Dotson",
+        "player_name": "Jase McClellan",
         "position": "RB",
         "depth_rank": 4,
         "designation": "FA",
         "role_label": "RB4",
         "detail_label": "RB4 | FA",
+        "meta_label": "Age 23",
+        "contract_label": "FA",
+        "years_exp": 0,
+        "age": 23,
+        "apy_m": ""
+      },
+      {
+        "player_name": "Junior Aho",
+        "position": "DT",
+        "depth_rank": 5,
+        "designation": "FA",
+        "role_label": "DT",
+        "detail_label": "DT | FA",
         "meta_label": "1 yrs exp | Age 27",
         "contract_label": "FA",
         "years_exp": 1,
@@ -1710,17 +1723,17 @@
               "apy_m": 3.1
             },
             {
-              "player_name": "Josh Johnson",
+              "player_name": "Devin Leary",
               "position": "QB",
               "depth_rank": 4,
-              "designation": "Backup",
+              "designation": "FA",
               "role_label": "QB4",
-              "detail_label": "QB4 | 1y | $1.4M APY",
-              "meta_label": "16 yrs exp | Age 39",
-              "contract_label": "1y | $1.4M APY",
-              "years_exp": 16,
-              "age": 39,
-              "apy_m": 1.42
+              "detail_label": "QB4 | FA",
+              "meta_label": "Age 26",
+              "contract_label": "FA",
+              "years_exp": 0,
+              "age": 26,
+              "apy_m": ""
             }
           ]
         },
@@ -2300,7 +2313,21 @@
       "season": 2024,
       "week": 18
     },
-    "free_agents": [],
+    "free_agents": [
+      {
+        "player_name": "Devin Leary",
+        "position": "QB",
+        "depth_rank": 4,
+        "designation": "FA",
+        "role_label": "QB4",
+        "detail_label": "QB4 | FA",
+        "meta_label": "Age 26",
+        "contract_label": "FA",
+        "years_exp": 0,
+        "age": 26,
+        "apy_m": ""
+      }
+    ],
     "young_players_on_rise": [
       {
         "player_name": "Zay Flowers",
@@ -3882,19 +3909,6 @@
         "contract_label": "FA",
         "years_exp": 0,
         "age": 26,
-        "apy_m": ""
-      },
-      {
-        "player_name": "T.J. Smith",
-        "position": "DT",
-        "depth_rank": 5,
-        "designation": "FA",
-        "role_label": "DT",
-        "detail_label": "DT | FA",
-        "meta_label": "4 yrs exp | Age 28",
-        "contract_label": "FA",
-        "years_exp": 4,
-        "age": 28,
         "apy_m": ""
       }
     ],
@@ -6920,16 +6934,16 @@
               "apy_m": 3.0
             },
             {
-              "player_name": "Justin Rogers",
+              "player_name": "Denzel Daxon",
               "position": "DT",
               "depth_rank": 4,
               "designation": "FA",
               "role_label": "DT",
               "detail_label": "DT | FA",
-              "meta_label": "Age 24",
+              "meta_label": "Age 26",
               "contract_label": "FA",
               "years_exp": 0,
-              "age": 24,
+              "age": 26,
               "apy_m": ""
             }
           ]
@@ -7124,16 +7138,16 @@
         "apy_m": ""
       },
       {
-        "player_name": "Justin Rogers",
+        "player_name": "Denzel Daxon",
         "position": "DT",
         "depth_rank": 4,
         "designation": "FA",
         "role_label": "DT",
         "detail_label": "DT | FA",
-        "meta_label": "Age 24",
+        "meta_label": "Age 26",
         "contract_label": "FA",
         "years_exp": 0,
-        "age": 24,
+        "age": 26,
         "apy_m": ""
       }
     ],
@@ -9758,17 +9772,17 @@
               "apy_m": 1.11
             },
             {
-              "player_name": "Case Keenum",
+              "player_name": "Kedon Slovis",
               "position": "QB",
               "depth_rank": 4,
               "designation": "Backup",
               "role_label": "QB4",
-              "detail_label": "QB4 | 1y | $2.2M APY",
-              "meta_label": "12 yrs exp | Age 38",
-              "contract_label": "1y | $2.2M APY",
-              "years_exp": 12,
-              "age": 38,
-              "apy_m": 2.25
+              "detail_label": "QB4 | 2y | $0.9M APY",
+              "meta_label": "Age 24",
+              "contract_label": "2y | $0.9M APY",
+              "years_exp": 0,
+              "age": 24,
+              "apy_m": 0.92
             }
           ]
         },
@@ -14541,17 +14555,17 @@
               "apy_m": 1.09
             },
             {
-              "player_name": "Desmond Ridder",
+              "player_name": "Carter Bradley",
               "position": "QB",
               "depth_rank": 4,
               "designation": "Backup",
               "role_label": "QB4",
-              "detail_label": "QB4 | 2y | $1.1M APY",
-              "meta_label": "2 yrs exp | Age 26",
-              "contract_label": "2y | $1.1M APY",
-              "years_exp": 2,
-              "age": 26,
-              "apy_m": 1.12
+              "detail_label": "QB4 | 1y | $1.0M APY",
+              "meta_label": "Age 25",
+              "contract_label": "1y | $1.0M APY",
+              "years_exp": 0,
+              "age": 25,
+              "apy_m": 1.0
             }
           ]
         },
@@ -16713,21 +16727,7 @@
       "season": 2024,
       "week": 18
     },
-    "free_agents": [
-      {
-        "player_name": "Travis Bell",
-        "position": "DT",
-        "depth_rank": 5,
-        "designation": "FA",
-        "role_label": "DT",
-        "detail_label": "DT | FA",
-        "meta_label": "1 yrs exp | Age 27",
-        "contract_label": "FA",
-        "years_exp": 1,
-        "age": 27,
-        "apy_m": ""
-      }
-    ],
+    "free_agents": [],
     "young_players_on_rise": [
       {
         "player_name": "Christian Darrisaw",
@@ -16924,17 +16924,17 @@
               "apy_m": 1.03
             },
             {
-              "player_name": "Jacoby Brissett",
+              "player_name": "Joe Milton III",
               "position": "QB",
               "depth_rank": 4,
               "designation": "Backup",
               "role_label": "QB4",
-              "detail_label": "QB4 | 2y | $6.2M APY",
-              "meta_label": "8 yrs exp | Age 33",
-              "contract_label": "2y | $6.2M APY",
-              "years_exp": 8,
-              "age": 33,
-              "apy_m": 6.25
+              "detail_label": "QB4 | 4y | $1.1M APY",
+              "meta_label": "Age 26",
+              "contract_label": "4y | $1.1M APY",
+              "years_exp": 0,
+              "age": 26,
+              "apy_m": 1.05
             }
           ]
         },
@@ -17720,16 +17720,16 @@
               "apy_m": 10.0
             },
             {
-              "player_name": "Derek Carr",
+              "player_name": "Ben DiNucci",
               "position": "QB",
               "depth_rank": 4,
               "designation": "FA",
               "role_label": "QB4",
               "detail_label": "QB4 | FA",
-              "meta_label": "10 yrs exp | Age 34",
+              "meta_label": "4 yrs exp | Age 29",
               "contract_label": "FA",
-              "years_exp": 10,
-              "age": 34,
+              "years_exp": 4,
+              "age": 29,
               "apy_m": ""
             }
           ]
@@ -18312,16 +18312,16 @@
     },
     "free_agents": [
       {
-        "player_name": "Derek Carr",
+        "player_name": "Ben DiNucci",
         "position": "QB",
         "depth_rank": 4,
         "designation": "FA",
         "role_label": "QB4",
         "detail_label": "QB4 | FA",
-        "meta_label": "10 yrs exp | Age 34",
+        "meta_label": "4 yrs exp | Age 29",
         "contract_label": "FA",
-        "years_exp": 10,
-        "age": 34,
+        "years_exp": 4,
+        "age": 29,
         "apy_m": ""
       }
     ],
@@ -21707,17 +21707,17 @@
               "apy_m": 1.57
             },
             {
-              "player_name": "Sam Howell",
+              "player_name": "Jaren Hall",
               "position": "QB",
               "depth_rank": 4,
-              "designation": "Backup",
+              "designation": "FA",
               "role_label": "QB4",
-              "detail_label": "QB4 | 4y | $1.0M APY",
-              "meta_label": "2 yrs exp | Age 25",
-              "contract_label": "4y | $1.0M APY",
-              "years_exp": 2,
-              "age": 25,
-              "apy_m": 1.01
+              "detail_label": "QB4 | FA",
+              "meta_label": "1 yrs exp | Age 27",
+              "contract_label": "FA",
+              "years_exp": 1,
+              "age": 27,
+              "apy_m": ""
             }
           ]
         },
@@ -22298,6 +22298,19 @@
       "week": 18
     },
     "free_agents": [
+      {
+        "player_name": "Jaren Hall",
+        "position": "QB",
+        "depth_rank": 4,
+        "designation": "FA",
+        "role_label": "QB4",
+        "detail_label": "QB4 | FA",
+        "meta_label": "1 yrs exp | Age 27",
+        "contract_label": "FA",
+        "years_exp": 1,
+        "age": 27,
+        "apy_m": ""
+      },
       {
         "player_name": "Johnathan Hankins",
         "position": "DT",
@@ -23107,7 +23120,21 @@
       "season": 2024,
       "week": 18
     },
-    "free_agents": [],
+    "free_agents": [
+      {
+        "player_name": "Khalil Davis",
+        "position": "DT",
+        "depth_rank": 5,
+        "designation": "FA",
+        "role_label": "DT",
+        "detail_label": "DT | FA",
+        "meta_label": "4 yrs exp | Age 29",
+        "contract_label": "FA",
+        "years_exp": 4,
+        "age": 29,
+        "apy_m": ""
+      }
+    ],
     "young_players_on_rise": [
       {
         "player_name": "Brock Purdy",
@@ -23915,19 +23942,6 @@
         "contract_label": "FA",
         "years_exp": 0,
         "age": 24,
-        "apy_m": ""
-      },
-      {
-        "player_name": "Mike Greene",
-        "position": "DT",
-        "depth_rank": 5,
-        "designation": "FA",
-        "role_label": "DT",
-        "detail_label": "DT | FA",
-        "meta_label": "2 yrs exp | Age 26",
-        "contract_label": "FA",
-        "years_exp": 2,
-        "age": 26,
         "apy_m": ""
       }
     ],

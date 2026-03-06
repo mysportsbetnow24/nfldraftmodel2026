@@ -1,0 +1,264 @@
+pff_rank,pff_player,pff_position,pff_school,match_type,board_player,board_position,board_school,board_rank_seed,board_final_rank,board_grade,pff_grade
+1,Fernando Mendoza,QB,Indiana,exact,Fernando Mendoza,QB,Indiana,1,,89.24,91.6
+2,Arvell Reese,LB,Ohio State,exact,Arvell Reese,LB,Ohio State Buckeyes,15,,94.14,76.5
+3,Jeremiyah Love,HB,Notre Dame,exact,Jeremiyah Love,RB,Notre Dame,16,,93.86,93.1
+4,Sonny Styles,LB,Ohio State,exact,Sonny Styles,LB,Ohio State,97,,94.45,88.6
+5,Rueben Bain Jr.,ED,Miami (FL),name_only,Rueben Bain Jr.,EDGE,Miami (FL) Hurricanes,14,,87.84,92.8
+6,David Bailey,ED,Texas Tech,name_only,David Bailey,EDGE,Texas Tech,158,,88.2,93.3
+7,Francis Mauigoa,T,Miami (FL),name_pos,Francis Mauigoa,OT,Miami (FL) Hurricanes,23,,92.52,82.6
+8,Caleb Downs,S,Ohio State,exact,Caleb Downs,S,Ohio State,5,,92.61,87.6
+9,Mansoor Delane,CB,LSU,exact,Mansoor Delane,CB,LSU Tigers,24,,92.34,90.5
+10,Carnell Tate,WR,Ohio State,exact,Carnell Tate,WR,Ohio State,13,,87.32,88.6
+11,Dillon Thieneman,S,Oregon,exact,Dillon Thieneman,S,Oregon,190,,89.53,91.0
+12,Spencer Fano,T,Utah,exact,Spencer Fano,OT,Utah,107,,89.06,84.0
+13,Monroe Freeling,T,Georgia,exact,Monroe Freeling,OT,Georgia,34,,93.88,72.3
+14,Kenyon Sadiq,TE,Oregon,exact,Kenyon Sadiq,TE,Oregon,86,,89.97,70.4
+15,Makai Lemon,WR,USC,exact,Makai Lemon,WR,USC Trojans,21,,91.33,90.8
+16,Olaivavega Ioane,G,Penn State,exact,Olaivavega Ioane,IOL,Penn State Nittany Lions,32,,91.26,80.0
+17,Jermod McCoy,CB,Tennessee,exact,Jermod McCoy,CB,Tennessee,33,,83.03,
+18,Caleb Banks,DI,Florida,name_only,Caleb Banks,DT,Florida Gators,28,,87.44,68.8
+20,Jordyn Tyson,WR,Arizona State,exact,Jordyn Tyson,WR,Arizona State,12,,93.37,82.9
+21,Akheem Mesidor,ED,Miami (FL),name_only,Akheem Mesidor,EDGE,Miami (FL) Hurricanes,41,,87.87,92.5
+22,Emmanuel McNeil-Warren,S,Toledo,name_pos,Emmanuel McNeil-Warren,S,Toledo Rockets,43,,87.78,91.9
+23,Keldric Faulk,ED,Auburn,name_only,Keldric Faulk,EDGE,Auburn,14,,91.78,75.8
+24,Avieon Terrell,CB,Clemson,exact,Avieon Terrell,CB,Clemson,6,,85.53,83.5
+25,Blake Miller,T,Clemson,exact,Blake Miller,OT,Clemson Tigers,83,,85.76,78.5
+26,Cashius Howell,ED,Texas A&M,name_only,Cashius Howell,EDGE,Texas A&M Aggies,26,,91.05,81.2
+27,Omar Cooper Jr.,WR,Indiana,exact,Omar Cooper Jr.,WR,Indiana Hoosiers,64,,86.91,87.4
+28,Kayden McDonald,DI,Ohio State,name_only,Kayden McDonald,DT,Ohio State Buckeyes,31,,91.49,86.5
+29,T.J. Parker,ED,Clemson,name_only,T.J. Parker,EDGE,Clemson,11,,88.37,80.7
+30,Peter Woods,DI,Clemson,name_only,Peter Woods,DT,Clemson,4,,88.85,72.5
+31,Denzel Boston,WR,Washington,exact,Denzel Boston,WR,Washington,25,,87.78,88.0
+32,Colton Hood,CB,Tennessee,exact,Colton Hood,CB,Tennessee Volunteers,55,,86.77,79.2
+33,Kadyn Proctor,T,Alabama,exact,Kadyn Proctor,OT,Alabama,9,,94.06,86.1
+34,KC Concepcion,WR,Texas A&M,exact,KC Concepcion,WR,Texas A&M Aggies,36,,87.21,78.4
+35,Max Iheanachor,T,Arizona State,name_pos,Max Iheanachor,OT,Arizona State Sun Devils,70,,81.56,72.5
+36,Emmanuel Pregnon,G,Oregon,exact,Emmanuel Pregnon,IOL,Oregon Ducks,52,,88.68,86.7
+37,Christen Miller,DI,Georgia,name_only,Christen Miller,DT,Georgia Bulldogs,39,,86.15,84.5
+38,Caleb Lomu,T,Utah,exact,Caleb Lomu,OT,Utah,17,,93.81,68.4
+39,Lee Hunter,DI,Texas Tech,name_only,Lee Hunter,DT,Texas Tech Red Raiders,57,,79.73,80.9
+40,Zion Young,ED,Missouri,name_only,Zion Young,EDGE,Missouri Tigers,53,,84.78,85.0
+41,Brandon Cisse,CB,South Carolina,exact,Brandon Cisse,CB,South Carolina Gamecocks,41,,89.95,75.2
+42,Ty Simpson,QB,Alabama,exact,Ty Simpson,QB,Alabama Crimson Tide,42,,86.23,83.1
+43,D'Angelo Ponds,CB,Indiana,exact,D'Angelo Ponds,CB,Indiana Hoosiers,60,,85.13,89.9
+44,Chris Bell,WR,Louisville,exact,Chris Bell,WR,Louisville,269,,80.62,81.8
+45,Jacob Rodriguez,LB,Texas Tech,name_pos,Jacob Rodriguez,LB,Texas Tech Red Raiders,95,,82.77,93.0
+46,Chris Johnson,CB,San Diego State,name_pos,Chris Johnson,CB,San Diego State Aztecs,63,,83.75,91.6
+47,R Mason Thomas,ED,Oklahoma,name_only,R Mason Thomas,EDGE,Oklahoma,30,,84.71,85.3
+48,Chase Bisontis,G,Texas A&M,exact,Chase Bisontis,IOL,Texas A&M,123,,83.49,62.4
+49,Germie Bernard,WR,Alabama,exact,Germie Bernard,WR,Alabama,265,,79.34,71.9
+50,Keith Abney II,CB,Arizona State,name_pos,Keith Abney II,CB,Arizona State Sun Devils,44,,81.52,86.3
+51,Gabe Jacas,ED,Illinois,name_only,Gabe Jacas,EDGE,Illinois Fighting Illini,49,,85.75,78.3
+52,A.J. Haulcy,S,LSU,exact,A.J. Haulcy,S,LSU Tigers,51,,82.16,86.6
+53,Eli Stowers,TE,Vanderbilt,exact,Eli Stowers,TE,Vanderbilt,21,,85.73,81.6
+54,Malachi Lawrence,ED,UCF,name_only,Malachi Lawrence,EDGE,UCF Knights,154,,78.09,80.1
+55,Keionte Scott,CB,Miami (FL),name_pos,Keionte Scott,CB,Miami (FL) Hurricanes,58,,84.79,89.6
+56,Jadarian Price,HB,Notre Dame,exact,Jadarian Price,RB,Notre Dame Fighting Irish,66,,81.5,78.6
+57,Gennings Dunker,T,Iowa,name_pos,Gennings Dunker,OT,Iowa Hawkeyes,88,,80.5,82.0
+58,Jake Golday,LB,Cincinnati,name_pos,Jake Golday,LB,Cincinnati Bearcats,64,,84.72,82.4
+59,Skyler Bell,WR,Connecticut,exact,Skyler Bell,WR,Connecticut Huskies,85,,85.3,81.6
+60,Treydan Stukes,CB,Arizona,exact,Treydan Stukes,CB,Arizona Wildcats,278,,74.28,90.1
+61,Joshua Josephs,ED,Tennessee,name_only,Joshua Josephs,EDGE,Tennessee Volunteers,68,,79.94,87.1
+62,Caleb Tiernan,T,Northwestern,exact,Caleb Tiernan,OT,Northwestern Wildcats,61,,84.64,70.5
+63,Derrick Moore,ED,Michigan,name_only,Derrick Moore,EDGE,Michigan,172,,80.65,89.9
+64,Chris Brazzell II,WR,Tennessee,exact,Chris Brazzell II,WR,Tennessee Volunteers,81,,84.45,79.4
+65,Josiah Trotter,LB,Missouri,exact,Josiah Trotter,LB,Missouri Tigers,67,,85.99,72.7
+66,Dani Dennis-Sutton,ED,Penn State,name_only,Dani Dennis-Sutton,EDGE,Penn State Nittany Lions,94,,85.36,80.1
+67,Davison Igbinosun,CB,Ohio State,exact,Davison Igbinosun,CB,Ohio State,51,,78.17,81.5
+68,Kyle Louis,LB,Pittsburgh,exact,Kyle Louis,LB,Pittsburgh Panthers,160,,78.8,73.1
+69,Kamari Ramsey,S,USC,exact,Kamari Ramsey,S,USC Trojans,69,,76.72,72.5
+70,Mike Washington Jr.,HB,Arkansas,exact,Mike Washington Jr.,RB,Arkansas Razorbacks,142,,79.9,78.3
+71,Domonique Orange,DI,Iowa State,name_only,Domonique Orange,DT,Iowa State Cyclones,72,,82.8,68.3
+72,Elijah Sarratt,WR,Indiana,exact,Elijah Sarratt,WR,Indiana Hoosiers,73,,82.74,86.1
+73,Sam Hecht,C,Kansas State,exact,Sam Hecht,IOL,Kansas State Wildcats,98,,80.31,80.3
+74,Zachariah Branch,WR,Georgia,exact,Zachariah Branch,WR,Georgia,266,,82.01,82.0
+75,Max Klare,TE,Ohio State,name_pos,Max Klare,TE,Purdue,300,,78.26,69.3
+76,Romello Height,ED,Texas Tech,name_only,Romello Height,EDGE,Texas Tech Red Raiders,59,,84.08,92.5
+77,Deion Burks,WR,Oklahoma,name_pos,Deion Burks,WR,Oklahoma Sooners,92,,83.37,64.1
+78,Darrell Jackson Jr.,DI,Florida State,name_only,Darrell Jackson Jr.,DT,Florida State,7,,82.35,74.4
+79,Chandler Rivers,CB,Duke,exact,Chandler Rivers,CB,Duke,52,,83.26,79.2
+80,Gracen Halton,DI,Oklahoma,name_only,Gracen Halton,DT,Oklahoma Sooners,118,,78.8,84.7
+81,Devin Moore,CB,Florida,exact,Devin Moore,CB,Florida,92,,76.1,83.0
+82,Sam Roush,TE,Stanford,exact,Sam Roush,TE,Stanford Cardinal,105,,79.59,57.1
+84,Daylen Everette,CB,Georgia,exact,Daylen Everette,CB,Georgia,48,,85.58,69.7
+85,Keyron Crawford,ED,Auburn,name_only,Keyron Crawford,EDGE,Auburn Tigers,300,,70.91,76.3
+86,Connor Lew,C,Auburn,exact,Connor Lew,IOL,Auburn Tigers,71,,79.83,67.6
+87,Keylan Rutledge,G,Georgia Tech,name_pos,Keylan Rutledge,IOL,Georgia Tech Yellow Jackets,134,,78.98,76.7
+88,Garrett Nussmeier,QB,LSU,exact,Garrett Nussmeier,QB,LSU,58,,78.58,77.1
+89,Genesis Smith,S,Arizona,exact,Genesis Smith,S,Arizona Wildcats,108,,80.57,81.1
+90,Jake Slaughter,C,Florida,exact,Jake Slaughter,IOL,Florida,129,,82.36,79.3
+91,Drew Allar,QB,Penn State,exact,Drew Allar,QB,Penn State,62,,77.54,72.4
+92,Anthony Hill Jr.,LB,Texas,exact,Anthony Hill Jr.,LB,Texas Longhorns,48,,88.45,72.8
+93,Jonah Coleman,HB,Washington,exact,Jonah Coleman,RB,Washington Huskies,84,,82.88,82.1
+94,Malachi Fields,WR,Notre Dame,exact,Malachi Fields,WR,Notre Dame Fighting Irish,101,,78.92,75.8
+96,LT Overton,ED,Alabama,name_only,LT Overton,EDGE,Alabama,23,,78.34,64.2
+97,Antonio Williams,WR,Clemson,exact,Antonio Williams,WR,Clemson,267,,79.09,80.3
+99,Dontay Corleone,DI,Cincinnati,name_only,Dontay Corleone,DT,Cincinnati Bearcats,62,,82.43,72.6
+100,Anthony Lucas,ED,USC,name_only,Anthony Lucas,EDGE,USC Trojans,75,,82.05,71.4
+101,Deontae Lawson,LB,Alabama,exact,Deontae Lawson,LB,Alabama,96,,81.72,77.6
+102,De'Zhaun Stribling,WR,Mississippi,exact,De'Zhaun Stribling,WR,Mississippi Rebels,110,,77.67,79.2
+103,Bryce Lance,WR,North Dakota State,exact,Bryce Lance,WR,North Dakota State,38,,81.17,89.5
+104,Ted Hurst,WR,Georgia State,exact,Ted Hurst,WR,Georgia State Panthers,150,,79.67,82.0
+105,Carson Beck,QB,Miami (FL),name_pos,Carson Beck,QB,Miami (FL) Hurricanes,96,,78.04,73.6
+106,Will Lee III,CB,Texas A&M,exact,Will Lee III,CB,Texas A&M Aggies,106,,78.44,66.5
+107,Zakee Wheatley,S,Penn State,exact,Zakee Wheatley,S,Penn State Nittany Lions,97,,78.35,85.9
+109,Rayshaun Benny,DI,Michigan,name_only,Rayshaun Benny,DT,Michigan Wolverines,219,,75.83,78.2
+110,Bryce Boettcher,LB,Oregon,exact,Bryce Boettcher,LB,Oregon Ducks,204,,77.01,77.4
+111,Michael Trigg,TE,Baylor,exact,Michael Trigg,TE,Baylor Bears,80,,80.11,72.4
+112,CJ Daniels,WR,Miami (FL),name_pos,CJ Daniels,WR,Miami (FL) Hurricanes,79,,79.17,73.3
+114,Kage Casey,T,Boise State,exact,Kage Casey,OT,Boise State,143,,76.71,80.0
+115,Tyreak Sapp,ED,Florida,name_only,Tyreak Sapp,EDGE,Florida,84,,78.09,65.0
+116,Jack Endries,TE,Texas,exact,Jack Endries,TE,Texas Longhorns,77,,79.59,68.5
+117,Chris McClellan,DI,Missouri,name_only,Chris McClellan,DT,Missouri Tigers,300,,69.16,78.2
+119,Brian Parker II,T,Duke,exact,Brian Parker II,OT,Duke Blue Devils,103,,82.94,85.5
+120,Seth McGowan,HB,Kentucky,exact,Seth McGowan,RB,Kentucky Wildcats,99,,78.4,70.1
+121,Jaishawn Barham,ED,Michigan,name_only,Jaishawn Barham,LB,Michigan,142,,80.38,79.3
+122,Jalon Kilgore,CB,South Carolina,name_only,Jalon Kilgore,S,South Carolina,26,,82.07,69.7
+123,Reggie Virgil,WR,Texas Tech,name_pos,Reggie Virgil,WR,Texas Tech Red Raiders,211,,71.63,68.5
+124,DeMonte Capehart,DI,Clemson,name_only,DeMonte Capehart,DT,Clemson Tigers,171,,78.64,71.2
+125,Justin Joly,TE,North Carolina State,exact,Justin Joly,TE,North Carolina State Wolfpack,91,,79.16,77.9
+126,Eric McAlister,WR,TCU,name_pos,Eric McAlister,WR,TCU Horned Frogs,129,,76.67,76.1
+127,Malik Muhammad,CB,Texas,exact,Malik Muhammad,CB,Texas,228,,80.17,70.8
+128,Brenen Thompson,WR,Mississippi State,exact,Brenen Thompson,WR,Mississippi State Bulldogs,181,,77.13,79.0
+129,Jude Bowry,T,Boston College,exact,Jude Bowry,OT,Boston College Eagles,130,,78.74,66.0
+130,Ja'Kobi Lane,WR,USC,exact,Ja'Kobi Lane,WR,USC,20,,83.79,77.6
+131,Emmett Johnson,HB,Nebraska,name_pos,Emmett Johnson,RB,Nebraska Cornhuskers,87,,79.46,85.6
+132,Marlin Klein,TE,Michigan,exact,Marlin Klein,TE,Michigan Wolverines,111,,75.1,64.6
+133,Bud Clark,S,TCU,name_pos,Bud Clark,S,TCU Horned Frogs,112,,80.07,80.4
+134,Jager Burton,C,Kentucky,exact,Jager Burton,IOL,Kentucky Wildcats,138,,77.47,71.3
+135,Dallen Bentley,TE,Utah,exact,Dallen Bentley,TE,Utah Utes,191,,74.96,76.9
+136,Trey Zuhn III,T,Texas A&M,name_only,Trey Zuhn III,IOL,Texas A&M,114,,77.47,72.7
+137,Tim Keenan III,DI,Alabama,name_only,Tim Keenan III,DT,Alabama Crimson Tide,133,,76.99,70.8
+138,Taurean York,LB,Texas A&M,exact,Taurean York,LB,Texas A&M Aggies,86,,79.42,83.7
+139,Nicholas Singleton,HB,Penn State,exact,Nicholas Singleton,RB,Penn State,32,,81.9,77.6
+140,J.C. Davis,T,Illinois,name_pos,J.C. Davis,OT,Illinois Fighting Illini,114,,77.77,87.8
+142,Nadame Tucker,ED,Western Michigan,name_only,Nadame Tucker,EDGE,Western Michigan Broncos,157,,75.26,91.4
+143,Austin Barber,T,Florida,exact,Austin Barber,OT,Florida,27,,81.27,83.5
+144,Le'Veon Moss,HB,Texas A&M,exact,Le'Veon Moss,RB,Texas A&M,66,,79.4,75.8
+146,Max Llewellyn,ED,Iowa,name_only,Max Llewellyn,EDGE,Iowa Hawkeyes,179,,74.4,72.3
+149,Caleb Douglas,WR,Texas Tech,name_pos,Caleb Douglas,WR,Texas Tech Red Raiders,194,,72.23,66.9
+150,Diego Pounds,T,Mississippi,exact,Diego Pounds,OT,Mississippi Rebels,290,,69.1,62.3
+151,Nate Boerkircher,TE,Texas A&M,exact,Nate Boerkircher,TE,Texas A&M Aggies,180,,73.41,74.5
+152,Kaytron Allen,HB,Penn State,exact,Kaytron Allen,RB,Penn State Nittany Lions,119,,79.9,89.5
+153,Joe Royer,TE,Cincinnati,name_pos,Joe Royer,TE,Cincinnati Bearcats,120,,77.43,59.8
+154,Eli Raridon,TE,Notre Dame,exact,Eli Raridon,TE,Notre Dame,294,,78.09,67.6
+155,Ephesians Prysock,CB,Washington,exact,Ephesians Prysock,CB,Washington Huskies,207,,74.4,77.8
+156,Dametrious Crownover,T,Texas A&M,exact,Dametrious Crownover,OT,Texas A&M Aggies,206,,74.0,65.2
+157,Beau Stephens,G,Iowa,name_pos,Beau Stephens,IOL,Iowa Hawkeyes,131,,77.03,85.1
+158,Jeremiah Wright,G,Auburn,exact,Jeremiah Wright,IOL,Auburn Tigers,275,,70.38,68.2
+159,Albert Regis,DI,Texas A&M,name_only,Albert Regis,DT,Texas A&M Aggies,121,,77.64,72.5
+160,Skyler Gill-Howard,DI,Texas Tech,name_only,Skyler Gill-Howard,DT,Texas Tech Red Raiders,110,,78.0,88.6
+161,Cade Klubnik,QB,Clemson,exact,Cade Klubnik,QB,Clemson,61,,77.54,76.5
+162,Kevin Coleman Jr.,WR,Missouri,exact,Kevin Coleman Jr.,WR,Missouri Tigers,185,,74.4,78.5
+164,Logan Jones,C,Iowa,name_pos,Logan Jones,IOL,Iowa Hawkeyes,174,,76.9,79.0
+165,Charles Demmings,CB,Stephen F. Austin,exact,Charles Demmings,CB,Stephen F. Austin,38,,79.67,79.6
+166,Michael Taaffe,S,Texas,exact,Michael Taaffe,S,Texas Longhorns,122,,78.57,88.1
+167,Demond Claiborne,HB,Wake Forest,exact,Demond Claiborne,RB,Wake Forest,67,,80.46,68.7
+168,Julian Neal,CB,Arkansas,exact,Julian Neal,CB,Arkansas Razorbacks,126,,78.59,79.5
+169,DJ Campbell,G,Texas,exact,DJ Campbell,IOL,Texas Longhorns,127,,77.47,70.9
+170,Josh Cuevas,TE,Alabama,exact,Josh Cuevas,TE,Alabama Crimson Tide,116,,76.38,69.6
+171,Thaddeus Dixon,CB,North Carolina,exact,Thaddeus Dixon,CB,North Carolina Tar Heels,128,,78.17,65.2
+172,Quintayvious Hutchins,ED,Boston College,name_only,Quintayvious Hutchins,EDGE,Boston College Eagles,162,,74.73,68.7
+173,Aiden Fisher,LB,Indiana,exact,Aiden Fisher,LB,Indiana Hoosiers,132,,78.88,68.1
+174,Eric Rivers,WR,Georgia Tech,name_pos,Eric Rivers,WR,Georgia Tech Yellow Jackets,133,,77.67,72.7
+176,Hezekiah Masses,CB,California,name_pos,Hezekiah Masses,CB,California Golden Bears,143,,75.77,79.5
+177,Aamil Wagner,T,Notre Dame,exact,Aamil Wagner,OT,Notre Dame,44,,79.77,68.7
+178,Jeff Caldwell,WR,Cincinnati,name_pos,Jeff Caldwell,WR,Cincinnati Bearcats,178,,74.17,70.0
+179,Trey Moore,LB,Texas,exact,Trey Moore,LB,Texas Longhorns,140,,78.88,64.6
+180,Drew Shelton,T,Penn State,exact,Drew Shelton,OT,Penn State Nittany Lions,144,,79.27,70.6
+181,J'Mari Taylor,HB,Virginia,name_pos,J'Mari Taylor,RB,Virginia Cavaliers,145,,71.73,76.1
+182,Ar'maj Reed-Adams,G,Texas A&M,exact,Ar'maj Reed-Adams,IOL,Texas A&M,126,,77.47,69.1
+183,Aaron Anderson,WR,LSU,exact,Aaron Anderson,WR,LSU Tigers,147,,69.28,72.8
+185,Harold Perkins Jr.,LB,LSU,exact,Harold Perkins Jr.,LB,LSU,18,,80.88,62.4
+186,Pat Coogan,C,Indiana,exact,Pat Coogan,IOL,Indiana Hoosiers,149,,78.84,78.0
+188,Miles Kitselman,TE,Tennessee,exact,Miles Kitselman,TE,Tennessee Volunteers,151,,72.19,64.7
+189,Owen Heinecke,LB,Oklahoma,name_pos,Owen Heinecke,LB,Oklahoma Sooners,200,,73.79,76.1
+191,John Michael Gyllenborg,TE,Wyoming,exact,John Michael Gyllenborg,TE,Wyoming Cowboys,167,,76.09,54.1
+193,Jaeden Roberts,G,Alabama,exact,Jaeden Roberts,IOL,Alabama,125,,76.47,69.5
+195,Tanner Koziol,TE,Houston,exact,Tanner Koziol,TE,Houston,289,,76.09,78.9
+196,Tacario Davis,CB,Washington,exact,Tacario Davis,CB,Washington,56,,80.17,67.2
+197,Zane Durant,DI,Penn State,name_only,Zane Durant,DT,Penn State,88,,79.14,63.9
+199,Chase Roberts,WR,BYU,exact,Chase Roberts,WR,BYU Cougars,164,,73.21,74.5
+200,Bishop Fitzgerald,S,USC,exact,Bishop Fitzgerald,S,USC Trojans,165,,73.69,90.7
+202,VJ Payne,S,Kansas State,exact,VJ Payne,S,Kansas State Wildcats,255,,72.49,73.3
+203,Red Murdock,LB,Buffalo,exact,Red Murdock,LB,Buffalo,145,,78.88,91.2
+204,Dae'Quan Wright,TE,Mississippi,exact,Dae'Quan Wright,TE,Mississippi Rebels,161,,76.2,66.4
+205,George Gumbs Jr.,ED,Florida,name_only,George Gumbs Jr.,EDGE,Florida Gators,170,,74.45,66.0
+206,Zavion Thomas,WR,LSU,exact,Zavion Thomas,WR,LSU Tigers,172,,71.83,66.2
+207,Oscar Delp,TE,Georgia,exact,Oscar Delp,TE,Georgia Bulldogs,173,,76.42,63.2
+208,Eli Heidenreich,FB,Navy,name_pos,Eli Heidenreich,RB,Navy Midshipmen,217,,76.22,92.9
+210,Desmond Reid,HB,Pittsburgh,exact,Desmond Reid,RB,Pittsburgh Panthers,177,,75.1,80.1
+212,TJ Hall,CB,Iowa,name_pos,TJ Hall,CB,Iowa Hawkeyes,224,,69.44,78.3
+213,Zxavian Harris,DI,Mississippi,name_only,Zxavian Harris,DT,Mississippi Rebels,182,,77.64,73.3
+214,Robert Spears-Jennings,S,Oklahoma,name_pos,Robert Spears-Jennings,S,Oklahoma Sooners,183,,74.38,58.9
+215,Jadon Canady,CB,Oregon,exact,Jadon Canady,CB,Oregon Ducks,184,,75.57,85.5
+218,Parker Brailsford,C,Alabama,exact,Parker Brailsford,IOL,Alabama,128,,77.47,65.6
+219,Domani Jackson,CB,Alabama,exact,Domani Jackson,CB,Alabama,212,,73.51,73.4
+220,Robert Henry Jr.,HB,UTSA,name_pos,Robert Henry Jr.,RB,UTSA Roadrunners,193,,74.02,74.2
+221,Colbie Young,WR,Georgia,exact,Colbie Young,WR,Georgia Bulldogs,300,,65.77,76.3
+223,Roman Hemby,HB,Indiana,exact,Roman Hemby,RB,Indiana,73,,78.4,80.9
+226,J. Michael Sturdivant,WR,Florida,exact,J. Michael Sturdivant,WR,Florida Gators,199,,76.17,62.7
+229,Jalon Daniels,QB,Kansas,name_pos,Jalon Daniels,QB,Kansas Jayhawks,175,,74.01,77.1
+231,Vincent Anthony Jr.,ED,Duke,name_only,Vincent Anthony Jr.,EDGE,Duke Blue Devils,202,,72.88,58.2
+232,Lake McRee,TE,USC,exact,Lake McRee,TE,USC Trojans,203,,71.63,69.0
+233,Taylen Green,QB,Arkansas,exact,Taylen Green,QB,Arkansas Razorbacks,221,,75.04,82.5
+234,Cole Payton,QB,North Dakota State,exact,Cole Payton,QB,North Dakota State,35,,78.04,95.9
+236,Eric Gentry,LB,USC,exact,Eric Gentry,LB,USC Trojans,262,,72.66,72.0
+237,Rahsul Faison,HB,South Carolina,exact,Rahsul Faison,RB,South Carolina Gamecocks,208,,68.59,68.8
+238,Lorenzo Styles Jr.,S,Ohio State,name_only,Lorenzo Styles Jr.,CB,Ohio State,225,,82.01,66.0
+239,Josh Cameron,WR,Baylor,exact,Josh Cameron,WR,Baylor Bears,209,,72.73,72.4
+242,Fa'alili Fa'amoe,T,Wake Forest,name_pos,Fa'alili Fa'amoe,OT,Wake Forest Demon Deacons,213,,72.07,67.7
+243,Luke Altmyer,QB,Illinois,name_pos,Luke Altmyer,QB,Illinois Fighting Illini,214,,70.74,78.0
+244,Vinny Anthony II,WR,Wisconsin,exact,Vinny Anthony II,WR,Wisconsin Badgers,215,,69.17,67.7
+245,Deven Eastern,DI,Minnesota,name_only,Deven Eastern,DT,Minnesota Golden Gophers,216,,69.5,67.3
+246,Sawyer Robertson,QB,Baylor,exact,Sawyer Robertson,QB,Baylor Bears,218,,69.29,70.3
+251,Diego Pavia,QB,Vanderbilt,name_pos,Diego Pavia,QB,Vanderbilt Commodores,233,,71.86,92.2
+253,Xavian Sorey Jr.,LB,Arkansas,exact,Xavian Sorey Jr.,LB,Arkansas Razorbacks,226,,69.74,50.3
+255,Joshua Braun,G,Kentucky,exact,Joshua Braun,IOL,Kentucky Wildcats,229,,69.97,62.5
+257,Patrick Payton,ED,LSU,name_only,Patrick Payton,EDGE,LSU,92,,72.88,69.0
+264,Logan Fano,ED,Utah,name_only,Logan Fano,EDGE,Utah Utes,238,,72.69,78.7
+265,Riley Nowakowski,TE,Indiana,exact,Riley Nowakowski,TE,Indiana Hoosiers,239,,69.9,79.6
+267,Micah Morris,G,Georgia,exact,Micah Morris,IOL,Georgia Bulldogs,241,,70.85,72.0
+268,Lander Barton,LB,Utah,exact,Lander Barton,LB,Utah Utes,242,,74.78,61.7
+271,Dillon Bell,WR,Georgia,exact,Dillon Bell,WR,Georgia Bulldogs,246,,66.41,57.7
+273,Jaren Kanak,TE,Oklahoma,name_pos,Jaren Kanak,TE,Oklahoma Sooners,248,,66.47,64.1
+274,Mason Reiger,ED,Wisconsin,name_only,Mason Reiger,EDGE,Wisconsin Badgers,249,,73.2,82.4
+277,Joe Fagnano,QB,Connecticut,exact,Joe Fagnano,QB,Connecticut Huskies,251,,69.02,87.0
+283,Jam Miller,HB,Alabama,exact,Jam Miller,RB,Alabama Crimson Tide,256,,72.24,66.2
+287,RJ Maryland,TE,SMU,exact,RJ Maryland,TE,SMU,295,,69.91,62.4
+288,Jackie Marshall,DI,Baylor,name_only,Jackie Marshall,EDGE,Baylor Bears,299,,62.33,55.7
+290,Damonic Williams,DI,Oklahoma,name_only,Damonic Williams,DT,Oklahoma Sooners,300,,74.13,56.1
+293,Xavier Nwankpa,S,Iowa,exact,Xavier Nwankpa,S,Iowa,95,,77.07,71.0
+296,Noah Whittington,HB,Oregon,exact,Noah Whittington,RB,Oregon Ducks,267,,71.95,83.6
+300,Brandon Cleveland,DI,North Carolina State,name_only,Brandon Cleveland,DT,North Carolina State Wolfpack,270,,67.71,72.1
+303,Behren Morton,QB,Texas Tech,name_pos,Behren Morton,QB,Texas Tech Red Raiders,272,,69.17,72.0
+306,Gary Smith III,DI,UCLA,name_only,Gary Smith III,DT,UCLA Bruins,276,,66.6,75.4
+308,Jordan Hudson,WR,SMU,exact,Jordan Hudson,WR,SMU,134,,75.02,72.6
+310,Harrison Wallace III,WR,Mississippi,exact,Harrison Wallace III,WR,Mississippi Rebels,281,,64.06,73.1
+312,Nick Barrett,DI,South Carolina,name_only,Nick Barrett,DT,South Carolina,105,,77.44,76.2
+314,Fernando Carmona,G,Arkansas,exact,Fernando Carmona,IOL,Arkansas Razorbacks,283,,68.34,71.2
+315,Cameron Ball,DI,Arkansas,name_only,Cameron Ball,DT,Arkansas Razorbacks,284,,68.43,70.6
+317,Adam Randall,HB,Clemson,exact,Adam Randall,RB,Clemson Tigers,285,,67.71,72.5
+318,Scooby Williams,LB,Texas A&M,exact,Scooby Williams,LB,Texas A&M Aggies,286,,71.03,78.9
+320,CJ Donaldson,HB,Ohio State,exact,CJ Donaldson,RB,Ohio State Buckeyes,288,,67.58,73.2
+325,Jack Pyburn,ED,LSU,name_only,Jack Pyburn,EDGE,LSU Tigers,292,,69.29,72.9
+326,Keagen Trost,T,Missouri,exact,Keagen Trost,OT,Missouri,102,,77.77,92.0
+328,Jalen Huskey,S,Maryland,name_pos,Jalen Huskey,S,Maryland Terrapins,294,,71.35,83.6
+329,Caullin Lacy,WR,Louisville,exact,Caullin Lacy,WR,Louisville Cardinals,294,,63.63,66.7
+331,Emmanuel Henderson Jr.,WR,Kansas,exact,Emmanuel Henderson Jr.,WR,Kansas,179,,73.33,70.9
+341,Dillon Wade,G,Auburn,exact,Dillon Wade,IOL,Auburn Tigers,300,,68.21,59.6
+343,Wesley Bissainthe,LB,Miami (FL),name_pos,Wesley Bissainthe,LB,Miami (FL) Hurricanes,300,,70.19,64.7
+345,Ahmaad Moses,S,SMU,exact,Ahmaad Moses,S,SMU Mustangs,300,,68.51,70.4
+347,Chris Hilton Jr.,WR,LSU,exact,Chris Hilton Jr.,WR,LSU Tigers,300,,69.71,51.6
+348,Bauer Sharp,TE,LSU,exact,Bauer Sharp,TE,LSU Tigers,300,,66.77,47.9
+351,Jaylon Guilbeau,CB,Texas,exact,Jaylon Guilbeau,CB,Texas Longhorns,300,,68.85,65.4
+355,Garrett DiGiorgio,G,UCLA,exact,Garrett DiGiorgio,IOL,UCLA Bruins,300,,65.06,67.2
+359,Kendal Daniels,S,Oklahoma,name_only,Kendal Daniels,LB,Oklahoma,75,,77.38,77.4
+363,Avery Smith,CB,Toledo,name_pos,Avery Smith,CB,Toledo Rockets,300,,65.85,70.6
+371,Barion Brown,WR,LSU,exact,Barion Brown,WR,LSU,82,,64.59,68.5
+376,David Gusta,DI,Kentucky,name_only,David Gusta,DT,Kentucky,119,,78.64,76.3
+397,Anez Cooper,G,Miami (FL),name_pos,Anez Cooper,IOL,Miami,151,,74.34,68.7
+403,Jalen Walthall,WR,Incarnate Word,exact,Jalen Walthall,WR,Incarnate Word,38,,69.34,76.8
+410,Toriano Pride Jr.,CB,Missouri,exact,Toriano Pride Jr.,CB,Missouri,227,,79.06,74.4
+429,Justin Jefferson,LB,Alabama,exact,Justin Jefferson,LB,Alabama,181,,74.56,67.7
+436,Alex Harkey,T,Oregon,name_only,Alex Harkey,IOL,Oregon,115,,77.47,65.0

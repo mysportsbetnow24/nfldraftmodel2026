@@ -91,38 +91,46 @@ def analyst_aggregate_score(rows: List[dict]) -> Dict[str, float]:
 
 
 
+def _default_external_board_paths() -> list[Path]:
+    return [
+        MANUAL_DIR / "nfl-draft-bigboard-scout-mode-2026-02-25.csv",
+        MANUAL_DIR / "pff_big_board_2026_latest.csv",
+    ]
+
+
 def load_external_big_board(path: Path | None = None) -> Dict[str, dict]:
-    path = path or (MANUAL_DIR / "nfl-draft-bigboard-scout-mode-2026-02-25.csv")
-    if not path.exists():
-        return {}
+    paths = [path] if path is not None else _default_external_board_paths()
 
     out: Dict[str, dict] = {}
-    with path.open() as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            try:
-                rank = int(float(row.get("Rank", "") or 0))
-            except ValueError:
-                continue
+    for path in paths:
+        if not path.exists():
+            continue
+        with path.open() as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                try:
+                    rank = int(float(row.get("Rank", "") or 0))
+                except ValueError:
+                    continue
 
-            if rank <= 0:
-                continue
+                if rank <= 0:
+                    continue
 
-            name = row.get("Player", "").strip()
-            key = canonical_player_name(name)
+                name = row.get("Player", "").strip()
+                key = canonical_player_name(name)
 
-            payload = {
-                "external_rank": rank,
-                "external_pos": normalize_pos(row.get("Pos", "")),
-                "external_school": row.get("School", "").strip(),
-                "pff_grade": _to_float_or_none(row.get("PFF Grade")),
-                "pff_waa": _to_float_or_none(row.get("PFF WAA")),
-                "external_notes": row.get("Notes", "").strip(),
-            }
+                payload = {
+                    "external_rank": rank,
+                    "external_pos": normalize_pos(row.get("Pos", "")),
+                    "external_school": row.get("School", "").strip(),
+                    "pff_grade": _to_float_or_none(row.get("PFF Grade")),
+                    "pff_waa": _to_float_or_none(row.get("PFF WAA")),
+                    "external_notes": row.get("Notes", "").strip(),
+                }
 
-            existing = out.get(key)
-            if existing is None or payload["external_rank"] < existing["external_rank"]:
-                out[key] = payload
+                existing = out.get(key)
+                if existing is None or payload["external_rank"] < existing["external_rank"]:
+                    out[key] = payload
 
     return out
 
@@ -130,36 +138,37 @@ def load_external_big_board(path: Path | None = None) -> Dict[str, dict]:
 
 def load_external_big_board_rows(path: Path | None = None) -> List[dict]:
     """Returns deduped external board rows with player identity preserved."""
-    path = path or (MANUAL_DIR / "nfl-draft-bigboard-scout-mode-2026-02-25.csv")
-    if not path.exists():
-        return []
+    paths = [path] if path is not None else _default_external_board_paths()
 
     by_key: Dict[str, dict] = {}
-    with path.open() as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            try:
-                rank = int(float(row.get("Rank", "") or 0))
-            except ValueError:
-                continue
-            if rank <= 0:
-                continue
+    for path in paths:
+        if not path.exists():
+            continue
+        with path.open() as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                try:
+                    rank = int(float(row.get("Rank", "") or 0))
+                except ValueError:
+                    continue
+                if rank <= 0:
+                    continue
 
-            player_name = row.get("Player", "").strip()
-            key = canonical_player_name(player_name)
-            payload = {
-                "player_name": player_name,
-                "external_rank": rank,
-                "external_pos": normalize_pos(row.get("Pos", "")),
-                "external_school": row.get("School", "").strip(),
-                "pff_grade": _to_float_or_none(row.get("PFF Grade")),
-                "pff_waa": _to_float_or_none(row.get("PFF WAA")),
-                "external_notes": row.get("Notes", "").strip(),
-            }
+                player_name = row.get("Player", "").strip()
+                key = canonical_player_name(player_name)
+                payload = {
+                    "player_name": player_name,
+                    "external_rank": rank,
+                    "external_pos": normalize_pos(row.get("Pos", "")),
+                    "external_school": row.get("School", "").strip(),
+                    "pff_grade": _to_float_or_none(row.get("PFF Grade")),
+                    "pff_waa": _to_float_or_none(row.get("PFF WAA")),
+                    "external_notes": row.get("Notes", "").strip(),
+                }
 
-            cur = by_key.get(key)
-            if cur is None or payload["external_rank"] < cur["external_rank"]:
-                by_key[key] = payload
+                cur = by_key.get(key)
+                if cur is None or payload["external_rank"] < cur["external_rank"]:
+                    by_key[key] = payload
 
     rows = list(by_key.values())
     rows.sort(key=lambda r: r["external_rank"])

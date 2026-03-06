@@ -919,7 +919,7 @@ def _build_allowed_universe_names(
 ) -> set[str]:
     nfl_official_names = nfl_official_names or set()
     if ENFORCE_NFL_OFFICIAL_UNIVERSE and nfl_official_names:
-        return set(nfl_official_names)
+        return set(nfl_official_names) | set(declared_underclassmen)
 
     allowed: set[str] = set(declared_underclassmen)
     for row in external_rows:
@@ -4692,6 +4692,9 @@ def main() -> None:
             "pp_profile_tier": pp.get("pp_profile_tier", ""),
             "pp_notes": pp.get("pp_notes", ""),
             "cfb_prod_signal": round(cfb_prod_signal, 2) if cfb_player_available else "",
+            "sg_advanced_signal": cfb.get("sg_advanced_signal", ""),
+            "sg_advanced_available_count": cfb.get("sg_advanced_available_count", 0),
+            "sg_advanced_source": cfb.get("sg_advanced_source", ""),
             "cfb_proxy_audit_summary": cfb_proxy_audit,
             "cfb_proxy_fallback_heavy_flag": cfb_proxy_heavy_flag,
             "cfb_proxy_fallback_heavy_reason": cfb_proxy_heavy_reason,
