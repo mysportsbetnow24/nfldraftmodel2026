@@ -10,14 +10,16 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from src.ingest.cfbd_loader import fetch_dataset
+from src.ingest.cfbd_loader import fetch_adjusted_player_metrics, fetch_dataset
 
 
 OUT_DIR = ROOT / "data" / "sources" / "cfbd"
 
 
 DATASET_CHOICES = [
+    "adjusted_player_metrics",
     "player_season_stats",
+    "game_player_stats",
     "team_season_stats",
     "team_advanced_stats",
     "advanced_game_stats",
@@ -59,16 +61,23 @@ def output_path(dataset: str, year: int, team: str | None, conference: str | Non
 def main() -> None:
     args = build_parser().parse_args()
 
-    result = fetch_dataset(
-        dataset=args.dataset,
-        year=args.year,
-        team=args.team,
-        conference=args.conference,
-        week=args.week,
-        season_type=args.season_type,
-        execute=args.execute,
-        max_calls_per_month=args.max_calls,
-    )
+    if args.dataset == "adjusted_player_metrics":
+        result = fetch_adjusted_player_metrics(
+            year=args.year,
+            execute=args.execute,
+            max_calls_per_month=args.max_calls,
+        )
+    else:
+        result = fetch_dataset(
+            dataset=args.dataset,
+            year=args.year,
+            team=args.team,
+            conference=args.conference,
+            week=args.week,
+            season_type=args.season_type,
+            execute=args.execute,
+            max_calls_per_month=args.max_calls,
+        )
 
     if result.get("dry_run", False):
         print(json.dumps(result, indent=2))

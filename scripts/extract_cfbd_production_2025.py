@@ -21,7 +21,7 @@ BOARD_PATH = ROOT / "data" / "outputs" / "big_board_2026.csv"
 OUT_PATH = ROOT / "data" / "sources" / "manual" / "cfb_production_2025.csv"
 REPORT_PATH = ROOT / "data" / "outputs" / "cfbd_production_extract_report_2025.txt"
 
-TARGET_POS = {"QB", "WR", "TE", "RB", "EDGE", "CB", "S"}
+TARGET_POS = {"QB", "WR", "TE", "RB", "EDGE", "LB", "CB", "S", "OT", "IOL"}
 
 
 def _safe_float(value) -> float | None:
@@ -267,6 +267,33 @@ def _aggregate_ppa(rows: list[dict]) -> dict[tuple[str, str], dict]:
     return out
 
 
+def _aggregate_usage(rows: list[dict]) -> dict[tuple[str, str], dict]:
+    out: dict[tuple[str, str], dict] = {}
+    for row in rows:
+        name_key = canonical_player_name(row.get("name", ""))
+        pos = _pos_map(row.get("position", ""))
+        if not name_key:
+            continue
+        usage = row.get("usage", {}) or {}
+        payload = {
+            "overall": _safe_float(usage.get("overall")),
+            "pass": _safe_float(usage.get("pass")),
+            "rush": _safe_float(usage.get("rush")),
+            "firstDown": _safe_float(usage.get("firstDown")),
+            "secondDown": _safe_float(usage.get("secondDown")),
+            "thirdDown": _safe_float(usage.get("thirdDown")),
+            "standardDowns": _safe_float(usage.get("standardDowns")),
+            "passingDowns": _safe_float(usage.get("passingDowns")),
+        }
+        key = (name_key, pos)
+        cur = out.get(key)
+        cur_score = _safe_float(cur.get("overall")) if cur else None
+        new_score = payload.get("overall")
+        if cur is None or (new_score is not None and (cur_score is None or abs(new_score) > abs(cur_score))):
+            out[key] = payload
+    return out
+
+
 def _get_stat(stats: dict, category: str, stat_type: str) -> float | None:
     return _safe_float(stats.get(f"{category}:{stat_type}"))
 
@@ -342,6 +369,9 @@ def _build_opponent_defense_context(team_adv_rows: list[dict], adv_game_rows: li
 def main() -> None:
     player_stats_path = CFBD_DIR / "player_season_stats_2025.json"
     player_ppa_path = CFBD_DIR / "player_ppa_2025.json"
+    player_usage_path = CFBD_DIR / "player_usage_2025.json"
+    game_player_stats_path = CFBD_DIR / "game_player_stats_2025.json"
+    adjusted_player_metrics_path = CFBD_DIR / "adjusted_player_metrics_2025.json"
     team_adv_path = CFBD_DIR / "team_advanced_stats_2025.json"
     adv_game_path = CFBD_DIR / "advanced_game_stats_2025.json"
     if not player_stats_path.exists() or not player_ppa_path.exists():
@@ -350,10 +380,12 @@ def main() -> None:
     board_map = _load_board()
     stats_rows = _load_json_data(player_stats_path)
     ppa_rows = _load_json_data(player_ppa_path)
+    usage_rows = _load_json_data(player_usage_path) if player_usage_path.exists() else []
     team_adv_rows = _load_json_data(team_adv_path) if team_adv_path.exists() else []
     adv_game_rows = _load_json_data(adv_game_path) if adv_game_path.exists() else []
     stats_by_player, team_rec_totals = _aggregate_stats(stats_rows)
     ppa_by_player = _aggregate_ppa(ppa_rows)
+    usage_by_player = _aggregate_usage(usage_rows)
     opp_def_context_by_team = _build_opponent_defense_context(team_adv_rows, adv_game_rows)
     years_played_index = _build_years_played_index()
 
@@ -373,22 +405,30 @@ def main() -> None:
     for name_key, board_pos in board_map.items():
         stats = stats_by_player.get((name_key, board_pos))
         ppa = ppa_by_player.get((name_key, board_pos))
+        usage = usage_by_player.get((name_key, board_pos))
 
         # fallback by name if exact position wasn't present in CFBD feed
         if stats is None:
-            for pos in (board_pos, "S", "CB", "EDGE", "RB", "WR", "TE", "QB"):
+            for pos in (board_pos, "LB", "OT", "IOL", "S", "CB", "EDGE", "RB", "WR", "TE", "QB"):
                 maybe = stats_by_player.get((name_key, pos))
                 if maybe is not None:
                     stats = maybe
                     break
         if ppa is None:
-            for pos in (board_pos, "S", "CB", "EDGE", "RB", "WR", "TE", "QB"):
+            for pos in (board_pos, "LB", "OT", "IOL", "S", "CB", "EDGE", "RB", "WR", "TE", "QB"):
                 maybe = ppa_by_player.get((name_key, pos))
                 if maybe is not None:
                     ppa = maybe
                     break
+        if usage is None:
+            for pos in (board_pos, "LB", "OT", "IOL", "S", "CB", "EDGE", "RB", "WR", "TE", "QB"):
+                maybe = usage_by_player.get((name_key, pos))
+                if maybe is not None:
+                    usage = maybe
+                    break
 
-        if stats is None and ppa is None:
+        yp = years_played_index.get(name_key)
+        if stats is None and ppa is None and usage is None and yp is None:
             continue
         matched += 1
 
@@ -446,14 +486,36 @@ def main() -> None:
             "opp_def_toughness_index": "",
             "opp_def_adjustment_multiplier": "",
             "opp_def_context_source": "",
+            "qb_ppa_overall": "",
+            "qb_ppa_passing": "",
+            "qb_ppa_standard_downs": "",
+            "qb_ppa_passing_downs": "",
+            "qb_wepa_passing": "",
+            "qb_usage_rate": "",
+            "wrte_ppa_overall": "",
+            "wrte_ppa_passing_downs": "",
+            "wrte_wepa_receiving": "",
+            "wrte_usage_rate": "",
+            "rb_ppa_rushing": "",
+            "rb_ppa_standard_downs": "",
+            "rb_wepa_rushing": "",
+            "rb_usage_rate": "",
+            "lb_tackles": "",
+            "lb_tfl": "",
+            "lb_sacks": "",
+            "lb_qb_hurries": "",
+            "lb_pbu": "",
+            "lb_int": "",
+            "lb_usage_rate": "",
+            "ol_starts": "",
+            "ol_usage_rate": "",
             "cfb_prod_quality_label": "",
             "cfb_prod_reliability": "",
             "cfb_prod_real_features": "",
             "cfb_prod_proxy_features": "",
-            "cfb_prod_provenance": "cfbd_stats+cfbd_ppa_proxy",
+            "cfb_prod_provenance": "cfbd_stats+cfbd_ppa+cfbd_usage",
             "source": "CFBD_2025_proxy_extract",
         }
-        yp = years_played_index.get(name_key)
         if yp:
             row["years_played"] = yp.get("years_played", "")
             row["years_played_seasons"] = yp.get("years_played_seasons", "")
@@ -485,6 +547,8 @@ def main() -> None:
             ppa_pass = _safe_float((ppa or {}).get("avg_pass"))
             ppa_pd = _safe_float((ppa or {}).get("avg_pd"))
             ppa_sd = _safe_float((ppa or {}).get("avg_sd"))
+            ppa_overall = _safe_float((ppa or {}).get("avg_all"))
+            usage_overall = _safe_float((usage or {}).get("overall"))
             comp_pct = (comp / att) if att > 0 else None
             td_rate = (td / att) if att > 0 else None
             if att > 0:
@@ -501,6 +565,16 @@ def main() -> None:
                 row["qb_rush_yds"] = int(round(rush_yds))
             if rush_td is not None:
                 row["qb_rush_td"] = int(round(rush_td))
+            if ppa_overall is not None:
+                row["qb_ppa_overall"] = round(ppa_overall, 4)
+            if ppa_pass is not None:
+                row["qb_ppa_passing"] = round(ppa_pass, 4)
+            if ppa_sd is not None:
+                row["qb_ppa_standard_downs"] = round(ppa_sd, 4)
+            if ppa_pd is not None:
+                row["qb_ppa_passing_downs"] = round(ppa_pd, 4)
+            if usage_overall is not None:
+                row["qb_usage_rate"] = round(usage_overall, 4)
 
             if att >= 50:
                 qbr_proxy = 50.0
@@ -532,18 +606,30 @@ def main() -> None:
             ypr = _get_stat(stats or {}, "receiving", "YPR")
             rec_yds = _get_stat(stats or {}, "receiving", "YDS")
             rec_td = _get_stat(stats or {}, "receiving", "TD")
+            usage_overall = _safe_float((usage or {}).get("overall"))
+            usage_pass = _safe_float((usage or {}).get("pass"))
+            ppa_overall = _safe_float((ppa or {}).get("avg_all"))
+            ppa_pd = _safe_float((ppa or {}).get("avg_pd"))
             if rec is not None:
                 row["wrte_rec"] = int(round(rec))
             if rec_yds is not None:
                 row["wrte_rec_yds"] = int(round(rec_yds))
             if rec_td is not None:
                 row["wrte_rec_td"] = int(round(rec_td))
+            if ppa_overall is not None:
+                row["wrte_ppa_overall"] = round(ppa_overall, 4)
+            if ppa_pd is not None:
+                row["wrte_ppa_passing_downs"] = round(ppa_pd, 4)
+            if usage_overall is not None:
+                row["wrte_usage_rate"] = round(usage_overall, 4)
             if ypr is not None:
                 yprr_proxy = 0.35 + (0.14 * ypr)
                 row["yprr"] = round(_clamp(yprr_proxy, 0.8, 3.5), 3)
-            if rec is not None and team and team_rec_totals.get(team, 0.0) > 0:
+            if usage_pass is not None:
+                row["target_share"] = round(_clamp(usage_pass, 0.03, 0.60), 4)
+            elif rec is not None and team and team_rec_totals.get(team, 0.0) > 0:
                 row["target_share"] = round(_clamp(rec / team_rec_totals[team], 0.03, 0.60), 4)
-            wr_usage = _safe_float((ppa or {}).get("avg_all"))
+            wr_usage = ppa_overall
             target_share = _safe_float(row.get("target_share"))
             if wr_usage is not None and target_share is not None:
                 # Proxy route involvement from overall PPA context when explicit routes are unavailable.
@@ -560,6 +646,10 @@ def main() -> None:
             rec = _get_stat(stats or {}, "receiving", "REC")
             rec_yds = _get_stat(stats or {}, "receiving", "YDS")
             rec_td = _get_stat(stats or {}, "receiving", "TD")
+            usage_overall = _safe_float((usage or {}).get("overall"))
+            usage_rush = _safe_float((usage or {}).get("rush"))
+            ppa_rush = _safe_float((ppa or {}).get("avg_rush"))
+            ppa_sd = _safe_float((ppa or {}).get("avg_sd"))
             if car is not None:
                 row["rb_rush_att"] = int(round(car))
             if yds is not None:
@@ -572,8 +662,15 @@ def main() -> None:
                 row["rb_rec_yds"] = int(round(rec_yds))
             if rec_td is not None:
                 row["rb_rec_td"] = int(round(rec_td))
+            if ppa_rush is not None:
+                row["rb_ppa_rushing"] = round(ppa_rush, 4)
+            if ppa_sd is not None:
+                row["rb_ppa_standard_downs"] = round(ppa_sd, 4)
+            if usage_rush is not None:
+                row["rb_usage_rate"] = round(usage_rush, 4)
+            elif usage_overall is not None:
+                row["rb_usage_rate"] = round(usage_overall, 4)
             ypc = _get_stat(stats or {}, "rushing", "YPC")
-            ppa_rush = _safe_float((ppa or {}).get("avg_rush"))
             if ypc is not None:
                 base = 0.06 + (ypc - 3.6) * 0.03
                 if ppa_rush is not None:
@@ -621,6 +718,31 @@ def main() -> None:
                 norm = _clamp((float(cpt) - 0.08) / 0.22, 0.0, 1.0)
                 row["yards_allowed_per_coverage_snap"] = round(_clamp(1.85 - (1.10 * norm), 0.55, 1.85), 4)
 
+        elif board_pos == "LB":
+            tackles = (_get_stat(stats or {}, "defensive", "TOT") or 0.0)
+            tfl = (_get_stat(stats or {}, "defensive", "TFL") or 0.0)
+            sacks = (_get_stat(stats or {}, "defensive", "SACKS") or 0.0)
+            hurries = (_get_stat(stats or {}, "defensive", "QB HUR") or 0.0)
+            pbu = (_get_stat(stats or {}, "defensive", "PD") or 0.0)
+            ints = (_get_stat(stats or {}, "interceptions", "INT") or 0.0)
+            if tackles > 0:
+                row["lb_tackles"] = int(round(tackles))
+            if tfl > 0:
+                row["lb_tfl"] = int(round(tfl))
+            if sacks > 0:
+                row["lb_sacks"] = int(round(sacks))
+            if hurries > 0:
+                row["lb_qb_hurries"] = int(round(hurries))
+            if pbu > 0:
+                row["lb_pbu"] = int(round(pbu))
+            if ints > 0:
+                row["lb_int"] = int(round(ints))
+
+        elif board_pos in {"OT", "IOL"}:
+            usage_overall = _safe_float((usage or {}).get("overall"))
+            if usage_overall is not None:
+                row["ol_usage_rate"] = round(usage_overall, 4)
+
         # Proxy metrics are useful, but explicit counting stats should be recognized
         # as real evidence so downstream concern text doesn't overstate proxy risk.
         if board_pos == "QB":
@@ -650,9 +772,15 @@ def main() -> None:
         elif board_pos == "EDGE":
             proxy_fields = ["pressure_rate", "pressures_per_pass_rush_snap", "sacks_per_pass_rush_snap"]
             real_fields = ["edge_sacks", "edge_qb_hurries", "edge_tfl", "edge_tackles"]
+        elif board_pos == "LB":
+            proxy_fields = ["lb_usage_rate"]
+            real_fields = ["lb_tackles", "lb_tfl", "lb_sacks", "lb_qb_hurries", "lb_pbu", "lb_int"]
         elif board_pos in {"CB", "S"}:
             proxy_fields = ["coverage_plays_per_target", "yards_allowed_per_coverage_snap"]
             real_fields = ["db_int", "db_pbu", "db_tackles", "db_tfl"]
+        elif board_pos in {"OT", "IOL"}:
+            proxy_fields = ["ol_usage_rate"]
+            real_fields = ["years_played", "ol_starts"]
         else:
             proxy_fields = []
             real_fields = []
@@ -736,6 +864,29 @@ def main() -> None:
                 "opp_def_toughness_index",
                 "opp_def_adjustment_multiplier",
                 "opp_def_context_source",
+                "qb_ppa_overall",
+                "qb_ppa_passing",
+                "qb_ppa_standard_downs",
+                "qb_ppa_passing_downs",
+                "qb_wepa_passing",
+                "qb_usage_rate",
+                "wrte_ppa_overall",
+                "wrte_ppa_passing_downs",
+                "wrte_wepa_receiving",
+                "wrte_usage_rate",
+                "rb_ppa_rushing",
+                "rb_ppa_standard_downs",
+                "rb_wepa_rushing",
+                "rb_usage_rate",
+                "lb_tackles",
+                "lb_tfl",
+                "lb_sacks",
+                "lb_qb_hurries",
+                "lb_pbu",
+                "lb_int",
+                "lb_usage_rate",
+                "ol_starts",
+                "ol_usage_rate",
                 "cfb_prod_quality_label",
                 "cfb_prod_reliability",
                 "cfb_prod_real_features",
@@ -767,7 +918,10 @@ def main() -> None:
         f"rows_written: {len(out_rows)}",
         f"rows_with_opp_def_context: {opp_ctx_rows}",
         f"rows_with_years_played: {years_played_rows}",
-        "notes: CFBD does not expose true YPRR/targets/missed_tackles/coverage_targets directly; proxy fields were generated.",
+        f"player_usage_file_present: {int(player_usage_path.exists())}",
+        f"game_player_stats_file_present: {int(game_player_stats_path.exists())}",
+        f"adjusted_player_metrics_file_present: {int(adjusted_player_metrics_path.exists())}",
+        "notes: usage/ppa down-split fields are now direct CFBD inputs; YPRR, missed tackles forced, and coverage-target stats still use proxies until richer player-level feeds are pulled.",
         "",
         "rows_by_position:",
     ]

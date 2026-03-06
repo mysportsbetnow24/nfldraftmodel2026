@@ -177,9 +177,73 @@ class CFBDClient:
             "data": data,
         }
 
+    def graphql(self, query: str, execute: bool = False) -> Dict[str, Any]:
+        url = os.getenv("CFBD_GRAPHQL_URL", "https://graphql.collegefootballdata.com/").strip()
+        if not execute:
+            status = self.tracker.status()
+            return {
+                "dry_run": True,
+                "url": url,
+                "query": query,
+                "calls_used": status.calls_used,
+                "calls_remaining": status.calls_remaining,
+                "max_calls": status.max_calls,
+            }
+
+        if not self.api_key:
+            raise RuntimeError("CFBD_API_KEY is not set. Export it in your shell before using --execute.")
+        insecure_ssl = str(os.getenv("CFBD_INSECURE_SSL", "")).strip().lower() in {"1", "true", "yes"}
+        status_before = self.tracker.status()
+        if status_before.calls_used >= status_before.max_calls:
+            raise CFBDQuotaExceeded(
+                f"CFBD monthly cap reached ({status_before.calls_used}/{status_before.max_calls}). Refusing new API call."
+            )
+        payload = {"query": query}
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "x-api-key": self.api_key,
+            "Content-Type": "application/json",
+        }
+        try:
+            import requests  # type: ignore
+
+            resp = requests.post(
+                url,
+                json=payload,
+                headers=headers,
+                timeout=self.timeout_seconds,
+                verify=not insecure_ssl,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+        except ModuleNotFoundError:
+            import ssl
+            from urllib.request import Request, urlopen
+
+            req = Request(
+                url,
+                data=json.dumps(payload).encode("utf-8"),
+                headers=headers,
+                method="POST",
+            )
+            ctx = ssl._create_unverified_context() if insecure_ssl else None
+            with urlopen(req, timeout=self.timeout_seconds, context=ctx) as resp:  # nosec B310
+                data = json.loads(resp.read().decode("utf-8"))
+        status = self.tracker.reserve_call(endpoint="/graphql", params={"query": "adjustedPlayerMetrics"})
+        return {
+            "dry_run": False,
+            "url": url,
+            "query": query,
+            "calls_used": status.calls_used,
+            "calls_remaining": status.calls_remaining,
+            "max_calls": status.max_calls,
+            "data": data,
+        }
+
 
 DATASET_ENDPOINTS = {
     "player_season_stats": "/stats/player/season",
+    "game_player_stats": "/stats/player/game",
     "team_season_stats": "/stats/season",
     "team_advanced_stats": "/stats/season/advanced",
     "advanced_game_stats": "/stats/game/advanced",
@@ -223,3 +287,55 @@ def fetch_dataset(
         params["seasonType"] = season_type
 
     return client.get(DATASET_ENDPOINTS[dataset], params=params, execute=execute)
+
+
+def fetch_adjusted_player_metrics(
+    year: int,
+    execute: bool = False,
+    max_calls_per_month: int = 1000,
+    page_size: int = 5000,
+) -> Dict[str, Any]:
+    client = CFBDClient(max_calls_per_month=max_calls_per_month)
+    offset = 0
+    rows: list[dict] = []
+    while True:
+        query = f"""
+        query {{
+          adjustedPlayerMetrics(
+            limit: {int(page_size)},
+            offset: {int(offset)},
+            orderBy: [{{athleteId: asc}}, {{metricType: asc}}],
+            where: {{year: {{_eq: {int(year)}}}}}
+          ) {{
+            athleteId
+            metricType
+            metricValue
+            plays
+            year
+            athlete {{
+              id
+              name
+              teamId
+              position {{
+                abbreviation
+              }}
+            }}
+          }}
+        }}
+        """.strip()
+        result = client.graphql(query=query, execute=execute)
+        if result.get("dry_run", False):
+            return result
+        batch = ((result.get("data") or {}).get("data") or {}).get("adjustedPlayerMetrics") or []
+        rows.extend(batch)
+        if len(batch) < int(page_size):
+            return {
+                "dry_run": False,
+                "url": os.getenv("CFBD_GRAPHQL_URL", "https://graphql.collegefootballdata.com/").strip(),
+                "calls_used": result["calls_used"],
+                "calls_remaining": result["calls_remaining"],
+                "max_calls": result["max_calls"],
+                "query_type": "adjustedPlayerMetrics",
+                "data": rows,
+            }
+        offset += int(page_size)
