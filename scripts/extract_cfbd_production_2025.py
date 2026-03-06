@@ -294,6 +294,30 @@ def _aggregate_usage(rows: list[dict]) -> dict[tuple[str, str], dict]:
     return out
 
 
+def _aggregate_adjusted_player_metrics(rows: list[dict]) -> dict[tuple[str, str], dict]:
+    out: dict[tuple[str, str], dict] = {}
+    for row in rows:
+        athlete = row.get("athlete", {}) or {}
+        name_key = canonical_player_name(athlete.get("name", ""))
+        pos = _pos_map(((athlete.get("position") or {}).get("abbreviation", "")))
+        metric_type = str(row.get("metricType", "")).strip().lower()
+        metric_value = _safe_float(row.get("metricValue"))
+        plays = _safe_float(row.get("plays"))
+        if not name_key or metric_value is None:
+            continue
+        payload = out.setdefault((name_key, pos), {})
+        if metric_type == "passing":
+            payload["adj_passing"] = metric_value
+            payload["adj_passing_plays"] = int(round(plays)) if plays is not None else ""
+        elif metric_type == "rushing":
+            payload["adj_rushing"] = metric_value
+            payload["adj_rushing_plays"] = int(round(plays)) if plays is not None else ""
+        elif metric_type == "field_goals":
+            payload["adj_field_goals"] = metric_value
+            payload["adj_field_goal_plays"] = int(round(plays)) if plays is not None else ""
+    return out
+
+
 def _get_stat(stats: dict, category: str, stat_type: str) -> float | None:
     return _safe_float(stats.get(f"{category}:{stat_type}"))
 
@@ -603,6 +627,7 @@ def main() -> None:
     ppa_rows = _load_json_data(player_ppa_path)
     usage_rows = _load_json_data(player_usage_path) if player_usage_path.exists() else []
     game_player_rows = _load_json_data(game_player_stats_path) if game_player_stats_path.exists() else []
+    adjusted_metric_rows = _load_json_data(adjusted_player_metrics_path) if adjusted_player_metrics_path.exists() else []
     player_ppa_game_path = CFBD_DIR / "player_ppa_games_2025.json"
     player_ppa_game_rows = _load_json_data(player_ppa_game_path) if player_ppa_game_path.exists() else []
     team_adv_rows = _load_json_data(team_adv_path) if team_adv_path.exists() else []
@@ -610,6 +635,7 @@ def main() -> None:
     stats_by_player, team_rec_totals = _aggregate_stats(stats_rows)
     ppa_by_player = _aggregate_ppa(ppa_rows)
     usage_by_player = _aggregate_usage(usage_rows)
+    adjusted_by_player = _aggregate_adjusted_player_metrics(adjusted_metric_rows)
     opp_def_context_by_team = _build_opponent_defense_context(team_adv_rows, adv_game_rows)
     team_defense_lookup = _build_team_defense_lookup(team_adv_rows)
     offense_game_context = _aggregate_player_ppa_games(player_ppa_game_rows, team_defense_lookup)
@@ -633,6 +659,7 @@ def main() -> None:
         stats = stats_by_player.get((name_key, board_pos))
         ppa = ppa_by_player.get((name_key, board_pos))
         usage = usage_by_player.get((name_key, board_pos))
+        adjusted = adjusted_by_player.get((name_key, board_pos))
 
         # fallback by name if exact position wasn't present in CFBD feed
         if stats is None:
@@ -653,9 +680,15 @@ def main() -> None:
                 if maybe is not None:
                     usage = maybe
                     break
+        if adjusted is None:
+            for pos in (board_pos, "LB", "OT", "IOL", "S", "CB", "EDGE", "RB", "WR", "TE", "QB"):
+                maybe = adjusted_by_player.get((name_key, pos))
+                if maybe is not None:
+                    adjusted = maybe
+                    break
 
         yp = years_played_index.get(name_key)
-        if stats is None and ppa is None and usage is None and yp is None:
+        if stats is None and ppa is None and usage is None and adjusted is None and yp is None:
             continue
         matched += 1
 
@@ -719,6 +752,9 @@ def main() -> None:
             "qb_ppa_passing_downs": "",
             "qb_wepa_passing": "",
             "qb_usage_rate": "",
+            "qb_adjusted_passing": "",
+            "qb_adjusted_rushing": "",
+            "qb_adjusted_total": "",
             "wrte_ppa_overall": "",
             "wrte_ppa_passing_downs": "",
             "wrte_wepa_receiving": "",
@@ -727,6 +763,7 @@ def main() -> None:
             "rb_ppa_standard_downs": "",
             "rb_wepa_rushing": "",
             "rb_usage_rate": "",
+            "rb_adjusted_rushing": "",
             "lb_tackles": "",
             "lb_tfl": "",
             "lb_sacks": "",
@@ -776,6 +813,28 @@ def main() -> None:
             row["top_defense_games"] = game_ctx.get("top_defense_games", "")
             row["weekly_sample_games"] = game_ctx.get("weekly_sample_games", "")
             row["game_context_source"] = game_ctx.get("game_context_source", "")
+
+        if adjusted:
+            if board_pos == "QB":
+                adj_pass = _safe_float(adjusted.get("adj_passing"))
+                adj_rush = _safe_float(adjusted.get("adj_rushing"))
+                total_parts = []
+                if adj_pass is not None:
+                    row["qb_adjusted_passing"] = round(adj_pass, 4)
+                    total_parts.append((float(adjusted.get("adj_passing_plays") or 0), adj_pass))
+                if adj_rush is not None:
+                    row["qb_adjusted_rushing"] = round(adj_rush, 4)
+                    total_parts.append((float(adjusted.get("adj_rushing_plays") or 0), adj_rush))
+                if total_parts:
+                    total_weight = sum(max(1.0, weight) for weight, _ in total_parts)
+                    blended = sum(max(1.0, weight) * value for weight, value in total_parts) / total_weight
+                    row["qb_adjusted_total"] = round(blended, 4)
+            elif board_pos == "RB":
+                adj_rush = _safe_float(adjusted.get("adj_rushing"))
+                if adj_rush is not None:
+                    row["rb_adjusted_rushing"] = round(adj_rush, 4)
+        if adjusted:
+            row["cfb_prod_provenance"] = f"{row['cfb_prod_provenance']}+cfbd_adjusted_metrics"
 
         if board_pos == "QB":
             att = _get_stat(stats or {}, "passing", "ATT") or 0.0
@@ -995,6 +1054,9 @@ def main() -> None:
                 "qb_pressure_to_sack_rate",
                 "qb_under_pressure_epa",
                 "qb_under_pressure_success_rate",
+                "qb_adjusted_passing",
+                "qb_adjusted_rushing",
+                "qb_adjusted_total",
             ]
             real_fields = [
                 "qb_pass_att",
@@ -1009,7 +1071,7 @@ def main() -> None:
             proxy_fields = ["yprr", "target_share", "targets_per_route_run"]
             real_fields = ["wrte_rec", "wrte_rec_yds", "wrte_rec_td"]
         elif board_pos == "RB":
-            proxy_fields = ["explosive_run_rate", "missed_tackles_forced_per_touch"]
+            proxy_fields = ["explosive_run_rate", "missed_tackles_forced_per_touch", "rb_adjusted_rushing"]
             real_fields = ["rb_rush_att", "rb_rush_yds", "rb_rush_td", "rb_rec", "rb_rec_yds", "rb_rec_td"]
         elif board_pos in {"EDGE", "DT"}:
             proxy_fields = ["pressure_rate", "pressures_per_pass_rush_snap", "sacks_per_pass_rush_snap"]
@@ -1112,6 +1174,9 @@ def main() -> None:
                 "qb_ppa_passing_downs",
                 "qb_wepa_passing",
                 "qb_usage_rate",
+                "qb_adjusted_passing",
+                "qb_adjusted_rushing",
+                "qb_adjusted_total",
                 "wrte_ppa_overall",
                 "wrte_ppa_passing_downs",
                 "wrte_wepa_receiving",
@@ -1120,6 +1185,7 @@ def main() -> None:
                 "rb_ppa_standard_downs",
                 "rb_wepa_rushing",
                 "rb_usage_rate",
+                "rb_adjusted_rushing",
                 "lb_tackles",
                 "lb_tfl",
                 "lb_sacks",
@@ -1170,7 +1236,8 @@ def main() -> None:
         f"game_player_stats_file_present: {int(game_player_stats_path.exists())}",
         f"player_ppa_games_file_present: {int(player_ppa_game_path.exists())}",
         f"adjusted_player_metrics_file_present: {int(adjusted_player_metrics_path.exists())}",
-        "notes: usage/ppa down-split fields are now direct CFBD inputs; game-level consistency/trend/top-defense layers are active when weekly files exist; YPRR, missed tackles forced, coverage-target stats, and adjustedPlayerMetrics remain partial/open items.",
+        f"adjusted_player_metrics_rows: {len(adjusted_metric_rows)}",
+        "notes: usage/ppa down-split fields are now direct CFBD inputs; game-level consistency/trend/top-defense layers are active when weekly files exist; adjustedPlayerMetrics are active for QB/RB where CFBD returns rows; YPRR, missed tackles forced, and coverage-target stats remain partial/open items.",
         "",
         "rows_by_position:",
     ]

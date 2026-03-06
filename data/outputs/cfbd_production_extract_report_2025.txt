@@ -9,7 +9,8 @@ player_usage_file_present: 1
 game_player_stats_file_present: 1
 player_ppa_games_file_present: 1
 adjusted_player_metrics_file_present: 1
-notes: usage/ppa down-split fields are now direct CFBD inputs; game-level consistency/trend/top-defense layers are active when weekly files exist; YPRR, missed tackles forced, coverage-target stats, and adjustedPlayerMetrics remain partial/open items.
+adjusted_player_metrics_rows: 870
+notes: usage/ppa down-split fields are now direct CFBD inputs; game-level consistency/trend/top-defense layers are active when weekly files exist; adjustedPlayerMetrics are active for QB/RB where CFBD returns rows; YPRR, missed tackles forced, and coverage-target stats remain partial/open items.
 
 rows_by_position:
 - CB: 27

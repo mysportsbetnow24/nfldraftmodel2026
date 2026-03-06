@@ -1710,17 +1710,17 @@
               "apy_m": 3.1
             },
             {
-              "player_name": "Josh Johnson",
+              "player_name": "Devin Leary",
               "position": "QB",
               "depth_rank": 4,
-              "designation": "Backup",
+              "designation": "FA",
               "role_label": "QB4",
-              "detail_label": "QB4 | 1y | $1.4M APY",
-              "meta_label": "16 yrs exp | Age 39",
-              "contract_label": "1y | $1.4M APY",
-              "years_exp": 16,
-              "age": 39,
-              "apy_m": 1.42
+              "detail_label": "QB4 | FA",
+              "meta_label": "Age 26",
+              "contract_label": "FA",
+              "years_exp": 0,
+              "age": 26,
+              "apy_m": ""
             }
           ]
         },
@@ -2301,6 +2301,19 @@
       "week": 18
     },
     "free_agents": [
+      {
+        "player_name": "Devin Leary",
+        "position": "QB",
+        "depth_rank": 4,
+        "designation": "FA",
+        "role_label": "QB4",
+        "detail_label": "QB4 | FA",
+        "meta_label": "Age 26",
+        "contract_label": "FA",
+        "years_exp": 0,
+        "age": 26,
+        "apy_m": ""
+      },
       {
         "player_name": "Scotty Washington",
         "position": "TE",
@@ -3103,6 +3116,19 @@
         "contract_label": "FA",
         "years_exp": 6,
         "age": 30,
+        "apy_m": ""
+      },
+      {
+        "player_name": "DaQuan Jones",
+        "position": "DT",
+        "depth_rank": 5,
+        "designation": "FA",
+        "role_label": "DT",
+        "detail_label": "DT | FA",
+        "meta_label": "10 yrs exp | Age 34",
+        "contract_label": "FA",
+        "years_exp": 10,
+        "age": 34,
         "apy_m": ""
       }
     ],
@@ -5715,17 +5741,17 @@
               "apy_m": 46.0
             },
             {
-              "player_name": "Jameis Winston",
+              "player_name": "Bailey Zappe",
               "position": "QB",
               "depth_rank": 4,
               "designation": "Backup",
               "role_label": "QB4",
-              "detail_label": "QB4 | 2y | $4.0M APY",
-              "meta_label": "9 yrs exp | Age 32",
-              "contract_label": "2y | $4.0M APY",
-              "years_exp": 9,
-              "age": 32,
-              "apy_m": 4.0
+              "detail_label": "QB4 | 1y | $1.2M APY",
+              "meta_label": "2 yrs exp | Age 26",
+              "contract_label": "1y | $1.2M APY",
+              "years_exp": 2,
+              "age": 26,
+              "apy_m": 1.22
             }
           ]
         },
@@ -6691,7 +6717,7 @@
               "apy_m": 1.57
             },
             {
-              "player_name": "Princeton Fant",
+              "player_name": "John Stephens Jr.",
               "position": "TE",
               "depth_rank": 4,
               "designation": "FA",
@@ -6921,17 +6947,17 @@
               "apy_m": 3.0
             },
             {
-              "player_name": "Denzel Daxon",
+              "player_name": "Mazi Smith",
               "position": "DT",
               "depth_rank": 4,
-              "designation": "FA",
+              "designation": "Blue Chip Prospect",
               "role_label": "DT",
-              "detail_label": "DT | FA",
-              "meta_label": "Age 26",
-              "contract_label": "FA",
-              "years_exp": 0,
-              "age": 26,
-              "apy_m": ""
+              "detail_label": "DT | 4y | $3.3M APY",
+              "meta_label": "1 yrs exp | Age 24",
+              "contract_label": "4y | $3.3M APY",
+              "years_exp": 1,
+              "age": 24,
+              "apy_m": 3.32
             }
           ]
         },
@@ -7112,7 +7138,7 @@
     },
     "free_agents": [
       {
-        "player_name": "Princeton Fant",
+        "player_name": "John Stephens Jr.",
         "position": "TE",
         "depth_rank": 4,
         "designation": "FA",
@@ -7121,19 +7147,6 @@
         "meta_label": "1 yrs exp | Age 26",
         "contract_label": "FA",
         "years_exp": 1,
-        "age": 26,
-        "apy_m": ""
-      },
-      {
-        "player_name": "Denzel Daxon",
-        "position": "DT",
-        "depth_rank": 4,
-        "designation": "FA",
-        "role_label": "DT",
-        "detail_label": "DT | FA",
-        "meta_label": "Age 26",
-        "contract_label": "FA",
-        "years_exp": 0,
         "age": 26,
         "apy_m": ""
       }
@@ -9759,17 +9772,17 @@
               "apy_m": 1.11
             },
             {
-              "player_name": "Case Keenum",
+              "player_name": "Kedon Slovis",
               "position": "QB",
               "depth_rank": 4,
               "designation": "Backup",
               "role_label": "QB4",
-              "detail_label": "QB4 | 1y | $2.2M APY",
-              "meta_label": "12 yrs exp | Age 38",
-              "contract_label": "1y | $2.2M APY",
-              "years_exp": 12,
-              "age": 38,
-              "apy_m": 2.25
+              "detail_label": "QB4 | 2y | $0.9M APY",
+              "meta_label": "Age 24",
+              "contract_label": "2y | $0.9M APY",
+              "years_exp": 0,
+              "age": 24,
+              "apy_m": 0.92
             }
           ]
         },
@@ -11325,17 +11338,17 @@
               "apy_m": 1.0
             },
             {
-              "player_name": "John Wolford",
+              "player_name": "Mac Jones",
               "position": "QB",
               "depth_rank": 4,
               "designation": "Backup",
               "role_label": "QB4",
-              "detail_label": "QB4 | 1y | $1.2M APY",
-              "meta_label": "6 yrs exp | Age 30",
-              "contract_label": "1y | $1.2M APY",
-              "years_exp": 6,
-              "age": 30,
-              "apy_m": 1.17
+              "detail_label": "QB4 | 2y | $3.5M APY",
+              "meta_label": "3 yrs exp | Age 27",
+              "contract_label": "2y | $3.5M APY",
+              "years_exp": 3,
+              "age": 27,
+              "apy_m": 3.5
             }
           ]
         },
@@ -14528,17 +14541,17 @@
               "apy_m": 1.09
             },
             {
-              "player_name": "Desmond Ridder",
+              "player_name": "Jake Luton",
               "position": "QB",
               "depth_rank": 4,
-              "designation": "Backup",
+              "designation": "FA",
               "role_label": "QB4",
-              "detail_label": "QB4 | 2y | $1.1M APY",
-              "meta_label": "2 yrs exp | Age 26",
-              "contract_label": "2y | $1.1M APY",
-              "years_exp": 2,
-              "age": 26,
-              "apy_m": 1.12
+              "detail_label": "QB4 | FA",
+              "meta_label": "4 yrs exp | Age 29",
+              "contract_label": "FA",
+              "years_exp": 4,
+              "age": 29,
+              "apy_m": ""
             }
           ]
         },
@@ -15118,7 +15131,21 @@
       "season": 2024,
       "week": 18
     },
-    "free_agents": [],
+    "free_agents": [
+      {
+        "player_name": "Jake Luton",
+        "position": "QB",
+        "depth_rank": 4,
+        "designation": "FA",
+        "role_label": "QB4",
+        "detail_label": "QB4 | FA",
+        "meta_label": "4 yrs exp | Age 29",
+        "contract_label": "FA",
+        "years_exp": 4,
+        "age": 29,
+        "apy_m": ""
+      }
+    ],
     "young_players_on_rise": [
       {
         "player_name": "Tyree Wilson",
@@ -18503,17 +18530,17 @@
               "apy_m": 10.5
             },
             {
-              "player_name": "Drew Lock",
+              "player_name": "Tim Boyle",
               "position": "QB",
               "depth_rank": 4,
-              "designation": "Backup",
+              "designation": "FA",
               "role_label": "QB4",
-              "detail_label": "QB4 | 2y | $2.5M APY",
-              "meta_label": "5 yrs exp | Age 29",
-              "contract_label": "2y | $2.5M APY",
-              "years_exp": 5,
-              "age": 29,
-              "apy_m": 2.5
+              "detail_label": "QB4 | FA",
+              "meta_label": "6 yrs exp | Age 31",
+              "contract_label": "FA",
+              "years_exp": 6,
+              "age": 31,
+              "apy_m": ""
             }
           ]
         },
@@ -19093,7 +19120,21 @@
       "season": 2024,
       "week": 18
     },
-    "free_agents": [],
+    "free_agents": [
+      {
+        "player_name": "Tim Boyle",
+        "position": "QB",
+        "depth_rank": 4,
+        "designation": "FA",
+        "role_label": "QB4",
+        "detail_label": "QB4 | FA",
+        "meta_label": "6 yrs exp | Age 31",
+        "contract_label": "FA",
+        "years_exp": 6,
+        "age": 31,
+        "apy_m": ""
+      }
+    ],
     "young_players_on_rise": [
       {
         "player_name": "Kayvon Thibodeaux",
@@ -21666,17 +21707,17 @@
               "apy_m": 1.57
             },
             {
-              "player_name": "Jaren Hall",
+              "player_name": "Geno Smith",
               "position": "QB",
               "depth_rank": 4,
-              "designation": "FA",
+              "designation": "Backup",
               "role_label": "QB4",
-              "detail_label": "QB4 | FA",
-              "meta_label": "1 yrs exp | Age 27",
-              "contract_label": "FA",
-              "years_exp": 1,
-              "age": 27,
-              "apy_m": ""
+              "detail_label": "QB4 | 2y | $37.5M APY",
+              "meta_label": "11 yrs exp | Age 35",
+              "contract_label": "2y | $37.5M APY",
+              "years_exp": 11,
+              "age": 35,
+              "apy_m": 37.5
             }
           ]
         },
@@ -22258,29 +22299,16 @@
     },
     "free_agents": [
       {
-        "player_name": "Jaren Hall",
-        "position": "QB",
-        "depth_rank": 4,
-        "designation": "FA",
-        "role_label": "QB4",
-        "detail_label": "QB4 | FA",
-        "meta_label": "1 yrs exp | Age 27",
-        "contract_label": "FA",
-        "years_exp": 1,
-        "age": 27,
-        "apy_m": ""
-      },
-      {
-        "player_name": "Kenneth Odumegwu",
+        "player_name": "Johnathan Hankins",
         "position": "DT",
         "depth_rank": 5,
         "designation": "FA",
         "role_label": "DT",
         "detail_label": "DT | FA",
-        "meta_label": "1 yrs exp | Age 25",
+        "meta_label": "11 yrs exp | Age 33",
         "contract_label": "FA",
-        "years_exp": 1,
-        "age": 25,
+        "years_exp": 11,
+        "age": 33,
         "apy_m": ""
       }
     ],
@@ -23886,19 +23914,6 @@
         "meta_label": "3 yrs exp | Age 28",
         "contract_label": "FA",
         "years_exp": 3,
-        "age": 28,
-        "apy_m": ""
-      },
-      {
-        "player_name": "Eric Banks",
-        "position": "DT",
-        "depth_rank": 5,
-        "designation": "FA",
-        "role_label": "DT",
-        "detail_label": "DT | FA",
-        "meta_label": "4 yrs exp | Age 28",
-        "contract_label": "FA",
-        "years_exp": 4,
         "age": 28,
         "apy_m": ""
       }

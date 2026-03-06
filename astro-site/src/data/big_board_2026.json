@@ -305,7 +305,7 @@
     "uncertainty_score": 6.97,
     "best_role": "Primary every-down creator",
     "best_scheme_fit": "Wide-zone/play-action feature back",
-    "rank_driver_summary": "score=93.86; prior_signal=96.63; trait:+4.19 | prior:-3.11 | athletic:+1.58 | production:+1.36",
+    "rank_driver_summary": "score=93.86; prior_signal=96.63; trait:+4.19 | prior:-3.11 | athletic:+1.58 | production:+1.40",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.11,
     "rank_history": [
@@ -759,7 +759,7 @@
     "rank_history": [
       13,
       13,
-      13,
+      11,
       11,
       11,
       11,
@@ -845,7 +845,7 @@
     "rank_history": [
       11,
       11,
-      11,
+      12,
       12,
       12,
       12,
@@ -934,7 +934,7 @@
       14,
       14,
       14,
-      14,
+      13,
       13,
       13
     ],
@@ -1009,10 +1009,10 @@
     "rank_history": [
       12,
       12,
-      12,
       13,
       13,
       13,
+      14,
       14,
       14
     ],
@@ -1153,7 +1153,7 @@
       17,
       17,
       17,
-      17,
+      16,
       16
     ],
     "rank_move_window": 1,
@@ -1239,7 +1239,7 @@
       16,
       16,
       16,
-      16,
+      17,
       17
     ],
     "rank_move_window": -1,
@@ -1539,10 +1539,10 @@
     "rank_history": [
       21,
       21,
+      22,
+      22,
+      22,
       21,
-      22,
-      22,
-      22,
       21,
       21
     ],
@@ -1625,10 +1625,10 @@
     "rank_history": [
       22,
       22,
+      21,
+      21,
+      21,
       22,
-      21,
-      21,
-      21,
       22,
       22
     ],
@@ -1709,7 +1709,7 @@
       24,
       24,
       24,
-      24,
+      23,
       23
     ],
     "rank_move_window": 1,
@@ -1795,7 +1795,7 @@
       23,
       23,
       23,
-      23,
+      24,
       24
     ],
     "rank_move_window": -1,
@@ -2017,11 +2017,11 @@
     "rank_history": [
       28,
       28,
-      28,
       30,
       30,
       30,
       29,
+      27,
       27
     ],
     "rank_move_window": 1,
@@ -2087,11 +2087,11 @@
     "rank_history": [
       27,
       27,
-      27,
       29,
       29,
       29,
       30,
+      28,
       28
     ],
     "rank_move_window": -1,
@@ -2157,11 +2157,11 @@
     "rank_history": [
       29,
       29,
+      28,
+      28,
+      28,
+      28,
       29,
-      28,
-      28,
-      28,
-      28,
       29
     ],
     "rank_move_window": 0,
@@ -2239,11 +2239,11 @@
     "rank_history": [
       30,
       30,
+      27,
+      27,
+      27,
+      27,
       30,
-      27,
-      27,
-      27,
-      27,
       30
     ],
     "rank_move_window": 0,
@@ -2320,8 +2320,8 @@
       31,
       31,
       31,
-      31,
       32,
+      31,
       31
     ],
     "rank_move_window": 0,
@@ -2393,11 +2393,11 @@
     "rank_history": [
       35,
       35,
-      35,
       34,
       34,
       34,
       31,
+      32,
       32
     ],
     "rank_move_window": 3,
@@ -2471,7 +2471,7 @@
     "rank_history": [
       32,
       32,
-      32,
+      33,
       33,
       33,
       33,
@@ -2533,10 +2533,10 @@
     "rank_history": [
       33,
       33,
-      33,
       32,
       32,
       32,
+      34,
       34,
       34
     ],
@@ -2611,7 +2611,7 @@
     "rank_history": [
       34,
       34,
-      34,
+      35,
       35,
       35,
       35,
@@ -2693,7 +2693,7 @@
     "rank_history": [
       38,
       38,
-      38,
+      36,
       36,
       36,
       36,
@@ -2773,10 +2773,10 @@
     "rank_history": [
       37,
       37,
+      38,
+      38,
+      38,
       37,
-      38,
-      38,
-      38,
       37,
       37
     ],
@@ -2859,10 +2859,10 @@
     "rank_history": [
       36,
       36,
-      36,
       37,
       37,
       37,
+      38,
       38,
       38
     ],
@@ -2999,10 +2999,10 @@
     "rank_history": [
       40,
       40,
+      41,
+      41,
+      41,
       40,
-      41,
-      41,
-      41,
       40,
       40
     ],
@@ -3085,10 +3085,10 @@
     "rank_history": [
       41,
       41,
+      40,
+      40,
+      40,
       41,
-      40,
-      40,
-      40,
       41,
       41
     ],
@@ -3243,11 +3243,11 @@
     "rank_history": [
       43,
       43,
+      45,
+      45,
+      45,
+      45,
       43,
-      45,
-      45,
-      45,
-      45,
       43
     ],
     "rank_move_window": 0,
@@ -3329,7 +3329,7 @@
     "rank_history": [
       46,
       46,
-      46,
+      44,
       44,
       44,
       44,
@@ -3409,11 +3409,11 @@
     "rank_history": [
       44,
       44,
-      44,
       43,
       43,
       43,
       43,
+      45,
       45
     ],
     "rank_move_window": -1,
@@ -3490,7 +3490,7 @@
       47,
       47,
       47,
-      47,
+      46,
       46,
       46
     ],
@@ -3573,7 +3573,7 @@
       52,
       52,
       52,
-      52,
+      47,
       47
     ],
     "rank_move_window": 5,
@@ -3651,10 +3651,10 @@
     "rank_history": [
       50,
       50,
-      50,
       49,
       49,
       49,
+      48,
       48,
       48
     ],
@@ -3737,10 +3737,10 @@
     "rank_history": [
       45,
       45,
-      45,
       46,
       46,
       46,
+      49,
       49,
       49
     ],
@@ -3815,10 +3815,10 @@
     "rank_history": [
       49,
       49,
-      49,
       51,
       51,
       51,
+      50,
       50,
       50
     ],
@@ -3885,10 +3885,10 @@
     "rank_history": [
       48,
       48,
-      48,
       50,
       50,
       50,
+      51,
       51,
       51
     ],
@@ -3947,11 +3947,11 @@
     "rank_history": [
       51,
       51,
-      51,
       48,
       48,
       48,
       47,
+      52,
       52
     ],
     "rank_move_window": -1,
@@ -4177,7 +4177,7 @@
       56,
       56,
       56,
-      56,
+      55,
       55
     ],
     "rank_move_window": 1,
@@ -4259,7 +4259,7 @@
       55,
       55,
       55,
-      55,
+      56,
       56
     ],
     "rank_move_window": -1,
@@ -4333,10 +4333,10 @@
     "rank_history": [
       59,
       59,
-      59,
       58,
       58,
       58,
+      57,
       57,
       57
     ],
@@ -4414,7 +4414,7 @@
       57,
       57,
       57,
-      57,
+      58,
       58,
       58
     ],
@@ -4489,7 +4489,7 @@
     "rank_history": [
       60,
       60,
-      60,
+      59,
       59,
       59,
       59,
@@ -4571,11 +4571,11 @@
     "rank_history": [
       61,
       61,
-      61,
       62,
       62,
       62,
       61,
+      60,
       60
     ],
     "rank_move_window": 1,
@@ -4633,11 +4633,11 @@
     "rank_history": [
       63,
       63,
-      63,
       61,
       61,
       61,
       60,
+      61,
       61
     ],
     "rank_move_window": 2,
@@ -4709,11 +4709,11 @@
     "rank_history": [
       58,
       58,
-      58,
       60,
       60,
       60,
       63,
+      62,
       62
     ],
     "rank_move_window": -4,
@@ -4779,11 +4779,11 @@
     "rank_history": [
       65,
       65,
-      65,
       66,
       66,
       66,
       64,
+      63,
       63
     ],
     "rank_move_window": 2,
@@ -4857,11 +4857,11 @@
     "rank_history": [
       62,
       62,
-      62,
       63,
       63,
       63,
       65,
+      64,
       64
     ],
     "rank_move_window": -2,
@@ -4939,11 +4939,11 @@
     "rank_history": [
       67,
       67,
-      67,
       64,
       64,
       64,
       62,
+      65,
       65
     ],
     "rank_move_window": 2,
@@ -5017,10 +5017,10 @@
     "rank_history": [
       64,
       64,
-      64,
       65,
       65,
       65,
+      66,
       66,
       66
     ],
@@ -5079,7 +5079,7 @@
     "rank_history": [
       66,
       66,
-      66,
+      67,
       67,
       67,
       67,
@@ -5157,11 +5157,11 @@
     "rank_history": [
       68,
       68,
+      70,
+      70,
+      70,
+      70,
       68,
-      70,
-      70,
-      70,
-      70,
       68
     ],
     "rank_move_window": 0,
@@ -5243,11 +5243,11 @@
     "rank_history": [
       70,
       70,
-      70,
       68,
       68,
       68,
       68,
+      69,
       69
     ],
     "rank_move_window": 1,
@@ -5325,11 +5325,11 @@
     "rank_history": [
       71,
       71,
-      71,
       69,
       69,
       69,
       69,
+      70,
       70
     ],
     "rank_move_window": 1,
@@ -5403,7 +5403,7 @@
     "rank_history": [
       69,
       69,
-      69,
+      71,
       71,
       71,
       71,
@@ -5465,7 +5465,7 @@
     "rank_history": [
       73,
       73,
-      73,
+      72,
       72,
       72,
       72,
@@ -5545,7 +5545,7 @@
     "rank_history": [
       72,
       72,
-      72,
+      73,
       73,
       73,
       73,
@@ -5623,11 +5623,11 @@
     "rank_history": [
       80,
       80,
-      80,
       76,
       76,
       76,
       76,
+      74,
       74
     ],
     "rank_move_window": 6,
@@ -5709,11 +5709,11 @@
     "rank_history": [
       74,
       74,
-      74,
       75,
       75,
       75,
       74,
+      75,
       75
     ],
     "rank_move_window": -1,
@@ -5744,75 +5744,13 @@
     "player_report_url": "/players/max-iheanachor"
   },
   {
-    "player_uid": "316-keith-abney-ii",
-    "slug": "keith-abney-ii",
-    "consensus_rank": 76,
-    "player_name": "Keith Abney II",
-    "position": "CB",
-    "school": "Arizona State Sun Devils",
-    "final_grade": 81.52,
-    "round_value": "Round 3-4",
-    "consensus_board_mean_rank": "74.2",
-    "market_signal_pct": 71.9,
-    "pff_grade": 86.3,
-    "trait_score": 92.16,
-    "athletic_profile_score": 61.547,
-    "athletic_metric_coverage_rate": 0.2727,
-    "athletic_percentile": 24.1,
-    "combine_ras_official": 0.0,
-    "ras_estimate": 0.0,
-    "confidence_score": 63.41,
-    "uncertainty_score": 36.59,
-    "best_role": "Outside starter with matchup flexibility",
-    "best_scheme_fit": "press match",
-    "rank_driver_summary": "score=81.52; prior_signal=69.71; athletic:-2.28 | trait:-1.89 | prior:+0.97 | production:+0.66",
-    "top_rank_driver": "trait",
-    "top_rank_driver_delta": -1.89,
-    "rank_history": [
-      75,
-      75,
-      75,
-      77,
-      77,
-      77,
-      77,
-      76
-    ],
-    "rank_move_window": -1,
-    "low_evidence_flag": false,
-    "production_metrics": {},
-    "production_percentiles": {},
-    "historical_comp_floor": {
-      "name": "Tre Brown",
-      "similarity": 87.523,
-      "year": 2021
-    },
-    "historical_comp_median": {
-      "name": "DAndre Payne",
-      "similarity": 87.881,
-      "year": 2019
-    },
-    "historical_comp_ceiling": {
-      "name": "Rufus Brown",
-      "similarity": 93.906,
-      "year": 2004
-    },
-    "comp_confidence": "A",
-    "scouting_report_summary": "Keith Abney II (CB, Arizona State Sun Devils) carries a 81.52 model grade with a current Round 3-4 projection. Current board slot: 76. Primary NFL pathway: Outside starter with matchup flexibility in press match. developmental contributor profile; matches routes with disciplined leverage. Seed rank 44 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
-    "scouting_why_he_wins": "- Usage fit: Outside starter with matchup flexibility within press match.\n- Film translation comes from coverage mechanics: maintain leverage, transition cleanly, and finish at the catch point without panic.\n- Model + film note: developmental contributor profile; matches routes with disciplined leverage. Seed rank 44 indicates current market confidence with developmental upside still available.",
-    "scouting_primary_concerns": "- CB projection risk is driven by speed/leverage recovery and ball production at the catch point.\n- Role stress test: value is strongest in outside starter with matchup flexibility; projection gets thinner if usage expands too far outside that lane early.\n- Eye discipline through route breaks must tighten to limit transition losses against pro route pacing.",
-    "scouting_production_snapshot": "PFF grade 86.3",
-    "scouting_role_projection": "Best early team fit: JAX. Scheme path: press match. Expected early deployment: Outside starter with matchup flexibility. For film-heavy evaluation: this role asks for leverage consistency across man/zone and reliable tackle finish when targeted in run support. Historical combine comp: DAndre Payne (2019), athletic-profile match 93.49%.",
-    "player_report_url": "/players/keith-abney-ii"
-  },
-  {
     "player_uid": "332-jadarian-price",
     "slug": "jadarian-price",
-    "consensus_rank": 77,
+    "consensus_rank": 76,
     "player_name": "Jadarian Price",
     "position": "RB",
     "school": "Notre Dame Fighting Irish",
-    "final_grade": 81.45,
+    "final_grade": 81.5,
     "round_value": "Round 3-4",
     "consensus_board_mean_rank": "54.83",
     "market_signal_pct": 81.4,
@@ -5827,20 +5765,20 @@
     "uncertainty_score": 17.37,
     "best_role": "Primary committee back with passing-down utility",
     "best_scheme_fit": "Wide-zone committee",
-    "rank_driver_summary": "score=81.45; prior_signal=75.13; prior:+2.49 | trait:-1.68 | athletic:-1.52 | production:-0.48",
+    "rank_driver_summary": "score=81.5; prior_signal=75.13; prior:+2.42 | trait:-1.68 | athletic:-1.52 | language:-0.47",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      76,
       76,
       76,
       74,
       74,
       74,
       75,
-      77
+      77,
+      76
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_rb_explosive_rate": 0.1536,
@@ -5874,12 +5812,74 @@
       "year": 2000
     },
     "comp_confidence": "B",
-    "scouting_report_summary": "Jadarian Price (RB, Notre Dame Fighting Irish) carries a 81.45 model grade with a current Round 3-4 projection. Current board slot: 77. Primary NFL pathway: Primary committee back with passing-down utility in Wide-zone committee. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 66 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
+    "scouting_report_summary": "Jadarian Price (RB, Notre Dame Fighting Irish) carries a 81.50 model grade with a current Round 3-4 projection. Current board slot: 76. Primary NFL pathway: Primary committee back with passing-down utility in Wide-zone committee. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 66 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
     "scouting_why_he_wins": "- Usage fit: Primary committee back with passing-down utility within Wide-zone committee.\n- Film translation comes from vision plus contact balance: press tracks, force linebacker displacement, then accelerate through daylight.\n- Model + film note: developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 66 indicates current market confidence with developmental upside still available.",
     "scouting_primary_concerns": "- RB projection risk is driven by burst creation, tackle-breaking translation, and passing-down value.\n- Role stress test: value is strongest in primary committee back with passing-down utility; projection gets thinner if usage expands too far outside that lane early.\n- Early-down production must be paired with dependable pass-protection reps to hold three-down value.",
     "scouting_production_snapshot": "PFF grade 78.6\nStat context: rush attempts 113; rush yards 674; rush TD 11; 6 rec, 87 rec yds, 2 rec TD",
     "scouting_role_projection": "Best early team fit: DAL. Scheme path: Wide-zone committee. Expected early deployment: Primary committee back with passing-down utility. For film-heavy evaluation: this role asks for box-count recognition, run-track efficiency, and enough receiving utility to stay on the field in sub packages. Historical combine comp: Javonte Williams (2021), athletic-profile match 94.07%.",
     "player_report_url": "/players/jadarian-price"
+  },
+  {
+    "player_uid": "316-keith-abney-ii",
+    "slug": "keith-abney-ii",
+    "consensus_rank": 77,
+    "player_name": "Keith Abney II",
+    "position": "CB",
+    "school": "Arizona State Sun Devils",
+    "final_grade": 81.52,
+    "round_value": "Round 3-4",
+    "consensus_board_mean_rank": "74.2",
+    "market_signal_pct": 71.9,
+    "pff_grade": 86.3,
+    "trait_score": 92.16,
+    "athletic_profile_score": 61.547,
+    "athletic_metric_coverage_rate": 0.2727,
+    "athletic_percentile": 24.1,
+    "combine_ras_official": 0.0,
+    "ras_estimate": 0.0,
+    "confidence_score": 63.41,
+    "uncertainty_score": 36.59,
+    "best_role": "Outside starter with matchup flexibility",
+    "best_scheme_fit": "press match",
+    "rank_driver_summary": "score=81.52; prior_signal=69.71; athletic:-2.28 | trait:-1.89 | prior:+0.97 | production:+0.66",
+    "top_rank_driver": "trait",
+    "top_rank_driver_delta": -1.89,
+    "rank_history": [
+      75,
+      75,
+      77,
+      77,
+      77,
+      77,
+      76,
+      77
+    ],
+    "rank_move_window": -2,
+    "low_evidence_flag": false,
+    "production_metrics": {},
+    "production_percentiles": {},
+    "historical_comp_floor": {
+      "name": "Tre Brown",
+      "similarity": 87.523,
+      "year": 2021
+    },
+    "historical_comp_median": {
+      "name": "DAndre Payne",
+      "similarity": 87.881,
+      "year": 2019
+    },
+    "historical_comp_ceiling": {
+      "name": "Rufus Brown",
+      "similarity": 93.906,
+      "year": 2004
+    },
+    "comp_confidence": "A",
+    "scouting_report_summary": "Keith Abney II (CB, Arizona State Sun Devils) carries a 81.52 model grade with a current Round 3-4 projection. Current board slot: 77. Primary NFL pathway: Outside starter with matchup flexibility in press match. developmental contributor profile; matches routes with disciplined leverage. Seed rank 44 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
+    "scouting_why_he_wins": "- Usage fit: Outside starter with matchup flexibility within press match.\n- Film translation comes from coverage mechanics: maintain leverage, transition cleanly, and finish at the catch point without panic.\n- Model + film note: developmental contributor profile; matches routes with disciplined leverage. Seed rank 44 indicates current market confidence with developmental upside still available.",
+    "scouting_primary_concerns": "- CB projection risk is driven by speed/leverage recovery and ball production at the catch point.\n- Role stress test: value is strongest in outside starter with matchup flexibility; projection gets thinner if usage expands too far outside that lane early.\n- Eye discipline through route breaks must tighten to limit transition losses against pro route pacing.",
+    "scouting_production_snapshot": "PFF grade 86.3",
+    "scouting_role_projection": "Best early team fit: JAX. Scheme path: press match. Expected early deployment: Outside starter with matchup flexibility. For film-heavy evaluation: this role asks for leverage consistency across man/zone and reliable tackle finish when targeted in run support. Historical combine comp: DAndre Payne (2019), athletic-profile match 93.49%.",
+    "player_report_url": "/players/keith-abney-ii"
   },
   {
     "player_uid": "26-jalon-kilgore",
@@ -5909,7 +5909,7 @@
     "rank_history": [
       77,
       77,
-      77,
+      78,
       78,
       78,
       78,
@@ -5989,7 +5989,7 @@
     "rank_history": [
       78,
       78,
-      78,
+      79,
       79,
       79,
       79,
@@ -6065,13 +6065,13 @@
     "uncertainty_score": 37.56,
     "best_role": "Explosive one-cut slasher",
     "best_scheme_fit": "Wide-zone one-cut system",
-    "rank_driver_summary": "score=81.9; prior_signal=62.06; prior:-5.79 | guardrail:-2.87 | production:-0.75 | trait:+0.44",
+    "rank_driver_summary": "score=81.9; prior_signal=62.06; prior:-5.80 | guardrail:-2.88 | production:-0.74 | trait:+0.44",
     "top_rank_driver": "production",
-    "top_rank_driver_delta": -0.75,
+    "top_rank_driver_delta": -0.74,
     "rank_history": [
       79,
       79,
-      79,
+      80,
       80,
       80,
       80,
@@ -6516,8 +6516,8 @@
       86,
       86,
       86,
-      86,
       88,
+      86,
       86
     ],
     "rank_move_window": 0,
@@ -6575,11 +6575,11 @@
     "rank_history": [
       93,
       93,
-      93,
       87,
       87,
       87,
       86,
+      87,
       87
     ],
     "rank_move_window": 6,
@@ -6653,11 +6653,11 @@
     "rank_history": [
       96,
       96,
-      96,
       89,
       89,
       89,
       87,
+      88,
       88
     ],
     "rank_move_window": 8,
@@ -6731,10 +6731,10 @@
     "rank_history": [
       95,
       95,
-      95,
       88,
       88,
       88,
+      89,
       89,
       89
     ],
@@ -6807,11 +6807,11 @@
     "rank_history": [
       87,
       87,
-      87,
       90,
       90,
       90,
       91,
+      90,
       90
     ],
     "rank_move_window": -3,
@@ -6869,11 +6869,11 @@
     "rank_history": [
       88,
       88,
-      88,
       91,
       91,
       91,
       92,
+      91,
       91
     ],
     "rank_move_window": -3,
@@ -6951,11 +6951,11 @@
     "rank_history": [
       89,
       89,
-      89,
       92,
       92,
       92,
       93,
+      92,
       92
     ],
     "rank_move_window": -3,
@@ -7013,11 +7013,11 @@
     "rank_history": [
       101,
       101,
-      101,
       95,
       95,
       95,
       90,
+      93,
       93
     ],
     "rank_move_window": 8,
@@ -7091,10 +7091,10 @@
     "rank_history": [
       90,
       90,
-      90,
       93,
       93,
       93,
+      94,
       94,
       94
     ],
@@ -7169,10 +7169,10 @@
     "rank_history": [
       91,
       91,
-      91,
       94,
       94,
       94,
+      95,
       95,
       95
     ],
@@ -7245,7 +7245,7 @@
     "rank_history": [
       92,
       92,
-      92,
+      96,
       96,
       96,
       96,
@@ -7327,11 +7327,11 @@
     "rank_history": [
       97,
       97,
+      98,
+      98,
+      98,
+      98,
       97,
-      98,
-      98,
-      98,
-      98,
       97
     ],
     "rank_move_window": 0,
@@ -7397,11 +7397,11 @@
     "rank_history": [
       94,
       94,
-      94,
       97,
       97,
       97,
       97,
+      98,
       98
     ],
     "rank_move_window": -4,
@@ -7459,11 +7459,11 @@
     "rank_history": [
       99,
       99,
+      100,
+      100,
+      100,
+      100,
       99,
-      100,
-      100,
-      100,
-      100,
       99
     ],
     "rank_move_window": 0,
@@ -7537,11 +7537,11 @@
     "rank_history": [
       104,
       104,
-      104,
       105,
       105,
       105,
       105,
+      100,
       100
     ],
     "rank_move_window": 4,
@@ -7623,11 +7623,11 @@
     "rank_history": [
       105,
       105,
-      105,
       102,
       102,
       102,
       102,
+      101,
       101
     ],
     "rank_move_window": 4,
@@ -7701,11 +7701,11 @@
     "rank_history": [
       102,
       102,
-      102,
       104,
       104,
       104,
       103,
+      102,
       102
     ],
     "rank_move_window": 0,
@@ -7773,17 +7773,17 @@
     "uncertainty_score": 24.19,
     "best_role": "Primary committee back with passing-down utility",
     "best_scheme_fit": "Wide-zone committee",
-    "rank_driver_summary": "score=79.46; prior_signal=67.88; athletic:-3.31 | trait:-2.63 | prior:+2.50 | production:+0.50",
+    "rank_driver_summary": "score=79.46; prior_signal=67.88; athletic:-3.31 | trait:-2.63 | prior:+2.51 | production:+0.49",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.63,
     "rank_history": [
       103,
       103,
+      101,
+      101,
+      101,
+      101,
       103,
-      101,
-      101,
-      101,
-      101,
       103
     ],
     "rank_move_window": 0,
@@ -7855,10 +7855,10 @@
     "rank_history": [
       100,
       100,
-      100,
       103,
       103,
       103,
+      104,
       104,
       104
     ],
@@ -7937,7 +7937,7 @@
       106,
       106,
       106,
-      106,
+      105,
       105
     ],
     "rank_move_window": 1,
@@ -8013,7 +8013,7 @@
       107,
       107,
       107,
-      107,
+      106,
       106
     ],
     "rank_move_window": 1,
@@ -8074,8 +8074,8 @@
       108,
       108,
       108,
-      108,
       109,
+      107,
       107
     ],
     "rank_move_window": 1,
@@ -8149,10 +8149,10 @@
     "rank_history": [
       119,
       119,
-      119,
       109,
       109,
       109,
+      108,
       108,
       108
     ],
@@ -8227,11 +8227,11 @@
     "rank_history": [
       110,
       110,
-      110,
       111,
       111,
       111,
       112,
+      109,
       109
     ],
     "rank_move_window": 1,
@@ -8289,11 +8289,11 @@
     "rank_history": [
       109,
       109,
-      109,
       110,
       110,
       110,
       111,
+      110,
       110
     ],
     "rank_move_window": -1,
@@ -8367,11 +8367,11 @@
     "rank_history": [
       122,
       122,
-      122,
       112,
       112,
       112,
       110,
+      111,
       111
     ],
     "rank_move_window": 11,
@@ -8445,11 +8445,11 @@
     "rank_history": [
       111,
       111,
-      111,
       113,
       113,
       113,
       113,
+      112,
       112
     ],
     "rank_move_window": -1,
@@ -8523,11 +8523,11 @@
     "rank_history": [
       112,
       112,
-      112,
       114,
       114,
       114,
       114,
+      113,
       113
     ],
     "rank_move_window": -1,
@@ -8585,11 +8585,11 @@
     "rank_history": [
       113,
       113,
-      113,
       115,
       115,
       115,
       115,
+      114,
       114
     ],
     "rank_move_window": -1,
@@ -8647,11 +8647,11 @@
     "rank_history": [
       114,
       114,
-      114,
       116,
       116,
       116,
       116,
+      115,
       115
     ],
     "rank_move_window": -1,
@@ -8713,11 +8713,11 @@
     "rank_history": [
       98,
       98,
-      98,
       99,
       99,
       99,
       99,
+      116,
       116
     ],
     "rank_move_window": -18,
@@ -8799,7 +8799,7 @@
     "rank_history": [
       115,
       115,
-      115,
+      117,
       117,
       117,
       117,
@@ -8877,7 +8877,7 @@
     "rank_history": [
       116,
       116,
-      116,
+      118,
       118,
       118,
       118,
@@ -8955,7 +8955,7 @@
     "rank_history": [
       117,
       117,
-      117,
+      119,
       119,
       119,
       119,
@@ -9017,11 +9017,11 @@
     "rank_history": [
       120,
       120,
+      121,
+      121,
+      121,
+      121,
       120,
-      121,
-      121,
-      121,
-      121,
       120
     ],
     "rank_move_window": 0,
@@ -9103,11 +9103,11 @@
     "rank_history": [
       121,
       121,
+      122,
+      122,
+      122,
+      122,
       121,
-      122,
-      122,
-      122,
-      122,
       121
     ],
     "rank_move_window": 0,
@@ -9165,11 +9165,11 @@
     "rank_history": [
       118,
       118,
-      118,
       120,
       120,
       120,
       120,
+      122,
       122
     ],
     "rank_move_window": -4,
@@ -9247,11 +9247,11 @@
     "rank_history": [
       123,
       123,
+      124,
+      124,
+      124,
+      124,
       123,
-      124,
-      124,
-      124,
-      124,
       123
     ],
     "rank_move_window": 0,
@@ -9333,11 +9333,11 @@
     "rank_history": [
       124,
       124,
+      125,
+      125,
+      125,
+      125,
       124,
-      125,
-      125,
-      125,
-      125,
       124
     ],
     "rank_move_window": 0,
@@ -9409,11 +9409,11 @@
     "rank_history": [
       125,
       125,
+      126,
+      126,
+      126,
+      126,
       125,
-      126,
-      126,
-      126,
-      126,
       125
     ],
     "rank_move_window": 0,
@@ -9491,11 +9491,11 @@
     "rank_history": [
       128,
       128,
-      128,
       123,
       123,
       123,
       123,
+      126,
       126
     ],
     "rank_move_window": 2,
@@ -9571,11 +9571,11 @@
     "rank_history": [
       126,
       126,
-      126,
       129,
       129,
       129,
       129,
+      127,
       127
     ],
     "rank_move_window": -1,
@@ -9657,7 +9657,7 @@
     "rank_history": [
       129,
       129,
-      129,
+      128,
       128,
       128,
       128,
@@ -9737,11 +9737,11 @@
     "rank_history": [
       127,
       127,
-      127,
       130,
       130,
       130,
       130,
+      129,
       129
     ],
     "rank_move_window": -2,
@@ -9823,11 +9823,11 @@
     "rank_history": [
       131,
       131,
-      131,
       127,
       127,
       127,
       127,
+      130,
       130
     ],
     "rank_move_window": 1,
@@ -9905,7 +9905,7 @@
     "rank_history": [
       130,
       130,
-      130,
+      131,
       131,
       131,
       131,
@@ -10285,11 +10285,11 @@
     "rank_history": [
       145,
       145,
-      145,
       146,
       146,
       146,
       146,
+      136,
       136
     ],
     "rank_move_window": 9,
@@ -10375,7 +10375,7 @@
       136,
       136,
       136,
-      136,
+      137,
       137
     ],
     "rank_move_window": -1,
@@ -10461,7 +10461,7 @@
       137,
       137,
       137,
-      137,
+      138,
       138
     ],
     "rank_move_window": -1,
@@ -10519,11 +10519,11 @@
     "rank_history": [
       138,
       138,
-      138,
       139,
       139,
       139,
       138,
+      139,
       139
     ],
     "rank_move_window": -1,
@@ -10597,11 +10597,11 @@
     "rank_history": [
       139,
       139,
-      139,
       140,
       140,
       140,
       139,
+      140,
       140
     ],
     "rank_move_window": -1,
@@ -10683,11 +10683,11 @@
     "rank_history": [
       140,
       140,
-      140,
       141,
       141,
       141,
       140,
+      141,
       141
     ],
     "rank_move_window": -1,
@@ -10763,11 +10763,11 @@
     "rank_history": [
       141,
       141,
-      141,
       142,
       142,
       142,
       141,
+      142,
       142
     ],
     "rank_move_window": -1,
@@ -10841,11 +10841,11 @@
     "rank_history": [
       142,
       142,
-      142,
       143,
       143,
       143,
       142,
+      143,
       143
     ],
     "rank_move_window": -1,
@@ -10983,7 +10983,7 @@
     "rank_history": [
       143,
       143,
-      143,
+      145,
       145,
       145,
       145,
@@ -11069,11 +11069,11 @@
     "rank_history": [
       146,
       146,
+      147,
+      147,
+      147,
+      147,
       146,
-      147,
-      147,
-      147,
-      147,
       146
     ],
     "rank_move_window": 0,
@@ -11131,11 +11131,11 @@
     "rank_history": [
       147,
       147,
+      148,
+      148,
+      148,
+      148,
       147,
-      148,
-      148,
-      148,
-      148,
       147
     ],
     "rank_move_window": 0,
@@ -11193,11 +11193,11 @@
     "rank_history": [
       148,
       148,
+      149,
+      149,
+      149,
+      149,
       148,
-      149,
-      149,
-      149,
-      149,
       148
     ],
     "rank_move_window": 0,
@@ -11259,11 +11259,11 @@
     "rank_history": [
       149,
       149,
+      150,
+      150,
+      150,
+      150,
       149,
-      150,
-      150,
-      150,
-      150,
       149
     ],
     "rank_move_window": 0,
@@ -11325,11 +11325,11 @@
     "rank_history": [
       150,
       150,
+      151,
+      151,
+      151,
+      151,
       150,
-      151,
-      151,
-      151,
-      151,
       150
     ],
     "rank_move_window": 0,
@@ -11387,11 +11387,11 @@
     "rank_history": [
       157,
       157,
-      157,
       152,
       152,
       152,
       152,
+      151,
       151
     ],
     "rank_move_window": 6,
@@ -11465,11 +11465,11 @@
     "rank_history": [
       151,
       151,
-      151,
       153,
       153,
       153,
       153,
+      152,
       152
     ],
     "rank_move_window": -1,
@@ -11527,11 +11527,11 @@
     "rank_history": [
       152,
       152,
-      152,
       154,
       154,
       154,
       154,
+      153,
       153
     ],
     "rank_move_window": -1,
@@ -11607,11 +11607,11 @@
     "rank_history": [
       153,
       153,
-      153,
       138,
       138,
       138,
       143,
+      154,
       154
     ],
     "rank_move_window": -1,
@@ -11685,7 +11685,7 @@
     "rank_history": [
       154,
       154,
-      154,
+      155,
       155,
       155,
       155,
@@ -11761,10 +11761,10 @@
     "rank_history": [
       156,
       156,
+      157,
+      157,
+      157,
       156,
-      157,
-      157,
-      157,
       156,
       156
     ],
@@ -11847,10 +11847,10 @@
     "rank_history": [
       155,
       155,
-      155,
       156,
       156,
       156,
+      157,
       157,
       157
     ],
@@ -12143,11 +12143,11 @@
     "rank_history": [
       161,
       161,
+      162,
+      162,
+      162,
+      162,
       161,
-      162,
-      162,
-      162,
-      162,
       161
     ],
     "rank_move_window": 0,
@@ -12205,11 +12205,11 @@
     "rank_history": [
       162,
       162,
+      163,
+      163,
+      163,
+      163,
       162,
-      163,
-      163,
-      163,
-      163,
       162
     ],
     "rank_move_window": 0,
@@ -12283,11 +12283,11 @@
     "rank_history": [
       163,
       163,
+      164,
+      164,
+      164,
+      164,
       163,
-      164,
-      164,
-      164,
-      164,
       163
     ],
     "rank_move_window": 0,
@@ -12361,11 +12361,11 @@
     "rank_history": [
       165,
       165,
-      165,
       161,
       161,
       161,
       161,
+      164,
       164
     ],
     "rank_move_window": 1,
@@ -12441,7 +12441,7 @@
     "rank_history": [
       164,
       164,
-      164,
+      165,
       165,
       165,
       165,
@@ -12519,7 +12519,7 @@
     "rank_history": [
       171,
       171,
-      171,
+      166,
       166,
       166,
       166,
@@ -12597,11 +12597,11 @@
     "rank_history": [
       173,
       173,
-      173,
       168,
       168,
       168,
       169,
+      167,
       167
     ],
     "rank_move_window": 6,
@@ -12675,11 +12675,11 @@
     "rank_history": [
       169,
       169,
-      169,
       172,
       172,
       172,
       172,
+      168,
       168
     ],
     "rank_move_window": 1,
@@ -12740,7 +12740,7 @@
     "player_name": "Eli Heidenreich",
     "position": "RB",
     "school": "Navy Midshipmen",
-    "final_grade": 76.23,
+    "final_grade": 76.22,
     "round_value": "Round 4-5",
     "consensus_board_mean_rank": "196.0",
     "market_signal_pct": 23.2,
@@ -12755,17 +12755,17 @@
     "uncertainty_score": 46.14,
     "best_role": "Primary committee back with passing-down utility",
     "best_scheme_fit": "Wide-zone committee",
-    "rank_driver_summary": "score=76.23; prior_signal=30.64; prior:-15.09 | guardrail:-2.74 | trait:-1.60 | production:+1.40",
+    "rank_driver_summary": "score=76.22; prior_signal=30.64; prior:-15.08 | guardrail:-2.74 | trait:-1.60 | production:+1.39",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.6,
     "rank_history": [
       166,
       166,
-      166,
       167,
       167,
       167,
       167,
+      169,
       169
     ],
     "rank_move_window": -3,
@@ -12802,7 +12802,7 @@
       "year": 2003
     },
     "comp_confidence": "C",
-    "scouting_report_summary": "Eli Heidenreich (RB, Navy Midshipmen) carries a 76.23 model grade with a current Round 4-5 projection. Current board slot: 169. Primary NFL pathway: Primary committee back with passing-down utility in Wide-zone committee. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 217 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
+    "scouting_report_summary": "Eli Heidenreich (RB, Navy Midshipmen) carries a 76.22 model grade with a current Round 4-5 projection. Current board slot: 169. Primary NFL pathway: Primary committee back with passing-down utility in Wide-zone committee. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 217 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
     "scouting_why_he_wins": "- Usage fit: Primary committee back with passing-down utility within Wide-zone committee.\n- Film translation comes from vision plus contact balance: press tracks, force linebacker displacement, then accelerate through daylight.\n- Model + film note: developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 217 indicates current market confidence with developmental upside still available.",
     "scouting_primary_concerns": "- RB projection risk is driven by burst creation, tackle-breaking translation, and passing-down value.\n- Role stress test: value is strongest in primary committee back with passing-down utility; projection gets thinner if usage expands too far outside that lane early.\n- Early-down production must be paired with dependable pass-protection reps to hold three-down value.",
     "scouting_production_snapshot": "PFF grade 92.9\nStat context: rush attempts 77; rush yards 499; rush TD 3; 51 rec, 941 rec yds, 6 rec TD",
@@ -12837,7 +12837,7 @@
     "rank_history": [
       167,
       167,
-      167,
+      170,
       170,
       170,
       170,
@@ -12899,11 +12899,11 @@
     "rank_history": [
       174,
       174,
-      174,
       169,
       169,
       169,
       168,
+      171,
       171
     ],
     "rank_move_window": 3,
@@ -12977,11 +12977,11 @@
     "rank_history": [
       168,
       168,
-      168,
       171,
       171,
       171,
       171,
+      172,
       172
     ],
     "rank_move_window": -4,
@@ -13039,7 +13039,7 @@
     "rank_history": [
       170,
       170,
-      170,
+      173,
       173,
       173,
       173,
@@ -13119,7 +13119,7 @@
     "rank_history": [
       172,
       172,
-      172,
+      174,
       174,
       174,
       174,
@@ -13427,11 +13427,11 @@
     "rank_history": [
       179,
       179,
-      179,
       180,
       180,
       180,
       180,
+      178,
       178
     ],
     "rank_move_window": 1,
@@ -13517,7 +13517,7 @@
       178,
       178,
       178,
-      178,
+      179,
       179
     ],
     "rank_move_window": -1,
@@ -13593,11 +13593,11 @@
     "rank_history": [
       181,
       181,
-      181,
       184,
       184,
       184,
       183,
+      180,
       180
     ],
     "rank_move_window": 1,
@@ -13654,7 +13654,7 @@
     "player_name": "Desmond Reid",
     "position": "RB",
     "school": "Pittsburgh Panthers",
-    "final_grade": 75.14,
+    "final_grade": 75.1,
     "round_value": "Round 5-6",
     "consensus_board_mean_rank": "201.5",
     "market_signal_pct": 21.7,
@@ -13669,17 +13669,17 @@
     "uncertainty_score": 46.1,
     "best_role": "Primary committee back with passing-down utility",
     "best_scheme_fit": "Wide-zone committee",
-    "rank_driver_summary": "score=75.14; prior_signal=37.66; prior:-10.51 | guardrail:-2.45 | trait:-1.16 | production:-0.66",
+    "rank_driver_summary": "score=75.1; prior_signal=37.66; prior:-10.46 | guardrail:-2.45 | trait:-1.16 | production:-0.70",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.16,
     "rank_history": [
       183,
       183,
-      183,
       179,
       179,
       179,
       179,
+      181,
       181
     ],
     "rank_move_window": 2,
@@ -13716,7 +13716,7 @@
       "year": 2020
     },
     "comp_confidence": "B",
-    "scouting_report_summary": "Desmond Reid (RB, Pittsburgh Panthers) carries a 75.14 model grade with a current Round 5-6 projection. Current board slot: 181. Primary NFL pathway: Primary committee back with passing-down utility in Wide-zone committee. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 177 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
+    "scouting_report_summary": "Desmond Reid (RB, Pittsburgh Panthers) carries a 75.10 model grade with a current Round 5-6 projection. Current board slot: 181. Primary NFL pathway: Primary committee back with passing-down utility in Wide-zone committee. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 177 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
     "scouting_why_he_wins": "- Usage fit: Primary committee back with passing-down utility within Wide-zone committee.\n- Film translation comes from vision plus contact balance: press tracks, force linebacker displacement, then accelerate through daylight.\n- Model + film note: developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 177 indicates current market confidence with developmental upside still available.",
     "scouting_primary_concerns": "- RB projection risk is driven by burst creation, tackle-breaking translation, and passing-down value.\n- Lack of explosive-run creation (8.2% explosive rate) narrows home-run ceiling.\n- Role stress test: value is strongest in primary committee back with passing-down utility; projection gets thinner if usage expands too far outside that lane early.",
     "scouting_production_snapshot": "PFF grade 80.1\nStat context: rush attempts 60; rush yards 278; rush TD 2; 23 rec, 317 rec yds, 2 rec TD",
@@ -13751,7 +13751,7 @@
     "rank_history": [
       180,
       180,
-      180,
+      182,
       182,
       182,
       182,
@@ -13829,11 +13829,11 @@
     "rank_history": [
       182,
       182,
-      182,
       181,
       181,
       181,
       181,
+      183,
       183
     ],
     "rank_move_window": -1,
@@ -13907,10 +13907,10 @@
     "rank_history": [
       187,
       187,
-      187,
       186,
       186,
       186,
+      184,
       184,
       184
     ],
@@ -13985,10 +13985,10 @@
     "rank_history": [
       186,
       186,
-      186,
       187,
       187,
       187,
+      185,
       185,
       185
     ],
@@ -14063,10 +14063,10 @@
     "rank_history": [
       189,
       189,
-      189,
       188,
       188,
       188,
+      186,
       186,
       186
     ],
@@ -14145,10 +14145,10 @@
     "rank_history": [
       185,
       185,
-      185,
       183,
       183,
       183,
+      187,
       187,
       187
     ],
@@ -14223,10 +14223,10 @@
     "rank_history": [
       184,
       184,
-      184,
       185,
       185,
       185,
+      188,
       188,
       188
     ],
@@ -14293,10 +14293,10 @@
     "rank_history": [
       191,
       191,
-      191,
       192,
       192,
       192,
+      189,
       189,
       189
     ],
@@ -14371,10 +14371,10 @@
     "rank_history": [
       188,
       188,
-      188,
       189,
       189,
       189,
+      190,
       190,
       190
     ],
@@ -14436,7 +14436,7 @@
       190,
       190,
       190,
-      190,
+      191,
       191,
       191
     ],
@@ -14503,10 +14503,10 @@
     "rank_history": [
       194,
       194,
-      194,
       191,
       191,
       191,
+      192,
       192,
       192
     ],
@@ -14585,7 +14585,7 @@
     "rank_history": [
       192,
       192,
-      192,
+      193,
       193,
       193,
       193,
@@ -14647,7 +14647,7 @@
     "rank_history": [
       193,
       193,
-      193,
+      194,
       194,
       194,
       194,
@@ -14709,11 +14709,11 @@
     "rank_history": [
       198,
       198,
-      198,
       200,
       200,
       200,
       200,
+      195,
       195
     ],
     "rank_move_window": 3,
@@ -14795,10 +14795,10 @@
     "rank_history": [
       196,
       196,
+      197,
+      197,
+      197,
       196,
-      197,
-      197,
-      197,
       196,
       196
     ],
@@ -14857,11 +14857,11 @@
     "rank_history": [
       199,
       199,
-      199,
       195,
       195,
       195,
       195,
+      197,
       197
     ],
     "rank_move_window": 2,
@@ -14937,11 +14937,11 @@
     "rank_history": [
       197,
       197,
-      197,
       198,
       198,
       198,
       197,
+      198,
       198
     ],
     "rank_move_window": -1,
@@ -15015,10 +15015,10 @@
     "rank_history": [
       195,
       195,
-      195,
       196,
       196,
       196,
+      199,
       199,
       199
     ],
@@ -15093,11 +15093,11 @@
     "rank_history": [
       200,
       200,
-      200,
       199,
       199,
       199,
       198,
+      200,
       200
     ],
     "rank_move_window": 0,
@@ -15255,7 +15255,7 @@
     "rank_history": [
       203,
       203,
-      203,
+      202,
       202,
       202,
       202,
@@ -15333,7 +15333,7 @@
     "rank_history": [
       202,
       202,
-      202,
+      203,
       203,
       203,
       203,
@@ -15411,10 +15411,10 @@
     "rank_history": [
       204,
       204,
+      206,
+      206,
+      206,
       204,
-      206,
-      206,
-      206,
       204,
       204
     ],
@@ -15497,10 +15497,10 @@
     "rank_history": [
       209,
       209,
-      209,
       208,
       208,
       208,
+      205,
       205,
       205
     ],
@@ -15575,10 +15575,10 @@
     "rank_history": [
       206,
       206,
+      204,
+      204,
+      204,
       206,
-      204,
-      204,
-      204,
       206,
       206
     ],
@@ -15653,11 +15653,11 @@
     "rank_history": [
       205,
       205,
-      205,
       207,
       207,
       207,
       208,
+      207,
       207
     ],
     "rank_move_window": -2,
@@ -15715,11 +15715,11 @@
     "rank_history": [
       208,
       208,
-      208,
       205,
       205,
       205,
       207,
+      208,
       208
     ],
     "rank_move_window": 0,
@@ -15797,7 +15797,7 @@
     "rank_history": [
       207,
       207,
-      207,
+      209,
       209,
       209,
       209,
@@ -15961,11 +15961,11 @@
     "rank_history": [
       214,
       214,
-      214,
       211,
       211,
       211,
       212,
+      211,
       211
     ],
     "rank_move_window": 3,
@@ -16047,11 +16047,11 @@
     "rank_history": [
       211,
       211,
-      211,
       212,
       212,
       212,
       213,
+      212,
       212
     ],
     "rank_move_window": -1,
@@ -16109,11 +16109,11 @@
     "rank_history": [
       215,
       215,
-      215,
       213,
       213,
       213,
       211,
+      213,
       213
     ],
     "rank_move_window": 2,
@@ -16187,7 +16187,7 @@
     "rank_history": [
       213,
       213,
-      213,
+      214,
       214,
       214,
       214,
@@ -16265,7 +16265,7 @@
     "rank_history": [
       212,
       212,
-      212,
+      215,
       215,
       215,
       215,
@@ -16300,9 +16300,85 @@
     "player_report_url": "/players/faalili-faamoe"
   },
   {
+    "player_uid": "457-noah-whittington",
+    "slug": "noah-whittington",
+    "consensus_rank": 216,
+    "player_name": "Noah Whittington",
+    "position": "RB",
+    "school": "Oregon Ducks",
+    "final_grade": 71.95,
+    "round_value": "Round 6-7",
+    "consensus_board_mean_rank": "292.5",
+    "market_signal_pct": 8.0,
+    "pff_grade": 83.6,
+    "trait_score": 72.81,
+    "athletic_profile_score": 65.274,
+    "athletic_metric_coverage_rate": 0.2727,
+    "athletic_percentile": 45.0,
+    "combine_ras_official": 0.0,
+    "ras_estimate": 0.0,
+    "confidence_score": 57.75,
+    "uncertainty_score": 42.25,
+    "best_role": "Primary committee back with passing-down utility",
+    "best_scheme_fit": "Wide-zone committee",
+    "rank_driver_summary": "score=71.95; prior_signal=11.52; prior:-21.55 | guardrail:-4.17 | trait:-2.14 | athletic:+0.93",
+    "top_rank_driver": "trait",
+    "top_rank_driver_delta": -2.14,
+    "rank_history": [
+      217,
+      217,
+      216,
+      216,
+      216,
+      216,
+      218,
+      216
+    ],
+    "rank_move_window": 1,
+    "low_evidence_flag": false,
+    "production_metrics": {
+      "cfb_rb_explosive_rate": 0.1751,
+      "cfb_rb_rush_td": 6.0,
+      "cfb_rb_rush_yds": 829.0,
+      "cfb_lb_signal": 20.0,
+      "cfb_ol_years_played": 6.0,
+      "cfb_ol_proxy_signal": 95.0
+    },
+    "production_percentiles": {
+      "cfb_rb_explosive_rate": 88.2,
+      "cfb_rb_rush_td": 29.4,
+      "cfb_rb_rush_yds": 64.7,
+      "cfb_lb_signal": 100.0,
+      "cfb_ol_years_played": 100.0,
+      "cfb_ol_proxy_signal": 100.0
+    },
+    "historical_comp_floor": {
+      "name": "Darwin Thompson",
+      "similarity": 88.792,
+      "year": 2019
+    },
+    "historical_comp_median": {
+      "name": "Deandre Washington",
+      "similarity": 93.474,
+      "year": 2016
+    },
+    "historical_comp_ceiling": {
+      "name": "James White",
+      "similarity": 89.62,
+      "year": 2014
+    },
+    "comp_confidence": "C",
+    "scouting_report_summary": "Noah Whittington (RB, Oregon Ducks) carries a 71.95 model grade with a current Round 6-7 projection. Current board slot: 216. Primary NFL pathway: Primary committee back with passing-down utility in Wide-zone committee. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 267 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
+    "scouting_why_he_wins": "- Usage fit: Primary committee back with passing-down utility within Wide-zone committee.\n- Film translation comes from vision plus contact balance: press tracks, force linebacker displacement, then accelerate through daylight.\n- Model + film note: developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 267 indicates current market confidence with developmental upside still available.",
+    "scouting_primary_concerns": "- RB projection risk is driven by burst creation, tackle-breaking translation, and passing-down value.\n- Role stress test: value is strongest in primary committee back with passing-down utility; projection gets thinner if usage expands too far outside that lane early.\n- Early-down production must be paired with dependable pass-protection reps to hold three-down value.",
+    "scouting_production_snapshot": "PFF grade 83.6\nStat context: rush attempts 129; rush yards 829; rush TD 6; 19 rec, 98 rec yds, 1 rec TD",
+    "scouting_role_projection": "Best early team fit: DAL. Scheme path: Wide-zone committee. Expected early deployment: Primary committee back with passing-down utility. For film-heavy evaluation: this role asks for box-count recognition, run-track efficiency, and enough receiving utility to stay on the field in sub packages. Historical combine comp: Michael Smith (2012), athletic-profile match 96.72%.",
+    "player_report_url": "/players/noah-whittington"
+  },
+  {
     "player_uid": "445-diego-pavia",
     "slug": "diego-pavia",
-    "consensus_rank": 216,
+    "consensus_rank": 217,
     "player_name": "Diego Pavia",
     "position": "QB",
     "school": "Vanderbilt Commodores",
@@ -16327,14 +16403,14 @@
     "rank_history": [
       218,
       218,
-      218,
       217,
       217,
       217,
       217,
-      216
+      216,
+      217
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_qb_epa_per_play": 0.517,
@@ -16372,7 +16448,7 @@
       "year": 2019
     },
     "comp_confidence": "C",
-    "scouting_report_summary": "Diego Pavia (QB, Vanderbilt Commodores) carries a 71.86 model grade with a current Round 6-7 projection. Current board slot: 216. Primary NFL pathway: Starter-caliber distributor profile in Timing-spread distributor framework. developmental contributor profile; wins with timing and structure while retaining off-script creation. Seed rank 233 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
+    "scouting_report_summary": "Diego Pavia (QB, Vanderbilt Commodores) carries a 71.86 model grade with a current Round 6-7 projection. Current board slot: 217. Primary NFL pathway: Starter-caliber distributor profile in Timing-spread distributor framework. developmental contributor profile; wins with timing and structure while retaining off-script creation. Seed rank 233 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
     "scouting_why_he_wins": "- Usage fit: Starter-caliber distributor profile within Timing-spread distributor framework.\n- Film translation comes from timing/processing: ID leverage pre-snap, hold structure from the pocket, and create only when structure breaks.\n- QB style lens: high-efficiency anticipation distributor; wins by seeing windows early and triggering on time from structure.\n- Model + film note: developmental contributor profile; wins with timing and structure while retaining off-script creation. Seed rank 233 indicates current market confidence with developmental upsid.",
     "scouting_primary_concerns": "- QB projection risk is driven by anticipation timing, pressure response, and turnover discipline.\n- Role stress test: value is strongest in starter-caliber distributor profile; projection gets thinner if usage expands too far outside that lane early.\n- Pocket disruption response must stay on schedule; drifting off platform creates NFL turnover windows.",
     "scouting_production_snapshot": "PFF grade 92.2\nStat context: passing yards 3,539; pass TD-INT 29-8; completions/attempts 267/378; 862 rush yds, 10 rush TD; ESPN QBR 92.0; ESPN EPA/play 0.517",
@@ -16382,7 +16458,7 @@
   {
     "player_uid": "476-keyron-crawford",
     "slug": "keyron-crawford",
-    "consensus_rank": 217,
+    "consensus_rank": 218,
     "player_name": "Keyron Crawford",
     "position": "EDGE",
     "school": "Auburn Tigers",
@@ -16407,14 +16483,14 @@
     "rank_history": [
       219,
       219,
-      219,
       218,
       218,
       218,
       219,
-      217
+      217,
+      218
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_edge_pressure_rate": 0.2432,
@@ -16458,88 +16534,12 @@
       "year": 2015
     },
     "comp_confidence": "C",
-    "scouting_report_summary": "Keyron Crawford (EDGE, Auburn Tigers) carries a 70.91 model grade with a current Round 6-7 projection. Current board slot: 217. Primary NFL pathway: Three-down pressure creator in multiple front pass rush. developmental contributor profile; produces pressure through get-off and counters. Seed rank 300 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
+    "scouting_report_summary": "Keyron Crawford (EDGE, Auburn Tigers) carries a 70.91 model grade with a current Round 6-7 projection. Current board slot: 218. Primary NFL pathway: Three-down pressure creator in multiple front pass rush. developmental contributor profile; produces pressure through get-off and counters. Seed rank 300 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
     "scouting_why_he_wins": "- Usage fit: Three-down pressure creator within multiple front pass rush.\n- Film translation comes from rush sequencing: first-step threat, hand counters, and rush-to-contain discipline by game state.\n- Model + film note: developmental contributor profile; produces pressure through get-off and counters. Seed rank 300 indicates current market confidence with developmental upside still available.",
     "scouting_primary_concerns": "- EDGE projection risk is driven by first-step burst, bend/cornering, and rush-plan finish rate.\n- Total hurry volume (10.0) leaves less evidence of sustained rush disruption.\n- Role stress test: value is strongest in three-down pressure creator; projection gets thinner if usage expands too far outside that lane early.",
     "scouting_production_snapshot": "PFF grade 76.3\nStat context: sacks 5; QB hurries 10; TFL 10; tackles 36",
     "scouting_role_projection": "Best early team fit: PHI. Scheme path: multiple front pass rush. Expected early deployment: Three-down pressure creator. For film-heavy evaluation: this role asks for a complete four-down profile, combining rush productivity with edge-setting discipline versus the run. Historical combine comp: Brock Hekking (2015), athletic-profile match 95.68%.",
     "player_report_url": "/players/keyron-crawford"
-  },
-  {
-    "player_uid": "457-noah-whittington",
-    "slug": "noah-whittington",
-    "consensus_rank": 218,
-    "player_name": "Noah Whittington",
-    "position": "RB",
-    "school": "Oregon Ducks",
-    "final_grade": 71.87,
-    "round_value": "Round 6-7",
-    "consensus_board_mean_rank": "292.5",
-    "market_signal_pct": 8.0,
-    "pff_grade": 83.6,
-    "trait_score": 72.81,
-    "athletic_profile_score": 65.274,
-    "athletic_metric_coverage_rate": 0.2727,
-    "athletic_percentile": 45.0,
-    "combine_ras_official": 0.0,
-    "ras_estimate": 0.0,
-    "confidence_score": 57.75,
-    "uncertainty_score": 42.25,
-    "best_role": "Primary committee back with passing-down utility",
-    "best_scheme_fit": "Wide-zone committee",
-    "rank_driver_summary": "score=71.87; prior_signal=11.52; prior:-21.45 | guardrail:-4.17 | trait:-2.14 | athletic:+0.93",
-    "top_rank_driver": "trait",
-    "top_rank_driver_delta": -2.14,
-    "rank_history": [
-      217,
-      217,
-      217,
-      216,
-      216,
-      216,
-      216,
-      218
-    ],
-    "rank_move_window": -1,
-    "low_evidence_flag": false,
-    "production_metrics": {
-      "cfb_rb_explosive_rate": 0.1751,
-      "cfb_rb_rush_td": 6.0,
-      "cfb_rb_rush_yds": 829.0,
-      "cfb_lb_signal": 20.0,
-      "cfb_ol_years_played": 6.0,
-      "cfb_ol_proxy_signal": 95.0
-    },
-    "production_percentiles": {
-      "cfb_rb_explosive_rate": 88.2,
-      "cfb_rb_rush_td": 29.4,
-      "cfb_rb_rush_yds": 64.7,
-      "cfb_lb_signal": 100.0,
-      "cfb_ol_years_played": 100.0,
-      "cfb_ol_proxy_signal": 100.0
-    },
-    "historical_comp_floor": {
-      "name": "Darwin Thompson",
-      "similarity": 88.792,
-      "year": 2019
-    },
-    "historical_comp_median": {
-      "name": "Deandre Washington",
-      "similarity": 93.474,
-      "year": 2016
-    },
-    "historical_comp_ceiling": {
-      "name": "James White",
-      "similarity": 89.62,
-      "year": 2014
-    },
-    "comp_confidence": "C",
-    "scouting_report_summary": "Noah Whittington (RB, Oregon Ducks) carries a 71.87 model grade with a current Round 6-7 projection. Current board slot: 218. Primary NFL pathway: Primary committee back with passing-down utility in Wide-zone committee. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 267 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
-    "scouting_why_he_wins": "- Usage fit: Primary committee back with passing-down utility within Wide-zone committee.\n- Film translation comes from vision plus contact balance: press tracks, force linebacker displacement, then accelerate through daylight.\n- Model + film note: developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 267 indicates current market confidence with developmental upside still available.",
-    "scouting_primary_concerns": "- RB projection risk is driven by burst creation, tackle-breaking translation, and passing-down value.\n- Role stress test: value is strongest in primary committee back with passing-down utility; projection gets thinner if usage expands too far outside that lane early.\n- Early-down production must be paired with dependable pass-protection reps to hold three-down value.",
-    "scouting_production_snapshot": "PFF grade 83.6\nStat context: rush attempts 129; rush yards 829; rush TD 6; 19 rec, 98 rec yds, 1 rec TD",
-    "scouting_role_projection": "Best early team fit: DAL. Scheme path: Wide-zone committee. Expected early deployment: Primary committee back with passing-down utility. For film-heavy evaluation: this role asks for box-count recognition, run-track efficiency, and enough receiving utility to stay on the field in sub packages. Historical combine comp: Michael Smith (2012), athletic-profile match 96.72%.",
-    "player_report_url": "/players/noah-whittington"
   },
   {
     "player_uid": "433-reggie-virgil",
@@ -16569,11 +16569,11 @@
     "rank_history": [
       216,
       216,
-      216,
       220,
       220,
       220,
       220,
+      219,
       219
     ],
     "rank_move_window": -3,
@@ -16631,11 +16631,11 @@
     "rank_history": [
       220,
       220,
-      220,
       219,
       219,
       219,
       218,
+      220,
       220
     ],
     "rank_move_window": 0,
@@ -16707,7 +16707,7 @@
     "rank_history": [
       223,
       223,
-      223,
+      221,
       221,
       221,
       221,
@@ -16785,7 +16785,7 @@
     "rank_history": [
       224,
       224,
-      224,
+      222,
       222,
       222,
       222,
@@ -16863,7 +16863,7 @@
     "rank_history": [
       222,
       222,
-      222,
+      223,
       223,
       223,
       223,
@@ -16945,7 +16945,7 @@
     "rank_history": [
       221,
       221,
-      221,
+      224,
       224,
       224,
       224,
@@ -17026,7 +17026,7 @@
       226,
       226,
       226,
-      226,
+      225,
       225,
       225
     ],
@@ -17092,7 +17092,7 @@
       227,
       227,
       227,
-      227,
+      226,
       226,
       226
     ],
@@ -17172,7 +17172,7 @@
       225,
       225,
       225,
-      225,
+      227,
       227,
       227
     ],
@@ -17317,11 +17317,11 @@
     "rank_history": [
       231,
       231,
-      231,
       233,
       233,
       233,
       234,
+      229,
       229
     ],
     "rank_move_window": 2,
@@ -17406,7 +17406,7 @@
       229,
       229,
       229,
-      229,
+      230,
       230,
       230
     ],
@@ -17465,10 +17465,10 @@
     "rank_history": [
       234,
       234,
-      234,
       230,
       230,
       230,
+      231,
       231,
       231
     ],
@@ -17543,11 +17543,11 @@
     "rank_history": [
       233,
       233,
-      233,
       231,
       231,
       231,
       229,
+      232,
       232
     ],
     "rank_move_window": 1,
@@ -17621,10 +17621,10 @@
     "rank_history": [
       232,
       232,
-      232,
       236,
       236,
       236,
+      233,
       233,
       233
     ],
@@ -17699,11 +17699,11 @@
     "rank_history": [
       230,
       230,
-      230,
       232,
       232,
       232,
       232,
+      234,
       234
     ],
     "rank_move_window": -4,
@@ -17779,10 +17779,10 @@
     "rank_history": [
       236,
       236,
-      236,
       234,
       234,
       234,
+      235,
       235,
       235
     ],
@@ -17855,11 +17855,11 @@
     "rank_history": [
       235,
       235,
-      235,
       237,
       237,
       237,
       237,
+      236,
       236
     ],
     "rank_move_window": -1,
@@ -17941,11 +17941,11 @@
     "rank_history": [
       237,
       237,
-      237,
       235,
       235,
       235,
       236,
+      237,
       237
     ],
     "rank_move_window": 0,
@@ -18024,8 +18024,8 @@
       238,
       238,
       238,
-      238,
       240,
+      238,
       238
     ],
     "rank_move_window": 0,
@@ -18083,11 +18083,11 @@
     "rank_history": [
       239,
       239,
-      239,
       240,
       240,
       240,
       241,
+      239,
       239
     ],
     "rank_move_window": 0,
@@ -18145,11 +18145,11 @@
     "rank_history": [
       243,
       243,
-      243,
       245,
       245,
       245,
       238,
+      240,
       240
     ],
     "rank_move_window": 3,
@@ -18224,8 +18224,8 @@
       241,
       241,
       241,
-      241,
       242,
+      241,
       241
     ],
     "rank_move_window": 0,
@@ -18286,7 +18286,7 @@
     "player_name": "Behren Morton",
     "position": "QB",
     "school": "Texas Tech Red Raiders",
-    "final_grade": 69.13,
+    "final_grade": 69.17,
     "round_value": "Round 6-7",
     "consensus_board_mean_rank": "300.5",
     "market_signal_pct": 7.2,
@@ -18301,17 +18301,17 @@
     "uncertainty_score": 47.41,
     "best_role": "Movement-passer starter",
     "best_scheme_fit": "Boot/play-action spread",
-    "rank_driver_summary": "score=69.13; prior_signal=9.97; prior:-18.86 | guardrail:-3.91 | trait:-2.53 | risk:-1.45",
+    "rank_driver_summary": "score=69.17; prior_signal=9.97; prior:-18.91 | guardrail:-3.91 | trait:-2.53 | risk:-1.45",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.53,
     "rank_history": [
       242,
       242,
+      239,
+      239,
+      239,
+      239,
       242,
-      239,
-      239,
-      239,
-      239,
       242
     ],
     "rank_move_window": 0,
@@ -18352,7 +18352,7 @@
       "year": 2011
     },
     "comp_confidence": "C",
-    "scouting_report_summary": "Behren Morton (QB, Texas Tech Red Raiders) carries a 69.13 model grade with a current Round 6-7 projection. Current board slot: 242. Primary NFL pathway: Movement-passer starter in Boot/play-action spread. developmental contributor profile; wins with timing and structure while retaining off-script creation. Seed rank 272 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
+    "scouting_report_summary": "Behren Morton (QB, Texas Tech Red Raiders) carries a 69.17 model grade with a current Round 6-7 projection. Current board slot: 242. Primary NFL pathway: Movement-passer starter in Boot/play-action spread. developmental contributor profile; wins with timing and structure while retaining off-script creation. Seed rank 272 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
     "scouting_why_he_wins": "- Usage fit: Movement-passer starter within Boot/play-action spread.\n- Film translation comes from timing/processing: ID leverage pre-snap, hold structure from the pocket, and create only when structure breaks.\n- QB style lens: high-efficiency anticipation distributor; wins by seeing windows early and triggering on time from structure.\n- Model + film note: developmental contributor profile; wins with timing and structure while retaining off-script creation. Seed rank 272 indicates current market confidence with developmental upsid.",
     "scouting_primary_concerns": "- QB projection risk is driven by anticipation timing, pressure response, and turnover discipline.\n- Role stress test: value is strongest in movement-passer starter; projection gets thinner if usage expands too far outside that lane early.\n- PFF grade 72.0 suggests current performance volatility that needs film-confirmed cleanup.",
     "scouting_production_snapshot": "PFF grade 72.0\nStat context: passing yards 2,780; pass TD-INT 22-6; completions/attempts 219/333; -113 rush yds; ESPN QBR 75.33; ESPN EPA/play 0.338",
@@ -18387,10 +18387,10 @@
     "rank_history": [
       240,
       240,
-      240,
       242,
       242,
       242,
+      243,
       243,
       243
     ],
@@ -18532,7 +18532,7 @@
       246,
       246,
       246,
-      246,
+      245,
       245,
       245
     ],
@@ -18615,7 +18615,7 @@
       247,
       247,
       247,
-      247,
+      246,
       246
     ],
     "rank_move_window": 1,
@@ -18693,11 +18693,11 @@
     "rank_history": [
       245,
       245,
-      245,
       243,
       243,
       243,
       246,
+      247,
       247
     ],
     "rank_move_window": -2,
@@ -18771,11 +18771,11 @@
     "rank_history": [
       248,
       248,
+      249,
+      249,
+      249,
+      249,
       248,
-      249,
-      249,
-      249,
-      249,
       248
     ],
     "rank_move_window": 0,
@@ -18837,11 +18837,11 @@
     "rank_history": [
       249,
       249,
+      248,
+      248,
+      248,
+      248,
       249,
-      248,
-      248,
-      248,
-      248,
       249
     ],
     "rank_move_window": 0,
@@ -18995,7 +18995,7 @@
     "rank_history": [
       252,
       252,
-      252,
+      251,
       251,
       251,
       251,
@@ -19071,7 +19071,7 @@
     "rank_history": [
       251,
       251,
-      251,
+      252,
       252,
       252,
       252,
@@ -19233,7 +19233,7 @@
     "rank_history": [
       255,
       255,
-      255,
+      254,
       254,
       254,
       254,
@@ -19311,7 +19311,7 @@
     "rank_history": [
       254,
       254,
-      254,
+      255,
       255,
       255,
       255,
@@ -19471,7 +19471,7 @@
     "rank_history": [
       258,
       258,
-      258,
+      257,
       257,
       257,
       257,
@@ -19547,7 +19547,7 @@
     "rank_history": [
       257,
       257,
-      257,
+      258,
       258,
       258,
       258,
@@ -19773,7 +19773,7 @@
       262,
       262,
       262,
-      262,
+      261,
       261
     ],
     "rank_move_window": 1,
@@ -19851,7 +19851,7 @@
       261,
       261,
       261,
-      261,
+      262,
       262
     ],
     "rank_move_window": -1,

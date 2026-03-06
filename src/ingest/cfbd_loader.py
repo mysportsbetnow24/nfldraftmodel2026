@@ -423,7 +423,7 @@ def fetch_adjusted_player_metrics(
           adjustedPlayerMetrics(
             limit: {int(page_size)},
             offset: {int(offset)},
-            orderBy: [{{athleteId: asc}}, {{metricType: asc}}],
+            orderBy: [{{athleteId: ASC}}, {{metricType: ASC}}],
             where: {{year: {{_eq: {int(year)}}}}}
           ) {{
             athleteId

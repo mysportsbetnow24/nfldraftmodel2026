@@ -48,6 +48,9 @@ POSITION_SCOPE_KEYS = {
         "qb_ppa_passing_downs",
         "qb_wepa_passing",
         "qb_usage_rate",
+        "qb_adjusted_passing",
+        "qb_adjusted_rushing",
+        "qb_adjusted_total",
         "game_consistency_index",
         "late_season_trend_index",
         "top_defense_performance_index",
@@ -95,6 +98,7 @@ POSITION_SCOPE_KEYS = {
         "rb_ppa_standard_downs",
         "rb_wepa_rushing",
         "rb_usage_rate",
+        "rb_adjusted_rushing",
         "game_consistency_index",
         "late_season_trend_index",
         "top_defense_performance_index",
@@ -913,27 +917,39 @@ def _qb_p0_signal(row: dict) -> tuple[float | None, int]:
     ppa_pd = _first_float(row, ["qb_ppa_passing_downs", "ppa_passing_downs", "qb_ppa_pd"])
     ppa_sd = _first_float(row, ["qb_ppa_standard_downs", "ppa_standard_downs", "qb_ppa_sd"])
     wepa_pass = _first_float(row, ["qb_wepa_passing", "wepa_passing", "pass_wepa"])
+    adj_pass = _first_float(row, ["qb_adjusted_passing", "qb_adj_passing", "adjusted_passing"])
+    adj_rush = _first_float(row, ["qb_adjusted_rushing", "qb_adj_rushing", "adjusted_rushing"])
+    adj_total = _first_float(row, ["qb_adjusted_total", "qb_adj_total", "adjusted_total"])
     usage = _first_float(row, ["qb_usage_rate", "qb_usage", "usage_rate"])
 
     parts = []
+    s_adj_total = _score_linear(adj_total, -0.15, 0.45)
+    if s_adj_total is not None:
+        parts.append((0.18, s_adj_total))
+    s_adj_pass = _score_linear(adj_pass, -0.15, 0.45)
+    if s_adj_pass is not None:
+        parts.append((0.16, s_adj_pass))
+    s_adj_rush = _score_linear(adj_rush, -0.10, 0.35)
+    if s_adj_rush is not None:
+        parts.append((0.06, s_adj_rush))
     s_wepa = _score_linear(wepa_pass, -0.2, 0.6)
     if s_wepa is not None:
-        parts.append((0.34, s_wepa))
+        parts.append((0.24, s_wepa))
     s_pass = _score_linear(ppa_pass, -0.2, 0.65)
     if s_pass is not None:
-        parts.append((0.24, s_pass))
+        parts.append((0.16, s_pass))
     s_overall = _score_linear(ppa_overall, -0.15, 0.55)
     if s_overall is not None:
-        parts.append((0.17, s_overall))
+        parts.append((0.10, s_overall))
     s_pd = _score_linear(ppa_pd, -0.25, 0.45)
     if s_pd is not None:
-        parts.append((0.13, s_pd))
+        parts.append((0.06, s_pd))
     s_sd = _score_linear(ppa_sd, -0.2, 0.45)
     if s_sd is not None:
-        parts.append((0.07, s_sd))
+        parts.append((0.02, s_sd))
     s_usage = _score_linear(usage, 0.08, 0.24)
     if s_usage is not None:
-        parts.append((0.05, s_usage))
+        parts.append((0.02, s_usage))
     score = _weighted_mean(parts)
     return score, len(parts)
 
@@ -974,21 +990,25 @@ def _rb_p0_signal(row: dict) -> tuple[float | None, int]:
     wepa_rush = _first_float(row, ["rb_wepa_rushing", "wepa_rushing", "rush_wepa"])
     ppa_rush = _first_float(row, ["rb_ppa_rushing", "ppa_rushing", "rb_ppa"])
     ppa_sd = _first_float(row, ["rb_ppa_standard_downs", "ppa_standard_downs", "rb_ppa_sd"])
+    adj_rush = _first_float(row, ["rb_adjusted_rushing", "rb_adj_rushing", "adjusted_rushing"])
     usage = _first_float(row, ["rb_usage_rate", "rb_usage", "usage_rate"])
 
     parts = []
+    s_adj = _score_linear(adj_rush, -0.1, 0.35)
+    if s_adj is not None:
+        parts.append((0.22, s_adj))
     s_wepa = _score_linear(wepa_rush, -0.2, 0.45)
     if s_wepa is not None:
-        parts.append((0.42, s_wepa))
+        parts.append((0.34, s_wepa))
     s_ppa = _score_linear(ppa_rush, -0.25, 0.5)
     if s_ppa is not None:
-        parts.append((0.33, s_ppa))
+        parts.append((0.27, s_ppa))
     s_sd = _score_linear(ppa_sd, -0.2, 0.4)
     if s_sd is not None:
-        parts.append((0.15, s_sd))
+        parts.append((0.09, s_sd))
     s_usage = _score_linear(usage, 0.10, 0.42)
     if s_usage is not None:
-        parts.append((0.10, s_usage))
+        parts.append((0.08, s_usage))
     score = _weighted_mean(parts)
     return score, len(parts)
 

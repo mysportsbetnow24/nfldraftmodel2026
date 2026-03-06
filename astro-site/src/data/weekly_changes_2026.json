@@ -2,124 +2,47 @@
   "delta_source": "delta_audit_2026_latest.csv",
   "risers": [
     {
-      "player_name": "Skyler Gill-Howard",
-      "position": "DT",
-      "school": "Texas Tech Red Raiders",
-      "rank_delta_prev_minus_curr": 10,
-      "top_driver": "production (down 0.82)"
+      "player_name": "Noah Whittington",
+      "position": "RB",
+      "school": "Oregon Ducks",
+      "rank_delta_prev_minus_curr": 2,
+      "top_driver": "production (up 0.31)"
     },
     {
-      "player_name": "Keionte Scott",
-      "position": "CB",
-      "school": "Miami (FL) Hurricanes",
-      "rank_delta_prev_minus_curr": 5,
-      "top_driver": "production (down 0.84)"
-    },
-    {
-      "player_name": "Lee Hunter",
-      "position": "DT",
-      "school": "Texas Tech Red Raiders",
-      "rank_delta_prev_minus_curr": 5,
-      "top_driver": "production (up 0.36)"
-    },
-    {
-      "player_name": "Damonic Williams",
-      "position": "DT",
-      "school": "Oklahoma Sooners",
-      "rank_delta_prev_minus_curr": 5,
-      "top_driver": "production (up 0.82)"
-    },
-    {
-      "player_name": "Chris McClellan",
-      "position": "DT",
-      "school": "Missouri Tigers",
-      "rank_delta_prev_minus_curr": 5,
-      "top_driver": "production (up 0.44)"
-    },
-    {
-      "player_name": "Rayshaun Benny",
-      "position": "DT",
-      "school": "Michigan Wolverines",
-      "rank_delta_prev_minus_curr": 4,
-      "top_driver": "production (up 0.44)"
-    },
-    {
-      "player_name": "Keylan Rutledge",
-      "position": "IOL",
-      "school": "Georgia Tech Yellow Jackets",
-      "rank_delta_prev_minus_curr": 3,
-      "top_driver": "athletic (up 0.00)"
-    },
-    {
-      "player_name": "Treydan Stukes",
-      "position": "CB",
-      "school": "Arizona Wildcats",
-      "rank_delta_prev_minus_curr": 3,
-      "top_driver": "production (down 0.67)"
+      "player_name": "Jadarian Price",
+      "position": "RB",
+      "school": "Notre Dame Fighting Irish",
+      "rank_delta_prev_minus_curr": 1,
+      "top_driver": "production (up 0.23)"
     }
   ],
   "fallers": [
     {
-      "player_name": "Gracen Halton",
-      "position": "DT",
-      "school": "Oklahoma Sooners",
-      "rank_delta_prev_minus_curr": -17,
-      "top_driver": "guardrail_relief (down 0.69)"
+      "player_name": "Keith Abney II",
+      "position": "CB",
+      "school": "Arizona State Sun Devils",
+      "rank_delta_prev_minus_curr": -1,
+      "top_driver": "athletic (up 0.00)"
     },
     {
-      "player_name": "Brenen Thompson",
-      "position": "WR",
-      "school": "Mississippi State Bulldogs",
-      "rank_delta_prev_minus_curr": -11,
-      "top_driver": "production (down 0.61)"
-    },
-    {
-      "player_name": "Chris Brazzell II",
-      "position": "WR",
-      "school": "Tennessee Volunteers",
-      "rank_delta_prev_minus_curr": -5,
-      "top_driver": "production (down 0.73)"
-    },
-    {
-      "player_name": "Denzel Boston",
-      "position": "WR",
-      "school": "Washington Huskies",
-      "rank_delta_prev_minus_curr": -3,
-      "top_driver": "production (down 0.79)"
-    },
-    {
-      "player_name": "Elijah Sarratt",
-      "position": "WR",
-      "school": "Indiana Hoosiers",
-      "rank_delta_prev_minus_curr": -3,
-      "top_driver": "production (down 0.67)"
-    },
-    {
-      "player_name": "Michael Trigg",
-      "position": "TE",
-      "school": "Baylor Bears",
-      "rank_delta_prev_minus_curr": -3,
-      "top_driver": "production (down 0.58)"
-    },
-    {
-      "player_name": "Garrett Nussmeier",
+      "player_name": "Diego Pavia",
       "position": "QB",
-      "school": "LSU Tigers",
-      "rank_delta_prev_minus_curr": -3,
-      "top_driver": "production (down 0.58)"
+      "school": "Vanderbilt Commodores",
+      "rank_delta_prev_minus_curr": -1,
+      "top_driver": "athletic (up 0.00)"
     },
     {
-      "player_name": "Zakee Wheatley",
-      "position": "S",
-      "school": "Penn State Nittany Lions",
-      "rank_delta_prev_minus_curr": -3,
-      "top_driver": "production (down 1.03)"
+      "player_name": "Keyron Crawford",
+      "position": "EDGE",
+      "school": "Auburn Tigers",
+      "rank_delta_prev_minus_curr": -1,
+      "top_driver": "athletic (up 0.00)"
     }
   ],
   "summary": {
-    "movers_total": 125,
-    "risers_total": 71,
-    "fallers_total": 54,
+    "movers_total": 5,
+    "risers_total": 2,
+    "fallers_total": 3,
     "qa_watch_total": 13,
     "qa_clear_total": 251
   }
