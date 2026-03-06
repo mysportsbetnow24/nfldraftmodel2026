@@ -26,6 +26,7 @@ CBS_TRANSACTIONS_CSV = ROOT / "data" / "processed" / "cbs_nfl_transactions_2026.
 TRANSACTION_OVERRIDES_CSV = ROOT / "data" / "sources" / "manual" / "transactions_overrides_2026.csv"
 INSIDER_TRANSACTIONS_CSV = ROOT / "data" / "sources" / "manual" / "insider_transactions_feed_2026.csv"
 ESPN_PROSPECTS_CSV = ROOT / "data" / "sources" / "external" / "espn_nfl_draft_prospect_data" / "nfl_draft_prospects.csv"
+ESPN_DEPTH_CHARTS_CSV = ROOT / "data" / "sources" / "external" / "espn_depth_charts_2026.csv"
 DELTA_AUDIT_LATEST_CSV = OUTPUTS / "delta_audit_2026_latest.csv"
 STABILITY_SNAPSHOTS_DIR = OUTPUTS / "stability_snapshots"
 CURRENT_DRAFT_YEAR = 2026
@@ -363,6 +364,13 @@ def _designation_priority(label: str) -> int:
     return lookup.get(str(label or "").strip(), 999)
 
 
+def _read_csv_rows(path: Path) -> list[dict]:
+    if not path.exists():
+        return []
+    with path.open(newline="", encoding="utf-8") as handle:
+        return list(csv.DictReader(handle))
+
+
 def _player_designation(
     *,
     has_contract: bool,
@@ -446,6 +454,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                 contract_by_name[payload["name_key"]] = payload
 
     team_players: dict[str, dict[str, list[dict]]] = defaultdict(lambda: defaultdict(list))
+    roster_lookup_by_team: dict[str, dict[str, dict]] = defaultdict(dict)
     for row in subset.iter_rows(named=True):
         team = str(row.get("team") or "").strip().upper()
         if not team:
@@ -472,6 +481,19 @@ def _build_team_depth_context() -> dict[str, dict]:
         else:
             contract_label = "FA"
 
+        roster_lookup_by_team[team][_norm_player_key(name)] = {
+            "player_name": name,
+            "position": model_pos,
+            "depth_chart_position": depth_pos,
+            "years_exp": years_exp,
+            "age": age if age is not None else "",
+            "draft_number": draft_number if draft_number is not None else "",
+            "has_contract": has_contract,
+            "contract_label": contract_label,
+            "apy_m": round(apy, 2) if apy is not None else "",
+            "apy_pct": apy_pct,
+        }
+
         team_players[team][model_pos].append(
             {
                 "player_name": name,
@@ -486,6 +508,79 @@ def _build_team_depth_context() -> dict[str, dict]:
                 "apy_pct": apy_pct,
             }
         )
+
+    espn_depth_rows = _read_csv_rows(ESPN_DEPTH_CHARTS_CSV)
+    espn_by_team_pos: dict[tuple[str, str], list[dict]] = defaultdict(list)
+    for row in espn_depth_rows:
+        team = str(row.get("team") or "").strip().upper()
+        player_name = str(row.get("player_name") or "").strip()
+        if not team or not player_name:
+            continue
+        model_pos = _map_team_needs_position(
+            row.get("position_abbreviation", ""),
+            row.get("position_slot", "") or row.get("position_key", ""),
+        )
+        if model_pos not in TEAM_NEEDS_POS_ORDER:
+            continue
+        espn_by_team_pos[(team, model_pos)].append(row)
+
+    for (team, pos), rows in espn_by_team_pos.items():
+        normalized_players = []
+        seen_names: set[str] = set()
+        for row in sorted(
+            rows,
+            key=lambda item: (
+                _safe_int(item.get("rank"), 99),
+                str(item.get("position_slot") or item.get("position_key") or ""),
+                str(item.get("player_name") or ""),
+            ),
+        ):
+            player_name = str(row.get("player_name") or "").strip()
+            player_key = _norm_player_key(player_name)
+            if not player_key or player_key in seen_names:
+                continue
+            seen_names.add(player_key)
+            roster_info = roster_lookup_by_team.get(team, {}).get(player_key, {})
+            contract = contract_by_name.get(player_key)
+            apy = _safe_float(contract.get("apy")) if contract else _safe_float(roster_info.get("apy_m"))
+            apy_pct = (
+                _pct_score(apy, apy_pool_by_pos.get(pos, []))
+                if apy is not None
+                else float(roster_info.get("apy_pct") or 0.0)
+            )
+            years_left = _safe_int(contract.get("years"), 0) if contract else 0
+            has_contract = bool(contract) or bool(roster_info)
+            if contract:
+                contract_label = f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
+            elif roster_info:
+                contract_label = str(roster_info.get("contract_label") or "Rostered")
+            else:
+                contract_label = "FA"
+
+            normalized_players.append(
+                {
+                    "player_name": player_name,
+                    "position": pos,
+                    "depth_chart_position": str(row.get("position_slot") or row.get("position_key") or row.get("position_abbreviation") or "").strip(),
+                    "years_exp": _safe_int(roster_info.get("years_exp"), 0),
+                    "age": roster_info.get("age", ""),
+                    "draft_number": roster_info.get("draft_number", ""),
+                    "has_contract": has_contract,
+                    "contract_label": contract_label,
+                    "apy_m": round(apy, 2) if apy is not None else roster_info.get("apy_m", ""),
+                    "apy_pct": apy_pct,
+                    "depth_source": "espn",
+                }
+            )
+
+        if normalized_players:
+            existing_players = team_players[team].get(pos, [])
+            existing_keys = { _norm_player_key(p.get("player_name", "")) for p in normalized_players }
+            for player in existing_players:
+                player_key = _norm_player_key(player.get("player_name", ""))
+                if player_key and player_key not in existing_keys and len(normalized_players) < 4:
+                    normalized_players.append(player)
+            team_players[team][pos] = normalized_players
 
     out: dict[str, dict] = {}
     for team, by_pos in team_players.items():
