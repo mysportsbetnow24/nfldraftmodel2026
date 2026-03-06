@@ -407,6 +407,114 @@ def _lane_slot_order(position: str, front_family: str) -> list[str]:
     return DEFENSE_LANE_SLOT_ORDER_GENERIC.get(position, [position])
 
 
+def _slot_display_label(position: str, slot: str, front_family: str, slot_rank: int) -> str:
+    slot = str(slot or "").strip().upper()
+    if position == "QB":
+        return f"QB{slot_rank}"
+    if position == "RB":
+        if slot == "FB":
+            return "Fullback"
+        return f"RB{slot_rank}"
+    if position == "WR":
+        if slot in {"SWR", "SLOT"}:
+            return "Slot WR"
+        if slot == "XWR":
+            return "X WR"
+        if slot == "ZWR":
+            return "Z WR"
+        if slot in {"LWR", "RWR", "WR"}:
+            return f"WR{slot_rank}"
+    if position == "TE":
+        return f"TE{slot_rank}"
+    if position == "OT":
+        return {"LT": "LT", "RT": "RT", "T": "Swing OT"}.get(slot, f"OT{slot_rank}")
+    if position == "IOL":
+        return {
+            "LG": "LG",
+            "C": "C",
+            "OC": "C",
+            "RG": "RG",
+            "G": f"G{slot_rank}",
+        }.get(slot, f"IOL{slot_rank}")
+    if position == "EDGE":
+        if front_family == "3-4":
+            if slot in {"LOLB", "ROLB", "OLB"}:
+                return f"Rush OLB {slot_rank}"
+            if slot in {"SLB", "WLB"}:
+                return f"Edge {slot_rank}"
+        return f"Edge {slot_rank}"
+    if position == "DT":
+        if front_family == "3-4":
+            if slot in {"LDE", "RDE", "DE"}:
+                return "5-Tech"
+            if slot == "NT":
+                return "Nose"
+        return {
+            "LDT": "DT",
+            "RDT": "DT",
+            "DT": "DT",
+            "IDL": "IDL",
+            "NT": "Nose",
+        }.get(slot, f"DT{slot_rank}")
+    if position == "LB":
+        return {
+            "MLB": "Mike",
+            "LILB": "ILB",
+            "RILB": "ILB",
+            "ILB": "ILB",
+            "WLB": "Will",
+            "SLB": "Sam",
+            "LB": f"LB{slot_rank}",
+        }.get(slot, f"LB{slot_rank}")
+    if position == "CB":
+        return {
+            "LCB": "CB1",
+            "RCB": "CB2",
+            "NB": "Nickel",
+            "CB": f"CB{slot_rank}",
+        }.get(slot, f"CB{slot_rank}")
+    if position == "S":
+        return {
+            "FS": "FS",
+            "SS": "SS",
+            "S": f"S{slot_rank}",
+            "SAF": f"S{slot_rank}",
+        }.get(slot, f"S{slot_rank}")
+    return f"{position}{slot_rank}"
+
+
+def _player_sort_tuple(player: dict, slot_priority: dict[str, int]) -> tuple:
+    slot = str(player.get("depth_chart_position") or "").strip().upper()
+    return (
+        slot_priority.get(slot, 99),
+        _safe_int(player.get("espn_rank"), 99),
+        0 if player.get("has_contract") else 1,
+        -(float(player.get("apy_m") or 0.0)),
+        -int(player.get("years_exp") or 0),
+        int(player.get("draft_number") or 9999),
+        str(player.get("player_name", "")),
+    )
+
+
+def _player_detail_line(player: dict, role_label: str) -> str:
+    parts = [role_label]
+    contract = str(player.get("contract_label") or "").strip()
+    if contract:
+        parts.append(contract)
+    return " | ".join(parts)
+
+
+def _player_meta_line(player: dict) -> str:
+    parts = []
+    years_exp = _safe_int(player.get("years_exp"), 0)
+    age = _safe_int(player.get("age"), 0)
+    if years_exp > 0:
+        parts.append(f"{years_exp} yrs exp")
+    if age > 0:
+        parts.append(f"Age {age}")
+    return " | ".join(parts)
+
+
 def _designation_priority(label: str) -> int:
     ordered = [
         "HOF Path",
@@ -443,10 +551,6 @@ def _player_designation(
 ) -> str:
     if not has_contract:
         return "FA"
-    if years_exp <= 1:
-        if draft_number is not None and draft_number > 0 and draft_number <= 32:
-            return "Blue Chip Prospect"
-        return "Prospect"
     if apy_pct >= 97.0 and years_exp >= 6:
         return "HOF Path"
     if apy_pct >= 90.0:
@@ -457,6 +561,10 @@ def _player_designation(
         return "In His Prime Star"
     if age is not None and age >= 33 and years_exp >= 8:
         return "Older Mentor"
+    if years_exp <= 1:
+        if draft_number is not None and draft_number > 0 and draft_number <= 32:
+            return "Blue Chip Prospect"
+        return "Prospect"
     if depth_rank <= int(STARTERS_BY_POSITION.get(model_position, 1)):
         return "Starter"
     return "Backup"
@@ -769,17 +877,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                 if len(selected_players) >= 4:
                     break
 
-            players = sorted(
-                by_pos.get(pos, []),
-                key=lambda p: (
-                    slot_priority.get(str(p.get("depth_chart_position") or "").strip().upper(), 99),
-                    0 if p.get("has_contract") else 1,
-                    -(float(p.get("apy_m") or 0.0)),
-                    -int(p.get("years_exp") or 0),
-                    int(p.get("draft_number") or 9999),
-                    str(p.get("player_name", "")),
-                ),
-            )
+            players = sorted(by_pos.get(pos, []), key=lambda p: _player_sort_tuple(p, slot_priority))
             for player in players:
                 player_key = _norm_player_key(player.get("player_name", ""))
                 if not player_key or player_key in selected_keys:
@@ -789,8 +887,14 @@ def _build_team_depth_context() -> dict[str, dict]:
                 if len(selected_players) >= 4:
                     break
 
+            selected_players = sorted(selected_players, key=lambda p: _player_sort_tuple(p, slot_priority))
+
             lane_players = []
+            slot_counts: dict[str, int] = defaultdict(int)
             for idx, player in enumerate(selected_players, start=1):
+                slot = str(player.get("depth_chart_position") or "").strip().upper()
+                slot_counts[slot] += 1
+                role_label = _slot_display_label(pos, slot, front_family, slot_counts[slot] or idx)
                 label = _player_designation(
                     has_contract=bool(player.get("has_contract")),
                     years_exp=int(player.get("years_exp") or 0),
@@ -805,6 +909,9 @@ def _build_team_depth_context() -> dict[str, dict]:
                     "position": pos,
                     "depth_rank": idx,
                     "designation": label,
+                    "role_label": role_label,
+                    "detail_label": _player_detail_line(player, role_label),
+                    "meta_label": _player_meta_line(player),
                     "contract_label": player.get("contract_label", ""),
                     "years_exp": int(player.get("years_exp") or 0),
                     "age": player.get("age", ""),
