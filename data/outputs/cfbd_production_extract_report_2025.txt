@@ -1,17 +1,19 @@
 CFBD 2025 Production Extraction Report
 
-board_players_targeted: 240
-players_matched_cfbd: 192
-rows_written: 192
-rows_with_opp_def_context: 180
-rows_with_years_played: 183
+board_players_targeted: 264
+players_matched_cfbd: 215
+rows_written: 215
+rows_with_opp_def_context: 203
+rows_with_years_played: 206
 player_usage_file_present: 1
-game_player_stats_file_present: 0
-adjusted_player_metrics_file_present: 0
-notes: usage/ppa down-split fields are now direct CFBD inputs; YPRR, missed tackles forced, and coverage-target stats still use proxies until richer player-level feeds are pulled.
+game_player_stats_file_present: 1
+player_ppa_games_file_present: 1
+adjusted_player_metrics_file_present: 1
+notes: usage/ppa down-split fields are now direct CFBD inputs; game-level consistency/trend/top-defense layers are active when weekly files exist; YPRR, missed tackles forced, coverage-target stats, and adjustedPlayerMetrics remain partial/open items.
 
 rows_by_position:
 - CB: 27
+- DT: 23
 - EDGE: 25
 - IOL: 7
 - LB: 22
@@ -24,5 +26,5 @@ rows_by_position:
 
 quality_counts:
 - missing: 19
-- mixed: 151
-- real: 22
+- mixed: 173
+- real: 23

@@ -10,7 +10,12 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from src.ingest.cfbd_loader import fetch_adjusted_player_metrics, fetch_dataset
+from src.ingest.cfbd_loader import (
+    fetch_adjusted_player_metrics,
+    fetch_dataset,
+    fetch_game_player_stats,
+    fetch_player_ppa_games,
+)
 
 
 OUT_DIR = ROOT / "data" / "sources" / "cfbd"
@@ -24,6 +29,7 @@ DATASET_CHOICES = [
     "team_advanced_stats",
     "advanced_game_stats",
     "player_ppa",
+    "player_ppa_games",
     "player_usage",
     "team_ppa",
     "games",
@@ -64,6 +70,20 @@ def main() -> None:
     if args.dataset == "adjusted_player_metrics":
         result = fetch_adjusted_player_metrics(
             year=args.year,
+            execute=args.execute,
+            max_calls_per_month=args.max_calls,
+        )
+    elif args.dataset == "game_player_stats":
+        result = fetch_game_player_stats(
+            year=args.year,
+            season_type=args.season_type,
+            execute=args.execute,
+            max_calls_per_month=args.max_calls,
+        )
+    elif args.dataset == "player_ppa_games":
+        result = fetch_player_ppa_games(
+            year=args.year,
+            season_type=args.season_type,
             execute=args.execute,
             max_calls_per_month=args.max_calls,
         )

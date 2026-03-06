@@ -4,102 +4,102 @@ Rows: 100
 
 ModelRank | Player | Pos | Grade | ConsensusMean | Delta(consensus-model) | AbsDelta | Sources | Driver
 72 | Lorenzo Styles Jr. | CB | 82.01 | 231.0 | 159.0 | 159.0 | 1 | score=82.01; prior_signal=29.17; prior:-16.86 | athletic:+3.76 | production:-1.68 | trait:-1.63
-44 | Daylen Everette | CB | 85.64 | 95.0 | 51.0 | 51.0 | 3 | score=85.64; prior_signal=67.91; prior:-7.36 | athletic:+3.30 | guardrail:-2.77 | production:-1.10
-43 | Skyler Bell | WR | 85.47 | 86.33 | 43.33 | 43.33 | 3 | score=85.47; prior_signal=66.59; prior:-6.27 | athletic:+1.00 | production:+0.37 | risk:-0.36
+100 | Lee Hunter | DT | 79.73 | 44.43 | -55.57 | 55.57 | 7 | score=79.73; prior_signal=78.96; prior:+8.54 | athletic:-5.75 | trait:-2.01 | language:-0.45
+44 | Daylen Everette | CB | 85.58 | 95.0 | 51.0 | 51.0 | 3 | score=85.58; prior_signal=67.91; prior:-7.29 | athletic:+3.30 | guardrail:-2.77 | production:-1.16
+60 | Brian Parker II | OT | 82.94 | 104.33 | 44.33 | 44.33 | 3 | score=82.94; prior_signal=61.35; prior:-5.31 | guardrail:-1.51 | athletic:-1.39 | production:+0.87
 90 | Harold Perkins Jr. | LB | 80.88 | 133.0 | 43.0 | 43.0 | 2 | score=80.88; prior_signal=55.35; prior:-7.41 | guardrail:-4.33 | production:-1.26 | trait:+0.59
-62 | Brian Parker II | OT | 82.94 | 104.33 | 42.33 | 42.33 | 3 | score=82.94; prior_signal=61.35; prior:-5.31 | guardrail:-1.51 | athletic:-1.39 | production:+0.87
-60 | Jermod McCoy | CB | 83.24 | 19.5 | -40.5 | 40.5 | 10 | score=83.24; prior_signal=90.78; prior:+7.78 | athletic:-3.29 | production:-1.68 | trait:+1.33
-78 | Jalon Kilgore | S | 82.07 | 116.25 | 38.25 | 38.25 | 4 | score=82.07; prior_signal=52.03; prior:-8.90 | guardrail:-2.88 | athletic:+2.21 | trait:-1.96
+62 | Jermod McCoy | CB | 83.03 | 19.5 | -42.5 | 42.5 | 10 | score=83.03; prior_signal=90.78; prior:+8.05 | athletic:-3.29 | production:-1.68 | trait:+1.33
+45 | Skyler Bell | WR | 85.3 | 86.33 | 41.33 | 41.33 | 3 | score=85.3; prior_signal=66.59; prior:-6.06 | athletic:+1.00 | risk:-0.36 | production:+0.20
+78 | Jalon Kilgore | S | 82.07 | 116.25 | 38.25 | 38.25 | 4 | score=82.07; prior_signal=52.03; prior:-8.87 | guardrail:-2.86 | athletic:+2.21 | trait:-1.96
 75 | Max Iheanachor | OT | 81.56 | 38.29 | -36.71 | 36.71 | 7 | score=81.56; prior_signal=80.27; prior:+5.92 | trait:-4.00 | risk:-1.94 | athletic:+1.38
-80 | Nicholas Singleton | RB | 81.9 | 113.0 | 33.0 | 33.0 | 2 | score=81.9; prior_signal=62.06; prior:-5.92 | guardrail:-2.97 | production:-0.65 | trait:+0.44
-98 | Joshua Josephs | EDGE | 79.89 | 66.0 | -32.0 | 32.0 | 5 | score=79.89; prior_signal=75.41; prior:+4.46 | trait:-4.40 | language:-0.73 | risk:-0.73
-45 | Dani Dennis-Sutton | EDGE | 85.36 | 76.67 | 31.67 | 31.67 | 3 | score=85.36; prior_signal=65.86; prior:-7.10 | athletic:+1.73 | guardrail:-1.47 | risk:-0.35
-88 | Demond Claiborne | RB | 80.46 | 119.5 | 31.5 | 31.5 | 4 | score=80.46; prior_signal=58.0; prior:-3.80 | trait:-2.33 | production:-1.68 | guardrail:-1.37
-94 | Kaytron Allen | RB | 79.9 | 124.67 | 30.67 | 30.67 | 3 | score=79.9; prior_signal=56.32; prior:-8.18 | guardrail:-4.84 | production:+0.70 | trait:-0.52
-59 | Chandler Rivers | CB | 83.31 | 89.0 | 30.0 | 30.0 | 4 | score=83.31; prior_signal=67.48; prior:-3.73 | trait:-2.19 | athletic:+1.81 | guardrail:-1.03
+43 | Dani Dennis-Sutton | EDGE | 85.36 | 76.67 | 33.67 | 33.67 | 3 | score=85.36; prior_signal=65.86; prior:-7.09 | athletic:+1.73 | guardrail:-1.46 | risk:-0.35
+80 | Nicholas Singleton | RB | 81.9 | 113.0 | 33.0 | 33.0 | 2 | score=81.9; prior_signal=62.06; prior:-5.79 | guardrail:-2.87 | production:-0.75 | trait:+0.44
+97 | Joshua Josephs | EDGE | 79.94 | 66.0 | -31.0 | 31.0 | 5 | score=79.94; prior_signal=75.41; trait:-4.40 | prior:+4.24 | guardrail:-0.81 | language:-0.73
+89 | Demond Claiborne | RB | 80.46 | 119.5 | 30.5 | 30.5 | 4 | score=80.46; prior_signal=58.0; prior:-3.80 | trait:-2.33 | production:-1.68 | guardrail:-1.37
+59 | Chandler Rivers | CB | 83.26 | 89.0 | 30.0 | 30.0 | 4 | score=83.26; prior_signal=67.48; prior:-3.60 | trait:-2.19 | athletic:+1.81 | guardrail:-0.98
+95 | Kaytron Allen | RB | 79.9 | 124.67 | 29.67 | 29.67 | 3 | score=79.9; prior_signal=56.32; prior:-8.13 | guardrail:-4.80 | production:+0.66 | trait:-0.52
 85 | Austin Barber | OT | 81.27 | 112.25 | 27.25 | 27.25 | 4 | score=81.27; prior_signal=55.19; prior:-10.45 | guardrail:-5.14 | athletic:+3.03 | trait:-1.88
-81 | Bryce Lance | WR | 81.17 | 107.75 | 26.75 | 26.75 | 4 | score=81.17; prior_signal=68.15; guardrail:-4.21 | prior:-4.14 | trait:-2.85 | production:+1.63
-67 | Dontay Corleone | DT | 82.47 | 92.5 | 25.5 | 25.5 | 4 | score=82.47; prior_signal=66.35; trait:-1.98 | guardrail:-1.10 | prior:-1.05 | production:-0.56
-34 | Carnell Tate | WR | 87.18 | 8.6 | -25.4 | 25.4 | 10 | score=87.18; prior_signal=96.71; athletic:-5.13 | prior:+5.04 | trait:+4.26 | production:+0.63
-58 | Deion Burks | WR | 83.37 | 82.5 | 24.5 | 24.5 | 4 | score=83.37; prior_signal=68.32; prior:-2.58 | athletic:+1.87 | production:-1.68 | trait:-1.49
-41 | Gabe Jacas | EDGE | 85.64 | 65.0 | 24.0 | 24.0 | 5 | score=85.64; prior_signal=73.48; prior:-3.92 | athletic:+2.47 | guardrail:-1.70 | trait:-1.22
-65 | Jake Slaughter | IOL | 82.36 | 89.0 | 24.0 | 24.0 | 4 | score=82.36; prior_signal=58.75; prior:-6.94 | trait:-3.09 | athletic:+2.86 | guardrail:-0.80
-70 | Anthony Lucas | EDGE | 82.06 | 94.0 | 24.0 | 24.0 | 4 | score=82.06; prior_signal=66.42; trait:-2.08 | prior:-1.26 | guardrail:-1.25 | risk:-0.63
-97 | Connor Lew | IOL | 79.83 | 73.0 | -24.0 | 24.0 | 5 | score=79.83; prior_signal=68.3; trait:-2.41 | production:-1.38 | prior:+0.95 | guardrail:-0.80
-87 | Germie Bernard | WR | 79.23 | 63.75 | -23.25 | 23.25 | 4 | score=79.23; prior_signal=55.71; trait:-4.55 | prior:-2.77 | production:-1.36 | athletic:+1.36
-83 | Jaishawn Barham | LB | 80.38 | 105.6 | 22.6 | 22.6 | 5 | score=80.38; prior_signal=56.34; trait:-2.83 | prior:-2.64 | guardrail:-1.32 | athletic:-1.27
-40 | Eli Stowers | TE | 85.86 | 62.4 | 22.4 | 22.4 | 5 | score=85.86; prior_signal=74.49; prior:-3.42 | athletic:+2.41 | trait:-1.52 | guardrail:-0.40
-37 | Josiah Trotter | LB | 86.24 | 58.8 | 21.8 | 21.8 | 5 | score=86.24; prior_signal=76.18; athletic:+1.79 | trait:-1.78 | prior:-1.15 | production:-0.54
-91 | Bud Clark | S | 80.07 | 111.25 | 20.25 | 20.25 | 4 | score=80.07; prior_signal=54.05; prior:-6.02 | guardrail:-3.31 | trait:-2.90 | athletic:+0.53
+81 | Bryce Lance | WR | 81.17 | 107.75 | 26.75 | 26.75 | 4 | score=81.17; prior_signal=68.15; guardrail:-3.74 | prior:-3.53 | trait:-2.85 | athletic:+1.34
+68 | Anthony Lucas | EDGE | 82.05 | 94.0 | 26.0 | 26.0 | 4 | score=82.05; prior_signal=66.42; trait:-2.08 | prior:-1.26 | guardrail:-1.25 | risk:-0.63
+57 | Deion Burks | WR | 83.37 | 82.5 | 25.5 | 25.5 | 4 | score=83.37; prior_signal=68.32; prior:-2.58 | athletic:+1.87 | production:-1.68 | trait:-1.49
+67 | Dontay Corleone | DT | 82.43 | 92.5 | 25.5 | 25.5 | 4 | score=82.43; prior_signal=66.35; trait:-1.98 | guardrail:-1.08 | prior:-0.97 | production:-0.68
+40 | Gabe Jacas | EDGE | 85.75 | 65.0 | 25.0 | 25.0 | 5 | score=85.75; prior_signal=73.48; prior:-4.23 | athletic:+2.47 | guardrail:-1.83 | trait:-1.22
+98 | Connor Lew | IOL | 79.83 | 73.0 | -25.0 | 25.0 | 5 | score=79.83; prior_signal=68.3; trait:-2.41 | production:-1.38 | prior:+0.95 | guardrail:-0.80
+32 | Carnell Tate | WR | 87.32 | 8.6 | -23.4 | 23.4 | 10 | score=87.32; prior_signal=96.71; athletic:-5.13 | prior:+4.85 | trait:+4.26 | production:+0.79
+87 | Germie Bernard | WR | 79.34 | 63.75 | -23.25 | 23.25 | 4 | score=79.34; prior_signal=55.71; trait:-4.55 | prior:-2.91 | athletic:+1.36 | production:-1.25
+66 | Jake Slaughter | IOL | 82.36 | 89.0 | 23.0 | 23.0 | 4 | score=82.36; prior_signal=58.75; prior:-6.94 | trait:-3.09 | athletic:+2.86 | guardrail:-0.80
+83 | Jaishawn Barham | LB | 80.38 | 105.6 | 22.6 | 22.6 | 5 | score=80.38; prior_signal=56.34; trait:-2.83 | prior:-2.57 | guardrail:-1.27 | athletic:-1.27
+77 | Jadarian Price | RB | 81.45 | 54.83 | -22.17 | 22.17 | 6 | score=81.45; prior_signal=75.13; prior:+2.49 | trait:-1.68 | athletic:-1.52 | production:-0.48
+41 | Eli Stowers | TE | 85.73 | 62.4 | 21.4 | 21.4 | 5 | score=85.73; prior_signal=74.49; prior:-3.25 | athletic:+2.41 | trait:-1.52 | guardrail:-0.40
+38 | Josiah Trotter | LB | 85.99 | 58.8 | 20.8 | 20.8 | 5 | score=85.99; prior_signal=76.18; athletic:+1.79 | trait:-1.78 | prior:-0.83 | production:-0.59
+91 | Bud Clark | S | 80.07 | 111.25 | 20.25 | 20.25 | 4 | score=80.07; prior_signal=54.05; prior:-5.91 | guardrail:-3.23 | trait:-2.90 | athletic:+0.53
+22 | Fernando Mendoza | QB | 89.24 | 1.77 | -20.23 | 20.23 | 13 | score=89.24; prior_signal=99.85; prior:+3.29 | trait:+2.09 | production:+1.44 | risk:-1.10
 3 | Kadyn Proctor | OT | 94.06 | 22.82 | 19.82 | 19.82 | 11 | score=94.06; prior_signal=91.51; prior:-4.80 | trait:+4.22 | athletic:+2.70 | production:+0.92
-21 | Fernando Mendoza | QB | 89.24 | 1.77 | -19.23 | 19.23 | 13 | score=89.24; prior_signal=99.85; prior:+3.29 | trait:+2.09 | production:+1.44 | risk:-1.10
-74 | Jadarian Price | RB | 81.63 | 54.83 | -19.17 | 19.17 | 6 | score=81.63; prior_signal=75.13; prior:+2.25 | trait:-1.68 | athletic:-1.52 | language:-0.47
-89 | Antonio Williams | WR | 78.95 | 70.67 | -18.33 | 18.33 | 6 | score=78.95; prior_signal=57.73; trait:-4.14 | prior:-1.70 | production:-0.85 | risk:-0.63
-69 | Chris Bell | WR | 80.74 | 50.75 | -18.25 | 18.25 | 4 | score=80.74; prior_signal=62.53; trait:-4.47 | prior:-1.02 | guardrail:-0.40 | risk:-0.13
-12 | Kayden McDonald | DT | 91.74 | 30.0 | 18.0 | 18.0 | 8 | score=91.74; prior_signal=88.32; trait:+3.76 | prior:-3.02 | language:-0.41 | production:+0.27
-29 | Rueben Bain Jr. | EDGE | 87.94 | 11.18 | -17.82 | 17.82 | 11 | score=87.94; prior_signal=94.7; prior:+2.84 | trait:+1.68 | risk:-1.13 | language:-0.90
-95 | Michael Trigg | TE | 79.99 | 77.25 | -17.75 | 17.75 | 4 | score=79.99; prior_signal=74.54; prior:+4.26 | trait:-3.21 | production:-1.02 | risk:-0.73
-96 | Tacario Davis | CB | 80.17 | 113.75 | 17.75 | 17.75 | 4 | score=80.17; prior_signal=55.34; prior:-7.49 | guardrail:-4.21 | athletic:+3.15 | trait:-2.24
-19 | Brandon Cisse | CB | 90.08 | 36.38 | 17.38 | 17.38 | 8 | score=90.08; prior_signal=84.47; prior:-2.94 | athletic:+2.42 | trait:+1.55 | production:-0.68
-55 | Ja'Kobi Lane | WR | 83.82 | 72.25 | 17.25 | 17.25 | 4 | score=83.82; prior_signal=71.34; prior:-4.31 | athletic:+3.06 | guardrail:-1.94 | trait:-1.80
-68 | A.J. Haulcy | S | 82.3 | 50.8 | -17.2 | 17.2 | 5 | score=82.3; prior_signal=79.35; prior:+5.42 | athletic:-3.46 | trait:-2.04 | production:+0.64
-16 | Dillon Thieneman | S | 89.71 | 32.86 | 16.86 | 16.86 | 7 | score=89.71; prior_signal=75.1; prior:-5.93 | athletic:+2.79 | production:+1.11 | trait:-0.99
-100 | Sam Roush | TE | 79.59 | 116.67 | 16.67 | 16.67 | 3 | score=79.59; prior_signal=59.74; prior:-5.22 | guardrail:-4.07 | production:-1.68 | athletic:+0.58
+70 | Chris Bell | WR | 80.62 | 50.75 | -19.25 | 19.25 | 4 | score=80.62; prior_signal=62.53; trait:-4.47 | prior:-0.86 | guardrail:-0.40 | risk:-0.13
+69 | A.J. Haulcy | S | 82.16 | 50.8 | -18.2 | 18.2 | 5 | score=82.16; prior_signal=79.35; prior:+5.61 | athletic:-3.46 | trait:-2.04 | production:+0.48
+12 | Kayden McDonald | DT | 91.49 | 30.0 | 18.0 | 18.0 | 8 | score=91.49; prior_signal=88.32; trait:+3.76 | prior:-2.81 | risk:-0.41 | language:-0.41
+96 | Tacario Davis | CB | 80.17 | 113.75 | 17.75 | 17.75 | 4 | score=80.17; prior_signal=55.34; prior:-7.37 | guardrail:-4.12 | athletic:+3.15 | trait:-2.24
+99 | Sam Roush | TE | 79.59 | 116.67 | 17.67 | 17.67 | 3 | score=79.59; prior_signal=59.74; prior:-5.22 | guardrail:-4.07 | production:-1.68 | athletic:+0.58
+19 | Brandon Cisse | CB | 89.95 | 36.38 | 17.38 | 17.38 | 8 | score=89.95; prior_signal=84.47; prior:-2.76 | athletic:+2.42 | trait:+1.55 | production:-0.83
+88 | Antonio Williams | WR | 79.09 | 70.67 | -17.33 | 17.33 | 6 | score=79.09; prior_signal=57.73; trait:-4.14 | prior:-1.89 | production:-0.70 | risk:-0.63
+28 | Rueben Bain Jr. | EDGE | 87.84 | 11.18 | -16.82 | 16.82 | 11 | score=87.84; prior_signal=94.7; prior:+2.81 | trait:+1.68 | risk:-1.13 | language:-0.90
 4 | Monroe Freeling | OT | 93.88 | 20.62 | 16.62 | 16.62 | 8 | score=93.88; prior_signal=89.37; prior:-5.51 | trait:+3.90 | athletic:+3.51 | production:-0.81
-25 | Anthony Hill Jr. | LB | 88.56 | 41.62 | 16.62 | 16.62 | 8 | score=88.56; prior_signal=81.84; athletic:+3.01 | trait:-1.60 | prior:-1.03 | production:-0.55
+25 | Anthony Hill Jr. | LB | 88.45 | 41.62 | 16.62 | 16.62 | 8 | score=88.45; prior_signal=81.84; athletic:+3.01 | trait:-1.60 | prior:-0.88 | production:-0.74
 92 | Mike Washington Jr. | RB | 79.9 | 108.5 | 16.5 | 16.5 | 4 | score=79.9; prior_signal=48.98; prior:-9.82 | guardrail:-3.67 | trait:-3.23 | athletic:+2.83
-61 | Jonah Coleman | RB | 83.0 | 76.75 | 15.75 | 15.75 | 4 | score=83.0; prior_signal=72.5; trait:-1.77 | athletic:-0.64 | production:+0.24 | language:-0.23
-42 | Avieon Terrell | CB | 85.67 | 26.58 | -15.42 | 15.42 | 12 | score=85.67; prior_signal=89.8; prior:+4.26 | athletic:-3.12 | trait:+1.78 | language:-0.90
+56 | Ja'Kobi Lane | WR | 83.79 | 72.25 | 16.25 | 16.25 | 4 | score=83.79; prior_signal=71.34; prior:-4.27 | athletic:+3.06 | guardrail:-1.94 | trait:-1.80
+17 | Dillon Thieneman | S | 89.53 | 32.86 | 15.86 | 15.86 | 7 | score=89.53; prior_signal=75.1; prior:-5.71 | athletic:+2.79 | trait:-0.99 | production:+0.93
+61 | Jonah Coleman | RB | 82.88 | 76.75 | 15.75 | 15.75 | 4 | score=82.88; prior_signal=72.5; trait:-1.77 | athletic:-0.64 | language:-0.23 | risk:-0.14
+93 | Michael Trigg | TE | 80.11 | 77.25 | -15.75 | 15.75 | 4 | score=80.11; prior_signal=74.54; prior:+4.10 | trait:-3.21 | production:-0.89 | risk:-0.73
+42 | Avieon Terrell | CB | 85.53 | 26.58 | -15.42 | 15.42 | 12 | score=85.53; prior_signal=89.8; prior:+4.43 | athletic:-3.12 | trait:+1.78 | language:-0.90
 6 | Caleb Lomu | OT | 93.81 | 21.1 | 15.1 | 15.1 | 10 | score=93.81; prior_signal=91.88; trait:+4.27 | prior:-4.24 | athletic:+3.10 | production:-1.29
-13 | C.J. Allen | LB | 91.56 | 26.7 | 13.7 | 13.7 | 10 | score=91.56; prior_signal=88.24; trait:+3.63 | prior:-2.27 | athletic:-0.37 | production:-0.36
-23 | Emmanuel Pregnon | IOL | 88.68 | 36.67 | 13.67 | 13.67 | 6 | score=88.68; prior_signal=84.96; prior:-1.42 | trait:+1.21 | production:+0.99 | risk:-0.24
-50 | Caleb Tiernan | OT | 84.64 | 62.6 | 12.6 | 12.6 | 5 | score=84.64; prior_signal=74.28; athletic:+2.66 | trait:-2.17 | prior:-1.36 | production:-1.01
-38 | Christen Miller | DT | 86.16 | 49.29 | 11.29 | 11.29 | 7 | score=86.16; prior_signal=80.42; trait:-1.18 | prior:+1.06 | language:-0.39 | risk:-0.23
+47 | Keionte Scott | CB | 84.79 | 60.5 | 13.5 | 13.5 | 6 | score=84.79; prior_signal=74.84; prior:-1.86 | guardrail:-1.30 | trait:-0.89 | production:+0.66
+14 | C.J. Allen | LB | 91.3 | 26.7 | 12.7 | 12.7 | 10 | score=91.3; prior_signal=88.24; trait:+3.63 | prior:-1.93 | production:-0.76 | athletic:-0.37
+24 | Emmanuel Pregnon | IOL | 88.68 | 36.67 | 12.67 | 12.67 | 6 | score=88.68; prior_signal=84.96; prior:-1.42 | trait:+1.21 | production:+0.99 | risk:-0.24
+37 | Christen Miller | DT | 86.15 | 49.29 | 12.29 | 12.29 | 7 | score=86.15; prior_signal=80.42; trait:-1.18 | prior:+0.97 | language:-0.39 | risk:-0.23
+51 | Caleb Tiernan | OT | 84.64 | 62.6 | 11.6 | 11.6 | 5 | score=84.64; prior_signal=74.28; athletic:+2.66 | trait:-2.17 | prior:-1.36 | production:-1.01
 54 | Chase Bisontis | IOL | 83.49 | 64.6 | 10.6 | 10.6 | 5 | score=83.49; prior_signal=66.17; prior:-4.57 | athletic:+2.86 | trait:-1.78 | production:-1.68
-99 | Gracen Halton | DT | 79.64 | 88.5 | -10.5 | 10.5 | 4 | score=79.64; prior_signal=60.65; trait:-2.97 | prior:-1.73 | guardrail:-1.40 | athletic:-0.94
-22 | David Bailey | EDGE | 87.87 | 12.62 | -9.38 | 9.38 | 13 | score=87.87; prior_signal=87.42; athletic:+2.96 | risk:-1.24 | language:-0.90 | trait:-0.77
-53 | Romello Height | EDGE | 83.92 | 62.0 | 9.0 | 9.0 | 4 | score=83.92; prior_signal=78.43; trait:-2.17 | prior:+1.08 | guardrail:-1.03 | athletic:+0.66
-73 | Deontae Lawson | LB | 81.72 | 82.0 | 9.0 | 9.0 | 4 | score=81.72; prior_signal=67.28; trait:-2.73 | guardrail:-0.80 | risk:-0.45 | prior:-0.33
-76 | Derrick Moore | EDGE | 80.46 | 67.25 | -8.75 | 8.75 | 4 | score=80.46; prior_signal=64.86; trait:-3.48 | guardrail:-1.27 | prior:-0.95 | risk:-0.63
-52 | Keionte Scott | CB | 84.53 | 60.5 | 8.5 | 8.5 | 6 | score=84.53; prior_signal=74.84; prior:-2.11 | guardrail:-1.77 | trait:-0.89 | production:+0.86
-1 | Sonny Styles | LB | 94.35 | 9.0 | 8.0 | 8.0 | 10 | score=94.35; prior_signal=91.95; prior:-4.62 | athletic:+3.56 | trait:+2.40 | production:+0.39
-47 | D'Angelo Ponds | CB | 84.94 | 55.0 | 8.0 | 8.0 | 5 | score=84.94; prior_signal=76.78; prior:-3.82 | athletic:+3.16 | guardrail:-3.13 | trait:-2.06
+46 | D'Angelo Ponds | CB | 85.13 | 55.0 | 9.0 | 9.0 | 5 | score=85.13; prior_signal=76.78; prior:-3.66 | athletic:+3.16 | guardrail:-2.81 | trait:-2.06
+53 | Romello Height | EDGE | 84.08 | 62.0 | 9.0 | 9.0 | 4 | score=84.08; prior_signal=78.43; trait:-2.17 | guardrail:-1.04 | prior:+0.87 | athletic:+0.66
+73 | Deontae Lawson | LB | 81.72 | 82.0 | 9.0 | 9.0 | 4 | score=81.72; prior_signal=67.28; trait:-2.73 | guardrail:-0.80 | production:-0.50 | risk:-0.35
+16 | Cashius Howell | EDGE | 91.05 | 24.89 | 8.89 | 8.89 | 9 | score=91.05; prior_signal=90.23; trait:+3.95 | prior:-1.52 | athletic:-0.91 | language:-0.33
+21 | David Bailey | EDGE | 88.2 | 12.62 | -8.38 | 8.38 | 13 | score=88.2; prior_signal=87.42; athletic:+2.96 | risk:-1.14 | language:-0.90 | trait:-0.77
+1 | Sonny Styles | LB | 94.45 | 9.0 | 8.0 | 8.0 | 10 | score=94.45; prior_signal=91.95; prior:-4.42 | athletic:+3.56 | trait:+2.40 | language:-0.35
 84 | Gennings Dunker | OT | 80.5 | 76.0 | -8.0 | 8.0 | 4 | score=80.5; prior_signal=61.81; trait:-3.22 | prior:-1.68 | athletic:-1.05 | production:+0.43
-17 | Cashius Howell | EDGE | 91.06 | 24.89 | 7.89 | 7.89 | 9 | score=91.06; prior_signal=90.23; trait:+3.95 | prior:-1.54 | athletic:-0.91 | language:-0.33
 7 | Jordyn Tyson | WR | 93.37 | 14.6 | 7.6 | 7.6 | 10 | score=93.37; prior_signal=95.05; trait:+4.25 | prior:-3.63 | athletic:+3.60 | language:-0.37
-49 | Zion Young | EDGE | 84.75 | 41.4 | -7.6 | 7.6 | 5 | score=84.75; prior_signal=80.65; trait:-1.68 | prior:+1.29 | guardrail:-0.67 | language:-0.48
-11 | Keldric Faulk | EDGE | 91.79 | 18.4 | 7.4 | 7.4 | 10 | score=91.79; prior_signal=93.33; trait:+4.26 | prior:-1.19 | athletic:-0.83 | language:-0.34
-63 | Domonique Orange | DT | 82.84 | 70.25 | 7.25 | 7.25 | 4 | score=82.84; prior_signal=73.7; trait:-2.46 | prior:+1.80 | production:-0.82 | risk:-0.45
-32 | Omar Cooper Jr. | WR | 87.2 | 38.57 | 6.57 | 6.57 | 7 | score=87.2; prior_signal=81.19; prior:-1.05 | trait:+0.99 | athletic:-0.90 | production:+0.78
-51 | R Mason Thomas | EDGE | 84.69 | 44.86 | -6.14 | 6.14 | 7 | score=84.69; prior_signal=81.93; prior:+2.63 | trait:-1.46 | athletic:-0.42 | language:-0.39
-64 | Elijah Sarratt | WR | 82.68 | 70.0 | 6.0 | 6.0 | 4 | score=82.68; prior_signal=67.44; trait:-2.44 | prior:-1.85 | risk:-0.35 | production:+0.34
-24 | Peter Woods | DT | 88.73 | 18.71 | -5.29 | 5.29 | 14 | score=88.73; prior_signal=93.11; prior:+2.41 | trait:+1.68 | language:-0.90 | risk:-0.73
-93 | Ted Hurst | WR | 79.67 | 97.75 | 4.75 | 4.75 | 4 | score=79.67; prior_signal=59.09; trait:-3.28 | prior:-2.84 | guardrail:-1.84 | risk:-0.64
-18 | Kenyon Sadiq | TE | 89.9 | 22.67 | 4.67 | 4.67 | 9 | score=89.9; prior_signal=86.3; prior:-2.69 | trait:+2.69 | athletic:+2.30 | production:-1.50
-26 | T.J. Parker | EDGE | 88.39 | 30.6 | 4.6 | 4.6 | 10 | score=88.39; prior_signal=88.66; athletic:+2.34 | language:-0.90 | trait:-0.81 | risk:-0.74
+11 | Keldric Faulk | EDGE | 91.78 | 18.4 | 7.4 | 7.4 | 10 | score=91.78; prior_signal=93.33; trait:+4.26 | prior:-1.18 | athletic:-0.83 | language:-0.34
+52 | Chris Brazzell II | WR | 84.45 | 45.25 | -6.75 | 6.75 | 4 | score=84.45; prior_signal=79.67; trait:-2.31 | prior:+1.78 | athletic:+0.62 | risk:-0.36
+63 | Jacob Rodriguez | LB | 82.77 | 69.75 | 6.75 | 6.75 | 4 | score=82.77; prior_signal=64.77; trait:-2.72 | prior:-2.46 | guardrail:-0.71 | production:+0.57
+74 | Derrick Moore | EDGE | 80.65 | 67.25 | -6.75 | 6.75 | 4 | score=80.65; prior_signal=64.86; trait:-3.48 | guardrail:-1.06 | prior:-0.92 | risk:-0.63
+30 | Denzel Boston | WR | 87.78 | 23.4 | -6.6 | 6.6 | 10 | score=87.78; prior_signal=90.15; trait:+3.93 | athletic:-3.59 | prior:+1.56 | production:+0.70
+48 | Zion Young | EDGE | 84.78 | 41.4 | -6.6 | 6.6 | 5 | score=84.78; prior_signal=80.65; trait:-1.68 | prior:+1.31 | guardrail:-0.62 | language:-0.48
+64 | Domonique Orange | DT | 82.8 | 70.25 | 6.25 | 6.25 | 4 | score=82.8; prior_signal=73.7; trait:-2.46 | prior:+1.86 | production:-0.91 | risk:-0.45
+27 | Akheem Mesidor | EDGE | 87.87 | 32.89 | 5.89 | 5.89 | 9 | score=87.87; prior_signal=83.81; trait:+1.65 | prior:-1.53 | guardrail:-0.88 | risk:-0.63
+50 | R Mason Thomas | EDGE | 84.71 | 44.86 | -5.14 | 5.14 | 7 | score=84.71; prior_signal=81.93; prior:+2.60 | trait:-1.46 | athletic:-0.42 | language:-0.39
+65 | Elijah Sarratt | WR | 82.74 | 70.0 | 5.0 | 5.0 | 4 | score=82.74; prior_signal=67.44; trait:-2.44 | prior:-1.93 | production:+0.41 | risk:-0.35
+18 | Kenyon Sadiq | TE | 89.97 | 22.67 | 4.67 | 4.67 | 9 | score=89.97; prior_signal=86.3; prior:-2.79 | trait:+2.69 | athletic:+2.30 | production:-1.43
+26 | T.J. Parker | EDGE | 88.37 | 30.6 | 4.6 | 4.6 | 10 | score=88.37; prior_signal=88.66; athletic:+2.34 | language:-0.90 | trait:-0.81 | risk:-0.74
+34 | Omar Cooper Jr. | WR | 86.91 | 38.57 | 4.57 | 4.57 | 7 | score=86.91; prior_signal=81.19; trait:+0.99 | athletic:-0.90 | prior:-0.68 | production:+0.47
+23 | Peter Woods | DT | 88.85 | 18.71 | -4.29 | 4.29 | 14 | score=88.85; prior_signal=93.11; prior:+2.26 | trait:+1.68 | language:-0.90 | risk:-0.73
 86 | Sam Hecht | IOL | 80.31 | 90.25 | 4.25 | 4.25 | 4 | score=80.31; prior_signal=60.81; trait:-2.75 | athletic:-1.69 | prior:-1.24 | guardrail:-0.51
-36 | Ty Simpson | QB | 86.4 | 32.14 | -3.86 | 3.86 | 7 | score=86.4; prior_signal=86.71; prior:+1.84 | production:+1.00 | athletic:-0.64 | language:-0.53
-79 | Malik Muhammad | CB | 80.17 | 82.8 | 3.8 | 3.8 | 5 | score=80.17; prior_signal=59.25; prior:-4.38 | trait:-3.91 | athletic:+2.66 | guardrail:-2.03
-66 | Jacob Rodriguez | LB | 82.44 | 69.75 | 3.75 | 3.75 | 4 | score=82.44; prior_signal=64.77; trait:-2.72 | prior:-2.24 | guardrail:-0.87 | production:+0.57
-8 | Caleb Downs | S | 92.82 | 4.27 | -3.73 | 3.73 | 15 | score=92.82; prior_signal=98.66; trait:+4.15 | production:+0.54 | language:-0.27 | athletic:-0.26
-27 | Denzel Boston | WR | 87.96 | 23.4 | -3.6 | 3.6 | 10 | score=87.96; prior_signal=90.15; trait:+3.93 | athletic:-3.59 | prior:+1.34 | production:+0.88
+36 | Ty Simpson | QB | 86.23 | 32.14 | -3.86 | 3.86 | 7 | score=86.23; prior_signal=86.71; prior:+2.07 | production:+0.81 | athletic:-0.64 | language:-0.53
+79 | Malik Muhammad | CB | 80.17 | 82.8 | 3.8 | 3.8 | 5 | score=80.17; prior_signal=59.25; prior:-4.24 | trait:-3.91 | athletic:+2.66 | guardrail:-1.92
+94 | Ted Hurst | WR | 79.67 | 97.75 | 3.75 | 3.75 | 4 | score=79.67; prior_signal=59.09; trait:-3.28 | prior:-2.83 | guardrail:-1.83 | risk:-0.64
+8 | Caleb Downs | S | 92.61 | 4.27 | -3.73 | 3.73 | 15 | score=92.61; prior_signal=98.66; trait:+4.15 | production:+0.32 | language:-0.27 | prior:+0.26
 33 | KC Concepcion | WR | 87.21 | 29.62 | -3.38 | 3.38 | 8 | score=87.21; prior_signal=87.17; trait:+3.40 | risk:-2.43 | prior:+0.91 | language:-0.38
-10 | Mansoor Delane | CB | 92.46 | 13.33 | 3.33 | 3.33 | 9 | score=92.46; prior_signal=93.27; trait:+3.97 | prior:-2.22 | production:+1.24 | language:-0.31
+10 | Mansoor Delane | CB | 92.34 | 13.33 | 3.33 | 3.33 | 9 | score=92.34; prior_signal=93.27; trait:+3.97 | prior:-2.06 | production:+1.11 | language:-0.31
 71 | Darrell Jackson Jr. | DT | 82.35 | 74.0 | 3.0 | 3.0 | 4 | score=82.35; prior_signal=73.35; trait:-1.74 | guardrail:-1.43 | production:-0.45 | risk:-0.45
-30 | Akheem Mesidor | EDGE | 87.82 | 32.89 | 2.89 | 2.89 | 9 | score=87.82; prior_signal=83.81; trait:+1.65 | prior:-1.31 | guardrail:-0.76 | risk:-0.73
-77 | Keith Abney II | CB | 81.52 | 74.2 | -2.8 | 2.8 | 5 | score=81.52; prior_signal=69.71; athletic:-2.28 | trait:-1.89 | prior:+0.97 | production:+0.66
-48 | Chris Brazzell II | WR | 84.63 | 45.25 | -2.75 | 2.75 | 4 | score=84.63; prior_signal=79.67; trait:-2.31 | prior:+1.56 | athletic:+0.62 | risk:-0.36
-35 | Colton Hood | CB | 86.88 | 32.44 | -2.56 | 2.56 | 9 | score=86.88; prior_signal=84.29; trait:+1.25 | prior:+1.07 | athletic:-0.98 | risk:-0.42
+35 | Colton Hood | CB | 86.77 | 32.44 | -2.56 | 2.56 | 9 | score=86.77; prior_signal=84.29; trait:+1.25 | prior:+1.21 | athletic:-0.98 | risk:-0.42
 20 | Spencer Fano | OT | 89.06 | 17.64 | -2.36 | 2.36 | 11 | score=89.06; prior_signal=86.91; athletic:+2.13 | risk:-1.13 | prior:-0.97 | language:-0.90
 9 | Francis Mauigoa | OT | 92.52 | 6.82 | -2.18 | 2.18 | 11 | score=92.52; prior_signal=96.17; trait:+4.18 | prior:-0.62 | production:+0.50 | risk:-0.23
-5 | Jeremiyah Love | RB | 93.86 | 7.15 | 2.15 | 2.15 | 13 | score=93.86; prior_signal=96.63; trait:+4.19 | prior:-3.11 | production:+1.64 | athletic:+1.58
-31 | Caleb Banks | DT | 87.42 | 29.0 | -2.0 | 2.0 | 9 | score=87.42; prior_signal=87.84; prior:+2.25 | risk:-1.14 | trait:+0.91 | production:-0.79
-46 | Jake Golday | LB | 85.1 | 47.83 | 1.83 | 1.83 | 6 | score=85.1; prior_signal=79.94; trait:-2.06 | prior:+2.05 | language:-0.43 | risk:-0.23
-57 | Zachariah Branch | WR | 82.24 | 58.5 | 1.5 | 1.5 | 4 | score=82.24; prior_signal=58.91; prior:-4.59 | trait:-3.84 | athletic:+1.83 | production:-0.25
+5 | Jeremiyah Love | RB | 93.86 | 7.15 | 2.15 | 2.15 | 13 | score=93.86; prior_signal=96.63; trait:+4.19 | prior:-3.11 | athletic:+1.58 | production:+1.36
+31 | Caleb Banks | DT | 87.44 | 29.0 | -2.0 | 2.0 | 9 | score=87.44; prior_signal=87.84; prior:+2.22 | risk:-1.14 | trait:+0.91 | production:-0.79
+76 | Keith Abney II | CB | 81.52 | 74.2 | -1.8 | 1.8 | 5 | score=81.52; prior_signal=69.71; athletic:-2.28 | trait:-1.89 | prior:+0.97 | production:+0.66
 15 | Olaivavega Ioane | IOL | 91.26 | 16.33 | 1.33 | 1.33 | 6 | score=91.26; prior_signal=92.17; trait:+4.01 | prior:-2.07 | athletic:+0.49 | language:-0.25
-2 | Arvell Reese | LB | 94.46 | 3.17 | 1.17 | 1.17 | 12 | score=94.46; prior_signal=98.3; trait:+4.01 | athletic:+1.77 | prior:-1.55 | risk:-0.46
-56 | Chris Johnson | CB | 83.47 | 55.0 | -1.0 | 1.0 | 5 | score=83.47; prior_signal=74.23; trait:-2.12 | guardrail:-2.06 | production:+1.30 | prior:-1.30
-28 | Emmanuel McNeil-Warren | S | 87.94 | 28.71 | 0.71 | 0.71 | 7 | score=87.94; prior_signal=86.94; athletic:-2.01 | trait:+1.34 | production:+1.31 | prior:+1.12
-14 | Makai Lemon | WR | 91.54 | 13.44 | -0.56 | 0.56 | 9 | score=91.54; prior_signal=94.25; trait:+3.98 | prior:-1.70 | production:+1.26 | language:-0.42
-82 | Genesis Smith | S | 80.57 | 81.6 | -0.4 | 0.4 | 5 | score=80.57; prior_signal=64.71; prior:-3.19 | guardrail:-2.92 | trait:-2.80 | athletic:+0.95
+2 | Arvell Reese | LB | 94.14 | 3.17 | 1.17 | 1.17 | 12 | score=94.14; prior_signal=98.3; trait:+4.01 | athletic:+1.77 | prior:-1.14 | risk:-0.64
+49 | Jake Golday | LB | 84.72 | 47.83 | -1.17 | 1.17 | 6 | score=84.72; prior_signal=79.94; prior:+2.53 | trait:-2.06 | language:-0.43 | risk:-0.41
+58 | Zachariah Branch | WR | 82.01 | 58.5 | 0.5 | 0.5 | 4 | score=82.01; prior_signal=58.91; prior:-4.29 | trait:-3.84 | athletic:+1.83 | production:-0.49
+13 | Makai Lemon | WR | 91.33 | 13.44 | 0.44 | 0.44 | 9 | score=91.33; prior_signal=94.25; trait:+3.98 | prior:-1.43 | production:+1.04 | language:-0.42
+82 | Genesis Smith | S | 80.57 | 81.6 | -0.4 | 0.4 | 5 | score=80.57; prior_signal=64.71; prior:-3.07 | guardrail:-2.83 | trait:-2.80 | athletic:+0.95
+29 | Emmanuel McNeil-Warren | S | 87.78 | 28.71 | -0.29 | 0.29 | 7 | score=87.78; prior_signal=86.94; athletic:-2.01 | trait:+1.34 | prior:+1.31 | production:+1.14
 39 | Blake Miller | OT | 85.76 | 39.29 | 0.29 | 0.29 | 7 | score=85.76; prior_signal=78.55; trait:-1.95 | athletic:+1.25 | language:-0.46 | risk:-0.24
+55 | Chris Johnson | CB | 83.75 | 55.0 | 0.0 | 0.0 | 5 | score=83.75; prior_signal=74.23; trait:-2.12 | guardrail:-1.64 | production:+1.15 | prior:-1.12

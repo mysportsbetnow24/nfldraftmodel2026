@@ -18,7 +18,7 @@ DEFAULT_PATH_CANDIDATES = [
     PROCESSED_DIR / "cfb_production_features_2025.csv",
 ]
 
-TARGET_POSITIONS = {"QB", "WR", "TE", "RB", "EDGE", "LB", "CB", "S", "OT", "IOL"}
+TARGET_POSITIONS = {"QB", "WR", "TE", "RB", "EDGE", "DT", "LB", "CB", "S", "OT", "IOL"}
 P0_BLEND_WEIGHT = float(os.getenv("CFBFASTR_P0_BLEND_WEIGHT", "0.35"))
 P0_MAX_DELTA = float(os.getenv("CFBFASTR_P0_MAX_DELTA", "4.0"))
 P0_QB_MAX_DELTA = float(os.getenv("CFBFASTR_P0_QB_MAX_DELTA", "3.0"))
@@ -48,6 +48,9 @@ POSITION_SCOPE_KEYS = {
         "qb_ppa_passing_downs",
         "qb_wepa_passing",
         "qb_usage_rate",
+        "game_consistency_index",
+        "late_season_trend_index",
+        "top_defense_performance_index",
         "opp_def_ppa_allowed_avg",
         "opp_def_success_rate_allowed_avg",
         "opp_def_toughness_index",
@@ -61,6 +64,9 @@ POSITION_SCOPE_KEYS = {
         "wrte_ppa_passing_downs",
         "wrte_wepa_receiving",
         "wrte_usage_rate",
+        "game_consistency_index",
+        "late_season_trend_index",
+        "top_defense_performance_index",
         "opp_def_ppa_allowed_avg",
         "opp_def_success_rate_allowed_avg",
         "opp_def_toughness_index",
@@ -74,6 +80,9 @@ POSITION_SCOPE_KEYS = {
         "wrte_ppa_passing_downs",
         "wrte_wepa_receiving",
         "wrte_usage_rate",
+        "game_consistency_index",
+        "late_season_trend_index",
+        "top_defense_performance_index",
         "opp_def_ppa_allowed_avg",
         "opp_def_success_rate_allowed_avg",
         "opp_def_toughness_index",
@@ -86,6 +95,9 @@ POSITION_SCOPE_KEYS = {
         "rb_ppa_standard_downs",
         "rb_wepa_rushing",
         "rb_usage_rate",
+        "game_consistency_index",
+        "late_season_trend_index",
+        "top_defense_performance_index",
         "opp_def_ppa_allowed_avg",
         "opp_def_success_rate_allowed_avg",
         "opp_def_toughness_index",
@@ -97,6 +109,21 @@ POSITION_SCOPE_KEYS = {
         "sacks_per_pass_rush_snap",
         "edge_pressures",
         "edge_sacks",
+        "game_consistency_index",
+        "late_season_trend_index",
+        "top_defense_performance_index",
+    },
+    "DT": {
+        "pressure_rate",
+        "pressures_per_pass_rush_snap",
+        "sacks_per_pass_rush_snap",
+        "edge_pressures",
+        "edge_sacks",
+        "edge_tfl",
+        "edge_tackles",
+        "game_consistency_index",
+        "late_season_trend_index",
+        "top_defense_performance_index",
     },
     "LB": {
         "lb_usage_rate",
@@ -112,9 +139,24 @@ POSITION_SCOPE_KEYS = {
         "db_tfl",
         "db_int",
         "db_pbu",
+        "game_consistency_index",
+        "late_season_trend_index",
+        "top_defense_performance_index",
     },
-    "CB": {"coverage_plays_per_target", "yards_allowed_per_coverage_snap"},
-    "S": {"coverage_plays_per_target", "yards_allowed_per_coverage_snap"},
+    "CB": {
+        "coverage_plays_per_target",
+        "yards_allowed_per_coverage_snap",
+        "game_consistency_index",
+        "late_season_trend_index",
+        "top_defense_performance_index",
+    },
+    "S": {
+        "coverage_plays_per_target",
+        "yards_allowed_per_coverage_snap",
+        "game_consistency_index",
+        "late_season_trend_index",
+        "top_defense_performance_index",
+    },
     "OT": {
         "years_played",
         "ol_usage_rate",
@@ -259,6 +301,8 @@ def _legacy_position_signal(
         return rb_sig
     if position == "EDGE":
         return edge_sig
+    if position == "DT":
+        return edge_sig
     if position == "LB":
         return lb_sig
     if position in {"CB", "S"}:
@@ -277,6 +321,8 @@ def _usage_rate(position: str, row: dict) -> float | None:
         return _first_float(row, ["rb_usage_rate", "rb_usage", "usage_rate"])
     if position == "EDGE":
         return _first_float(row, ["edge_usage_rate", "pass_rush_snap_rate", "usage_rate"])
+    if position == "DT":
+        return _first_float(row, ["dt_usage_rate", "pass_rush_snap_rate", "usage_rate"])
     if position == "LB":
         return _first_float(
             row,
@@ -313,6 +359,8 @@ def _usage_context_multiplier(position: str, usage: float | None) -> float:
         floor, target, min_mult = 0.08, 0.30, 0.74
     elif position == "EDGE":
         floor, target, min_mult = 0.12, 0.45, 0.80
+    elif position == "DT":
+        floor, target, min_mult = 0.12, 0.42, 0.80
     elif position == "LB":
         floor, target, min_mult = 0.28, 0.82, 0.82
     elif position in {"CB", "S"}:
@@ -945,6 +993,27 @@ def _rb_p0_signal(row: dict) -> tuple[float | None, int]:
     return score, len(parts)
 
 
+def _game_context_signal(row: dict) -> tuple[float | None, int, dict]:
+    consistency = _first_float(row, ["game_consistency_index", "weekly_consistency_index"])
+    trend = _first_float(row, ["late_season_trend_index", "late_trend_index"])
+    top_def = _first_float(row, ["top_defense_performance_index", "top_def_index"])
+    parts = []
+    s_consistency = _score_linear(consistency, 0.20, 0.95)
+    if s_consistency is not None:
+        parts.append((0.45, s_consistency))
+    s_trend = _score_linear(trend, -0.40, 0.40)
+    if s_trend is not None:
+        parts.append((0.20, s_trend))
+    s_top_def = _score_linear(top_def, 0.55, 1.25)
+    if s_top_def is not None:
+        parts.append((0.35, s_top_def))
+    return _weighted_mean(parts), len(parts), {
+        "game_context_source": str(row.get("game_context_source", "")).strip(),
+        "game_context_top_def_games": int(_first_float(row, ["top_defense_games"]) or 0),
+        "game_context_weekly_sample_games": int(_first_float(row, ["weekly_sample_games"]) or 0),
+    }
+
+
 def _load_rows(path: Path | None) -> list[dict]:
     if path is None or not path.exists():
         return []
@@ -1001,6 +1070,7 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
         lb_sig, _lb_tackles, _lb_tfl, _lb_sacks, _lb_hurries, _lb_usage, _lb_snaps, _lb_diag = _lb_signal(row)
         db_sig, _cov_plays_per_target, _yards_allowed_per_cov_snap, _db_diag = _db_signal(row)
         ol_proxy_sig, _ol_years, _ol_starts, _ol_usage, _ol_diag = _ol_proxy_signal(row)
+        game_ctx_sig, _game_ctx_cov, _game_ctx_diag = _game_context_signal(row)
         legacy_sig = _legacy_position_signal(
             position=position,
             qb_eff_sig=qb_eff_sig,
@@ -1069,7 +1139,7 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             fallback_metric_count = int(wrte_diag.get("wrte_fallback_count", 0) or 0)
         elif position == "RB":
             coverage_count = int(rb_diag.get("rb_available_count", 0) or 0)
-        elif position == "EDGE":
+        elif position in {"EDGE", "DT"}:
             coverage_count = int(edge_diag.get("edge_available_count", 0) or 0)
             fallback_metric_count = int(edge_diag.get("edge_fallback_count", 0) or 0)
         elif position == "LB":
@@ -1081,6 +1151,8 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             coverage_count = int(ol_diag.get("ol_available_count", 0) or 0)
         else:
             coverage_count = 0
+        if position in {"QB", "WR", "TE", "RB", "EDGE", "DT", "LB", "CB", "S"}:
+            coverage_count += _game_ctx_cov
 
         p0_signal = None
         p0_cov = 0
@@ -1107,6 +1179,13 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
                 ((1.0 - CFB_PERCENTILE_BLEND_WEIGHT) * float(cfb_prod_contextual_signal))
                 + (CFB_PERCENTILE_BLEND_WEIGHT * float(percentile_signal))
             )
+        if cfb_prod_contextual_signal is not None and game_ctx_sig is not None:
+            game_weight = 0.14 if position in {"QB", "WR", "TE", "RB"} else 0.12 if position in {"EDGE", "DT", "LB", "CB", "S"} else 0.0
+            if game_weight > 0:
+                cfb_prod_contextual_signal = (
+                    ((1.0 - game_weight) * float(cfb_prod_contextual_signal))
+                    + (game_weight * float(game_ctx_sig))
+                )
         usage = _usage_rate(position, row)
         usage_mult = _usage_context_multiplier(position, usage)
         if cfb_prod_contextual_signal is not None:
@@ -1171,7 +1250,7 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             adjusted_signal = (reliability * float(cfb_prod_signal)) + ((1.0 - reliability) * 55.0)
             # Extra brake: proxy-only single-metric production should refine, not drive.
             if quality_label == "proxy" and coverage_count <= 1:
-                if position == "EDGE":
+                if position in {"EDGE", "DT"}:
                     adjusted_signal = min(adjusted_signal, 66.0)
                 elif position in {"CB", "S"}:
                     adjusted_signal = min(adjusted_signal, 64.0)
@@ -1220,6 +1299,10 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             "cfbfastr_p0_coverage_count": p0_cov,
             "cfb_qb_eff_signal": round(qb_eff_sig, 2) if qb_eff_sig is not None else "",
             "cfb_qb_pressure_signal": round(qb_pressure_sig, 2) if qb_pressure_sig is not None else "",
+            "cfb_game_context_signal": round(game_ctx_sig, 2) if game_ctx_sig is not None else "",
+            "cfb_game_context_source": _game_ctx_diag.get("game_context_source", ""),
+            "cfb_game_context_top_def_games": _game_ctx_diag.get("game_context_top_def_games", 0),
+            "cfb_game_context_weekly_sample_games": _game_ctx_diag.get("game_context_weekly_sample_games", 0),
             "cfb_wrte_yprr_signal": round(_score_linear(yprr, 1.0, 3.3), 2) if yprr is not None else "",
             "cfb_wrte_target_share_signal": round(_score_linear(target_share, 0.12, 0.35), 2) if target_share is not None else "",
             "cfb_wrte_targets_per_route_signal": round(_score_linear(targets_per_route, 0.10, 0.34), 2)

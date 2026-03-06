@@ -21,7 +21,7 @@ BOARD_PATH = ROOT / "data" / "outputs" / "big_board_2026.csv"
 OUT_PATH = ROOT / "data" / "sources" / "manual" / "cfb_production_2025.csv"
 REPORT_PATH = ROOT / "data" / "outputs" / "cfbd_production_extract_report_2025.txt"
 
-TARGET_POS = {"QB", "WR", "TE", "RB", "EDGE", "LB", "CB", "S", "OT", "IOL"}
+TARGET_POS = {"QB", "WR", "TE", "RB", "EDGE", "DT", "LB", "CB", "S", "OT", "IOL"}
 
 
 def _safe_float(value) -> float | None:
@@ -366,6 +366,227 @@ def _build_opponent_defense_context(team_adv_rows: list[dict], adv_game_rows: li
     return out
 
 
+def _build_team_defense_lookup(team_adv_rows: list[dict]) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    for row in team_adv_rows:
+        team = str(row.get("team", "")).strip()
+        defense = row.get("defense", {}) or {}
+        def_ppa = _safe_float(defense.get("ppa"))
+        def_success = _safe_float(defense.get("successRate"))
+        if not team or def_ppa is None:
+            continue
+        out[team] = {
+            "def_ppa_allowed": def_ppa,
+            "def_success_rate_allowed": def_success,
+        }
+    return out
+
+
+def _consistency_index(values: list[float]) -> float | None:
+    vals = [float(v) for v in values if v is not None]
+    if len(vals) < 3:
+        return None
+    mean = sum(vals) / len(vals)
+    if abs(mean) < 1e-9:
+        return None
+    var = sum((v - mean) ** 2 for v in vals) / len(vals)
+    std = math.sqrt(var)
+    cv = std / max(abs(mean), 0.05)
+    return _clamp(1.0 - (cv / 1.25), 0.0, 1.0)
+
+
+def _late_trend_index(weekly_pairs: list[tuple[int, float]]) -> float | None:
+    vals = [(int(w), float(v)) for w, v in weekly_pairs if v is not None]
+    if len(vals) < 4:
+        return None
+    vals.sort(key=lambda x: x[0])
+    split = max(2, len(vals) // 2)
+    early = [v for _, v in vals[:-split]]
+    late = [v for _, v in vals[-split:]]
+    if not early or not late:
+        return None
+    early_avg = sum(early) / len(early)
+    late_avg = sum(late) / len(late)
+    denom = max(abs(early_avg), 0.05)
+    return _clamp((late_avg - early_avg) / denom, -1.0, 1.0)
+
+
+def _top_defense_threshold(team_defense_lookup: dict[str, dict]) -> float | None:
+    vals = sorted(float(v["def_ppa_allowed"]) for v in team_defense_lookup.values() if v.get("def_ppa_allowed") is not None)
+    if len(vals) < 8:
+        return None
+    idx = max(0, min(len(vals) - 1, int(round((len(vals) - 1) * 0.25))))
+    return vals[idx]
+
+
+def _top_defense_performance_index(
+    weekly_pairs: list[tuple[int, str, float]],
+    team_defense_lookup: dict[str, dict],
+    top_def_threshold: float | None,
+) -> tuple[float | None, int]:
+    if top_def_threshold is None:
+        return None, 0
+    vals = [float(v) for _, _, v in weekly_pairs if v is not None]
+    if len(vals) < 3:
+        return None, 0
+    season_avg = sum(vals) / len(vals)
+    if abs(season_avg) < 1e-9:
+        return None, 0
+    top_vals: list[float] = []
+    for _, opponent, value in weekly_pairs:
+        opp = team_defense_lookup.get(str(opponent or "").strip())
+        if not opp:
+            continue
+        def_ppa = _safe_float(opp.get("def_ppa_allowed"))
+        if def_ppa is None or def_ppa > float(top_def_threshold):
+            continue
+        top_vals.append(float(value))
+    if not top_vals:
+        return None, 0
+    return _clamp((sum(top_vals) / len(top_vals)) / max(abs(season_avg), 0.05), 0.0, 1.5), len(top_vals)
+
+
+def _aggregate_player_ppa_games(rows: list[dict], team_defense_lookup: dict[str, dict]) -> dict[tuple[str, str], dict]:
+    weekly: dict[tuple[str, str], list[tuple[int, str, float]]] = defaultdict(list)
+    top_def_threshold = _top_defense_threshold(team_defense_lookup)
+    for row in rows:
+        name_key = canonical_player_name(row.get("name", ""))
+        pos = _pos_map(row.get("position", ""))
+        week = int(_safe_float(row.get("week")) or 0)
+        opp = str(row.get("opponent", "")).strip()
+        avg = row.get("averagePPA", {}) or {}
+        metric = None
+        if pos == "QB":
+            metric = _safe_float(avg.get("pass"))
+            if metric is None:
+                metric = _safe_float(avg.get("all"))
+        elif pos == "RB":
+            metric = _safe_float(avg.get("rush"))
+            if metric is None:
+                metric = _safe_float(avg.get("all"))
+        elif pos in {"WR", "TE"}:
+            metric = _safe_float(avg.get("pass"))
+            if metric is None:
+                metric = _safe_float(avg.get("all"))
+        if not name_key or not pos or metric is None or week <= 0:
+            continue
+        weekly[(name_key, pos)].append((week, opp, metric))
+
+    out: dict[tuple[str, str], dict] = {}
+    for key, samples in weekly.items():
+        ordered = sorted(samples, key=lambda x: x[0])
+        vals = [v for _, _, v in ordered]
+        consistency = _consistency_index(vals)
+        late = _late_trend_index([(w, v) for w, _, v in ordered])
+        top_def, top_games = _top_defense_performance_index(ordered, team_defense_lookup, top_def_threshold)
+        out[key] = {
+            "game_consistency_index": round(consistency, 4) if consistency is not None else "",
+            "late_season_trend_index": round(late, 4) if late is not None else "",
+            "top_defense_performance_index": round(top_def, 4) if top_def is not None else "",
+            "top_defense_games": top_games,
+            "weekly_sample_games": len(ordered),
+            "game_context_source": "cfbd_player_ppa_games",
+        }
+    return out
+
+
+def _parse_nested_stat(category: str, stat_type: str, raw_stat: str) -> dict[str, float]:
+    category = str(category or "").strip().lower()
+    stat_type = str(stat_type or "").strip().upper()
+    raw = str(raw_stat or "").strip()
+    if not raw:
+        return {}
+    if category == "passing" and stat_type == "C/ATT" and "/" in raw:
+        left, right = raw.split("/", 1)
+        comp = _safe_float(left)
+        att = _safe_float(right)
+        out = {}
+        if comp is not None:
+            out["passing:COMPLETIONS"] = comp
+        if att is not None:
+            out["passing:ATT"] = att
+        return out
+    val = _safe_float(raw)
+    if val is None:
+        return {}
+    key = f"{category}:{stat_type}"
+    return {key: val}
+
+
+def _defensive_game_score(position: str, stats: dict) -> float | None:
+    tackles = _safe_float(stats.get("defensive:TOT")) or 0.0
+    tfl = _safe_float(stats.get("defensive:TFL")) or 0.0
+    sacks = _safe_float(stats.get("defensive:SACKS")) or 0.0
+    hurries = _safe_float(stats.get("defensive:QB HUR")) or 0.0
+    pbu = _safe_float(stats.get("defensive:PD")) or 0.0
+    ints = _safe_float(stats.get("interceptions:INT")) or 0.0
+    if position in {"EDGE", "DT"}:
+        return (4.0 * sacks) + (1.0 * hurries) + (1.25 * tfl) + (0.08 * tackles)
+    if position == "LB":
+        return (0.08 * tackles) + (1.25 * tfl) + (3.5 * sacks) + (0.8 * hurries) + (1.2 * pbu) + (3.0 * ints)
+    if position in {"CB", "S"}:
+        return (3.0 * ints) + (1.1 * pbu) + (0.06 * tackles) + (1.0 * tfl)
+    return None
+
+
+def _aggregate_defense_game_box_scores(
+    rows: list[dict],
+    board_map: dict[str, str],
+    team_defense_lookup: dict[str, dict],
+) -> dict[tuple[str, str], dict]:
+    weekly_stats: dict[tuple[str, str, int], dict] = {}
+    top_def_threshold = _top_defense_threshold(team_defense_lookup)
+    for game in rows:
+        teams = game.get("teams", []) or []
+        if len(teams) < 1:
+            continue
+        all_team_names = [str(t.get("team", "")).strip() for t in teams]
+        week = int(_safe_float(game.get("_cfbd_pull_week")) or 0)
+        if week <= 0:
+            continue
+        for team_entry in teams:
+            team = str(team_entry.get("team", "")).strip()
+            opponent = next((x for x in all_team_names if x and x != team), "")
+            for category in team_entry.get("categories", []) or []:
+                cname = str(category.get("name", "")).strip()
+                for stat_type in category.get("types", []) or []:
+                    tname = str(stat_type.get("name", "")).strip()
+                    for athlete in stat_type.get("athletes", []) or []:
+                        name_key = canonical_player_name(athlete.get("name", ""))
+                        if not name_key or name_key == "team":
+                            continue
+                        pos = board_map.get(name_key, "")
+                        if pos not in {"EDGE", "DT", "LB", "CB", "S"}:
+                            continue
+                        key = (name_key, pos, week)
+                        payload = weekly_stats.setdefault(key, {"opponent": opponent})
+                        payload.update(_parse_nested_stat(cname, tname, athlete.get("stat", "")))
+
+    by_player: dict[tuple[str, str], list[tuple[int, str, float]]] = defaultdict(list)
+    for (name_key, pos, week), stats in weekly_stats.items():
+        score = _defensive_game_score(pos, stats)
+        if score is None:
+            continue
+        by_player[(name_key, pos)].append((week, str(stats.get("opponent", "")), score))
+
+    out: dict[tuple[str, str], dict] = {}
+    for key, samples in by_player.items():
+        ordered = sorted(samples, key=lambda x: x[0])
+        vals = [v for _, _, v in ordered]
+        consistency = _consistency_index(vals)
+        late = _late_trend_index([(w, v) for w, _, v in ordered])
+        top_def, top_games = _top_defense_performance_index(ordered, team_defense_lookup, top_def_threshold)
+        out[key] = {
+            "game_consistency_index": round(consistency, 4) if consistency is not None else "",
+            "late_season_trend_index": round(late, 4) if late is not None else "",
+            "top_defense_performance_index": round(top_def, 4) if top_def is not None else "",
+            "top_defense_games": top_games,
+            "weekly_sample_games": len(ordered),
+            "game_context_source": "cfbd_game_player_stats_box",
+        }
+    return out
+
+
 def main() -> None:
     player_stats_path = CFBD_DIR / "player_season_stats_2025.json"
     player_ppa_path = CFBD_DIR / "player_ppa_2025.json"
@@ -381,12 +602,18 @@ def main() -> None:
     stats_rows = _load_json_data(player_stats_path)
     ppa_rows = _load_json_data(player_ppa_path)
     usage_rows = _load_json_data(player_usage_path) if player_usage_path.exists() else []
+    game_player_rows = _load_json_data(game_player_stats_path) if game_player_stats_path.exists() else []
+    player_ppa_game_path = CFBD_DIR / "player_ppa_games_2025.json"
+    player_ppa_game_rows = _load_json_data(player_ppa_game_path) if player_ppa_game_path.exists() else []
     team_adv_rows = _load_json_data(team_adv_path) if team_adv_path.exists() else []
     adv_game_rows = _load_json_data(adv_game_path) if adv_game_path.exists() else []
     stats_by_player, team_rec_totals = _aggregate_stats(stats_rows)
     ppa_by_player = _aggregate_ppa(ppa_rows)
     usage_by_player = _aggregate_usage(usage_rows)
     opp_def_context_by_team = _build_opponent_defense_context(team_adv_rows, adv_game_rows)
+    team_defense_lookup = _build_team_defense_lookup(team_adv_rows)
+    offense_game_context = _aggregate_player_ppa_games(player_ppa_game_rows, team_defense_lookup)
+    defense_game_context = _aggregate_defense_game_box_scores(game_player_rows, board_map, team_defense_lookup)
     years_played_index = _build_years_played_index()
 
     # Build percentile pools for proxy rate metrics.
@@ -509,6 +736,12 @@ def main() -> None:
             "lb_usage_rate": "",
             "ol_starts": "",
             "ol_usage_rate": "",
+            "game_consistency_index": "",
+            "late_season_trend_index": "",
+            "top_defense_performance_index": "",
+            "top_defense_games": "",
+            "weekly_sample_games": "",
+            "game_context_source": "",
             "cfb_prod_quality_label": "",
             "cfb_prod_reliability": "",
             "cfb_prod_real_features": "",
@@ -534,6 +767,15 @@ def main() -> None:
                 4,
             )
             row["opp_def_context_source"] = "cfbd_team_advanced_stats+advanced_game_stats"
+
+        game_ctx = offense_game_context.get((name_key, board_pos)) or defense_game_context.get((name_key, board_pos)) or {}
+        if game_ctx:
+            row["game_consistency_index"] = game_ctx.get("game_consistency_index", "")
+            row["late_season_trend_index"] = game_ctx.get("late_season_trend_index", "")
+            row["top_defense_performance_index"] = game_ctx.get("top_defense_performance_index", "")
+            row["top_defense_games"] = game_ctx.get("top_defense_games", "")
+            row["weekly_sample_games"] = game_ctx.get("weekly_sample_games", "")
+            row["game_context_source"] = game_ctx.get("game_context_source", "")
 
         if board_pos == "QB":
             att = _get_stat(stats or {}, "passing", "ATT") or 0.0
@@ -677,7 +919,7 @@ def main() -> None:
                     base += _clamp(ppa_rush, -0.20, 0.40) * 0.15
                 row["explosive_run_rate"] = round(_clamp(base, 0.04, 0.26), 4)
 
-        elif board_pos == "EDGE":
+        elif board_pos in {"EDGE", "DT"}:
             sacks = (_get_stat(stats or {}, "defensive", "SACKS") or 0.0)
             hurries = (_get_stat(stats or {}, "defensive", "QB HUR") or 0.0)
             tfl = (_get_stat(stats or {}, "defensive", "TFL") or 0.0)
@@ -769,7 +1011,7 @@ def main() -> None:
         elif board_pos == "RB":
             proxy_fields = ["explosive_run_rate", "missed_tackles_forced_per_touch"]
             real_fields = ["rb_rush_att", "rb_rush_yds", "rb_rush_td", "rb_rec", "rb_rec_yds", "rb_rec_td"]
-        elif board_pos == "EDGE":
+        elif board_pos in {"EDGE", "DT"}:
             proxy_fields = ["pressure_rate", "pressures_per_pass_rush_snap", "sacks_per_pass_rush_snap"]
             real_fields = ["edge_sacks", "edge_qb_hurries", "edge_tfl", "edge_tackles"]
         elif board_pos == "LB":
@@ -887,6 +1129,12 @@ def main() -> None:
                 "lb_usage_rate",
                 "ol_starts",
                 "ol_usage_rate",
+                "game_consistency_index",
+                "late_season_trend_index",
+                "top_defense_performance_index",
+                "top_defense_games",
+                "weekly_sample_games",
+                "game_context_source",
                 "cfb_prod_quality_label",
                 "cfb_prod_reliability",
                 "cfb_prod_real_features",
@@ -920,8 +1168,9 @@ def main() -> None:
         f"rows_with_years_played: {years_played_rows}",
         f"player_usage_file_present: {int(player_usage_path.exists())}",
         f"game_player_stats_file_present: {int(game_player_stats_path.exists())}",
+        f"player_ppa_games_file_present: {int(player_ppa_game_path.exists())}",
         f"adjusted_player_metrics_file_present: {int(adjusted_player_metrics_path.exists())}",
-        "notes: usage/ppa down-split fields are now direct CFBD inputs; YPRR, missed tackles forced, and coverage-target stats still use proxies until richer player-level feeds are pulled.",
+        "notes: usage/ppa down-split fields are now direct CFBD inputs; game-level consistency/trend/top-defense layers are active when weekly files exist; YPRR, missed tackles forced, coverage-target stats, and adjustedPlayerMetrics remain partial/open items.",
         "",
         "rows_by_position:",
     ]

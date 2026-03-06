@@ -145,7 +145,15 @@ class CFBDClient:
                 verify=not insecure_ssl,
             )
             resp.raise_for_status()
-            data = resp.json()
+            try:
+                data = resp.json()
+            except ValueError as exc:
+                snippet = (resp.text or "")[:400]
+                raise RuntimeError(
+                    f"CFBD returned non-JSON response for {endpoint} "
+                    f"(status={resp.status_code}, content_type={resp.headers.get('Content-Type', '')}). "
+                    f"Body snippet: {snippet}"
+                ) from exc
         except ModuleNotFoundError:
             # Fallback to stdlib so API pulls work without extra installs.
             import json
@@ -178,7 +186,7 @@ class CFBDClient:
         }
 
     def graphql(self, query: str, execute: bool = False) -> Dict[str, Any]:
-        url = os.getenv("CFBD_GRAPHQL_URL", "https://graphql.collegefootballdata.com/").strip()
+        url = os.getenv("CFBD_GRAPHQL_URL", "https://graphql.collegefootballdata.com/v1/graphql").strip()
         if not execute:
             status = self.tracker.status()
             return {
@@ -215,7 +223,15 @@ class CFBDClient:
                 verify=not insecure_ssl,
             )
             resp.raise_for_status()
-            data = resp.json()
+            try:
+                data = resp.json()
+            except ValueError as exc:
+                snippet = (resp.text or "")[:400]
+                raise RuntimeError(
+                    f"CFBD GraphQL returned non-JSON response "
+                    f"(status={resp.status_code}, content_type={resp.headers.get('Content-Type', '')}). "
+                    f"Body snippet: {snippet}"
+                ) from exc
         except ModuleNotFoundError:
             import ssl
             from urllib.request import Request, urlopen
@@ -230,6 +246,8 @@ class CFBDClient:
             with urlopen(req, timeout=self.timeout_seconds, context=ctx) as resp:  # nosec B310
                 data = json.loads(resp.read().decode("utf-8"))
         status = self.tracker.reserve_call(endpoint="/graphql", params={"query": "adjustedPlayerMetrics"})
+        if isinstance(data, dict) and data.get("errors"):
+            raise RuntimeError(f"CFBD GraphQL returned errors: {data.get('errors')}")
         return {
             "dry_run": False,
             "url": url,
@@ -243,11 +261,12 @@ class CFBDClient:
 
 DATASET_ENDPOINTS = {
     "player_season_stats": "/stats/player/season",
-    "game_player_stats": "/stats/player/game",
+    "game_player_stats": "/games/players",
     "team_season_stats": "/stats/season",
     "team_advanced_stats": "/stats/season/advanced",
     "advanced_game_stats": "/stats/game/advanced",
     "player_ppa": "/ppa/players/season",
+    "player_ppa_games": "/ppa/players/games",
     "player_usage": "/player/usage",
     "team_ppa": "/ppa/teams",
     "games": "/games",
@@ -258,6 +277,18 @@ DATASET_ENDPOINTS = {
 
 
 SEASON_TYPE_DATASETS = {"games", "team_game_stats", "advanced_game_stats", "team_ppa"}
+
+
+def _iter_season_type_weeks(season_type: str) -> list[tuple[str, int]]:
+    normalized = str(season_type or "regular").strip().lower()
+    pairs: list[tuple[str, int]] = []
+    if normalized in {"regular", "both"}:
+        for week in range(1, 17):
+            pairs.append(("regular", week))
+    if normalized in {"postseason", "both"}:
+        for week in range(1, 6):
+            pairs.append(("postseason", week))
+    return pairs
 
 
 def fetch_dataset(
@@ -287,6 +318,94 @@ def fetch_dataset(
         params["seasonType"] = season_type
 
     return client.get(DATASET_ENDPOINTS[dataset], params=params, execute=execute)
+
+
+def fetch_game_player_stats(
+    year: int,
+    season_type: str = "regular",
+    execute: bool = False,
+    max_calls_per_month: int = 1000,
+) -> Dict[str, Any]:
+    client = CFBDClient(max_calls_per_month=max_calls_per_month)
+    rows: list[dict] = []
+    last_status: Dict[str, Any] | None = None
+    for season_type_key, week in _iter_season_type_weeks(season_type):
+        result = client.get(
+            DATASET_ENDPOINTS["game_player_stats"],
+            params={"year": year, "week": week, "seasonType": season_type_key},
+            execute=execute,
+        )
+        if result.get("dry_run", False):
+            return result
+        batch = result.get("data") or []
+        if isinstance(batch, list):
+            for row in batch:
+                if isinstance(row, dict):
+                    row.setdefault("_cfbd_pull_week", week)
+                    row.setdefault("_cfbd_pull_season_type", season_type_key)
+            rows.extend(batch)
+        last_status = result
+    if last_status is None:
+        status = client.usage_status()
+        return {
+            "dry_run": False,
+            "url": f"{client.base_url}{DATASET_ENDPOINTS['game_player_stats']}",
+            "calls_used": status.calls_used,
+            "calls_remaining": status.calls_remaining,
+            "max_calls": status.max_calls,
+            "data": [],
+        }
+    return {
+        "dry_run": False,
+        "url": f"{client.base_url}{DATASET_ENDPOINTS['game_player_stats']}",
+        "calls_used": last_status["calls_used"],
+        "calls_remaining": last_status["calls_remaining"],
+        "max_calls": last_status["max_calls"],
+        "query_type": "game_player_stats_weekly_rollup",
+        "data": rows,
+    }
+
+
+def fetch_player_ppa_games(
+    year: int,
+    season_type: str = "regular",
+    execute: bool = False,
+    max_calls_per_month: int = 1000,
+    threshold: float = 0.0,
+) -> Dict[str, Any]:
+    client = CFBDClient(max_calls_per_month=max_calls_per_month)
+    rows: list[dict] = []
+    last_status: Dict[str, Any] | None = None
+    for season_type_key, week in _iter_season_type_weeks(season_type):
+        params: Dict[str, Any] = {"year": year, "week": week, "seasonType": season_type_key}
+        if threshold > 0:
+            params["threshold"] = threshold
+        result = client.get(DATASET_ENDPOINTS["player_ppa_games"], params=params, execute=execute)
+        if result.get("dry_run", False):
+            return result
+        batch = result.get("data") or []
+        if isinstance(batch, list):
+            rows.extend(batch)
+        last_status = result
+    if last_status is None:
+        status = client.usage_status()
+        return {
+            "dry_run": False,
+            "url": f"{client.base_url}{DATASET_ENDPOINTS['player_ppa_games']}",
+            "calls_used": status.calls_used,
+            "calls_remaining": status.calls_remaining,
+            "max_calls": status.max_calls,
+            "data": [],
+        }
+    return {
+        "dry_run": False,
+        "url": f"{client.base_url}{DATASET_ENDPOINTS['player_ppa_games']}",
+        "calls_used": last_status["calls_used"],
+        "calls_remaining": last_status["calls_remaining"],
+        "max_calls": last_status["max_calls"],
+        "query_type": "player_ppa_games_weekly_rollup",
+        "data": rows,
+    }
 
 
 def fetch_adjusted_player_metrics(
@@ -331,7 +450,7 @@ def fetch_adjusted_player_metrics(
         if len(batch) < int(page_size):
             return {
                 "dry_run": False,
-                "url": os.getenv("CFBD_GRAPHQL_URL", "https://graphql.collegefootballdata.com/").strip(),
+                "url": os.getenv("CFBD_GRAPHQL_URL", "https://graphql.collegefootballdata.com/v1/graphql").strip(),
                 "calls_used": result["calls_used"],
                 "calls_remaining": result["calls_remaining"],
                 "max_calls": result["max_calls"],
