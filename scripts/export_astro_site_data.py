@@ -317,27 +317,31 @@ def _map_team_needs_position(position: str, depth_chart_position: str = "") -> s
     depth = str(depth_chart_position or "").strip().upper()
     if pos in TEAM_NEEDS_POS_ORDER:
         return pos
+    if pos in {"LWR", "RWR", "SWR", "XWR", "ZWR"}:
+        return "WR"
     if pos in {"HB", "FB"}:
         return "RB"
     if pos in {"T", "LT", "RT"}:
         return "OT"
     if pos in {"G", "LG", "RG", "C", "OC"}:
         return "IOL"
-    if pos in {"DE", "ED"}:
+    if pos in {"DE", "ED", "LDE", "RDE", "LOLB", "ROLB"}:
         return "EDGE"
-    if pos in {"NT", "IDL"}:
+    if pos in {"NT", "IDL", "LDT", "RDT"}:
         return "DT"
-    if pos in {"ILB", "MLB"}:
+    if pos in {"ILB", "MLB", "LB", "SLB", "WLB", "LILB", "RILB"}:
         return "LB"
-    if pos in {"FS", "SS", "SAF"}:
+    if pos in {"FS", "SS", "SAF", "RS", "LS"}:
         return "S"
+    if pos in {"LCB", "RCB", "NB"}:
+        return "CB"
     if pos == "OL":
         if depth in {"LT", "RT", "T"}:
             return "OT"
         if depth in {"LG", "RG", "G", "C", "OC"}:
             return "IOL"
     if pos == "DL":
-        if depth in {"DE", "ED", "EDGE", "OLB"}:
+        if depth in {"DE", "ED", "EDGE", "OLB", "LDE", "RDE", "LOLB", "ROLB"}:
             return "EDGE"
         return "DT"
     if pos == "DB":
@@ -424,6 +428,7 @@ def _build_team_depth_context() -> dict[str, dict]:
     apy_pool_by_pos: dict[str, list[float]] = defaultdict(list)
     contract_by_gsis: dict[str, dict] = {}
     contract_by_name: dict[str, dict] = {}
+    contract_players_by_team_pos: dict[tuple[str, str], list[dict]] = defaultdict(list)
     if NFLVERSE_CONTRACTS.exists():
         contracts = pl.read_parquet(NFLVERSE_CONTRACTS)
         if not contracts.is_empty():
@@ -434,16 +439,71 @@ def _build_team_depth_context() -> dict[str, dict]:
         apy = _safe_float(row.get("apy"))
         years = _safe_int(row.get("years"), 0)
         pos = _map_team_needs_position(row.get("position", ""))
+        team_text = str(row.get("team") or "").strip()
+        team_norm = ""
+        lowered_team = team_text.lower()
+        for code, aliases in {
+            "ARI": ["arizona cardinals", "cardinals"],
+            "ATL": ["atlanta falcons", "falcons"],
+            "BAL": ["baltimore ravens", "ravens"],
+            "BUF": ["buffalo bills", "bills"],
+            "CAR": ["carolina panthers", "panthers"],
+            "CHI": ["chicago bears", "bears"],
+            "CIN": ["cincinnati bengals", "bengals"],
+            "CLE": ["cleveland browns", "browns"],
+            "DAL": ["dallas cowboys", "cowboys"],
+            "DEN": ["denver broncos", "broncos"],
+            "DET": ["detroit lions", "lions"],
+            "GB": ["green bay packers", "packers"],
+            "HOU": ["houston texans", "texans"],
+            "IND": ["indianapolis colts", "colts"],
+            "JAX": ["jacksonville jaguars", "jaguars"],
+            "KC": ["kansas city chiefs", "chiefs"],
+            "LAC": ["los angeles chargers", "chargers"],
+            "LAR": ["los angeles rams", "rams"],
+            "LV": ["las vegas raiders", "raiders"],
+            "MIA": ["miami dolphins", "dolphins"],
+            "MIN": ["minnesota vikings", "vikings"],
+            "NE": ["new england patriots", "patriots"],
+            "NO": ["new orleans saints", "saints"],
+            "NYG": ["new york giants", "giants"],
+            "NYJ": ["new york jets", "jets"],
+            "PHI": ["philadelphia eagles", "eagles"],
+            "PIT": ["pittsburgh steelers", "steelers"],
+            "SEA": ["seattle seahawks", "seahawks"],
+            "SF": ["san francisco 49ers", "49ers", "niners"],
+            "TB": ["tampa bay buccaneers", "buccaneers", "bucs"],
+            "TEN": ["tennessee titans", "titans"],
+            "WAS": ["washington commanders", "commanders"],
+        }.items():
+            if lowered_team in aliases:
+                team_norm = code
+                break
         payload = {
             "gsis_id": gsis,
             "name_key": _norm_player_key(name),
             "apy": apy,
             "years": years,
             "position": pos,
-            "team_text": str(row.get("team") or "").strip(),
+            "team_text": team_text,
         }
         if pos and apy is not None and apy > 0:
             apy_pool_by_pos[pos].append(float(apy))
+        if team_norm and pos and name:
+            contract_players_by_team_pos[(team_norm, pos)].append(
+                {
+                    "player_name": name,
+                    "position": pos,
+                    "depth_chart_position": pos,
+                    "years_exp": 0,
+                    "age": "",
+                    "draft_number": "",
+                    "has_contract": True,
+                    "contract_label": f"{years}y | ${apy:.1f}M APY" if apy is not None else f"{years}y contract",
+                    "apy_m": round(apy, 2) if apy is not None else "",
+                    "apy_pct": _pct_score(apy, apy_pool_by_pos.get(pos, [])),
+                }
+            )
         if gsis:
             existing = contract_by_gsis.get(gsis)
             if existing is None or (_safe_float(existing.get("apy")) or 0.0) < (_safe_float(apy) or 0.0):
@@ -580,7 +640,37 @@ def _build_team_depth_context() -> dict[str, dict]:
                 player_key = _norm_player_key(player.get("player_name", ""))
                 if player_key and player_key not in existing_keys and len(normalized_players) < 4:
                     normalized_players.append(player)
+                    existing_keys.add(player_key)
+            for player in sorted(
+                contract_players_by_team_pos.get((team, pos), []),
+                key=lambda p: (
+                    -(float(p.get("apy_m") or 0.0)),
+                    str(p.get("player_name", "")),
+                ),
+            ):
+                player_key = _norm_player_key(player.get("player_name", ""))
+                if player_key and player_key not in existing_keys and len(normalized_players) < 4:
+                    normalized_players.append(player)
+                    existing_keys.add(player_key)
             team_players[team][pos] = normalized_players
+
+    for (team, pos), players in contract_players_by_team_pos.items():
+        existing_players = team_players[team].get(pos, [])
+        existing_keys = {_norm_player_key(p.get("player_name", "")) for p in existing_players}
+        merged_players = list(existing_players)
+        for player in sorted(
+            players,
+            key=lambda p: (
+                -(float(p.get("apy_m") or 0.0)),
+                str(p.get("player_name", "")),
+            ),
+        ):
+            player_key = _norm_player_key(player.get("player_name", ""))
+            if player_key and player_key not in existing_keys and len(merged_players) < 4:
+                merged_players.append(player)
+                existing_keys.add(player_key)
+        if merged_players:
+            team_players[team][pos] = merged_players
 
     out: dict[str, dict] = {}
     for team, by_pos in team_players.items():

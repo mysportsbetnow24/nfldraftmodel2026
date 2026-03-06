@@ -67,6 +67,16 @@ def _fetch_json(url: str, *, insecure: bool = False) -> dict:
         return json.loads(response.read().decode("utf-8"))
 
 
+def _resolve_athlete_name(athlete_ref: str, *, insecure: bool = False) -> str:
+    if not athlete_ref:
+        return ""
+    try:
+        payload = _fetch_json(athlete_ref, insecure=insecure)
+    except Exception:
+        return ""
+    return str(payload.get("displayName") or payload.get("fullName") or payload.get("shortName") or "").strip()
+
+
 def _extract_athlete_id(ref: str) -> str:
     match = ATHLETE_ID_RE.search(str(ref or ""))
     return match.group(1) if match else ""
@@ -103,8 +113,18 @@ def _build_espn_name_lookup() -> dict[str, str]:
     return lookup
 
 
-def _normalize_rows(payload: dict, season: int, team: str, team_id: str, pulled_at_utc: str, name_lookup: dict[str, str]) -> list[dict]:
+def _normalize_rows(
+    payload: dict,
+    season: int,
+    team: str,
+    team_id: str,
+    pulled_at_utc: str,
+    name_lookup: dict[str, str],
+    *,
+    insecure: bool = False,
+) -> list[dict]:
     rows: list[dict] = []
+    athlete_name_cache: dict[str, str] = {}
     for chart in payload.get("items", []) or []:
         pos_group_id = str(chart.get("id") or "")
         pos_group = str(chart.get("name") or "")
@@ -125,7 +145,13 @@ def _normalize_rows(payload: dict, season: int, team: str, team_id: str, pulled_
             for athlete_idx, athlete in enumerate(athletes, start=1):
                 athlete_ref = athlete.get("athlete", {}).get("$ref", "")
                 athlete_id = _extract_athlete_id(athlete_ref)
-                athlete_name = str(athlete.get("displayName") or athlete.get("shortName") or name_lookup.get(athlete_id) or "")
+                athlete_name = str(athlete.get("displayName") or athlete.get("shortName") or name_lookup.get(athlete_id) or "").strip()
+                if not athlete_name and athlete_ref:
+                    cached = athlete_name_cache.get(athlete_ref)
+                    if cached is None:
+                        cached = _resolve_athlete_name(athlete_ref, insecure=insecure)
+                        athlete_name_cache[athlete_ref] = cached
+                    athlete_name = cached
                 rows.append(
                     {
                         "season": season,
@@ -155,7 +181,7 @@ def pull_depth_charts(season: int, teams: list[str], *, insecure: bool = False) 
     for team in teams:
         team_id = TEAM_IDS[team]
         payload = _fetch_json(_depth_chart_url(season, team_id), insecure=insecure)
-        rows.extend(_normalize_rows(payload, season, team, team_id, pulled_at_utc, name_lookup))
+        rows.extend(_normalize_rows(payload, season, team, team_id, pulled_at_utc, name_lookup, insecure=insecure))
     return rows
 
 
