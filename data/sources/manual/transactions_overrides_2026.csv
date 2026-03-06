@@ -1,6 +1,6 @@
 event_date,player_name,position,from_team,to_team,action_text,impact_weight,transaction_status,apply_to_team_needs,source_url,source_account,notes
 2026-03-04,Trent McDuffie,CB,KC,LAR,traded,1.0,confirmed,true,https://www.cbssports.com/nfl/news/chiefs-trade-all-pro-cornerback-to-rams-as-defending-super-bowl-champs-load-up-in-the-2026-nfl-draft/,CBS Sports,Two-sided trade override so KC loss and LAR gain both hit team-needs logic.
-2026-03-04,Kayvon Thibodeaux,DE,NYG,ARI,traded,1.0,confirmed,true,https://www.cbssports.com/nfl/transactions/,CBS Sports,CBS transactions list: traded to ARI.
+2026-03-04,Kayvon Thibodeaux,DE,NYG,ARI,traded,1.0,rumored,false,https://www.cbssports.com/nfl/transactions/,CBS Sports,Flagged as rumored pending official confirmation.
 2026-03-03,L'Jarius Sneed,CB,TEN,MIA,traded,1.0,confirmed,true,https://www.cbssports.com/nfl/transactions/,CBS Sports,CBS transactions list: traded to MIA.
 2026-03-03,George Kittle,TE,SF,JAX,traded,1.0,rumored,false,https://www.cbssports.com/nfl/transactions/,CBS Sports,Marked rumored until confirmed by official team/league transaction wire.
 2026-03-04,Darnell Savage Jr.,SS,JAX,,released,1.0,confirmed,true,https://www.cbssports.com/nfl/transactions/,CBS Sports,CBS transactions list: released by JAX.

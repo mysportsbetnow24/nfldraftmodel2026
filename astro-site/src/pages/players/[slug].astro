@@ -40,6 +40,14 @@ const riskKeywords = [
   "fracture",
 ];
 const hasMedicalCharacterRisk = riskKeywords.some((k) => concernsText.toLowerCase().includes(k));
+const productionPercentileValues = Object.values(player.production_percentiles || {}).map((v: any) => Number(v)).filter((n: number) => Number.isFinite(n));
+const productionPct = productionPercentileValues.length ? (productionPercentileValues.reduce((a: number, b: number) => a + b, 0) / productionPercentileValues.length) : 50;
+const rasRaw = Number(player.combine_ras_official || 0) > 0 ? Number(player.combine_ras_official || 0) : Number(player.ras_estimate || 0);
+const athleticPct = Number.isFinite(rasRaw) && rasRaw > 0 ? Math.max(0, Math.min(100, ((rasRaw - 4) / 6) * 100)) : 50;
+const traitRaw = Number(player.trait_score || 0);
+const traitPct = Number.isFinite(traitRaw) && traitRaw > 0 ? Math.max(0, Math.min(100, ((traitRaw - 70) / 27) * 100)) : 50;
+const marketRaw = Number(player.market_signal_pct || 50);
+const marketPct = Number.isFinite(marketRaw) ? Math.max(0, Math.min(100, marketRaw)) : 50;
 ---
 <BaseLayout title={`${player.player_name} | 2026 NFL Draft Scouting Report`} description={pageDescription} collectionSchema={collectionSchema}>
   <section class="hero hero--data">
@@ -65,7 +73,28 @@ const hasMedicalCharacterRisk = riskKeywords.some((k) => concernsText.toLowerCas
   <section class="card detail-grid">
     <article class="card">
       <h2 class="block-title">Report Summary</h2>
-      <p class="muted block-copy">{player.scouting_report_summary || "Summary pending."}</p>
+      <p class="muted block-copy report-summary">{player.scouting_report_summary || "Summary pending."}</p>
+    </article>
+    <article class="card">
+      <h2 class="block-title">Translation Snapshot</h2>
+      <div class="bar-metrics">
+        <div class="metric-row">
+          <div class="metric-top"><span>Production Percentile</span><strong>{productionPct.toFixed(0)}th pct</strong></div>
+          <div class="meter"><div class="meter-fill" style={`width:${productionPct.toFixed(1)}%;background:#0f7b6a;`}></div></div>
+        </div>
+        <div class="metric-row">
+          <div class="metric-top"><span>Athletic Percentile</span><strong>{athleticPct.toFixed(0)}th pct</strong></div>
+          <div class="meter"><div class="meter-fill" style={`width:${athleticPct.toFixed(1)}%;background:#425466;`}></div></div>
+        </div>
+        <div class="metric-row">
+          <div class="metric-top"><span>Trait Percentile</span><strong>{traitPct.toFixed(0)}th pct</strong></div>
+          <div class="meter"><div class="meter-fill" style={`width:${traitPct.toFixed(1)}%;background:#245ea8;`}></div></div>
+        </div>
+        <div class="metric-row">
+          <div class="metric-top"><span>Market Signal</span><strong>{marketPct.toFixed(0)}th pct</strong></div>
+          <div class="meter"><div class="meter-fill" style={`width:${marketPct.toFixed(1)}%;background:#0ea5e9;`}></div></div>
+        </div>
+      </div>
     </article>
     <article class="card">
       <h2 class="block-title">How He Wins</h2>

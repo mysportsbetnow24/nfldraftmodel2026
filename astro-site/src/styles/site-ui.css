@@ -71,7 +71,7 @@ body {
   text-decoration: none;
   color: var(--ui-cta-ink);
   border: 1px solid var(--ui-cta-border);
-  background: var(--ui-cta-bg);
+  background: linear-gradient(135deg, #eaf3ff 0%, #e4f1ff 62%, #e8f8ef 100%);
   border-radius: 999px;
   padding: 0.45rem 0.72rem;
   font-size: 0.9rem;
@@ -393,7 +393,7 @@ tbody tr:hover {
 
 .detail-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 0.75rem;
 }
 
@@ -609,9 +609,9 @@ tbody tr:hover {
 .page-link {
   text-decoration: none;
   color: inherit;
-  border: 1px solid #b9cde4;
-  background: linear-gradient(135deg, #f8fcff 0%, #eef6ff 62%, #ecfaf3 100%);
-  box-shadow: 0 6px 18px rgba(15, 45, 74, 0.06);
+  border: 1px solid #8fb6dd;
+  background: linear-gradient(135deg, #e6f2ff 0%, #d9ecff 52%, #dcf7ea 100%);
+  box-shadow: 0 8px 20px rgba(15, 45, 74, 0.08);
   transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -620,9 +620,15 @@ tbody tr:hover {
 }
 
 .page-link:hover {
-  border-color: #80a9d4;
-  box-shadow: 0 10px 22px rgba(31, 94, 168, 0.15);
+  border-color: #5f95ce;
+  box-shadow: 0 12px 24px rgba(31, 94, 168, 0.18);
   transform: translateY(-1px);
+}
+
+.report-summary {
+  margin: 0.15rem 0 0.2rem;
+  line-height: 1.75;
+  max-width: 76ch;
 }
 
 .footer {

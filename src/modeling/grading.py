@@ -119,6 +119,7 @@ def _infer_lb_role_and_scheme(
     weight_lb: int,
     athletic_score: float,
     film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
 ) -> tuple[str, str]:
     """
     Role/scheme inference for off-ball linebackers.
@@ -134,6 +135,13 @@ def _infer_lb_role_and_scheme(
     coverage_profile = _avg_defined([coverage, range_score, trigger])
     box_profile = _avg_defined([processing, decon, tackling])
     pressure_profile = _avg_defined([trigger, decon, processing])
+    prod = production_context or {}
+    lb_tackles = _safe_prod_value(prod, "cfb_lb_tackles", "lb_tackles")
+    lb_tfl = _safe_prod_value(prod, "cfb_lb_tfl", "lb_tfl")
+    lb_sacks = _safe_prod_value(prod, "cfb_lb_sacks", "lb_sacks")
+    lb_hurries = _safe_prod_value(prod, "cfb_lb_qb_hurries", "lb_qb_hurries")
+    lb_tackle_signal = _safe_prod_value(prod, "cfb_lb_tackle_signal")
+    lb_rush_signal = _safe_prod_value(prod, "cfb_lb_rush_impact_signal")
 
     xl_frame = weight_lb >= 240
     big_frame = weight_lb >= 235
@@ -142,6 +150,21 @@ def _infer_lb_role_and_scheme(
     explosive_athlete = athletic_score >= 88.0
     mobile_athlete = athletic_score >= 85.0
     limited_athlete = athletic_score < 81.0
+    high_volume_tackler = (lb_tackles is not None and lb_tackles >= 78) or (lb_tackle_signal is not None and lb_tackle_signal >= 74)
+    impact_run_game = (lb_tfl is not None and lb_tfl >= 8) or (lb_tackles is not None and lb_tackles >= 95)
+    pressure_usage = (
+        (lb_sacks is not None and lb_sacks >= 4.0)
+        or (lb_hurries is not None and lb_hurries >= 9.0)
+        or (lb_rush_signal is not None and lb_rush_signal >= 76.0)
+    )
+
+    # Production-supported role nudges.
+    if pressure_usage and mobile_athlete and (big_frame or long_frame):
+        return ("Pressure SAM backer", "Sim-pressure multiple front")
+    if high_volume_tackler and impact_run_game and (big_frame or xl_frame):
+        return ("Stack-and-shed MIKE backer", "Base over-under run fit")
+    if high_volume_tackler and (light_frame or mobile_athlete):
+        return ("Run-and-chase WILL backer", "Pursuit-heavy split-safety fit")
 
     # Film-first role classification when sub-trait coverage exists.
     if coverage_profile is not None and coverage_profile >= 82.0 and (light_frame or (mobile_athlete and long_frame)):
@@ -293,6 +316,7 @@ def _infer_qb_role_and_scheme(
     weight_lb: int,
     athletic_score: float,
     film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
 ) -> tuple[str, str]:
     """
     Role/scheme inference for quarterbacks.
@@ -309,24 +333,36 @@ def _infer_qb_role_and_scheme(
     creator_profile = _avg_defined([creation, arm_talent, situational])
     pure_arm_profile = _avg_defined([arm_talent, creation])
     structure_profile = _avg_defined([processing, pocket, accuracy])
+    prod = production_context or {}
+    qb_epa = _safe_prod_value(prod, "cfb_qb_epa_per_play", "qb_epa_per_play", "qb_epa_per_pl")
+    qb_pressure_to_sack = _safe_prod_value(prod, "cfb_qb_pressure_signal", "qb_pressure_to_sack_rate")
+    qb_pass_td = _safe_prod_value(prod, "cfb_qb_pass_td", "qb_pass_td")
+    qb_int = _safe_prod_value(prod, "cfb_qb_pass_int", "qb_pass_int")
+    qb_int_rate = _safe_prod_value(prod, "cfb_qb_int_rate", "qb_int_rate")
 
     plus_athlete = athletic_score >= 88.0
     good_athlete = athletic_score >= 84.0
     limited_athlete = athletic_score < 80.0
     prototype_frame = height_in >= 75 and weight_lb >= 220
+    secure_ball = (qb_int_rate is not None and qb_int_rate <= 0.022) or (qb_int is not None and qb_int <= 8.0)
+    turnover_prone = (qb_int_rate is not None and qb_int_rate >= 0.032) or (qb_int is not None and qb_int >= 12.0)
+    efficient_passer = qb_epa is not None and qb_epa >= 0.16
+    unstable_under_pressure = qb_pressure_to_sack is not None and qb_pressure_to_sack >= 23.0
 
-    if distributor_profile is not None and distributor_profile >= 81.0 and good_athlete:
+    if distributor_profile is not None and distributor_profile >= 81.0 and good_athlete and (secure_ball or efficient_passer):
         if creation is not None and creation >= 78.0:
             return ("Franchise dual-threat creator", "Spread/RPO vertical-play-action")
         return ("Franchise timing distributor", "West Coast timing spread")
-    if creator_profile is not None and creator_profile >= 80.0 and plus_athlete:
+    if creator_profile is not None and creator_profile >= 80.0 and plus_athlete and not turnover_prone:
         return ("Dual-threat shot-play creator", "Spread/RPO vertical-play-action")
-    if pure_arm_profile is not None and pure_arm_profile >= 80.0 and (arm_talent or 0.0) >= 82.0:
+    if pure_arm_profile is not None and pure_arm_profile >= 80.0 and (arm_talent or 0.0) >= 82.0 and (secure_ball or efficient_passer):
         return ("Vertical drive-starter", "Play-action deep-shot structure")
-    if structure_profile is not None and structure_profile >= 76.0 and not limited_athlete:
+    if structure_profile is not None and structure_profile >= 76.0 and not limited_athlete and not unstable_under_pressure:
         return ("Rhythm-and-timing starter", "Quick-game progression spread")
-    if structure_profile is not None and structure_profile >= 74.0 and limited_athlete:
+    if structure_profile is not None and structure_profile >= 74.0 and limited_athlete and secure_ball:
         return ("Pocket distributor", "Play-action under-center progression")
+    if turnover_prone or unstable_under_pressure:
+        return ("Developmental backup profile", "Half-field progression + protection menu")
     if creator_profile is not None and creator_profile >= 74.0 and good_athlete:
         return ("Developmental creator with upside", "Spread movement-passer package")
 
@@ -354,6 +390,7 @@ def _infer_role_and_scheme(
             weight_lb=weight_lb,
             athletic_score=athletic_score,
             film_subtraits=film_subtraits,
+            production_context=production_context or {},
         )
     if position == "RB":
         return _infer_rb_role_and_scheme(
@@ -369,6 +406,7 @@ def _infer_role_and_scheme(
             weight_lb=weight_lb,
             athletic_score=athletic_score,
             film_subtraits=film_subtraits,
+            production_context=production_context or {},
         )
     return (
         ROLE_BY_POS.get(position, "Depth and developmental value"),

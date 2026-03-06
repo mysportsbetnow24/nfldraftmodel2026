@@ -19,7 +19,7 @@ const collectionSchema = {
 <BaseLayout title="NFL Transactions Feed 2026 | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
   <section class="hero hero--data">
     <h1>NFL Transactions Feed 2026</h1>
-    <p>Confirmed and rumored transaction stream with clear impact flags.</p>
+    <p>Confirmed and rumored transaction stream with clear status and team-needs impact flags.</p>
   </section>
 
   <section class="card">
@@ -43,7 +43,6 @@ const collectionSchema = {
             <th>Player / Action</th>
             <th>Status</th>
             <th>Team Needs Impact</th>
-            <th>Source</th>
           </tr>
         </thead>
         <tbody id="transactionsRows">
@@ -67,15 +66,6 @@ const collectionSchema = {
                   <span class={`chip ${affectsNeeds ? "good" : "info"}`}>
                     {affectsNeeds ? "Affects team needs" : "No auto-impact"}
                   </span>
-                </td>
-                <td>
-                  {tx.source_url ? (
-                    <a href={tx.source_url} target="_blank" rel="noopener noreferrer" class="source-link">
-                      {tx.source_account || "Source"}
-                    </a>
-                  ) : (
-                    <span>{tx.source_account || "-"}</span>
-                  )}
                 </td>
               </tr>
             );

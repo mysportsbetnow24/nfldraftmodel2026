@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import board from "../data/big_board_2026.json";
 
 const pool = (board || []).slice(0, 220);
-const pageDescription = "Position-aware 2026 NFL Draft player comparison with production percentiles, traits, athletic profile, role fit, evidence confidence, and historical comps.";
+const pageDescription = "Position-aware 2026 NFL Draft player comparison with production percentiles, traits, athletic profile, market context, role fit, and historical comps.";
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -118,12 +118,12 @@ const collectionSchema = {
       return clamp(((n - min) / (max - min)) * 100, 0, 100);
     };
 
-    const evidenceState = (p) => {
-      const c = Number(p.confidence_score || 0);
-      if (p.low_evidence_flag) return { label: "Low", pct: Math.max(20, c), tone: "warn" };
-      if (c >= 75) return { label: "High", pct: c, tone: "good" };
-      if (c >= 50) return { label: "Medium", pct: c, tone: "info" };
-      return { label: "Low", pct: Math.max(20, c), tone: "warn" };
+    const marketSignalState = (p) => {
+      const raw = Number(p.market_signal_pct);
+      const pct = Number.isFinite(raw) ? clamp(raw, 0, 100) : 50;
+      if (pct >= 80) return { label: "Strong", pct, tone: "good" };
+      if (pct >= 55) return { label: "Balanced", pct, tone: "info" };
+      return { label: "Contrarian", pct, tone: "warn" };
     };
 
     const parseTopDrivers = (summary) => {
@@ -160,7 +160,7 @@ const collectionSchema = {
     };
 
     const radarSvg = (values) => {
-      const labels = ["Production", "Athletic", "Traits", "Evidence"];
+      const labels = ["Production", "Athletic", "Traits", "Market"];
       const w = 280;
       const h = 280;
       const cx = 140;
@@ -222,16 +222,40 @@ const collectionSchema = {
 
     const productionRows = (p) => {
       const group = PRODUCTION_CONFIG[p.position] ? p.position : (POSITION_GROUP_FALLBACK[p.position] || "");
+      const metrics = p.production_metrics || {};
+      const pcts = p.production_percentiles || {};
       if (group === "OL") {
-        return `<div class="muted">Public OL counting stats are limited; lean on trait profile and role projection.</div>`;
+        const olRows = [
+          { key: "cfb_ol_years_played", label: "Years Played", fmt: "int" },
+          { key: "cfb_ol_starts", label: "Career Starts", fmt: "int" },
+          { key: "cfb_ol_usage_rate", label: "Usage Rate", fmt: "pct" },
+          { key: "cfb_ol_proxy_signal", label: "OL Proxy Signal", fmt: "dec2" }
+        ];
+        return olRows.map((m) => {
+          const raw = num(metrics[m.key]);
+          if (raw === null) return `<div class="muted metric-lite">${m.label}: -</div>`;
+          let pp = num(pcts[m.key]);
+          if (pp === null) pp = 50;
+          return meterRow(`${m.label} (${p.position})`, pp, `${fmtValue(raw, m.fmt)} · ${pp.toFixed(0)}th pct`, "#3f5f82");
+        }).join("");
       }
       if (group === "LB") {
-        return `<div class="muted">LB-specific public counting feeds are thinner; use role and trait context.</div>`;
+        const lbRows = [
+          { key: "cfb_lb_tackles", label: "Total Tackles", fmt: "int" },
+          { key: "cfb_lb_tfl", label: "TFL", fmt: "dec1" },
+          { key: "cfb_lb_sacks", label: "Sacks", fmt: "dec1" },
+          { key: "cfb_lb_qb_hurries", label: "QB Hurries", fmt: "dec1" }
+        ];
+        return lbRows.map((m) => {
+          const raw = num(metrics[m.key]);
+          if (raw === null) return `<div class="muted metric-lite">${m.label}: -</div>`;
+          let pp = num(pcts[m.key]);
+          if (pp === null) pp = 50;
+          return meterRow(`${m.label} (${p.position})`, pp, `${fmtValue(raw, m.fmt)} · ${pp.toFixed(0)}th pct`, "#245ea8");
+        }).join("");
       }
       const cfg = PRODUCTION_CONFIG[group];
       if (!cfg || cfg.length === 0) return `<div class="muted">Position-specific production data pending.</div>`;
-      const metrics = p.production_metrics || {};
-      const pcts = p.production_percentiles || {};
       return cfg.map((m) => {
         const raw = num(metrics[m.key]);
         if (raw === null) return `<div class="muted metric-lite">${m.label}: -</div>`;
@@ -273,7 +297,7 @@ const collectionSchema = {
         const trait = Number(p.trait_score || 0);
         const rasRaw = Number(p.combine_ras_official || 0) > 0 ? Number(p.combine_ras_official || 0) : Number(p.ras_estimate || 0);
         const ras = rasRaw > 0 ? rasRaw.toFixed(2) : "-";
-        const evidence = evidenceState(p);
+        const market = marketSignalState(p);
         const topDrivers = parseTopDrivers(p.rank_driver_summary || "");
         const move = Number(p.rank_move_window || 0);
         const moveText = move > 0 ? `Up ${move}` : (move < 0 ? `Down ${Math.abs(move)}` : "Flat");
@@ -283,7 +307,7 @@ const collectionSchema = {
         const productionPct = prodPctVals.length ? (prodPctVals.reduce((a, b) => a + b, 0) / prodPctVals.length) : 50;
         const athleticPct = rasRaw > 0 ? toPct(rasRaw, 4, 10) : 50;
         const traitPct = toPct(trait, 70, 97);
-        const evidencePct = clamp(Number(evidence.pct || 50), 0, 100);
+        const marketPct = clamp(Number(market.pct || 50), 0, 100);
 
         const div = document.createElement("article");
         div.className = "card compare-card";
@@ -299,19 +323,19 @@ const collectionSchema = {
               <span class="chip info">Rank ${p.consensus_rank}</span>
               <span class="chip info">PFF ${pff > 0 ? pff.toFixed(1) : "-"}</span>
               <span class="chip info">RAS ${ras}</span>
-              <span class="chip ${evidence.tone === "good" ? "good" : (evidence.tone === "warn" ? "warn" : "info")}">Evidence ${evidence.label}</span>
+              <span class="chip ${market.tone === "good" ? "good" : (market.tone === "warn" ? "warn" : "info")}">Market ${market.label}</span>
             </div>
           </div>
 
           <div class="translation-block">
             <div class="radar-wrap">
-              ${radarSvg([productionPct, athleticPct, traitPct, evidencePct])}
+              ${radarSvg([productionPct, athleticPct, traitPct, marketPct])}
             </div>
             <div class="bar-metrics">
               ${meterRow("Production Percentile", productionPct, `${productionPct.toFixed(0)}th pct`, "#0f7b6a")}
               ${meterRow("Athletic Percentile", athleticPct, `${athleticPct.toFixed(0)}th pct`, "#425466")}
               ${meterRow("Trait Percentile", traitPct, `${traitPct.toFixed(0)}th pct`, "#245ea8")}
-              ${meterRow("Evidence Confidence", evidencePct, evidence.label, evidence.tone === "good" ? "#138a4a" : (evidence.tone === "warn" ? "#b15518" : "#245ea8"))}
+              ${meterRow("Market Signal", marketPct, market.label, market.tone === "good" ? "#138a4a" : (market.tone === "warn" ? "#b15518" : "#245ea8"))}
             </div>
           </div>
 

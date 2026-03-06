@@ -3,20 +3,20 @@
     "team": "ARI",
     "top_needs": [
       {
-        "position": "RB",
-        "need_score": 0.6637,
-        "depth_chart_pressure": 0.124,
-        "future_need_pressure_1y": 0.934,
-        "future_need_pressure_2y": 0.911,
-        "starter_quality": 0.734
-      },
-      {
         "position": "QB",
         "need_score": 0.609,
         "depth_chart_pressure": 0.324,
         "future_need_pressure_1y": 1.0,
         "future_need_pressure_2y": 0.45,
         "starter_quality": 0.604
+      },
+      {
+        "position": "RB",
+        "need_score": 0.6637,
+        "depth_chart_pressure": 0.124,
+        "future_need_pressure_1y": 0.934,
+        "future_need_pressure_2y": 0.911,
+        "starter_quality": 0.734
       },
       {
         "position": "LB",
@@ -30,10 +30,10 @@
     "recent_transactions": [
       {
         "event_date": "2026-03-04",
-        "status": "Confirmed",
-        "status_kind": "confirmed",
+        "status": "Rumored",
+        "status_kind": "rumored",
         "label": "Kayvon Thibodeaux (DE) traded",
-        "affects_team_needs": true,
+        "affects_team_needs": false,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
       }
@@ -133,20 +133,20 @@
     "team": "CAR",
     "top_needs": [
       {
-        "position": "OT",
-        "need_score": 0.5496,
-        "depth_chart_pressure": 0.06,
-        "future_need_pressure_1y": 1.0,
-        "future_need_pressure_2y": 0.616,
-        "starter_quality": 0.861
-      },
-      {
         "position": "QB",
         "need_score": 0.507,
         "depth_chart_pressure": 0.137,
         "future_need_pressure_1y": 1.0,
         "future_need_pressure_2y": 0.45,
         "starter_quality": 0.969
+      },
+      {
+        "position": "OT",
+        "need_score": 0.5496,
+        "depth_chart_pressure": 0.06,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.616,
+        "starter_quality": 0.861
       },
       {
         "position": "LB",
@@ -293,6 +293,14 @@
     "team": "DEN",
     "top_needs": [
       {
+        "position": "QB",
+        "need_score": 0.4887,
+        "depth_chart_pressure": 0.246,
+        "future_need_pressure_1y": 0.744,
+        "future_need_pressure_2y": 0.504,
+        "starter_quality": 0.752
+      },
+      {
         "position": "TE",
         "need_score": 0.6208,
         "depth_chart_pressure": 0.211,
@@ -307,14 +315,6 @@
         "future_need_pressure_1y": 0.885,
         "future_need_pressure_2y": 0.79,
         "starter_quality": 0.764
-      },
-      {
-        "position": "QB",
-        "need_score": 0.4887,
-        "depth_chart_pressure": 0.246,
-        "future_need_pressure_1y": 0.744,
-        "future_need_pressure_2y": 0.504,
-        "starter_quality": 0.752
       }
     ],
     "recent_transactions": [
@@ -846,10 +846,10 @@
     "recent_transactions": [
       {
         "event_date": "2026-03-04",
-        "status": "Confirmed",
-        "status_kind": "confirmed",
+        "status": "Rumored",
+        "status_kind": "rumored",
         "label": "Kayvon Thibodeaux (DE) traded",
-        "affects_team_needs": true,
+        "affects_team_needs": false,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
       },
@@ -1047,6 +1047,14 @@
     "team": "TB",
     "top_needs": [
       {
+        "position": "QB",
+        "need_score": 0.5741,
+        "depth_chart_pressure": 0.253,
+        "future_need_pressure_1y": 0.982,
+        "future_need_pressure_2y": 0.482,
+        "starter_quality": 0.747
+      },
+      {
         "position": "TE",
         "need_score": 0.6578,
         "depth_chart_pressure": 0.293,
@@ -1061,14 +1069,6 @@
         "future_need_pressure_1y": 0.908,
         "future_need_pressure_2y": 0.883,
         "starter_quality": 0.905
-      },
-      {
-        "position": "QB",
-        "need_score": 0.5741,
-        "depth_chart_pressure": 0.253,
-        "future_need_pressure_1y": 0.982,
-        "future_need_pressure_2y": 0.482,
-        "starter_quality": 0.747
       }
     ],
     "recent_transactions": []

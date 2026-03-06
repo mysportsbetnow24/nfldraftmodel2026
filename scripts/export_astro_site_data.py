@@ -48,6 +48,15 @@ PRODUCTION_METRIC_KEYS = [
     "cfb_db_yards_allowed_per_coverage_snap",
     "cfb_db_int",
     "cfb_db_pbu",
+    "cfb_lb_tackles",
+    "cfb_lb_tfl",
+    "cfb_lb_sacks",
+    "cfb_lb_qb_hurries",
+    "cfb_lb_signal",
+    "cfb_ol_years_played",
+    "cfb_ol_starts",
+    "cfb_ol_usage_rate",
+    "cfb_ol_proxy_signal",
 ]
 
 
@@ -229,6 +238,27 @@ def _clean_token_label(value: str) -> str:
     return text
 
 
+def _clean_public_snapshot(value: str) -> str:
+    """
+    Remove internal pipeline/missing-data notes from public snapshot text.
+    """
+    text = str(value or "")
+    lines = []
+    banned_tokens = [
+        "pending structured 2025 counting-stat import",
+        "pending structured 2025 counting stat import",
+    ]
+    for raw in text.splitlines():
+        line = str(raw or "").strip()
+        if not line:
+            continue
+        lowered = line.lower()
+        if any(token in lowered for token in banned_tokens):
+            continue
+        lines.append(line)
+    return "\n".join(lines)
+
+
 def _norm_similarity_pct(value) -> float | None:
     sim = _safe_float(value)
     if sim is None:
@@ -378,6 +408,8 @@ def _build_transactions_feed(window_days: int = 14) -> list[dict]:
         pos = str(position or "").strip().upper()
         action = str(action_text or "").strip()
         status_raw = str(status or "").strip().lower() or "confirmed"
+        status_kind = _status_kind(status_raw)
+        effective_needs_impact = bool(affects_team_needs) and status_kind == "confirmed"
         key = (team_code, event_date.isoformat(), player.lower(), action.lower(), status_raw)
         if key in seen:
             return
@@ -395,12 +427,12 @@ def _build_transactions_feed(window_days: int = 14) -> list[dict]:
                 "team": team_code,
                 "event_date": event_date.isoformat(),
                 "status": _status_label(status_raw),
-                "status_kind": _status_kind(status_raw),
+                "status_kind": status_kind,
                 "label": label,
                 "player_name": player,
                 "position": pos,
                 "action_text": action,
-                "affects_team_needs": bool(affects_team_needs),
+                "affects_team_needs": effective_needs_impact,
                 "source_url": str(source_url or "").strip(),
                 "source_account": str(source_account or "").strip(),
             }
@@ -560,6 +592,11 @@ def _needs_score(row: dict) -> float:
 
 def export_board(player_school_map: dict[str, str]) -> list[dict]:
     rows = _read_csv(BOARD_CSV)
+    consensus_mean_population = [
+        float(_safe_float(row.get("consensus_board_mean_rank")) or 0.0)
+        for row in rows
+        if (_safe_float(row.get("consensus_board_mean_rank")) or 0.0) > 0
+    ]
 
     # Position-normalized metric populations for percentile context.
     pos_metric_values: dict[str, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
@@ -588,7 +625,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         pff_grade = round(_safe_float(row.get("pff_grade")) or 0.0, 2)
         combine_ras_official = round(_safe_float(row.get("combine_ras_official")) or 0.0, 2)
         ras_estimate = round(_safe_float(row.get("ras_estimate")) or 0.0, 2)
-        production_snapshot = row.get("scouting_production_snapshot", "") or ""
+        production_snapshot = _clean_public_snapshot(row.get("scouting_production_snapshot", "") or "")
         low_evidence_flag = (
             ("pending structured" in production_snapshot.lower())
             or (pff_grade <= 0 and combine_ras_official <= 0 and ras_estimate <= 0)
@@ -712,9 +749,29 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             comp_items,
             key=lambda r: (r.get("similarity") is None, -(r.get("similarity") or 0.0)),
         )
-        comp_ceiling = comp_items[0] if len(comp_items) >= 1 else {}
-        comp_median = comp_items[1] if len(comp_items) >= 3 else {}
-        comp_floor = comp_items[-1] if len(comp_items) >= 2 else {}
+        if len(comp_items) >= 3:
+            mid_idx = len(comp_items) // 2
+            comp_ceiling = comp_items[0]
+            comp_median = comp_items[mid_idx]
+            comp_floor = comp_items[-1]
+        elif len(comp_items) == 2:
+            comp_ceiling = comp_items[0]
+            comp_median = comp_items[1]
+            comp_floor = {}
+        elif len(comp_items) == 1:
+            comp_ceiling = comp_items[0]
+            comp_median = {}
+            comp_floor = {}
+        else:
+            comp_ceiling = {}
+            comp_median = {}
+            comp_floor = {}
+
+        consensus_mean_rank_val = _safe_float(row.get("consensus_board_mean_rank"))
+        if consensus_mean_rank_val is None or consensus_mean_rank_val <= 0:
+            consensus_mean_rank_val = float(_safe_int(row.get("consensus_rank"), 9999))
+        market_rank_pct = _pct_rank(consensus_mean_rank_val, consensus_mean_population) if consensus_mean_population else 50.0
+        market_signal_pct = 100.0 - float(market_rank_pct)
 
         out.append(
             {
@@ -727,6 +784,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "final_grade": round(_safe_float(row.get("final_grade")) or 0.0, 2),
                 "round_value": row.get("round_value", ""),
                 "consensus_board_mean_rank": row.get("consensus_board_mean_rank", ""),
+                "market_signal_pct": round(market_signal_pct, 1),
                 "pff_grade": pff_grade,
                 "trait_score": round(_safe_float(row.get("trait_score")) or 0.0, 2),
                 "combine_ras_official": combine_ras_official,
@@ -844,6 +902,13 @@ def export_team_needs() -> list[dict]:
     out: list[dict] = []
     for team, items in sorted(by_team.items(), key=lambda x: x[0]):
         items = sorted(items, key=lambda x: x["need_score"], reverse=True)
+        qb_top3_idx = next(
+            (idx for idx, item in enumerate(items[:3]) if str(item.get("position", "")).upper() == "QB"),
+            None,
+        )
+        if qb_top3_idx is not None and qb_top3_idx > 0:
+            qb_item = items.pop(qb_top3_idx)
+            items.insert(0, qb_item)
         out.append(
             {
                 "team": team,
