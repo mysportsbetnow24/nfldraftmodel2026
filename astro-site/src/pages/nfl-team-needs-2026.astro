@@ -115,6 +115,24 @@ function roleContractLine(player: any) {
 function metaLine(player: any) {
   return String(player?.meta_label || "").trim();
 }
+
+function contractChipLabel(player: any) {
+  const contract = String(player?.contract_label || "").trim();
+  if (!contract || contract.toUpperCase() === "FA") return "FA";
+  const match = contract.match(/^(\d+)y/i);
+  if (!match) return "Rostered";
+  const years = Number(match[1] || 0);
+  if (years <= 1) return "1y";
+  if (years === 2) return "2y";
+  return `${years}y`;
+}
+
+function contractChipClass(player: any) {
+  const label = contractChipLabel(player);
+  if (label === "FA" || label === "1y") return "chip warn contract-chip";
+  if (label === "2y") return "chip info contract-chip";
+  return "chip good contract-chip";
+}
 ---
 <BaseLayout
   title="NFL Team Needs 2026 by Team | Scouting Grade"
@@ -254,7 +272,10 @@ function metaLine(player: any) {
                       <article class="depth-player">
                         <div class="depth-player__top">
                           <strong>{p.player_name}</strong>
-                          <span class={designationClass(p.designation)}>{p.designation}</span>
+                          <div class="depth-player__chips">
+                            <span class={designationClass(p.designation)}>{p.designation}</span>
+                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                          </div>
                         </div>
                         <div class="muted">{roleContractLine(p)}</div>
                         {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
@@ -270,7 +291,10 @@ function metaLine(player: any) {
                       <article class="depth-player">
                         <div class="depth-player__top">
                           <strong>{p.player_name}</strong>
-                          <span class={designationClass(p.designation)}>{p.designation}</span>
+                          <div class="depth-player__chips">
+                            <span class={designationClass(p.designation)}>{p.designation}</span>
+                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                          </div>
                         </div>
                         <div class="muted">{roleContractLine(p)}</div>
                         {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
@@ -286,7 +310,10 @@ function metaLine(player: any) {
                       <article class="depth-player">
                         <div class="depth-player__top">
                           <strong>{p.player_name}</strong>
-                          <span class={designationClass(p.designation)}>{p.designation}</span>
+                          <div class="depth-player__chips">
+                            <span class={designationClass(p.designation)}>{p.designation}</span>
+                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                          </div>
                         </div>
                         <div class="muted">{roleContractLine(p)}</div>
                         {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
@@ -302,7 +329,10 @@ function metaLine(player: any) {
                       <article class="depth-player">
                         <div class="depth-player__top">
                           <strong>{p.player_name}</strong>
-                          <span class={designationClass(p.designation)}>{p.designation}</span>
+                          <div class="depth-player__chips">
+                            <span class={designationClass(p.designation)}>{p.designation}</span>
+                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                          </div>
                         </div>
                         <div class="muted">{roleContractLine(p)}</div>
                         {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
@@ -318,7 +348,10 @@ function metaLine(player: any) {
                       <article class="depth-player">
                         <div class="depth-player__top">
                           <strong>{p.player_name}</strong>
-                          <span class={designationClass(p.designation)}>{p.designation}</span>
+                          <div class="depth-player__chips">
+                            <span class={designationClass(p.designation)}>{p.designation}</span>
+                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                          </div>
                         </div>
                         <div class="muted">{roleContractLine(p)}</div>
                         {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
@@ -334,7 +367,10 @@ function metaLine(player: any) {
                       <article class="depth-player">
                         <div class="depth-player__top">
                           <strong>{p.player_name}</strong>
-                          <span class={designationClass(p.designation)}>{p.designation}</span>
+                          <div class="depth-player__chips">
+                            <span class={designationClass(p.designation)}>{p.designation}</span>
+                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                          </div>
                         </div>
                         <div class="muted">{roleContractLine(p)}</div>
                         {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
@@ -354,7 +390,10 @@ function metaLine(player: any) {
                       <article class="depth-player">
                         <div class="depth-player__top">
                           <strong>{p.player_name}</strong>
-                          <span class={designationClass(p.designation)}>{p.designation}</span>
+                          <div class="depth-player__chips">
+                            <span class={designationClass(p.designation)}>{p.designation}</span>
+                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                          </div>
                         </div>
                         <div class="muted">{roleContractLine(p)}</div>
                         {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
@@ -370,7 +409,10 @@ function metaLine(player: any) {
                       <article class="depth-player">
                         <div class="depth-player__top">
                           <strong>{p.player_name}</strong>
-                          <span class={designationClass(p.designation)}>{p.designation}</span>
+                          <div class="depth-player__chips">
+                            <span class={designationClass(p.designation)}>{p.designation}</span>
+                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                          </div>
                         </div>
                         <div class="muted">{roleContractLine(p)}</div>
                         {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
@@ -386,7 +428,10 @@ function metaLine(player: any) {
                       <article class="depth-player">
                         <div class="depth-player__top">
                           <strong>{p.player_name}</strong>
-                          <span class={designationClass(p.designation)}>{p.designation}</span>
+                          <div class="depth-player__chips">
+                            <span class={designationClass(p.designation)}>{p.designation}</span>
+                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                          </div>
                         </div>
                         <div class="muted">{roleContractLine(p)}</div>
                         {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
@@ -402,7 +447,10 @@ function metaLine(player: any) {
                       <article class="depth-player">
                         <div class="depth-player__top">
                           <strong>{p.player_name}</strong>
-                          <span class={designationClass(p.designation)}>{p.designation}</span>
+                          <div class="depth-player__chips">
+                            <span class={designationClass(p.designation)}>{p.designation}</span>
+                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                          </div>
                         </div>
                         <div class="muted">{roleContractLine(p)}</div>
                         {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}

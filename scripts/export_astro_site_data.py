@@ -545,13 +545,24 @@ def _player_designation(
     years_exp: int,
     age: int | None,
     apy_pct: float,
+    apy_m: float | None,
+    contract_years: int,
     depth_rank: int,
     model_position: str,
     draft_number: int | None,
 ) -> str:
     if not has_contract:
         return "FA"
-    if apy_pct >= 97.0 and years_exp >= 6:
+    veteran_inference = (
+        years_exp <= 1
+        and (
+            (age is not None and age >= 26)
+            or (contract_years > 0 and contract_years <= 3 and (apy_pct >= 25.0 or (apy_m or 0.0) >= 2.5))
+            or ((apy_m or 0.0) >= 5.0)
+        )
+    )
+    effective_years_exp = years_exp if years_exp > 0 else (4 if veteran_inference else 0)
+    if apy_pct >= 97.0 and effective_years_exp >= 6:
         return "HOF Path"
     if apy_pct >= 90.0:
         return "All-Pro"
@@ -559,9 +570,9 @@ def _player_designation(
         return "Franchise Cornerstone"
     if apy_pct >= 55.0:
         return "In His Prime Star"
-    if age is not None and age >= 33 and years_exp >= 8:
+    if age is not None and age >= 33 and (effective_years_exp >= 8 or veteran_inference):
         return "Older Mentor"
-    if years_exp <= 1:
+    if years_exp <= 1 and not veteran_inference:
         if draft_number is not None and draft_number > 0 and draft_number <= 32:
             return "Blue Chip Prospect"
         return "Prospect"
@@ -596,7 +607,12 @@ def _build_team_depth_context() -> dict[str, dict]:
     if NFLVERSE_CONTRACTS.exists():
         contracts = pl.read_parquet(NFLVERSE_CONTRACTS)
         if not contracts.is_empty():
-            contract_rows = contracts.filter(pl.col("is_active") == True).iter_rows(named=True)
+            contract_rows = list(contracts.filter(pl.col("is_active") == True).iter_rows(named=True))
+    for row in contract_rows:
+        pos = _map_team_needs_position(row.get("position", ""))
+        apy = _safe_float(row.get("apy"))
+        if pos and apy is not None and apy > 0:
+            apy_pool_by_pos[pos].append(float(apy))
     for row in contract_rows:
         gsis = str(row.get("gsis_id") or "").strip()
         name = str(row.get("player") or "").strip()
@@ -651,8 +667,6 @@ def _build_team_depth_context() -> dict[str, dict]:
             "position": pos,
             "team_text": team_text,
         }
-        if pos and apy is not None and apy > 0:
-            apy_pool_by_pos[pos].append(float(apy))
         if team_norm and pos and name:
             contract_players_by_team_pos[(team_norm, pos)].append(
                 {
@@ -662,6 +676,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                     "years_exp": 0,
                     "age": "",
                     "draft_number": "",
+                    "contract_years": years,
                     "has_contract": True,
                     "contract_label": f"{years}y | ${apy:.1f}M APY" if apy is not None else f"{years}y contract",
                     "apy_m": round(apy, 2) if apy is not None else "",
@@ -712,6 +727,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             "years_exp": years_exp,
             "age": age if age is not None else "",
             "draft_number": draft_number if draft_number is not None else "",
+            "contract_years": years_left,
             "has_contract": has_contract,
             "contract_label": contract_label,
             "apy_m": round(apy, 2) if apy is not None else "",
@@ -726,6 +742,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                 "years_exp": years_exp,
                 "age": age if age is not None else "",
                 "draft_number": draft_number if draft_number is not None else "",
+                "contract_years": years_left,
                 "has_contract": has_contract,
                 "contract_label": contract_label,
                 "apy_m": round(apy, 2) if apy is not None else "",
@@ -774,6 +791,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             "years_exp": _safe_int(roster_info.get("years_exp"), 0),
             "age": roster_info.get("age", ""),
             "draft_number": roster_info.get("draft_number", ""),
+            "contract_years": years_left if contract else _safe_int(roster_info.get("contract_years"), 0),
             "has_contract": has_contract,
             "contract_label": contract_label,
             "apy_m": round(apy, 2) if apy is not None else roster_info.get("apy_m", ""),
@@ -900,6 +918,8 @@ def _build_team_depth_context() -> dict[str, dict]:
                     years_exp=int(player.get("years_exp") or 0),
                     age=int(player.get("age")) if str(player.get("age", "")).strip() else None,
                     apy_pct=float(player.get("apy_pct") or 0.0),
+                    apy_m=_safe_float(player.get("apy_m")),
+                    contract_years=int(player.get("contract_years") or 0),
                     depth_rank=idx,
                     model_position=pos,
                     draft_number=int(player.get("draft_number")) if str(player.get("draft_number", "")).strip() else None,

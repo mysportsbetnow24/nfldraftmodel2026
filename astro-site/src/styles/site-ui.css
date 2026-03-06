@@ -741,6 +741,19 @@ tbody tr:hover {
   gap: 0.45rem;
 }
 
+.depth-player__chips {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.contract-chip {
+  padding: 0.08rem 0.36rem;
+  font-size: 0.68rem;
+}
+
 .designation {
   display: inline-flex;
   align-items: center;
