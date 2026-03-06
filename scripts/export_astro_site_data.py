@@ -532,6 +532,74 @@ def _designation_priority(label: str) -> int:
     return lookup.get(str(label or "").strip(), 999)
 
 
+def _usage_proxy_from_role(model_position: str, role_label: str, depth_rank: int) -> float:
+    """
+    Lightweight role-based usage proxy for public depth-chart labels.
+    This is not true snap share; it approximates on-field importance from
+    lane role and depth placement so labels read like football hierarchy.
+    """
+    role = str(role_label or "").strip().upper()
+    pos = str(model_position or "").strip().upper()
+    rank = max(1, int(depth_rank or 1))
+
+    role_bases = {
+        "QB1": 1.0,
+        "QB2": 0.32,
+        "QB3": 0.12,
+        "RB1": 0.88,
+        "RB2": 0.58,
+        "RB3": 0.28,
+        "FULLBACK": 0.18,
+        "X WR": 0.9,
+        "Z WR": 0.88,
+        "SLOT WR": 0.82,
+        "WR1": 0.88,
+        "WR2": 0.8,
+        "WR3": 0.5,
+        "TE1": 0.78,
+        "TE2": 0.42,
+        "TE3": 0.22,
+        "LT": 0.95,
+        "RT": 0.9,
+        "SWING OT": 0.38,
+        "LG": 0.83,
+        "C": 0.9,
+        "RG": 0.83,
+        "G1": 0.76,
+        "G2": 0.68,
+        "EDGE 1": 0.9,
+        "EDGE 2": 0.82,
+        "RUSH OLB 1": 0.88,
+        "RUSH OLB 2": 0.8,
+        "NOSE": 0.78,
+        "5-TECH": 0.78,
+        "DT": 0.76,
+        "IDL": 0.7,
+        "MIKE": 0.84,
+        "WILL": 0.8,
+        "SAM": 0.72,
+        "ILB": 0.78,
+        "LB1": 0.74,
+        "LB2": 0.68,
+        "CB1": 0.9,
+        "CB2": 0.84,
+        "NICKEL": 0.78,
+        "FS": 0.82,
+        "SS": 0.8,
+        "S1": 0.78,
+        "S2": 0.72,
+    }
+    if role in role_bases:
+        return role_bases[role]
+
+    if pos in {"QB", "RB", "WR", "TE", "OT", "IOL", "EDGE", "DT", "LB", "CB", "S"}:
+        starter_cutoff = int(STARTERS_BY_POSITION.get(pos, 1))
+        if rank <= starter_cutoff:
+            return max(0.62, 0.9 - (0.08 * (rank - 1)))
+        return max(0.12, 0.5 - (0.1 * (rank - starter_cutoff - 1)))
+    return 0.25
+
+
 def _read_csv_rows(path: Path) -> list[dict]:
     if not path.exists():
         return []
@@ -550,11 +618,13 @@ def _player_designation(
     depth_rank: int,
     model_position: str,
     draft_number: int | None,
+    role_label: str,
 ) -> str:
     if not has_contract:
         return "FA"
     starter_cutoff = int(STARTERS_BY_POSITION.get(model_position, 1))
     is_top_starter = depth_rank <= starter_cutoff
+    usage_proxy = _usage_proxy_from_role(model_position, role_label, depth_rank)
     veteran_inference = (
         years_exp <= 1
         and (
@@ -564,25 +634,40 @@ def _player_designation(
         )
     )
     effective_years_exp = years_exp if years_exp > 0 else (4 if veteran_inference else 0)
-    if is_top_starter and apy_pct >= 97.0 and effective_years_exp >= 6:
+    is_early_pick = draft_number is not None and draft_number > 0 and draft_number <= 40
+    likely_young_player = (
+        (age is not None and age <= 26)
+        or is_early_pick
+        or years_exp > 0
+    )
+
+    if usage_proxy >= 0.95 and apy_pct >= 97.0 and effective_years_exp >= 6:
         return "HOF Path"
-    if is_top_starter and apy_pct >= 90.0 and effective_years_exp >= 3:
+    if usage_proxy >= 0.86 and apy_pct >= 90.0 and effective_years_exp >= 4:
         return "All-Pro"
-    if is_top_starter and apy_pct >= 75.0 and (effective_years_exp >= 2 or (apy_m or 0.0) >= 10.0):
-        return "Franchise Cornerstone"
-    if is_top_starter and apy_pct >= 65.0 and 3 <= effective_years_exp <= 9:
-        return "In His Prime Star"
-    if is_top_starter and (
+    if usage_proxy >= 0.62 and (
         (age is not None and age >= 33 and effective_years_exp >= 8)
         or (veteran_inference and (apy_m or 0.0) >= 8.0 and contract_years <= 2)
+        or (model_position == "QB" and age is not None and age >= 34)
     ):
         return "Older Mentor"
+    if usage_proxy >= 0.84 and (
+        (apy_pct >= 78.0 and effective_years_exp >= 2)
+        or (apy_pct >= 70.0 and (apy_m or 0.0) >= 10.0)
+        or (is_early_pick and effective_years_exp <= 2 and is_top_starter)
+    ) and (age is None or age <= 31):
+        return "Franchise Cornerstone"
+    if usage_proxy >= 0.78 and apy_pct >= 70.0 and 3 <= effective_years_exp <= 9 and age is not None and age <= 31:
+        return "In His Prime Star"
     if years_exp <= 1 and not veteran_inference:
-        if draft_number is not None and draft_number > 0 and draft_number <= 32:
+        if is_early_pick and usage_proxy >= 0.62:
             return "Blue Chip Prospect"
-        return "Prospect"
-    if is_top_starter:
+        if usage_proxy >= 0.4 and likely_young_player:
+            return "Prospect"
+    if usage_proxy >= 0.56:
         return "Starter"
+    if years_exp <= 2 and usage_proxy >= 0.35 and likely_young_player:
+        return "Prospect"
     return "Backup"
 
 
@@ -928,6 +1013,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                     depth_rank=idx,
                     model_position=pos,
                     draft_number=int(player.get("draft_number")) if str(player.get("draft_number", "")).strip() else None,
+                    role_label=role_label,
                 )
                 payload = {
                     "player_name": player.get("player_name", ""),
@@ -945,7 +1031,15 @@ def _build_team_depth_context() -> dict[str, dict]:
                 lane_players.append(payload)
                 if label == "FA" and len(free_agents) < 12:
                     free_agents.append(payload)
-                if int(player.get("years_exp") or 0) <= 2 and label in {"Prospect", "Blue Chip Prospect", "Starter", "In His Prime Star"}:
+                if (
+                    int(player.get("years_exp") or 0) <= 3
+                    and int(payload.get("depth_rank") or 99) <= 2
+                    and (
+                        not str(player.get("age", "")).strip()
+                        or _safe_int(player.get("age"), 0) <= 27
+                    )
+                    and label in {"Prospect", "Blue Chip Prospect", "Starter", "Franchise Cornerstone"}
+                ):
                     youth.append(payload)
 
             lane = {"position": pos, "players": lane_players[:4]}
