@@ -685,7 +685,7 @@ def _summary_sections(row: dict) -> list[tuple[str, str]]:
         (
             f"{kiper_statline_2025}."
             if kiper_statline_2025
-            else "No structured 2025 Kiper production snapshot ingested yet; rely on model production tables + manual film notes."
+            else "Production snapshot based on model production tables and manual scouting notes."
         ),
     )
 
@@ -806,7 +806,7 @@ def _player_card(row: dict) -> str:
     )
     source_confidence = _first_non_empty(
         row.get("source_confidence", ""),
-        "Medium confidence - model and available film align; pending combine + interview stack.",
+        "Medium confidence - model and available film align.",
     )
 
     summary_blocks = _summary_sections(row)

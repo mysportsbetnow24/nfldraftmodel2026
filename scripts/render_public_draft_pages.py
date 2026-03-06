@@ -713,7 +713,7 @@ def _comparison_page(rows: list[dict[str, str]], built_at: str) -> str:
             <p class=\"rankline\">Model #${{player.model_rank}} | Consensus #${{player.consensus_rank || '-'}} | Mean ${{
               player.consensus_mean ? Number(player.consensus_mean).toFixed(1) : '-'
             }}</p>
-            <p class=\"rankline\">${{player.round_value}} | Role: ${{player.best_role || 'Projection pending'}}</p>
+            <p class=\"rankline\">${{player.round_value}} | Role: ${{player.best_role || 'Role projection available after refresh.'}}</p>
             <p class=\"rankline\">Scheme fit: ${{player.best_scheme_fit || 'Flexible'}}</p>
           </div>
           <div class=\"radar-wrap\" id=\"radarWrap${{idx}}\"></div>

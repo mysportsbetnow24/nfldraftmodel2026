@@ -255,7 +255,7 @@ const collectionSchema = {
         }).join("");
       }
       const cfg = PRODUCTION_CONFIG[group];
-      if (!cfg || cfg.length === 0) return `<div class="muted">Position-specific production data pending.</div>`;
+      if (!cfg || cfg.length === 0) return `<div class="muted">Position-specific production context will appear after next refresh.</div>`;
       return cfg.map((m) => {
         const raw = num(metrics[m.key]);
         if (raw === null) return `<div class="muted metric-lite">${m.label}: -</div>`;
@@ -276,8 +276,8 @@ const collectionSchema = {
     };
 
     const roleTags = (p) => {
-      const role = String(p.best_role || "Role pending");
-      const scheme = String(p.best_scheme_fit || "Scheme pending");
+      const role = String(p.best_role || "Role projection");
+      const scheme = String(p.best_scheme_fit || "Scheme projection");
       const tags = [];
       const s = scheme.toLowerCase();
       if (s.includes("zone")) tags.push("Zone");

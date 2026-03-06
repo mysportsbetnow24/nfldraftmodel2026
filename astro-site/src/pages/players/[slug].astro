@@ -103,7 +103,11 @@ const marketPct = Number.isFinite(marketRaw) ? Math.max(0, Math.min(100, marketR
   <section class="card detail-grid">
     <article class="card">
       <h2 class="block-title">Report Summary</h2>
-      <p class="muted block-copy report-summary">{player.scouting_report_summary || "Summary pending."}</p>
+      {String(player.scouting_report_summary || "").trim() ? (
+        <p class="muted block-copy report-summary">{player.scouting_report_summary}</p>
+      ) : (
+        <p class="muted block-copy report-summary">No scouting summary available yet.</p>
+      )}
     </article>
     <article class="card">
       <h2 class="block-title">Translation Snapshot</h2>
@@ -128,19 +132,27 @@ const marketPct = Number.isFinite(marketRaw) ? Math.max(0, Math.min(100, marketR
     </article>
     <article class="card">
       <h2 class="block-title">How He Wins</h2>
-      <div class="muted pre-wrap">{player.scouting_why_he_wins || "Context pending."}</div>
+      {String(player.scouting_why_he_wins || "").trim() ? (
+        <div class="muted pre-wrap">{player.scouting_why_he_wins}</div>
+      ) : <div class="muted pre-wrap">How he wins assessment updates as scouting notes refresh.</div>}
     </article>
     <article class="card">
       <h2 class="block-title">Primary Concerns</h2>
-      <div class="muted pre-wrap">{player.scouting_primary_concerns || "Concerns pending."}</div>
+      {String(player.scouting_primary_concerns || "").trim() ? (
+        <div class="muted pre-wrap">{player.scouting_primary_concerns}</div>
+      ) : <div class="muted pre-wrap">No major concerns flagged in the current profile.</div>}
     </article>
     <article class="card">
       <h2 class="block-title">2025 Production Snapshot</h2>
-      <div class="muted pre-wrap">{player.scouting_production_snapshot || "Production snapshot pending."}</div>
+      {String(player.scouting_production_snapshot || "").trim() ? (
+        <div class="muted pre-wrap">{player.scouting_production_snapshot}</div>
+      ) : <div class="muted pre-wrap">2025 production snapshot is updating; final context will appear after next refresh.</div>}
     </article>
     <article class="card">
       <h2 class="block-title">Role / Scheme Projection</h2>
-      <div class="muted pre-wrap">{player.scouting_role_projection || "Projection pending."}</div>
+      {String(player.scouting_role_projection || "").trim() ? (
+        <div class="muted pre-wrap">{player.scouting_role_projection}</div>
+      ) : <div class="muted pre-wrap">Role and scheme projection is still calibrating.</div>}
     </article>
   </section>
 

@@ -255,6 +255,15 @@ def _clean_public_snapshot(value: str) -> str:
     banned_tokens = [
         "pending structured 2025 counting-stat import",
         "pending structured 2025 counting stat import",
+        "pending official combine ras",
+        "pending until more verified testing metrics are available",
+        "production snapshot pending",
+        "summary pending",
+        "context pending",
+        "projection pending",
+        "concerns pending",
+        "role pending",
+        "no structured 2025 kiper production snapshot ingested yet",
     ]
     for raw in text.splitlines():
         line = str(raw or "").strip()
@@ -264,7 +273,10 @@ def _clean_public_snapshot(value: str) -> str:
         if any(token in lowered for token in banned_tokens):
             continue
         lines.append(line)
-    return "\n".join(lines)
+    cleaned = "\n".join(lines)
+    if not cleaned.strip():
+        return ""
+    return cleaned.strip()
 
 
 TEAM_NEEDS_POS_ORDER = ["QB", "RB", "WR", "TE", "OT", "IOL", "EDGE", "DT", "LB", "CB", "S"]
@@ -916,10 +928,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         combine_ras_official = round(_safe_float(row.get("combine_ras_official")) or 0.0, 2)
         ras_estimate = round(_safe_float(row.get("ras_estimate")) or 0.0, 2)
         production_snapshot = _clean_public_snapshot(row.get("scouting_production_snapshot", "") or "")
-        low_evidence_flag = (
-            ("pending structured" in production_snapshot.lower())
-            or (pff_grade <= 0 and combine_ras_official <= 0 and ras_estimate <= 0)
-        )
+        low_evidence_flag = pff_grade <= 0 and combine_ras_official <= 0 and ras_estimate <= 0
         production_metrics: dict[str, float] = {}
         production_percentiles: dict[str, float] = {}
         for key in PRODUCTION_METRIC_KEYS:
