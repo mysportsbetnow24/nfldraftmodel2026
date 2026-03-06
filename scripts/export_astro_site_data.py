@@ -37,6 +37,7 @@ NFLVERSE_CONTRACTS = NFLVERSE_DIR / "contracts.parquet"
 NFLVERSE_PLAYERS = NFLVERSE_DIR / "players.parquet"
 HISTORICAL_DRAFT_COMPILATION = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "notebook" / "compilations" / "drafts2015To2022.csv"
 HISTORICAL_DRAFT_REFINED = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "old-data" / "pfr-compilations" / "2014To2018Drafts-refined.csv"
+HISTORICAL_LABELS_LEAGIFY = ROOT / "data" / "processed" / "historical_labels_leagify_2015_2023.csv"
 
 
 PRODUCTION_METRIC_KEYS = [
@@ -214,6 +215,10 @@ def _safe_int(value, default: int = 0) -> int:
     if val is None:
         return default
     return int(round(val))
+
+
+def _clamp(value: float, lo: float, hi: float) -> float:
+    return max(lo, min(hi, value))
 
 
 def _is_truthy(value: str) -> bool:
@@ -1485,71 +1490,127 @@ def _historical_position_family(raw_pos: str) -> str:
     return "OTHER"
 
 
+def _comp_outcome_window(position: str) -> tuple[int, float]:
+    family = _historical_position_family(position)
+    if family == "QB":
+        return (30, 20.0)
+    if family == "SKILL":
+        return (24, 16.0)
+    if family == "OL":
+        return (20, 14.0)
+    if family in {"DL", "LB", "DB"}:
+        return (18, 12.0)
+    return (15, 12.0)
+
+
 def _position_aware_outcome_score(position_family: str, row: dict) -> float:
     drav = _safe_float(row.get("DrAV") or row.get("career_value"))
     wav = _safe_float(row.get("wAV") or row.get("CarAV"))
     value_per_year = _safe_float(row.get("ValuePerYear"))
-    starter_seasons = _safe_float(row.get("St"))
+    starter_seasons = _safe_float(row.get("starter_seasons_proxy") or row.get("starter_seasons") or row.get("St"))
     pro_bowls = _safe_float(row.get("PB"))
     all_pros = _safe_float(row.get("AP1"))
     games = _safe_float(row.get("G"))
+    starts = _safe_float(row.get("starts") or row.get("Starts"))
     pass_yds = _safe_float(row.get("PassYds"))
     pass_td = _safe_float(row.get("PassTD"))
+    second_contract = _safe_float(row.get("second_contract_proxy") or row.get("second_contract"))
+    success_label = _safe_float(row.get("success_label_3yr") or row.get("success_label"))
+    ceiling_label = _safe_float(row.get("ceiling_label"))
 
     score = 0.0
     if position_family == "QB":
         if starter_seasons is not None:
-            score += min(float(starter_seasons), 10.0) / 10.0 * 26.0
+            score += min(float(starter_seasons), 10.0) / 10.0 * 20.0
+        if second_contract is not None:
+            score += _clamp(float(second_contract), 0.0, 1.0) * 14.0
         if value_per_year is not None:
-            score += min(float(value_per_year), 12.0) / 12.0 * 18.0
+            score += min(float(value_per_year), 12.0) / 12.0 * 14.0
         if drav is not None:
-            score += min(float(drav), 70.0) / 70.0 * 18.0
+            score += min(float(drav), 70.0) / 70.0 * 10.0
         elif wav is not None:
-            score += min(float(wav), 90.0) / 90.0 * 15.0
+            score += min(float(wav), 90.0) / 90.0 * 10.0
         if pass_yds is not None:
-            score += min(float(pass_yds), 45000.0) / 45000.0 * 10.0
+            score += min(float(pass_yds), 45000.0) / 45000.0 * 8.0
         if pass_td is not None:
-            score += min(float(pass_td), 320.0) / 320.0 * 10.0
+            score += min(float(pass_td), 320.0) / 320.0 * 8.0
         if pro_bowls is not None:
             score += min(float(pro_bowls), 8.0) / 8.0 * 10.0
         if all_pros is not None:
-            score += min(float(all_pros), 4.0) / 4.0 * 8.0
+            score += min(float(all_pros), 4.0) / 4.0 * 12.0
+        if success_label is not None:
+            score += _clamp(float(success_label), 0.0, 1.0) * 8.0
+        if ceiling_label is not None:
+            score += _clamp(float(ceiling_label), 0.0, 1.0) * 8.0
         if games is not None:
             score += min(float(games), 180.0) / 180.0 * 4.0
         return score
 
     if position_family == "SKILL":
+        if second_contract is not None:
+            score += _clamp(float(second_contract), 0.0, 1.0) * 16.0
         if value_per_year is not None:
-            score += min(float(value_per_year), 12.0) / 12.0 * 26.0
+            score += min(float(value_per_year), 12.0) / 12.0 * 22.0
         if drav is not None:
-            score += min(float(drav), 70.0) / 70.0 * 24.0
+            score += min(float(drav), 70.0) / 70.0 * 18.0
         elif wav is not None:
-            score += min(float(wav), 90.0) / 90.0 * 20.0
+            score += min(float(wav), 90.0) / 90.0 * 16.0
         if games is not None:
-            score += min(float(games), 180.0) / 180.0 * 14.0
+            score += min(float(games), 180.0) / 180.0 * 10.0
         if starter_seasons is not None:
             score += min(float(starter_seasons), 8.0) / 8.0 * 10.0
         if pro_bowls is not None:
             score += min(float(pro_bowls), 8.0) / 8.0 * 10.0
         if all_pros is not None:
-            score += min(float(all_pros), 4.0) / 4.0 * 8.0
+            score += min(float(all_pros), 4.0) / 4.0 * 10.0
+        if success_label is not None:
+            score += _clamp(float(success_label), 0.0, 1.0) * 8.0
+        if ceiling_label is not None:
+            score += _clamp(float(ceiling_label), 0.0, 1.0) * 6.0
         return score
 
-    if position_family in {"OL", "DL", "LB", "DB"}:
-        if drav is not None:
-            score += min(float(drav), 70.0) / 70.0 * 34.0
-        elif wav is not None:
-            score += min(float(wav), 90.0) / 90.0 * 28.0
+    if position_family == "OL":
         if starter_seasons is not None:
             score += min(float(starter_seasons), 10.0) / 10.0 * 22.0
+        if starts is not None:
+            score += min(float(starts), 120.0) / 120.0 * 16.0
+        if second_contract is not None:
+            score += _clamp(float(second_contract), 0.0, 1.0) * 16.0
+        if drav is not None:
+            score += min(float(drav), 70.0) / 70.0 * 12.0
+        elif wav is not None:
+            score += min(float(wav), 90.0) / 90.0 * 10.0
         if pro_bowls is not None:
-            score += min(float(pro_bowls), 8.0) / 8.0 * 14.0
+            score += min(float(pro_bowls), 8.0) / 8.0 * 10.0
         if all_pros is not None:
-            score += min(float(all_pros), 4.0) / 4.0 * 14.0
+            score += min(float(all_pros), 4.0) / 4.0 * 10.0
+        if success_label is not None:
+            score += _clamp(float(success_label), 0.0, 1.0) * 8.0
+        if ceiling_label is not None:
+            score += _clamp(float(ceiling_label), 0.0, 1.0) * 6.0
+        return score
+
+    if position_family in {"DL", "LB", "DB"}:
+        if drav is not None:
+            score += min(float(drav), 70.0) / 70.0 * 24.0
+        elif wav is not None:
+            score += min(float(wav), 90.0) / 90.0 * 18.0
+        if starter_seasons is not None:
+            score += min(float(starter_seasons), 10.0) / 10.0 * 18.0
+        if second_contract is not None:
+            score += _clamp(float(second_contract), 0.0, 1.0) * 14.0
+        if pro_bowls is not None:
+            score += min(float(pro_bowls), 8.0) / 8.0 * 12.0
+        if all_pros is not None:
+            score += min(float(all_pros), 4.0) / 4.0 * 12.0
         if games is not None:
-            score += min(float(games), 180.0) / 180.0 * 10.0
+            score += min(float(games), 180.0) / 180.0 * 8.0
         if value_per_year is not None:
             score += min(float(value_per_year), 12.0) / 12.0 * 6.0
+        if success_label is not None:
+            score += _clamp(float(success_label), 0.0, 1.0) * 10.0
+        if ceiling_label is not None:
+            score += _clamp(float(ceiling_label), 0.0, 1.0) * 10.0
         return score
 
     if drav is not None:
@@ -1570,7 +1631,7 @@ def _position_aware_outcome_score(position_family: str, row: dict) -> float:
 
 
 def _load_historical_comp_outcomes() -> dict[tuple[str, int], dict]:
-    sources = [HISTORICAL_DRAFT_COMPILATION, HISTORICAL_DRAFT_REFINED]
+    sources = [HISTORICAL_DRAFT_COMPILATION, HISTORICAL_DRAFT_REFINED, HISTORICAL_LABELS_LEAGIFY]
     outcomes: dict[tuple[str, int], dict] = {}
     for path in sources:
         if not path.exists():
@@ -1579,35 +1640,51 @@ def _load_historical_comp_outcomes() -> dict[tuple[str, int], dict]:
             reader = csv.DictReader(f)
             for row in reader:
                 name = str(row.get("Player") or row.get("player_name") or "").strip()
-                year = _safe_int(row.get("DraftYear") or row.get("Year"), 0)
+                year = _safe_int(row.get("DraftYear") or row.get("draft_year") or row.get("Year"), 0)
                 if not name or year <= 0 or year >= CURRENT_DRAFT_YEAR:
                     continue
                 key = (_norm_comp_identity_key(name), year)
-                drav = _safe_float(row.get("DrAV") or row.get("career_value"))
-                wav = _safe_float(row.get("wAV") or row.get("CarAV"))
-                value_per_year = _safe_float(row.get("ValuePerYear"))
-                starter_seasons = _safe_float(row.get("St"))
-                pro_bowls = _safe_float(row.get("PB"))
-                all_pros = _safe_float(row.get("AP1"))
-                games = _safe_float(row.get("G"))
-                position_family = _historical_position_family(row.get("Pos") or row.get("position") or "")
-                outcome_score = _position_aware_outcome_score(position_family, row)
-                existing = outcomes.get(key)
-                payload = {
-                    "name": name,
-                    "year": year,
-                    "position_family": position_family,
-                    "drav": drav,
-                    "wav": wav,
-                    "value_per_year": value_per_year,
-                    "starter_seasons": starter_seasons,
-                    "pro_bowls": pro_bowls,
-                    "all_pros": all_pros,
-                    "games": games,
-                    "outcome_score": round(outcome_score, 3),
+                existing = outcomes.get(key, {"name": name, "year": year})
+                if len(name.split()) > len(str(existing.get("name", "")).split()):
+                    existing["name"] = name
+                raw_position = row.get("Pos") or row.get("position") or existing.get("position") or ""
+                existing["position"] = raw_position
+                existing["position_family"] = _historical_position_family(raw_position)
+
+                merge_fields = {
+                    "DrAV": row.get("DrAV") or row.get("drav") or row.get("career_value"),
+                    "wAV": row.get("wAV") or row.get("wav") or row.get("CarAV"),
+                    "ValuePerYear": row.get("ValuePerYear") or row.get("value_per_year"),
+                    "St": row.get("St") or row.get("starter_seasons") or row.get("starter_seasons_proxy"),
+                    "PB": row.get("PB") or row.get("pb"),
+                    "AP1": row.get("AP1") or row.get("ap1"),
+                    "G": row.get("G") or row.get("games"),
+                    "starts": row.get("starts"),
+                    "PassYds": row.get("PassYds"),
+                    "PassTD": row.get("PassTD"),
+                    "second_contract_proxy": row.get("second_contract_proxy") or row.get("second_contract"),
+                    "success_label_3yr": row.get("success_label_3yr") or row.get("success_label"),
+                    "ceiling_label": row.get("ceiling_label"),
                 }
-                if existing is None or float(payload["outcome_score"]) > float(existing.get("outcome_score", 0.0) or 0.0):
-                    outcomes[key] = payload
+                for field, raw in merge_fields.items():
+                    if raw not in ("", None):
+                        existing[field] = raw
+                outcomes[key] = existing
+
+    for key, payload in list(outcomes.items()):
+        position_family = str(payload.get("position_family") or "")
+        outcome_score = _position_aware_outcome_score(position_family, payload)
+        payload["drav"] = _safe_float(payload.get("DrAV") or payload.get("career_value"))
+        payload["wav"] = _safe_float(payload.get("wAV") or payload.get("CarAV"))
+        payload["value_per_year"] = _safe_float(payload.get("ValuePerYear"))
+        payload["starter_seasons"] = _safe_float(payload.get("starter_seasons_proxy") or payload.get("starter_seasons") or payload.get("St"))
+        payload["pro_bowls"] = _safe_float(payload.get("PB"))
+        payload["all_pros"] = _safe_float(payload.get("AP1"))
+        payload["games"] = _safe_float(payload.get("G"))
+        payload["second_contract"] = _safe_float(payload.get("second_contract_proxy") or payload.get("second_contract"))
+        payload["success_label"] = _safe_float(payload.get("success_label_3yr") or payload.get("success_label"))
+        payload["ceiling_label"] = _safe_float(payload.get("ceiling_label"))
+        payload["outcome_score"] = round(outcome_score, 3)
     return outcomes
 
 
@@ -1838,7 +1915,18 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             comp_items,
             key=lambda r: (r.get("similarity") is None, -(r.get("similarity") or 0.0)),
         )
-        outcome_pool = [item for item in comp_items[:10] if item.get("outcome_score") is not None]
+        top_n, sim_delta = _comp_outcome_window(pos)
+        top_similarity_band = comp_items[:top_n]
+        if top_similarity_band:
+            best_sim = float(top_similarity_band[0].get("similarity") or 0.0)
+            outcome_pool = [
+                item for item in top_similarity_band
+                if item.get("outcome_score") is not None and float(item.get("similarity") or 0.0) >= max(65.0, best_sim - sim_delta)
+            ]
+            if len(outcome_pool) < 3:
+                outcome_pool = [item for item in top_similarity_band if item.get("outcome_score") is not None]
+        else:
+            outcome_pool = []
         if len(outcome_pool) >= 3:
             outcome_sorted = sorted(
                 outcome_pool,

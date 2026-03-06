@@ -55,13 +55,13 @@
       "cfb_ol_proxy_signal": 54.5
     },
     "historical_comp_floor": {
-      "name": "Baron Browning",
-      "similarity": 80.624,
+      "name": "Jamin Davis",
+      "similarity": 81.113,
       "year": 2021
     },
     "historical_comp_median": {
-      "name": "Jamin Davis",
-      "similarity": 81.113,
+      "name": "Baron Browning",
+      "similarity": 80.624,
       "year": 2021
     },
     "historical_comp_ceiling": {
@@ -403,9 +403,9 @@
       "cfb_lb_signal": 100.0
     },
     "historical_comp_floor": {
-      "name": "Matt Patchan",
-      "similarity": 88.294,
-      "year": 2014
+      "name": "Paris Johnson Jr.",
+      "similarity": 90.052,
+      "year": 2023
     },
     "historical_comp_median": {
       "name": "Jake Fisher",
@@ -413,9 +413,9 @@
       "year": 2015
     },
     "historical_comp_ceiling": {
-      "name": "Will Campbell",
-      "similarity": 90.682,
-      "year": 2025
+      "name": "Trey Pipkins",
+      "similarity": 88.482,
+      "year": 2019
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Caleb Lomu (OT, Utah) carries a 93.81 model grade with a current Round 1 projection. Current board slot: 6. Primary NFL pathway: Starting tackle with pass-pro floor in zone power hybrid. instant starter profile; has playable pass-pro mechanics with growth runway. Seed rank 17 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -486,9 +486,9 @@
       "year": 2023
     },
     "historical_comp_median": {
-      "name": "Karaun White",
-      "similarity": 87.862,
-      "year": 2018
+      "name": "Quintez Cephus",
+      "similarity": 86.358,
+      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "Tyler Johnson",
@@ -1427,19 +1427,19 @@
       "cfb_ol_proxy_signal": 55.6
     },
     "historical_comp_floor": {
-      "name": "Rashad Holman",
-      "similarity": 89.319,
-      "year": 2001
-    },
-    "historical_comp_median": {
-      "name": "Quincy Riley",
-      "similarity": 89.403,
-      "year": 2025
-    },
-    "historical_comp_ceiling": {
       "name": "Jakorian Bennett",
       "similarity": 90.795,
       "year": 2023
+    },
+    "historical_comp_median": {
+      "name": "Zech McPhearson",
+      "similarity": 90.231,
+      "year": 2021
+    },
+    "historical_comp_ceiling": {
+      "name": "Ronald Darby",
+      "similarity": 89.366,
+      "year": 2015
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Brandon Cisse (CB, South Carolina Gamecocks) carries a 89.95 model grade with a current Round 1-2 projection. Current board slot: 19. Primary NFL pathway: Outside starter with matchup flexibility in press match. instant starter profile; matches routes with disciplined leverage. Seed rank 41 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -3279,14 +3279,14 @@
       "cfb_ol_proxy_signal": 92.0
     },
     "historical_comp_floor": {
-      "name": "Kemoko Turay",
-      "similarity": 92.073,
-      "year": 2018
-    },
-    "historical_comp_median": {
       "name": "Chase Young",
       "similarity": 89.676,
       "year": 2020
+    },
+    "historical_comp_median": {
+      "name": "Kemoko Turay",
+      "similarity": 92.073,
+      "year": 2018
     },
     "historical_comp_ceiling": {
       "name": "Danielle Hunter",
@@ -4526,14 +4526,14 @@
       "year": 2021
     },
     "historical_comp_median": {
-      "name": "Josiah Scott",
-      "similarity": 92.082,
-      "year": 2020
-    },
-    "historical_comp_ceiling": {
       "name": "Jason Verrett",
       "similarity": 89.77,
       "year": 2014
+    },
+    "historical_comp_ceiling": {
+      "name": "Josiah Scott",
+      "similarity": 92.082,
+      "year": 2020
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Chandler Rivers (CB, Duke) carries a 83.26 model grade with a current Round 3-4 projection. Current board slot: 59. Primary NFL pathway: Outside starter with matchup flexibility in press match. early contributor profile; matches routes with disciplined leverage. Seed rank 52 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -5495,9 +5495,9 @@
       "cfb_ol_proxy_signal": 92.6
     },
     "historical_comp_floor": {
-      "name": "Andrew Booth",
-      "similarity": 91.594,
-      "year": 2022
+      "name": "Carrington Valentine",
+      "similarity": 93.004,
+      "year": 2023
     },
     "historical_comp_median": {
       "name": "Kendall Sheffield",
@@ -5721,14 +5721,14 @@
     "production_metrics": {},
     "production_percentiles": {},
     "historical_comp_floor": {
-      "name": "Andre Dillard",
-      "similarity": 88.238,
-      "year": 2019
-    },
-    "historical_comp_median": {
       "name": "Ezra Cleveland",
       "similarity": 86.527,
       "year": 2020
+    },
+    "historical_comp_median": {
+      "name": "Andre Dillard",
+      "similarity": 88.238,
+      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Brandon Scherff",
@@ -5797,19 +5797,19 @@
       "cfb_ol_proxy_signal": 35.3
     },
     "historical_comp_floor": {
+      "name": "DeWayne McBride",
+      "similarity": 88.313,
+      "year": 2023
+    },
+    "historical_comp_median": {
       "name": "Kylin Hill",
       "similarity": 88.153,
       "year": 2021
     },
-    "historical_comp_median": {
+    "historical_comp_ceiling": {
       "name": "Javonte Williams",
       "similarity": 88.426,
       "year": 2021
-    },
-    "historical_comp_ceiling": {
-      "name": "Keith Smith",
-      "similarity": 91.81,
-      "year": 2000
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Jadarian Price (RB, Notre Dame Fighting Irish) carries a 81.50 model grade with a current Round 3-4 projection. Current board slot: 76. Primary NFL pathway: Primary committee back with passing-down utility in Wide-zone committee. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 66 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -6757,19 +6757,19 @@
       "cfb_ol_proxy_signal": 88.2
     },
     "historical_comp_floor": {
-      "name": "Nyheim Hines",
-      "similarity": 87.364,
-      "year": 2018
-    },
-    "historical_comp_median": {
-      "name": "LaMichael James",
-      "similarity": 89.62,
-      "year": 2012
-    },
-    "historical_comp_ceiling": {
       "name": "Devon Achane",
       "similarity": 90.71,
       "year": 2023
+    },
+    "historical_comp_median": {
+      "name": "T.J. Logan",
+      "similarity": 90.155,
+      "year": 2017
+    },
+    "historical_comp_ceiling": {
+      "name": "Nyheim Hines",
+      "similarity": 87.364,
+      "year": 2018
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Demond Claiborne (RB, Wake Forest) carries a 80.46 model grade with a current Round 3-4 projection. Current board slot: 89. Primary NFL pathway: Primary committee back with passing-down utility in Wide-zone committee. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 67 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -7959,9 +7959,9 @@
       "cfb_ol_proxy_signal": 40.9
     },
     "historical_comp_floor": {
-      "name": "Stephen Sullivan",
-      "similarity": 88.116,
-      "year": 2020
+      "name": "Luke Musgrave",
+      "similarity": 86.63,
+      "year": 2023
     },
     "historical_comp_median": {
       "name": "Isaiah Likely",
@@ -10713,9 +10713,9 @@
       "cfb_ol_proxy_signal": 50.0
     },
     "historical_comp_floor": {
-      "name": "Joe Reed",
-      "similarity": 82.814,
-      "year": 2020
+      "name": "Anthony Richardson",
+      "similarity": 81.987,
+      "year": 2023
     },
     "historical_comp_median": {
       "name": "Justin Fields",
@@ -11280,9 +11280,9 @@
       "year": 2020
     },
     "historical_comp_median": {
-      "name": "Forrest Lamp",
-      "similarity": 91.077,
-      "year": 2017
+      "name": "Tyler Biadasz",
+      "similarity": 90.362,
+      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "Elgton Jenkins",
@@ -14100,14 +14100,14 @@
       "year": 2014
     },
     "historical_comp_median": {
-      "name": "Kevin King",
-      "similarity": 89.92,
-      "year": 2017
-    },
-    "historical_comp_ceiling": {
       "name": "Sauce Gardner",
       "similarity": 87.749,
       "year": 2022
+    },
+    "historical_comp_ceiling": {
+      "name": "Ahkello Witherspoon",
+      "similarity": 88.557,
+      "year": 2017
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Ephesians Prysock (CB, Washington Huskies) carries a 74.40 model grade with a current Round 5-6 projection. Current board slot: 186. Primary NFL pathway: Outside starter with matchup flexibility in press match. developmental contributor profile; matches routes with disciplined leverage. Seed rank 207 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -15205,18 +15205,18 @@
       "cfb_ol_proxy_signal": 55.6
     },
     "historical_comp_floor": {
-      "name": "Kadar Hollman",
-      "similarity": 90.55,
-      "year": 2019
-    },
-    "historical_comp_median": {
       "name": "Derion Kendrick",
       "similarity": 92.938,
       "year": 2022
     },
-    "historical_comp_ceiling": {
+    "historical_comp_median": {
       "name": "Kendall Sheffield",
       "similarity": 90.381,
+      "year": 2019
+    },
+    "historical_comp_ceiling": {
+      "name": "Kadar Hollman",
+      "similarity": 90.55,
       "year": 2019
     },
     "comp_confidence": "C",
@@ -16358,14 +16358,14 @@
       "year": 2019
     },
     "historical_comp_median": {
-      "name": "Deandre Washington",
-      "similarity": 93.474,
-      "year": 2016
-    },
-    "historical_comp_ceiling": {
       "name": "James White",
       "similarity": 89.62,
       "year": 2014
+    },
+    "historical_comp_ceiling": {
+      "name": "Deandre Washington",
+      "similarity": 93.474,
+      "year": 2016
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Noah Whittington (RB, Oregon Ducks) carries a 71.95 model grade with a current Round 6-7 projection. Current board slot: 216. Primary NFL pathway: Primary committee back with passing-down utility in Wide-zone committee. developmental contributor profile; creates hidden yards and stays on schedule. Seed rank 267 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -17493,19 +17493,19 @@
       "cfb_ol_proxy_signal": 81.8
     },
     "historical_comp_floor": {
-      "name": "Jack Westover",
-      "similarity": 83.81,
-      "year": 2024
+      "name": "Brayden Willis",
+      "similarity": 86.189,
+      "year": 2023
     },
     "historical_comp_median": {
+      "name": "Will Mallory",
+      "similarity": 84.938,
+      "year": 2023
+    },
+    "historical_comp_ceiling": {
       "name": "Grant Calcaterra",
       "similarity": 85.728,
       "year": 2022
-    },
-    "historical_comp_ceiling": {
-      "name": "Trey Knox",
-      "similarity": 87.345,
-      "year": 2024
     },
     "comp_confidence": "C",
     "scouting_report_summary": "RJ Maryland (TE, SMU) carries a 69.91 model grade with a current Round 6-7 projection. Current board slot: 231. Primary NFL pathway: In-line + move mismatch in multiple attach detach. developmental contributor profile; projects as a mismatch in multiple alignments. Seed rank 295 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
@@ -17734,9 +17734,9 @@
       "year": 2017
     },
     "historical_comp_median": {
-      "name": "Donnie Lewis",
-      "similarity": 87.232,
-      "year": 2019
+      "name": "Brian Branch",
+      "similarity": 89.723,
+      "year": 2023
     },
     "historical_comp_ceiling": {
       "name": "Derek Stingley",
