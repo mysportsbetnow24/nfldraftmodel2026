@@ -1,6 +1,6 @@
 # Team Needs Context Build Report (NFLverse)
 
-- Built at: `2026-03-01T01:24:24.946339+00:00`
+- Built at: `2026-03-06T03:39:01.908152+00:00`
 - Output: `/Users/nickholz/nfldraftmodel2026/data/sources/team_needs_context_2026.csv`
 - Target year: `2026`
 - Teams: `32`
@@ -9,7 +9,7 @@
 ## Input Files
 
 - rosters: `/Users/nickholz/nfldraftmodel2026/data/sources/external/nflverse/rosters_weekly.parquet` (46579 rows)
-- contracts: `/Users/nickholz/nfldraftmodel2026/data/sources/external/nflverse/contracts.parquet` (50229 rows)
+- contracts: `/Users/nickholz/nfldraftmodel2026/data/sources/external/nflverse/contracts.parquet` (50300 rows)
 - players: `/Users/nickholz/nfldraftmodel2026/data/sources/external/nflverse/players.parquet` (24356 rows)
 - participation: `/Users/nickholz/nfldraftmodel2026/data/sources/external/nflverse/participation.parquet` (45919 rows)
 

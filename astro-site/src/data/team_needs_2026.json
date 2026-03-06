@@ -720,7 +720,7 @@
       },
       {
         "position": "TE",
-        "need_score": 0.555,
+        "need_score": 0.5551,
         "depth_chart_pressure": 0.133,
         "future_need_pressure_1y": 1.0,
         "future_need_pressure_2y": 0.512,
@@ -877,10 +877,10 @@
               "position": "TE",
               "depth_rank": 1,
               "designation": "All-Pro",
-              "contract_label": "1y | $15.2M APY",
+              "contract_label": "1y | $15.0M APY",
               "years_exp": 3,
               "age": 25,
-              "apy_m": 15.16
+              "apy_m": 15.04
             },
             {
               "player_name": "Charlie Woerner",
@@ -1030,24 +1030,24 @@
               "apy_m": 1.39
             },
             {
-              "player_name": "Brandon Dorlus",
+              "player_name": "Ta'Quon Graham",
               "position": "EDGE",
               "depth_rank": 3,
+              "designation": "Backup",
+              "contract_label": "1y | $1.3M APY",
+              "years_exp": 3,
+              "age": 27,
+              "apy_m": 1.26
+            },
+            {
+              "player_name": "Brandon Dorlus",
+              "position": "EDGE",
+              "depth_rank": 4,
               "designation": "Prospect",
               "contract_label": "4y | $1.2M APY",
               "years_exp": 0,
               "age": 24,
               "apy_m": 1.21
-            },
-            {
-              "player_name": "Khalid Kareem",
-              "position": "EDGE",
-              "depth_rank": 4,
-              "designation": "Backup",
-              "contract_label": "1y | $1.2M APY",
-              "years_exp": 4,
-              "age": 27,
-              "apy_m": 1.17
             }
           ]
         },
@@ -1550,24 +1550,24 @@
               "apy_m": 3.51
             },
             {
-              "player_name": "Tylan Wallace",
-              "position": "WR",
-              "depth_rank": 3,
-              "designation": "In His Prime Star",
-              "contract_label": "1y | $2.1M APY",
-              "years_exp": 3,
-              "age": 26,
-              "apy_m": 2.1
-            },
-            {
               "player_name": "Devontez Walker",
               "position": "WR",
-              "depth_rank": 4,
+              "depth_rank": 3,
               "designation": "Prospect",
               "contract_label": "4y | $1.2M APY",
               "years_exp": 0,
               "age": 24,
               "apy_m": 1.2
+            },
+            {
+              "player_name": "Malik Cunningham",
+              "position": "WR",
+              "depth_rank": 4,
+              "designation": "Prospect",
+              "contract_label": "1y | $1.0M APY",
+              "years_exp": 1,
+              "age": 27,
+              "apy_m": 1.0
             }
           ]
         },
@@ -1688,7 +1688,7 @@
               "player_name": "Tyler Linderbaum",
               "position": "IOL",
               "depth_rank": 3,
-              "designation": "In His Prime Star",
+              "designation": "Franchise Cornerstone",
               "contract_label": "4y | $3.3M APY",
               "years_exp": 2,
               "age": 25,
@@ -1951,7 +1951,7 @@
       {
         "player_name": "Nelson Agholor",
         "position": "WR",
-        "depth_rank": 8,
+        "depth_rank": 7,
         "designation": "FA",
         "contract_label": "FA",
         "years_exp": 9,
@@ -1961,7 +1961,7 @@
       {
         "player_name": "Anthony Miller",
         "position": "WR",
-        "depth_rank": 9,
+        "depth_rank": 8,
         "designation": "FA",
         "contract_label": "FA",
         "years_exp": 6,
@@ -1971,7 +1971,7 @@
       {
         "player_name": "Keith Kirkwood",
         "position": "WR",
-        "depth_rank": 10,
+        "depth_rank": 9,
         "designation": "FA",
         "contract_label": "FA",
         "years_exp": 6,
@@ -1981,7 +1981,7 @@
       {
         "player_name": "Deonte Harty",
         "position": "WR",
-        "depth_rank": 11,
+        "depth_rank": 10,
         "designation": "FA",
         "contract_label": "FA",
         "years_exp": 5,
@@ -1991,11 +1991,21 @@
       {
         "player_name": "Steven Sims",
         "position": "WR",
-        "depth_rank": 12,
+        "depth_rank": 11,
         "designation": "FA",
         "contract_label": "FA",
         "years_exp": 5,
         "age": 28,
+        "apy_m": ""
+      },
+      {
+        "player_name": "Tylan Wallace",
+        "position": "WR",
+        "depth_rank": 12,
+        "designation": "FA",
+        "contract_label": "FA",
+        "years_exp": 3,
+        "age": 26,
         "apy_m": ""
       },
       {
@@ -2007,29 +2017,9 @@
         "years_exp": 4,
         "age": 29,
         "apy_m": ""
-      },
-      {
-        "player_name": "Darrian Dalcourt",
-        "position": "IOL",
-        "depth_rank": 8,
-        "designation": "FA",
-        "contract_label": "FA",
-        "years_exp": 0,
-        "age": 25,
-        "apy_m": ""
       }
     ],
     "young_players_on_rise": [
-      {
-        "player_name": "Tyler Linderbaum",
-        "position": "IOL",
-        "depth_rank": 3,
-        "designation": "In His Prime Star",
-        "contract_label": "4y | $3.3M APY",
-        "years_exp": 2,
-        "age": 25,
-        "apy_m": 3.31
-      },
       {
         "player_name": "David Ojabo",
         "position": "LB",
@@ -2093,12 +2083,22 @@
       {
         "player_name": "Devontez Walker",
         "position": "WR",
-        "depth_rank": 4,
+        "depth_rank": 3,
         "designation": "Prospect",
         "contract_label": "4y | $1.2M APY",
         "years_exp": 0,
         "age": 24,
         "apy_m": 1.2
+      },
+      {
+        "player_name": "T.J. Tampa",
+        "position": "CB",
+        "depth_rank": 5,
+        "designation": "Prospect",
+        "contract_label": "4y | $1.2M APY",
+        "years_exp": 0,
+        "age": 23,
+        "apy_m": 1.18
       }
     ],
     "recent_transactions": []
@@ -2124,10 +2124,10 @@
       },
       {
         "position": "S",
-        "need_score": 0.4801,
+        "need_score": 0.3693,
         "depth_chart_pressure": 0.022,
-        "future_need_pressure_1y": 0.81,
-        "future_need_pressure_2y": 0.689,
+        "future_need_pressure_1y": 0.579,
+        "future_need_pressure_2y": 0.623,
         "starter_quality": 0.955
       }
     ],
@@ -3314,9 +3314,19 @@
           "position": "S",
           "players": [
             {
-              "player_name": "Lonnie Johnson",
+              "player_name": "Sam Franklin Jr.",
               "position": "S",
               "depth_rank": 1,
+              "designation": "Franchise Cornerstone",
+              "contract_label": "3y | $2.3M APY",
+              "years_exp": 4,
+              "age": 30,
+              "apy_m": 2.33
+            },
+            {
+              "player_name": "Lonnie Johnson",
+              "position": "S",
+              "depth_rank": 2,
               "designation": "In His Prime Star",
               "contract_label": "1y | $1.7M APY",
               "years_exp": 5,
@@ -3326,22 +3336,12 @@
             {
               "player_name": "Nick Scott",
               "position": "S",
-              "depth_rank": 2,
+              "depth_rank": 3,
               "designation": "In His Prime Star",
               "contract_label": "1y | $1.3M APY",
               "years_exp": 5,
               "age": 30,
               "apy_m": 1.34
-            },
-            {
-              "player_name": "Sam Franklin Jr.",
-              "position": "S",
-              "depth_rank": 3,
-              "designation": "Backup",
-              "contract_label": "1y | $1.2M APY",
-              "years_exp": 4,
-              "age": 30,
-              "apy_m": 1.17
             },
             {
               "player_name": "Demani Richardson",
@@ -4277,10 +4277,10 @@
       },
       {
         "position": "IOL",
-        "need_score": 0.5726,
+        "need_score": 0.5523,
         "depth_chart_pressure": 0.07,
-        "future_need_pressure_1y": 0.907,
-        "future_need_pressure_2y": 0.779,
+        "future_need_pressure_1y": 0.916,
+        "future_need_pressure_2y": 0.712,
         "starter_quality": 0.886
       },
       {
@@ -4996,26 +4996,26 @@
         "starter_quality": 0.907
       },
       {
-        "position": "TE",
-        "need_score": 0.6283,
-        "depth_chart_pressure": 0.05,
-        "future_need_pressure_1y": 0.94,
-        "future_need_pressure_2y": 0.922,
-        "starter_quality": 0.891
+        "position": "IOL",
+        "need_score": 0.623,
+        "depth_chart_pressure": 0.034,
+        "future_need_pressure_1y": 0.966,
+        "future_need_pressure_2y": 0.91,
+        "starter_quality": 0.943
       },
       {
-        "position": "IOL",
-        "need_score": 0.6148,
-        "depth_chart_pressure": 0.034,
-        "future_need_pressure_1y": 0.953,
-        "future_need_pressure_2y": 0.9,
-        "starter_quality": 0.943
+        "position": "TE",
+        "need_score": 0.6173,
+        "depth_chart_pressure": 0.05,
+        "future_need_pressure_1y": 0.94,
+        "future_need_pressure_2y": 0.891,
+        "starter_quality": 0.891
       }
     ],
     "weakness_positions": [
       "S",
-      "TE",
-      "IOL"
+      "IOL",
+      "TE"
     ],
     "depth_chart": {
       "offense": [
@@ -5147,10 +5147,10 @@
               "position": "WR",
               "depth_rank": 4,
               "designation": "Prospect",
-              "contract_label": "1y | $1.0M APY",
+              "contract_label": "1y | $1.1M APY",
               "years_exp": 0,
               "age": 25,
-              "apy_m": 0.96
+              "apy_m": 1.07
             }
           ]
         },
@@ -5168,24 +5168,24 @@
               "apy_m": 13.69
             },
             {
-              "player_name": "Blake Whiteheart",
+              "player_name": "Brenden Bates",
               "position": "TE",
               "depth_rank": 2,
+              "designation": "Prospect",
+              "contract_label": "1y | $1.1M APY",
+              "years_exp": 0,
+              "age": 26,
+              "apy_m": 1.07
+            },
+            {
+              "player_name": "Blake Whiteheart",
+              "position": "TE",
+              "depth_rank": 3,
               "designation": "Prospect",
               "contract_label": "1y | $1.0M APY",
               "years_exp": 1,
               "age": 25,
               "apy_m": 1.03
-            },
-            {
-              "player_name": "Brenden Bates",
-              "position": "TE",
-              "depth_rank": 3,
-              "designation": "Prospect",
-              "contract_label": "1y | $1.0M APY",
-              "years_exp": 0,
-              "age": 26,
-              "apy_m": 0.96
             },
             {
               "player_name": "Cameron Latu",
@@ -5415,14 +5415,14 @@
               "apy_m": 1.1
             },
             {
-              "player_name": "Nathaniel Watson",
+              "player_name": "Winston Reid",
               "position": "LB",
               "depth_rank": 4,
               "designation": "Prospect",
-              "contract_label": "4y | $1.0M APY",
+              "contract_label": "1y | $1.1M APY",
               "years_exp": 0,
-              "age": 25,
-              "apy_m": 1.0
+              "age": 26,
+              "apy_m": 1.07
             }
           ]
         },
@@ -5735,9 +5735,9 @@
       },
       {
         "position": "WR",
-        "need_score": 0.2649,
+        "need_score": 0.2604,
         "depth_chart_pressure": 0.017,
-        "future_need_pressure_1y": 0.464,
+        "future_need_pressure_1y": 0.452,
         "future_need_pressure_2y": 0.46,
         "starter_quality": 0.968
       }
@@ -7145,18 +7145,18 @@
         "starter_quality": 0.769
       },
       {
-        "position": "IOL",
-        "need_score": 0.4163,
-        "depth_chart_pressure": 0.02,
-        "future_need_pressure_1y": 0.84,
-        "future_need_pressure_2y": 0.449,
-        "starter_quality": 0.959
+        "position": "CB",
+        "need_score": 0.3992,
+        "depth_chart_pressure": 0.072,
+        "future_need_pressure_1y": 0.601,
+        "future_need_pressure_2y": 0.605,
+        "starter_quality": 0.848
       }
     ],
     "weakness_positions": [
       "TE",
       "RB",
-      "IOL"
+      "CB"
     ],
     "depth_chart": {
       "offense": [
@@ -7399,19 +7399,9 @@
               "apy_m": 9.0
             },
             {
-              "player_name": "Graham Glasgow",
-              "position": "IOL",
-              "depth_rank": 2,
-              "designation": "Franchise Cornerstone",
-              "contract_label": "3y | $6.7M APY",
-              "years_exp": 8,
-              "age": 33,
-              "apy_m": 6.67
-            },
-            {
               "player_name": "Kayode Awosika",
               "position": "IOL",
-              "depth_rank": 3,
+              "depth_rank": 2,
               "designation": "In His Prime Star",
               "contract_label": "1y | $1.4M APY",
               "years_exp": 3,
@@ -7421,12 +7411,22 @@
             {
               "player_name": "Jamarco Jones",
               "position": "IOL",
-              "depth_rank": 4,
-              "designation": "Backup",
+              "depth_rank": 3,
+              "designation": "Starter",
               "contract_label": "1y | $1.1M APY",
               "years_exp": 6,
               "age": 29,
               "apy_m": 1.1
+            },
+            {
+              "player_name": "Christian Mahogany",
+              "position": "IOL",
+              "depth_rank": 4,
+              "designation": "Prospect",
+              "contract_label": "4y | $1.0M APY",
+              "years_exp": 0,
+              "age": 25,
+              "apy_m": 1.04
             }
           ]
         }
@@ -7733,13 +7733,13 @@
         "apy_m": ""
       },
       {
-        "player_name": "Frank Ragnow",
+        "player_name": "Graham Glasgow",
         "position": "IOL",
-        "depth_rank": 7,
+        "depth_rank": 6,
         "designation": "FA",
         "contract_label": "FA",
-        "years_exp": 6,
-        "age": 29,
+        "years_exp": 8,
+        "age": 33,
         "apy_m": ""
       }
     ],
@@ -8568,18 +8568,18 @@
         "starter_quality": 0.866
       },
       {
-        "position": "S",
-        "need_score": 0.5389,
-        "depth_chart_pressure": 0.028,
-        "future_need_pressure_1y": 0.844,
-        "future_need_pressure_2y": 0.809,
-        "starter_quality": 0.942
+        "position": "TE",
+        "need_score": 0.5386,
+        "depth_chart_pressure": 0.12,
+        "future_need_pressure_1y": 0.954,
+        "future_need_pressure_2y": 0.544,
+        "starter_quality": 0.751
       }
     ],
     "weakness_positions": [
       "OT",
       "RB",
-      "S"
+      "TE"
     ],
     "depth_chart": {
       "offense": [
@@ -9059,24 +9059,24 @@
               "apy_m": 6.5
             },
             {
-              "player_name": "Jimmie Ward",
-              "position": "S",
-              "depth_rank": 3,
-              "designation": "Franchise Cornerstone",
-              "contract_label": "1y | $4.5M APY",
-              "years_exp": 10,
-              "age": 34,
-              "apy_m": 4.5
-            },
-            {
               "player_name": "M.J. Stewart",
               "position": "S",
-              "depth_rank": 4,
+              "depth_rank": 3,
               "designation": "Franchise Cornerstone",
               "contract_label": "1y | $2.5M APY",
               "years_exp": 6,
               "age": 30,
               "apy_m": 2.5
+            },
+            {
+              "player_name": "Calen Bullock",
+              "position": "S",
+              "depth_rank": 4,
+              "designation": "Prospect",
+              "contract_label": "4y | $1.5M APY",
+              "years_exp": 0,
+              "age": 22,
+              "apy_m": 1.46
             }
           ]
         }
@@ -9772,11 +9772,11 @@
               "player_name": "Julian Blackmon",
               "position": "S",
               "depth_rank": 1,
-              "designation": "In His Prime Star",
-              "contract_label": "1y | $1.5M APY",
+              "designation": "Franchise Cornerstone",
+              "contract_label": "1y | $2.5M APY",
               "years_exp": 4,
               "age": 27,
-              "apy_m": 1.51
+              "apy_m": 2.54
             },
             {
               "player_name": "Nick Cross",
@@ -10840,19 +10840,9 @@
               "apy_m": 7.0
             },
             {
-              "player_name": "DeAndre Hopkins",
-              "position": "WR",
-              "depth_rank": 2,
-              "designation": "Franchise Cornerstone",
-              "contract_label": "1y | $5.0M APY",
-              "years_exp": 11,
-              "age": 33,
-              "apy_m": 5.0
-            },
-            {
               "player_name": "Xavier Worthy",
               "position": "WR",
-              "depth_rank": 3,
+              "depth_rank": 2,
               "designation": "Blue Chip Prospect",
               "contract_label": "4y | $3.4M APY",
               "years_exp": 0,
@@ -10862,12 +10852,22 @@
             {
               "player_name": "Justin Watson",
               "position": "WR",
-              "depth_rank": 4,
+              "depth_rank": 3,
               "designation": "Franchise Cornerstone",
               "contract_label": "2y | $2.5M APY",
               "years_exp": 6,
               "age": 29,
               "apy_m": 2.5
+            },
+            {
+              "player_name": "Rashee Rice",
+              "position": "WR",
+              "depth_rank": 4,
+              "designation": "Prospect",
+              "contract_label": "4y | $1.6M APY",
+              "years_exp": 1,
+              "age": 25,
+              "apy_m": 1.62
             }
           ]
         },
@@ -10920,19 +10920,9 @@
           "position": "OT",
           "players": [
             {
-              "player_name": "Jawaan Taylor",
-              "position": "OT",
-              "depth_rank": 1,
-              "designation": "All-Pro",
-              "contract_label": "4y | $20.0M APY",
-              "years_exp": 5,
-              "age": 28,
-              "apy_m": 20.0
-            },
-            {
               "player_name": "D.J. Humphries",
               "position": "OT",
-              "depth_rank": 2,
+              "depth_rank": 1,
               "designation": "In His Prime Star",
               "contract_label": "1y | $2.5M APY",
               "years_exp": 9,
@@ -10942,7 +10932,7 @@
             {
               "player_name": "Kingsley Suamataia",
               "position": "OT",
-              "depth_rank": 3,
+              "depth_rank": 2,
               "designation": "Prospect",
               "contract_label": "4y | $1.6M APY",
               "years_exp": 0,
@@ -10952,12 +10942,22 @@
             {
               "player_name": "Wanya Morris",
               "position": "OT",
-              "depth_rank": 4,
+              "depth_rank": 3,
               "designation": "Prospect",
               "contract_label": "4y | $1.3M APY",
               "years_exp": 1,
               "age": 25,
               "apy_m": 1.34
+            },
+            {
+              "player_name": "Ethan Driskell",
+              "position": "OT",
+              "depth_rank": 4,
+              "designation": "Prospect",
+              "contract_label": "3y | $1.0M APY",
+              "years_exp": 0,
+              "age": 25,
+              "apy_m": 0.96
             }
           ]
         },
@@ -11239,6 +11239,16 @@
     },
     "free_agents": [
       {
+        "player_name": "DeAndre Hopkins",
+        "position": "WR",
+        "depth_rank": 10,
+        "designation": "FA",
+        "contract_label": "FA",
+        "years_exp": 11,
+        "age": 33,
+        "apy_m": ""
+      },
+      {
         "player_name": "Justyn Ross",
         "position": "WR",
         "depth_rank": 11,
@@ -11279,6 +11289,16 @@
         "apy_m": ""
       },
       {
+        "player_name": "Jawaan Taylor",
+        "position": "OT",
+        "depth_rank": 6,
+        "designation": "FA",
+        "contract_label": "FA",
+        "years_exp": 5,
+        "age": 28,
+        "apy_m": ""
+      },
+      {
         "player_name": "McKade Mettauer",
         "position": "IOL",
         "depth_rank": 7,
@@ -11296,26 +11316,6 @@
         "contract_label": "FA",
         "years_exp": 4,
         "age": 28,
-        "apy_m": ""
-      },
-      {
-        "player_name": "Malik Herring",
-        "position": "EDGE",
-        "depth_rank": 5,
-        "designation": "FA",
-        "contract_label": "FA",
-        "years_exp": 3,
-        "age": 28,
-        "apy_m": ""
-      },
-      {
-        "player_name": "BJ Thompson",
-        "position": "EDGE",
-        "depth_rank": 6,
-        "designation": "FA",
-        "contract_label": "FA",
-        "years_exp": 1,
-        "age": 26,
         "apy_m": ""
       }
     ],
@@ -11343,7 +11343,7 @@
       {
         "player_name": "Skyy Moore",
         "position": "WR",
-        "depth_rank": 6,
+        "depth_rank": 5,
         "designation": "In His Prime Star",
         "contract_label": "4y | $1.6M APY",
         "years_exp": 2,
@@ -11373,7 +11373,7 @@
       {
         "player_name": "Xavier Worthy",
         "position": "WR",
-        "depth_rank": 3,
+        "depth_rank": 2,
         "designation": "Blue Chip Prospect",
         "contract_label": "4y | $3.4M APY",
         "years_exp": 0,
@@ -11393,7 +11393,7 @@
       {
         "player_name": "Rashee Rice",
         "position": "WR",
-        "depth_rank": 5,
+        "depth_rank": 4,
         "designation": "Prospect",
         "contract_label": "4y | $1.6M APY",
         "years_exp": 1,
@@ -11435,6 +11435,14 @@
     "team": "LAC",
     "top_needs": [
       {
+        "position": "IOL",
+        "need_score": 0.6669,
+        "depth_chart_pressure": 0.113,
+        "future_need_pressure_1y": 1.0,
+        "future_need_pressure_2y": 0.86,
+        "starter_quality": 0.732
+      },
+      {
         "position": "RB",
         "need_score": 0.594,
         "depth_chart_pressure": 0.196,
@@ -11443,25 +11451,17 @@
         "starter_quality": 0.682
       },
       {
-        "position": "IOL",
-        "need_score": 0.5876,
-        "depth_chart_pressure": 0.113,
-        "future_need_pressure_1y": 1.0,
-        "future_need_pressure_2y": 0.635,
-        "starter_quality": 0.732
-      },
-      {
         "position": "TE",
-        "need_score": 0.5339,
+        "need_score": 0.5686,
         "depth_chart_pressure": 0.055,
-        "future_need_pressure_1y": 0.931,
-        "future_need_pressure_2y": 0.654,
+        "future_need_pressure_1y": 0.88,
+        "future_need_pressure_2y": 0.809,
         "starter_quality": 0.875
       }
     ],
     "weakness_positions": [
-      "RB",
       "IOL",
+      "RB",
       "TE"
     ],
     "depth_chart": {
@@ -11595,19 +11595,9 @@
           "position": "TE",
           "players": [
             {
-              "player_name": "Will Dissly",
-              "position": "TE",
-              "depth_rank": 1,
-              "designation": "Franchise Cornerstone",
-              "contract_label": "3y | $4.7M APY",
-              "years_exp": 6,
-              "age": 29,
-              "apy_m": 4.67
-            },
-            {
               "player_name": "Stone Smartt",
               "position": "TE",
-              "depth_rank": 2,
+              "depth_rank": 1,
               "designation": "In His Prime Star",
               "contract_label": "1y | $1.4M APY",
               "years_exp": 2,
@@ -11617,7 +11607,7 @@
             {
               "player_name": "Tucker Fisk",
               "position": "TE",
-              "depth_rank": 3,
+              "depth_rank": 2,
               "designation": "Backup",
               "contract_label": "1y | $1.0M APY",
               "years_exp": 2,
@@ -11627,12 +11617,22 @@
             {
               "player_name": "McCallan Castles",
               "position": "TE",
-              "depth_rank": 4,
+              "depth_rank": 3,
               "designation": "Prospect",
               "contract_label": "1y | $0.9M APY",
               "years_exp": 0,
               "age": 26,
               "apy_m": 0.89
+            },
+            {
+              "player_name": "Eric Tomlinson",
+              "position": "TE",
+              "depth_rank": 4,
+              "designation": "FA",
+              "contract_label": "FA",
+              "years_exp": 9,
+              "age": 33,
+              "apy_m": ""
             }
           ]
         },
@@ -12031,7 +12031,7 @@
       {
         "player_name": "Eric Tomlinson",
         "position": "TE",
-        "depth_rank": 5,
+        "depth_rank": 4,
         "designation": "FA",
         "contract_label": "FA",
         "years_exp": 9,
@@ -12043,7 +12043,7 @@
       {
         "player_name": "Stone Smartt",
         "position": "TE",
-        "depth_rank": 2,
+        "depth_rank": 1,
         "designation": "In His Prime Star",
         "contract_label": "1y | $1.4M APY",
         "years_exp": 2,
@@ -12928,18 +12928,18 @@
       },
       {
         "position": "CB",
-        "need_score": 0.5862,
+        "need_score": 0.5765,
         "depth_chart_pressure": 0.024,
         "future_need_pressure_1y": 0.965,
-        "future_need_pressure_2y": 0.82,
+        "future_need_pressure_2y": 0.792,
         "starter_quality": 0.952
       },
       {
         "position": "IOL",
-        "need_score": 0.5631,
+        "need_score": 0.5339,
         "depth_chart_pressure": 0.11,
-        "future_need_pressure_1y": 0.953,
-        "future_need_pressure_2y": 0.634,
+        "future_need_pressure_1y": 0.944,
+        "future_need_pressure_2y": 0.562,
         "starter_quality": 0.787
       }
     ],
@@ -13092,7 +13092,7 @@
               "player_name": "Durham Smythe",
               "position": "TE",
               "depth_rank": 2,
-              "designation": "In His Prime Star",
+              "designation": "Franchise Cornerstone",
               "contract_label": "1y | $2.5M APY",
               "years_exp": 6,
               "age": 30,
@@ -13147,7 +13147,7 @@
               "player_name": "Kendall Lamm",
               "position": "OT",
               "depth_rank": 3,
-              "designation": "Older Mentor",
+              "designation": "In His Prime Star",
               "contract_label": "1y | $1.4M APY",
               "years_exp": 9,
               "age": 33,
@@ -13189,24 +13189,24 @@
               "apy_m": 3.75
             },
             {
-              "player_name": "Liam Eichenberg",
-              "position": "IOL",
-              "depth_rank": 3,
-              "designation": "In His Prime Star",
-              "contract_label": "1y | $2.2M APY",
-              "years_exp": 3,
-              "age": 28,
-              "apy_m": 2.23
-            },
-            {
               "player_name": "Kion Smith",
               "position": "IOL",
-              "depth_rank": 4,
-              "designation": "Backup",
+              "depth_rank": 3,
+              "designation": "Starter",
               "contract_label": "1y | $1.1M APY",
               "years_exp": 3,
               "age": 27,
               "apy_m": 1.15
+            },
+            {
+              "player_name": "Braeden Daniels",
+              "position": "IOL",
+              "depth_rank": 4,
+              "designation": "Prospect",
+              "contract_label": "2y | $1.0M APY",
+              "years_exp": 1,
+              "age": 25,
+              "apy_m": 0.97
             }
           ]
         }
@@ -13385,10 +13385,10 @@
               "position": "CB",
               "depth_rank": 4,
               "designation": "Prospect",
-              "contract_label": "2y | $1.0M APY",
+              "contract_label": "1y | $1.1M APY",
               "years_exp": 1,
               "age": 26,
-              "apy_m": 0.97
+              "apy_m": 1.15
             }
           ]
         },
@@ -13575,6 +13575,16 @@
         "apy_m": 1.2
       },
       {
+        "player_name": "Ethan Bonner",
+        "position": "CB",
+        "depth_rank": 4,
+        "designation": "Prospect",
+        "contract_label": "1y | $1.1M APY",
+        "years_exp": 1,
+        "age": 26,
+        "apy_m": 1.15
+      },
+      {
         "player_name": "Mohamed Kamara",
         "position": "LB",
         "depth_rank": 7,
@@ -13593,16 +13603,6 @@
         "years_exp": 1,
         "age": 26,
         "apy_m": 1.06
-      },
-      {
-        "player_name": "Malik Washington",
-        "position": "WR",
-        "depth_rank": 5,
-        "designation": "Prospect",
-        "contract_label": "4y | $1.1M APY",
-        "years_exp": 0,
-        "age": 25,
-        "apy_m": 1.05
       }
     ],
     "recent_transactions": [
@@ -13674,24 +13674,24 @@
           "position": "QB",
           "players": [
             {
-              "player_name": "Sam Darnold",
+              "player_name": "Daniel Jones",
               "position": "QB",
               "depth_rank": 1,
+              "designation": "Franchise Cornerstone",
+              "contract_label": "1y | $37.8M APY",
+              "years_exp": 5,
+              "age": 28,
+              "apy_m": 37.83
+            },
+            {
+              "player_name": "Sam Darnold",
+              "position": "QB",
+              "depth_rank": 2,
               "designation": "Franchise Cornerstone",
               "contract_label": "3y | $33.5M APY",
               "years_exp": 6,
               "age": 28,
               "apy_m": 33.5
-            },
-            {
-              "player_name": "Daniel Jones",
-              "position": "QB",
-              "depth_rank": 2,
-              "designation": "Franchise Cornerstone",
-              "contract_label": "1y | $14.0M APY",
-              "years_exp": 5,
-              "age": 28,
-              "apy_m": 14.0
             },
             {
               "player_name": "J.J. McCarthy",
@@ -13909,9 +13909,19 @@
               "apy_m": 4.75
             },
             {
-              "player_name": "Blake Brandel",
+              "player_name": "Dalton Risner",
               "position": "IOL",
               "depth_rank": 2,
+              "designation": "In His Prime Star",
+              "contract_label": "1y | $3.2M APY",
+              "years_exp": 5,
+              "age": 30,
+              "apy_m": 3.25
+            },
+            {
+              "player_name": "Blake Brandel",
+              "position": "IOL",
+              "depth_rank": 3,
               "designation": "In His Prime Star",
               "contract_label": "3y | $3.2M APY",
               "years_exp": 4,
@@ -13921,22 +13931,12 @@
             {
               "player_name": "Ed Ingram",
               "position": "IOL",
-              "depth_rank": 3,
+              "depth_rank": 4,
               "designation": "In His Prime Star",
               "contract_label": "4y | $1.5M APY",
               "years_exp": 2,
               "age": 27,
               "apy_m": 1.5
-            },
-            {
-              "player_name": "Dalton Risner",
-              "position": "IOL",
-              "depth_rank": 4,
-              "designation": "In His Prime Star",
-              "contract_label": "1y | $1.3M APY",
-              "years_exp": 5,
-              "age": 30,
-              "apy_m": 1.34
             }
           ]
         }
@@ -13970,10 +13970,10 @@
               "position": "EDGE",
               "depth_rank": 3,
               "designation": "Prospect",
-              "contract_label": "1y | $1.0M APY",
+              "contract_label": "1y | $1.1M APY",
               "years_exp": 1,
               "age": 26,
-              "apy_m": 0.96
+              "apy_m": 1.07
             },
             {
               "player_name": "Jonathan Harris",
@@ -14257,7 +14257,7 @@
       {
         "player_name": "Ed Ingram",
         "position": "IOL",
-        "depth_rank": 3,
+        "depth_rank": 4,
         "designation": "In His Prime Star",
         "contract_label": "4y | $1.5M APY",
         "years_exp": 2,
@@ -14315,6 +14315,16 @@
         "apy_m": 1.12
       },
       {
+        "player_name": "Jalen Redmond",
+        "position": "EDGE",
+        "depth_rank": 3,
+        "designation": "Prospect",
+        "contract_label": "1y | $1.1M APY",
+        "years_exp": 1,
+        "age": 26,
+        "apy_m": 1.07
+      },
+      {
         "player_name": "Walter Rouse",
         "position": "OT",
         "depth_rank": 4,
@@ -14323,16 +14333,6 @@
         "years_exp": 0,
         "age": 24,
         "apy_m": 1.06
-      },
-      {
-        "player_name": "Levi Drake Rodriguez",
-        "position": "DT",
-        "depth_rank": 2,
-        "designation": "Prospect",
-        "contract_label": "4y | $1.0M APY",
-        "years_exp": 0,
-        "age": 25,
-        "apy_m": 1.03
       }
     ],
     "recent_transactions": [
@@ -15791,26 +15791,26 @@
         "starter_quality": 0.7
       },
       {
+        "position": "LB",
+        "need_score": 0.5658,
+        "depth_chart_pressure": 0.115,
+        "future_need_pressure_1y": 0.917,
+        "future_need_pressure_2y": 0.669,
+        "starter_quality": 0.759
+      },
+      {
         "position": "IOL",
         "need_score": 0.5462,
         "depth_chart_pressure": 0.057,
         "future_need_pressure_1y": 1.0,
         "future_need_pressure_2y": 0.619,
         "starter_quality": 0.893
-      },
-      {
-        "position": "LB",
-        "need_score": 0.5408,
-        "depth_chart_pressure": 0.115,
-        "future_need_pressure_1y": 0.963,
-        "future_need_pressure_2y": 0.549,
-        "starter_quality": 0.759
       }
     ],
     "weakness_positions": [
       "QB",
-      "IOL",
-      "LB"
+      "LB",
+      "IOL"
     ],
     "depth_chart": {
       "offense": [
@@ -15921,7 +15921,7 @@
               "player_name": "Wan'Dale Robinson",
               "position": "WR",
               "depth_rank": 3,
-              "designation": "In His Prime Star",
+              "designation": "Franchise Cornerstone",
               "contract_label": "4y | $2.0M APY",
               "years_exp": 2,
               "age": 25,
@@ -16160,20 +16160,10 @@
               "apy_m": 28.2
             },
             {
-              "player_name": "Bobby Okereke",
+              "player_name": "Kayvon Thibodeaux",
               "position": "LB",
               "depth_rank": 2,
               "designation": "All-Pro",
-              "contract_label": "4y | $10.0M APY",
-              "years_exp": 5,
-              "age": 29,
-              "apy_m": 10.0
-            },
-            {
-              "player_name": "Kayvon Thibodeaux",
-              "position": "LB",
-              "depth_rank": 3,
-              "designation": "Franchise Cornerstone",
               "contract_label": "4y | $7.8M APY",
               "years_exp": 2,
               "age": 25,
@@ -16182,12 +16172,22 @@
             {
               "player_name": "Isaiah Simmons",
               "position": "LB",
-              "depth_rank": 4,
+              "depth_rank": 3,
               "designation": "Backup",
               "contract_label": "1y | $1.2M APY",
               "years_exp": 4,
               "age": 27,
               "apy_m": 1.17
+            },
+            {
+              "player_name": "Darius Muasau",
+              "position": "LB",
+              "depth_rank": 4,
+              "designation": "Prospect",
+              "contract_label": "4y | $1.1M APY",
+              "years_exp": 0,
+              "age": 25,
+              "apy_m": 1.06
             }
           ]
         },
@@ -16243,7 +16243,7 @@
               "player_name": "Jason Pinnock",
               "position": "S",
               "depth_rank": 1,
-              "designation": "Franchise Cornerstone",
+              "designation": "In His Prime Star",
               "contract_label": "1y | $2.2M APY",
               "years_exp": 3,
               "age": 26,
@@ -16369,16 +16369,6 @@
     ],
     "young_players_on_rise": [
       {
-        "player_name": "Wan'Dale Robinson",
-        "position": "WR",
-        "depth_rank": 3,
-        "designation": "In His Prime Star",
-        "contract_label": "4y | $2.0M APY",
-        "years_exp": 2,
-        "age": 25,
-        "apy_m": 2.05
-      },
-      {
         "player_name": "Joshua Ezeudu",
         "position": "IOL",
         "depth_rank": 5,
@@ -16447,6 +16437,16 @@
         "years_exp": 1,
         "age": 26,
         "apy_m": 1.59
+      },
+      {
+        "player_name": "Andru Phillips",
+        "position": "CB",
+        "depth_rank": 2,
+        "designation": "Prospect",
+        "contract_label": "4y | $1.5M APY",
+        "years_exp": 0,
+        "age": 24,
+        "apy_m": 1.5
       }
     ],
     "recent_transactions": [
@@ -16483,20 +16483,20 @@
     "team": "NYJ",
     "top_needs": [
       {
-        "position": "RB",
-        "need_score": 0.5946,
-        "depth_chart_pressure": 0.149,
-        "future_need_pressure_1y": 0.799,
-        "future_need_pressure_2y": 0.83,
-        "starter_quality": 0.709
-      },
-      {
         "position": "TE",
         "need_score": 0.5583,
         "depth_chart_pressure": 0.214,
         "future_need_pressure_1y": 0.809,
         "future_need_pressure_2y": 0.614,
         "starter_quality": 0.58
+      },
+      {
+        "position": "RB",
+        "need_score": 0.5357,
+        "depth_chart_pressure": 0.149,
+        "future_need_pressure_1y": 0.925,
+        "future_need_pressure_2y": 0.527,
+        "starter_quality": 0.709
       },
       {
         "position": "S",
@@ -16508,8 +16508,8 @@
       }
     ],
     "weakness_positions": [
-      "RB",
       "TE",
+      "RB",
       "S"
     ],
     "depth_chart": {
@@ -16566,11 +16566,11 @@
               "player_name": "Breece Hall",
               "position": "RB",
               "depth_rank": 1,
-              "designation": "Franchise Cornerstone",
-              "contract_label": "4y | $2.3M APY",
+              "designation": "All-Pro",
+              "contract_label": "1y | $14.3M APY",
               "years_exp": 2,
               "age": 24,
-              "apy_m": 2.25
+              "apy_m": 14.29
             },
             {
               "player_name": "Kene Nwangwu",
@@ -17358,24 +17358,24 @@
               "apy_m": 25.0
             },
             {
-              "player_name": "Jahan Dotson",
-              "position": "WR",
-              "depth_rank": 3,
-              "designation": "Franchise Cornerstone",
-              "contract_label": "4y | $3.8M APY",
-              "years_exp": 2,
-              "age": 25,
-              "apy_m": 3.76
-            },
-            {
               "player_name": "Parris Campbell",
               "position": "WR",
-              "depth_rank": 4,
+              "depth_rank": 3,
               "designation": "In His Prime Star",
               "contract_label": "1y | $1.2M APY",
               "years_exp": 5,
               "age": 28,
               "apy_m": 1.22
+            },
+            {
+              "player_name": "Britain Covey",
+              "position": "WR",
+              "depth_rank": 4,
+              "designation": "Backup",
+              "contract_label": "2y | $1.2M APY",
+              "years_exp": 2,
+              "age": 28,
+              "apy_m": 1.16
             }
           ]
         },
@@ -17448,24 +17448,24 @@
               "apy_m": 22.0
             },
             {
-              "player_name": "Mekhi Becton",
-              "position": "OT",
-              "depth_rank": 3,
-              "designation": "Franchise Cornerstone",
-              "contract_label": "2y | $10.0M APY",
-              "years_exp": 4,
-              "age": 26,
-              "apy_m": 10.0
-            },
-            {
               "player_name": "Fred Johnson",
               "position": "OT",
-              "depth_rank": 4,
+              "depth_rank": 3,
               "designation": "Backup",
               "contract_label": "1y | $1.3M APY",
               "years_exp": 5,
               "age": 28,
               "apy_m": 1.34
+            },
+            {
+              "player_name": "Jack Driscoll",
+              "position": "OT",
+              "depth_rank": 4,
+              "designation": "Backup",
+              "contract_label": "1y | $1.2M APY",
+              "years_exp": 4,
+              "age": 28,
+              "apy_m": 1.17
             }
           ]
         },
@@ -17779,11 +17779,21 @@
       {
         "player_name": "DeVante Parker",
         "position": "WR",
-        "depth_rank": 9,
+        "depth_rank": 8,
         "designation": "FA",
         "contract_label": "FA",
         "years_exp": 9,
         "age": 33,
+        "apy_m": ""
+      },
+      {
+        "player_name": "Jahan Dotson",
+        "position": "WR",
+        "depth_rank": 9,
+        "designation": "FA",
+        "contract_label": "FA",
+        "years_exp": 2,
+        "age": 25,
         "apy_m": ""
       },
       {
@@ -17809,21 +17819,11 @@
       {
         "player_name": "Le'Raven Clark",
         "position": "OT",
-        "depth_rank": 8,
+        "depth_rank": 7,
         "designation": "FA",
         "contract_label": "FA",
         "years_exp": 8,
         "age": 32,
-        "apy_m": ""
-      },
-      {
-        "player_name": "Laekin Vakalahi",
-        "position": "OT",
-        "depth_rank": 9,
-        "designation": "FA",
-        "contract_label": "FA",
-        "years_exp": 0,
-        "age": 23,
         "apy_m": ""
       }
     ],
@@ -17951,10 +17951,10 @@
       },
       {
         "position": "OT",
-        "need_score": 0.5563,
+        "need_score": 0.5672,
         "depth_chart_pressure": 0.098,
         "future_need_pressure_1y": 1.0,
-        "future_need_pressure_2y": 0.584,
+        "future_need_pressure_2y": 0.615,
         "starter_quality": 0.813
       }
     ],
@@ -18007,7 +18007,7 @@
               "player_name": "Jaylen Warren",
               "position": "RB",
               "depth_rank": 1,
-              "designation": "All-Pro",
+              "designation": "Franchise Cornerstone",
               "contract_label": "2y | $6.0M APY",
               "years_exp": 2,
               "age": 27,
@@ -18053,10 +18053,10 @@
               "position": "WR",
               "depth_rank": 1,
               "designation": "All-Pro",
-              "contract_label": "1y | $28.8M APY",
+              "contract_label": "1y | $27.3M APY",
               "years_exp": 2,
               "age": 25,
-              "apy_m": 28.82
+              "apy_m": 27.3
             },
             {
               "player_name": "Ben Skowronek",
@@ -18169,14 +18169,14 @@
               "apy_m": 3.76
             },
             {
-              "player_name": "Calvin Anderson",
+              "player_name": "Dylan Cook",
               "position": "OT",
               "depth_rank": 4,
-              "designation": "In His Prime Star",
-              "contract_label": "2y | $2.0M APY",
-              "years_exp": 5,
-              "age": 29,
-              "apy_m": 2.0
+              "designation": "Backup",
+              "contract_label": "2y | $1.0M APY",
+              "years_exp": 2,
+              "age": 28,
+              "apy_m": 1.02
             }
           ]
         },
@@ -18528,9 +18528,9 @@
         "apy_m": ""
       },
       {
-        "player_name": "John Leglue",
+        "player_name": "Calvin Anderson",
         "position": "OT",
-        "depth_rank": 7,
+        "depth_rank": 6,
         "designation": "FA",
         "contract_label": "FA",
         "years_exp": 5,
@@ -18646,18 +18646,18 @@
     "top_needs": [
       {
         "position": "RB",
-        "need_score": 0.6474,
+        "need_score": 0.6275,
         "depth_chart_pressure": 0.228,
         "future_need_pressure_1y": 1.0,
-        "future_need_pressure_2y": 0.632,
+        "future_need_pressure_2y": 0.576,
         "starter_quality": 0.527
       },
       {
         "position": "CB",
-        "need_score": 0.5209,
+        "need_score": 0.5068,
         "depth_chart_pressure": 0.054,
         "future_need_pressure_1y": 0.95,
-        "future_need_pressure_2y": 0.605,
+        "future_need_pressure_2y": 0.564,
         "starter_quality": 0.895
       },
       {
@@ -18745,14 +18745,14 @@
               "apy_m": 1.07
             },
             {
-              "player_name": "Kenny McIntosh",
+              "player_name": "George Holani",
               "position": "RB",
               "depth_rank": 4,
               "designation": "Prospect",
-              "contract_label": "4y | $1.0M APY",
-              "years_exp": 1,
+              "contract_label": "1y | $1.1M APY",
+              "years_exp": 0,
               "age": 26,
-              "apy_m": 0.98
+              "apy_m": 1.07
             }
           ]
         },
@@ -19132,23 +19132,23 @@
               "apy_m": 1.42
             },
             {
-              "player_name": "Jerrick Reed II",
+              "player_name": "Ty Okada",
               "position": "S",
               "depth_rank": 3,
               "designation": "Prospect",
-              "contract_label": "1y | $1.0M APY",
+              "contract_label": "1y | $1.1M APY",
               "years_exp": 1,
-              "age": 25,
-              "apy_m": 1.03
+              "age": 26,
+              "apy_m": 1.15
             },
             {
-              "player_name": "Ty Okada",
+              "player_name": "Jerrick Reed II",
               "position": "S",
               "depth_rank": 4,
               "designation": "Prospect",
               "contract_label": "1y | $1.0M APY",
               "years_exp": 1,
-              "age": 26,
+              "age": 25,
               "apy_m": 1.03
             }
           ]
@@ -20832,7 +20832,7 @@
               "player_name": "Tony Pollard",
               "position": "RB",
               "depth_rank": 1,
-              "designation": "All-Pro",
+              "designation": "Franchise Cornerstone",
               "contract_label": "3y | $7.2M APY",
               "years_exp": 5,
               "age": 28,
@@ -21149,7 +21149,7 @@
               "player_name": "Kenneth Murray, Jr.",
               "position": "LB",
               "depth_rank": 2,
-              "designation": "Franchise Cornerstone",
+              "designation": "All-Pro",
               "contract_label": "2y | $7.8M APY",
               "years_exp": 4,
               "age": 27,
@@ -21694,19 +21694,9 @@
               "apy_m": 4.0
             },
             {
-              "player_name": "Cornelius Lucas",
-              "position": "OT",
-              "depth_rank": 2,
-              "designation": "In His Prime Star",
-              "contract_label": "2y | $3.2M APY",
-              "years_exp": 10,
-              "age": 34,
-              "apy_m": 3.25
-            },
-            {
               "player_name": "Brandon Coleman",
               "position": "OT",
-              "depth_rank": 3,
+              "depth_rank": 2,
               "designation": "Prospect",
               "contract_label": "4y | $1.5M APY",
               "years_exp": 0,
@@ -21716,12 +21706,22 @@
             {
               "player_name": "Trent Scott",
               "position": "OT",
-              "depth_rank": 4,
+              "depth_rank": 3,
               "designation": "Backup",
               "contract_label": "1y | $1.4M APY",
               "years_exp": 6,
               "age": 32,
               "apy_m": 1.42
+            },
+            {
+              "player_name": "Bobby Hart",
+              "position": "OT",
+              "depth_rank": 4,
+              "designation": "Backup",
+              "contract_label": "1y | $1.3M APY",
+              "years_exp": 9,
+              "age": 31,
+              "apy_m": 1.25
             }
           ]
         },
@@ -21739,19 +21739,9 @@
               "apy_m": 18.5
             },
             {
-              "player_name": "Tyler Biadasz",
-              "position": "IOL",
-              "depth_rank": 2,
-              "designation": "Franchise Cornerstone",
-              "contract_label": "3y | $10.0M APY",
-              "years_exp": 4,
-              "age": 28,
-              "apy_m": 10.0
-            },
-            {
               "player_name": "Nick Allegretti",
               "position": "IOL",
-              "depth_rank": 3,
+              "depth_rank": 2,
               "designation": "Franchise Cornerstone",
               "contract_label": "3y | $5.3M APY",
               "years_exp": 5,
@@ -21761,12 +21751,22 @@
             {
               "player_name": "Michael Deiter",
               "position": "IOL",
-              "depth_rank": 4,
+              "depth_rank": 3,
               "designation": "In His Prime Star",
               "contract_label": "1y | $1.2M APY",
               "years_exp": 5,
               "age": 29,
               "apy_m": 1.22
+            },
+            {
+              "player_name": "Julian Good-Jones",
+              "position": "IOL",
+              "depth_rank": 4,
+              "designation": "Backup",
+              "contract_label": "2y | $1.0M APY",
+              "years_exp": 4,
+              "age": 29,
+              "apy_m": 1.02
             }
           ]
         }
@@ -22033,6 +22033,16 @@
         "apy_m": ""
       },
       {
+        "player_name": "Cornelius Lucas",
+        "position": "OT",
+        "depth_rank": 5,
+        "designation": "FA",
+        "contract_label": "FA",
+        "years_exp": 10,
+        "age": 34,
+        "apy_m": ""
+      },
+      {
         "player_name": "Max Pircher",
         "position": "OT",
         "depth_rank": 6,
@@ -22040,6 +22050,16 @@
         "contract_label": "FA",
         "years_exp": 3,
         "age": 26,
+        "apy_m": ""
+      },
+      {
+        "player_name": "Tyler Biadasz",
+        "position": "IOL",
+        "depth_rank": 6,
+        "designation": "FA",
+        "contract_label": "FA",
+        "years_exp": 4,
+        "age": 28,
         "apy_m": ""
       },
       {
@@ -22060,26 +22080,6 @@
         "contract_label": "FA",
         "years_exp": 9,
         "age": 34,
-        "apy_m": ""
-      },
-      {
-        "player_name": "Norell Pollard",
-        "position": "DT",
-        "depth_rank": 6,
-        "designation": "FA",
-        "contract_label": "FA",
-        "years_exp": 0,
-        "age": 26,
-        "apy_m": ""
-      },
-      {
-        "player_name": "Kevon Seymour",
-        "position": "CB",
-        "depth_rank": 6,
-        "designation": "FA",
-        "contract_label": "FA",
-        "years_exp": 8,
-        "age": 32,
         "apy_m": ""
       }
     ],
@@ -22157,7 +22157,7 @@
       {
         "player_name": "Brandon Coleman",
         "position": "OT",
-        "depth_rank": 3,
+        "depth_rank": 2,
         "designation": "Prospect",
         "contract_label": "4y | $1.5M APY",
         "years_exp": 0,

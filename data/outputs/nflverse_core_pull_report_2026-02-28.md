@@ -1,6 +1,6 @@
 # NFLverse Core Pull Report
 
-- Pulled at: `2026-02-28T00:54:04.845292+00:00`
+- Pulled at: `2026-03-06T03:39:01.000095+00:00`
 - Seasons requested: `[2024]`
 - Output directory: `/Users/nickholz/nfldraftmodel2026/data/sources/external/nflverse`
 
@@ -10,9 +10,9 @@
 |---|---:|---:|---|
 | participation | 45919 | 26 | `/Users/nickholz/nfldraftmodel2026/data/sources/external/nflverse/participation.parquet` |
 | rosters_weekly | 46579 | 36 | `/Users/nickholz/nfldraftmodel2026/data/sources/external/nflverse/rosters_weekly.parquet` |
-| contracts | 50229 | 25 | `/Users/nickholz/nfldraftmodel2026/data/sources/external/nflverse/contracts.parquet` |
+| contracts | 50300 | 25 | `/Users/nickholz/nfldraftmodel2026/data/sources/external/nflverse/contracts.parquet` |
 | players | 24356 | 39 | `/Users/nickholz/nfldraftmodel2026/data/sources/external/nflverse/players.parquet` |
-| combine | 8649 | 18 | `/Users/nickholz/nfldraftmodel2026/data/sources/external/nflverse/combine.parquet` |
+| combine | 8968 | 18 | `/Users/nickholz/nfldraftmodel2026/data/sources/external/nflverse/combine.parquet` |
 
 ## Key Notes
 
