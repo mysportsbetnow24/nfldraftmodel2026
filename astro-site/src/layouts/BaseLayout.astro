@@ -6,19 +6,25 @@ interface Props {
   title: string;
   description?: string;
   collectionSchema?: Record<string, unknown> | null;
+  extraSchemas?: Record<string, unknown>[];
+  keywords?: string[];
   ogImage?: string;
   ogType?: "website" | "article";
+  canonicalPath?: string;
 }
 
 const {
   title,
   description = "2026 NFL Draft big board, mocks, scouting cards, and player comparison tools.",
   collectionSchema = null,
+  extraSchemas = [],
+  keywords = [],
   ogImage = "/og-default.svg",
-  ogType = "website"
+  ogType = "website",
+  canonicalPath = Astro.url.pathname,
 } = Astro.props;
 const siteUrl = (Astro.site ?? new URL("https://scoutinggrade.com")).toString().replace(/\/$/, "");
-const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
 const ogImageUrl = new URL(ogImage, siteUrl).toString();
 const webSiteSchema = {
   "@context": "https://schema.org",
@@ -35,6 +41,8 @@ const generatedAt = (meta as { generated_at?: string }).generated_at || "";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    {keywords.length ? <meta name="keywords" content={keywords.join(", ")} /> : null}
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="Scouting Grade" />
@@ -51,6 +59,9 @@ const generatedAt = (meta as { generated_at?: string }).generated_at || "";
     <meta name="twitter:image:alt" content="Scouting Grade - 2026 NFL Draft data and scouting hub" />
     <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
     {collectionSchema && <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />}
+    {extraSchemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </head>
   <body>
     <div class="shell">

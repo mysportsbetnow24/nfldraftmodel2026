@@ -1,0 +1,30 @@
+2026 DELTA AUDIT
+
+Current board: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
+Previous board: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260305_102332.csv
+Rows compared: 264
+
+Top Risers (prev rank - curr rank > 0)
+1. Caleb Douglas (WR) 217 -> 215 (+2); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+2. Jonah Coleman (RB) 64 -> 63 (+1); driver: production (up 0.70) [ath 0.0, prod 0.7, prior 0.0, guardrail 0.0]
+3. Keith Abney II (CB) 76 -> 75 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+4. Tacario Davis (CB) 97 -> 96 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+5. Antonio Williams (WR) 98 -> 97 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+6. Joshua Josephs (EDGE) 99 -> 98 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+7. Germie Bernard (WR) 100 -> 99 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+8. Connor Lew (IOL) 101 -> 100 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+9. Desmond Reid (RB) 187 -> 186 (+1); driver: production (up 0.47) [ath 0.0, prod 0.47, prior 0.0, guardrail 0.0]
+10. Miles Kitselman (TE) 215 -> 214 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+11. Keyron Crawford (EDGE) 218 -> 217 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+12. Ahmaad Moses (S) 250 -> 249 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+13. Brandon Cleveland (DT) 252 -> 251 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+
+Top Fallers (prev rank - curr rank < 0)
+1. Demond Claiborne (RB) 96 -> 101 (-5); driver: production (down 0.70) [ath 0.0, prod -0.7, prior 0.0, guardrail 0.0]
+2. Noah Whittington (RB) 214 -> 216 (-2); driver: production (down 1.13) [ath 0.0, prod -1.13, prior 0.0, guardrail 0.0]
+3. J'Mari Taylor (RB) 216 -> 218 (-2); driver: production (down 1.25) [ath 0.0, prod -1.25, prior 0.0, guardrail 0.0]
+4. Jack Endries (TE) 63 -> 64 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+5. Jadarian Price (RB) 75 -> 76 (-1); driver: production (down 0.65) [ath 0.0, prod -0.65, prior 0.0, guardrail 0.0]
+6. Justin Jefferson (LB) 186 -> 187 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+7. Rahsul Faison (RB) 249 -> 250 (-1); driver: production (down 0.56) [ath 0.0, prod -0.56, prior 0.0, guardrail 0.0]
+8. Adam Randall (RB) 251 -> 252 (-1); driver: production (down 0.40) [ath 0.0, prod -0.4, prior 0.0, guardrail 0.0]

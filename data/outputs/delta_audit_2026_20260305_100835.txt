@@ -1,0 +1,11 @@
+2026 DELTA AUDIT
+
+Current board: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
+Previous board: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260305_091339.csv
+Rows compared: 264
+
+Top Risers (prev rank - curr rank > 0)
+1. Damonic Williams (DT) 197 -> 196 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+
+Top Fallers (prev rank - curr rank < 0)
+1. Jalon Daniels (QB) 196 -> 197 (-1); driver: production (down 0.24) [ath 0.0, prod -0.24, prior 0.0, guardrail 0.0]

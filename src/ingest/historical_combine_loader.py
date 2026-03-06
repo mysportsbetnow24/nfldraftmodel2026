@@ -189,6 +189,8 @@ def find_historical_combine_comps(
     position: str,
     current_metrics: dict,
     pack: dict,
+    player_name: str = "",
+    max_year_exclusive: int | None = None,
     k: int = 3,
     min_overlap_metrics: int = 3,
 ) -> dict:
@@ -205,7 +207,14 @@ def find_historical_combine_comps(
     overlap_min = min_overlap_metrics
 
     scored = []
+    player_name_key = canonical_player_name(player_name)
     for cand in candidates:
+        cand_name = str(cand.get("player_name", "")).strip()
+        if player_name_key and canonical_player_name(cand_name) == player_name_key:
+            continue
+        cand_year = int(cand.get("year", 0) or 0)
+        if max_year_exclusive is not None and cand_year >= int(max_year_exclusive):
+            continue
         dist, overlap = _distance_for_candidate(current_metrics, cand, stats)
         if overlap < overlap_min or not math.isfinite(dist):
             continue

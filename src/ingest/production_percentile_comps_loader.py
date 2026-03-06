@@ -242,6 +242,7 @@ def find_production_percentile_comps(
     target_season: int = 2025,
     k: int = 3,
     min_overlap: int = 3,
+    allow_same_season_fallback: bool = False,
 ) -> dict:
     pos = normalize_pos(position)
     metrics = list(POSITION_BASELINES.get(pos, []))
@@ -290,9 +291,11 @@ def find_production_percentile_comps(
 
     scored = _score_pool(allow_same_season=False)
     candidate_mode = "historical_only"
-    if not scored:
+    if not scored and allow_same_season_fallback:
         scored = _score_pool(allow_same_season=True)
         candidate_mode = "same_season_fallback"
+    elif not scored:
+        candidate_mode = "historical_only_no_match"
 
     top = scored[:k]
     return {

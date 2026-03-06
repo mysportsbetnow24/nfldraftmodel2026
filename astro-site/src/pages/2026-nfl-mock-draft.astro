@@ -11,7 +11,7 @@ const positions = [
 const teams = Array.from(new Set((round1 || []).map((p: any) => p.team).filter(Boolean))).sort();
 const schools = Array.from(new Set((round1 || []).map((p: any) => p.school).filter(Boolean))).sort();
 
-const pageDescription = "2026 NFL mock draft hub with first-round and full 7-round projections, updated from the latest Scouting Grade model cycle.";
+const pageDescription = "2026 NFL mock draft hub with first-round and full 7-round projections, updated pick order, and team-level draft context.";
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -24,8 +24,23 @@ const collectionSchema = {
     url: "https://scoutinggrade.com"
   }
 };
+const mockRouteSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "2026 NFL Mock Draft Routes",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "2026 NFL Mock Draft Round 1", url: "https://scoutinggrade.com/2026-nfl-mock-draft-round-1" },
+    { "@type": "ListItem", position: 2, name: "2026 7-Round NFL Mock Draft", url: "https://scoutinggrade.com/2026-nfl-7-round-mock-draft" },
+  ],
+};
 ---
-<BaseLayout title="2026 NFL Mock Draft | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
+<BaseLayout
+  title="2026 NFL Mock Draft Hub | Round 1 And 7-Round"
+  description={pageDescription}
+  keywords={["2026 nfl mock draft", "round 1 mock draft 2026", "7-round mock draft 2026", "scouting grade"]}
+  collectionSchema={collectionSchema}
+  extraSchemas={[mockRouteSchema]}
+>
   <section class="hero hero--data">
     <h1>2026 NFL Mock Draft</h1>
     <p>Use the round-by-round links below for full class projections and team-level draft views.</p>

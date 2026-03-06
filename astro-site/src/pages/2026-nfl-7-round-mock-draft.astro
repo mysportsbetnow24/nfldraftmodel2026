@@ -14,7 +14,7 @@ const rounds = Array.from(
   new Set((picks || []).map((p: any) => Number(p.round)).filter((r) => Number.isFinite(r) && r > 0))
 ).sort((a, b) => a - b);
 const schools = Array.from(new Set((picks || []).map((p: any) => p.school).filter(Boolean))).sort();
-const pageDescription = "Complete 7-round mock draft with team filter to view full projected classes.";
+const pageDescription = "2026 7-round NFL mock draft with full pick order, team filters, and complete projected draft classes.";
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -27,8 +27,27 @@ const collectionSchema = {
     url: "https://scoutinggrade.com"
   }
 };
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "2026 7-Round NFL Mock Draft Picks",
+  itemListOrder: "https://schema.org/ItemListOrderAscending",
+  numberOfItems: (picks || []).length,
+  itemListElement: (picks || []).map((p: any) => ({
+    "@type": "ListItem",
+    position: Number(p.overall_pick),
+    name: `${p.team} - ${p.player_name}`,
+    url: p.player_report_url ? `https://scoutinggrade.com${p.player_report_url}` : "https://scoutinggrade.com/2026-nfl-7-round-mock-draft",
+  })),
+};
 ---
-<BaseLayout title="2026 7-Round NFL Mock Draft | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
+<BaseLayout
+  title="2026 7-Round NFL Mock Draft | Full Picks"
+  description={pageDescription}
+  keywords={["2026 7-round nfl mock draft", "full nfl mock draft 2026", "nfl draft projections", "scouting grade"]}
+  collectionSchema={collectionSchema}
+  extraSchemas={[itemListSchema]}
+>
   <section class="hero hero--data">
     <h1>2026 7-Round NFL Mock Draft</h1>
     <p>Full draft projection with team-level class filtering.</p>

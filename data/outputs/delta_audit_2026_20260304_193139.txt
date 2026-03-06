@@ -1,0 +1,23 @@
+2026 DELTA AUDIT
+
+Current board: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
+Previous board: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260304_192351.csv
+Rows compared: 264
+
+Top Risers (prev rank - curr rank > 0)
+1. Chris Bell (WR) 71 -> 70 (+1); driver: production (up 0.07) [ath 0.0, prod 0.07, prior 0.0, guardrail 0.0]
+2. Demond Claiborne (RB) 99 -> 98 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+3. Bryce Boettcher (LB) 159 -> 158 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+4. Joe Royer (TE) 160 -> 159 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+5. Kendal Daniels (LB) 161 -> 160 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+6. Nadame Tucker (EDGE) 181 -> 180 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+7. Patrick Payton (EDGE) 216 -> 215 (+1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+8. Riley Nowakowski (TE) 228 -> 227 (+1); driver: production (up 0.04) [ath 0.0, prod 0.04, prior 0.0, guardrail 0.0]
+
+Top Fallers (prev rank - curr rank < 0)
+1. Brenen Thompson (WR) 158 -> 161 (-3); driver: production (down 0.02) [ath 0.0, prod -0.02, prior 0.0, guardrail 0.0]
+2. A.J. Haulcy (S) 70 -> 71 (-1); driver: production (down 0.03) [ath 0.0, prod -0.03, prior 0.0, guardrail 0.0]
+3. Tacario Davis (CB) 98 -> 99 (-1); driver: production (down 0.09) [ath 0.0, prod -0.09, prior 0.0, guardrail 0.02]
+4. Desmond Reid (RB) 180 -> 181 (-1); driver: production (down 0.02) [ath 0.0, prod -0.02, prior 0.0, guardrail 0.0]
+5. Caleb Douglas (WR) 215 -> 216 (-1); driver: production (down 0.03) [ath 0.0, prod -0.03, prior 0.0, guardrail 0.0]
+6. Wesley Bissainthe (LB) 227 -> 228 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]

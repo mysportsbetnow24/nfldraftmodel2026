@@ -1,6 +1,6 @@
 # CBS Wilson Big Board Pull Report
 
-- pulled_at_utc: `2026-02-27T04:44:01.163686+00:00`
+- pulled_at_utc: `2026-03-04T22:03:01.022934+00:00`
 - rows_loaded: `125`
 
 ## Warnings

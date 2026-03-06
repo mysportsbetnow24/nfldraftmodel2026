@@ -40,6 +40,11 @@ LINE_RE = re.compile(
     r"(?P<team_name>.+?)\s+\((?P<team>[A-Z]{2,3})\)$"
 )
 
+TABLE_SECTION_RE = re.compile(
+    r'(?is)<h4[^>]*class="TableBase-title[^"]*"[^>]*>(?P<event_date>.*?)</h4>.*?<tbody>(?P<tbody>.*?)</tbody>'
+)
+TABLE_ROW_RE = re.compile(r'(?is)<tr[^>]*class="TableBase-bodyTr"[^>]*>(?P<row>.*?)</tr>')
+
 
 def _fetch(url: str) -> str:
     req = urllib.request.Request(
@@ -87,12 +92,32 @@ def _impact_weight(action_text: str, direction: str) -> float:
     return 0.0
 
 
+def _impact_weight_from_action(action_text: str) -> float:
+    txt = str(action_text or "").lower()
+    # Positive sign means team lost talent (need up), negative means team added talent.
+    if any(k in txt for k in ("cut", "released", "waived", "retired")):
+        return 1.0
+    if "traded" in txt:
+        if any(k in txt for k in ("acquired", "from")):
+            return -1.0
+        if any(k in txt for k in ("to", "away")):
+            return 1.0
+        return 0.0
+    if any(k in txt for k in ("signed", "re-signed", "resigned", "claimed", "activated", "extension")):
+        return -0.8
+    if "injured reserve" in txt:
+        return 0.6
+    return 0.0
+
+
 def _transaction_type(action_text: str) -> str:
     txt = action_text.lower()
     if "re-signed" in txt or "resigned" in txt or "extension" in txt:
         return "re-signed"
     if "signed" in txt:
         return "signed"
+    if "cut" in txt:
+        return "released"
     if "released" in txt:
         return "released"
     if "waived" in txt:
@@ -114,8 +139,93 @@ def _transaction_type(action_text: str) -> str:
     return "other"
 
 
+def _clean_html_text(value: str) -> str:
+    cleaned = re.sub(r"(?is)<script.*?>.*?</script>", " ", str(value or ""))
+    cleaned = re.sub(r"(?is)<style.*?>.*?</style>", " ", cleaned)
+    cleaned = re.sub(r"(?i)<br\\s*/?>", " ", cleaned)
+    cleaned = re.sub(r"(?s)<[^>]+>", " ", cleaned)
+    cleaned = html.unescape(cleaned)
+    return re.sub(r"\s+", " ", cleaned).strip()
+
+
+def _parse_table_transactions(page_html: str) -> list[dict]:
+    out: list[dict] = []
+    for section in TABLE_SECTION_RE.finditer(page_html):
+        raw_date = _clean_html_text(section.group("event_date"))
+        # Normalize date label such as "Thursday, March 05, 2026" => "March 05, 2026"
+        raw_date = re.sub(r"^(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),\s*", "", raw_date)
+        if not raw_date:
+            continue
+
+        tbody = section.group("tbody")
+        for row_m in TABLE_ROW_RE.finditer(tbody):
+            row_html = row_m.group("row")
+            tds = re.findall(r"(?is)<td[^>]*>(.*?)</td>", row_html)
+            if len(tds) < 3:
+                continue
+
+            team_code = ""
+            team_m = re.search(
+                r'(?is)<span[^>]*class="TeamName"[^>]*>.*?<a[^>]*>(?P<team>[A-Z]{2,3})</a>',
+                tds[0],
+            )
+            if team_m:
+                team_code = team_m.group("team").strip().upper()
+            if not team_code:
+                team_guess = _clean_html_text(tds[0]).split()
+                if team_guess:
+                    candidate = team_guess[0].strip().upper()
+                    if re.fullmatch(r"[A-Z]{2,3}", candidate or ""):
+                        team_code = candidate
+            if not team_code:
+                continue
+
+            player_name = ""
+            player_m = re.search(
+                r'(?is)<span[^>]*class="CellPlayerName--long"[^>]*>.*?<a[^>]*>(?P<name>[^<]+)</a>',
+                tds[1],
+            )
+            if player_m:
+                player_name = _clean_html_text(player_m.group("name"))
+            if not player_name:
+                # Fallback uses cleaned second cell; remove short-name prefix if both are present.
+                player_name = _clean_html_text(tds[1])
+                if " " in player_name:
+                    parts = player_name.split()
+                    # If duplicate names merged ("B. Nichols Bilal Nichols"), keep latter half.
+                    if len(parts) >= 3 and "." in parts[0]:
+                        player_name = " ".join(parts[len(parts) // 2 :])
+
+            action_text = _clean_html_text(tds[2])
+            if not action_text:
+                continue
+
+            out.append(
+                {
+                    "snapshot_date": dt.date.today().isoformat(),
+                    "event_date": raw_date,
+                    "player_name": player_name,
+                    "position": "",
+                    "action_text": action_text,
+                    "transaction_type": _transaction_type(action_text),
+                    "transaction_status": "confirmed",
+                    "direction": "",
+                    "team": team_code,
+                    "team_name": "",
+                    "impact_weight": round(float(_impact_weight_from_action(action_text)), 3),
+                    "source_url": SOURCE_URL,
+                    "raw_line": _clean_html_text(f"{raw_date} {team_code} {player_name} {action_text}"),
+                }
+            )
+    return out
+
+
 def parse_transactions(page_html: str) -> list[dict]:
     rows: list[dict] = []
+    # Preferred parser for CBS current table layout.
+    rows.extend(_parse_table_transactions(page_html))
+
+    # Backward-compatible fallback for old plaintext-ish render.
     for line in _to_lines(page_html):
         m = LINE_RE.match(line)
         if not m:

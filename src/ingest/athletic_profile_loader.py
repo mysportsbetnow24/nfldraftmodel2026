@@ -150,6 +150,8 @@ def _metric_score(
     value: float | None,
     stats_all: dict[str, dict],
     stats_recent: dict[str, dict],
+    pct_stats_all: dict[str, dict] | None = None,
+    pct_stats_recent: dict[str, dict] | None = None,
 ) -> tuple[float | None, float | None, float | None]:
     if value is None:
         return None, None, None
@@ -160,23 +162,35 @@ def _metric_score(
     if not all_stats and not rec_stats:
         return None, None, None
 
-    pct_all = (
-        _percentile(all_stats["values"], value, lower_better)
-        if all_stats is not None
-        else 50.0
-    )
-    pct_recent = (
-        _percentile(rec_stats["values"], value, lower_better)
-        if rec_stats is not None
-        else pct_all
-    )
-    pct_blend = (0.4 * pct_all) + (0.6 * pct_recent)
+    # Percentiles should be position-specific and only emitted when the
+    # percentile reference distribution exists for that position.
+    pct_all_ref = (pct_stats_all or {}).get(metric)
+    pct_recent_ref = (pct_stats_recent or {}).get(metric)
+    pct_blend = None
+    if pct_all_ref is not None or pct_recent_ref is not None:
+        pct_all = (
+            _percentile(pct_all_ref["values"], value, lower_better)
+            if pct_all_ref is not None
+            else 50.0
+        )
+        pct_recent = (
+            _percentile(pct_recent_ref["values"], value, lower_better)
+            if pct_recent_ref is not None
+            else pct_all
+        )
+        pct_blend = (0.4 * pct_all) + (0.6 * pct_recent)
 
     z_base = rec_stats if rec_stats is not None else all_stats
     z = (value - z_base["mean"]) / max(z_base["std"], 1e-6)
     if lower_better:
         z *= -1.0
     z_scaled = _clamp(50.0 + (10.0 * z), 0.0, 100.0)
+
+    # If position-specific percentile references are missing, score falls back
+    # to z-score scaling and percentiles are withheld.
+    if pct_blend is None:
+        score = z_scaled
+        return round(score, 3), None, round(z, 3)
 
     score = _clamp((0.70 * pct_blend) + (0.30 * z_scaled), 0.0, 100.0)
     return round(score, 3), round(pct_blend, 3), round(z, 3)
@@ -188,6 +202,8 @@ def _compute_core(
     metrics: dict,
     stats_all: dict[str, dict],
     stats_recent: dict[str, dict],
+    pct_stats_all: dict[str, dict] | None = None,
+    pct_stats_recent: dict[str, dict] | None = None,
 ) -> dict:
     pos = normalize_pos(position)
     group_weights = POSITION_EVENT_WEIGHTS.get(
@@ -203,11 +219,14 @@ def _compute_core(
             value=_to_float(metrics.get(metric)),
             stats_all=stats_all,
             stats_recent=stats_recent,
+            pct_stats_all=pct_stats_all,
+            pct_stats_recent=pct_stats_recent,
         )
         if score is None:
             continue
         metric_scores[metric] = score
-        metric_percentiles[metric] = pct
+        if pct is not None:
+            metric_percentiles[metric] = pct
         metric_z[metric] = z
 
     event_scores: dict[str, float] = {}
@@ -421,6 +440,9 @@ def evaluate_athletic_profile(
 
     stats_all = pack.get("stats_all_by_pos", {}).get(pos, {})
     stats_recent = pack.get("stats_recent_by_pos", {}).get(pos, {})
+    # Keep a strict position-only reference for displayed percentiles.
+    pct_stats_all = stats_all
+    pct_stats_recent = stats_recent
     if not stats_all:
         stats_all = pack.get("stats_global_all", {})
     if not stats_recent:
@@ -463,6 +485,8 @@ def evaluate_athletic_profile(
         metrics=current_metrics,
         stats_all=stats_all,
         stats_recent=stats_recent,
+        pct_stats_all=pct_stats_all,
+        pct_stats_recent=pct_stats_recent,
     )
     score = float(core["athletic_profile_score"])
     bucket = int(_clamp(math.floor(score / 10.0), 0, 9))

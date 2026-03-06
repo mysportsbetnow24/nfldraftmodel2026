@@ -1,0 +1,25 @@
+2026 DELTA AUDIT
+
+Current board: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
+Previous board: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260304_170851.csv
+Rows compared: 264
+
+Top Risers (prev rank - curr rank > 0)
+1. KC Concepcion (WR) 44 -> 32 (+12); driver: prior (up 0.26) [ath 0.0, prod 0.0, prior 0.26, guardrail 0.0]
+2. Monroe Freeling (OT) 7 -> 5 (+2); driver: prior (up 0.14) [ath 0.0, prod 0.0, prior 0.14, guardrail 0.0]
+
+Top Fallers (prev rank - curr rank < 0)
+1. Caleb Lomu (OT) 5 -> 6 (-1); driver: prior (down 0.09) [ath 0.0, prod 0.0, prior -0.09, guardrail 0.0]
+2. Jordyn Tyson (WR) 6 -> 7 (-1); driver: prior (up 0.06) [ath 0.0, prod 0.0, prior 0.06, guardrail 0.0]
+3. Omar Cooper Jr. (WR) 32 -> 33 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+4. Daylen Everette (CB) 33 -> 34 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+5. Carnell Tate (WR) 34 -> 35 (-1); driver: prior (up 0.02) [ath 0.0, prod 0.0, prior 0.02, guardrail 0.0]
+6. Colton Hood (CB) 35 -> 36 (-1); driver: prior (down 0.07) [ath 0.0, prod 0.0, prior -0.07, guardrail 0.0]
+7. Josiah Trotter (LB) 36 -> 37 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+8. Christen Miller (DT) 37 -> 38 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+9. Ty Simpson (QB) 38 -> 39 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+10. Blake Miller (OT) 39 -> 40 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+11. Gabe Jacas (EDGE) 40 -> 41 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+12. Avieon Terrell (CB) 41 -> 42 (-1); driver: prior (up 0.07) [ath 0.0, prod 0.0, prior 0.07, guardrail 0.0]
+13. Eli Stowers (TE) 42 -> 43 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]
+14. Jake Golday (LB) 43 -> 44 (-1); driver: athletic (up 0.00) [ath 0.0, prod 0.0, prior 0.0, guardrail 0.0]

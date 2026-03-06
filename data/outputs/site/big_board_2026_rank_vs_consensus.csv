@@ -1,456 +1,264 @@
-final_rank,player_name,position,school,final_grade,round_value,consensus_rank,consensus_score,consensus_board_mean_rank,consensus_board_rank_std,consensus_board_source_count,consensus_board_sources,rank_seed
-1,Sonny Styles,LB,Ohio State,85.53,Round 1,1,85.53,11.0,8.6,6,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026,97
-2,Kadyn Proctor,OT,Alabama,85.1,Round 1,2,85.1,19.5,10.56,8,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFLMockDraftDatabase_2026|NFL_Daniel_Jeremiah_2026|PFF_Big_Board|Yahoo_Nate_Tice_2026,9
-3,Jeremiyah Love,RB,Notre Dame,85.1,Round 1,3,85.1,6.22,4.05,9,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|FantasyPros_Devy|NFL_Daniel_Jeremiah_2026|NFL_Draft_Buzz|PFF_Big_Board|Yahoo_Nate_Tice_2026,16
-4,Jordyn Tyson,WR,Arizona State,84.75,Round 1,4,84.75,12.67,6.75,6,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026|PFF_Big_Board,12
-5,Dillon Thieneman,S,Oregon,84.6,Round 1,5,84.6,38.75,15.51,4,CBS_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,190
-6,Monroe Freeling,OT,Georgia,84.59,Round 1,6,84.59,27.75,3.34,4,CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,34
-7,Caleb Lomu,OT,Utah,84.16,Round 1,7,84.16,19.67,7.5,6,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026|PFF_Big_Board,17
-8,Daylen Everette,CB,Georgia,83.92,Round 1-2,8,83.92,72.0,0.0,1,ExternalScoutBoard_2026,48
-9,Arvell Reese,LB,Ohio State Buckeyes,83.86,Round 2-3,9,83.86,3.62,2.5,8,Athletic_Consensus_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026|Ringer_NFL_Draft_Guide_2026|Yahoo_Nate_Tice_2026,15
-10,Anthony Hill Jr.,LB,Texas Longhorns,83.61,Round 2-3,10,83.61,41.17,23.23,6,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|FantasyPros_Devy|NFL_Daniel_Jeremiah_2026,48
-11,Dani Dennis-Sutton,EDGE,Penn State Nittany Lions,83.26,Round 2-3,11,83.26,89.0,0.0,1,ExternalScoutBoard_2026,94
-12,Francis Mauigoa,OT,Miami (FL) Hurricanes,83.18,Round 2-3,12,83.18,7.86,2.9,7,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026|PFF_Big_Board|Yahoo_Nate_Tice_2026,23
-13,Spencer Fano,OT,Utah,82.99,Round 2-3,13,82.99,21.71,23.27,7,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026,107
-14,Caleb Downs,S,Ohio State,82.74,Round 2-3,14,82.74,3.42,1.98,12,Athletic_Consensus_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|FantasyPros_Devy|NFLMockDraftDatabase_2026|NFL_Daniel_Jeremiah_2026|NFL_Draft_Buzz|PFF_Big_Board|Ringer_NFL_Draft_Guide_2026|Yahoo_Nate_Tice_2026,5
-15,Skyler Bell,WR,Connecticut Huskies,82.74,Round 2-3,15,82.74,79.0,0.0,1,ExternalScoutBoard_2026,85
-16,Brandon Cisse,CB,South Carolina Gamecocks,82.59,Round 2-3,16,82.59,37.4,15.37,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,41
-17,Olaivavega Ioane,IOL,Penn State Nittany Lions,82.47,Round 2-3,17,82.47,16.4,3.83,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,32
-18,Mansoor Delane,CB,LSU Tigers,82.44,Round 2-3,18,82.44,15.4,11.43,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,24
-19,Keionte Scott,CB,Miami (FL) Hurricanes,82.41,Round 2-3,19,82.41,61.0,18.4,4,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,58
-20,David Bailey,EDGE,Texas Tech,82.1,Round 2-3,20,82.1,15.56,23.1,9,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026|NFL_Draft_Buzz|Ringer_NFL_Draft_Guide_2026|Yahoo_Nate_Tice_2026,158
-21,T.J. Parker,EDGE,Clemson,82.03,Round 2-3,21,82.03,30.86,21.47,7,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|FantasyPros_Devy|NFL_Daniel_Jeremiah_2026,11
-22,D'Angelo Ponds,CB,Indiana Hoosiers,81.92,Round 2-3,22,81.92,55.5,10.9,4,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026,60
-23,Kenyon Sadiq,TE,Oregon,81.92,Round 2-3,23,81.92,28.0,13.16,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,86
-24,Tyreak Sapp,EDGE,Florida,81.76,Round 2-3,24,81.76,98.0,0.0,1,ExternalScoutBoard_2026,84
-25,C.J. Allen,LB,Georgia,81.75,Round 2-3,25,81.75,27.33,4.07,6,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026,40
-26,Makai Lemon,WR,USC Trojans,81.69,Round 2-3,26,81.69,13.0,2.97,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,21
-27,Josiah Trotter,LB,Missouri Tigers,81.68,Round 2-3,27,81.68,53.0,4.97,3,CBS_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026,67
-28,Zion Young,EDGE,Missouri Tigers,81.63,Round 2-3,28,81.63,44.0,2.94,3,ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,53
-29,Emmanuel Pregnon,IOL,Oregon Ducks,81.61,Round 2-3,29,81.61,33.5,11.59,4,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026,52
-30,Nyck Harbor,WR,South Carolina,81.6,Round 2-3,30,81.6,8.0,0.0,1,FantasyPros_Devy,40
-31,Gabe Jacas,EDGE,Illinois Fighting Illini,81.48,Round 2-3,31,81.48,68.67,36.38,3,CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026,49
-32,Fernando Mendoza,QB,Indiana,81.47,Round 2-3,32,81.47,1.7,1.55,10,Athletic_Consensus_2026|Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFLMockDraftDatabase_2026|NFL_Daniel_Jeremiah_2026|Ringer_NFL_Draft_Guide_2026|Yahoo_Nate_Tice_2026,1
-33,Christen Miller,DT,Georgia Bulldogs,81.42,Round 2-3,33,81.42,49.6,20.92,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,39
-34,Kayden McDonald,DT,Ohio State Buckeyes,81.37,Round 2-3,34,81.37,29.6,5.31,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,31
-35,Brian Parker II,OT,Duke Blue Devils,81.32,Round 2-3,35,81.32,99.0,0.0,1,ExternalScoutBoard_2026,103
-36,Blake Miller,OT,Clemson Tigers,81.26,Round 2-3,36,81.26,43.75,19.97,4,CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,83
-37,Mikail Kamara,EDGE,Indiana Hoosiers,80.92,Round 2-3,37,80.92,96.0,0.0,1,ExternalScoutBoard_2026,100
-38,Keldric Faulk,EDGE,Auburn,80.78,Round 2-3,38,80.78,19.83,5.87,6,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026,14
-39,Eugene Asante,LB,Auburn,80.76,Round 2-3,39,80.76,,,,,94
-40,Deion Burks,WR,Oklahoma Sooners,80.71,Round 2-3,40,80.71,68.0,19.0,2,ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,92
-41,Peter Woods,DT,Clemson,80.58,Round 3-4,41,80.58,17.5,22.44,10,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|FantasyPros_Devy|NFL_Daniel_Jeremiah_2026|NFL_Draft_Buzz|PFF_Big_Board|Yahoo_Nate_Tice_2026,4
-42,Emmanuel McNeil-Warren,S,Toledo Rockets,80.55,Round 3-4,42,80.55,27.6,8.85,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,43
-43,Jake Golday,LB,Cincinnati Bearcats,80.51,Round 3-4,43,80.51,43.5,10.23,4,CBS_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,64
-44,Kaytron Allen,RB,Penn State Nittany Lions,80.4,Round 3-4,44,80.4,116.0,0.0,1,ExternalScoutBoard_2026,119
-45,CJ Daniels,WR,Miami (FL) Hurricanes,80.37,Round 3-4,45,80.37,73.0,0.0,1,ExternalScoutBoard_2026,79
-46,Jack Endries,TE,Texas Longhorns,80.25,Round 3-4,46,80.25,71.0,0.0,1,ExternalScoutBoard_2026,77
-47,Zachariah Branch,WR,Georgia,80.14,Round 3-4,47,80.14,67.0,17.0,2,ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,266
-48,Akheem Mesidor,EDGE,Miami (FL) Hurricanes,80.12,Round 3-4,48,80.12,38.8,24.36,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,41
-49,Rueben Bain Jr.,EDGE,Miami (FL) Hurricanes,80.06,Round 3-4,49,80.06,14.25,24.23,8,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|FantasyPros_Devy|NFL_Daniel_Jeremiah_2026|PFF_Big_Board,14
-50,Caleb Tiernan,OT,Northwestern Wildcats,80.06,Round 3-4,50,80.06,61.67,6.6,3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,61
-51,Chris Brazzell II,WR,Tennessee Volunteers,80.06,Round 3-4,51,80.06,45.0,22.73,3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,81
-52,Colton Hood,CB,Tennessee Volunteers,80.04,Round 3-4,52,80.04,31.8,10.23,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,55
-53,Cashius Howell,EDGE,Texas A&M Aggies,79.99,Round 4-5,53,79.99,25.8,8.63,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,26
-54,Omar Cooper Jr.,WR,Indiana Hoosiers,79.98,Round 4-5,54,79.98,40.4,12.86,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,64
-55,Ja'Kobi Lane,WR,USC,79.95,Round 4-5,55,79.95,63.0,53.56,3,CBS_BigBoard_2026|ExternalScoutBoard_2026|NFL_Draft_Buzz,20
-56,R Mason Thomas,EDGE,Oklahoma,79.81,Round 4-5,56,79.81,46.2,10.78,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,30
-57,Michael Taaffe,S,Texas Longhorns,79.74,Round 4-5,57,79.74,120.0,0.0,1,ExternalScoutBoard_2026,122
-58,Ty Simpson,QB,Alabama Crimson Tide,79.67,Round 4-5,58,79.67,32.4,11.04,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,42
-59,J.C. Davis,OT,Illinois Fighting Illini,79.62,Round 4-5,59,79.62,111.0,0.0,1,ExternalScoutBoard_2026,114
-60,Chase Bisontis,IOL,Texas A&M,79.58,Round 4-5,60,79.58,74.67,21.01,3,CBS_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026,123
-61,Kaimon Rucker,EDGE,North Carolina,79.54,Round 4-5,61,79.54,,,,,50
-62,DJ McKinney,CB,Colorado,79.47,Round 4-5,62,79.47,,,,,35
-63,Bryce Lance,WR,North Dakota State,79.47,Round 4-5,63,79.47,73.0,67.0,2,ExternalScoutBoard_2026|SI_FCS_Scouting_2026,38
-64,Austin Barber,OT,Florida,79.41,Round 4-5,64,79.41,115.0,3.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,27
-65,Romello Height,EDGE,Texas Tech Red Raiders,79.41,Round 4-5,65,79.41,47.0,4.0,2,CBS_BigBoard_2026|ExternalScoutBoard_2026,59
-66,Eli Stowers,TE,Vanderbilt,79.4,Round 4-5,66,79.4,70.33,29.8,3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,21
-67,Dasan McCullough,LB,Oklahoma,79.39,Round 4-5,67,79.39,,,,,100
-68,Lorenzo Styles Jr.,CB,Ohio State,79.39,Round 4-5,68,79.39,,,,,225
-69,Justin Flowe,LB,Arizona,79.35,Round 4-5,69,79.35,,,,,91
-70,Nicholas Singleton,RB,Penn State,79.34,Round 4-5,70,79.34,110.0,0.0,1,ExternalScoutBoard_2026,32
-71,Takye Heath,CB,Georgia Tech,79.34,Round 4-5,71,79.34,,,,,42
-72,Chris Johnson,CB,San Diego State Aztecs,79.32,Round 4-5,72,79.32,63.0,12.75,3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,63
-73,De'Zhaun Stribling,WR,Mississippi Rebels,79.32,Round 4-5,73,79.32,107.0,0.0,1,ExternalScoutBoard_2026,110
-74,Jalen Stroman,S,Notre Dame Fighting Irish,79.3,Round 4-5,74,79.3,134.0,0.0,1,ExternalScoutBoard_2026,135
-75,Eugene Brooks III,IOL,Oklahoma,79.15,Round 4-5,75,79.15,,,,,38
-76,Charles Demmings,CB,Stephen F. Austin,79.15,Round 4-5,76,79.15,6.0,0.0,1,SI_FCS_Scouting_2026,38
-77,Aamil Wagner,OT,Notre Dame,79.13,Round 4-5,77,79.13,138.0,0.0,1,ExternalScoutBoard_2026,44
-78,Aiden Fisher,LB,Indiana Hoosiers,79.06,Round 4-5,78,79.06,130.0,0.0,1,ExternalScoutBoard_2026,132
-79,Brady Latham,IOL,Arkansas,79.04,Round 4-5,79,79.04,,,,,147
-80,Jermayne Lole,DT,Louisville,79.02,Round 4-5,80,79.02,,,,,120
-81,Jonah Coleman,RB,Washington Huskies,78.94,Round 4-5,81,78.94,60.0,18.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,84
-82,Seth McGowan,RB,Kentucky Wildcats,78.9,Round 4-5,82,78.9,95.0,0.0,1,ExternalScoutBoard_2026,99
-83,Eli Raridon,TE,Notre Dame,78.87,Round 4-5,83,78.87,122.0,0.0,1,ExternalScoutBoard_2026,294
-84,Evan Stewart,WR,Oregon,78.82,Round 4-5,84,78.82,,,,,46
-85,Christian Thomas,LB,Maine,78.8,Round 4-5,85,78.8,6.0,0.0,1,SI_FCS_Scouting_2026,38
-86,Isaiah World,OT,Oregon,78.79,Round 4-5,86,78.79,114.0,0.0,1,ExternalScoutBoard_2026,15
-87,Harold Perkins Jr.,LB,LSU,78.79,Round 4-5,87,78.79,148.0,0.0,1,ExternalScoutBoard_2026,18
-88,Sam Roush,TE,Stanford Cardinal,78.79,Round 4-5,88,78.79,101.0,0.0,1,ExternalScoutBoard_2026,105
-89,Chandler Rivers,CB,Duke,78.69,Round 4-5,89,78.69,73.5,5.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,52
-90,David Oke,DT,Arkansas Razorbacks,78.68,Round 4-5,90,78.68,144.0,0.0,1,ExternalScoutBoard_2026,144
-91,Albert Regis,DT,Texas A&M Aggies,78.66,Round 4-5,91,78.66,118.0,0.0,1,ExternalScoutBoard_2026,121
-92,Kevin Concepcion,WR,Texas A&M,78.65,Round 4-5,92,78.65,,,,,31
-93,Xavier Scott,CB,Illinois Fighting Illini,78.59,Round 4-5,93,78.59,103.0,0.0,1,ExternalScoutBoard_2026,107
-94,Domonique Orange,DT,Iowa State Cyclones,78.54,Round 4-5,94,78.54,58.0,7.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,72
-95,Thaddeus Dixon,CB,North Carolina Tar Heels,78.54,Round 4-5,95,78.54,126.0,0.0,1,ExternalScoutBoard_2026,128
-96,Derrick Moore,EDGE,Michigan,78.54,Round 4-5,96,78.54,68.0,10.0,2,Bleacher_Report_2026|ExternalScoutBoard_2026,172
-97,Justice Boone,RB,Colorado,78.51,Round 4-5,97,78.51,,,,,75
-98,Caleb Banks,DT,Florida Gators,78.48,Round 4-5,98,78.48,32.4,18.04,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,28
-99,Langston Jones,OT,Lehigh,78.45,Round 4-5,99,78.45,6.0,0.0,1,SI_FCS_Scouting_2026,38
-100,Makhi Hughes,RB,Oregon,78.42,Round 4-5,100,78.42,,,,,65
-101,Jake Slaughter,IOL,Florida,78.37,Round 4-5,101,78.37,88.5,12.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,129
-102,Denzel Boston,WR,Washington,78.36,Round 4-5,102,78.36,25.33,6.26,6,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026,25
-103,A'Mauri Washington,DT,Oregon,78.36,Round 4-5,103,78.36,49.0,0.0,1,CBS_BigBoard_2026,91
-104,Mateen Ibirogba,DT,Wake Forest,78.36,Round 4-5,104,78.36,53.0,0.0,1,CBS_BigBoard_2026,96
-105,Davison Igbinosun,CB,Ohio State,78.35,Round 4-5,105,78.35,105.0,48.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,51
-106,Eric McAlister,WR,TCU Horned Frogs,78.33,Round 4-5,106,78.33,127.0,0.0,1,ExternalScoutBoard_2026,129
-107,Eric Singleton Jr.,WR,Auburn,78.29,Round 4-5,107,78.29,32.0,0.0,1,CBS_BigBoard_2026,70
-108,DeMonte Capehart,DT,Clemson Tigers,78.29,Round 4-5,108,78.29,173.0,0.0,1,ExternalScoutBoard_2026,171
-109,Gabriel Brownlow-Dindy,DT,South Carolina,78.28,Round 4-5,109,78.28,,,,,159
-110,Hollin Pierce,OT,Rutgers,78.24,Round 4-5,110,78.24,,,,,117
-111,Jager Burton,IOL,Kentucky Wildcats,78.22,Round 4-5,111,78.22,137.0,0.0,1,ExternalScoutBoard_2026,138
-112,Joshua Josephs,EDGE,Tennessee Volunteers,78.2,Round 4-5,112,78.2,56.0,20.31,3,Bleacher_Report_2026|CBS_BigBoard_2026|ExternalScoutBoard_2026,68
-113,Avieon Terrell,CB,Clemson,78.18,Round 4-5,113,78.18,29.62,19.83,8,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026|NFL_Draft_Buzz|Yahoo_Nate_Tice_2026,6
-114,Trey Moore,LB,Texas Longhorns,78.16,Round 4-5,114,78.16,139.0,0.0,1,ExternalScoutBoard_2026,140
-115,Max Iheanachor,OT,Arizona State Sun Devils,78.12,Round 4-5,115,78.12,41.75,12.3,4,CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,70
-116,Tyre West,DT,Indiana,78.11,Round 4-5,116,78.11,,,,,164
-117,Xavier Chaplin,OT,Auburn,78.1,Round 4-5,117,78.1,,,,,122
-118,Malachi Lawrence,EDGE,UCF Knights,78.09,Round 4-5,118,78.09,106.5,47.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,154
-119,Tanner Koziol,TE,Houston,78.09,Round 4-5,119,78.09,159.0,0.0,1,ExternalScoutBoard_2026,289
-120,Domata Peko Jr.,DT,UCLA,78.03,Round 4-5,120,78.03,,,,,176
-121,Carnell Tate,WR,Ohio State,78.01,Round 4-5,121,78.01,8.83,2.27,6,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026|Yahoo_Nate_Tice_2026,13
-122,Gennings Dunker,OT,Iowa Hawkeyes,78.0,Round 4-5,122,78.0,95.0,12.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,88
-123,Elijah Sarratt,WR,Indiana Hoosiers,77.93,Round 4-5,123,77.93,76.5,10.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,73
-124,Matayo Uiagalelei,EDGE,Oregon,77.87,Round 4-5,124,77.87,50.5,27.5,2,Bleacher_Report_2026|CBS_BigBoard_2026,59
-125,Kade Pieper,IOL,Iowa,77.83,Round 4-5,125,77.83,40.0,0.0,1,CBS_BigBoard_2026,80
-126,A.J. Haulcy,S,LSU Tigers,77.82,Round 4-5,126,77.82,48.67,8.06,3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,51
-127,Ar'maj Reed-Adams,IOL,Texas A&M,77.81,Round 4-5,127,77.81,146.0,0.0,1,ExternalScoutBoard_2026,126
-128,Genesis Smith,S,Arizona Wildcats,77.77,Round 4-5,128,77.77,81.33,24.69,3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,108
-129,Chris Bell,WR,Louisville,77.75,Round 4-5,129,77.75,54.0,18.0,2,CBS_BigBoard_2026|ExternalScoutBoard_2026,269
-130,Jadon Canady,CB,Oregon Ducks,77.73,Round 4-5,130,77.73,187.0,0.0,1,ExternalScoutBoard_2026,184
-131,Deontae Lawson,LB,Alabama,77.68,Round 4-5,131,77.68,64.0,18.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,96
-132,Jeff Caldwell,WR,Cincinnati Bearcats,77.67,Round 4-5,132,77.67,180.0,0.0,1,ExternalScoutBoard_2026,178
-133,Malik Muhammad,CB,Texas,77.66,Round 4-5,133,77.66,77.0,21.74,3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,228
-134,Tre Williams,DT,Clemson,77.65,Round 4-5,134,77.65,,,,,182
-135,Cole Brevard,DT,Texas Longhorns,77.59,Round 4-5,135,77.59,167.0,0.0,1,ExternalScoutBoard_2026,166
-136,Darrell Jackson Jr.,DT,Florida State,77.58,Round 4-5,136,77.58,66.0,19.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,7
-137,Tacario Davis,CB,Washington,77.54,Round 4-5,137,77.54,114.0,46.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,56
-138,Cade Klubnik,QB,Clemson,77.54,Round 4-5,138,77.54,42.33,54.22,3,ExternalScoutBoard_2026|FantasyPros_Devy|NFL_Draft_Buzz,61
-139,Drew Allar,QB,Penn State,77.53,Round 4-5,139,77.53,61.0,60.0,2,ExternalScoutBoard_2026|NFL_Draft_Buzz,62
-140,CJ Mims,EDGE,West Virginia,77.5,Round 4-5,140,77.5,,,,,168
-141,David Gusta,DT,Kentucky,77.46,Round 4-5,141,77.46,71.0,0.0,1,CBS_Wilson_BigBoard_2026,119
-142,KC Concepcion,WR,Texas A&M Aggies,77.41,Round 4-5,142,77.41,31.6,7.17,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,36
-143,Dontay Corleone,DT,Cincinnati Bearcats,77.4,Round 4-5,143,77.4,73.5,19.5,2,CBS_BigBoard_2026|ExternalScoutBoard_2026,62
-144,Dakaari Nelson,S,Penn State,77.37,Round 4-5,144,77.37,,,,,193
-145,Barika Kpeenu,RB,North Dakota State,77.36,Round 4-5,145,77.36,6.0,0.0,1,SI_FCS_Scouting_2026,38
-146,Daniel Sobkowicz,WR,Illinois State,77.36,Round 4-5,146,77.36,6.0,0.0,1,SI_FCS_Scouting_2026,38
-147,Michael Briscoe,WR,Cal Poly,77.36,Round 4-5,147,77.36,6.0,0.0,1,SI_FCS_Scouting_2026,38
-148,Michael Wortham,WR,Montana,77.36,Round 4-5,148,77.36,6.0,0.0,1,SI_FCS_Scouting_2026,38
-149,Rodney Hammond Jr.,RB,Sacramento State,77.36,Round 4-5,149,77.36,6.0,0.0,1,SI_FCS_Scouting_2026,38
-150,Treyvhon Saunders,WR,Colgate,77.36,Round 4-5,150,77.36,6.0,0.0,1,SI_FCS_Scouting_2026,38
-151,Drew Shelton,OT,Penn State Nittany Lions,77.36,Round 4-5,151,77.36,143.0,0.0,1,ExternalScoutBoard_2026,144
-152,Jalon Kilgore,S,South Carolina,77.33,Round 4-5,152,77.33,124.0,11.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,26
-153,Zxavian Harris,DT,Mississippi Rebels,77.3,Round 4-5,153,77.3,185.0,0.0,1,ExternalScoutBoard_2026,182
-154,Keagen Trost,OT,Missouri,77.28,Round 4-5,154,77.28,58.0,0.0,1,CBS_Wilson_BigBoard_2026,102
-155,Jadarian Price,RB,Notre Dame Fighting Irish,77.27,Round 4-5,155,77.27,57.25,19.9,4,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,66
-156,Cayden Green,IOL,Missouri,77.25,Round 4-5,156,77.25,58.0,0.0,1,CBS_BigBoard_2026,102
-157,Darris Smith,EDGE,LSU,77.24,Round 4-5,157,77.24,,,,,170
-158,Keon Wylie,S,Texas Tech,77.22,Round 4-5,158,77.22,,,,,197
-159,Trevor Goosby,OT,Texas,77.21,Round 4-5,159,77.21,31.0,0.0,1,CBS_BigBoard_2026,69
-160,Addison Nichols,IOL,Arkansas,77.19,Round 4-5,160,77.19,,,,,134
-161,Bryce Lovett,IOL,NC State,77.17,Round 4-5,161,77.17,,,,,137
-162,Branson Combs,S,Wake Forest,77.17,Round 4-5,162,77.17,,,,,196
-163,Zane Durant,DT,Penn State,77.14,Round 4-5,163,77.14,217.0,0.0,1,ExternalScoutBoard_2026,88
-164,DJ Campbell,IOL,Texas Longhorns,77.14,Round 4-5,164,77.14,125.0,0.0,1,ExternalScoutBoard_2026,127
-165,Skyler Gill-Howard,DT,Texas Tech Red Raiders,77.11,Round 4-5,165,77.11,106.0,0.0,1,ExternalScoutBoard_2026,110
-166,Timothy McKay,IOL,NC State,77.08,Round 4-5,166,77.08,,,,,136
-167,Bear Alexander,DT,Oregon,77.07,Round 4-5,167,77.07,62.0,0.0,1,CBS_BigBoard_2026,108
-168,Keon Sabb,S,Alabama,77.05,Round 4-5,168,77.05,,,,,194
-169,Isaac Smith,S,Mississippi State,77.03,Round 4-5,169,77.03,,,,,192
-170,Ted Hurst,WR,Georgia State Panthers,76.99,Round 4-5,170,76.99,98.0,52.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,150
-171,Jeremiah Alexander,EDGE,Alabama,76.99,Round 4-5,171,76.99,,,,,177
-172,Jacob Rodriguez,LB,Texas Tech Red Raiders,76.98,Round 4-5,172,76.98,85.0,5.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,95
-173,Joe Crocker Jr.,IOL,Auburn,76.97,Round 4-5,173,76.97,,,,,148
-174,Ernest Hausmann,LB,Michigan,76.94,Round 4-5,174,76.94,,,,,243
-175,Anthony Lucas,EDGE,USC Trojans,76.9,Round 4-5,175,76.9,74.0,5.0,2,CBS_BigBoard_2026|ExternalScoutBoard_2026,75
-176,Nolan Rucci,OT,Penn State,76.9,Round 4-5,176,76.9,193.0,0.0,1,ExternalScoutBoard_2026,149
-177,Mike Washington Jr.,RB,Arkansas Razorbacks,76.89,Round 4-5,177,76.89,131.5,9.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,142
-178,Raesjon Davis,LB,USC,76.86,Round 4-5,178,76.86,,,,,242
-179,Le'Veon Moss,RB,Texas A&M,76.8,Round 4-5,179,76.8,155.0,0.0,1,ExternalScoutBoard_2026,66
-180,Martavius French,LB,Tennessee,76.76,Round 4-5,180,76.76,,,,,245
-181,Kobe Baynes,IOL,Kansas Jayhawks,76.73,Round 4-5,181,76.73,152.0,0.0,1,ExternalScoutBoard_2026,152
-182,Cole Wisniewski,S,Texas Tech Red Raiders,76.73,Round 4-5,182,76.73,202.0,0.0,1,ExternalScoutBoard_2026,198
-183,Shedrick Shropshire,LB,TCU,76.73,Round 4-5,183,76.73,,,,,246
-184,Jermod McCoy,CB,Tennessee,76.69,Round 4-5,184,76.69,22.33,24.99,6,Bleacher_Report_2026|CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,33
-185,Bud Clark,S,TCU Horned Frogs,76.68,Round 4-5,185,76.68,113.0,4.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,112
-186,Garrett Nussmeier,QB,LSU,76.67,Round 4-5,186,76.67,81.0,0.0,1,ExternalScoutBoard_2026,58
-187,Keith Abney II,CB,Arizona State Sun Devils,76.64,Round 4-5,187,76.64,84.67,37.33,3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,44
-188,Jaeden Roberts,IOL,Alabama,76.64,Round 4-5,188,76.64,156.0,0.0,1,ExternalScoutBoard_2026,125
-189,George Gumbs Jr.,EDGE,Florida Gators,76.64,Round 4-5,189,76.64,172.0,0.0,1,ExternalScoutBoard_2026,170
-190,Roman Hemby,RB,Indiana,76.61,Round 4-5,190,76.61,200.0,0.0,1,ExternalScoutBoard_2026,73
-191,Iapani Laloulu,IOL,Oregon,76.61,Round 4-5,191,76.61,54.0,0.0,1,CBS_BigBoard_2026,98
-192,John Michael Gyllenborg,TE,Wyoming Cowboys,76.61,Round 4-5,192,76.61,168.0,0.0,1,ExternalScoutBoard_2026,167
-193,Popo Aumavae,LB,Oregon,76.6,Round 4-5,193,76.6,,,,,248
-194,Max Klare,TE,Purdue,76.59,Round 4-5,194,76.59,48.5,21.5,2,CBS_BigBoard_2026|ExternalScoutBoard_2026,300
-195,Jaishawn Barham,LB,Michigan,76.57,Round 4-5,195,76.57,96.0,4.32,3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,142
-196,LaNorris Sellers,QB,South Carolina,76.54,Round 4-5,196,76.54,4.0,0.0,1,NFL_Draft_Buzz,35
-197,Tysheem Johnson,LB,Oregon,76.53,Round 4-5,197,76.53,,,,,250
-198,Antonio Williams,WR,Clemson,76.51,Round 4-5,198,76.51,72.5,17.28,4,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,267
-199,Marlin Klein,TE,Michigan Wolverines,76.48,Round 4-5,199,76.48,108.0,0.0,1,ExternalScoutBoard_2026,111
-200,Denairius Gray,CB,Florida,76.43,Round 4-5,200,76.43,,,,,213
-201,Toriano Pride Jr.,CB,Missouri,76.43,Round 4-5,201,76.43,,,,,227
-202,Hero Kanu,DT,Texas,76.42,Round 4-5,202,76.42,87.0,0.0,1,CBS_BigBoard_2026,139
-203,Gracen Halton,DT,Oklahoma Sooners,76.3,Round 4-5,203,76.3,92.5,22.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,118
-204,Ja'Keem Jackson,CB,Florida,76.3,Round 4-5,204,76.3,,,,,223
-205,Ricardo Jones Jr.,CB,Purdue,76.28,Round 4-5,205,76.28,,,,,211
-206,Quincy Rhodes Jr.,EDGE,Arkansas,76.26,Round 4-5,206,76.26,42.0,0.0,1,CBS_BigBoard_2026,82
-207,Samari Matthews,CB,Texas A&M,76.22,Round 4-5,207,76.22,,,,,214
-208,Cyrus Allen,WR,Cincinnati Bearcats,76.2,Round 4-5,208,76.2,164.0,0.0,1,ExternalScoutBoard_2026,163
-209,Tyreak Chappell,CB,South Carolina,76.17,Round 4-5,209,76.17,,,,,218
-210,Tyler Collins,CB,Mississippi State,76.17,Round 4-5,210,76.17,,,,,230
-211,Justin Joly,TE,North Carolina State Wolfpack,76.16,Round 4-5,211,76.16,82.0,4.0,2,Bleacher_Report_2026|ExternalScoutBoard_2026,91
-212,Sam Hecht,IOL,Kansas State Wildcats,76.14,Round 4-5,212,76.14,91.5,1.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,98
-213,Suntarine Perkins,LB,Ole Miss,76.09,Round 4-5,213,76.09,88.0,0.0,1,CBS_BigBoard_2026,140
-214,Isaiah Nwokobia,S,SMU Mustangs,76.09,Round 4-5,214,76.09,181.0,0.0,1,ExternalScoutBoard_2026,179
-215,Ethan Burke,EDGE,Texas,76.08,Round 4-5,215,76.08,75.0,0.0,1,CBS_BigBoard_2026,124
-216,Germie Bernard,WR,Alabama,76.08,Round 4-5,216,76.08,70.5,29.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,265
-217,Eric Rivers,WR,Georgia Tech Yellow Jackets,76.06,Round 4-5,217,76.06,95.0,36.0,2,CBS_BigBoard_2026|ExternalScoutBoard_2026,133
-218,Earnest Greene III,OT,Georgia,76.04,Round 4-5,218,76.04,171.0,0.0,1,ExternalScoutBoard_2026,113
-219,Bryce Boettcher,LB,Oregon Ducks,76.04,Round 4-5,219,76.04,209.0,0.0,1,ExternalScoutBoard_2026,204
-220,Taylen Green,QB,Arkansas Razorbacks,76.04,Round 4-5,220,76.04,227.0,0.0,1,ExternalScoutBoard_2026,221
-221,Jamel Johnson,S,TCU,76.03,Round 4-5,221,76.03,83.0,0.0,1,CBS_BigBoard_2026,134
-222,Jalyn Phillips,S,Georgia,75.94,Round 5-6,222,75.94,,,,,189
-223,Michael Trigg,TE,Baylor Bears,75.93,Round 5-6,223,75.93,55.5,18.5,2,CBS_BigBoard_2026|ExternalScoutBoard_2026,80
-224,Alex Harkey,IOL,Oregon,75.93,Round 5-6,224,75.93,68.0,0.0,1,CBS_BigBoard_2026,115
-225,Jordan Shaw,CB,Washington,75.93,Round 5-6,225,75.93,,,,,224
-226,Jeremiah Wilson,CB,Florida State,75.91,Round 5-6,226,75.91,,,,,216
-227,Kani Walker,CB,Oregon,75.9,Round 5-6,227,75.9,,,,,226
-228,Red Murdock,LB,Buffalo,75.85,Round 5-6,228,75.85,92.0,0.0,1,CBS_BigBoard_2026,145
-229,Jaydn Ott,RB,Oklahoma,75.84,Round 5-6,229,75.84,170.0,0.0,1,ExternalScoutBoard_2026,64
-230,Demond Claiborne,RB,Wake Forest,75.79,Round 5-6,230,75.79,99.5,23.5,2,CBS_BigBoard_2026|ExternalScoutBoard_2026,67
-231,Ashton Stamps,CB,LSU,75.77,Round 5-6,231,75.77,,,,,215
-232,Beau Stephens,IOL,Iowa Hawkeyes,75.7,Round 5-6,232,75.7,85.33,33.07,3,Bleacher_Report_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,131
-233,Clev Lubin,EDGE,Louisville,75.7,Round 5-6,233,75.7,100.0,0.0,1,CBS_BigBoard_2026,155
-234,Cole Payton,QB,North Dakota State,75.64,Round 5-6,234,75.64,117.5,113.5,2,ExternalScoutBoard_2026|SI_FCS_Scouting_2026,35
-235,Eli Heidenreich,RB,Navy Midshipmen,75.64,Round 5-6,235,75.64,223.0,0.0,1,ExternalScoutBoard_2026,217
-236,TJ Guy,EDGE,Michigan Wolverines,75.59,Round 5-6,236,75.59,199.0,0.0,1,ExternalScoutBoard_2026,195
-237,Treyveon McGee,CB,Georgia,75.58,Round 5-6,237,75.58,,,,,229
-238,Xavier Nwankpa,S,Iowa,75.57,Round 5-6,238,75.57,274.0,0.0,1,ExternalScoutBoard_2026,95
-239,Josh Cuevas,TE,Alabama Crimson Tide,75.54,Round 5-6,239,75.54,113.0,0.0,1,ExternalScoutBoard_2026,116
-240,Trinidad Chambliss,QB,Mississippi Rebels,75.47,Round 5-6,240,75.47,72.5,5.5,2,Bleacher_Report_2026|ExternalScoutBoard_2026,74
-241,Hollywood Smothers,RB,N.C. State,75.47,Round 5-6,241,75.47,69.0,0.0,1,CBS_BigBoard_2026,116
-242,Pat Coogan,IOL,Indiana Hoosiers,75.47,Round 5-6,242,75.47,106.5,42.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,149
-243,Desmond Reid,RB,Pittsburgh Panthers,75.45,Round 5-6,243,75.45,179.0,0.0,1,ExternalScoutBoard_2026,177
-244,James Thompson Jr.,DT,Illinois Fighting Illini,75.45,Round 5-6,244,75.45,218.0,0.0,1,ExternalScoutBoard_2026,213
-245,Emmett Johnson,RB,Nebraska Cornhuskers,75.42,Round 5-6,245,75.42,74.0,8.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,87
-246,Jalen McMurray,S,Tennessee,75.37,Round 5-6,246,75.37,81.0,0.0,1,CBS_Wilson_BigBoard_2026,131
-247,Jahiem Lawson,EDGE,Clemson,75.37,Round 5-6,247,75.37,96.0,0.0,1,CBS_BigBoard_2026,150
-248,Connor Lew,IOL,Auburn Tigers,75.35,Round 5-6,248,75.35,80.0,18.55,3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,71
-249,Dae'Quan Wright,TE,Mississippi Rebels,75.26,Round 5-6,249,75.26,162.0,0.0,1,ExternalScoutBoard_2026,161
-250,Quintayvious Hutchins,EDGE,Boston College Eagles,75.11,Round 5-6,250,75.11,163.0,0.0,1,ExternalScoutBoard_2026,162
-251,Jude Bowry,OT,Boston College Eagles,75.09,Round 5-6,251,75.09,109.5,18.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,130
-252,Zavion Thomas,WR,LSU Tigers,75.05,Round 5-6,252,75.05,174.0,0.0,1,ExternalScoutBoard_2026,172
-253,Lee Hunter,DT,Texas Tech Red Raiders,75.04,Round 5-6,253,75.04,46.4,19.79,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,57
-254,Carson Beck,QB,Miami (FL) Hurricanes,75.02,Round 5-6,254,75.02,98.0,7.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,96
-255,Jermaine Mathews Jr.,CB,Ohio State Buckeyes,74.99,Round 5-6,255,74.99,194.0,0.0,1,ExternalScoutBoard_2026,190
-256,Malachi Fields,WR,Notre Dame Fighting Irish,74.98,Round 5-6,256,74.98,64.75,23.37,4,CBS_Wilson_BigBoard_2026|ESPN_Jordan_Reid_2026|ExternalScoutBoard_2026|NFL_Daniel_Jeremiah_2026,101
-257,Josh Moten,CB,Southern Miss Golden Eagles,74.9,Round 5-6,257,74.9,235.0,0.0,1,ExternalScoutBoard_2026,228
-258,Nic Anderson,WR,Oklahoma,74.89,Round 5-6,258,74.89,,,,,264
-259,Isaiah Paul,LB,Baylor,74.88,Round 5-6,259,74.88,,,,,240
-260,Nick Barrett,DT,South Carolina,74.87,Round 5-6,260,74.87,60.0,0.0,1,CBS_Wilson_BigBoard_2026,105
-261,Julian Neal,CB,Arkansas Razorbacks,74.85,Round 5-6,261,74.85,74.67,38.87,3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,126
-262,AJ Harris,CB,Penn State,74.84,Round 5-6,262,74.84,98.0,0.0,1,CBS_BigBoard_2026,152
-263,Micah Morris,IOL,Georgia Bulldogs,74.77,Round 5-6,263,74.77,249.0,0.0,1,ExternalScoutBoard_2026,241
-264,Dallen Bentley,TE,Utah Utes,74.75,Round 5-6,264,74.75,195.0,0.0,1,ExternalScoutBoard_2026,191
-265,Devon Marshall,CB,North Carolina State Wolfpack,74.74,Round 5-6,265,74.74,126.5,51.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,176
-266,Jalen Walthall,WR,Incarnate Word,74.72,Round 5-6,266,74.72,6.0,0.0,1,SI_FCS_Scouting_2026,38
-267,Patrick Payton,EDGE,LSU,74.72,Round 5-6,267,74.72,237.0,0.0,1,ExternalScoutBoard_2026,92
-268,J. Michael Sturdivant,WR,Florida Gators,74.72,Round 5-6,268,74.72,203.0,0.0,1,ExternalScoutBoard_2026,199
-269,Johntay Cook,WR,Texas,74.72,Round 5-6,269,74.72,,,,,268
-270,Robert Spears-Jennings,S,Oklahoma Sooners,74.71,Round 5-6,270,74.71,186.0,0.0,1,ExternalScoutBoard_2026,183
-271,Kaelon Black,RB,Indiana Hoosiers,74.6,Round 5-6,271,74.6,228.0,0.0,1,ExternalScoutBoard_2026,222
-272,Carter Smith,IOL,Indiana,74.56,Round 5-6,272,74.56,95.0,0.0,1,CBS_BigBoard_2026,149
-273,Zakee Wheatley,S,Penn State Nittany Lions,74.53,Round 5-6,273,74.53,85.33,4.99,3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,97
-274,Tanner Miller,IOL,Michigan,74.48,Round 5-6,274,74.48,,,,,127
-275,Devonta Smith,CB,Notre Dame Fighting Irish,74.47,Round 5-6,275,74.47,210.0,0.0,1,ExternalScoutBoard_2026,205
-276,Isaiah Sategna,WR,Arkansas,74.45,Round 5-6,276,74.45,,,,,270
-277,Justin Jefferson,LB,Alabama,74.42,Round 5-6,277,74.42,121.0,0.0,1,CBS_Wilson_BigBoard_2026,181
-278,Anto Saka,EDGE,Northwestern,74.37,Round 5-6,278,74.37,73.0,0.0,1,CBS_BigBoard_2026,121
-279,Lander Barton,LB,Utah Utes,74.33,Round 5-6,279,74.33,250.0,0.0,1,ExternalScoutBoard_2026,242
-280,Terrance Carter Jr.,TE,Texas Tech,74.32,Round 5-6,280,74.32,98.0,16.0,2,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026,132
-281,Jordan Hudson,WR,SMU,74.32,Round 5-6,281,74.32,83.0,0.0,1,CBS_Wilson_BigBoard_2026,134
-282,Mason Reiger,EDGE,Wisconsin Badgers,74.3,Round 5-6,282,74.3,258.0,0.0,1,ExternalScoutBoard_2026,249
-283,Dane Key,WR,Georgia,74.29,Round 5-6,283,74.29,191.0,0.0,1,ExternalScoutBoard_2026,263
-284,Parker Brailsford,IOL,Alabama,74.26,Round 5-6,284,74.26,120.0,72.0,2,CBS_BigBoard_2026|ExternalScoutBoard_2026,128
-285,Arlis Boardingham,TE,Florida,74.26,Round 5-6,285,74.26,,,,,293
-286,Owen Heinecke,LB,Oklahoma Sooners,74.23,Round 5-6,286,74.23,204.0,0.0,1,ExternalScoutBoard_2026,200
-287,Jalen Catalon,S,Missouri Tigers,74.22,Round 5-6,287,74.22,238.0,0.0,1,ExternalScoutBoard_2026,231
-288,Conner Weigman,QB,Houston,74.19,Round 5-6,288,74.19,,,,,60
-289,Eric O'Neill,EDGE,Rutgers Scarlet Knights,74.15,Round 5-6,289,74.15,245.0,0.0,1,ExternalScoutBoard_2026,237
-290,Kamari Ramsey,S,USC Trojans,74.13,Round 5-6,290,74.13,62.0,0.0,1,ExternalScoutBoard_2026,69
-291,Logan Fano,EDGE,Utah Utes,74.13,Round 5-6,291,74.13,246.0,0.0,1,ExternalScoutBoard_2026,238
-292,Keeshawn Silver,DT,USC,74.1,Round 5-6,292,74.1,271.0,0.0,1,ExternalScoutBoard_2026,47
-293,Taurean York,LB,Texas A&M Aggies,74.09,Round 5-6,293,74.09,87.5,7.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,86
-294,Tim Keenan III,DT,Alabama Crimson Tide,74.06,Round 5-6,294,74.06,132.0,0.0,1,ExternalScoutBoard_2026,133
-295,Anez Cooper,IOL,Miami,74.06,Round 5-6,295,74.06,97.0,0.0,1,CBS_Wilson_BigBoard_2026,151
-296,Robert Henry Jr.,RB,UTSA Roadrunners,74.05,Round 5-6,296,74.05,197.0,0.0,1,ExternalScoutBoard_2026,193
-297,Terion Stewart,RB,Virginia Tech Hokies,74.03,Round 5-6,297,74.03,205.0,0.0,1,ExternalScoutBoard_2026,201
-298,Oscar Cardenas,TE,UTSA,74.03,Round 5-6,298,74.03,,,,,296
-299,Rahsul Faison,RB,South Carolina Gamecocks,73.99,Round 5-6,299,73.99,213.0,0.0,1,ExternalScoutBoard_2026,208
-300,Holden Staes,TE,Tennessee,73.99,Round 5-6,300,73.99,,,,,290
-301,Keylan Rutledge,IOL,Georgia Tech Yellow Jackets,73.98,Round 5-6,301,73.98,117.5,15.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,134
-302,Max Llewellyn,EDGE,Iowa Hawkeyes,73.98,Round 5-6,302,73.98,182.0,0.0,1,ExternalScoutBoard_2026,179
-303,DJ Harvey,CB,USC Trojans,73.98,Round 5-6,303,73.98,206.0,0.0,1,ExternalScoutBoard_2026,202
-304,Domani Jackson,CB,Alabama,73.97,Round 5-6,304,73.97,196.0,0.0,1,ExternalScoutBoard_2026,212
-305,Kyle Louis,LB,Pittsburgh Panthers,73.85,Round 5-6,305,73.85,130.0,31.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,160
-306,Lewis Bond,WR,Boston College Eagles,73.82,Round 5-6,306,73.82,226.0,0.0,1,ExternalScoutBoard_2026,220
-307,Jalon Daniels,QB,Kansas Jayhawks,73.8,Round 5-6,307,73.8,177.0,0.0,1,ExternalScoutBoard_2026,175
-308,Keyshawn James-Newby,EDGE,New Mexico Lobos,73.8,Round 5-6,308,73.8,261.0,0.0,1,ExternalScoutBoard_2026,252
-309,Trey Zuhn III,IOL,Texas A&M,73.73,Round 5-6,309,73.73,111.0,42.8,3,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,114
-310,Peyton Bowen,S,Oklahoma Sooners,73.73,Round 5-6,310,73.73,251.0,0.0,1,ExternalScoutBoard_2026,243
-311,Noah Thomas,WR,Georgia Bulldogs,73.72,Round 5-6,311,73.72,201.0,0.0,1,ExternalScoutBoard_2026,197
-312,Kendal Daniels,LB,Oklahoma,73.7,Round 5-6,312,73.7,187.0,151.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,75
-313,Elijah Pritchett,OT,Nebraska Cornhuskers,73.67,Round 5-6,313,73.67,241.0,0.0,1,ExternalScoutBoard_2026,234
-314,Ceyair Wright,CB,Nebraska Cornhuskers,73.64,Round 5-6,314,73.64,215.0,0.0,1,ExternalScoutBoard_2026,210
-315,Noah Whittington,RB,Oregon Ducks,73.64,Round 5-6,315,73.64,277.0,0.0,1,ExternalScoutBoard_2026,267
-316,Derek Robertson,QB,Monmouth,73.56,Round 5-6,316,73.56,6.0,0.0,1,SI_FCS_Scouting_2026,38
-317,LT Overton,EDGE,Alabama,73.54,Round 5-6,317,73.54,53.8,44.98,5,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026|NFL_Draft_Buzz|PFF_Big_Board,23
-318,Chase Roberts,WR,BYU Cougars,73.53,Round 5-6,318,73.53,165.0,0.0,1,ExternalScoutBoard_2026,164
-319,Rohan Jones,TE,Arkansas Razorbacks,73.46,Round 5-6,319,73.46,346.0,0.0,1,ExternalScoutBoard_2026,300
-320,Eric Gentry,LB,USC Trojans,73.35,Round 5-6,320,73.35,272.0,0.0,1,ExternalScoutBoard_2026,262
-321,Jalen Huskey,S,Maryland Terrapins,73.34,Round 5-6,321,73.34,306.0,0.0,1,ExternalScoutBoard_2026,294
-322,John Mateer,QB,Oklahoma,73.2,Round 5-6,322,73.2,61.0,0.0,1,CBS_BigBoard_2026,106
-323,Will Lee III,CB,Texas A&M Aggies,73.19,Round 5-6,323,73.19,90.0,12.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,106
-324,Joe Royer,TE,Cincinnati Bearcats,73.16,Round 5-6,324,73.16,120.5,3.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,120
-325,Jeadyn Lukus,CB,Clemson Tigers,73.16,Round 5-6,325,73.16,232.0,0.0,1,ExternalScoutBoard_2026,225
-326,Caleb Douglas,WR,Texas Tech Red Raiders,73.1,Round 5-6,326,73.1,198.0,0.0,1,ExternalScoutBoard_2026,194
-327,Trebor Pena,WR,Penn State Nittany Lions,73.1,Round 5-6,327,73.1,248.0,0.0,1,ExternalScoutBoard_2026,240
-328,Carsen Ryan,TE,BYU Cougars,73.04,Round 5-6,328,73.04,273.0,0.0,1,ExternalScoutBoard_2026,263
-329,Scooby Williams,LB,Texas A&M Aggies,73.03,Round 5-6,329,73.03,298.0,0.0,1,ExternalScoutBoard_2026,286
-330,Lake McRee,TE,USC Trojans,72.96,Round 5-6,330,72.96,208.0,0.0,1,ExternalScoutBoard_2026,203
-331,Landon Robinson,DT,Navy Midshipmen,72.92,Round 5-6,331,72.92,293.0,0.0,1,ExternalScoutBoard_2026,282
-332,Jaden Rashada,QB,Sacramento State,72.91,Round 5-6,332,72.91,,,,,59
-333,Raion Strader,CB,Auburn Tigers,72.88,Round 5-6,333,72.88,243.0,0.0,1,ExternalScoutBoard_2026,236
-334,Tommy Castellanos,QB,Florida State Seminoles,72.86,Round 5-6,334,72.86,234.0,0.0,1,ExternalScoutBoard_2026,227
-335,Tyreek Chappell,CB,Texas A&M Aggies,72.86,Round 5-6,335,72.86,244.0,0.0,1,ExternalScoutBoard_2026,236
-336,Ethan Onianwa,IOL,Ohio State Buckeyes,72.76,Round 5-6,336,72.76,229.0,0.0,1,ExternalScoutBoard_2026,223
-337,Hank Beatty,WR,Illinois Fighting Illini,72.74,Round 5-6,337,72.74,288.0,0.0,1,ExternalScoutBoard_2026,277
-338,Logan Jones,IOL,Iowa Hawkeyes,72.72,Round 5-6,338,72.72,142.5,33.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,174
-339,Ephesians Prysock,CB,Washington Huskies,72.71,Round 5-6,339,72.71,133.0,79.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,207
-340,Chip Trayanum,RB,Toledo Rockets,72.65,Round 5-6,340,72.65,255.0,0.0,1,ExternalScoutBoard_2026,247
-341,Nate Boerkircher,TE,Texas A&M Aggies,72.56,Round 5-6,341,72.56,183.0,0.0,1,ExternalScoutBoard_2026,180
-342,Dante Moore,QB,Oregon,72.55,Round 5-6,342,72.55,13.0,0.0,1,CBS_BigBoard_2026,46
-343,Brenen Thompson,WR,Mississippi State Bulldogs,72.55,Round 5-6,343,72.55,147.5,36.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,181
-344,Jerry Wilson,CB,Florida State Seminoles,72.53,Round 5-6,344,72.53,256.0,0.0,1,ExternalScoutBoard_2026,248
-345,Athan Kaliakmanis,QB,Rutgers Scarlet Knights,72.49,Round 5-6,345,72.49,263.0,0.0,1,ExternalScoutBoard_2026,254
-346,Ben Bell,EDGE,Virginia Tech Hokies,72.48,Round 5-6,346,72.48,276.0,0.0,1,ExternalScoutBoard_2026,266
-347,Seydou Traore,TE,Mississippi State Bulldogs,72.45,Round 5-6,347,72.45,242.0,0.0,1,ExternalScoutBoard_2026,235
-348,Treydan Stukes,CB,Arizona Wildcats,72.44,Round 5-6,348,72.44,168.5,120.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,278
-349,Devin Moore,CB,Florida,72.38,Round 5-6,349,72.38,74.5,24.5,2,CBS_BigBoard_2026|CBS_Wilson_BigBoard_2026,92
-350,Kage Casey,OT,Boise State,72.36,Round 5-6,350,72.36,142.0,48.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,143
-351,Ryan Baer,OT,Pittsburgh Panthers,72.36,Round 5-6,351,72.36,328.0,0.0,1,ExternalScoutBoard_2026,300
-352,Jaden Dugger,LB,Louisiana Ragin' Cajuns,72.32,Round 5-6,352,72.32,310.0,0.0,1,ExternalScoutBoard_2026,297
-353,Micah Pettus,OT,Florida State Seminoles,72.31,Round 5-6,353,72.31,285.0,0.0,1,ExternalScoutBoard_2026,274
-354,Bryce Foster,IOL,Kansas,72.3,Round 5-6,354,72.3,275.0,0.0,1,ExternalScoutBoard_2026,124
-355,Vincent Anthony Jr.,EDGE,Duke Blue Devils,72.3,Round 5-6,355,72.3,207.0,0.0,1,ExternalScoutBoard_2026,202
-356,Hezekiah Masses,CB,California Golden Bears,72.29,Round 5-6,356,72.29,101.5,40.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,143
-357,Diego Pavia,QB,Vanderbilt Commodores,72.27,Round 5-6,357,72.27,240.0,0.0,1,ExternalScoutBoard_2026,233
-358,Wesley Bissainthe,LB,Miami (FL) Hurricanes,72.23,Round 5-6,358,72.23,322.0,0.0,1,ExternalScoutBoard_2026,300
-359,Tre Smith,EDGE,Arizona Wildcats,72.21,Round 5-6,359,72.21,313.0,0.0,1,ExternalScoutBoard_2026,300
-360,Mo Westmoreland,EDGE,Tulane Green Wave,72.19,Round 5-6,360,72.19,337.0,0.0,1,ExternalScoutBoard_2026,300
-361,Miles Kitselman,TE,Tennessee Volunteers,72.16,Round 5-6,361,72.16,151.0,0.0,1,ExternalScoutBoard_2026,151
-362,Josh Hoover,QB,TCU,72.15,Round 5-6,362,72.15,56.0,0.0,1,CBS_BigBoard_2026,100
-363,Connor Tollison,IOL,Missouri,72.15,Round 5-6,363,72.15,253.0,0.0,1,ExternalScoutBoard_2026,146
-364,Fa'alili Fa'amoe,OT,Wake Forest Demon Deacons,72.11,Round 5-6,364,72.11,219.0,0.0,1,ExternalScoutBoard_2026,213
-365,Ahmaad Moses,S,SMU Mustangs,72.03,Round 5-6,365,72.03,324.0,0.0,1,ExternalScoutBoard_2026,300
-366,RJ Maryland,TE,SMU,71.95,Round 6-7,366,71.95,269.0,0.0,1,ExternalScoutBoard_2026,295
-367,Riley Mahlman,OT,Wisconsin Badgers,71.94,Round 6-7,367,71.94,267.0,0.0,1,ExternalScoutBoard_2026,258
-368,Bishop Fitzgerald,S,USC Trojans,71.91,Round 6-7,368,71.91,138.0,28.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,165
-369,Jack Pyburn,EDGE,LSU Tigers,71.78,Round 6-7,369,71.78,304.0,0.0,1,ExternalScoutBoard_2026,292
-370,Nadame Tucker,EDGE,Western Michigan Broncos,71.76,Round 6-7,370,71.76,137.0,21.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,157
-371,Jake Retzlaff,QB,Tulane Green Wave,71.74,Round 6-7,371,71.74,252.0,0.0,1,ExternalScoutBoard_2026,244
-372,Daniel Harris,CB,Georgia Bulldogs,71.73,Round 6-7,372,71.73,268.0,0.0,1,ExternalScoutBoard_2026,259
-373,Joe Fagnano,QB,Connecticut Huskies,71.71,Round 6-7,373,71.71,260.0,0.0,1,ExternalScoutBoard_2026,251
-374,Caden Barnett,IOL,Wyoming Cowboys,71.71,Round 6-7,374,71.71,270.0,0.0,1,ExternalScoutBoard_2026,260
-375,Dean Miller,EDGE,Kansas Jayhawks,71.64,Round 6-7,375,71.64,330.0,0.0,1,ExternalScoutBoard_2026,300
-376,Joshua Braun,IOL,Kentucky Wildcats,71.63,Round 6-7,376,71.63,236.0,0.0,1,ExternalScoutBoard_2026,229
-377,Austin Brown,S,Wisconsin Badgers,71.51,Round 6-7,377,71.51,290.0,0.0,1,ExternalScoutBoard_2026,279
-378,Luke Petitbon,IOL,Florida State Seminoles,71.47,Round 6-7,378,71.47,282.0,0.0,1,ExternalScoutBoard_2026,271
-379,Dean Connors,RB,Houston Cougars,71.45,Round 6-7,379,71.45,281.0,0.0,1,ExternalScoutBoard_2026,271
-380,Davion Carter,IOL,Texas Tech Red Raiders,71.44,Round 6-7,380,71.44,278.0,0.0,1,ExternalScoutBoard_2026,268
-381,Reggie Virgil,WR,Texas Tech Red Raiders,71.35,Round 6-7,381,71.35,216.0,0.0,1,ExternalScoutBoard_2026,211
-382,DQ Smith,S,South Carolina Gamecocks,71.32,Round 6-7,382,71.32,340.0,0.0,1,ExternalScoutBoard_2026,300
-383,Nikai Martinez,S,Michigan State Spartans,71.31,Round 6-7,383,71.31,299.0,0.0,1,ExternalScoutBoard_2026,287
-384,Damonic Williams,DT,Oklahoma Sooners,71.31,Round 6-7,384,71.31,320.0,0.0,1,ExternalScoutBoard_2026,300
-385,Jimmori Robinson,EDGE,West Virginia Mountaineers,71.3,Round 6-7,385,71.3,345.0,0.0,1,ExternalScoutBoard_2026,300
-386,Jeff Persi,OT,Pittsburgh Panthers,71.27,Round 6-7,386,71.27,294.0,0.0,1,ExternalScoutBoard_2026,282
-387,Gunner Maldonado,S,Kansas State Wildcats,71.22,Round 6-7,387,71.22,332.0,0.0,1,ExternalScoutBoard_2026,300
-388,Luke Altmyer,QB,Illinois Fighting Illini,71.17,Round 6-7,388,71.17,220.0,0.0,1,ExternalScoutBoard_2026,214
-389,Mel Brown,RB,Connecticut Huskies,71.16,Round 6-7,389,71.16,291.0,0.0,1,ExternalScoutBoard_2026,280
-390,Tomas Rimac,IOL,Virginia Tech Hokies,71.13,Round 6-7,390,71.13,266.0,0.0,1,ExternalScoutBoard_2026,257
-391,Riley Nowakowski,TE,Indiana Hoosiers,71.12,Round 6-7,391,71.12,247.0,0.0,1,ExternalScoutBoard_2026,239
-392,Anthony Smith,WR,East Carolina Pirates,71.05,Round 6-7,392,71.05,318.0,0.0,1,ExternalScoutBoard_2026,300
-393,Kevin Coleman Jr.,WR,Missouri Tigers,71.04,Round 6-7,393,71.04,137.0,51.0,2,CBS_BigBoard_2026|ExternalScoutBoard_2026,185
-394,Tristan Leigh,OT,Clemson Tigers,71.03,Round 6-7,394,71.03,347.0,0.0,1,ExternalScoutBoard_2026,300
-395,CJ Donaldson,RB,Ohio State Buckeyes,70.9,Round 6-7,395,70.9,300.0,0.0,1,ExternalScoutBoard_2026,288
-396,Jamal Haynes,RB,Georgia Tech Yellow Jackets,70.88,Round 6-7,396,70.88,259.0,0.0,1,ExternalScoutBoard_2026,250
-397,Jack Velling,TE,Michigan State Spartans,70.81,Round 6-7,397,70.81,279.0,0.0,1,ExternalScoutBoard_2026,269
-398,Jaren Kanak,TE,Oklahoma Sooners,70.8,Round 6-7,398,70.8,257.0,0.0,1,ExternalScoutBoard_2026,248
-399,Mason Randolph,IOL,Boise State Broncos,70.77,Round 6-7,399,70.77,329.0,0.0,1,ExternalScoutBoard_2026,300
-400,Squirrel White,WR,Florida State Seminoles,70.75,Round 6-7,400,70.75,284.0,0.0,1,ExternalScoutBoard_2026,273
-401,Stephen Hall,CB,Missouri Tigers,70.74,Round 6-7,401,70.74,305.0,0.0,1,ExternalScoutBoard_2026,293
-402,Vinny Anthony II,WR,Wisconsin Badgers,70.73,Round 6-7,402,70.73,221.0,0.0,1,ExternalScoutBoard_2026,215
-403,Jaylon Guilbeau,CB,Texas Longhorns,70.73,Round 6-7,403,70.73,331.0,0.0,1,ExternalScoutBoard_2026,300
-404,DaShawn Jones,CB,Alabama Crimson Tide,70.7,Round 6-7,404,70.7,323.0,0.0,1,ExternalScoutBoard_2026,300
-405,Amari Jackson,CB,Boston College Eagles,70.7,Round 6-7,405,70.7,339.0,0.0,1,ExternalScoutBoard_2026,300
-406,Behren Morton,QB,Texas Tech Red Raiders,70.65,Round 6-7,406,70.65,283.0,0.0,1,ExternalScoutBoard_2026,272
-407,Diego Pounds,OT,Mississippi Rebels,70.63,Round 6-7,407,70.63,302.0,0.0,1,ExternalScoutBoard_2026,290
-408,Devonte Ross,WR,Penn State Nittany Lions,70.63,Round 6-7,408,70.63,344.0,0.0,1,ExternalScoutBoard_2026,300
-409,Rayshaun Benny,DT,Michigan Wolverines,70.61,Round 6-7,409,70.61,156.5,68.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,219
-410,Devin Mockobee,RB,Purdue Boilermakers,70.6,Round 6-7,410,70.6,342.0,0.0,1,ExternalScoutBoard_2026,300
-411,Emmanuel Henderson Jr.,WR,Kansas,70.49,Round 6-7,411,70.49,119.0,0.0,1,CBS_Wilson_BigBoard_2026,179
-412,Miller Moss,QB,Louisville,70.45,Round 6-7,412,70.45,239.0,0.0,1,ExternalScoutBoard_2026,71
-413,Dillon Wade,IOL,Auburn Tigers,70.4,Round 6-7,413,70.4,319.0,0.0,1,ExternalScoutBoard_2026,300
-414,Dillon Bell,WR,Georgia Bulldogs,70.37,Round 6-7,414,70.37,254.0,0.0,1,ExternalScoutBoard_2026,246
-415,Jaren Kump,IOL,Utah Utes,70.36,Round 6-7,415,70.36,311.0,0.0,1,ExternalScoutBoard_2026,298
-416,J'Mari Taylor,RB,Virginia Cavaliers,70.34,Round 6-7,416,70.34,130.0,15.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,145
-417,Logan Diggs,RB,Mississippi Rebels,70.33,Round 6-7,417,70.33,309.0,0.0,1,ExternalScoutBoard_2026,296
-418,Jeremiah Franklin,TE,Boston College Eagles,70.31,Round 6-7,418,70.31,301.0,0.0,1,ExternalScoutBoard_2026,289
-419,Donavon Greene,WR,Virginia Tech Hokies,70.31,Round 6-7,419,70.31,316.0,0.0,1,ExternalScoutBoard_2026,300
-420,Daniel King,IOL,North Carolina Tar Heels,70.31,Round 6-7,420,70.31,348.0,0.0,1,ExternalScoutBoard_2026,300
-421,Josh Thompson,IOL,LSU Tigers,70.28,Round 6-7,421,70.28,303.0,0.0,1,ExternalScoutBoard_2026,291
-422,Dametrious Crownover,OT,Texas A&M Aggies,70.24,Round 6-7,422,70.24,142.0,69.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,206
-423,Tanner Arkin,TE,Illinois Fighting Illini,70.24,Round 6-7,423,70.24,334.0,0.0,1,ExternalScoutBoard_2026,300
-424,Izavion Miller,IOL,Auburn Tigers,70.23,Round 6-7,424,70.23,317.0,0.0,1,ExternalScoutBoard_2026,300
-425,Cameron Ball,DT,Arkansas Razorbacks,70.19,Round 6-7,425,70.19,296.0,0.0,1,ExternalScoutBoard_2026,284
-426,Mark Gronowski,QB,Iowa Hawkeyes,70.01,Round 6-7,426,70.01,314.0,0.0,1,ExternalScoutBoard_2026,300
-427,Aaron Anderson,WR,LSU Tigers,69.94,Round 6-7,427,69.94,147.0,0.0,1,ExternalScoutBoard_2026,147
-428,Al-Jay Henderson,RB,Buffalo Bulls,69.87,Round 6-7,428,69.87,325.0,0.0,1,ExternalScoutBoard_2026,300
-429,Brandon Cleveland,DT,North Carolina State Wolfpack,69.77,Round 6-7,429,69.77,280.0,0.0,1,ExternalScoutBoard_2026,270
-430,Jam Miller,RB,Alabama Crimson Tide,69.72,Round 6-7,430,69.72,265.0,0.0,1,ExternalScoutBoard_2026,256
-431,VJ Payne,S,Kansas State Wildcats,69.55,Round 6-7,431,69.55,170.0,94.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,255
-432,Kyron Drones,QB,Virginia Tech Hokies,69.48,Round 6-7,432,69.48,262.0,0.0,1,ExternalScoutBoard_2026,253
-433,Maverick McIvor,QB,Western Kentucky Hilltoppers,69.44,Round 6-7,433,69.44,341.0,0.0,1,ExternalScoutBoard_2026,300
-434,Adam Randall,RB,Clemson Tigers,69.38,Round 6-7,434,69.38,297.0,0.0,1,ExternalScoutBoard_2026,285
-435,Josh Cameron,WR,Baylor Bears,68.99,Round 6-7,435,68.99,161.0,53.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,209
-436,Walker Eget,QB,San Jose State Spartans,68.86,Round 6-7,436,68.86,315.0,0.0,1,ExternalScoutBoard_2026,300
-437,Bauer Sharp,TE,LSU Tigers,68.84,Round 6-7,437,68.84,327.0,0.0,1,ExternalScoutBoard_2026,300
-438,Gary Smith III,DT,UCLA Bruins,68.79,Round 6-7,438,68.79,287.0,0.0,1,ExternalScoutBoard_2026,276
-439,Garrett DiGiorgio,IOL,UCLA Bruins,68.7,Round 6-7,439,68.7,335.0,0.0,1,ExternalScoutBoard_2026,300
-440,Grayson James,QB,Boston College Eagles,68.51,Round 6-7,440,68.51,308.0,0.0,1,ExternalScoutBoard_2026,295
-441,Barion Brown,WR,LSU,68.33,Round 6-7,441,68.33,349.0,0.0,1,ExternalScoutBoard_2026,82
-442,TJ Hall,CB,Iowa Hawkeyes,68.18,Round 6-7,442,68.18,147.5,82.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,224
-443,Jeremiah Wright,IOL,Auburn Tigers,68.12,Round 6-7,443,68.12,170.5,115.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,275
-444,Colbie Young,WR,Georgia Bulldogs,67.99,UDFA,444,67.99,333.0,0.0,1,ExternalScoutBoard_2026,300
-445,Avery Smith,CB,Toledo Rockets,67.86,UDFA,445,67.86,343.0,0.0,1,ExternalScoutBoard_2026,300
-446,Harrison Wallace III,WR,Mississippi Rebels,67.67,UDFA,446,67.67,292.0,0.0,1,ExternalScoutBoard_2026,281
-447,Xavian Sorey Jr.,LB,Arkansas Razorbacks,67.54,UDFA,447,67.54,168.0,65.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,226
-448,Deven Eastern,DT,Minnesota Golden Gophers,67.28,UDFA,448,67.28,159.0,63.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,216
-449,Chris Hilton Jr.,WR,LSU Tigers,67.18,UDFA,449,67.18,326.0,0.0,1,ExternalScoutBoard_2026,300
-450,Sawyer Robertson,QB,Baylor Bears,65.96,UDFA,450,65.96,164.0,60.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,218
-451,Jackie Marshall,EDGE,Baylor Bears,65.95,UDFA,451,65.95,312.0,0.0,1,ExternalScoutBoard_2026,299
-452,Fernando Carmona,IOL,Arkansas Razorbacks,65.75,UDFA,452,65.75,179.0,116.0,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,283
-453,Caullin Lacy,WR,Louisville Cardinals,65.75,UDFA,453,65.75,307.0,0.0,1,ExternalScoutBoard_2026,294
-454,Keyron Crawford,EDGE,Auburn Tigers,65.72,UDFA,454,65.72,191.5,129.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,300
-455,Chris McClellan,DT,Missouri Tigers,64.21,UDFA,455,64.21,217.5,132.5,2,CBS_Wilson_BigBoard_2026|ExternalScoutBoard_2026,300
+consensus_rank,player_name,position,school,final_grade,consensus_board_mean_rank,consensus_board_source_count,consensus_board_rank_std,rank_delta_consensus_minus_model,rank_delta_abs,model_higher_than_consensus,model_lower_than_consensus,confidence_score,uncertainty_score,top50_evidence_signal_count,top50_evidence_brake_penalty,bluechip_rank_protection_adjustment,rank_driver_summary
+73,Lorenzo Styles Jr.,CB,Ohio State,81.65,236.0,1,0.0,163.0,163.0,1,0,44.01,55.99,2,0.0,0.0,score=81.65; prior_signal=29.17; prior:-16.40 | athletic:+3.76 | production:-1.68 | trait:-1.63
+250,Ahmaad Moses,S,SMU Mustangs,68.17,377.0,2,53.0,127.0,127.0,1,0,52.6,47.4,4,0.0,0.0,score=68.17; prior_signal=4.2; prior:-20.87 | guardrail:-6.27 | trait:-2.51 | production:-0.98
+197,Damonic Williams,DT,Oklahoma Sooners,73.82,320.0,1,0.0,123.0,123.0,1,0,57.41,42.59,3,0.0,0.0,score=73.82; prior_signal=8.74; prior:-18.05 | guardrail:-4.03 | trait:-2.51 | production:-1.51
+227,Wesley Bissainthe,LB,Miami (FL) Hurricanes,70.25,334.5,2,12.5,107.5,107.5,1,0,58.53,41.47,4,0.0,0.0,score=70.25; prior_signal=6.39; prior:-19.91 | guardrail:-4.50 | trait:-2.51 | production:-1.03
+260,Garrett DiGiorgio,IOL,UCLA Bruins,65.06,360.5,2,25.5,100.5,100.5,1,0,54.06,45.94,4,0.0,0.0,score=65.06; prior_signal=4.84; prior:-17.36 | guardrail:-5.72 | trait:-2.51 | athletic:-2.25
+241,Jack Pyburn,EDGE,LSU Tigers,69.07,340.5,2,36.5,99.5,99.5,1,0,51.65,48.35,4,0.0,0.0,score=69.07; prior_signal=5.79; prior:-20.84 | guardrail:-5.32 | trait:-2.36 | risk:-0.63
+164,Kamari Ramsey,S,USC Trojans,76.7,66.0,3,2.94,-98.0,98.0,0,1,78.88,21.12,4,0.0,0.0,score=76.7; prior_signal=71.73; prior:+7.90 | trait:-5.28 | athletic:-1.87 | production:-1.14
+176,Devin Moore,CB,Florida,75.94,79.5,4,18.12,-96.5,96.5,0,1,53.38,46.62,3,0.0,0.0,score=75.94; prior_signal=64.16; prior:+4.79 | athletic:-3.15 | trait:-2.58 | production:-1.68
+264,Jackie Marshall,EDGE,Baylor Bears,62.3,355.5,2,43.5,91.5,91.5,1,0,53.17,46.83,4,0.0,0.0,score=62.3; prior_signal=4.99; prior:-12.82 | athletic:-6.08 | guardrail:-5.58 | trait:-2.43
+235,Chris Hilton Jr.,WR,LSU Tigers,69.35,326.0,1,0.0,91.0,91.0,1,0,56.86,43.14,3,0.0,0.0,score=69.35; prior_signal=8.74; prior:-13.71 | guardrail:-4.03 | athletic:-3.77 | trait:-2.47
+253,CJ Donaldson,RB,Ohio State Buckeyes,67.49,340.5,2,40.5,87.5,87.5,1,0,51.65,48.35,4,0.0,0.0,score=67.49; prior_signal=5.95; prior:-19.82 | guardrail:-5.45 | trait:-2.38 | production:-1.34
+261,Harrison Wallace III,WR,Mississippi Rebels,63.85,347.5,2,55.5,86.5,86.5,1,0,52.6,47.4,4,0.0,0.0,score=63.85; prior_signal=6.57; prior:-15.13 | guardrail:-5.92 | athletic:-4.34 | trait:-2.26
+171,Xavier Nwankpa,S,Iowa,77.07,254.5,2,19.5,83.5,83.5,1,0,56.07,43.93,4,0.0,0.0,score=77.07; prior_signal=22.67; prior:-21.07 | guardrail:-7.61 | athletic:+3.57 | production:-1.42
+200,Emmanuel Henderson Jr.,WR,Kansas,73.11,119.0,1,0.0,-81.0,81.0,0,1,44.01,55.99,1,0.0,0.0,score=73.11; prior_signal=30.61; prior:-5.51 | trait:-3.60 | athletic:-2.81 | production:-1.68
+224,Micah Morris,IOL,Georgia Bulldogs,71.28,303.5,2,54.5,79.5,79.5,1,0,53.17,46.83,4,0.0,0.0,score=71.28; prior_signal=14.2; prior:-20.65 | guardrail:-5.15 | trait:-1.86 | athletic:+1.72
+248,Dillon Wade,IOL,Auburn Tigers,68.21,327.5,2,8.5,79.5,79.5,1,0,60.38,39.62,4,0.0,0.0,score=68.21; prior_signal=6.39; prior:-19.18 | guardrail:-4.50 | trait:-2.51 | production:-1.68
+214,Noah Whittington,RB,Oregon Ducks,71.93,292.5,2,15.5,78.5,78.5,1,0,56.85,43.15,4,0.0,0.0,score=71.93; prior_signal=11.52; prior:-21.53 | guardrail:-4.17 | trait:-2.14 | athletic:+0.93
+256,Jaren Kanak,TE,Oklahoma Sooners,66.16,334.5,2,77.5,78.5,78.5,1,0,52.63,47.37,4,0.0,0.0,score=66.16; prior_signal=11.91; prior:-16.90 | guardrail:-6.58 | trait:-1.94 | production:-1.68
+245,Jaylon Guilbeau,CB,Texas Longhorns,68.49,321.0,2,10.0,76.0,76.0,1,0,58.52,41.48,4,0.0,0.0,score=68.49; prior_signal=6.39; prior:-18.80 | guardrail:-4.50 | trait:-2.45 | production:-1.68
+132,LT Overton,EDGE,Alabama,78.43,56.71,7,38.35,-75.29,75.29,0,1,63.41,36.59,4,0.0,0.0,score=78.43; prior_signal=78.9; prior:+9.70 | athletic:-5.66 | trait:-1.86 | production:-1.06
+255,Bauer Sharp,TE,LSU Tigers,66.42,327.5,2,0.5,72.5,72.5,1,0,63.15,36.85,4,0.0,0.0,score=66.42; prior_signal=6.76; prior:-16.75 | guardrail:-4.50 | trait:-2.51 | athletic:-1.77
+32,Daylen Everette,CB,Georgia,87.44,104.33,3,23.16,72.33,72.33,1,0,48.43,51.57,4,0.0,0.0,score=87.44; prior_signal=66.46; prior:-7.38 | athletic:+3.30 | production:-1.10 | risk:-0.64
+222,Jalen Huskey,S,Maryland Terrapins,71.26,294.0,2,12.0,72.0,72.0,1,0,58.07,41.93,4,0.0,0.0,score=71.26; prior_signal=7.12; prior:-20.91 | guardrail:-4.17 | trait:-2.44 | risk:-0.63
+229,TJ Hall,CB,Iowa Hawkeyes,69.6,158.25,4,59.52,-70.75,70.75,0,1,59.89,40.11,4,0.0,0.0,score=69.6; prior_signal=37.61; athletic:-5.16 | trait:-4.08 | guardrail:-3.60 | prior:-2.58
+249,Rahsul Faison,RB,South Carolina Gamecocks,68.48,318.0,2,105.0,69.0,69.0,1,0,52.6,47.4,4,0.0,0.0,score=68.48; prior_signal=18.56; prior:-17.41 | guardrail:-6.74 | production:-1.55 | trait:-1.50
+240,Sawyer Robertson,QB,Baylor Bears,68.74,172.25,4,43.46,-67.75,67.75,0,1,56.5,43.5,4,0.0,0.0,score=68.74; prior_signal=30.61; prior:-7.97 | guardrail:-4.80 | trait:-3.90 | risk:-1.69
+258,Dillon Bell,WR,Georgia Bulldogs,66.02,325.5,2,71.5,67.5,67.5,1,0,52.6,47.4,4,0.0,0.0,score=66.02; prior_signal=12.64; prior:-15.90 | guardrail:-6.35 | trait:-1.88 | production:-1.68
+221,Scooby Williams,LB,Texas A&M Aggies,71.3,286.5,2,11.5,65.5,65.5,1,0,58.76,41.24,4,0.0,0.0,score=71.3; prior_signal=8.52; prior:-20.36 | guardrail:-4.50 | trait:-2.36 | risk:-0.45
+216,J'Mari Taylor,RB,Virginia Cavaliers,71.78,152.33,3,33.88,-63.67,63.67,0,1,55.99,44.01,4,0.0,0.0,score=71.78; prior_signal=44.39; athletic:-3.71 | trait:-3.27 | guardrail:-2.70 | prior:-2.07
+149,Drew Allar,QB,Penn State,77.54,86.0,4,51.64,-63.0,63.0,0,1,56.37,43.63,4,0.0,0.0,score=77.54; prior_signal=73.92; guardrail:-4.40 | risk:-1.33 | production:-0.91 | prior:+0.64
+228,Chris McClellan,DT,Missouri Tigers,69.14,165.0,4,107.82,-63.0,63.0,0,1,60.46,39.54,4,0.0,0.0,score=69.14; prior_signal=21.9; prior:-9.09 | trait:-4.97 | guardrail:-4.50 | athletic:-2.89
+106,Lee Hunter,DT,Texas Tech Red Raiders,79.51,43.71,7,17.27,-62.29,62.29,0,1,82.44,17.56,4,0.0,0.0,score=79.51; prior_signal=79.02; prior:+8.85 | athletic:-5.75 | trait:-2.01 | language:-0.45
+120,Malachi Fields,WR,Notre Dame Fighting Irish,78.64,58.33,6,21.13,-61.67,61.67,0,1,80.93,19.07,4,0.0,0.0,score=78.64; prior_signal=69.23; prior:+4.07 | athletic:-3.67 | trait:-1.86 | production:-0.73
+243,Aaron Anderson,WR,LSU Tigers,68.93,181.33,3,35.97,-61.67,61.67,0,1,55.99,44.01,4,0.0,0.0,score=68.93; prior_signal=45.27; athletic:-7.85 | guardrail:-2.70 | production:-1.47 | prior:+1.40
+252,Brandon Cleveland,DT,North Carolina State Wolfpack,67.59,313.0,2,33.0,61.0,61.0,1,0,53.17,46.83,4,0.0,0.0,score=67.59; prior_signal=9.55; prior:-15.38 | guardrail:-4.50 | athletic:-3.88 | trait:-2.18
+218,Keyron Crawford,EDGE,Auburn Tigers,70.62,157.5,4,98.46,-60.5,60.5,0,1,58.91,41.09,4,0.0,0.0,score=70.62; prior_signal=27.01; prior:-9.23 | trait:-5.94 | guardrail:-4.30 | risk:-0.63
+190,Dametrious Crownover,OT,Texas A&M Aggies,74.01,130.75,4,51.93,-59.25,59.25,0,1,60.43,39.57,4,0.0,0.0,score=74.01; prior_signal=42.28; prior:-4.62 | trait:-3.84 | guardrail:-3.60 | production:-1.68
+209,Logan Fano,EDGE,Utah Utes,72.44,266.5,2,20.5,57.5,57.5,1,0,54.93,45.07,4,0.0,0.0,score=72.44; prior_signal=19.55; prior:-17.48 | guardrail:-3.87 | trait:-1.76 | risk:-0.63
+242,Behren Morton,QB,Texas Tech Red Raiders,68.86,299.5,2,16.5,57.5,57.5,1,0,51.89,48.11,4,0.0,0.0,score=68.86; prior_signal=9.97; prior:-18.52 | guardrail:-3.91 | trait:-2.53 | risk:-1.73
+146,Le'Veon Moss,RB,Texas A&M,78.4,203.0,2,48.0,57.0,57.0,1,0,51.65,48.35,4,0.0,0.0,score=78.4; prior_signal=43.32; prior:-11.08 | guardrail:-4.04 | risk:-0.63 | production:-0.54
+254,Gary Smith III,DT,UCLA Bruins,66.57,311.0,2,24.0,57.0,57.0,1,0,54.3,45.7,4,0.0,0.0,score=66.57; prior_signal=8.69; prior:-14.44 | athletic:-4.80 | guardrail:-4.50 | trait:-2.25
+155,Cade Klubnik,QB,Clemson,77.54,98.6,5,81.26,-56.4,56.4,0,1,59.34,40.66,4,0.0,0.0,score=77.54; prior_signal=71.53; guardrail:-5.30 | risk:-1.33 | athletic:-0.60 | production:-0.52
+244,Joe Fagnano,QB,Connecticut Huskies,68.68,300.0,2,40.0,56.0,56.0,1,0,49.24,50.76,4,0.0,0.0,score=68.68; prior_signal=12.83; prior:-17.81 | guardrail:-4.48 | trait:-2.30 | risk:-1.69
+238,Fernando Carmona,IOL,Arkansas Razorbacks,68.36,182.33,3,94.83,-55.67,55.67,0,1,56.6,43.4,4,0.0,0.0,score=68.36; prior_signal=25.9; prior:-8.65 | trait:-4.78 | guardrail:-4.50 | athletic:-1.94
+210,Jam Miller,RB,Alabama Crimson Tide,72.24,265.0,1,0.0,55.0,55.0,1,0,57.41,42.59,3,0.0,0.0,score=72.24; prior_signal=18.27; prior:-13.74 | guardrail:-4.03 | trait:-2.03 | athletic:-1.95
+225,George Gumbs Jr.,EDGE,Florida Gators,71.36,279.5,2,107.5,54.5,54.5,1,0,53.21,46.79,4,0.0,0.0,score=71.36; prior_signal=27.57; prior:-15.44 | guardrail:-6.02 | trait:-1.01 | production:-0.93
+157,Roman Hemby,RB,Indiana,78.4,211.0,2,11.0,54.0,54.0,1,0,58.29,41.71,4,0.0,0.0,score=78.4; prior_signal=37.0; prior:-13.24 | guardrail:-3.65 | risk:-0.63 | production:-0.43
+233,RJ Maryland,TE,SMU,69.54,284.5,2,15.5,51.5,51.5,1,0,56.85,43.15,4,0.0,0.0,score=69.54; prior_signal=10.87; prior:-19.00 | guardrail:-4.50 | trait:-2.45 | production:-1.68
+182,Treydan Stukes,CB,Arizona Wildcats,74.03,131.0,4,93.11,-51.0,51.0,0,1,59.86,40.14,4,0.0,0.0,score=74.03; prior_signal=34.23; prior:-12.72 | guardrail:-7.48 | trait:-4.68 | athletic:+1.76
+205,Josh Cameron,WR,Baylor Bears,72.44,154.0,4,39.06,-51.0,51.0,0,1,58.91,41.09,4,0.0,0.0,score=72.44; prior_signal=34.15; prior:-8.60 | guardrail:-4.00 | trait:-3.93 | production:-1.27
+257,Avery Smith,CB,Toledo Rockets,65.67,307.0,2,36.0,50.0,50.0,1,0,52.63,47.37,4,0.0,0.0,score=65.67; prior_signal=6.39; prior:-15.18 | guardrail:-4.50 | athletic:-4.01 | trait:-2.45
+161,Kendal Daniels,LB,Oklahoma,77.88,210.33,3,127.63,49.33,49.33,1,0,55.62,44.38,4,0.0,0.0,score=77.88; prior_signal=32.82; prior:-12.39 | guardrail:-3.70 | trait:-2.50 | risk:-0.45
+178,Hezekiah Masses,CB,California Golden Bears,75.5,128.75,4,39.59,-49.25,49.25,0,1,59.86,40.14,4,0.0,0.0,score=75.5; prior_signal=54.0; athletic:-4.52 | trait:-3.19 | guardrail:-1.90 | prior:+0.91
+188,Kevin Coleman Jr.,WR,Missouri Tigers,74.39,139.25,4,36.52,-48.75,48.75,0,1,71.56,28.44,4,0.0,0.0,score=74.39; prior_signal=43.23; prior:-4.40 | trait:-3.55 | guardrail:-2.90 | athletic:-2.45
+234,Deven Eastern,DT,Minnesota Golden Gophers,69.39,185.33,3,63.51,-48.67,48.67,0,1,56.56,43.44,4,0.0,0.0,score=69.39; prior_signal=29.81; prior:-6.63 | guardrail:-4.40 | trait:-4.05 | athletic:-3.29
+202,Mason Reiger,EDGE,Wisconsin Badgers,72.99,247.5,2,10.5,45.5,45.5,1,0,59.93,40.07,4,0.0,0.0,score=72.99; prior_signal=19.39; prior:-18.31 | guardrail:-4.17 | trait:-1.88 | risk:-0.46
+46,Skyler Bell,WR,Connecticut Huskies,84.69,91.33,3,8.96,45.33,45.33,1,0,56.39,43.61,4,0.0,0.0,score=84.69; prior_signal=66.09; prior:-5.98 | guardrail:-1.60 | athletic:+1.00 | risk:-0.64
+133,Davison Igbinosun,CB,Ohio State,78.17,87.75,4,38.07,-45.25,45.25,0,1,59.86,40.14,4,0.0,0.0,score=78.17; prior_signal=61.89; guardrail:-5.54 | prior:-4.97 | trait:-2.18 | athletic:+1.40
+129,Garrett Nussmeier,QB,LSU,78.32,84.0,3,2.94,-45.0,45.0,0,1,64.3,35.7,4,0.0,0.0,score=78.32; prior_signal=68.91; guardrail:-2.00 | risk:-1.73 | athletic:-0.67 | production:-0.63
+130,Zakee Wheatley,S,Penn State Nittany Lions,78.24,85.2,5,6.88,-44.8,44.8,0,1,79.75,20.25,4,0.0,0.0,score=78.24; prior_signal=63.66; athletic:-4.12 | prior:+2.83 | trait:-2.71 | risk:-0.64
+201,Nate Boerkircher,TE,Texas A&M Aggies,73.02,156.33,3,22.48,-44.67,44.67,0,1,57.55,42.45,4,0.0,0.0,score=73.02; prior_signal=41.58; prior:-5.04 | athletic:-3.41 | guardrail:-2.90 | production:-1.52
+105,Max Klare,TE,Purdue,78.07,60.5,4,19.37,-44.5,44.5,0,1,76.65,23.35,4,0.0,0.0,score=78.07; prior_signal=64.47; trait:-4.85 | prior:+3.07 | production:-1.68 | risk:-0.41
+223,Jeremiah Wright,IOL,Auburn Tigers,70.49,179.0,3,95.07,-44.0,44.0,0,1,55.62,44.38,4,0.0,0.0,score=70.49; prior_signal=29.01; prior:-9.71 | trait:-4.70 | guardrail:-4.30 | production:-1.30
+198,Bishop Fitzgerald,S,USC Trojans,73.67,154.25,4,26.02,-43.75,43.75,0,1,60.89,39.11,4,0.0,0.0,score=73.67; prior_signal=40.87; athletic:-4.73 | prior:-4.16 | trait:-3.49 | guardrail:-2.50
+58,Brian Parker II,OT,Duke Blue Devils,83.18,100.67,3,15.97,42.67,42.67,1,0,53.1,46.9,4,0.0,0.0,score=83.18; prior_signal=61.72; prior:-5.18 | athletic:-1.39 | guardrail:-1.30 | production:+0.87
+137,Tanner Koziol,TE,Houston,77.09,179.5,2,20.5,42.5,42.5,1,0,55.88,44.12,4,0.0,0.0,score=77.09; prior_signal=34.26; prior:-15.81 | guardrail:-4.21 | athletic:+2.93 | trait:-2.39
+90,Harold Perkins Jr.,LB,LSU,80.88,132.0,2,16.0,42.0,42.0,1,0,56.38,43.62,4,0.0,0.0,score=80.88; prior_signal=55.49; prior:-7.37 | guardrail:-4.34 | production:-1.26 | trait:+0.59
+63,Jack Endries,TE,Texas Longhorns,82.71,104.0,3,24.12,41.0,41.0,1,0,48.26,51.74,4,0.0,0.0,score=82.71; prior_signal=66.24; prior:-2.54 | production:-1.68 | guardrail:-1.00 | risk:-0.64
+80,Jalon Kilgore,S,South Carolina,82.07,121.0,4,9.06,41.0,41.0,1,0,62.65,37.35,4,0.0,0.0,score=82.07; prior_signal=51.32; prior:-8.84 | guardrail:-2.60 | athletic:+2.21 | trait:-1.96
+207,Reggie Virgil,WR,Texas Tech Red Raiders,72.43,166.0,3,35.44,-41.0,41.0,0,1,56.56,43.44,4,0.0,0.0,score=72.43; prior_signal=35.47; prior:-7.88 | guardrail:-3.60 | athletic:-2.92 | trait:-1.49
+232,Xavian Sorey Jr.,LB,Arkansas Razorbacks,69.63,193.67,3,64.3,-38.33,38.33,0,1,56.6,43.4,4,0.0,0.0,score=69.63; prior_signal=26.51; prior:-8.39 | guardrail:-4.40 | trait:-4.15 | athletic:-2.16
+117,Trey Moore,LB,Texas Longhorns,78.88,155.0,2,16.0,38.0,38.0,1,0,57.36,42.64,4,0.0,0.0,score=78.88; prior_signal=49.29; prior:-7.19 | guardrail:-2.78 | athletic:-1.15 | production:-0.96
+121,Zane Durant,DT,Penn State,79.14,159.0,3,42.17,38.0,38.0,1,0,56.56,43.44,4,0.0,0.0,score=79.14; prior_signal=40.53; prior:-14.10 | guardrail:-6.18 | athletic:+1.76 | production:-1.08
+59,Jermod McCoy,CB,Tennessee,83.23,21.12,8,21.81,-37.88,37.88,0,1,79.71,20.29,3,0.0,0.0,score=83.23; prior_signal=90.65; prior:+7.73 | athletic:-3.29 | production:-1.68 | trait:+1.33
+115,Julian Neal,CB,Arkansas Razorbacks,78.74,77.4,5,30.31,-37.6,37.6,0,1,63.05,36.95,4,0.0,0.0,score=78.74; prior_signal=66.08; trait:-2.94 | athletic:-2.44 | prior:+2.01 | guardrail:-1.00
+78,Max Iheanachor,OT,Arizona State Sun Devils,81.29,40.83,6,10.14,-37.17,37.17,0,1,82.47,17.53,4,0.0,0.0,score=81.29; prior_signal=80.03; prior:+5.84 | trait:-4.00 | risk:-1.94 | athletic:+1.38
+107,Eli Raridon,TE,Notre Dame,78.09,143.67,3,15.37,36.67,36.67,1,0,61.66,38.34,4,0.0,0.0,score=78.09; prior_signal=41.75; prior:-10.91 | guardrail:-4.08 | athletic:+2.65 | trait:-2.44
+143,Beau Stephens,IOL,Iowa Hawkeyes,77.56,107.4,5,38.67,-35.6,35.6,0,1,72.23,27.77,4,0.0,0.0,score=77.56; prior_signal=59.41; trait:-3.44 | athletic:-2.87 | risk:-1.14 | production:+0.82
+100,Germie Bernard,WR,Alabama,78.58,64.75,4,21.74,-35.25,35.25,0,1,65.33,34.67,4,0.0,0.0,score=78.58; prior_signal=55.62; trait:-4.55 | prior:-2.35 | production:-1.36 | athletic:+1.36
+48,Dani Dennis-Sutton,EDGE,Penn State Nittany Lions,84.64,82.67,3,6.34,34.67,34.67,1,0,59.12,40.88,4,0.0,0.0,score=84.64; prior_signal=65.25; prior:-6.81 | athletic:+1.73 | guardrail:-1.53 | risk:-0.63
+126,Malachi Lawrence,EDGE,UCF Knights,78.09,91.75,4,37.02,-34.25,34.25,0,1,59.86,40.14,4,0.0,0.0,score=78.09; prior_signal=57.11; prior:-6.22 | guardrail:-6.05 | trait:-3.30 | athletic:+2.50
+169,J. Michael Sturdivant,WR,Florida Gators,76.17,203.0,1,0.0,34.0,34.0,1,0,57.41,42.59,3,0.0,0.0,score=76.17; prior_signal=33.66; prior:-12.62 | guardrail:-4.60 | production:-1.68 | trait:-1.36
+116,Aiden Fisher,LB,Indiana Hoosiers,78.88,149.67,3,17.75,33.67,33.67,1,0,60.72,39.28,4,0.0,0.0,score=78.88; prior_signal=51.36; prior:-7.55 | guardrail:-5.12 | production:-0.83 | trait:-0.66
+180,Nadame Tucker,EDGE,Western Michigan Broncos,75.17,146.33,3,21.64,-33.67,33.67,0,1,60.22,39.78,4,0.0,0.0,score=75.17; prior_signal=42.83; prior:-5.74 | guardrail:-4.30 | trait:-3.33 | athletic:-1.81
+99,Joshua Josephs,EDGE,Tennessee Volunteers,79.89,66.0,5,20.19,-33.0,33.0,0,1,79.16,20.84,4,0.0,0.0,score=79.89; prior_signal=75.41; prior:+4.46 | trait:-4.40 | language:-0.73 | risk:-0.73
+215,Miles Kitselman,TE,Tennessee Volunteers,71.94,182.0,2,31.0,-33.0,33.0,0,1,52.64,47.36,4,0.0,0.0,score=71.94; prior_signal=44.49; athletic:-4.28 | prior:-3.22 | guardrail:-2.85 | production:-1.68
+173,Eli Heidenreich,RB,Navy Midshipmen,75.95,205.5,2,17.5,32.5,32.5,1,0,56.5,43.5,4,0.0,0.0,score=75.95; prior_signal=29.68; prior:-15.47 | guardrail:-2.74 | production:+1.68 | trait:-1.60
+79,Nicholas Singleton,RB,Penn State,81.9,111.0,2,1.0,32.0,32.0,1,0,62.04,37.96,4,0.0,0.0,score=81.9; prior_signal=62.54; prior:-5.21 | guardrail:-2.58 | production:-0.71 | risk:-0.63
+113,Aamil Wagner,OT,Notre Dame,79.77,145.0,3,11.34,32.0,32.0,1,0,65.35,34.65,4,0.0,0.0,score=79.77; prior_signal=52.19; prior:-9.13 | guardrail:-4.65 | production:-1.24 | athletic:+0.77
+128,Will Lee III,CB,Texas A&M Aggies,78.29,96.0,4,11.22,-32.0,32.0,0,1,71.0,29.0,4,0.0,0.0,score=78.29; prior_signal=60.69; trait:-2.77 | guardrail:-1.80 | production:-1.55 | athletic:-0.94
+140,Zxavian Harris,DT,Mississippi Rebels,77.64,171.33,3,12.92,31.33,31.33,1,0,64.0,36.0,4,0.0,0.0,score=77.64; prior_signal=39.71; prior:-11.66 | guardrail:-3.73 | trait:-1.21 | production:-0.52
+95,Kaytron Allen,RB,Penn State Nittany Lions,79.9,126.0,3,7.12,31.0,31.0,1,0,66.91,33.09,4,0.0,0.0,score=79.9; prior_signal=56.19; prior:-8.40 | guardrail:-4.96 | production:+1.22 | risk:-0.63
+259,Colbie Young,WR,Georgia Bulldogs,65.23,290.0,2,43.0,31.0,31.0,1,0,52.6,47.4,4,0.0,0.0,score=65.23; prior_signal=7.2; prior:-14.81 | guardrail:-4.50 | athletic:-3.70 | trait:-2.47
+153,Parker Brailsford,IOL,Alabama,77.47,122.5,4,51.1,-30.5,30.5,0,1,60.46,39.54,4,0.0,0.0,score=77.47; prior_signal=53.74; prior:-3.80 | trait:-2.72 | guardrail:-2.64 | production:-1.62
+263,Caullin Lacy,WR,Louisville Cardinals,63.24,293.0,2,14.0,30.0,30.0,1,0,58.57,41.43,4,0.0,0.0,score=63.24; prior_signal=7.22; prior:-12.26 | athletic:-5.25 | guardrail:-4.50 | trait:-2.40
+104,Emmett Johnson,RB,Nebraska Cornhuskers,79.44,75.0,4,5.79,-29.0,29.0,0,1,75.33,24.67,4,0.0,0.0,score=79.44; prior_signal=68.0; athletic:-3.31 | trait:-2.63 | prior:+2.62 | production:+0.66
+195,Jeff Caldwell,WR,Cincinnati Bearcats,74.17,224.0,2,44.0,29.0,29.0,1,0,52.6,47.4,4,0.0,0.0,score=74.17; prior_signal=34.21; prior:-15.14 | guardrail:-5.58 | athletic:+2.78 | production:-1.39
+174,Ephesians Prysock,CB,Washington Huskies,75.63,145.25,4,57.32,-28.75,28.75,0,1,59.86,40.14,4,0.0,0.0,score=75.63; prior_signal=43.53; prior:-5.36 | trait:-3.90 | guardrail:-3.20 | athletic:-1.04
+162,Tim Keenan III,DT,Alabama Crimson Tide,76.83,133.33,3,9.84,-28.67,28.67,0,1,65.77,34.23,4,0.0,0.0,score=76.83; prior_signal=52.74; athletic:-5.88 | guardrail:-1.90 | trait:-0.68 | production:-0.67
+134,Carson Beck,QB,Miami (FL) Hurricanes,78.04,105.75,4,9.52,-28.25,28.25,0,1,79.48,20.52,4,0.0,0.0,score=78.04; prior_signal=57.69; prior:-5.05 | guardrail:-4.17 | trait:-1.86 | risk:-1.18
+103,Michael Trigg,TE,Baylor Bears,79.67,75.25,4,24.53,-27.75,27.75,0,1,70.03,29.97,4,0.0,0.0,score=79.67; prior_signal=74.73; prior:+4.78 | trait:-3.21 | production:-1.02 | risk:-1.01
+125,David Gusta,DT,Kentucky,78.64,152.5,2,81.5,27.5,27.5,1,0,40.35,59.65,2,0.0,0.0,score=78.64; prior_signal=51.42; prior:-5.28 | trait:-2.98 | guardrail:-2.09 | production:-1.51
+247,Cameron Ball,DT,Arkansas Razorbacks,68.35,274.5,2,21.5,27.5,27.5,1,0,56.29,43.71,4,0.0,0.0,score=68.35; prior_signal=10.09; prior:-16.13 | guardrail:-4.50 | athletic:-2.89 | trait:-2.33
+36,Carnell Tate,WR,Ohio State,86.96,8.75,8,1.98,-27.25,27.25,0,1,93.02,6.98,4,0.0,0.0,score=86.96; prior_signal=96.69; prior:+5.33 | athletic:-5.13 | trait:+4.26 | production:+0.63
+163,Kage Casey,OT,Boise State,76.72,135.75,4,34.73,-27.25,27.25,0,1,60.43,39.57,4,0.0,0.0,score=76.72; prior_signal=43.29; prior:-6.26 | trait:-3.15 | guardrail:-2.50 | athletic:-1.91
+98,Antonio Williams,WR,Clemson,78.59,70.83,6,14.31,-27.17,27.17,0,1,81.04,18.96,4,0.0,0.0,score=78.59; prior_signal=57.72; trait:-4.14 | prior:-1.24 | risk:-0.91 | production:-0.85
+101,Connor Lew,IOL,Auburn Tigers,79.8,74.0,5,16.15,-27.0,27.0,0,1,70.07,29.93,4,0.0,0.0,score=79.8; prior_signal=68.22; trait:-2.41 | production:-1.38 | prior:+0.92 | guardrail:-0.80
+150,Trey Zuhn III,IOL,Texas A&M,77.47,123.0,5,36.81,-27.0,27.0,0,1,62.46,37.54,4,0.0,0.0,score=77.47; prior_signal=52.01; prior:-5.36 | guardrail:-3.25 | trait:-2.53 | production:-0.73
+96,Demond Claiborne,RB,Wake Forest,80.18,122.75,4,29.28,26.75,26.75,1,0,60.25,39.75,4,0.0,0.0,score=80.18; prior_signal=57.53; prior:-3.71 | trait:-2.33 | production:-1.51 | guardrail:-1.41
+139,DeMonte Capehart,DT,Clemson Tigers,77.64,165.67,3,6.13,26.67,26.67,1,0,68.72,31.28,4,0.0,0.0,score=77.64; prior_signal=42.35; prior:-11.90 | guardrail:-4.95 | trait:-1.09 | athletic:+0.98
+61,Deion Burks,WR,Oklahoma Sooners,82.89,87.5,4,25.67,26.5,26.5,1,0,72.7,27.3,4,0.0,0.0,score=82.89; prior_signal=67.82; prior:-2.28 | athletic:+1.87 | production:-1.68 | trait:-1.49
+156,Brenen Thompson,WR,Mississippi State Bulldogs,77.11,129.5,4,31.47,-26.5,26.5,0,1,59.86,40.14,4,0.0,0.0,score=77.11; prior_signal=41.17; prior:-8.69 | trait:-3.62 | guardrail:-2.90 | risk:-0.64
+172,John Michael Gyllenborg,TE,Wyoming Cowboys,76.09,198.5,2,30.5,26.5,26.5,1,0,53.32,46.68,4,0.0,0.0,score=76.09; prior_signal=39.85; prior:-11.32 | guardrail:-3.05 | production:-1.68 | athletic:+1.06
+97,Tacario Davis,CB,Washington,80.17,123.25,4,37.08,26.25,26.25,1,0,59.86,40.14,4,0.0,0.0,score=80.17; prior_signal=53.91; prior:-7.67 | guardrail:-3.89 | athletic:+3.15 | trait:-2.24
+82,Bryce Lance,WR,North Dakota State,81.17,107.75,4,59.52,25.75,25.75,1,0,59.89,40.11,4,0.0,0.0,score=81.17; prior_signal=68.15; guardrail:-3.99 | prior:-3.86 | trait:-2.85 | production:+1.63
+118,Red Murdock,LB,Buffalo,78.88,143.5,2,51.5,25.5,25.5,1,0,52.23,47.77,2,0.0,0.0,score=78.88; prior_signal=46.31; prior:-5.54 | trait:-3.13 | guardrail:-1.80 | production:-1.51
+158,Logan Jones,IOL,Iowa Hawkeyes,76.9,132.5,4,28.54,-25.5,25.5,0,1,61.0,39.0,4,0.0,0.0,score=76.9; prior_signal=41.87; prior:-8.37 | trait:-3.59 | guardrail:-2.90 | risk:-0.45
+246,Jalen Walthall,WR,Incarnate Word,69.41,220.5,2,214.5,-25.5,25.5,0,1,39.77,60.23,3,0.0,0.0,score=69.41; prior_signal=59.08; guardrail:-4.57 | athletic:-3.21 | prior:+2.90 | trait:-2.85
+60,Chandler Rivers,CB,Duke,83.11,85.25,4,13.92,25.25,25.25,1,0,61.22,38.78,4,0.0,0.0,score=83.11; prior_signal=68.75; prior:-2.85 | trait:-2.19 | athletic:+1.81 | guardrail:-0.91
+206,Eric Gentry,LB,USC Trojans,72.63,231.0,2,41.0,25.0,25.0,1,0,52.23,47.77,4,0.0,0.0,score=72.63; prior_signal=18.63; prior:-16.93 | guardrail:-4.50 | trait:-2.09 | production:-0.64
+88,Austin Barber,OT,Florida,81.27,112.25,4,4.71,24.25,24.25,1,0,76.22,23.78,4,0.0,0.0,score=81.27; prior_signal=55.19; prior:-10.45 | guardrail:-5.14 | athletic:+3.03 | trait:-1.88
+65,Jake Slaughter,IOL,Florida,82.36,89.0,4,12.02,24.0,24.0,1,0,62.35,37.65,4,0.0,0.0,score=82.36; prior_signal=58.75; prior:-6.94 | trait:-3.09 | athletic:+2.86 | guardrail:-0.80
+170,Rayshaun Benny,DT,Michigan Wolverines,75.74,146.0,4,49.66,-24.0,24.0,0,1,59.48,40.52,4,0.0,0.0,score=75.74; prior_signal=35.95; prior:-8.89 | trait:-4.08 | guardrail:-4.00 | risk:-0.45
+119,Justin Joly,TE,North Carolina State Wolfpack,78.81,95.75,4,15.01,-23.25,23.25,0,1,76.14,23.86,4,0.0,0.0,score=78.81; prior_signal=63.64; trait:-3.62 | prior:+1.07 | risk:-0.91 | guardrail:-0.80
+160,Joe Royer,TE,Cincinnati Bearcats,77.05,136.75,4,16.5,-23.25,23.25,0,1,65.66,34.34,4,0.0,0.0,score=77.05; prior_signal=50.14; prior:-3.78 | trait:-2.99 | guardrail:-2.30 | production:-1.68
+41,Gabe Jacas,EDGE,Illinois Fighting Illini,85.47,63.6,5,28.88,22.6,22.6,1,0,75.58,24.42,4,0.0,0.0,score=85.47; prior_signal=73.61; prior:-3.88 | athletic:+2.47 | guardrail:-1.72 | trait:-1.22
+43,Eli Stowers,TE,Vanderbilt,85.42,65.6,5,24.05,22.6,22.6,1,0,75.96,24.04,4,0.0,0.0,score=85.42; prior_signal=74.04; prior:-3.28 | athletic:+2.41 | trait:-1.52 | risk:-0.42
+203,VJ Payne,S,Kansas State Wildcats,72.46,180.67,3,78.22,-22.33,22.33,0,1,55.99,44.01,4,0.0,0.0,score=72.46; prior_signal=28.44; prior:-11.33 | guardrail:-4.50 | trait:-4.47 | production:-0.88
+68,Anthony Lucas,EDGE,USC Trojans,82.07,90.25,4,18.51,22.25,22.25,1,0,56.16,43.84,4,0.0,0.0,score=82.07; prior_signal=66.76; trait:-2.08 | guardrail:-1.26 | prior:-1.15 | risk:-0.63
+262,Barion Brown,WR,LSU,64.25,283.5,2,65.5,21.5,21.5,1,0,52.6,47.4,4,0.0,0.0,score=64.25; prior_signal=18.2; prior:-13.26 | guardrail:-7.90 | athletic:-3.86 | production:-1.68
+108,J.C. Davis,OT,Illinois Fighting Illini,79.27,129.33,3,16.01,21.33,21.33,1,0,62.06,37.94,4,0.0,0.0,score=79.27; prior_signal=56.74; prior:-6.04 | guardrail:-4.25 | athletic:-2.05 | production:+1.16
+123,Keylan Rutledge,IOL,Georgia Tech Yellow Jackets,78.59,101.75,4,20.7,-21.25,21.25,0,1,66.17,33.83,4,0.0,0.0,score=78.59; prior_signal=51.39; prior:-5.10 | trait:-3.14 | guardrail:-1.80 | risk:-0.45
+84,Charles Demmings,CB,Stephen F. Austin,81.18,105.0,2,99.0,21.0,21.0,1,0,39.77,60.23,3,0.0,0.0,score=81.18; prior_signal=78.73; prior:+4.72 | trait:-2.84 | production:-1.68 | guardrail:-1.43
+239,Diego Pounds,OT,Mississippi Rebels,68.86,259.5,2,42.5,20.5,20.5,1,0,53.21,46.79,4,0.0,0.0,score=68.86; prior_signal=10.93; prior:-17.16 | guardrail:-4.50 | trait:-2.31 | production:-1.68
+37,Josiah Trotter,LB,Missouri Tigers,86.23,57.4,5,6.65,20.4,20.4,1,0,92.1,7.9,4,0.0,0.0,score=86.23; prior_signal=76.3; athletic:+1.79 | trait:-1.78 | prior:-1.11 | production:-0.54
+109,Drew Shelton,OT,Penn State Nittany Lions,79.27,129.33,3,9.67,20.33,20.33,1,0,65.79,34.21,4,0.0,0.0,score=79.27; prior_signal=51.17; prior:-6.77 | guardrail:-2.98 | production:-1.01 | trait:-0.70
+22,Fernando Mendoza,QB,Indiana,89.01,1.91,11,1.62,-20.09,20.09,0,1,89.11,10.89,4,0.0,0.0,score=89.01; prior_signal=99.85; prior:+3.57 | trait:+2.09 | production:+1.44 | risk:-1.28
+71,Chris Bell,WR,Louisville,80.37,51.0,4,13.08,-20.0,20.0,0,1,81.22,18.78,4,0.0,0.0,score=80.37; prior_signal=62.5; trait:-4.47 | prior:-0.55 | risk:-0.41 | guardrail:-0.40
+159,Bryce Boettcher,LB,Oregon Ducks,77.02,179.0,2,30.0,20.0,20.0,1,0,52.42,47.58,4,0.0,0.0,score=77.02; prior_signal=34.79; prior:-12.74 | guardrail:-3.54 | trait:-1.46 | risk:-0.45
+75,Jadarian Price,RB,Notre Dame Fighting Irish,81.54,55.17,6,16.52,-19.83,19.83,0,1,82.08,17.92,4,0.0,0.0,score=81.54; prior_signal=75.09; prior:+2.34 | trait:-1.68 | athletic:-1.52 | language:-0.47
+86,Jaishawn Barham,LB,Michigan,80.38,105.8,5,16.25,19.8,19.8,1,0,70.99,29.01,4,0.0,0.0,score=80.38; prior_signal=56.32; trait:-2.83 | prior:-2.64 | guardrail:-1.32 | athletic:-1.27
+5,Monroe Freeling,OT,Georgia,93.85,24.5,6,5.38,19.5,19.5,1,0,92.51,7.49,4,0.0,0.0,score=93.85; prior_signal=89.01; prior:-5.63 | trait:+3.90 | athletic:+3.51 | production:-0.81
+16,Dillon Thieneman,S,Oregon,89.47,35.5,6,13.52,19.5,19.5,1,0,86.39,13.61,4,0.0,0.0,score=89.47; prior_signal=74.86; prior:-5.72 | athletic:+2.79 | production:+1.11 | trait:-0.99
+191,Anez Cooper,IOL,Miami,74.45,171.5,2,74.5,-19.5,19.5,0,1,39.4,60.6,2,0.0,0.0,score=74.45; prior_signal=39.49; prior:-6.69 | trait:-3.33 | production:-1.68 | guardrail:-1.65
+3,Kadyn Proctor,OT,Alabama,94.07,22.33,9,8.08,19.33,19.33,1,0,88.5,11.5,4,0.0,0.0,score=94.07; prior_signal=91.55; prior:-4.79 | trait:+4.22 | athletic:+2.70 | production:+0.92
+70,A.J. Haulcy,S,LSU Tigers,81.94,50.8,5,7.47,-19.2,19.2,0,1,79.56,20.44,4,0.0,0.0,score=81.94; prior_signal=79.35; prior:+5.88 | athletic:-3.46 | trait:-2.04 | risk:-0.64
+11,Kayden McDonald,DT,Ohio State Buckeyes,91.74,30.14,7,4.64,19.14,19.14,1,0,91.8,8.2,4,0.0,0.0,score=91.74; prior_signal=88.31; trait:+3.76 | prior:-3.03 | language:-0.41 | production:+0.27
+131,Thaddeus Dixon,CB,North Carolina Tar Heels,78.17,150.0,2,24.0,19.0,19.0,1,0,53.72,46.28,4,0.0,0.0,score=78.17; prior_signal=52.05; prior:-7.20 | guardrail:-4.94 | production:-1.68 | athletic:+0.73
+212,Zavion Thomas,WR,LSU Tigers,72.21,231.0,2,57.0,19.0,19.0,1,0,52.6,47.4,4,0.0,0.0,score=72.21; prior_signal=34.08; prior:-11.32 | guardrail:-4.34 | production:-1.68 | trait:-1.06
+92,Bud Clark,S,TCU Horned Frogs,80.07,110.75,4,3.77,18.75,18.75,1,0,75.95,24.05,4,0.0,0.0,score=80.07; prior_signal=54.12; prior:-5.53 | guardrail:-2.95 | trait:-2.90 | risk:-0.64
+184,Marlin Klein,TE,Michigan Wolverines,75.16,165.67,3,42.94,-18.33,18.33,0,1,56.02,43.98,4,0.0,0.0,score=75.16; prior_signal=51.72; prior:-4.34 | guardrail:-3.32 | athletic:-1.84 | production:-1.68
+19,Brandon Cisse,CB,South Carolina Gamecocks,89.86,36.57,7,13.06,17.57,17.57,1,0,86.49,13.51,4,0.0,0.0,score=89.86; prior_signal=84.45; prior:-2.65 | athletic:+2.42 | trait:+1.55 | production:-0.68
+55,Ja'Kobi Lane,WR,USC,83.58,72.5,4,49.22,17.5,17.5,1,0,50.86,49.14,4,0.0,0.0,score=83.58; prior_signal=71.3; prior:-4.03 | athletic:+3.06 | guardrail:-1.95 | trait:-1.80
+93,Mike Washington Jr.,RB,Arkansas Razorbacks,79.9,110.5,4,22.05,17.5,17.5,1,0,62.26,37.74,4,0.0,0.0,score=79.9; prior_signal=48.79; prior:-9.88 | guardrail:-3.66 | trait:-3.23 | athletic:+2.83
+211,Jordan Hudson,WR,SMU,72.59,194.0,2,111.0,-17.0,17.0,0,1,38.83,61.17,3,0.0,0.0,score=72.59; prior_signal=40.07; prior:-6.14 | trait:-3.11 | guardrail:-2.84 | production:-1.68
+236,Lake McRee,TE,USC Trojans,69.53,253.0,2,45.0,17.0,17.0,1,0,52.6,47.4,4,0.0,0.0,score=69.53; prior_signal=26.35; prior:-12.65 | guardrail:-4.74 | production:-1.57 | trait:-1.44
+25,Anthony Hill Jr.,LB,Texas Longhorns,88.56,41.75,8,20.15,16.75,16.75,1,0,81.75,18.25,4,0.0,0.0,score=88.56; prior_signal=81.83; athletic:+3.01 | trait:-1.60 | prior:-1.04 | production:-0.55
+177,Josh Cuevas,TE,Alabama Crimson Tide,75.74,160.5,2,47.5,-16.5,16.5,0,1,52.63,47.37,4,0.0,0.0,score=75.74; prior_signal=52.31; prior:-2.96 | athletic:-2.62 | guardrail:-1.98 | production:-1.68
+151,Alex Harkey,IOL,Oregon,77.47,134.67,3,51.37,-16.33,16.33,0,1,55.62,44.38,2,0.0,0.0,score=77.47; prior_signal=56.13; trait:-2.83 | prior:-2.36 | guardrail:-2.29 | production:-1.68
+167,Oscar Delp,TE,Georgia Bulldogs,76.22,150.67,3,17.78,-16.33,16.33,0,1,60.14,39.86,4,0.0,0.0,score=76.22; prior_signal=43.51; prior:-8.13 | guardrail:-2.90 | production:-1.68 | trait:-1.11
+91,Taurean York,LB,Texas A&M Aggies,80.15,107.0,4,21.78,16.0,16.0,1,0,65.87,34.13,4,0.0,0.0,score=80.15; prior_signal=60.31; athletic:-2.85 | trait:-2.61 | prior:+0.61 | risk:-0.46
+187,Desmond Reid,RB,Pittsburgh Panthers,74.73,203.0,2,24.0,16.0,16.0,1,0,52.77,47.23,4,0.0,0.0,score=74.73; prior_signal=37.5; prior:-10.11 | guardrail:-2.45 | trait:-1.16 | production:-0.66
+74,Dontay Corleone,DT,Cincinnati Bearcats,81.66,89.75,4,21.42,15.75,15.75,1,0,65.01,34.99,4,0.0,0.0,score=81.66; prior_signal=66.6; trait:-1.98 | prior:-0.97 | guardrail:-0.80 | production:-0.56
+189,Max Llewellyn,EDGE,Iowa Hawkeyes,74.44,173.33,3,6.94,-15.67,15.67,0,1,68.49,31.51,4,0.0,0.0,score=74.44; prior_signal=40.04; prior:-7.83 | guardrail:-3.30 | athletic:-3.01 | trait:-1.11
+12,C.J. Allen,LB,Georgia,91.56,27.5,8,3.57,15.5,15.5,1,0,92.14,7.86,4,0.0,0.0,score=91.56; prior_signal=88.21; trait:+3.63 | prior:-2.28 | athletic:-0.37 | production:-0.36
+183,Quintayvious Hutchins,EDGE,Boston College Eagles,75.02,198.0,2,35.0,15.0,15.0,1,0,53.17,46.83,4,0.0,0.0,score=75.02; prior_signal=40.2; prior:-8.75 | guardrail:-2.85 | athletic:-1.90 | trait:-0.93
+194,Owen Heinecke,LB,Oklahoma Sooners,74.03,209.0,2,5.0,15.0,15.0,1,0,62.6,37.4,4,0.0,0.0,score=74.03; prior_signal=32.57; prior:-10.86 | guardrail:-3.54 | athletic:-2.39 | trait:-1.41
+6,Caleb Lomu,OT,Utah,93.81,20.5,8,6.82,14.5,14.5,1,0,92.05,7.95,4,0.0,0.0,score=93.81; prior_signal=91.94; trait:+4.27 | prior:-4.22 | athletic:+3.10 | production:-1.29
+204,Vincent Anthony Jr.,EDGE,Duke Blue Devils,72.73,189.5,2,17.5,-14.5,14.5,0,1,57.04,42.96,4,0.0,0.0,score=72.73; prior_signal=34.09; prior:-9.02 | guardrail:-3.54 | athletic:-2.73 | production:-1.42
+47,Caleb Tiernan,OT,Northwestern Wildcats,84.68,61.4,5,5.28,14.4,14.4,1,0,71.84,28.16,4,0.0,0.0,score=84.68; prior_signal=74.38; athletic:+2.66 | trait:-2.17 | prior:-1.32 | production:-1.01
+81,Derrick Moore,EDGE,Michigan,80.09,66.75,4,7.19,-14.25,14.25,0,1,84.01,15.99,4,0.0,0.0,score=80.09; prior_signal=64.91; trait:-3.48 | guardrail:-1.27 | risk:-0.91 | production:+0.54
+27,Rueben Bain Jr.,EDGE,Miami (FL) Hurricanes,87.93,12.89,9,23.16,-14.11,14.11,0,1,72.89,27.11,4,0.0,0.0,score=87.93; prior_signal=94.56; prior:+2.80 | trait:+1.68 | risk:-1.13 | language:-0.90
+42,Avieon Terrell,CB,Clemson,85.43,28.0,10,18.04,-14.0,14.0,0,1,80.07,19.93,4,0.0,0.0,score=85.43; prior_signal=89.69; prior:+4.51 | athletic:-3.12 | trait:+1.78 | risk:-0.92
+148,Skyler Gill-Howard,DT,Texas Tech Red Raiders,77.53,134.0,3,22.09,-14.0,14.0,0,1,58.2,41.8,4,0.0,0.0,score=77.53; prior_signal=57.09; guardrail:-4.56 | athletic:-3.49 | prior:-2.92 | risk:-0.46
+192,Robert Spears-Jennings,S,Oklahoma Sooners,74.26,206.0,2,20.0,14.0,14.0,1,0,56.01,43.99,4,0.0,0.0,score=74.26; prior_signal=36.03; prior:-9.12 | guardrail:-2.85 | production:-1.68 | athletic:-1.38
+230,Joshua Braun,IOL,Kentucky Wildcats,69.92,244.0,2,8.0,14.0,14.0,1,0,61.82,38.18,4,0.0,0.0,score=69.92; prior_signal=23.53; prior:-12.90 | guardrail:-3.87 | trait:-1.73 | production:-1.68
+102,Sam Roush,TE,Stanford Cardinal,79.59,115.67,3,10.66,13.67,13.67,1,0,64.98,35.02,4,0.0,0.0,score=79.59; prior_signal=59.84; prior:-4.71 | guardrail:-3.71 | production:-1.68 | risk:-0.63
+142,Cole Payton,QB,North Dakota State,78.04,128.33,3,93.93,-13.67,13.67,0,1,53.91,46.09,4,0.0,0.0,score=78.04; prior_signal=56.32; prior:-6.36 | guardrail:-4.97 | trait:-2.69 | production:+1.44
+23,Emmanuel Pregnon,IOL,Oregon Ducks,88.69,36.0,6,10.1,13.0,13.0,1,0,87.92,12.08,4,0.0,0.0,score=88.69; prior_signal=85.02; prior:-1.40 | trait:+1.21 | production:+0.99 | risk:-0.24
+219,Diego Pavia,QB,Vanderbilt Commodores,71.46,232.0,2,8.0,13.0,13.0,1,0,56.48,43.52,4,0.0,0.0,score=71.46; prior_signal=24.03; prior:-14.43 | guardrail:-3.41 | trait:-2.11 | risk:-1.73
+141,Eric McAlister,WR,TCU Horned Frogs,77.67,153.67,3,18.86,12.67,12.67,1,0,59.9,40.1,4,0.0,0.0,score=77.67; prior_signal=51.5; prior:-8.33 | guardrail:-4.32 | risk:-0.63 | trait:-0.59
+53,Chase Bisontis,IOL,Texas A&M,83.47,64.8,5,20.36,11.8,11.8,1,0,81.7,18.3,4,0.0,0.0,score=83.47; prior_signal=66.14; prior:-4.58 | athletic:+2.86 | trait:-1.78 | production:-1.68
+87,Gennings Dunker,OT,Iowa Hawkeyes,80.49,76.25,4,20.73,-10.75,10.75,0,1,77.87,22.13,4,0.0,0.0,score=80.49; prior_signal=61.78; trait:-3.22 | prior:-1.69 | athletic:-1.05 | production:+0.43
+231,Riley Nowakowski,TE,Indiana Hoosiers,69.75,220.5,2,26.5,-10.5,10.5,0,1,53.33,46.67,4,0.0,0.0,score=69.75; prior_signal=24.02; prior:-11.68 | guardrail:-3.87 | athletic:-2.48 | trait:-1.84
+38,Christen Miller,DT,Georgia Bulldogs,86.18,48.43,7,17.78,10.43,10.43,1,0,81.37,18.63,4,0.0,0.0,score=86.18; prior_signal=80.5; trait:-1.18 | prior:+1.08 | language:-0.39 | risk:-0.23
+124,Michael Taaffe,S,Texas Longhorns,78.57,134.33,3,20.98,10.33,10.33,1,0,60.37,39.63,4,0.0,0.0,score=78.57; prior_signal=54.71; prior:-5.84 | guardrail:-4.91 | athletic:-1.84 | risk:-0.64
+45,D'Angelo Ponds,CB,Indiana Hoosiers,84.72,54.8,5,9.85,9.8,9.8,1,0,87.42,12.58,4,0.0,0.0,score=84.72; prior_signal=76.8; prior:-3.53 | athletic:+3.16 | guardrail:-3.13 | trait:-2.06
+83,Gracen Halton,DT,Oklahoma Sooners,80.64,92.75,4,17.14,9.75,9.75,1,0,67.06,32.94,4,0.0,0.0,score=80.64; prior_signal=60.25; trait:-2.97 | prior:-1.87 | guardrail:-1.60 | athletic:-0.94
+147,Albert Regis,DT,Texas A&M Aggies,77.64,156.67,3,27.93,9.67,9.67,1,0,57.19,42.81,4,0.0,0.0,score=77.64; prior_signal=51.89; prior:-6.82 | guardrail:-4.36 | athletic:-1.15 | production:-0.55
+1,Sonny Styles,LB,Ohio State,94.34,10.38,8,7.57,9.38,9.38,1,0,91.84,8.16,4,0.0,0.0,score=94.34; prior_signal=91.84; prior:-4.65 | athletic:+3.56 | trait:+2.40 | production:+0.39
+51,Keionte Scott,CB,Miami (FL) Hurricanes,84.37,60.33,6,15.06,9.33,9.33,1,0,81.47,18.53,4,0.0,0.0,score=84.37; prior_signal=74.85; prior:-1.65 | guardrail:-1.56 | trait:-0.89 | production:+0.86
+199,Domani Jackson,CB,Alabama,73.26,189.67,3,44.72,-9.33,9.33,0,1,55.99,44.01,4,0.0,0.0,score=73.26; prior_signal=34.35; prior:-9.28 | guardrail:-3.30 | athletic:-1.93 | trait:-1.49
+181,Lander Barton,LB,Utah Utes,74.82,189.67,3,45.26,8.67,8.67,1,0,55.62,44.38,4,0.0,0.0,score=74.82; prior_signal=27.47; prior:-13.95 | guardrail:-4.00 | trait:-1.87 | production:-1.22
+226,Luke Altmyer,QB,Illinois Fighting Illini,70.68,218.0,2,2.0,-8.0,8.0,0,1,59.35,40.65,4,0.0,0.0,score=70.68; prior_signal=29.17; prior:-11.43 | guardrail:-3.91 | athletic:-2.09 | trait:-1.90
+50,Zion Young,EDGE,Missouri Tigers,84.58,42.2,5,3.19,-7.8,7.8,0,1,91.69,8.31,4,0.0,0.0,score=84.58; prior_signal=80.65; prior:+1.78 | trait:-1.68 | language:-0.48 | guardrail:-0.45
+17,Cashius Howell,EDGE,Texas A&M Aggies,90.68,24.71,7,7.5,7.71,7.71,1,0,91.26,8.74,4,0.0,0.0,score=90.68; prior_signal=90.25; trait:+3.95 | prior:-1.05 | athletic:-0.91 | risk:-0.42
+21,David Bailey,EDGE,Texas Tech,87.86,13.45,11,21.37,-7.55,7.55,0,1,78.22,21.78,4,0.0,0.0,score=87.86; prior_signal=87.36; athletic:+2.96 | risk:-1.24 | language:-0.90 | trait:-0.77
+64,Jonah Coleman,RB,Washington Huskies,82.62,71.5,4,17.21,7.5,7.5,1,0,78.14,21.86,4,0.0,0.0,score=82.62; prior_signal=73.0; trait:-1.77 | athletic:-0.64 | prior:+0.62 | risk:-0.42
+67,Jacob Rodriguez,LB,Texas Tech Red Raiders,82.09,74.0,4,12.31,7.0,7.0,1,0,62.29,37.71,4,0.0,0.0,score=82.09; prior_signal=64.37; trait:-2.72 | prior:-2.37 | guardrail:-0.99 | production:+0.57
+166,DJ Campbell,IOL,Texas Longhorns,76.47,159.0,3,24.54,-7.0,7.0,0,1,57.76,42.24,4,0.0,0.0,score=76.47; prior_signal=51.32; prior:-6.57 | guardrail:-3.79 | production:-0.96 | athletic:-0.89
+39,Ty Simpson,QB,Alabama Crimson Tide,85.93,32.14,7,9.34,-6.86,6.86,0,1,85.13,14.87,4,0.0,0.0,score=85.93; prior_signal=86.71; prior:+2.45 | production:+0.88 | risk:-0.78 | athletic:-0.64
+110,Kyle Louis,LB,Pittsburgh Panthers,78.84,103.25,4,34.63,-6.75,6.75,0,1,60.46,39.54,4,0.0,0.0,score=78.84; prior_signal=47.94; prior:-5.48 | trait:-3.43 | guardrail:-2.40 | production:-0.53
+18,Kenyon Sadiq,TE,Oregon,89.66,24.57,7,12.42,6.57,6.57,1,0,86.71,13.29,4,0.0,0.0,score=89.66; prior_signal=86.08; trait:+2.69 | prior:-2.49 | athletic:+2.30 | production:-1.50
+28,Akheem Mesidor,EDGE,Miami (FL) Hurricanes,87.81,34.57,7,21.65,6.57,6.57,1,0,78.8,21.2,4,0.0,0.0,score=87.81; prior_signal=83.67; trait:+1.65 | prior:-1.36 | guardrail:-0.76 | risk:-0.73
+145,Keagen Trost,OT,Missouri,77.77,138.5,2,80.5,-6.5,6.5,0,1,40.35,59.65,2,0.0,0.0,score=77.77; prior_signal=57.45; guardrail:-2.98 | trait:-2.71 | prior:-2.23 | production:-1.68
+152,Ar'maj Reed-Adams,IOL,Texas A&M,77.47,145.5,2,0.5,-6.5,6.5,0,1,63.72,36.28,4,0.0,0.0,score=77.47; prior_signal=51.05; prior:-8.33 | guardrail:-5.34 | production:-1.19 | athletic:+0.69
+24,Peter Woods,DT,Clemson,88.74,17.58,12,20.49,-6.42,6.42,0,1,79.09,20.91,4,0.0,0.0,score=88.74; prior_signal=93.2; prior:+2.44 | trait:+1.68 | language:-0.90 | risk:-0.73
+111,CJ Daniels,WR,Miami (FL) Hurricanes,79.17,117.33,3,32.97,6.33,6.33,1,0,55.04,44.96,4,0.0,0.0,score=79.17; prior_signal=63.56; guardrail:-4.08 | prior:-3.35 | production:-1.43 | risk:-0.63
+30,Denzel Boston,WR,Washington,87.59,23.88,8,6.03,-6.12,6.12,0,1,91.73,8.27,4,0.0,0.0,score=87.59; prior_signal=90.11; trait:+3.93 | athletic:-3.59 | prior:+1.79 | production:+0.88
+7,Jordyn Tyson,WR,Arizona State,93.38,13.0,8,5.89,6.0,6.0,1,0,91.77,8.23,4,0.0,0.0,score=93.38; prior_signal=95.19; trait:+4.25 | athletic:+3.60 | prior:-3.59 | risk:-0.42
+185,Dallen Bentley,TE,Utah Utes,74.8,179.33,3,13.07,-5.67,5.67,0,1,64.36,35.64,4,0.0,0.0,score=74.8; prior_signal=37.19; prior:-10.47 | guardrail:-3.30 | trait:-1.31 | athletic:-1.20
+34,Omar Cooper Jr.,WR,Indiana Hoosiers,86.97,39.57,7,10.98,5.57,5.57,1,0,87.09,12.91,4,0.0,0.0,score=86.97; prior_signal=81.11; trait:+0.99 | athletic:-0.90 | prior:-0.78 | production:+0.78
+13,Keldric Faulk,EDGE,Auburn,91.55,18.5,8,5.63,5.5,5.5,1,0,91.85,8.15,4,0.0,0.0,score=91.55; prior_signal=93.32; trait:+4.26 | prior:-0.89 | athletic:-0.83 | risk:-0.42
+127,Seth McGowan,RB,Kentucky Wildcats,78.4,132.5,2,37.5,5.5,5.5,1,0,52.63,47.37,4,0.0,0.0,score=78.4; prior_signal=59.22; guardrail:-3.44 | prior:-3.25 | production:-1.54 | athletic:-0.99
+186,Justin Jefferson,LB,Alabama,74.82,191.5,2,70.5,5.5,5.5,1,0,40.35,59.65,2,0.0,0.0,score=74.82; prior_signal=32.41; prior:-8.94 | trait:-3.66 | guardrail:-1.65 | production:-1.51
+220,Fa'alili Fa'amoe,OT,Wake Forest Demon Deacons,71.39,214.5,2,4.5,-5.5,5.5,0,1,62.69,37.31,4,0.0,0.0,score=71.39; prior_signal=29.49; prior:-10.33 | guardrail:-3.87 | athletic:-2.45 | trait:-1.46
+237,Vinny Anthony II,WR,Wisconsin Badgers,69.27,231.5,2,10.5,-5.5,5.5,0,1,59.96,40.04,4,0.0,0.0,score=69.27; prior_signal=27.41; prior:-9.79 | guardrail:-3.87 | athletic:-3.37 | trait:-1.54
+52,Chris Brazzell II,WR,Tennessee Volunteers,84.2,46.75,4,19.92,-5.25,5.25,0,1,56.76,43.24,4,0.0,0.0,score=84.2; prior_signal=79.21; trait:-2.31 | prior:+1.87 | risk:-0.64 | athletic:+0.62
+54,Romello Height,EDGE,Texas Tech Red Raiders,83.87,59.25,4,12.58,5.25,5.25,1,0,62.18,37.82,4,0.0,0.0,score=83.87; prior_signal=78.68; trait:-2.17 | prior:+1.16 | guardrail:-1.10 | athletic:+0.66
+62,Domonique Orange,DT,Iowa State Cyclones,82.93,67.25,4,10.78,5.25,5.25,1,0,61.76,38.24,4,0.0,0.0,score=82.93; prior_signal=73.98; trait:-2.46 | prior:+1.89 | production:-0.82 | risk:-0.45
+138,Eric Rivers,WR,Georgia Tech Yellow Jackets,77.67,143.25,4,55.64,5.25,5.25,1,0,71.56,28.44,4,0.0,0.0,score=77.67; prior_signal=55.79; prior:-3.23 | guardrail:-2.85 | trait:-2.71 | production:-1.38
+251,Adam Randall,RB,Clemson Tigers,67.46,256.0,2,41.0,5.0,5.0,1,0,52.63,47.37,4,0.0,0.0,score=67.46; prior_signal=11.78; prior:-16.10 | guardrail:-4.50 | trait:-2.34 | athletic:-1.59
+26,T.J. Parker,EDGE,Clemson,88.15,30.89,9,18.96,4.89,4.89,1,0,79.84,20.16,4,0.0,0.0,score=88.15; prior_signal=88.64; athletic:+2.34 | risk:-0.92 | language:-0.90 | trait:-0.81
+89,Sam Hecht,IOL,Kansas State Wildcats,80.3,93.75,4,2.86,4.75,4.75,1,0,76.84,23.16,4,0.0,0.0,score=80.3; prior_signal=60.41; trait:-2.75 | athletic:-1.69 | prior:-1.37 | guardrail:-0.49
+135,Nick Barrett,DT,South Carolina,78.16,130.5,2,70.5,-4.5,4.5,0,1,40.38,59.62,2,0.0,0.0,score=78.16; prior_signal=58.34; trait:-2.82 | athletic:-2.64 | prior:+1.68 | production:-1.51
+8,Caleb Downs,S,Ohio State,92.6,3.77,13,2.08,-4.23,4.23,0,1,92.04,7.96,4,0.0,0.0,score=92.6; prior_signal=98.74; trait:+4.15 | production:+0.54 | risk:-0.41 | prior:+0.31
+10,Mansoor Delane,CB,LSU Tigers,92.09,14.14,7,9.86,4.14,4.14,1,0,86.47,13.53,4,0.0,0.0,score=92.09; prior_signal=93.2; trait:+3.97 | prior:-1.78 | production:+1.24 | risk:-0.41
+49,R Mason Thomas,EDGE,Oklahoma,84.69,45.0,7,9.3,-4.0,4.0,0,1,88.15,11.85,4,0.0,0.0,score=84.69; prior_signal=81.91; prior:+2.62 | trait:-1.46 | athletic:-0.42 | language:-0.39
+69,Darrell Jackson Jr.,DT,Florida State,82.41,73.0,4,15.17,4.0,4.0,1,0,57.57,42.43,4,0.0,0.0,score=82.41; prior_signal=73.5; trait:-1.74 | guardrail:-1.40 | production:-0.45 | risk:-0.45
+72,Deontae Lawson,LB,Alabama,81.69,76.0,4,19.14,4.0,4.0,1,0,65.58,34.42,4,0.0,0.0,score=81.69; prior_signal=67.84; trait:-2.73 | guardrail:-0.80 | risk:-0.45 | production:-0.26
+44,Jake Golday,LB,Cincinnati Bearcats,85.1,47.83,6,10.37,3.83,3.83,1,0,87.88,12.12,4,0.0,0.0,score=85.1; prior_signal=79.94; trait:-2.06 | prior:+2.05 | language:-0.43 | risk:-0.23
+175,Dae'Quan Wright,TE,Mississippi Rebels,75.85,171.5,2,9.5,-3.5,3.5,0,1,58.63,41.37,4,0.0,0.0,score=75.85; prior_signal=43.66; prior:-8.23 | guardrail:-2.85 | production:-1.48 | trait:-0.98
+217,Caleb Douglas,WR,Texas Tech Red Raiders,71.82,220.5,2,22.5,3.5,3.5,1,0,53.95,46.05,4,0.0,0.0,score=71.82; prior_signal=32.49; prior:-9.63 | guardrail:-3.17 | athletic:-1.80 | production:-1.68
+114,Pat Coogan,IOL,Indiana Hoosiers,78.83,117.33,3,37.93,3.33,3.33,1,0,55.62,44.38,4,0.0,0.0,score=78.83; prior_signal=53.47; prior:-4.66 | trait:-3.31 | guardrail:-1.90 | risk:-0.45
+122,Jude Bowry,OT,Boston College Eagles,78.72,125.25,4,21.06,3.25,3.25,1,0,66.05,33.95,4,0.0,0.0,score=78.72; prior_signal=51.5; prior:-5.11 | trait:-3.01 | guardrail:-2.30 | production:-1.57
+76,Keith Abney II,CB,Arizona State Sun Devils,81.55,72.8,5,32.36,-3.2,3.2,0,1,63.41,36.59,4,0.0,0.0,score=81.55; prior_signal=69.83; athletic:-2.28 | trait:-1.89 | prior:+1.01 | production:+0.66
+66,Elijah Sarratt,WR,Indiana Hoosiers,82.35,69.0,4,10.56,3.0,3.0,1,0,61.24,38.76,4,0.0,0.0,score=82.35; prior_signal=67.53; trait:-2.44 | prior:-1.36 | risk:-0.63 | production:+0.34
+77,Malik Muhammad,CB,Texas,80.17,80.0,5,17.72,3.0,3.0,1,0,70.05,29.95,4,0.0,0.0,score=80.17; prior_signal=59.49; prior:-4.02 | trait:-3.91 | athletic:+2.66 | guardrail:-1.87
+179,Taylen Green,QB,Arkansas Razorbacks,75.04,176.0,2,51.0,-3.0,3.0,0,1,49.21,50.79,4,0.0,0.0,score=75.04; prior_signal=32.38; prior:-17.10 | guardrail:-6.13 | athletic:+3.21 | trait:-1.97
+196,Jalon Daniels,QB,Kansas Jayhawks,73.87,199.0,2,22.0,3.0,3.0,1,0,52.2,47.8,4,0.0,0.0,score=73.87; prior_signal=38.27; prior:-11.02 | guardrail:-3.91 | risk:-1.70 | trait:-1.47
+4,Jeremiyah Love,RB,Notre Dame,93.86,6.82,11,3.88,2.82,2.82,1,0,92.41,7.59,4,0.0,0.0,score=93.86; prior_signal=96.65; trait:+4.19 | prior:-3.11 | production:+1.68 | athletic:+1.58
+35,Colton Hood,CB,Tennessee Volunteers,86.95,32.57,7,8.73,-2.43,2.43,0,1,87.74,12.26,4,0.0,0.0,score=86.95; prior_signal=84.28; trait:+1.25 | prior:+1.07 | athletic:-0.98 | risk:-0.42
+33,KC Concepcion,WR,Texas A&M Aggies,87.2,30.67,6,6.87,-2.33,2.33,0,1,84.05,15.95,4,0.0,0.0,score=87.2; prior_signal=87.08; trait:+3.40 | risk:-2.43 | prior:+0.88 | language:-0.38
+165,Jadon Canady,CB,Oregon Ducks,76.47,167.0,2,20.0,2.0,2.0,1,0,55.03,44.97,4,0.0,0.0,score=76.47; prior_signal=39.79; prior:-11.77 | guardrail:-4.41 | trait:-1.18 | risk:-0.63
+9,Francis Mauigoa,OT,Miami (FL) Hurricanes,92.51,7.33,9,2.75,-1.67,1.67,0,1,92.4,7.6,4,0.0,0.0,score=92.51; prior_signal=96.13; trait:+4.18 | prior:-0.64 | production:+0.50 | risk:-0.23
+20,Spencer Fano,OT,Utah,89.05,18.44,9,21.42,-1.56,1.56,0,1,78.56,21.44,4,0.0,0.0,score=89.05; prior_signal=86.85; athletic:+2.13 | risk:-1.13 | prior:-0.99 | language:-0.90
+40,Blake Miller,OT,Clemson Tigers,85.51,41.5,6,16.61,1.5,1.5,1,0,82.61,17.39,4,0.0,0.0,score=85.51; prior_signal=78.27; trait:-1.95 | athletic:+1.25 | language:-0.46 | risk:-0.24
+144,De'Zhaun Stribling,WR,Mississippi Rebels,77.67,145.5,2,38.5,1.5,1.5,1,0,52.6,47.4,4,0.0,0.0,score=77.67; prior_signal=55.25; prior:-7.29 | guardrail:-5.91 | risk:-0.64 | trait:-0.38
+193,Robert Henry Jr.,RB,UTSA Roadrunners,74.04,194.5,2,2.5,1.5,1.5,1,0,63.22,36.78,4,0.0,0.0,score=74.04; prior_signal=35.45; prior:-10.32 | guardrail:-2.85 | athletic:-1.75 | trait:-1.33
+208,Chase Roberts,WR,BYU Cougars,72.65,206.5,2,41.5,-1.5,1.5,0,1,52.6,47.4,4,0.0,0.0,score=72.65; prior_signal=38.73; prior:-7.18 | athletic:-3.33 | guardrail:-2.85 | trait:-0.98
+14,Makai Lemon,WR,USC Trojans,91.32,12.71,7,2.55,-1.29,1.29,0,1,91.89,8.11,4,0.0,0.0,score=91.32; prior_signal=94.4; trait:+3.98 | prior:-1.36 | production:+1.26 | language:-0.42
+57,Zachariah Branch,WR,Georgia,82.02,58.25,4,14.87,1.25,1.25,1,0,78.75,21.25,4,0.0,0.0,score=82.02; prior_signal=58.94; prior:-4.29 | trait:-3.84 | athletic:+1.83 | risk:-0.41
+2,Arvell Reese,LB,Ohio State Buckeyes,94.46,3.2,10,2.4,1.2,1.2,1,0,72.76,27.24,4,0.0,0.0,score=94.46; prior_signal=98.28; trait:+4.01 | athletic:+1.77 | prior:-1.56 | risk:-0.46
+15,Olaivavega Ioane,IOL,Penn State Nittany Lions,91.26,16.17,6,3.53,1.17,1.17,1,0,93.1,6.9,4,0.0,0.0,score=91.26; prior_signal=92.18; trait:+4.01 | prior:-2.06 | athletic:+0.49 | language:-0.25
+94,Ted Hurst,WR,Georgia State Panthers,79.67,95.0,4,36.89,1.0,1.0,1,0,59.86,40.14,4,0.0,0.0,score=79.67; prior_signal=59.44; trait:-3.28 | prior:-2.72 | guardrail:-1.86 | risk:-0.64
+136,Tyreak Sapp,EDGE,Florida,78.09,137.0,3,29.13,1.0,1.0,1,0,56.37,43.63,4,0.0,0.0,score=78.09; prior_signal=57.87; guardrail:-8.19 | prior:-8.07 | athletic:+1.45 | production:-0.85
+213,Patrick Payton,EDGE,LSU,72.52,214.0,2,23.0,1.0,1.0,1,0,52.93,47.07,4,0.0,0.0,score=72.52; prior_signal=32.13; prior:-15.01 | guardrail:-7.14 | risk:-0.63 | production:-0.62
+168,Jaeden Roberts,IOL,Alabama,76.47,168.67,3,9.53,0.67,0.67,1,0,64.87,35.13,4,0.0,0.0,score=76.47; prior_signal=46.15; prior:-9.26 | guardrail:-3.93 | production:-1.14 | trait:-0.59
+29,Emmanuel McNeil-Warren,S,Toledo Rockets,87.71,28.57,7,7.65,-0.43,0.43,0,1,91.21,8.79,4,0.0,0.0,score=87.71; prior_signal=86.95; athletic:-2.01 | prior:+1.41 | trait:+1.34 | production:+1.31
+154,Jager Burton,IOL,Kentucky Wildcats,77.47,153.67,3,17.0,-0.33,0.33,0,1,61.84,38.16,4,0.0,0.0,score=77.47; prior_signal=49.78; prior:-8.85 | guardrail:-4.20 | production:-0.91 | trait:-0.73
+31,Caleb Banks,DT,Florida Gators,87.41,30.71,7,15.5,-0.29,0.29,0,1,80.0,20.0,4,0.0,0.0,score=87.41; prior_signal=87.69; prior:+2.20 | risk:-1.14 | trait:+0.91 | production:-0.79
+56,Chris Johnson,CB,San Diego State Aztecs,83.31,55.8,5,13.3,-0.2,0.2,0,1,65.75,34.25,4,0.0,0.0,score=83.31; prior_signal=74.16; trait:-2.12 | guardrail:-1.85 | production:+1.30 | prior:-0.87
+85,Genesis Smith,S,Arizona Wildcats,80.57,84.8,5,19.68,-0.2,0.2,0,1,69.56,30.44,4,0.0,0.0,score=80.57; prior_signal=64.44; prior:-2.99 | trait:-2.80 | guardrail:-2.61 | athletic:+0.95

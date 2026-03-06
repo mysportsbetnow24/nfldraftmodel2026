@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import teamNeeds from "../data/team_needs_2026.json";
 
-const pageDescription = "NFL team needs for the 2026 draft cycle with top weaknesses, depth chart context, free agents, and rising young players.";
+const pageDescription = "NFL Team Needs 2026 with team-by-team weakness tiers, depth chart context, free-agent risk, and position priority.";
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -17,6 +17,53 @@ const collectionSchema = {
 };
 
 const rows = (teamNeeds || []) as any[];
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "NFL Team Needs 2026 Rankings",
+  itemListOrder: "https://schema.org/ItemListUnordered",
+  numberOfItems: rows.length,
+  itemListElement: rows.map((row: any, idx: number) => ({
+    "@type": "ListItem",
+    position: idx + 1,
+    name: `${row.team} top need: ${row?.top_needs?.[0]?.position || "N/A"}`,
+    url: "https://scoutinggrade.com/nfl-team-needs-2026",
+  })),
+};
+const TEAM_SEARCH_ALIASES: Record<string, string[]> = {
+  ARI: ["ARI", "Arizona", "Arizona Cardinals", "Cardinals"],
+  ATL: ["ATL", "Atlanta", "Atlanta Falcons", "Falcons"],
+  BAL: ["BAL", "Baltimore", "Baltimore Ravens", "Ravens"],
+  BUF: ["BUF", "Buffalo", "Buffalo Bills", "Bills"],
+  CAR: ["CAR", "Carolina", "Carolina Panthers", "Panthers"],
+  CHI: ["CHI", "Chicago", "Chicago Bears", "Bears"],
+  CIN: ["CIN", "Cincinnati", "Cincinnati Bengals", "Bengals"],
+  CLE: ["CLE", "Cleveland", "Cleveland Browns", "Browns"],
+  DAL: ["DAL", "Dallas", "Dallas Cowboys", "Cowboys"],
+  DEN: ["DEN", "Denver", "Denver Broncos", "Broncos"],
+  DET: ["DET", "Detroit", "Detroit Lions", "Lions"],
+  GB: ["GB", "Green Bay", "Green Bay Packers", "Packers"],
+  HOU: ["HOU", "Houston", "Houston Texans", "Texans"],
+  IND: ["IND", "Indianapolis", "Indianapolis Colts", "Colts"],
+  JAX: ["JAX", "Jacksonville", "Jacksonville Jaguars", "Jaguars"],
+  KC: ["KC", "Kansas City", "Kansas City Chiefs", "Chiefs"],
+  LAC: ["LAC", "Los Angeles Chargers", "LA Chargers", "Chargers"],
+  LAR: ["LAR", "Los Angeles Rams", "LA Rams", "Rams"],
+  LV: ["LV", "Las Vegas", "Las Vegas Raiders", "Raiders"],
+  MIA: ["MIA", "Miami", "Miami Dolphins", "Dolphins"],
+  MIN: ["MIN", "Minnesota", "Minnesota Vikings", "Vikings"],
+  NE: ["NE", "New England", "New England Patriots", "Patriots"],
+  NO: ["NO", "New Orleans", "New Orleans Saints", "Saints"],
+  NYG: ["NYG", "New York Giants", "Giants"],
+  NYJ: ["NYJ", "New York Jets", "Jets"],
+  PHI: ["PHI", "Philadelphia", "Philadelphia Eagles", "Eagles"],
+  PIT: ["PIT", "Pittsburgh", "Pittsburgh Steelers", "Steelers"],
+  SEA: ["SEA", "Seattle", "Seattle Seahawks", "Seahawks"],
+  SF: ["SF", "San Francisco", "San Francisco 49ers", "49ers", "Niners"],
+  TB: ["TB", "Tampa Bay", "Tampa Bay Buccaneers", "Buccaneers", "Bucs"],
+  TEN: ["TEN", "Tennessee", "Tennessee Titans", "Titans"],
+  WAS: ["WAS", "Washington", "Washington Commanders", "Commanders"],
+};
 const sortedTeams = [...rows]
   .map((row) => String(row.team || "").trim())
   .filter(Boolean)
@@ -41,7 +88,13 @@ function lanePlayers(lane: any) {
   return ((lane?.players || []) as any[]).slice(0, 3);
 }
 ---
-<BaseLayout title="NFL Team Needs 2026 | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
+<BaseLayout
+  title="NFL Team Needs 2026 by Team | Scouting Grade"
+  description={pageDescription}
+  keywords={["nfl team needs 2026", "team needs nfl draft", "nfl free agency team needs", "scouting grade"]}
+  collectionSchema={collectionSchema}
+  extraSchemas={[itemListSchema]}
+>
   <section class="hero hero--data">
     <h1>NFL Team Needs 2026</h1>
     <p>Team-by-team weakness tiers with depth chart, contract pressure, free-agent exposure, and roster trajectory context.</p>
@@ -71,6 +124,7 @@ function lanePlayers(lane: any) {
   <section class="team-needs-grid" id="team-needs-grid">
     {rows.map((row) => {
       const team = String(row.team || "").trim();
+      const teamAliases = TEAM_SEARCH_ALIASES[team] || [team];
       const topNeeds = (row.top_needs || []) as any[];
       const weakness = (row.weakness_positions || []) as string[];
       const freeAgents = (row.free_agents || []) as any[];
@@ -93,6 +147,7 @@ function lanePlayers(lane: any) {
       const defS = laneFor(defense, "S");
       const searchable = [
         team,
+        ...teamAliases,
         ...weakness,
         ...freeAgents.map((p) => p.player_name),
         ...youngPlayers.map((p) => p.player_name),

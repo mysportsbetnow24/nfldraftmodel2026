@@ -2,25 +2,25 @@ WEEKLY STABILITY CHECK - 2026 BOARD
 
 Run date: 2026-03-04
 Current board: /Users/nickholz/nfldraftmodel2026/data/outputs/big_board_2026.csv
-Previous board baseline: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260304_093716.csv
+Previous board baseline: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/big_board_2026_snapshot_20260304_200842.csv
 Current watchlist: /Users/nickholz/nfldraftmodel2026/data/outputs/contrarian_watchlist_2026.csv
-Previous watchlist baseline: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/contrarian_watchlist_2026_snapshot_20260304_093716.csv
+Previous watchlist baseline: /Users/nickholz/nfldraftmodel2026/data/outputs/stability_snapshots/contrarian_watchlist_2026_snapshot_20260304_200842.csv
 
 Top-32 Churn
-- overlap: 32/32
-- churn_rate: 0.000
-- added: none
-- dropped: none
+- overlap: 31/32
+- churn_rate: 0.062
+- added: Daylen Everette
+- dropped: KC Concepcion
 
 Top-50 Rank Delta
 - players with prior rank: 50
-- mean_abs_rank_delta: 0.50
-- detail_csv: /Users/nickholz/nfldraftmodel2026/data/outputs/weekly_top50_rank_delta_20260304_101033.csv
+- mean_abs_rank_delta: 0.44
+- detail_csv: /Users/nickholz/nfldraftmodel2026/data/outputs/weekly_top50_rank_delta_20260304_201744.csv
 
 Outlier Watchlist Trend
-- current_count: 6
-- previous_count: 6
-- retained: 6
+- current_count: 15
+- previous_count: 15
+- retained: 15
 - added: 0
 - dropped: 0
-- trend_csv: /Users/nickholz/nfldraftmodel2026/data/outputs/weekly_outlier_watchlist_trend_20260304_101033.csv
+- trend_csv: /Users/nickholz/nfldraftmodel2026/data/outputs/weekly_outlier_watchlist_trend_20260304_201744.csv

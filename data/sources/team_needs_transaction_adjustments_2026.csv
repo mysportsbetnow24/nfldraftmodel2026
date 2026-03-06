@@ -1,6 +1,7 @@
 team,position,depth_delta,future_need_1y_delta,future_need_2y_delta,starter_quality_delta,roster_count_delta,transaction_count,event_summary,window_days,source_url
-ARI,EDGE,-0.075,-0.055,-0.03,0.06,0.5,1,2026-03-04 confirmed Kayvon Thibodeaux (traded),7,https://www.cbssports.com/nfl/transactions/
+BUF,WR,-0.075,-0.055,-0.03,0.06,0.5,1,2026-03-05 confirmed DJ Moore (traded),7,https://www.cbssports.com/nfl/news/bills-acquire-former-pro-bowl-wideout-from-bears-in-first-major-trade-of-offseason-per-reports/
 CAR,WR,-0.0525,-0.0385,-0.021,0.042,0.35,1,2026-03-04 confirmed Hayden Hatten (signed),7,https://www.cbssports.com/nfl/transactions/
+CHI,WR,0.09,0.08,0.04,-0.07,-0.6,1,2026-03-05 confirmed DJ Moore (traded),7,https://www.cbssports.com/nfl/news/bills-acquire-former-pro-bowl-wideout-from-bears-in-first-major-trade-of-offseason-per-reports/
 DEN,CB,-0.0525,-0.0385,-0.021,0.042,0.35,1,2026-03-02 confirmed Ja'Quan McMillian (signed),7,https://www.cbssports.com/nfl/transactions/
 JAX,S,0.09,0.08,0.04,-0.07,-0.6,1,2026-03-04 confirmed Darnell Savage Jr. (released),7,https://www.cbssports.com/nfl/transactions/
 KC,CB,0.09,0.08,0.04,-0.07,-0.6,1,2026-03-04 confirmed Trent McDuffie (traded),7,https://www.cbssports.com/nfl/news/chiefs-trade-all-pro-cornerback-to-rams-as-defending-super-bowl-champs-load-up-in-the-2026-nfl-draft/
@@ -10,7 +11,6 @@ LAR,CB,-0.1275,-0.0935,-0.051,0.102,0.85,2,2026-03-03 confirmed Fentrell Cypress
 MIA,CB,-0.075,-0.055,-0.03,0.06,0.5,1,2026-03-03 confirmed L'Jarius Sneed (traded),7,https://www.cbssports.com/nfl/transactions/
 NO,WR,-0.06,-0.044,-0.024,0.048,0.4,1,2026-03-02 confirmed JuJu Smith-Schuster (signed),7,https://www.cbssports.com/nfl/transactions/
 NYG,CB,-0.0525,-0.0385,-0.021,0.042,0.35,1,2026-03-02 confirmed Myles Harden (signed),7,https://www.cbssports.com/nfl/transactions/
-NYG,EDGE,0.09,0.08,0.04,-0.07,-0.6,1,2026-03-04 confirmed Kayvon Thibodeaux (traded),7,https://www.cbssports.com/nfl/transactions/
 NYG,S,-0.0525,-0.0385,-0.021,0.042,0.35,1,2026-03-04 confirmed Jonathan Sutherland (signed),7,https://www.cbssports.com/nfl/transactions/
 PHI,TE,-0.06,-0.044,-0.024,0.048,0.4,1,2026-03-02 confirmed Juwan Johnson (signed),7,https://www.cbssports.com/nfl/transactions/
 TEN,CB,0.09,0.08,0.04,-0.07,-0.6,1,2026-03-03 confirmed L'Jarius Sneed (traded),7,https://www.cbssports.com/nfl/transactions/

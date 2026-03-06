@@ -11,7 +11,7 @@ const positions = [
 const teams = Array.from(new Set((picks || []).map((p: any) => p.team).filter(Boolean))).sort();
 const schools = Array.from(new Set((picks || []).map((p: any) => p.school).filter(Boolean))).sort();
 
-const pageDescription = "Round 1 2026 NFL mock draft with pick order, team, player, and model grade.";
+const pageDescription = "2026 NFL Mock Draft Round 1 with pick-by-pick projections, team fits, and model grades.";
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -24,8 +24,28 @@ const collectionSchema = {
     url: "https://scoutinggrade.com"
   }
 };
+const pickList = (picks || []).slice(0, 32).map((p: any) => ({
+  "@type": "ListItem",
+  position: Number(p.overall_pick),
+  name: `${p.team} - ${p.player_name}`,
+  url: p.player_report_url ? `https://scoutinggrade.com${p.player_report_url}` : "https://scoutinggrade.com/2026-nfl-mock-draft-round-1",
+}));
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "2026 NFL Mock Draft Round 1 Picks",
+  itemListOrder: "https://schema.org/ItemListOrderAscending",
+  numberOfItems: pickList.length,
+  itemListElement: pickList,
+};
 ---
-<BaseLayout title="2026 NFL Mock Draft Round 1 | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
+<BaseLayout
+  title="2026 NFL Mock Draft Round 1 Picks | Scouting Grade"
+  description={pageDescription}
+  keywords={["2026 nfl mock draft", "2026 nfl mock draft round 1", "nfl draft first round mock", "scouting grade"]}
+  collectionSchema={collectionSchema}
+  extraSchemas={[itemListSchema]}
+>
   <section class="hero hero--data">
     <h1>2026 NFL Mock Draft (Round 1)</h1>
     <p>Latest first-round projection from the current model and team-need logic.</p>

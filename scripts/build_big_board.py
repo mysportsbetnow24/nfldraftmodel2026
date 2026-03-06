@@ -3237,6 +3237,72 @@ def _build_scouting_sections(
     strengths = _phrase_list(kiper_strength_tags, tdn_strengths, br_strengths, atoz_strengths, si_strengths, max_items=8)
     concerns = _phrase_list(kiper_concern_tags, tdn_concerns, br_concerns, atoz_concerns, si_concerns, max_items=8)
 
+    def _f(value):
+        val = _as_float(value)
+        return float(val) if val is not None else None
+
+    # Core percentile / production signals reused in both "How He Wins" and "Primary Concerns".
+    arm_pct = _f(athletic_pct_arm_in)
+    weight_pct = _f(athletic_pct_weight_lb)
+    vert_pct = _f(athletic_pct_vertical)
+    broad_pct = _f(athletic_pct_broad)
+    shuttle_pct = _f(athletic_pct_shuttle)
+    cone_pct = _f(athletic_pct_three_cone)
+    forty_pct = _f(athletic_pct_forty)
+    ten_pct = _f(athletic_pct_ten_split)
+
+    qb_epa = _f(cfb_qb_epa_per_play)
+    qb_press = _f(cfb_qb_pressure_signal)
+    qb_int = _f(cfb_qb_pass_int)
+    wr_yprr = _f(cfb_wrte_yprr)
+    wr_share = _f(cfb_wrte_target_share)
+    rb_explosive = _f(cfb_rb_explosive_rate)
+    rb_mtf = _f(cfb_rb_missed_tackles_forced_per_touch)
+    edge_pr = _f(cfb_edge_pressure_rate)
+    edge_sacks_pr = _f(cfb_edge_sacks_per_pr_snap)
+    edge_hurries = _f(cfb_edge_qb_hurries)
+    db_plays_ball = _f(cfb_db_coverage_plays_per_target)
+    db_yards_cov = _f(cfb_db_yards_allowed_per_coverage_snap)
+    db_int = _f(cfb_db_int)
+    db_pbu = _f(cfb_db_pbu)
+
+    def _qb_style_profile() -> str:
+        if qb_epa is None and qb_press is None and qb_int is None:
+            return "QB style lens: evaluate the full play sequence (drop, eye discipline, trigger timing, and finish) rather than isolated throws."
+        if qb_epa is not None and qb_epa >= 0.22 and (qb_int is None or qb_int <= 8):
+            return "QB style lens: high-efficiency anticipation distributor; wins by seeing windows early and triggering on time from structure."
+        if (forty_pct is not None and forty_pct >= 75) or (ten_pct is not None and ten_pct >= 75):
+            return "QB style lens: movement-enabled creator; adds value when structure breaks and can steal hidden yards outside the pocket."
+        if qb_press is not None and qb_press < 0.0:
+            return "QB style lens: pocket outcomes are pressure-sensitive; projection leans toward controlled game-manager usage until response stabilizes."
+        return "QB style lens: pocket-first rhythm passer with intermediate accuracy value; ceiling depends on downfield placement consistency."
+
+    def _receiver_style_profile() -> str:
+        # Snap-to-catch separation style inspired by scout process:
+        # release -> stem pacing -> break efficiency -> catch-point finish.
+        quickness_flag = (shuttle_pct is not None and shuttle_pct >= 65) or (cone_pct is not None and cone_pct >= 65)
+        speed_flag = forty_pct is not None and forty_pct >= 65
+        target_flag = wr_share is not None and wr_share >= 0.24
+        efficiency_flag = wr_yprr is not None and wr_yprr >= 2.4
+        hands_flag = arm_pct is not None and arm_pct >= 50
+
+        style_parts: list[str] = []
+        if quickness_flag:
+            style_parts.append("quickness at breaks")
+        if speed_flag:
+            style_parts.append("vertical speed stress")
+        if target_flag or efficiency_flag:
+            style_parts.append("route-volume earning")
+        if hands_flag:
+            style_parts.append("catch-radius finish")
+
+        if style_parts:
+            return "Receiver style lens: separation is driven by " + ", ".join(style_parts[:3]) + "."
+        return (
+            "Receiver style lens: evaluate from snap to catch — release plan, break mechanics, edge attack, "
+            "and contact-point finish — to separate true NFL translatability."
+        )
+
     wins_logic = {
         "QB": "Film translation comes from timing/processing: ID leverage pre-snap, hold structure from the pocket, and create only when structure breaks.",
         "RB": "Film translation comes from vision plus contact balance: press tracks, force linebacker displacement, then accelerate through daylight.",
@@ -3374,43 +3440,18 @@ def _build_scouting_sections(
     wins_points: list[str] = []
     wins_points.append(f"Usage fit: {clean_role} within {clean_scheme}.")
     wins_points.append(wins_logic.get(pos, "Film translation is defined by repeatable technique, processing, and role clarity under NFL speed."))
+    if pos == "QB":
+        wins_points.append(_qb_style_profile())
+    elif pos in {"WR", "TE"}:
+        wins_points.append(_receiver_style_profile())
     if str(scouting_notes or "").strip():
         wins_points.append("Model + film note: " + _compact_text(str(scouting_notes), 180).rstrip(".") + ".")
     if strengths:
         wins_points.append("Scout-logged strength indicators: " + "; ".join(strengths[:4]) + ".")
     wins = "\n".join(f"- {point}" for point in wins_points[:5])
 
-    def _f(value):
-        val = _as_float(value)
-        return float(val) if val is not None else None
-
     concern_points: list[str] = []
     concern_points.append(concern_logic.get(pos, "Projection risk centers on consistency under NFL speed, stress, and role expansion."))
-
-    # Position-specific concern logic from measurable signals.
-    arm_pct = _f(athletic_pct_arm_in)
-    weight_pct = _f(athletic_pct_weight_lb)
-    vert_pct = _f(athletic_pct_vertical)
-    broad_pct = _f(athletic_pct_broad)
-    shuttle_pct = _f(athletic_pct_shuttle)
-    cone_pct = _f(athletic_pct_three_cone)
-    forty_pct = _f(athletic_pct_forty)
-    ten_pct = _f(athletic_pct_ten_split)
-
-    qb_epa = _f(cfb_qb_epa_per_play)
-    qb_press = _f(cfb_qb_pressure_signal)
-    qb_int = _f(cfb_qb_pass_int)
-    wr_yprr = _f(cfb_wrte_yprr)
-    wr_share = _f(cfb_wrte_target_share)
-    rb_explosive = _f(cfb_rb_explosive_rate)
-    rb_mtf = _f(cfb_rb_missed_tackles_forced_per_touch)
-    edge_pr = _f(cfb_edge_pressure_rate)
-    edge_sacks_pr = _f(cfb_edge_sacks_per_pr_snap)
-    edge_hurries = _f(cfb_edge_qb_hurries)
-    db_plays_ball = _f(cfb_db_coverage_plays_per_target)
-    db_yards_cov = _f(cfb_db_yards_allowed_per_coverage_snap)
-    db_int = _f(cfb_db_int)
-    db_pbu = _f(cfb_db_pbu)
 
     if pos == "QB":
         if qb_epa is not None and qb_epa < 0.08:

@@ -1,11 +1,11 @@
 # RAS Import Report (2026)
 
-- run_at_utc: `2026-03-04T00:40:57.926311+00:00`
+- run_at_utc: `2026-03-06T02:31:00.359278+00:00`
 - input_csv: `/Users/nickholz/Downloads/New Menu Table (no draft) (1).csv`
 - ras_rows_loaded: `24682`
 - benchmark_positions: `11`
-- 2026_seed_players_checked: `190`
-- combine_rows_updated: `36`
+- 2026_seed_players_checked: `187`
+- combine_rows_updated: `0`
 - combine_rows_added: `5`
 
 ## Position Benchmarks (Starter/Impact/Elite Targets)
@@ -35,7 +35,6 @@
 | Avieon Terrell | CB | Clemson |
 | Darrell Jackson Jr. | DT | Florida State |
 | Jeremiah Smith | WR | Ohio State |
-| LaNorris Sellers | QB | South Carolina |
 | Jordyn Tyson | WR | Arizona State |
 | Carnell Tate | WR | Ohio State |
 | Keldric Faulk | EDGE | Auburn |
@@ -48,3 +47,4 @@
 | Justice Haynes | RB | Michigan |
 | Denzel Boston | WR | Washington |
 | Eli Holstein | QB | Pittsburgh |
+| R Mason Thomas | EDGE | Oklahoma |

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import board from "../data/big_board_2026.json";
-const pageDescription = "Live 2026 NFL Draft big board from the Scouting Grade model with ranks, grades, and projection context.";
+const pageDescription = "2026 NFL Draft big board with updated rankings, grades, round value, and scouting context for top prospects.";
 const preferredPositionOrder = ["QB", "RB", "WR", "TE", "OT", "IOL", "DT", "EDGE", "LB", "CB", "S"];
 const boardPositions = Array.from(new Set((board || []).map((r: any) => r.position).filter(Boolean)));
 const positions = [
@@ -22,8 +22,28 @@ const collectionSchema = {
     url: "https://scoutinggrade.com"
   }
 };
+const rankList = (board || []).slice(0, 100).map((r: any, idx: number) => ({
+  "@type": "ListItem",
+  position: idx + 1,
+  name: r.player_name,
+  url: `https://scoutinggrade.com/players/${r.slug}`,
+}));
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "2026 NFL Draft Big Board Rankings",
+  itemListOrder: "https://schema.org/ItemListOrderAscending",
+  numberOfItems: rankList.length,
+  itemListElement: rankList,
+};
 ---
-<BaseLayout title="2026 NFL Draft Big Board | Scouting Grade" description={pageDescription} collectionSchema={collectionSchema}>
+<BaseLayout
+  title="2026 NFL Draft Big Board Rankings | Scouting Grade"
+  description={pageDescription}
+  keywords={["2026 nfl draft big board", "nfl draft rankings", "nfl prospects 2026", "scouting grade"]}
+  collectionSchema={collectionSchema}
+  extraSchemas={[itemListSchema]}
+>
   <section class="hero hero--data bigboard-hero">
     <h1>2026 NFL Draft Big Board</h1>
     <p>Live ranked board with scouting context, team-era lens, and weekly refreshes.</p>
