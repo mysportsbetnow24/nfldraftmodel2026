@@ -41,94 +41,6 @@ const collectionSchema = {
     const slots = ["p1", "p2", "p3", "p4"].map((id) => document.getElementById(id));
     const cards = document.getElementById("cards");
 
-    const PRODUCTION_CONFIG = {
-      QB: [
-        { key: "sg_qb_pass_grade", label: "Pass Grade", fmt: "dec1" },
-        { key: "sg_qb_btt_rate", label: "Big-Time Throw Rate", fmt: "pct100" },
-        { key: "sg_qb_twp_rate", label: "Turnover-Worthy Play Rate", fmt: "pct100", lowerBetter: true },
-        { key: "sg_qb_pressure_to_sack_rate", label: "Pressure-to-Sack Rate", fmt: "pct100", lowerBetter: true },
-        { key: "sg_qb_pressure_grade", label: "Under-Pressure Grade", fmt: "dec1" },
-        { key: "sg_qb_blitz_grade", label: "Blitz Grade", fmt: "dec1" }
-      ],
-      WR: [
-        { key: "sg_wrte_route_grade", label: "Route Grade", fmt: "dec1" },
-        { key: "sg_wrte_yprr", label: "Yards / Route Run", fmt: "dec2" },
-        { key: "sg_wrte_targets_per_route", label: "Targets / Route", fmt: "dec3" },
-        { key: "sg_wrte_man_yprr", label: "Man YPRR", fmt: "dec2" },
-        { key: "sg_wrte_zone_yprr", label: "Zone YPRR", fmt: "dec2" },
-        { key: "sg_wrte_drop_rate", label: "Drop Rate", fmt: "pct100", lowerBetter: true }
-      ],
-      TE: [
-        { key: "sg_wrte_route_grade", label: "Route Grade", fmt: "dec1" },
-        { key: "sg_wrte_yprr", label: "Yards / Route Run", fmt: "dec2" },
-        { key: "sg_wrte_targets_per_route", label: "Targets / Route", fmt: "dec3" },
-        { key: "sg_wrte_man_yprr", label: "Man YPRR", fmt: "dec2" },
-        { key: "sg_wrte_zone_yprr", label: "Zone YPRR", fmt: "dec2" },
-        { key: "sg_wrte_drop_rate", label: "Drop Rate", fmt: "pct100", lowerBetter: true }
-      ],
-      RB: [
-        { key: "sg_rb_run_grade", label: "Run Grade", fmt: "dec1" },
-        { key: "sg_rb_elusive_rating", label: "Elusive Rating", fmt: "dec1" },
-        { key: "sg_rb_yco_attempt", label: "Yards After Contact / Att", fmt: "dec2" },
-        { key: "sg_rb_explosive_rate", label: "Explosive Run Rate", fmt: "pct100" },
-        { key: "sg_rb_breakaway_percent", label: "Breakaway Rate", fmt: "pct100" },
-        { key: "sg_rb_targets_per_route", label: "Targets / Route", fmt: "dec3" }
-      ],
-      EDGE: [
-        { key: "sg_dl_pass_rush_grade", label: "Pass Rush Grade", fmt: "dec1" },
-        { key: "sg_dl_true_pass_set_win_rate", label: "True Pass Set Win Rate", fmt: "pct100" },
-        { key: "sg_dl_true_pass_set_prp", label: "True Pass Set PRP", fmt: "dec1" },
-        { key: "sg_dl_total_pressures", label: "Total Pressures", fmt: "int" },
-        { key: "sg_front_run_def_grade", label: "Run Defense Grade", fmt: "dec1" },
-        { key: "sg_front_stop_percent", label: "Stop Rate", fmt: "pct100" }
-      ],
-      DT: [
-        { key: "sg_dl_pass_rush_grade", label: "Pass Rush Grade", fmt: "dec1" },
-        { key: "sg_dl_true_pass_set_win_rate", label: "True Pass Set Win Rate", fmt: "pct100" },
-        { key: "sg_dl_true_pass_set_prp", label: "True Pass Set PRP", fmt: "dec1" },
-        { key: "sg_dl_total_pressures", label: "Total Pressures", fmt: "int" },
-        { key: "sg_front_run_def_grade", label: "Run Defense Grade", fmt: "dec1" },
-        { key: "sg_front_stop_percent", label: "Stop Rate", fmt: "pct100" }
-      ],
-      CB: [
-        { key: "sg_cov_grade", label: "Coverage Grade", fmt: "dec1" },
-        { key: "sg_cov_forced_incompletion_rate", label: "Forced Incompletion Rate", fmt: "pct100" },
-        { key: "sg_cov_snaps_per_target", label: "Coverage Snaps / Target", fmt: "dec1" },
-        { key: "sg_cov_yards_per_snap", label: "Yards / Coverage Snap", fmt: "dec2", lowerBetter: true },
-        { key: "sg_cov_qb_rating_against", label: "QB Rating Against", fmt: "dec1", lowerBetter: true },
-        { key: "sg_cov_man_grade", label: "Man Coverage Grade", fmt: "dec1" }
-      ],
-      S: [
-        { key: "sg_cov_grade", label: "Coverage Grade", fmt: "dec1" },
-        { key: "sg_cov_forced_incompletion_rate", label: "Forced Incompletion Rate", fmt: "pct100" },
-        { key: "sg_cov_snaps_per_target", label: "Coverage Snaps / Target", fmt: "dec1" },
-        { key: "sg_cov_yards_per_snap", label: "Yards / Coverage Snap", fmt: "dec2", lowerBetter: true },
-        { key: "sg_cov_qb_rating_against", label: "QB Rating Against", fmt: "dec1", lowerBetter: true },
-        { key: "sg_cov_zone_grade", label: "Zone Coverage Grade", fmt: "dec1" }
-      ],
-      LB: [
-        { key: "sg_def_run_grade", label: "Run Defense Grade", fmt: "dec1" },
-        { key: "sg_def_coverage_grade", label: "Coverage Grade", fmt: "dec1" },
-        { key: "sg_def_tackle_grade", label: "Tackle Grade", fmt: "dec1" },
-        { key: "sg_def_missed_tackle_rate", label: "Missed Tackle Rate", fmt: "pct100", lowerBetter: true },
-        { key: "sg_front_stop_percent", label: "Stop Rate", fmt: "pct100" },
-        { key: "sg_cov_yards_per_snap", label: "Yards / Coverage Snap", fmt: "dec2", lowerBetter: true }
-      ],
-      OL: [
-        { key: "sg_ol_pass_block_grade", label: "Pass Block Grade", fmt: "dec1" },
-        { key: "sg_ol_run_block_grade", label: "Run Block Grade", fmt: "dec1" },
-        { key: "sg_ol_pbe", label: "Pass Block Efficiency", fmt: "dec1" },
-        { key: "sg_ol_pressure_allowed_rate", label: "Pressure Allowed Rate", fmt: "pct", lowerBetter: true },
-        { key: "sg_ol_versatility_count", label: "Alignment Versatility", fmt: "int" }
-      ]
-    };
-
-    const POSITION_GROUP_FALLBACK = {
-      OT: "OL",
-      IOL: "OL",
-      LB: "LB"
-    };
-
     const fmtValue = (n, mode) => {
       if (!Number.isFinite(n)) return "-";
       if (mode === "int") return Math.round(n).toString();
@@ -254,18 +166,9 @@ const collectionSchema = {
     `;
 
     const productionRows = (p) => {
-      const group = PRODUCTION_CONFIG[p.position] ? p.position : (POSITION_GROUP_FALLBACK[p.position] || "");
-      const metrics = p.production_metrics || {};
-      const pcts = p.production_percentiles || {};
-      const cfg = PRODUCTION_CONFIG[group];
-      if (!cfg || cfg.length === 0) return `<div class="muted">ScoutingGrade advanced context will appear after next refresh.</div>`;
-      const rows = cfg.map((m) => {
-        const raw = num(metrics[m.key]);
-        if (raw === null) return "";
-        let pp = num(pcts[m.key]);
-        if (pp === null) pp = 50;
-        if (m.lowerBetter) pp = 100 - pp;
-        return meterRow(`${m.label} (${p.position})`, pp, `${fmtValue(raw, m.fmt)} · ${pp.toFixed(0)}th pct`, "#0f7b6a");
+      const rows = (p.advanced_metric_cards || []).map((m) => {
+        const pp = clamp(Number(m.pct || 50), 0, 100);
+        return meterRow(`${m.label} (${p.position})`, pp, `${m.display || fmtValue(Number(m.raw), m.fmt)} · ${pp.toFixed(0)}th pct`, "#0f7b6a");
       }).filter(Boolean);
       if (!rows.length) return `<div class="muted">ScoutingGrade advanced context will appear after next refresh.</div>`;
       return rows.join("");
@@ -308,8 +211,8 @@ const collectionSchema = {
         const moveText = move > 0 ? `Up ${move}` : (move < 0 ? `Down ${Math.abs(move)}` : "Flat");
         const role = roleTags(p);
 
-        const prodPctVals = Object.values(p.production_percentiles || {}).map((v) => Number(v)).filter((n) => Number.isFinite(n));
-        const productionPct = prodPctVals.length ? (prodPctVals.reduce((a, b) => a + b, 0) / prodPctVals.length) : 50;
+        const productionPctRaw = Number(p.production_composite_pct);
+        const productionPct = Number.isFinite(productionPctRaw) ? clamp(productionPctRaw, 0, 100) : 50;
         const athleticPctRaw = num(p.athletic_percentile);
         const athleticPct = athleticPctRaw === null ? (rasRaw > 0 ? toPct(rasRaw, 4, 10) : 50) : clamp(athleticPctRaw, 0, 100);
         const traitPct = toPct(trait, 70, 97);

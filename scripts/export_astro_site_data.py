@@ -116,6 +116,158 @@ PRODUCTION_METRIC_KEYS = [
     "cfb_ol_proxy_signal",
 ]
 
+POSITION_ADVANCED_METRIC_CONFIG = {
+    "QB": [
+        {"key": "sg_qb_pass_grade", "label": "Pass Grade", "fmt": "dec1", "weight": 0.24},
+        {"key": "sg_qb_btt_rate", "label": "Big-Time Throw Rate", "fmt": "pct100", "weight": 0.14},
+        {"key": "sg_qb_twp_rate", "label": "Turnover-Worthy Play Rate", "fmt": "pct100", "lower_better": True, "weight": 0.16},
+        {"key": "sg_qb_pressure_to_sack_rate", "label": "Pressure-to-Sack Rate", "fmt": "pct100", "lower_better": True, "weight": 0.16},
+        {"key": "sg_qb_pressure_grade", "label": "Under-Pressure Grade", "fmt": "dec1", "weight": 0.16},
+        {"key": "sg_qb_blitz_grade", "label": "Blitz Grade", "fmt": "dec1", "weight": 0.14},
+    ],
+    "RB": [
+        {"key": "sg_rb_run_grade", "label": "Run Grade", "fmt": "dec1", "weight": 0.18},
+        {"key": "sg_rb_elusive_rating", "label": "Elusive Rating", "fmt": "dec1", "weight": 0.22},
+        {"key": "sg_rb_yco_attempt", "label": "Yards After Contact / Att", "fmt": "dec2", "weight": 0.18},
+        {"key": "sg_rb_explosive_rate", "label": "Explosive Run Rate", "fmt": "pct100", "weight": 0.18},
+        {"key": "sg_rb_breakaway_percent", "label": "Breakaway Rate", "fmt": "pct100", "weight": 0.14},
+        {"key": "sg_rb_targets_per_route", "label": "Targets / Route", "fmt": "dec3", "weight": 0.10},
+    ],
+    "WR": [
+        {"key": "sg_wrte_route_grade", "label": "Route Grade", "fmt": "dec1", "weight": 0.24},
+        {"key": "sg_wrte_yprr", "label": "Yards / Route Run", "fmt": "dec2", "weight": 0.20},
+        {"key": "sg_wrte_targets_per_route", "label": "Targets / Route", "fmt": "dec3", "weight": 0.18},
+        {"key": "sg_wrte_man_yprr", "label": "Man YPRR", "fmt": "dec2", "weight": 0.14},
+        {"key": "sg_wrte_zone_yprr", "label": "Zone YPRR", "fmt": "dec2", "weight": 0.12},
+        {"key": "sg_wrte_drop_rate", "label": "Drop Rate", "fmt": "pct100", "lower_better": True, "weight": 0.12},
+    ],
+    "TE": [
+        {"key": "sg_wrte_route_grade", "label": "Route Grade", "fmt": "dec1", "weight": 0.24},
+        {"key": "sg_wrte_yprr", "label": "Yards / Route Run", "fmt": "dec2", "weight": 0.22},
+        {"key": "sg_wrte_targets_per_route", "label": "Targets / Route", "fmt": "dec3", "weight": 0.18},
+        {"key": "sg_wrte_man_yprr", "label": "Man YPRR", "fmt": "dec2", "weight": 0.14},
+        {"key": "sg_wrte_zone_yprr", "label": "Zone YPRR", "fmt": "dec2", "weight": 0.12},
+        {"key": "sg_wrte_drop_rate", "label": "Drop Rate", "fmt": "pct100", "lower_better": True, "weight": 0.10},
+    ],
+    "EDGE": [
+        {"key": "sg_dl_pass_rush_grade", "label": "Pass Rush Grade", "fmt": "dec1", "weight": 0.24},
+        {"key": "sg_dl_true_pass_set_win_rate", "label": "True Pass Set Win Rate", "fmt": "pct100", "weight": 0.22},
+        {"key": "sg_dl_true_pass_set_prp", "label": "True Pass Set PRP", "fmt": "dec1", "weight": 0.18},
+        {"key": "sg_dl_total_pressures", "label": "Total Pressures", "fmt": "int", "weight": 0.12},
+        {"key": "sg_front_run_def_grade", "label": "Run Defense Grade", "fmt": "dec1", "weight": 0.14},
+        {"key": "sg_front_stop_percent", "label": "Stop Rate", "fmt": "pct100", "weight": 0.10},
+    ],
+    "DT": [
+        {"key": "sg_dl_pass_rush_grade", "label": "Pass Rush Grade", "fmt": "dec1", "weight": 0.20},
+        {"key": "sg_dl_true_pass_set_win_rate", "label": "True Pass Set Win Rate", "fmt": "pct100", "weight": 0.18},
+        {"key": "sg_dl_true_pass_set_prp", "label": "True Pass Set PRP", "fmt": "dec1", "weight": 0.16},
+        {"key": "sg_dl_total_pressures", "label": "Total Pressures", "fmt": "int", "weight": 0.12},
+        {"key": "sg_front_run_def_grade", "label": "Run Defense Grade", "fmt": "dec1", "weight": 0.20},
+        {"key": "sg_front_stop_percent", "label": "Stop Rate", "fmt": "pct100", "weight": 0.14},
+    ],
+    "LB": [
+        {"key": "sg_def_run_grade", "label": "Run Defense Grade", "fmt": "dec1", "weight": 0.24},
+        {"key": "sg_def_coverage_grade", "label": "Coverage Grade", "fmt": "dec1", "weight": 0.22},
+        {"key": "sg_def_tackle_grade", "label": "Tackle Grade", "fmt": "dec1", "weight": 0.16},
+        {"key": "sg_def_missed_tackle_rate", "label": "Missed Tackle Rate", "fmt": "pct100", "lower_better": True, "weight": 0.14},
+        {"key": "sg_front_stop_percent", "label": "Stop Rate", "fmt": "pct100", "weight": 0.12},
+        {"key": "sg_cov_yards_per_snap", "label": "Yards / Coverage Snap", "fmt": "dec2", "lower_better": True, "weight": 0.12},
+    ],
+    "CB": [
+        {"key": "sg_cov_grade", "label": "Coverage Grade", "fmt": "dec1", "weight": 0.24},
+        {"key": "sg_cov_forced_incompletion_rate", "label": "Forced Incompletion Rate", "fmt": "pct100", "weight": 0.16},
+        {"key": "sg_cov_snaps_per_target", "label": "Coverage Snaps / Target", "fmt": "dec1", "weight": 0.14},
+        {"key": "sg_cov_yards_per_snap", "label": "Yards / Coverage Snap", "fmt": "dec2", "lower_better": True, "weight": 0.18},
+        {"key": "sg_cov_qb_rating_against", "label": "QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.16},
+        {"key": "sg_cov_man_grade", "label": "Man Coverage Grade", "fmt": "dec1", "weight": 0.12},
+    ],
+    "S": [
+        {"key": "sg_cov_grade", "label": "Coverage Grade", "fmt": "dec1", "weight": 0.22},
+        {"key": "sg_cov_forced_incompletion_rate", "label": "Forced Incompletion Rate", "fmt": "pct100", "weight": 0.14},
+        {"key": "sg_cov_snaps_per_target", "label": "Coverage Snaps / Target", "fmt": "dec1", "weight": 0.14},
+        {"key": "sg_cov_yards_per_snap", "label": "Yards / Coverage Snap", "fmt": "dec2", "lower_better": True, "weight": 0.18},
+        {"key": "sg_cov_qb_rating_against", "label": "QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.14},
+        {"key": "sg_cov_zone_grade", "label": "Zone Coverage Grade", "fmt": "dec1", "weight": 0.18},
+    ],
+    "OT": [
+        {"key": "sg_ol_pass_block_grade", "label": "Pass Block Grade", "fmt": "dec1", "weight": 0.34},
+        {"key": "sg_ol_run_block_grade", "label": "Run Block Grade", "fmt": "dec1", "weight": 0.18},
+        {"key": "sg_ol_pbe", "label": "Pass Block Efficiency", "fmt": "dec1", "weight": 0.28},
+        {"key": "sg_ol_pressure_allowed_rate", "label": "Pressure Allowed Rate", "fmt": "pct", "lower_better": True, "weight": 0.14},
+        {"key": "sg_ol_versatility_count", "label": "Alignment Versatility", "fmt": "int", "weight": 0.06},
+    ],
+    "IOL": [
+        {"key": "sg_ol_pass_block_grade", "label": "Pass Block Grade", "fmt": "dec1", "weight": 0.30},
+        {"key": "sg_ol_run_block_grade", "label": "Run Block Grade", "fmt": "dec1", "weight": 0.22},
+        {"key": "sg_ol_pbe", "label": "Pass Block Efficiency", "fmt": "dec1", "weight": 0.26},
+        {"key": "sg_ol_pressure_allowed_rate", "label": "Pressure Allowed Rate", "fmt": "pct", "lower_better": True, "weight": 0.14},
+        {"key": "sg_ol_versatility_count", "label": "Alignment Versatility", "fmt": "int", "weight": 0.08},
+    ],
+}
+
+POSITION_COUNTING_STAT_CONFIG = {
+    "QB": [
+        {"key": "cfb_qb_pass_td", "label": "Pass TD", "fmt": "int"},
+        {"key": "cfb_qb_pass_int", "label": "INT", "fmt": "int"},
+        {"key": "cfb_qb_pass_yds", "label": "Pass Yards", "fmt": "int"},
+        {"key": "cfb_qb_rush_yds", "label": "Rush Yards", "fmt": "int"},
+    ],
+    "RB": [
+        {"key": "cfb_rb_rush_yds", "label": "Rush Yards", "fmt": "int"},
+        {"key": "cfb_rb_rush_td", "label": "Rush TD", "fmt": "int"},
+        {"key": "cfb_rb_rec", "label": "Receptions", "fmt": "int"},
+        {"key": "cfb_rb_rec_yds", "label": "Rec Yards", "fmt": "int"},
+    ],
+    "WR": [
+        {"key": "cfb_wrte_rec", "label": "Receptions", "fmt": "int"},
+        {"key": "cfb_wrte_rec_yds", "label": "Rec Yards", "fmt": "int"},
+        {"key": "cfb_wrte_rec_td", "label": "Rec TD", "fmt": "int"},
+    ],
+    "TE": [
+        {"key": "cfb_wrte_rec", "label": "Receptions", "fmt": "int"},
+        {"key": "cfb_wrte_rec_yds", "label": "Rec Yards", "fmt": "int"},
+        {"key": "cfb_wrte_rec_td", "label": "Rec TD", "fmt": "int"},
+    ],
+    "EDGE": [
+        {"key": "cfb_edge_sacks", "label": "Sacks", "fmt": "dec1"},
+        {"key": "cfb_edge_qb_hurries", "label": "QB Hurries", "fmt": "int"},
+        {"key": "cfb_edge_tfl", "label": "TFL", "fmt": "int"},
+        {"key": "cfb_edge_tackles", "label": "Tackles", "fmt": "int"},
+    ],
+    "DT": [
+        {"key": "cfb_edge_sacks", "label": "Sacks", "fmt": "dec1"},
+        {"key": "cfb_edge_qb_hurries", "label": "QB Hurries", "fmt": "int"},
+        {"key": "cfb_edge_tfl", "label": "TFL", "fmt": "int"},
+        {"key": "cfb_edge_tackles", "label": "Tackles", "fmt": "int"},
+    ],
+    "LB": [
+        {"key": "cfb_lb_tackles", "label": "Tackles", "fmt": "int"},
+        {"key": "cfb_lb_tfl", "label": "TFL", "fmt": "int"},
+        {"key": "cfb_lb_sacks", "label": "Sacks", "fmt": "dec1"},
+        {"key": "cfb_lb_qb_hurries", "label": "QB Hurries", "fmt": "int"},
+    ],
+    "CB": [
+        {"key": "cfb_db_int", "label": "INT", "fmt": "int"},
+        {"key": "cfb_db_pbu", "label": "PBU", "fmt": "int"},
+        {"key": "cfb_db_tackles", "label": "Tackles", "fmt": "int"},
+        {"key": "cfb_db_tfl", "label": "TFL", "fmt": "int"},
+    ],
+    "S": [
+        {"key": "cfb_db_int", "label": "INT", "fmt": "int"},
+        {"key": "cfb_db_pbu", "label": "PBU", "fmt": "int"},
+        {"key": "cfb_db_tackles", "label": "Tackles", "fmt": "int"},
+        {"key": "cfb_db_tfl", "label": "TFL", "fmt": "int"},
+    ],
+    "OT": [
+        {"key": "cfb_ol_years_played", "label": "Years Played", "fmt": "int"},
+        {"key": "cfb_ol_starts", "label": "Starts", "fmt": "int"},
+    ],
+    "IOL": [
+        {"key": "cfb_ol_years_played", "label": "Years Played", "fmt": "int"},
+        {"key": "cfb_ol_starts", "label": "Starts", "fmt": "int"},
+    ],
+}
+
 
 CANONICAL_SCHOOL_ALIASES = {
     "alabama": "Alabama Crimson Tide",
@@ -1277,6 +1429,114 @@ def _pct_rank(value: float | None, values: list[float]) -> float | None:
     return round((count / n) * 100.0, 1)
 
 
+def _metric_config_for_position(position: str, config_map: dict[str, list[dict]]) -> list[dict]:
+    pos = str(position or "").strip().upper()
+    if pos in config_map:
+        return config_map[pos]
+    if pos in {"OT", "IOL"} and "OT" in config_map:
+        return config_map["OT"]
+    return []
+
+
+def _format_metric_value(value: float, fmt: str) -> str:
+    if fmt == "int":
+        return str(int(round(value)))
+    if fmt == "pct":
+        return f"{value * 100:.1f}%"
+    if fmt == "pct100":
+        return f"{value:.1f}%"
+    if fmt == "dec1":
+        return f"{value:.1f}"
+    if fmt == "dec3":
+        return f"{value:.3f}"
+    return f"{value:.2f}"
+
+
+def _build_metric_cards(
+    row: dict,
+    position: str,
+    config_map: dict[str, list[dict]],
+    pos_metric_values: dict[str, dict[str, list[float]]],
+) -> tuple[list[dict], dict[str, float], dict[str, float]]:
+    cards: list[dict] = []
+    metrics: dict[str, float] = {}
+    percentiles: dict[str, float] = {}
+    for cfg in _metric_config_for_position(position, config_map):
+        key = str(cfg.get("key", "")).strip()
+        if not key:
+            continue
+        raw = _safe_float(row.get(key))
+        if raw is None:
+            continue
+        metrics[key] = round(float(raw), 4)
+        pop = pos_metric_values.get(position, {}).get(key, [])
+        pct = _pct_rank(float(raw), pop)
+        if pct is not None:
+            percentiles[key] = pct
+        public_pct = float(pct if pct is not None else 50.0)
+        if cfg.get("lower_better"):
+            public_pct = 100.0 - public_pct
+        public_pct = round(_clamp(public_pct, 0.0, 100.0), 1)
+        cards.append(
+            {
+                "key": key,
+                "label": cfg.get("label", key),
+                "raw": round(float(raw), 4),
+                "display": _format_metric_value(float(raw), str(cfg.get("fmt", "dec2"))),
+                "pct": public_pct,
+                "fmt": cfg.get("fmt", "dec2"),
+                "lower_better": bool(cfg.get("lower_better", False)),
+                "weight": round(float(cfg.get("weight", 0.0)), 4),
+            }
+        )
+    return cards, metrics, percentiles
+
+
+def _build_counting_stat_chips(
+    row: dict,
+    position: str,
+    config_map: dict[str, list[dict]],
+) -> tuple[list[dict], dict[str, float]]:
+    chips: list[dict] = []
+    metrics: dict[str, float] = {}
+    for cfg in _metric_config_for_position(position, config_map):
+        key = str(cfg.get("key", "")).strip()
+        if not key:
+            continue
+        raw = _safe_float(row.get(key))
+        if raw is None:
+            continue
+        metrics[key] = round(float(raw), 4)
+        chips.append(
+            {
+                "key": key,
+                "label": cfg.get("label", key),
+                "raw": round(float(raw), 4),
+                "display": _format_metric_value(float(raw), str(cfg.get("fmt", "dec2"))),
+                "fmt": cfg.get("fmt", "dec2"),
+            }
+        )
+    return chips, metrics
+
+
+def _weighted_percentile_composite(cards: list[dict]) -> float | None:
+    if not cards:
+        return None
+    weighted_sum = 0.0
+    weight_total = 0.0
+    for card in cards:
+        pct = _safe_float(card.get("pct"))
+        weight = _safe_float(card.get("weight"))
+        if pct is None:
+            continue
+        w = float(weight) if weight is not None and weight > 0 else 1.0
+        weighted_sum += float(pct) * w
+        weight_total += w
+    if weight_total <= 0:
+        return None
+    return round(weighted_sum / weight_total, 1)
+
+
 def _load_rank_history(window: int = 8) -> dict[str, list[int]]:
     if not STABILITY_SNAPSHOTS_DIR.exists():
         return {}
@@ -1837,17 +2097,20 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             float(athletic_profile_score),
             pos_athletic_profile_values.get(pos, []),
         ) if athletic_profile_score is not None and athletic_profile_score > 0 else None
-        production_metrics: dict[str, float] = {}
-        production_percentiles: dict[str, float] = {}
-        for key in PRODUCTION_METRIC_KEYS:
-            v = _safe_float(row.get(key))
-            if v is None:
-                continue
-            production_metrics[key] = round(float(v), 4)
-            pop = pos_metric_values.get(pos, {}).get(key, [])
-            pct = _pct_rank(float(v), pop)
-            if pct is not None:
-                production_percentiles[key] = pct
+        advanced_metric_cards, advanced_metrics, advanced_percentiles = _build_metric_cards(
+            row=row,
+            position=pos,
+            config_map=POSITION_ADVANCED_METRIC_CONFIG,
+            pos_metric_values=pos_metric_values,
+        )
+        counting_stat_chips, counting_metrics = _build_counting_stat_chips(
+            row=row,
+            position=pos,
+            config_map=POSITION_COUNTING_STAT_CONFIG,
+        )
+        production_metrics: dict[str, float] = {**advanced_metrics, **counting_metrics}
+        production_percentiles: dict[str, float] = dict(advanced_percentiles)
+        production_composite_pct = _weighted_percentile_composite(advanced_metric_cards)
 
         uid = row.get("player_uid", "")
         hist = rank_history.get(uid, [])
@@ -2037,6 +2300,12 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "low_evidence_flag": low_evidence_flag,
                 "production_metrics": production_metrics,
                 "production_percentiles": production_percentiles,
+                "advanced_metric_cards": advanced_metric_cards,
+                "advanced_metrics": advanced_metrics,
+                "advanced_percentiles": advanced_percentiles,
+                "counting_stat_chips": counting_stat_chips,
+                "counting_metrics": counting_metrics,
+                "production_composite_pct": production_composite_pct,
                 "historical_comp_floor": _public_comp_dict(comp_floor),
                 "historical_comp_median": _public_comp_dict(comp_median),
                 "historical_comp_ceiling": _public_comp_dict(comp_ceiling),
