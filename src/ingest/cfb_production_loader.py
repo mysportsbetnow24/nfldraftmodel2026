@@ -20,6 +20,12 @@ DEFAULT_PATH_CANDIDATES = [
 SG_ADVANCED_PATH = MANUAL_DIR / "scoutinggrade_advanced_2025.csv"
 
 TARGET_POSITIONS = {"QB", "WR", "TE", "RB", "EDGE", "DT", "LB", "CB", "S", "OT", "IOL"}
+POSITION_FAMILY_MAP = {
+    "CB": "DB",
+    "S": "DB",
+    "EDGE": "DL",
+    "DT": "DL",
+}
 P0_BLEND_WEIGHT = float(os.getenv("CFBFASTR_P0_BLEND_WEIGHT", "0.35"))
 P0_MAX_DELTA = float(os.getenv("CFBFASTR_P0_MAX_DELTA", "4.0"))
 P0_QB_MAX_DELTA = float(os.getenv("CFBFASTR_P0_QB_MAX_DELTA", "3.0"))
@@ -1333,13 +1339,18 @@ def _merge_scoutinggrade_advanced_rows(rows: list[dict], target_season: int) -> 
         return rows
 
     merged: dict[tuple[str, str], dict] = {}
+    family_keys_by_name: dict[tuple[str, str], list[tuple[str, str]]] = defaultdict(list)
     for row in rows:
         name = canonical_player_name(str(row.get("player_name", "")).strip())
         pos = normalize_pos(str(row.get("position", "")).strip())
         season = int(_safe_float(row.get("season")) or target_season)
         if not name or not pos or season != target_season:
             continue
-        merged[(name, pos)] = dict(row)
+        key = (name, pos)
+        merged[key] = dict(row)
+        family = POSITION_FAMILY_MAP.get(pos)
+        if family:
+            family_keys_by_name[(name, family)].append(key)
 
     with SG_ADVANCED_PATH.open() as f:
         for row in csv.DictReader(f):
@@ -1348,17 +1359,24 @@ def _merge_scoutinggrade_advanced_rows(rows: list[dict], target_season: int) -> 
             season = int(_safe_float(row.get("season")) or target_season)
             if not name or not pos or season != target_season:
                 continue
-            cur = merged.get((name, pos), {})
+            merge_key = (name, pos)
+            cur = merged.get(merge_key, {})
+            if not cur:
+                family = POSITION_FAMILY_MAP.get(pos)
+                family_candidates = family_keys_by_name.get((name, family), []) if family else []
+                if len(family_candidates) == 1:
+                    merge_key = family_candidates[0]
+                    cur = merged.get(merge_key, {})
             base = dict(cur) if cur else {
                 "player_name": row.get("player_name", ""),
                 "school": row.get("school", ""),
                 "position": pos,
                 "season": target_season,
             }
-            for key, value in row.items():
+            for field, value in row.items():
                 if value not in {"", None}:
-                    base[key] = value
-            merged[(name, pos)] = base
+                    base[field] = value
+            merged[merge_key] = base
     return list(merged.values())
 
 

@@ -2640,12 +2640,15 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 trait_percentile = _pct_rank(float(trait_score), pos_trait_values.get(pos, []))
         else:
             trait_percentile = None
+        production_source_tier = "missing"
         advanced_metric_cards, advanced_metrics, advanced_percentiles = _build_metric_cards(
             row=row,
             position=pos,
             config_map=POSITION_ADVANCED_METRIC_CONFIG,
             pos_metric_values=pos_metric_values,
         )
+        if advanced_metric_cards:
+            production_source_tier = "premium"
         if not advanced_metric_cards:
             advanced_metric_cards, advanced_metrics, advanced_percentiles = _build_metric_cards(
                 row=row,
@@ -2653,6 +2656,8 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 config_map=POSITION_FALLBACK_METRIC_CONFIG,
                 pos_metric_values=pos_metric_values,
             )
+            if advanced_metric_cards:
+                production_source_tier = "fallback"
         counting_stat_chips, counting_metrics = _build_counting_stat_chips(
             row=row,
             position=pos,
@@ -2890,6 +2895,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "counting_stat_chips": counting_stat_chips,
                 "counting_metrics": counting_metrics,
                 "production_composite_pct": production_composite_pct,
+                "production_source_tier": production_source_tier,
                 "position_lens": position_lens,
                 "historical_comp_floor": _public_comp_dict(comp_floor),
                 "historical_comp_median": _public_comp_dict(comp_median),

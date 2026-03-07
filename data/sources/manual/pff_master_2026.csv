@@ -18,7 +18,7 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 17,Jermod McCoy,CB,Tennessee,,,,,,
 18,Caleb Banks,DT,Florida,68.8,,,144146,exact,florida
 19,CJ Allen,LB,Georgia,75.8,,,173539,exact,georgia
-20,Jordyn Tyson,WR,Arizona State,82.9,,,157690,name_pos,arizona st
+20,Jordyn Tyson,WR,Arizona State,82.9,,,157690,exact,arizona state
 21,Akheem Mesidor,EDGE,Miami (FL),92.5,,,123427,exact,miami
 22,Emmanuel McNeil-Warren,S,Toledo,91.9,,,163155,exact,toledo
 23,Keldric Faulk,EDGE,Auburn,75.8,,,172447,exact,auburn
@@ -33,22 +33,22 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 32,Colton Hood,CB,Tennessee,79.2,,,172450,exact,tennessee
 33,Kadyn Proctor,OT,Alabama,86.1,,,172392,exact,alabama
 34,KC Concepcion,WR,Texas A&M,78.4,,,170362,exact,texas aandm
-35,Max Iheanachor,OT,Arizona State,72.5,,,171881,name_pos,arizona st
+35,Max Iheanachor,OT,Arizona State,72.5,,,171881,exact,arizona state
 36,Emmanuel Pregnon,IOL,Oregon,86.7,,,128427,exact,oregon
 37,Christen Miller,DT,Georgia,84.5,,,163747,exact,georgia
 38,Caleb Lomu,OT,Utah,68.4,,,176655,exact,utah
 39,Lee Hunter,DT,Texas Tech,80.9,,,146676,exact,texas tech
 40,Zion Young,EDGE,Missouri,85.0,,,158404,exact,missouri
-41,Brandon Cisse,CB,South Carolina,75.2,,,170368,name_pos,s carolina
+41,Brandon Cisse,CB,South Carolina,75.2,,,170368,exact,south carolina
 42,Ty Simpson,QB,Alabama,83.1,,,157008,exact,alabama
 43,D'Angelo Ponds,CB,Indiana,89.9,,,172259,exact,indiana
 44,Chris Bell,WR,Louisville,81.8,,,156321,exact,louisville
 45,Jacob Rodriguez,LB,Texas Tech,93.0,,,151095,exact,texas tech
-46,Chris Johnson,CB,San Diego State,91.6,,,158794,name_pos,s diego st
+46,Chris Johnson,CB,San Diego State,91.6,,,158794,exact,san diego state
 47,R Mason Thomas,EDGE,Oklahoma,85.3,,,158080,exact,oklahoma
 48,Chase Bisontis,IOL,Texas A&M,62.4,,,172570,exact,texas aandm
 49,Germie Bernard,WR,Alabama,71.9,,,158374,exact,alabama
-50,Keith Abney II,CB,Arizona State,86.3,,,171875,name_pos,arizona st
+50,Keith Abney II,CB,Arizona State,86.3,,,171875,exact,arizona state
 51,Gabe Jacas,EDGE,Illinois,78.3,,,158210,exact,illinois
 52,A.J. Haulcy,S,LSU,86.6,,,163349,exact,lsu
 53,Eli Stowers,TE,Vanderbilt,81.6,,,147013,exact,vanderbilt
@@ -60,7 +60,7 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 59,Skyler Bell,WR,Connecticut,81.6,,,145163,name_pos,uconn
 60,Treydan Stukes,CB,Arizona,90.1,,,131596,exact,arizona
 61,Joshua Josephs,EDGE,Tennessee,87.1,,,163768,exact,tennessee
-62,Caleb Tiernan,OT,Northwestern,70.5,,,145042,name_pos,nwestern
+62,Caleb Tiernan,OT,Northwestern,70.5,,,145042,exact,northwestern
 63,Derrick Moore,EDGE,Michigan,89.9,,,158543,exact,michigan
 64,Chris Brazzell II,WR,Tennessee,79.4,,,158409,exact,tennessee
 65,Josiah Trotter,LB,Missouri,72.7,,,173191,exact,missouri
@@ -71,12 +71,12 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 70,Mike Washington Jr.,RB,Arkansas,78.3,,,145672,exact,arkansas
 71,Domonique Orange,DT,Iowa State,68.3,,,157602,exact,iowa state
 72,Elijah Sarratt,WR,Indiana,86.1,,,159499,exact,indiana
-73,Sam Hecht,IOL,Kansas State,80.3,,,144601,name_pos,kansas st
+73,Sam Hecht,IOL,Kansas State,80.3,,,144601,exact,kansas state
 74,Zachariah Branch,WR,Georgia,82.0,,,174142,exact,georgia
 75,Max Klare,TE,Ohio State,69.3,,,162884,exact,ohio state
 76,Romello Height,EDGE,Texas Tech,92.5,,,123988,exact,texas tech
 77,Deion Burks,WR,Oklahoma,64.1,,,145107,exact,oklahoma
-78,Darrell Jackson Jr.,DT,Florida State,74.4,,,144910,name_pos,florida st
+78,Darrell Jackson Jr.,DT,Florida State,74.4,,,144910,exact,florida state
 79,Chandler Rivers,CB,Duke,79.2,,,156257,exact,duke
 80,Gracen Halton,DT,Oklahoma,84.7,,,85774,exact,oklahoma
 81,Devin Moore,CB,Florida,83.0,,,157751,exact,florida
@@ -85,7 +85,7 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 84,Daylen Everette,CB,Georgia,69.7,,,157079,exact,georgia
 85,Keyron Crawford,EDGE,Auburn,76.3,,,156660,exact,auburn
 86,Connor Lew,IOL,Auburn,67.6,,,172456,exact,auburn
-87,Keylan Rutledge,IOL,Georgia Tech,76.7,,,156597,name_pos,ga tech
+87,Keylan Rutledge,IOL,Georgia Tech,76.7,,,156597,exact,georgia tech
 88,Garrett Nussmeier,QB,LSU,77.1,,,146757,exact,lsu
 89,Genesis Smith,S,Arizona,81.1,,,171868,exact,arizona
 90,Jake Slaughter,IOL,Florida,79.3,,,146693,exact,florida
@@ -96,11 +96,11 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 95,Markel Bell,OT,Miami (FL),72.1,,,183226,exact,miami
 96,LT Overton,EDGE,Alabama,64.2,,,158667,exact,alabama
 97,Antonio Williams,WR,Clemson,80.3,,,156241,exact,clemson
-98,Keyshaun Elliott,LB,Arizona State,67.5,,,156945,name_pos,arizona st
+98,Keyshaun Elliott,LB,Arizona State,67.5,,,156945,exact,arizona state
 99,Dontay Corleone,DT,Cincinnati,72.6,,,133825,exact,cincinnati
 100,Anthony Lucas,EDGE,USC,71.4,,,158657,exact,usc
 101,Deontae Lawson,LB,Alabama,77.6,,,146608,exact,alabama
-102,De'Zhaun Stribling,WR,Mississippi,79.2,,,146508,name_pos,ole miss
+102,De'Zhaun Stribling,WR,Mississippi,79.2,,,146508,exact,ole miss
 103,Bryce Lance,WR,North Dakota State,89.5,,,,,
 104,Ted Hurst,WR,Georgia State,82.0,,,187922,name_pos,ga state
 105,Carson Beck,QB,Miami (FL),73.6,,,124010,exact,miami
@@ -120,14 +120,14 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 119,Brian Parker II,OT,Duke,85.5,,,162699,exact,duke
 120,Seth McGowan,RB,Kentucky,70.1,,,122936,exact,kentucky
 121,Jaishawn Barham,EDGE,Michigan,79.3,,,156452,exact,michigan
-122,Jalon Kilgore,CB,South Carolina,69.7,,,174323,name_pos,s carolina
+122,Jalon Kilgore,CB,South Carolina,69.7,,,174323,exact,south carolina
 123,Reggie Virgil,WR,Texas Tech,68.5,,,158022,exact,texas tech
 124,DeMonte Capehart,DT,Clemson,71.2,,,122144,exact,clemson
 125,Justin Joly,TE,North Carolina State,77.9,,,158620,exact,north carolina state
 126,Eric McAlister,WR,TCU,76.1,,,145976,exact,tcu
 127,Malik Muhammad,CB,Texas,70.8,,,173165,exact,texas
 128,Brenen Thompson,WR,Mississippi State,79.0,,,163865,name_pos,miss state
-129,Jude Bowry,OT,Boston College,66.0,,,156223,name_pos,boston col
+129,Jude Bowry,OT,Boston College,66.0,,,156223,exact,boston college
 130,Ja'Kobi Lane,WR,USC,77.6,,,176638,exact,usc
 131,Emmett Johnson,RB,Nebraska,85.6,,,156473,exact,nebraska
 132,Marlin Klein,TE,Michigan,64.6,,,162818,exact,michigan
@@ -139,8 +139,8 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 138,Taurean York,LB,Texas A&M,83.7,,,172604,exact,texas aandm
 139,Nicholas Singleton,RB,Penn State,77.6,,,164188,exact,penn state
 140,J.C. Davis,OT,Illinois,87.8,,,157231,exact,illinois
-141,Kaleb Proctor,DT,Southeastern Louisiana,86.5,,,,,
-142,Nadame Tucker,EDGE,Western Michigan,91.4,,,156169,name_pos,w michigan
+141,Kaleb Proctor,DT,Southeastern Louisiana,86.5,,,160131,exact,southeastern louisiana
+142,Nadame Tucker,EDGE,Western Michigan,91.4,,,156169,exact,western michigan
 143,Austin Barber,OT,Florida,83.5,,,146692,exact,florida
 144,Le'Veon Moss,RB,Texas A&M,75.8,,,158664,exact,texas aandm
 145,Devon Marshall,CB,North Carolina State,89.8,,,160445,exact,north carolina state
@@ -148,7 +148,7 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 147,Isaiah World,OT,Oregon,65.4,,,158252,exact,oregon
 148,Jaydn Ott,RB,Oklahoma,53.1,,,158325,exact,oklahoma
 149,Caleb Douglas,WR,Texas Tech,66.9,,,157740,exact,texas tech
-150,Diego Pounds,OT,Mississippi,62.3,,,143976,name_pos,ole miss
+150,Diego Pounds,OT,Mississippi,62.3,,,143976,exact,ole miss
 151,Nate Boerkircher,TE,Texas A&M,74.5,,,129676,exact,texas aandm
 152,Kaytron Allen,RB,Penn State,89.5,,,164158,exact,penn state
 153,Joe Royer,TE,Cincinnati,59.8,,,52545,exact,cincinnati
@@ -163,18 +163,18 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 162,Kevin Coleman Jr.,WR,Missouri,78.5,,,160756,exact,missouri
 163,Kaleb Elarms-Orr,LB,TCU,84.4,,,146306,exact,tcu
 164,Logan Jones,IOL,Iowa,79.0,,,129473,exact,iowa
-165,Charles Demmings,CB,Stephen F. Austin,79.6,,,150672,name_pos,stf austin
+165,Charles Demmings,CB,Stephen F. Austin,79.6,,,150672,exact,stephen f austin
 166,Michael Taaffe,S,Texas,88.1,,,144732,exact,texas
 167,Demond Claiborne,RB,Wake Forest,68.7,,,157523,name_pos,wake
 168,Julian Neal,CB,Arkansas,79.5,,,146043,exact,arkansas
 169,DJ Campbell,IOL,Texas,70.9,,,163844,exact,texas
 170,Josh Cuevas,TE,Alabama,69.6,,,147570,exact,alabama
-171,Thaddeus Dixon,CB,North Carolina,65.2,,,158614,name_pos,n carolina
-172,Quintayvious Hutchins,EDGE,Boston College,68.7,,,143827,name_pos,boston col
+171,Thaddeus Dixon,CB,North Carolina,65.2,,,158614,exact,north carolina
+172,Quintayvious Hutchins,EDGE,Boston College,68.7,,,143827,exact,boston college
 173,Aiden Fisher,LB,Indiana,68.1,,,156725,exact,indiana
-174,Eric Rivers,WR,Georgia Tech,72.7,,,144279,name_pos,ga tech
+174,Eric Rivers,WR,Georgia Tech,72.7,,,144279,exact,georgia tech
 175,Jalen Stroman,S,Notre Dame,79.8,,,144106,exact,notre dame
-176,Hezekiah Masses,CB,California,79.5,,,156555,name_pos,cal
+176,Hezekiah Masses,CB,California,79.5,,,156555,exact,california
 177,Aamil Wagner,OT,Notre Dame,68.7,,,156973,exact,notre dame
 178,Jeff Caldwell,WR,Cincinnati,70.0,,,154188,exact,cincinnati
 179,Trey Moore,LB,Texas,64.6,,,145527,exact,texas
@@ -200,9 +200,9 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 199,Chase Roberts,WR,BYU,74.5,,,147528,exact,byu
 200,Bishop Fitzgerald,S,USC,90.7,,,176010,exact,usc
 201,Cole Brevard,DT,Texas,72.6,,,129766,exact,texas
-202,VJ Payne,S,Kansas State,73.3,,,157780,name_pos,kansas st
+202,VJ Payne,S,Kansas State,73.3,,,157780,exact,kansas state
 203,Red Murdock,LB,Buffalo,91.2,,,157948,exact,buffalo
-204,Dae'Quan Wright,TE,Mississippi,66.4,,,157645,name_pos,ole miss
+204,Dae'Quan Wright,TE,Mississippi,66.4,,,157645,exact,ole miss
 205,George Gumbs Jr.,EDGE,Florida,66.0,,,145870,exact,florida
 206,Zavion Thomas,WR,LSU,66.2,,,163697,exact,lsu
 207,Oscar Delp,TE,Georgia,63.2,,,157080,exact,georgia
@@ -211,7 +211,7 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 210,Desmond Reid,RB,Pittsburgh,80.1,,,159936,exact,pittsburgh
 211,Isaiah Nwokobia,S,SMU,67.4,,,144373,exact,smu
 212,TJ Hall,CB,Iowa,78.3,,,156441,exact,iowa
-213,Zxavian Harris,DT,Mississippi,73.3,,,163658,name_pos,ole miss
+213,Zxavian Harris,DT,Mississippi,73.3,,,163658,exact,ole miss
 214,Robert Spears-Jennings,S,Oklahoma,58.9,,,158074,exact,oklahoma
 215,Jadon Canady,CB,Oregon,85.5,,,144405,exact,oregon
 216,Dane Key,WR,Nebraska,65.9,,,157100,exact,nebraska
@@ -235,7 +235,7 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 234,Cole Payton,QB,North Dakota State,95.9,,,148154,name_pos,n dak st
 235,DeVonta Smith,CB,Notre Dame,72.4,,,146607,exact,notre dame
 236,Eric Gentry,LB,USC,72.0,,,146280,exact,usc
-237,Rahsul Faison,RB,South Carolina,68.8,,,176482,name_pos,s carolina
+237,Rahsul Faison,RB,South Carolina,68.8,,,176482,exact,south carolina
 238,Lorenzo Styles Jr.,S,Ohio State,66.0,,,147474,exact,ohio state
 239,Josh Cameron,WR,Baylor,72.4,,,144513,exact,baylor
 240,Ceyair Wright,CB,Nebraska,66.6,,,86877,exact,nebraska
@@ -245,8 +245,8 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 244,Vinny Anthony II,WR,Wisconsin,67.7,,,158687,exact,wisconsin
 245,Deven Eastern,DT,Minnesota,67.3,,,144989,exact,minnesota
 246,Sawyer Robertson,QB,Baylor,70.3,,,146839,exact,baylor
-247,Lewis Bond,WR,Boston College,74.5,,,143817,name_pos,boston col
-248,Haynes King,QB,Georgia Tech,85.9,,,124329,name_pos,ga tech
+247,Lewis Bond,WR,Boston College,74.5,,,143817,exact,boston college
+248,Haynes King,QB,Georgia Tech,85.9,,,124329,exact,georgia tech
 249,Joey Aguilar,QB,Tennessee,90.5,,,174978,exact,tennessee
 250,Ethan Onianwa,IOL,Ohio State,58.2,,,155966,exact,ohio state
 251,Diego Pavia,QB,Vanderbilt,92.2,,,156927,exact,vanderbilt
@@ -254,13 +254,13 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 253,Xavian Sorey Jr.,LB,Arkansas,50.3,,,146724,exact,arkansas
 254,Josh Moten,CB,Southern Miss,80.1,,,124332,name_pos,so miss
 255,Joshua Braun,IOL,Kentucky,62.5,,,124371,exact,kentucky
-256,Ahmari Harvey,CB,Georgia Tech,71.9,,,146674,name_pos,ga tech
+256,Ahmari Harvey,CB,Georgia Tech,71.9,,,146674,exact,georgia tech
 257,Patrick Payton,EDGE,LSU,69.0,,,143893,exact,lsu
 258,Jalen Catalon,S,Missouri,74.0,,,98867,exact,missouri
 259,Miller Moss,QB,Louisville,68.2,,,70727,exact,louisville
 260,Seydou Traore,TE,Mississippi State,60.3,,,147046,name_pos,miss state
 261,Tyreek Chappell,CB,Texas A&M,63.2,,,146989,exact,texas aandm
-262,Tommy Castellanos,QB,Florida State,85.1,,,158433,name_pos,florida st
+262,Tommy Castellanos,QB,Florida State,85.1,,,158433,exact,florida state
 263,Eric O'Neill,EDGE,Rutgers,74.5,,,155869,exact,rutgers
 264,Logan Fano,EDGE,Utah,78.7,,,157432,exact,utah
 265,Riley Nowakowski,TE,Indiana,79.6,,,129928,exact,indiana
@@ -273,7 +273,7 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 272,Chip Trayanum,RB,Toledo,76.7,,,131631,exact,toledo
 273,Jaren Kanak,TE,Oklahoma,64.1,,,158070,exact,oklahoma
 274,Mason Reiger,EDGE,Wisconsin,82.4,,,122721,exact,wisconsin
-275,Jamal Haynes,RB,Georgia Tech,66.1,,,143918,name_pos,ga tech
+275,Jamal Haynes,RB,Georgia Tech,66.1,,,143918,exact,georgia tech
 276,Malik Benson,WR,Oregon,73.0,,,169698,exact,oregon
 277,Joe Fagnano,QB,Connecticut,87.0,,,104768,name_pos,uconn
 278,Keyshawn James-Newby,EDGE,New Mexico,88.8,,,175089,exact,new mexico
@@ -300,17 +300,17 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 299,Latrell McCutchin Sr.,CB,Houston,78.2,,,144639,exact,houston
 300,Brandon Cleveland,DT,North Carolina State,72.1,,,157411,exact,north carolina state
 301,Dean Connors,RB,Houston,76.6,,,156624,exact,houston
-302,Luke Petitbon,IOL,Florida State,71.9,,,123396,name_pos,florida st
+302,Luke Petitbon,IOL,Florida State,71.9,,,123396,exact,florida state
 303,Behren Morton,QB,Texas Tech,72.0,,,144747,exact,texas tech
-304,Squirrel White,WR,Florida State,51.0,,,163776,name_pos,florida st
-305,Micah Pettus,OT,Florida State,72.5,,,146812,name_pos,florida st
+304,Squirrel White,WR,Florida State,51.0,,,163776,exact,florida state
+305,Micah Pettus,OT,Florida State,72.5,,,146812,exact,florida state
 306,Gary Smith III,DT,UCLA,75.4,,,122388,exact,ucla
 307,Hank Beatty,WR,Illinois,82.4,,,158198,exact,illinois
 308,Jordan Hudson,WR,SMU,72.6,,,157298,exact,smu
 309,Austin Brown,S,Wisconsin,51.3,,,158689,exact,wisconsin
-310,Harrison Wallace III,WR,Mississippi,73.1,,,145090,name_pos,ole miss
+310,Harrison Wallace III,WR,Mississippi,73.1,,,145090,exact,ole miss
 311,Landon Robinson,DT,Navy,78.2,,,162580,exact,navy
-312,Nick Barrett,DT,South Carolina,76.2,,,146926,name_pos,s carolina
+312,Nick Barrett,DT,South Carolina,76.2,,,146926,exact,south carolina
 313,Jeff Persi,OT,Pittsburgh,46.4,,,129593,exact,pittsburgh
 314,Fernando Carmona,IOL,Arkansas,71.2,,,146185,exact,arkansas
 315,Cameron Ball,DT,Arkansas,70.6,,,146644,exact,arkansas
@@ -319,8 +319,8 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 318,Scooby Williams,LB,Texas A&M,78.9,,,146701,exact,texas aandm
 319,DeShon Singleton,S,Nebraska,72.2,,,156476,exact,nebraska
 320,CJ Donaldson,RB,Ohio State,73.2,,,157372,exact,ohio state
-321,Jeremiah Franklin,TE,Boston College,65.7,,,156225,name_pos,boston col
-322,Aidan Hubbard,EDGE,Northwestern,74.5,,,145048,name_pos,nwestern
+321,Jeremiah Franklin,TE,Boston College,65.7,,,156225,exact,boston college
+322,Aidan Hubbard,EDGE,Northwestern,74.5,,,145048,exact,northwestern
 323,Wesley Williams,EDGE,Duke,71.9,,,162704,exact,duke
 324,Josh Thompson,IOL,LSU,64.2,,,145039,exact,lsu
 325,Jack Pyburn,EDGE,LSU,72.9,,,157747,exact,lsu
@@ -328,9 +328,9 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 327,Stephen Hall,CB,Missouri,51.9,,,174161,exact,missouri
 328,Jalen Huskey,S,Maryland,83.6,,,163106,exact,maryland
 329,Caullin Lacy,WR,Louisville,66.7,,,121426,exact,louisville
-330,Grayson James,QB,Boston College,60.6,,,145214,name_pos,boston col
+330,Grayson James,QB,Boston College,60.6,,,145214,exact,boston college
 331,Emmanuel Henderson Jr.,WR,Kansas,70.9,,,163595,exact,kansas
-332,Logan Diggs,RB,Mississippi,70.1,,,147475,name_pos,ole miss
+332,Logan Diggs,RB,Mississippi,70.1,,,147475,exact,ole miss
 333,Jaden Dugger,LB,Louisiana,63.5,,,162137,name_pos,la lafayet
 334,Jaren Kump,IOL,Utah,66.3,,,131859,exact,utah
 335,Mark Gronowski,QB,Iowa,83.3,,,138303,exact,iowa
@@ -351,14 +351,14 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 350,Dean Miller,EDGE,Kansas,70.4,,,163813,exact,kansas
 351,Jaylon Guilbeau,CB,Texas,65.4,,,157307,exact,texas
 352,Tyler Onyedim,DT,Texas A&M,71.9,,,144547,exact,texas aandm
-353,Gunner Maldonado,S,Kansas State,65.9,,,129727,name_pos,kansas st
+353,Gunner Maldonado,S,Kansas State,65.9,,,129727,exact,kansas state
 354,Tanner Arkin,TE,Illinois,68.7,,,146008,exact,illinois
 355,Garrett DiGiorgio,IOL,UCLA,67.2,,,146395,exact,ucla
 356,Mark Petry,IOL,Syracuse,,,,,,
 357,Mo Westmoreland,EDGE,Tulane,79.2,,,157883,exact,tulane
-358,Evan Beerntsen,IOL,Northwestern,79.3,,,103865,name_pos,nwestern
+358,Evan Beerntsen,IOL,Northwestern,79.3,,,103865,exact,northwestern
 359,Kendal Daniels,S,Oklahoma,77.4,,,144668,exact,oklahoma
-360,DQ Smith,S,South Carolina,68.0,,,158116,name_pos,s carolina
+360,DQ Smith,S,South Carolina,68.0,,,158116,exact,south carolina
 361,Maverick McIvor,QB,Western Kentucky,73.2,,,99476,name_pos,w kentucky
 362,Devin Mockobee,RB,Purdue,73.7,,,145111,exact,purdue
 363,Avery Smith,CB,Toledo,70.6,,,157000,exact,toledo
@@ -368,23 +368,23 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 367,Rohan Jones,TE,Arkansas,90.3,,,159125,exact,arkansas
 368,Tristan Leigh,OT,Clemson,49.5,,,144121,exact,clemson
 369,Matt Gulbin,IOL,Michigan State,82.6,,,144191,name_pos,mich state
-370,Daniel King,IOL,North Carolina,66.3,,,156877,name_pos,n carolina
+370,Daniel King,IOL,North Carolina,66.3,,,156877,exact,north carolina
 371,Barion Brown,WR,LSU,68.5,,,163779,exact,lsu
 372,Donaven McCulley,WR,Michigan,66.6,,,144829,exact,michigan
 373,Marvin Jones Jr.,EDGE,Oklahoma,58.2,,,163745,exact,oklahoma
 374,Enrique Cruz Jr.,OT,Kansas,70.3,,,144041,exact,kansas
-375,Marcus Allen,CB,North Carolina,64.1,,,162743,name_pos,n carolina
+375,Marcus Allen,CB,North Carolina,64.1,,,162743,exact,north carolina
 376,David Gusta,DT,Kentucky,76.3,,,146524,exact,kentucky
 377,JJ Johnson,S,North Carolina State,56.4,,,156702,exact,north carolina state
 378,Will Kacmarek,TE,Ohio State,77.5,,,145896,exact,ohio state
-379,Roydell Williams,RB,Florida State,64.9,,,123939,name_pos,florida st
+379,Roydell Williams,RB,Florida State,64.9,,,123939,exact,florida state
 380,Chris Adams,OT,Memphis,67.4,,,145359,exact,memphis
 381,Weylin Lapuaho,IOL,BYU,62.6,,,157628,exact,byu
 382,Kentrel Bullock,RB,South Alabama,90.3,,,124129,name_pos,s alabama
 383,Dalton Johnson,S,Arizona,84.8,,,146252,exact,arizona
-384,Shyheim Brown,S,Florida State,56.6,,,143874,name_pos,florida st
+384,Shyheim Brown,S,Florida State,56.6,,,143874,exact,florida state
 385,Anthony Hankerson,RB,Oregon State,73.7,,,157691,exact,oregon state
-386,Malik Rutherford,WR,Georgia Tech,77.7,,,143929,name_pos,ga tech
+386,Malik Rutherford,WR,Georgia Tech,77.7,,,143929,exact,georgia tech
 387,Matthew Hibner,TE,SMU,62.6,,,129581,exact,smu
 388,Trevor Brock,OT,Buffalo,74.6,,,171197,exact,buffalo
 389,Kam Dewberry,IOL,Alabama,71.2,,,158645,exact,alabama
@@ -412,7 +412,7 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 411,Jaquez Moore,RB,Duke,71.6,,,143866,exact,duke
 412,Miles Capers,EDGE,Vanderbilt,68.0,,,146967,exact,vanderbilt
 413,Max Tomczak,WR,Youngstown State,85.0,,,,,
-414,Chamon Metayer,TE,Arizona State,56.3,,,144230,name_pos,arizona st
+414,Chamon Metayer,TE,Arizona State,56.3,,,144230,exact,arizona state
 415,Nyjalik Kelly,EDGE,UCF,75.9,,,156339,exact,ucf
 416,Tyler Van Dyke,QB,SMU,,,,,,
 417,Cash Jones,RB,Georgia,66.4,,,155211,exact,georgia
@@ -425,8 +425,8 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 424,Alan Herron,OT,Maryland,71.2,,,181445,exact,maryland
 425,Romello Brinson,WR,SMU,59.0,,,143936,exact,smu
 426,Caleb Fauria,TE,Delaware,,,,,,
-427,Logan Taylor,IOL,Boston College,70.0,,,151098,name_pos,boston col
-428,Desmond Purnell,LB,Kansas State,66.1,,,144611,name_pos,kansas st
+427,Logan Taylor,IOL,Boston College,70.0,,,151098,exact,boston college
+428,Desmond Purnell,LB,Kansas State,66.1,,,144611,exact,kansas state
 429,Justin Jefferson,LB,Alabama,67.7,,,172384,exact,alabama
 430,Ricardo Hallman,CB,Wisconsin,71.0,,,145169,exact,wisconsin
 431,Kam Olds,EDGE,Kentucky,71.1,,,157953,exact,kentucky

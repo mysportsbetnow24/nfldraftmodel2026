@@ -30,6 +30,7 @@ PREMIUM_FILES = {
     "defense_coverage_summary": DOWNLOADS / "defense_coverage_summary.csv",
     "defense_coverage_scheme": DOWNLOADS / "defense_coverage_scheme.csv",
     "slot_coverage": DOWNLOADS / "slot_coverage.csv",
+    "pass_rush_productivity": DOWNLOADS / "pass_rush_productivity.csv",
 }
 
 PFF_BOARD_OUT = MANUAL_DIR / "pff_big_board_2026_latest.csv"
@@ -50,9 +51,31 @@ SCHOOL_ALIASES = {
     "notre dame fighting irish": "notre dame",
     "oregon ducks": "oregon",
     "alabama crimson tide": "alabama",
+    "mississippi": "ole miss",
     "ole miss rebels": "ole miss",
     "south carolina gamecocks": "south carolina",
+    "s carolina": "south carolina",
     "arizona state sun devils": "arizona state",
+    "arizona st": "arizona state",
+    "ga tech": "georgia tech",
+    "georgia tech yellow jackets": "georgia tech",
+    "n carolina": "north carolina",
+    "north carolina tar heels": "north carolina",
+    "boston col": "boston college",
+    "western michigan broncos": "western michigan",
+    "w michigan": "western michigan",
+    "s diego st": "san diego state",
+    "san diego state aztecs": "san diego state",
+    "kansas st": "kansas state",
+    "kansas state wildcats": "kansas state",
+    "cal": "california",
+    "florida st": "florida state",
+    "northwestern wildcats": "northwestern",
+    "nwestern": "northwestern",
+    "se la": "southeastern louisiana",
+    "southeastern louisiana lions": "southeastern louisiana",
+    "stephen f austin lumberjacks": "stephen f austin",
+    "stf austin": "stephen f austin",
     "nc state": "north carolina state",
     "n c state": "north carolina state",
     "s jose st": "san jose state",
@@ -451,6 +474,22 @@ def build() -> None:
                 "sg_dl_true_pass_set_win_rate": row.get("true_pass_set_pass_rush_win_rate", ""),
                 "sg_dl_true_pass_set_prp": row.get("true_pass_set_prp", ""),
                 "sg_dl_true_pass_set_total_pressures": row.get("true_pass_set_total_pressures", ""),
+            }
+        )
+
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("pass_rush_productivity", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        m = metrics_by_pid[pid]
+        m.update(
+            {
+                "player_name": row.get("player", m.get("player_name", "")),
+                "position": _norm_pos(row.get("position", m.get("position", ""))),
+                "school": row.get("team_name", m.get("school", "")),
+                "sg_dl_prp": row.get("prp", m.get("sg_dl_prp", "")),
+                "sg_dl_total_pressures": row.get("pressures", m.get("sg_dl_total_pressures", "")),
             }
         )
 
