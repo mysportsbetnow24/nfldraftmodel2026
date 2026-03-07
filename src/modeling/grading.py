@@ -916,6 +916,18 @@ def _infer_s_role_and_scheme(
         and run_grade is not None
         and run_grade >= 80.0
     )
+    matchup_safety_star = (
+        matchup_safety
+        and cov_grade is not None
+        and cov_grade >= 86.0
+        and man_grade is not None
+        and man_grade >= 80.0
+        and (
+            slot_usage
+            or (qbr is not None and qbr <= 62.0)
+            or (snaps_per_target is not None and snaps_per_target >= 9.0)
+        )
+    )
     deep_eraser = (
         deep_safety
         and cov_grade is not None
@@ -936,7 +948,9 @@ def _infer_s_role_and_scheme(
     )
 
     if slot_matchup_star or (slot_usage and matchup_safety and box_safety and not (deep_safety and complete_coverage)):
-        return ("Big nickel matchup safety", "Big-nickel / split-safety coverage family")
+        return ("Matchup safety", "Big-nickel / split-safety coverage family")
+    if matchup_safety_star and not pressure_role:
+        return ("Matchup safety", "TE / slot matchup coverage family")
     if coverage_eraser:
         return ("Coverage eraser safety", "Split-safety eraser / disguise-heavy family")
     if deep_eraser or (deep_safety and explosive):
