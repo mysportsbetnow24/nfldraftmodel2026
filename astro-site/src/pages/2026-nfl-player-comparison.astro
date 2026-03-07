@@ -71,30 +71,42 @@ const collectionSchema = {
 
     const repopulateSlotOptions = () => {
       const available = filteredPool();
-      const selected = new Set(slots.map((el) => el?.value).filter(Boolean));
+      const availableById = new Map(available.map((player) => [player.player_uid, player]));
+      const selectedValues = slots.map((el) => el?.value).filter(Boolean);
       slots.forEach((el, idxNum) => {
         if (!el) return;
         const currentValue = el.value;
         const placeholder = `Select Player ${idxNum + 1}`;
+        const currentPlayer = currentValue ? idx[currentValue] : null;
+        const optionPlayers = [];
+        const seen = new Set();
+        if (currentPlayer) {
+          optionPlayers.push(currentPlayer);
+          seen.add(currentPlayer.player_uid);
+        }
+        available.forEach((player) => {
+          if (seen.has(player.player_uid)) return;
+          optionPlayers.push(player);
+          seen.add(player.player_uid);
+        });
+
         el.innerHTML = "";
         const first = document.createElement("option");
         first.value = "";
         first.textContent = placeholder;
         el.appendChild(first);
-        available.forEach((p) => {
+
+        optionPlayers.forEach((player) => {
           const option = document.createElement("option");
-          option.value = p.player_uid;
-          option.textContent = `${p.player_name} (${p.position})`;
-          if (currentValue === p.player_uid) {
+          option.value = player.player_uid;
+          option.textContent = `${player.player_name} (${player.position})`;
+          if (currentValue === player.player_uid) {
             option.selected = true;
-          } else if (!currentValue && selected.has(p.player_uid)) {
+          } else if (selectedValues.includes(player.player_uid)) {
             option.disabled = true;
           }
           el.appendChild(option);
         });
-        if (currentValue && !available.some((p) => p.player_uid === currentValue)) {
-          el.value = "";
-        }
       });
     };
 
