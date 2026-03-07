@@ -270,7 +270,7 @@ def _infer_lb_role_and_scheme(
     if light_frame and mobile_athlete:
         return ("Coverage WILL backer", "Two-high match zone", "coverage_overhang_lb")
     if light_frame:
-        return ("off_ball_lb", "Run-and-chase WILL backer", "Split-safety pursuit fit")
+        return ("Run-and-chase WILL backer", "Split-safety pursuit fit", "off_ball_lb")
     if big_frame and mobile_athlete:
         return ("Pressure SAM backer", "Sim-pressure multiple front", "hybrid_edge_lb")
     if xl_frame or (big_frame and limited_athlete):
@@ -390,6 +390,378 @@ def _infer_rb_role_and_scheme(
     if dynamic:
         return ("Explosive one-cut slasher", "Wide-zone one-cut system")
     return ("Primary committee back with passing-down utility", "Wide-zone committee")
+
+
+def _infer_wr_role_and_scheme(
+    *,
+    height_in: int,
+    weight_lb: int,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
+) -> tuple[str, str]:
+    release = _safe_trait_value(film_subtraits, "release")
+    route_running = _safe_trait_value(film_subtraits, "route_running")
+    separation = _safe_trait_value(film_subtraits, "separation")
+    ball_skills = _safe_trait_value(film_subtraits, "ball_skills")
+    yac = _safe_trait_value(film_subtraits, "yac")
+    play_strength = _safe_trait_value(film_subtraits, "play_strength")
+
+    separator_profile = _avg_defined([release, route_running, separation])
+    volume_profile = _avg_defined([route_running, separation, ball_skills])
+    vertical_profile = _avg_defined([separation, ball_skills, yac])
+
+    prod = production_context or {}
+    route_grade = _safe_prod_value(prod, "sg_wrte_route_grade")
+    yprr = _safe_prod_value(prod, "sg_wrte_yprr")
+    targets_per_route = _safe_prod_value(prod, "sg_wrte_targets_per_route")
+    man_yprr = _safe_prod_value(prod, "sg_wrte_man_yprr")
+    zone_yprr = _safe_prod_value(prod, "sg_wrte_zone_yprr")
+    contested = _safe_prod_value(prod, "sg_wrte_contested_catch_rate")
+    drop_rate = _safe_prod_value(prod, "sg_wrte_drop_rate")
+
+    big_frame = height_in >= 74 and weight_lb >= 205
+    compact_frame = height_in <= 71 and weight_lb <= 192
+    explosive = athletic_score >= 88.0
+    dynamic = athletic_score >= 84.0
+
+    elite_route = (route_grade is not None and route_grade >= 79.0) or (separator_profile is not None and separator_profile >= 79.0)
+    high_volume = ((targets_per_route is not None and targets_per_route >= 0.24) and (yprr is not None and yprr >= 2.1)) or (
+        volume_profile is not None and volume_profile >= 78.0
+    )
+    vertical_winner = (
+        (man_yprr is not None and man_yprr >= 2.0)
+        or (contested is not None and contested >= 0.55)
+        or (vertical_profile is not None and vertical_profile >= 77.0 and explosive)
+    )
+    reliable_hands = (drop_rate is not None and drop_rate <= 0.07) or (ball_skills is not None and ball_skills >= 77.0)
+
+    if elite_route and high_volume and reliable_hands:
+        return ("Volume-driving X/Z separator", "Spread isolation / full-route-tree attack")
+    if vertical_winner and big_frame:
+        return ("Boundary vertical stressor", "Play-action shot / isolation winner")
+    if elite_route and compact_frame and dynamic:
+        return ("Movement Z separator", "Spread motion / leverage-creation menu")
+    if high_volume:
+        return ("Alignment-flexible target earner", "Spread spacing / progression target funnel")
+    if vertical_winner:
+        return ("Field-stretching Z receiver", "Vertical spread / play-action launcher")
+    if compact_frame and dynamic:
+        return ("YAC-tilted slot/inside-out target", "Motion slot / quick-game stress")
+    return ("Alignment-flexible target earner", "Spread vertical / spacing menu")
+
+
+def _infer_te_role_and_scheme(
+    *,
+    height_in: int,
+    weight_lb: int,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
+) -> tuple[str, str]:
+    route_running = _safe_trait_value(film_subtraits, "route_running")
+    ball_skills = _safe_trait_value(film_subtraits, "ball_skills")
+    yac = _safe_trait_value(film_subtraits, "yac")
+    inline_blocking = _safe_trait_value(film_subtraits, "inline_blocking")
+    pass_pro = _safe_trait_value(film_subtraits, "pass_pro")
+
+    detached_profile = _avg_defined([route_running, ball_skills, yac])
+    attached_profile = _avg_defined([inline_blocking, pass_pro, ball_skills])
+
+    prod = production_context or {}
+    route_grade = _safe_prod_value(prod, "sg_wrte_route_grade")
+    yprr = _safe_prod_value(prod, "sg_wrte_yprr")
+    targets_per_route = _safe_prod_value(prod, "sg_wrte_targets_per_route")
+    contested = _safe_prod_value(prod, "sg_wrte_contested_catch_rate")
+    pass_block = _safe_prod_value(prod, "sg_ol_pass_block_grade")
+    run_block = _safe_prod_value(prod, "sg_ol_run_block_grade")
+
+    dynamic = athletic_score >= 84.0
+    attached_blocker = (
+        (attached_profile is not None and attached_profile >= 75.0)
+        or (pass_block is not None and pass_block >= 70.0)
+        or (run_block is not None and run_block >= 68.0)
+    )
+    route_earner = (
+        (route_grade is not None and route_grade >= 74.0 and yprr is not None and yprr >= 1.75)
+        or (detached_profile is not None and detached_profile >= 76.0)
+    )
+    mismatch_ball = (contested is not None and contested >= 0.52) or (ball_skills is not None and ball_skills >= 76.0)
+
+    if route_earner and attached_blocker and mismatch_ball:
+        return ("In-line + move mismatch", "Multiple attach/detach stress package")
+    if route_earner and dynamic:
+        return ("Detached mismatch F tight end", "Spread detach / seam-stretch menu")
+    if attached_blocker and mismatch_ball:
+        return ("Y-tight end with chain-moving value", "Play-action attach / boot complement")
+    if attached_blocker:
+        return ("Inline TE2 with protection utility", "Balanced attach / split-zone package")
+    return ("Move tight end mismatch piece", "Detach / slot seam package")
+
+
+def _infer_ot_role_and_scheme(
+    *,
+    height_in: int,
+    weight_lb: int,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
+) -> tuple[str, str]:
+    pass_set = _safe_trait_value(film_subtraits, "pass_set")
+    anchor = _safe_trait_value(film_subtraits, "anchor")
+    hand_usage = _safe_trait_value(film_subtraits, "hand_usage")
+    recovery = _safe_trait_value(film_subtraits, "recovery")
+    run_blocking = _safe_trait_value(film_subtraits, "run_blocking")
+    processing = _safe_trait_value(film_subtraits, "processing")
+
+    pass_pro_profile = _avg_defined([pass_set, anchor, hand_usage, recovery])
+    run_profile = _avg_defined([run_blocking, processing, anchor])
+
+    prod = production_context or {}
+    pass_grade = _safe_prod_value(prod, "sg_ol_pass_block_grade")
+    run_grade = _safe_prod_value(prod, "sg_ol_run_block_grade")
+    pbe = _safe_prod_value(prod, "sg_ol_pbe")
+    pressure_rate = _safe_prod_value(prod, "sg_ol_pressure_allowed_rate")
+    versatility = _safe_prod_value(prod, "sg_ol_versatility_count")
+
+    elite_pass = (
+        (pass_pro_profile is not None and pass_pro_profile >= 78.0)
+        or (pass_grade is not None and pass_grade >= 80.0 and pbe is not None and pbe >= 98.0)
+    )
+    strong_run = (run_profile is not None and run_profile >= 75.0) or (run_grade is not None and run_grade >= 76.0)
+    efficient_pass = (pressure_rate is not None and pressure_rate <= 0.03) or (pbe is not None and pbe >= 98.7)
+    mover = athletic_score >= 84.0
+
+    if elite_pass and mover and efficient_pass:
+        return ("Blindside pass-pro translator", "Wide-zone / vertical-set tackle playbook")
+    if elite_pass and strong_run:
+        return ("Balanced starting tackle", "Zone-power hybrid tackle menu")
+    if strong_run and mover:
+        return ("Movement tackle with run-game lift", "Wide-zone / pin-pull tackle fit")
+    if strong_run:
+        return ("Power-side right tackle profile", "Gap / duo front-side tackle fit")
+    if versatility is not None and versatility >= 3:
+        return ("Swing tackle with lineup resilience", "Zone-power hybrid depth package")
+    return ("Starting tackle with pass-pro floor", "Zone-power hybrid tackle menu")
+
+
+def _infer_iol_role_and_scheme(
+    *,
+    height_in: int,
+    weight_lb: int,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
+) -> tuple[str, str]:
+    leverage = _safe_trait_value(film_subtraits, "leverage")
+    anchor = _safe_trait_value(film_subtraits, "anchor")
+    hand_usage = _safe_trait_value(film_subtraits, "hand_usage")
+    processing = _safe_trait_value(film_subtraits, "processing")
+    lateral = _safe_trait_value(film_subtraits, "lateral_agility")
+    run_blocking = _safe_trait_value(film_subtraits, "run_blocking")
+
+    pass_pro_profile = _avg_defined([anchor, hand_usage, processing])
+    movement_profile = _avg_defined([lateral, processing, run_blocking])
+    power_profile = _avg_defined([leverage, anchor, run_blocking])
+
+    prod = production_context or {}
+    pass_grade = _safe_prod_value(prod, "sg_ol_pass_block_grade")
+    run_grade = _safe_prod_value(prod, "sg_ol_run_block_grade")
+    pbe = _safe_prod_value(prod, "sg_ol_pbe")
+    pressure_rate = _safe_prod_value(prod, "sg_ol_pressure_allowed_rate")
+    versatility = _safe_prod_value(prod, "sg_ol_versatility_count")
+
+    elite_pass = (
+        (pass_pro_profile is not None and pass_pro_profile >= 77.0)
+        or (pass_grade is not None and pass_grade >= 80.0 and pbe is not None and pbe >= 99.0)
+    )
+    low_pressure = pressure_rate is not None and pressure_rate <= 0.02
+    movement = (movement_profile is not None and movement_profile >= 75.0) or athletic_score >= 80.0
+    power = (power_profile is not None and power_profile >= 75.0) or (run_grade is not None and run_grade >= 77.0)
+
+    if elite_pass and low_pressure and movement:
+        return ("Pocket-control interior starter", "Inside-zone / dropback protection core")
+    if power and movement:
+        return ("Zone-to-gap interior mover", "Inside-zone / duo combo-climb fit")
+    if power:
+        return ("Power-drive guard profile", "Gap / duo interior displacement menu")
+    if versatility is not None and versatility >= 4:
+        return ("Multi-spot interior stabilizer", "Inside-zone / hybrid interior depth")
+    return ("Starter with interior pocket-control value", "Inside-zone / gap hybrid")
+
+
+def _infer_edge_role_and_scheme(
+    *,
+    height_in: int,
+    weight_lb: int,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
+) -> tuple[str, str]:
+    get_off = _safe_trait_value(film_subtraits, "get_off")
+    bend = _safe_trait_value(film_subtraits, "bend")
+    hand_usage = _safe_trait_value(film_subtraits, "hand_usage")
+    rush_plan = _safe_trait_value(film_subtraits, "rush_plan")
+    counter_moves = _safe_trait_value(film_subtraits, "counter_moves")
+    run_defense = _safe_trait_value(film_subtraits, "run_defense")
+
+    speed_rush_profile = _avg_defined([get_off, bend, counter_moves])
+    power_profile = _avg_defined([hand_usage, rush_plan, run_defense])
+
+    prod = production_context or {}
+    rush_grade = _safe_prod_value(prod, "sg_dl_pass_rush_grade")
+    true_win = _safe_prod_value(prod, "sg_dl_true_pass_set_win_rate")
+    true_prp = _safe_prod_value(prod, "sg_dl_true_pass_set_prp")
+    run_grade = _safe_prod_value(prod, "sg_front_run_def_grade")
+    stop_pct = _safe_prod_value(prod, "sg_front_stop_percent")
+    pressures = _safe_prod_value(prod, "sg_dl_total_pressures", "sg_def_total_pressures")
+
+    explosive = athletic_score >= 87.0
+    clean_pocket_rusher = (
+        (speed_rush_profile is not None and speed_rush_profile >= 77.0)
+        or (true_win is not None and true_win >= 18.0 and true_prp is not None and true_prp >= 9.5)
+    )
+    three_down = (
+        (run_grade is not None and run_grade >= 74.0 and stop_pct is not None and stop_pct >= 7.0)
+        or (power_profile is not None and power_profile >= 75.0)
+    )
+    high_volume_pressure = pressures is not None and pressures >= 28.0
+
+    if clean_pocket_rusher and explosive and high_volume_pressure:
+        return ("Wide-alignment speed pressure creator", "Multiple-front upfield rush plan")
+    if clean_pocket_rusher and three_down:
+        return ("Three-down pressure creator", "Multiple-front every-down edge role")
+    if three_down:
+        return ("Power edge with base-down value", "Odd-even front edge-setting role")
+    return ("Rotational rush specialist", "Sub-package designated rush lane")
+
+
+def _infer_dt_role_and_scheme(
+    *,
+    height_in: int,
+    weight_lb: int,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
+) -> tuple[str, str]:
+    get_off = _safe_trait_value(film_subtraits, "get_off")
+    power = _safe_trait_value(film_subtraits, "power")
+    hand_usage = _safe_trait_value(film_subtraits, "hand_usage")
+    leverage = _safe_trait_value(film_subtraits, "leverage")
+    pass_rush = _safe_trait_value(film_subtraits, "pass_rush")
+    run_defense = _safe_trait_value(film_subtraits, "run_defense")
+
+    penetration_profile = _avg_defined([get_off, pass_rush, hand_usage])
+    anchor_profile = _avg_defined([power, leverage, run_defense])
+
+    prod = production_context or {}
+    rush_grade = _safe_prod_value(prod, "sg_dl_pass_rush_grade")
+    true_win = _safe_prod_value(prod, "sg_dl_true_pass_set_win_rate")
+    run_grade = _safe_prod_value(prod, "sg_front_run_def_grade")
+    stop_pct = _safe_prod_value(prod, "sg_front_stop_percent")
+
+    explosive = athletic_score >= 82.0
+    strong_anchor = (anchor_profile is not None and anchor_profile >= 76.0) or (run_grade is not None and run_grade >= 78.0 and stop_pct is not None and stop_pct >= 8.0)
+    interior_rush = (penetration_profile is not None and penetration_profile >= 74.0) or (rush_grade is not None and rush_grade >= 72.0 and true_win is not None and true_win >= 10.0)
+
+    if interior_rush and explosive and not strong_anchor:
+        return ("One-gap interior disruptor", "Upfield one-gap attack front")
+    if strong_anchor and interior_rush:
+        return ("Three-tech disruptor with anchor", "Attack front with base-down sturdiness")
+    if strong_anchor:
+        return ("Double-team absorbing anchor", "Odd-front shade / early-down interior fit")
+    return ("Early-down anchor with interior rush upside", "One-gap attack interior rotation")
+
+
+def _infer_cb_role_and_scheme(
+    *,
+    height_in: int,
+    weight_lb: int,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
+) -> tuple[str, str]:
+    press = _safe_trait_value(film_subtraits, "press")
+    footwork = _safe_trait_value(film_subtraits, "footwork")
+    recovery_speed = _safe_trait_value(film_subtraits, "recovery_speed")
+    processing = _safe_trait_value(film_subtraits, "processing")
+    ball_skills = _safe_trait_value(film_subtraits, "ball_skills")
+    tackling = _safe_trait_value(film_subtraits, "tackling")
+
+    press_profile = _avg_defined([press, recovery_speed, ball_skills])
+    off_profile = _avg_defined([processing, footwork, ball_skills])
+
+    prod = production_context or {}
+    cov_grade = _safe_prod_value(prod, "sg_cov_grade")
+    man_grade = _safe_prod_value(prod, "sg_cov_man_grade")
+    zone_grade = _safe_prod_value(prod, "sg_cov_zone_grade")
+    fir = _safe_prod_value(prod, "sg_cov_forced_incompletion_rate")
+    slot_snaps = _safe_prod_value(prod, "sg_slot_cov_snaps")
+    qbr = _safe_prod_value(prod, "sg_cov_qb_rating_against")
+    run_grade = _safe_prod_value(prod, "sg_def_run_grade")
+
+    long_frame = height_in >= 72
+    explosive = athletic_score >= 87.0
+    strong_press = (press_profile is not None and press_profile >= 76.0) or (man_grade is not None and man_grade >= 78.0)
+    strong_zone = (off_profile is not None and off_profile >= 75.0) or (zone_grade is not None and zone_grade >= 76.0)
+    slot_usage = slot_snaps is not None and slot_snaps >= 80.0
+    ball_disruption = (fir is not None and fir >= 0.18) or (qbr is not None and qbr <= 70.0)
+
+    if slot_usage and strong_zone and ball_disruption:
+        return ("Nickel matchup corner", "Match-zone / big-nickel coverage family")
+    if strong_press and long_frame and explosive:
+        return ("Press-man outside corner", "Press-match outside corner framework")
+    if strong_zone and ball_disruption:
+        return ("Off-zone ballhawk corner", "Pattern-match zone / off-alignment corner fit")
+    if run_grade is not None and run_grade >= 74.0 and slot_usage:
+        return ("Slot-support corner", "Nickel fit with run-support stress")
+    return ("Outside starter with matchup flexibility", "Press-match / quarters hybrid")
+
+
+def _infer_s_role_and_scheme(
+    *,
+    height_in: int,
+    weight_lb: int,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
+) -> tuple[str, str]:
+    processing = _safe_trait_value(film_subtraits, "processing")
+    range_score = _safe_trait_value(film_subtraits, "range")
+    man_coverage = _safe_trait_value(film_subtraits, "man_coverage")
+    tackling = _safe_trait_value(film_subtraits, "tackling")
+    angles = _safe_trait_value(film_subtraits, "angles")
+    communication = _safe_trait_value(film_subtraits, "communication")
+
+    deep_profile = _avg_defined([processing, range_score, angles])
+    box_profile = _avg_defined([tackling, processing, communication])
+    coverage_profile = _avg_defined([man_coverage, range_score, processing])
+
+    prod = production_context or {}
+    cov_grade = _safe_prod_value(prod, "sg_cov_grade")
+    man_grade = _safe_prod_value(prod, "sg_cov_man_grade")
+    zone_grade = _safe_prod_value(prod, "sg_cov_zone_grade")
+    run_grade = _safe_prod_value(prod, "sg_def_run_grade")
+    pressures = _safe_prod_value(prod, "sg_def_total_pressures")
+    slot_snaps = _safe_prod_value(prod, "sg_slot_cov_snaps")
+    tfl = _safe_prod_value(prod, "sg_def_tackles_for_loss")
+
+    explosive = athletic_score >= 85.0
+    slot_usage = slot_snaps is not None and slot_snaps >= 70.0
+    deep_safety = (deep_profile is not None and deep_profile >= 76.0) or (zone_grade is not None and zone_grade >= 76.0)
+    matchup_safety = (coverage_profile is not None and coverage_profile >= 75.0) or (man_grade is not None and man_grade >= 76.0)
+    box_safety = (box_profile is not None and box_profile >= 75.0) or (run_grade is not None and run_grade >= 76.0)
+    pressure_role = (pressures is not None and pressures >= 4.0) or (tfl is not None and tfl >= 4.0)
+
+    if slot_usage and matchup_safety:
+        return ("Big nickel matchup safety", "Big-nickel / split-safety coverage family")
+    if deep_safety and explosive:
+        return ("Range-first split safety", "Quarters / middle-field-open range fit")
+    if box_safety and pressure_role:
+        return ("Robber/box safety with pressure value", "Sim-pressure / robber rotation family")
+    if matchup_safety:
+        return ("Coverage-adjustment back-end starter", "Split-safety multiplicity")
+    return ("Coverage-adjustment back-end starter", "Split-safety multiplicity")
 
 
 def _infer_qb_role_and_scheme(
@@ -538,6 +910,60 @@ def _infer_role_and_scheme(
             production_context=production_context,
         )
         return role, scheme, ""
+    if position == "WR":
+        role, scheme = _infer_wr_role_and_scheme(
+            height_in=height_in,
+            weight_lb=weight_lb,
+            athletic_score=athletic_score,
+            film_subtraits=film_subtraits,
+            production_context=production_context or {},
+        )
+        return role, scheme, ""
+    if position == "TE":
+        role, scheme = _infer_te_role_and_scheme(
+            height_in=height_in,
+            weight_lb=weight_lb,
+            athletic_score=athletic_score,
+            film_subtraits=film_subtraits,
+            production_context=production_context or {},
+        )
+        return role, scheme, ""
+    if position == "OT":
+        role, scheme = _infer_ot_role_and_scheme(
+            height_in=height_in,
+            weight_lb=weight_lb,
+            athletic_score=athletic_score,
+            film_subtraits=film_subtraits,
+            production_context=production_context or {},
+        )
+        return role, scheme, ""
+    if position == "IOL":
+        role, scheme = _infer_iol_role_and_scheme(
+            height_in=height_in,
+            weight_lb=weight_lb,
+            athletic_score=athletic_score,
+            film_subtraits=film_subtraits,
+            production_context=production_context or {},
+        )
+        return role, scheme, ""
+    if position == "EDGE":
+        role, scheme = _infer_edge_role_and_scheme(
+            height_in=height_in,
+            weight_lb=weight_lb,
+            athletic_score=athletic_score,
+            film_subtraits=film_subtraits,
+            production_context=production_context or {},
+        )
+        return role, scheme, ""
+    if position == "DT":
+        role, scheme = _infer_dt_role_and_scheme(
+            height_in=height_in,
+            weight_lb=weight_lb,
+            athletic_score=athletic_score,
+            film_subtraits=film_subtraits,
+            production_context=production_context or {},
+        )
+        return role, scheme, ""
     if position == "LB":
         return _infer_lb_role_and_scheme(
             height_in=height_in,
@@ -546,6 +972,24 @@ def _infer_role_and_scheme(
             film_subtraits=film_subtraits,
             production_context=production_context or {},
         )
+    if position == "CB":
+        role, scheme = _infer_cb_role_and_scheme(
+            height_in=height_in,
+            weight_lb=weight_lb,
+            athletic_score=athletic_score,
+            film_subtraits=film_subtraits,
+            production_context=production_context or {},
+        )
+        return role, scheme, ""
+    if position == "S":
+        role, scheme = _infer_s_role_and_scheme(
+            height_in=height_in,
+            weight_lb=weight_lb,
+            athletic_score=athletic_score,
+            film_subtraits=film_subtraits,
+            production_context=production_context or {},
+        )
+        return role, scheme, ""
     return (
         ROLE_BY_POS.get(position, "Depth and developmental value"),
         SCHEME_FIT_BY_POS.get(position, "multiple"),
