@@ -113,6 +113,24 @@ def _avg_defined(values: list[Optional[float]]) -> Optional[float]:
     return sum(usable) / len(usable)
 
 
+def _clamp(value: float, lo: float, hi: float) -> float:
+    return max(lo, min(hi, value))
+
+
+def _score_linear(value: Optional[float], lo: float, hi: float) -> Optional[float]:
+    if value is None or hi <= lo:
+        return None
+    scaled = (float(value) - lo) / (hi - lo)
+    return round(_clamp(60.0 + (40.0 * scaled), 60.0, 100.0), 2)
+
+
+def _score_inverse(value: Optional[float], hi_bad: float, lo_good: float) -> Optional[float]:
+    if value is None or hi_bad <= lo_good:
+        return None
+    scaled = (hi_bad - float(value)) / (hi_bad - lo_good)
+    return round(_clamp(60.0 + (40.0 * scaled), 60.0, 100.0), 2)
+
+
 def _infer_lb_archetype(
     *,
     height_in: int,
@@ -280,6 +298,76 @@ def _infer_lb_role_and_scheme(
     if mobile_athlete:
         return ("Run-and-chase WILL backer", "Pursuit-heavy split-safety fit", "off_ball_lb")
     return ("Balanced MIKE/WILL communicator", "Match-zone multiple", "off_ball_lb")
+
+
+def _lb_trait_context_score(
+    *,
+    archetype: str,
+    athletic_score: float,
+    production_context: Mapping[str, object] | None = None,
+) -> Optional[float]:
+    prod = production_context or {}
+    run_grade = _safe_prod_value(prod, "sg_def_run_grade")
+    coverage_grade = _safe_prod_value(prod, "sg_def_coverage_grade", "sg_cov_grade")
+    tackle_grade = _safe_prod_value(prod, "sg_def_tackle_grade")
+    pressures = _safe_prod_value(prod, "sg_def_total_pressures")
+    tfl = _safe_prod_value(prod, "sg_def_tackles_for_loss")
+    rush_signal = _safe_prod_value(prod, "cfb_lb_rush_impact_signal")
+    slot_spt = _safe_prod_value(prod, "sg_slot_cov_snaps_per_target")
+    cov_yps = _safe_prod_value(prod, "sg_cov_yards_per_snap")
+    cov_qbr = _safe_prod_value(prod, "sg_cov_qb_rating_against")
+
+    run_component = _avg_defined(
+        [
+            _score_linear(run_grade, 58.0, 90.0),
+            _score_linear(tackle_grade, 60.0, 92.0),
+            _score_linear(tfl, 2.0, 10.0),
+        ]
+    )
+    coverage_component = _avg_defined(
+        [
+            _score_linear(coverage_grade, 52.0, 90.0),
+            _score_linear(slot_spt, 2.5, 7.5),
+            _score_inverse(cov_yps, 2.0, 0.45),
+            _score_inverse(cov_qbr, 130.0, 55.0),
+        ]
+    )
+    pressure_component = _avg_defined(
+        [
+            _score_linear(pressures, 4.0, 28.0),
+            _score_linear(tfl, 2.0, 12.0),
+            _score_linear(rush_signal, 16.0, 42.0),
+        ]
+    )
+    athletic_component = _clamp(float(athletic_score), 60.0, 95.0)
+
+    if archetype == "coverage_overhang_lb":
+        weights = [
+            (0.42, coverage_component),
+            (0.20, run_component),
+            (0.14, pressure_component),
+            (0.24, athletic_component),
+        ]
+    elif archetype == "hybrid_edge_lb":
+        weights = [
+            (0.40, pressure_component),
+            (0.15, coverage_component),
+            (0.20, run_component),
+            (0.25, athletic_component),
+        ]
+    else:
+        weights = [
+            (0.42, run_component),
+            (0.22, coverage_component),
+            (0.14, pressure_component),
+            (0.22, athletic_component),
+        ]
+
+    usable = [(w, v) for w, v in weights if v is not None]
+    if not usable:
+        return None
+    weight_total = sum(w for w, _ in usable)
+    return round(sum(w * float(v) for w, v in usable) / weight_total, 2)
 
 
 def _infer_rb_role_and_scheme(
@@ -1100,6 +1188,7 @@ def grade_player(
 
     trait_proxy = _trait_proxy_score(position, rank_seed)
     film_eval = score_film_traits(position, film_inputs)
+    lb_trait_context_score: float | None = None
 
     if film_eval["film_trait_score"] is not None:
         film_weight = _film_trait_blend_weight(film_eval["film_trait_coverage"])
@@ -1113,6 +1202,26 @@ def grade_player(
     size = _size_score(position, height_in, weight_lb)
     context = _context_score(rank_seed)
     risk = _risk_penalty(class_year, rank_seed)
+
+    if position == "LB":
+        lb_archetype_seed = _infer_lb_archetype(
+            height_in=height_in,
+            weight_lb=weight_lb,
+            athletic_score=ath,
+            film_subtraits=film_inputs,
+            production_context=production_context or {},
+        )
+        lb_trait_context_score = _lb_trait_context_score(
+            archetype=lb_archetype_seed,
+            athletic_score=ath,
+            production_context=production_context or {},
+        )
+        if lb_trait_context_score is not None:
+            if film_eval["film_trait_score"] is not None:
+                trait = (0.85 * trait) + (0.15 * lb_trait_context_score)
+            else:
+                trait = (0.45 * trait) + (0.55 * lb_trait_context_score)
+
     best_role, best_scheme_fit, lb_archetype = _infer_role_and_scheme(
         position=position,
         height_in=height_in,
@@ -1145,6 +1254,7 @@ def grade_player(
         "film_trait_coverage": round(film_eval["film_trait_coverage"], 3),
         "film_trait_blend_weight": round(film_weight, 3),
         "film_trait_missing_count": film_eval["film_trait_missing_count"],
+        "lb_trait_context_score": round(lb_trait_context_score, 2) if lb_trait_context_score is not None else "",
         "production_score": round(prod, 2),
         "athletic_score": round(ath, 2),
         "size_score": round(size, 2),

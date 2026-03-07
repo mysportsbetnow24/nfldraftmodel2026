@@ -1610,11 +1610,11 @@ def _build_position_lens(
             "structure passing and timing-game stability",
         )
         rows = [r for r in [stress, decision, structure] if r]
-        if stress and stress["pct"] >= 75:
+        if stress and stress["pct"] >= 72:
             tags.append("Pressure Manager")
-        if decision and decision["pct"] >= 74:
+        if decision and decision["pct"] >= 71:
             tags.append("Aggressive Creator")
-        if structure and structure["pct"] >= 75:
+        if structure and structure["pct"] >= 74:
             tags.append("Structure Passer")
     elif pos == "RB":
         title = "RB Three-Down Creator"
@@ -1730,19 +1730,19 @@ def _build_position_lens(
             "pressure utility, box disruption, slot stress response",
         )
         rows = [r for r in [deterrence, disruption, near_ball] if r]
-        if deterrence and deterrence["pct"] >= 75:
+        if deterrence and deterrence["pct"] >= 73:
             tags.append("Target Deterrent")
-        if disruption and disruption["pct"] >= 72:
+        if disruption and disruption["pct"] >= 70:
             tags.append("Ball Disruptor")
         man_pct = pct("sg_cov_man_grade")
         zone_pct = pct("sg_cov_zone_grade")
         if (
             near_ball
-            and near_ball["pct"] >= 62
+            and near_ball["pct"] >= 60
             and man_pct is not None
             and zone_pct is not None
-            and man_pct >= 64
-            and zone_pct >= 64
+            and man_pct >= 62
+            and zone_pct >= 62
         ):
             tags.append("Scheme Translator")
     elif pos in {"OT", "IOL"}:
@@ -2298,6 +2298,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
     pos_metric_values: dict[str, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
     pos_athletic_profile_values: dict[str, list[float]] = defaultdict(list)
     pos_trait_values: dict[str, list[float]] = defaultdict(list)
+    lb_trait_bucket_values: dict[str, list[float]] = defaultdict(list)
     pos_market_values: dict[str, list[float]] = defaultdict(list)
     for row in rows:
         pos = str(row.get("position", "")).strip().upper()
@@ -2309,6 +2310,10 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         trait_score = _safe_float(row.get("trait_score"))
         if trait_score is not None and trait_score > 0:
             pos_trait_values[pos].append(float(trait_score))
+            if pos == "LB":
+                lb_bucket = str(row.get("lb_archetype", "")).strip()
+                if lb_bucket:
+                    lb_trait_bucket_values[lb_bucket].append(float(trait_score))
         consensus_rank_value = _safe_float(row.get("consensus_board_mean_rank"))
         if consensus_rank_value is None or consensus_rank_value <= 0:
             consensus_rank_value = float(_safe_int(row.get("consensus_rank"), 0))
@@ -2344,10 +2349,15 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             pos_athletic_profile_values.get(pos, []),
         ) if athletic_profile_score is not None and athletic_profile_score > 0 else None
         trait_score = _safe_float(row.get("trait_score"))
-        trait_percentile = _pct_rank(
-            float(trait_score),
-            pos_trait_values.get(pos, []),
-        ) if trait_score is not None and trait_score > 0 else None
+        if trait_score is not None and trait_score > 0:
+            if pos == "LB":
+                lb_bucket = str(row.get("lb_archetype", "")).strip()
+                lb_values = lb_trait_bucket_values.get(lb_bucket, [])
+                trait_percentile = _pct_rank(float(trait_score), lb_values if len(lb_values) >= 5 else pos_trait_values.get(pos, []))
+            else:
+                trait_percentile = _pct_rank(float(trait_score), pos_trait_values.get(pos, []))
+        else:
+            trait_percentile = None
         advanced_metric_cards, advanced_metrics, advanced_percentiles = _build_metric_cards(
             row=row,
             position=pos,
