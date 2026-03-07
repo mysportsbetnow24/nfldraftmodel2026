@@ -30,7 +30,7 @@ const topNeeds = (row.top_needs || []) as any[];
 const weakness = (row.weakness_positions || []) as string[];
 const freeAgents = (row.free_agents || []) as any[];
 const freeAgentsFull = (row.free_agents_full || []) as any[];
-const additionalFreeAgents = freeAgentsFull.slice(freeAgents.length);
+const contractWatch = (row.contract_watch || freeAgentsFull.slice(freeAgents.length)) as any[];
 const youngPlayers = (row.young_players_on_rise || []) as any[];
 const depthChart = (row.depth_chart || {}) as any;
 const offense = (depthChart.offense || []) as any[];
@@ -131,9 +131,9 @@ const defenseSlots = ["CB", "S", "DT", "LB", "EDGE"];
 
   <section class="card">
     <h2 class="section-title">Additional Contract Watch</h2>
-    {additionalFreeAgents.length > 0 ? (
+    {contractWatch.length > 0 ? (
       <div class="team-pill-list">
-        {additionalFreeAgents.map((p: any) => (
+        {contractWatch.map((p: any) => (
           <div class="team-pill">
             <div class="depth-player__top">
               <strong>{p.player_name}</strong>

@@ -247,7 +247,7 @@ def _infer_player_id(row: dict, by_exact: dict, by_name_pos: dict, by_name: dict
     return "", ""
 
 
-def _row_matches_expected(expected: dict, row: dict) -> bool:
+def _row_matches_expected(expected: dict, row: dict, *, ignore_school: bool = False) -> bool:
     expected_name = canonical_player_name(expected.get("player_name", ""))
     expected_pos = _norm_pos(expected.get("position", ""))
     expected_school = _norm_school(expected.get("school", ""))
@@ -259,7 +259,7 @@ def _row_matches_expected(expected: dict, row: dict) -> bool:
         return False
     if expected_pos and row_pos and expected_pos != row_pos:
         return False
-    if expected_school and row_school and expected_school != row_school:
+    if not ignore_school and expected_school and row_school and expected_school != row_school:
         return False
     return True
 
@@ -371,7 +371,7 @@ def build() -> None:
             continue
         if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
             continue
-        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row, ignore_school=True):
             continue
         m = metrics_by_pid[pid]
         m.update(
@@ -394,7 +394,7 @@ def build() -> None:
             continue
         if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
             continue
-        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row, ignore_school=True):
             continue
         m = metrics_by_pid[pid]
         if _backfill_fields(
@@ -420,7 +420,7 @@ def build() -> None:
             continue
         if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
             continue
-        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row, ignore_school=True):
             continue
         m = metrics_by_pid[pid]
         for src, dest in [
@@ -440,7 +440,7 @@ def build() -> None:
             continue
         if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
             continue
-        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row, ignore_school=True):
             continue
         m = metrics_by_pid[pid]
         updates = {}
@@ -463,7 +463,7 @@ def build() -> None:
             continue
         if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
             continue
-        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row, ignore_school=True):
             continue
         m = metrics_by_pid[pid]
         for src, dest in [
@@ -481,7 +481,7 @@ def build() -> None:
             continue
         if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
             continue
-        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row, ignore_school=True):
             continue
         m = metrics_by_pid[pid]
         updates = {}
@@ -502,7 +502,7 @@ def build() -> None:
             continue
         if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
             continue
-        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row, ignore_school=True):
             continue
         m = metrics_by_pid[pid]
         for src, dest in [
@@ -521,7 +521,7 @@ def build() -> None:
             continue
         if not _expected_pos_is(expected_by_pid, pid, {"RB"}):
             continue
-        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row, ignore_school=True):
             continue
         m = metrics_by_pid[pid]
         routes = _safe_float(row.get("routes"))
@@ -549,7 +549,7 @@ def build() -> None:
             continue
         if not _expected_pos_is(expected_by_pid, pid, {"RB"}):
             continue
-        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row, ignore_school=True):
             continue
         m = metrics_by_pid[pid]
         routes = _safe_float(row.get("routes"))
@@ -580,7 +580,7 @@ def build() -> None:
             continue
         if not _expected_pos_is(expected_by_pid, pid, {"WR", "TE"}):
             continue
-        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row, ignore_school=True):
             continue
         m = metrics_by_pid[pid]
         targets = _safe_float(row.get("targets"))
@@ -608,7 +608,7 @@ def build() -> None:
             continue
         if not _expected_pos_is(expected_by_pid, pid, {"WR", "TE"}):
             continue
-        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row, ignore_school=True):
             continue
         metrics_by_pid[pid].update(
             {
@@ -623,7 +623,7 @@ def build() -> None:
             continue
         if not _expected_pos_is(expected_by_pid, pid, {"WR", "TE"}):
             continue
-        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row, ignore_school=True):
             continue
         if _backfill_fields(
             metrics_by_pid[pid],
@@ -641,7 +641,7 @@ def build() -> None:
             continue
         if not _expected_pos_is(expected_by_pid, pid, {"OT", "IOL"}):
             continue
-        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row, ignore_school=True):
             continue
         m = metrics_by_pid[pid]
         pressures_allowed = _safe_float(row.get("pressures_allowed"))

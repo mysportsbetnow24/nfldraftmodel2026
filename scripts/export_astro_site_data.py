@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUTS = ROOT / "data" / "outputs"
 ASTRO_DATA = ROOT / "astro-site" / "src" / "data"
 INTERNAL_OUTPUTS = OUTPUTS / "internal"
+MANUAL_SOURCES = ROOT / "data" / "sources" / "manual"
 
 BOARD_CSV = OUTPUTS / "big_board_2026.csv"
 ROUND1_CSV = OUTPUTS / "mock_2026_round1.csv"
@@ -41,6 +42,21 @@ HISTORICAL_DRAFT_REFINED = ROOT / "data" / "sources" / "external" / "historical-
 HISTORICAL_LABELS_LEAGIFY = ROOT / "data" / "processed" / "historical_labels_leagify_2015_2023.csv"
 OWNER_SCOUTING_NOTES_CSV = ROOT / "data" / "sources" / "manual" / "owner_scouting_notes_2026.csv"
 PRODUCTION_SNAPSHOT_OVERRIDES_CSV = ROOT / "data" / "sources" / "manual" / "production_snapshot_overrides_2026.csv"
+PREMIUM_COMP_2024_SOURCES = [
+    MANUAL_SOURCES / "passing_summary_2024.csv",
+    MANUAL_SOURCES / "passing_pressure_2024.csv",
+    MANUAL_SOURCES / "passing_concept_2024.csv",
+    MANUAL_SOURCES / "rushing_summary_2024.csv",
+    MANUAL_SOURCES / "receiving_scheme_2024.csv",
+    MANUAL_SOURCES / "offense_blocking_2024.csv",
+    MANUAL_SOURCES / "pass_rush_summary_2024.csv",
+    MANUAL_SOURCES / "pass_rush_productivity_2024.csv",
+    MANUAL_SOURCES / "run_defense_summary_2024.csv",
+    MANUAL_SOURCES / "defense_summary_2024.csv",
+    MANUAL_SOURCES / "defense_coverage_summary_2024.csv",
+    MANUAL_SOURCES / "defense_coverage_scheme_2024.csv",
+    MANUAL_SOURCES / "slot_coverage_2024.csv",
+]
 
 
 PRODUCTION_METRIC_KEYS = [
@@ -632,7 +648,7 @@ DEFENSE_LANE_SLOT_ORDER_34 = {
 DEFENSE_LANE_SLOT_ORDER_43 = {
     "EDGE": ["LDE", "RDE", "DE", "EDGE", "ED"],
     "DT": ["LDT", "RDT", "DT", "NT", "IDL"],
-    "LB": ["WLB", "MLB", "SLB", "LOLB", "ROLB", "OLB", "ILB", "LB"],
+    "LB": ["WLB", "MLB", "SLB", "ILB", "LB"],
     "CB": ["LCB", "RCB", "NB", "CB"],
     "S": ["FS", "SS", "S", "SAF"],
 }
@@ -906,6 +922,25 @@ def _player_sort_tuple(player: dict, slot_priority: dict[str, int]) -> tuple:
     )
 
 
+def _room_family(position: str) -> str:
+    pos = str(position or "").strip().upper()
+    if pos in {"QB"}:
+        return "QB"
+    if pos in {"RB"}:
+        return "RB"
+    if pos in {"WR", "TE"}:
+        return "RECEIVER"
+    if pos in {"OT", "IOL"}:
+        return "OL"
+    if pos in {"EDGE", "DT"}:
+        return "DL"
+    if pos in {"LB"}:
+        return "LB"
+    if pos in {"CB", "S"}:
+        return "DB"
+    return pos
+
+
 def _canonical_position_score(player: dict, candidate_pos: str) -> float:
     slot = str(player.get("depth_chart_position") or "").strip().upper()
     current_pos = str(player.get("position") or "").strip().upper()
@@ -913,9 +948,33 @@ def _canonical_position_score(player: dict, candidate_pos: str) -> float:
     score = 0.0
 
     if candidate_pos == current_pos:
-        score += 20.0
-    if implied_pos and candidate_pos == implied_pos:
         score += 60.0
+    if implied_pos and candidate_pos == implied_pos:
+        score += 32.0
+
+    current_family = _room_family(current_pos)
+    candidate_family = _room_family(candidate_pos)
+    implied_family = _room_family(implied_pos)
+    if current_family and candidate_family and current_family != candidate_family:
+        score -= 28.0
+    elif current_pos and candidate_pos and current_pos != candidate_pos:
+        score -= 10.0
+    if implied_family and candidate_family and implied_family != candidate_family:
+        score -= 8.0
+    if current_pos == "LB" and candidate_pos == "EDGE":
+        score -= 18.0
+    if current_pos == "EDGE" and candidate_pos == "LB":
+        score -= 14.0
+    if current_pos == "DT" and candidate_pos == "EDGE":
+        score -= 12.0
+    if current_pos == "OT" and candidate_pos == "IOL":
+        score -= 10.0
+    if current_pos == "IOL" and candidate_pos == "OT":
+        score -= 10.0
+    if current_pos == "CB" and candidate_pos == "S":
+        score -= 14.0
+    if current_pos == "S" and candidate_pos == "CB":
+        score -= 14.0
 
     if slot in {"LT", "RT", "LG", "RG", "C", "OC"}:
         score += 12.0
@@ -2073,6 +2132,8 @@ def _build_team_depth_context() -> dict[str, dict]:
                     player_key = _norm_player_key(player.get("player_name", ""))
                     if not player_key or player_key in selected_keys:
                         continue
+                    if str(player.get("position") or "").strip().upper() != pos:
+                        continue
                     selected_players.append(player)
                     selected_keys.add(player_key)
 
@@ -2172,7 +2233,8 @@ def _build_team_depth_context() -> dict[str, dict]:
             [p for p in unique_player_payloads if str(p.get("contract_status_kind") or "").strip() == "unsigned_watch"],
             key=_free_agent_priority,
         )
-        key_free_agents = free_agents[:8]
+        key_free_agents = free_agents[:2]
+        contract_watch = free_agents[2:]
 
         youth = sorted(
             [p for p in unique_player_payloads if _is_rising_young_player(p)],
@@ -2188,6 +2250,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             },
             "free_agents": key_free_agents,
             "free_agents_full": free_agents,
+            "contract_watch": contract_watch,
             "young_players_on_rise": youth,
         }
 
@@ -3049,6 +3112,7 @@ def _position_aware_outcome_score(position_family: str, row: dict) -> float:
 def _load_historical_comp_outcomes() -> dict[tuple[str, int], dict]:
     sources = [HISTORICAL_DRAFT_COMPILATION, HISTORICAL_DRAFT_REFINED, HISTORICAL_LABELS_LEAGIFY]
     outcomes: dict[tuple[str, int], dict] = {}
+    premium_2024_scores = _load_premium_2024_comp_scores()
     for path in sources:
         if not path.exists():
             continue
@@ -3100,6 +3164,7 @@ def _load_historical_comp_outcomes() -> dict[tuple[str, int], dict]:
         payload["second_contract"] = _safe_float(payload.get("second_contract_proxy") or payload.get("second_contract"))
         payload["success_label"] = _safe_float(payload.get("success_label_3yr") or payload.get("success_label"))
         payload["ceiling_label"] = _safe_float(payload.get("ceiling_label"))
+        payload["premium_profile_score"] = premium_2024_scores.get(key, 0.0)
         payload["outcome_score"] = round(outcome_score, 3)
     return outcomes
 
@@ -3198,6 +3263,61 @@ def _load_production_snapshot_overrides() -> dict[str, dict[str, object]]:
             "counting_stat_chips": _parse_manual_counting_stats(row.get("production_counting_stats", "")),
         }
     return out
+
+
+def _load_premium_2024_comp_scores() -> dict[tuple[str, int], float]:
+    field_weights = {
+        "grades_pass": 2.0,
+        "btt_rate": 1.0,
+        "twp_rate": 1.0,
+        "pressure_to_sack_rate": 1.0,
+        "grades_run": 1.5,
+        "elusive_rating": 1.0,
+        "yco_attempt": 1.0,
+        "explosive": 1.0,
+        "yprr": 1.3,
+        "grades_pass_route": 1.7,
+        "man_yprr": 0.8,
+        "zone_yprr": 0.8,
+        "grades_pass_block": 1.8,
+        "grades_run_block": 1.2,
+        "pbe": 1.5,
+        "grades_pass_rush_defense": 1.8,
+        "pass_rush_win_rate": 1.4,
+        "prp": 1.3,
+        "true_pass_set_pass_rush_win_rate": 1.4,
+        "true_pass_set_prp": 1.3,
+        "grades_run_defense": 1.3,
+        "stop_percent": 1.0,
+        "grades_coverage_defense": 1.8,
+        "forced_incompletion_rate": 1.2,
+        "coverage_snaps_per_target": 1.0,
+        "yards_per_coverage_snap": 1.1,
+        "qb_rating_against": 1.1,
+        "man_grades_coverage_defense": 0.8,
+        "zone_grades_coverage_defense": 0.8,
+        "coverage_snaps": 0.5,
+    }
+    scores_by_name: dict[str, float] = defaultdict(float)
+    for path in PREMIUM_COMP_2024_SOURCES:
+        if not path.exists():
+            continue
+        for row in _read_csv(path):
+            player_name = str(row.get("player") or row.get("Player") or "").strip()
+            if not player_name:
+                continue
+            player_key = _norm_comp_identity_key(player_name)
+            if not player_key:
+                continue
+            row_score = 0.0
+            for field, weight in field_weights.items():
+                raw = _safe_float(row.get(field))
+                if raw is None:
+                    continue
+                row_score += weight
+            if row_score > 0:
+                scores_by_name[player_key] += row_score
+    return {(name, 2025): round(score, 3) for name, score in scores_by_name.items()}
 
 
 def _needs_score(row: dict) -> float:
@@ -3467,6 +3587,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                     "similarity": round(blend_score, 3),
                     "year": slot.get("year"),
                     "outcome_score": outcome.get("outcome_score"),
+                    "premium_profile_score": outcome.get("premium_profile_score"),
                 }
             )
 
@@ -3491,6 +3612,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 outcome_pool,
                 key=lambda r: (
                     float(r.get("outcome_score") or 0.0),
+                    float(r.get("premium_profile_score") or 0.0),
                     -(r.get("similarity") or 0.0),
                 ),
             )
