@@ -251,8 +251,8 @@
       3,
       3,
       3,
-      3,
-      3,
+      2,
+      2,
       2,
       2,
       2
@@ -419,8 +419,8 @@
       4,
       4,
       4,
-      4,
-      4,
+      3,
+      3,
       3,
       3,
       3
@@ -588,8 +588,8 @@
       5,
       5,
       5,
-      5,
-      5,
+      4,
+      4,
       4,
       4,
       4
@@ -810,8 +810,8 @@
       6,
       6,
       6,
-      6,
-      6,
+      5,
+      5,
       5,
       5,
       5
@@ -979,8 +979,8 @@
       7,
       7,
       7,
-      7,
-      7,
+      6,
+      6,
       6,
       6,
       6
@@ -1084,8 +1084,8 @@
       2,
       2,
       2,
-      2,
-      2,
+      7,
+      7,
       7,
       7,
       7
@@ -2715,8 +2715,8 @@
     "ras_estimate": 9.65,
     "confidence_score": 86.92,
     "uncertainty_score": 13.08,
-    "best_role": "Range-first split safety",
-    "best_scheme_fit": "Quarters / middle-field-open range fit",
+    "best_role": "Coverage eraser safety",
+    "best_scheme_fit": "Split-safety eraser / disguise-heavy family",
     "lb_archetype": "",
     "rank_driver_summary": "score=89.87; prior_signal=77.5; prior:-5.12 | athletic:+2.79 | production:+1.09 | trait:-0.99",
     "top_rank_driver": "athletic",
@@ -2725,8 +2725,8 @@
       16,
       16,
       16,
-      16,
-      16,
+      15,
+      15,
       15,
       15,
       15
@@ -2907,11 +2907,11 @@
       "year": 2006
     },
     "comp_confidence": "C",
-    "scouting_report_summary": "Dillon Thieneman (S, Oregon) carries a 89.87 model grade with a current Round 1-2 projection. Current board slot: 15. Primary NFL pathway: Range-first split safety in Quarters / middle-field-open range fit. instant starter profile; eliminates explosives with range and communication. Seed rank 190 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
-    "scouting_why_he_wins": "- Usage fit: Range-first split safety within Quarters / middle-field-open range fit.\n- Film translation comes from range plus communication: rotate on time, overlap windows, and close space with controlled tackling angles.\n- Model + film note: instant starter profile; eliminates explosives with range and communication. Seed rank 190 indicates current market confidence with developmental upside still available.",
-    "scouting_primary_concerns": "- S projection risk is driven by range/transition speed and ball-finish consistency in split-field work.\n- Role stress test: value is strongest in range-first split safety; projection gets thinner if usage expands too far outside that lane early.\n- Communication and rotation timing must stay precise to avoid coverage busts in split-field structures.",
+    "scouting_report_summary": "Dillon Thieneman (S, Oregon) carries a 89.87 model grade with a current Round 1-2 projection. Current board slot: 15. Primary NFL pathway: Coverage eraser safety in Split-safety eraser / disguise-heavy family. instant starter profile; eliminates explosives with range and communication. Seed rank 190 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
+    "scouting_why_he_wins": "- Usage fit: Coverage eraser safety within Split-safety eraser / disguise-heavy family.\n- Film translation comes from range plus communication: rotate on time, overlap windows, and close space with controlled tackling angles.\n- Model + film note: instant starter profile; eliminates explosives with range and communication. Seed rank 190 indicates current market confidence with developmental upside still available.",
+    "scouting_primary_concerns": "- S projection risk is driven by range/transition speed and ball-finish consistency in split-field work.\n- Role stress test: value is strongest in coverage eraser safety; projection gets thinner if usage expands too far outside that lane early.\n- Communication and rotation timing must stay precise to avoid coverage busts in split-field structures.",
     "scouting_production_snapshot": "PFF grade 91.0\nStat context: INT 2; PBUs 5; tackles 92; TFL 4",
-    "scouting_role_projection": "Best early team fit: MIA. Scheme path: Quarters / middle-field-open range fit. Expected early deployment: Range-first split safety. For film-heavy evaluation: this role asks for rotation versatility, overlap range, and communication that prevents explosive busts. Historical combine comp: Xavier Watts (2025), athletic-profile match 93.87%.",
+    "scouting_role_projection": "Best early team fit: MIA. Scheme path: Split-safety eraser / disguise-heavy family. Expected early deployment: Coverage eraser safety. For film-heavy evaluation: this role asks for rotation versatility, overlap range, and communication that prevents explosive busts. Historical combine comp: Xavier Watts (2025), athletic-profile match 93.87%.",
     "player_report_url": "/players/dillon-thieneman"
   },
   {
@@ -2945,8 +2945,8 @@
       17,
       17,
       17,
-      17,
-      17,
+      16,
+      16,
       16,
       16,
       16
@@ -3165,8 +3165,8 @@
       18,
       18,
       18,
-      18,
-      18,
+      17,
+      17,
       17,
       17,
       17
@@ -3374,8 +3374,8 @@
       19,
       19,
       19,
-      19,
-      19,
+      18,
+      18,
       18,
       18,
       18
@@ -3595,8 +3595,8 @@
       20,
       20,
       20,
-      20,
-      20,
+      19,
+      19,
       19,
       19,
       19
@@ -3709,8 +3709,8 @@
       21,
       21,
       21,
-      21,
-      21,
+      20,
+      20,
       20,
       20,
       20
@@ -3875,8 +3875,8 @@
       22,
       22,
       22,
-      22,
-      22,
+      21,
+      21,
       21,
       21,
       21
@@ -4043,8 +4043,8 @@
       15,
       15,
       15,
-      15,
-      15,
+      22,
+      22,
       22,
       22,
       22
@@ -5094,8 +5094,8 @@
       28,
       28,
       28,
-      28,
-      28,
+      27,
+      27,
       27,
       27,
       27
@@ -5277,8 +5277,8 @@
       29,
       29,
       29,
-      29,
-      29,
+      28,
+      28,
       28,
       28,
       28
@@ -5495,8 +5495,8 @@
       30,
       30,
       30,
-      30,
-      30,
+      29,
+      29,
       29,
       29,
       29
@@ -5678,8 +5678,8 @@
       31,
       31,
       31,
-      31,
-      31,
+      30,
+      30,
       30,
       30,
       30
@@ -5890,8 +5890,8 @@
       32,
       32,
       32,
-      32,
-      32,
+      31,
+      31,
       31,
       31,
       31
@@ -6101,8 +6101,8 @@
       27,
       27,
       27,
-      27,
-      27,
+      32,
+      32,
       32,
       32,
       32
@@ -7680,8 +7680,8 @@
       41,
       41,
       41,
-      41,
-      41,
+      40,
+      40,
       40,
       40,
       40
@@ -7898,8 +7898,8 @@
       42,
       42,
       42,
-      42,
-      42,
+      41,
+      41,
       41,
       41,
       41
@@ -8111,8 +8111,8 @@
       40,
       40,
       40,
-      40,
-      40,
+      42,
+      42,
       42,
       42,
       42
@@ -9483,8 +9483,8 @@
       50,
       50,
       50,
-      50,
-      50,
+      49,
+      49,
       49,
       49,
       49
@@ -9695,8 +9695,8 @@
       51,
       51,
       51,
-      51,
-      51,
+      50,
+      50,
       50,
       50,
       50
@@ -9915,8 +9915,8 @@
       52,
       52,
       52,
-      52,
-      52,
+      51,
+      51,
       51,
       51,
       51
@@ -10097,8 +10097,8 @@
       53,
       53,
       53,
-      53,
-      53,
+      52,
+      52,
       52,
       52,
       52
@@ -10172,8 +10172,8 @@
       54,
       54,
       54,
-      54,
-      54,
+      53,
+      53,
       53,
       53,
       53
@@ -10392,8 +10392,8 @@
       49,
       49,
       49,
-      49,
-      49,
+      54,
+      54,
       54,
       54,
       54
@@ -10997,8 +10997,8 @@
       58,
       58,
       58,
-      58,
-      58,
+      57,
+      57,
       57,
       57,
       57
@@ -11207,16 +11207,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.06,
     "rank_history": [
-      60,
       59,
       59,
       59,
-      59,
+      58,
+      58,
       58,
       58,
       58
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 81.8,
@@ -11411,23 +11411,23 @@
     "ras_estimate": 8.64,
     "confidence_score": 51.75,
     "uncertainty_score": 48.25,
-    "best_role": "Outside starter with matchup flexibility",
-    "best_scheme_fit": "Press-match / quarters hybrid",
+    "best_role": "Outside matchup corner",
+    "best_scheme_fit": "Press-match / quarters travel-capable fit",
     "lb_archetype": "",
     "rank_driver_summary": "score=83.88; prior_signal=71.33; prior:-2.27 | trait:-2.18 | athletic:+1.40 | guardrail:-0.79",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.18,
     "rank_history": [
+      60,
+      60,
+      60,
       59,
-      60,
-      60,
-      60,
-      60,
+      59,
       59,
       59,
       59
     ],
-    "rank_move_window": 0,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 81.0,
@@ -11603,11 +11603,11 @@
       "year": 2012
     },
     "comp_confidence": "A",
-    "scouting_report_summary": "Davison Igbinosun (CB, Ohio State) carries a 83.88 model grade with a current Round 3-4 projection. Current board slot: 59. Primary NFL pathway: Outside starter with matchup flexibility in Press-match / quarters hybrid. early contributor profile; matches routes with disciplined leverage. Seed rank 51 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
-    "scouting_why_he_wins": "- Usage fit: Outside starter with matchup flexibility within Press-match / quarters hybrid.\n- Film translation comes from coverage mechanics: maintain leverage, transition cleanly, and finish at the catch point without panic.\n- Model + film note: early contributor profile; matches routes with disciplined leverage. Seed rank 51 indicates current market confidence with developmental upside still available.",
-    "scouting_primary_concerns": "- CB projection risk is driven by speed/leverage recovery and ball production at the catch point.\n- Role stress test: value is strongest in outside starter with matchup flexibility; projection gets thinner if usage expands too far outside that lane early.\n- Eye discipline through route breaks must tighten to limit transition losses against pro route pacing.",
+    "scouting_report_summary": "Davison Igbinosun (CB, Ohio State) carries a 83.88 model grade with a current Round 3-4 projection. Current board slot: 59. Primary NFL pathway: Outside matchup corner in Press-match / quarters travel-capable fit. early contributor profile; matches routes with disciplined leverage. Seed rank 51 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
+    "scouting_why_he_wins": "- Usage fit: Outside matchup corner within Press-match / quarters travel-capable fit.\n- Film translation comes from coverage mechanics: maintain leverage, transition cleanly, and finish at the catch point without panic.\n- Model + film note: early contributor profile; matches routes with disciplined leverage. Seed rank 51 indicates current market confidence with developmental upside still available.",
+    "scouting_primary_concerns": "- CB projection risk is driven by speed/leverage recovery and ball production at the catch point.\n- Role stress test: value is strongest in outside matchup corner; projection gets thinner if usage expands too far outside that lane early.\n- Eye discipline through route breaks must tighten to limit transition losses against pro route pacing.",
     "scouting_production_snapshot": "PFF grade 81.5\nStat context: INT 2; PBUs 6; tackles 52; TFL 0",
-    "scouting_role_projection": "Best early team fit: JAX. Scheme path: Press-match / quarters hybrid. Expected early deployment: Outside starter with matchup flexibility. For film-heavy evaluation: this role asks for leverage consistency across man/zone and reliable tackle finish when targeted in run support. Historical combine comp: Aaron Ross (2007), athletic-profile match 93.01%.",
+    "scouting_role_projection": "Best early team fit: JAX. Scheme path: Press-match / quarters travel-capable fit. Expected early deployment: Outside matchup corner. For film-heavy evaluation: this role asks for leverage consistency across man/zone and reliable tackle finish when targeted in run support. Historical combine comp: Aaron Ross (2007), athletic-profile match 93.01%.",
     "player_report_url": "/players/davison-igbinosun"
   },
   {
@@ -11641,8 +11641,8 @@
       61,
       61,
       61,
-      61,
-      61,
+      60,
+      60,
       60,
       60,
       60
@@ -11850,8 +11850,8 @@
       62,
       62,
       62,
-      62,
-      62,
+      61,
+      61,
       61,
       61,
       61
@@ -11964,8 +11964,8 @@
       64,
       64,
       64,
-      64,
-      64,
+      62,
+      62,
       62,
       62,
       62
@@ -12184,8 +12184,8 @@
       57,
       57,
       57,
-      57,
-      57,
+      63,
+      63,
       63,
       63,
       63
@@ -12404,8 +12404,8 @@
       63,
       63,
       63,
-      63,
-      63,
+      64,
+      64,
       64,
       64,
       64
@@ -12469,8 +12469,8 @@
     "ras_estimate": 8.8,
     "confidence_score": 58.59,
     "uncertainty_score": 41.41,
-    "best_role": "Outside starter with matchup flexibility",
-    "best_scheme_fit": "Press-match / quarters hybrid",
+    "best_role": "Outside matchup corner",
+    "best_scheme_fit": "Press-match / quarters travel-capable fit",
     "lb_archetype": "",
     "rank_driver_summary": "score=83.25; prior_signal=67.48; prior:-3.55 | trait:-2.19 | athletic:+1.81 | guardrail:-0.95",
     "top_rank_driver": "trait",
@@ -12661,11 +12661,11 @@
       "year": 2020
     },
     "comp_confidence": "A",
-    "scouting_report_summary": "Chandler Rivers (CB, Duke) carries a 83.25 model grade with a current Round 3-4 projection. Current board slot: 65. Primary NFL pathway: Outside starter with matchup flexibility in Press-match / quarters hybrid. early contributor profile; matches routes with disciplined leverage. Seed rank 52 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
-    "scouting_why_he_wins": "- Usage fit: Outside starter with matchup flexibility within Press-match / quarters hybrid.\n- Film translation comes from coverage mechanics: maintain leverage, transition cleanly, and finish at the catch point without panic.\n- Model + film note: early contributor profile; matches routes with disciplined leverage. Seed rank 52 indicates current market confidence with developmental upside still available.",
-    "scouting_primary_concerns": "- CB projection risk is driven by speed/leverage recovery and ball production at the catch point.\n- Role stress test: value is strongest in outside starter with matchup flexibility; projection gets thinner if usage expands too far outside that lane early.\n- Eye discipline through route breaks must tighten to limit transition losses against pro route pacing.",
+    "scouting_report_summary": "Chandler Rivers (CB, Duke) carries a 83.25 model grade with a current Round 3-4 projection. Current board slot: 65. Primary NFL pathway: Outside matchup corner in Press-match / quarters travel-capable fit. early contributor profile; matches routes with disciplined leverage. Seed rank 52 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
+    "scouting_why_he_wins": "- Usage fit: Outside matchup corner within Press-match / quarters travel-capable fit.\n- Film translation comes from coverage mechanics: maintain leverage, transition cleanly, and finish at the catch point without panic.\n- Model + film note: early contributor profile; matches routes with disciplined leverage. Seed rank 52 indicates current market confidence with developmental upside still available.",
+    "scouting_primary_concerns": "- CB projection risk is driven by speed/leverage recovery and ball production at the catch point.\n- Role stress test: value is strongest in outside matchup corner; projection gets thinner if usage expands too far outside that lane early.\n- Eye discipline through route breaks must tighten to limit transition losses against pro route pacing.",
     "scouting_production_snapshot": "PFF grade 79.2\nStat context: INT 2; PBUs 8; tackles 59; TFL 4",
-    "scouting_role_projection": "Best early team fit: JAX. Scheme path: Press-match / quarters hybrid. Expected early deployment: Outside starter with matchup flexibility. For film-heavy evaluation: this role asks for leverage consistency across man/zone and reliable tackle finish when targeted in run support. Historical combine comp: Scotty McGee (2010), athletic-profile match 93.8%.",
+    "scouting_role_projection": "Best early team fit: JAX. Scheme path: Press-match / quarters travel-capable fit. Expected early deployment: Outside matchup corner. For film-heavy evaluation: this role asks for leverage consistency across man/zone and reliable tackle finish when targeted in run support. Historical combine comp: Scotty McGee (2010), athletic-profile match 93.8%.",
     "player_report_url": "/players/chandler-rivers"
   },
   {
@@ -14162,8 +14162,8 @@
       75,
       75,
       75,
-      75,
-      75,
+      74,
+      74,
       74,
       74,
       74
@@ -14380,8 +14380,8 @@
       76,
       76,
       76,
-      76,
-      76,
+      75,
+      75,
       75,
       75,
       75
@@ -14598,8 +14598,8 @@
       77,
       77,
       77,
-      77,
-      77,
+      76,
+      76,
       76,
       76,
       76
@@ -14673,8 +14673,8 @@
       79,
       79,
       79,
-      79,
-      79,
+      77,
+      77,
       77,
       77,
       77
@@ -14893,8 +14893,8 @@
       80,
       80,
       80,
-      80,
-      80,
+      78,
+      78,
       78,
       78,
       78
@@ -15114,8 +15114,8 @@
       74,
       74,
       74,
-      74,
-      74,
+      79,
+      79,
       79,
       79,
       79
@@ -15334,8 +15334,8 @@
       81,
       81,
       81,
-      81,
-      81,
+      80,
+      80,
       80,
       80,
       80
@@ -15409,8 +15409,8 @@
       82,
       82,
       82,
-      82,
-      82,
+      81,
+      81,
       81,
       81,
       81
@@ -15629,8 +15629,8 @@
       83,
       83,
       83,
-      83,
-      83,
+      82,
+      82,
       82,
       82,
       82
@@ -15734,8 +15734,8 @@
       84,
       84,
       84,
-      84,
-      84,
+      83,
+      83,
       83,
       83,
       83
@@ -15954,8 +15954,8 @@
       78,
       78,
       78,
-      78,
-      78,
+      84,
+      84,
       84,
       84,
       84
@@ -20506,8 +20506,8 @@
       110,
       110,
       110,
-      110,
-      110,
+      109,
+      109,
       109,
       109,
       109
@@ -20718,8 +20718,8 @@
       111,
       111,
       111,
-      111,
-      111,
+      110,
+      110,
       110,
       110,
       110
@@ -20921,8 +20921,8 @@
       112,
       112,
       112,
-      112,
-      112,
+      111,
+      111,
       111,
       111,
       111
@@ -21141,8 +21141,8 @@
       113,
       113,
       113,
-      113,
-      113,
+      112,
+      112,
       112,
       112,
       112
@@ -21309,8 +21309,8 @@
       114,
       114,
       114,
-      114,
-      114,
+      113,
+      113,
       113,
       113,
       113
@@ -21518,8 +21518,8 @@
       115,
       115,
       115,
-      115,
-      115,
+      114,
+      114,
       114,
       114,
       114
@@ -21623,8 +21623,8 @@
       109,
       109,
       109,
-      109,
-      109,
+      115,
+      115,
       115,
       115,
       115
@@ -22372,7 +22372,7 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -0.45,
     "rank_history": [
-      120,
+      119,
       119,
       119,
       119,
@@ -22381,7 +22381,7 @@
       119,
       119
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 82.7,
@@ -22541,7 +22541,7 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.25,
     "rank_history": [
-      121,
+      120,
       120,
       120,
       120,
@@ -22550,7 +22550,7 @@
       120,
       120
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 79.4,
@@ -22707,7 +22707,7 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.53,
     "rank_history": [
-      119,
+      121,
       121,
       121,
       121,
@@ -22716,7 +22716,7 @@
       121,
       121
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 81.5,
@@ -23716,7 +23716,7 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.01,
     "rank_history": [
-      127,
+      126,
       126,
       126,
       126,
@@ -23725,7 +23725,7 @@
       126,
       126
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -23791,7 +23791,7 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.53,
     "rank_history": [
-      128,
+      127,
       127,
       127,
       127,
@@ -23800,7 +23800,7 @@
       127,
       127
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 96.8,
@@ -23959,7 +23959,7 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.71,
     "rank_history": [
-      126,
+      128,
       128,
       128,
       128,
@@ -23968,7 +23968,7 @@
       128,
       128
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 83.5,
@@ -24179,7 +24179,7 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 0.98,
     "rank_history": [
-      130,
+      129,
       129,
       129,
       129,
@@ -24188,7 +24188,7 @@
       129,
       129
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 61.9,
@@ -24397,7 +24397,7 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.02,
     "rank_history": [
-      131,
+      130,
       130,
       130,
       130,
@@ -24406,7 +24406,7 @@
       130,
       130
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 80.0,
@@ -24615,7 +24615,7 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.44,
     "rank_history": [
-      129,
+      131,
       131,
       131,
       131,
@@ -24624,7 +24624,7 @@
       131,
       131
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 76.5,
@@ -25491,7 +25491,7 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.0,
     "rank_history": [
-      136,
+      135,
       135,
       135,
       135,
@@ -25500,7 +25500,7 @@
       135,
       135
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_db_int": 4.0,
@@ -25587,7 +25587,7 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      135,
+      136,
       136,
       136,
       136,
@@ -25596,7 +25596,7 @@
       136,
       136
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 68.5,
@@ -30378,7 +30378,7 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.2,
     "rank_history": [
-      165,
+      164,
       164,
       164,
       164,
@@ -30387,7 +30387,7 @@
       164,
       164
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 83.1,
@@ -30590,7 +30590,7 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -5.28,
     "rank_history": [
-      164,
+      165,
       165,
       165,
       165,
@@ -30599,7 +30599,7 @@
       165,
       165
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 77.0,
@@ -32360,7 +32360,7 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.34,
     "rank_history": [
-      175,
+      174,
       174,
       174,
       174,
@@ -32369,7 +32369,7 @@
       174,
       174
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_wrte_rec": 39.0,
@@ -32465,7 +32465,7 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.33,
     "rank_history": [
-      174,
+      175,
       175,
       175,
       175,
@@ -32474,7 +32474,7 @@
       175,
       175
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 76.5,
@@ -33243,7 +33243,7 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      180,
+      179,
       179,
       179,
       179,
@@ -33252,7 +33252,7 @@
       179,
       179
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 62.8,
@@ -33423,7 +33423,7 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.41,
     "rank_history": [
-      181,
+      180,
       180,
       180,
       180,
@@ -33432,7 +33432,7 @@
       180,
       180
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 73.0,
@@ -33596,14 +33596,14 @@
     "ras_estimate": 0.0,
     "confidence_score": 57.44,
     "uncertainty_score": 42.56,
-    "best_role": "Outside starter with matchup flexibility",
-    "best_scheme_fit": "Press-match / quarters hybrid",
+    "best_role": "Outside matchup corner",
+    "best_scheme_fit": "Press-match / quarters travel-capable fit",
     "lb_archetype": "",
     "rank_driver_summary": "score=76.12; prior_signal=30.17; prior:-11.10 | athletic:-3.04 | guardrail:-2.75 | trait:-1.49",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.04,
     "rank_history": [
-      179,
+      181,
       181,
       181,
       181,
@@ -33612,7 +33612,7 @@
       181,
       181
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 80.0,
@@ -33750,11 +33750,11 @@
       "year": 2022
     },
     "comp_confidence": "C",
-    "scouting_report_summary": "Andre Fuller (CB, Toledo) carries a 76.12 model grade with a current Round 4-5 projection. Current board slot: 181. Primary NFL pathway: Outside starter with matchup flexibility in Press-match / quarters hybrid. developmental contributor profile; matches routes with disciplined leverage. Seed rank 212 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
-    "scouting_why_he_wins": "- Usage fit: Outside starter with matchup flexibility within Press-match / quarters hybrid.\n- Film translation comes from coverage mechanics: maintain leverage, transition cleanly, and finish at the catch point without panic.\n- Model + film note: developmental contributor profile; matches routes with disciplined leverage. Seed rank 212 indicates current market confidence with developmental upside still available.",
-    "scouting_primary_concerns": "- CB projection risk is driven by speed/leverage recovery and ball production at the catch point.\n- Role stress test: value is strongest in outside starter with matchup flexibility; projection gets thinner if usage expands too far outside that lane early.\n- Eye discipline through route breaks must tighten to limit transition losses against pro route pacing.",
+    "scouting_report_summary": "Andre Fuller (CB, Toledo) carries a 76.12 model grade with a current Round 4-5 projection. Current board slot: 181. Primary NFL pathway: Outside matchup corner in Press-match / quarters travel-capable fit. developmental contributor profile; matches routes with disciplined leverage. Seed rank 212 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
+    "scouting_why_he_wins": "- Usage fit: Outside matchup corner within Press-match / quarters travel-capable fit.\n- Film translation comes from coverage mechanics: maintain leverage, transition cleanly, and finish at the catch point without panic.\n- Model + film note: developmental contributor profile; matches routes with disciplined leverage. Seed rank 212 indicates current market confidence with developmental upside still available.",
+    "scouting_primary_concerns": "- CB projection risk is driven by speed/leverage recovery and ball production at the catch point.\n- Role stress test: value is strongest in outside matchup corner; projection gets thinner if usage expands too far outside that lane early.\n- Eye discipline through route breaks must tighten to limit transition losses against pro route pacing.",
     "scouting_production_snapshot": "PFF grade 82.6",
-    "scouting_role_projection": "Best early team fit: JAX. Scheme path: Press-match / quarters hybrid. Expected early deployment: Outside starter with matchup flexibility. For film-heavy evaluation: this role asks for leverage consistency across man/zone and reliable tackle finish when targeted in run support. Historical combine comp: Cooper DeJean (2024), athletic-profile match 93.66%.",
+    "scouting_role_projection": "Best early team fit: JAX. Scheme path: Press-match / quarters travel-capable fit. Expected early deployment: Outside matchup corner. For film-heavy evaluation: this role asks for leverage consistency across man/zone and reliable tackle finish when targeted in run support. Historical combine comp: Cooper DeJean (2024), athletic-profile match 93.66%.",
     "player_report_url": "/players/andre-fuller"
   },
   {
@@ -36667,8 +36667,8 @@
       204,
       204,
       204,
-      204,
-      204,
+      199,
+      199,
       199,
       199,
       199
@@ -36887,8 +36887,8 @@
       199,
       199,
       199,
-      199,
-      199,
+      200,
+      200,
       200,
       200,
       200
@@ -37096,8 +37096,8 @@
       200,
       200,
       200,
-      200,
-      200,
+      201,
+      201,
       201,
       201,
       201
@@ -37314,8 +37314,8 @@
       201,
       201,
       201,
-      201,
-      201,
+      202,
+      202,
       202,
       202,
       202
@@ -37494,8 +37494,8 @@
       202,
       202,
       202,
-      202,
-      202,
+      203,
+      203,
       203,
       203,
       203
@@ -37674,8 +37674,8 @@
       203,
       203,
       203,
-      203,
-      203,
+      204,
+      204,
       204,
       204,
       204
@@ -37892,8 +37892,8 @@
       206,
       206,
       206,
-      206,
-      206,
+      205,
+      205,
       205,
       205,
       205
@@ -38112,8 +38112,8 @@
       209,
       209,
       209,
-      209,
-      209,
+      206,
+      206,
       206,
       206,
       206
@@ -38292,8 +38292,8 @@
       205,
       205,
       205,
-      205,
-      205,
+      207,
+      207,
       207,
       207,
       207
@@ -38472,8 +38472,8 @@
       207,
       207,
       207,
-      207,
-      207,
+      208,
+      208,
       208,
       208,
       208
@@ -38681,8 +38681,8 @@
       208,
       208,
       208,
-      208,
-      208,
+      209,
+      209,
       209,
       209,
       209
@@ -38753,16 +38753,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.2,
     "rank_history": [
-      218,
       219,
       219,
       219,
-      219,
+      210,
+      210,
       210,
       210,
       210
     ],
-    "rank_move_window": 8,
+    "rank_move_window": 9,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 75.9,
@@ -38936,8 +38936,8 @@
       210,
       210,
       210,
-      210,
-      210,
+      211,
+      211,
       211,
       211,
       211
@@ -39089,16 +39089,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
+      211,
+      211,
+      211,
       212,
-      211,
-      211,
-      211,
-      211,
+      212,
       212,
       212,
       212
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -39164,16 +39164,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.28,
     "rank_history": [
+      212,
+      212,
+      212,
       213,
-      212,
-      212,
-      212,
-      212,
+      213,
       213,
       213,
       213
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 58.0,
@@ -39382,16 +39382,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.31,
     "rank_history": [
-      211,
       213,
       213,
       213,
-      213,
+      214,
+      214,
       214,
       214,
       214
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 77.7,
@@ -39565,8 +39565,8 @@
       214,
       214,
       214,
-      214,
-      214,
+      215,
+      215,
       215,
       215,
       215
@@ -39733,8 +39733,8 @@
       215,
       215,
       215,
-      215,
-      215,
+      216,
+      216,
       216,
       216,
       216
@@ -39953,8 +39953,8 @@
       216,
       216,
       216,
-      216,
-      216,
+      217,
+      217,
       217,
       217,
       217
@@ -40171,8 +40171,8 @@
       217,
       217,
       217,
-      217,
-      217,
+      218,
+      218,
       218,
       218,
       218
@@ -40336,16 +40336,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.41,
     "rank_history": [
+      218,
+      218,
+      218,
       219,
-      218,
-      218,
-      218,
-      218,
+      219,
       219,
       219,
       219
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 67.4,
@@ -40548,8 +40548,8 @@
       221,
       221,
       221,
-      221,
-      221,
+      220,
+      220,
       220,
       220,
       220
@@ -40728,8 +40728,8 @@
       222,
       222,
       222,
-      222,
-      222,
+      221,
+      221,
       221,
       221,
       221
@@ -40910,8 +40910,8 @@
       223,
       223,
       223,
-      223,
-      223,
+      222,
+      222,
       222,
       222,
       222
@@ -41092,8 +41092,8 @@
       224,
       224,
       224,
-      224,
-      224,
+      223,
+      223,
       223,
       223,
       223
@@ -41206,8 +41206,8 @@
       220,
       220,
       220,
-      220,
-      220,
+      224,
+      224,
       224,
       224,
       224
@@ -41841,7 +41841,7 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.47,
     "rank_history": [
-      228,
+      227,
       227,
       227,
       227,
@@ -41850,7 +41850,7 @@
       227,
       227
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 72.0,
@@ -42059,7 +42059,7 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.23,
     "rank_history": [
-      229,
+      228,
       228,
       228,
       228,
@@ -42068,7 +42068,7 @@
       228,
       228
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 83.5,
@@ -42220,14 +42220,14 @@
     "ras_estimate": 0.0,
     "confidence_score": 61.22,
     "uncertainty_score": 38.78,
-    "best_role": "Coverage-adjustment back-end starter",
-    "best_scheme_fit": "Split-safety multiplicity",
+    "best_role": "Coverage eraser safety",
+    "best_scheme_fit": "Split-safety eraser / disguise-heavy family",
     "lb_archetype": "",
     "rank_driver_summary": "score=73.72; prior_signal=40.73; athletic:-4.73 | prior:-4.35 | trait:-3.49 | guardrail:-2.50",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -4.35,
     "rank_history": [
-      227,
+      229,
       229,
       229,
       229,
@@ -42236,7 +42236,7 @@
       229,
       229
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 90.8,
@@ -42410,11 +42410,11 @@
       "year": 2002
     },
     "comp_confidence": "B",
-    "scouting_report_summary": "Bishop Fitzgerald (S, USC Trojans) carries a 73.72 model grade with a current Round 5-6 projection. Current board slot: 229. Primary NFL pathway: Coverage-adjustment back-end starter in Split-safety multiplicity. developmental contributor profile; eliminates explosives with range and communication. Seed rank 165 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
-    "scouting_why_he_wins": "- Usage fit: Coverage-adjustment back-end starter within Split-safety multiplicity.\n- Film translation comes from range plus communication: rotate on time, overlap windows, and close space with controlled tackling angles.\n- Model + film note: developmental contributor profile; eliminates explosives with range and communication. Seed rank 165 indicates current market confidence with developmental upside still available.",
-    "scouting_primary_concerns": "- S projection risk is driven by range/transition speed and ball-finish consistency in split-field work.\n- Role stress test: value is strongest in coverage-adjustment back-end starter; projection gets thinner if usage expands too far outside that lane early.\n- Communication and rotation timing must stay precise to avoid coverage busts in split-field structures.",
+    "scouting_report_summary": "Bishop Fitzgerald (S, USC Trojans) carries a 73.72 model grade with a current Round 5-6 projection. Current board slot: 229. Primary NFL pathway: Coverage eraser safety in Split-safety eraser / disguise-heavy family. developmental contributor profile; eliminates explosives with range and communication. Seed rank 165 indicates current market confidence with developmental upside still available. How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.",
+    "scouting_why_he_wins": "- Usage fit: Coverage eraser safety within Split-safety eraser / disguise-heavy family.\n- Film translation comes from range plus communication: rotate on time, overlap windows, and close space with controlled tackling angles.\n- Model + film note: developmental contributor profile; eliminates explosives with range and communication. Seed rank 165 indicates current market confidence with developmental upside still available.",
+    "scouting_primary_concerns": "- S projection risk is driven by range/transition speed and ball-finish consistency in split-field work.\n- Role stress test: value is strongest in coverage eraser safety; projection gets thinner if usage expands too far outside that lane early.\n- Communication and rotation timing must stay precise to avoid coverage busts in split-field structures.",
     "scouting_production_snapshot": "PFF grade 90.7\nStat context: INT 5; PBUs 3; tackles 51; TFL 2",
-    "scouting_role_projection": "Best early team fit: MIA. Scheme path: Split-safety multiplicity. Expected early deployment: Coverage-adjustment back-end starter. For film-heavy evaluation: this role asks for rotation versatility, overlap range, and communication that prevents explosive busts. Historical combine comp: Jordan Haden (2015), athletic-profile match 97.9%.",
+    "scouting_role_projection": "Best early team fit: MIA. Scheme path: Split-safety eraser / disguise-heavy family. Expected early deployment: Coverage eraser safety. For film-heavy evaluation: this role asks for rotation versatility, overlap range, and communication that prevents explosive busts. Historical combine comp: Jordan Haden (2015), athletic-profile match 97.9%.",
     "player_report_url": "/players/bishop-fitzgerald"
   },
   {
@@ -47912,8 +47912,8 @@
       265,
       265,
       265,
-      265,
-      265,
+      261,
+      261,
       261,
       261,
       261
@@ -48129,16 +48129,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.59,
     "rank_history": [
+      261,
+      261,
+      261,
       262,
-      261,
-      261,
-      261,
-      261,
+      262,
       262,
       262,
       262
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 80.3,
@@ -48295,16 +48295,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.44,
     "rank_history": [
-      261,
       262,
       262,
       262,
-      262,
+      263,
+      263,
       263,
       263,
       263
     ],
-    "rank_move_window": -2,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 83.5,
@@ -48518,8 +48518,8 @@
       263,
       263,
       263,
-      263,
-      263,
+      264,
+      264,
       264,
       264,
       264
@@ -48727,8 +48727,8 @@
       264,
       264,
       264,
-      264,
-      264,
+      265,
+      265,
       265,
       265,
       265
@@ -49008,16 +49008,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.5,
     "rank_history": [
-      270,
       271,
       271,
       271,
-      271,
+      267,
+      267,
       267,
       267,
       267
     ],
-    "rank_move_window": 3,
+    "rank_move_window": 4,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 62.7,
@@ -49229,8 +49229,8 @@
       267,
       267,
       267,
-      267,
-      267,
+      268,
+      268,
       268,
       268,
       268
@@ -49398,8 +49398,8 @@
       268,
       268,
       268,
-      268,
-      268,
+      269,
+      269,
       269,
       269,
       269
@@ -49578,8 +49578,8 @@
       269,
       269,
       269,
-      269,
-      269,
+      270,
+      270,
       270,
       270,
       270
@@ -49784,16 +49784,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.13,
     "rank_history": [
+      270,
+      270,
+      270,
       271,
-      270,
-      270,
-      270,
-      270,
+      271,
       271,
       271,
       271
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -49862,8 +49862,8 @@
       274,
       274,
       274,
-      274,
-      274,
+      272,
+      272,
       272,
       272,
       272
@@ -50080,8 +50080,8 @@
       272,
       272,
       272,
-      272,
-      272,
+      273,
+      273,
       273,
       273,
       273
@@ -50298,8 +50298,8 @@
       273,
       273,
       273,
-      273,
-      273,
+      274,
+      274,
       274,
       274,
       274
@@ -51307,8 +51307,8 @@
       281,
       281,
       281,
-      281,
-      281,
+      280,
+      280,
       280,
       280,
       280
@@ -51518,8 +51518,8 @@
       282,
       282,
       282,
-      282,
-      282,
+      281,
+      281,
       281,
       281,
       281
@@ -51718,8 +51718,8 @@
       280,
       280,
       280,
-      280,
-      280,
+      282,
+      282,
       282,
       282,
       282

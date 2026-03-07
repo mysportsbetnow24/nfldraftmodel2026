@@ -925,9 +925,20 @@ def _infer_s_role_and_scheme(
         and snaps_per_target is not None
         and snaps_per_target >= 12.0
     )
+    coverage_eraser = (
+        complete_coverage
+        and cov_grade is not None
+        and cov_grade >= 89.0
+        and (
+            (snaps_per_target is not None and snaps_per_target >= 10.0)
+            or (qbr is not None and qbr <= 60.0)
+        )
+    )
 
     if slot_matchup_star or (slot_usage and matchup_safety and box_safety and not (deep_safety and complete_coverage)):
         return ("Big nickel matchup safety", "Big-nickel / split-safety coverage family")
+    if coverage_eraser:
+        return ("Coverage eraser safety", "Split-safety eraser / disguise-heavy family")
     if deep_eraser or (deep_safety and explosive):
         return ("Range-first split safety", "Quarters / middle-field-open range fit")
     if box_safety and pressure_role:

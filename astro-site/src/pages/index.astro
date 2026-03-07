@@ -88,7 +88,7 @@ const landingSchema = {
           {top.map((r: any) => (
             <tr>
               <td>{r.consensus_rank}</td>
-              <td>{r.player_name}</td>
+              <td><a href={`/players/${r.slug}`} class="player-link">{r.player_name}</a></td>
               <td><span class="badge">{r.position}</span></td>
               <td>{r.school}</td>
               <td>{r.final_grade}</td>
