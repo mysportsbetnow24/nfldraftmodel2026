@@ -72,6 +72,23 @@ const athleticPctRaw = Number(player.athletic_percentile ?? "");
 const athleticPct = Number.isFinite(athleticPctRaw) && athleticPctRaw >= 0
   ? Math.max(0, Math.min(100, athleticPctRaw))
   : (Number.isFinite(rasRaw) && rasRaw > 0 ? Math.max(0, Math.min(100, ((rasRaw - 4) / 6) * 100)) : 50);
+const athleticTestingRaw = Number(player.athletic_testing_score ?? "");
+const athleticTestingScore = Number.isFinite(athleticTestingRaw) && athleticTestingRaw >= 0
+  ? Math.max(0, Math.min(100, athleticTestingRaw))
+  : 50;
+const athleticFrameRaw = Number(player.athletic_frame_score ?? "");
+const athleticFrameScore = Number.isFinite(athleticFrameRaw) && athleticFrameRaw >= 0
+  ? Math.max(0, Math.min(100, athleticFrameRaw))
+  : 50;
+const athleticConfidenceRaw = Number(player.athletic_source_confidence ?? "");
+const athleticConfidence = Number.isFinite(athleticConfidenceRaw) && athleticConfidenceRaw >= 0
+  ? Math.max(0, Math.min(100, athleticConfidenceRaw))
+  : 50;
+const athleticSourceLabel = String(player.athletic_source_label || "")
+  .replace(/_/g, " ")
+  .replace(/\bmd\b/gi, "measurement data")
+  .replace(/\bplus\b/gi, "+")
+  .trim();
 const traitPctRaw = Number(player.trait_percentile ?? "");
 const traitRaw = Number(player.trait_score || 0);
 const traitPct = Number.isFinite(traitPctRaw) && traitPctRaw >= 0
@@ -158,8 +175,15 @@ const compLine = (title: string, comp: any, fallback: string) => {
           <div class="meter"><div class="meter-fill" style={`width:${productionPct.toFixed(1)}%;background:#0f7b6a;`}></div></div>
         </div>
         <div class="metric-row">
-          <div class="metric-top"><span>Athletic Percentile</span><strong>{athleticPct.toFixed(0)}th pct</strong></div>
+          <div class="metric-top"><span>Athletic Profile Percentile</span><strong>{athleticPct.toFixed(0)}th pct</strong></div>
           <div class="meter"><div class="meter-fill" style={`width:${athleticPct.toFixed(1)}%;background:#425466;`}></div></div>
+          <div class="muted athletic-copy">Blends verified testing, frame context, and position-adjusted athletic history.</div>
+          <div class="athletic-subgrid">
+            <div class="athletic-subrow"><span>Testing Profile</span><strong>{athleticTestingScore.toFixed(0)}/100</strong></div>
+            <div class="athletic-subrow"><span>Frame Profile</span><strong>{athleticFrameScore.toFixed(0)}/100</strong></div>
+            <div class="athletic-subrow"><span>Confidence</span><strong>{athleticConfidence.toFixed(0)}%</strong></div>
+          </div>
+          {athleticSourceLabel ? <div class="muted athletic-copy">Source: {athleticSourceLabel}</div> : null}
         </div>
         <div class="metric-row">
           <div class="metric-top"><span>Trait Percentile</span><strong>{traitPct.toFixed(0)}th pct</strong></div>
@@ -256,6 +280,26 @@ const compLine = (title: string, comp: any, fallback: string) => {
 </BaseLayout>
 
 <style>
+  .athletic-copy {
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  .athletic-subgrid {
+    display: grid;
+    gap: 0.45rem;
+    margin-top: 0.6rem;
+  }
+  .athletic-subrow {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    font-size: 0.92rem;
+    color: #4b5563;
+  }
+  .athletic-subrow strong {
+    color: #0f172a;
+    font-weight: 700;
+  }
   .scout-list {
     margin: 0;
     padding-left: 1.1rem;

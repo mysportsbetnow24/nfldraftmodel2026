@@ -320,6 +320,10 @@ const collectionSchema = {
         const productionPct = Number.isFinite(productionPctRaw) ? clamp(productionPctRaw, 0, 100) : 50;
         const athleticPctRaw = num(p.athletic_percentile);
         const athleticPct = athleticPctRaw === null ? (rasRaw > 0 ? toPct(rasRaw, 4, 10) : 50) : clamp(athleticPctRaw, 0, 100);
+        const athleticTesting = clamp(Number(p.athletic_testing_score || 50), 0, 100);
+        const athleticFrame = clamp(Number(p.athletic_frame_score || 50), 0, 100);
+        const athleticConfidence = clamp(Number(p.athletic_source_confidence || 50), 0, 100);
+        const athleticSource = String(p.athletic_source_label || "").replace(/_/g, " ").replace(/\bmd\b/gi, "measurement data").replace(/\bplus\b/gi, "+").trim();
         const traitPctRaw = Number(p.trait_percentile);
         const traitPct = Number.isFinite(traitPctRaw) ? clamp(traitPctRaw, 0, 100) : toPct(trait, 70, 97);
         const marketPct = clamp(Number(market.pct || 50), 0, 100);
@@ -352,7 +356,14 @@ const collectionSchema = {
             </div>
             <div class="bar-metrics">
               ${meterRow("Production Percentile", productionPct, `${productionPct.toFixed(0)}th pct`, "#0f7b6a")}
-              ${meterRow("Athletic Percentile", athleticPct, `${athleticPct.toFixed(0)}th pct`, "#425466")}
+              ${meterRow("Athletic Profile Percentile", athleticPct, `${athleticPct.toFixed(0)}th pct`, "#425466")}
+              <div class="muted lens-copy">Blends verified testing, frame context, and position-adjusted athletic history.</div>
+              <div class="chip-row">
+                <span class="chip info">Testing ${athleticTesting.toFixed(0)}/100</span>
+                <span class="chip info">Frame ${athleticFrame.toFixed(0)}/100</span>
+                <span class="chip info">Confidence ${athleticConfidence.toFixed(0)}%</span>
+              </div>
+              ${athleticSource ? `<div class="muted lens-copy">Source: ${athleticSource}</div>` : ``}
               ${meterRow("Trait Percentile", traitPct, `${traitPct.toFixed(0)}th pct`, "#245ea8")}
               ${meterRow("Market Signal", marketPct, market.label, market.tone === "good" ? "#138a4a" : (market.tone === "warn" ? "#b15518" : "#245ea8"))}
             </div>

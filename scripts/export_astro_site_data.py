@@ -2615,6 +2615,13 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         pff_grade = round(_safe_float(row.get("pff_grade")) or 0.0, 2)
         athletic_profile_score = _safe_float(row.get("athletic_profile_score"))
         athletic_metric_coverage_rate = _safe_float(row.get("athletic_metric_coverage_rate"))
+        athletic_speed_score = _safe_float(row.get("athletic_speed_score"))
+        athletic_explosion_score = _safe_float(row.get("athletic_explosion_score"))
+        athletic_agility_score = _safe_float(row.get("athletic_agility_score"))
+        athletic_size_adj_score = _safe_float(row.get("athletic_size_adj_score"))
+        formula_size_component = _safe_float(row.get("formula_size_component"))
+        formula_athletic_source_confidence = _safe_float(row.get("formula_athletic_source_confidence"))
+        formula_athletic_source = str(row.get("formula_athletic_source", "")).strip()
         combine_ras_official = round(_safe_float(row.get("combine_ras_official")) or 0.0, 2)
         ras_estimate = round(_safe_float(row.get("ras_estimate")) or 0.0, 2)
         production_snapshot = _clean_public_snapshot(row.get("scouting_production_snapshot", "") or "")
@@ -2658,6 +2665,20 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             production_composite_pct = _safe_float(row.get("cfb_prod_percentile_signal"))
             if production_composite_pct is not None:
                 production_composite_pct = round(float(production_composite_pct), 1)
+        testing_parts = [
+            float(v)
+            for v in (athletic_speed_score, athletic_explosion_score, athletic_agility_score)
+            if v is not None and v > 0
+        ]
+        athletic_testing_score = round(sum(testing_parts) / len(testing_parts), 1) if testing_parts else None
+        athletic_frame_score = athletic_size_adj_score
+        if (athletic_frame_score is None or athletic_frame_score <= 0) and formula_size_component is not None and formula_size_component > 0:
+            athletic_frame_score = formula_size_component
+        if athletic_frame_score is not None and athletic_frame_score > 0:
+            athletic_frame_score = round(float(athletic_frame_score), 1)
+        athletic_source_confidence = None
+        if formula_athletic_source_confidence is not None:
+            athletic_source_confidence = round(max(0.0, min(1.0, float(formula_athletic_source_confidence))) * 100.0, 1)
         position_lens = _build_position_lens(
             row=row,
             position=pos,
@@ -2844,6 +2865,10 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "athletic_profile_score": round(float(athletic_profile_score), 3) if athletic_profile_score is not None and athletic_profile_score > 0 else None,
                 "athletic_metric_coverage_rate": round(float(athletic_metric_coverage_rate), 4) if athletic_metric_coverage_rate is not None and athletic_metric_coverage_rate >= 0 else None,
                 "athletic_percentile": athletic_percentile,
+                "athletic_testing_score": athletic_testing_score,
+                "athletic_frame_score": athletic_frame_score,
+                "athletic_source_confidence": athletic_source_confidence,
+                "athletic_source_label": formula_athletic_source,
                 "combine_ras_official": combine_ras_official,
                 "ras_estimate": ras_estimate,
                 "confidence_score": round(_safe_float(row.get("confidence_score")) or 0.0, 2),
