@@ -1,11 +1,125 @@
 {
   "delta_source": "delta_audit_2026_latest.csv",
-  "risers": [],
-  "fallers": [],
+  "risers": [
+    {
+      "player_name": "Treydan Stukes",
+      "position": "CB",
+      "school": "Arizona Wildcats",
+      "rank_delta_prev_minus_curr": 103,
+      "top_driver": "prior (up 32.78)"
+    },
+    {
+      "player_name": "Keyron Crawford",
+      "position": "EDGE",
+      "school": "Auburn Tigers",
+      "rank_delta_prev_minus_curr": 89,
+      "top_driver": "prior (up 30.60)"
+    },
+    {
+      "player_name": "Devin Moore",
+      "position": "CB",
+      "school": "Florida Gators",
+      "rank_delta_prev_minus_curr": 79,
+      "top_driver": "athletic (up 7.85)"
+    },
+    {
+      "player_name": "Davison Igbinosun",
+      "position": "CB",
+      "school": "Ohio State Buckeyes",
+      "rank_delta_prev_minus_curr": 77,
+      "top_driver": "prior (up 9.62)"
+    },
+    {
+      "player_name": "Malachi Lawrence",
+      "position": "EDGE",
+      "school": "UCF Knights",
+      "rank_delta_prev_minus_curr": 75,
+      "top_driver": "prior (up 14.76)"
+    },
+    {
+      "player_name": "Patrick Payton",
+      "position": "EDGE",
+      "school": "LSU Tigers",
+      "rank_delta_prev_minus_curr": 55,
+      "top_driver": "guardrail_relief (up 5.35)"
+    },
+    {
+      "player_name": "LT Overton",
+      "position": "EDGE",
+      "school": "Alabama Crimson Tide",
+      "rank_delta_prev_minus_curr": 47,
+      "top_driver": "athletic (up 16.00)"
+    },
+    {
+      "player_name": "Zakee Wheatley",
+      "position": "S",
+      "school": "Penn State Nittany Lions",
+      "rank_delta_prev_minus_curr": 43,
+      "top_driver": "athletic (up 15.05)"
+    }
+  ],
+  "fallers": [
+    {
+      "player_name": "David Gusta",
+      "position": "DT",
+      "school": "Kentucky Wildcats",
+      "rank_delta_prev_minus_curr": -116,
+      "top_driver": "prior (down 26.12)"
+    },
+    {
+      "player_name": "Nick Barrett",
+      "position": "DT",
+      "school": "South Carolina Gamecocks",
+      "rank_delta_prev_minus_curr": -110,
+      "top_driver": "prior (down 26.86)"
+    },
+    {
+      "player_name": "Lorenzo Styles Jr.",
+      "position": "S",
+      "school": "Ohio State Buckeyes",
+      "rank_delta_prev_minus_curr": -94,
+      "top_driver": "guardrail_relief (down 5.15)"
+    },
+    {
+      "player_name": "Toriano Pride Jr.",
+      "position": "CB",
+      "school": "Missouri Tigers",
+      "rank_delta_prev_minus_curr": -91,
+      "top_driver": "prior (down 11.85)"
+    },
+    {
+      "player_name": "Justin Jefferson",
+      "position": "LB",
+      "school": "Alabama Crimson Tide",
+      "rank_delta_prev_minus_curr": -88,
+      "top_driver": "prior (down 17.08)"
+    },
+    {
+      "player_name": "Jordan Hudson",
+      "position": "WR",
+      "school": "SMU Mustangs",
+      "rank_delta_prev_minus_curr": -85,
+      "top_driver": "prior (down 22.14)"
+    },
+    {
+      "player_name": "Anez Cooper",
+      "position": "IOL",
+      "school": "Miami (FL)",
+      "rank_delta_prev_minus_curr": -84,
+      "top_driver": "prior (down 21.31)"
+    },
+    {
+      "player_name": "Emmanuel Henderson Jr.",
+      "position": "WR",
+      "school": "Kansas Jayhawks",
+      "rank_delta_prev_minus_curr": -81,
+      "top_driver": "prior (down 23.51)"
+    }
+  ],
   "summary": {
-    "movers_total": 0,
-    "risers_total": 0,
-    "fallers_total": 0,
+    "movers_total": 255,
+    "risers_total": 59,
+    "fallers_total": 196,
     "qa_watch_total": 0,
     "qa_clear_total": 311
   }

@@ -291,16 +291,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": 4.22,
     "rank_history": [
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
       2
     ],
-    "rank_move_window": 0,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 84.2,
@@ -469,16 +469,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": 3.9,
     "rank_history": [
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
+      5,
+      5,
+      4,
+      4,
+      4,
+      4,
+      4,
       3
     ],
-    "rank_move_window": 0,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 86.1,
@@ -658,11 +658,11 @@
     "rank_history": [
       4,
       4,
-      4,
-      4,
-      4,
-      4,
-      4,
+      5,
+      5,
+      5,
+      5,
+      5,
       4
     ],
     "rank_move_window": 0,
@@ -888,16 +888,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -4.24,
     "rank_history": [
-      5,
-      5,
-      5,
-      5,
-      5,
-      5,
-      5,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
       5
     ],
-    "rank_move_window": 0,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 82.1,
@@ -1079,16 +1079,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.63,
     "rank_history": [
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
       6
     ],
-    "rank_move_window": 0,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_wrte_rec": 61.0,
@@ -1203,8 +1203,8 @@
       8,
       8,
       8,
-      7,
-      7,
+      8,
+      8,
       7
     ],
     "rank_move_window": 1,
@@ -1435,16 +1435,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": 0.5,
     "rank_history": [
-      9,
-      9,
-      9,
-      9,
-      9,
-      8,
-      8,
       8
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 87.0,
@@ -1614,16 +1607,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.97,
     "rank_history": [
-      10,
-      10,
-      10,
-      10,
-      10,
-      9,
-      9,
       9
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 90.7,
@@ -1861,16 +1847,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 1.16,
     "rank_history": [
-      7,
-      7,
-      7,
-      7,
-      7,
-      10,
-      10,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
       10
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -8,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 86.5,
@@ -2112,16 +2098,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.6,
     "rank_history": [
-      11,
-      11,
-      11,
-      11,
-      11,
-      11,
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
       11,
       11
     ],
-    "rank_move_window": 0,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 66.0,
@@ -2354,13 +2340,6 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.78,
     "rank_history": [
-      12,
-      12,
-      12,
-      12,
-      12,
-      12,
-      12,
       12
     ],
     "rank_move_window": 0,
@@ -2589,13 +2568,6 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.65,
     "rank_history": [
-      13,
-      13,
-      13,
-      13,
-      13,
-      13,
-      13,
       13
     ],
     "rank_move_window": 0,
@@ -2823,16 +2795,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.79,
     "rank_history": [
-      15,
-      15,
-      15,
-      15,
-      15,
-      14,
-      14,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
       14
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 91.1,
@@ -3062,16 +3034,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.79,
     "rank_history": [
-      14,
-      14,
-      14,
-      14,
-      14,
-      15,
-      15,
       15
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 87.0,
@@ -3253,16 +3218,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.84,
     "rank_history": [
-      33,
-      33,
-      33,
-      33,
-      33,
-      16,
-      16,
+      36,
+      36,
+      35,
+      35,
+      35,
+      35,
+      34,
       16
     ],
-    "rank_move_window": 17,
+    "rank_move_window": 20,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 89.0,
@@ -3488,16 +3453,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.28,
     "rank_history": [
-      16,
-      16,
-      16,
-      16,
-      16,
+      17,
+      17,
+      17,
+      17,
+      17,
       17,
       17,
       17
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 90.3,
@@ -3722,13 +3687,6 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.69,
     "rank_history": [
-      18,
-      18,
-      18,
-      18,
-      18,
-      18,
-      18,
       18
     ],
     "rank_move_window": 0,
@@ -3974,16 +3932,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.53,
     "rank_history": [
-      17,
-      17,
-      17,
-      17,
-      17,
-      19,
-      19,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
       19
     ],
-    "rank_move_window": -2,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 69.0,
@@ -4210,8 +4168,8 @@
       30,
       30,
       30,
-      20,
-      20,
+      30,
+      27,
       20
     ],
     "rank_move_window": 10,
@@ -4427,16 +4385,16 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -1.13,
     "rank_history": [
-      21,
-      21,
-      21,
-      21,
-      21,
-      21,
-      21,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
       21
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 81.5,
@@ -4621,16 +4579,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.56,
     "rank_history": [
-      22,
-      22,
-      22,
-      22,
-      22,
-      22,
-      22,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      13,
       22
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -10,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 88.6,
@@ -4872,16 +4830,16 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -1.14,
     "rank_history": [
-      23,
-      23,
-      23,
-      23,
-      23,
-      23,
-      23,
+      21,
+      21,
+      21,
+      21,
+      21,
+      21,
+      22,
       23
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 93.8,
@@ -5116,16 +5074,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": 2.09,
     "rank_history": [
-      24,
-      24,
-      24,
-      24,
-      24,
-      24,
-      24,
+      22,
+      22,
+      22,
+      22,
+      22,
+      22,
+      21,
       24
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 90.7,
@@ -5347,16 +5305,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.23,
     "rank_history": [
-      19,
-      19,
-      19,
-      19,
-      19,
-      25,
-      25,
       25
     ],
-    "rank_move_window": -6,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_db_int": 1.0,
@@ -5483,16 +5434,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": 1.68,
     "rank_history": [
-      26,
-      26,
-      26,
-      26,
-      26,
-      26,
-      26,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
       26
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 65.4,
@@ -5711,16 +5662,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": 1.06,
     "rank_history": [
-      25,
-      25,
-      25,
-      25,
-      25,
-      27,
-      27,
       27
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 88.1,
@@ -5891,16 +5835,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -0.35,
     "rank_history": [
-      20,
-      20,
-      20,
-      20,
-      20,
-      28,
-      28,
       28
     ],
-    "rank_move_window": -8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 83.5,
@@ -6079,16 +6016,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -0.82,
     "rank_history": [
-      31,
-      31,
-      31,
-      31,
-      31,
-      29,
-      29,
       29
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 86.0,
@@ -6300,16 +6230,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.22,
     "rank_history": [
-      27,
-      27,
-      27,
-      27,
-      27,
-      30,
-      30,
       30
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 92.5,
@@ -6505,16 +6428,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -0.81,
     "rank_history": [
-      28,
-      28,
-      28,
-      28,
-      28,
-      31,
-      31,
+      26,
+      26,
+      26,
+      26,
+      26,
+      26,
+      26,
       31
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -5,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 74.6,
@@ -6733,16 +6656,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": 1.68,
     "rank_history": [
+      27,
+      27,
+      27,
+      27,
+      27,
+      27,
       29,
-      29,
-      29,
-      29,
-      29,
-      32,
-      32,
       32
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -5,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 92.4,
@@ -6942,16 +6865,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.3,
     "rank_history": [
-      32,
-      32,
-      32,
-      32,
-      32,
-      33,
-      33,
       33
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 79.7,
@@ -7179,16 +7095,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 1.27,
     "rank_history": [
-      35,
-      35,
-      35,
-      35,
-      35,
-      34,
-      34,
       34
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 80.3,
@@ -7416,16 +7325,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": 1.78,
     "rank_history": [
-      44,
-      44,
-      44,
-      44,
-      44,
-      35,
-      35,
+      42,
+      42,
+      42,
+      42,
+      42,
+      42,
+      42,
       35
     ],
-    "rank_move_window": 9,
+    "rank_move_window": 7,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 76.9,
@@ -7639,13 +7548,6 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -2.45,
     "rank_history": [
-      36,
-      36,
-      36,
-      36,
-      36,
-      36,
-      36,
       36
     ],
     "rank_move_window": 0,
@@ -7845,13 +7747,6 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 1.08,
     "rank_history": [
-      37,
-      37,
-      37,
-      37,
-      37,
-      37,
-      37,
       37
     ],
     "rank_move_window": 0,
@@ -8088,16 +7983,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": 0.68,
     "rank_history": [
-      39,
-      39,
-      39,
-      39,
-      39,
-      38,
-      38,
       38
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 81.4,
@@ -8318,16 +8206,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.23,
     "rank_history": [
-      34,
-      34,
-      34,
-      34,
-      34,
-      39,
-      39,
       39
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 64.2,
@@ -8540,13 +8421,6 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.47,
     "rank_history": [
-      40,
-      40,
-      40,
-      40,
-      40,
-      40,
-      40,
       40
     ],
     "rank_move_window": 0,
@@ -8780,16 +8654,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.41,
     "rank_history": [
+      43,
+      43,
       41,
       41,
       41,
       41,
-      41,
-      41,
-      41,
+      40,
       41
     ],
-    "rank_move_window": 0,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 85.3,
@@ -9019,13 +8893,6 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 1.79,
     "rank_history": [
-      42,
-      42,
-      42,
-      42,
-      42,
-      42,
-      42,
       42
     ],
     "rank_move_window": 0,
@@ -9271,16 +9138,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": 0.42,
     "rank_history": [
-      38,
-      38,
-      38,
-      38,
-      38,
-      43,
-      43,
       43
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_wrte_rec": 101.0,
@@ -9386,16 +9246,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.16,
     "rank_history": [
-      45,
-      45,
-      45,
-      45,
-      45,
-      44,
-      44,
       44
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 89.5,
@@ -9625,16 +9478,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.3,
     "rank_history": [
+      32,
+      32,
       46,
       46,
       46,
       46,
-      46,
-      45,
-      45,
+      44,
       45
     ],
-    "rank_move_window": 1,
+    "rank_move_window": -13,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 65.8,
@@ -9865,16 +9718,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 0.64,
     "rank_history": [
-      43,
-      43,
-      43,
-      43,
-      43,
-      46,
-      46,
       46
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 79.7,
@@ -10105,16 +9951,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 1.55,
     "rank_history": [
-      48,
-      48,
-      48,
-      48,
-      48,
-      47,
-      47,
       47
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 82.7,
@@ -10347,16 +10186,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 2.05,
     "rank_history": [
-      49,
-      49,
-      49,
-      49,
-      49,
-      48,
+      52,
+      52,
+      51,
+      51,
+      51,
+      51,
       48,
       48
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 4,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 80.6,
@@ -10569,16 +10408,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -0.89,
     "rank_history": [
-      50,
-      50,
-      50,
-      50,
-      50,
-      49,
-      49,
       49
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 87.1,
@@ -10812,16 +10644,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.04,
     "rank_history": [
-      74,
-      74,
-      74,
-      74,
-      74,
-      50,
-      50,
       50
     ],
-    "rank_move_window": 24,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 88.6,
@@ -11049,16 +10874,9 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -1.93,
     "rank_history": [
-      47,
-      47,
-      47,
-      47,
-      47,
-      51,
-      51,
       51
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -11134,16 +10952,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.86,
     "rank_history": [
-      55,
-      55,
-      55,
-      55,
-      55,
-      52,
-      52,
+      53,
+      53,
+      54,
+      54,
+      54,
+      54,
+      54,
       52
     ],
-    "rank_move_window": 3,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 70.7,
@@ -11310,16 +11128,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.46,
     "rank_history": [
+      49,
+      49,
+      49,
+      49,
+      49,
+      49,
       51,
-      51,
-      51,
-      51,
-      51,
-      53,
-      53,
       53
     ],
-    "rank_move_window": -2,
+    "rank_move_window": -4,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 90.4,
@@ -11514,16 +11332,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 1.28,
     "rank_history": [
-      53,
-      53,
-      53,
-      53,
-      53,
-      54,
-      54,
       54
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 89.5,
@@ -11761,8 +11572,8 @@
       57,
       57,
       57,
-      55,
-      55,
+      57,
+      57,
       55
     ],
     "rank_move_window": 2,
@@ -11991,16 +11802,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.06,
     "rank_history": [
-      58,
-      58,
-      58,
-      58,
-      58,
-      56,
-      56,
+      55,
+      55,
+      55,
+      55,
+      55,
+      55,
+      55,
       56
     ],
-    "rank_move_window": 2,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 81.8,
@@ -12212,16 +12023,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.18,
     "rank_history": [
-      59,
-      59,
-      59,
-      59,
-      59,
-      57,
-      57,
+      133,
+      133,
+      134,
+      134,
+      134,
+      134,
+      134,
       57
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 76,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 81.0,
@@ -12467,16 +12278,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.45,
     "rank_history": [
-      54,
-      54,
-      54,
-      54,
-      54,
-      58,
-      58,
       58
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 90.6,
@@ -12704,16 +12508,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 1.46,
     "rank_history": [
-      52,
-      52,
-      52,
-      52,
-      52,
-      59,
-      59,
       59
     ],
-    "rank_move_window": -7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -12789,16 +12586,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": 1.3,
     "rank_history": [
-      61,
-      61,
-      61,
-      61,
-      61,
-      60,
-      60,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
       60
     ],
-    "rank_move_window": 1,
+    "rank_move_window": -4,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_db_int": 4.0,
@@ -12913,16 +12710,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.87,
     "rank_history": [
-      64,
-      64,
-      64,
-      64,
-      64,
-      61,
-      61,
       61
     ],
-    "rank_move_window": 3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -12998,16 +12788,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.19,
     "rank_history": [
-      65,
-      65,
-      65,
-      65,
-      65,
-      62,
-      62,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      59,
       62
     ],
-    "rank_move_window": 3,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 80.7,
@@ -13249,16 +13039,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.17,
     "rank_history": [
-      56,
-      56,
-      56,
-      56,
-      56,
-      63,
-      63,
       63
     ],
-    "rank_move_window": -7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 92.6,
@@ -13492,16 +13275,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.24,
     "rank_history": [
-      66,
-      66,
-      66,
-      66,
-      66,
-      64,
-      64,
       64
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 87.3,
@@ -13721,16 +13497,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -0.64,
     "rank_history": [
-      67,
-      67,
-      67,
-      67,
-      67,
-      65,
-      65,
       65
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 83.8,
@@ -13944,16 +13713,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.29,
     "rank_history": [
-      68,
-      68,
-      68,
-      68,
-      68,
-      66,
-      66,
+      59,
+      59,
+      58,
+      58,
+      58,
+      58,
+      60,
       66
     ],
-    "rank_move_window": 2,
+    "rank_move_window": -7,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -14033,16 +13802,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.85,
     "rank_history": [
-      62,
-      62,
-      62,
-      62,
-      62,
-      67,
-      67,
       67
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 88.5,
@@ -14284,16 +14046,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 1.9,
     "rank_history": [
-      70,
-      70,
-      70,
-      70,
-      70,
-      68,
-      68,
       68
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 62.8,
@@ -14503,16 +14258,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.09,
     "rank_history": [
-      71,
-      71,
-      71,
-      71,
-      71,
-      69,
-      69,
+      65,
+      65,
+      64,
+      64,
+      64,
+      64,
+      65,
       69
     ],
-    "rank_move_window": 2,
+    "rank_move_window": -4,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 84.1,
@@ -14698,16 +14453,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 0.98,
     "rank_history": [
-      63,
-      63,
-      63,
-      63,
-      63,
-      70,
-      70,
       70
     ],
-    "rank_move_window": -7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 94.8,
@@ -14949,16 +14697,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.42,
     "rank_history": [
-      60,
-      60,
-      60,
-      60,
-      60,
-      71,
-      71,
       71
     ],
-    "rank_move_window": -11,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 65.8,
@@ -15168,16 +14909,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.93,
     "rank_history": [
-      69,
-      69,
-      69,
-      69,
-      69,
-      72,
-      72,
       72
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 83.4,
@@ -15358,16 +15092,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -0.94,
     "rank_history": [
-      72,
-      72,
-      72,
-      72,
-      72,
-      73,
-      73,
       73
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 59.5,
@@ -15580,16 +15307,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.26,
     "rank_history": [
-      73,
-      73,
-      73,
-      73,
-      73,
-      74,
-      74,
+      71,
+      71,
+      71,
+      71,
+      71,
+      71,
+      69,
       74
     ],
-    "rank_move_window": -1,
+    "rank_move_window": -3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 83.3,
@@ -15815,13 +15542,6 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.2,
     "rank_history": [
-      75,
-      75,
-      75,
-      75,
-      75,
-      75,
-      75,
       75
     ],
     "rank_move_window": 0,
@@ -16043,16 +15763,16 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -0.46,
     "rank_history": [
-      76,
-      76,
-      76,
-      76,
-      76,
-      76,
-      76,
+      69,
+      69,
+      69,
+      69,
+      69,
+      69,
+      71,
       76
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -7,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -16136,13 +15856,6 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.66,
     "rank_history": [
-      77,
-      77,
-      77,
-      77,
-      77,
-      77,
-      77,
       77
     ],
     "rank_move_window": 0,
@@ -16378,16 +16091,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -0.91,
     "rank_history": [
-      78,
-      78,
-      78,
-      78,
-      78,
-      78,
-      78,
+      81,
+      81,
+      80,
+      80,
+      80,
+      80,
+      76,
       78
     ],
-    "rank_move_window": 0,
+    "rank_move_window": 3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 92.4,
@@ -16621,16 +16334,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -4.11,
     "rank_history": [
-      101,
-      101,
-      101,
-      101,
-      101,
-      79,
-      79,
+      106,
+      106,
+      104,
+      104,
+      104,
+      104,
+      105,
       79
     ],
-    "rank_move_window": 22,
+    "rank_move_window": 27,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 72.1,
@@ -16848,13 +16561,6 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.89,
     "rank_history": [
-      80,
-      80,
-      80,
-      80,
-      80,
-      80,
-      80,
       80
     ],
     "rank_move_window": 0,
@@ -16933,13 +16639,6 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.5,
     "rank_history": [
-      81,
-      81,
-      81,
-      81,
-      81,
-      81,
-      81,
       81
     ],
     "rank_move_window": 0,
@@ -17176,16 +16875,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.21,
     "rank_history": [
-      82,
-      82,
-      82,
-      82,
-      82,
-      82,
-      82,
+      80,
+      80,
+      77,
+      77,
+      77,
+      77,
+      78,
       82
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_db_int": 2.0,
@@ -17291,16 +16990,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.91,
     "rank_history": [
-      83,
-      83,
-      83,
-      83,
-      83,
-      83,
-      83,
+      77,
+      77,
+      78,
+      78,
+      78,
+      78,
+      79,
       83
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -6,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 69.8,
@@ -17534,16 +17233,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.41,
     "rank_history": [
-      128,
-      128,
-      128,
-      128,
-      128,
-      84,
-      84,
       84
     ],
-    "rank_move_window": 44,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 83.5,
@@ -17789,16 +17481,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.39,
     "rank_history": [
-      84,
-      84,
-      84,
-      84,
-      84,
-      85,
-      85,
+      72,
+      72,
+      72,
+      72,
+      72,
+      72,
+      73,
       85
     ],
-    "rank_move_window": -1,
+    "rank_move_window": -13,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 83.6,
@@ -18034,16 +17726,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.72,
     "rank_history": [
-      85,
-      85,
-      85,
-      85,
-      85,
-      86,
-      86,
+      79,
+      79,
+      79,
+      79,
+      79,
+      79,
+      80,
       86
     ],
-    "rank_move_window": -1,
+    "rank_move_window": -7,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 76.9,
@@ -18262,13 +17954,6 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.3,
     "rank_history": [
-      87,
-      87,
-      87,
-      87,
-      87,
-      87,
-      87,
       87
     ],
     "rank_move_window": 0,
@@ -18438,16 +18123,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.78,
     "rank_history": [
-      140,
-      140,
-      140,
-      140,
-      140,
-      88,
-      88,
+      132,
+      132,
+      135,
+      135,
+      135,
+      135,
+      135,
       88
     ],
-    "rank_move_window": 52,
+    "rank_move_window": 44,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 64.8,
@@ -18640,16 +18325,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.44,
     "rank_history": [
-      89,
-      89,
-      89,
-      89,
-      89,
-      89,
+      97,
+      97,
+      96,
+      96,
+      96,
+      96,
       89,
       89
     ],
-    "rank_move_window": 0,
+    "rank_move_window": 8,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 79.6,
@@ -18859,16 +18544,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.67,
     "rank_history": [
-      88,
-      88,
-      88,
-      88,
-      88,
-      90,
-      90,
       90
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -18960,13 +18638,6 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.34,
     "rank_history": [
-      91,
-      91,
-      91,
-      91,
-      91,
-      91,
-      91,
       91
     ],
     "rank_move_window": 0,
@@ -19108,16 +18779,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.08,
     "rank_history": [
-      79,
-      79,
-      79,
-      79,
-      79,
-      92,
-      92,
       92
     ],
-    "rank_move_window": -13,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 75.3,
@@ -19347,16 +19011,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.1,
     "rank_history": [
-      90,
-      90,
-      90,
-      90,
-      90,
-      93,
-      93,
       93
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -19432,16 +19089,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.03,
     "rank_history": [
-      92,
-      92,
-      92,
-      92,
-      92,
-      94,
-      94,
+      88,
+      88,
+      85,
+      85,
+      85,
+      85,
+      85,
       94
     ],
-    "rank_move_window": -2,
+    "rank_move_window": -6,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 66.7,
@@ -19622,16 +19279,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.0,
     "rank_history": [
+      99,
+      99,
       93,
       93,
       93,
       93,
-      93,
-      95,
-      95,
+      87,
       95
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 4,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 71.6,
@@ -19841,16 +19498,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.74,
     "rank_history": [
-      121,
-      121,
-      121,
-      121,
-      121,
-      96,
-      96,
       96
     ],
-    "rank_move_window": 25,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 81.5,
@@ -20086,16 +19736,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.33,
     "rank_history": [
-      94,
-      94,
-      94,
-      94,
-      94,
-      97,
-      97,
+      101,
+      101,
+      95,
+      95,
+      95,
+      95,
+      88,
       97
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 4,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_rb_rush_yds": 905.0,
@@ -20218,16 +19868,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.38,
     "rank_history": [
-      95,
-      95,
-      95,
-      95,
-      95,
-      98,
-      98,
+      90,
+      90,
+      87,
+      87,
+      87,
+      87,
+      90,
       98
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -8,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 69.0,
@@ -20431,16 +20081,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.21,
     "rank_history": [
-      96,
-      96,
-      96,
-      96,
-      96,
-      99,
-      99,
       99
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 77.3,
@@ -20658,16 +20301,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.9,
     "rank_history": [
-      97,
-      97,
-      97,
-      97,
-      97,
-      100,
-      100,
       100
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 77.2,
@@ -20905,16 +20541,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": 1.02,
     "rank_history": [
-      98,
-      98,
-      98,
-      98,
-      98,
-      101,
-      101,
       101
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 91.3,
@@ -21136,16 +20765,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.15,
     "rank_history": [
-      99,
-      99,
-      99,
-      99,
-      99,
-      102,
-      102,
+      96,
+      96,
+      92,
+      92,
+      92,
+      92,
+      96,
       102
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -6,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 65.0,
@@ -21385,16 +21014,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.32,
     "rank_history": [
-      86,
-      86,
-      86,
-      86,
-      86,
-      103,
-      103,
       103
     ],
-    "rank_move_window": -17,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 76.9,
@@ -21617,16 +21239,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 4.26,
     "rank_history": [
-      100,
-      100,
-      100,
-      100,
-      100,
-      104,
-      104,
       104
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 90.6,
@@ -21809,16 +21424,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.5,
     "rank_history": [
-      102,
-      102,
-      102,
-      102,
-      102,
-      105,
-      105,
       105
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 84.3,
@@ -22001,16 +21609,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.44,
     "rank_history": [
-      103,
-      103,
-      103,
-      103,
-      103,
-      106,
-      106,
       106
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 71.9,
@@ -22185,16 +21786,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.63,
     "rank_history": [
-      106,
-      106,
-      106,
-      106,
-      106,
-      107,
-      107,
       107
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 88.1,
@@ -22425,16 +22019,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.18,
     "rank_history": [
-      104,
-      104,
-      104,
-      104,
-      104,
-      108,
-      108,
       108
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_wrte_rec": 71.0,
@@ -22552,16 +22139,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 3.02,
     "rank_history": [
-      113,
-      113,
-      113,
-      113,
-      113,
-      109,
-      109,
       109
     ],
-    "rank_move_window": 4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 76.2,
@@ -22788,8 +22368,8 @@
       105,
       105,
       105,
-      110,
-      110,
+      105,
+      102,
       110
     ],
     "rank_move_window": -5,
@@ -23016,16 +22596,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      107,
-      107,
-      107,
-      107,
-      107,
-      111,
-      111,
       111
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 65.1,
@@ -23247,16 +22820,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.25,
     "rank_history": [
-      108,
-      108,
-      108,
-      108,
-      108,
-      112,
-      112,
       112
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 56.6,
@@ -23478,16 +23044,9 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -0.65,
     "rank_history": [
-      109,
-      109,
-      109,
-      109,
-      109,
-      113,
-      113,
       113
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 81.6,
@@ -23712,16 +23271,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.65,
     "rank_history": [
-      110,
-      110,
-      110,
-      110,
-      110,
-      114,
-      114,
+      107,
+      107,
+      106,
+      106,
+      106,
+      106,
+      106,
       114
     ],
-    "rank_move_window": -4,
+    "rank_move_window": -7,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 70.9,
@@ -23937,16 +23496,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 1.76,
     "rank_history": [
-      111,
-      111,
-      111,
-      111,
-      111,
-      115,
-      115,
+      121,
+      121,
+      120,
+      120,
+      120,
+      120,
+      121,
       115
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 6,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 64.0,
@@ -24167,16 +23726,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.28,
     "rank_history": [
-      112,
-      112,
-      112,
-      112,
-      112,
-      116,
-      116,
       116
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 71.2,
@@ -24357,16 +23909,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.61,
     "rank_history": [
-      114,
-      114,
-      114,
-      114,
-      114,
-      117,
-      117,
       117
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_wrte_rec": 51.0,
@@ -24488,16 +24033,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.82,
     "rank_history": [
-      115,
-      115,
-      115,
-      115,
-      115,
-      118,
-      118,
       118
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 74.0,
@@ -24739,16 +24277,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -4.3,
     "rank_history": [
-      116,
-      116,
-      116,
-      116,
-      116,
-      119,
-      119,
       119
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 73.8,
@@ -24970,16 +24501,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 1.96,
     "rank_history": [
-      117,
-      117,
-      117,
-      117,
-      117,
-      120,
-      120,
+      149,
+      149,
+      144,
+      144,
+      144,
+      144,
+      144,
       120
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 29,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 66.1,
@@ -25198,16 +24729,9 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -0.47,
     "rank_history": [
-      119,
-      119,
-      119,
-      119,
-      119,
-      121,
-      121,
       121
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 82.7,
@@ -25377,16 +24901,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.25,
     "rank_history": [
-      120,
-      120,
-      120,
-      120,
-      120,
-      122,
-      122,
+      113,
+      113,
+      113,
+      113,
+      113,
+      113,
+      115,
       122
     ],
-    "rank_move_window": -2,
+    "rank_move_window": -9,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 79.4,
@@ -25565,16 +25089,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.06,
     "rank_history": [
-      118,
-      118,
-      118,
-      118,
-      118,
-      123,
-      123,
       123
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_wrte_rec": 57.0,
@@ -25680,16 +25197,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.31,
     "rank_history": [
-      122,
-      122,
-      122,
-      122,
-      122,
-      124,
-      124,
       124
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 84.0,
@@ -25874,16 +25384,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.16,
     "rank_history": [
-      123,
-      123,
-      123,
-      123,
-      123,
-      125,
-      125,
       125
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 69.3,
@@ -26129,16 +25632,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.46,
     "rank_history": [
-      124,
-      124,
-      124,
-      124,
-      124,
-      126,
-      126,
       126
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 73.2,
@@ -26376,16 +25872,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -0.68,
     "rank_history": [
-      125,
-      125,
-      125,
-      125,
-      125,
-      127,
-      127,
       127
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 89.1,
@@ -26580,16 +26069,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.2,
     "rank_history": [
-      131,
-      131,
-      131,
-      131,
-      131,
-      128,
-      128,
       128
     ],
-    "rank_move_window": 3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 76.5,
@@ -26829,16 +26311,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.78,
     "rank_history": [
-      167,
-      167,
-      167,
-      167,
-      167,
-      129,
-      129,
       129
     ],
-    "rank_move_window": 38,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 85.8,
@@ -27057,16 +26532,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.53,
     "rank_history": [
-      127,
-      127,
-      127,
-      127,
-      127,
-      130,
-      130,
       130
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 96.8,
@@ -27247,16 +26715,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.71,
     "rank_history": [
-      129,
-      129,
-      129,
-      129,
-      129,
-      131,
-      131,
       131
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 61.9,
@@ -27483,16 +26944,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.02,
     "rank_history": [
-      130,
-      130,
-      130,
-      130,
-      130,
-      132,
-      132,
+      146,
+      146,
+      124,
+      124,
+      124,
+      124,
+      125,
       132
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 14,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 80.0,
@@ -27723,16 +27184,16 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -1.43,
     "rank_history": [
-      133,
-      133,
-      133,
-      133,
-      133,
-      133,
-      133,
+      129,
+      129,
+      128,
+      128,
+      128,
+      128,
+      123,
       133
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -4,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 76.4,
@@ -27955,16 +27416,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -0.82,
     "rank_history": [
-      132,
-      132,
-      132,
-      132,
-      132,
-      134,
-      134,
       134
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 89.4,
@@ -28206,16 +27660,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.9,
     "rank_history": [
-      134,
-      134,
-      134,
-      134,
-      134,
-      135,
-      135,
       135
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 65.5,
@@ -28436,16 +27883,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -0.99,
     "rank_history": [
-      135,
-      135,
-      135,
-      135,
-      135,
-      136,
-      136,
       136
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_db_int": 4.0,
@@ -28554,16 +27994,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.15,
     "rank_history": [
-      163,
-      163,
-      163,
-      163,
-      163,
-      137,
-      137,
       137
     ],
-    "rank_move_window": 26,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 63.0,
@@ -28782,16 +28215,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      136,
-      136,
-      136,
-      136,
-      136,
-      138,
-      138,
       138
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 68.5,
@@ -29018,16 +28444,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      137,
-      137,
-      137,
-      137,
-      137,
-      139,
-      139,
       139
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 77.2,
@@ -29246,16 +28665,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      138,
-      138,
-      138,
-      138,
-      138,
-      140,
-      140,
       140
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_db_pbu": 6.0,
@@ -29373,16 +28785,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.86,
     "rank_history": [
-      139,
-      139,
-      139,
-      139,
-      139,
-      141,
-      141,
       141
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 75.6,
@@ -29601,16 +29006,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.73,
     "rank_history": [
-      141,
-      141,
-      141,
-      141,
-      141,
-      142,
-      142,
       142
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -29698,16 +29096,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 1.45,
     "rank_history": [
-      142,
-      142,
-      142,
-      142,
-      142,
-      143,
-      143,
+      136,
+      136,
+      136,
+      136,
+      136,
+      136,
+      136,
       143
     ],
-    "rank_move_window": -1,
+    "rank_move_window": -7,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 59.4,
@@ -29938,16 +29336,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.49,
     "rank_history": [
-      143,
-      143,
-      143,
-      143,
-      143,
-      144,
-      144,
       144
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 90.0,
@@ -30169,16 +29560,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.96,
     "rank_history": [
-      144,
-      144,
-      144,
-      144,
-      144,
-      145,
-      145,
       145
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 77.4,
@@ -30347,16 +29731,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.15,
     "rank_history": [
-      145,
-      145,
-      145,
-      145,
-      145,
-      146,
-      146,
+      163,
+      163,
+      161,
+      161,
+      161,
+      161,
+      162,
       146
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 17,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -30432,16 +29816,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.01,
     "rank_history": [
-      126,
-      126,
-      126,
-      126,
-      126,
-      147,
-      147,
       147
     ],
-    "rank_move_window": -21,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -30529,16 +29906,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.71,
     "rank_history": [
-      146,
-      146,
-      146,
-      146,
-      146,
-      148,
-      148,
       148
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_wrte_rec": 47.0,
@@ -30656,16 +30026,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.21,
     "rank_history": [
-      147,
-      147,
-      147,
-      147,
-      147,
-      149,
-      149,
       149
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_edge_sacks": 3.0,
@@ -30780,16 +30143,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.25,
     "rank_history": [
-      162,
-      162,
-      162,
-      162,
-      162,
-      150,
-      150,
       150
     ],
-    "rank_move_window": 12,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 91.6,
@@ -30975,16 +30331,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -0.74,
     "rank_history": [
-      148,
-      148,
-      148,
-      148,
-      148,
-      151,
-      151,
       151
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 72.1,
@@ -31224,16 +30573,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.69,
     "rank_history": [
-      149,
-      149,
-      149,
-      149,
-      149,
-      152,
-      152,
       152
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_qb_pass_td": 16.0,
@@ -31360,16 +30702,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.43,
     "rank_history": [
-      150,
-      150,
-      150,
-      150,
-      150,
-      153,
-      153,
       153
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_wrte_rec": 55.0,
@@ -31475,16 +30810,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.73,
     "rank_history": [
-      188,
-      188,
-      188,
-      188,
-      188,
-      154,
-      154,
       154
     ],
-    "rank_move_window": 34,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_db_int": 5.0,
@@ -31611,16 +30939,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.56,
     "rank_history": [
-      152,
-      152,
-      152,
-      152,
-      152,
-      155,
-      155,
       155
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 58.0,
@@ -31853,16 +31174,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.81,
     "rank_history": [
-      251,
-      251,
-      251,
-      251,
-      251,
-      156,
-      156,
+      213,
+      213,
+      214,
+      214,
+      214,
+      214,
+      211,
       156
     ],
-    "rank_move_window": 95,
+    "rank_move_window": 57,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 66.6,
@@ -32081,16 +31402,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.47,
     "rank_history": [
-      153,
-      153,
-      153,
-      153,
-      153,
-      157,
-      157,
+      152,
+      152,
+      147,
+      147,
+      147,
+      147,
+      148,
       157
     ],
-    "rank_move_window": -4,
+    "rank_move_window": -5,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 65.2,
@@ -32257,16 +31578,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.72,
     "rank_history": [
-      154,
-      154,
-      154,
-      154,
-      154,
-      158,
-      158,
+      153,
+      153,
+      148,
+      148,
+      148,
+      148,
+      149,
       158
     ],
-    "rank_move_window": -4,
+    "rank_move_window": -5,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 75.6,
@@ -32433,16 +31754,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.91,
     "rank_history": [
-      155,
-      155,
-      155,
-      155,
-      155,
-      159,
-      159,
       159
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 79.5,
@@ -32611,16 +31925,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.06,
     "rank_history": [
-      157,
-      157,
-      157,
-      157,
-      157,
-      160,
-      160,
       160
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 77.6,
@@ -32802,16 +32109,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.99,
     "rank_history": [
-      156,
-      156,
-      156,
-      156,
-      156,
-      161,
-      161,
       161
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 64.6,
@@ -33033,16 +32333,16 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -1.03,
     "rank_history": [
-      158,
-      158,
-      158,
-      158,
-      158,
-      162,
-      162,
+      155,
+      155,
+      152,
+      152,
+      152,
+      152,
+      154,
       162
     ],
-    "rank_move_window": -4,
+    "rank_move_window": -7,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 77.4,
@@ -33271,16 +32571,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.59,
     "rank_history": [
-      159,
-      159,
-      159,
-      159,
-      159,
-      163,
-      163,
+      157,
+      157,
+      154,
+      154,
+      154,
+      154,
+      155,
       163
     ],
-    "rank_move_window": -4,
+    "rank_move_window": -6,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 81.9,
@@ -33503,16 +32803,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -5.28,
     "rank_history": [
-      165,
-      165,
-      165,
-      165,
-      165,
-      164,
-      164,
       164
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 77.0,
@@ -33731,16 +33024,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -4.7,
     "rank_history": [
-      160,
-      160,
-      160,
-      160,
-      160,
-      165,
-      165,
       165
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 72.4,
@@ -33907,16 +33193,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.53,
     "rank_history": [
-      161,
-      161,
-      161,
-      161,
-      161,
-      166,
-      166,
       166
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 63.5,
@@ -34124,16 +33403,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.47,
     "rank_history": [
-      151,
-      151,
-      151,
-      151,
-      151,
-      167,
-      167,
       167
     ],
-    "rank_move_window": -16,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 90.7,
@@ -34308,16 +33580,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.4,
     "rank_history": [
-      181,
-      181,
-      181,
-      181,
-      181,
-      168,
-      168,
       168
     ],
-    "rank_move_window": 13,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 80.0,
@@ -34523,16 +33788,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.93,
     "rank_history": [
-      166,
-      166,
-      166,
-      166,
-      166,
-      169,
-      169,
+      137,
+      137,
+      162,
+      162,
+      162,
+      162,
+      163,
       169
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -32,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 87.3,
@@ -34746,16 +34011,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.21,
     "rank_history": [
-      168,
-      168,
-      168,
-      168,
-      168,
-      170,
-      170,
       170
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 83.5,
@@ -34962,16 +34220,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -0.58,
     "rank_history": [
-      169,
-      169,
-      169,
-      169,
-      169,
-      171,
-      171,
       171
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 77.5,
@@ -35200,16 +34451,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.33,
     "rank_history": [
-      170,
-      170,
-      170,
-      170,
-      170,
-      172,
-      172,
       172
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_lb_tackles": 54.0,
@@ -35340,16 +34584,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.3,
     "rank_history": [
-      171,
-      171,
-      171,
-      171,
-      171,
-      173,
-      173,
       173
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 91.3,
@@ -35557,16 +34794,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.5,
     "rank_history": [
-      164,
-      164,
-      164,
-      164,
-      164,
-      174,
-      174,
       174
     ],
-    "rank_move_window": -10,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 83.1,
@@ -35791,16 +35021,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      172,
-      172,
-      172,
-      172,
-      172,
-      175,
-      175,
       175
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 60.3,
@@ -36022,16 +35245,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.34,
     "rank_history": [
-      174,
-      174,
-      174,
-      174,
-      174,
-      176,
-      176,
       176
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_wrte_rec": 39.0,
@@ -36137,16 +35353,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.29,
     "rank_history": [
-      189,
-      189,
-      189,
-      189,
-      189,
-      177,
-      177,
       177
     ],
-    "rank_move_window": 12,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 58.4,
@@ -36313,16 +35522,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.17,
     "rank_history": [
-      176,
-      176,
-      176,
-      176,
-      176,
-      178,
-      178,
       178
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 88.7,
@@ -36505,16 +35707,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.44,
     "rank_history": [
+      189,
+      189,
       190,
       190,
       190,
       190,
       190,
-      179,
-      179,
       179
     ],
-    "rank_move_window": 11,
+    "rank_move_window": 10,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 86.1,
@@ -36695,16 +35897,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.91,
     "rank_history": [
-      178,
-      178,
-      178,
-      178,
-      178,
-      180,
-      180,
+      168,
+      168,
+      167,
+      167,
+      167,
+      167,
+      170,
       180
     ],
-    "rank_move_window": -2,
+    "rank_move_window": -12,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 87.5,
@@ -36874,16 +36076,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.33,
     "rank_history": [
-      175,
-      175,
-      175,
-      175,
-      175,
-      181,
-      181,
       181
     ],
-    "rank_move_window": -6,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 76.5,
@@ -37119,16 +36314,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.44,
     "rank_history": [
-      173,
-      173,
-      173,
-      173,
-      173,
-      182,
-      182,
       182
     ],
-    "rank_move_window": -9,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 86.1,
@@ -37344,16 +36532,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      179,
-      179,
-      179,
-      179,
-      179,
-      183,
-      183,
       183
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 62.8,
@@ -37529,16 +36710,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.41,
     "rank_history": [
-      180,
-      180,
-      180,
-      180,
-      180,
-      184,
-      184,
       184
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 73.0,
@@ -37731,16 +36905,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.8,
     "rank_history": [
-      177,
-      177,
-      177,
-      177,
-      177,
-      185,
-      185,
       185
     ],
-    "rank_move_window": -8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 71.1,
@@ -37954,16 +37121,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.57,
     "rank_history": [
-      183,
-      183,
-      183,
-      183,
-      183,
-      186,
-      186,
+      171,
+      171,
+      170,
+      170,
+      170,
+      170,
+      173,
       186
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -15,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 61.6,
@@ -38190,16 +37357,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.86,
     "rank_history": [
-      186,
-      186,
-      186,
-      186,
-      186,
-      187,
-      187,
       187
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 79.6,
@@ -38401,16 +37561,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.14,
     "rank_history": [
-      187,
-      187,
-      187,
-      187,
-      187,
-      188,
-      188,
       188
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 70.8,
@@ -38606,16 +37759,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.49,
     "rank_history": [
-      229,
-      229,
-      229,
-      229,
-      229,
-      189,
-      189,
       189
     ],
-    "rank_move_window": 40,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 90.8,
@@ -38855,16 +38001,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.29,
     "rank_history": [
-      200,
-      200,
-      200,
-      200,
-      200,
-      190,
-      190,
       190
     ],
-    "rank_move_window": 10,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 79.9,
@@ -39074,13 +38213,6 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      191,
-      191,
-      191,
-      191,
-      191,
-      191,
-      191,
       191
     ],
     "rank_move_window": 0,
@@ -39278,16 +38410,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.18,
     "rank_history": [
-      182,
-      182,
-      182,
-      182,
-      182,
-      192,
-      192,
       192
     ],
-    "rank_move_window": -10,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_edge_sacks": 14.0,
@@ -39402,13 +38527,6 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.23,
     "rank_history": [
-      193,
-      193,
-      193,
-      193,
-      193,
-      193,
-      193,
       193
     ],
     "rank_move_window": 0,
@@ -39605,13 +38723,6 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      194,
-      194,
-      194,
-      194,
-      194,
-      194,
-      194,
       194
     ],
     "rank_move_window": 0,
@@ -39806,16 +38917,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.94,
     "rank_history": [
-      228,
-      228,
-      228,
-      228,
-      228,
-      195,
-      195,
       195
     ],
-    "rank_move_window": 33,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 83.5,
@@ -39984,16 +39088,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.19,
     "rank_history": [
-      195,
-      195,
-      195,
-      195,
-      195,
-      196,
-      196,
       196
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 90.6,
@@ -40178,16 +39275,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.88,
     "rank_history": [
-      196,
-      196,
-      196,
-      196,
-      196,
-      197,
-      197,
       197
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 85.4,
@@ -40358,16 +39448,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.49,
     "rank_history": [
-      226,
-      226,
-      226,
-      226,
-      226,
-      198,
-      198,
+      199,
+      199,
+      201,
+      201,
+      201,
+      201,
+      201,
       198
     ],
-    "rank_move_window": 28,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 74.4,
@@ -40583,16 +39673,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      197,
-      197,
-      197,
-      197,
-      197,
-      199,
-      199,
       199
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 43.2,
@@ -40773,16 +39856,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.18,
     "rank_history": [
-      184,
-      184,
-      184,
-      184,
-      184,
-      200,
-      200,
       200
     ],
-    "rank_move_window": -16,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -40858,16 +39934,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.18,
     "rank_history": [
-      198,
-      198,
-      198,
-      198,
-      198,
-      201,
-      201,
       201
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 88.0,
@@ -41114,16 +40183,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.11,
     "rank_history": [
-      205,
-      205,
-      205,
-      205,
-      205,
-      202,
-      202,
       202
     ],
-    "rank_move_window": 3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 78.8,
@@ -41369,16 +40431,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.72,
     "rank_history": [
-      199,
-      199,
-      199,
-      199,
-      199,
-      203,
-      203,
       203
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 59.7,
@@ -41620,16 +40675,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.44,
     "rank_history": [
-      201,
-      201,
-      201,
-      201,
-      201,
-      204,
-      204,
       204
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 65.6,
@@ -41843,16 +40891,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.65,
     "rank_history": [
-      202,
-      202,
-      202,
-      202,
-      202,
-      205,
-      205,
+      112,
+      112,
+      112,
+      112,
+      112,
+      112,
+      114,
       205
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -93,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 73.8,
@@ -42039,16 +41087,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.45,
     "rank_history": [
-      203,
-      203,
-      203,
-      203,
-      203,
-      206,
-      206,
       206
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 73.5,
@@ -42235,16 +41276,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      185,
-      185,
-      185,
-      185,
-      185,
-      207,
-      207,
       207
     ],
-    "rank_move_window": -22,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 64.0,
@@ -42433,16 +41467,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.16,
     "rank_history": [
-      204,
-      204,
-      204,
-      204,
-      204,
-      208,
-      208,
       208
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 74.0,
@@ -42669,16 +41696,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.15,
     "rank_history": [
-      206,
-      206,
-      206,
-      206,
-      206,
-      209,
-      209,
       209
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 80.0,
@@ -42882,16 +41902,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.75,
     "rank_history": [
-      208,
-      208,
-      208,
-      208,
-      208,
-      210,
-      210,
       210
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 65.3,
@@ -43101,16 +42114,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      221,
-      221,
-      221,
-      221,
-      221,
-      211,
-      211,
       211
     ],
-    "rank_move_window": 10,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 88.6,
@@ -43304,16 +42310,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      192,
-      192,
-      192,
-      192,
-      192,
-      212,
-      212,
       212
     ],
-    "rank_move_window": -20,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 65.0,
@@ -43498,16 +42497,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      217,
-      217,
-      217,
-      217,
-      217,
-      213,
-      213,
       213
     ],
-    "rank_move_window": 4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 49.6,
@@ -43735,16 +42727,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.42,
     "rank_history": [
-      211,
-      211,
-      211,
-      211,
-      211,
-      214,
-      214,
       214
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 67.3,
@@ -43901,16 +42886,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.07,
     "rank_history": [
-      209,
-      209,
-      209,
-      209,
-      209,
-      215,
-      215,
       215
     ],
-    "rank_move_window": -6,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -43986,16 +42964,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      212,
-      212,
-      212,
-      212,
-      212,
-      216,
-      216,
       216
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -44083,16 +43054,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.28,
     "rank_history": [
-      213,
-      213,
-      213,
-      213,
-      213,
-      217,
-      217,
       217
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 58.0,
@@ -44311,16 +43275,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.83,
     "rank_history": [
-      215,
-      215,
-      215,
-      215,
-      215,
-      218,
-      218,
       218
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 74.0,
@@ -44497,16 +43454,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.62,
     "rank_history": [
-      207,
-      207,
-      207,
-      207,
-      207,
-      219,
-      219,
       219
     ],
-    "rank_move_window": -12,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 65.0,
@@ -44698,16 +43648,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.4,
     "rank_history": [
-      218,
-      218,
-      218,
-      218,
-      218,
-      220,
-      220,
       220
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 67.1,
@@ -44888,16 +43831,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.41,
     "rank_history": [
-      219,
-      219,
-      219,
-      219,
-      219,
-      221,
-      221,
       221
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 67.4,
@@ -45102,16 +44038,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.31,
     "rank_history": [
-      214,
-      214,
-      214,
-      214,
-      214,
-      222,
-      222,
       222
     ],
-    "rank_move_window": -8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 77.7,
@@ -45311,16 +44240,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.2,
     "rank_history": [
-      210,
-      210,
-      210,
-      210,
-      210,
-      223,
-      223,
       223
     ],
-    "rank_move_window": -13,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 75.9,
@@ -45524,16 +44446,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 1.27,
     "rank_history": [
-      225,
-      225,
-      225,
-      225,
-      225,
-      224,
-      224,
       224
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 71.5,
@@ -45759,16 +44674,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.01,
     "rank_history": [
-      224,
-      224,
-      224,
-      224,
-      224,
-      225,
-      225,
       225
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 67.5,
@@ -46008,16 +44916,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.87,
     "rank_history": [
-      236,
-      236,
-      236,
-      236,
-      236,
-      226,
-      226,
       226
     ],
-    "rank_move_window": 10,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 73.2,
@@ -46233,16 +45134,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.45,
     "rank_history": [
-      234,
-      234,
-      234,
-      234,
-      234,
-      227,
-      227,
       227
     ],
-    "rank_move_window": 7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 67.5,
@@ -46423,16 +45317,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.01,
     "rank_history": [
-      220,
-      220,
-      220,
-      220,
-      220,
-      228,
-      228,
       228
     ],
-    "rank_move_window": -8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 68.2,
@@ -46608,16 +45495,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.47,
     "rank_history": [
-      230,
-      230,
-      230,
-      230,
-      230,
-      229,
-      229,
       229
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 67.8,
@@ -46806,16 +45686,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.27,
     "rank_history": [
-      254,
-      254,
-      254,
-      254,
-      254,
-      230,
-      230,
       230
     ],
-    "rank_move_window": 24,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 80.3,
@@ -47048,16 +45921,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.79,
     "rank_history": [
-      238,
-      238,
-      238,
-      238,
-      238,
-      231,
-      231,
       231
     ],
-    "rank_move_window": 7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 76.9,
@@ -47269,16 +46135,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.06,
     "rank_history": [
-      222,
-      222,
-      222,
-      222,
-      222,
-      232,
-      232,
       232
     ],
-    "rank_move_window": -10,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 77.7,
@@ -47461,16 +46320,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.46,
     "rank_history": [
-      255,
-      255,
-      255,
-      255,
-      255,
-      233,
-      233,
       233
     ],
-    "rank_move_window": 22,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -47541,16 +46393,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.19,
     "rank_history": [
-      231,
-      231,
-      231,
-      231,
-      231,
-      234,
-      234,
       234
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -47621,16 +46466,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.1,
     "rank_history": [
-      246,
-      246,
-      246,
-      246,
-      246,
-      235,
-      235,
       235
     ],
-    "rank_move_window": 11,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 75.6,
@@ -47808,16 +46646,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.19,
     "rank_history": [
-      232,
-      232,
-      232,
-      232,
-      232,
-      236,
-      236,
       236
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 74.7,
@@ -48010,16 +46841,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.68,
     "rank_history": [
-      283,
-      283,
-      283,
-      283,
-      283,
-      237,
-      237,
       237
     ],
-    "rank_move_window": 46,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 72.8,
@@ -48223,16 +47047,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.42,
     "rank_history": [
-      233,
-      233,
-      233,
-      233,
-      233,
-      238,
-      238,
       238
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 64.7,
@@ -48399,16 +47216,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.24,
     "rank_history": [
-      241,
-      241,
-      241,
-      241,
-      241,
-      239,
-      239,
       239
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 64.7,
@@ -48601,16 +47411,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.02,
     "rank_history": [
-      252,
-      252,
-      252,
-      252,
-      252,
-      240,
-      240,
       240
     ],
-    "rank_move_window": 12,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 64.7,
@@ -48832,16 +47635,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.47,
     "rank_history": [
-      227,
-      227,
-      227,
-      227,
-      227,
-      241,
-      241,
       241
     ],
-    "rank_move_window": -14,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 72.0,
@@ -49064,16 +47860,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.85,
     "rank_history": [
-      223,
-      223,
-      223,
-      223,
-      223,
-      242,
-      242,
       242
     ],
-    "rank_move_window": -19,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_db_int": 1.0,
@@ -49200,16 +47989,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.93,
     "rank_history": [
-      239,
-      239,
-      239,
-      239,
-      239,
-      243,
-      243,
       243
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 71.9,
@@ -49414,16 +48196,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.99,
     "rank_history": [
-      245,
-      245,
-      245,
-      245,
-      245,
-      244,
-      244,
       244
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 61.1,
@@ -49604,16 +48379,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.44,
     "rank_history": [
-      243,
-      243,
-      243,
-      243,
-      243,
-      245,
-      245,
       245
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 57.7,
@@ -49806,16 +48574,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.97,
     "rank_history": [
-      216,
-      216,
-      216,
-      216,
-      216,
-      246,
-      246,
       246
     ],
-    "rank_move_window": -30,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 69.7,
@@ -50036,16 +48797,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      240,
-      240,
-      240,
-      240,
-      240,
-      247,
-      247,
       247
     ],
-    "rank_move_window": -7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -50121,16 +48875,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.44,
     "rank_history": [
-      249,
-      249,
-      249,
-      249,
-      249,
-      248,
-      248,
       248
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 80.9,
@@ -50306,16 +49053,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      235,
-      235,
-      235,
-      235,
-      235,
-      249,
-      249,
       249
     ],
-    "rank_move_window": -14,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 61.3,
@@ -50508,16 +49248,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.76,
     "rank_history": [
-      244,
-      244,
-      244,
-      244,
-      244,
-      250,
-      250,
       250
     ],
-    "rank_move_window": -6,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 74.8,
@@ -50748,16 +49481,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.63,
     "rank_history": [
-      258,
-      258,
-      258,
-      258,
-      258,
-      251,
-      251,
       251
     ],
-    "rank_move_window": 7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 68.3,
@@ -50967,16 +49693,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.03,
     "rank_history": [
-      253,
-      253,
-      253,
-      253,
-      253,
-      252,
-      252,
       252
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 69.4,
@@ -51157,16 +49876,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.42,
     "rank_history": [
-      257,
-      257,
-      257,
-      257,
-      257,
-      253,
-      253,
       253
     ],
-    "rank_move_window": 4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 69.2,
@@ -51330,16 +50042,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      250,
-      250,
-      250,
-      250,
-      250,
-      254,
-      254,
       254
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 73.5,
@@ -51520,16 +50225,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.12,
     "rank_history": [
-      247,
-      247,
-      247,
-      247,
-      247,
-      255,
-      255,
       255
     ],
-    "rank_move_window": -8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 64.5,
@@ -51710,16 +50408,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.47,
     "rank_history": [
-      260,
-      260,
-      260,
-      260,
-      260,
-      256,
-      256,
       256
     ],
-    "rank_move_window": 4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 65.3,
@@ -51902,16 +50593,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      242,
-      242,
-      242,
-      242,
-      242,
-      257,
-      257,
       257
     ],
-    "rank_move_window": -15,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -51987,16 +50671,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      268,
-      268,
-      268,
-      268,
-      268,
-      258,
-      258,
       258
     ],
-    "rank_move_window": 10,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 91.6,
@@ -52178,16 +50855,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.88,
     "rank_history": [
-      237,
-      237,
-      237,
-      237,
-      237,
-      259,
-      259,
       259
     ],
-    "rank_move_window": -22,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 83.0,
@@ -52418,16 +51088,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      264,
-      264,
-      264,
-      264,
-      264,
-      260,
-      260,
       260
     ],
-    "rank_move_window": 4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 67.5,
@@ -52645,16 +51308,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.14,
     "rank_history": [
-      256,
-      256,
-      256,
-      256,
-      256,
-      261,
-      261,
       261
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 88.5,
@@ -52885,16 +51541,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.11,
     "rank_history": [
-      259,
-      259,
-      259,
-      259,
-      259,
-      262,
-      262,
       262
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 90.7,
@@ -53133,16 +51782,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.88,
     "rank_history": [
-      261,
-      261,
-      261,
-      261,
-      261,
-      263,
-      263,
       263
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 69.7,
@@ -53367,16 +52009,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.45,
     "rank_history": [
-      271,
-      271,
-      271,
-      271,
-      271,
-      264,
-      264,
       264
     ],
-    "rank_move_window": 7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -53456,16 +52091,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.44,
     "rank_history": [
-      263,
-      263,
-      263,
-      263,
-      263,
-      265,
-      265,
       265
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 83.5,
@@ -53707,16 +52335,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.6,
     "rank_history": [
-      265,
-      265,
-      265,
-      265,
-      265,
-      266,
-      266,
       266
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 72.0,
@@ -53938,16 +52559,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.96,
     "rank_history": [
-      248,
-      248,
-      248,
-      248,
-      248,
-      267,
-      267,
       267
     ],
-    "rank_move_window": -19,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_edge_sacks": 2.0,
@@ -54062,16 +52676,9 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.63,
     "rank_history": [
-      280,
-      280,
-      280,
-      280,
-      280,
-      268,
-      268,
       268
     ],
-    "rank_move_window": 12,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 74.4,
@@ -54292,16 +52899,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.93,
     "rank_history": [
-      262,
-      262,
-      262,
-      262,
-      262,
-      269,
-      269,
       269
     ],
-    "rank_move_window": -7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 80.3,
@@ -54468,16 +53068,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.73,
     "rank_history": [
-      278,
-      278,
-      278,
-      278,
-      278,
-      270,
-      270,
       270
     ],
-    "rank_move_window": 8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 77.4,
@@ -54656,16 +53249,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.88,
     "rank_history": [
-      270,
-      270,
-      270,
-      270,
-      270,
-      271,
-      271,
       271
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 74.7,
@@ -54875,16 +53461,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      266,
-      266,
-      266,
-      266,
-      266,
-      272,
-      272,
       272
     ],
-    "rank_move_window": -6,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -54972,16 +53551,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.14,
     "rank_history": [
-      275,
-      275,
-      275,
-      275,
-      275,
-      273,
-      273,
       273
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 75.5,
@@ -55209,16 +53781,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.23,
     "rank_history": [
-      272,
-      272,
-      272,
-      272,
-      272,
-      274,
-      274,
       274
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 64.9,
@@ -55458,16 +54023,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.04,
     "rank_history": [
-      281,
-      281,
-      281,
-      281,
-      281,
-      275,
-      275,
       275
     ],
-    "rank_move_window": 6,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 51.5,
@@ -55663,13 +54221,6 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.65,
     "rank_history": [
-      276,
-      276,
-      276,
-      276,
-      276,
-      276,
-      276,
       276
     ],
     "rank_move_window": 0,
@@ -55865,16 +54416,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.05,
     "rank_history": [
-      284,
-      284,
-      284,
-      284,
-      284,
-      277,
-      277,
       277
     ],
-    "rank_move_window": 7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 66.0,
@@ -56093,16 +54637,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.97,
     "rank_history": [
-      274,
-      274,
-      274,
-      274,
-      274,
-      278,
-      278,
       278
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 78.9,
@@ -56271,16 +54808,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -4.98,
     "rank_history": [
-      277,
-      277,
-      277,
-      277,
-      277,
-      279,
-      279,
       279
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -56372,16 +54902,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.5,
     "rank_history": [
-      267,
-      267,
-      267,
-      267,
-      267,
-      280,
-      280,
       280
     ],
-    "rank_move_window": -13,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 62.7,
@@ -56621,16 +55144,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.4,
     "rank_history": [
-      273,
-      273,
-      273,
-      273,
-      273,
-      281,
-      281,
       281
     ],
-    "rank_move_window": -8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 74.2,
@@ -56861,16 +55377,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.45,
     "rank_history": [
-      279,
-      279,
-      279,
-      279,
-      279,
-      282,
-      282,
+      233,
+      233,
+      234,
+      234,
+      234,
+      234,
+      230,
       282
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -49,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 67.5,
@@ -57096,16 +55612,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.4,
     "rank_history": [
-      282,
-      282,
-      282,
-      282,
-      282,
-      283,
-      283,
       283
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 49.3,
@@ -57345,16 +55854,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.93,
     "rank_history": [
-      292,
-      292,
-      292,
-      292,
-      292,
-      284,
-      284,
       284
     ],
-    "rank_move_window": 8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 70.8,
@@ -57561,16 +56063,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.62,
     "rank_history": [
-      287,
-      287,
-      287,
-      287,
-      287,
-      285,
-      285,
       285
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 67.8,
@@ -57763,16 +56258,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.18,
     "rank_history": [
-      299,
-      299,
-      299,
-      299,
-      299,
-      286,
-      286,
       286
     ],
-    "rank_move_window": 13,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 62.0,
@@ -58007,16 +56495,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.86,
     "rank_history": [
-      269,
-      269,
-      269,
-      269,
-      269,
-      287,
-      287,
       287
     ],
-    "rank_move_window": -18,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 83.7,
@@ -58209,16 +56690,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.36,
     "rank_history": [
-      286,
-      286,
-      286,
-      286,
-      286,
-      288,
-      288,
       288
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 62.9,
@@ -58439,16 +56913,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.78,
     "rank_history": [
-      291,
-      291,
-      291,
-      291,
-      291,
-      289,
-      289,
       289
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 72.3,
@@ -58615,16 +57082,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.45,
     "rank_history": [
-      289,
-      289,
-      289,
-      289,
-      289,
-      290,
-      290,
       290
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 63.4,
@@ -58864,16 +57324,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.53,
     "rank_history": [
-      290,
-      290,
-      290,
-      290,
-      290,
-      291,
-      291,
       291
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 72.7,
@@ -59104,16 +57557,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.3,
     "rank_history": [
-      288,
-      288,
-      288,
-      288,
-      288,
-      292,
-      292,
       292
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_qb_pass_td": 28.0,
@@ -59240,16 +57686,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.9,
     "rank_history": [
-      285,
-      285,
-      285,
-      285,
-      285,
-      293,
-      293,
       293
     ],
-    "rank_move_window": -8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 67.2,
@@ -59480,16 +57919,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.67,
     "rank_history": [
-      303,
-      303,
-      303,
-      303,
-      303,
-      294,
-      294,
       294
     ],
-    "rank_move_window": 9,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 76.7,
@@ -59713,16 +58145,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.16,
     "rank_history": [
-      293,
-      293,
-      293,
-      293,
-      293,
-      295,
-      295,
       295
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 64.4,
@@ -59936,16 +58361,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      295,
-      295,
-      295,
-      295,
-      295,
-      296,
-      296,
       296
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 65.7,
@@ -60181,13 +58599,6 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.34,
     "rank_history": [
-      297,
-      297,
-      297,
-      297,
-      297,
-      297,
-      297,
       297
     ],
     "rank_move_window": 0,
@@ -60409,16 +58820,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      294,
-      294,
-      294,
-      294,
-      294,
-      298,
-      298,
       298
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 66.9,
@@ -60595,16 +58999,9 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.63,
     "rank_history": [
-      296,
-      296,
-      296,
-      296,
-      296,
-      299,
-      299,
       299
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_rb_rush_yds": 470.0,
@@ -60731,16 +59128,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -5.73,
     "rank_history": [
-      302,
-      302,
-      302,
-      302,
-      302,
-      300,
-      300,
       300
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_wrte_rec": 70.0,
@@ -60854,16 +59244,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.38,
     "rank_history": [
-      300,
-      300,
-      300,
-      300,
-      300,
-      301,
-      301,
       301
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 72.5,
@@ -61094,16 +59477,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      301,
-      301,
-      301,
-      301,
-      301,
-      302,
-      302,
       302
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 49.3,
@@ -61313,16 +59689,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.26,
     "rank_history": [
-      298,
-      298,
-      298,
-      298,
-      298,
-      303,
-      303,
       303
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 60.2,
@@ -61515,16 +59884,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.66,
     "rank_history": [
-      310,
-      310,
-      310,
-      310,
-      310,
-      304,
-      304,
+      262,
+      262,
+      262,
+      262,
+      262,
+      262,
+      262,
       304
     ],
-    "rank_move_window": 6,
+    "rank_move_window": -42,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 66.9,
@@ -61746,16 +60115,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -4.8,
     "rank_history": [
-      304,
-      304,
-      304,
-      304,
-      304,
-      305,
-      305,
       305
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 54.7,
@@ -61965,16 +60327,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.24,
     "rank_history": [
-      307,
-      307,
-      307,
-      307,
-      307,
-      306,
-      306,
       306
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 64.4,
@@ -62216,16 +60571,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.88,
     "rank_history": [
-      305,
-      305,
-      305,
-      305,
-      305,
-      307,
-      307,
       307
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 58.5,
@@ -62447,16 +60795,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.26,
     "rank_history": [
-      309,
-      309,
-      309,
-      309,
-      309,
-      308,
-      308,
       308
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_wrte_rec": 61.0,
@@ -62574,16 +60915,9 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.58,
     "rank_history": [
-      311,
-      311,
-      311,
-      311,
-      311,
-      309,
-      309,
       309
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 67.8,
@@ -62793,16 +61127,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
-      308,
-      308,
-      308,
-      308,
-      308,
-      310,
-      310,
       310
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 74.0,
@@ -62984,16 +61311,9 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.94,
     "rank_history": [
-      306,
-      306,
-      306,
-      306,
-      306,
-      311,
-      311,
       311
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 71.2,

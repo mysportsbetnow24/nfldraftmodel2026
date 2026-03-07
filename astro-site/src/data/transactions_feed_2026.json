@@ -1,5 +1,31 @@
 [
   {
+    "team": "LV",
+    "event_date": "2026-03-06",
+    "status": "Confirmed",
+    "status_kind": "confirmed",
+    "label": "Maxx Crosby (EDGE) traded",
+    "player_name": "Maxx Crosby",
+    "position": "EDGE",
+    "action_text": "traded",
+    "affects_team_needs": true,
+    "source_url": "https://www.cbssports.com/nfl/transactions/",
+    "source_account": "CBS Sports"
+  },
+  {
+    "team": "BAL",
+    "event_date": "2026-03-06",
+    "status": "Confirmed",
+    "status_kind": "confirmed",
+    "label": "Maxx Crosby (EDGE) traded",
+    "player_name": "Maxx Crosby",
+    "position": "EDGE",
+    "action_text": "traded",
+    "affects_team_needs": true,
+    "source_url": "https://www.cbssports.com/nfl/transactions/",
+    "source_account": "CBS Sports"
+  },
+  {
     "team": "WAS",
     "event_date": "2026-03-05",
     "status": "Confirmed",
