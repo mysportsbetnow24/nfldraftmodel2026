@@ -463,6 +463,8 @@ tbody tr.clickable-row {
   padding: 1rem;
   display: grid;
   gap: 0.7rem;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .profile-strip {
@@ -529,14 +531,14 @@ tbody tr.clickable-row {
 
 .translation-block {
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 0.8rem;
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+  align-items: start;
 }
 
 .radar-wrap {
-  width: 280px;
-  height: 280px;
+  width: min(100%, 240px);
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -551,6 +553,7 @@ tbody tr.clickable-row {
 .bar-metrics {
   display: grid;
   gap: 0.48rem;
+  min-width: 0;
 }
 
 .subcard {
@@ -583,6 +586,16 @@ tbody tr.clickable-row {
   gap: 0.45rem;
   font-size: 0.84rem;
   margin-bottom: 0.28rem;
+  align-items: flex-start;
+}
+
+.metric-top span,
+.metric-top strong {
+  min-width: 0;
+}
+
+.metric-top strong {
+  text-align: right;
 }
 
 .meter {
@@ -616,6 +629,10 @@ tbody tr.clickable-row {
 
 .metric-lite {
   font-size: 0.86rem;
+}
+
+.lens-copy {
+  display: none;
 }
 
 .scout-block {

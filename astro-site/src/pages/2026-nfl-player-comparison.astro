@@ -355,18 +355,14 @@ const collectionSchema = {
             </div>
             <div class="bar-metrics">
               ${meterRow("Production Percentile", productionPct, `${productionPct.toFixed(0)}th pct`, "#0f7b6a")}
-              <div class="muted lens-copy">Measures how strong the player&apos;s current production profile looks versus this draft class at the same position.</div>
               ${meterRow("Athletic Profile Percentile", athleticPct, `${athleticPct.toFixed(0)}th pct`, "#425466")}
-              <div class="muted lens-copy">Blends verified testing, frame context, and position-adjusted athletic history.</div>
               <div class="chip-row">
                 <span class="chip info">Testing ${athleticTesting.toFixed(0)}/100</span>
                 <span class="chip info">Frame ${athleticFrame.toFixed(0)}/100</span>
                 <span class="chip info">Confidence ${athleticConfidence.toFixed(0)}%</span>
               </div>
               ${meterRow("Trait Percentile", traitPct, `${traitPct.toFixed(0)}th pct`, "#245ea8")}
-              <div class="muted lens-copy">Captures the player&apos;s projected NFL tool set for the position: movement skills, functional traits, and role translation.</div>
               ${meterRow("Market Signal", marketPct, market.label, market.tone === "good" ? "#138a4a" : (market.tone === "warn" ? "#b15518" : "#245ea8"))}
-              <div class="muted lens-copy">Shows how strongly the broader draft market supports this evaluation relative to peers at the same position.</div>
             </div>
           </div>
 
