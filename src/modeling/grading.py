@@ -820,6 +820,17 @@ def _infer_cb_role_and_scheme(
             or (fir is not None and fir >= 0.22)
         )
     )
+    strong_outside_coverage = (
+        cov_grade is not None
+        and cov_grade >= 80.0
+        and man_grade is not None
+        and man_grade >= 76.0
+        and (
+            (snaps_per_target is not None and snaps_per_target >= 8.5)
+            or (qbr is not None and qbr <= 55.0)
+            or (fir is not None and fir >= 0.20)
+        )
+    )
     true_slot_corner = slot_snaps is not None and slot_snaps >= 180.0
     zone_tilt = (
         zone_grade is not None
@@ -831,6 +842,8 @@ def _infer_cb_role_and_scheme(
     if true_slot_corner and strong_zone and (ball_disruption or (cov_grade is not None and cov_grade >= 80.0)):
         return ("Nickel matchup corner", "Match-zone / big-nickel coverage family")
     if elite_coverage and strong_press and strong_zone:
+        return ("Outside matchup corner", "Press-match / quarters travel-capable fit")
+    if strong_outside_coverage and not slot_usage:
         return ("Outside matchup corner", "Press-match / quarters travel-capable fit")
     if strong_press and long_frame and explosive:
         return ("Press-man outside corner", "Press-match outside corner framework")

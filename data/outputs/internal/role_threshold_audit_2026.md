@@ -10,6 +10,12 @@ Targeted threshold pass completed for `CB`, `S`, `EDGE`, and `DT`, with the exis
 - `DT`: loosened interior-rush promotion so disruptive athletic tackles stop sitting in generic anchor buckets.
 - `LB`: no new trait rewrite in this pass; existing archetype-aware methodology remains active.
 
+## Follow-up CB/S pass
+- `CB` generic `Outside starter with matchup flexibility` outcomes reduced from `27` to `24`.
+- `Outside matchup corner` outcomes increased from `1` to `4`.
+- `Davison Igbinosun` now clears into `Outside matchup corner`.
+- `S` distribution stayed stable after the narrower CB pass, which was the intended outcome.
+
 ## Spot checks
 - Mansoor Delane -> Outside matchup corner
 - Avieon Terrell -> Outside starter with matchup flexibility
