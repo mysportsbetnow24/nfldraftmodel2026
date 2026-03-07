@@ -2277,6 +2277,7 @@ def _load_owner_scouting_notes() -> dict[str, dict[str, str]]:
             "report_summary": str(row.get("public_report_summary", "")).strip(),
             "why_he_wins": str(row.get("public_why_he_wins", "")).strip(),
             "primary_concerns": str(row.get("public_primary_concerns", "")).strip(),
+            "film_notes": str(row.get("public_film_notes", "")).strip(),
             "role_projection": str(row.get("public_role_projection", "")).strip(),
             "seo_description": str(row.get("seo_description", "")).strip(),
         }
@@ -2605,6 +2606,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "scouting_report_summary": owner_note.get("report_summary") or row.get("scouting_report_summary", ""),
                 "scouting_why_he_wins": owner_note.get("why_he_wins") or row.get("scouting_why_he_wins", ""),
                 "scouting_primary_concerns": owner_note.get("primary_concerns") or row.get("scouting_primary_concerns", ""),
+                "scouting_film_notes": owner_note.get("film_notes") or row.get("scouting_film_notes", ""),
                 "scouting_production_snapshot": production_snapshot,
                 "scouting_role_projection": owner_note.get("role_projection") or row.get("scouting_role_projection", ""),
                 "seo_description_override": owner_note.get("seo_description") or "",

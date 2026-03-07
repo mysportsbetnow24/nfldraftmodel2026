@@ -12,6 +12,7 @@ This is the private editing path for public scouting-card copy.
 - `public_report_summary`
 - `public_why_he_wins`
 - `public_primary_concerns`
+- `public_film_notes`
 - `public_role_projection`
 - `seo_description`
 

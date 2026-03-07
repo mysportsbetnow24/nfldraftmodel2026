@@ -56,6 +56,7 @@ const collectionSchema = {
       <article class="card"><strong>Report Summary</strong><div id="dSummary" class="muted detail-text report-summary"></div></article>
       <article class="card"><strong>How He Wins</strong><div id="dWins" class="muted detail-text"></div></article>
       <article class="card"><strong>Primary Concerns</strong><div id="dConcerns" class="muted detail-text"></div></article>
+      <article class="card"><strong>Film Notes</strong><div id="dFilm" class="muted detail-text"></div></article>
       <article class="card"><strong>2025 Production Snapshot</strong><div id="dProd" class="muted detail-text"></div></article>
       <article class="card"><strong>Role / Scheme Fit</strong><div id="dRole" class="muted detail-text"></div></article>
     </div>
@@ -189,6 +190,17 @@ const collectionSchema = {
       el.innerHTML = blocks.join("");
     };
 
+    const renderFilmNotes = (id, value) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const items = toBullets(value);
+      if (!items.length) {
+        el.innerHTML = `<p class="block-copy">Film notes will appear here as scouting updates are published.</p>`;
+        return;
+      }
+      el.innerHTML = `<ul class="scout-list">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+    };
+
     const renderRoleFit = (id, player) => {
       const el = document.getElementById(id);
       if (!el) return;
@@ -245,6 +257,7 @@ const collectionSchema = {
       renderParagraphStack("dSummary", p.scouting_report_summary, "No scouting summary available yet.");
       renderBulletList("dWins", p.scouting_why_he_wins, "How he wins assessment updates as scouting notes refresh.");
       renderBulletList("dConcerns", p.scouting_primary_concerns, "No major concerns flagged in the current profile.");
+      renderFilmNotes("dFilm", p.scouting_film_notes);
       renderProduction("dProd", p);
       renderRoleFit("dRole", p);
     };

@@ -97,6 +97,7 @@ const toParagraphs = (value: string) =>
     .filter(Boolean);
 const winsBullets = toBullets(String(player.scouting_why_he_wins || ""));
 const concernBullets = toBullets(String(player.scouting_primary_concerns || ""));
+const filmNoteBullets = toBullets(String(player.scouting_film_notes || ""));
 const summaryParagraphs = toParagraphs(String(player.scouting_report_summary || ""));
 const roleParagraphs = toParagraphs(String(player.scouting_role_projection || ""));
 const roleChips = [String(player.best_role || "").trim(), String(player.best_scheme_fit || "").trim(), ...(positionLens?.tags || [])]
@@ -184,6 +185,14 @@ const compLine = (title: string, comp: any, fallback: string) => {
           {concernBullets.map((item: string) => <li>{item}</li>)}
         </ul>
       ) : <div class="muted">No major concerns flagged in the current profile.</div>}
+    </article>
+    <article class="card">
+      <h2 class="block-title">Film Notes</h2>
+      {filmNoteBullets.length ? (
+        <ul class="scout-list muted">
+          {filmNoteBullets.map((item: string) => <li>{item}</li>)}
+        </ul>
+      ) : <div class="muted">Film notes will appear here as scouting updates are published.</div>}
     </article>
     <article class="card">
       <h2 class="block-title">2025 Production Snapshot</h2>
