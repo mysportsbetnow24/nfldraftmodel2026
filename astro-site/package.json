@@ -6,6 +6,7 @@
   "scripts": {
     "sync-data": "python3 ../scripts/export_astro_site_data.py",
     "refresh:consensus": "python3 ../scripts/refresh_consensus_pipeline.py",
+    "refresh:workflow": "python3 ../scripts/refresh_update_workflow.py",
     "dev": "astro dev",
     "build": "astro build",
     "build:cloudflare": "python3 -m pip install -r ../requirements.txt && npm run sync-data && astro build",

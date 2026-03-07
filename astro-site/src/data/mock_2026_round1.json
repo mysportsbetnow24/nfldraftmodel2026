@@ -116,7 +116,7 @@
     "school": "Texas A&M Aggies",
     "final_grade": 90.7,
     "round_value": "Round 1-2",
-    "pick_score": 0.7137,
+    "pick_score": 0.7082,
     "rank_driver_summary": ""
   },
   {
@@ -129,7 +129,7 @@
     "player_report_url": "/players/caleb-lomu",
     "position": "OT",
     "school": "Utah Utes",
-    "final_grade": 93.81,
+    "final_grade": 93.8,
     "round_value": "Round 1",
     "pick_score": 0.7486,
     "rank_driver_summary": ""
@@ -159,7 +159,7 @@
     "player_report_url": "/players/caleb-downs",
     "position": "S",
     "school": "Ohio State Buckeyes",
-    "final_grade": 92.86,
+    "final_grade": 92.88,
     "round_value": "Round 1",
     "pick_score": 0.7534,
     "rank_driver_summary": ""
@@ -191,7 +191,7 @@
     "school": "Utah Utes",
     "final_grade": 88.99,
     "round_value": "Round 1-2",
-    "pick_score": 0.9004,
+    "pick_score": 0.9154,
     "rank_driver_summary": ""
   },
   {
@@ -234,7 +234,7 @@
     "player_report_url": "/players/dillon-thieneman",
     "position": "S",
     "school": "Oregon Ducks",
-    "final_grade": 89.87,
+    "final_grade": 89.88,
     "round_value": "Round 1-2",
     "pick_score": 0.7206,
     "rank_driver_summary": ""
@@ -294,7 +294,7 @@
     "player_report_url": "/players/sonny-styles",
     "position": "LB",
     "school": "Ohio State Buckeyes",
-    "final_grade": 94.33,
+    "final_grade": 94.32,
     "round_value": "Round 1",
     "pick_score": 0.6788,
     "rank_driver_summary": ""
@@ -304,14 +304,14 @@
     "pick": 21,
     "overall_pick": 21,
     "team": "PIT",
-    "player_uid": "13-carnell-tate",
-    "player_name": "Carnell Tate",
-    "player_report_url": "/players/carnell-tate",
-    "position": "WR",
-    "school": "Ohio State Buckeyes",
-    "final_grade": 90.73,
+    "player_uid": "311-emmanuel-mcneil-warren",
+    "player_name": "Emmanuel McNeil-Warren",
+    "player_report_url": "/players/emmanuel-mcneil-warren",
+    "position": "S",
+    "school": "Toledo Rockets",
+    "final_grade": 90.72,
     "round_value": "Round 1-2",
-    "pick_score": 0.678,
+    "pick_score": 0.6793,
     "rank_driver_summary": ""
   },
   {
@@ -349,21 +349,6 @@
     "pick": 24,
     "overall_pick": 24,
     "team": "CLE",
-    "player_uid": "311-emmanuel-mcneil-warren",
-    "player_name": "Emmanuel McNeil-Warren",
-    "player_report_url": "/players/emmanuel-mcneil-warren",
-    "position": "S",
-    "school": "Toledo Rockets",
-    "final_grade": 90.7,
-    "round_value": "Round 1-2",
-    "pick_score": 0.6667,
-    "rank_driver_summary": ""
-  },
-  {
-    "round": 1,
-    "pick": 25,
-    "overall_pick": 25,
-    "team": "CHI",
     "player_uid": "307-olaivavega-ioane",
     "player_name": "Olaivavega Ioane",
     "player_report_url": "/players/olaivavega-ioane",
@@ -371,7 +356,22 @@
     "school": "Penn State Nittany Lions",
     "final_grade": 91.32,
     "round_value": "Round 1-2",
-    "pick_score": 0.6696,
+    "pick_score": 0.6583,
+    "rank_driver_summary": ""
+  },
+  {
+    "round": 1,
+    "pick": 25,
+    "overall_pick": 25,
+    "team": "CHI",
+    "player_uid": "302-arvell-reese",
+    "player_name": "Arvell Reese",
+    "player_report_url": "/players/arvell-reese",
+    "position": "LB",
+    "school": "Ohio State Buckeyes",
+    "final_grade": 92.39,
+    "round_value": "Round 1",
+    "pick_score": 0.6485,
     "rank_driver_summary": ""
   },
   {
@@ -386,7 +386,7 @@
     "school": "Clemson Tigers",
     "final_grade": 88.73,
     "round_value": "Round 1-2",
-    "pick_score": 0.6583,
+    "pick_score": 0.6638,
     "rank_driver_summary": ""
   },
   {
@@ -399,9 +399,9 @@
     "player_report_url": "/players/max-iheanachor",
     "position": "OT",
     "school": "Arizona State Sun Devils",
-    "final_grade": 84.41,
+    "final_grade": 84.29,
     "round_value": "Round 2-3",
-    "pick_score": 0.7372,
+    "pick_score": 0.7317,
     "rank_driver_summary": ""
   },
   {
@@ -424,14 +424,14 @@
     "pick": 29,
     "overall_pick": 29,
     "team": "KC",
-    "player_uid": "302-arvell-reese",
-    "player_name": "Arvell Reese",
-    "player_report_url": "/players/arvell-reese",
-    "position": "LB",
+    "player_uid": "13-carnell-tate",
+    "player_name": "Carnell Tate",
+    "player_report_url": "/players/carnell-tate",
+    "position": "WR",
     "school": "Ohio State Buckeyes",
-    "final_grade": 92.39,
-    "round_value": "Round 1",
-    "pick_score": 0.644,
+    "final_grade": 90.73,
+    "round_value": "Round 1-2",
+    "pick_score": 0.5852,
     "rank_driver_summary": ""
   },
   {
@@ -474,9 +474,9 @@
     "player_report_url": "/players/caleb-tiernan",
     "position": "OT",
     "school": "Northwestern Wildcats",
-    "final_grade": 83.51,
+    "final_grade": 83.48,
     "round_value": "Round 3-4",
-    "pick_score": 0.635,
+    "pick_score": 0.639,
     "rank_driver_summary": ""
   }
 ]

@@ -35,6 +35,33 @@ python3 scripts/build_big_board.py
 Consensus output:
 - `data/processed/consensus_big_boards_2026.csv`
 
+## Regular refresh workflow
+
+Use this when you want the normal site/model update path to start with a fresh consensus pull before
+transactions, mocks, and Astro data rebuilds:
+
+```bash
+cd astro-site
+npm run refresh:workflow
+```
+
+What it runs, in order:
+1. `scripts/refresh_consensus_pipeline.py`
+2. `scripts/pull_cbs_transactions.py`
+3. `scripts/build_team_needs_transaction_adjustments.py`
+4. `scripts/run_mock_draft.py`
+5. `scripts/export_astro_site_data.py`
+6. `astro build`
+
+Useful flags:
+
+```bash
+python3 scripts/refresh_update_workflow.py --skip-consensus-fetch
+python3 scripts/refresh_update_workflow.py --skip-transactions-fetch
+python3 scripts/refresh_update_workflow.py --skip-mocks
+python3 scripts/refresh_update_workflow.py --skip-site-build
+```
+
 ## Historical Calibration (real data only)
 
 Synthetic calibration fallback is disabled. Provide:

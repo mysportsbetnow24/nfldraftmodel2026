@@ -33,6 +33,11 @@ def main() -> None:
         help="Skip the final Astro build after regenerating data.",
     )
     parser.add_argument(
+        "--skip-export",
+        action="store_true",
+        help="Skip export_astro_site_data.py after the board rebuild.",
+    )
+    parser.add_argument(
         "--strict-production-knn",
         action="store_true",
         help="Do not auto-enable ALLOW_SINGLE_YEAR_PRODUCTION_KNN for the board rebuild.",
@@ -50,7 +55,8 @@ def main() -> None:
     _run(pull_cmd, cwd=ROOT, env=env)
 
     _run([sys.executable, "scripts/build_big_board.py"], cwd=ROOT, env=env)
-    _run([sys.executable, "scripts/export_astro_site_data.py"], cwd=ROOT, env=env)
+    if not args.skip_export:
+        _run([sys.executable, "scripts/export_astro_site_data.py"], cwd=ROOT, env=env)
 
     if not args.skip_site_build:
         _run(["npm", "run", "build"], cwd=ASTRO_DIR, env=env)

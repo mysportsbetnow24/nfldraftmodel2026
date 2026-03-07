@@ -2081,6 +2081,15 @@
     ],
     "recent_transactions": [
       {
+        "event_date": "2026-03-06",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Dalvin Tomlinson Cut",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
+      {
         "event_date": "2026-03-05",
         "status": "Confirmed",
         "status_kind": "confirmed",
@@ -2095,15 +2104,6 @@
         "status_kind": "confirmed",
         "label": "Akeem Davis-Gaither Cut",
         "affects_team_needs": true,
-        "source_url": "https://www.cbssports.com/nfl/transactions/",
-        "source_account": "CBS Sports"
-      },
-      {
-        "event_date": "2026-03-04",
-        "status": "Rumored",
-        "status_kind": "rumored",
-        "label": "Kayvon Thibodeaux (DE) traded",
-        "affects_team_needs": false,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
       }
@@ -8682,6 +8682,24 @@
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/news/bills-acquire-former-pro-bowl-wideout-from-bears-in-first-major-trade-of-offseason-per-reports/",
         "source_account": "CBS Sports"
+      },
+      {
+        "event_date": "2026-03-06",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Taylor Rapp Cut",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
+      {
+        "event_date": "2026-03-06",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Taron Johnson Cut",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
       }
     ]
   },
@@ -13138,10 +13156,19 @@
         "source_account": "CBS Sports"
       },
       {
-        "event_date": "2026-03-03",
+        "event_date": "2026-03-06",
         "status": "Confirmed",
         "status_kind": "confirmed",
         "label": "Drew Dalman Retired",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
+      {
+        "event_date": "2026-03-06",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Tremaine Edmunds Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -28365,6 +28392,15 @@
     ],
     "recent_transactions": [
       {
+        "event_date": "2026-03-06",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Joe Mixon Cut",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
+      {
         "event_date": "2026-03-02",
         "status": "Confirmed",
         "status_kind": "confirmed",
@@ -43181,10 +43217,19 @@
         "source_account": "CBS Sports"
       },
       {
-        "event_date": "2026-03-02",
+        "event_date": "2026-03-06",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Liam Eichenberg Cut",
+        "label": "Jason Sanders Cut",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
+      {
+        "event_date": "2026-03-06",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Alec Ingold Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -45406,7 +45451,17 @@
         "draft_number": 23
       }
     ],
-    "recent_transactions": []
+    "recent_transactions": [
+      {
+        "event_date": "2026-03-06",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Ryan Kelly Retired",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      }
+    ]
   },
   {
     "team": "NE",
@@ -52667,6 +52722,15 @@
     ],
     "recent_transactions": [
       {
+        "event_date": "2026-03-06",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "James Hudson Cut",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
+      {
         "event_date": "2026-03-04",
         "status": "Confirmed",
         "status_kind": "confirmed",
@@ -52681,15 +52745,6 @@
         "status_kind": "rumored",
         "label": "Kayvon Thibodeaux (DE) traded",
         "affects_team_needs": false,
-        "source_url": "https://www.cbssports.com/nfl/transactions/",
-        "source_account": "CBS Sports"
-      },
-      {
-        "event_date": "2026-03-04",
-        "status": "Confirmed",
-        "status_kind": "confirmed",
-        "label": "Jonathan Sutherland (SS) signed",
-        "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
       }
@@ -71476,6 +71531,15 @@
       }
     ],
     "recent_transactions": [
+      {
+        "event_date": "2026-03-06",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Marshon Lattimore Cut",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
       {
         "event_date": "2026-03-03",
         "status": "Confirmed",
