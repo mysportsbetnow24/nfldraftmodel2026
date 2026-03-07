@@ -84,11 +84,6 @@ const athleticConfidenceRaw = Number(player.athletic_source_confidence ?? "");
 const athleticConfidence = Number.isFinite(athleticConfidenceRaw) && athleticConfidenceRaw >= 0
   ? Math.max(0, Math.min(100, athleticConfidenceRaw))
   : 50;
-const athleticSourceLabel = String(player.athletic_source_label || "")
-  .replace(/_/g, " ")
-  .replace(/\bmd\b/gi, "measurement data")
-  .replace(/\bplus\b/gi, "+")
-  .trim();
 const traitPctRaw = Number(player.trait_percentile ?? "");
 const traitRaw = Number(player.trait_score || 0);
 const traitPct = Number.isFinite(traitPctRaw) && traitPctRaw >= 0
@@ -173,6 +168,7 @@ const compLine = (title: string, comp: any, fallback: string) => {
         <div class="metric-row">
           <div class="metric-top"><span>Production Percentile</span><strong>{productionPct.toFixed(0)}th pct</strong></div>
           <div class="meter"><div class="meter-fill" style={`width:${productionPct.toFixed(1)}%;background:#0f7b6a;`}></div></div>
+          <div class="muted athletic-copy">Measures how strong the player&apos;s current production profile looks versus this draft class at the same position.</div>
         </div>
         <div class="metric-row">
           <div class="metric-top"><span>Athletic Profile Percentile</span><strong>{athleticPct.toFixed(0)}th pct</strong></div>
@@ -183,15 +179,16 @@ const compLine = (title: string, comp: any, fallback: string) => {
             <div class="athletic-subrow"><span>Frame Profile</span><strong>{athleticFrameScore.toFixed(0)}/100</strong></div>
             <div class="athletic-subrow"><span>Confidence</span><strong>{athleticConfidence.toFixed(0)}%</strong></div>
           </div>
-          {athleticSourceLabel ? <div class="muted athletic-copy">Source: {athleticSourceLabel}</div> : null}
         </div>
         <div class="metric-row">
           <div class="metric-top"><span>Trait Percentile</span><strong>{traitPct.toFixed(0)}th pct</strong></div>
           <div class="meter"><div class="meter-fill" style={`width:${traitPct.toFixed(1)}%;background:#245ea8;`}></div></div>
+          <div class="muted athletic-copy">Captures the player&apos;s projected NFL tool set for the position: movement skills, functional traits, and role translation.</div>
         </div>
         <div class="metric-row">
           <div class="metric-top"><span>Market Signal</span><strong>{marketPct.toFixed(0)}th pct</strong></div>
           <div class="meter"><div class="meter-fill" style={`width:${marketPct.toFixed(1)}%;background:#0ea5e9;`}></div></div>
+          <div class="muted athletic-copy">Shows how strongly the broader draft market supports this evaluation relative to peers at the same position.</div>
         </div>
       </div>
     </article>
