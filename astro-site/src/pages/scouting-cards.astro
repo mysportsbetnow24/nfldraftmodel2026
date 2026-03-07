@@ -150,7 +150,7 @@ const collectionSchema = {
       if (!el) return;
       const items = toBullets(value);
       if (!items.length) {
-        el.innerHTML = `<p class="block-copy">${escapeHtml(fallback)}</p>`;
+        el.innerHTML = fallback ? `<p class="block-copy">${escapeHtml(fallback)}</p>` : "";
         return;
       }
       el.innerHTML = `<ul class="scout-list">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
@@ -257,7 +257,7 @@ const collectionSchema = {
       setText("dRas", rasScore(p));
       renderParagraphStack("dSummary", p.scouting_report_summary, "No scouting summary available yet.");
       renderBulletList("dWins", p.scouting_why_he_wins, "How he wins assessment updates as scouting notes refresh.");
-      renderBulletList("dConcerns", p.scouting_primary_concerns, "No major concerns flagged in the current profile.");
+      renderBulletList("dConcerns", p.scouting_primary_concerns, "");
       renderFilmNotes("dFilm", p.scouting_film_notes);
       renderProduction("dProd", p);
       renderRoleFit("dRole", p);
