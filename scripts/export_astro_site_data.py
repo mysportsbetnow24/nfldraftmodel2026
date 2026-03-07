@@ -3280,6 +3280,127 @@ def _parse_manual_counting_stats(raw: str) -> list[dict]:
     return chips
 
 
+def _split_bullet_lines(raw: str) -> list[str]:
+    items: list[str] = []
+    for line in str(raw or "").replace("\\n", "\n").splitlines():
+        text = str(line).strip()
+        if not text:
+            continue
+        text = re.sub(r"^\s*(?:[-*•]|\d+\.)\s*", "", text).strip()
+        if not text:
+            continue
+        items.append(text)
+    return items
+
+
+def _sanitize_primary_concern_text(raw: str) -> list[str]:
+    cleaned: list[str] = []
+    for item in _split_bullet_lines(raw):
+        lower = item.lower()
+        if lower in {"none", "n/a", "na", "tbd"}:
+            continue
+        if re.search(r"scouting concern to verify:\s*[>.\-]*\s*$", item, flags=re.IGNORECASE):
+            continue
+        if re.search(r"scouting concern to verify:\s*$", item, flags=re.IGNORECASE):
+            continue
+        cleaned.append(item)
+    return cleaned
+
+
+def _metric_card_lookup(cards: list[dict]) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    for card in cards or []:
+        key = str(card.get("key", "")).strip()
+        if key:
+            out[key] = card
+    return out
+
+
+def _fallback_primary_concerns(
+    row: dict,
+    position: str,
+    advanced_metric_cards: list[dict],
+    production_composite_pct: float | None,
+    athletic_percentile: float | None,
+    trait_percentile: float | None,
+    comp_confidence: str,
+) -> str:
+    pos = str(position or "").upper()
+    card_map = _metric_card_lookup(advanced_metric_cards)
+    bullets: list[str] = []
+
+    def add(text: str) -> None:
+        if text and text not in bullets and len(bullets) < 4:
+            bullets.append(text)
+
+    def pct_for(key: str) -> float | None:
+        raw = _safe_float(card_map.get(key, {}).get("pct"))
+        return float(raw) if raw is not None else None
+
+    if production_composite_pct is not None and production_composite_pct < 35:
+        add("Current production profile is light versus this draft class at the same position, which narrows the margin for projection error.")
+    if athletic_percentile is not None and athletic_percentile < 35:
+        add("Athletic profile sits below preferred starter bands for this position, so the transition window is less forgiving against NFL speed and size.")
+    if trait_percentile is not None and trait_percentile < 35:
+        add("Trait profile is thinner than the top draftable range at this position, which raises the burden on role fit and technical development.")
+    if str(comp_confidence or "").strip().upper() == "C":
+        add("Historical translation comps are less stable here, so the outcome range is wider than it is for cleaner projection profiles.")
+
+    if pos == "QB":
+        if (pct_for("sg_qb_twp_rate") or 100) < 35:
+            add("Turnover-worthy decision making still needs to tighten when the pocket muddies and coverage rotates late.")
+        if (pct_for("sg_qb_pressure_to_sack_rate") or 100) < 35:
+            add("Pressure response currently creates too many dead-end downs; sack avoidance and pocket management remain a key separator.")
+        if (pct_for("sg_qb_blitz_grade") or 100) < 35:
+            add("Blitz answers do not yet look fully bankable, which can slow early-down trust against NFL pressure packages.")
+    elif pos == "RB":
+        if (pct_for("sg_rb_explosive_rate") or 100) < 35:
+            add("Explosive-run creation is below top-tier back standards, so the profile leans more on efficiency than true chunk-play stress.")
+        if (pct_for("sg_rb_targets_per_route") or 100) < 35:
+            add("Passing-game involvement is lighter than true three-down back profiles, which can cap early-down-only value if protection also lags.")
+        if (pct_for("sg_rb_elusive_rating") or 100) < 35:
+            add("Independent creation after contact is less consistent than it needs to be for a back expected to survive NFL traffic density.")
+    elif pos in {"WR", "TE"}:
+        if (pct_for("sg_wrte_targets_per_route") or 100) < 35:
+            add("Target earning is light for the role projection, so NFL volume depends on winning cleaner and earlier against coverage leverage.")
+        if (pct_for("sg_wrte_yprr") or 100) < 35:
+            add("Per-route production is below premium translation bands, which raises the risk of empty usage without true target command.")
+        if (pct_for("sg_wrte_drop_rate") or 100) < 35:
+            add("Ball-finish consistency needs to be cleaner, especially on timing throws and contested windows where trust is earned quickly.")
+    elif pos in {"EDGE", "DT"}:
+        if (pct_for("sg_dl_true_pass_set_win_rate") or 100) < 35:
+            add("True pass-set disruption is still thin for a high-end projection, so the rush plan has to win more often on pure NFL dropback downs.")
+        if (pct_for("sg_front_run_def_grade") or 100) < 35:
+            add("Early-down run defense remains a pressure point, which can narrow usage into more obvious passing situations.")
+        if (pct_for("sg_dl_total_pressures") or 100) < 35:
+            add("Sustained pressure volume is lighter than top-line draft expectations, so the current profile leans more on flashes than down-to-down finish.")
+    elif pos == "LB":
+        if (pct_for("sg_def_coverage_grade") or 100) < 35:
+            add("Coverage reliability is still the swing trait, especially if offenses force him into space or isolate him on crossers and option routes.")
+        if (pct_for("sg_def_missed_tackle_rate") or 100) < 35:
+            add("Tackle finish and angle discipline remain important cleanup points before the profile is trustworthy as a full-time linebacker.")
+        if (pct_for("sg_def_run_grade") or 100) < 35:
+            add("Run-fit consistency is not yet stable enough to assume immediate every-down linebacker value against NFL size and pace.")
+    elif pos in {"CB", "S"}:
+        if (pct_for("sg_cov_yards_per_snap") or 100) < 35:
+            add("Coverage efficiency allowed is still too loose for a clean projection, so leverage control and finish at the catch point matter more here.")
+        if (pct_for("sg_cov_snaps_per_target") or 100) < 35:
+            add("Target deterrence is lighter than premium coverage profiles, which suggests quarterbacks were still comfortable testing him.")
+        if (pct_for("sg_cov_qb_rating_against") or 100) < 35:
+            add("Passing efficiency against this coverage profile needs to come down before the transition path looks truly bankable.")
+    elif pos in {"OT", "IOL"}:
+        if (pct_for("sg_ol_pass_block_grade") or 100) < 35:
+            add("Pass-protection consistency needs work before the profile can be trusted against NFL counter sequencing and interior/edge power.")
+        if (pct_for("sg_ol_pressure_allowed_rate") or 100) < 35:
+            add("Pressure prevention is below ideal starter bands, so hand timing and recovery mechanics still look like the swing variable.")
+        if (pct_for("sg_ol_run_block_grade") or 100) < 35:
+            add("Run-game movement and leverage do not yet project as cleanly as the pass-game role, which can narrow early deployment paths.")
+
+    if not bullets:
+        add("No single fatal flaw stands out in the current data, but the translation path still depends on how this profile handles tighter NFL speed, strength, and processing windows.")
+    return "\n".join(f"- {item}" for item in bullets[:4])
+
+
 def _load_production_snapshot_overrides() -> dict[str, dict[str, object]]:
     rows = _read_csv(PRODUCTION_SNAPSHOT_OVERRIDES_CSV)
     out: dict[str, dict[str, object]] = {}
@@ -3676,6 +3797,28 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         market_population = pos_market_values.get(pos) or consensus_mean_population
         market_rank_pct = _pct_rank(consensus_mean_rank_val, market_population) if market_population else 50.0
         market_signal_pct = 100.0 - float(market_rank_pct)
+        comp_confidence = str(row.get("comp_confidence", "")).strip()
+        owner_primary_concerns = owner_note.get("primary_concerns", "")
+        generated_primary_concerns = row.get("scouting_primary_concerns", "")
+        public_primary_concern_bullets = (
+            _sanitize_primary_concern_text(owner_primary_concerns)
+            if str(owner_primary_concerns or "").strip()
+            else _sanitize_primary_concern_text(generated_primary_concerns)
+        )
+        if public_primary_concern_bullets:
+            scouting_primary_concerns = "\n".join(
+                f"- {item}" for item in public_primary_concern_bullets[:4]
+            )
+        else:
+            scouting_primary_concerns = _fallback_primary_concerns(
+                row=row,
+                position=pos,
+                advanced_metric_cards=advanced_metric_cards,
+                production_composite_pct=production_composite_pct,
+                athletic_percentile=athletic_percentile,
+                trait_percentile=trait_percentile,
+                comp_confidence=comp_confidence,
+            )
 
         out.append(
             {
@@ -3732,10 +3875,10 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "historical_comp_floor": _public_comp_dict(comp_floor),
                 "historical_comp_median": _public_comp_dict(comp_median),
                 "historical_comp_ceiling": _public_comp_dict(comp_ceiling),
-                "comp_confidence": str(row.get("comp_confidence", "")).strip(),
+                "comp_confidence": comp_confidence,
                 "scouting_report_summary": owner_note.get("report_summary") or row.get("scouting_report_summary", ""),
                 "scouting_why_he_wins": owner_note.get("why_he_wins") or row.get("scouting_why_he_wins", ""),
-                "scouting_primary_concerns": owner_note.get("primary_concerns") or row.get("scouting_primary_concerns", ""),
+                "scouting_primary_concerns": scouting_primary_concerns,
                 "scouting_film_notes": owner_note.get("film_notes") or row.get("scouting_film_notes", ""),
                 "scouting_production_snapshot": production_snapshot,
                 "scouting_role_projection": owner_note.get("role_projection") or row.get("scouting_role_projection", ""),
