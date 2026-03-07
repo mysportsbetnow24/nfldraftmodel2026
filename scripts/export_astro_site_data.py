@@ -1595,42 +1595,42 @@ def _build_position_lens(
     if pos == "QB":
         title = "QB Stress / Process"
         stress = row_item(
-            "Stress Response",
+            "Pressure Management",
             [pct("sg_qb_pressure_grade"), pct("sg_qb_pressure_to_sack_rate", lower_better=True), pct("sg_qb_blitz_grade")],
             "pressure, sack avoidance, blitz answers",
         )
         decision = row_item(
-            "Decision Quality",
-            [pct("sg_qb_btt_rate"), pct("sg_qb_twp_rate", lower_better=True), pct("sg_qb_pass_grade")],
-            "aggression balanced with turnover control",
+            "Aggressive Creation",
+            [pct("sg_qb_btt_rate"), pct("sg_qb_blitz_grade"), pct("sg_qb_twp_rate", lower_better=True)],
+            "downfield aggression with enough turnover control to keep it playable",
         )
         structure = row_item(
-            "Starter Translation",
+            "Structure Passing",
             [pct("sg_qb_pass_grade"), pct("sg_qb_no_screen_grade"), pct("sg_qb_quick_qb_rating")],
             "structure passing and timing-game stability",
         )
         rows = [r for r in [stress, decision, structure] if r]
         if stress and stress["pct"] >= 75:
             tags.append("Pressure Manager")
-        if decision and decision["pct"] >= 75:
+        if decision and decision["pct"] >= 74:
             tags.append("Aggressive Creator")
         if structure and structure["pct"] >= 75:
             tags.append("Structure Passer")
     elif pos == "RB":
         title = "RB Three-Down Creator"
         contact = row_item(
-            "Creation After Contact",
+            "Contact Creation",
             [pct("sg_rb_run_grade"), pct("sg_rb_elusive_rating"), pct("sg_rb_yco_attempt")],
             "run grade, elusive value, yards after contact",
         )
         explosive = row_item(
-            "Explosive Threat",
+            "Explosive Running",
             [pct("sg_rb_explosive_rate"), pct("sg_rb_breakaway_percent")],
             "chunk gains and home-run carry profile",
         )
         passing = row_item(
-            "Passing-Down Value",
-            [pct("sg_rb_targets_per_route"), pct("sg_rb_yprr"), pct("sg_rb_run_grade")],
+            "Passing-Game Utility",
+            [pct("sg_rb_targets_per_route"), pct("sg_rb_yprr"), pct("sg_rb_elusive_rating")],
             "receiving involvement and snap-stay utility",
         )
         rows = [r for r in [contact, explosive, passing] if r]
@@ -1643,41 +1643,41 @@ def _build_position_lens(
     elif pos in {"WR", "TE"}:
         title = f"{pos} Route Earner"
         route = row_item(
-            "Route Earning",
-            [pct("sg_wrte_route_grade"), pct("sg_wrte_yprr"), pct("sg_wrte_targets_per_route")],
-            "route quality plus target-earning efficiency",
+            "Separation",
+            [pct("sg_wrte_route_grade"), pct("sg_wrte_man_yprr"), pct("sg_wrte_yprr")],
+            "route quality and man-coverage separation value",
         )
         coverage = row_item(
-            "Coverage Translation",
-            [pct("sg_wrte_man_yprr"), pct("sg_wrte_zone_yprr"), pct("sg_wrte_route_grade")],
-            "production across coverage families",
+            "Volume Earning",
+            [pct("sg_wrte_targets_per_route"), pct("sg_wrte_yprr"), pct("sg_wrte_zone_yprr")],
+            "how consistently the player earns routes into targets and usable volume",
         )
         reliability = row_item(
-            "Ball Reliability",
-            [pct("sg_wrte_contested_catch_rate"), pct("sg_wrte_drop_rate", lower_better=True), pct("sg_wrte_yprr")],
-            "finishing through contact and preserving targets",
+            "Vertical Stress",
+            [pct("sg_wrte_man_yprr"), pct("sg_wrte_contested_catch_rate"), pct("sg_wrte_yprr")],
+            "ability to punish coverage downfield and finish high-value targets",
         )
         rows = [r for r in [route, coverage, reliability] if r]
-        if route and route["pct"] >= 75:
+        if route and route["pct"] >= 74:
             tags.append("Separator")
-        if coverage and coverage["pct"] >= 75:
+        if coverage and coverage["pct"] >= 74:
             tags.append("Volume Earner")
         if reliability and reliability["pct"] >= 72:
             tags.append("Vertical Stressor")
     elif pos in {"EDGE", "DT"}:
         title = "True-Pass-Set Disruption"
         rush = row_item(
-            "Rush Translation",
+            "True-Pass-Set Wins",
             [pct("sg_dl_pass_rush_grade"), pct("sg_dl_true_pass_set_win_rate"), pct("sg_dl_true_pass_set_prp")],
             "clean pass-rush quality when protections are honest",
         )
         pressure = row_item(
-            "Pressure Load",
-            [pct("sg_dl_total_pressures"), pct("sg_dl_pass_rush_grade")],
-            "how often disruption actually shows up",
+            "Pocket Finish",
+            [pct("sg_dl_total_pressures"), pct("sg_dl_true_pass_set_prp"), pct("sg_dl_pass_rush_grade")],
+            "how often rush quality turns into actual pocket damage",
         )
         run = row_item(
-            "Run-Down Utility",
+            "Base-Down Value",
             [pct("sg_front_run_def_grade"), pct("sg_front_stop_percent")],
             "base-down viability alongside rush value",
         )
@@ -1734,12 +1734,21 @@ def _build_position_lens(
             tags.append("Target Deterrent")
         if disruption and disruption["pct"] >= 72:
             tags.append("Ball Disruptor")
-        if near_ball and near_ball["pct"] >= 68:
+        man_pct = pct("sg_cov_man_grade")
+        zone_pct = pct("sg_cov_zone_grade")
+        if (
+            near_ball
+            and near_ball["pct"] >= 62
+            and man_pct is not None
+            and zone_pct is not None
+            and man_pct >= 64
+            and zone_pct >= 64
+        ):
             tags.append("Scheme Translator")
     elif pos in {"OT", "IOL"}:
         title = "OL Pass-Pro Translation"
         pass_pro = row_item(
-            "Pass-Pro Core",
+            "Pass-Pro Translation",
             [pct("sg_ol_pass_block_grade"), pct("sg_ol_pbe"), pct("sg_ol_pressure_allowed_rate", lower_better=True)],
             "block quality plus pressure suppression",
         )

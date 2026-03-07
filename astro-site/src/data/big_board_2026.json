@@ -566,7 +566,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 63.2,
           "detail": "block quality plus pressure suppression"
         },
@@ -734,7 +734,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 87.7,
           "detail": "block quality plus pressure suppression"
         },
@@ -955,17 +955,17 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 100.0,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 97.2,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
+          "label": "Passing-Game Utility",
           "pct": 97.2,
           "detail": "receiving involvement and snap-stay utility"
         }
@@ -1125,7 +1125,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 75.5,
           "detail": "block quality plus pressure suppression"
         },
@@ -1466,9 +1466,7 @@
           "detail": "pressure utility, box disruption, slot stress response"
         }
       ],
-      "tags": [
-        "Scheme Translator"
-      ]
+      "tags": []
     },
     "historical_comp_floor": {
       "name": "Quincy Mauger",
@@ -1619,7 +1617,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 75.4,
           "detail": "block quality plus pressure suppression"
         },
@@ -2052,17 +2050,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 29.9,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 27.6,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 28.7,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 84.5,
           "detail": "base-down viability alongside rush value"
         }
@@ -2263,19 +2261,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 99.1,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 98.2,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 95.5,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 96.4,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 88.3,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 93.7,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
@@ -2485,17 +2483,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 49.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 48.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 58.7,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 100.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -2653,7 +2651,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 74.7,
           "detail": "block quality plus pressure suppression"
         },
@@ -3109,7 +3107,9 @@
           "detail": "pressure utility, box disruption, slot stress response"
         }
       ],
-      "tags": []
+      "tags": [
+        "Scheme Translator"
+      ]
     },
     "historical_comp_floor": {
       "name": "Jamoris Slaughter",
@@ -3312,17 +3312,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 75.9,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 69.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 71.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 24.1,
           "detail": "base-down viability alongside rush value"
         }
@@ -3523,19 +3523,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 63.0,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 61.8,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 58.1,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 64.2,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 48.8,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 61.2,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -3758,8 +3758,7 @@
       ],
       "tags": [
         "Target Deterrent",
-        "Ball Disruptor",
-        "Scheme Translator"
+        "Ball Disruptor"
       ]
     },
     "historical_comp_floor": {
@@ -4025,7 +4024,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 71.9,
           "detail": "block quality plus pressure suppression"
         },
@@ -4191,7 +4190,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 84.2,
           "detail": "block quality plus pressure suppression"
         },
@@ -4411,17 +4410,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 100.0,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 98.3,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 98.9,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 82.8,
           "detail": "base-down viability alongside rush value"
         }
@@ -4633,23 +4632,22 @@
       "title": "QB Stress / Process",
       "rows": [
         {
-          "label": "Stress Response",
+          "label": "Pressure Management",
           "pct": 71.8,
           "detail": "pressure, sack avoidance, blitz answers"
         },
         {
-          "label": "Decision Quality",
-          "pct": 76.9,
-          "detail": "aggression balanced with turnover control"
+          "label": "Aggressive Creation",
+          "pct": 71.8,
+          "detail": "downfield aggression with enough turnover control to keep it playable"
         },
         {
-          "label": "Starter Translation",
+          "label": "Structure Passing",
           "pct": 100.0,
           "detail": "structure passing and timing-game stability"
         }
       ],
       "tags": [
-        "Aggressive Creator",
         "Structure Passer"
       ]
     },
@@ -4802,7 +4800,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 78.7,
           "detail": "block quality plus pressure suppression"
         },
@@ -5024,17 +5022,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 70.7,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
+          "label": "Pocket Finish",
           "pct": 64.0,
-          "detail": "how often disruption actually shows up"
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 62.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -5422,17 +5420,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 93.1,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 93.1,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 92.0,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 60.4,
           "detail": "base-down viability alongside rush value"
         }
@@ -5643,17 +5641,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 43.7,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 48.3,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 41.4,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 63.8,
           "detail": "base-down viability alongside rush value"
         }
@@ -5823,17 +5821,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 79.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 94.8,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 86.2,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 67.2,
           "detail": "base-down viability alongside rush value"
         }
@@ -6035,24 +6033,23 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
+          "label": "Separation",
           "pct": 81.1,
-          "detail": "route quality plus target-earning efficiency"
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 75.7,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 70.3,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 79.3,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 81.1,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
         "Separator",
-        "Volume Earner",
         "Vertical Stressor"
       ]
     },
@@ -6248,23 +6245,22 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 77.5,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 73.0,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 77.5,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 80.2,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 62.2,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 58.5,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
-        "Separator",
         "Volume Earner"
       ]
     },
@@ -6460,19 +6456,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 82.9,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 94.6,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 90.1,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 78.4,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 97.3,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 94.6,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
@@ -6664,17 +6660,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 46.7,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 28.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 33.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 26.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -6897,9 +6893,7 @@
           "detail": "pressure utility, box disruption, slot stress response"
         }
       ],
-      "tags": [
-        "Scheme Translator"
-      ]
+      "tags": []
     },
     "historical_comp_floor": {
       "name": "Dan Jackson",
@@ -7064,24 +7058,25 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 79.3,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 77.5,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 78.4,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 81.1,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 57.7,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 81.1,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
         "Separator",
-        "Volume Earner"
+        "Volume Earner",
+        "Vertical Stressor"
       ]
     },
     "historical_comp_floor": {
@@ -7285,17 +7280,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 90.7,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 84.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 85.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 70.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -7611,17 +7606,17 @@
       "title": "QB Stress / Process",
       "rows": [
         {
-          "label": "Stress Response",
+          "label": "Pressure Management",
           "pct": 41.0,
           "detail": "pressure, sack avoidance, blitz answers"
         },
         {
-          "label": "Decision Quality",
-          "pct": 66.7,
-          "detail": "aggression balanced with turnover control"
+          "label": "Aggressive Creation",
+          "pct": 59.0,
+          "detail": "downfield aggression with enough turnover control to keep it playable"
         },
         {
-          "label": "Starter Translation",
+          "label": "Structure Passing",
           "pct": 76.9,
           "detail": "structure passing and timing-game stability"
         }
@@ -8052,17 +8047,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 58.6,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 63.8,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 63.2,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 31.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -8261,24 +8256,25 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
+          "label": "Separation",
           "pct": 97.5,
-          "detail": "route quality plus target-earning efficiency"
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 97.5,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 98.8,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 60.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 77.0,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
         "Separator",
-        "Volume Earner"
+        "Volume Earner",
+        "Vertical Stressor"
       ]
     },
     "historical_comp_floor": {
@@ -8482,17 +8478,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 43.7,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 63.8,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 57.5,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 48.2,
           "detail": "base-down viability alongside rush value"
         }
@@ -8925,8 +8921,7 @@
         }
       ],
       "tags": [
-        "Ball Disruptor",
-        "Scheme Translator"
+        "Ball Disruptor"
       ]
     },
     "historical_comp_floor": {
@@ -9136,9 +9131,7 @@
           "detail": "pressure utility, box disruption, slot stress response"
         }
       ],
-      "tags": [
-        "Scheme Translator"
-      ]
+      "tags": []
     },
     "historical_comp_floor": {
       "name": "Chris Wilcox",
@@ -9416,17 +9409,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 57.5,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 69.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 66.7,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 91.4,
           "detail": "base-down viability alongside rush value"
         }
@@ -9845,22 +9838,23 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 73.0,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 75.7,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 77.5,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 78.4,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 61.3,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 58.6,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
+        "Separator",
         "Volume Earner"
       ]
     },
@@ -10247,17 +10241,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 87.4,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 53.5,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 66.7,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 55.2,
           "detail": "base-down viability alongside rush value"
         }
@@ -10542,17 +10536,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 80.5,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 60.4,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 69.0,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 20.6,
           "detail": "base-down viability alongside rush value"
         }
@@ -10710,7 +10704,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 30.7,
           "detail": "block quality plus pressure suppression"
         },
@@ -10928,17 +10922,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 80.5,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 93.2,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 86.2,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 38.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -11360,19 +11354,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
+          "label": "Separation",
+          "pct": 91.0,
+          "detail": "route quality and man-coverage separation value"
+        },
+        {
+          "label": "Volume Earning",
+          "pct": 83.8,
+          "detail": "how consistently the player earns routes into targets and usable volume"
+        },
+        {
+          "label": "Vertical Stress",
           "pct": 88.3,
-          "detail": "route quality plus target-earning efficiency"
-        },
-        {
-          "label": "Coverage Translation",
-          "pct": 84.7,
-          "detail": "production across coverage families"
-        },
-        {
-          "label": "Ball Reliability",
-          "pct": 82.0,
-          "detail": "finishing through contact and preserving targets"
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
@@ -11573,23 +11567,23 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 69.4,
-          "detail": "route quality plus target-earning efficiency"
-        },
-        {
-          "label": "Coverage Translation",
+          "label": "Separation",
           "pct": 78.4,
-          "detail": "production across coverage families"
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 43.2,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Volume Earning",
+          "pct": 65.8,
+          "detail": "how consistently the player earns routes into targets and usable volume"
+        },
+        {
+          "label": "Vertical Stress",
+          "pct": 61.3,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
-        "Volume Earner"
+        "Separator"
       ]
     },
     "historical_comp_floor": {
@@ -12004,19 +11998,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 18.0,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 26.1,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 25.2,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 16.2,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 36.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 39.7,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -12426,9 +12420,7 @@
           "detail": "pressure utility, box disruption, slot stress response"
         }
       ],
-      "tags": [
-        "Scheme Translator"
-      ]
+      "tags": []
     },
     "historical_comp_floor": {
       "name": "Isaiah Johnson",
@@ -12842,23 +12834,23 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 74.8,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 81.1,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 80.2,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 64.9,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 47.8,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 57.7,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
-        "Volume Earner"
+        "Separator"
       ]
     },
     "historical_comp_floor": {
@@ -13062,17 +13054,17 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 68.5,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 52.8,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
+          "label": "Passing-Game Utility",
           "pct": 61.2,
           "detail": "receiving involvement and snap-stay utility"
         }
@@ -13303,7 +13295,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 52.6,
           "detail": "block quality plus pressure suppression"
         },
@@ -13514,17 +13506,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 61.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 42.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 45.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 26.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -13680,7 +13672,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 78.7,
           "detail": "block quality plus pressure suppression"
         },
@@ -13883,17 +13875,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 53.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 16.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 41.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 40.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -14092,24 +14084,25 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 88.3,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 87.4,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
+          "label": "Volume Earning",
           "pct": 86.5,
-          "detail": "production across coverage families"
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 63.1,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 73.9,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
         "Separator",
-        "Volume Earner"
+        "Volume Earner",
+        "Vertical Stressor"
       ]
     },
     "historical_comp_floor": {
@@ -14751,17 +14744,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 47.1,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 27.6,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 29.9,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 31.1,
           "detail": "base-down viability alongside rush value"
         }
@@ -15262,18 +15255,18 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 74.1,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 77.8,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 25.0,
+          "label": "Passing-Game Utility",
+          "pct": 52.8,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
@@ -15482,17 +15475,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 93.1,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 75.9,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 82.8,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 39.7,
           "detail": "base-down viability alongside rush value"
         }
@@ -16321,18 +16314,18 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 18.5,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 25.0,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 52.8,
+          "label": "Passing-Game Utility",
+          "pct": 50.0,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
@@ -16539,17 +16532,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 85.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 98.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 93.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 86.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -16709,7 +16702,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 49.1,
           "detail": "block quality plus pressure suppression"
         },
@@ -16993,19 +16986,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 69.4,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 66.7,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 64.0,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 62.2,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 60.4,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 55.0,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -17356,7 +17349,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 31.6,
           "detail": "block quality plus pressure suppression"
         },
@@ -17567,19 +17560,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 33.3,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 29.7,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 31.5,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 32.4,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 45.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 20.7,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -18070,24 +18063,25 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 88.9,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 91.4,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 88.9,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 87.7,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 44.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 74.5,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
         "Separator",
-        "Volume Earner"
+        "Volume Earner",
+        "Vertical Stressor"
       ]
     },
     "historical_comp_floor": {
@@ -18511,25 +18505,24 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 87.0,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 80.6,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 72.2,
+          "label": "Passing-Game Utility",
+          "pct": 69.5,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
       "tags": [
         "Contact Creator",
-        "Explosive Runner",
-        "Passing-Game Utility"
+        "Explosive Runner"
       ]
     },
     "historical_comp_floor": {
@@ -18913,17 +18906,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 82.8,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 60.3,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 66.7,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 65.5,
           "detail": "base-down viability alongside rush value"
         }
@@ -19133,17 +19126,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 85.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 92.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 85.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 88.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -19317,18 +19310,18 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 70.4,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 88.9,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 52.8,
+          "label": "Passing-Game Utility",
+          "pct": 44.5,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
@@ -19485,7 +19478,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 45.3,
           "detail": "block quality plus pressure suppression"
         },
@@ -19799,22 +19792,24 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 49.4,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 60.5,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 55.5,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 46.9,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 67.8,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 75.2,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
-      "tags": []
+      "tags": [
+        "Vertical Stressor"
+      ]
     },
     "historical_comp_floor": {
       "name": "Peyton Hendershot",
@@ -20017,24 +20012,22 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 62.9,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 66.7,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 75.0,
+          "label": "Passing-Game Utility",
+          "pct": 69.5,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
-      "tags": [
-        "Passing-Game Utility"
-      ]
+      "tags": []
     },
     "historical_comp_floor": {
       "name": "Sean Tucker",
@@ -20228,19 +20221,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 22.2,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 25.9,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 30.8,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 17.3,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 52.7,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 36.6,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -20437,19 +20430,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
+          "label": "Separation",
           "pct": 42.0,
-          "detail": "route quality plus target-earning efficiency"
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 46.9,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 54.3,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 23.8,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 46.0,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -20866,25 +20859,24 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
+          "label": "Separation",
+          "pct": 74.1,
+          "detail": "route quality and man-coverage separation value"
+        },
+        {
+          "label": "Volume Earning",
           "pct": 84.0,
-          "detail": "route quality plus target-earning efficiency"
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 76.6,
-          "detail": "production across coverage families"
-        },
-        {
-          "label": "Ball Reliability",
-          "pct": 76.2,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 67.5,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
         "Separator",
-        "Volume Earner",
-        "Vertical Stressor"
+        "Volume Earner"
       ]
     },
     "historical_comp_floor": {
@@ -21070,22 +21062,25 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 74.1,
-          "detail": "route quality plus target-earning efficiency"
-        },
-        {
-          "label": "Coverage Translation",
+          "label": "Separation",
           "pct": 69.2,
-          "detail": "production across coverage families"
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 69.0,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Volume Earning",
+          "pct": 85.2,
+          "detail": "how consistently the player earns routes into targets and usable volume"
+        },
+        {
+          "label": "Vertical Stress",
+          "pct": 78.9,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
-      "tags": []
+      "tags": [
+        "Volume Earner",
+        "Vertical Stressor"
+      ]
     },
     "historical_comp_floor": {
       "name": "Luke Musgrave",
@@ -21288,22 +21283,24 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 72.0,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 66.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 76.0,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 16.0,
           "detail": "base-down viability alongside rush value"
         }
       ],
-      "tags": []
+      "tags": [
+        "Clean-Pocket Finisher"
+      ]
     },
     "historical_comp_floor": {
       "name": "Mitch King",
@@ -21454,7 +21451,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 22.8,
           "detail": "block quality plus pressure suppression"
         },
@@ -21665,19 +21662,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 52.3,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 56.8,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 55.9,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 48.6,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 55.0,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 49.6,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -21979,19 +21976,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 41.4,
-          "detail": "route quality plus target-earning efficiency"
-        },
-        {
-          "label": "Coverage Translation",
+          "label": "Separation",
           "pct": 37.8,
-          "detail": "production across coverage families"
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 58.6,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Volume Earning",
+          "pct": 36.0,
+          "detail": "how consistently the player earns routes into targets and usable volume"
+        },
+        {
+          "label": "Vertical Stress",
+          "pct": 46.8,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -22197,17 +22194,17 @@
       "title": "QB Stress / Process",
       "rows": [
         {
-          "label": "Stress Response",
+          "label": "Pressure Management",
           "pct": 46.1,
           "detail": "pressure, sack avoidance, blitz answers"
         },
         {
-          "label": "Decision Quality",
-          "pct": 25.6,
-          "detail": "aggression balanced with turnover control"
+          "label": "Aggressive Creation",
+          "pct": 23.1,
+          "detail": "downfield aggression with enough turnover control to keep it playable"
         },
         {
-          "label": "Starter Translation",
+          "label": "Structure Passing",
           "pct": 15.4,
           "detail": "structure passing and timing-game stability"
         }
@@ -22468,7 +22465,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 80.0,
           "detail": "block quality plus pressure suppression"
         },
@@ -22637,7 +22634,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 68.4,
           "detail": "block quality plus pressure suppression"
         },
@@ -23021,7 +23018,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 62.7,
           "detail": "block quality plus pressure suppression"
         },
@@ -23887,7 +23884,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 64.0,
           "detail": "block quality plus pressure suppression"
         },
@@ -24327,17 +24324,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 17.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 24.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 17.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 58.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -24545,18 +24542,18 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 51.8,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 27.8,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 25.0,
+          "label": "Passing-Game Utility",
+          "pct": 27.8,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
@@ -25201,17 +25198,17 @@
       "title": "QB Stress / Process",
       "rows": [
         {
-          "label": "Stress Response",
+          "label": "Pressure Management",
           "pct": 35.9,
           "detail": "pressure, sack avoidance, blitz answers"
         },
         {
-          "label": "Decision Quality",
-          "pct": 48.7,
-          "detail": "aggression balanced with turnover control"
+          "label": "Aggressive Creation",
+          "pct": 43.6,
+          "detail": "downfield aggression with enough turnover control to keep it playable"
         },
         {
-          "label": "Starter Translation",
+          "label": "Structure Passing",
           "pct": 61.5,
           "detail": "structure passing and timing-game stability"
         }
@@ -25419,17 +25416,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 69.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 74.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 72.0,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 66.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -25944,18 +25941,18 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 24.1,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 22.2,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 27.8,
+          "label": "Passing-Game Utility",
+          "pct": 25.0,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
@@ -26267,17 +26264,17 @@
       "title": "QB Stress / Process",
       "rows": [
         {
-          "label": "Stress Response",
+          "label": "Pressure Management",
           "pct": 35.9,
           "detail": "pressure, sack avoidance, blitz answers"
         },
         {
-          "label": "Decision Quality",
-          "pct": 53.8,
-          "detail": "aggression balanced with turnover control"
+          "label": "Aggressive Creation",
+          "pct": 43.6,
+          "detail": "downfield aggression with enough turnover control to keep it playable"
         },
         {
-          "label": "Starter Translation",
+          "label": "Structure Passing",
           "pct": 53.8,
           "detail": "structure passing and timing-game stability"
         }
@@ -26447,17 +26444,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 23.0,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 17.2,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 18.4,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 58.6,
           "detail": "base-down viability alongside rush value"
         }
@@ -26740,17 +26737,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 8.0,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 8.6,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 8.0,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 46.5,
           "detail": "base-down viability alongside rush value"
         }
@@ -26958,22 +26955,23 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 94.7,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 66.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 77.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 60.0,
           "detail": "base-down viability alongside rush value"
         }
       ],
       "tags": [
+        "Clean-Pocket Finisher",
         "True-Pass-Set Winner"
       ]
     },
@@ -27126,7 +27124,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 35.1,
           "detail": "block quality plus pressure suppression"
         },
@@ -28036,7 +28034,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 89.3,
           "detail": "block quality plus pressure suppression"
         },
@@ -28256,17 +28254,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 28.0,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 30.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 37.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 74.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -28424,7 +28422,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 14.7,
           "detail": "block quality plus pressure suppression"
         },
@@ -28590,7 +28588,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 45.3,
           "detail": "block quality plus pressure suppression"
         },
@@ -28756,7 +28754,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 49.3,
           "detail": "block quality plus pressure suppression"
         },
@@ -28967,24 +28965,22 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 30.9,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 40.7,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 45.7,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 44.5,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 79.0,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 64.2,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
-      "tags": [
-        "Vertical Stressor"
-      ]
+      "tags": []
     },
     "historical_comp_floor": {
       "name": "Ben Koyack",
@@ -29135,7 +29131,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 28.0,
           "detail": "block quality plus pressure suppression"
         },
@@ -29356,17 +29352,17 @@
       "title": "QB Stress / Process",
       "rows": [
         {
-          "label": "Stress Response",
+          "label": "Pressure Management",
           "pct": 84.6,
           "detail": "pressure, sack avoidance, blitz answers"
         },
         {
-          "label": "Decision Quality",
-          "pct": 61.5,
-          "detail": "aggression balanced with turnover control"
+          "label": "Aggressive Creation",
+          "pct": 64.1,
+          "detail": "downfield aggression with enough turnover control to keep it playable"
         },
         {
-          "label": "Starter Translation",
+          "label": "Structure Passing",
           "pct": 69.2,
           "detail": "structure passing and timing-game stability"
         }
@@ -29576,18 +29572,18 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 48.2,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 61.1,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 36.1,
+          "label": "Passing-Game Utility",
+          "pct": 27.8,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
@@ -29742,7 +29738,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 29.3,
           "detail": "block quality plus pressure suppression"
         },
@@ -30088,7 +30084,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 80.0,
           "detail": "block quality plus pressure suppression"
         },
@@ -30309,17 +30305,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 21.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 36.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 30.7,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 24.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -30518,19 +30514,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 88.9,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 81.5,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 79.0,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 84.0,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 60.7,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 55.8,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
@@ -30939,19 +30935,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 98.8,
-          "detail": "route quality plus target-earning efficiency"
-        },
-        {
-          "label": "Coverage Translation",
+          "label": "Separation",
           "pct": 95.1,
-          "detail": "production across coverage families"
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 86.3,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Volume Earning",
+          "pct": 97.5,
+          "detail": "how consistently the player earns routes into targets and usable volume"
+        },
+        {
+          "label": "Vertical Stress",
+          "pct": 92.5,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
@@ -31161,17 +31157,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 67.8,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 62.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 69.0,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 41.4,
           "detail": "base-down viability alongside rush value"
         }
@@ -31552,23 +31548,24 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 80.2,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 77.5,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 74.8,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 86.5,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 45.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 60.4,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
-        "Separator"
+        "Separator",
+        "Volume Earner"
       ]
     },
     "historical_comp_floor": {
@@ -32069,19 +32066,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 22.2,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 21.0,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 24.7,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 29.6,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 33.5,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 18.6,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -32287,18 +32284,18 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 61.1,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 47.2,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 88.9,
+          "label": "Passing-Game Utility",
+          "pct": 80.5,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
@@ -32792,23 +32789,22 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 50.6,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 74.2,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 67.8,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 89.7,
           "detail": "base-down viability alongside rush value"
         }
       ],
       "tags": [
-        "Clean-Pocket Finisher",
         "Base-Down Value"
       ]
     },
@@ -33004,19 +33000,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 42.0,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 50.6,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 53.1,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 32.1,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 33.8,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 43.7,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -33170,7 +33166,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 80.0,
           "detail": "block quality plus pressure suppression"
         },
@@ -33353,19 +33349,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
+          "label": "Separation",
           "pct": 9.0,
-          "detail": "route quality plus target-earning efficiency"
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 10.8,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 9.9,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 49.6,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 30.6,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -33533,24 +33529,22 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 46.8,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 43.2,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 49.5,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 51.3,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 76.6,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 60.3,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
-      "tags": [
-        "Vertical Stressor"
-      ]
+      "tags": []
     },
     "historical_comp_floor": {
       "name": "Mike Mason",
@@ -34295,19 +34289,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 38.3,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 43.2,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 38.3,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 32.1,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 18.7,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 41.0,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -34937,7 +34931,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 8.8,
           "detail": "block quality plus pressure suppression"
         },
@@ -35117,17 +35111,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 54.0,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 67.2,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 60.9,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 8.6,
           "detail": "base-down viability alongside rush value"
         }
@@ -35297,17 +35291,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 22.7,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 30.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 22.7,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 92.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -35479,17 +35473,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 56.0,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 68.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 60.0,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 62.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -35856,9 +35850,7 @@
           "detail": "pressure utility, box disruption, slot stress response"
         }
       ],
-      "tags": [
-        "Scheme Translator"
-      ]
+      "tags": []
     },
     "historical_comp_floor": {
       "name": "Marvell Tell",
@@ -36023,17 +36015,17 @@
       "title": "QB Stress / Process",
       "rows": [
         {
-          "label": "Stress Response",
+          "label": "Pressure Management",
           "pct": 84.6,
           "detail": "pressure, sack avoidance, blitz answers"
         },
         {
-          "label": "Decision Quality",
-          "pct": 79.5,
-          "detail": "aggression balanced with turnover control"
+          "label": "Aggressive Creation",
+          "pct": 82.0,
+          "detail": "downfield aggression with enough turnover control to keep it playable"
         },
         {
-          "label": "Starter Translation",
+          "label": "Structure Passing",
           "pct": 84.6,
           "detail": "structure passing and timing-game stability"
         }
@@ -36193,7 +36185,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 91.2,
           "detail": "block quality plus pressure suppression"
         },
@@ -36377,19 +36369,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 3.7,
-          "detail": "route quality plus target-earning efficiency"
-        },
-        {
-          "label": "Coverage Translation",
+          "label": "Separation",
           "pct": 4.9,
-          "detail": "production across coverage families"
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 1.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Volume Earning",
+          "pct": 3.7,
+          "detail": "how consistently the player earns routes into targets and usable volume"
+        },
+        {
+          "label": "Vertical Stress",
+          "pct": 5.6,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -36611,7 +36603,8 @@
         }
       ],
       "tags": [
-        "Target Deterrent"
+        "Target Deterrent",
+        "Scheme Translator"
       ]
     },
     "historical_comp_floor": {
@@ -36806,24 +36799,22 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 65.8,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 60.4,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 55.9,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 54.1,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 73.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 66.7,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
-      "tags": [
-        "Vertical Stressor"
-      ]
+      "tags": []
     },
     "historical_comp_floor": {
       "name": "KJ Hamler",
@@ -37026,17 +37017,17 @@
       "title": "QB Stress / Process",
       "rows": [
         {
-          "label": "Stress Response",
+          "label": "Pressure Management",
           "pct": 20.5,
           "detail": "pressure, sack avoidance, blitz answers"
         },
         {
-          "label": "Decision Quality",
-          "pct": 10.3,
-          "detail": "aggression balanced with turnover control"
+          "label": "Aggressive Creation",
+          "pct": 20.5,
+          "detail": "downfield aggression with enough turnover control to keep it playable"
         },
         {
-          "label": "Starter Translation",
+          "label": "Structure Passing",
           "pct": 7.7,
           "detail": "structure passing and timing-game stability"
         }
@@ -37604,18 +37595,18 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 24.1,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 38.9,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 52.8,
+          "label": "Passing-Game Utility",
+          "pct": 58.4,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
@@ -38433,19 +38424,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 63.0,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 40.7,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 29.6,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 59.3,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 34.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 36.1,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -38854,7 +38845,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 28.1,
           "detail": "block quality plus pressure suppression"
         },
@@ -39137,17 +39128,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 20.0,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 30.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 24.0,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 22.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -39483,7 +39474,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 17.3,
           "detail": "block quality plus pressure suppression"
         },
@@ -39703,23 +39694,22 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 77.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 74.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 68.0,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 34.0,
           "detail": "base-down viability alongside rush value"
         }
       ],
       "tags": [
-        "Clean-Pocket Finisher",
         "True-Pass-Set Winner"
       ]
     },
@@ -40090,7 +40080,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 5.3,
           "detail": "block quality plus pressure suppression"
         },
@@ -40301,19 +40291,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 24.7,
-          "detail": "route quality plus target-earning efficiency"
-        },
-        {
-          "label": "Coverage Translation",
+          "label": "Separation",
           "pct": 46.9,
-          "detail": "production across coverage families"
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 56.8,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Volume Earning",
+          "pct": 13.6,
+          "detail": "how consistently the player earns routes into targets and usable volume"
+        },
+        {
+          "label": "Vertical Stress",
+          "pct": 64.2,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -40879,17 +40869,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 28.7,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 17.2,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 24.1,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 56.9,
           "detail": "base-down viability alongside rush value"
         }
@@ -41241,18 +41231,18 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 70.3,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 86.1,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 27.8,
+          "label": "Passing-Game Utility",
+          "pct": 52.8,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
@@ -41566,19 +41556,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 53.1,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 43.2,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 52.2,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 65.8,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 28.8,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 36.9,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -41995,17 +41985,17 @@
       "title": "QB Stress / Process",
       "rows": [
         {
-          "label": "Stress Response",
+          "label": "Pressure Management",
           "pct": 46.1,
           "detail": "pressure, sack avoidance, blitz answers"
         },
         {
-          "label": "Decision Quality",
-          "pct": 38.5,
-          "detail": "aggression balanced with turnover control"
+          "label": "Aggressive Creation",
+          "pct": 48.7,
+          "detail": "downfield aggression with enough turnover control to keep it playable"
         },
         {
-          "label": "Starter Translation",
+          "label": "Structure Passing",
           "pct": 30.8,
           "detail": "structure passing and timing-game stability"
         }
@@ -42161,7 +42151,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 71.9,
           "detail": "block quality plus pressure suppression"
         },
@@ -42561,19 +42551,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 29.7,
-          "detail": "route quality plus target-earning efficiency"
-        },
-        {
-          "label": "Coverage Translation",
+          "label": "Separation",
           "pct": 28.8,
-          "detail": "production across coverage families"
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Ball Reliability",
+          "label": "Volume Earning",
+          "pct": 27.9,
+          "detail": "how consistently the player earns routes into targets and usable volume"
+        },
+        {
+          "label": "Vertical Stress",
           "pct": 38.7,
-          "detail": "finishing through contact and preserving targets"
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -42816,19 +42806,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 55.5,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 54.3,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 55.5,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 44.4,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 60.4,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 57.9,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -42982,7 +42972,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 8.8,
           "detail": "block quality plus pressure suppression"
         },
@@ -43162,19 +43152,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 19.8,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 20.7,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 23.4,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 21.6,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 30.6,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 29.7,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -43342,19 +43332,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 23.4,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 32.1,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 38.3,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 33.3,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 48.7,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 40.1,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -43560,17 +43550,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 66.7,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 92.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 81.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 58.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -43780,17 +43770,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 55.2,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 63.8,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 64.4,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 63.8,
           "detail": "base-down viability alongside rush value"
         }
@@ -43989,22 +43979,24 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 66.7,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 56.8,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 64.9,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 74.8,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 39.7,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 53.2,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
-      "tags": []
+      "tags": [
+        "Volume Earner"
+      ]
     },
     "historical_comp_floor": {
       "name": "Justyn Ross",
@@ -44198,19 +44190,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 33.3,
-          "detail": "route quality plus target-earning efficiency"
-        },
-        {
-          "label": "Coverage Translation",
+          "label": "Separation",
           "pct": 31.5,
-          "detail": "production across coverage families"
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 64.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Volume Earning",
+          "pct": 29.7,
+          "detail": "how consistently the player earns routes into targets and usable volume"
+        },
+        {
+          "label": "Vertical Stress",
+          "pct": 39.6,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -44453,17 +44445,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 13.8,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 25.9,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 21.8,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 5.2,
           "detail": "base-down viability alongside rush value"
         }
@@ -44708,17 +44700,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 9.2,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 5.2,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 10.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 13.8,
           "detail": "base-down viability alongside rush value"
         }
@@ -44926,17 +44918,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 49.4,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 41.3,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 46.0,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 55.2,
           "detail": "base-down viability alongside rush value"
         }
@@ -45106,19 +45098,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 36.9,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 11.7,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 21.6,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 48.6,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 23.4,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 9.9,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -45286,23 +45278,23 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 64.9,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 66.7,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 68.5,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 79.3,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 82.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 71.2,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": [
-        "Vertical Stressor"
+        "Volume Earner"
       ]
     },
     "historical_comp_floor": {
@@ -45468,17 +45460,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 41.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 64.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 54.7,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 30.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -45762,17 +45754,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 42.5,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 34.5,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 36.8,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 70.7,
           "detail": "base-down viability alongside rush value"
         }
@@ -45942,19 +45934,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 51.8,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 58.0,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 63.0,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 48.1,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 57.3,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 47.4,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -46160,17 +46152,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 12.6,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 25.9,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 18.4,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 34.5,
           "detail": "base-down viability alongside rush value"
         }
@@ -46369,19 +46361,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 51.8,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 58.0,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 51.8,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 49.4,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 19.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 50.7,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -46549,18 +46541,18 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 9.3,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 16.7,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 25.0,
+          "label": "Passing-Game Utility",
+          "pct": 27.8,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
@@ -46767,22 +46759,24 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 61.1,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 58.4,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 63.9,
+          "label": "Passing-Game Utility",
+          "pct": 77.8,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
-      "tags": []
+      "tags": [
+        "Passing-Game Utility"
+      ]
     },
     "historical_comp_floor": {
       "name": "Bryce Love",
@@ -47060,24 +47054,22 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 66.7,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 58.3,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 80.6,
+          "label": "Passing-Game Utility",
+          "pct": 58.3,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
-      "tags": [
-        "Passing-Game Utility"
-      ]
+      "tags": []
     },
     "historical_comp_floor": {
       "name": "Darwin Thompson",
@@ -47228,7 +47220,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 12.3,
           "detail": "block quality plus pressure suppression"
         },
@@ -47439,19 +47431,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 29.7,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 45.9,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 39.6,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 26.1,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 18.0,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 38.7,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -47657,17 +47649,17 @@
       "title": "QB Stress / Process",
       "rows": [
         {
-          "label": "Stress Response",
+          "label": "Pressure Management",
           "pct": 87.2,
           "detail": "pressure, sack avoidance, blitz answers"
         },
         {
-          "label": "Decision Quality",
+          "label": "Aggressive Creation",
           "pct": 89.7,
-          "detail": "aggression balanced with turnover control"
+          "detail": "downfield aggression with enough turnover control to keep it playable"
         },
         {
-          "label": "Starter Translation",
+          "label": "Structure Passing",
           "pct": 100.0,
           "detail": "structure passing and timing-game stability"
         }
@@ -47841,17 +47833,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 21.8,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 50.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 41.4,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 88.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -48009,7 +48001,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 35.1,
           "detail": "block quality plus pressure suppression"
         },
@@ -48438,19 +48430,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 17.1,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 22.5,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 21.6,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 15.3,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 33.3,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 26.1,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -48647,19 +48639,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 58.0,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 54.3,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
+          "label": "Volume Earning",
           "pct": 56.8,
-          "detail": "production across coverage families"
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 58.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 55.2,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -49108,7 +49100,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 97.3,
           "detail": "block quality plus pressure suppression"
         },
@@ -49288,7 +49280,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 81.3,
           "detail": "block quality plus pressure suppression"
         },
@@ -49500,19 +49492,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 55.9,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 55.0,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 45.1,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 44.1,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 37.8,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 44.1,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -50011,17 +50003,17 @@
       "title": "QB Stress / Process",
       "rows": [
         {
-          "label": "Stress Response",
+          "label": "Pressure Management",
           "pct": 30.8,
           "detail": "pressure, sack avoidance, blitz answers"
         },
         {
-          "label": "Decision Quality",
-          "pct": 30.8,
-          "detail": "aggression balanced with turnover control"
+          "label": "Aggressive Creation",
+          "pct": 20.5,
+          "detail": "downfield aggression with enough turnover control to keep it playable"
         },
         {
-          "label": "Starter Translation",
+          "label": "Structure Passing",
           "pct": 46.2,
           "detail": "structure passing and timing-game stability"
         }
@@ -50177,7 +50169,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 54.7,
           "detail": "block quality plus pressure suppression"
         },
@@ -50606,22 +50598,24 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 65.4,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 75.3,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 69.2,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 56.8,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 68.5,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 64.8,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
-      "tags": []
+      "tags": [
+        "Separator"
+      ]
     },
     "historical_comp_floor": {
       "name": "Ryan Taylor",
@@ -50786,19 +50780,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
+          "label": "Separation",
+          "pct": 11.1,
+          "detail": "route quality and man-coverage separation value"
+        },
+        {
+          "label": "Volume Earning",
           "pct": 17.3,
-          "detail": "route quality plus target-earning efficiency"
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 9.9,
-          "detail": "production across coverage families"
-        },
-        {
-          "label": "Ball Reliability",
-          "pct": 48.0,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 36.9,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -51027,7 +51021,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 32.0,
           "detail": "block quality plus pressure suppression"
         },
@@ -51236,19 +51230,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 60.5,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 44.5,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 49.4,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 71.6,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 37.1,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 28.4,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -51865,19 +51859,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
+          "label": "Separation",
           "pct": 2.7,
-          "detail": "route quality plus target-earning efficiency"
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
+          "label": "Volume Earning",
           "pct": 3.6,
-          "detail": "production across coverage families"
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 7.2,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 3.6,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -52065,22 +52059,25 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 73.0,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 68.5,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 63.1,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 76.6,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 47.8,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 74.8,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
-      "tags": []
+      "tags": [
+        "Volume Earner",
+        "Vertical Stressor"
+      ]
     },
     "historical_comp_floor": {
       "name": "Isaiah Burse",
@@ -52283,17 +52280,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 37.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 68.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 54.7,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 36.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -52501,17 +52498,17 @@
       "title": "QB Stress / Process",
       "rows": [
         {
-          "label": "Stress Response",
+          "label": "Pressure Management",
           "pct": 51.3,
           "detail": "pressure, sack avoidance, blitz answers"
         },
         {
-          "label": "Decision Quality",
-          "pct": 33.3,
-          "detail": "aggression balanced with turnover control"
+          "label": "Aggressive Creation",
+          "pct": 35.9,
+          "detail": "downfield aggression with enough turnover control to keep it playable"
         },
         {
-          "label": "Starter Translation",
+          "label": "Structure Passing",
           "pct": 23.1,
           "detail": "structure passing and timing-game stability"
         }
@@ -52719,17 +52716,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 14.9,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 27.5,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 21.8,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 75.9,
           "detail": "base-down viability alongside rush value"
         }
@@ -52901,19 +52898,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 21.6,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 29.7,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 26.1,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 15.3,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 27.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 35.1,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -53451,17 +53448,17 @@
       "title": "QB Stress / Process",
       "rows": [
         {
-          "label": "Stress Response",
+          "label": "Pressure Management",
           "pct": 28.2,
           "detail": "pressure, sack avoidance, blitz answers"
         },
         {
-          "label": "Decision Quality",
-          "pct": 46.2,
-          "detail": "aggression balanced with turnover control"
+          "label": "Aggressive Creation",
+          "pct": 56.4,
+          "detail": "downfield aggression with enough turnover control to keep it playable"
         },
         {
-          "label": "Starter Translation",
+          "label": "Structure Passing",
           "pct": 38.5,
           "detail": "structure passing and timing-game stability"
         }
@@ -53617,7 +53614,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 26.7,
           "detail": "block quality plus pressure suppression"
         },
@@ -53826,22 +53823,24 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 43.2,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 55.0,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 52.3,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 49.6,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 57.7,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 73.0,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
-      "tags": []
+      "tags": [
+        "Vertical Stressor"
+      ]
     },
     "historical_comp_floor": {
       "name": "Deontay Burnett",
@@ -54035,24 +54034,22 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 44.0,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 74.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 61.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 30.0,
           "detail": "base-down viability alongside rush value"
         }
       ],
-      "tags": [
-        "Clean-Pocket Finisher"
-      ]
+      "tags": []
     },
     "historical_comp_floor": {
       "name": "Jordan Jefferson",
@@ -54203,7 +54200,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 22.7,
           "detail": "block quality plus pressure suppression"
         },
@@ -54438,9 +54435,7 @@
           "detail": "pressure utility, box disruption, slot stress response"
         }
       ],
-      "tags": [
-        "Scheme Translator"
-      ]
+      "tags": []
     },
     "historical_comp_floor": {
       "name": "Verone McKinley III",
@@ -54757,18 +54752,18 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 44.4,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 47.2,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 61.1,
+          "label": "Passing-Game Utility",
+          "pct": 47.2,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
@@ -54937,17 +54932,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 53.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 22.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 40.0,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 16.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -55155,17 +55150,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 37.3,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 38.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 33.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 64.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -55373,18 +55368,18 @@
       "title": "RB Three-Down Creator",
       "rows": [
         {
-          "label": "Creation After Contact",
+          "label": "Contact Creation",
           "pct": 7.4,
           "detail": "run grade, elusive value, yards after contact"
         },
         {
-          "label": "Explosive Threat",
+          "label": "Explosive Running",
           "pct": 5.6,
           "detail": "chunk gains and home-run carry profile"
         },
         {
-          "label": "Passing-Down Value",
-          "pct": 25.0,
+          "label": "Passing-Game Utility",
+          "pct": 22.2,
           "detail": "receiving involvement and snap-stay utility"
         }
       ],
@@ -55582,19 +55577,19 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 18.5,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 16.0,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 17.3,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 23.4,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 39.1,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 36.6,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -55896,22 +55891,24 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 47.8,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 73.0,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 71.2,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 45.1,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 59.5,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 81.1,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
-      "tags": []
+      "tags": [
+        "Vertical Stressor"
+      ]
     },
     "historical_comp_floor": {
       "name": "Tony Stevens",
@@ -56105,17 +56102,17 @@
       "title": "True-Pass-Set Disruption",
       "rows": [
         {
-          "label": "Rush Translation",
+          "label": "True-Pass-Set Wins",
           "pct": 10.7,
           "detail": "clean pass-rush quality when protections are honest"
         },
         {
-          "label": "Pressure Load",
-          "pct": 6.0,
-          "detail": "how often disruption actually shows up"
+          "label": "Pocket Finish",
+          "pct": 9.3,
+          "detail": "how often rush quality turns into actual pocket damage"
         },
         {
-          "label": "Run-Down Utility",
+          "label": "Base-Down Value",
           "pct": 66.0,
           "detail": "base-down viability alongside rush value"
         }
@@ -56314,19 +56311,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 5.4,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 8.1,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 7.2,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 4.5,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 36.0,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 27.9,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -56514,24 +56511,22 @@
       "title": "TE Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 66.7,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 56.8,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 55.6,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 69.2,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 73.7,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 57.6,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
-      "tags": [
-        "Vertical Stressor"
-      ]
+      "tags": []
     },
     "historical_comp_floor": {
       "name": "Garrett Hudson",
@@ -56902,7 +56897,7 @@
       "title": "OL Pass-Pro Translation",
       "rows": [
         {
-          "label": "Pass-Pro Core",
+          "label": "Pass-Pro Translation",
           "pct": 17.3,
           "detail": "block quality plus pressure suppression"
         },
@@ -57219,19 +57214,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 47.7,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 20.7,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 31.5,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 66.7,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 36.9,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 35.1,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
@@ -57428,19 +57423,19 @@
       "title": "WR Route Earner",
       "rows": [
         {
-          "label": "Route Earning",
-          "pct": 32.4,
-          "detail": "route quality plus target-earning efficiency"
+          "label": "Separation",
+          "pct": 29.7,
+          "detail": "route quality and man-coverage separation value"
         },
         {
-          "label": "Coverage Translation",
-          "pct": 31.5,
-          "detail": "production across coverage families"
+          "label": "Volume Earning",
+          "pct": 33.3,
+          "detail": "how consistently the player earns routes into targets and usable volume"
         },
         {
-          "label": "Ball Reliability",
-          "pct": 25.2,
-          "detail": "finishing through contact and preserving targets"
+          "label": "Vertical Stress",
+          "pct": 22.5,
+          "detail": "ability to punish coverage downfield and finish high-value targets"
         }
       ],
       "tags": []
