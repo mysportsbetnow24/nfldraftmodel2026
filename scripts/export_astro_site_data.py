@@ -579,6 +579,40 @@ TEAM_NEEDS_POS_ORDER = ["QB", "RB", "WR", "TE", "OT", "IOL", "EDGE", "DT", "LB",
 OFFENSE_POS_ORDER = ["QB", "RB", "WR", "TE", "OT", "IOL"]
 DEFENSE_POS_ORDER = ["EDGE", "DT", "LB", "CB", "S"]
 STARTERS_BY_POSITION = {"QB": 1, "RB": 1, "WR": 2, "TE": 1, "OT": 2, "IOL": 3, "EDGE": 2, "DT": 2, "LB": 2, "CB": 2, "S": 2}
+TEAM_TEXT_CODE_ALIASES = {
+    "ARI": ["ari", "arizona", "arizona cardinals", "cardinals"],
+    "ATL": ["atl", "atlanta", "atlanta falcons", "falcons"],
+    "BAL": ["bal", "baltimore", "baltimore ravens", "ravens"],
+    "BUF": ["buf", "buffalo", "buffalo bills", "bills"],
+    "CAR": ["car", "carolina", "carolina panthers", "panthers"],
+    "CHI": ["chi", "chicago", "chicago bears", "bears"],
+    "CIN": ["cin", "cincinnati", "cincinnati bengals", "bengals"],
+    "CLE": ["cle", "cleveland", "cleveland browns", "browns"],
+    "DAL": ["dal", "dallas", "dallas cowboys", "cowboys"],
+    "DEN": ["den", "denver", "denver broncos", "broncos"],
+    "DET": ["det", "detroit", "detroit lions", "lions"],
+    "GB": ["gb", "green bay", "green bay packers", "packers"],
+    "HOU": ["hou", "houston", "houston texans", "texans"],
+    "IND": ["ind", "indianapolis", "indianapolis colts", "colts"],
+    "JAX": ["jax", "jacksonville", "jacksonville jaguars", "jaguars"],
+    "KC": ["kc", "kansas city", "kansas city chiefs", "chiefs"],
+    "LAC": ["lac", "la chargers", "los angeles chargers", "chargers"],
+    "LAR": ["lar", "la rams", "los angeles rams", "rams"],
+    "LV": ["lv", "las vegas", "las vegas raiders", "raiders"],
+    "MIA": ["mia", "miami", "miami dolphins", "dolphins"],
+    "MIN": ["min", "minnesota", "minnesota vikings", "vikings"],
+    "NE": ["ne", "new england", "new england patriots", "patriots"],
+    "NO": ["no", "new orleans", "new orleans saints", "saints"],
+    "NYG": ["nyg", "new york giants", "giants"],
+    "NYJ": ["nyj", "new york jets", "jets"],
+    "PHI": ["phi", "philadelphia", "philadelphia eagles", "eagles"],
+    "PIT": ["pit", "pittsburgh", "pittsburgh steelers", "steelers"],
+    "SEA": ["sea", "seattle", "seattle seahawks", "seahawks"],
+    "SF": ["sf", "san francisco", "san francisco 49ers", "49ers", "niners"],
+    "TB": ["tb", "tampa bay", "tampa bay buccaneers", "buccaneers", "bucs"],
+    "TEN": ["ten", "tennessee", "tennessee titans", "titans"],
+    "WAS": ["was", "washington", "washington commanders", "commanders"],
+}
 OFFENSE_LANE_SLOT_ORDER = {
     "QB": ["QB"],
     "RB": ["RB", "HB", "FB"],
@@ -690,6 +724,27 @@ def _team_front_family(position_groups: list[str]) -> str:
     if counts["4-3"] > 0:
         return "4-3"
     return "generic"
+
+
+def _normalize_contract_team_codes(value: str) -> list[str]:
+    text = str(value or "").strip().lower()
+    if not text:
+        return []
+    parts = [part.strip() for part in re.split(r"[\\/,&]+", text) if part.strip()]
+    if not parts:
+        parts = [text]
+    codes: list[str] = []
+    seen: set[str] = set()
+    for part in parts:
+        normalized = re.sub(r"[^a-z0-9\s]+", " ", part)
+        normalized = re.sub(r"\s+", " ", normalized).strip()
+        for code, aliases in TEAM_TEXT_CODE_ALIASES.items():
+            if normalized == code.lower() or normalized in aliases:
+                if code not in seen:
+                    seen.add(code)
+                    codes.append(code)
+                break
+    return codes
 
 
 def _lane_slot_order(position: str, front_family: str) -> list[str]:
@@ -1322,15 +1377,42 @@ def _build_team_depth_context() -> dict[str, dict]:
                 if new_score > existing_score:
                     players_master_by_name[key] = payload
 
+    all_contract_rows = []
     contract_rows = []
     apy_pool_by_pos: dict[str, list[float]] = defaultdict(list)
     contract_by_gsis: dict[str, dict] = {}
     contract_by_name: dict[str, dict] = {}
+    contract_history_by_name_team: dict[tuple[str, str], dict] = {}
     contract_players_by_team_pos: dict[tuple[str, str], list[dict]] = defaultdict(list)
     if NFLVERSE_CONTRACTS.exists():
         contracts = pl.read_parquet(NFLVERSE_CONTRACTS)
         if not contracts.is_empty():
+            all_contract_rows = list(contracts.iter_rows(named=True))
             contract_rows = list(contracts.filter(pl.col("is_active") == True).iter_rows(named=True))
+    for row in all_contract_rows:
+        name_key = _norm_player_key(row.get("player") or "")
+        if not name_key:
+            continue
+        years = _safe_int(row.get("years"), 0)
+        year_signed = _safe_int(row.get("year_signed"), 0)
+        contract_end_year = year_signed + max(years - 1, 0) if year_signed and years else 0
+        apy = _safe_float(row.get("apy"))
+        for team_code in _normalize_contract_team_codes(row.get("team") or ""):
+            key = (name_key, team_code)
+            existing = contract_history_by_name_team.get(key)
+            existing_score = (
+                _safe_int(existing.get("contract_end_year"), 0) if existing else 0,
+                _safe_float(existing.get("apy")) or 0.0 if existing else 0.0,
+            )
+            new_score = (contract_end_year, apy or 0.0)
+            if existing is None or new_score > existing_score:
+                contract_history_by_name_team[key] = {
+                    "team_norm": team_code,
+                    "years": years,
+                    "year_signed": year_signed,
+                    "contract_end_year": contract_end_year,
+                    "apy": apy,
+                }
     for row in contract_rows:
         pos = _map_team_needs_position(row.get("position", ""))
         apy = _safe_float(row.get("apy"))
@@ -1344,45 +1426,7 @@ def _build_team_depth_context() -> dict[str, dict]:
         years = _safe_int(row.get("years"), 0)
         pos = _map_team_needs_position(row.get("position", ""))
         team_text = str(row.get("team") or "").strip()
-        team_norm = ""
-        lowered_team = team_text.lower()
-        for code, aliases in {
-            "ARI": ["arizona cardinals", "cardinals"],
-            "ATL": ["atlanta falcons", "falcons"],
-            "BAL": ["baltimore ravens", "ravens"],
-            "BUF": ["buffalo bills", "bills"],
-            "CAR": ["carolina panthers", "panthers"],
-            "CHI": ["chicago bears", "bears"],
-            "CIN": ["cincinnati bengals", "bengals"],
-            "CLE": ["cleveland browns", "browns"],
-            "DAL": ["dallas cowboys", "cowboys"],
-            "DEN": ["denver broncos", "broncos"],
-            "DET": ["detroit lions", "lions"],
-            "GB": ["green bay packers", "packers"],
-            "HOU": ["houston texans", "texans"],
-            "IND": ["indianapolis colts", "colts"],
-            "JAX": ["jacksonville jaguars", "jaguars"],
-            "KC": ["kansas city chiefs", "chiefs"],
-            "LAC": ["los angeles chargers", "chargers"],
-            "LAR": ["los angeles rams", "rams"],
-            "LV": ["las vegas raiders", "raiders"],
-            "MIA": ["miami dolphins", "dolphins"],
-            "MIN": ["minnesota vikings", "vikings"],
-            "NE": ["new england patriots", "patriots"],
-            "NO": ["new orleans saints", "saints"],
-            "NYG": ["new york giants", "giants"],
-            "NYJ": ["new york jets", "jets"],
-            "PHI": ["philadelphia eagles", "eagles"],
-            "PIT": ["pittsburgh steelers", "steelers"],
-            "SEA": ["seattle seahawks", "seahawks"],
-            "SF": ["san francisco 49ers", "49ers", "niners"],
-            "TB": ["tampa bay buccaneers", "buccaneers", "bucs"],
-            "TEN": ["tennessee titans", "titans"],
-            "WAS": ["washington commanders", "commanders"],
-        }.items():
-            if lowered_team in aliases:
-                team_norm = code
-                break
+        candidate_team_codes = _normalize_contract_team_codes(team_text)
         payload = {
             "gsis_id": gsis,
             "name_key": name_key,
@@ -1390,17 +1434,28 @@ def _build_team_depth_context() -> dict[str, dict]:
             "years": years,
             "position": pos,
             "team_text": team_text,
-            "team_norm": team_norm,
+            "team_norm": "",
+            "team_codes": candidate_team_codes,
         }
         player_master = players_master_by_name.get(payload["name_key"], {})
+        latest_team = str(player_master.get("latest_team") or "").strip().upper()
+        override_team = str(transaction_team_override_by_name.get(payload["name_key"], {}).get("current_team") or "").strip().upper()
+        resolved_team = ""
+        if override_team and override_team in candidate_team_codes:
+            resolved_team = override_team
+        elif latest_team and latest_team in candidate_team_codes:
+            resolved_team = latest_team
+        elif len(candidate_team_codes) == 1:
+            resolved_team = candidate_team_codes[0]
+        payload["team_norm"] = resolved_team
         latest_team_match = (
             bool(player_master)
-            and str(player_master.get("latest_team") or "").strip().upper() == team_norm
+            and latest_team == resolved_team
             and str(player_master.get("status") or "").strip().upper() not in {"RET", "CUT"}
         )
-        if team_norm and pos and name and latest_team_match:
-            player_team_candidates[payload["name_key"]][team_norm] += 70.0
-            contract_players_by_team_pos[(team_norm, pos)].append(
+        if resolved_team and pos and name and (latest_team_match or override_team == resolved_team or len(candidate_team_codes) == 1):
+            player_team_candidates[payload["name_key"]][resolved_team] += 70.0
+            contract_players_by_team_pos[(resolved_team, pos)].append(
                 {
                     "player_name": name,
                     "position": pos,
@@ -1450,14 +1505,30 @@ def _build_team_depth_context() -> dict[str, dict]:
         draft_number = _safe_int(row.get("draft_number"), 0) or None
 
         contract = contract_by_gsis.get(gsis_id) or contract_by_name.get(_norm_player_key(name))
+        historical_contract = contract_history_by_name_team.get((_norm_player_key(name), team))
         apy = _safe_float(contract.get("apy")) if contract else None
         apy_pct = _pct_score(apy, apy_pool_by_pos.get(model_pos, []))
         years_left = _safe_int(contract.get("years"), 0) if contract else 0
-        has_contract = contract is not None
-        if has_contract:
+        historical_contract_valid = (
+            bool(historical_contract)
+            and _safe_int(historical_contract.get("contract_end_year"), 0) >= CURRENT_DRAFT_YEAR
+        )
+        has_contract = True
+        if contract is not None:
             contract_label = f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
+        elif historical_contract_valid:
+            hist_years = _safe_int(historical_contract.get("years"), 0)
+            hist_apy = _safe_float(historical_contract.get("apy"))
+            years_left = hist_years
+            apy = hist_apy
+            apy_pct = _pct_score(apy, apy_pool_by_pos.get(model_pos, [])) if apy is not None else apy_pct
+            contract_label = (
+                f"{hist_years}y | ${hist_apy:.1f}M APY"
+                if hist_apy is not None and hist_years
+                else "Rostered"
+            )
         else:
-            contract_label = "FA"
+            contract_label = "Rostered"
 
         roster_lookup_by_team[team][_norm_player_key(name)] = {
             "player_name": name,
@@ -1512,6 +1583,7 @@ def _build_team_depth_context() -> dict[str, dict]:
         roster_info = roster_lookup_by_team.get(team, {}).get(player_key, {})
         contract = contract_by_name.get(player_key)
         contract_team_match = bool(contract) and str(contract.get("team_norm") or "").strip().upper() == team
+        historical_contract = contract_history_by_name_team.get((player_key, team))
         player_master = players_master_by_name.get(player_key, {})
         latest_team_match = (
             bool(player_master)
@@ -1551,9 +1623,25 @@ def _build_team_depth_context() -> dict[str, dict]:
             and _safe_int(player_master.get("rookie_season"), 0) >= (latest_season - 1)
             and _safe_int(player_master.get("years_of_experience"), 0) <= 1
         )
-        has_contract = bool(contract) or roster_has_contract or inferred_rookie_contract
+        historical_team_contract = (
+            bool(historical_contract)
+            and latest_team_match
+            and _safe_int(historical_contract.get("contract_end_year"), 0) >= CURRENT_DRAFT_YEAR
+        )
+        has_contract = bool(contract) or roster_has_contract or inferred_rookie_contract or historical_team_contract
         if contract:
             contract_label = f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
+        elif historical_team_contract:
+            hist_years = _safe_int(historical_contract.get("years"), 0)
+            hist_apy = _safe_float(historical_contract.get("apy"))
+            years_left = hist_years
+            apy = hist_apy if hist_apy is not None else apy
+            apy_pct = _pct_score(apy, apy_pool_by_pos.get(model_pos, [])) if apy is not None else apy_pct
+            contract_label = (
+                f"{hist_years}y | ${hist_apy:.1f}M APY"
+                if hist_apy is not None and hist_years
+                else "Rostered"
+            )
         elif roster_has_contract and roster_info:
             contract_label = str(roster_info.get("contract_label") or "Rostered")
         elif inferred_rookie_contract:
@@ -1802,7 +1890,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                 "season": latest_season,
                 "week": latest_week,
             },
-            "free_agents": free_agents[:8],
+            "free_agents": free_agents,
             "young_players_on_rise": youth,
         }
 
