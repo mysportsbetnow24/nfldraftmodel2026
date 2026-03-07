@@ -42,6 +42,7 @@ const generatedAt = (meta as { generated_at?: string }).generated_at || "";
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="copyright" content="Scouting Grade. All rights reserved." />
     {keywords.length ? <meta name="keywords" content={keywords.join(", ")} /> : null}
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content={ogType} />
@@ -81,7 +82,11 @@ const generatedAt = (meta as { generated_at?: string }).generated_at || "";
       </header>
       <slot />
       <footer class="footer">
-        Scouting Grade · Data-driven NFL Draft modeling and scouting synthesis.
+        <span>© 2026 Scouting Grade. All rights reserved.</span>
+        <span>·</span>
+        <span>Data-driven NFL Draft modeling and scouting synthesis.</span>
+        <span>·</span>
+        <a href="/terms-of-use">Terms of Use</a>
         {generatedAt && <span> · Last updated (UTC): {generatedAt}</span>}
       </footer>
     </div>

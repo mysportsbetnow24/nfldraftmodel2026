@@ -1063,6 +1063,21 @@ tbody tr.clickable-row {
   color: var(--muted);
   font-size: 0.82rem;
   padding: 1rem 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.footer a {
+  color: var(--brand-2);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+  text-decoration: underline;
 }
 
 @media (max-width: 1080px) {
