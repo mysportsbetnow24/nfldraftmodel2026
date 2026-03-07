@@ -26,6 +26,19 @@ const collectionSchema = {
   <section class="card compare-controls">
     <h2 class="section-title">Select Prospects</h2>
     <div class="compare-grid">
+      <input
+        id="compare-search"
+        class="control search-control"
+        type="search"
+        placeholder="Search player or position..."
+        autocomplete="off"
+      />
+      <select id="compare-position" class="control">
+        <option value="">All Positions</option>
+        {[...new Set(pool.map((p:any) => String(p.position || "").toUpperCase()).filter(Boolean))].sort().map((pos) => (
+          <option value={pos}>{pos}</option>
+        ))}
+      </select>
       <select id="p1" class="control"><option value="">Select Player 1</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
       <select id="p2" class="control"><option value="">Select Player 2</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
       <select id="p3" class="control"><option value="">Select Player 3</option>{pool.map((p:any)=><option value={p.player_uid}>{p.player_name} ({p.position})</option>)}</select>
@@ -38,8 +51,52 @@ const collectionSchema = {
   <script define:vars={{ pool }}>
     const idx = {};
     pool.forEach((p) => { idx[p.player_uid] = p; });
+    const searchInput = document.getElementById("compare-search");
+    const positionFilter = document.getElementById("compare-position");
     const slots = ["p1", "p2", "p3", "p4"].map((id) => document.getElementById(id));
     const cards = document.getElementById("cards");
+    const normalizeSearch = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+
+    const filteredPool = () => {
+      const query = normalizeSearch(searchInput?.value || "");
+      const position = String(positionFilter?.value || "").toUpperCase();
+      return pool.filter((p) => {
+        const pos = String(p.position || "").toUpperCase();
+        if (position && pos !== position) return false;
+        if (!query) return true;
+        const haystack = normalizeSearch([p.player_name, p.position, p.school].join(" "));
+        return haystack.includes(query);
+      });
+    };
+
+    const repopulateSlotOptions = () => {
+      const available = filteredPool();
+      const selected = new Set(slots.map((el) => el?.value).filter(Boolean));
+      slots.forEach((el, idxNum) => {
+        if (!el) return;
+        const currentValue = el.value;
+        const placeholder = `Select Player ${idxNum + 1}`;
+        el.innerHTML = "";
+        const first = document.createElement("option");
+        first.value = "";
+        first.textContent = placeholder;
+        el.appendChild(first);
+        available.forEach((p) => {
+          const option = document.createElement("option");
+          option.value = p.player_uid;
+          option.textContent = `${p.player_name} (${p.position})`;
+          if (currentValue === p.player_uid) {
+            option.selected = true;
+          } else if (!currentValue && selected.has(p.player_uid)) {
+            option.disabled = true;
+          }
+          el.appendChild(option);
+        });
+        if (currentValue && !available.some((p) => p.player_uid === currentValue)) {
+          el.value = "";
+        }
+      });
+    };
 
     const fmtValue = (n, mode) => {
       if (!Number.isFinite(n)) return "-";
@@ -414,7 +471,19 @@ const collectionSchema = {
     if (pool[2] && slots[2] && !slots[2].value) slots[2].value = pool[2].player_uid;
     if (pool[3] && slots[3] && !slots[3].value) slots[3].value = pool[3].player_uid;
 
-    slots.forEach((el) => el?.addEventListener("change", render));
+    slots.forEach((el) => el?.addEventListener("change", () => {
+      repopulateSlotOptions();
+      render();
+    }));
+    searchInput?.addEventListener("input", () => {
+      repopulateSlotOptions();
+      render();
+    });
+    positionFilter?.addEventListener("change", () => {
+      repopulateSlotOptions();
+      render();
+    });
+    repopulateSlotOptions();
     render();
   </script>
 </BaseLayout>

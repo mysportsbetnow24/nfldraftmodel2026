@@ -1,5 +1,18 @@
 [
   {
+    "team": "BUF",
+    "event_date": "2026-03-07",
+    "status": "Confirmed",
+    "status_kind": "confirmed",
+    "label": "Amari Cooper (WR) retired",
+    "player_name": "Amari Cooper",
+    "position": "WR",
+    "action_text": "retired",
+    "affects_team_needs": true,
+    "source_url": "https://www.cbssports.com/nfl/transactions/",
+    "source_account": "Manual Override"
+  },
+  {
     "team": "WAS",
     "event_date": "2026-03-06",
     "status": "Confirmed",
