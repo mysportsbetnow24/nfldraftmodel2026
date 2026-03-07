@@ -86,10 +86,11 @@ const positionLens = player && typeof player.position_lens === "object" && Array
   : null;
 const toBullets = (value: string) =>
   String(value || "")
-    .split("\n")
+    .replace(/\\n/g, "\n")
+    .split(/\n+/)
     .map((line) => String(line || "").trim())
     .filter(Boolean)
-    .map((line) => line.replace(/^\-\s*/, "").trim());
+    .map((line) => line.replace(/^(?:[-*•]\s*|\d+\.\s*)/, "").trim());
 const toParagraphs = (value: string) =>
   String(value || "")
     .split(/\n{2,}/)

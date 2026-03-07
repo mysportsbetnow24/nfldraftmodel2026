@@ -114,10 +114,11 @@ const collectionSchema = {
 
     const toBullets = (value) =>
       String(value || "")
-        .split("\n")
+        .replace(/\\n/g, "\n")
+        .split(/\n+/)
         .map((line) => String(line || "").trim())
         .filter(Boolean)
-        .map((line) => line.replace(/^\-\s*/, "").trim());
+        .map((line) => line.replace(/^(?:[-*•]\s*|\d+\.\s*)/, "").trim());
 
     const toParagraphs = (value) =>
       String(value || "")

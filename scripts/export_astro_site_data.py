@@ -255,18 +255,21 @@ POSITION_COUNTING_STAT_CONFIG = {
         {"key": "cfb_lb_tfl", "label": "TFL", "fmt": "int"},
         {"key": "cfb_lb_sacks", "label": "Sacks", "fmt": "dec1"},
         {"key": "cfb_lb_qb_hurries", "label": "QB Hurries", "fmt": "int"},
+        {"key": "sg_def_total_pressures", "label": "Pressures", "fmt": "int"},
     ],
     "CB": [
         {"key": "cfb_db_int", "label": "INT", "fmt": "int"},
         {"key": "cfb_db_pbu", "label": "PBU", "fmt": "int"},
         {"key": "cfb_db_tackles", "label": "Tackles", "fmt": "int"},
         {"key": "cfb_db_tfl", "label": "TFL", "fmt": "int"},
+        {"key": "sg_def_total_pressures", "label": "Pressures", "fmt": "int"},
     ],
     "S": [
         {"key": "cfb_db_int", "label": "INT", "fmt": "int"},
         {"key": "cfb_db_pbu", "label": "PBU", "fmt": "int"},
         {"key": "cfb_db_tackles", "label": "Tackles", "fmt": "int"},
         {"key": "cfb_db_tfl", "label": "TFL", "fmt": "int"},
+        {"key": "sg_def_total_pressures", "label": "Pressures", "fmt": "int"},
     ],
     "OT": [
         {"key": "cfb_ol_years_played", "label": "Years Played", "fmt": "int"},

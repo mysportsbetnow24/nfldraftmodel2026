@@ -48,7 +48,8 @@
       "cfb_lb_tackles": 83.0,
       "cfb_lb_tfl": 6.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 4.0
+      "cfb_lb_qb_hurries": 4.0,
+      "sg_def_total_pressures": 15.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 78.6,
@@ -164,13 +165,21 @@
         "raw": 4.0,
         "display": "4",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 15.0,
+        "display": "15",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 83.0,
       "cfb_lb_tfl": 6.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 4.0
+      "cfb_lb_qb_hurries": 4.0,
+      "sg_def_total_pressures": 15.0
     },
     "production_composite_pct": 87.7,
     "position_lens": {
@@ -1114,7 +1123,8 @@
       "cfb_lb_tackles": 69.0,
       "cfb_lb_tfl": 10.0,
       "cfb_lb_sacks": 6.0,
-      "cfb_lb_qb_hurries": 5.0
+      "cfb_lb_qb_hurries": 5.0,
+      "sg_def_total_pressures": 27.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 75.0,
@@ -1230,13 +1240,21 @@
         "raw": 5.0,
         "display": "5",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 27.0,
+        "display": "27",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 69.0,
       "cfb_lb_tfl": 10.0,
       "cfb_lb_sacks": 6.0,
-      "cfb_lb_qb_hurries": 5.0
+      "cfb_lb_qb_hurries": 5.0,
+      "sg_def_total_pressures": 27.0
     },
     "production_composite_pct": 54.9,
     "position_lens": {
@@ -1336,7 +1354,8 @@
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 1.0,
       "cfb_db_tackles": 68.0,
-      "cfb_db_tfl": 5.0
+      "cfb_db_tfl": 5.0,
+      "sg_def_total_pressures": 5.0
     },
     "production_percentiles": {
       "sg_cov_grade": 84.2,
@@ -1452,13 +1471,21 @@
         "raw": 5.0,
         "display": "5",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 5.0,
+        "display": "5",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 1.0,
       "cfb_db_tackles": 68.0,
-      "cfb_db_tfl": 5.0
+      "cfb_db_tfl": 5.0,
+      "sg_def_total_pressures": 5.0
     },
     "production_composite_pct": 54.0,
     "position_lens": {
@@ -1726,7 +1753,8 @@
       "sg_cov_man_grade": 89.1,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 11.0,
-      "cfb_db_tackles": 45.0
+      "cfb_db_tackles": 45.0,
+      "sg_def_total_pressures": 3.0
     },
     "production_percentiles": {
       "sg_cov_grade": 100.0,
@@ -1835,12 +1863,20 @@
         "raw": 45.0,
         "display": "45",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 3.0,
+        "display": "3",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 11.0,
-      "cfb_db_tackles": 45.0
+      "cfb_db_tackles": 45.0,
+      "sg_def_total_pressures": 3.0
     },
     "production_composite_pct": 95.2,
     "position_lens": {
@@ -2771,7 +2807,8 @@
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 5.0,
       "cfb_db_tackles": 92.0,
-      "cfb_db_tfl": 4.0
+      "cfb_db_tfl": 4.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_percentiles": {
       "sg_cov_grade": 94.7,
@@ -2887,13 +2924,21 @@
         "raw": 4.0,
         "display": "4",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 4.0,
+        "display": "4",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 5.0,
       "cfb_db_tackles": 92.0,
-      "cfb_db_tfl": 4.0
+      "cfb_db_tfl": 4.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_composite_pct": 75.8,
     "position_lens": {
@@ -3426,7 +3471,8 @@
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 77.0,
-      "cfb_db_tfl": 6.0
+      "cfb_db_tfl": 6.0,
+      "sg_def_total_pressures": 5.0
     },
     "production_percentiles": {
       "sg_cov_grade": 100.0,
@@ -3542,13 +3588,21 @@
         "raw": 6.0,
         "display": "6",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 5.0,
+        "display": "5",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 77.0,
-      "cfb_db_tfl": 6.0
+      "cfb_db_tfl": 6.0,
+      "sg_def_total_pressures": 5.0
     },
     "production_composite_pct": 89.7,
     "position_lens": {
@@ -4103,7 +4157,8 @@
       "cfb_lb_tackles": 16.0,
       "cfb_lb_tfl": 2.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 1.0
+      "cfb_lb_qb_hurries": 1.0,
+      "sg_def_total_pressures": 13.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 82.1,
@@ -4219,13 +4274,21 @@
         "raw": 1.0,
         "display": "1",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 13.0,
+        "display": "13",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 16.0,
       "cfb_lb_tfl": 2.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 1.0
+      "cfb_lb_qb_hurries": 1.0,
+      "sg_def_total_pressures": 13.0
     },
     "production_composite_pct": 58.5,
     "position_lens": {
@@ -6181,7 +6244,8 @@
       "cfb_lb_tackles": 70.0,
       "cfb_lb_tfl": 6.0,
       "cfb_lb_sacks": 4.0,
-      "cfb_lb_qb_hurries": 5.0
+      "cfb_lb_qb_hurries": 5.0,
+      "sg_def_total_pressures": 16.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 64.3,
@@ -6297,13 +6361,21 @@
         "raw": 5.0,
         "display": "5",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 16.0,
+        "display": "16",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 70.0,
       "cfb_lb_tfl": 6.0,
       "cfb_lb_sacks": 4.0,
-      "cfb_lb_qb_hurries": 5.0
+      "cfb_lb_qb_hurries": 5.0,
+      "sg_def_total_pressures": 16.0
     },
     "production_composite_pct": 60.7,
     "position_lens": {
@@ -6818,7 +6890,8 @@
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 8.0,
       "cfb_db_tackles": 50.0,
-      "cfb_db_tfl": 4.0
+      "cfb_db_tfl": 4.0,
+      "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
       "sg_cov_grade": 66.7,
@@ -6934,13 +7007,21 @@
         "raw": 4.0,
         "display": "4",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 1.0,
+        "display": "1",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 8.0,
       "cfb_db_tackles": 50.0,
-      "cfb_db_tfl": 4.0
+      "cfb_db_tfl": 4.0,
+      "sg_def_total_pressures": 1.0
     },
     "production_composite_pct": 56.8,
     "position_lens": {
@@ -8211,7 +8292,8 @@
       "cfb_lb_tackles": 84.0,
       "cfb_lb_tfl": 13.0,
       "cfb_lb_sacks": 2.0,
-      "cfb_lb_qb_hurries": 7.0
+      "cfb_lb_qb_hurries": 7.0,
+      "sg_def_total_pressures": 14.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 89.3,
@@ -8327,13 +8409,21 @@
         "raw": 7.0,
         "display": "7",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 14.0,
+        "display": "14",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 84.0,
       "cfb_lb_tfl": 13.0,
       "cfb_lb_sacks": 2.0,
-      "cfb_lb_qb_hurries": 7.0
+      "cfb_lb_qb_hurries": 7.0,
+      "sg_def_total_pressures": 14.0
     },
     "production_composite_pct": 52.1,
     "position_lens": {
@@ -8653,7 +8743,8 @@
       "sg_cov_man_grade": 66.7,
       "cfb_db_pbu": 8.0,
       "cfb_db_tackles": 48.0,
-      "cfb_db_tfl": 4.0
+      "cfb_db_tfl": 4.0,
+      "sg_def_total_pressures": 6.0
     },
     "production_percentiles": {
       "sg_cov_grade": 54.2,
@@ -8762,12 +8853,20 @@
         "raw": 4.0,
         "display": "4",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 6.0,
+        "display": "6",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_pbu": 8.0,
       "cfb_db_tackles": 48.0,
-      "cfb_db_tfl": 4.0
+      "cfb_db_tfl": 4.0,
+      "sg_def_total_pressures": 6.0
     },
     "production_composite_pct": 43.0,
     "position_lens": {
@@ -8865,7 +8964,8 @@
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 10.0,
       "cfb_db_tackles": 60.0,
-      "cfb_db_tfl": 4.0
+      "cfb_db_tfl": 4.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
       "sg_cov_grade": 91.7,
@@ -8981,13 +9081,21 @@
         "raw": 4.0,
         "display": "4",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 2.0,
+        "display": "2",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 10.0,
       "cfb_db_tackles": 60.0,
-      "cfb_db_tfl": 4.0
+      "cfb_db_tfl": 4.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_composite_pct": 66.3,
     "position_lens": {
@@ -9086,7 +9194,8 @@
       "sg_cov_man_grade": 52.2,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 8.0,
-      "cfb_db_tackles": 48.0
+      "cfb_db_tackles": 48.0,
+      "sg_def_total_pressures": 5.0
     },
     "production_percentiles": {
       "sg_cov_grade": 16.7,
@@ -9195,12 +9304,20 @@
         "raw": 48.0,
         "display": "48",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 5.0,
+        "display": "5",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 8.0,
-      "cfb_db_tackles": 48.0
+      "cfb_db_tackles": 48.0,
+      "sg_def_total_pressures": 5.0
     },
     "production_composite_pct": 19.9,
     "position_lens": {
@@ -9811,7 +9928,8 @@
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 5.0,
       "cfb_db_tackles": 64.0,
-      "cfb_db_tfl": 13.0
+      "cfb_db_tfl": 13.0,
+      "sg_def_total_pressures": 20.0
     },
     "production_percentiles": {
       "sg_cov_grade": 83.3,
@@ -9927,13 +10045,21 @@
         "raw": 13.0,
         "display": "13",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 20.0,
+        "display": "20",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 5.0,
       "cfb_db_tackles": 64.0,
-      "cfb_db_tfl": 13.0
+      "cfb_db_tfl": 13.0,
+      "sg_def_total_pressures": 20.0
     },
     "production_composite_pct": 49.5,
     "position_lens": {
@@ -10516,7 +10642,8 @@
       "cfb_lb_tackles": 95.0,
       "cfb_lb_tfl": 4.0,
       "cfb_lb_sacks": 4.0,
-      "cfb_lb_qb_hurries": 2.0
+      "cfb_lb_qb_hurries": 2.0,
+      "sg_def_total_pressures": 18.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 92.9,
@@ -10632,13 +10759,21 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 18.0,
+        "display": "18",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 95.0,
       "cfb_lb_tfl": 4.0,
       "cfb_lb_sacks": 4.0,
-      "cfb_lb_qb_hurries": 2.0
+      "cfb_lb_qb_hurries": 2.0,
+      "sg_def_total_pressures": 18.0
     },
     "production_composite_pct": 72.7,
     "position_lens": {
@@ -11555,7 +11690,8 @@
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 52.0,
-      "cfb_db_tfl": 0.0
+      "cfb_db_tfl": 0.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
       "sg_cov_grade": 75.0,
@@ -11671,13 +11807,21 @@
         "raw": 0.0,
         "display": "0",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 2.0,
+        "display": "2",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 52.0,
-      "cfb_db_tfl": 0.0
+      "cfb_db_tfl": 0.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_composite_pct": 78.8,
     "position_lens": {
@@ -12104,7 +12248,8 @@
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 8.0,
       "cfb_db_tackles": 77.0,
-      "cfb_db_tfl": 3.0
+      "cfb_db_tfl": 3.0,
+      "sg_def_total_pressures": 6.0
     },
     "production_percentiles": {
       "sg_cov_grade": 57.9,
@@ -12220,13 +12365,21 @@
         "raw": 3.0,
         "display": "3",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 6.0,
+        "display": "6",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 8.0,
       "cfb_db_tackles": 77.0,
-      "cfb_db_tfl": 3.0
+      "cfb_db_tfl": 3.0,
+      "sg_def_total_pressures": 6.0
     },
     "production_composite_pct": 54.4,
     "position_lens": {
@@ -12326,7 +12479,8 @@
       "cfb_lb_tackles": 122.0,
       "cfb_lb_tfl": 10.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 1.0
+      "cfb_lb_qb_hurries": 1.0,
+      "sg_def_total_pressures": 6.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 100.0,
@@ -12442,13 +12596,21 @@
         "raw": 1.0,
         "display": "1",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 6.0,
+        "display": "6",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 122.0,
       "cfb_lb_tfl": 10.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 1.0
+      "cfb_lb_qb_hurries": 1.0,
+      "sg_def_total_pressures": 6.0
     },
     "production_composite_pct": 70.6,
     "position_lens": {
@@ -12625,7 +12787,8 @@
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 8.0,
       "cfb_db_tackles": 59.0,
-      "cfb_db_tfl": 4.0
+      "cfb_db_tfl": 4.0,
+      "sg_def_total_pressures": 6.0
     },
     "production_percentiles": {
       "sg_cov_grade": 70.8,
@@ -12741,13 +12904,21 @@
         "raw": 4.0,
         "display": "4",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 6.0,
+        "display": "6",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 8.0,
       "cfb_db_tackles": 59.0,
-      "cfb_db_tfl": 4.0
+      "cfb_db_tfl": 4.0,
+      "sg_def_total_pressures": 6.0
     },
     "production_composite_pct": 48.7,
     "position_lens": {
@@ -14326,7 +14497,8 @@
       "cfb_db_int": 3.0,
       "cfb_db_pbu": 4.0,
       "cfb_db_tackles": 88.0,
-      "cfb_db_tfl": 0.0
+      "cfb_db_tfl": 0.0,
+      "sg_def_total_pressures": 3.0
     },
     "production_percentiles": {
       "sg_cov_grade": 68.4,
@@ -14442,13 +14614,21 @@
         "raw": 0.0,
         "display": "0",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 3.0,
+        "display": "3",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 3.0,
       "cfb_db_pbu": 4.0,
       "cfb_db_tackles": 88.0,
-      "cfb_db_tfl": 0.0
+      "cfb_db_tfl": 0.0,
+      "sg_def_total_pressures": 3.0
     },
     "production_composite_pct": 52.8,
     "position_lens": {
@@ -15288,7 +15468,8 @@
       "cfb_lb_tackles": 79.0,
       "cfb_lb_tfl": 8.0,
       "cfb_lb_sacks": 3.0,
-      "cfb_lb_qb_hurries": 3.0
+      "cfb_lb_qb_hurries": 3.0,
+      "sg_def_total_pressures": 18.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 50.0,
@@ -15404,13 +15585,21 @@
         "raw": 3.0,
         "display": "3",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 18.0,
+        "display": "18",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 79.0,
       "cfb_lb_tfl": 8.0,
       "cfb_lb_sacks": 3.0,
-      "cfb_lb_qb_hurries": 3.0
+      "cfb_lb_qb_hurries": 3.0,
+      "sg_def_total_pressures": 18.0
     },
     "production_composite_pct": 49.9,
     "position_lens": {
@@ -15587,7 +15776,8 @@
       "cfb_db_int": 4.0,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 52.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_percentiles": {
       "sg_cov_grade": 95.8,
@@ -15703,13 +15893,21 @@
         "raw": 1.0,
         "display": "1",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 4.0,
+        "display": "4",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 4.0,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 52.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_composite_pct": 68.2,
     "position_lens": {
@@ -15916,7 +16114,8 @@
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 4.0,
       "cfb_db_tackles": 30.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
       "sg_cov_grade": 25.0,
@@ -16032,13 +16231,21 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 2.0,
+        "display": "2",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 4.0,
       "cfb_db_tackles": 30.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_composite_pct": 48.2,
     "position_lens": {
@@ -16138,7 +16345,8 @@
       "cfb_lb_tackles": 80.0,
       "cfb_lb_tfl": 4.0,
       "cfb_lb_sacks": 2.0,
-      "cfb_lb_qb_hurries": 1.0
+      "cfb_lb_qb_hurries": 1.0,
+      "sg_def_total_pressures": 14.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 71.4,
@@ -16254,13 +16462,21 @@
         "raw": 1.0,
         "display": "1",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 14.0,
+        "display": "14",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 80.0,
       "cfb_lb_tfl": 4.0,
       "cfb_lb_sacks": 2.0,
-      "cfb_lb_qb_hurries": 1.0
+      "cfb_lb_qb_hurries": 1.0,
+      "sg_def_total_pressures": 14.0
     },
     "production_composite_pct": 49.3,
     "position_lens": {
@@ -17952,7 +18168,8 @@
       "sg_def_tackle_grade": 53.5,
       "sg_def_missed_tackle_rate": 21.0,
       "sg_front_stop_percent": 5.7,
-      "sg_cov_yards_per_snap": 0.9
+      "sg_cov_yards_per_snap": 0.9,
+      "sg_def_total_pressures": 19.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 25.0,
@@ -18040,8 +18257,18 @@
       "sg_front_stop_percent": 17.9,
       "sg_cov_yards_per_snap": 75.0
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 19.0,
+        "display": "19",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 19.0
+    },
     "production_composite_pct": 17.0,
     "position_lens": {
       "title": "LB Dual-Threat Defender",
@@ -18353,7 +18580,8 @@
       "cfb_db_int": 4.0,
       "cfb_db_pbu": 7.0,
       "cfb_db_tackles": 56.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_percentiles": {
       "sg_cov_grade": 36.8,
@@ -18469,13 +18697,21 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 4.0,
+        "display": "4",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 4.0,
       "cfb_db_pbu": 7.0,
       "cfb_db_tackles": 56.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_composite_pct": 43.5,
     "position_lens": {
@@ -18798,7 +19034,8 @@
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 4.0,
       "cfb_db_tackles": 20.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
       "sg_cov_grade": 12.5,
@@ -18914,13 +19151,21 @@
         "raw": 1.0,
         "display": "1",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 1.0,
+        "display": "1",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 4.0,
       "cfb_db_tackles": 20.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 1.0
     },
     "production_composite_pct": 49.7,
     "position_lens": {
@@ -21869,7 +22114,8 @@
       "cfb_lb_tackles": 72.0,
       "cfb_lb_tfl": 7.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 5.0
+      "cfb_lb_qb_hurries": 5.0,
+      "sg_def_total_pressures": 11.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 46.4,
@@ -21985,13 +22231,21 @@
         "raw": 5.0,
         "display": "5",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 11.0,
+        "display": "11",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 72.0,
       "cfb_lb_tfl": 7.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 5.0
+      "cfb_lb_qb_hurries": 5.0,
+      "sg_def_total_pressures": 11.0
     },
     "production_composite_pct": 61.4,
     "position_lens": {
@@ -22968,7 +23222,8 @@
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 35.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
       "sg_cov_grade": 79.2,
@@ -23084,13 +23339,21 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 1.0,
+        "display": "1",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 35.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 1.0
     },
     "production_composite_pct": 61.5,
     "position_lens": {
@@ -23358,7 +23621,8 @@
       "cfb_lb_tackles": 95.0,
       "cfb_lb_tfl": 10.0,
       "cfb_lb_sacks": 4.0,
-      "cfb_lb_qb_hurries": 5.0
+      "cfb_lb_qb_hurries": 5.0,
+      "sg_def_total_pressures": 21.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 28.6,
@@ -23474,13 +23738,21 @@
         "raw": 5.0,
         "display": "5",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 21.0,
+        "display": "21",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 95.0,
       "cfb_lb_tfl": 10.0,
       "cfb_lb_sacks": 4.0,
-      "cfb_lb_qb_hurries": 5.0
+      "cfb_lb_qb_hurries": 5.0,
+      "sg_def_total_pressures": 21.0
     },
     "production_composite_pct": 45.9,
     "position_lens": {
@@ -23580,7 +23852,8 @@
       "cfb_lb_tackles": 34.0,
       "cfb_lb_tfl": 5.0,
       "cfb_lb_sacks": 3.0,
-      "cfb_lb_qb_hurries": 6.0
+      "cfb_lb_qb_hurries": 6.0,
+      "sg_def_total_pressures": 27.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 42.9,
@@ -23696,13 +23969,21 @@
         "raw": 6.0,
         "display": "6",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 27.0,
+        "display": "27",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 34.0,
       "cfb_lb_tfl": 5.0,
       "cfb_lb_sacks": 3.0,
-      "cfb_lb_qb_hurries": 6.0
+      "cfb_lb_qb_hurries": 6.0,
+      "sg_def_total_pressures": 27.0
     },
     "production_composite_pct": 27.0,
     "position_lens": {
@@ -23798,7 +24079,8 @@
       "sg_def_tackle_grade": 86.2,
       "sg_def_missed_tackle_rate": 7.1,
       "sg_front_stop_percent": 10.1,
-      "sg_cov_yards_per_snap": 0.7
+      "sg_cov_yards_per_snap": 0.7,
+      "sg_def_total_pressures": 25.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 85.7,
@@ -23886,8 +24168,18 @@
       "sg_front_stop_percent": 71.4,
       "sg_cov_yards_per_snap": 50.0
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 25.0,
+        "display": "25",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 25.0
+    },
     "production_composite_pct": 77.4,
     "position_lens": {
       "title": "LB Dual-Threat Defender",
@@ -24234,7 +24526,8 @@
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 1.0,
       "cfb_db_tackles": 74.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_percentiles": {
       "sg_cov_grade": 52.6,
@@ -24350,13 +24643,21 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 4.0,
+        "display": "4",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 1.0,
       "cfb_db_tackles": 74.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_composite_pct": 64.6,
     "position_lens": {
@@ -24896,7 +25197,8 @@
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 10.0,
       "cfb_db_tackles": 55.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 3.0
     },
     "production_percentiles": {
       "sg_cov_grade": 50.0,
@@ -25012,13 +25314,21 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 3.0,
+        "display": "3",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 10.0,
       "cfb_db_tackles": 55.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 3.0
     },
     "production_composite_pct": 43.8,
     "position_lens": {
@@ -25116,7 +25426,8 @@
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 1.0,
       "cfb_db_tackles": 70.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 3.0
     },
     "production_percentiles": {
       "sg_cov_grade": 78.9,
@@ -25232,13 +25543,21 @@
         "raw": 1.0,
         "display": "1",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 3.0,
+        "display": "3",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 1.0,
       "cfb_db_tackles": 70.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 3.0
     },
     "production_composite_pct": 69.8,
     "position_lens": {
@@ -25877,7 +26196,8 @@
       "sg_cov_man_grade": 76.6,
       "cfb_db_pbu": 7.0,
       "cfb_db_tackles": 50.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
       "sg_cov_grade": 20.8,
@@ -25986,12 +26306,20 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 1.0,
+        "display": "1",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_pbu": 7.0,
       "cfb_db_tackles": 50.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 1.0
     },
     "production_composite_pct": 31.7,
     "position_lens": {
@@ -27808,7 +28136,8 @@
       "cfb_lb_tackles": 132.0,
       "cfb_lb_tfl": 6.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 5.0
+      "cfb_lb_qb_hurries": 5.0,
+      "sg_def_total_pressures": 12.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 39.3,
@@ -27924,13 +28253,21 @@
         "raw": 5.0,
         "display": "5",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 12.0,
+        "display": "12",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 132.0,
       "cfb_lb_tfl": 6.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 5.0
+      "cfb_lb_qb_hurries": 5.0,
+      "sg_def_total_pressures": 12.0
     },
     "production_composite_pct": 61.6,
     "position_lens": {
@@ -30148,7 +30485,8 @@
       "sg_cov_snaps_per_target": 6.8,
       "sg_cov_yards_per_snap": 1.2,
       "sg_cov_qb_rating_against": 100.7,
-      "sg_cov_zone_grade": 64.5
+      "sg_cov_zone_grade": 64.5,
+      "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
       "sg_cov_grade": 15.8,
@@ -30236,8 +30574,18 @@
       "sg_cov_qb_rating_against": 94.7,
       "sg_cov_zone_grade": 21.1
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 1.0,
+        "display": "1",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 1.0
+    },
     "production_composite_pct": 21.5,
     "position_lens": {
       "title": "DB Coverage Tax",
@@ -30938,7 +31286,8 @@
       "sg_cov_zone_grade": 67.0,
       "cfb_db_pbu": 2.0,
       "cfb_db_tackles": 21.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
       "sg_cov_grade": 31.6,
@@ -31047,12 +31396,20 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 2.0,
+        "display": "2",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_pbu": 2.0,
       "cfb_db_tackles": 21.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_composite_pct": 22.6,
     "position_lens": {
@@ -31581,7 +31938,8 @@
       "sg_cov_snaps_per_target": 14.0,
       "sg_cov_yards_per_snap": 0.4,
       "sg_cov_qb_rating_against": 45.1,
-      "sg_cov_zone_grade": 85.7
+      "sg_cov_zone_grade": 85.7,
+      "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
       "sg_cov_grade": 52.6,
@@ -31669,8 +32027,18 @@
       "sg_cov_qb_rating_against": 15.8,
       "sg_cov_zone_grade": 68.4
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 1.0,
+        "display": "1",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 1.0
+    },
     "production_composite_pct": 66.9,
     "position_lens": {
       "title": "DB Coverage Tax",
@@ -32104,7 +32472,8 @@
       "sg_def_tackle_grade": 82.2,
       "sg_def_missed_tackle_rate": 9.4,
       "sg_front_stop_percent": 9.8,
-      "sg_cov_yards_per_snap": 0.6
+      "sg_cov_yards_per_snap": 0.6,
+      "sg_def_total_pressures": 20.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 96.4,
@@ -32192,8 +32561,18 @@
       "sg_front_stop_percent": 64.3,
       "sg_cov_yards_per_snap": 35.7
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 20.0,
+        "display": "20",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 20.0
+    },
     "production_composite_pct": 78.6,
     "position_lens": {
       "title": "LB Dual-Threat Defender",
@@ -32834,7 +33213,8 @@
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 7.0,
       "cfb_db_tackles": 48.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 0.0
     },
     "production_percentiles": {
       "sg_cov_grade": 50.0,
@@ -32950,13 +33330,21 @@
         "raw": 1.0,
         "display": "1",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 0.0,
+        "display": "0",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 7.0,
       "cfb_db_tackles": 48.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 0.0
     },
     "production_composite_pct": 38.3,
     "position_lens": {
@@ -33980,7 +34368,8 @@
       "sg_cov_snaps_per_target": 6.9,
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 56.5,
-      "sg_cov_man_grade": 84.4
+      "sg_cov_man_grade": 84.4,
+      "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
       "sg_cov_grade": 62.5,
@@ -34068,8 +34457,18 @@
       "sg_cov_qb_rating_against": 33.3,
       "sg_cov_man_grade": 95.8
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 1.0,
+        "display": "1",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 1.0
+    },
     "production_composite_pct": 68.2,
     "position_lens": {
       "title": "DB Coverage Tax",
@@ -34283,7 +34682,8 @@
       "sg_cov_zone_grade": 60.5,
       "cfb_db_int": 1.0,
       "cfb_db_tackles": 76.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_percentiles": {
       "sg_cov_grade": 10.5,
@@ -34392,12 +34792,20 @@
         "raw": 1.0,
         "display": "1",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 4.0,
+        "display": "4",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 1.0,
       "cfb_db_tackles": 76.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_composite_pct": 31.4,
     "position_lens": {
@@ -34750,7 +35158,8 @@
       "sg_def_tackle_grade": 61.4,
       "sg_def_missed_tackle_rate": 16.8,
       "sg_front_stop_percent": 9.2,
-      "sg_cov_yards_per_snap": 0.6
+      "sg_cov_yards_per_snap": 0.6,
+      "sg_def_total_pressures": 15.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 60.7,
@@ -34838,8 +35247,18 @@
       "sg_front_stop_percent": 53.6,
       "sg_cov_yards_per_snap": 35.7
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 15.0,
+        "display": "15",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 15.0
+    },
     "production_composite_pct": 46.9,
     "position_lens": {
       "title": "LB Dual-Threat Defender",
@@ -34934,7 +35353,8 @@
       "sg_def_tackle_grade": 75.7,
       "sg_def_missed_tackle_rate": 9.0,
       "sg_front_stop_percent": 10.3,
-      "sg_cov_yards_per_snap": 0.9
+      "sg_cov_yards_per_snap": 0.9,
+      "sg_def_total_pressures": 7.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 35.7,
@@ -35022,8 +35442,18 @@
       "sg_front_stop_percent": 78.6,
       "sg_cov_yards_per_snap": 75.0
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 7.0,
+        "display": "7",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 7.0
+    },
     "production_composite_pct": 56.9,
     "position_lens": {
       "title": "LB Dual-Threat Defender",
@@ -35948,7 +36378,8 @@
       "sg_cov_snaps_per_target": 7.9,
       "sg_cov_yards_per_snap": 0.9,
       "sg_cov_qb_rating_against": 55.8,
-      "sg_cov_zone_grade": 71.6
+      "sg_cov_zone_grade": 71.6,
+      "sg_def_total_pressures": 14.0
     },
     "production_percentiles": {
       "sg_cov_grade": 73.7,
@@ -36036,8 +36467,18 @@
       "sg_cov_qb_rating_against": 36.8,
       "sg_cov_zone_grade": 42.1
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 14.0,
+        "display": "14",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 14.0
+    },
     "production_composite_pct": 44.8,
     "position_lens": {
       "title": "DB Coverage Tax",
@@ -36132,7 +36573,8 @@
       "sg_cov_snaps_per_target": 10.0,
       "sg_cov_yards_per_snap": 0.4,
       "sg_cov_qb_rating_against": 35.4,
-      "sg_cov_zone_grade": 67.8
+      "sg_cov_zone_grade": 67.8,
+      "sg_def_total_pressures": 6.0
     },
     "production_percentiles": {
       "sg_cov_grade": 26.3,
@@ -36220,8 +36662,18 @@
       "sg_cov_qb_rating_against": 5.3,
       "sg_cov_zone_grade": 31.6
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 6.0,
+        "display": "6",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 6.0
+    },
     "production_composite_pct": 44.9,
     "position_lens": {
       "title": "DB Coverage Tax",
@@ -36858,7 +37310,8 @@
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 39.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 5.0
     },
     "production_percentiles": {
       "sg_cov_grade": 87.5,
@@ -36974,13 +37427,21 @@
         "raw": 1.0,
         "display": "1",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 5.0,
+        "display": "5",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 39.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 5.0
     },
     "production_composite_pct": 83.0,
     "position_lens": {
@@ -37081,7 +37542,8 @@
       "cfb_lb_tackles": 51.0,
       "cfb_lb_tfl": 4.0,
       "cfb_lb_sacks": 2.0,
-      "cfb_lb_qb_hurries": 2.0
+      "cfb_lb_qb_hurries": 2.0,
+      "sg_def_total_pressures": 19.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 7.1,
@@ -37197,13 +37659,21 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 19.0,
+        "display": "19",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 51.0,
       "cfb_lb_tfl": 4.0,
       "cfb_lb_sacks": 2.0,
-      "cfb_lb_qb_hurries": 2.0
+      "cfb_lb_qb_hurries": 2.0,
+      "sg_def_total_pressures": 19.0
     },
     "production_composite_pct": 28.5,
     "position_lens": {
@@ -37730,7 +38200,8 @@
       "sg_cov_snaps_per_target": 7.4,
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 53.4,
-      "sg_cov_man_grade": 67.6
+      "sg_cov_man_grade": 67.6,
+      "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
       "sg_cov_grade": 33.3,
@@ -37818,8 +38289,18 @@
       "sg_cov_qb_rating_against": 25.0,
       "sg_cov_man_grade": 45.8
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 1.0,
+        "display": "1",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 1.0
+    },
     "production_composite_pct": 51.1,
     "position_lens": {
       "title": "DB Coverage Tax",
@@ -37912,7 +38393,8 @@
       "sg_cov_snaps_per_target": 6.3,
       "sg_cov_yards_per_snap": 0.9,
       "sg_cov_qb_rating_against": 86.5,
-      "sg_cov_man_grade": 56.7
+      "sg_cov_man_grade": 56.7,
+      "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
       "sg_cov_grade": 29.2,
@@ -38000,8 +38482,18 @@
       "sg_cov_qb_rating_against": 75.0,
       "sg_cov_man_grade": 12.5
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 1.0,
+        "display": "1",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 1.0
+    },
     "production_composite_pct": 23.3,
     "position_lens": {
       "title": "DB Coverage Tax",
@@ -38318,7 +38810,8 @@
       "cfb_lb_tackles": 74.0,
       "cfb_lb_tfl": 12.0,
       "cfb_lb_sacks": 3.0,
-      "cfb_lb_qb_hurries": 2.0
+      "cfb_lb_qb_hurries": 2.0,
+      "sg_def_total_pressures": 15.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 57.1,
@@ -38434,13 +38927,21 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 15.0,
+        "display": "15",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 74.0,
       "cfb_lb_tfl": 12.0,
       "cfb_lb_sacks": 3.0,
-      "cfb_lb_qb_hurries": 2.0
+      "cfb_lb_qb_hurries": 2.0,
+      "sg_def_total_pressures": 15.0
     },
     "production_composite_pct": 47.4,
     "position_lens": {
@@ -38536,7 +39037,8 @@
       "sg_def_tackle_grade": 88.8,
       "sg_def_missed_tackle_rate": 4.7,
       "sg_front_stop_percent": 7.3,
-      "sg_cov_yards_per_snap": 1.2
+      "sg_cov_yards_per_snap": 1.2,
+      "sg_def_total_pressures": 13.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 67.9,
@@ -38624,8 +39126,18 @@
       "sg_front_stop_percent": 35.7,
       "sg_cov_yards_per_snap": 92.9
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 13.0,
+        "display": "13",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 13.0
+    },
     "production_composite_pct": 56.4,
     "position_lens": {
       "title": "LB Dual-Threat Defender",
@@ -38718,7 +39230,8 @@
       "sg_def_tackle_grade": 57.2,
       "sg_def_missed_tackle_rate": 22.4,
       "sg_front_stop_percent": 4.8,
-      "sg_cov_yards_per_snap": 0.9
+      "sg_cov_yards_per_snap": 0.9,
+      "sg_def_total_pressures": 29.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 17.9,
@@ -38806,8 +39319,18 @@
       "sg_front_stop_percent": 7.1,
       "sg_cov_yards_per_snap": 75.0
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 29.0,
+        "display": "29",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 29.0
+    },
     "production_composite_pct": 20.1,
     "position_lens": {
       "title": "LB Dual-Threat Defender",
@@ -39188,7 +39711,8 @@
       "sg_def_tackle_grade": 82.3,
       "sg_def_missed_tackle_rate": 8.0,
       "sg_front_stop_percent": 6.1,
-      "sg_cov_yards_per_snap": 0.8
+      "sg_cov_yards_per_snap": 0.8,
+      "sg_def_total_pressures": 9.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 53.6,
@@ -39276,8 +39800,18 @@
       "sg_front_stop_percent": 25.0,
       "sg_cov_yards_per_snap": 57.1
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 9.0,
+        "display": "9",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 9.0
+    },
     "production_composite_pct": 49.0,
     "position_lens": {
       "title": "LB Dual-Threat Defender",
@@ -39825,7 +40359,8 @@
       "sg_cov_snaps_per_target": 8.0,
       "sg_cov_yards_per_snap": 0.9,
       "sg_cov_qb_rating_against": 88.4,
-      "sg_cov_man_grade": 70.4
+      "sg_cov_man_grade": 70.4,
+      "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
       "sg_cov_grade": 58.3,
@@ -39913,8 +40448,18 @@
       "sg_cov_qb_rating_against": 83.3,
       "sg_cov_man_grade": 54.2
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 1.0,
+        "display": "1",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 1.0
+    },
     "production_composite_pct": 50.2,
     "position_lens": {
       "title": "DB Coverage Tax",
@@ -40403,7 +40948,8 @@
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 2.0,
       "cfb_db_tackles": 59.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 0.0
     },
     "production_percentiles": {
       "sg_cov_grade": 5.3,
@@ -40519,13 +41065,21 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 0.0,
+        "display": "0",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 2.0,
       "cfb_db_tackles": 59.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 0.0
     },
     "production_composite_pct": 13.8,
     "position_lens": {
@@ -41182,7 +41736,8 @@
       "sg_cov_snaps_per_target": 8.2,
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 37.8,
-      "sg_cov_zone_grade": 88.5
+      "sg_cov_zone_grade": 88.5,
+      "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
       "sg_cov_grade": 68.4,
@@ -41270,8 +41825,18 @@
       "sg_cov_qb_rating_against": 10.5,
       "sg_cov_zone_grade": 78.9
     },
-    "counting_stat_chips": [],
-    "counting_metrics": {},
+    "counting_stat_chips": [
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 1.0,
+        "display": "1",
+        "fmt": "int"
+      }
+    ],
+    "counting_metrics": {
+      "sg_def_total_pressures": 1.0
+    },
     "production_composite_pct": 57.1,
     "position_lens": {
       "title": "DB Coverage Tax",
@@ -41670,7 +42235,8 @@
       "cfb_lb_tackles": 71.0,
       "cfb_lb_tfl": 7.0,
       "cfb_lb_sacks": 3.0,
-      "cfb_lb_qb_hurries": 1.0
+      "cfb_lb_qb_hurries": 1.0,
+      "sg_def_total_pressures": 11.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 21.4,
@@ -41786,13 +42352,21 @@
         "raw": 1.0,
         "display": "1",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 11.0,
+        "display": "11",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 71.0,
       "cfb_lb_tfl": 7.0,
       "cfb_lb_sacks": 3.0,
-      "cfb_lb_qb_hurries": 1.0
+      "cfb_lb_qb_hurries": 1.0,
+      "sg_def_total_pressures": 11.0
     },
     "production_composite_pct": 39.4,
     "position_lens": {
@@ -42100,7 +42674,8 @@
       "sg_cov_man_grade": 62.0,
       "cfb_db_pbu": 1.0,
       "cfb_db_tackles": 38.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
       "sg_cov_grade": 41.7,
@@ -42209,12 +42784,20 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 1.0,
+        "display": "1",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_pbu": 1.0,
       "cfb_db_tackles": 38.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 1.0
     },
     "production_composite_pct": 43.3,
     "position_lens": {
@@ -42704,7 +43287,8 @@
       "cfb_db_int": 5.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 51.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
       "sg_cov_grade": 89.5,
@@ -42820,13 +43404,21 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 2.0,
+        "display": "2",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 5.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 51.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_composite_pct": 62.1,
     "position_lens": {
@@ -48450,7 +49042,8 @@
       "cfb_lb_tackles": 19.0,
       "cfb_lb_tfl": 4.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 1.0
+      "cfb_lb_qb_hurries": 1.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 32.1,
@@ -48566,13 +49159,21 @@
         "raw": 1.0,
         "display": "1",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 4.0,
+        "display": "4",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 19.0,
       "cfb_lb_tfl": 4.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 1.0
+      "cfb_lb_qb_hurries": 1.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_composite_pct": 49.6,
     "position_lens": {
@@ -48840,7 +49441,8 @@
       "cfb_db_int": 4.0,
       "cfb_db_pbu": 2.0,
       "cfb_db_tackles": 72.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
       "sg_cov_grade": 52.6,
@@ -48956,13 +49558,21 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 2.0,
+        "display": "2",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 4.0,
       "cfb_db_pbu": 2.0,
       "cfb_db_tackles": 72.0,
-      "cfb_db_tfl": 2.0
+      "cfb_db_tfl": 2.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_composite_pct": 68.9,
     "position_lens": {
@@ -49561,7 +50171,8 @@
       "cfb_lb_tackles": 79.0,
       "cfb_lb_tfl": 6.0,
       "cfb_lb_sacks": 3.0,
-      "cfb_lb_qb_hurries": 2.0
+      "cfb_lb_qb_hurries": 2.0,
+      "sg_def_total_pressures": 8.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 10.7,
@@ -49677,13 +50288,21 @@
         "raw": 2.0,
         "display": "2",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 8.0,
+        "display": "8",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 79.0,
       "cfb_lb_tfl": 6.0,
       "cfb_lb_sacks": 3.0,
-      "cfb_lb_qb_hurries": 2.0
+      "cfb_lb_qb_hurries": 2.0,
+      "sg_def_total_pressures": 8.0
     },
     "production_composite_pct": 42.3,
     "position_lens": {
@@ -50422,7 +51041,8 @@
       "cfb_lb_tackles": 71.0,
       "cfb_lb_tfl": 3.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 1.0
+      "cfb_lb_qb_hurries": 1.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 14.3,
@@ -50538,13 +51158,21 @@
         "raw": 1.0,
         "display": "1",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 4.0,
+        "display": "4",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 71.0,
       "cfb_lb_tfl": 3.0,
       "cfb_lb_sacks": 1.0,
-      "cfb_lb_qb_hurries": 1.0
+      "cfb_lb_qb_hurries": 1.0,
+      "sg_def_total_pressures": 4.0
     },
     "production_composite_pct": 43.8,
     "position_lens": {
@@ -51882,7 +52510,8 @@
       "sg_cov_man_grade": 61.1,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 10.0,
-      "cfb_db_tackles": 47.0
+      "cfb_db_tackles": 47.0,
+      "sg_def_total_pressures": 0.0
     },
     "production_percentiles": {
       "sg_cov_grade": 41.7,
@@ -51991,12 +52620,20 @@
         "raw": 47.0,
         "display": "47",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 0.0,
+        "display": "0",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 10.0,
-      "cfb_db_tackles": 47.0
+      "cfb_db_tackles": 47.0,
+      "sg_def_total_pressures": 0.0
     },
     "production_composite_pct": 34.1,
     "position_lens": {
@@ -52298,7 +52935,8 @@
       "cfb_lb_tackles": 81.0,
       "cfb_lb_tfl": 8.0,
       "cfb_lb_sacks": 2.0,
-      "cfb_lb_qb_hurries": 3.0
+      "cfb_lb_qb_hurries": 3.0,
+      "sg_def_total_pressures": 23.0
     },
     "production_percentiles": {
       "sg_def_run_grade": 3.6,
@@ -52414,13 +53052,21 @@
         "raw": 3.0,
         "display": "3",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 23.0,
+        "display": "23",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_lb_tackles": 81.0,
       "cfb_lb_tfl": 8.0,
       "cfb_lb_sacks": 2.0,
-      "cfb_lb_qb_hurries": 3.0
+      "cfb_lb_qb_hurries": 3.0,
+      "sg_def_total_pressures": 23.0
     },
     "production_composite_pct": 12.6,
     "position_lens": {
@@ -53683,7 +54329,8 @@
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 40.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
       "sg_cov_grade": 4.2,
@@ -53799,13 +54446,21 @@
         "raw": 1.0,
         "display": "1",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 1.0,
+        "display": "1",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 40.0,
-      "cfb_db_tfl": 1.0
+      "cfb_db_tfl": 1.0,
+      "sg_def_total_pressures": 1.0
     },
     "production_composite_pct": 18.7,
     "position_lens": {
@@ -54885,7 +55540,8 @@
       "cfb_db_int": 5.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 104.0,
-      "cfb_db_tfl": 6.0
+      "cfb_db_tfl": 6.0,
+      "sg_def_total_pressures": 5.0
     },
     "production_percentiles": {
       "sg_cov_grade": 21.1,
@@ -55001,13 +55657,21 @@
         "raw": 6.0,
         "display": "6",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 5.0,
+        "display": "5",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 5.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 104.0,
-      "cfb_db_tfl": 6.0
+      "cfb_db_tfl": 6.0,
+      "sg_def_total_pressures": 5.0
     },
     "production_composite_pct": 26.2,
     "position_lens": {
@@ -57218,7 +57882,8 @@
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 10.0,
       "cfb_db_tackles": 42.0,
-      "cfb_db_tfl": 5.0
+      "cfb_db_tfl": 5.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
       "sg_cov_grade": 8.3,
@@ -57334,13 +57999,21 @@
         "raw": 5.0,
         "display": "5",
         "fmt": "int"
+      },
+      {
+        "key": "sg_def_total_pressures",
+        "label": "Pressures",
+        "raw": 2.0,
+        "display": "2",
+        "fmt": "int"
       }
     ],
     "counting_metrics": {
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 10.0,
       "cfb_db_tackles": 42.0,
-      "cfb_db_tfl": 5.0
+      "cfb_db_tfl": 5.0,
+      "sg_def_total_pressures": 2.0
     },
     "production_composite_pct": 46.7,
     "position_lens": {
