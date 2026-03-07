@@ -211,6 +211,7 @@
     },
     "production_composite_pct": 88.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -395,6 +396,7 @@
     "counting_metrics": {},
     "production_composite_pct": 67.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -578,6 +580,7 @@
     "counting_metrics": {},
     "production_composite_pct": 78.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -822,6 +825,7 @@
     },
     "production_composite_pct": 98.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -1007,6 +1011,7 @@
     "counting_metrics": {},
     "production_composite_pct": 69.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -1246,6 +1251,7 @@
     },
     "production_composite_pct": 82.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -1495,6 +1501,7 @@
     },
     "production_composite_pct": 55.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -1671,6 +1678,7 @@
     "counting_metrics": {},
     "production_composite_pct": 78.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -1902,6 +1910,7 @@
     },
     "production_composite_pct": 95.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -2163,6 +2172,7 @@
     },
     "production_composite_pct": 55.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -2410,6 +2420,7 @@
     },
     "production_composite_pct": 41.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -2643,6 +2654,7 @@
     },
     "production_composite_pct": 94.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -2887,6 +2899,7 @@
     },
     "production_composite_pct": 68.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -3135,6 +3148,7 @@
     },
     "production_composite_pct": 75.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -3313,6 +3327,7 @@
     "counting_metrics": {},
     "production_composite_pct": 82.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -3558,6 +3573,7 @@
     },
     "production_composite_pct": 89.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -3797,6 +3813,7 @@
     },
     "production_composite_pct": 86.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -4046,6 +4063,7 @@
     },
     "production_composite_pct": 62.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -4284,6 +4302,7 @@
     },
     "production_composite_pct": 56.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -4520,6 +4539,7 @@
     },
     "production_composite_pct": 77.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -4704,6 +4724,7 @@
     "counting_metrics": {},
     "production_composite_pct": 79.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -4965,6 +4986,7 @@
     },
     "production_composite_pct": 59.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -5212,6 +5234,7 @@
     },
     "production_composite_pct": 94.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -5461,6 +5484,7 @@
     },
     "production_composite_pct": 75.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -5709,6 +5733,7 @@
     },
     "production_composite_pct": 66.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -5885,6 +5910,7 @@
     "counting_metrics": {},
     "production_composite_pct": 88.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -6126,6 +6152,7 @@
     },
     "production_composite_pct": 42.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -6302,6 +6329,7 @@
     "counting_metrics": {},
     "production_composite_pct": 69.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -6533,6 +6561,7 @@
     },
     "production_composite_pct": 74.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -6725,6 +6754,7 @@
     "counting_metrics": {},
     "production_composite_pct": 85.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -6973,6 +7003,7 @@
     },
     "production_composite_pct": 51.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -7168,6 +7199,7 @@
     "counting_metrics": {},
     "production_composite_pct": 79.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -7424,6 +7456,7 @@
     },
     "production_composite_pct": 61.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -7661,6 +7694,7 @@
     },
     "production_composite_pct": 57.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -7894,6 +7928,7 @@
     },
     "production_composite_pct": 43.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -8079,6 +8114,7 @@
     "counting_metrics": {},
     "production_composite_pct": 70.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -8323,6 +8359,7 @@
     },
     "production_composite_pct": 83.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -8566,6 +8603,7 @@
     },
     "production_composite_pct": 53.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -8778,6 +8816,7 @@
     },
     "production_composite_pct": 34.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -9018,6 +9057,7 @@
     },
     "production_composite_pct": 50.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -9254,6 +9294,7 @@
     },
     "production_composite_pct": 92.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -9511,6 +9552,7 @@
     },
     "production_composite_pct": 53.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -9701,6 +9743,7 @@
     },
     "production_composite_pct": 62.7,
     "production_source_tier": "fallback",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -9922,6 +9965,7 @@
     },
     "production_composite_pct": 66.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -10157,6 +10201,7 @@
     },
     "production_composite_pct": 20.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -10397,6 +10442,7 @@
     },
     "production_composite_pct": 49.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -10637,6 +10683,7 @@
     },
     "production_composite_pct": 68.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -10876,6 +10923,7 @@
     },
     "production_composite_pct": 50.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -11114,6 +11162,7 @@
     },
     "production_composite_pct": 73.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -11358,6 +11407,7 @@
     },
     "production_composite_pct": 54.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -11539,6 +11589,7 @@
     "counting_metrics": {},
     "production_composite_pct": 27.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -11715,6 +11766,7 @@
     "counting_metrics": {},
     "production_composite_pct": 53.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -11910,6 +11962,7 @@
     "counting_metrics": {},
     "production_composite_pct": 71.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -12152,6 +12205,7 @@
     },
     "production_composite_pct": 62.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -12390,6 +12444,7 @@
     },
     "production_composite_pct": 86.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -12630,6 +12685,7 @@
     },
     "production_composite_pct": 68.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -12874,6 +12930,7 @@
     },
     "production_composite_pct": 79.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -13119,6 +13176,7 @@
     },
     "production_composite_pct": 83.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -13376,6 +13434,7 @@
     },
     "production_composite_pct": 72.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -13552,6 +13611,7 @@
     "counting_metrics": {},
     "production_composite_pct": 60.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -13763,6 +13823,7 @@
     },
     "production_composite_pct": 36.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -14007,6 +14068,7 @@
     },
     "production_composite_pct": 48.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -14249,6 +14311,7 @@
     },
     "production_composite_pct": 70.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -14483,6 +14546,7 @@
     },
     "production_composite_pct": 73.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -14721,6 +14785,7 @@
     },
     "production_composite_pct": 62.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -14818,10 +14883,47 @@
     "advanced_metric_cards": [],
     "advanced_metrics": {},
     "advanced_percentiles": {},
-    "counting_stat_chips": [],
+    "counting_stat_chips": [
+      {
+        "key": "int",
+        "label": "INT",
+        "raw": "4",
+        "display": "4",
+        "fmt": "manual"
+      },
+      {
+        "key": "pbu",
+        "label": "PBU",
+        "raw": "9",
+        "display": "9",
+        "fmt": "manual"
+      },
+      {
+        "key": "passes_defended",
+        "label": "Passes Defended",
+        "raw": "13",
+        "display": "13",
+        "fmt": "manual"
+      },
+      {
+        "key": "tackles",
+        "label": "Tackles",
+        "raw": "44",
+        "display": "44",
+        "fmt": "manual"
+      },
+      {
+        "key": "tfl",
+        "label": "TFL",
+        "raw": "0.5",
+        "display": "0.5",
+        "fmt": "manual"
+      }
+    ],
     "counting_metrics": {},
     "production_composite_pct": null,
     "production_source_tier": "missing",
+    "production_snapshot_heading": "2024 Production Snapshot*",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [],
@@ -14847,7 +14949,7 @@
     "scouting_why_he_wins": "- Usage fit: Outside starter with matchup flexibility within Press-match / quarters hybrid.\n- Film translation comes from coverage mechanics: maintain leverage, transition cleanly, and finish at the catch point without panic.\n- Model + film note: early contributor profile; matches routes with disciplined leverage.",
     "scouting_primary_concerns": "- No stable PFF grade loaded yet; track week-to-week consistency until the performance baseline is complete.\n- Eye discipline through route breaks must tighten to limit transition losses against pro route pacing.\n- Tackle finish and block deconstruction must hold so offenses cannot isolate him in run support.",
     "scouting_film_notes": "",
-    "scouting_production_snapshot": "PFF grade pending",
+    "scouting_production_snapshot": "2024 season used because McCoy missed 2025 while rehabbing a January 2025 knee injury. PFF coverage grade 89.6. Stat context: 44 tackles; 4 INT; 9 PBU; 13 passes defended; 0.5 TFL.",
     "scouting_role_projection": "Best early team fit: JAX. Expected early deployment: Outside starter with matchup flexibility in Press-match / quarters hybrid. Early value comes from leverage consistency across man and zone, plus reliable tackle finish when the offense tests him in run support. Historical combine comp: Travis Hunter (2025), athletic-profile match 97.72%.",
     "seo_description_override": "Jermod McCoy CB scouting report, traits, role fit, concerns, and NFL Draft projection.",
     "player_report_url": "/players/jermod-mccoy"
@@ -15047,6 +15149,7 @@
     },
     "production_composite_pct": 55.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -15278,6 +15381,7 @@
     },
     "production_composite_pct": 46.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -15459,6 +15563,7 @@
     "counting_metrics": {},
     "production_composite_pct": 80.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -15715,6 +15820,7 @@
     },
     "production_composite_pct": 71.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -15948,6 +16054,7 @@
     },
     "production_composite_pct": 23.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -16124,6 +16231,7 @@
     "counting_metrics": {},
     "production_composite_pct": 57.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -16348,6 +16456,7 @@
     },
     "production_composite_pct": 44.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -16584,6 +16693,7 @@
     },
     "production_composite_pct": 83.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -16828,6 +16938,7 @@
     },
     "production_composite_pct": 38.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -17064,6 +17175,7 @@
     },
     "production_composite_pct": 70.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -17262,6 +17374,7 @@
     "counting_metrics": {},
     "production_composite_pct": 51.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -17507,6 +17620,7 @@
     },
     "production_composite_pct": 75.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -17706,6 +17820,7 @@
     },
     "production_composite_pct": 56.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -17951,6 +18066,7 @@
     },
     "production_composite_pct": 88.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -18192,6 +18308,7 @@
     },
     "production_composite_pct": 67.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -18435,6 +18552,7 @@
     },
     "production_composite_pct": 65.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -18674,6 +18792,7 @@
     },
     "production_composite_pct": 26.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -18918,6 +19037,7 @@
     },
     "production_composite_pct": 50.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -19178,6 +19298,7 @@
     },
     "production_composite_pct": 49.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -19419,6 +19540,7 @@
     },
     "production_composite_pct": 27.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -19595,6 +19717,7 @@
     "counting_metrics": {},
     "production_composite_pct": 50.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -19792,6 +19915,7 @@
     "counting_metrics": {},
     "production_composite_pct": 28.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -20028,6 +20152,7 @@
     },
     "production_composite_pct": 68.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -20204,6 +20329,7 @@
     "counting_metrics": {},
     "production_composite_pct": 69.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -20406,6 +20532,7 @@
     },
     "production_composite_pct": 92.3,
     "production_source_tier": "fallback",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -20651,6 +20778,7 @@
     },
     "production_composite_pct": 50.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -20834,6 +20962,7 @@
     "counting_metrics": {},
     "production_composite_pct": 41.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -21012,6 +21141,7 @@
     "counting_metrics": {},
     "production_composite_pct": 64.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -21250,6 +21380,7 @@
     },
     "production_composite_pct": 36.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -21487,6 +21618,7 @@
     },
     "production_composite_pct": 60.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -21682,6 +21814,7 @@
     },
     "production_composite_pct": 51.3,
     "production_source_tier": "fallback",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [],
@@ -21880,6 +22013,7 @@
     },
     "production_composite_pct": 17.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -22111,6 +22245,7 @@
     },
     "production_composite_pct": 81.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -22356,6 +22491,7 @@
     },
     "production_composite_pct": 46.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -22594,6 +22730,7 @@
     },
     "production_composite_pct": 82.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -22840,6 +22977,7 @@
     },
     "production_composite_pct": 48.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -23080,6 +23218,7 @@
     },
     "production_composite_pct": 88.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -23274,6 +23413,7 @@
     "counting_metrics": {},
     "production_composite_pct": 72.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -23466,6 +23606,7 @@
     "counting_metrics": {},
     "production_composite_pct": 72.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -23644,6 +23785,7 @@
     "counting_metrics": {},
     "production_composite_pct": 37.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -23880,6 +24022,7 @@
     },
     "production_composite_pct": 66.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -24069,6 +24212,7 @@
     },
     "production_composite_pct": 64.9,
     "production_source_tier": "fallback",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -24284,6 +24428,7 @@
     },
     "production_composite_pct": 54.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -24520,6 +24665,7 @@
     },
     "production_composite_pct": 53.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -24753,6 +24899,7 @@
     },
     "production_composite_pct": 29.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -24984,6 +25131,7 @@
     },
     "production_composite_pct": 41.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -25215,6 +25363,7 @@
     },
     "production_composite_pct": 79.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -25444,6 +25593,7 @@
     },
     "production_composite_pct": 68.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -25692,6 +25842,7 @@
     },
     "production_composite_pct": 53.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -25871,6 +26022,7 @@
     "counting_metrics": {},
     "production_composite_pct": 29.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -26060,6 +26212,7 @@
     },
     "production_composite_pct": 75.0,
     "production_source_tier": "fallback",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -26297,6 +26450,7 @@
     },
     "production_composite_pct": 61.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -26530,6 +26684,7 @@
     },
     "production_composite_pct": 39.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -26775,6 +26930,7 @@
     },
     "production_composite_pct": 34.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -26951,6 +27107,7 @@
     "counting_metrics": {},
     "production_composite_pct": 74.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -27134,6 +27291,7 @@
     "counting_metrics": {},
     "production_composite_pct": 57.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -27321,6 +27479,7 @@
     },
     "production_composite_pct": 66.9,
     "production_source_tier": "fallback",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -27481,6 +27640,7 @@
     "counting_metrics": {},
     "production_composite_pct": 64.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -27736,6 +27896,7 @@
     },
     "production_composite_pct": 46.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -27991,6 +28152,7 @@
     },
     "production_composite_pct": 27.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -28202,6 +28364,7 @@
     },
     "production_composite_pct": 77.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -28442,6 +28605,7 @@
     },
     "production_composite_pct": 44.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -28682,6 +28846,7 @@
     },
     "production_composite_pct": 61.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -28858,6 +29023,7 @@
     "counting_metrics": {},
     "production_composite_pct": 55.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -28980,6 +29146,7 @@
     "counting_metrics": {},
     "production_composite_pct": 100.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -29212,6 +29379,7 @@
     },
     "production_composite_pct": 30.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -29453,6 +29621,7 @@
     },
     "production_composite_pct": 39.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -29698,6 +29867,7 @@
     },
     "production_composite_pct": 42.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -29939,6 +30109,7 @@
     },
     "production_composite_pct": 71.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -30181,6 +30352,7 @@
     },
     "production_composite_pct": 71.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -30337,6 +30509,7 @@
     },
     "production_composite_pct": 8.1,
     "production_source_tier": "fallback",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -30567,6 +30740,7 @@
     },
     "production_composite_pct": 24.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -30795,6 +30969,7 @@
     },
     "production_composite_pct": 26.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -31031,6 +31206,7 @@
     },
     "production_composite_pct": 24.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -31259,6 +31435,7 @@
     },
     "production_composite_pct": 31.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -31499,6 +31676,7 @@
     },
     "production_composite_pct": 44.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -31744,6 +31922,7 @@
     },
     "production_composite_pct": 16.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -31984,6 +32163,7 @@
     },
     "production_composite_pct": 73.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -32163,6 +32343,7 @@
     "counting_metrics": {},
     "production_composite_pct": 46.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -32271,6 +32452,7 @@
     "counting_metrics": {},
     "production_composite_pct": null,
     "production_source_tier": "missing",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [],
@@ -32486,6 +32668,7 @@
     },
     "production_composite_pct": 45.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -32726,6 +32909,7 @@
     },
     "production_composite_pct": 53.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -32902,6 +33086,7 @@
     "counting_metrics": {},
     "production_composite_pct": 85.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -33081,6 +33266,7 @@
     "counting_metrics": {},
     "production_composite_pct": 31.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -33334,6 +33520,7 @@
     },
     "production_composite_pct": 62.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -33504,6 +33691,7 @@
     },
     "production_composite_pct": 100.0,
     "production_source_tier": "fallback",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [],
@@ -33719,6 +33907,7 @@
     },
     "production_composite_pct": 53.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -33959,6 +34148,7 @@
     },
     "production_composite_pct": 43.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -34206,6 +34396,7 @@
     },
     "production_composite_pct": 19.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -34387,6 +34578,7 @@
     "counting_metrics": {},
     "production_composite_pct": 26.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -34568,6 +34760,7 @@
     "counting_metrics": {},
     "production_composite_pct": 38.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -34744,6 +34937,7 @@
     "counting_metrics": {},
     "production_composite_pct": 51.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -34922,6 +35116,7 @@
     "counting_metrics": {},
     "production_composite_pct": 44.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -35156,6 +35351,7 @@
     },
     "production_composite_pct": 41.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -35401,6 +35597,7 @@
     },
     "production_composite_pct": 70.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -35640,6 +35837,7 @@
     },
     "production_composite_pct": 57.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -35883,6 +36081,7 @@
     },
     "production_composite_pct": 48.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -36115,6 +36314,7 @@
     },
     "production_composite_pct": 24.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -36291,6 +36491,7 @@
     "counting_metrics": {},
     "production_composite_pct": 33.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -36523,6 +36724,7 @@
     },
     "production_composite_pct": 21.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -36726,6 +36928,7 @@
     },
     "production_composite_pct": 80.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -36924,6 +37127,7 @@
     },
     "production_composite_pct": 68.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -37162,6 +37366,7 @@
     },
     "production_composite_pct": 94.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -37367,6 +37572,7 @@
     },
     "production_composite_pct": 67.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -37601,6 +37807,7 @@
     },
     "production_composite_pct": 72.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -37803,6 +38010,7 @@
     },
     "production_composite_pct": 63.6,
     "production_source_tier": "fallback",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -38004,6 +38212,7 @@
     },
     "production_composite_pct": 79.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -38239,6 +38448,7 @@
     },
     "production_composite_pct": 82.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -38473,6 +38683,7 @@
     },
     "production_composite_pct": 26.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -38649,6 +38860,7 @@
     "counting_metrics": {},
     "production_composite_pct": 19.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -38839,6 +39051,7 @@
     "counting_metrics": {},
     "production_composite_pct": 61.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -39036,6 +39249,7 @@
     "counting_metrics": {},
     "production_composite_pct": 45.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -39217,6 +39431,7 @@
     "counting_metrics": {},
     "production_composite_pct": 68.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -39456,6 +39671,7 @@
     },
     "production_composite_pct": 59.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -39695,6 +39911,7 @@
     },
     "production_composite_pct": 39.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -39880,6 +40097,7 @@
     "counting_metrics": {},
     "production_composite_pct": 15.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -40065,6 +40283,7 @@
     "counting_metrics": {},
     "production_composite_pct": 50.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -40296,6 +40515,7 @@
     },
     "production_composite_pct": 42.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -40533,6 +40753,7 @@
     },
     "production_composite_pct": 31.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -40764,6 +40985,7 @@
     },
     "production_composite_pct": 75.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -40975,6 +41197,7 @@
     },
     "production_composite_pct": 48.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -41186,6 +41409,7 @@
     },
     "production_composite_pct": 57.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -41427,6 +41651,7 @@
     },
     "production_composite_pct": 62.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -41667,6 +41892,7 @@
     },
     "production_composite_pct": 88.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -41901,6 +42127,7 @@
     },
     "production_composite_pct": 60.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -42091,6 +42318,7 @@
     "counting_metrics": {},
     "production_composite_pct": 46.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -42294,6 +42522,7 @@
     },
     "production_composite_pct": 46.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -42497,6 +42726,7 @@
     },
     "production_composite_pct": 46.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -42673,6 +42903,7 @@
     "counting_metrics": {},
     "production_composite_pct": 69.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -42866,6 +43097,7 @@
     "counting_metrics": {},
     "production_composite_pct": 81.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -43046,6 +43278,7 @@
     "counting_metrics": {},
     "production_composite_pct": 94.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -43283,6 +43516,7 @@
     },
     "production_composite_pct": 45.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -43522,6 +43756,7 @@
     },
     "production_composite_pct": 82.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -43710,6 +43945,7 @@
     "counting_metrics": {},
     "production_composite_pct": 4.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -43963,6 +44199,7 @@
     },
     "production_composite_pct": 47.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -44218,6 +44455,7 @@
     },
     "production_composite_pct": 28.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -44460,6 +44698,7 @@
     },
     "production_composite_pct": 15.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -44661,6 +44900,7 @@
     },
     "production_composite_pct": 52.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -44857,6 +45097,7 @@
     },
     "production_composite_pct": 24.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -45042,6 +45283,7 @@
     "counting_metrics": {},
     "production_composite_pct": 36.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -45278,6 +45520,7 @@
     },
     "production_composite_pct": 34.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -45487,6 +45730,7 @@
     },
     "production_composite_pct": 57.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -45718,6 +45962,7 @@
     },
     "production_composite_pct": 45.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -45919,6 +46164,7 @@
     },
     "production_composite_pct": 58.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -46111,6 +46357,7 @@
     "counting_metrics": {},
     "production_composite_pct": 59.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -46352,6 +46599,7 @@
     },
     "production_composite_pct": 15.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -46542,6 +46790,7 @@
     "counting_metrics": {},
     "production_composite_pct": 67.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -46718,6 +46967,7 @@
     "counting_metrics": {},
     "production_composite_pct": 34.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -46898,6 +47148,7 @@
     "counting_metrics": {},
     "production_composite_pct": 38.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -46999,6 +47250,7 @@
     "counting_metrics": {},
     "production_composite_pct": null,
     "production_source_tier": "missing",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [],
@@ -47223,6 +47475,7 @@
     },
     "production_composite_pct": 21.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -47399,6 +47652,7 @@
     "counting_metrics": {},
     "production_composite_pct": 28.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -47610,6 +47864,7 @@
     },
     "production_composite_pct": 20.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -47786,6 +48041,7 @@
     "counting_metrics": {},
     "production_composite_pct": 20.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -48019,6 +48275,7 @@
     },
     "production_composite_pct": 33.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -48215,6 +48472,7 @@
     },
     "production_composite_pct": 50.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -48424,6 +48682,7 @@
     },
     "production_composite_pct": 49.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -48655,6 +48914,7 @@
     },
     "production_composite_pct": 48.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -48908,6 +49168,7 @@
     },
     "production_composite_pct": 39.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -49148,6 +49409,7 @@
     },
     "production_composite_pct": 67.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -49335,6 +49597,7 @@
     "counting_metrics": {},
     "production_composite_pct": 19.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -49525,6 +49788,7 @@
     "counting_metrics": {},
     "production_composite_pct": 29.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -49710,6 +49974,7 @@
     "counting_metrics": {},
     "production_composite_pct": 27.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -49946,6 +50211,7 @@
     },
     "production_composite_pct": 62.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -50179,6 +50445,7 @@
     },
     "production_composite_pct": 64.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -50371,6 +50638,7 @@
     "counting_metrics": {},
     "production_composite_pct": 71.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -50474,6 +50742,7 @@
     "counting_metrics": {},
     "production_composite_pct": null,
     "production_source_tier": "missing",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [],
@@ -50643,6 +50912,7 @@
     "counting_metrics": {},
     "production_composite_pct": 68.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -50830,6 +51100,7 @@
     "counting_metrics": {},
     "production_composite_pct": 51.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -51026,6 +51297,7 @@
     },
     "production_composite_pct": 53.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -51248,6 +51520,7 @@
     },
     "production_composite_pct": 62.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -51427,6 +51700,7 @@
     "counting_metrics": {},
     "production_composite_pct": 15.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -51617,6 +51891,7 @@
     "counting_metrics": {},
     "production_composite_pct": 13.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -51848,6 +52123,7 @@
     },
     "production_composite_pct": 48.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -52088,6 +52364,7 @@
     },
     "production_composite_pct": 38.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -52329,6 +52606,7 @@
     },
     "production_composite_pct": 51.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -52560,6 +52838,7 @@
     },
     "production_composite_pct": 36.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -52745,6 +53024,7 @@
     "counting_metrics": {},
     "production_composite_pct": 32.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -52935,6 +53215,7 @@
     "counting_metrics": {},
     "production_composite_pct": 8.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -53175,6 +53456,7 @@
     },
     "production_composite_pct": 63.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -53367,6 +53649,7 @@
     "counting_metrics": {},
     "production_composite_pct": 45.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -53543,6 +53826,7 @@
     "counting_metrics": {},
     "production_composite_pct": 64.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -53731,6 +54015,7 @@
     "counting_metrics": {},
     "production_composite_pct": 33.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -53971,6 +54256,7 @@
     },
     "production_composite_pct": 50.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -54202,6 +54488,7 @@
     },
     "production_composite_pct": 28.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -54392,6 +54679,7 @@
     "counting_metrics": {},
     "production_composite_pct": 14.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -54568,6 +54856,7 @@
     "counting_metrics": {},
     "production_composite_pct": 35.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -54755,6 +55044,7 @@
     "counting_metrics": {},
     "production_composite_pct": 55.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -54945,6 +55235,7 @@
     "counting_metrics": {},
     "production_composite_pct": 41.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -55135,6 +55426,7 @@
     "counting_metrics": {},
     "production_composite_pct": 42.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -55313,6 +55605,7 @@
     "counting_metrics": {},
     "production_composite_pct": 28.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -55491,6 +55784,7 @@
     "counting_metrics": {},
     "production_composite_pct": 77.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -55734,6 +56028,7 @@
     },
     "production_composite_pct": 59.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -55965,6 +56260,7 @@
     },
     "production_composite_pct": 20.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -56201,6 +56497,7 @@
     },
     "production_composite_pct": 63.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -56441,6 +56738,7 @@
     },
     "production_composite_pct": 87.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -56698,6 +56996,7 @@
     },
     "production_composite_pct": 50.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -56896,6 +57195,7 @@
     },
     "production_composite_pct": 16.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -57137,6 +57437,7 @@
     },
     "production_composite_pct": 70.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -57370,6 +57671,7 @@
     },
     "production_composite_pct": 53.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -57610,6 +57912,7 @@
     },
     "production_composite_pct": 41.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -57788,6 +58091,7 @@
     "counting_metrics": {},
     "production_composite_pct": 34.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -58016,6 +58320,7 @@
     },
     "production_composite_pct": 34.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -58194,6 +58499,7 @@
     "counting_metrics": {},
     "production_composite_pct": 28.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -58425,6 +58731,7 @@
     },
     "production_composite_pct": 49.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -58601,6 +58908,7 @@
     "counting_metrics": {},
     "production_composite_pct": 47.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -58834,6 +59142,7 @@
     },
     "production_composite_pct": 66.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -59087,6 +59396,7 @@
     },
     "production_composite_pct": 44.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -59309,6 +59619,7 @@
     },
     "production_composite_pct": 3.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -59494,6 +59805,7 @@
     "counting_metrics": {},
     "production_composite_pct": 16.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -59734,6 +60046,7 @@
     },
     "production_composite_pct": 38.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -59910,6 +60223,7 @@
     "counting_metrics": {},
     "production_composite_pct": 55.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -60165,6 +60479,7 @@
     },
     "production_composite_pct": 42.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -60355,6 +60670,7 @@
     "counting_metrics": {},
     "production_composite_pct": 42.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -60595,6 +60911,7 @@
     },
     "production_composite_pct": 31.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -60831,6 +61148,7 @@
     },
     "production_composite_pct": 52.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -61084,6 +61402,7 @@
     },
     "production_composite_pct": 12.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -61315,6 +61634,7 @@
     },
     "production_composite_pct": 44.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -61502,6 +61822,7 @@
     "counting_metrics": {},
     "production_composite_pct": 20.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -61742,6 +62063,7 @@
     },
     "production_composite_pct": 47.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -61945,6 +62267,7 @@
     },
     "production_composite_pct": 72.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -62188,6 +62511,7 @@
     },
     "production_composite_pct": 33.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -62366,6 +62690,7 @@
     "counting_metrics": {},
     "production_composite_pct": 34.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -62603,6 +62928,7 @@
     },
     "production_composite_pct": 16.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -62843,6 +63169,7 @@
     },
     "production_composite_pct": 41.7,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -63013,6 +63340,7 @@
     },
     "production_composite_pct": 85.7,
     "production_source_tier": "fallback",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [],
@@ -63237,6 +63565,7 @@
     },
     "production_composite_pct": 40.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [
@@ -63468,6 +63797,7 @@
     },
     "production_composite_pct": 53.5,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -63701,6 +64031,7 @@
     },
     "production_composite_pct": 44.3,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -63942,6 +64273,7 @@
     },
     "production_composite_pct": 26.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -64178,6 +64510,7 @@
     },
     "production_composite_pct": 47.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -64354,6 +64687,7 @@
     "counting_metrics": {},
     "production_composite_pct": 21.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -64592,6 +64926,7 @@
     },
     "production_composite_pct": 46.4,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -64779,6 +65114,7 @@
     },
     "production_composite_pct": 55.1,
     "production_source_tier": "fallback",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -64999,6 +65335,7 @@
     },
     "production_composite_pct": 10.9,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [
@@ -65230,6 +65567,7 @@
     },
     "production_composite_pct": 19.2,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [
@@ -65420,6 +65758,7 @@
     "counting_metrics": {},
     "production_composite_pct": 37.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -65656,6 +65995,7 @@
     },
     "production_composite_pct": 36.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -65887,6 +66227,7 @@
     },
     "production_composite_pct": 28.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -66124,6 +66465,7 @@
     },
     "production_composite_pct": 47.6,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [
@@ -66357,6 +66699,7 @@
     },
     "production_composite_pct": 9.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -66588,6 +66931,7 @@
     },
     "production_composite_pct": 56.0,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -66819,6 +67163,7 @@
     },
     "production_composite_pct": 31.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [
@@ -66995,6 +67340,7 @@
     "counting_metrics": {},
     "production_composite_pct": 36.1,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "OL Pass-Pro Translation",
       "rows": [
@@ -67219,6 +67565,7 @@
     },
     "production_composite_pct": 61.8,
     "production_source_tier": "premium",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [

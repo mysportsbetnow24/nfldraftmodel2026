@@ -2,124 +2,117 @@
   "delta_source": "delta_audit_2026_latest.csv",
   "risers": [
     {
-      "player_name": "Brenen Thompson",
-      "position": "WR",
-      "school": "Mississippi State Bulldogs",
-      "rank_delta_prev_minus_curr": 15,
-      "top_driver": "athletic (up 0.00)"
+      "player_name": "Emmanuel McNeil-Warren",
+      "position": "S",
+      "school": "Toledo Rockets",
+      "rank_delta_prev_minus_curr": 2,
+      "top_driver": "production (up 0.08)"
     },
     {
-      "player_name": "Justin Joly",
-      "position": "TE",
-      "school": "North Carolina State Wolfpack",
-      "rank_delta_prev_minus_curr": 10,
-      "top_driver": "athletic (up 0.00)"
+      "player_name": "Zakee Wheatley",
+      "position": "S",
+      "school": "Penn State Nittany Lions",
+      "rank_delta_prev_minus_curr": 2,
+      "top_driver": "production (up 0.08)"
     },
     {
-      "player_name": "Malachi Fields",
-      "position": "WR",
-      "school": "Notre Dame Fighting Irish",
-      "rank_delta_prev_minus_curr": 10,
-      "top_driver": "athletic (up 0.00)"
+      "player_name": "Keionte Scott",
+      "position": "CB",
+      "school": "Miami (FL) Hurricanes",
+      "rank_delta_prev_minus_curr": 1,
+      "top_driver": "production (down 0.05)"
     },
     {
-      "player_name": "Demond Claiborne",
+      "player_name": "Eli Heidenreich",
       "position": "RB",
-      "school": "Wake Forest Demon Deacons",
-      "rank_delta_prev_minus_curr": 7,
+      "school": "Navy",
+      "rank_delta_prev_minus_curr": 1,
       "top_driver": "athletic (up 0.00)"
     },
     {
-      "player_name": "Antonio Williams",
-      "position": "WR",
-      "school": "Clemson Tigers",
-      "rank_delta_prev_minus_curr": 7,
-      "top_driver": "athletic (up 0.00)"
+      "player_name": "Bishop Fitzgerald",
+      "position": "S",
+      "school": "USC Trojans",
+      "rank_delta_prev_minus_curr": 1,
+      "top_driver": "production (up 0.07)"
     },
     {
-      "player_name": "Germie Bernard",
-      "position": "WR",
-      "school": "Alabama Crimson Tide",
-      "rank_delta_prev_minus_curr": 6,
-      "top_driver": "athletic (up 0.00)"
+      "player_name": "Jadon Canady",
+      "position": "CB",
+      "school": "Oregon Ducks",
+      "rank_delta_prev_minus_curr": 1,
+      "top_driver": "production (down 0.05)"
     },
     {
-      "player_name": "Michael Trigg",
-      "position": "TE",
-      "school": "Baylor Bears",
-      "rank_delta_prev_minus_curr": 6,
-      "top_driver": "athletic (up 0.00)"
-    },
-    {
-      "player_name": "Garrett Nussmeier",
-      "position": "QB",
-      "school": "LSU Tigers",
-      "rank_delta_prev_minus_curr": 5,
+      "player_name": "Alan Herron",
+      "position": "OT",
+      "school": "Maryland",
+      "rank_delta_prev_minus_curr": 1,
       "top_driver": "athletic (up 0.00)"
     }
   ],
   "fallers": [
     {
-      "player_name": "Tacario Davis",
+      "player_name": "Carnell Tate",
+      "position": "WR",
+      "school": "Ohio State Buckeyes",
+      "rank_delta_prev_minus_curr": -1,
+      "top_driver": "athletic (up 0.00)"
+    },
+    {
+      "player_name": "Cashius Howell",
+      "position": "EDGE",
+      "school": "Texas A&M Aggies",
+      "rank_delta_prev_minus_curr": -1,
+      "top_driver": "athletic (up 0.00)"
+    },
+    {
+      "player_name": "Chris Brazzell II",
+      "position": "WR",
+      "school": "Tennessee Volunteers",
+      "rank_delta_prev_minus_curr": -1,
+      "top_driver": "athletic (up 0.00)"
+    },
+    {
+      "player_name": "Jalon Kilgore",
+      "position": "S",
+      "school": "South Carolina Gamecocks",
+      "rank_delta_prev_minus_curr": -1,
+      "top_driver": "production (down 1.12)"
+    },
+    {
+      "player_name": "Malik Muhammad",
+      "position": "CB",
+      "school": "Texas Longhorns",
+      "rank_delta_prev_minus_curr": -1,
+      "top_driver": "production (down 0.05)"
+    },
+    {
+      "player_name": "Ephesians Prysock",
       "position": "CB",
       "school": "Washington Huskies",
-      "rank_delta_prev_minus_curr": -4,
-      "top_driver": "guardrail_relief (down 0.22)"
+      "rank_delta_prev_minus_curr": -1,
+      "top_driver": "production (down 0.04)"
     },
     {
-      "player_name": "Reggie Virgil",
-      "position": "WR",
-      "school": "Texas Tech Red Raiders",
-      "rank_delta_prev_minus_curr": -4,
+      "player_name": "Nadame Tucker",
+      "position": "EDGE",
+      "school": "Western Michigan",
+      "rank_delta_prev_minus_curr": -1,
       "top_driver": "athletic (up 0.00)"
     },
     {
-      "player_name": "Xavian Sorey Jr.",
-      "position": "LB",
-      "school": "Arkansas Razorbacks",
-      "rank_delta_prev_minus_curr": -4,
+      "player_name": "Max Bredeson",
+      "position": "TE",
+      "school": "Michigan Wolverines",
+      "rank_delta_prev_minus_curr": -1,
       "top_driver": "athletic (up 0.00)"
-    },
-    {
-      "player_name": "Harold Perkins Jr.",
-      "position": "LB",
-      "school": "LSU Tigers",
-      "rank_delta_prev_minus_curr": -3,
-      "top_driver": "athletic (up 0.00)"
-    },
-    {
-      "player_name": "Bud Clark",
-      "position": "S",
-      "school": "TCU Horned Frogs",
-      "rank_delta_prev_minus_curr": -3,
-      "top_driver": "guardrail_relief (down 0.36)"
-    },
-    {
-      "player_name": "Mike Washington Jr.",
-      "position": "RB",
-      "school": "Arkansas Razorbacks",
-      "rank_delta_prev_minus_curr": -3,
-      "top_driver": "athletic (up 0.00)"
-    },
-    {
-      "player_name": "Ted Hurst",
-      "position": "WR",
-      "school": "Georgia State Panthers",
-      "rank_delta_prev_minus_curr": -3,
-      "top_driver": "athletic (up 0.00)"
-    },
-    {
-      "player_name": "Kaytron Allen",
-      "position": "RB",
-      "school": "Penn State Nittany Lions",
-      "rank_delta_prev_minus_curr": -3,
-      "top_driver": "guardrail_relief (down 0.36)"
     }
   ],
   "summary": {
-    "movers_total": 188,
-    "risers_total": 68,
-    "fallers_total": 120,
+    "movers_total": 16,
+    "risers_total": 7,
+    "fallers_total": 9,
     "qa_watch_total": 0,
     "qa_clear_total": 311
   }

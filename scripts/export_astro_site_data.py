@@ -39,6 +39,7 @@ HISTORICAL_DRAFT_COMPILATION = ROOT / "data" / "sources" / "external" / "histori
 HISTORICAL_DRAFT_REFINED = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "old-data" / "pfr-compilations" / "2014To2018Drafts-refined.csv"
 HISTORICAL_LABELS_LEAGIFY = ROOT / "data" / "processed" / "historical_labels_leagify_2015_2023.csv"
 OWNER_SCOUTING_NOTES_CSV = ROOT / "data" / "sources" / "manual" / "owner_scouting_notes_2026.csv"
+PRODUCTION_SNAPSHOT_OVERRIDES_CSV = ROOT / "data" / "sources" / "manual" / "production_snapshot_overrides_2026.csv"
 
 
 PRODUCTION_METRIC_KEYS = [
@@ -2606,6 +2607,46 @@ def _load_owner_scouting_notes() -> dict[str, dict[str, str]]:
     return out
 
 
+def _parse_manual_counting_stats(raw: str) -> list[dict]:
+    chips: list[dict] = []
+    for part in str(raw or "").split(";"):
+        item = str(part).strip()
+        if not item or ":" not in item:
+            continue
+        label, value = item.split(":", 1)
+        label = str(label).strip()
+        value = str(value).strip()
+        if not label or not value:
+            continue
+        chips.append(
+            {
+                "key": _slugify_player(label).replace("-", "_"),
+                "label": label,
+                "raw": value,
+                "display": value,
+                "fmt": "manual",
+            }
+        )
+    return chips
+
+
+def _load_production_snapshot_overrides() -> dict[str, dict[str, object]]:
+    rows = _read_csv(PRODUCTION_SNAPSHOT_OVERRIDES_CSV)
+    out: dict[str, dict[str, object]] = {}
+    for row in rows:
+        slug = str(row.get("slug", "")).strip().lower()
+        if not slug:
+            slug = _slugify_player(row.get("player_name", ""))
+        if not slug:
+            continue
+        out[slug] = {
+            "heading": str(row.get("production_snapshot_heading", "")).strip(),
+            "text": str(row.get("production_snapshot_text", "")).strip(),
+            "counting_stat_chips": _parse_manual_counting_stats(row.get("production_counting_stats", "")),
+        }
+    return out
+
+
 def _needs_score(row: dict) -> float:
     depth = _safe_float(row.get("depth_chart_pressure")) or 0.0
     fa = _safe_float(row.get("free_agent_pressure")) or 0.0
@@ -2632,6 +2673,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
     rows = _read_csv(BOARD_CSV)
     comp_outcomes = _load_historical_comp_outcomes()
     owner_notes = _load_owner_scouting_notes()
+    production_snapshot_overrides = _load_production_snapshot_overrides()
     consensus_mean_population = [
         float(_safe_float(row.get("consensus_board_mean_rank")) or 0.0)
         for row in rows
@@ -2680,6 +2722,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
 
         slug = _slugify_player(player_name)
         owner_note = owner_notes.get(slug, {})
+        production_override = production_snapshot_overrides.get(slug, {})
         rank_driver_summary = row.get("rank_driver_summary", "")
         top_driver_key, top_driver_delta = _top_driver(rank_driver_summary)
         pff_grade = round(_safe_float(row.get("pff_grade")) or 0.0, 2)
@@ -2695,6 +2738,8 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         combine_ras_official = round(_safe_float(row.get("combine_ras_official")) or 0.0, 2)
         ras_estimate = round(_safe_float(row.get("ras_estimate")) or 0.0, 2)
         production_snapshot = _clean_public_snapshot(row.get("scouting_production_snapshot", "") or "")
+        if production_override.get("text"):
+            production_snapshot = str(production_override.get("text", "")).strip()
         low_evidence_flag = pff_grade <= 0 and combine_ras_official <= 0 and ras_estimate <= 0
         athletic_percentile = _pct_rank(
             float(athletic_profile_score),
@@ -2733,6 +2778,8 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             position=pos,
             config_map=POSITION_COUNTING_STAT_CONFIG,
         )
+        if production_override.get("counting_stat_chips"):
+            counting_stat_chips = list(production_override.get("counting_stat_chips", []))
         production_metrics: dict[str, float] = {**advanced_metrics, **counting_metrics}
         production_percentiles: dict[str, float] = dict(advanced_percentiles)
         production_composite_pct = _weighted_percentile_composite(advanced_metric_cards)
@@ -2966,6 +3013,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "counting_metrics": counting_metrics,
                 "production_composite_pct": production_composite_pct,
                 "production_source_tier": production_source_tier,
+                "production_snapshot_heading": str(production_override.get("heading", "")).strip() or "2025 Production Snapshot",
                 "position_lens": position_lens,
                 "historical_comp_floor": _public_comp_dict(comp_floor),
                 "historical_comp_median": _public_comp_dict(comp_median),

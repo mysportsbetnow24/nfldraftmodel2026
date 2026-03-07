@@ -217,7 +217,7 @@ const compLine = (title: string, comp: any, fallback: string) => {
       ) : <div class="muted">Film notes will appear here as scouting updates are published.</div>}
     </article>
     <article class="card">
-      <h2 class="block-title">2025 Production Snapshot</h2>
+      <h2 class="block-title">{player.production_snapshot_heading || "2025 Production Snapshot"}</h2>
       {advancedRows.length ? (
         <div class="bar-metrics">
           {advancedRows.map((m:any) => (
