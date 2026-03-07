@@ -92,6 +92,9 @@ PRODUCTION_METRIC_KEYS = [
     "sg_cov_qb_rating_against",
     "sg_cov_man_grade",
     "sg_cov_zone_grade",
+    "sg_slot_cov_snaps",
+    "sg_slot_cov_snaps_per_target",
+    "sg_slot_cov_qb_rating_against",
     "cfb_db_coverage_plays_per_target",
     "cfb_db_yards_allowed_per_coverage_snap",
     "cfb_db_int",
@@ -100,11 +103,17 @@ PRODUCTION_METRIC_KEYS = [
     "sg_def_coverage_grade",
     "sg_def_tackle_grade",
     "sg_def_missed_tackle_rate",
+    "sg_def_total_pressures",
+    "sg_def_tackles_for_loss",
+    "sg_def_tackles",
+    "sg_def_pass_break_ups",
+    "sg_def_interceptions",
     "cfb_lb_tackles",
     "cfb_lb_tfl",
     "cfb_lb_sacks",
     "cfb_lb_qb_hurries",
     "cfb_lb_signal",
+    "cfb_lb_rush_impact_signal",
     "sg_ol_pass_block_grade",
     "sg_ol_run_block_grade",
     "sg_ol_pbe",
@@ -1537,6 +1546,224 @@ def _weighted_percentile_composite(cards: list[dict]) -> float | None:
     return round(weighted_sum / weight_total, 1)
 
 
+def _metric_public_pct(
+    row: dict,
+    position: str,
+    key: str,
+    pos_metric_values: dict[str, dict[str, list[float]]],
+    *,
+    lower_better: bool = False,
+) -> float | None:
+    raw = _safe_float(row.get(key))
+    if raw is None:
+        return None
+    pop = pos_metric_values.get(position, {}).get(key, [])
+    pct = _pct_rank(float(raw), pop)
+    if pct is None:
+        return None
+    public_pct = 100.0 - float(pct) if lower_better else float(pct)
+    return round(_clamp(public_pct, 0.0, 100.0), 1)
+
+
+def _mean_present(values: list[float | None], fallback: float | None = None) -> float | None:
+    usable = [float(v) for v in values if v is not None]
+    if not usable:
+        return fallback
+    return round(sum(usable) / len(usable), 1)
+
+
+def _build_position_lens(
+    row: dict,
+    position: str,
+    pos_metric_values: dict[str, dict[str, list[float]]],
+) -> dict:
+    pos = str(position or "").upper()
+
+    def pct(key: str, *, lower_better: bool = False) -> float | None:
+        return _metric_public_pct(row, pos, key, pos_metric_values, lower_better=lower_better)
+
+    def row_item(label: str, values: list[float | None], detail: str) -> dict | None:
+        value = _mean_present(values)
+        if value is None:
+            return None
+        return {"label": label, "pct": value, "detail": detail}
+
+    title = "ScoutingGrade Lens"
+    rows: list[dict] = []
+    tags: list[str] = []
+
+    if pos == "QB":
+        title = "QB Stress / Process"
+        stress = row_item(
+            "Stress Response",
+            [pct("sg_qb_pressure_grade"), pct("sg_qb_pressure_to_sack_rate", lower_better=True), pct("sg_qb_blitz_grade")],
+            "pressure, sack avoidance, blitz answers",
+        )
+        decision = row_item(
+            "Decision Quality",
+            [pct("sg_qb_btt_rate"), pct("sg_qb_twp_rate", lower_better=True), pct("sg_qb_pass_grade")],
+            "aggression balanced with turnover control",
+        )
+        structure = row_item(
+            "Starter Translation",
+            [pct("sg_qb_pass_grade"), pct("sg_qb_no_screen_grade"), pct("sg_qb_quick_qb_rating")],
+            "structure passing and timing-game stability",
+        )
+        rows = [r for r in [stress, decision, structure] if r]
+        if stress and stress["pct"] >= 75:
+            tags.append("Pressure Manager")
+        if decision and decision["pct"] >= 75:
+            tags.append("Aggressive Creator")
+        if structure and structure["pct"] >= 75:
+            tags.append("Structure Passer")
+    elif pos == "RB":
+        title = "RB Three-Down Creator"
+        contact = row_item(
+            "Creation After Contact",
+            [pct("sg_rb_run_grade"), pct("sg_rb_elusive_rating"), pct("sg_rb_yco_attempt")],
+            "run grade, elusive value, yards after contact",
+        )
+        explosive = row_item(
+            "Explosive Threat",
+            [pct("sg_rb_explosive_rate"), pct("sg_rb_breakaway_percent")],
+            "chunk gains and home-run carry profile",
+        )
+        passing = row_item(
+            "Passing-Down Value",
+            [pct("sg_rb_targets_per_route"), pct("sg_rb_yprr"), pct("sg_rb_run_grade")],
+            "receiving involvement and snap-stay utility",
+        )
+        rows = [r for r in [contact, explosive, passing] if r]
+        if contact and contact["pct"] >= 75:
+            tags.append("Contact Creator")
+        if explosive and explosive["pct"] >= 75:
+            tags.append("Explosive Runner")
+        if passing and passing["pct"] >= 70:
+            tags.append("Passing-Game Utility")
+    elif pos in {"WR", "TE"}:
+        title = f"{pos} Route Earner"
+        route = row_item(
+            "Route Earning",
+            [pct("sg_wrte_route_grade"), pct("sg_wrte_yprr"), pct("sg_wrte_targets_per_route")],
+            "route quality plus target-earning efficiency",
+        )
+        coverage = row_item(
+            "Coverage Translation",
+            [pct("sg_wrte_man_yprr"), pct("sg_wrte_zone_yprr"), pct("sg_wrte_route_grade")],
+            "production across coverage families",
+        )
+        reliability = row_item(
+            "Ball Reliability",
+            [pct("sg_wrte_contested_catch_rate"), pct("sg_wrte_drop_rate", lower_better=True), pct("sg_wrte_yprr")],
+            "finishing through contact and preserving targets",
+        )
+        rows = [r for r in [route, coverage, reliability] if r]
+        if route and route["pct"] >= 75:
+            tags.append("Separator")
+        if coverage and coverage["pct"] >= 75:
+            tags.append("Volume Earner")
+        if reliability and reliability["pct"] >= 72:
+            tags.append("Vertical Stressor")
+    elif pos in {"EDGE", "DT"}:
+        title = "True-Pass-Set Disruption"
+        rush = row_item(
+            "Rush Translation",
+            [pct("sg_dl_pass_rush_grade"), pct("sg_dl_true_pass_set_win_rate"), pct("sg_dl_true_pass_set_prp")],
+            "clean pass-rush quality when protections are honest",
+        )
+        pressure = row_item(
+            "Pressure Load",
+            [pct("sg_dl_total_pressures"), pct("sg_dl_pass_rush_grade")],
+            "how often disruption actually shows up",
+        )
+        run = row_item(
+            "Run-Down Utility",
+            [pct("sg_front_run_def_grade"), pct("sg_front_stop_percent")],
+            "base-down viability alongside rush value",
+        )
+        rows = [r for r in [rush, pressure, run] if r]
+        if pressure and pressure["pct"] >= 72:
+            tags.append("Clean-Pocket Finisher")
+        if rush and rush["pct"] >= 75:
+            tags.append("True-Pass-Set Winner")
+        if run and run["pct"] >= 72:
+            tags.append("Base-Down Value")
+    elif pos == "LB":
+        title = "LB Dual-Threat Defender"
+        run = row_item(
+            "Run-Fit Control",
+            [pct("sg_def_run_grade"), pct("sg_front_stop_percent"), pct("sg_def_tackle_grade")],
+            "run fits, stop creation, tackle finish",
+        )
+        coverage = row_item(
+            "Coverage Range",
+            [pct("sg_def_coverage_grade"), pct("sg_cov_yards_per_snap", lower_better=True), pct("sg_slot_cov_snaps_per_target")],
+            "space playability and overhang coverage utility",
+        )
+        pressure = row_item(
+            "Pressure Utility",
+            [pct("sg_def_total_pressures"), pct("sg_def_tackles_for_loss"), pct("cfb_lb_rush_impact_signal")],
+            "blitz value, backfield disruption, near-the-ball impact",
+        )
+        rows = [r for r in [run, coverage, pressure] if r]
+        if run and run["pct"] >= 75:
+            tags.append("Run-Fit Anchor")
+        if coverage and coverage["pct"] >= 72:
+            tags.append("Coverage Range")
+        if pressure and pressure["pct"] >= 70:
+            tags.append("Pressure Utility")
+    elif pos in {"CB", "S"}:
+        title = "DB Coverage Tax"
+        deterrence = row_item(
+            "Target Deterrence",
+            [pct("sg_cov_snaps_per_target"), pct("sg_cov_yards_per_snap", lower_better=True)],
+            "how expensive it is to attack this defender",
+        )
+        disruption = row_item(
+            "Ball Disruption",
+            [pct("sg_cov_forced_incompletion_rate"), pct("sg_cov_qb_rating_against", lower_better=True), pct("sg_def_pass_break_ups")],
+            "forced misses and passer suppression",
+        )
+        near_ball = row_item(
+            "Near-Ball Impact",
+            [pct("sg_def_total_pressures"), pct("sg_def_tackles_for_loss"), pct("sg_slot_cov_qb_rating_against", lower_better=True)],
+            "pressure utility, box disruption, slot stress response",
+        )
+        rows = [r for r in [deterrence, disruption, near_ball] if r]
+        if deterrence and deterrence["pct"] >= 75:
+            tags.append("Target Deterrent")
+        if disruption and disruption["pct"] >= 72:
+            tags.append("Ball Disruptor")
+        if near_ball and near_ball["pct"] >= 68:
+            tags.append("Scheme Translator")
+    elif pos in {"OT", "IOL"}:
+        title = "OL Pass-Pro Translation"
+        pass_pro = row_item(
+            "Pass-Pro Core",
+            [pct("sg_ol_pass_block_grade"), pct("sg_ol_pbe"), pct("sg_ol_pressure_allowed_rate", lower_better=True)],
+            "block quality plus pressure suppression",
+        )
+        run = row_item(
+            "Run-Game Lift",
+            [pct("sg_ol_run_block_grade")],
+            "movement and run-game support",
+        )
+        flex = row_item(
+            "Alignment Flex",
+            [pct("sg_ol_versatility_count")],
+            "multi-spot utility and lineup resilience",
+        )
+        rows = [r for r in [pass_pro, run, flex] if r]
+        if pass_pro and pass_pro["pct"] >= 75:
+            tags.append("Pass-Pro Translator")
+        if run and run["pct"] >= 72:
+            tags.append("Run-Game Lift")
+        if flex and flex["pct"] >= 70:
+            tags.append("Alignment Flex")
+
+    return {"title": title, "rows": rows, "tags": tags}
+
+
 def _load_rank_history(window: int = 8) -> dict[str, list[int]]:
     if not STABILITY_SNAPSHOTS_DIR.exists():
         return {}
@@ -2126,6 +2353,11 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         production_metrics: dict[str, float] = {**advanced_metrics, **counting_metrics}
         production_percentiles: dict[str, float] = dict(advanced_percentiles)
         production_composite_pct = _weighted_percentile_composite(advanced_metric_cards)
+        position_lens = _build_position_lens(
+            row=row,
+            position=pos,
+            pos_metric_values=pos_metric_values,
+        )
 
         uid = row.get("player_uid", "")
         hist = rank_history.get(uid, [])
@@ -2323,6 +2555,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "counting_stat_chips": counting_stat_chips,
                 "counting_metrics": counting_metrics,
                 "production_composite_pct": production_composite_pct,
+                "position_lens": position_lens,
                 "historical_comp_floor": _public_comp_dict(comp_floor),
                 "historical_comp_median": _public_comp_dict(comp_median),
                 "historical_comp_ceiling": _public_comp_dict(comp_ceiling),

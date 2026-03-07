@@ -80,6 +80,9 @@ const marketRaw = Number(player.market_signal_pct || 50);
 const marketPct = Number.isFinite(marketRaw) ? Math.max(0, Math.min(100, marketRaw)) : 50;
 const advancedRows = Array.isArray(player.advanced_metric_cards) ? player.advanced_metric_cards : [];
 const countRows = Array.isArray(player.counting_stat_chips) ? player.counting_stat_chips : [];
+const positionLens = player && typeof player.position_lens === "object" && Array.isArray(player.position_lens.rows)
+  ? player.position_lens
+  : null;
 const compLine = (title: string, comp: any, fallback: string) => {
   if (!comp || !comp.name) return `${title}: ${fallback}`;
   const simRaw = Number(comp.similarity);
@@ -145,6 +148,25 @@ const compLine = (title: string, comp: any, fallback: string) => {
           <div class="meter"><div class="meter-fill" style={`width:${marketPct.toFixed(1)}%;background:#0ea5e9;`}></div></div>
         </div>
       </div>
+      {positionLens && positionLens.rows.length ? (
+        <div class="card" style="margin-top:1rem;">
+          <h3 class="block-title" style="margin-bottom:0.65rem;">{positionLens.title}</h3>
+          {positionLens.tags?.length ? (
+            <div class="chip-row" style="margin-bottom:0.8rem;">
+              {positionLens.tags.map((tag: string) => <span class="chip info">{tag}</span>)}
+            </div>
+          ) : null}
+          <div class="bar-metrics">
+            {positionLens.rows.map((item: any) => (
+              <div class="metric-row">
+                <div class="metric-top"><span>{item.label}</span><strong>{Number(item.pct || 50).toFixed(0)}th pct</strong></div>
+                <div class="meter"><div class="meter-fill" style={`width:${Number(item.pct || 50).toFixed(1)}%;background:#1f5ea8;`}></div></div>
+                <div class="muted" style="margin-top:0.35rem;">{item.detail}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : null}
     </article>
     <article class="card">
       <h2 class="block-title">How He Wins</h2>

@@ -1,264 +1,306 @@
 consensus_rank,player_name,position,school,final_grade,consensus_board_mean_rank,consensus_board_source_count,consensus_board_rank_std,rank_delta_consensus_minus_model,rank_delta_abs,model_higher_than_consensus,model_lower_than_consensus,confidence_score,uncertainty_score,top50_evidence_signal_count,top50_evidence_brake_penalty,bluechip_rank_protection_adjustment,rank_driver_summary
-72,Lorenzo Styles Jr.,CB,Ohio State,82.01,231.0,1,0.0,159.0,159.0,1,0,35.9,64.1,2,0.0,0.0,score=82.01; prior_signal=29.17; prior:-16.86 | athletic:+3.76 | production:-1.68 | trait:-1.63
-249,Ahmaad Moses,S,SMU Mustangs,68.51,376.5,2,52.5,127.5,127.5,1,0,53.49,46.51,4,0.0,0.0,score=68.51; prior_signal=4.22; prior:-21.28 | guardrail:-6.25 | trait:-2.51 | production:-1.03
-195,Damonic Williams,DT,Oklahoma Sooners,74.13,320.0,1,0.0,125.0,125.0,1,0,57.73,42.27,3,0.0,0.0,score=74.13; prior_signal=8.74; prior:-18.45 | guardrail:-4.03 | trait:-2.51 | production:-1.32
-228,Wesley Bissainthe,LB,Miami (FL) Hurricanes,70.19,335.0,2,13.0,107.0,107.0,1,0,58.74,41.26,4,0.0,0.0,score=70.19; prior_signal=5.83; prior:-20.07 | guardrail:-4.50 | trait:-2.51 | production:-1.30
-260,Garrett DiGiorgio,IOL,UCLA Bruins,65.06,360.5,2,25.5,100.5,100.5,1,0,54.06,45.94,4,0.0,0.0,score=65.06; prior_signal=4.84; prior:-17.36 | guardrail:-5.72 | trait:-2.51 | athletic:-2.25
-241,Jack Pyburn,EDGE,LSU Tigers,69.29,341.0,2,37.0,100.0,100.0,1,0,52.23,47.77,4,0.0,0.0,score=69.29; prior_signal=5.77; prior:-21.13 | guardrail:-5.33 | trait:-2.36 | risk:-0.45
-164,Kamari Ramsey,S,USC Trojans,76.72,67.33,3,3.86,-96.67,96.67,0,1,79.19,20.81,4,0.0,0.0,score=76.72; prior_signal=71.5; prior:+7.73 | trait:-5.28 | athletic:-1.87 | production:-1.30
-175,Devin Moore,CB,Florida,76.1,81.75,4,18.83,-93.25,93.25,0,1,53.78,46.22,3,0.0,0.0,score=76.1; prior_signal=63.91; prior:+4.42 | athletic:-3.15 | trait:-2.58 | production:-1.68
-235,Chris Hilton Jr.,WR,LSU Tigers,69.71,326.0,1,0.0,91.0,91.0,1,0,57.76,42.24,3,0.0,0.0,score=69.71; prior_signal=8.74; prior:-14.17 | guardrail:-4.03 | athletic:-3.77 | trait:-2.47
-264,Jackie Marshall,EDGE,Baylor Bears,62.33,355.0,2,43.0,91.0,91.0,1,0,53.17,46.83,4,0.0,0.0,score=62.33; prior_signal=5.01; prior:-12.84 | athletic:-6.08 | guardrail:-5.57 | trait:-2.43
-253,CJ Donaldson,RB,Ohio State Buckeyes,67.58,341.0,2,41.0,88.0,88.0,1,0,52.55,47.45,4,0.0,0.0,score=67.58; prior_signal=5.93; prior:-19.97 | guardrail:-5.47 | trait:-2.38 | production:-1.61
-262,Harrison Wallace III,WR,Mississippi Rebels,64.06,347.0,2,55.0,85.0,85.0,1,0,53.49,46.51,4,0.0,0.0,score=64.06; prior_signal=6.58; prior:-15.38 | guardrail:-5.90 | athletic:-4.34 | trait:-2.26
-203,Emmanuel Henderson Jr.,WR,Kansas,73.33,119.0,1,0.0,-84.0,84.0,0,1,44.58,55.42,1,0.0,0.0,score=73.33; prior_signal=30.61; prior:-5.80 | trait:-3.60 | athletic:-2.81 | production:-1.68
-173,Xavier Nwankpa,S,Iowa,77.07,254.5,2,19.5,81.5,81.5,1,0,56.97,43.03,4,0.0,0.0,score=77.07; prior_signal=22.67; prior:-21.30 | guardrail:-7.79 | athletic:+3.57 | production:-1.61
-248,Dillon Wade,IOL,Auburn Tigers,68.21,327.5,2,8.5,79.5,79.5,1,0,60.38,39.62,4,0.0,0.0,score=68.21; prior_signal=6.39; prior:-19.18 | guardrail:-4.50 | trait:-2.51 | production:-1.68
-257,Jaren Kanak,TE,Oklahoma Sooners,66.47,336.0,2,79.0,79.0,79.0,1,0,53.53,46.47,4,0.0,0.0,score=66.47; prior_signal=11.85; prior:-17.38 | guardrail:-6.63 | trait:-1.94 | production:-1.68
-135,LT Overton,EDGE,Alabama,78.34,58.14,7,38.64,-76.86,76.86,0,1,63.41,36.59,4,0.0,0.0,score=78.34; prior_signal=77.95; prior:+9.38 | athletic:-5.66 | trait:-1.86 | production:-1.06
-245,Jaylon Guilbeau,CB,Texas Longhorns,68.85,321.5,2,9.5,76.5,76.5,1,0,59.53,40.47,4,0.0,0.0,score=68.85; prior_signal=6.39; prior:-19.26 | guardrail:-4.50 | trait:-2.45 | production:-1.68
-227,Micah Morris,IOL,Georgia Bulldogs,70.85,303.0,2,54.0,76.0,76.0,1,0,51.8,48.2,4,0.0,0.0,score=70.85; prior_signal=14.22; prior:-20.08 | guardrail:-5.14 | trait:-1.86 | athletic:+1.72
-254,Bauer Sharp,TE,LSU Tigers,66.77,330.0,2,3.0,76.0,76.0,1,0,63.42,36.58,4,0.0,0.0,score=66.77; prior_signal=6.5; prior:-17.30 | guardrail:-4.50 | trait:-2.51 | athletic:-1.77
-218,Noah Whittington,RB,Oregon Ducks,71.87,292.5,2,15.5,74.5,74.5,1,0,57.75,42.25,4,0.0,0.0,score=71.87; prior_signal=11.52; prior:-21.45 | guardrail:-4.17 | trait:-2.14 | athletic:+0.93
-237,Sawyer Robertson,QB,Baylor Bears,69.29,163.25,4,43.49,-73.75,73.75,0,1,57.39,42.61,4,0.0,0.0,score=69.29; prior_signal=31.76; prior:-7.87 | guardrail:-4.80 | trait:-3.90 | risk:-1.41
-234,TJ Hall,CB,Iowa Hawkeyes,69.44,160.33,3,69.76,-73.67,73.67,0,1,56.02,43.98,4,0.0,0.0,score=69.44; prior_signal=37.36; athletic:-5.16 | trait:-4.08 | guardrail:-3.60 | prior:-2.55
-256,Dillon Bell,WR,Georgia Bulldogs,66.41,325.0,2,71.0,69.0,69.0,1,0,53.49,46.51,4,0.0,0.0,score=66.41; prior_signal=12.66; prior:-16.35 | guardrail:-6.33 | trait:-1.88 | production:-1.68
-223,Jalen Huskey,S,Maryland Terrapins,71.35,291.0,2,15.0,68.0,68.0,1,0,56.58,43.42,4,0.0,0.0,score=71.35; prior_signal=7.42; prior:-20.90 | guardrail:-4.17 | trait:-2.44 | risk:-0.45
-250,Rahsul Faison,RB,South Carolina Gamecocks,68.59,317.5,2,104.5,67.5,67.5,1,0,53.17,46.83,4,0.0,0.0,score=68.59; prior_signal=18.58; prior:-17.53 | guardrail:-6.72 | production:-1.68 | trait:-1.50
-220,J'Mari Taylor,RB,Virginia Cavaliers,71.73,156.0,3,38.76,-64.0,64.0,0,1,56.88,43.12,4,0.0,0.0,score=71.73; prior_signal=44.05; athletic:-3.71 | trait:-3.27 | guardrail:-2.70 | prior:-2.26
-144,Drew Allar,QB,Penn State,77.54,81.25,4,48.61,-62.75,62.75,0,1,57.26,42.74,4,0.0,0.0,score=77.54; prior_signal=74.4; guardrail:-4.74 | production:-1.07 | risk:-1.05 | prior:+0.54
-252,Brandon Cleveland,DT,North Carolina State Wolfpack,67.71,313.0,2,33.0,61.0,61.0,1,0,53.17,46.83,4,0.0,0.0,score=67.71; prior_signal=9.55; prior:-15.54 | guardrail:-4.50 | athletic:-3.88 | trait:-2.18
-243,Fernando Carmona,IOL,Arkansas Razorbacks,68.34,182.67,3,94.86,-60.33,60.33,0,1,56.6,43.4,4,0.0,0.0,score=68.34; prior_signal=25.87; prior:-8.66 | trait:-4.78 | guardrail:-4.50 | athletic:-1.94
-155,Roman Hemby,RB,Indiana,78.4,215.0,2,15.0,60.0,60.0,1,0,56.9,43.1,4,0.0,0.0,score=78.4; prior_signal=36.44; prior:-13.20 | guardrail:-3.44 | production:-0.99 | risk:-0.35
-165,Kendal Daniels,LB,Oklahoma,77.38,224.67,3,134.31,59.67,59.67,1,0,55.94,44.06,4,0.0,0.0,score=77.38; prior_signal=30.66; prior:-13.07 | guardrail:-4.01 | trait:-2.50 | production:-0.54
-224,Scooby Williams,LB,Texas A&M Aggies,71.03,283.5,2,14.5,59.5,59.5,1,0,56.68,43.32,4,0.0,0.0,score=71.03; prior_signal=8.82; prior:-19.89 | guardrail:-4.50 | trait:-2.36 | production:-0.62
-242,Behren Morton,QB,Texas Tech Red Raiders,69.13,300.5,2,17.5,58.5,58.5,1,0,52.59,47.41,4,0.0,0.0,score=69.13; prior_signal=9.97; prior:-18.86 | guardrail:-3.91 | trait:-2.53 | risk:-1.45
-190,Dametrious Crownover,OT,Texas A&M Aggies,74.0,131.75,4,51.37,-58.25,58.25,0,1,60.43,39.57,4,0.0,0.0,score=74.0; prior_signal=42.16; prior:-4.66 | trait:-3.84 | guardrail:-3.60 | production:-1.68
-229,Chris McClellan,DT,Missouri Tigers,69.16,171.5,4,104.39,-57.5,57.5,0,1,60.78,39.22,4,0.0,0.0,score=69.16; prior_signal=21.28; prior:-9.61 | trait:-4.97 | guardrail:-4.50 | athletic:-2.89
-255,Gary Smith III,DT,UCLA Bruins,66.6,312.0,2,25.0,57.0,57.0,1,0,54.46,45.54,4,0.0,0.0,score=66.6; prior_signal=8.65; prior:-14.50 | athletic:-4.80 | guardrail:-4.50 | trait:-2.25
-217,Keyron Crawford,EDGE,Auburn Tigers,70.91,160.25,4,97.26,-56.75,56.75,0,1,59.8,40.2,4,0.0,0.0,score=70.91; prior_signal=26.76; prior:-9.79 | trait:-5.94 | guardrail:-4.30 | risk:-0.35
-244,Joe Fagnano,QB,Connecticut Huskies,69.02,300.5,2,40.5,56.5,56.5,1,0,50.13,49.87,4,0.0,0.0,score=69.02; prior_signal=12.81; prior:-18.27 | guardrail:-4.50 | trait:-2.30 | athletic:-1.52
-240,Aaron Anderson,WR,LSU Tigers,69.28,184.33,3,36.57,-55.67,55.67,0,1,56.56,43.44,4,0.0,0.0,score=69.28; prior_signal=44.04; athletic:-7.85 | guardrail:-2.70 | production:-1.16 | trait:-0.79
-100,Lee Hunter,DT,Texas Tech Red Raiders,79.73,44.43,7,17.02,-55.57,55.57,0,1,82.82,17.18,4,0.0,0.0,score=79.73; prior_signal=78.96; prior:+8.54 | athletic:-5.75 | trait:-2.01 | language:-0.45
-212,Jam Miller,RB,Alabama Crimson Tide,72.24,265.0,1,0.0,53.0,53.0,1,0,57.41,42.59,3,0.0,0.0,score=72.24; prior_signal=18.27; prior:-13.74 | guardrail:-4.03 | trait:-2.03 | athletic:-1.95
-231,RJ Maryland,TE,SMU,69.91,284.0,2,15.0,53.0,53.0,1,0,57.85,42.15,4,0.0,0.0,score=69.91; prior_signal=10.92; prior:-19.45 | guardrail:-4.50 | trait:-2.45 | production:-1.68
-206,Josh Cameron,WR,Baylor Bears,72.73,153.5,4,39.48,-52.5,52.5,0,1,59.8,40.2,4,0.0,0.0,score=72.73; prior_signal=34.21; prior:-8.91 | guardrail:-4.00 | trait:-3.93 | production:-1.38
-210,Logan Fano,EDGE,Utah Utes,72.69,262.5,2,16.5,52.5,52.5,1,0,56.29,43.71,4,0.0,0.0,score=72.69; prior_signal=19.95; prior:-17.63 | guardrail:-3.87 | trait:-1.76 | risk:-0.45
-153,Cade Klubnik,QB,Clemson,77.54,100.6,5,83.67,-52.4,52.4,0,1,60.24,39.76,4,0.0,0.0,score=77.54; prior_signal=71.22; guardrail:-5.68 | risk:-1.05 | production:-0.75 | athletic:-0.60
-187,Kevin Coleman Jr.,WR,Missouri Tigers,74.4,135.25,4,37.01,-51.75,51.75,0,1,72.46,27.54,4,0.0,0.0,score=74.4; prior_signal=43.72; prior:-4.21 | trait:-3.55 | guardrail:-2.90 | athletic:-2.45
-124,Le'Veon Moss,RB,Texas A&M,79.4,175.5,2,20.5,51.5,51.5,1,0,55.83,44.17,4,0.0,0.0,score=79.4; prior_signal=47.16; prior:-9.33 | guardrail:-2.95 | production:-1.32 | risk:-0.35
-180,Treydan Stukes,CB,Arizona Wildcats,74.28,128.75,4,94.09,-51.25,51.25,0,1,60.75,39.25,4,0.0,0.0,score=74.28; prior_signal=34.45; prior:-12.91 | guardrail:-7.45 | trait:-4.68 | athletic:+1.76
-44,Daylen Everette,CB,Georgia,85.58,95.0,3,16.27,51.0,51.0,1,0,53.32,46.68,4,0.0,0.0,score=85.58; prior_signal=67.91; prior:-7.29 | athletic:+3.30 | guardrail:-2.77 | production:-1.16
-111,Malachi Fields,WR,Notre Dame Fighting Irish,78.92,60.83,6,19.95,-50.17,50.17,0,1,82.12,17.88,4,0.0,0.0,score=78.92; prior_signal=68.91; athletic:-3.67 | prior:+3.51 | trait:-1.86 | production:-0.74
-236,Deven Eastern,DT,Minnesota Golden Gophers,69.5,186.67,3,64.63,-49.33,49.33,0,1,56.56,43.44,4,0.0,0.0,score=69.5; prior_signal=29.68; prior:-6.85 | guardrail:-4.40 | trait:-4.05 | athletic:-3.29
-159,Beau Stephens,IOL,Iowa Hawkeyes,77.03,112.2,5,45.18,-46.8,46.8,0,1,72.23,27.77,4,0.0,0.0,score=77.03; prior_signal=59.0; trait:-3.44 | athletic:-2.87 | risk:-1.14 | guardrail:-1.10
-202,Nate Boerkircher,TE,Texas A&M Aggies,73.41,155.33,3,26.28,-46.67,46.67,0,1,57.77,42.23,4,0.0,0.0,score=73.41; prior_signal=41.68; prior:-5.47 | athletic:-3.41 | guardrail:-2.90 | production:-1.52
-258,Avery Smith,CB,Toledo Rockets,65.85,303.5,2,39.5,45.5,45.5,1,0,53.21,46.79,4,0.0,0.0,score=65.85; prior_signal=6.39; prior:-15.41 | guardrail:-4.50 | athletic:-4.01 | trait:-2.45
-134,Davison Igbinosun,CB,Ohio State,78.17,89.0,4,37.53,-45.0,45.0,0,1,60.75,39.25,4,0.0,0.0,score=78.17; prior_signal=61.71; guardrail:-5.72 | prior:-5.34 | trait:-2.18 | athletic:+1.40
-130,Zakee Wheatley,S,Penn State Nittany Lions,78.35,85.6,5,7.96,-44.4,44.4,0,1,80.3,19.7,4,0.0,0.0,score=78.35; prior_signal=63.63; athletic:-4.12 | trait:-2.71 | prior:+2.65 | risk:-0.36
-60,Brian Parker II,OT,Duke Blue Devils,82.94,104.33,3,12.81,44.33,44.33,1,0,56.0,44.0,4,0.0,0.0,score=82.94; prior_signal=61.35; prior:-5.31 | guardrail:-1.51 | athletic:-1.39 | production:+0.87
-200,Bishop Fitzgerald,S,USC Trojans,73.69,155.75,4,27.26,-44.25,44.25,0,1,61.22,38.78,4,0.0,0.0,score=73.69; prior_signal=40.73; athletic:-4.73 | prior:-4.31 | trait:-3.49 | guardrail:-2.50
-204,Mason Reiger,EDGE,Wisconsin Badgers,73.2,248.0,2,10.0,44.0,44.0,1,0,60.36,39.64,4,0.0,0.0,score=73.2; prior_signal=19.35; prior:-18.63 | guardrail:-4.17 | trait:-1.88 | athletic:+0.40
-126,Garrett Nussmeier,QB,LSU,78.58,82.33,3,1.89,-43.67,43.67,0,1,65.5,34.5,4,0.0,0.0,score=78.58; prior_signal=69.19; guardrail:-2.00 | risk:-1.45 | production:-0.82 | athletic:-0.67
-90,Harold Perkins Jr.,LB,LSU,80.88,133.0,2,15.0,43.0,43.0,1,0,56.58,43.42,4,0.0,0.0,score=80.88; prior_signal=55.35; prior:-7.41 | guardrail:-4.33 | production:-1.26 | trait:+0.59
-176,Hezekiah Masses,CB,California Golden Bears,75.77,133.0,4,43.48,-43.0,43.0,0,1,60.75,39.25,4,0.0,0.0,score=75.77; prior_signal=53.6; athletic:-4.52 | trait:-3.19 | guardrail:-1.90 | prior:+0.40
-225,Jeremiah Wright,IOL,Auburn Tigers,70.38,182.33,3,95.78,-42.67,42.67,0,1,55.62,44.38,4,0.0,0.0,score=70.38; prior_signal=28.7; prior:-9.81 | trait:-4.70 | guardrail:-4.30 | production:-1.30
-62,Jermod McCoy,CB,Tennessee,83.03,19.5,10,19.72,-42.5,42.5,0,1,79.65,20.35,3,0.0,0.0,score=83.03; prior_signal=90.78; prior:+8.05 | athletic:-3.29 | production:-1.68 | trait:+1.33
-219,Reggie Virgil,WR,Texas Tech Red Raiders,71.63,176.67,3,27.92,-42.33,42.33,0,1,57.16,42.84,4,0.0,0.0,score=71.63; prior_signal=33.77; prior:-8.45 | guardrail:-4.00 | athletic:-2.92 | trait:-1.49
-105,Eli Raridon,TE,Notre Dame,78.09,147.0,3,17.91,42.0,42.0,1,0,61.67,38.33,4,0.0,0.0,score=78.09; prior_signal=41.41; prior:-11.26 | guardrail:-4.24 | athletic:+2.65 | trait:-2.44
-122,Julian Neal,CB,Arkansas Razorbacks,78.59,80.6,5,30.97,-41.4,41.4,0,1,62.92,37.08,4,0.0,0.0,score=78.59; prior_signal=65.71; trait:-2.94 | athletic:-2.44 | prior:+1.98 | guardrail:-1.00
-45,Skyler Bell,WR,Connecticut Huskies,85.3,86.33,3,8.34,41.33,41.33,1,0,57.45,42.55,4,0.0,0.0,score=85.3; prior_signal=66.59; prior:-6.06 | athletic:+1.00 | risk:-0.36 | production:+0.20
-127,Malachi Lawrence,EDGE,UCF Knights,78.09,85.75,4,39.49,-41.25,41.25,0,1,60.43,39.57,4,0.0,0.0,score=78.09; prior_signal=57.88; prior:-6.25 | guardrail:-5.50 | trait:-3.30 | athletic:+2.50
-101,Max Klare,TE,Purdue,78.26,61.5,4,20.03,-39.5,39.5,0,1,77.06,22.94,4,0.0,0.0,score=78.26; prior_signal=64.38; trait:-4.85 | prior:+2.75 | production:-1.68 | athletic:-0.27
-78,Jalon Kilgore,S,South Carolina,82.07,116.25,4,15.51,38.25,38.25,1,0,58.46,41.54,4,0.0,0.0,score=82.07; prior_signal=52.03; prior:-8.87 | guardrail:-2.86 | athletic:+2.21 | trait:-1.96
-233,Xavian Sorey Jr.,LB,Arkansas Razorbacks,69.74,195.33,3,65.66,-37.67,37.67,0,1,56.92,43.08,4,0.0,0.0,score=69.74; prior_signal=26.35; prior:-8.66 | guardrail:-4.40 | trait:-4.15 | athletic:-2.16
-120,Zane Durant,DT,Penn State,79.14,157.33,3,43.82,37.33,37.33,1,0,56.88,43.12,4,0.0,0.0,score=79.14; prior_signal=40.79; prior:-14.41 | guardrail:-6.50 | athletic:+1.76 | production:-0.90
-75,Max Iheanachor,OT,Arizona State Sun Devils,81.56,38.29,7,11.27,-36.71,36.71,0,1,82.15,17.85,4,0.0,0.0,score=81.56; prior_signal=80.27; prior:+5.92 | trait:-4.00 | risk:-1.94 | athletic:+1.38
-118,Trey Moore,LB,Texas Longhorns,78.88,154.5,2,15.5,36.5,36.5,1,0,57.78,42.22,4,0.0,0.0,score=78.88; prior_signal=49.34; prior:-7.12 | guardrail:-2.75 | production:-1.25 | athletic:-1.15
-198,Jeff Caldwell,WR,Cincinnati Bearcats,74.17,233.5,2,53.5,35.5,35.5,1,0,53.49,46.51,4,0.0,0.0,score=74.17; prior_signal=32.88; prior:-16.14 | guardrail:-5.67 | athletic:+2.78 | production:-1.31
-207,Vincent Anthony Jr.,EDGE,Duke Blue Devils,72.88,171.67,3,25.82,-35.33,35.33,0,1,57.53,42.47,4,0.0,0.0,score=72.88; prior_signal=35.89; prior:-8.43 | guardrail:-4.00 | athletic:-2.73 | production:-1.42
-140,Zxavian Harris,DT,Mississippi Rebels,77.64,175.0,3,14.14,35.0,35.0,1,0,61.53,38.47,4,0.0,0.0,score=77.64; prior_signal=39.34; prior:-11.93 | guardrail:-3.72 | trait:-1.21 | risk:-0.45
-157,Logan Jones,IOL,Iowa Hawkeyes,76.9,123.0,4,31.14,-34.0,34.0,0,1,60.01,39.99,4,0.0,0.0,score=76.9; prior_signal=43.07; prior:-7.88 | trait:-3.59 | guardrail:-2.90 | risk:-0.60
-43,Dani Dennis-Sutton,EDGE,Penn State Nittany Lions,85.36,76.67,3,8.81,33.67,33.67,1,0,57.36,42.64,4,0.0,0.0,score=85.36; prior_signal=65.86; prior:-7.09 | athletic:+1.73 | guardrail:-1.46 | risk:-0.35
-193,George Gumbs Jr.,EDGE,Florida Gators,74.45,226.5,2,54.5,33.5,33.5,1,0,53.21,46.79,4,0.0,0.0,score=74.45; prior_signal=34.98; prior:-13.00 | guardrail:-4.25 | trait:-1.01 | production:-0.93
-80,Nicholas Singleton,RB,Penn State,81.9,113.0,2,3.0,33.0,33.0,1,0,62.44,37.56,4,0.0,0.0,score=81.9; prior_signal=62.06; prior:-5.79 | guardrail:-2.87 | production:-0.75 | trait:+0.44
-117,Aiden Fisher,LB,Indiana Hoosiers,78.88,150.0,3,18.71,33.0,33.0,1,0,60.51,39.49,4,0.0,0.0,score=78.88; prior_signal=51.33; prior:-7.59 | guardrail:-5.14 | production:-0.83 | trait:-0.66
-214,Miles Kitselman,TE,Tennessee Volunteers,72.19,181.0,2,30.0,-33.0,33.0,0,1,53.37,46.63,4,0.0,0.0,score=72.19; prior_signal=44.59; athletic:-4.28 | prior:-3.48 | guardrail:-2.85 | production:-1.68
-128,Will Lee III,CB,Texas A&M Aggies,78.44,96.0,4,11.51,-32.0,32.0,0,1,71.49,28.51,4,0.0,0.0,score=78.44; prior_signal=60.69; trait:-2.77 | guardrail:-1.80 | production:-1.63 | athletic:-0.94
-186,Ephesians Prysock,CB,Washington Huskies,74.4,154.0,4,59.95,-32.0,32.0,0,1,60.75,39.25,4,0.0,0.0,score=74.4; prior_signal=42.41; prior:-6.04 | trait:-3.90 | guardrail:-3.20 | athletic:-1.04
-114,Aamil Wagner,OT,Notre Dame,79.77,145.67,3,11.56,31.67,31.67,1,0,65.3,34.7,4,0.0,0.0,score=79.77; prior_signal=52.09; prior:-9.16 | guardrail:-4.64 | production:-1.24 | athletic:+0.77
-178,Nadame Tucker,EDGE,Western Michigan Broncos,75.26,146.75,4,17.77,-31.25,31.25,0,1,66.29,33.71,4,0.0,0.0,score=75.26; prior_signal=42.79; prior:-5.76 | guardrail:-4.21 | trait:-3.33 | athletic:-1.81
-97,Joshua Josephs,EDGE,Tennessee Volunteers,79.94,66.0,5,20.57,-31.0,31.0,0,1,79.39,20.61,4,0.0,0.0,score=79.94; prior_signal=75.41; trait:-4.40 | prior:+4.24 | guardrail:-0.81 | language:-0.73
-172,J. Michael Sturdivant,WR,Florida Gators,76.17,203.0,1,0.0,31.0,31.0,1,0,57.41,42.59,3,0.0,0.0,score=76.17; prior_signal=33.66; prior:-12.62 | guardrail:-4.60 | production:-1.68 | trait:-1.36
-160,Tim Keenan III,DT,Alabama Crimson Tide,76.99,129.33,3,9.98,-30.67,30.67,0,1,65.74,34.26,4,0.0,0.0,score=76.99; prior_signal=53.14; athletic:-5.88 | guardrail:-1.90 | trait:-0.68 | production:-0.52
-89,Demond Claiborne,RB,Wake Forest,80.46,119.5,4,26.69,30.5,30.5,1,0,61.66,38.34,4,0.0,0.0,score=80.46; prior_signal=58.0; prior:-3.80 | trait:-2.33 | production:-1.68 | guardrail:-1.37
-59,Chandler Rivers,CB,Duke,83.26,89.0,4,16.17,30.0,30.0,1,0,58.59,41.41,4,0.0,0.0,score=83.26; prior_signal=67.48; prior:-3.60 | trait:-2.19 | athletic:+1.81 | guardrail:-0.98
-246,Cameron Ball,DT,Arkansas Razorbacks,68.43,276.0,2,20.0,30.0,30.0,1,0,56.91,43.09,4,0.0,0.0,score=68.43; prior_signal=9.94; prior:-16.30 | guardrail:-4.50 | athletic:-2.89 | trait:-2.33
-95,Kaytron Allen,RB,Penn State Nittany Lions,79.9,124.67,3,6.34,29.67,29.67,1,0,68.03,31.97,4,0.0,0.0,score=79.9; prior_signal=56.32; prior:-8.13 | guardrail:-4.80 | production:+0.66 | trait:-0.52
-259,Colbie Young,WR,Georgia Bulldogs,65.77,288.5,2,44.5,29.5,29.5,1,0,53.49,46.51,4,0.0,0.0,score=65.77; prior_signal=7.35; prior:-15.44 | guardrail:-4.50 | athletic:-3.70 | trait:-2.47
-116,Gracen Halton,DT,Oklahoma Sooners,78.8,88.5,4,17.24,-27.5,27.5,0,1,66.46,33.54,4,0.0,0.0,score=78.8; prior_signal=60.65; trait:-2.97 | guardrail:-2.09 | prior:-1.52 | athletic:-0.94
-119,Red Murdock,LB,Buffalo,78.88,146.5,2,54.5,27.5,27.5,1,0,52.23,47.77,2,0.0,0.0,score=78.88; prior_signal=45.94; prior:-5.66 | trait:-3.13 | guardrail:-1.77 | production:-1.51
-85,Austin Barber,OT,Florida,81.27,112.25,4,6.34,27.25,27.25,1,0,75.7,24.3,4,0.0,0.0,score=81.27; prior_signal=55.19; prior:-10.45 | guardrail:-5.14 | athletic:+3.03 | trait:-1.88
-169,Eli Heidenreich,RB,Navy Midshipmen,76.23,196.0,2,27.0,27.0,27.0,1,0,53.86,46.14,4,0.0,0.0,score=76.23; prior_signal=30.64; prior:-15.09 | guardrail:-2.74 | trait:-1.60 | production:+1.40
-247,Jalen Walthall,WR,Incarnate Word,69.34,220.0,2,214.0,-27.0,27.0,0,1,40.67,59.33,3,0.0,0.0,score=69.34; prior_signal=59.15; guardrail:-4.57 | athletic:-3.21 | prior:+3.02 | trait:-2.85
-263,Caullin Lacy,WR,Louisville Cardinals,63.63,290.0,2,17.0,27.0,27.0,1,0,57.46,42.54,4,0.0,0.0,score=63.63; prior_signal=7.52; prior:-12.62 | athletic:-5.25 | guardrail:-4.50 | trait:-2.40
-81,Bryce Lance,WR,North Dakota State,81.17,107.75,4,61.26,26.75,26.75,1,0,60.46,39.54,4,0.0,0.0,score=81.17; prior_signal=68.15; guardrail:-3.74 | prior:-3.53 | trait:-2.85 | athletic:+1.34
-103,Emmett Johnson,RB,Nebraska Cornhuskers,79.46,76.25,4,6.1,-26.75,26.75,0,1,75.81,24.19,4,0.0,0.0,score=79.46; prior_signal=67.88; athletic:-3.31 | trait:-2.63 | prior:+2.50 | production:+0.50
-154,Brenen Thompson,WR,Mississippi State Bulldogs,77.13,127.25,4,32.93,-26.75,26.75,0,1,60.75,39.25,4,0.0,0.0,score=77.13; prior_signal=41.46; prior:-8.61 | trait:-3.62 | guardrail:-2.90 | athletic:+0.39
-123,DeMonte Capehart,DT,Clemson Tigers,78.64,149.67,3,26.89,26.67,26.67,1,0,57.66,42.34,4,0.0,0.0,score=78.64; prior_signal=43.97; prior:-11.72 | guardrail:-5.98 | trait:-1.09 | athletic:+0.98
-133,Carson Beck,QB,Miami (FL) Hurricanes,78.04,106.5,4,10.71,-26.5,26.5,0,1,80.04,19.96,4,0.0,0.0,score=78.04; prior_signal=57.62; prior:-5.21 | guardrail:-4.27 | trait:-1.86 | risk:-0.90
-68,Anthony Lucas,EDGE,USC Trojans,82.05,94.0,4,21.28,26.0,26.0,1,0,55.47,44.53,4,0.0,0.0,score=82.05; prior_signal=66.42; trait:-2.08 | prior:-1.26 | guardrail:-1.25 | risk:-0.63
-129,David Gusta,DT,Kentucky,78.64,155.0,2,84.0,26.0,26.0,1,0,40.35,59.65,3,0.0,0.0,score=78.64; prior_signal=50.49; prior:-5.96 | trait:-2.98 | guardrail:-2.25 | athletic:+1.37
-162,Tanner Koziol,TE,Houston,76.09,188.0,2,29.0,26.0,26.0,1,0,53.84,46.16,4,0.0,0.0,score=76.09; prior_signal=33.41; prior:-16.07 | guardrail:-4.90 | athletic:+2.93 | trait:-2.39
-57,Deion Burks,WR,Oklahoma Sooners,83.37,82.5,4,22.43,25.5,25.5,1,0,74.24,25.76,4,0.0,0.0,score=83.37; prior_signal=68.32; prior:-2.58 | athletic:+1.87 | production:-1.68 | trait:-1.49
-67,Dontay Corleone,DT,Cincinnati Bearcats,82.43,92.5,4,23.5,25.5,25.5,1,0,52.02,47.98,4,0.0,0.0,score=82.43; prior_signal=66.35; trait:-1.98 | guardrail:-1.08 | prior:-0.97 | production:-0.68
-40,Gabe Jacas,EDGE,Illinois Fighting Illini,85.75,65.0,5,28.55,25.0,25.0,1,0,75.97,24.03,4,0.0,0.0,score=85.75; prior_signal=73.48; prior:-4.23 | athletic:+2.47 | guardrail:-1.83 | trait:-1.22
-98,Connor Lew,IOL,Auburn Tigers,79.83,73.0,5,16.73,-25.0,25.0,0,1,69.92,30.08,4,0.0,0.0,score=79.83; prior_signal=68.3; trait:-2.41 | production:-1.38 | prior:+0.95 | guardrail:-0.80
-261,Barion Brown,WR,LSU,64.59,286.0,2,63.0,25.0,25.0,1,0,53.49,46.51,4,0.0,0.0,score=64.59; prior_signal=17.95; prior:-13.81 | guardrail:-7.90 | athletic:-3.86 | production:-1.68
-148,Parker Brailsford,IOL,Alabama,77.47,123.5,4,51.21,-24.5,24.5,0,1,60.46,39.54,4,0.0,0.0,score=77.47; prior_signal=53.65; prior:-3.83 | trait:-2.72 | guardrail:-2.63 | production:-1.62
-161,Kage Casey,OT,Boise State,76.71,136.5,4,34.57,-24.5,24.5,0,1,60.43,39.57,4,0.0,0.0,score=76.71; prior_signal=43.22; prior:-6.29 | trait:-3.15 | guardrail:-2.50 | athletic:-1.91
-174,John Michael Gyllenborg,TE,Wyoming Cowboys,76.09,197.5,2,29.5,23.5,23.5,1,0,53.48,46.52,4,0.0,0.0,score=76.09; prior_signal=39.95; prior:-11.29 | guardrail:-3.09 | production:-1.68 | athletic:+1.06
-32,Carnell Tate,WR,Ohio State,87.32,8.6,10,1.91,-23.4,23.4,0,1,93.62,6.38,4,0.0,0.0,score=87.32; prior_signal=96.71; athletic:-5.13 | prior:+4.85 | trait:+4.26 | production:+0.79
-87,Germie Bernard,WR,Alabama,79.34,63.75,4,22.03,-23.25,23.25,0,1,62.61,37.39,4,0.0,0.0,score=79.34; prior_signal=55.71; trait:-4.55 | prior:-2.91 | athletic:+1.36 | production:-1.25
-66,Jake Slaughter,IOL,Florida,82.36,89.0,4,11.11,23.0,23.0,1,0,62.61,37.39,4,0.0,0.0,score=82.36; prior_signal=58.75; prior:-6.94 | trait:-3.09 | athletic:+2.86 | guardrail:-0.80
-83,Jaishawn Barham,LB,Michigan,80.38,105.6,5,17.59,22.6,22.6,1,0,70.98,29.02,4,0.0,0.0,score=80.38; prior_signal=56.34; trait:-2.83 | prior:-2.57 | guardrail:-1.27 | athletic:-1.27
-77,Jadarian Price,RB,Notre Dame Fighting Irish,81.45,54.83,6,16.65,-22.17,22.17,0,1,82.63,17.37,4,0.0,0.0,score=81.45; prior_signal=75.13; prior:+2.49 | trait:-1.68 | athletic:-1.52 | production:-0.48
-106,Drew Shelton,OT,Penn State Nittany Lions,79.27,127.67,3,11.9,21.67,21.67,1,0,65.21,34.79,4,0.0,0.0,score=79.27; prior_signal=51.34; prior:-6.72 | guardrail:-3.00 | production:-1.01 | trait:-0.70
-208,VJ Payne,S,Kansas State Wildcats,72.49,186.33,3,80.15,-21.67,21.67,0,1,56.88,43.12,4,0.0,0.0,score=72.49; prior_signal=27.71; prior:-11.87 | guardrail:-4.50 | trait:-4.47 | production:-1.01
-158,Bryce Boettcher,LB,Oregon Ducks,77.01,179.5,2,29.5,21.5,21.5,1,0,52.5,47.5,4,0.0,0.0,score=77.01; prior_signal=34.74; prior:-12.77 | guardrail:-3.54 | trait:-1.46 | risk:-0.45
-41,Eli Stowers,TE,Vanderbilt,85.73,62.4,5,25.05,21.4,21.4,1,0,76.34,23.66,4,0.0,0.0,score=85.73; prior_signal=74.49; prior:-3.25 | athletic:+2.41 | trait:-1.52 | guardrail:-0.40
-146,Trey Zuhn III,IOL,Texas A&M,77.47,125.0,5,38.09,-21.0,21.0,0,1,62.46,37.54,4,0.0,0.0,score=77.47; prior_signal=51.84; prior:-5.41 | guardrail:-3.24 | trait:-2.53 | production:-0.73
-209,Eric Gentry,LB,USC Trojans,72.66,230.0,2,42.0,21.0,21.0,1,0,52.55,47.45,4,0.0,0.0,score=72.66; prior_signal=18.73; prior:-16.89 | guardrail:-4.50 | trait:-2.09 | production:-0.89
-38,Josiah Trotter,LB,Missouri Tigers,85.99,58.8,5,8.08,20.8,20.8,1,0,87.93,12.07,4,0.0,0.0,score=85.99; prior_signal=76.18; athletic:+1.79 | trait:-1.78 | prior:-0.83 | production:-0.59
-168,Rayshaun Benny,DT,Michigan Wolverines,75.83,147.25,4,49.31,-20.75,20.75,0,1,59.48,40.52,4,0.0,0.0,score=75.83; prior_signal=35.79; prior:-9.06 | trait:-4.08 | guardrail:-4.00 | risk:-0.45
-181,Desmond Reid,RB,Pittsburgh Panthers,75.14,201.5,2,22.5,20.5,20.5,1,0,53.9,46.1,4,0.0,0.0,score=75.14; prior_signal=37.66; prior:-10.51 | guardrail:-2.45 | trait:-1.16 | production:-0.66
-91,Bud Clark,S,TCU Horned Frogs,80.07,111.25,4,5.12,20.25,20.25,1,0,76.41,23.59,4,0.0,0.0,score=80.07; prior_signal=54.05; prior:-5.91 | guardrail:-3.23 | trait:-2.90 | athletic:+0.53
-22,Fernando Mendoza,QB,Indiana,89.24,1.77,13,1.53,-20.23,20.23,0,1,89.71,10.29,4,0.0,0.0,score=89.24; prior_signal=99.85; prior:+3.29 | trait:+2.09 | production:+1.44 | risk:-1.10
+184,Haynes King,QB,Georgia Tech,76.04,401.0,1,0.0,217.0,217.0,1,0,54.05,45.95,3,0.0,0.0,score=76.04; prior_signal=19.8; prior:-17.56 | guardrail:-3.32 | trait:-2.18 | risk:-1.51
+63,Keyshaun Elliott,LB,Arizona State,83.54,253.0,1,0.0,190.0,190.0,1,0,48.41,51.59,3,0.0,0.0,score=83.54; prior_signal=57.23; prior:-5.91 | guardrail:-1.03 | production:-0.87 | athletic:-0.57
+232,DJ Rogers,TE,TCU,73.47,419.0,1,0.0,187.0,187.0,1,0,56.46,43.54,3,0.0,0.0,score=73.47; prior_signal=11.64; prior:-17.88 | guardrail:-4.03 | trait:-2.19 | production:-1.41
+243,Marvin Jones Jr.,EDGE,Oklahoma,72.7,427.0,1,0.0,184.0,184.0,1,0,57.41,42.59,3,0.0,0.0,score=72.7; prior_signal=6.32; prior:-18.45 | guardrail:-4.03 | trait:-2.44 | production:-1.51
+292,Emmanuel Henderson Jr.,WR,Kansas,68.64,119.0,1,0.0,-173.0,173.0,0,1,57.41,42.59,2,0.0,0.0,score=68.64; prior_signal=7.1; prior:-13.58 | trait:-4.93 | guardrail:-3.97 | athletic:-2.81
+202,Collin Wright,CB,Stanford,75.17,360.0,1,0.0,158.0,158.0,1,0,57.41,42.59,3,0.0,0.0,score=75.17; prior_signal=7.4; prior:-21.84 | guardrail:-4.56 | trait:-2.45 | athletic:+1.50
+195,Joey Aguilar,QB,Tennessee,75.53,345.0,1,0.0,150.0,150.0,1,0,52.64,47.36,3,0.0,0.0,score=75.53; prior_signal=20.66; prior:-16.12 | guardrail:-2.99 | trait:-2.19 | risk:-1.55
+222,Dalton Johnson,S,Arizona,74.06,368.0,1,0.0,146.0,146.0,1,0,57.41,42.59,3,0.0,0.0,score=74.06; prior_signal=7.39; prior:-18.60 | guardrail:-3.63 | trait:-2.51 | athletic:-2.09
+209,Jimmy Rolder,LB,Michigan,74.62,350.0,1,0.0,141.0,141.0,1,0,57.44,42.56,3,0.0,0.0,score=74.62; prior_signal=8.17; prior:-19.07 | guardrail:-4.03 | trait:-2.51 | athletic:-0.75
+186,Karson Sharar,LB,Iowa,75.88,325.0,1,0.0,139.0,139.0,1,0,57.41,42.59,3,0.0,0.0,score=75.88; prior_signal=8.44; prior:-20.90 | guardrail:-4.26 | trait:-2.51 | athletic:+0.64
+261,Alan Herron,OT,Maryland,71.55,394.0,1,0.0,133.0,133.0,1,0,57.44,42.56,3,0.0,0.0,score=71.55; prior_signal=6.61; prior:-16.76 | guardrail:-4.03 | athletic:-2.59 | trait:-2.42
+285,Sawyer Robertson,QB,Baylor Bears,69.12,163.25,4,43.49,-121.75,121.75,0,1,57.39,42.61,4,0.0,0.0,score=69.12; prior_signal=31.76; prior:-7.65 | guardrail:-4.80 | trait:-3.90 | risk:-1.41
+281,TJ Hall,CB,Iowa,69.55,160.33,3,69.76,-120.67,120.67,0,1,56.02,43.98,4,0.0,0.0,score=69.55; prior_signal=39.73; athletic:-5.16 | trait:-3.90 | guardrail:-3.60 | prior:-1.70
+180,Kendrick Law,WR,Kentucky,76.17,297.0,1,0.0,117.0,117.0,1,0,57.44,42.56,3,0.0,0.0,score=76.17; prior_signal=30.82; prior:-12.79 | guardrail:-3.78 | trait:-1.41 | production:-1.27
+242,Logan Taylor,IOL,Boston College,72.74,359.0,1,0.0,117.0,117.0,1,0,57.44,42.56,3,0.0,0.0,score=72.74; prior_signal=7.29; prior:-18.93 | guardrail:-4.03 | trait:-2.51 | production:-1.07
+276,Khalil Dinkins,TE,Penn State,70.13,389.0,1,0.0,113.0,113.0,1,0,57.44,42.56,3,0.0,0.0,score=70.13; prior_signal=6.86; prior:-15.62 | guardrail:-4.03 | athletic:-2.89 | trait:-2.51
+194,DeShon Singleton,S,Nebraska,75.57,304.0,1,0.0,110.0,110.0,1,0,57.41,42.59,3,0.0,0.0,score=75.57; prior_signal=8.74; prior:-22.42 | guardrail:-5.54 | trait:-2.51 | athletic:+2.50
+291,Fernando Carmona,IOL,Arkansas Razorbacks,68.14,182.67,3,94.86,-108.33,108.33,0,1,56.6,43.4,4,0.0,0.0,score=68.14; prior_signal=25.87; prior:-8.40 | trait:-4.78 | guardrail:-4.50 | athletic:-1.94
+212,Damonic Williams,DT,Oklahoma,74.45,320.0,1,0.0,108.0,108.0,1,0,57.73,42.27,3,0.0,0.0,score=74.45; prior_signal=11.67; prior:-17.61 | guardrail:-4.03 | trait:-2.28 | production:-1.51
+248,Nick Barrett,DT,South Carolina,71.5,144.67,3,61.46,-103.33,103.33,0,1,56.02,43.98,4,0.0,0.0,score=71.5; prior_signal=28.57; prior:-6.95 | trait:-4.96 | guardrail:-4.30 | athletic:-2.64
+240,Evan Beerntsen,IOL,Northwestern,72.89,340.0,1,0.0,100.0,100.0,1,0,57.41,42.59,3,0.0,0.0,score=72.89; prior_signal=8.13; prior:-18.76 | guardrail:-4.03 | trait:-2.51 | athletic:-1.73
+283,Aaron Anderson,WR,LSU Tigers,69.57,184.33,3,36.57,-98.67,98.67,0,1,56.56,43.44,4,0.0,0.0,score=69.57; prior_signal=44.04; athletic:-7.85 | guardrail:-2.70 | production:-0.85 | trait:-0.79
+273,Anez Cooper,IOL,Miami (FL),69.53,174.5,2,77.5,-98.5,98.5,0,1,52.23,47.77,4,0.0,0.0,score=69.53; prior_signal=17.78; prior:-13.32 | trait:-4.97 | guardrail:-4.50 | production:-1.10
+254,J'Mari Taylor,RB,Virginia Cavaliers,72.11,156.0,3,38.76,-98.0,98.0,0,1,56.88,43.12,4,0.0,0.0,score=72.11; prior_signal=44.05; athletic:-3.71 | trait:-3.27 | prior:-2.75 | guardrail:-2.70
+165,Kamari Ramsey,S,USC Trojans,76.9,67.33,3,3.86,-97.67,97.67,0,1,79.19,20.81,4,0.0,0.0,score=76.9; prior_signal=71.5; prior:+7.50 | trait:-5.28 | athletic:-1.87 | production:-1.12
+269,Jordan Hudson,WR,SMU,70.16,171.5,2,88.5,-97.5,97.5,0,1,52.55,47.45,4,0.0,0.0,score=70.16; prior_signal=21.75; prior:-12.15 | trait:-4.88 | guardrail:-4.50 | production:-0.94
+284,Deven Eastern,DT,Minnesota Golden Gophers,69.35,186.67,3,64.63,-97.33,97.33,0,1,56.56,43.44,4,0.0,0.0,score=69.35; prior_signal=29.68; prior:-6.66 | guardrail:-4.40 | trait:-4.05 | athletic:-3.29
+125,Kaleb Elarms-Orr,LB,TCU,78.88,214.0,1,0.0,89.0,89.0,1,0,57.44,42.56,3,0.0,0.0,score=78.88; prior_signal=43.0; prior:-10.80 | guardrail:-4.80 | trait:-0.99 | risk:-0.45
+239,Josh Cameron,WR,Baylor Bears,72.87,153.5,4,39.48,-85.5,85.5,0,1,59.8,40.2,4,0.0,0.0,score=72.87; prior_signal=34.21; prior:-9.09 | guardrail:-4.00 | trait:-3.93 | production:-1.22
+280,Xavian Sorey Jr.,LB,Arkansas Razorbacks,69.74,195.33,3,65.66,-84.67,84.67,0,1,56.92,43.08,4,0.0,0.0,score=69.74; prior_signal=26.35; prior:-8.66 | guardrail:-4.40 | trait:-4.15 | athletic:-2.16
+302,Jalen Walthall,WR,Incarnate Word,66.23,220.0,2,214.0,-82.0,82.0,0,1,53.49,46.51,4,0.0,0.0,score=66.23; prior_signal=26.29; prior:-6.38 | trait:-5.73 | guardrail:-4.17 | athletic:-3.21
+140,LT Overton,EDGE,Alabama,78.29,58.14,7,38.64,-81.86,81.86,0,1,63.41,36.59,4,0.0,0.0,score=78.29; prior_signal=77.95; prior:+9.44 | athletic:-5.66 | trait:-1.86 | production:-1.13
+295,Ahmaad Moses,S,SMU Mustangs,68.4,376.5,2,52.5,81.5,81.5,1,0,53.49,46.51,4,0.0,0.0,score=68.4; prior_signal=4.22; prior:-21.14 | guardrail:-6.25 | trait:-2.51 | production:-1.14
+214,Alex Harkey,IOL,Oregon,74.44,136.67,3,52.36,-77.33,77.33,0,1,67.32,32.68,4,0.0,0.0,score=74.44; prior_signal=39.24; prior:-8.20 | guardrail:-4.30 | trait:-2.83 | production:-1.68
+229,Bishop Fitzgerald,S,USC Trojans,73.72,155.75,4,27.26,-73.25,73.25,0,1,61.22,38.78,4,0.0,0.0,score=73.72; prior_signal=40.73; athletic:-4.73 | prior:-4.35 | trait:-3.49 | guardrail:-2.50
+247,Bryson Eason,DT,Tennessee,72.37,174.0,1,0.0,-73.0,73.0,0,1,57.44,42.56,3,0.0,0.0,score=72.37; prior_signal=9.44; prior:-15.67 | guardrail:-3.85 | athletic:-3.12 | trait:-2.51
+183,Xavier Nwankpa,S,Iowa,77.07,254.5,2,19.5,71.5,71.5,1,0,56.97,43.03,4,0.0,0.0,score=77.07; prior_signal=22.67; prior:-21.67 | guardrail:-8.08 | athletic:+3.57 | production:-1.31
+231,Ahmari Harvey,CB,Georgia Tech,73.5,302.0,1,0.0,71.0,71.0,1,0,57.41,42.59,3,0.0,0.0,score=73.5; prior_signal=19.82; prior:-13.76 | guardrail:-4.03 | athletic:-2.19 | trait:-1.88
+252,Miles Kitselman,TE,Tennessee Volunteers,72.19,181.0,2,30.0,-71.0,71.0,0,1,53.37,46.63,4,0.0,0.0,score=72.19; prior_signal=44.59; athletic:-4.28 | prior:-3.48 | guardrail:-2.85 | production:-1.68
+161,Lorenzo Styles Jr.,S,Ohio State,77.07,231.0,1,0.0,70.0,70.0,1,0,57.41,42.59,3,0.0,0.0,score=77.07; prior_signal=24.99; prior:-18.29 | guardrail:-6.18 | athletic:+3.53 | trait:-1.75
+246,Malik Benson,WR,Oregon,72.37,316.0,1,0.0,70.0,70.0,1,0,57.41,42.59,3,0.0,0.0,score=72.37; prior_signal=14.98; prior:-14.94 | guardrail:-4.03 | athletic:-2.42 | trait:-2.10
+241,Vincent Anthony Jr.,EDGE,Duke Blue Devils,72.81,171.67,3,25.82,-69.33,69.33,0,1,57.53,42.47,4,0.0,0.0,score=72.81; prior_signal=35.89; prior:-8.35 | guardrail:-4.00 | athletic:-2.73 | production:-1.51
+192,Tyler Onyedim,DT,Texas A&M,75.64,261.0,1,0.0,69.0,69.0,1,0,57.41,42.59,3,0.0,0.0,score=75.64; prior_signal=8.7; prior:-20.68 | guardrail:-4.25 | trait:-2.51 | production:-0.76
+271,Justin Jefferson,LB,Alabama,70.12,203.5,2,82.5,-67.5,67.5,0,1,53.49,46.51,4,0.0,0.0,score=70.12; prior_signal=13.76; prior:-14.87 | trait:-4.97 | guardrail:-4.50 | production:-0.91
+236,Chris McClellan,DT,Missouri,73.57,171.5,4,104.39,-64.5,64.5,0,1,60.78,39.22,4,0.0,0.0,score=73.57; prior_signal=48.21; guardrail:-4.02 | prior:-3.24 | trait:-2.99 | athletic:-2.89
+199,Kevin Coleman Jr.,WR,Missouri,75.2,135.25,4,37.01,-63.75,63.75,0,1,72.46,27.54,4,0.0,0.0,score=75.2; prior_signal=46.97; prior:-3.86 | trait:-3.29 | guardrail:-2.90 | athletic:-2.45
+218,Nate Boerkircher,TE,Texas A&M,74.29,155.33,3,26.28,-62.67,62.67,0,1,57.77,42.23,4,0.0,0.0,score=74.29; prior_signal=47.18; prior:-4.27 | athletic:-3.41 | guardrail:-2.90 | production:-1.33
+274,Wesley Bissainthe,LB,Miami (FL) Hurricanes,70.3,335.0,2,13.0,61.0,61.0,1,0,58.74,41.26,4,0.0,0.0,score=70.3; prior_signal=5.83; prior:-20.21 | guardrail:-4.50 | trait:-2.51 | production:-1.15
+215,David Gusta,DT,Kentucky,73.66,155.0,2,84.0,-60.0,60.0,0,1,53.17,46.83,4,0.0,0.0,score=73.66; prior_signal=24.37; prior:-13.36 | trait:-4.97 | guardrail:-4.38 | athletic:+1.37
+233,Chris Adams,OT,Memphis,73.44,293.0,1,0.0,60.0,60.0,1,0,56.46,43.54,3,0.0,0.0,score=73.44; prior_signal=8.33; prior:-18.44 | guardrail:-4.03 | trait:-2.42 | production:-1.68
+196,Keagen Trost,OT,Missouri,74.77,137.0,2,79.0,-59.0,59.0,0,1,53.17,46.83,4,0.0,0.0,score=74.77; prior_signal=29.03; prior:-13.60 | guardrail:-5.47 | trait:-4.88 | production:+1.50
+158,Cade Klubnik,QB,Clemson,77.54,100.6,5,83.67,-57.4,57.4,0,1,60.24,39.76,4,0.0,0.0,score=77.54; prior_signal=71.22; guardrail:-5.78 | risk:-1.05 | production:-0.64 | athletic:-0.60
+234,Reggie Virgil,WR,Texas Tech,73.55,176.67,3,27.92,-57.33,57.33,0,1,57.16,42.84,4,0.0,0.0,score=73.55; prior_signal=48.16; prior:-4.34 | guardrail:-3.62 | athletic:-2.92 | production:-1.68
+189,Dametrious Crownover,OT,Texas A&M,75.74,131.75,4,51.37,-57.25,57.25,0,1,60.43,39.57,4,0.0,0.0,score=75.74; prior_signal=49.4; trait:-3.29 | prior:-2.94 | guardrail:-2.90 | production:-1.68
+298,Jackie Marshall,DT,Baylor,68.03,355.0,2,43.0,57.0,57.0,1,0,53.17,46.83,4,0.0,0.0,score=68.03; prior_signal=6.84; prior:-19.39 | guardrail:-6.30 | trait:-2.26 | production:-1.51
+101,Lee Hunter,DT,Texas Tech,80.02,44.43,7,17.02,-56.57,56.57,0,1,82.82,17.18,4,0.0,0.0,score=80.02; prior_signal=80.4; prior:+8.97 | athletic:-5.75 | trait:-1.92 | language:-0.45
+159,Roman Hemby,RB,Indiana,78.4,215.0,2,15.0,56.0,56.0,1,0,56.9,43.1,4,0.0,0.0,score=78.4; prior_signal=36.44; prior:-13.69 | guardrail:-3.82 | production:-0.59 | risk:-0.35
+188,Hezekiah Masses,CB,California Golden Bears,75.83,133.0,4,43.48,-55.0,55.0,0,1,60.75,39.25,4,0.0,0.0,score=75.83; prior_signal=53.6; athletic:-4.52 | trait:-3.19 | guardrail:-1.90 | risk:-0.36
+286,Jack Pyburn,EDGE,LSU Tigers,69.2,341.0,2,37.0,55.0,55.0,1,0,52.23,47.77,4,0.0,0.0,score=69.2; prior_signal=5.77; prior:-21.02 | guardrail:-5.33 | trait:-2.36 | production:-0.54
+170,Kendal Daniels,LB,Oklahoma,77.38,224.67,3,134.31,54.67,54.67,1,0,55.94,44.06,4,0.0,0.0,score=77.38; prior_signal=30.66; prior:-13.15 | guardrail:-4.07 | trait:-2.50 | production:-0.46
+114,Malachi Fields,WR,Notre Dame,79.1,60.83,6,19.95,-53.17,53.17,0,1,82.12,17.88,4,0.0,0.0,score=79.1; prior_signal=69.31; athletic:-3.67 | prior:+3.45 | trait:-1.83 | production:-0.62
+205,Jack Kelly,LB,BYU,75.06,258.0,1,0.0,53.0,53.0,1,0,57.44,42.56,3,0.0,0.0,score=75.06; prior_signal=8.23; prior:-19.62 | guardrail:-4.03 | trait:-2.51 | production:-0.96
+287,Vinny Anthony II,WR,Wisconsin Badgers,68.87,234.5,2,13.5,-52.5,52.5,0,1,59.29,40.71,4,0.0,0.0,score=68.87; prior_signal=27.11; prior:-9.50 | guardrail:-3.87 | athletic:-3.37 | production:-1.68
+308,Garrett DiGiorgio,IOL,UCLA Bruins,64.98,360.5,2,25.5,52.5,52.5,1,0,54.06,45.94,4,0.0,0.0,score=64.98; prior_signal=4.84; prior:-17.25 | guardrail:-5.72 | trait:-2.51 | athletic:-2.25
+275,Riley Nowakowski,TE,Indiana Hoosiers,70.13,223.5,2,23.5,-51.5,51.5,0,1,54.37,45.63,4,0.0,0.0,score=70.13; prior_signal=23.71; prior:-12.40 | guardrail:-3.87 | athletic:-2.48 | trait:-1.84
+255,Fa'alili Fa'amoe,OT,Wake Forest Demon Deacons,72.07,204.0,2,15.0,-51.0,51.0,0,1,57.53,42.47,4,0.0,0.0,score=72.07; prior_signal=30.55; prior:-9.98 | guardrail:-3.54 | athletic:-2.45 | trait:-1.46
+133,Garrett Nussmeier,QB,LSU,78.61,82.33,3,1.89,-50.67,50.67,0,1,65.5,34.5,4,0.0,0.0,score=78.61; prior_signal=69.19; guardrail:-2.00 | risk:-1.45 | production:-0.78 | athletic:-0.67
+131,Julian Neal,CB,Arkansas Razorbacks,78.43,80.6,5,30.97,-50.4,50.4,0,1,62.92,37.08,4,0.0,0.0,score=78.43; prior_signal=65.71; trait:-2.94 | athletic:-2.44 | prior:+2.18 | guardrail:-1.00
+162,Beau Stephens,IOL,Iowa Hawkeyes,77.01,112.2,5,45.18,-49.8,49.8,0,1,72.23,27.77,4,0.0,0.0,score=77.01; prior_signal=59.0; trait:-3.44 | athletic:-2.87 | risk:-1.14 | guardrail:-1.10
+46,Daylen Everette,CB,Georgia,85.48,95.0,3,16.27,49.0,49.0,1,0,53.32,46.68,4,0.0,0.0,score=85.48; prior_signal=67.91; prior:-7.16 | athletic:+3.30 | guardrail:-2.77 | production:-1.27
+68,Jermod McCoy,CB,Tennessee,83.03,19.5,10,19.72,-48.5,48.5,0,1,79.65,20.35,3,0.0,0.0,score=83.03; prior_signal=90.78; prior:+8.05 | athletic:-3.29 | production:-1.68 | trait:+1.33
+38,Skyler Bell,WR,Connecticut,86.1,86.33,3,8.34,48.33,48.33,1,0,57.45,42.55,4,0.0,0.0,score=86.1; prior_signal=70.1; prior:-5.43 | athletic:+1.00 | production:+0.42 | risk:-0.36
+219,Namdi Obiazor,LB,TCU,74.29,267.0,1,0.0,48.0,48.0,1,0,57.44,42.56,3,0.0,0.0,score=74.29; prior_signal=8.04; prior:-18.72 | guardrail:-4.03 | trait:-2.51 | athletic:-1.05
+228,Markel Bell,OT,Miami (FL),74.09,180.5,2,29.5,-47.5,47.5,0,1,53.45,46.55,4,0.0,0.0,score=74.09; prior_signal=51.98; athletic:-4.85 | guardrail:-3.17 | prior:-2.23 | production:-0.77
+272,Luke Altmyer,QB,Illinois Fighting Illini,70.36,224.5,2,4.5,-47.5,47.5,0,1,59.62,40.38,4,0.0,0.0,score=70.36; prior_signal=28.3; prior:-11.60 | guardrail:-3.91 | athletic:-2.09 | trait:-1.90
+82,Treydan Stukes,CB,Arizona,81.67,128.75,4,94.09,46.75,46.75,1,0,60.75,39.25,4,0.0,0.0,score=81.67; prior_signal=67.23; prior:-5.04 | guardrail:-4.72 | trait:-2.36 | athletic:+1.76
+130,Le'Veon Moss,RB,Texas A&M,79.4,175.5,2,20.5,45.5,45.5,1,0,55.83,44.17,4,0.0,0.0,score=79.4; prior_signal=48.43; prior:-9.26 | guardrail:-3.32 | production:-1.02 | risk:-0.35
+112,Zane Durant,DT,Penn State,79.64,157.33,3,43.82,45.33,45.33,1,0,56.88,43.12,4,0.0,0.0,score=79.64; prior_signal=42.96; prior:-13.55 | guardrail:-6.05 | athletic:+1.76 | production:-1.05
+270,Marcus Allen,CB,North Carolina,70.6,315.0,1,0.0,45.0,45.0,1,0,57.41,42.59,3,0.0,0.0,score=70.6; prior_signal=8.37; prior:-14.88 | guardrail:-4.03 | athletic:-3.13 | trait:-2.45
+277,Aidan Hubbard,EDGE,Northwestern,70.1,322.0,1,0.0,45.0,45.0,1,0,57.41,42.59,3,0.0,0.0,score=70.1; prior_signal=8.74; prior:-14.08 | athletic:-4.98 | guardrail:-4.03 | trait:-2.44
+282,Chris Hilton Jr.,WR,LSU Tigers,69.71,326.0,1,0.0,44.0,44.0,1,0,57.76,42.24,3,0.0,0.0,score=69.71; prior_signal=8.74; prior:-14.17 | guardrail:-4.03 | athletic:-3.77 | trait:-2.47
+105,Max Klare,TE,Purdue,78.26,61.5,4,20.03,-43.5,43.5,0,1,77.06,22.94,4,0.0,0.0,score=78.26; prior_signal=64.38; trait:-4.85 | prior:+2.75 | production:-1.68 | athletic:-0.27
+226,Domani Jackson,CB,Alabama,73.82,183.0,3,35.11,-43.0,43.0,0,1,56.56,43.44,4,0.0,0.0,score=73.82; prior_signal=35.03; prior:-9.51 | guardrail:-3.30 | athletic:-1.93 | trait:-1.49
+128,Zakee Wheatley,S,Penn State Nittany Lions,78.72,85.6,5,7.96,-42.4,42.4,0,1,80.3,19.7,4,0.0,0.0,score=78.72; prior_signal=63.63; athletic:-4.12 | trait:-2.71 | prior:+2.17 | production:+0.37
+297,Adam Randall,RB,Clemson Tigers,67.88,256.0,2,41.0,-41.0,41.0,0,1,53.53,46.47,4,0.0,0.0,score=67.88; prior_signal=11.78; prior:-16.63 | guardrail:-4.50 | trait:-2.34 | athletic:-1.59
+300,CJ Donaldson,RB,Ohio State Buckeyes,67.62,341.0,2,41.0,41.0,41.0,1,0,52.55,47.45,4,0.0,0.0,score=67.62; prior_signal=5.93; prior:-20.02 | guardrail:-5.47 | trait:-2.38 | production:-1.57
+136,Will Lee III,CB,Texas A&M Aggies,78.39,96.0,4,11.51,-40.0,40.0,0,1,71.49,28.51,4,0.0,0.0,score=78.39; prior_signal=60.69; trait:-2.77 | guardrail:-1.80 | production:-1.68 | athletic:-0.94
+121,Devin Moore,CB,Florida,78.99,81.75,4,18.83,-39.25,39.25,0,1,66.6,33.4,4,0.0,0.0,score=78.99; prior_signal=66.61; athletic:-3.15 | trait:-2.53 | prior:+2.37 | risk:-0.46
+258,Caleb Douglas,WR,Texas Tech,72.29,219.0,2,21.0,-39.0,39.0,0,1,56.68,43.32,4,0.0,0.0,score=72.29; prior_signal=39.19; prior:-8.55 | guardrail:-4.10 | athletic:-1.80 | production:-1.63
+95,Harold Perkins Jr.,LB,LSU,80.88,133.0,2,15.0,38.0,38.0,1,0,56.58,43.42,4,0.0,0.0,score=80.88; prior_signal=55.35; prior:-7.30 | guardrail:-4.24 | production:-1.38 | trait:+0.59
+250,Will Kacmarek,TE,Ohio State,72.2,288.0,1,0.0,38.0,38.0,1,0,57.41,42.59,3,0.0,0.0,score=72.2; prior_signal=8.35; prior:-17.66 | guardrail:-4.03 | trait:-2.51 | athletic:-1.72
+309,Harrison Wallace III,WR,Mississippi Rebels,64.21,347.0,2,55.0,38.0,38.0,1,0,53.49,46.51,4,0.0,0.0,score=64.21; prior_signal=6.58; prior:-15.57 | guardrail:-5.90 | athletic:-4.34 | trait:-2.26
+224,VJ Payne,S,Kansas State,73.94,186.33,3,80.15,-37.67,37.67,0,1,56.88,43.12,4,0.0,0.0,score=73.94; prior_signal=36.32; prior:-9.96 | guardrail:-4.40 | trait:-3.85 | production:-0.88
+207,Marlin Klein,TE,Michigan Wolverines,75.1,169.67,3,46.42,-37.33,37.33,0,1,56.6,43.4,4,0.0,0.0,score=75.1; prior_signal=51.1; prior:-4.84 | guardrail:-3.46 | athletic:-1.84 | production:-1.68
+251,Patrick Payton,EDGE,LSU,72.74,214.5,2,22.5,-36.5,36.5,0,1,53.9,46.1,4,0.0,0.0,score=72.74; prior_signal=32.06; prior:-15.35 | guardrail:-7.15 | production:-0.81 | risk:-0.35
+256,Noah Whittington,RB,Oregon Ducks,72.03,292.5,2,15.5,36.5,36.5,1,0,57.75,42.25,4,0.0,0.0,score=72.03; prior_signal=11.52; prior:-21.65 | guardrail:-4.17 | trait:-2.14 | athletic:+0.93
+111,Eli Raridon,TE,Notre Dame,78.09,147.0,3,17.91,36.0,36.0,1,0,61.67,38.33,4,0.0,0.0,score=78.09; prior_signal=41.41; prior:-11.28 | guardrail:-4.25 | athletic:+2.65 | trait:-2.44
+117,Drew Allar,QB,Penn State,79.04,81.25,4,48.61,-35.75,35.75,0,1,57.26,42.74,4,0.0,0.0,score=79.04; prior_signal=78.07; guardrail:-3.31 | prior:+2.00 | production:-1.28 | risk:-1.05
+278,Joshua Braun,IOL,Kentucky Wildcats,69.97,242.5,2,6.5,-35.5,35.5,0,1,62.19,37.81,4,0.0,0.0,score=69.97; prior_signal=23.69; prior:-12.85 | guardrail:-3.87 | trait:-1.73 | production:-1.68
+69,Brian Parker II,OT,Duke Blue Devils,82.76,104.33,3,12.81,35.33,35.33,1,0,56.0,44.0,4,0.0,0.0,score=82.76; prior_signal=61.35; prior:-4.88 | athletic:-1.39 | guardrail:-1.36 | production:+0.52
+182,Nadame Tucker,EDGE,Western Michigan,76.09,146.75,4,17.77,-35.25,35.25,0,1,66.29,33.71,4,0.0,0.0,score=76.09; prior_signal=45.33; prior:-5.13 | guardrail:-3.72 | trait:-3.18 | athletic:-1.81
+268,Micah Morris,IOL,Georgia Bulldogs,71.09,303.0,2,54.0,35.0,35.0,1,0,52.6,47.4,4,0.0,0.0,score=71.09; prior_signal=14.22; prior:-20.38 | guardrail:-5.14 | trait:-1.86 | athletic:+1.72
+217,Jeremiah Wright,IOL,Auburn,74.37,182.33,3,95.78,-34.67,34.67,0,1,55.62,44.38,4,0.0,0.0,score=74.37; prior_signal=47.42; prior:-5.21 | trait:-3.40 | guardrail:-2.90 | production:-1.30
+100,Joshua Josephs,EDGE,Tennessee Volunteers,79.94,66.0,5,20.57,-34.0,34.0,0,1,79.39,20.61,4,0.0,0.0,score=79.94; prior_signal=75.41; trait:-4.40 | prior:+4.24 | guardrail:-0.81 | language:-0.73
+43,Dani Dennis-Sutton,EDGE,Penn State,85.58,76.67,3,8.81,33.67,33.67,1,0,57.36,42.64,4,0.0,0.0,score=85.58; prior_signal=69.82; prior:-6.04 | athletic:+1.73 | guardrail:-1.73 | risk:-0.35
+163,Tim Keenan III,DT,Alabama Crimson Tide,76.83,129.33,3,9.98,-33.67,33.67,0,1,65.74,34.26,4,0.0,0.0,score=76.83; prior_signal=53.14; athletic:-5.88 | guardrail:-1.90 | production:-0.75 | trait:-0.68
+294,Dillon Wade,IOL,Auburn Tigers,68.21,327.5,2,8.5,33.5,33.5,1,0,60.38,39.62,4,0.0,0.0,score=68.21; prior_signal=6.39; prior:-19.18 | guardrail:-4.50 | trait:-2.51 | production:-1.68
+83,Jalon Kilgore,S,South Carolina,82.07,116.25,4,15.51,33.25,33.25,1,0,58.46,41.54,4,0.0,0.0,score=82.07; prior_signal=53.52; prior:-8.41 | guardrail:-2.99 | athletic:+2.21 | trait:-1.96
+238,Chase Roberts,WR,BYU Cougars,73.29,205.0,2,40.0,-33.0,33.0,0,1,53.49,46.51,4,0.0,0.0,score=73.29; prior_signal=38.94; prior:-7.86 | athletic:-3.33 | guardrail:-2.85 | trait:-0.98
+264,Lake McRee,TE,USC Trojans,71.56,231.0,2,23.0,-33.0,33.0,0,1,54.77,45.23,4,0.0,0.0,score=71.56; prior_signal=29.71; prior:-11.97 | guardrail:-3.87 | production:-1.60 | trait:-1.44
+139,Carson Beck,QB,Miami (FL) Hurricanes,78.04,106.5,4,10.71,-32.5,32.5,0,1,80.04,19.96,4,0.0,0.0,score=78.04; prior_signal=57.62; prior:-4.83 | guardrail:-3.98 | trait:-1.86 | risk:-0.90
+289,Jaylon Guilbeau,CB,Texas Longhorns,68.85,321.5,2,9.5,32.5,32.5,1,0,59.53,40.47,4,0.0,0.0,score=68.85; prior_signal=6.39; prior:-19.26 | guardrail:-4.50 | trait:-2.45 | production:-1.68
+260,Wesley Williams,EDGE,Duke,71.8,292.0,1,0.0,32.0,32.0,1,0,57.41,42.59,3,0.0,0.0,score=71.8; prior_signal=8.74; prior:-16.27 | guardrail:-4.03 | athletic:-3.00 | trait:-2.44
+54,Malachi Lawrence,EDGE,UCF,84.58,85.75,4,39.49,31.75,31.75,1,0,51.43,48.57,4,0.0,0.0,score=84.58; prior_signal=72.64; prior:-2.74 | athletic:+2.50 | trait:-2.29 | guardrail:-1.21
+148,Bryce Boettcher,LB,Oregon,77.88,179.5,2,29.5,31.5,31.5,1,0,52.5,47.5,4,0.0,0.0,score=77.88; prior_signal=50.08; prior:-9.06 | guardrail:-4.84 | trait:-0.46 | risk:-0.45
+200,Taylen Green,QB,Arkansas Razorbacks,75.04,168.67,3,43.15,-31.33,31.33,0,1,53.49,46.51,4,0.0,0.0,score=75.04; prior_signal=33.56; prior:-16.39 | guardrail:-6.17 | athletic:+3.21 | trait:-1.97
+124,Trey Moore,LB,Texas Longhorns,78.88,154.5,2,15.5,30.5,30.5,1,0,57.78,42.22,4,0.0,0.0,score=78.88; prior_signal=49.34; prior:-7.24 | guardrail:-2.84 | athletic:-1.15 | production:-1.12
+154,Parker Brailsford,IOL,Alabama,77.47,123.5,4,51.21,-30.5,30.5,0,1,60.46,39.54,4,0.0,0.0,score=77.47; prior_signal=53.65; prior:-3.83 | trait:-2.72 | guardrail:-2.63 | production:-1.62
+103,Connor Lew,IOL,Auburn Tigers,79.77,73.0,5,16.73,-30.0,30.0,0,1,69.92,30.08,4,0.0,0.0,score=79.77; prior_signal=68.3; trait:-2.41 | production:-1.44 | prior:+1.03 | guardrail:-0.80
+306,Jaren Kanak,TE,Oklahoma Sooners,66.47,336.0,2,79.0,30.0,30.0,1,0,53.53,46.47,4,0.0,0.0,score=66.47; prior_signal=11.85; prior:-17.38 | guardrail:-6.63 | trait:-1.94 | production:-1.68
+106,Emmett Johnson,RB,Nebraska Cornhuskers,79.56,76.25,4,6.1,-29.75,29.75,0,1,75.81,24.19,4,0.0,0.0,score=79.56; prior_signal=67.88; athletic:-3.31 | trait:-2.63 | prior:+2.38 | production:+0.60
+93,Germie Bernard,WR,Alabama,79.41,63.75,4,22.03,-29.25,29.25,0,1,62.61,37.39,4,0.0,0.0,score=79.41; prior_signal=55.71; trait:-4.55 | prior:-3.00 | athletic:+1.36 | production:-1.18
+60,Davison Igbinosun,CB,Ohio State,83.88,89.0,4,37.53,29.0,29.0,1,0,51.75,48.25,4,0.0,0.0,score=83.88; prior_signal=71.33; prior:-2.27 | trait:-2.18 | athletic:+1.40 | guardrail:-0.79
+262,Jalen Huskey,S,Maryland Terrapins,71.54,291.0,2,15.0,29.0,29.0,1,0,56.58,43.42,4,0.0,0.0,score=71.54; prior_signal=7.42; prior:-21.14 | guardrail:-4.17 | trait:-2.44 | risk:-0.45
+301,Bauer Sharp,TE,LSU Tigers,66.77,330.0,2,3.0,29.0,29.0,1,0,63.42,36.58,4,0.0,0.0,score=66.77; prior_signal=6.5; prior:-17.30 | guardrail:-4.50 | trait:-2.51 | athletic:-1.77
+74,Kyle Louis,LB,Pittsburgh,82.31,102.5,4,35.28,28.5,28.5,1,0,51.46,48.54,4,0.0,0.0,score=82.31; prior_signal=61.99; trait:-2.50 | prior:-2.06 | guardrail:-0.90 | production:-0.61
+85,Nicholas Singleton,RB,Penn State,81.9,113.0,2,3.0,28.0,28.0,1,0,62.44,37.56,4,0.0,0.0,score=81.9; prior_signal=62.06; prior:-5.83 | guardrail:-2.90 | production:-0.72 | trait:+0.44
+147,Zxavian Harris,DT,Mississippi Rebels,77.64,175.0,3,14.14,28.0,28.0,1,0,61.53,38.47,4,0.0,0.0,score=77.64; prior_signal=39.34; prior:-11.93 | guardrail:-3.73 | trait:-1.21 | risk:-0.45
+151,Logan Jones,IOL,Iowa,77.37,123.0,4,31.14,-28.0,28.0,0,1,60.81,39.19,4,0.0,0.0,score=77.37; prior_signal=44.65; prior:-7.81 | trait:-3.47 | guardrail:-2.90 | risk:-0.35
+197,Max Bredeson,TE,Michigan,75.4,225.0,1,0.0,28.0,28.0,1,0,56.46,43.54,3,0.0,0.0,score=75.4; prior_signal=28.22; prior:-12.44 | guardrail:-3.33 | production:-1.68 | trait:-1.62
+227,Jalon Daniels,QB,Kansas Jayhawks,73.79,199.0,2,22.0,-28.0,28.0,0,1,53.09,46.91,4,0.0,0.0,score=73.79; prior_signal=38.27; prior:-10.93 | guardrail:-3.91 | trait:-1.47 | risk:-1.42
+259,Diego Pavia,QB,Vanderbilt Commodores,71.86,231.0,2,9.0,-28.0,28.0,0,1,55.82,44.18,4,0.0,0.0,score=71.86; prior_signal=24.13; prior:-14.87 | guardrail:-3.41 | trait:-2.11 | risk:-1.45
+223,Robert Henry Jr.,RB,UTSA Roadrunners,73.94,195.5,2,1.5,-27.5,27.5,0,1,63.47,36.53,4,0.0,0.0,score=73.94; prior_signal=35.46; prior:-10.22 | guardrail:-2.85 | athletic:-1.75 | trait:-1.33
+123,Aiden Fisher,LB,Indiana Hoosiers,78.88,150.0,3,18.71,27.0,27.0,1,0,60.51,39.49,4,0.0,0.0,score=78.88; prior_signal=51.33; prior:-7.59 | guardrail:-5.14 | production:-0.83 | trait:-0.66
+135,Charles Demmings,CB,Stephen F. Austin,78.17,108.0,3,75.18,-27.0,27.0,0,1,56.56,43.44,4,0.0,0.0,score=78.17; prior_signal=61.32; trait:-4.23 | guardrail:-3.93 | prior:-2.00 | athletic:+1.06
+98,Kaytron Allen,RB,Penn State Nittany Lions,79.9,124.67,3,6.34,26.67,26.67,1,0,68.03,31.97,4,0.0,0.0,score=79.9; prior_signal=56.32; prior:-8.57 | guardrail:-5.15 | production:+1.02 | trait:-0.52
+120,Aamil Wagner,OT,Notre Dame,79.77,145.67,3,11.56,25.67,25.67,1,0,65.3,34.7,4,0.0,0.0,score=79.77; prior_signal=52.09; prior:-9.15 | guardrail:-4.64 | production:-1.25 | athletic:+0.77
+94,Demond Claiborne,RB,Wake Forest,80.46,119.5,4,26.69,25.5,25.5,1,0,61.66,38.34,4,0.0,0.0,score=80.46; prior_signal=58.0; prior:-3.80 | trait:-2.33 | production:-1.68 | guardrail:-1.37
+171,Red Murdock,LB,Buffalo,76.28,146.5,2,54.5,-24.5,24.5,0,1,63.93,36.07,4,0.0,0.0,score=76.28; prior_signal=39.13; prior:-9.09 | guardrail:-4.79 | trait:-3.72 | production:+0.36
+33,Carnell Tate,WR,Ohio State,87.6,8.6,10,1.91,-24.4,24.4,0,1,93.62,6.38,4,0.0,0.0,score=87.6; prior_signal=96.71; athletic:-5.13 | prior:+4.51 | trait:+4.26 | production:+1.07
+75,A.J. Haulcy,S,LSU Tigers,82.22,50.8,5,7.47,-24.2,24.2,0,1,71.46,28.54,4,0.0,0.0,score=82.22; prior_signal=79.35; prior:+5.52 | athletic:-3.46 | trait:-2.04 | production:+0.55
+79,Jadarian Price,RB,Notre Dame,81.73,54.83,6,16.65,-24.17,24.17,0,1,82.63,17.37,4,0.0,0.0,score=81.73; prior_signal=75.51; prior:+2.29 | trait:-1.66 | athletic:-1.52 | language:-0.47
+41,Gabe Jacas,EDGE,Illinois Fighting Illini,85.74,65.0,5,28.55,24.0,24.0,1,0,75.97,24.03,4,0.0,0.0,score=85.74; prior_signal=73.48; prior:-4.21 | athletic:+2.47 | guardrail:-1.82 | trait:-1.22
+65,Chandler Rivers,CB,Duke,83.25,89.0,4,16.17,24.0,24.0,1,0,58.59,41.41,4,0.0,0.0,score=83.25; prior_signal=67.48; prior:-3.55 | trait:-2.19 | athletic:+1.81 | guardrail:-0.95
+177,Josh Cuevas,TE,Alabama Crimson Tide,76.4,153.0,2,40.0,-24.0,24.0,0,1,53.53,46.47,4,0.0,0.0,score=76.4; prior_signal=53.36; prior:-3.11 | athletic:-2.62 | guardrail:-1.98 | production:-1.65
+179,J. Michael Sturdivant,WR,Florida Gators,76.17,203.0,1,0.0,24.0,24.0,1,0,57.41,42.59,3,0.0,0.0,score=76.17; prior_signal=33.66; prior:-12.62 | guardrail:-4.60 | production:-1.68 | trait:-1.36
+310,Barion Brown,WR,LSU,64.62,286.0,2,63.0,-24.0,24.0,0,1,53.49,46.51,4,0.0,0.0,score=64.62; prior_signal=17.95; prior:-13.84 | guardrail:-7.90 | athletic:-3.86 | production:-1.66
+173,Eli Heidenreich,RB,Navy,76.4,196.0,2,27.0,23.0,23.0,1,0,53.86,46.14,4,0.0,0.0,score=76.4; prior_signal=33.25; prior:-14.30 | guardrail:-2.83 | trait:-1.44 | production:+1.31
+73,Chris Bell,WR,Louisville,80.94,50.75,4,13.14,-22.25,22.25,0,1,82.1,17.9,4,0.0,0.0,score=80.94; prior_signal=62.53; trait:-4.47 | prior:-1.26 | guardrail:-0.40 | production:+0.33
+156,Joe Royer,TE,Cincinnati Bearcats,77.43,133.75,4,13.77,-22.25,22.25,0,1,70.21,29.79,4,0.0,0.0,score=77.43; prior_signal=50.43; prior:-4.16 | trait:-2.99 | guardrail:-2.30 | production:-1.68
+24,Fernando Mendoza,QB,Indiana,89.24,1.77,13,1.53,-22.23,22.23,0,1,89.71,10.29,4,0.0,0.0,score=89.24; prior_signal=99.85; prior:+3.29 | trait:+2.09 | production:+1.44 | risk:-1.10
+166,Tanner Koziol,TE,Houston,76.09,188.0,2,29.0,22.0,22.0,1,0,53.84,46.16,4,0.0,0.0,score=76.09; prior_signal=33.41; prior:-16.32 | guardrail:-5.10 | athletic:+2.93 | trait:-2.39
+61,Deion Burks,WR,Oklahoma,83.57,82.5,4,22.43,21.5,21.5,1,0,74.24,25.76,4,0.0,0.0,score=83.57; prior_signal=70.03; prior:-2.11 | athletic:+1.87 | production:-1.68 | trait:-1.42
+263,Zavion Thomas,WR,LSU Tigers,71.83,241.5,2,67.5,-21.5,21.5,0,1,53.49,46.51,4,0.0,0.0,score=71.83; prior_signal=32.61; prior:-12.27 | guardrail:-4.69 | production:-1.68 | trait:-1.06
+296,Rahsul Faison,RB,South Carolina Gamecocks,68.64,317.5,2,104.5,21.5,21.5,1,0,53.17,46.83,4,0.0,0.0,score=68.64; prior_signal=18.58; prior:-17.59 | guardrail:-6.72 | production:-1.63 | trait:-1.50
+160,Jalen Farmer,IOL,Kentucky,77.47,139.0,2,2.0,-21.0,21.0,0,1,63.32,36.68,4,0.0,0.0,score=77.47; prior_signal=59.67; guardrail:-5.81 | prior:-5.28 | production:-1.30 | risk:-0.46
+175,Ephesians Prysock,CB,Washington,76.3,154.0,4,59.95,-21.0,21.0,0,1,60.75,39.25,4,0.0,0.0,score=76.3; prior_signal=50.7; prior:-4.08 | trait:-3.33 | guardrail:-2.50 | athletic:-1.04
+311,Caullin Lacy,WR,Louisville Cardinals,63.63,290.0,2,17.0,-21.0,21.0,0,1,57.46,42.54,4,0.0,0.0,score=63.63; prior_signal=7.52; prior:-12.62 | athletic:-5.25 | guardrail:-4.50 | trait:-2.40
+129,DeMonte Capehart,DT,Clemson,78.64,149.67,3,26.89,20.67,20.67,1,0,57.66,42.34,4,0.0,0.0,score=78.64; prior_signal=52.44; prior:-9.41 | guardrail:-6.97 | athletic:+0.98 | production:-0.71
+72,Dontay Corleone,DT,Cincinnati Bearcats,82.42,92.5,4,23.5,20.5,20.5,1,0,52.02,47.98,4,0.0,0.0,score=82.42; prior_signal=66.35; trait:-1.98 | guardrail:-1.08 | prior:-0.96 | production:-0.69
+42,Eli Stowers,TE,Vanderbilt,85.86,62.4,5,25.05,20.4,20.4,1,0,76.34,23.66,4,0.0,0.0,score=85.86; prior_signal=74.49; prior:-3.42 | athletic:+2.41 | trait:-1.52 | guardrail:-0.40
+92,Austin Barber,OT,Florida,81.27,112.25,4,6.34,20.25,20.25,1,0,75.7,24.3,4,0.0,0.0,score=81.27; prior_signal=55.19; prior:-9.83 | guardrail:-4.66 | athletic:+3.03 | trait:-1.88
+211,Matt Gulbin,IOL,Michigan State,74.47,191.0,1,0.0,-20.0,20.0,0,1,56.46,43.54,3,0.0,0.0,score=74.47; prior_signal=9.12; prior:-20.67 | guardrail:-4.27 | trait:-2.51 | production:+0.50
+305,Dillon Bell,WR,Georgia Bulldogs,66.41,325.0,2,71.0,20.0,20.0,1,0,53.49,46.51,4,0.0,0.0,score=66.41; prior_signal=12.66; prior:-16.35 | guardrail:-6.33 | trait:-1.88 | production:-1.68
 3,Kadyn Proctor,OT,Alabama,94.06,22.82,11,7.63,19.82,19.82,1,0,91.79,8.21,4,0.0,0.0,score=94.06; prior_signal=91.51; prior:-4.80 | trait:+4.22 | athletic:+2.70 | production:+0.92
-132,Thaddeus Dixon,CB,North Carolina Tar Heels,78.17,151.5,2,25.5,19.5,19.5,1,0,54.06,45.94,4,0.0,0.0,score=78.17; prior_signal=51.89; prior:-7.54 | guardrail:-3.82 | production:-1.68 | athletic:+0.73
-194,Anez Cooper,IOL,Miami,74.34,174.5,2,77.5,-19.5,19.5,0,1,39.4,60.6,2,0.0,0.0,score=74.34; prior_signal=39.09; prior:-6.82 | trait:-3.33 | production:-1.68 | guardrail:-1.65
-222,Zavion Thomas,WR,LSU Tigers,71.83,241.5,2,67.5,19.5,19.5,1,0,53.49,46.51,4,0.0,0.0,score=71.83; prior_signal=32.61; prior:-12.27 | guardrail:-4.69 | production:-1.68 | trait:-1.06
-70,Chris Bell,WR,Louisville,80.62,50.75,4,13.14,-19.25,19.25,0,1,82.1,17.9,4,0.0,0.0,score=80.62; prior_signal=62.53; trait:-4.47 | prior:-0.86 | guardrail:-0.40 | risk:-0.13
-69,A.J. Haulcy,S,LSU Tigers,82.16,50.8,5,7.47,-18.2,18.2,0,1,71.46,28.54,4,0.0,0.0,score=82.16; prior_signal=79.35; prior:+5.61 | athletic:-3.46 | trait:-2.04 | production:+0.48
-12,Kayden McDonald,DT,Ohio State Buckeyes,91.49,30.0,8,4.9,18.0,18.0,1,0,91.14,8.86,4,0.0,0.0,score=91.49; prior_signal=88.32; trait:+3.76 | prior:-2.81 | risk:-0.41 | language:-0.41
-201,Domani Jackson,CB,Alabama,73.51,183.0,3,35.11,-18.0,18.0,0,1,56.56,43.44,4,0.0,0.0,score=73.51; prior_signal=35.03; prior:-9.10 | guardrail:-3.30 | athletic:-1.93 | trait:-1.49
-96,Tacario Davis,CB,Washington,80.17,113.75,4,33.53,17.75,17.75,1,0,60.43,39.57,4,0.0,0.0,score=80.17; prior_signal=55.34; prior:-7.37 | guardrail:-4.12 | athletic:+3.15 | trait:-2.24
-99,Sam Roush,TE,Stanford Cardinal,79.59,116.67,3,11.95,17.67,17.67,1,0,65.55,34.45,4,0.0,0.0,score=79.59; prior_signal=59.74; prior:-5.22 | guardrail:-4.07 | production:-1.68 | athletic:+0.58
-177,Jadon Canady,CB,Oregon Ducks,75.57,194.5,2,7.5,17.5,17.5,1,0,61.32,38.68,4,0.0,0.0,score=75.57; prior_signal=37.01; prior:-12.96 | guardrail:-4.59 | trait:-1.18 | athletic:-0.39
-19,Brandon Cisse,CB,South Carolina Gamecocks,89.95,36.38,8,12.49,17.38,17.38,1,0,87.23,12.77,4,0.0,0.0,score=89.95; prior_signal=84.47; prior:-2.76 | athletic:+2.42 | trait:+1.55 | production:-0.83
-88,Antonio Williams,WR,Clemson,79.09,70.67,6,14.45,-17.33,17.33,0,1,81.9,18.1,4,0.0,0.0,score=79.09; prior_signal=57.73; trait:-4.14 | prior:-1.89 | production:-0.70 | risk:-0.63
-151,Joe Royer,TE,Cincinnati Bearcats,77.43,133.75,4,13.77,-17.25,17.25,0,1,70.21,29.79,4,0.0,0.0,score=77.43; prior_signal=50.43; prior:-4.16 | trait:-2.99 | guardrail:-2.30 | production:-1.68
-192,Robert Spears-Jennings,S,Oklahoma Sooners,74.38,209.0,2,23.0,17.0,17.0,1,0,54.48,45.52,4,0.0,0.0,score=74.38; prior_signal=35.72; prior:-9.51 | guardrail:-2.85 | production:-1.68 | athletic:-1.38
-28,Rueben Bain Jr.,EDGE,Miami (FL) Hurricanes,87.84,11.18,11,21.26,-16.82,16.82,0,1,77.62,22.38,4,0.0,0.0,score=87.84; prior_signal=94.7; prior:+2.81 | trait:+1.68 | risk:-1.13 | language:-0.90
-4,Monroe Freeling,OT,Georgia,93.88,20.62,8,8.12,16.62,16.62,1,0,88.49,11.51,4,0.0,0.0,score=93.88; prior_signal=89.37; prior:-5.51 | trait:+3.90 | athletic:+3.51 | production:-0.81
-25,Anthony Hill Jr.,LB,Texas Longhorns,88.45,41.62,8,20.14,16.62,16.62,1,0,81.76,18.24,4,0.0,0.0,score=88.45; prior_signal=81.84; athletic:+3.01 | trait:-1.60 | prior:-0.88 | production:-0.74
-92,Mike Washington Jr.,RB,Arkansas Razorbacks,79.9,108.5,4,24.03,16.5,16.5,1,0,61.86,38.14,4,0.0,0.0,score=79.9; prior_signal=48.98; prior:-9.82 | guardrail:-3.67 | trait:-3.23 | athletic:+2.83
-56,Ja'Kobi Lane,WR,USC,83.79,72.25,4,49.07,16.25,16.25,1,0,51.43,48.57,4,0.0,0.0,score=83.79; prior_signal=71.34; prior:-4.27 | athletic:+3.06 | guardrail:-1.94 | trait:-1.80
-17,Dillon Thieneman,S,Oregon,89.53,32.86,7,13.69,15.86,15.86,1,0,86.92,13.08,4,0.0,0.0,score=89.53; prior_signal=75.1; prior:-5.71 | athletic:+2.79 | trait:-0.99 | production:+0.93
-61,Jonah Coleman,RB,Washington Huskies,82.88,76.75,4,21.18,15.75,15.75,1,0,78.04,21.96,4,0.0,0.0,score=82.88; prior_signal=72.5; trait:-1.77 | athletic:-0.64 | language:-0.23 | risk:-0.14
-93,Michael Trigg,TE,Baylor Bears,80.11,77.25,4,25.73,-15.75,15.75,0,1,70.68,29.32,4,0.0,0.0,score=80.11; prior_signal=74.54; prior:+4.10 | trait:-3.21 | production:-0.89 | risk:-0.73
-191,Max Llewellyn,EDGE,Iowa Hawkeyes,74.4,175.33,3,5.73,-15.67,15.67,0,1,68.84,31.16,4,0.0,0.0,score=74.4; prior_signal=39.84; prior:-7.92 | guardrail:-3.30 | athletic:-3.01 | trait:-1.11
-42,Avieon Terrell,CB,Clemson,85.53,26.58,12,16.84,-15.42,15.42,0,1,80.95,19.05,4,0.0,0.0,score=85.53; prior_signal=89.8; prior:+4.43 | athletic:-3.12 | trait:+1.78 | language:-0.90
-185,Marlin Klein,TE,Michigan Wolverines,75.1,169.67,3,46.42,-15.33,15.33,0,1,56.6,43.4,4,0.0,0.0,score=75.1; prior_signal=51.1; prior:-4.84 | guardrail:-3.46 | athletic:-1.84 | production:-1.68
+149,Cole Payton,QB,North Dakota State,78.04,129.33,3,94.17,-19.67,19.67,0,1,54.8,45.2,4,0.0,0.0,score=78.04; prior_signal=56.16; prior:-6.88 | guardrail:-5.32 | trait:-2.69 | production:+1.44
+30,Rueben Bain Jr.,EDGE,Miami (FL) Hurricanes,88.12,11.18,11,21.26,-18.82,18.82,0,1,77.62,22.38,4,0.0,0.0,score=88.12; prior_signal=94.7; prior:+2.81 | trait:+1.68 | risk:-1.13 | language:-0.90
+40,Josiah Trotter,LB,Missouri Tigers,86.0,58.8,5,8.08,18.8,18.8,1,0,87.93,12.07,4,0.0,0.0,score=86.0; prior_signal=76.18; athletic:+1.79 | trait:-1.78 | prior:-0.84 | production:-0.57
+96,Michael Trigg,TE,Baylor Bears,80.2,77.25,4,25.73,-18.75,18.75,0,1,70.68,29.32,4,0.0,0.0,score=80.2; prior_signal=74.54; prior:+3.98 | trait:-3.21 | production:-0.79 | risk:-0.73
+244,Logan Fano,EDGE,Utah Utes,72.66,262.5,2,16.5,18.5,18.5,1,0,56.29,43.71,4,0.0,0.0,score=72.66; prior_signal=19.95; prior:-17.59 | guardrail:-3.87 | trait:-1.76 | risk:-0.45
+265,Scooby Williams,LB,Texas A&M Aggies,71.19,283.5,2,14.5,18.5,18.5,1,0,56.68,43.32,4,0.0,0.0,score=71.19; prior_signal=8.82; prior:-20.09 | guardrail:-4.50 | trait:-2.36 | risk:-0.45
+89,Antonio Williams,WR,Clemson,79.52,70.67,6,14.45,-18.33,18.33,0,1,81.9,18.1,4,0.0,0.0,score=79.52; prior_signal=57.73; trait:-4.14 | prior:-2.44 | risk:-0.63 | language:-0.41
+21,Blake Miller,OT,Clemson,89.67,39.29,7,16.22,18.29,18.29,1,0,82.7,17.3,4,0.0,0.0,score=89.67; prior_signal=86.38; prior:-1.70 | trait:+1.69 | athletic:+1.25 | language:-0.46
+71,Jake Slaughter,IOL,Florida,82.39,89.0,4,11.11,18.0,18.0,1,0,62.61,37.39,4,0.0,0.0,score=82.39; prior_signal=58.75; prior:-6.97 | trait:-3.09 | athletic:+2.86 | guardrail:-0.80
+76,Anthony Lucas,EDGE,USC Trojans,82.03,94.0,4,21.28,18.0,18.0,1,0,55.47,44.53,4,0.0,0.0,score=82.03; prior_signal=66.42; trait:-2.08 | guardrail:-1.23 | prior:-1.20 | risk:-0.63
+64,Genesis Smith,S,Arizona,83.36,81.6,5,19.29,17.6,17.6,1,0,61.23,38.77,4,0.0,0.0,score=83.36; prior_signal=66.92; trait:-2.64 | prior:-2.60 | athletic:+0.95 | risk:-0.46
+44,Avieon Terrell,CB,Clemson,85.52,26.58,12,16.84,-17.42,17.42,0,1,80.95,19.05,4,0.0,0.0,score=85.52; prior_signal=89.8; prior:+4.45 | athletic:-3.12 | trait:+1.78 | language:-0.90
+13,Kayden McDonald,DT,Ohio State Buckeyes,91.57,30.0,8,4.9,17.0,17.0,1,0,91.14,8.86,4,0.0,0.0,score=91.57; prior_signal=88.32; trait:+3.76 | prior:-2.66 | risk:-0.41 | language:-0.41
+249,Nyjalik Kelly,EDGE,UCF,72.29,266.0,1,0.0,17.0,17.0,1,0,57.41,42.59,3,0.0,0.0,score=72.29; prior_signal=8.06; prior:-17.18 | guardrail:-4.03 | athletic:-2.66 | trait:-2.44
+293,Cameron Ball,DT,Arkansas Razorbacks,68.39,276.0,2,20.0,-17.0,17.0,0,1,56.91,43.09,4,0.0,0.0,score=68.39; prior_signal=9.94; prior:-16.25 | guardrail:-4.50 | athletic:-2.89 | trait:-2.33
+16,Dillon Thieneman,S,Oregon,89.87,32.86,7,13.69,16.86,16.86,1,0,86.92,13.08,4,0.0,0.0,score=89.87; prior_signal=77.5; prior:-5.12 | athletic:+2.79 | production:+1.09 | trait:-0.99
+172,Oscar Delp,TE,Georgia Bulldogs,76.42,155.33,3,17.75,-16.67,16.67,0,1,61.04,38.96,4,0.0,0.0,score=76.42; prior_signal=43.04; prior:-8.75 | guardrail:-2.90 | production:-1.68 | trait:-1.11
+4,Monroe Freeling,OT,Georgia,93.99,20.62,8,8.12,16.62,16.62,1,0,88.49,11.51,4,0.0,0.0,score=93.99; prior_signal=90.94; prior:-4.99 | trait:+3.90 | athletic:+3.51 | production:-0.69
+20,Brandon Cisse,CB,South Carolina Gamecocks,90.08,36.38,8,12.49,16.38,16.38,1,0,87.23,12.77,4,0.0,0.0,score=90.08; prior_signal=84.47; prior:-2.94 | athletic:+2.42 | trait:+1.55 | production:-0.68
+110,Justin Joly,TE,North Carolina State Wolfpack,79.41,93.75,4,12.21,-16.25,16.25,0,1,80.77,19.23,4,0.0,0.0,score=79.41; prior_signal=63.82; trait:-3.62 | guardrail:-0.80 | risk:-0.63 | production:-0.52
+181,Andre Fuller,CB,Toledo,76.12,197.0,1,0.0,16.0,16.0,1,0,57.44,42.56,3,0.0,0.0,score=76.12; prior_signal=30.17; prior:-11.10 | athletic:-3.04 | guardrail:-2.75 | trait:-1.49
+193,Jakobe Thomas,S,Miami (FL),75.57,209.0,1,0.0,16.0,16.0,1,0,56.46,43.54,3,0.0,0.0,score=75.57; prior_signal=13.56; prior:-19.94 | guardrail:-5.20 | trait:-2.23 | production:+0.56
+235,Matthew Hibner,TE,SMU,73.32,251.0,1,0.0,16.0,16.0,1,0,57.44,42.56,3,0.0,0.0,score=73.32; prior_signal=8.55; prior:-19.01 | guardrail:-4.03 | trait:-2.51 | production:-1.68
+266,Diego Pounds,OT,Mississippi,71.58,250.5,2,51.5,-15.5,15.5,0,1,53.21,46.79,4,0.0,0.0,score=71.58; prior_signal=34.62; prior:-11.23 | guardrail:-5.12 | production:-1.68 | trait:-0.77
 6,Caleb Lomu,OT,Utah,93.81,21.1,10,6.55,15.1,15.1,1,0,92.14,7.86,4,0.0,0.0,score=93.81; prior_signal=91.88; trait:+4.27 | prior:-4.24 | athletic:+3.10 | production:-1.29
-216,Diego Pavia,QB,Vanderbilt Commodores,71.86,231.0,2,9.0,15.0,15.0,1,0,55.82,44.18,4,0.0,0.0,score=71.86; prior_signal=24.13; prior:-14.87 | guardrail:-3.41 | trait:-2.11 | risk:-1.45
-189,Justin Jefferson,LB,Alabama,74.56,203.5,2,82.5,14.5,14.5,1,0,40.67,59.33,3,0.0,0.0,score=74.56; prior_signal=30.84; prior:-9.67 | trait:-3.66 | guardrail:-1.65 | production:-1.51
-108,Justin Joly,TE,North Carolina State Wolfpack,79.16,93.75,4,12.21,-14.25,14.25,0,1,80.77,19.23,4,0.0,0.0,score=79.16; prior_signal=63.82; trait:-3.62 | guardrail:-0.80 | production:-0.78 | prior:+0.69
-167,Josh Cuevas,TE,Alabama Crimson Tide,76.38,153.0,2,40.0,-14.0,14.0,0,1,53.53,46.47,4,0.0,0.0,score=76.38; prior_signal=53.36; prior:-3.07 | athletic:-2.62 | guardrail:-1.98 | production:-1.68
-47,Keionte Scott,CB,Miami (FL) Hurricanes,84.79,60.5,6,15.06,13.5,13.5,1,0,82.37,17.63,4,0.0,0.0,score=84.79; prior_signal=74.84; prior:-1.86 | guardrail:-1.30 | trait:-0.89 | production:+0.66
-150,Alex Harkey,IOL,Oregon,77.47,136.67,3,52.36,-13.33,13.33,0,1,55.62,44.38,2,0.0,0.0,score=77.47; prior_signal=55.89; trait:-2.83 | prior:-2.44 | guardrail:-2.27 | production:-1.68
-14,C.J. Allen,LB,Georgia,91.3,26.7,10,4.17,12.7,12.7,1,0,91.95,8.05,4,0.0,0.0,score=91.3; prior_signal=88.24; trait:+3.63 | prior:-1.93 | production:-0.76 | athletic:-0.37
-24,Emmanuel Pregnon,IOL,Oregon Ducks,88.68,36.67,6,10.53,12.67,12.67,1,0,87.8,12.2,4,0.0,0.0,score=88.68; prior_signal=84.96; prior:-1.42 | trait:+1.21 | production:+0.99 | risk:-0.24
-109,Keylan Rutledge,IOL,Georgia Tech Yellow Jackets,78.98,96.5,4,23.69,-12.5,12.5,0,1,61.96,38.04,4,0.0,0.0,score=78.98; prior_signal=52.27; prior:-4.81 | trait:-3.14 | guardrail:-1.80 | risk:-0.45
-184,Jordan Hudson,WR,SMU,75.02,171.5,2,88.5,-12.5,12.5,0,1,39.72,60.28,3,0.0,0.0,score=75.02; prior_signal=43.89; prior:-5.35 | trait:-3.11 | production:-1.68 | guardrail:-1.65
-230,Joshua Braun,IOL,Kentucky Wildcats,69.97,242.5,2,6.5,12.5,12.5,1,0,62.19,37.81,4,0.0,0.0,score=69.97; prior_signal=23.69; prior:-12.85 | guardrail:-3.87 | trait:-1.73 | production:-1.68
-238,Diego Pounds,OT,Mississippi Rebels,69.1,250.5,2,51.5,12.5,12.5,1,0,53.21,46.79,4,0.0,0.0,score=69.1; prior_signal=12.15; prior:-16.76 | guardrail:-4.50 | trait:-2.31 | production:-1.68
-37,Christen Miller,DT,Georgia Bulldogs,86.15,49.29,7,17.78,12.29,12.29,1,0,81.37,18.63,4,0.0,0.0,score=86.15; prior_signal=80.42; trait:-1.18 | prior:+0.97 | language:-0.39 | risk:-0.23
-188,Quintayvious Hutchins,EDGE,Boston College Eagles,74.73,200.0,2,37.0,12.0,12.0,1,0,52.6,47.4,4,0.0,0.0,score=74.73; prior_signal=39.92; prior:-8.58 | guardrail:-2.85 | athletic:-1.90 | trait:-0.93
-141,Cole Payton,QB,North Dakota State,78.04,129.33,3,94.17,-11.67,11.67,0,1,54.8,45.2,4,0.0,0.0,score=78.04; prior_signal=56.16; prior:-6.88 | guardrail:-5.32 | trait:-2.69 | production:+1.44
-145,Albert Regis,DT,Texas A&M Aggies,77.64,156.67,3,28.78,11.67,11.67,1,0,57.36,42.64,4,0.0,0.0,score=77.64; prior_signal=51.89; prior:-7.16 | guardrail:-4.63 | athletic:-1.15 | trait:-0.54
-51,Caleb Tiernan,OT,Northwestern Wildcats,84.64,62.6,5,5.28,11.6,11.6,1,0,71.84,28.16,4,0.0,0.0,score=84.64; prior_signal=74.28; athletic:+2.66 | trait:-2.17 | prior:-1.36 | production:-1.01
-156,Nick Barrett,DT,South Carolina,77.44,144.67,3,61.46,-11.33,11.33,0,1,43.2,56.8,3,0.0,0.0,score=77.44; prior_signal=55.43; trait:-2.82 | athletic:-2.64 | guardrail:-1.30 | risk:-1.20
-215,Fa'alili Fa'amoe,OT,Wake Forest Demon Deacons,72.07,204.0,2,15.0,-11.0,11.0,0,1,57.53,42.47,4,0.0,0.0,score=72.07; prior_signal=30.55; prior:-9.98 | guardrail:-3.54 | athletic:-2.45 | trait:-1.46
-166,Oscar Delp,TE,Georgia Bulldogs,76.42,155.33,3,17.75,-10.67,10.67,0,1,61.04,38.96,4,0.0,0.0,score=76.42; prior_signal=43.04; prior:-8.75 | guardrail:-2.90 | production:-1.68 | trait:-1.11
-54,Chase Bisontis,IOL,Texas A&M,83.49,64.6,5,20.54,10.6,10.6,1,0,81.66,18.34,4,0.0,0.0,score=83.49; prior_signal=66.17; prior:-4.57 | athletic:+2.86 | trait:-1.78 | production:-1.68
-104,Taurean York,LB,Texas A&M Aggies,79.42,114.5,4,27.57,10.5,10.5,1,0,61.16,38.84,4,0.0,0.0,score=79.42; prior_signal=59.6; athletic:-2.85 | trait:-2.61 | guardrail:-0.90 | prior:+0.62
-179,Taylen Green,QB,Arkansas Razorbacks,75.04,168.67,3,43.15,-10.33,10.33,0,1,53.49,46.51,4,0.0,0.0,score=75.04; prior_signal=33.56; prior:-16.78 | guardrail:-6.48 | athletic:+3.21 | trait:-1.97
-221,Lake McRee,TE,USC Trojans,71.63,231.0,2,23.0,10.0,10.0,1,0,54.77,45.23,4,0.0,0.0,score=71.63; prior_signal=29.71; prior:-12.05 | guardrail:-3.87 | production:-1.53 | trait:-1.44
-125,Michael Taaffe,S,Texas Longhorns,78.57,134.67,3,28.11,9.67,9.67,1,0,57.44,42.56,4,0.0,0.0,score=78.57; prior_signal=54.67; prior:-6.04 | guardrail:-5.05 | athletic:-1.84 | trait:-0.55
-46,D'Angelo Ponds,CB,Indiana Hoosiers,85.13,55.0,5,9.8,9.0,9.0,1,0,88.01,11.99,4,0.0,0.0,score=85.13; prior_signal=76.78; prior:-3.66 | athletic:+3.16 | guardrail:-2.81 | trait:-2.06
-53,Romello Height,EDGE,Texas Tech Red Raiders,84.08,62.0,4,15.41,9.0,9.0,1,0,58.78,41.22,4,0.0,0.0,score=84.08; prior_signal=78.43; trait:-2.17 | guardrail:-1.04 | prior:+0.87 | athletic:+0.66
-73,Deontae Lawson,LB,Alabama,81.72,82.0,4,22.45,9.0,9.0,1,0,61.55,38.45,4,0.0,0.0,score=81.72; prior_signal=67.28; trait:-2.73 | guardrail:-0.80 | production:-0.50 | risk:-0.35
-199,Owen Heinecke,LB,Oklahoma Sooners,73.79,208.0,2,4.0,9.0,9.0,1,0,62.27,37.73,4,0.0,0.0,score=73.79; prior_signal=32.67; prior:-10.48 | guardrail:-3.54 | athletic:-2.39 | trait:-1.41
-16,Cashius Howell,EDGE,Texas A&M Aggies,91.05,24.89,9,7.08,8.89,8.89,1,0,92.29,7.71,4,0.0,0.0,score=91.05; prior_signal=90.23; trait:+3.95 | prior:-1.52 | athletic:-0.91 | language:-0.33
-232,Riley Nowakowski,TE,Indiana Hoosiers,69.9,223.5,2,23.5,-8.5,8.5,0,1,54.37,45.63,4,0.0,0.0,score=69.9; prior_signal=23.71; prior:-12.11 | guardrail:-3.87 | athletic:-2.48 | trait:-1.84
-21,David Bailey,EDGE,Texas Tech,88.2,12.62,13,19.76,-8.38,8.38,0,1,78.94,21.06,4,0.0,0.0,score=88.2; prior_signal=87.42; athletic:+2.96 | risk:-1.14 | language:-0.90 | trait:-0.77
-1,Sonny Styles,LB,Ohio State,94.45,9.0,10,7.28,8.0,8.0,1,0,91.93,8.07,4,0.0,0.0,score=94.45; prior_signal=91.95; prior:-4.42 | athletic:+3.56 | trait:+2.40 | language:-0.35
-84,Gennings Dunker,OT,Iowa Hawkeyes,80.5,76.0,4,20.86,-8.0,8.0,0,1,77.83,22.17,4,0.0,0.0,score=80.5; prior_signal=61.81; trait:-3.22 | prior:-1.68 | athletic:-1.05 | production:+0.43
-182,Lander Barton,LB,Utah Utes,74.78,190.0,3,43.54,8.0,8.0,1,0,55.94,44.06,4,0.0,0.0,score=74.78; prior_signal=27.43; prior:-13.93 | guardrail:-4.00 | trait:-1.87 | production:-1.50
-102,Jack Endries,TE,Texas Longhorns,79.59,109.67,3,27.35,7.67,7.67,1,0,57.26,42.74,4,0.0,0.0,score=79.59; prior_signal=65.67; guardrail:-4.32 | prior:-3.02 | production:-1.68 | risk:-0.46
-7,Jordyn Tyson,WR,Arizona State,93.37,14.6,10,7.13,7.6,7.6,1,0,91.95,8.05,4,0.0,0.0,score=93.37; prior_signal=95.05; trait:+4.25 | prior:-3.63 | athletic:+3.60 | language:-0.37
-110,Kyle Louis,LB,Pittsburgh Panthers,78.8,102.5,4,35.28,-7.5,7.5,0,1,60.46,39.54,4,0.0,0.0,score=78.8; prior_signal=48.04; prior:-5.40 | trait:-3.43 | guardrail:-2.40 | production:-0.62
-11,Keldric Faulk,EDGE,Auburn,91.78,18.4,10,4.94,7.4,7.4,1,0,92.65,7.35,4,0.0,0.0,score=91.78; prior_signal=93.33; trait:+4.26 | prior:-1.18 | athletic:-0.83 | language:-0.34
-138,J.C. Davis,OT,Illinois Fighting Illini,77.77,131.0,3,17.2,-7.0,7.0,0,1,61.79,38.21,4,0.0,0.0,score=77.77; prior_signal=56.58; prior:-6.10 | guardrail:-5.74 | athletic:-2.05 | production:+1.16
-52,Chris Brazzell II,WR,Tennessee Volunteers,84.45,45.25,4,19.69,-6.75,6.75,0,1,57.71,42.29,4,0.0,0.0,score=84.45; prior_signal=79.67; trait:-2.31 | prior:+1.78 | athletic:+0.62 | risk:-0.36
-63,Jacob Rodriguez,LB,Texas Tech Red Raiders,82.77,69.75,4,15.66,6.75,6.75,1,0,58.75,41.25,4,0.0,0.0,score=82.77; prior_signal=64.77; trait:-2.72 | prior:-2.46 | guardrail:-0.71 | production:+0.57
-74,Derrick Moore,EDGE,Michigan,80.65,67.25,4,7.12,-6.75,6.75,0,1,84.93,15.07,4,0.0,0.0,score=80.65; prior_signal=64.86; trait:-3.48 | guardrail:-1.06 | prior:-0.92 | risk:-0.63
-30,Denzel Boston,WR,Washington,87.78,23.4,10,5.87,-6.6,6.6,0,1,92.67,7.33,4,0.0,0.0,score=87.78; prior_signal=90.15; trait:+3.93 | athletic:-3.59 | prior:+1.56 | production:+0.70
-48,Zion Young,EDGE,Missouri Tigers,84.78,41.4,5,3.93,-6.6,6.6,0,1,92.35,7.65,4,0.0,0.0,score=84.78; prior_signal=80.65; trait:-1.68 | prior:+1.31 | guardrail:-0.62 | language:-0.48
-131,Seth McGowan,RB,Kentucky Wildcats,78.4,137.33,3,30.92,6.33,6.33,1,0,56.65,43.35,4,0.0,0.0,score=78.4; prior_signal=57.74; prior:-3.86 | guardrail:-3.43 | production:-1.68 | athletic:-0.99
-183,Dallen Bentley,TE,Utah Utes,74.96,176.67,3,18.12,-6.33,6.33,0,1,61.62,38.38,4,0.0,0.0,score=74.96; prior_signal=37.45; prior:-10.47 | guardrail:-3.30 | trait:-1.31 | athletic:-1.20
-64,Domonique Orange,DT,Iowa State Cyclones,82.8,70.25,4,13.77,6.25,6.25,1,0,60.89,39.11,4,0.0,0.0,score=82.8; prior_signal=73.7; trait:-2.46 | prior:+1.86 | production:-0.91 | risk:-0.45
-112,CJ Daniels,WR,Miami (FL) Hurricanes,79.17,118.0,3,32.26,6.0,6.0,1,0,55.94,44.06,4,0.0,0.0,score=79.17; prior_signal=63.45; guardrail:-4.66 | prior:-4.12 | production:-1.20 | risk:-0.35
-143,Keagen Trost,OT,Missouri,77.77,137.0,2,79.0,-6.0,6.0,0,1,40.35,59.65,2,0.0,0.0,score=77.77; prior_signal=57.71; guardrail:-3.00 | trait:-2.71 | prior:-2.15 | production:-1.68
-213,Caleb Douglas,WR,Texas Tech Red Raiders,72.23,219.0,2,21.0,6.0,6.0,1,0,56.68,43.32,4,0.0,0.0,score=72.23; prior_signal=32.64; prior:-10.05 | guardrail:-3.17 | athletic:-1.80 | production:-1.68
-27,Akheem Mesidor,EDGE,Miami (FL) Hurricanes,87.87,32.89,9,19.42,5.89,5.89,1,0,79.68,20.32,4,0.0,0.0,score=87.87; prior_signal=83.81; trait:+1.65 | prior:-1.53 | guardrail:-0.88 | risk:-0.63
-137,Tyreak Sapp,EDGE,Florida,78.09,142.67,3,32.25,5.67,5.67,1,0,56.88,43.12,4,0.0,0.0,score=78.09; prior_signal=56.99; prior:-8.86 | guardrail:-8.51 | athletic:+1.45 | production:-0.84
-163,Eric McAlister,WR,TCU Horned Frogs,76.67,157.33,3,22.54,-5.67,5.67,0,1,57.49,42.51,4,0.0,0.0,score=76.67; prior_signal=51.13; prior:-8.64 | guardrail:-5.35 | trait:-0.59 | risk:-0.35
-50,R Mason Thomas,EDGE,Oklahoma,84.71,44.86,7,9.36,-5.14,5.14,0,1,88.14,11.86,4,0.0,0.0,score=84.71; prior_signal=81.93; prior:+2.60 | trait:-1.46 | athletic:-0.42 | language:-0.39
-65,Elijah Sarratt,WR,Indiana Hoosiers,82.74,70.0,4,9.92,5.0,5.0,1,0,62.32,37.68,4,0.0,0.0,score=82.74; prior_signal=67.44; trait:-2.44 | prior:-1.93 | production:+0.41 | risk:-0.35
-139,Eric Rivers,WR,Georgia Tech Yellow Jackets,77.67,144.0,4,57.0,5.0,5.0,1,0,72.14,27.86,4,0.0,0.0,score=77.67; prior_signal=55.72; prior:-3.64 | guardrail:-3.15 | trait:-2.71 | production:-1.29
-251,Adam Randall,RB,Clemson Tigers,67.71,256.0,2,41.0,5.0,5.0,1,0,53.53,46.47,4,0.0,0.0,score=67.71; prior_signal=11.78; prior:-16.41 | guardrail:-4.50 | trait:-2.34 | athletic:-1.59
-18,Kenyon Sadiq,TE,Oregon,89.97,22.67,9,11.6,4.67,4.67,1,0,87.52,12.48,4,0.0,0.0,score=89.97; prior_signal=86.3; prior:-2.79 | trait:+2.69 | athletic:+2.30 | production:-1.43
-26,T.J. Parker,EDGE,Clemson,88.37,30.6,10,17.97,4.6,4.6,1,0,80.67,19.33,4,0.0,0.0,score=88.37; prior_signal=88.66; athletic:+2.34 | language:-0.90 | trait:-0.81 | risk:-0.74
-34,Omar Cooper Jr.,WR,Indiana Hoosiers,86.91,38.57,7,11.26,4.57,4.57,1,0,87.59,12.41,4,0.0,0.0,score=86.91; prior_signal=81.19; trait:+0.99 | athletic:-0.90 | prior:-0.68 | production:+0.47
-239,Vinny Anthony II,WR,Wisconsin Badgers,69.17,234.5,2,13.5,-4.5,4.5,0,1,59.29,40.71,4,0.0,0.0,score=69.17; prior_signal=27.11; prior:-9.89 | guardrail:-3.87 | athletic:-3.37 | trait:-1.54
-23,Peter Woods,DT,Clemson,88.85,18.71,14,19.09,-4.29,4.29,0,1,79.44,20.56,4,0.0,0.0,score=88.85; prior_signal=93.11; prior:+2.26 | trait:+1.68 | language:-0.90 | risk:-0.73
-86,Sam Hecht,IOL,Kansas State Wildcats,80.31,90.25,4,2.17,4.25,4.25,1,0,77.07,22.93,4,0.0,0.0,score=80.31; prior_signal=60.81; trait:-2.75 | athletic:-1.69 | prior:-1.24 | guardrail:-0.51
-36,Ty Simpson,QB,Alabama Crimson Tide,86.23,32.14,7,9.34,-3.86,3.86,0,1,86.03,13.97,4,0.0,0.0,score=86.23; prior_signal=86.71; prior:+2.07 | production:+0.81 | athletic:-0.64 | language:-0.53
-79,Malik Muhammad,CB,Texas,80.17,82.8,5,18.73,3.8,3.8,1,0,70.37,29.63,4,0.0,0.0,score=80.17; prior_signal=59.25; prior:-4.24 | trait:-3.91 | athletic:+2.66 | guardrail:-1.92
-94,Ted Hurst,WR,Georgia State Panthers,79.67,97.75,4,36.79,3.75,3.75,1,0,59.86,40.14,4,0.0,0.0,score=79.67; prior_signal=59.09; trait:-3.28 | prior:-2.83 | guardrail:-1.83 | risk:-0.64
-8,Caleb Downs,S,Ohio State,92.61,4.27,15,2.57,-3.73,3.73,0,1,92.46,7.54,4,0.0,0.0,score=92.61; prior_signal=98.66; trait:+4.15 | production:+0.32 | language:-0.27 | prior:+0.26
-211,Patrick Payton,EDGE,LSU,72.88,214.5,2,22.5,3.5,3.5,1,0,53.9,46.1,4,0.0,0.0,score=72.88; prior_signal=32.06; prior:-15.52 | guardrail:-7.15 | production:-0.62 | risk:-0.35
-33,KC Concepcion,WR,Texas A&M Aggies,87.21,29.62,8,6.71,-3.38,3.38,0,1,84.1,15.9,4,0.0,0.0,score=87.21; prior_signal=87.17; trait:+3.40 | risk:-2.43 | prior:+0.91 | language:-0.38
-10,Mansoor Delane,CB,LSU Tigers,92.34,13.33,9,8.83,3.33,3.33,1,0,87.66,12.34,4,0.0,0.0,score=92.34; prior_signal=93.27; trait:+3.97 | prior:-2.06 | production:+1.11 | language:-0.31
-149,Jager Burton,IOL,Kentucky Wildcats,77.47,152.33,3,18.26,3.33,3.33,1,0,61.55,38.45,4,0.0,0.0,score=77.47; prior_signal=49.92; prior:-8.81 | guardrail:-4.24 | production:-0.91 | trait:-0.73
-71,Darrell Jackson Jr.,DT,Florida State,82.35,74.0,4,15.65,3.0,3.0,1,0,57.45,42.55,4,0.0,0.0,score=82.35; prior_signal=73.35; trait:-1.74 | guardrail:-1.43 | production:-0.45 | risk:-0.45
-35,Colton Hood,CB,Tennessee Volunteers,86.77,32.44,9,7.7,-2.56,2.56,0,1,91.19,8.81,4,0.0,0.0,score=86.77; prior_signal=84.29; trait:+1.25 | prior:+1.21 | athletic:-0.98 | risk:-0.42
-121,Jude Bowry,OT,Boston College Eagles,78.74,123.5,4,20.08,2.5,2.5,1,0,66.29,33.71,4,0.0,0.0,score=78.74; prior_signal=51.67; prior:-5.05 | trait:-3.01 | guardrail:-2.30 | production:-1.57
-142,De'Zhaun Stribling,WR,Mississippi Rebels,77.67,144.5,2,37.5,2.5,2.5,1,0,53.49,46.51,4,0.0,0.0,score=77.67; prior_signal=55.93; prior:-7.22 | guardrail:-6.09 | production:-0.55 | trait:-0.38
-20,Spencer Fano,OT,Utah,89.06,17.64,11,19.52,-2.36,2.36,0,1,79.03,20.97,4,0.0,0.0,score=89.06; prior_signal=86.91; athletic:+2.13 | risk:-1.13 | prior:-0.97 | language:-0.90
-9,Francis Mauigoa,OT,Miami (FL) Hurricanes,92.52,6.82,11,2.82,-2.18,2.18,0,1,92.38,7.62,4,0.0,0.0,score=92.52; prior_signal=96.17; trait:+4.18 | prior:-0.62 | production:+0.50 | risk:-0.23
-5,Jeremiyah Love,RB,Notre Dame,93.86,7.15,13,3.76,2.15,2.15,1,0,93.03,6.97,4,0.0,0.0,score=93.86; prior_signal=96.63; trait:+4.19 | prior:-3.11 | athletic:+1.58 | production:+1.36
-31,Caleb Banks,DT,Florida Gators,87.44,29.0,9,14.03,-2.0,2.0,0,1,80.37,19.63,4,0.0,0.0,score=87.44; prior_signal=87.84; prior:+2.22 | risk:-1.14 | trait:+0.91 | production:-0.79
-147,Ar'maj Reed-Adams,IOL,Texas A&M,77.47,145.0,2,1.0,-2.0,2.0,0,1,63.6,36.4,4,0.0,0.0,score=77.47; prior_signal=51.05; prior:-8.33 | guardrail:-5.34 | production:-1.19 | athletic:+0.69
-197,Jalon Daniels,QB,Kansas Jayhawks,74.01,199.0,2,22.0,2.0,2.0,1,0,53.09,46.91,4,0.0,0.0,score=74.01; prior_signal=38.27; prior:-11.20 | guardrail:-3.91 | trait:-1.47 | risk:-1.42
-76,Keith Abney II,CB,Arizona State Sun Devils,81.52,74.2,5,31.64,-1.8,1.8,0,1,63.41,36.59,4,0.0,0.0,score=81.52; prior_signal=69.71; athletic:-2.28 | trait:-1.89 | prior:+0.97 | production:+0.66
-226,Luke Altmyer,QB,Illinois Fighting Illini,70.74,224.5,2,4.5,-1.5,1.5,0,1,59.62,40.38,4,0.0,0.0,score=70.74; prior_signal=28.3; prior:-12.09 | guardrail:-3.91 | athletic:-2.09 | trait:-1.90
-15,Olaivavega Ioane,IOL,Penn State Nittany Lions,91.26,16.33,6,3.5,1.33,1.33,1,0,93.11,6.89,4,0.0,0.0,score=91.26; prior_signal=92.17; trait:+4.01 | prior:-2.07 | athletic:+0.49 | language:-0.25
-2,Arvell Reese,LB,Ohio State Buckeyes,94.14,3.17,12,2.23,1.17,1.17,1,0,72.24,27.76,4,0.0,0.0,score=94.14; prior_signal=98.3; trait:+4.01 | athletic:+1.77 | prior:-1.14 | risk:-0.64
-49,Jake Golday,LB,Cincinnati Bearcats,84.72,47.83,6,10.37,-1.17,1.17,0,1,87.3,12.7,4,0.0,0.0,score=84.72; prior_signal=79.94; prior:+2.53 | trait:-2.06 | language:-0.43 | risk:-0.41
-107,Charles Demmings,CB,Stephen F. Austin,79.67,108.0,3,75.18,1.0,1.0,1,0,43.74,56.26,3,0.0,0.0,score=79.67; prior_signal=77.38; prior:+4.00 | guardrail:-3.05 | trait:-2.84 | production:-1.68
-115,Pat Coogan,IOL,Indiana Hoosiers,78.84,116.0,3,37.21,1.0,1.0,1,0,55.62,44.38,4,0.0,0.0,score=78.84; prior_signal=53.6; prior:-4.61 | trait:-3.31 | guardrail:-1.90 | risk:-0.45
-152,DJ Campbell,IOL,Texas Longhorns,77.47,152.67,3,22.07,0.67,0.67,1,0,58.2,41.8,4,0.0,0.0,score=77.47; prior_signal=51.96; prior:-6.35 | guardrail:-2.99 | production:-0.96 | athletic:-0.89
-58,Zachariah Branch,WR,Georgia,82.01,58.5,4,14.74,0.5,0.5,1,0,79.36,20.64,4,0.0,0.0,score=82.01; prior_signal=58.91; prior:-4.29 | trait:-3.84 | athletic:+1.83 | production:-0.49
-196,Robert Henry Jr.,RB,UTSA Roadrunners,74.02,195.5,2,1.5,-0.5,0.5,0,1,63.47,36.53,4,0.0,0.0,score=74.02; prior_signal=35.46; prior:-10.32 | guardrail:-2.85 | athletic:-1.75 | trait:-1.33
-13,Makai Lemon,WR,USC Trojans,91.33,13.44,9,3.53,0.44,0.44,1,0,92.15,7.85,4,0.0,0.0,score=91.33; prior_signal=94.25; trait:+3.98 | prior:-1.43 | production:+1.04 | language:-0.42
-82,Genesis Smith,S,Arizona Wildcats,80.57,81.6,5,19.29,-0.4,0.4,0,1,70.23,29.77,4,0.0,0.0,score=80.57; prior_signal=64.71; prior:-3.07 | guardrail:-2.83 | trait:-2.80 | athletic:+0.95
-170,Jaeden Roberts,IOL,Alabama,76.47,169.67,3,9.74,-0.33,0.33,0,1,64.82,35.18,4,0.0,0.0,score=76.47; prior_signal=45.99; prior:-9.31 | guardrail:-3.89 | production:-1.14 | trait:-0.59
-29,Emmanuel McNeil-Warren,S,Toledo Rockets,87.78,28.71,7,7.69,-0.29,0.29,0,1,91.77,8.23,4,0.0,0.0,score=87.78; prior_signal=86.94; athletic:-2.01 | trait:+1.34 | prior:+1.31 | production:+1.14
-39,Blake Miller,OT,Clemson Tigers,85.76,39.29,7,16.22,0.29,0.29,1,0,82.7,17.3,4,0.0,0.0,score=85.76; prior_signal=78.55; trait:-1.95 | athletic:+1.25 | language:-0.46 | risk:-0.24
-55,Chris Johnson,CB,San Diego State Aztecs,83.75,55.0,5,13.91,0.0,0.0,0,0,66.47,33.53,4,0.0,0.0,score=83.75; prior_signal=74.23; trait:-2.12 | guardrail:-1.64 | production:+1.15 | prior:-1.12
-136,Skyler Gill-Howard,DT,Texas Tech Red Raiders,78.0,136.0,3,22.73,0.0,0.0,0,0,58.08,41.92,4,0.0,0.0,score=78.0; prior_signal=56.89; guardrail:-3.95 | athletic:-3.49 | prior:-2.84 | risk:-0.46
-171,Dae'Quan Wright,TE,Mississippi Rebels,76.2,171.0,2,9.0,0.0,0.0,0,0,59.64,40.36,4,0.0,0.0,score=76.2; prior_signal=43.71; prior:-8.64 | guardrail:-2.85 | production:-1.51 | trait:-0.98
-205,Chase Roberts,WR,BYU Cougars,73.21,205.0,2,40.0,0.0,0.0,0,0,53.49,46.51,4,0.0,0.0,score=73.21; prior_signal=38.94; prior:-7.76 | athletic:-3.33 | guardrail:-2.85 | trait:-0.98
+99,Tacario Davis,CB,Washington,80.17,113.75,4,33.53,14.75,14.75,1,0,60.43,39.57,4,0.0,0.0,score=80.17; prior_signal=55.34; prior:-7.47 | guardrail:-4.20 | athletic:+3.15 | trait:-2.24
+113,Drew Shelton,OT,Penn State Nittany Lions,79.27,127.67,3,11.9,14.67,14.67,1,0,65.21,34.79,4,0.0,0.0,score=79.27; prior_signal=51.34; prior:-6.40 | guardrail:-2.74 | production:-1.28 | trait:-0.70
+190,Max Llewellyn,EDGE,Iowa,75.83,175.33,3,5.73,-14.67,14.67,0,1,68.84,31.16,4,0.0,0.0,score=75.83; prior_signal=46.06; prior:-6.36 | athletic:-3.01 | guardrail:-2.70 | trait:-0.75
+27,Anthony Hill Jr.,LB,Texas Longhorns,88.53,41.62,8,20.14,14.62,14.62,1,0,81.76,18.24,4,0.0,0.0,score=88.53; prior_signal=81.84; athletic:+3.01 | trait:-1.60 | prior:-0.99 | production:-0.62
+91,Jaishawn Barham,LB,Michigan,80.38,105.6,5,17.59,14.6,14.6,1,0,70.98,29.02,4,0.0,0.0,score=80.38; prior_signal=56.34; trait:-2.83 | prior:-2.65 | guardrail:-1.33 | athletic:-1.27
+303,Colbie Young,WR,Georgia,66.85,288.5,2,44.5,-14.5,14.5,0,1,53.49,46.51,4,0.0,0.0,score=66.85; prior_signal=19.59; prior:-12.96 | guardrail:-5.52 | athletic:-3.70 | trait:-1.54
+97,Bud Clark,S,TCU Horned Frogs,80.07,111.25,4,5.12,14.25,14.25,1,0,76.41,23.59,4,0.0,0.0,score=80.07; prior_signal=54.05; prior:-5.81 | guardrail:-3.15 | trait:-2.90 | athletic:+0.53
+204,Lander Barton,LB,Utah Utes,74.89,190.0,3,43.54,-14.0,14.0,0,1,55.94,44.06,4,0.0,0.0,score=74.89; prior_signal=27.43; prior:-14.07 | guardrail:-4.00 | trait:-1.87 | production:-1.34
+257,Carver Willis,OT,Washington,71.91,243.0,1,0.0,-14.0,14.0,0,1,57.41,42.59,3,0.0,0.0,score=71.91; prior_signal=8.59; prior:-16.37 | guardrail:-4.03 | athletic:-3.01 | trait:-2.42
+299,Brandon Cleveland,DT,North Carolina State Wolfpack,67.57,313.0,2,33.0,14.0,14.0,1,0,53.17,46.83,4,0.0,0.0,score=67.57; prior_signal=9.55; prior:-15.36 | guardrail:-4.50 | athletic:-3.88 | trait:-2.18
+138,Thaddeus Dixon,CB,North Carolina Tar Heels,78.17,151.5,2,25.5,13.5,13.5,1,0,54.06,45.94,4,0.0,0.0,score=78.17; prior_signal=51.89; prior:-7.54 | guardrail:-3.82 | production:-1.68 | athletic:+0.73
+141,Kaleb Proctor,DT,Southeastern Louisiana,77.89,154.5,2,34.5,13.5,13.5,1,0,53.21,46.79,4,0.0,0.0,score=77.89; prior_signal=48.98; prior:-9.11 | guardrail:-5.00 | trait:-0.77 | risk:-0.45
+168,Louis Moore,S,Indiana,75.57,154.5,2,4.5,-13.5,13.5,0,1,61.74,38.26,4,0.0,0.0,score=75.57; prior_signal=25.69; prior:-14.69 | guardrail:-3.82 | trait:-2.21 | risk:-0.45
+59,Ja'Kobi Lane,WR,USC,84.01,72.25,4,49.07,13.25,13.25,1,0,51.43,48.57,4,0.0,0.0,score=84.01; prior_signal=72.01; prior:-4.27 | athletic:+3.06 | guardrail:-1.94 | trait:-1.80
+134,Rayshaun Benny,DT,Michigan,78.64,147.25,4,49.31,13.25,13.25,1,0,59.48,40.52,4,0.0,0.0,score=78.64; prior_signal=52.24; prior:-5.07 | guardrail:-3.51 | trait:-2.90 | risk:-0.45
+144,J.C. Davis,OT,Illinois Fighting Illini,77.77,131.0,3,17.2,-13.0,13.0,0,1,61.79,38.21,4,0.0,0.0,score=77.77; prior_signal=56.58; prior:-5.50 | guardrail:-5.27 | athletic:-2.05 | production:+0.66
+57,Jacob Rodriguez,LB,Texas Tech,83.91,69.75,4,15.66,12.75,12.75,1,0,58.75,41.25,4,0.0,0.0,score=83.91; prior_signal=72.1; trait:-2.25 | guardrail:-0.71 | prior:-0.66 | production:+0.57
+80,Derrick Moore,EDGE,Michigan,80.63,67.25,4,7.12,-12.75,12.75,0,1,84.93,15.07,4,0.0,0.0,score=80.63; prior_signal=64.86; trait:-3.48 | guardrail:-1.09 | prior:-0.93 | risk:-0.63
+164,Dallen Bentley,TE,Utah,76.95,176.67,3,18.12,12.67,12.67,1,0,61.62,38.38,4,0.0,0.0,score=76.95; prior_signal=46.71; prior:-8.35 | guardrail:-2.70 | athletic:-1.20 | trait:-0.71
+185,John Michael Gyllenborg,TE,Wyoming Cowboys,76.09,197.5,2,29.5,12.5,12.5,1,0,53.48,46.52,4,0.0,0.0,score=76.09; prior_signal=39.95; prior:-11.29 | guardrail:-3.09 | production:-1.68 | athletic:+1.06
+288,Joe Fagnano,QB,Connecticut Huskies,69.02,300.5,2,40.5,12.5,12.5,1,0,50.13,49.87,4,0.0,0.0,score=69.02; prior_signal=12.81; prior:-18.27 | guardrail:-4.50 | trait:-2.30 | athletic:-1.52
+37,Christen Miller,DT,Georgia Bulldogs,86.15,49.29,7,17.78,12.29,12.29,1,0,81.37,18.63,4,0.0,0.0,score=86.15; prior_signal=80.42; trait:-1.18 | prior:+1.07 | language:-0.39 | risk:-0.23
+253,Jam Miller,RB,Alabama Crimson Tide,72.12,265.0,1,0.0,12.0,12.0,1,0,57.41,42.59,3,0.0,0.0,score=72.12; prior_signal=18.27; prior:-13.58 | guardrail:-4.03 | trait:-2.03 | athletic:-1.95
+15,C.J. Allen,LB,Georgia,91.5,26.7,10,4.17,11.7,11.7,1,0,91.95,8.05,4,0.0,0.0,score=91.5; prior_signal=89.0; trait:+3.63 | prior:-1.87 | production:-0.56 | athletic:-0.37
+25,Emmanuel Pregnon,IOL,Oregon,88.94,36.67,6,10.53,11.67,11.67,1,0,87.8,12.2,4,0.0,0.0,score=88.94; prior_signal=86.02; trait:+1.33 | prior:-1.30 | production:+1.06 | risk:-0.24
+169,Eric McAlister,WR,TCU,76.67,157.33,3,22.54,-11.67,11.67,0,1,57.49,42.51,4,0.0,0.0,score=76.67; prior_signal=51.31; prior:-8.63 | guardrail:-5.40 | trait:-0.58 | risk:-0.35
+87,Gennings Dunker,OT,Iowa,81.11,76.0,4,20.86,-11.0,11.0,0,1,77.83,22.17,4,0.0,0.0,score=81.11; prior_signal=66.02; trait:-3.02 | athletic:-1.05 | prior:-0.54 | production:+0.43
+237,Mason Reiger,EDGE,Wisconsin Badgers,73.18,248.0,2,10.0,11.0,11.0,1,0,60.36,39.64,4,0.0,0.0,score=73.18; prior_signal=19.35; prior:-18.60 | guardrail:-4.17 | trait:-1.88 | athletic:+0.40
+290,Behren Morton,QB,Texas Tech Red Raiders,68.86,300.5,2,17.5,10.5,10.5,1,0,52.59,47.41,4,0.0,0.0,score=68.86; prior_signal=9.97; prior:-18.52 | guardrail:-3.91 | trait:-2.53 | risk:-1.45
+23,David Bailey,EDGE,Texas Tech,88.2,12.62,13,19.76,-10.38,10.38,0,1,78.94,21.06,4,0.0,0.0,score=88.2; prior_signal=87.42; athletic:+2.96 | risk:-1.14 | language:-0.90 | trait:-0.77
+45,D'Angelo Ponds,CB,Indiana,85.31,55.0,5,9.8,10.0,10.0,1,0,88.01,11.99,4,0.0,0.0,score=85.31; prior_signal=78.08; prior:-3.33 | athletic:+3.16 | guardrail:-2.81 | trait:-1.97
+220,Eric Gentry,LB,USC,74.23,230.0,2,42.0,10.0,10.0,1,0,52.55,47.45,4,0.0,0.0,score=74.23; prior_signal=24.95; prior:-15.46 | guardrail:-3.87 | trait:-1.73 | production:-0.73
+267,Febechi Nwaiwu,IOL,Oklahoma,70.97,277.0,1,0.0,10.0,10.0,1,0,57.44,42.56,3,0.0,0.0,score=70.97; prior_signal=8.74; prior:-16.04 | guardrail:-4.03 | athletic:-2.93 | trait:-2.51
+67,Jonah Coleman,RB,Washington Huskies,82.95,76.75,4,21.18,9.75,9.75,1,0,78.04,21.96,4,0.0,0.0,score=82.95; prior_signal=72.5; trait:-1.77 | athletic:-0.64 | language:-0.23 | production:+0.18
+19,Emmanuel McNeil-Warren,S,Toledo,90.33,28.71,7,7.69,9.71,9.71,1,0,91.77,8.23,4,0.0,0.0,score=90.33; prior_signal=88.69; trait:+3.70 | athletic:-2.01 | production:+1.33 | prior:-1.21
+53,Caleb Tiernan,OT,Northwestern Wildcats,84.64,62.6,5,5.28,9.6,9.6,1,0,71.84,28.16,4,0.0,0.0,score=84.64; prior_signal=74.28; athletic:+2.66 | trait:-2.17 | prior:-1.36 | production:-1.01
+55,Chase Bisontis,IOL,Texas A&M,83.85,64.6,5,20.54,9.6,9.6,1,0,81.66,18.34,4,0.0,0.0,score=83.85; prior_signal=69.73; prior:-3.40 | athletic:+2.86 | trait:-1.78 | production:-1.68
+51,Keionte Scott,CB,Miami (FL) Hurricanes,84.67,60.5,6,15.06,9.5,9.5,1,0,82.37,17.63,4,0.0,0.0,score=84.67; prior_signal=74.84; prior:-2.08 | guardrail:-1.59 | trait:-0.89 | production:+0.84
+118,Brenen Thompson,WR,Mississippi State,78.99,127.25,4,32.93,9.25,9.25,1,0,60.75,39.25,4,0.0,0.0,score=78.99; prior_signal=49.55; prior:-6.80 | trait:-3.06 | guardrail:-2.30 | athletic:+0.39
+47,Max Iheanachor,OT,Arizona State,85.26,38.29,7,11.27,-8.71,8.71,0,1,82.15,17.85,4,0.0,0.0,score=85.26; prior_signal=84.82; prior:+3.09 | risk:-1.94 | athletic:+1.38 | production:-0.76
+108,Sam Roush,TE,Stanford,79.59,116.67,3,11.95,8.67,8.67,1,0,65.55,34.45,4,0.0,0.0,score=79.59; prior_signal=63.07; guardrail:-4.50 | prior:-4.36 | production:-1.68 | athletic:+0.58
+88,Keylan Rutledge,IOL,Georgia Tech,80.76,96.5,4,23.69,8.5,8.5,1,0,61.96,38.04,4,0.0,0.0,score=80.76; prior_signal=59.31; prior:-3.07 | trait:-2.68 | guardrail:-0.98 | risk:-0.45
+119,Billy Schrauth,IOL,Notre Dame,78.97,110.5,2,3.5,-8.5,8.5,0,1,61.99,38.01,4,0.0,0.0,score=78.97; prior_signal=59.24; prior:-5.77 | guardrail:-4.55 | risk:-0.45 | trait:-0.43
+145,Kage Casey,OT,Boise State,77.77,136.5,4,34.57,-8.5,8.5,0,1,60.43,39.57,4,0.0,0.0,score=77.77; prior_signal=50.24; prior:-3.97 | trait:-3.15 | guardrail:-1.95 | athletic:-1.91
+225,Jeff Caldwell,WR,Cincinnati,74.17,233.5,2,53.5,8.5,8.5,1,0,53.49,46.51,4,0.0,0.0,score=74.17; prior_signal=33.17; prior:-16.23 | guardrail:-5.84 | athletic:+2.78 | production:-1.18
+178,Jaeden Roberts,IOL,Alabama,76.47,169.67,3,9.74,-8.33,8.33,0,1,64.82,35.18,4,0.0,0.0,score=76.47; prior_signal=45.99; prior:-9.59 | guardrail:-4.11 | production:-0.91 | trait:-0.59
+1,Sonny Styles,LB,Ohio State,94.45,9.0,10,7.28,8.0,8.0,1,0,91.93,8.07,4,0.0,0.0,score=94.45; prior_signal=92.37; prior:-4.42 | athletic:+3.56 | trait:+2.40 | language:-0.35
+153,Ar'maj Reed-Adams,IOL,Texas A&M,77.47,145.0,2,1.0,-8.0,8.0,0,1,63.6,36.4,4,0.0,0.0,score=77.47; prior_signal=51.05; prior:-7.98 | guardrail:-5.07 | production:-1.47 | athletic:+0.69
+208,Quintayvious Hutchins,EDGE,Boston College Eagles,74.73,200.0,2,37.0,-8.0,8.0,0,1,52.6,47.4,4,0.0,0.0,score=74.73; prior_signal=39.92; prior:-8.58 | guardrail:-2.85 | athletic:-1.90 | trait:-0.93
+304,Gary Smith III,DT,UCLA Bruins,66.58,312.0,2,25.0,8.0,8.0,1,0,54.46,45.54,4,0.0,0.0,score=66.58; prior_signal=8.65; prior:-14.47 | athletic:-4.80 | guardrail:-4.50 | trait:-2.25
+17,Cashius Howell,EDGE,Texas A&M Aggies,91.04,24.89,9,7.08,7.89,7.89,1,0,92.29,7.71,4,0.0,0.0,score=91.04; prior_signal=90.23; trait:+3.95 | prior:-1.52 | athletic:-0.91 | language:-0.33
+7,Jordyn Tyson,WR,Arizona State,93.37,14.6,10,7.13,7.6,7.6,1,0,91.95,8.05,4,0.0,0.0,score=93.37; prior_signal=95.05; trait:+4.25 | prior:-3.63 | athletic:+3.60 | production:+0.44
+31,Denzel Boston,WR,Washington,87.96,23.4,10,5.87,-7.6,7.6,0,1,92.67,7.33,4,0.0,0.0,score=87.96; prior_signal=90.15; trait:+3.93 | athletic:-3.59 | prior:+1.34 | production:+0.88
+11,Keldric Faulk,EDGE,Auburn,91.71,18.4,10,4.94,7.4,7.4,1,0,92.65,7.35,4,0.0,0.0,score=91.71; prior_signal=93.33; trait:+4.26 | prior:-1.09 | athletic:-0.83 | production:-0.35
+26,Peter Woods,DT,Clemson,88.75,18.71,14,19.09,-7.29,7.29,0,1,79.44,20.56,4,0.0,0.0,score=88.75; prior_signal=93.11; prior:+2.39 | trait:+1.68 | language:-0.90 | risk:-0.73
+115,Bryce Lance,WR,North Dakota State,79.17,107.75,4,61.26,-7.25,7.25,0,1,60.46,39.54,4,0.0,0.0,score=79.17; prior_signal=70.72; guardrail:-5.36 | trait:-3.61 | prior:-1.97 | athletic:+1.34
+52,R Mason Thomas,EDGE,Oklahoma,84.71,44.86,7,9.36,-7.14,7.14,0,1,88.14,11.86,4,0.0,0.0,score=84.71; prior_signal=81.93; prior:+2.60 | trait:-1.46 | athletic:-0.42 | language:-0.39
+62,Chris Johnson,CB,San Diego State,83.56,55.0,5,13.91,-7.0,7.0,0,1,66.47,33.53,4,0.0,0.0,score=83.56; prior_signal=75.59; guardrail:-2.17 | trait:-2.02 | production:+1.30 | prior:-0.97
+143,Skyler Gill-Howard,DT,Texas Tech Red Raiders,77.83,136.0,3,22.73,-7.0,7.0,0,1,58.08,41.92,4,0.0,0.0,score=77.83; prior_signal=56.89; guardrail:-4.18 | athletic:-3.49 | prior:-2.90 | risk:-0.46
+216,Robert Spears-Jennings,S,Oklahoma Sooners,74.38,209.0,2,23.0,-7.0,7.0,0,1,54.48,45.52,4,0.0,0.0,score=74.38; prior_signal=35.72; prior:-9.51 | guardrail:-2.85 | production:-1.68 | athletic:-1.38
+39,Ty Simpson,QB,Alabama Crimson Tide,86.11,32.14,7,9.34,-6.86,6.86,0,1,86.03,13.97,4,0.0,0.0,score=86.11; prior_signal=86.71; prior:+2.22 | production:+0.68 | athletic:-0.64 | language:-0.53
+81,Keith Abney II,CB,Arizona State Sun Devils,81.52,74.2,5,31.64,-6.8,6.8,0,1,63.41,36.59,4,0.0,0.0,score=81.52; prior_signal=69.71; athletic:-2.28 | trait:-1.89 | prior:+0.97 | production:+0.66
+167,Keyron Crawford,EDGE,Auburn,77.01,160.25,4,97.26,-6.75,6.75,0,1,59.8,40.2,4,0.0,0.0,score=77.01; prior_signal=57.36; trait:-3.63 | guardrail:-2.84 | prior:-2.80 | risk:-0.35
+48,Zion Young,EDGE,Missouri,84.83,41.4,5,3.93,-6.6,6.6,0,1,92.35,7.65,4,0.0,0.0,score=84.83; prior_signal=81.47; trait:-1.65 | prior:+1.55 | guardrail:-0.66 | language:-0.48
+32,Omar Cooper Jr.,WR,Indiana,87.91,38.57,7,11.26,6.57,6.57,1,0,87.59,12.41,4,0.0,0.0,score=87.91; prior_signal=85.54; trait:+1.46 | athletic:-0.90 | production:+0.72 | language:-0.38
+102,Mike Washington Jr.,RB,Arkansas,79.9,108.5,4,24.03,6.5,6.5,1,0,61.86,38.14,4,0.0,0.0,score=79.9; prior_signal=60.52; prior:-6.67 | guardrail:-5.02 | athletic:+2.83 | trait:-2.50
+36,KC Concepcion,WR,Texas A&M Aggies,87.04,29.62,8,6.71,-6.38,6.38,0,1,84.1,15.9,4,0.0,0.0,score=87.04; prior_signal=87.17; trait:+3.40 | risk:-2.43 | prior:+1.13 | language:-0.38
+104,Ted Hurst,WR,Georgia State,79.67,97.75,4,36.79,-6.25,6.25,0,1,59.86,40.14,4,0.0,0.0,score=79.67; prior_signal=65.63; guardrail:-2.92 | trait:-2.82 | prior:-1.46 | risk:-0.64
+56,Romello Height,EDGE,Texas Tech Red Raiders,84.08,62.0,4,15.41,6.0,6.0,1,0,58.78,41.22,4,0.0,0.0,score=84.08; prior_signal=78.43; trait:-2.17 | guardrail:-1.04 | prior:+0.87 | athletic:+0.66
+122,Pat Coogan,IOL,Indiana Hoosiers,78.84,116.0,3,37.21,-6.0,6.0,0,1,55.62,44.38,4,0.0,0.0,score=78.84; prior_signal=53.6; prior:-4.61 | trait:-3.31 | guardrail:-1.90 | risk:-0.45
+109,Taurean York,LB,Texas A&M Aggies,79.52,114.5,4,27.57,5.5,5.5,1,0,61.16,38.84,4,0.0,0.0,score=79.52; prior_signal=59.6; athletic:-2.85 | trait:-2.61 | guardrail:-0.90 | prior:+0.48
+150,De'Zhaun Stribling,WR,Mississippi,77.67,144.5,2,37.5,-5.5,5.5,0,1,53.49,46.51,4,0.0,0.0,score=77.67; prior_signal=56.05; prior:-7.38 | guardrail:-6.26 | production:-0.43 | risk:-0.36
+221,George Gumbs Jr.,EDGE,Florida Gators,74.4,226.5,2,54.5,5.5,5.5,1,0,53.21,46.79,4,0.0,0.0,score=74.4; prior_signal=34.98; prior:-12.93 | guardrail:-4.25 | trait:-1.01 | production:-1.01
+34,Caleb Banks,DT,Florida Gators,87.31,29.0,9,14.03,-5.0,5.0,0,1,80.37,19.63,4,0.0,0.0,score=87.31; prior_signal=87.84; prior:+2.39 | risk:-1.14 | production:-0.97 | trait:+0.91
+279,RJ Maryland,TE,SMU,69.91,284.0,2,15.0,5.0,5.0,1,0,57.85,42.15,4,0.0,0.0,score=69.91; prior_signal=10.92; prior:-19.45 | guardrail:-4.50 | trait:-2.45 | production:-1.68
+28,Akheem Mesidor,EDGE,Miami (FL),88.45,32.89,9,19.42,4.89,4.89,1,0,79.68,20.32,4,0.0,0.0,score=88.45; prior_signal=85.41; trait:+1.82 | prior:-1.24 | risk:-0.63 | guardrail:-0.60
+50,Chris Brazzell II,WR,Tennessee,84.69,45.25,4,19.69,-4.75,4.75,0,1,57.71,42.29,4,0.0,0.0,score=84.69; prior_signal=80.94; trait:-2.19 | prior:+2.01 | athletic:+0.62 | risk:-0.36
+18,Kenyon Sadiq,TE,Oregon,90.05,22.67,9,11.6,4.67,4.67,1,0,87.52,12.48,4,0.0,0.0,score=90.05; prior_signal=87.14; trait:+2.69 | prior:-2.53 | athletic:+2.30 | production:-1.42
+152,Albert Regis,DT,Texas A&M Aggies,77.64,156.67,3,28.78,4.67,4.67,1,0,57.36,42.64,4,0.0,0.0,score=77.64; prior_signal=51.89; prior:-6.98 | guardrail:-4.48 | athletic:-1.15 | production:-0.61
+22,Spencer Fano,OT,Utah,88.99,17.64,11,19.52,-4.36,4.36,0,1,79.03,20.97,4,0.0,0.0,score=88.99; prior_signal=87.42; athletic:+2.13 | risk:-1.13 | language:-0.90 | prior:-0.66
+157,DJ Campbell,IOL,Texas Longhorns,77.47,152.67,3,22.07,-4.33,4.33,0,1,58.2,41.8,4,0.0,0.0,score=77.47; prior_signal=51.96; prior:-6.24 | guardrail:-2.90 | production:-1.06 | athletic:-0.89
+66,Elijah Sarratt,WR,Indiana Hoosiers,82.98,70.0,4,9.92,4.0,4.0,1,0,62.32,37.68,4,0.0,0.0,score=82.98; prior_signal=67.44; trait:-2.44 | prior:-2.24 | production:+0.66 | risk:-0.35
+78,Deontae Lawson,LB,Alabama,81.8,82.0,4,22.45,4.0,4.0,1,0,61.55,38.45,4,0.0,0.0,score=81.8; prior_signal=67.28; trait:-2.73 | guardrail:-0.80 | prior:-0.43 | production:-0.39
+176,Caden Curry,EDGE,Ohio State,76.29,172.0,2,14.0,-4.0,4.0,0,1,58.19,41.81,4,0.0,0.0,score=76.29; prior_signal=39.28; prior:-12.15 | guardrail:-4.61 | trait:-1.17 | risk:-0.45
+8,Caleb Downs,S,Ohio State,92.88,4.27,15,2.57,-3.73,3.73,0,1,92.46,7.54,4,0.0,0.0,score=92.88; prior_signal=98.66; trait:+4.15 | production:+0.61 | language:-0.27 | athletic:-0.26
+198,Jadon Canady,CB,Oregon Ducks,75.37,194.5,2,7.5,-3.5,3.5,0,1,61.32,38.68,4,0.0,0.0,score=75.37; prior_signal=37.01; prior:-13.18 | guardrail:-4.97 | trait:-1.18 | production:+0.55
+307,Avery Smith,CB,Toledo Rockets,65.73,303.5,2,39.5,-3.5,3.5,0,1,53.21,46.79,4,0.0,0.0,score=65.73; prior_signal=6.39; prior:-15.25 | guardrail:-4.50 | athletic:-4.01 | trait:-2.45
+10,Mansoor Delane,CB,LSU,92.48,13.33,9,8.83,3.33,3.33,1,0,87.66,12.34,4,0.0,0.0,score=92.48; prior_signal=93.88; trait:+4.06 | prior:-1.99 | production:+1.13 | language:-0.31
+77,Darrell Jackson Jr.,DT,Florida State,82.41,74.0,4,15.65,-3.0,3.0,0,1,57.45,42.55,4,0.0,0.0,score=82.41; prior_signal=74.16; trait:-1.74 | guardrail:-1.43 | production:-0.45 | risk:-0.45
+174,Dae'Quan Wright,TE,Mississippi Rebels,76.37,171.0,2,9.0,-3.0,3.0,0,1,59.64,40.36,4,0.0,0.0,score=76.37; prior_signal=43.71; prior:-8.86 | guardrail:-2.85 | production:-1.34 | trait:-0.98
+107,Jack Endries,TE,Texas Longhorns,79.59,109.67,3,27.35,2.67,2.67,1,0,57.26,42.74,4,0.0,0.0,score=79.59; prior_signal=65.67; guardrail:-4.32 | prior:-3.02 | production:-1.68 | risk:-0.46
+132,Michael Taaffe,S,Texas Longhorns,78.57,134.67,3,28.11,2.67,2.67,1,0,57.44,42.56,4,0.0,0.0,score=78.57; prior_signal=54.67; prior:-6.36 | guardrail:-5.30 | athletic:-1.84 | production:+0.63
+155,Jager Burton,IOL,Kentucky,77.47,152.33,3,18.26,-2.67,2.67,0,1,61.55,38.45,4,0.0,0.0,score=77.47; prior_signal=50.46; prior:-8.67 | guardrail:-4.32 | production:-0.91 | trait:-0.70
+35,Colton Hood,CB,Tennessee,87.19,32.44,9,7.7,-2.56,2.56,0,1,91.19,8.81,4,0.0,0.0,score=87.19; prior_signal=86.49; prior:+1.62 | trait:+1.50 | athletic:-0.98 | risk:-0.42
+86,Gracen Halton,DT,Oklahoma,81.19,88.5,4,17.24,2.5,2.5,1,0,66.46,33.54,4,0.0,0.0,score=81.19; prior_signal=66.3; trait:-2.62 | athletic:-0.94 | risk:-0.63 | guardrail:-0.40
+126,Jude Bowry,OT,Boston College Eagles,78.74,123.5,4,20.08,-2.5,2.5,0,1,66.29,33.71,4,0.0,0.0,score=78.74; prior_signal=51.67; prior:-5.05 | trait:-3.01 | guardrail:-2.30 | production:-1.57
+14,Olaivavega Ioane,IOL,Penn State,91.55,16.33,6,3.5,2.33,2.33,1,0,93.11,6.89,4,0.0,0.0,score=91.55; prior_signal=93.01; trait:+4.12 | prior:-2.09 | athletic:+0.49 | production:+0.31
+9,Francis Mauigoa,OT,Miami (FL),92.67,6.82,11,2.82,-2.18,2.18,0,1,92.38,7.62,4,0.0,0.0,score=92.67; prior_signal=96.93; trait:+4.29 | prior:-0.51 | production:+0.50 | risk:-0.23
+5,Jeremiyah Love,RB,Notre Dame,93.87,7.15,13,3.76,2.15,2.15,1,0,93.03,6.97,4,0.0,0.0,score=93.87; prior_signal=96.88; trait:+4.19 | prior:-3.03 | production:+1.68 | athletic:+1.58
+116,CJ Daniels,WR,Miami (FL) Hurricanes,79.17,118.0,3,32.26,2.0,2.0,1,0,55.94,44.06,4,0.0,0.0,score=79.17; prior_signal=63.45; guardrail:-4.79 | prior:-4.30 | production:-1.06 | risk:-0.35
+127,Trey Zuhn III,IOL,Texas A&M,78.7,125.0,5,38.09,-2.0,2.0,0,1,62.46,37.54,4,0.0,0.0,score=78.7; prior_signal=55.21; prior:-4.36 | trait:-2.53 | guardrail:-2.30 | production:-0.68
+146,Eric Rivers,WR,Georgia Tech Yellow Jackets,77.67,144.0,4,57.0,-2.0,2.0,0,1,72.14,27.86,4,0.0,0.0,score=77.67; prior_signal=55.72; prior:-3.77 | guardrail:-3.25 | trait:-2.71 | production:-1.19
+206,Owen Heinecke,LB,Oklahoma,74.87,208.0,2,4.0,2.0,2.0,1,0,62.27,37.73,4,0.0,0.0,score=74.87; prior_signal=35.28; prior:-9.86 | guardrail:-2.85 | athletic:-2.39 | trait:-1.26
+245,Kaden Wetjen,WR,Iowa,72.4,247.0,1,0.0,2.0,2.0,1,0,57.44,42.56,3,0.0,0.0,score=72.4; prior_signal=27.71; prior:-8.69 | athletic:-3.68 | guardrail:-3.33 | production:-1.68
+29,T.J. Parker,EDGE,Clemson,88.33,30.6,10,17.97,1.6,1.6,1,0,80.67,19.33,4,0.0,0.0,score=88.33; prior_signal=88.66; athletic:+2.34 | language:-0.90 | trait:-0.81 | risk:-0.74
+203,Desmond Reid,RB,Pittsburgh Panthers,75.2,201.5,2,22.5,-1.5,1.5,0,1,53.9,46.1,4,0.0,0.0,score=75.2; prior_signal=37.66; prior:-10.60 | guardrail:-2.45 | trait:-1.16 | production:-0.59
+12,Makai Lemon,WR,USC Trojans,91.61,13.44,9,3.53,1.44,1.44,1,0,92.15,7.85,4,0.0,0.0,score=91.61; prior_signal=94.25; trait:+3.98 | prior:-1.80 | production:+1.34 | language:-0.42
+84,Malik Muhammad,CB,Texas,80.17,82.8,5,18.73,-1.2,1.2,0,1,70.37,29.63,4,0.0,0.0,score=80.17; prior_signal=59.25; prior:-4.41 | trait:-3.91 | athletic:+2.66 | guardrail:-2.05
+2,Arvell Reese,LB,Ohio State,94.23,3.17,12,2.23,1.17,1.17,1,0,72.24,27.76,4,0.0,0.0,score=94.23; prior_signal=98.44; trait:+4.03 | athletic:+1.77 | prior:-1.19 | risk:-0.64
+49,Jake Golday,LB,Cincinnati Bearcats,84.81,47.83,6,10.37,-1.17,1.17,0,1,87.3,12.7,4,0.0,0.0,score=84.81; prior_signal=79.94; prior:+2.42 | trait:-2.06 | language:-0.43 | risk:-0.41
+142,Tyreak Sapp,EDGE,Florida,78.09,142.67,3,32.25,0.67,0.67,1,0,56.88,43.12,4,0.0,0.0,score=78.09; prior_signal=56.99; prior:-8.69 | guardrail:-8.38 | athletic:+1.45 | production:-1.02
+58,Zachariah Branch,WR,Georgia,82.58,58.5,4,14.74,0.5,0.5,1,0,79.36,20.64,4,0.0,0.0,score=82.58; prior_signal=59.9; prior:-4.60 | trait:-3.84 | athletic:+1.83 | risk:-0.23
+137,Seth McGowan,RB,Kentucky Wildcats,78.4,137.33,3,30.92,0.33,0.33,1,0,56.65,43.35,4,0.0,0.0,score=78.4; prior_signal=57.74; prior:-3.86 | guardrail:-3.43 | production:-1.68 | athletic:-0.99
+70,Domonique Orange,DT,Iowa State Cyclones,82.78,70.25,4,13.77,0.25,0.25,1,0,60.89,39.11,4,0.0,0.0,score=82.78; prior_signal=73.7; trait:-2.46 | prior:+1.88 | production:-0.93 | risk:-0.45
+90,Sam Hecht,IOL,Kansas State,80.69,90.25,4,2.17,0.25,0.25,1,0,77.07,22.93,4,0.0,0.0,score=80.69; prior_signal=64.09; trait:-2.54 | athletic:-1.69 | guardrail:-0.60 | prior:-0.46

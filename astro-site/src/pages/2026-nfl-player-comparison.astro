@@ -106,77 +106,85 @@ const collectionSchema = {
       if (pos === "QB") {
         return {
           title: "QB Stress / Process",
+          tags: [],
           rows: [
-            ["Stress Response", avgPct(cards, ["sg_qb_pressure_grade", "sg_qb_pressure_to_sack_rate", "sg_qb_blitz_grade"]), "pressure, sack avoidance, blitz answers"],
-            ["Decision Quality", avgPct(cards, ["sg_qb_btt_rate", "sg_qb_twp_rate", "sg_qb_pass_grade"]), "aggression balanced with turnover control"],
-            ["Starter Translation", avgPct(cards, ["sg_qb_pass_grade", "sg_qb_blitz_grade"]), "pass grade and pro-style stress handling"],
+            { label: "Stress Response", pct: avgPct(cards, ["sg_qb_pressure_grade", "sg_qb_pressure_to_sack_rate", "sg_qb_blitz_grade"]), detail: "pressure, sack avoidance, blitz answers" },
+            { label: "Decision Quality", pct: avgPct(cards, ["sg_qb_btt_rate", "sg_qb_twp_rate", "sg_qb_pass_grade"]), detail: "aggression balanced with turnover control" },
+            { label: "Starter Translation", pct: avgPct(cards, ["sg_qb_pass_grade", "sg_qb_blitz_grade"]), detail: "pass grade and pro-style stress handling" },
           ],
         };
       }
       if (pos === "RB") {
         return {
           title: "RB Three-Down Creator",
+          tags: [],
           rows: [
-            ["Creation After Contact", avgPct(cards, ["sg_rb_run_grade", "sg_rb_elusive_rating", "sg_rb_yco_attempt"]), "run grade, elusive value, yards after contact"],
-            ["Explosive Threat", avgPct(cards, ["sg_rb_explosive_rate", "sg_rb_breakaway_percent"]), "chunk gains and home-run carry profile"],
-            ["Passing-Down Value", avgPct(cards, ["sg_rb_targets_per_route", "sg_rb_run_grade"], productionPct), "receiving involvement and snap-stay utility"],
+            { label: "Creation After Contact", pct: avgPct(cards, ["sg_rb_run_grade", "sg_rb_elusive_rating", "sg_rb_yco_attempt"]), detail: "run grade, elusive value, yards after contact" },
+            { label: "Explosive Threat", pct: avgPct(cards, ["sg_rb_explosive_rate", "sg_rb_breakaway_percent"]), detail: "chunk gains and home-run carry profile" },
+            { label: "Passing-Down Value", pct: avgPct(cards, ["sg_rb_targets_per_route", "sg_rb_run_grade"], productionPct), detail: "receiving involvement and snap-stay utility" },
           ],
         };
       }
       if (pos === "WR" || pos === "TE") {
         return {
           title: `${pos === "TE" ? "TE" : "WR"} Route Earner`,
+          tags: [],
           rows: [
-            ["Route Earning", avgPct(cards, ["sg_wrte_route_grade", "sg_wrte_yprr", "sg_wrte_targets_per_route"]), "route quality plus target-earning efficiency"],
-            ["Coverage Translation", avgPct(cards, ["sg_wrte_man_yprr", "sg_wrte_zone_yprr", "sg_wrte_route_grade"]), "production across coverage families"],
-            ["Ball Reliability", avgPct(cards, ["sg_wrte_drop_rate", "sg_wrte_targets_per_route"], productionPct), "hands and stable passing-game utility"],
+            { label: "Route Earning", pct: avgPct(cards, ["sg_wrte_route_grade", "sg_wrte_yprr", "sg_wrte_targets_per_route"]), detail: "route quality plus target-earning efficiency" },
+            { label: "Coverage Translation", pct: avgPct(cards, ["sg_wrte_man_yprr", "sg_wrte_zone_yprr", "sg_wrte_route_grade"]), detail: "production across coverage families" },
+            { label: "Ball Reliability", pct: avgPct(cards, ["sg_wrte_drop_rate", "sg_wrte_targets_per_route"], productionPct), detail: "hands and stable passing-game utility" },
           ],
         };
       }
       if (pos === "EDGE" || pos === "DT") {
         return {
           title: "True-Pass-Set Disruption",
+          tags: [],
           rows: [
-            ["Rush Translation", avgPct(cards, ["sg_dl_pass_rush_grade", "sg_dl_true_pass_set_win_rate", "sg_dl_true_pass_set_prp"]), "clean pass-rush quality when protections are honest"],
-            ["Pressure Load", avgPct(cards, ["sg_dl_total_pressures", "sg_dl_pass_rush_grade"]), "how often disruption actually shows up"],
-            ["Run-Down Utility", avgPct(cards, ["sg_front_run_def_grade", "sg_front_stop_percent"]), "base-down viability alongside rush value"],
+            { label: "Rush Translation", pct: avgPct(cards, ["sg_dl_pass_rush_grade", "sg_dl_true_pass_set_win_rate", "sg_dl_true_pass_set_prp"]), detail: "clean pass-rush quality when protections are honest" },
+            { label: "Pressure Load", pct: avgPct(cards, ["sg_dl_total_pressures", "sg_dl_pass_rush_grade"]), detail: "how often disruption actually shows up" },
+            { label: "Run-Down Utility", pct: avgPct(cards, ["sg_front_run_def_grade", "sg_front_stop_percent"]), detail: "base-down viability alongside rush value" },
           ],
         };
       }
       if (pos === "CB" || pos === "S") {
         return {
           title: "DB Coverage Tax",
+          tags: [],
           rows: [
-            ["Target Deterrence", avgPct(cards, ["sg_cov_snaps_per_target", "sg_cov_yards_per_snap"]), "how expensive it is to attack this defender"],
-            ["Ball Disruption", avgPct(cards, ["sg_cov_forced_incompletion_rate", "sg_cov_qb_rating_against"]), "forced misses and passer suppression"],
-            ["Scheme Translation", avgPct(cards, pos === "CB" ? ["sg_cov_grade", "sg_cov_man_grade"] : ["sg_cov_grade", "sg_cov_zone_grade"]), "coverage quality in likely NFL usage"],
+            { label: "Target Deterrence", pct: avgPct(cards, ["sg_cov_snaps_per_target", "sg_cov_yards_per_snap"]), detail: "how expensive it is to attack this defender" },
+            { label: "Ball Disruption", pct: avgPct(cards, ["sg_cov_forced_incompletion_rate", "sg_cov_qb_rating_against"]), detail: "forced misses and passer suppression" },
+            { label: "Scheme Translation", pct: avgPct(cards, pos === "CB" ? ["sg_cov_grade", "sg_cov_man_grade"] : ["sg_cov_grade", "sg_cov_zone_grade"]), detail: "coverage quality in likely NFL usage" },
           ],
         };
       }
       if (pos === "OT" || pos === "IOL") {
         return {
           title: "OL Pass-Pro Translation",
+          tags: [],
           rows: [
-            ["Pass-Pro Core", avgPct(cards, ["sg_ol_pass_block_grade", "sg_ol_pbe", "sg_ol_pressure_allowed_rate"]), "block quality plus pressure suppression"],
-            ["Run-Game Lift", avgPct(cards, ["sg_ol_run_block_grade"], productionPct), "movement and run-game support"],
-            ["Alignment Flex", avgPct(cards, ["sg_ol_versatility_count"], productionPct), "multi-spot utility and lineup resilience"],
+            { label: "Pass-Pro Core", pct: avgPct(cards, ["sg_ol_pass_block_grade", "sg_ol_pbe", "sg_ol_pressure_allowed_rate"]), detail: "block quality plus pressure suppression" },
+            { label: "Run-Game Lift", pct: avgPct(cards, ["sg_ol_run_block_grade"], productionPct), detail: "movement and run-game support" },
+            { label: "Alignment Flex", pct: avgPct(cards, ["sg_ol_versatility_count"], productionPct), detail: "multi-spot utility and lineup resilience" },
           ],
         };
       }
       if (pos === "LB") {
         return {
           title: "LB Dual-Threat Defender",
+          tags: [],
           rows: [
-            ["Run-Game Control", avgPct(cards, ["sg_def_run_grade", "sg_front_stop_percent"]), "run fits and stop creation"],
-            ["Coverage Range", avgPct(cards, ["sg_def_coverage_grade", "sg_cov_yards_per_snap"]), "how playable he is in space"],
-            ["Tackle Finish", avgPct(cards, ["sg_def_tackle_grade", "sg_def_missed_tackle_rate"]), "clean finish and down-to-down reliability"],
+            { label: "Run-Game Control", pct: avgPct(cards, ["sg_def_run_grade", "sg_front_stop_percent"]), detail: "run fits and stop creation" },
+            { label: "Coverage Range", pct: avgPct(cards, ["sg_def_coverage_grade", "sg_cov_yards_per_snap"]), detail: "how playable he is in space" },
+            { label: "Tackle Finish", pct: avgPct(cards, ["sg_def_tackle_grade", "sg_def_missed_tackle_rate"]), detail: "clean finish and down-to-down reliability" },
           ],
         };
       }
       return {
         title: "ScoutingGrade Lens",
+        tags: [],
         rows: [
-          ["Translation Profile", productionPct, "position-specific production composite"],
+          { label: "Translation Profile", pct: productionPct, detail: "position-specific production composite" },
         ],
       };
     };
@@ -315,7 +323,9 @@ const collectionSchema = {
         const traitPctRaw = Number(p.trait_percentile);
         const traitPct = Number.isFinite(traitPctRaw) ? clamp(traitPctRaw, 0, 100) : toPct(trait, 70, 97);
         const marketPct = clamp(Number(market.pct || 50), 0, 100);
-        const lens = positionLens(p, productionPct);
+        const lens = (p.position_lens && Array.isArray(p.position_lens.rows) && p.position_lens.rows.length)
+          ? p.position_lens
+          : positionLens(p, productionPct);
 
         const div = document.createElement("article");
         div.className = "card compare-card";
@@ -354,7 +364,8 @@ const collectionSchema = {
 
           <div class="subcard">
               <div class="subhead">${lens.title}</div>
-              ${(lens.rows || []).map(([label, pct, detail]) => meterRow(label, pct, `${Number(pct).toFixed(0)}th pct`, "#1f5ea8") + `<div class="muted lens-copy">${detail}</div>`).join("")}
+              ${(lens.tags || []).length ? `<div class="chip-row">${(lens.tags || []).map((t) => `<span class="chip info">${t}</span>`).join("")}</div>` : ``}
+              ${(lens.rows || []).map((item) => meterRow(item.label, item.pct, `${Number(item.pct).toFixed(0)}th pct`, "#1f5ea8") + `<div class="muted lens-copy">${item.detail}</div>`).join("")}
             </div>
 
           <div class="scout-block">

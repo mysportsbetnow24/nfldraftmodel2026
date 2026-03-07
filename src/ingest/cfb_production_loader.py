@@ -1109,25 +1109,34 @@ def _sg_lb_signal(row: dict) -> tuple[float | None, int]:
     parts = []
     run_grade = _score_linear(_first_float(row, ["sg_def_run_grade"]), 45.0, 90.0)
     if run_grade is not None:
-        parts.append((0.20, run_grade))
+        parts.append((0.18, run_grade))
     cov_grade = _score_linear(_first_float(row, ["sg_def_coverage_grade"]), 40.0, 90.0)
     if cov_grade is not None:
-        parts.append((0.22, cov_grade))
+        parts.append((0.18, cov_grade))
     tackle_grade = _score_linear(_first_float(row, ["sg_def_tackle_grade"]), 45.0, 90.0)
     if tackle_grade is not None:
-        parts.append((0.12, tackle_grade))
+        parts.append((0.10, tackle_grade))
     missed = _score_inverse(_first_float(row, ["sg_def_missed_tackle_rate"]), 0.25, 0.05)
     if missed is not None:
-        parts.append((0.12, missed))
+        parts.append((0.10, missed))
     stop = _score_linear(_first_float(row, ["sg_front_stop_percent"]), 3.0, 12.0)
     if stop is not None:
-        parts.append((0.14, stop))
+        parts.append((0.12, stop))
     ypcs = _score_inverse(_first_float(row, ["sg_cov_yards_per_snap"]), 2.0, 0.4)
     if ypcs is not None:
-        parts.append((0.10, ypcs))
+        parts.append((0.08, ypcs))
     qbr = _score_inverse(_first_float(row, ["sg_cov_qb_rating_against"]), 130.0, 40.0)
     if qbr is not None:
-        parts.append((0.10, qbr))
+        parts.append((0.08, qbr))
+    pressure_utility = _score_linear(_first_float(row, ["sg_def_total_pressures"]), 2.0, 28.0)
+    if pressure_utility is not None:
+        parts.append((0.08, pressure_utility))
+    box_disruption = _score_linear(_first_float(row, ["sg_def_tackles_for_loss"]), 2.0, 14.0)
+    if box_disruption is not None:
+        parts.append((0.05, box_disruption))
+    slot_deterrence = _score_linear(_first_float(row, ["sg_slot_cov_snaps_per_target"]), 2.0, 14.0)
+    if slot_deterrence is not None:
+        parts.append((0.03, slot_deterrence))
     return _weighted_mean(parts), len(parts)
 
 
@@ -1135,10 +1144,10 @@ def _sg_db_signal(row: dict) -> tuple[float | None, int]:
     parts = []
     cov_grade = _score_linear(_first_float(row, ["sg_cov_grade"]), 45.0, 92.0)
     if cov_grade is not None:
-        parts.append((0.26, cov_grade))
+        parts.append((0.24, cov_grade))
     fi = _score_linear(_first_float(row, ["sg_cov_forced_incompletion_rate"]), 0.05, 0.30)
     if fi is not None:
-        parts.append((0.16, fi))
+        parts.append((0.14, fi))
     spt = _score_linear(_first_float(row, ["sg_cov_snaps_per_target"]), 2.0, 18.0)
     if spt is not None:
         parts.append((0.14, spt))
@@ -1147,13 +1156,25 @@ def _sg_db_signal(row: dict) -> tuple[float | None, int]:
         parts.append((0.18, ypcs))
     qbr = _score_inverse(_first_float(row, ["sg_cov_qb_rating_against"]), 140.0, 35.0)
     if qbr is not None:
-        parts.append((0.14, qbr))
+        parts.append((0.12, qbr))
     man = _score_linear(_first_float(row, ["sg_cov_man_grade"]), 40.0, 90.0)
     if man is not None:
         parts.append((0.06, man))
     zone = _score_linear(_first_float(row, ["sg_cov_zone_grade"]), 40.0, 90.0)
     if zone is not None:
         parts.append((0.06, zone))
+    pressure_utility = _score_linear(_first_float(row, ["sg_def_total_pressures"]), 1.0, 12.0)
+    if pressure_utility is not None:
+        parts.append((0.04, pressure_utility))
+    box_disruption = _score_linear(_first_float(row, ["sg_def_tackles_for_loss"]), 0.0, 8.0)
+    if box_disruption is not None:
+        parts.append((0.04, box_disruption))
+    slot_tax = _score_linear(_first_float(row, ["sg_slot_cov_snaps_per_target"]), 2.0, 14.0)
+    if slot_tax is not None:
+        parts.append((0.06, slot_tax))
+    slot_qbr = _score_inverse(_first_float(row, ["sg_slot_cov_qb_rating_against"]), 140.0, 35.0)
+    if slot_qbr is not None:
+        parts.append((0.06, slot_qbr))
     return _weighted_mean(parts), len(parts)
 
 
@@ -1655,6 +1676,11 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             "sg_def_run_grade": row.get("sg_def_run_grade", ""),
             "sg_def_tackle_grade": row.get("sg_def_tackle_grade", ""),
             "sg_def_missed_tackle_rate": row.get("sg_def_missed_tackle_rate", ""),
+            "sg_def_total_pressures": row.get("sg_def_total_pressures", ""),
+            "sg_def_tackles_for_loss": row.get("sg_def_tackles_for_loss", ""),
+            "sg_def_tackles": row.get("sg_def_tackles", ""),
+            "sg_def_pass_break_ups": row.get("sg_def_pass_break_ups", ""),
+            "sg_def_interceptions": row.get("sg_def_interceptions", ""),
             "sg_cov_grade": row.get("sg_cov_grade", ""),
             "sg_cov_forced_incompletion_rate": row.get("sg_cov_forced_incompletion_rate", ""),
             "sg_cov_snaps_per_target": row.get("sg_cov_snaps_per_target", ""),
@@ -1662,6 +1688,9 @@ def load_cfb_production_signals(path: Path | None = None, target_season: int = 2
             "sg_cov_qb_rating_against": row.get("sg_cov_qb_rating_against", ""),
             "sg_cov_man_grade": row.get("sg_cov_man_grade", ""),
             "sg_cov_zone_grade": row.get("sg_cov_zone_grade", ""),
+            "sg_slot_cov_snaps": row.get("sg_slot_cov_snaps", ""),
+            "sg_slot_cov_snaps_per_target": row.get("sg_slot_cov_snaps_per_target", ""),
+            "sg_slot_cov_qb_rating_against": row.get("sg_slot_cov_qb_rating_against", ""),
             "sg_slot_cov_yards_per_snap": row.get("sg_slot_cov_yards_per_snap", ""),
             "sg_ol_pass_block_grade": row.get("sg_ol_pass_block_grade", ""),
             "sg_ol_run_block_grade": row.get("sg_ol_run_block_grade", ""),
