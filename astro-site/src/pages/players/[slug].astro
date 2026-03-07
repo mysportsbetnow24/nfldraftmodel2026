@@ -11,7 +11,8 @@ export function getStaticPaths() {
 
 const { player } = Astro.props;
 const playerUrl = `https://scoutinggrade.com/players/${player.slug}`;
-const pageDescription = `${player.player_name} ${player.position} scouting report with grade, round projection, production snapshot, and role fit for the 2026 NFL Draft.`;
+const pageDescription = String(player.seo_description_override || "").trim()
+  || `${player.player_name} ${player.position} scouting report with grade, round projection, production snapshot, and role fit for the 2026 NFL Draft.`;
 const profileSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
@@ -83,6 +84,23 @@ const countRows = Array.isArray(player.counting_stat_chips) ? player.counting_st
 const positionLens = player && typeof player.position_lens === "object" && Array.isArray(player.position_lens.rows)
   ? player.position_lens
   : null;
+const toBullets = (value: string) =>
+  String(value || "")
+    .split("\n")
+    .map((line) => String(line || "").trim())
+    .filter(Boolean)
+    .map((line) => line.replace(/^\-\s*/, "").trim());
+const toParagraphs = (value: string) =>
+  String(value || "")
+    .split(/\n{2,}/)
+    .map((part) => String(part || "").trim())
+    .filter(Boolean);
+const winsBullets = toBullets(String(player.scouting_why_he_wins || ""));
+const concernBullets = toBullets(String(player.scouting_primary_concerns || ""));
+const summaryParagraphs = toParagraphs(String(player.scouting_report_summary || ""));
+const roleParagraphs = toParagraphs(String(player.scouting_role_projection || ""));
+const roleChips = [String(player.best_role || "").trim(), String(player.best_scheme_fit || "").trim(), ...(positionLens?.tags || [])]
+  .filter(Boolean);
 const compLine = (title: string, comp: any, fallback: string) => {
   if (!comp || !comp.name) return `${title}: ${fallback}`;
   const simRaw = Number(comp.similarity);
@@ -122,8 +140,10 @@ const compLine = (title: string, comp: any, fallback: string) => {
   <section class="card detail-grid">
     <article class="card">
       <h2 class="block-title">Report Summary</h2>
-      {String(player.scouting_report_summary || "").trim() ? (
-        <p class="muted block-copy report-summary">{player.scouting_report_summary}</p>
+      {summaryParagraphs.length ? (
+        <div class="summary-stack muted">
+          {summaryParagraphs.map((item: string) => <p class="block-copy report-summary">{item}</p>)}
+        </div>
       ) : (
         <p class="muted block-copy report-summary">No scouting summary available yet.</p>
       )}
@@ -148,37 +168,22 @@ const compLine = (title: string, comp: any, fallback: string) => {
           <div class="meter"><div class="meter-fill" style={`width:${marketPct.toFixed(1)}%;background:#0ea5e9;`}></div></div>
         </div>
       </div>
-      {positionLens && positionLens.rows.length ? (
-        <div class="card" style="margin-top:1rem;">
-          <h3 class="block-title" style="margin-bottom:0.65rem;">{positionLens.title}</h3>
-          {positionLens.tags?.length ? (
-            <div class="chip-row" style="margin-bottom:0.8rem;">
-              {positionLens.tags.map((tag: string) => <span class="chip info">{tag}</span>)}
-            </div>
-          ) : null}
-          <div class="bar-metrics">
-            {positionLens.rows.map((item: any) => (
-              <div class="metric-row">
-                <div class="metric-top"><span>{item.label}</span><strong>{Number(item.pct || 50).toFixed(0)}th pct</strong></div>
-                <div class="meter"><div class="meter-fill" style={`width:${Number(item.pct || 50).toFixed(1)}%;background:#1f5ea8;`}></div></div>
-                <div class="muted" style="margin-top:0.35rem;">{item.detail}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ) : null}
     </article>
     <article class="card">
       <h2 class="block-title">How He Wins</h2>
-      {String(player.scouting_why_he_wins || "").trim() ? (
-        <div class="muted pre-wrap">{player.scouting_why_he_wins}</div>
-      ) : <div class="muted pre-wrap">How he wins assessment updates as scouting notes refresh.</div>}
+      {winsBullets.length ? (
+        <ul class="scout-list muted">
+          {winsBullets.map((item: string) => <li>{item}</li>)}
+        </ul>
+      ) : <div class="muted">How he wins assessment updates as scouting notes refresh.</div>}
     </article>
     <article class="card">
       <h2 class="block-title">Primary Concerns</h2>
-      {String(player.scouting_primary_concerns || "").trim() ? (
-        <div class="muted pre-wrap">{player.scouting_primary_concerns}</div>
-      ) : <div class="muted pre-wrap">No major concerns flagged in the current profile.</div>}
+      {concernBullets.length ? (
+        <ul class="scout-list muted">
+          {concernBullets.map((item: string) => <li>{item}</li>)}
+        </ul>
+      ) : <div class="muted">No major concerns flagged in the current profile.</div>}
     </article>
     <article class="card">
       <h2 class="block-title">2025 Production Snapshot</h2>
@@ -209,10 +214,28 @@ const compLine = (title: string, comp: any, fallback: string) => {
       <div class="muted pre-wrap" style="margin-top:0.65rem;">Comp confidence: {player.comp_confidence || "-"}</div>
     </article>
     <article class="card">
-      <h2 class="block-title">Role / Scheme Projection</h2>
-      {String(player.scouting_role_projection || "").trim() ? (
-        <div class="muted pre-wrap">{player.scouting_role_projection}</div>
-      ) : <div class="muted pre-wrap">Role and scheme projection is still calibrating.</div>}
+      <h2 class="block-title">Role / Scheme Fit</h2>
+      {roleChips.length ? (
+        <div class="chip-row" style="margin-bottom:0.8rem;">
+          {roleChips.map((chip: string, idx: number) => <span class={idx < 2 ? "chip good" : "chip info"}>{chip}</span>)}
+        </div>
+      ) : null}
+      {positionLens && positionLens.rows.length ? (
+        <div class="bar-metrics" style="margin-bottom:0.9rem;">
+          {positionLens.rows.map((item: any) => (
+            <div class="metric-row">
+              <div class="metric-top"><span>{item.label}</span><strong>{Number(item.pct || 50).toFixed(0)}th pct</strong></div>
+              <div class="meter"><div class="meter-fill" style={`width:${Number(item.pct || 50).toFixed(1)}%;background:#1f5ea8;`}></div></div>
+              <div class="muted" style="margin-top:0.35rem;">{item.detail}</div>
+            </div>
+          ))}
+        </div>
+      ) : null}
+      {roleParagraphs.length ? (
+        <div class="summary-stack muted">
+          {roleParagraphs.map((item: string) => <p class="block-copy">{item}</p>)}
+        </div>
+      ) : <div class="muted">Role and scheme projection is still calibrating.</div>}
     </article>
   </section>
 
@@ -221,3 +244,24 @@ const compLine = (title: string, comp: any, fallback: string) => {
   </section>
 
 </BaseLayout>
+
+<style>
+  .scout-list {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.65rem;
+  }
+  .scout-list li {
+    line-height: 1.55;
+  }
+  .summary-stack {
+    display: grid;
+    gap: 0.75rem;
+  }
+  .summary-stack .block-copy,
+  .report-summary {
+    margin: 0;
+    line-height: 1.65;
+  }
+</style>

@@ -1398,7 +1398,7 @@ def scouting_note(position: str, final_grade: float, rank_seed: int) -> str:
         "CB": "matches routes with disciplined leverage",
         "S": "eliminates explosives with range and communication",
     }.get(position, "has translatable NFL tools")
-    return f"{tier} profile; {lens}. Seed rank {rank_seed} indicates current market confidence with developmental upside still available."
+    return f"{tier} profile; {lens}."
 
 
 def quick_z(value: float, mean: float, std: float) -> float:

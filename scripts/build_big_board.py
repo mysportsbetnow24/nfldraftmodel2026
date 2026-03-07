@@ -3378,17 +3378,17 @@ def _build_scouting_sections(
     }
 
     role_projection_logic = {
-        "QB": "For film-heavy evaluation: this role asks for rhythm passing on early downs, controlled aggression on explosives, and situational command on third down/two-minute.",
-        "RB": "For film-heavy evaluation: this role asks for box-count recognition, run-track efficiency, and enough receiving utility to stay on the field in sub packages.",
-        "WR": "For film-heavy evaluation: this role asks for separation creation by leverage, coverage-ID chemistry with the QB, and consistent finish through contact.",
-        "TE": "For film-heavy evaluation: this role asks for personnel multiplicity, where the same player can stress seams and still survive as a blocker.",
-        "OT": "For film-heavy evaluation: this role asks for stable pass sets versus wide alignments and run-game displacement without losing balance.",
-        "IOL": "For film-heavy evaluation: this role asks for interior pocket integrity, line-call chemistry, and efficient climb timing in zone/gap runs.",
-        "EDGE": "For film-heavy evaluation: this role asks for a complete four-down profile, combining rush productivity with edge-setting discipline versus the run.",
-        "DT": "For film-heavy evaluation: this role asks for early-down run control plus enough third-down pocket push to keep fronts multiple.",
-        "LB": "For film-heavy evaluation: this role asks for fit integrity, pursuit range, and route-distribution awareness in coverage.",
-        "CB": "For film-heavy evaluation: this role asks for leverage consistency across man/zone and reliable tackle finish when targeted in run support.",
-        "S": "For film-heavy evaluation: this role asks for rotation versatility, overlap range, and communication that prevents explosive busts.",
+        "QB": "Early value comes from rhythm passing on early downs, controlled aggression on explosives, and situational command on third down or in two-minute.",
+        "RB": "Early value comes from box-count recognition, efficient run tracks, and enough receiving utility to stay on the field in sub packages.",
+        "WR": "Early value comes from leverage-based separation, coverage-ID chemistry with the quarterback, and finish strength through contact.",
+        "TE": "Early value comes from personnel flexibility, where the same player can stress seams and still survive attached to the formation.",
+        "OT": "Early value comes from stable pass sets versus wide alignments and enough run-game displacement without losing balance.",
+        "IOL": "Early value comes from interior pocket integrity, line-call chemistry, and efficient climb timing in zone and gap runs.",
+        "EDGE": "Early value comes from a true four-down profile that combines rush productivity with edge-setting discipline versus the run.",
+        "DT": "Early value comes from early-down run control plus enough third-down pocket push to keep fronts multiple.",
+        "LB": "Early value comes from fit integrity, pursuit range, and route-distribution awareness in coverage.",
+        "CB": "Early value comes from leverage consistency across man and zone, plus reliable tackle finish when the offense tests him in run support.",
+        "S": "Early value comes from rotation versatility, overlap range, and communication that prevents explosive busts.",
     }
 
     if kiper_rank and kiper_rank_delta:
@@ -3428,13 +3428,21 @@ def _build_scouting_sections(
         production_snapshot = pff_line
 
     report_parts = [
-        f"{name} ({position}, {school}) carries a {final_grade:.2f} model grade with a current {round_value} projection.",
-        f"Current board slot: {consensus_rank}.",
-        f"Primary NFL pathway: {clean_role} in {clean_scheme}.",
+        f"{name} ({position}, {school}) projects as a {round_value} talent with his cleanest NFL path coming as a {clean_role.lower()} in {clean_scheme}.",
+        f"The current model grade sits at {final_grade:.2f}, with the board currently slotting him at No. {consensus_rank}.",
     ]
     if str(scouting_notes or "").strip():
         report_parts.append(_compact_text(scouting_notes, 220))
-    report_parts.append("How to read this card: 'How He Wins' describes repeatable film traits; 'Primary Concerns' lists failure points that can delay NFL translation.")
+    else:
+        report_parts.append(
+            _compact_text(
+                role_projection_logic.get(
+                    pos,
+                    "NFL translation is strongest when deployment and technique stay inside the current role lane.",
+                ),
+                210,
+            )
+        )
     report = " ".join(report_parts)
 
     wins_points: list[str] = []
@@ -3451,7 +3459,6 @@ def _build_scouting_sections(
     wins = "\n".join(f"- {point}" for point in wins_points[:5])
 
     concern_points: list[str] = []
-    concern_points.append(concern_logic.get(pos, "Projection risk centers on consistency under NFL speed, stress, and role expansion."))
 
     if pos == "QB":
         if qb_epa is not None and qb_epa < 0.08:
@@ -3529,10 +3536,6 @@ def _build_scouting_sections(
             concern_points.append(f"Plays-on-ball rate ({db_plays_ball:.2f} per target) is light for top-end safety projection.")
         if db_yards_cov is not None and db_yards_cov > 1.30:
             concern_points.append(f"Coverage efficiency ({db_yards_cov:.2f} yards/cov snap) suggests transition/angle cleanup.")
-    if clean_role != "Role TBD":
-        concern_points.append(
-            f"Role stress test: value is strongest in {clean_role.lower()}; projection gets thinner if usage expands too far outside that lane early."
-        )
     if concerns:
         for concern in concerns[:2]:
             concern_points.append(f"Scouting concern to verify: {concern}.")
@@ -3545,17 +3548,17 @@ def _build_scouting_sections(
             concern_points.append("Missing EPA/play context limits separation of explosive production versus sustainable drive efficiency.")
     if not concerns and pff_grade is not None and pff_grade < 75.0:
         concern_points.append(f"PFF grade {pff_grade:.1f} suggests current performance volatility that needs film-confirmed cleanup.")
-    if len(concern_points) < 3:
+    if len(concern_points) < 2:
         for fallback_concern in concern_depth.get(pos, []):
             if len(concern_points) >= 3:
                 break
             if fallback_concern not in concern_points:
                 concern_points.append(fallback_concern)
-    while len(concern_points) < 3:
+    if not concern_points:
         concern_points.append(
-            "Projection variance remains moderate until independent film and role-specific evidence stacks further."
+            "No major red flag stands out in the current profile, but the NFL transition still depends on holding this role against better athletes and processing speed."
         )
-    primary_concerns = "\n".join(f"- {point}" for point in concern_points[:5])
+    primary_concerns = "\n".join(f"- {point}" for point in concern_points[:4])
 
     hist_comp_text = ""
     if str(historical_combine_comp_1 or "").strip():
@@ -3572,7 +3575,8 @@ def _build_scouting_sections(
         hist_comp_text += "."
 
     projection_parts = [
-        f"Best early team fit: {clean_team}. Scheme path: {clean_scheme}. Expected early deployment: {clean_role}.",
+        f"Best early team fit: {clean_team}.",
+        f"Expected early deployment: {clean_role} in {clean_scheme}.",
         role_projection_logic.get(pos, "For film-heavy evaluation: this role asks for translatable execution against faster processing environments."),
     ]
     if hist_comp_text:

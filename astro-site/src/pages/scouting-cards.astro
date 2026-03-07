@@ -54,10 +54,10 @@ const collectionSchema = {
     </div>
     <div class="detail-grid">
       <article class="card"><strong>Report Summary</strong><div id="dSummary" class="muted detail-text report-summary"></div></article>
-      <article class="card"><strong>How He Wins</strong><div id="dWins" class="muted detail-text pre-wrap"></div></article>
-      <article class="card"><strong>Primary Concerns</strong><div id="dConcerns" class="muted detail-text pre-wrap"></div></article>
-      <article class="card"><strong>2025 Production Snapshot</strong><div id="dProd" class="muted detail-text pre-wrap"></div></article>
-      <article class="card"><strong>Role / Scheme Projection</strong><div id="dRole" class="muted detail-text pre-wrap"></div></article>
+      <article class="card"><strong>How He Wins</strong><div id="dWins" class="muted detail-text"></div></article>
+      <article class="card"><strong>Primary Concerns</strong><div id="dConcerns" class="muted detail-text"></div></article>
+      <article class="card"><strong>2025 Production Snapshot</strong><div id="dProd" class="muted detail-text"></div></article>
+      <article class="card"><strong>Role / Scheme Fit</strong><div id="dRole" class="muted detail-text"></div></article>
     </div>
   </section>
 
@@ -111,6 +111,125 @@ const collectionSchema = {
       if (el) el.textContent = value;
     };
 
+    const toBullets = (value) =>
+      String(value || "")
+        .split("\n")
+        .map((line) => String(line || "").trim())
+        .filter(Boolean)
+        .map((line) => line.replace(/^\-\s*/, "").trim());
+
+    const toParagraphs = (value) =>
+      String(value || "")
+        .split(/\n{2,}/)
+        .map((part) => String(part || "").trim())
+        .filter(Boolean);
+
+    const escapeHtml = (value) =>
+      String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+
+    const renderParagraphStack = (id, value, fallback) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const parts = toParagraphs(value);
+      if (!parts.length) {
+        el.innerHTML = `<p class="block-copy">${escapeHtml(fallback)}</p>`;
+        return;
+      }
+      el.innerHTML = `<div class="summary-stack">${parts.map((part) => `<p class="block-copy">${escapeHtml(part)}</p>`).join("")}</div>`;
+    };
+
+    const renderBulletList = (id, value, fallback) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const items = toBullets(value);
+      if (!items.length) {
+        el.innerHTML = `<p class="block-copy">${escapeHtml(fallback)}</p>`;
+        return;
+      }
+      el.innerHTML = `<ul class="scout-list">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+    };
+
+    const renderProduction = (id, player) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const advancedRows = Array.isArray(player.advanced_metric_cards) ? player.advanced_metric_cards : [];
+      const countRows = Array.isArray(player.counting_stat_chips) ? player.counting_stat_chips : [];
+      const snapshotText = String(player.scouting_production_snapshot || "").trim();
+      const blocks = [];
+      if (advancedRows.length) {
+        blocks.push(`
+          <div class="bar-metrics">
+            ${advancedRows.map((m) => `
+              <div class="metric-row">
+                <div class="metric-top"><span>${escapeHtml(m.label)}</span><strong>${escapeHtml(m.display)} · ${Number(m.pct || 50).toFixed(0)}th pct</strong></div>
+                <div class="meter"><div class="meter-fill" style="width:${Number(m.pct || 50).toFixed(1)}%;background:#0f7b6a;"></div></div>
+              </div>
+            `).join("")}
+          </div>
+        `);
+      }
+      if (countRows.length) {
+        blocks.push(`
+          <div class="chip-row card-chip-row">
+            ${countRows.map((m) => `<span class="chip info">${escapeHtml(m.label)}: ${escapeHtml(m.display)}</span>`).join("")}
+          </div>
+        `);
+      }
+      if (snapshotText) {
+        blocks.push(`<p class="block-copy">${escapeHtml(snapshotText)}</p>`);
+      }
+      if (!blocks.length) {
+        blocks.push(`<p class="block-copy">No production snapshot available yet.</p>`);
+      }
+      el.innerHTML = blocks.join("");
+    };
+
+    const renderRoleFit = (id, player) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const positionLens = player && typeof player.position_lens === "object" && Array.isArray(player.position_lens.rows)
+        ? player.position_lens
+        : null;
+      const roleParagraphs = toParagraphs(String(player.scouting_role_projection || ""));
+      const roleChips = [
+        String(player.best_role || "").trim(),
+        String(player.best_scheme_fit || "").trim(),
+        ...((positionLens && Array.isArray(positionLens.tags)) ? positionLens.tags : []),
+      ].filter(Boolean);
+      const blocks = [];
+      if (roleChips.length) {
+        blocks.push(`
+          <div class="chip-row card-chip-row">
+            ${roleChips.map((chip, idx) => `<span class="${idx < 2 ? "chip good" : "chip info"}">${escapeHtml(chip)}</span>`).join("")}
+          </div>
+        `);
+      }
+      if (positionLens && positionLens.rows.length) {
+        blocks.push(`
+          <div class="bar-metrics">
+            ${positionLens.rows.map((item) => `
+              <div class="metric-row">
+                <div class="metric-top"><span>${escapeHtml(item.label)}</span><strong>${Number(item.pct || 50).toFixed(0)}th pct</strong></div>
+                <div class="meter"><div class="meter-fill" style="width:${Number(item.pct || 50).toFixed(1)}%;background:#1f5ea8;"></div></div>
+                <div class="muted lens-detail">${escapeHtml(item.detail || "")}</div>
+              </div>
+            `).join("")}
+          </div>
+        `);
+      }
+      if (roleParagraphs.length) {
+        blocks.push(`<div class="summary-stack">${roleParagraphs.map((part) => `<p class="block-copy">${escapeHtml(part)}</p>`).join("")}</div>`);
+      } else {
+        blocks.push(`<p class="block-copy">Role and scheme projection is still calibrating.</p>`);
+      }
+      el.innerHTML = blocks.join("");
+    };
+
     const showCard = (uid) => {
       const p = byUid[uid];
       if (!p) return;
@@ -123,11 +242,11 @@ const collectionSchema = {
       setText("dGrade", fmt(p.final_grade));
       setText("dPff", Number(p.pff_grade || 0) > 0 ? Number(p.pff_grade).toFixed(1) : "-");
       setText("dRas", rasScore(p));
-      setText("dSummary", fmt(p.scouting_report_summary));
-      setText("dWins", fmt(p.scouting_why_he_wins));
-      setText("dConcerns", fmt(p.scouting_primary_concerns));
-      setText("dProd", fmt(p.scouting_production_snapshot));
-      setText("dRole", fmt(p.scouting_role_projection));
+      renderParagraphStack("dSummary", p.scouting_report_summary, "No scouting summary available yet.");
+      renderBulletList("dWins", p.scouting_why_he_wins, "How he wins assessment updates as scouting notes refresh.");
+      renderBulletList("dConcerns", p.scouting_primary_concerns, "No major concerns flagged in the current profile.");
+      renderProduction("dProd", p);
+      renderRoleFit("dRole", p);
     };
 
     search?.addEventListener("input", renderList);
@@ -136,3 +255,26 @@ const collectionSchema = {
   </script>
 
 </BaseLayout>
+
+<style>
+  .scout-list {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.65rem;
+  }
+  .summary-stack {
+    display: grid;
+    gap: 0.75rem;
+  }
+  .block-copy {
+    margin: 0;
+    line-height: 1.65;
+  }
+  .card-chip-row {
+    margin-bottom: 0.8rem;
+  }
+  .lens-detail {
+    margin-top: 0.35rem;
+  }
+</style>

@@ -38,6 +38,7 @@ NFLVERSE_PLAYERS = NFLVERSE_DIR / "players.parquet"
 HISTORICAL_DRAFT_COMPILATION = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "notebook" / "compilations" / "drafts2015To2022.csv"
 HISTORICAL_DRAFT_REFINED = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "old-data" / "pfr-compilations" / "2014To2018Drafts-refined.csv"
 HISTORICAL_LABELS_LEAGIFY = ROOT / "data" / "processed" / "historical_labels_leagify_2015_2023.csv"
+OWNER_SCOUTING_NOTES_CSV = ROOT / "data" / "sources" / "manual" / "owner_scouting_notes_2026.csv"
 
 
 PRODUCTION_METRIC_KEYS = [
@@ -2263,6 +2264,25 @@ def _slugify_player(name: str) -> str:
     )
 
 
+def _load_owner_scouting_notes() -> dict[str, dict[str, str]]:
+    rows = _read_csv(OWNER_SCOUTING_NOTES_CSV)
+    out: dict[str, dict[str, str]] = {}
+    for row in rows:
+        slug = str(row.get("slug", "")).strip().lower()
+        if not slug:
+            slug = _slugify_player(row.get("player_name", ""))
+        if not slug:
+            continue
+        out[slug] = {
+            "report_summary": str(row.get("public_report_summary", "")).strip(),
+            "why_he_wins": str(row.get("public_why_he_wins", "")).strip(),
+            "primary_concerns": str(row.get("public_primary_concerns", "")).strip(),
+            "role_projection": str(row.get("public_role_projection", "")).strip(),
+            "seo_description": str(row.get("seo_description", "")).strip(),
+        }
+    return out
+
+
 def _needs_score(row: dict) -> float:
     depth = _safe_float(row.get("depth_chart_pressure")) or 0.0
     fa = _safe_float(row.get("free_agent_pressure")) or 0.0
@@ -2288,6 +2308,7 @@ def _needs_score(row: dict) -> float:
 def export_board(player_school_map: dict[str, str]) -> list[dict]:
     rows = _read_csv(BOARD_CSV)
     comp_outcomes = _load_historical_comp_outcomes()
+    owner_notes = _load_owner_scouting_notes()
     consensus_mean_population = [
         float(_safe_float(row.get("consensus_board_mean_rank")) or 0.0)
         for row in rows
@@ -2335,6 +2356,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             school = _canonical_school_name(row.get("school", ""))
 
         slug = _slugify_player(player_name)
+        owner_note = owner_notes.get(slug, {})
         rank_driver_summary = row.get("rank_driver_summary", "")
         top_driver_key, top_driver_delta = _top_driver(rank_driver_summary)
         pff_grade = round(_safe_float(row.get("pff_grade")) or 0.0, 2)
@@ -2580,11 +2602,12 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "historical_comp_median": _public_comp_dict(comp_median),
                 "historical_comp_ceiling": _public_comp_dict(comp_ceiling),
                 "comp_confidence": str(row.get("comp_confidence", "")).strip(),
-                "scouting_report_summary": row.get("scouting_report_summary", ""),
-                "scouting_why_he_wins": row.get("scouting_why_he_wins", ""),
-                "scouting_primary_concerns": row.get("scouting_primary_concerns", ""),
+                "scouting_report_summary": owner_note.get("report_summary") or row.get("scouting_report_summary", ""),
+                "scouting_why_he_wins": owner_note.get("why_he_wins") or row.get("scouting_why_he_wins", ""),
+                "scouting_primary_concerns": owner_note.get("primary_concerns") or row.get("scouting_primary_concerns", ""),
                 "scouting_production_snapshot": production_snapshot,
-                "scouting_role_projection": row.get("scouting_role_projection", ""),
+                "scouting_role_projection": owner_note.get("role_projection") or row.get("scouting_role_projection", ""),
+                "seo_description_override": owner_note.get("seo_description") or "",
                 "player_report_url": f"/players/{slug}",
             }
         )
