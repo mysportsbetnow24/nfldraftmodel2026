@@ -301,8 +301,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": 4.22,
     "rank_history": [
-      3,
-      3,
+      2,
+      2,
       2,
       2,
       2,
@@ -310,7 +310,7 @@
       2,
       2
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 84.2,
@@ -485,8 +485,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": 3.9,
     "rank_history": [
-      4,
-      4,
+      3,
+      3,
       3,
       3,
       3,
@@ -494,7 +494,7 @@
       3,
       3
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 86.1,
@@ -678,8 +678,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.03,
     "rank_history": [
-      5,
-      5,
+      4,
+      4,
       4,
       4,
       4,
@@ -687,7 +687,7 @@
       4,
       4
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 93.7,
@@ -916,8 +916,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -4.24,
     "rank_history": [
-      6,
-      6,
+      5,
+      5,
       5,
       5,
       5,
@@ -925,7 +925,7 @@
       5,
       5
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 82.1,
@@ -1113,8 +1113,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.63,
     "rank_history": [
-      7,
-      7,
+      6,
+      6,
       6,
       6,
       6,
@@ -1122,7 +1122,7 @@
       6,
       6
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 85.3,
@@ -1345,8 +1345,8 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": 0.62,
     "rank_history": [
-      8,
-      8,
+      7,
+      7,
       7,
       7,
       7,
@@ -1354,7 +1354,7 @@
       7,
       7
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 89.6,
@@ -1633,6 +1633,8 @@
       8,
       8,
       8,
+      8,
+      8,
       8
     ],
     "rank_move_window": 0,
@@ -1816,6 +1818,8 @@
       9,
       9,
       9,
+      9,
+      9,
       9
     ],
     "rank_move_window": 0,
@@ -1836,11 +1840,11 @@
       "sg_def_total_pressures": 3.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 96.8,
+      "sg_cov_grade": 96.9,
       "sg_cov_forced_incompletion_rate": 100.0,
-      "sg_cov_snaps_per_target": 93.5,
-      "sg_cov_yards_per_snap": 12.9,
-      "sg_cov_qb_rating_against": 6.5,
+      "sg_cov_snaps_per_target": 93.8,
+      "sg_cov_yards_per_snap": 12.5,
+      "sg_cov_qb_rating_against": 6.2,
       "sg_cov_man_grade": 100.0,
       "sg_slot_cov_snaps_per_target": 96.2,
       "sg_slot_cov_qb_rating_against": 50.0
@@ -1851,7 +1855,7 @@
         "label": "Coverage Grade",
         "raw": 90.7,
         "display": "90.7",
-        "pct": 96.8,
+        "pct": 96.9,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -1871,7 +1875,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 9.7,
         "display": "9.7",
-        "pct": 93.5,
+        "pct": 93.8,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -1881,7 +1885,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.5,
         "display": "0.50",
-        "pct": 87.1,
+        "pct": 87.5,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -1891,7 +1895,7 @@
         "label": "QB Rating Against",
         "raw": 31.3,
         "display": "31.3",
-        "pct": 93.5,
+        "pct": 93.8,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -1949,11 +1953,11 @@
       "sg_slot_cov_qb_rating_against": 56.3
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 96.8,
+      "sg_cov_grade": 96.9,
       "sg_cov_forced_incompletion_rate": 100.0,
-      "sg_cov_snaps_per_target": 93.5,
-      "sg_cov_yards_per_snap": 12.9,
-      "sg_cov_qb_rating_against": 6.5,
+      "sg_cov_snaps_per_target": 93.8,
+      "sg_cov_yards_per_snap": 12.5,
+      "sg_cov_qb_rating_against": 6.2,
       "sg_cov_man_grade": 100.0,
       "sg_slot_cov_snaps_per_target": 96.2,
       "sg_slot_cov_qb_rating_against": 50.0
@@ -1994,7 +1998,7 @@
       "cfb_db_tackles": 45.0,
       "sg_def_total_pressures": 3.0
     },
-    "production_composite_pct": 88.1,
+    "production_composite_pct": 88.3,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -2002,12 +2006,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 90.3,
+          "pct": 90.7,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 88.2,
+          "pct": 88.6,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -2102,8 +2106,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 1.16,
     "rank_history": [
-      2,
-      2,
+      10,
+      10,
       10,
       10,
       10,
@@ -2111,7 +2115,7 @@
       10,
       10
     ],
-    "rank_move_window": -8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 86.5,
@@ -2359,7 +2363,7 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.6,
     "rank_history": [
-      13,
+      11,
       11,
       11,
       11,
@@ -2368,7 +2372,7 @@
       11,
       11
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 66.0,
@@ -2607,6 +2611,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.78,
     "rank_history": [
+      12,
+      12,
       12,
       12,
       12,
@@ -2851,6 +2857,8 @@
       13,
       13,
       13,
+      13,
+      13,
       13
     ],
     "rank_move_window": 0,
@@ -3084,8 +3092,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.79,
     "rank_history": [
-      16,
-      16,
+      14,
+      14,
       14,
       14,
       14,
@@ -3093,7 +3101,7 @@
       14,
       14
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 91.1,
@@ -3374,6 +3382,8 @@
       15,
       15,
       15,
+      15,
+      15,
       15
     ],
     "rank_move_window": 0,
@@ -3557,14 +3567,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.71,
     "rank_history": [
-      18,
-      18,
+      16,
+      16,
+      16,
+      16,
       16,
       16,
       16,
       16
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 92.0,
@@ -3853,16 +3865,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.84,
     "rank_history": [
-      35,
-      34,
-      16,
-      16,
+      17,
+      17,
+      17,
+      17,
       17,
       17,
       17,
       17
     ],
-    "rank_move_window": 18,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 89.0,
@@ -4094,16 +4106,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.28,
     "rank_history": [
-      17,
-      17,
-      17,
-      17,
+      18,
+      18,
+      18,
+      18,
       18,
       18,
       18,
       18
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 90.3,
@@ -4342,8 +4354,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.53,
     "rank_history": [
-      18,
-      18,
+      19,
+      19,
       19,
       19,
       19,
@@ -4351,7 +4363,7 @@
       19,
       19
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 69.0,
@@ -4579,8 +4591,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.64,
     "rank_history": [
-      30,
-      27,
+      20,
+      20,
       20,
       20,
       20,
@@ -4588,7 +4600,7 @@
       20,
       20
     ],
-    "rank_move_window": 10,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 87.2,
@@ -4807,8 +4819,8 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -1.13,
     "rank_history": [
-      20,
-      20,
+      21,
+      21,
       21,
       21,
       21,
@@ -4816,7 +4828,7 @@
       21,
       21
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 81.5,
@@ -5008,8 +5020,8 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.56,
     "rank_history": [
-      12,
-      13,
+      22,
+      22,
       22,
       22,
       22,
@@ -5017,7 +5029,7 @@
       22,
       22
     ],
-    "rank_move_window": -10,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 88.6,
@@ -5265,8 +5277,8 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -1.14,
     "rank_history": [
-      21,
-      22,
+      23,
+      23,
       23,
       23,
       23,
@@ -5274,7 +5286,7 @@
       23,
       23
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 93.8,
@@ -5515,8 +5527,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": 2.09,
     "rank_history": [
-      22,
-      21,
+      24,
+      24,
       24,
       24,
       24,
@@ -5524,7 +5536,7 @@
       24,
       24
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 90.7,
@@ -5764,8 +5776,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": 1.68,
     "rank_history": [
-      24,
-      24,
+      25,
+      25,
       25,
       25,
       25,
@@ -5773,7 +5785,7 @@
       25,
       25
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 65.4,
@@ -6003,6 +6015,8 @@
       26,
       26,
       26,
+      26,
+      26,
       26
     ],
     "rank_move_window": 0,
@@ -6187,6 +6201,8 @@
       27,
       27,
       27,
+      27,
+      27,
       27
     ],
     "rank_move_window": 0,
@@ -6208,11 +6224,11 @@
       "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 29.0,
-      "sg_cov_forced_incompletion_rate": 87.1,
-      "sg_cov_snaps_per_target": 29.0,
+      "sg_cov_grade": 28.1,
+      "sg_cov_forced_incompletion_rate": 87.5,
+      "sg_cov_snaps_per_target": 31.2,
       "sg_cov_yards_per_snap": 100.0,
-      "sg_cov_qb_rating_against": 61.3,
+      "sg_cov_qb_rating_against": 62.5,
       "sg_cov_man_grade": 29.0,
       "sg_slot_cov_snaps_per_target": 73.1,
       "sg_slot_cov_qb_rating_against": 34.6
@@ -6223,7 +6239,7 @@
         "label": "Coverage Grade",
         "raw": 71.2,
         "display": "71.2",
-        "pct": 29.0,
+        "pct": 28.1,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -6233,7 +6249,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 21.1,
         "display": "21.1%",
-        "pct": 87.1,
+        "pct": 87.5,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -6243,7 +6259,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 6.6,
         "display": "6.6",
-        "pct": 29.0,
+        "pct": 31.2,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -6263,7 +6279,7 @@
         "label": "QB Rating Against",
         "raw": 78.9,
         "display": "78.9",
-        "pct": 38.7,
+        "pct": 37.5,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -6321,11 +6337,11 @@
       "sg_slot_cov_qb_rating_against": 45.1
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 29.0,
-      "sg_cov_forced_incompletion_rate": 87.1,
-      "sg_cov_snaps_per_target": 29.0,
+      "sg_cov_grade": 28.1,
+      "sg_cov_forced_incompletion_rate": 87.5,
+      "sg_cov_snaps_per_target": 31.2,
       "sg_cov_yards_per_snap": 100.0,
-      "sg_cov_qb_rating_against": 61.3,
+      "sg_cov_qb_rating_against": 62.5,
       "sg_cov_man_grade": 29.0,
       "sg_slot_cov_snaps_per_target": 73.1,
       "sg_slot_cov_qb_rating_against": 34.6
@@ -6382,7 +6398,7 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 14.5,
+          "pct": 15.6,
           "detail": "how expensive it is to attack this defender"
         },
         {
@@ -6463,6 +6479,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -0.35,
     "rank_history": [
+      28,
+      28,
       28,
       28,
       28,
@@ -6655,6 +6673,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -0.82,
     "rank_history": [
+      29,
+      29,
       29,
       29,
       29,
@@ -6885,6 +6905,8 @@
       30,
       30,
       30,
+      30,
+      30,
       30
     ],
     "rank_move_window": 0,
@@ -7089,8 +7111,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -0.81,
     "rank_history": [
-      26,
-      26,
+      31,
+      31,
       31,
       31,
       31,
@@ -7098,7 +7120,7 @@
       31,
       31
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 74.6,
@@ -7323,8 +7345,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": 1.68,
     "rank_history": [
-      27,
-      29,
+      32,
+      32,
       32,
       32,
       32,
@@ -7332,7 +7354,7 @@
       32,
       32
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 92.4,
@@ -7538,6 +7560,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.3,
     "rank_history": [
+      33,
+      33,
       33,
       33,
       33,
@@ -7784,6 +7808,8 @@
       34,
       34,
       34,
+      34,
+      34,
       34
     ],
     "rank_move_window": 0,
@@ -7805,11 +7831,11 @@
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 64.5,
-      "sg_cov_forced_incompletion_rate": 38.7,
-      "sg_cov_snaps_per_target": 83.9,
-      "sg_cov_yards_per_snap": 54.8,
-      "sg_cov_qb_rating_against": 54.8,
+      "sg_cov_grade": 62.5,
+      "sg_cov_forced_incompletion_rate": 37.5,
+      "sg_cov_snaps_per_target": 84.4,
+      "sg_cov_yards_per_snap": 53.1,
+      "sg_cov_qb_rating_against": 56.2,
       "sg_cov_man_grade": 71.0,
       "sg_slot_cov_snaps_per_target": 42.3,
       "sg_slot_cov_qb_rating_against": 23.1
@@ -7820,7 +7846,7 @@
         "label": "Coverage Grade",
         "raw": 80.3,
         "display": "80.3",
-        "pct": 64.5,
+        "pct": 62.5,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -7830,7 +7856,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 15.4,
         "display": "15.4%",
-        "pct": 38.7,
+        "pct": 37.5,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -7840,7 +7866,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 8.1,
         "display": "8.1",
-        "pct": 83.9,
+        "pct": 84.4,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -7850,7 +7876,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.8,
         "display": "0.80",
-        "pct": 45.2,
+        "pct": 46.9,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -7860,7 +7886,7 @@
         "label": "QB Rating Against",
         "raw": 70.8,
         "display": "70.8",
-        "pct": 45.2,
+        "pct": 43.8,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -7918,11 +7944,11 @@
       "sg_slot_cov_qb_rating_against": 39.6
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 64.5,
-      "sg_cov_forced_incompletion_rate": 38.7,
-      "sg_cov_snaps_per_target": 83.9,
-      "sg_cov_yards_per_snap": 54.8,
-      "sg_cov_qb_rating_against": 54.8,
+      "sg_cov_grade": 62.5,
+      "sg_cov_forced_incompletion_rate": 37.5,
+      "sg_cov_snaps_per_target": 84.4,
+      "sg_cov_yards_per_snap": 53.1,
+      "sg_cov_qb_rating_against": 56.2,
       "sg_cov_man_grade": 71.0,
       "sg_slot_cov_snaps_per_target": 42.3,
       "sg_slot_cov_qb_rating_against": 23.1
@@ -7971,7 +7997,7 @@
       "cfb_db_tfl": 4.0,
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 57.1,
+    "production_composite_pct": 56.7,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -7979,12 +8005,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 64.6,
+          "pct": 65.7,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 45.2,
+          "pct": 43.8,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -8060,8 +8086,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": 1.78,
     "rank_history": [
-      42,
-      42,
+      35,
+      35,
       35,
       35,
       35,
@@ -8069,7 +8095,7 @@
       35,
       35
     ],
-    "rank_move_window": 7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 76.9,
@@ -8087,11 +8113,11 @@
       "sg_def_total_pressures": 6.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 54.8,
-      "sg_cov_forced_incompletion_rate": 64.5,
-      "sg_cov_snaps_per_target": 51.6,
-      "sg_cov_yards_per_snap": 71.0,
-      "sg_cov_qb_rating_against": 83.9,
+      "sg_cov_grade": 53.1,
+      "sg_cov_forced_incompletion_rate": 62.5,
+      "sg_cov_snaps_per_target": 53.1,
+      "sg_cov_yards_per_snap": 68.8,
+      "sg_cov_qb_rating_against": 84.4,
       "sg_cov_man_grade": 45.2,
       "sg_slot_cov_snaps_per_target": 34.6,
       "sg_slot_cov_qb_rating_against": 42.3
@@ -8102,7 +8128,7 @@
         "label": "Coverage Grade",
         "raw": 76.9,
         "display": "76.9",
-        "pct": 54.8,
+        "pct": 53.1,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -8112,7 +8138,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 17.6,
         "display": "17.6%",
-        "pct": 64.5,
+        "pct": 62.5,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -8122,7 +8148,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 7.3,
         "display": "7.3",
-        "pct": 51.6,
+        "pct": 53.1,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -8132,7 +8158,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.9,
         "display": "0.90",
-        "pct": 29.0,
+        "pct": 31.2,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -8142,7 +8168,7 @@
         "label": "QB Rating Against",
         "raw": 96.9,
         "display": "96.9",
-        "pct": 16.1,
+        "pct": 15.6,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -8200,11 +8226,11 @@
       "sg_slot_cov_qb_rating_against": 55.1
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 54.8,
-      "sg_cov_forced_incompletion_rate": 64.5,
-      "sg_cov_snaps_per_target": 51.6,
-      "sg_cov_yards_per_snap": 71.0,
-      "sg_cov_qb_rating_against": 83.9,
+      "sg_cov_grade": 53.1,
+      "sg_cov_forced_incompletion_rate": 62.5,
+      "sg_cov_snaps_per_target": 53.1,
+      "sg_cov_yards_per_snap": 68.8,
+      "sg_cov_qb_rating_against": 84.4,
       "sg_cov_man_grade": 45.2,
       "sg_slot_cov_snaps_per_target": 34.6,
       "sg_slot_cov_qb_rating_against": 42.3
@@ -8245,7 +8271,7 @@
       "cfb_db_tfl": 4.0,
       "sg_def_total_pressures": 6.0
     },
-    "production_composite_pct": 44.7,
+    "production_composite_pct": 44.6,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -8253,12 +8279,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 40.3,
+          "pct": 42.1,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 44.1,
+          "pct": 42.7,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -8329,6 +8355,8 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -2.45,
     "rank_history": [
+      36,
+      36,
       36,
       36,
       36,
@@ -8539,6 +8567,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 1.07,
     "rank_history": [
+      37,
+      37,
       37,
       37,
       37,
@@ -8791,6 +8821,8 @@
       38,
       38,
       38,
+      38,
+      38,
       38
     ],
     "rank_move_window": 0,
@@ -9025,6 +9057,8 @@
       39,
       39,
       39,
+      39,
+      39,
       39
     ],
     "rank_move_window": 0,
@@ -9246,6 +9280,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.47,
     "rank_history": [
+      40,
+      40,
       40,
       40,
       40,
@@ -9491,7 +9527,7 @@
     "top_rank_driver_delta": 2.41,
     "rank_history": [
       41,
-      40,
+      41,
       41,
       41,
       41,
@@ -9740,6 +9776,8 @@
       42,
       42,
       42,
+      42,
+      42,
       42
     ],
     "rank_move_window": 0,
@@ -9980,8 +10018,10 @@
     "top_rank_driver_delta": 3.16,
     "rank_history": [
       44,
-      44,
-      44,
+      43,
+      43,
+      43,
+      43,
       43,
       43,
       43
@@ -10002,11 +10042,11 @@
       "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 90.3,
-      "sg_cov_forced_incompletion_rate": 58.1,
-      "sg_cov_snaps_per_target": 64.5,
-      "sg_cov_yards_per_snap": 54.8,
-      "sg_cov_qb_rating_against": 29.0,
+      "sg_cov_grade": 87.5,
+      "sg_cov_forced_incompletion_rate": 56.2,
+      "sg_cov_snaps_per_target": 65.6,
+      "sg_cov_yards_per_snap": 53.1,
+      "sg_cov_qb_rating_against": 31.2,
       "sg_cov_man_grade": 54.8
     },
     "advanced_metric_cards": [
@@ -10015,7 +10055,7 @@
         "label": "Coverage Grade",
         "raw": 89.5,
         "display": "89.5",
-        "pct": 90.3,
+        "pct": 87.5,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -10025,7 +10065,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 17.2,
         "display": "17.2%",
-        "pct": 58.1,
+        "pct": 56.2,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -10035,7 +10075,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 7.4,
         "display": "7.4",
-        "pct": 64.5,
+        "pct": 65.6,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -10045,7 +10085,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.8,
         "display": "0.80",
-        "pct": 45.2,
+        "pct": 46.9,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -10055,7 +10095,7 @@
         "label": "QB Rating Against",
         "raw": 55.4,
         "display": "55.4",
-        "pct": 71.0,
+        "pct": 68.8,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -10080,11 +10120,11 @@
       "sg_cov_man_grade": 69.0
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 90.3,
-      "sg_cov_forced_incompletion_rate": 58.1,
-      "sg_cov_snaps_per_target": 64.5,
-      "sg_cov_yards_per_snap": 54.8,
-      "sg_cov_qb_rating_against": 29.0,
+      "sg_cov_grade": 87.5,
+      "sg_cov_forced_incompletion_rate": 56.2,
+      "sg_cov_snaps_per_target": 65.6,
+      "sg_cov_yards_per_snap": 53.1,
+      "sg_cov_qb_rating_against": 31.2,
       "sg_cov_man_grade": 54.8
     },
     "counting_stat_chips": [
@@ -10131,7 +10171,7 @@
       "cfb_db_tfl": 4.0,
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 66.1,
+    "production_composite_pct": 65.2,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -10139,12 +10179,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 54.9,
+          "pct": 56.2,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 76.4,
+          "pct": 75.0,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -10222,16 +10262,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.3,
     "rank_history": [
-      46,
+      45,
       44,
-      45,
-      45,
-      45,
+      44,
+      44,
+      44,
       44,
       44,
       44
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 65.8,
@@ -10249,11 +10289,11 @@
       "sg_def_total_pressures": 5.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 19.4,
-      "sg_cov_forced_incompletion_rate": 22.6,
-      "sg_cov_snaps_per_target": 19.4,
-      "sg_cov_yards_per_snap": 77.4,
-      "sg_cov_qb_rating_against": 67.7,
+      "sg_cov_grade": 18.8,
+      "sg_cov_forced_incompletion_rate": 21.9,
+      "sg_cov_snaps_per_target": 21.9,
+      "sg_cov_yards_per_snap": 75.0,
+      "sg_cov_qb_rating_against": 68.8,
       "sg_cov_man_grade": 3.2,
       "sg_slot_cov_snaps_per_target": 15.4,
       "sg_slot_cov_qb_rating_against": 30.8
@@ -10264,7 +10304,7 @@
         "label": "Coverage Grade",
         "raw": 65.8,
         "display": "65.8",
-        "pct": 19.4,
+        "pct": 18.8,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -10274,7 +10314,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 13.2,
         "display": "13.2%",
-        "pct": 22.6,
+        "pct": 21.9,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -10284,7 +10324,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 6.3,
         "display": "6.3",
-        "pct": 19.4,
+        "pct": 21.9,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -10294,7 +10334,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 1.0,
         "display": "1.00",
-        "pct": 22.6,
+        "pct": 25.0,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -10304,7 +10344,7 @@
         "label": "QB Rating Against",
         "raw": 84.2,
         "display": "84.2",
-        "pct": 32.3,
+        "pct": 31.2,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -10362,11 +10402,11 @@
       "sg_slot_cov_qb_rating_against": 42.4
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 19.4,
-      "sg_cov_forced_incompletion_rate": 22.6,
-      "sg_cov_snaps_per_target": 19.4,
-      "sg_cov_yards_per_snap": 77.4,
-      "sg_cov_qb_rating_against": 67.7,
+      "sg_cov_grade": 18.8,
+      "sg_cov_forced_incompletion_rate": 21.9,
+      "sg_cov_snaps_per_target": 21.9,
+      "sg_cov_yards_per_snap": 75.0,
+      "sg_cov_qb_rating_against": 68.8,
       "sg_cov_man_grade": 3.2,
       "sg_slot_cov_snaps_per_target": 15.4,
       "sg_slot_cov_qb_rating_against": 30.8
@@ -10407,7 +10447,7 @@
       "cfb_db_tackles": 48.0,
       "sg_def_total_pressures": 5.0
     },
-    "production_composite_pct": 26.2,
+    "production_composite_pct": 26.5,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -10415,12 +10455,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 21.0,
+          "pct": 23.4,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 42.0,
+          "pct": 41.7,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -10509,8 +10549,10 @@
     "top_rank_driver_delta": 0.42,
     "rank_history": [
       43,
-      43,
-      43,
+      45,
+      45,
+      45,
+      45,
       45,
       45,
       45
@@ -10683,6 +10725,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 0.64,
     "rank_history": [
+      46,
+      46,
       46,
       46,
       46,
@@ -10932,6 +10976,8 @@
       47,
       47,
       47,
+      47,
+      47,
       47
     ],
     "rank_move_window": 0,
@@ -11161,14 +11207,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -0.89,
     "rank_history": [
-      49,
-      49,
+      48,
+      48,
+      48,
+      48,
       48,
       48,
       48,
       48
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 87.1,
@@ -11187,11 +11235,11 @@
       "sg_def_total_pressures": 20.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 83.9,
-      "sg_cov_forced_incompletion_rate": 16.1,
-      "sg_cov_snaps_per_target": 29.0,
-      "sg_cov_yards_per_snap": 71.0,
-      "sg_cov_qb_rating_against": 48.4,
+      "sg_cov_grade": 81.2,
+      "sg_cov_forced_incompletion_rate": 15.6,
+      "sg_cov_snaps_per_target": 31.2,
+      "sg_cov_yards_per_snap": 68.8,
+      "sg_cov_qb_rating_against": 50.0,
       "sg_cov_man_grade": 83.9,
       "sg_slot_cov_snaps_per_target": 57.7,
       "sg_slot_cov_qb_rating_against": 61.5
@@ -11202,7 +11250,7 @@
         "label": "Coverage Grade",
         "raw": 87.1,
         "display": "87.1",
-        "pct": 83.9,
+        "pct": 81.2,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -11212,7 +11260,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 8.9,
         "display": "8.9%",
-        "pct": 16.1,
+        "pct": 15.6,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -11222,7 +11270,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 6.6,
         "display": "6.6",
-        "pct": 29.0,
+        "pct": 31.2,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -11232,7 +11280,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.9,
         "display": "0.90",
-        "pct": 29.0,
+        "pct": 31.2,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -11242,7 +11290,7 @@
         "label": "QB Rating Against",
         "raw": 69.9,
         "display": "69.9",
-        "pct": 51.6,
+        "pct": 50.0,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -11300,11 +11348,11 @@
       "sg_slot_cov_qb_rating_against": 69.3
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 83.9,
-      "sg_cov_forced_incompletion_rate": 16.1,
-      "sg_cov_snaps_per_target": 29.0,
-      "sg_cov_yards_per_snap": 71.0,
-      "sg_cov_qb_rating_against": 48.4,
+      "sg_cov_grade": 81.2,
+      "sg_cov_forced_incompletion_rate": 15.6,
+      "sg_cov_snaps_per_target": 31.2,
+      "sg_cov_yards_per_snap": 68.8,
+      "sg_cov_qb_rating_against": 50.0,
       "sg_cov_man_grade": 83.9,
       "sg_slot_cov_snaps_per_target": 57.7,
       "sg_slot_cov_qb_rating_against": 61.5
@@ -11353,7 +11401,7 @@
       "cfb_db_tfl": 13.0,
       "sg_def_total_pressures": 20.0
     },
-    "production_composite_pct": 50.0,
+    "production_composite_pct": 49.7,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -11361,12 +11409,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 29.0,
+          "pct": 31.2,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 32.2,
+          "pct": 31.2,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -11456,16 +11504,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 2.05,
     "rank_history": [
-      51,
-      48,
-      48,
-      48,
+      49,
+      49,
+      49,
+      49,
       49,
       49,
       49,
       49
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 80.6,
@@ -11688,6 +11736,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.04,
     "rank_history": [
+      50,
+      50,
       50,
       50,
       50,
@@ -11969,8 +12019,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.86,
     "rank_history": [
-      54,
-      54,
+      51,
+      51,
       51,
       51,
       51,
@@ -11978,7 +12028,7 @@
       51,
       51
     ],
-    "rank_move_window": 3,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 70.7,
@@ -12151,6 +12201,8 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -1.93,
     "rank_history": [
+      52,
+      52,
       52,
       52,
       52,
@@ -12331,8 +12383,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.46,
     "rank_history": [
-      49,
-      51,
+      53,
+      53,
       53,
       53,
       53,
@@ -12340,7 +12392,7 @@
       53,
       53
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 90.4,
@@ -12541,6 +12593,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 1.28,
     "rank_history": [
+      54,
+      54,
       54,
       54,
       54,
@@ -12787,8 +12841,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.84,
     "rank_history": [
-      57,
-      57,
+      55,
+      55,
       55,
       55,
       55,
@@ -12796,7 +12850,7 @@
       55,
       55
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 82.6,
@@ -13028,8 +13082,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.06,
     "rank_history": [
-      55,
-      55,
+      56,
+      56,
       56,
       56,
       56,
@@ -13037,7 +13091,7 @@
       56,
       56
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 81.8,
@@ -13255,8 +13309,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.18,
     "rank_history": [
-      134,
-      134,
+      57,
+      57,
       57,
       57,
       57,
@@ -13264,7 +13318,7 @@
       57,
       57
     ],
-    "rank_move_window": 77,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 81.0,
@@ -13283,11 +13337,11 @@
       "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 71.0,
-      "sg_cov_forced_incompletion_rate": 90.3,
-      "sg_cov_snaps_per_target": 71.0,
-      "sg_cov_yards_per_snap": 22.6,
-      "sg_cov_qb_rating_against": 16.1,
+      "sg_cov_grade": 68.8,
+      "sg_cov_forced_incompletion_rate": 90.6,
+      "sg_cov_snaps_per_target": 71.9,
+      "sg_cov_yards_per_snap": 21.9,
+      "sg_cov_qb_rating_against": 15.6,
       "sg_cov_man_grade": 87.1,
       "sg_slot_cov_snaps_per_target": 92.3,
       "sg_slot_cov_qb_rating_against": 3.8
@@ -13298,7 +13352,7 @@
         "label": "Coverage Grade",
         "raw": 81.0,
         "display": "81.0",
-        "pct": 71.0,
+        "pct": 68.8,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -13308,7 +13362,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 21.7,
         "display": "21.7%",
-        "pct": 90.3,
+        "pct": 90.6,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -13318,7 +13372,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 7.6,
         "display": "7.6",
-        "pct": 71.0,
+        "pct": 71.9,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -13328,7 +13382,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.6,
         "display": "0.60",
-        "pct": 77.4,
+        "pct": 78.1,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -13338,7 +13392,7 @@
         "label": "QB Rating Against",
         "raw": 42.6,
         "display": "42.6",
-        "pct": 83.9,
+        "pct": 84.4,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -13396,11 +13450,11 @@
       "sg_slot_cov_qb_rating_against": 0.0
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 71.0,
-      "sg_cov_forced_incompletion_rate": 90.3,
-      "sg_cov_snaps_per_target": 71.0,
-      "sg_cov_yards_per_snap": 22.6,
-      "sg_cov_qb_rating_against": 16.1,
+      "sg_cov_grade": 68.8,
+      "sg_cov_forced_incompletion_rate": 90.6,
+      "sg_cov_snaps_per_target": 71.9,
+      "sg_cov_yards_per_snap": 21.9,
+      "sg_cov_qb_rating_against": 15.6,
       "sg_cov_man_grade": 87.1,
       "sg_slot_cov_snaps_per_target": 92.3,
       "sg_slot_cov_qb_rating_against": 3.8
@@ -13449,7 +13503,7 @@
       "cfb_db_tfl": 0.0,
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 79.3,
+    "production_composite_pct": 79.2,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -13457,12 +13511,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 74.2,
+          "pct": 75.0,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 75.3,
+          "pct": 75.0,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -13541,8 +13595,8 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": 1.18,
     "rank_history": [
-      56,
-      56,
+      58,
+      58,
       58,
       58,
       58,
@@ -13550,7 +13604,7 @@
       58,
       58
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 92.4,
@@ -13570,10 +13624,10 @@
     },
     "production_percentiles": {
       "sg_cov_grade": 100.0,
-      "sg_cov_forced_incompletion_rate": 71.0,
-      "sg_cov_snaps_per_target": 74.2,
-      "sg_cov_yards_per_snap": 22.6,
-      "sg_cov_qb_rating_against": 3.2,
+      "sg_cov_forced_incompletion_rate": 68.8,
+      "sg_cov_snaps_per_target": 75.0,
+      "sg_cov_yards_per_snap": 21.9,
+      "sg_cov_qb_rating_against": 3.1,
       "sg_cov_man_grade": 67.7,
       "sg_slot_cov_snaps_per_target": 7.7,
       "sg_slot_cov_qb_rating_against": 76.9
@@ -13594,7 +13648,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 18.6,
         "display": "18.6%",
-        "pct": 71.0,
+        "pct": 68.8,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -13604,7 +13658,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 7.7,
         "display": "7.7",
-        "pct": 74.2,
+        "pct": 75.0,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -13614,7 +13668,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.6,
         "display": "0.60",
-        "pct": 77.4,
+        "pct": 78.1,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -13624,7 +13678,7 @@
         "label": "QB Rating Against",
         "raw": 16.1,
         "display": "16.1",
-        "pct": 96.8,
+        "pct": 96.9,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -13683,10 +13737,10 @@
     },
     "advanced_percentiles": {
       "sg_cov_grade": 100.0,
-      "sg_cov_forced_incompletion_rate": 71.0,
-      "sg_cov_snaps_per_target": 74.2,
-      "sg_cov_yards_per_snap": 22.6,
-      "sg_cov_qb_rating_against": 3.2,
+      "sg_cov_forced_incompletion_rate": 68.8,
+      "sg_cov_snaps_per_target": 75.0,
+      "sg_cov_yards_per_snap": 21.9,
+      "sg_cov_qb_rating_against": 3.1,
       "sg_cov_man_grade": 67.7,
       "sg_slot_cov_snaps_per_target": 7.7,
       "sg_slot_cov_qb_rating_against": 76.9
@@ -13735,7 +13789,7 @@
       "cfb_db_tfl": 3.0,
       "sg_def_total_pressures": 4.0
     },
-    "production_composite_pct": 70.3,
+    "production_composite_pct": 70.2,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -13743,12 +13797,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 75.8,
+          "pct": 76.5,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 73.1,
+          "pct": 71.9,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -13844,6 +13898,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.45,
     "rank_history": [
+      59,
+      59,
       59,
       59,
       59,
@@ -14094,8 +14150,10 @@
     "top_rank_driver_delta": -1.0,
     "rank_history": [
       61,
-      61,
-      61,
+      60,
+      60,
+      60,
+      60,
       60,
       60,
       60
@@ -14301,8 +14359,10 @@
     "top_rank_driver_delta": 1.46,
     "rank_history": [
       60,
-      60,
-      60,
+      61,
+      61,
+      61,
+      61,
       61,
       61,
       61
@@ -14495,8 +14555,10 @@
     "top_rank_driver_delta": -2.17,
     "rank_history": [
       63,
-      63,
-      63,
+      62,
+      62,
+      62,
+      62,
       62,
       62,
       62
@@ -14729,16 +14791,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.19,
     "rank_history": [
-      60,
-      59,
       62,
-      62,
-      62,
+      63,
+      63,
+      63,
+      63,
       63,
       63,
       63
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 80.7,
@@ -14757,11 +14819,11 @@
       "sg_def_total_pressures": 6.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 67.7,
-      "sg_cov_forced_incompletion_rate": 48.4,
-      "sg_cov_snaps_per_target": 51.6,
-      "sg_cov_yards_per_snap": 80.6,
-      "sg_cov_qb_rating_against": 71.0,
+      "sg_cov_grade": 65.6,
+      "sg_cov_forced_incompletion_rate": 46.9,
+      "sg_cov_snaps_per_target": 53.1,
+      "sg_cov_yards_per_snap": 81.2,
+      "sg_cov_qb_rating_against": 71.9,
       "sg_cov_man_grade": 77.4,
       "sg_slot_cov_snaps_per_target": 46.2,
       "sg_slot_cov_qb_rating_against": 57.7
@@ -14772,7 +14834,7 @@
         "label": "Coverage Grade",
         "raw": 80.7,
         "display": "80.7",
-        "pct": 67.7,
+        "pct": 65.6,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -14782,7 +14844,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 16.4,
         "display": "16.4%",
-        "pct": 48.4,
+        "pct": 46.9,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -14792,7 +14854,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 7.3,
         "display": "7.3",
-        "pct": 51.6,
+        "pct": 53.1,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -14802,7 +14864,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 1.1,
         "display": "1.10",
-        "pct": 19.4,
+        "pct": 18.8,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -14812,7 +14874,7 @@
         "label": "QB Rating Against",
         "raw": 84.9,
         "display": "84.9",
-        "pct": 29.0,
+        "pct": 28.1,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -14870,11 +14932,11 @@
       "sg_slot_cov_qb_rating_against": 60.9
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 67.7,
-      "sg_cov_forced_incompletion_rate": 48.4,
-      "sg_cov_snaps_per_target": 51.6,
-      "sg_cov_yards_per_snap": 80.6,
-      "sg_cov_qb_rating_against": 71.0,
+      "sg_cov_grade": 65.6,
+      "sg_cov_forced_incompletion_rate": 46.9,
+      "sg_cov_snaps_per_target": 53.1,
+      "sg_cov_yards_per_snap": 81.2,
+      "sg_cov_qb_rating_against": 71.9,
       "sg_cov_man_grade": 77.4,
       "sg_slot_cov_snaps_per_target": 46.2,
       "sg_slot_cov_qb_rating_against": 57.7
@@ -14923,7 +14985,7 @@
       "cfb_db_tfl": 4.0,
       "sg_def_total_pressures": 6.0
     },
-    "production_composite_pct": 48.1,
+    "production_composite_pct": 47.5,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -14931,12 +14993,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 35.5,
+          "pct": 36.0,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 45.2,
+          "pct": 44.8,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -15026,6 +15088,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.24,
     "rank_history": [
+      64,
+      64,
       64,
       64,
       64,
@@ -15264,6 +15328,8 @@
       65,
       65,
       65,
+      65,
+      65,
       65
     ],
     "rank_move_window": 0,
@@ -15486,8 +15552,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.29,
     "rank_history": [
-      58,
-      60,
+      66,
+      66,
       66,
       66,
       66,
@@ -15495,13 +15561,88 @@
       66,
       66
     ],
-    "rank_move_window": -8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
-    "production_metrics": {},
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_metrics": {
+      "sg_cov_grade": 89.6,
+      "sg_cov_forced_incompletion_rate": 19.4,
+      "sg_cov_snaps_per_target": 5.9,
+      "sg_cov_yards_per_snap": 1.1,
+      "sg_cov_qb_rating_against": 53.6
+    },
+    "production_percentiles": {
+      "sg_cov_grade": 90.6,
+      "sg_cov_forced_incompletion_rate": 78.1,
+      "sg_cov_snaps_per_target": 6.2,
+      "sg_cov_yards_per_snap": 81.2,
+      "sg_cov_qb_rating_against": 28.1
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "sg_cov_grade",
+        "label": "Coverage Grade",
+        "raw": 89.6,
+        "display": "89.6",
+        "pct": 90.6,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.24
+      },
+      {
+        "key": "sg_cov_forced_incompletion_rate",
+        "label": "Forced Incompletion Rate",
+        "raw": 19.4,
+        "display": "19.4%",
+        "pct": 78.1,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.16
+      },
+      {
+        "key": "sg_cov_snaps_per_target",
+        "label": "Coverage Snaps / Target",
+        "raw": 5.9,
+        "display": "5.9",
+        "pct": 6.2,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.14
+      },
+      {
+        "key": "sg_cov_yards_per_snap",
+        "label": "Yards / Coverage Snap",
+        "raw": 1.1,
+        "display": "1.10",
+        "pct": 18.8,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.18
+      },
+      {
+        "key": "sg_cov_qb_rating_against",
+        "label": "QB Rating Against",
+        "raw": 53.6,
+        "display": "53.6",
+        "pct": 71.9,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.16
+      }
+    ],
+    "advanced_metrics": {
+      "sg_cov_grade": 89.6,
+      "sg_cov_forced_incompletion_rate": 19.4,
+      "sg_cov_snaps_per_target": 5.9,
+      "sg_cov_yards_per_snap": 1.1,
+      "sg_cov_qb_rating_against": 53.6
+    },
+    "advanced_percentiles": {
+      "sg_cov_grade": 90.6,
+      "sg_cov_forced_incompletion_rate": 78.1,
+      "sg_cov_snaps_per_target": 6.2,
+      "sg_cov_yards_per_snap": 81.2,
+      "sg_cov_qb_rating_against": 28.1
+    },
     "counting_stat_chips": [
       {
         "key": "int",
@@ -15540,12 +15681,23 @@
       }
     ],
     "counting_metrics": {},
-    "production_composite_pct": null,
-    "production_source_tier": "missing",
+    "production_composite_pct": 56.8,
+    "production_source_tier": "premium",
     "production_snapshot_heading": "2024 Production Snapshot*",
     "position_lens": {
       "title": "DB Coverage Tax",
-      "rows": [],
+      "rows": [
+        {
+          "label": "Target Deterrence",
+          "pct": 12.5,
+          "detail": "how expensive it is to attack this defender"
+        },
+        {
+          "label": "Ball Disruption",
+          "pct": 69.8,
+          "detail": "forced misses and passer suppression"
+        }
+      ],
       "tags": []
     },
     "historical_comp_floor": {
@@ -15617,6 +15769,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.86,
     "rank_history": [
+      67,
+      67,
       67,
       67,
       67,
@@ -15915,6 +16069,8 @@
       68,
       68,
       68,
+      68,
+      68,
       68
     ],
     "rank_move_window": 0,
@@ -16133,8 +16289,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.09,
     "rank_history": [
-      64,
-      65,
+      69,
+      69,
       69,
       69,
       69,
@@ -16142,7 +16298,7 @@
       69,
       69
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 84.1,
@@ -16334,6 +16490,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 0.97,
     "rank_history": [
+      70,
+      70,
       70,
       70,
       70,
@@ -16594,6 +16752,8 @@
       71,
       71,
       71,
+      71,
+      71,
       71
     ],
     "rank_move_window": 0,
@@ -16825,8 +16985,10 @@
     "top_rank_driver_delta": -0.94,
     "rank_history": [
       73,
-      73,
-      73,
+      72,
+      72,
+      72,
+      72,
       72,
       72,
       72
@@ -17050,16 +17212,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.26,
     "rank_history": [
-      71,
-      69,
       74,
-      74,
-      74,
+      73,
+      73,
+      73,
+      73,
       73,
       73,
       73
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 83.3,
@@ -17292,8 +17454,10 @@
     "top_rank_driver_delta": -1.18,
     "rank_history": [
       75,
-      75,
-      75,
+      74,
+      74,
+      74,
+      74,
       74,
       74,
       74
@@ -17532,8 +17696,10 @@
     "top_rank_driver_delta": -1.66,
     "rank_history": [
       76,
-      76,
-      76,
+      75,
+      75,
+      75,
+      75,
       75,
       75,
       75
@@ -17766,16 +17932,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 0.66,
     "rank_history": [
-      69,
-      71,
       77,
-      77,
-      77,
+      76,
+      76,
+      76,
+      76,
       76,
       76,
       76
     ],
-    "rank_move_window": -7,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 58.5,
@@ -17974,16 +18140,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -0.9,
     "rank_history": [
-      80,
-      76,
       78,
-      78,
-      78,
+      77,
+      77,
+      77,
+      77,
       77,
       77,
       77
     ],
-    "rank_move_window": 3,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 92.4,
@@ -18207,8 +18373,10 @@
     "top_rank_driver_delta": -1.89,
     "rank_history": [
       79,
-      79,
-      79,
+      78,
+      78,
+      78,
+      78,
       78,
       78,
       78
@@ -18228,11 +18396,11 @@
       "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 80.6,
-      "sg_cov_forced_incompletion_rate": 29.0,
-      "sg_cov_snaps_per_target": 9.7,
-      "sg_cov_yards_per_snap": 41.9,
-      "sg_cov_qb_rating_against": 19.4,
+      "sg_cov_grade": 78.1,
+      "sg_cov_forced_incompletion_rate": 28.1,
+      "sg_cov_snaps_per_target": 12.5,
+      "sg_cov_yards_per_snap": 40.6,
+      "sg_cov_qb_rating_against": 18.8,
       "sg_cov_man_grade": 61.3,
       "sg_slot_cov_snaps_per_target": 3.8,
       "sg_slot_cov_qb_rating_against": 30.8
@@ -18243,7 +18411,7 @@
         "label": "Coverage Grade",
         "raw": 85.3,
         "display": "85.3",
-        "pct": 80.6,
+        "pct": 78.1,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -18253,7 +18421,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 13.9,
         "display": "13.9%",
-        "pct": 29.0,
+        "pct": 28.1,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -18263,7 +18431,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 6.0,
         "display": "6.0",
-        "pct": 9.7,
+        "pct": 12.5,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -18273,7 +18441,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.7,
         "display": "0.70",
-        "pct": 58.1,
+        "pct": 59.4,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -18283,7 +18451,7 @@
         "label": "QB Rating Against",
         "raw": 46.1,
         "display": "46.1",
-        "pct": 80.6,
+        "pct": 81.2,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -18341,11 +18509,11 @@
       "sg_slot_cov_qb_rating_against": 42.4
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 80.6,
-      "sg_cov_forced_incompletion_rate": 29.0,
-      "sg_cov_snaps_per_target": 9.7,
-      "sg_cov_yards_per_snap": 41.9,
-      "sg_cov_qb_rating_against": 19.4,
+      "sg_cov_grade": 78.1,
+      "sg_cov_forced_incompletion_rate": 28.1,
+      "sg_cov_snaps_per_target": 12.5,
+      "sg_cov_yards_per_snap": 40.6,
+      "sg_cov_qb_rating_against": 18.8,
       "sg_cov_man_grade": 61.3,
       "sg_slot_cov_snaps_per_target": 3.8,
       "sg_slot_cov_qb_rating_against": 30.8
@@ -18370,12 +18538,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 33.9,
+          "pct": 36.0,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 69.9,
+          "pct": 69.8,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -18463,16 +18631,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -4.11,
     "rank_history": [
-      104,
-      105,
       80,
-      80,
-      80,
+      79,
+      79,
+      79,
+      79,
       79,
       79,
       79
     ],
-    "rank_move_window": 25,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 72.1,
@@ -18702,8 +18870,10 @@
     "top_rank_driver_delta": -3.37,
     "rank_history": [
       81,
-      81,
-      81,
+      80,
+      80,
+      80,
+      80,
       80,
       80,
       80
@@ -18727,11 +18897,11 @@
       "sg_def_total_pressures": 4.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 93.5,
-      "sg_cov_forced_incompletion_rate": 38.7,
-      "sg_cov_snaps_per_target": 35.5,
-      "sg_cov_yards_per_snap": 54.8,
-      "sg_cov_qb_rating_against": 9.7,
+      "sg_cov_grade": 93.8,
+      "sg_cov_forced_incompletion_rate": 37.5,
+      "sg_cov_snaps_per_target": 37.5,
+      "sg_cov_yards_per_snap": 53.1,
+      "sg_cov_qb_rating_against": 9.4,
       "sg_cov_man_grade": 93.5,
       "sg_slot_cov_snaps_per_target": 80.8,
       "sg_slot_cov_qb_rating_against": 7.7
@@ -18742,7 +18912,7 @@
         "label": "Coverage Grade",
         "raw": 90.4,
         "display": "90.4",
-        "pct": 93.5,
+        "pct": 93.8,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -18752,7 +18922,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 15.4,
         "display": "15.4%",
-        "pct": 38.7,
+        "pct": 37.5,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -18762,7 +18932,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 6.8,
         "display": "6.8",
-        "pct": 35.5,
+        "pct": 37.5,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -18772,7 +18942,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.8,
         "display": "0.80",
-        "pct": 45.2,
+        "pct": 46.9,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -18782,7 +18952,7 @@
         "label": "QB Rating Against",
         "raw": 34.4,
         "display": "34.4",
-        "pct": 90.3,
+        "pct": 90.6,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -18840,11 +19010,11 @@
       "sg_slot_cov_qb_rating_against": 38.6
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 93.5,
-      "sg_cov_forced_incompletion_rate": 38.7,
-      "sg_cov_snaps_per_target": 35.5,
-      "sg_cov_yards_per_snap": 54.8,
-      "sg_cov_qb_rating_against": 9.7,
+      "sg_cov_grade": 93.8,
+      "sg_cov_forced_incompletion_rate": 37.5,
+      "sg_cov_snaps_per_target": 37.5,
+      "sg_cov_yards_per_snap": 53.1,
+      "sg_cov_qb_rating_against": 9.4,
       "sg_cov_man_grade": 93.5,
       "sg_slot_cov_snaps_per_target": 80.8,
       "sg_slot_cov_qb_rating_against": 7.7
@@ -18893,7 +19063,7 @@
       "cfb_db_tfl": 1.0,
       "sg_def_total_pressures": 4.0
     },
-    "production_composite_pct": 69.0,
+    "production_composite_pct": 69.4,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -18901,12 +19071,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 40.4,
+          "pct": 42.2,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 62.4,
+          "pct": 62.5,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -18988,14 +19158,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.41,
     "rank_history": [
-      84,
-      84,
       82,
+      81,
+      81,
+      81,
+      81,
       81,
       81,
       81
     ],
-    "rank_move_window": 3,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 83.5,
@@ -19271,16 +19443,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.91,
     "rank_history": [
-      78,
-      79,
-      83,
-      83,
       84,
+      82,
+      82,
+      82,
+      82,
       82,
       82,
       82
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 69.8,
@@ -19296,11 +19468,11 @@
       "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 25.8,
-      "sg_cov_forced_incompletion_rate": 6.5,
-      "sg_cov_snaps_per_target": 96.8,
-      "sg_cov_yards_per_snap": 12.9,
-      "sg_cov_qb_rating_against": 35.5,
+      "sg_cov_grade": 25.0,
+      "sg_cov_forced_incompletion_rate": 6.2,
+      "sg_cov_snaps_per_target": 96.9,
+      "sg_cov_yards_per_snap": 12.5,
+      "sg_cov_qb_rating_against": 37.5,
       "sg_cov_man_grade": 32.3
     },
     "advanced_metric_cards": [
@@ -19309,7 +19481,7 @@
         "label": "Coverage Grade",
         "raw": 69.8,
         "display": "69.8",
-        "pct": 25.8,
+        "pct": 25.0,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -19319,7 +19491,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 5.7,
         "display": "5.7%",
-        "pct": 6.5,
+        "pct": 6.2,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -19329,7 +19501,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 10.0,
         "display": "10.0",
-        "pct": 96.8,
+        "pct": 96.9,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -19339,7 +19511,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.5,
         "display": "0.50",
-        "pct": 87.1,
+        "pct": 87.5,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -19349,7 +19521,7 @@
         "label": "QB Rating Against",
         "raw": 57.8,
         "display": "57.8",
-        "pct": 64.5,
+        "pct": 62.5,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -19374,11 +19546,11 @@
       "sg_cov_man_grade": 61.9
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 25.8,
-      "sg_cov_forced_incompletion_rate": 6.5,
-      "sg_cov_snaps_per_target": 96.8,
-      "sg_cov_yards_per_snap": 12.9,
-      "sg_cov_qb_rating_against": 35.5,
+      "sg_cov_grade": 25.0,
+      "sg_cov_forced_incompletion_rate": 6.2,
+      "sg_cov_snaps_per_target": 96.9,
+      "sg_cov_yards_per_snap": 12.5,
+      "sg_cov_qb_rating_against": 37.5,
       "sg_cov_man_grade": 32.3
     },
     "counting_stat_chips": [
@@ -19425,7 +19597,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 50.7,
+    "production_composite_pct": 50.2,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -19433,12 +19605,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 91.9,
+          "pct": 92.2,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 28.0,
+          "pct": 27.1,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -19532,16 +19704,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.39,
     "rank_history": [
-      72,
-      73,
       85,
-      85,
-      85,
+      83,
+      83,
+      83,
+      83,
       83,
       83,
       83
     ],
-    "rank_move_window": -11,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 83.6,
@@ -19779,16 +19951,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.21,
     "rank_history": [
-      77,
-      78,
-      82,
-      82,
       83,
+      84,
+      84,
+      84,
+      84,
       84,
       84,
       84
     ],
-    "rank_move_window": -7,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 65.3,
@@ -20063,16 +20235,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.72,
     "rank_history": [
-      79,
-      80,
       86,
-      86,
-      86,
+      85,
+      85,
+      85,
+      85,
       85,
       85,
       85
     ],
-    "rank_move_window": -6,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 76.9,
@@ -20298,8 +20470,10 @@
     "top_rank_driver_delta": -1.3,
     "rank_history": [
       87,
-      87,
-      87,
+      86,
+      86,
+      86,
+      86,
       86,
       86,
       86
@@ -20496,8 +20670,10 @@
     "top_rank_driver_delta": -2.32,
     "rank_history": [
       91,
-      91,
-      91,
+      87,
+      87,
+      87,
+      87,
       87,
       87,
       87
@@ -20674,8 +20850,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.78,
     "rank_history": [
-      135,
-      135,
+      88,
+      88,
       88,
       88,
       88,
@@ -20683,7 +20859,7 @@
       88,
       88
     ],
-    "rank_move_window": 47,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 64.8,
@@ -20882,7 +21058,7 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.43,
     "rank_history": [
-      96,
+      89,
       89,
       89,
       89,
@@ -20891,7 +21067,7 @@
       89,
       89
     ],
-    "rank_move_window": 7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 79.6,
@@ -21112,6 +21288,8 @@
       90,
       90,
       90,
+      90,
+      90,
       90
     ],
     "rank_move_window": 0,
@@ -21307,8 +21485,10 @@
     "top_rank_driver_delta": -1.08,
     "rank_history": [
       92,
-      92,
-      92,
+      91,
+      91,
+      91,
+      91,
       91,
       91,
       91
@@ -21549,16 +21729,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.03,
     "rank_history": [
-      85,
-      85,
       93,
-      93,
-      93,
+      92,
+      92,
+      92,
+      92,
       92,
       92,
       92
     ],
-    "rank_move_window": -7,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 66.7,
@@ -21734,8 +21914,10 @@
     "top_rank_driver_delta": -2.1,
     "rank_history": [
       94,
-      94,
-      94,
+      93,
+      93,
+      93,
+      93,
       93,
       93,
       93
@@ -21927,16 +22109,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.0,
     "rank_history": [
-      93,
-      87,
       95,
-      95,
-      95,
+      94,
+      94,
+      94,
+      94,
       94,
       94,
       94
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 71.6,
@@ -22153,8 +22335,10 @@
     "top_rank_driver_delta": -1.74,
     "rank_history": [
       96,
-      96,
-      96,
+      95,
+      95,
+      95,
+      95,
       95,
       95,
       95
@@ -22178,11 +22362,11 @@
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 77.4,
-      "sg_cov_forced_incompletion_rate": 25.8,
-      "sg_cov_snaps_per_target": 87.1,
-      "sg_cov_yards_per_snap": 41.9,
-      "sg_cov_qb_rating_against": 51.6,
+      "sg_cov_grade": 75.0,
+      "sg_cov_forced_incompletion_rate": 25.0,
+      "sg_cov_snaps_per_target": 87.5,
+      "sg_cov_yards_per_snap": 40.6,
+      "sg_cov_qb_rating_against": 53.1,
       "sg_cov_man_grade": 64.5,
       "sg_slot_cov_snaps_per_target": 88.5,
       "sg_slot_cov_qb_rating_against": 23.1
@@ -22193,7 +22377,7 @@
         "label": "Coverage Grade",
         "raw": 81.5,
         "display": "81.5",
-        "pct": 77.4,
+        "pct": 75.0,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -22203,7 +22387,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 13.3,
         "display": "13.3%",
-        "pct": 25.8,
+        "pct": 25.0,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -22213,7 +22397,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 8.5,
         "display": "8.5",
-        "pct": 87.1,
+        "pct": 87.5,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -22223,7 +22407,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.7,
         "display": "0.70",
-        "pct": 58.1,
+        "pct": 59.4,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -22233,7 +22417,7 @@
         "label": "QB Rating Against",
         "raw": 70.0,
         "display": "70.0",
-        "pct": 48.4,
+        "pct": 46.9,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -22291,11 +22475,11 @@
       "sg_slot_cov_qb_rating_against": 39.6
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 77.4,
-      "sg_cov_forced_incompletion_rate": 25.8,
-      "sg_cov_snaps_per_target": 87.1,
-      "sg_cov_yards_per_snap": 41.9,
-      "sg_cov_qb_rating_against": 51.6,
+      "sg_cov_grade": 75.0,
+      "sg_cov_forced_incompletion_rate": 25.0,
+      "sg_cov_snaps_per_target": 87.5,
+      "sg_cov_yards_per_snap": 40.6,
+      "sg_cov_qb_rating_against": 53.1,
       "sg_cov_man_grade": 64.5,
       "sg_slot_cov_snaps_per_target": 88.5,
       "sg_slot_cov_qb_rating_against": 23.1
@@ -22344,7 +22528,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 63.4,
+    "production_composite_pct": 62.9,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -22352,12 +22536,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 72.6,
+          "pct": 73.5,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 30.1,
+          "pct": 29.2,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -22366,7 +22550,9 @@
           "detail": "pressure utility, box disruption, slot stress response"
         }
       ],
-      "tags": []
+      "tags": [
+        "Target Deterrent"
+      ]
     },
     "historical_comp_floor": {
       "name": "Tharold Simon",
@@ -22441,16 +22627,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.37,
     "rank_history": [
-      87,
-      90,
       98,
-      98,
-      98,
+      96,
+      96,
+      96,
+      96,
       96,
       96,
       96
     ],
-    "rank_move_window": -9,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 69.0,
@@ -22661,8 +22847,10 @@
     "top_rank_driver_delta": -3.21,
     "rank_history": [
       99,
-      99,
-      99,
+      97,
+      97,
+      97,
+      97,
       97,
       97,
       97
@@ -22892,8 +23080,10 @@
     "top_rank_driver_delta": -2.9,
     "rank_history": [
       100,
-      100,
-      100,
+      98,
+      98,
+      98,
+      98,
       98,
       98,
       98
@@ -23182,16 +23372,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.33,
     "rank_history": [
-      95,
-      88,
       97,
-      97,
-      97,
+      99,
+      99,
+      99,
+      99,
       99,
       99,
       99
     ],
-    "rank_move_window": -4,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "cfb_rb_explosive_rate": 0.1132,
@@ -23363,8 +23553,10 @@
     "top_rank_driver_delta": 1.02,
     "rank_history": [
       101,
-      101,
-      101,
+      100,
+      100,
+      100,
+      100,
       100,
       100,
       100
@@ -23598,16 +23790,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.15,
     "rank_history": [
-      92,
-      96,
       102,
-      102,
-      102,
+      101,
+      101,
+      101,
+      101,
       101,
       101,
       101
     ],
-    "rank_move_window": -9,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 65.0,
@@ -23626,11 +23818,11 @@
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 12.9,
-      "sg_cov_forced_incompletion_rate": 67.7,
-      "sg_cov_snaps_per_target": 77.4,
-      "sg_cov_yards_per_snap": 41.9,
-      "sg_cov_qb_rating_against": 22.6,
+      "sg_cov_grade": 12.5,
+      "sg_cov_forced_incompletion_rate": 65.6,
+      "sg_cov_snaps_per_target": 78.1,
+      "sg_cov_yards_per_snap": 40.6,
+      "sg_cov_qb_rating_against": 21.9,
       "sg_cov_man_grade": 6.5,
       "sg_slot_cov_snaps_per_target": 100.0,
       "sg_slot_cov_qb_rating_against": 50.0
@@ -23641,7 +23833,7 @@
         "label": "Coverage Grade",
         "raw": 65.0,
         "display": "65.0",
-        "pct": 12.9,
+        "pct": 12.5,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -23651,7 +23843,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 17.9,
         "display": "17.9%",
-        "pct": 67.7,
+        "pct": 65.6,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -23661,7 +23853,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 7.8,
         "display": "7.8",
-        "pct": 77.4,
+        "pct": 78.1,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -23671,7 +23863,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.7,
         "display": "0.70",
-        "pct": 58.1,
+        "pct": 59.4,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -23681,7 +23873,7 @@
         "label": "QB Rating Against",
         "raw": 50.6,
         "display": "50.6",
-        "pct": 77.4,
+        "pct": 78.1,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -23739,11 +23931,11 @@
       "sg_slot_cov_qb_rating_against": 56.3
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 12.9,
-      "sg_cov_forced_incompletion_rate": 67.7,
-      "sg_cov_snaps_per_target": 77.4,
-      "sg_cov_yards_per_snap": 41.9,
-      "sg_cov_qb_rating_against": 22.6,
+      "sg_cov_grade": 12.5,
+      "sg_cov_forced_incompletion_rate": 65.6,
+      "sg_cov_snaps_per_target": 78.1,
+      "sg_cov_yards_per_snap": 40.6,
+      "sg_cov_qb_rating_against": 21.9,
       "sg_cov_man_grade": 6.5,
       "sg_slot_cov_snaps_per_target": 100.0,
       "sg_slot_cov_qb_rating_against": 50.0
@@ -23800,12 +23992,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 67.8,
+          "pct": 68.8,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 58.0,
+          "pct": 57.3,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -23894,8 +24086,10 @@
     "top_rank_driver_delta": -2.32,
     "rank_history": [
       103,
-      103,
-      103,
+      102,
+      102,
+      102,
+      102,
       102,
       102,
       102
@@ -24130,8 +24324,10 @@
     "top_rank_driver_delta": 4.27,
     "rank_history": [
       104,
-      104,
-      104,
+      103,
+      103,
+      103,
+      103,
       103,
       103,
       103
@@ -24326,8 +24522,10 @@
     "top_rank_driver_delta": -2.5,
     "rank_history": [
       105,
-      105,
-      105,
+      104,
+      104,
+      104,
+      104,
       104,
       104,
       104
@@ -24522,8 +24720,10 @@
     "top_rank_driver_delta": -1.44,
     "rank_history": [
       106,
-      106,
-      106,
+      105,
+      105,
+      105,
+      105,
       105,
       105,
       105
@@ -24710,8 +24910,10 @@
     "top_rank_driver_delta": -2.63,
     "rank_history": [
       107,
-      107,
-      107,
+      106,
+      106,
+      106,
+      106,
       106,
       106,
       106
@@ -24956,8 +25158,10 @@
     "top_rank_driver_delta": -1.13,
     "rank_history": [
       108,
-      108,
-      108,
+      107,
+      107,
+      107,
+      107,
       107,
       107,
       107
@@ -25131,8 +25335,10 @@
     "top_rank_driver_delta": 3.01,
     "rank_history": [
       109,
-      109,
-      109,
+      108,
+      108,
+      108,
+      108,
       108,
       108,
       108
@@ -25365,16 +25571,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 2.77,
     "rank_history": [
-      105,
-      102,
       110,
-      110,
-      110,
+      109,
+      109,
+      109,
+      109,
       109,
       109,
       109
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 66.5,
@@ -25605,8 +25811,10 @@
     "top_rank_driver_delta": -2.07,
     "rank_history": [
       111,
-      111,
-      111,
+      110,
+      110,
+      110,
+      110,
       110,
       110,
       110
@@ -25840,8 +26048,10 @@
     "top_rank_driver_delta": -3.31,
     "rank_history": [
       112,
-      112,
-      112,
+      111,
+      111,
+      111,
+      111,
       111,
       111,
       111
@@ -26075,8 +26285,10 @@
     "top_rank_driver_delta": -0.65,
     "rank_history": [
       113,
-      113,
-      113,
+      112,
+      112,
+      112,
+      112,
       112,
       112,
       112
@@ -26311,16 +26523,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 1.76,
     "rank_history": [
-      120,
-      121,
       115,
-      115,
-      115,
+      113,
+      113,
+      113,
+      113,
       113,
       113,
       113
     ],
-    "rank_move_window": 7,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 64.0,
@@ -26560,8 +26772,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.65,
     "rank_history": [
-      106,
-      106,
+      114,
+      114,
       114,
       114,
       114,
@@ -26569,7 +26781,7 @@
       114,
       114
     ],
-    "rank_move_window": -8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 70.9,
@@ -26780,8 +26992,10 @@
     "top_rank_driver_delta": -4.26,
     "rank_history": [
       72,
-      72,
-      72,
+      115,
+      115,
+      115,
+      115,
       115,
       115,
       115
@@ -26961,6 +27175,8 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.28,
     "rank_history": [
+      116,
+      116,
       116,
       116,
       116,
@@ -27160,6 +27376,8 @@
       117,
       117,
       117,
+      117,
+      117,
       117
     ],
     "rank_move_window": 0,
@@ -27334,6 +27552,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.82,
     "rank_history": [
+      118,
+      118,
       118,
       118,
       118,
@@ -27594,6 +27814,8 @@
       119,
       119,
       119,
+      119,
+      119,
       119
     ],
     "rank_move_window": 0,
@@ -27824,8 +28046,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 1.91,
     "rank_history": [
-      144,
-      144,
+      120,
+      120,
       120,
       120,
       120,
@@ -27833,7 +28055,7 @@
       120,
       120
     ],
-    "rank_move_window": 24,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 66.1,
@@ -28063,6 +28285,8 @@
       121,
       121,
       121,
+      121,
+      121,
       121
     ],
     "rank_move_window": 0,
@@ -28253,8 +28477,10 @@
     "top_rank_driver_delta": -3.06,
     "rank_history": [
       123,
-      123,
-      123,
+      122,
+      122,
+      122,
+      122,
       122,
       122,
       122
@@ -28415,16 +28641,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.25,
     "rank_history": [
-      113,
-      115,
       122,
-      122,
-      122,
+      123,
+      123,
+      123,
+      123,
       123,
       123,
       123
     ],
-    "rank_move_window": -10,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 79.4,
@@ -28597,6 +28823,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.31,
     "rank_history": [
+      124,
+      124,
       124,
       124,
       124,
@@ -28795,6 +29023,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.16,
     "rank_history": [
+      125,
+      125,
       125,
       125,
       125,
@@ -29047,8 +29277,10 @@
     "top_rank_driver_delta": -0.68,
     "rank_history": [
       127,
-      127,
-      127,
+      126,
+      126,
+      126,
+      126,
       126,
       126,
       126
@@ -29255,8 +29487,10 @@
     "top_rank_driver_delta": -2.2,
     "rank_history": [
       128,
-      128,
-      128,
+      127,
+      127,
+      127,
+      127,
       127,
       127,
       127
@@ -29280,11 +29514,11 @@
       "sg_def_total_pressures": 3.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 51.6,
-      "sg_cov_forced_incompletion_rate": 51.6,
-      "sg_cov_snaps_per_target": 64.5,
-      "sg_cov_yards_per_snap": 77.4,
-      "sg_cov_qb_rating_against": 64.5,
+      "sg_cov_grade": 50.0,
+      "sg_cov_forced_incompletion_rate": 50.0,
+      "sg_cov_snaps_per_target": 65.6,
+      "sg_cov_yards_per_snap": 75.0,
+      "sg_cov_qb_rating_against": 65.6,
       "sg_cov_man_grade": 41.9,
       "sg_slot_cov_snaps_per_target": 15.4,
       "sg_slot_cov_qb_rating_against": 73.1
@@ -29295,7 +29529,7 @@
         "label": "Coverage Grade",
         "raw": 76.5,
         "display": "76.5",
-        "pct": 51.6,
+        "pct": 50.0,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -29305,7 +29539,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 16.7,
         "display": "16.7%",
-        "pct": 51.6,
+        "pct": 50.0,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -29315,7 +29549,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 7.4,
         "display": "7.4",
-        "pct": 64.5,
+        "pct": 65.6,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -29325,7 +29559,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 1.0,
         "display": "1.00",
-        "pct": 22.6,
+        "pct": 25.0,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -29335,7 +29569,7 @@
         "label": "QB Rating Against",
         "raw": 82.5,
         "display": "82.5",
-        "pct": 35.5,
+        "pct": 34.4,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -29393,11 +29627,11 @@
       "sg_slot_cov_qb_rating_against": 77.1
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 51.6,
-      "sg_cov_forced_incompletion_rate": 51.6,
-      "sg_cov_snaps_per_target": 64.5,
-      "sg_cov_yards_per_snap": 77.4,
-      "sg_cov_qb_rating_against": 64.5,
+      "sg_cov_grade": 50.0,
+      "sg_cov_forced_incompletion_rate": 50.0,
+      "sg_cov_snaps_per_target": 65.6,
+      "sg_cov_yards_per_snap": 75.0,
+      "sg_cov_qb_rating_against": 65.6,
       "sg_cov_man_grade": 41.9,
       "sg_slot_cov_snaps_per_target": 15.4,
       "sg_slot_cov_qb_rating_against": 73.1
@@ -29446,7 +29680,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 3.0
     },
-    "production_composite_pct": 41.3,
+    "production_composite_pct": 41.1,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -29454,12 +29688,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 43.5,
+          "pct": 45.3,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 55.9,
+          "pct": 55.2,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -29548,8 +29782,10 @@
     "top_rank_driver_delta": -2.71,
     "rank_history": [
       129,
-      129,
-      129,
+      128,
+      128,
+      128,
+      128,
       128,
       128,
       128
@@ -29780,8 +30016,10 @@
     "top_rank_driver_delta": -2.53,
     "rank_history": [
       130,
-      130,
-      130,
+      129,
+      129,
+      129,
+      129,
       129,
       129,
       129
@@ -29969,16 +30207,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.02,
     "rank_history": [
-      124,
-      125,
       133,
-      133,
-      133,
+      130,
+      130,
+      130,
+      130,
       130,
       130,
       130
     ],
-    "rank_move_window": -6,
+    "rank_move_window": 3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 80.0,
@@ -30216,8 +30454,10 @@
     "top_rank_driver_delta": -0.71,
     "rank_history": [
       132,
-      132,
-      132,
+      131,
+      131,
+      131,
+      131,
       131,
       131,
       131
@@ -30448,8 +30688,10 @@
     "top_rank_driver_delta": -1.73,
     "rank_history": [
       131,
-      131,
-      131,
+      132,
+      132,
+      132,
+      132,
       132,
       132,
       132
@@ -30575,16 +30817,16 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -1.43,
     "rank_history": [
-      128,
-      123,
       134,
-      134,
-      134,
+      133,
+      133,
+      133,
+      133,
       133,
       133,
       133
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 76.4,
@@ -30814,8 +31056,10 @@
     "top_rank_driver_delta": -0.82,
     "rank_history": [
       135,
-      135,
-      135,
+      134,
+      134,
+      134,
+      134,
       134,
       134,
       134
@@ -31109,8 +31353,10 @@
     "top_rank_driver_delta": -2.9,
     "rank_history": [
       136,
-      136,
-      136,
+      135,
+      135,
+      135,
+      135,
       135,
       135,
       135
@@ -31343,8 +31589,10 @@
     "top_rank_driver_delta": -0.59,
     "rank_history": [
       137,
-      137,
-      137,
+      136,
+      136,
+      136,
+      136,
       136,
       136,
       136
@@ -31503,8 +31751,10 @@
     "top_rank_driver_delta": -1.68,
     "rank_history": [
       139,
-      139,
-      139,
+      137,
+      137,
+      137,
+      137,
       137,
       137,
       137
@@ -31527,11 +31777,11 @@
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 22.6,
-      "sg_cov_forced_incompletion_rate": 32.3,
-      "sg_cov_snaps_per_target": 35.5,
-      "sg_cov_yards_per_snap": 96.8,
-      "sg_cov_qb_rating_against": 93.5,
+      "sg_cov_grade": 21.9,
+      "sg_cov_forced_incompletion_rate": 31.2,
+      "sg_cov_snaps_per_target": 37.5,
+      "sg_cov_yards_per_snap": 96.9,
+      "sg_cov_qb_rating_against": 93.8,
       "sg_cov_man_grade": 80.6,
       "sg_slot_cov_snaps_per_target": 80.8,
       "sg_slot_cov_qb_rating_against": 96.2
@@ -31542,7 +31792,7 @@
         "label": "Coverage Grade",
         "raw": 68.5,
         "display": "68.5",
-        "pct": 22.6,
+        "pct": 21.9,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -31552,7 +31802,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 15.3,
         "display": "15.3%",
-        "pct": 32.3,
+        "pct": 31.2,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -31562,7 +31812,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 6.8,
         "display": "6.8",
-        "pct": 35.5,
+        "pct": 37.5,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -31572,7 +31822,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 1.3,
         "display": "1.30",
-        "pct": 3.2,
+        "pct": 3.1,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -31582,7 +31832,7 @@
         "label": "QB Rating Against",
         "raw": 106.6,
         "display": "106.6",
-        "pct": 6.5,
+        "pct": 6.2,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -31640,11 +31890,11 @@
       "sg_slot_cov_qb_rating_against": 135.4
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 22.6,
-      "sg_cov_forced_incompletion_rate": 32.3,
-      "sg_cov_snaps_per_target": 35.5,
-      "sg_cov_yards_per_snap": 96.8,
-      "sg_cov_qb_rating_against": 93.5,
+      "sg_cov_grade": 21.9,
+      "sg_cov_forced_incompletion_rate": 31.2,
+      "sg_cov_snaps_per_target": 37.5,
+      "sg_cov_yards_per_snap": 96.9,
+      "sg_cov_qb_rating_against": 93.8,
       "sg_cov_man_grade": 80.6,
       "sg_slot_cov_snaps_per_target": 80.8,
       "sg_slot_cov_qb_rating_against": 96.2
@@ -31685,7 +31935,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 31.0,
+    "production_composite_pct": 30.9,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -31693,12 +31943,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 19.4,
+          "pct": 20.3,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 39.8,
+          "pct": 39.5,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -31786,6 +32036,8 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.18,
     "rank_history": [
+      138,
+      138,
       138,
       138,
       138,
@@ -32027,8 +32279,10 @@
     "top_rank_driver_delta": -1.68,
     "rank_history": [
       140,
-      140,
-      140,
+      139,
+      139,
+      139,
+      139,
       139,
       139,
       139
@@ -32259,8 +32513,10 @@
     "top_rank_driver_delta": -1.68,
     "rank_history": [
       141,
-      141,
-      141,
+      140,
+      140,
+      140,
+      140,
       140,
       140,
       140
@@ -32283,11 +32539,11 @@
       "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 16.1,
-      "sg_cov_forced_incompletion_rate": 74.2,
-      "sg_cov_snaps_per_target": 71.0,
-      "sg_cov_yards_per_snap": 90.3,
-      "sg_cov_qb_rating_against": 90.3,
+      "sg_cov_grade": 15.6,
+      "sg_cov_forced_incompletion_rate": 71.9,
+      "sg_cov_snaps_per_target": 71.9,
+      "sg_cov_yards_per_snap": 90.6,
+      "sg_cov_qb_rating_against": 90.6,
       "sg_cov_man_grade": 19.4,
       "sg_slot_cov_snaps_per_target": 65.4,
       "sg_slot_cov_qb_rating_against": 84.6
@@ -32298,7 +32554,7 @@
         "label": "Coverage Grade",
         "raw": 65.5,
         "display": "65.5",
-        "pct": 16.1,
+        "pct": 15.6,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -32308,7 +32564,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 19.2,
         "display": "19.2%",
-        "pct": 74.2,
+        "pct": 71.9,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -32318,7 +32574,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 7.6,
         "display": "7.6",
-        "pct": 71.0,
+        "pct": 71.9,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -32328,7 +32584,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 1.2,
         "display": "1.20",
-        "pct": 9.7,
+        "pct": 9.4,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -32338,7 +32594,7 @@
         "label": "QB Rating Against",
         "raw": 105.3,
         "display": "105.3",
-        "pct": 9.7,
+        "pct": 9.4,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -32396,11 +32652,11 @@
       "sg_slot_cov_qb_rating_against": 90.2
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 16.1,
-      "sg_cov_forced_incompletion_rate": 74.2,
-      "sg_cov_snaps_per_target": 71.0,
-      "sg_cov_yards_per_snap": 90.3,
-      "sg_cov_qb_rating_against": 90.3,
+      "sg_cov_grade": 15.6,
+      "sg_cov_forced_incompletion_rate": 71.9,
+      "sg_cov_snaps_per_target": 71.9,
+      "sg_cov_yards_per_snap": 90.6,
+      "sg_cov_qb_rating_against": 90.6,
       "sg_cov_man_grade": 19.4,
       "sg_slot_cov_snaps_per_target": 65.4,
       "sg_slot_cov_qb_rating_against": 84.6
@@ -32441,7 +32697,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 34.1,
+    "production_composite_pct": 33.8,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -32449,12 +32705,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 40.4,
+          "pct": 40.7,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 45.2,
+          "pct": 43.8,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -32543,8 +32799,10 @@
     "top_rank_driver_delta": -1.86,
     "rank_history": [
       142,
-      142,
-      142,
+      141,
+      141,
+      141,
+      141,
       141,
       141,
       141
@@ -32791,8 +33049,10 @@
     "top_rank_driver_delta": -1.46,
     "rank_history": [
       126,
-      126,
-      126,
+      142,
+      142,
+      142,
+      142,
       142,
       142,
       142
@@ -33045,8 +33305,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 1.45,
     "rank_history": [
-      136,
-      136,
+      143,
+      143,
       143,
       143,
       143,
@@ -33054,7 +33314,7 @@
       143,
       143
     ],
-    "rank_move_window": -7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 59.4,
@@ -33296,6 +33556,8 @@
       144,
       144,
       144,
+      144,
+      144,
       144
     ],
     "rank_move_window": 0,
@@ -33526,16 +33788,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.15,
     "rank_history": [
-      161,
-      162,
       146,
-      146,
-      146,
+      145,
+      145,
+      145,
+      145,
       145,
       145,
       145
     ],
-    "rank_move_window": 16,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -33618,8 +33880,10 @@
     "top_rank_driver_delta": -1.96,
     "rank_history": [
       145,
-      145,
-      145,
+      146,
+      146,
+      146,
+      146,
       146,
       146,
       146
@@ -33811,6 +34075,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.71,
     "rank_history": [
+      147,
+      147,
       147,
       147,
       147,
@@ -34051,6 +34317,8 @@
       148,
       148,
       148,
+      148,
+      148,
       148
     ],
     "rank_move_window": 0,
@@ -34283,6 +34551,8 @@
       149,
       149,
       149,
+      149,
+      149,
       149
     ],
     "rank_move_window": 0,
@@ -34474,8 +34744,10 @@
     "top_rank_driver_delta": -2.69,
     "rank_history": [
       152,
-      152,
-      152,
+      150,
+      150,
+      150,
+      150,
       150,
       150,
       150
@@ -34635,6 +34907,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -0.74,
     "rank_history": [
+      151,
+      151,
       151,
       151,
       151,
@@ -34877,8 +35151,10 @@
     "top_rank_driver_delta": -3.01,
     "rank_history": [
       150,
-      150,
-      150,
+      152,
+      152,
+      152,
+      152,
       152,
       152,
       152
@@ -35068,6 +35344,8 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -0.35,
     "rank_history": [
+      153,
+      153,
       153,
       153,
       153,
@@ -35308,6 +35586,8 @@
       154,
       154,
       154,
+      154,
+      154,
       154
     ],
     "rank_move_window": 0,
@@ -35537,16 +35817,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.72,
     "rank_history": [
-      148,
-      149,
       157,
-      157,
-      157,
+      155,
+      155,
+      155,
+      155,
       155,
       155,
       155
     ],
-    "rank_move_window": -7,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 75.6,
@@ -35732,8 +36012,10 @@
     "top_rank_driver_delta": -2.99,
     "rank_history": [
       160,
-      160,
-      160,
+      156,
+      156,
+      156,
+      156,
       156,
       156,
       156
@@ -35954,16 +36236,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.47,
     "rank_history": [
-      147,
-      148,
       156,
-      156,
-      156,
+      157,
+      157,
+      157,
+      157,
       157,
       157,
       157
     ],
-    "rank_move_window": -10,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 65.2,
@@ -36148,16 +36430,16 @@
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -1.03,
     "rank_history": [
-      152,
-      154,
       161,
-      161,
-      161,
+      158,
+      158,
+      158,
+      158,
       158,
       158,
       158
     ],
-    "rank_move_window": -6,
+    "rank_move_window": 3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 77.4,
@@ -36385,8 +36667,10 @@
     "top_rank_driver_delta": -2.73,
     "rank_history": [
       162,
-      162,
-      162,
+      159,
+      159,
+      159,
+      159,
       159,
       159,
       159
@@ -36410,11 +36694,11 @@
       "sg_def_total_pressures": 0.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 74.2,
-      "sg_cov_forced_incompletion_rate": 80.6,
-      "sg_cov_snaps_per_target": 64.5,
-      "sg_cov_yards_per_snap": 71.0,
-      "sg_cov_qb_rating_against": 38.7,
+      "sg_cov_grade": 71.9,
+      "sg_cov_forced_incompletion_rate": 81.2,
+      "sg_cov_snaps_per_target": 65.6,
+      "sg_cov_yards_per_snap": 68.8,
+      "sg_cov_qb_rating_against": 40.6,
       "sg_cov_man_grade": 22.6,
       "sg_slot_cov_snaps_per_target": 19.2,
       "sg_slot_cov_qb_rating_against": 92.3
@@ -36425,7 +36709,7 @@
         "label": "Coverage Grade",
         "raw": 81.2,
         "display": "81.2",
-        "pct": 74.2,
+        "pct": 71.9,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -36435,7 +36719,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 19.7,
         "display": "19.7%",
-        "pct": 80.6,
+        "pct": 81.2,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -36445,7 +36729,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 7.4,
         "display": "7.4",
-        "pct": 64.5,
+        "pct": 65.6,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -36455,7 +36739,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.9,
         "display": "0.90",
-        "pct": 29.0,
+        "pct": 31.2,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -36465,7 +36749,7 @@
         "label": "QB Rating Against",
         "raw": 59.0,
         "display": "59.0",
-        "pct": 61.3,
+        "pct": 59.4,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -36523,11 +36807,11 @@
       "sg_slot_cov_qb_rating_against": 104.2
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 74.2,
-      "sg_cov_forced_incompletion_rate": 80.6,
-      "sg_cov_snaps_per_target": 64.5,
-      "sg_cov_yards_per_snap": 71.0,
-      "sg_cov_qb_rating_against": 38.7,
+      "sg_cov_grade": 71.9,
+      "sg_cov_forced_incompletion_rate": 81.2,
+      "sg_cov_snaps_per_target": 65.6,
+      "sg_cov_yards_per_snap": 68.8,
+      "sg_cov_qb_rating_against": 40.6,
       "sg_cov_man_grade": 22.6,
       "sg_slot_cov_snaps_per_target": 19.2,
       "sg_slot_cov_qb_rating_against": 92.3
@@ -36576,7 +36860,7 @@
       "cfb_db_tfl": 1.0,
       "sg_def_total_pressures": 0.0
     },
-    "production_composite_pct": 50.1,
+    "production_composite_pct": 50.0,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -36584,12 +36868,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 46.8,
+          "pct": 48.4,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 80.6,
+          "pct": 80.2,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -36679,16 +36963,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.81,
     "rank_history": [
-      214,
-      211,
       155,
-      155,
-      155,
+      160,
+      160,
+      160,
+      160,
       160,
       160,
       160
     ],
-    "rank_move_window": 54,
+    "rank_move_window": -5,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 66.6,
@@ -36918,8 +37202,10 @@
     "top_rank_driver_delta": -5.28,
     "rank_history": [
       164,
-      164,
-      164,
+      161,
+      161,
+      161,
+      161,
       161,
       161,
       161
@@ -37190,8 +37476,10 @@
     "top_rank_driver_delta": -4.52,
     "rank_history": [
       165,
-      165,
-      165,
+      162,
+      162,
+      162,
+      162,
       162,
       162,
       162
@@ -37374,8 +37662,10 @@
     "top_rank_driver_delta": 3.53,
     "rank_history": [
       166,
-      166,
-      166,
+      163,
+      163,
+      163,
+      163,
       163,
       163,
       163
@@ -37662,8 +37952,10 @@
     "top_rank_driver_delta": -3.47,
     "rank_history": [
       167,
-      167,
-      167,
+      164,
+      164,
+      164,
+      164,
       164,
       164,
       164
@@ -37867,8 +38159,10 @@
     "top_rank_driver_delta": -0.58,
     "rank_history": [
       171,
-      171,
-      171,
+      165,
+      165,
+      165,
+      165,
       165,
       165,
       165
@@ -38093,8 +38387,10 @@
     "top_rank_driver_delta": -2.21,
     "rank_history": [
       170,
-      170,
-      170,
+      166,
+      166,
+      166,
+      166,
       166,
       166,
       166
@@ -38352,16 +38648,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.93,
     "rank_history": [
-      162,
-      163,
       169,
-      169,
-      169,
+      167,
+      167,
+      167,
+      167,
       167,
       167,
       167
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 87.3,
@@ -38581,6 +38877,8 @@
       168,
       168,
       168,
+      168,
+      168,
       168
     ],
     "rank_move_window": 0,
@@ -38598,11 +38896,11 @@
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 61.3,
-      "sg_cov_forced_incompletion_rate": 93.5,
-      "sg_cov_snaps_per_target": 38.7,
-      "sg_cov_yards_per_snap": 41.9,
-      "sg_cov_qb_rating_against": 32.3,
+      "sg_cov_grade": 59.4,
+      "sg_cov_forced_incompletion_rate": 93.8,
+      "sg_cov_snaps_per_target": 40.6,
+      "sg_cov_yards_per_snap": 40.6,
+      "sg_cov_qb_rating_against": 34.4,
       "sg_cov_man_grade": 96.8,
       "sg_slot_cov_snaps_per_target": 84.6,
       "sg_slot_cov_qb_rating_against": 23.1
@@ -38613,7 +38911,7 @@
         "label": "Coverage Grade",
         "raw": 80.0,
         "display": "80.0",
-        "pct": 61.3,
+        "pct": 59.4,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -38623,7 +38921,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 23.1,
         "display": "23.1%",
-        "pct": 93.5,
+        "pct": 93.8,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -38633,7 +38931,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 6.9,
         "display": "6.9",
-        "pct": 38.7,
+        "pct": 40.6,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -38643,7 +38941,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.7,
         "display": "0.70",
-        "pct": 58.1,
+        "pct": 59.4,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -38653,7 +38951,7 @@
         "label": "QB Rating Against",
         "raw": 56.5,
         "display": "56.5",
-        "pct": 67.7,
+        "pct": 65.6,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -38711,11 +39009,11 @@
       "sg_slot_cov_qb_rating_against": 39.6
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 61.3,
-      "sg_cov_forced_incompletion_rate": 93.5,
-      "sg_cov_snaps_per_target": 38.7,
-      "sg_cov_yards_per_snap": 41.9,
-      "sg_cov_qb_rating_against": 32.3,
+      "sg_cov_grade": 59.4,
+      "sg_cov_forced_incompletion_rate": 93.8,
+      "sg_cov_snaps_per_target": 40.6,
+      "sg_cov_yards_per_snap": 40.6,
+      "sg_cov_qb_rating_against": 34.4,
       "sg_cov_man_grade": 96.8,
       "sg_slot_cov_snaps_per_target": 84.6,
       "sg_slot_cov_qb_rating_against": 23.1
@@ -38732,7 +39030,7 @@
     "counting_metrics": {
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 68.6,
+    "production_composite_pct": 68.4,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -38740,12 +39038,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 48.4,
+          "pct": 50.0,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 87.1,
+          "pct": 86.5,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -38823,16 +39121,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.49,
     "rank_history": [
-      201,
-      201,
       198,
-      198,
-      198,
+      169,
+      169,
+      169,
+      169,
       169,
       169,
       169
     ],
-    "rank_move_window": 32,
+    "rank_move_window": 29,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 74.4,
@@ -38847,11 +39145,11 @@
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 41.9,
-      "sg_cov_forced_incompletion_rate": 3.2,
+      "sg_cov_grade": 40.6,
+      "sg_cov_forced_incompletion_rate": 3.1,
       "sg_cov_snaps_per_target": 100.0,
-      "sg_cov_yards_per_snap": 12.9,
-      "sg_cov_qb_rating_against": 96.8,
+      "sg_cov_yards_per_snap": 12.5,
+      "sg_cov_qb_rating_against": 96.9,
       "sg_cov_man_grade": 35.5
     },
     "advanced_metric_cards": [
@@ -38860,7 +39158,7 @@
         "label": "Coverage Grade",
         "raw": 74.4,
         "display": "74.4",
-        "pct": 41.9,
+        "pct": 40.6,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -38870,7 +39168,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 4.8,
         "display": "4.8%",
-        "pct": 3.2,
+        "pct": 3.1,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -38890,7 +39188,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.5,
         "display": "0.50",
-        "pct": 87.1,
+        "pct": 87.5,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -38900,7 +39198,7 @@
         "label": "QB Rating Against",
         "raw": 108.2,
         "display": "108.2",
-        "pct": 3.2,
+        "pct": 3.1,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -38925,11 +39223,11 @@
       "sg_cov_man_grade": 62.0
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 41.9,
-      "sg_cov_forced_incompletion_rate": 3.2,
+      "sg_cov_grade": 40.6,
+      "sg_cov_forced_incompletion_rate": 3.1,
       "sg_cov_snaps_per_target": 100.0,
-      "sg_cov_yards_per_snap": 12.9,
-      "sg_cov_qb_rating_against": 96.8,
+      "sg_cov_yards_per_snap": 12.5,
+      "sg_cov_qb_rating_against": 96.9,
       "sg_cov_man_grade": 35.5
     },
     "counting_stat_chips": [
@@ -38968,7 +39266,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 45.0,
+    "production_composite_pct": 44.7,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -38976,12 +39274,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 93.5,
+          "pct": 93.8,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 4.3,
+          "pct": 4.1,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -39076,8 +39374,10 @@
     "top_rank_driver_delta": -3.33,
     "rank_history": [
       172,
-      172,
-      172,
+      170,
+      170,
+      170,
+      170,
       170,
       170,
       170
@@ -39255,8 +39555,10 @@
     "top_rank_driver_delta": -0.91,
     "rank_history": [
       158,
-      158,
-      158,
+      171,
+      171,
+      171,
+      171,
       171,
       171,
       171
@@ -39445,8 +39747,10 @@
     "top_rank_driver_delta": -3.3,
     "rank_history": [
       173,
-      173,
-      173,
+      172,
+      172,
+      172,
+      172,
       172,
       172,
       172
@@ -39666,8 +39970,10 @@
     "top_rank_driver_delta": -1.5,
     "rank_history": [
       174,
-      174,
-      174,
+      173,
+      173,
+      173,
+      173,
       173,
       173,
       173
@@ -39904,8 +40210,10 @@
     "top_rank_driver_delta": -1.68,
     "rank_history": [
       175,
-      175,
-      175,
+      174,
+      174,
+      174,
+      174,
       174,
       174,
       174
@@ -40127,8 +40435,10 @@
     "top_rank_driver_delta": -1.06,
     "rank_history": [
       159,
-      159,
-      159,
+      175,
+      175,
+      175,
+      175,
       175,
       175,
       175
@@ -40309,16 +40619,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.44,
     "rank_history": [
-      190,
-      190,
-      179,
       178,
-      178,
+      176,
+      176,
+      176,
+      176,
       176,
       176,
       176
     ],
-    "rank_move_window": 14,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 86.1,
@@ -40505,14 +40815,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.29,
     "rank_history": [
+      176,
       177,
-      176,
-      176,
+      177,
+      177,
+      177,
       177,
       177,
       177
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 58.4,
@@ -40685,14 +40997,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.17,
     "rank_history": [
+      177,
       178,
-      177,
-      177,
+      178,
+      178,
+      178,
       178,
       178,
       178
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 88.7,
@@ -40876,14 +41190,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      183,
       182,
-      182,
+      179,
+      179,
+      179,
+      179,
       179,
       179,
       179
     ],
-    "rank_move_window": 4,
+    "rank_move_window": 3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 62.8,
@@ -41065,14 +41381,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.41,
     "rank_history": [
-      184,
       183,
-      183,
+      180,
+      180,
+      180,
+      180,
       180,
       180,
       180
     ],
-    "rank_move_window": 4,
+    "rank_move_window": 3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 73.0,
@@ -41260,7 +41578,9 @@
     "top_rank_driver_delta": -3.33,
     "rank_history": [
       181,
-      180,
+      181,
+      181,
+      181,
       181,
       181,
       181,
@@ -41285,11 +41605,11 @@
       "sg_def_total_pressures": 0.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 51.6,
-      "sg_cov_forced_incompletion_rate": 48.4,
-      "sg_cov_snaps_per_target": 12.9,
-      "sg_cov_yards_per_snap": 54.8,
-      "sg_cov_qb_rating_against": 77.4,
+      "sg_cov_grade": 50.0,
+      "sg_cov_forced_incompletion_rate": 46.9,
+      "sg_cov_snaps_per_target": 15.6,
+      "sg_cov_yards_per_snap": 53.1,
+      "sg_cov_qb_rating_against": 78.1,
       "sg_cov_man_grade": 48.4,
       "sg_slot_cov_snaps_per_target": 26.9,
       "sg_slot_cov_qb_rating_against": 80.8
@@ -41300,7 +41620,7 @@
         "label": "Coverage Grade",
         "raw": 76.5,
         "display": "76.5",
-        "pct": 51.6,
+        "pct": 50.0,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -41310,7 +41630,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 16.4,
         "display": "16.4%",
-        "pct": 48.4,
+        "pct": 46.9,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -41320,7 +41640,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 6.1,
         "display": "6.1",
-        "pct": 12.9,
+        "pct": 15.6,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -41330,7 +41650,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.8,
         "display": "0.80",
-        "pct": 45.2,
+        "pct": 46.9,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -41340,7 +41660,7 @@
         "label": "QB Rating Against",
         "raw": 87.2,
         "display": "87.2",
-        "pct": 22.6,
+        "pct": 21.9,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -41398,11 +41718,11 @@
       "sg_slot_cov_qb_rating_against": 85.0
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 51.6,
-      "sg_cov_forced_incompletion_rate": 48.4,
-      "sg_cov_snaps_per_target": 12.9,
-      "sg_cov_yards_per_snap": 54.8,
-      "sg_cov_qb_rating_against": 77.4,
+      "sg_cov_grade": 50.0,
+      "sg_cov_forced_incompletion_rate": 46.9,
+      "sg_cov_snaps_per_target": 15.6,
+      "sg_cov_yards_per_snap": 53.1,
+      "sg_cov_qb_rating_against": 78.1,
       "sg_cov_man_grade": 48.4,
       "sg_slot_cov_snaps_per_target": 26.9,
       "sg_slot_cov_qb_rating_against": 80.8
@@ -41451,7 +41771,7 @@
       "cfb_db_tfl": 1.0,
       "sg_def_total_pressures": 0.0
     },
-    "production_composite_pct": 37.8,
+    "production_composite_pct": 37.7,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -41459,12 +41779,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 29.1,
+          "pct": 31.2,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 40.9,
+          "pct": 39.6,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -41540,16 +41860,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.91,
     "rank_history": [
-      167,
-      170,
-      180,
       179,
-      179,
+      182,
+      182,
+      182,
+      182,
       182,
       182,
       182
     ],
-    "rank_move_window": -15,
+    "rank_move_window": -3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 87.5,
@@ -41726,8 +42046,10 @@
     "top_rank_driver_delta": -1.01,
     "rank_history": [
       228,
-      228,
-      228,
+      183,
+      183,
+      183,
+      183,
       183,
       183,
       183
@@ -41927,16 +42249,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.59,
     "rank_history": [
-      154,
-      155,
       163,
-      163,
-      163,
+      184,
+      184,
+      184,
+      184,
       184,
       184,
       184
     ],
-    "rank_move_window": -30,
+    "rank_move_window": -21,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 81.9,
@@ -42169,14 +42491,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.44,
     "rank_history": [
-      182,
-      181,
       180,
+      185,
+      185,
+      185,
+      185,
       185,
       185,
       185
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -5,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 86.1,
@@ -42415,14 +42739,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.62,
     "rank_history": [
-      176,
+      186,
+      186,
+      186,
       186,
       186,
       186,
       186,
       186
     ],
-    "rank_move_window": -10,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 75.5,
@@ -42641,8 +42967,10 @@
     "top_rank_driver_delta": -2.94,
     "rank_history": [
       195,
-      195,
-      195,
+      187,
+      187,
+      187,
+      187,
       187,
       187,
       187
@@ -42827,16 +43155,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.57,
     "rank_history": [
-      170,
-      173,
-      186,
       185,
-      185,
+      188,
+      188,
+      188,
+      188,
       188,
       188,
       188
     ],
-    "rank_move_window": -18,
+    "rank_move_window": -3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 61.6,
@@ -43110,8 +43438,10 @@
     "top_rank_driver_delta": -1.86,
     "rank_history": [
       187,
-      187,
-      187,
+      189,
+      189,
+      189,
+      189,
       189,
       189,
       189
@@ -43325,8 +43655,10 @@
     "top_rank_driver_delta": -2.14,
     "rank_history": [
       188,
-      188,
-      188,
+      190,
+      190,
+      190,
+      190,
       190,
       190,
       190
@@ -43541,14 +43873,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.8,
     "rank_history": [
-      185,
       184,
-      184,
+      191,
+      191,
+      191,
+      191,
       191,
       191,
       191
     ],
-    "rank_move_window": -6,
+    "rank_move_window": -7,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 71.1,
@@ -43776,14 +44110,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.18,
     "rank_history": [
-      189,
-      189,
       190,
+      192,
+      192,
+      192,
+      192,
       192,
       192,
       192
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 93.3,
@@ -44015,14 +44351,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.49,
     "rank_history": [
-      190,
-      190,
       189,
+      193,
+      193,
+      193,
+      193,
       193,
       193,
       193
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -4,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 90.8,
@@ -44297,8 +44635,10 @@
     "top_rank_driver_delta": -2.51,
     "rank_history": [
       192,
-      192,
-      192,
+      194,
+      194,
+      194,
+      194,
       194,
       194,
       194
@@ -44505,8 +44845,10 @@
     "top_rank_driver_delta": -3.29,
     "rank_history": [
       191,
-      191,
-      191,
+      195,
+      195,
+      195,
+      195,
       195,
       195,
       195
@@ -44740,8 +45082,10 @@
     "top_rank_driver_delta": 1.27,
     "rank_history": [
       224,
-      224,
-      224,
+      196,
+      196,
+      196,
+      196,
       196,
       196,
       196
@@ -44963,8 +45307,10 @@
     "top_rank_driver_delta": -2.23,
     "rank_history": [
       193,
-      193,
-      193,
+      197,
+      197,
+      197,
+      197,
       197,
       197,
       197
@@ -45210,8 +45556,10 @@
     "top_rank_driver_delta": -2.51,
     "rank_history": [
       194,
-      194,
-      194,
+      198,
+      198,
+      198,
+      198,
       198,
       198,
       198
@@ -45455,8 +45803,10 @@
     "top_rank_driver_delta": -2.19,
     "rank_history": [
       196,
-      196,
-      196,
+      199,
+      199,
+      199,
+      199,
       199,
       199,
       199
@@ -45653,8 +46003,10 @@
     "top_rank_driver_delta": -4.88,
     "rank_history": [
       197,
-      197,
-      197,
+      200,
+      200,
+      200,
+      200,
       200,
       200,
       200
@@ -45836,14 +46188,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.18,
     "rank_history": [
-      200,
-      200,
       199,
+      201,
+      201,
+      201,
+      201,
       201,
       201,
       201
     ],
-    "rank_move_window": -1,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 88.0,
@@ -45862,11 +46216,11 @@
       "sg_def_total_pressures": 5.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 87.1,
-      "sg_cov_forced_incompletion_rate": 41.9,
-      "sg_cov_snaps_per_target": 90.3,
-      "sg_cov_yards_per_snap": 3.2,
-      "sg_cov_qb_rating_against": 12.9,
+      "sg_cov_grade": 84.4,
+      "sg_cov_forced_incompletion_rate": 40.6,
+      "sg_cov_snaps_per_target": 90.6,
+      "sg_cov_yards_per_snap": 3.1,
+      "sg_cov_qb_rating_against": 12.5,
       "sg_cov_man_grade": 90.3,
       "sg_slot_cov_snaps_per_target": 69.2,
       "sg_slot_cov_qb_rating_against": 38.5
@@ -45877,7 +46231,7 @@
         "label": "Coverage Grade",
         "raw": 88.0,
         "display": "88.0",
-        "pct": 87.1,
+        "pct": 84.4,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -45887,7 +46241,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 16.2,
         "display": "16.2%",
-        "pct": 41.9,
+        "pct": 40.6,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -45897,7 +46251,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 8.8,
         "display": "8.8",
-        "pct": 90.3,
+        "pct": 90.6,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -45907,7 +46261,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.3,
         "display": "0.30",
-        "pct": 96.8,
+        "pct": 96.9,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -45917,7 +46271,7 @@
         "label": "QB Rating Against",
         "raw": 39.4,
         "display": "39.4",
-        "pct": 87.1,
+        "pct": 87.5,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -45975,11 +46329,11 @@
       "sg_slot_cov_qb_rating_against": 51.0
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 87.1,
-      "sg_cov_forced_incompletion_rate": 41.9,
-      "sg_cov_snaps_per_target": 90.3,
-      "sg_cov_yards_per_snap": 3.2,
-      "sg_cov_qb_rating_against": 12.9,
+      "sg_cov_grade": 84.4,
+      "sg_cov_forced_incompletion_rate": 40.6,
+      "sg_cov_snaps_per_target": 90.6,
+      "sg_cov_yards_per_snap": 3.1,
+      "sg_cov_qb_rating_against": 12.5,
       "sg_cov_man_grade": 90.3,
       "sg_slot_cov_snaps_per_target": 69.2,
       "sg_slot_cov_qb_rating_against": 38.5
@@ -46028,7 +46382,7 @@
       "cfb_db_tfl": 1.0,
       "sg_def_total_pressures": 5.0
     },
-    "production_composite_pct": 77.3,
+    "production_composite_pct": 76.8,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -46036,12 +46390,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 93.5,
+          "pct": 93.8,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 52.7,
+          "pct": 52.1,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -46115,14 +46469,16 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
     "rank_history": [
-      199,
-      199,
       200,
+      202,
+      202,
+      202,
+      202,
       202,
       202,
       202
     ],
-    "rank_move_window": -3,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 43.2,
@@ -46322,8 +46678,10 @@
     "top_rank_driver_delta": -1.75,
     "rank_history": [
       209,
-      209,
-      209,
+      203,
+      203,
+      203,
+      203,
       203,
       203,
       203
@@ -46557,8 +46915,10 @@
     "top_rank_driver_delta": 2.44,
     "rank_history": [
       203,
-      203,
-      203,
+      204,
+      204,
+      204,
+      204,
       204,
       204,
       204
@@ -46783,16 +47143,16 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.65,
     "rank_history": [
-      112,
-      114,
       204,
-      204,
-      204,
+      205,
+      205,
+      205,
+      205,
       205,
       205,
       205
     ],
-    "rank_move_window": -93,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 73.8,
@@ -46807,11 +47167,11 @@
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 35.5,
-      "sg_cov_forced_incompletion_rate": 16.1,
-      "sg_cov_snaps_per_target": 64.5,
-      "sg_cov_yards_per_snap": 22.6,
-      "sg_cov_qb_rating_against": 25.8,
+      "sg_cov_grade": 34.4,
+      "sg_cov_forced_incompletion_rate": 15.6,
+      "sg_cov_snaps_per_target": 65.6,
+      "sg_cov_yards_per_snap": 21.9,
+      "sg_cov_qb_rating_against": 25.0,
       "sg_cov_man_grade": 51.6,
       "sg_slot_cov_snaps_per_target": 57.7,
       "sg_slot_cov_qb_rating_against": 69.2
@@ -46822,7 +47182,7 @@
         "label": "Coverage Grade",
         "raw": 73.8,
         "display": "73.8",
-        "pct": 35.5,
+        "pct": 34.4,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -46832,7 +47192,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 8.9,
         "display": "8.9%",
-        "pct": 16.1,
+        "pct": 15.6,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -46842,7 +47202,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 7.4,
         "display": "7.4",
-        "pct": 64.5,
+        "pct": 65.6,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -46852,7 +47212,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.6,
         "display": "0.60",
-        "pct": 77.4,
+        "pct": 78.1,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -46862,7 +47222,7 @@
         "label": "QB Rating Against",
         "raw": 53.4,
         "display": "53.4",
-        "pct": 74.2,
+        "pct": 75.0,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -46920,11 +47280,11 @@
       "sg_slot_cov_qb_rating_against": 72.4
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 35.5,
-      "sg_cov_forced_incompletion_rate": 16.1,
-      "sg_cov_snaps_per_target": 64.5,
-      "sg_cov_yards_per_snap": 22.6,
-      "sg_cov_qb_rating_against": 25.8,
+      "sg_cov_grade": 34.4,
+      "sg_cov_forced_incompletion_rate": 15.6,
+      "sg_cov_snaps_per_target": 65.6,
+      "sg_cov_yards_per_snap": 21.9,
+      "sg_cov_qb_rating_against": 25.0,
       "sg_cov_man_grade": 51.6,
       "sg_slot_cov_snaps_per_target": 57.7,
       "sg_slot_cov_qb_rating_against": 69.2
@@ -46941,7 +47301,7 @@
     "counting_metrics": {
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 50.7,
+    "production_composite_pct": 50.8,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -46949,7 +47309,7 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 71.0,
+          "pct": 71.8,
           "detail": "how expensive it is to attack this defender"
         },
         {
@@ -47026,8 +47386,10 @@
     "top_rank_driver_delta": -2.45,
     "rank_history": [
       205,
-      205,
-      205,
+      206,
+      206,
+      206,
+      206,
       206,
       206,
       206
@@ -47044,11 +47406,11 @@
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 32.3,
-      "sg_cov_forced_incompletion_rate": 19.4,
-      "sg_cov_snaps_per_target": 19.4,
-      "sg_cov_yards_per_snap": 71.0,
-      "sg_cov_qb_rating_against": 74.2,
+      "sg_cov_grade": 31.2,
+      "sg_cov_forced_incompletion_rate": 18.8,
+      "sg_cov_snaps_per_target": 21.9,
+      "sg_cov_yards_per_snap": 68.8,
+      "sg_cov_qb_rating_against": 75.0,
       "sg_cov_man_grade": 16.1
     },
     "advanced_metric_cards": [
@@ -47057,7 +47419,7 @@
         "label": "Coverage Grade",
         "raw": 73.5,
         "display": "73.5",
-        "pct": 32.3,
+        "pct": 31.2,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -47067,7 +47429,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 11.4,
         "display": "11.4%",
-        "pct": 19.4,
+        "pct": 18.8,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -47077,7 +47439,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 6.3,
         "display": "6.3",
-        "pct": 19.4,
+        "pct": 21.9,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -47087,7 +47449,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.9,
         "display": "0.90",
-        "pct": 29.0,
+        "pct": 31.2,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -47097,7 +47459,7 @@
         "label": "QB Rating Against",
         "raw": 86.5,
         "display": "86.5",
-        "pct": 25.8,
+        "pct": 25.0,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -47122,11 +47484,11 @@
       "sg_cov_man_grade": 56.7
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 32.3,
-      "sg_cov_forced_incompletion_rate": 19.4,
-      "sg_cov_snaps_per_target": 19.4,
-      "sg_cov_yards_per_snap": 71.0,
-      "sg_cov_qb_rating_against": 74.2,
+      "sg_cov_grade": 31.2,
+      "sg_cov_forced_incompletion_rate": 18.8,
+      "sg_cov_snaps_per_target": 21.9,
+      "sg_cov_yards_per_snap": 68.8,
+      "sg_cov_qb_rating_against": 75.0,
       "sg_cov_man_grade": 16.1
     },
     "counting_stat_chips": [
@@ -47141,7 +47503,7 @@
     "counting_metrics": {
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 24.9,
+    "production_composite_pct": 25.1,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -47149,12 +47511,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 24.2,
+          "pct": 26.5,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 24.7,
+          "pct": 24.0,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -47247,8 +47609,10 @@
     "top_rank_driver_delta": -1.72,
     "rank_history": [
       202,
-      202,
-      202,
+      207,
+      207,
+      207,
+      207,
       207,
       207,
       207
@@ -47485,8 +47849,10 @@
     "top_rank_driver_delta": -1.68,
     "rank_history": [
       206,
-      206,
-      206,
+      208,
+      208,
+      208,
+      208,
       208,
       208,
       208
@@ -47687,8 +48053,10 @@
     "top_rank_driver_delta": -2.15,
     "rank_history": [
       208,
-      208,
-      208,
+      209,
+      209,
+      209,
+      209,
       209,
       209,
       209
@@ -47900,8 +48268,10 @@
     "top_rank_driver_delta": -1.16,
     "rank_history": [
       207,
-      207,
-      207,
+      210,
+      210,
+      210,
+      210,
       210,
       210,
       210
@@ -48148,8 +48518,10 @@
     "top_rank_driver_delta": -2.11,
     "rank_history": [
       201,
-      201,
-      201,
+      211,
+      211,
+      211,
+      211,
       211,
       211,
       211
@@ -48391,8 +48763,10 @@
     "top_rank_driver_delta": -2.51,
     "rank_history": [
       210,
-      210,
-      210,
+      212,
+      212,
+      212,
+      212,
       212,
       212,
       212
@@ -48638,8 +49012,10 @@
     "top_rank_driver_delta": -2.51,
     "rank_history": [
       211,
-      211,
-      211,
+      213,
+      213,
+      213,
+      213,
       213,
       213,
       213
@@ -48832,8 +49208,10 @@
     "top_rank_driver_delta": -2.18,
     "rank_history": [
       213,
-      213,
-      213,
+      214,
+      214,
+      214,
+      214,
       214,
       214,
       214
@@ -49026,8 +49404,10 @@
     "top_rank_driver_delta": -2.42,
     "rank_history": [
       214,
-      214,
-      214,
+      215,
+      215,
+      215,
+      215,
       215,
       215,
       215
@@ -49200,6 +49580,8 @@
       216,
       216,
       216,
+      216,
+      216,
       216
     ],
     "rank_move_window": 0,
@@ -49296,6 +49678,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.28,
     "rank_history": [
+      217,
+      217,
       217,
       217,
       217,
@@ -49533,6 +49917,8 @@
       218,
       218,
       218,
+      218,
+      218,
       218
     ],
     "rank_move_window": 0,
@@ -49711,8 +50097,10 @@
     "top_rank_driver_delta": -2.07,
     "rank_history": [
       215,
-      215,
-      215,
+      219,
+      219,
+      219,
+      219,
       219,
       219,
       219
@@ -49913,8 +50301,10 @@
     "top_rank_driver_delta": -2.62,
     "rank_history": [
       219,
-      219,
-      219,
+      220,
+      220,
+      220,
+      220,
       220,
       220,
       220
@@ -50129,6 +50519,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.41,
     "rank_history": [
+      221,
+      221,
       221,
       221,
       221,
@@ -50353,8 +50745,10 @@
     "top_rank_driver_delta": -3.4,
     "rank_history": [
       220,
-      220,
-      220,
+      222,
+      222,
+      222,
+      222,
       222,
       222,
       222
@@ -50530,8 +50924,10 @@
     "top_rank_driver_delta": -2.31,
     "rank_history": [
       222,
-      222,
-      222,
+      223,
+      223,
+      223,
+      223,
       223,
       223,
       223
@@ -50548,11 +50944,11 @@
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 58.1,
-      "sg_cov_forced_incompletion_rate": 64.5,
-      "sg_cov_snaps_per_target": 80.6,
-      "sg_cov_yards_per_snap": 71.0,
-      "sg_cov_qb_rating_against": 80.6,
+      "sg_cov_grade": 56.2,
+      "sg_cov_forced_incompletion_rate": 62.5,
+      "sg_cov_snaps_per_target": 81.2,
+      "sg_cov_yards_per_snap": 68.8,
+      "sg_cov_qb_rating_against": 81.2,
       "sg_cov_man_grade": 58.1
     },
     "advanced_metric_cards": [
@@ -50561,7 +50957,7 @@
         "label": "Coverage Grade",
         "raw": 77.7,
         "display": "77.7",
-        "pct": 58.1,
+        "pct": 56.2,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -50571,7 +50967,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 17.6,
         "display": "17.6%",
-        "pct": 64.5,
+        "pct": 62.5,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -50581,7 +50977,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 8.0,
         "display": "8.0",
-        "pct": 80.6,
+        "pct": 81.2,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -50591,7 +50987,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.9,
         "display": "0.90",
-        "pct": 29.0,
+        "pct": 31.2,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -50601,7 +50997,7 @@
         "label": "QB Rating Against",
         "raw": 88.4,
         "display": "88.4",
-        "pct": 19.4,
+        "pct": 18.8,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -50626,11 +51022,11 @@
       "sg_cov_man_grade": 70.4
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 58.1,
-      "sg_cov_forced_incompletion_rate": 64.5,
-      "sg_cov_snaps_per_target": 80.6,
-      "sg_cov_yards_per_snap": 71.0,
-      "sg_cov_qb_rating_against": 80.6,
+      "sg_cov_grade": 56.2,
+      "sg_cov_forced_incompletion_rate": 62.5,
+      "sg_cov_snaps_per_target": 81.2,
+      "sg_cov_yards_per_snap": 68.8,
+      "sg_cov_qb_rating_against": 81.2,
       "sg_cov_man_grade": 58.1
     },
     "counting_stat_chips": [
@@ -50645,7 +51041,7 @@
     "counting_metrics": {
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 50.8,
+    "production_composite_pct": 50.5,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -50653,12 +51049,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 54.8,
+          "pct": 56.2,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 54.8,
+          "pct": 54.2,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -50739,8 +51135,10 @@
     "top_rank_driver_delta": -1.68,
     "rank_history": [
       212,
-      212,
-      212,
+      224,
+      224,
+      224,
+      224,
       224,
       224,
       224
@@ -51020,8 +51418,10 @@
     "top_rank_driver_delta": -1.46,
     "rank_history": [
       233,
-      233,
-      233,
+      225,
+      225,
+      225,
+      225,
       225,
       225,
       225
@@ -51117,8 +51517,10 @@
     "top_rank_driver_delta": -2.2,
     "rank_history": [
       223,
-      223,
-      223,
+      226,
+      226,
+      226,
+      226,
       226,
       226,
       226
@@ -51330,8 +51732,10 @@
     "top_rank_driver_delta": -3.27,
     "rank_history": [
       230,
-      230,
-      230,
+      227,
+      227,
+      227,
+      227,
       227,
       227,
       227
@@ -51576,8 +51980,10 @@
     "top_rank_driver_delta": -3.88,
     "rank_history": [
       226,
-      226,
-      226,
+      228,
+      228,
+      228,
+      228,
       228,
       228,
       228
@@ -51809,6 +52215,8 @@
       229,
       229,
       229,
+      229,
+      229,
       229
     ],
     "rank_move_window": 0,
@@ -51994,8 +52402,10 @@
     "top_rank_driver_delta": -2.45,
     "rank_history": [
       227,
-      227,
-      227,
+      230,
+      230,
+      230,
+      230,
       230,
       230,
       230
@@ -52204,8 +52614,10 @@
     "top_rank_driver_delta": -2.01,
     "rank_history": [
       225,
-      225,
-      225,
+      231,
+      231,
+      231,
+      231,
       231,
       231,
       231
@@ -52457,8 +52869,10 @@
     "top_rank_driver_delta": -3.68,
     "rank_history": [
       237,
-      237,
-      237,
+      232,
+      232,
+      232,
+      232,
       232,
       232,
       232
@@ -52686,8 +53100,10 @@
     "top_rank_driver_delta": -2.79,
     "rank_history": [
       231,
-      231,
-      231,
+      233,
+      233,
+      233,
+      233,
       233,
       233,
       233
@@ -52911,8 +53327,10 @@
     "top_rank_driver_delta": -2.06,
     "rank_history": [
       232,
-      232,
-      232,
+      234,
+      234,
+      234,
+      234,
       234,
       234,
       234
@@ -53102,8 +53520,10 @@
     "top_rank_driver_delta": -2.1,
     "rank_history": [
       234,
-      234,
-      234,
+      235,
+      235,
+      235,
+      235,
       235,
       235,
       235
@@ -53293,8 +53713,10 @@
     "top_rank_driver_delta": -2.19,
     "rank_history": [
       235,
-      235,
-      235,
+      236,
+      236,
+      236,
+      236,
       236,
       236,
       236
@@ -53482,8 +53904,10 @@
     "top_rank_driver_delta": -2.19,
     "rank_history": [
       236,
-      236,
-      236,
+      237,
+      237,
+      237,
+      237,
       237,
       237,
       237
@@ -53500,11 +53924,11 @@
       "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 45.2,
-      "sg_cov_forced_incompletion_rate": 96.8,
-      "sg_cov_snaps_per_target": 45.2,
-      "sg_cov_yards_per_snap": 41.9,
-      "sg_cov_qb_rating_against": 41.9,
+      "sg_cov_grade": 43.8,
+      "sg_cov_forced_incompletion_rate": 96.9,
+      "sg_cov_snaps_per_target": 46.9,
+      "sg_cov_yards_per_snap": 40.6,
+      "sg_cov_qb_rating_against": 43.8,
       "sg_cov_man_grade": 9.7
     },
     "advanced_metric_cards": [
@@ -53513,7 +53937,7 @@
         "label": "Coverage Grade",
         "raw": 75.7,
         "display": "75.7",
-        "pct": 45.2,
+        "pct": 43.8,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -53523,7 +53947,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 23.5,
         "display": "23.5%",
-        "pct": 96.8,
+        "pct": 96.9,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -53533,7 +53957,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 7.1,
         "display": "7.1",
-        "pct": 45.2,
+        "pct": 46.9,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -53543,7 +53967,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.7,
         "display": "0.70",
-        "pct": 58.1,
+        "pct": 59.4,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -53553,7 +53977,7 @@
         "label": "QB Rating Against",
         "raw": 59.4,
         "display": "59.4",
-        "pct": 58.1,
+        "pct": 56.2,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -53578,11 +54002,11 @@
       "sg_cov_man_grade": 53.7
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 45.2,
-      "sg_cov_forced_incompletion_rate": 96.8,
-      "sg_cov_snaps_per_target": 45.2,
-      "sg_cov_yards_per_snap": 41.9,
-      "sg_cov_qb_rating_against": 41.9,
+      "sg_cov_grade": 43.8,
+      "sg_cov_forced_incompletion_rate": 96.9,
+      "sg_cov_snaps_per_target": 46.9,
+      "sg_cov_yards_per_snap": 40.6,
+      "sg_cov_qb_rating_against": 43.8,
       "sg_cov_man_grade": 9.7
     },
     "counting_stat_chips": [
@@ -53597,7 +54021,7 @@
     "counting_metrics": {
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 53.6,
+    "production_composite_pct": 53.4,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -53605,12 +54029,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 51.7,
+          "pct": 53.1,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 68.8,
+          "pct": 67.7,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -53686,6 +54110,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.42,
     "rank_history": [
+      238,
+      238,
       238,
       238,
       238,
@@ -53866,6 +54292,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.24,
     "rank_history": [
+      239,
+      239,
       239,
       239,
       239,
@@ -54072,6 +54500,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.02,
     "rank_history": [
+      240,
+      240,
       240,
       240,
       240,
@@ -54312,6 +54742,8 @@
       241,
       241,
       241,
+      241,
+      241,
       241
     ],
     "rank_move_window": 0,
@@ -54543,6 +54975,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.85,
     "rank_history": [
+      242,
+      242,
       242,
       242,
       242,
@@ -54841,6 +55275,8 @@
       243,
       243,
       243,
+      243,
+      243,
       243
     ],
     "rank_move_window": 0,
@@ -55059,6 +55495,8 @@
       244,
       244,
       244,
+      244,
+      244,
       244
     ],
     "rank_move_window": 0,
@@ -55248,6 +55686,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.44,
     "rank_history": [
+      245,
+      245,
       245,
       245,
       245,
@@ -55455,8 +55895,10 @@
     "top_rank_driver_delta": -1.76,
     "rank_history": [
       250,
-      250,
-      250,
+      246,
+      246,
+      246,
+      246,
       246,
       246,
       246
@@ -55699,8 +56141,10 @@
     "top_rank_driver_delta": -4.97,
     "rank_history": [
       246,
-      246,
-      246,
+      247,
+      247,
+      247,
+      247,
       247,
       247,
       247
@@ -55933,8 +56377,10 @@
     "top_rank_driver_delta": -2.44,
     "rank_history": [
       247,
-      247,
-      247,
+      248,
+      248,
+      248,
+      248,
       248,
       248,
       248
@@ -56127,8 +56573,10 @@
     "top_rank_driver_delta": -2.51,
     "rank_history": [
       248,
-      248,
-      248,
+      249,
+      249,
+      249,
+      249,
       249,
       249,
       249
@@ -56305,8 +56753,10 @@
     "top_rank_driver_delta": -2.51,
     "rank_history": [
       249,
-      249,
-      249,
+      250,
+      250,
+      250,
+      250,
       250,
       250,
       250
@@ -56499,8 +56949,10 @@
     "top_rank_driver_delta": -2.03,
     "rank_history": [
       252,
-      252,
-      252,
+      251,
+      251,
+      251,
+      251,
       251,
       251,
       251
@@ -56693,8 +57145,10 @@
     "top_rank_driver_delta": -2.42,
     "rank_history": [
       253,
-      253,
-      253,
+      252,
+      252,
+      252,
+      252,
       252,
       252,
       252
@@ -56870,8 +57324,10 @@
     "top_rank_driver_delta": -2.51,
     "rank_history": [
       254,
-      254,
-      254,
+      253,
+      253,
+      253,
+      253,
       253,
       253,
       253
@@ -57076,8 +57532,10 @@
     "top_rank_driver_delta": -1.63,
     "rank_history": [
       251,
-      251,
-      251,
+      254,
+      254,
+      254,
+      254,
       254,
       254,
       254
@@ -57303,6 +57761,8 @@
       255,
       255,
       255,
+      255,
+      255,
       255
     ],
     "rank_move_window": 0,
@@ -57492,6 +57952,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.47,
     "rank_history": [
+      256,
+      256,
       256,
       256,
       256,
@@ -57693,6 +58155,8 @@
       257,
       257,
       257,
+      257,
+      257,
       257
     ],
     "rank_move_window": 0,
@@ -57870,6 +58334,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
+      258,
+      258,
       258,
       258,
       258,
@@ -58065,6 +58531,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.88,
     "rank_history": [
+      259,
+      259,
       259,
       259,
       259,
@@ -58306,8 +58774,10 @@
     "top_rank_driver_delta": -2.14,
     "rank_history": [
       261,
-      261,
-      261,
+      260,
+      260,
+      260,
+      260,
       260,
       260,
       260
@@ -58550,8 +59020,10 @@
     "top_rank_driver_delta": -2.11,
     "rank_history": [
       262,
-      262,
-      262,
+      261,
+      261,
+      261,
+      261,
       261,
       261,
       261
@@ -58802,8 +59274,10 @@
     "top_rank_driver_delta": -1.88,
     "rank_history": [
       263,
-      263,
-      263,
+      262,
+      262,
+      262,
+      262,
       262,
       262,
       262
@@ -59040,8 +59514,10 @@
     "top_rank_driver_delta": -2.45,
     "rank_history": [
       264,
-      264,
-      264,
+      263,
+      263,
+      263,
+      263,
       263,
       263,
       263
@@ -59061,11 +59537,11 @@
       "sg_def_total_pressures": 3.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 3.2,
-      "sg_cov_forced_incompletion_rate": 54.8,
-      "sg_cov_snaps_per_target": 9.7,
-      "sg_cov_yards_per_snap": 90.3,
-      "sg_cov_qb_rating_against": 87.1,
+      "sg_cov_grade": 3.1,
+      "sg_cov_forced_incompletion_rate": 53.1,
+      "sg_cov_snaps_per_target": 12.5,
+      "sg_cov_yards_per_snap": 90.6,
+      "sg_cov_qb_rating_against": 87.5,
       "sg_cov_man_grade": 12.9,
       "sg_slot_cov_snaps_per_target": 23.1,
       "sg_slot_cov_qb_rating_against": 65.4
@@ -59076,7 +59552,7 @@
         "label": "Coverage Grade",
         "raw": 62.1,
         "display": "62.1",
-        "pct": 3.2,
+        "pct": 3.1,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -59086,7 +59562,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 16.9,
         "display": "16.9%",
-        "pct": 54.8,
+        "pct": 53.1,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -59096,7 +59572,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 6.0,
         "display": "6.0",
-        "pct": 9.7,
+        "pct": 12.5,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -59106,7 +59582,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 1.2,
         "display": "1.20",
-        "pct": 9.7,
+        "pct": 9.4,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -59116,7 +59592,7 @@
         "label": "QB Rating Against",
         "raw": 97.6,
         "display": "97.6",
-        "pct": 12.9,
+        "pct": 12.5,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -59174,11 +59650,11 @@
       "sg_slot_cov_qb_rating_against": 71.7
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 3.2,
-      "sg_cov_forced_incompletion_rate": 54.8,
-      "sg_cov_snaps_per_target": 9.7,
-      "sg_cov_yards_per_snap": 90.3,
-      "sg_cov_qb_rating_against": 87.1,
+      "sg_cov_grade": 3.1,
+      "sg_cov_forced_incompletion_rate": 53.1,
+      "sg_cov_snaps_per_target": 12.5,
+      "sg_cov_yards_per_snap": 90.6,
+      "sg_cov_qb_rating_against": 87.5,
       "sg_cov_man_grade": 12.9,
       "sg_slot_cov_snaps_per_target": 23.1,
       "sg_slot_cov_qb_rating_against": 65.4
@@ -59203,12 +59679,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 9.7,
+          "pct": 10.9,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 46.2,
+          "pct": 45.8,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -59289,8 +59765,10 @@
     "top_rank_driver_delta": -2.44,
     "rank_history": [
       265,
-      265,
-      265,
+      264,
+      264,
+      264,
+      264,
       264,
       264,
       264
@@ -59584,8 +60062,10 @@
     "top_rank_driver_delta": -1.6,
     "rank_history": [
       266,
-      266,
-      266,
+      265,
+      265,
+      265,
+      265,
       265,
       265,
       265
@@ -59819,8 +60299,10 @@
     "top_rank_driver_delta": -4.96,
     "rank_history": [
       267,
-      267,
-      267,
+      266,
+      266,
+      266,
+      266,
       266,
       266,
       266
@@ -60052,14 +60534,16 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.93,
     "rank_history": [
-      269,
-      269,
       268,
+      267,
+      267,
+      267,
+      267,
       267,
       267,
       267
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 80.3,
@@ -60232,14 +60716,16 @@
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.74,
     "rank_history": [
-      268,
-      268,
       269,
+      268,
+      268,
+      268,
+      268,
       268,
       268,
       268
     ],
-    "rank_move_window": 0,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 74.4,
@@ -60257,11 +60743,11 @@
       "sg_def_total_pressures": 0.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 41.9,
-      "sg_cov_forced_incompletion_rate": 77.4,
-      "sg_cov_snaps_per_target": 3.2,
-      "sg_cov_yards_per_snap": 90.3,
-      "sg_cov_qb_rating_against": 58.1,
+      "sg_cov_grade": 40.6,
+      "sg_cov_forced_incompletion_rate": 78.1,
+      "sg_cov_snaps_per_target": 3.1,
+      "sg_cov_yards_per_snap": 90.6,
+      "sg_cov_qb_rating_against": 59.4,
       "sg_cov_man_grade": 25.8,
       "sg_slot_cov_snaps_per_target": 61.5,
       "sg_slot_cov_qb_rating_against": 23.1
@@ -60272,7 +60758,7 @@
         "label": "Coverage Grade",
         "raw": 74.4,
         "display": "74.4",
-        "pct": 41.9,
+        "pct": 40.6,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -60282,7 +60768,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 19.4,
         "display": "19.4%",
-        "pct": 77.4,
+        "pct": 78.1,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -60292,7 +60778,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 5.2,
         "display": "5.2",
-        "pct": 3.2,
+        "pct": 3.1,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -60302,7 +60788,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 1.2,
         "display": "1.20",
-        "pct": 9.7,
+        "pct": 9.4,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -60312,7 +60798,7 @@
         "label": "QB Rating Against",
         "raw": 71.8,
         "display": "71.8",
-        "pct": 41.9,
+        "pct": 40.6,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -60370,11 +60856,11 @@
       "sg_slot_cov_qb_rating_against": 39.6
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 41.9,
-      "sg_cov_forced_incompletion_rate": 77.4,
-      "sg_cov_snaps_per_target": 3.2,
-      "sg_cov_yards_per_snap": 90.3,
-      "sg_cov_qb_rating_against": 58.1,
+      "sg_cov_grade": 40.6,
+      "sg_cov_forced_incompletion_rate": 78.1,
+      "sg_cov_snaps_per_target": 3.1,
+      "sg_cov_yards_per_snap": 90.6,
+      "sg_cov_qb_rating_against": 59.4,
       "sg_cov_man_grade": 25.8,
       "sg_slot_cov_snaps_per_target": 61.5,
       "sg_slot_cov_qb_rating_against": 23.1
@@ -60415,7 +60901,7 @@
       "cfb_db_tackles": 47.0,
       "sg_def_total_pressures": 0.0
     },
-    "production_composite_pct": 41.0,
+    "production_composite_pct": 40.6,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -60423,12 +60909,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 6.4,
+          "pct": 6.2,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 73.1,
+          "pct": 72.9,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -60507,8 +60993,10 @@
     "top_rank_driver_delta": -1.73,
     "rank_history": [
       270,
-      270,
-      270,
+      269,
+      269,
+      269,
+      269,
       269,
       269,
       269
@@ -60699,8 +61187,10 @@
     "top_rank_driver_delta": -1.68,
     "rank_history": [
       260,
-      260,
-      260,
+      270,
+      270,
+      270,
+      270,
       270,
       270,
       270
@@ -60938,6 +61428,8 @@
       271,
       271,
       271,
+      271,
+      271,
       271
     ],
     "rank_move_window": 0,
@@ -61169,8 +61661,10 @@
     "top_rank_driver_delta": -2.14,
     "rank_history": [
       273,
-      273,
-      273,
+      272,
+      272,
+      272,
+      272,
       272,
       272,
       272
@@ -61408,8 +61902,10 @@
     "top_rank_driver_delta": -2.23,
     "rank_history": [
       274,
-      274,
-      274,
+      273,
+      273,
+      273,
+      273,
       273,
       273,
       273
@@ -61661,8 +62157,10 @@
     "top_rank_driver_delta": -3.04,
     "rank_history": [
       275,
-      275,
-      275,
+      274,
+      274,
+      274,
+      274,
       274,
       274,
       274
@@ -61887,8 +62385,10 @@
     "top_rank_driver_delta": -4.05,
     "rank_history": [
       277,
-      277,
-      277,
+      275,
+      275,
+      275,
+      275,
       275,
       275,
       275
@@ -62118,6 +62618,8 @@
       276,
       276,
       276,
+      276,
+      276,
       276
     ],
     "rank_move_window": 0,
@@ -62320,8 +62822,10 @@
     "top_rank_driver_delta": -2.4,
     "rank_history": [
       281,
-      281,
-      281,
+      277,
+      277,
+      277,
+      277,
       277,
       277,
       277
@@ -62552,8 +63056,10 @@
     "top_rank_driver_delta": -1.68,
     "rank_history": [
       272,
-      272,
-      272,
+      278,
+      278,
+      278,
+      278,
       278,
       278,
       278
@@ -62734,8 +63240,10 @@
     "top_rank_driver_delta": -4.98,
     "rank_history": [
       280,
-      280,
-      280,
+      279,
+      279,
+      279,
+      279,
       279,
       279,
       279
@@ -62928,8 +63436,10 @@
     "top_rank_driver_delta": -4.97,
     "rank_history": [
       278,
-      278,
-      278,
+      280,
+      280,
+      280,
+      280,
       280,
       280,
       280
@@ -63126,8 +63636,10 @@
     "top_rank_driver_delta": -4.5,
     "rank_history": [
       279,
-      279,
-      279,
+      281,
+      281,
+      281,
+      281,
       281,
       281,
       281
@@ -63378,8 +63890,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.45,
     "rank_history": [
-      234,
-      230,
+      282,
+      282,
       282,
       282,
       282,
@@ -63387,7 +63899,7 @@
       282,
       282
     ],
-    "rank_move_window": -48,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 67.5,
@@ -63616,8 +64128,10 @@
     "top_rank_driver_delta": -4.93,
     "rank_history": [
       284,
-      284,
-      284,
+      283,
+      283,
+      283,
+      283,
       283,
       283,
       283
@@ -63857,8 +64371,10 @@
     "top_rank_driver_delta": -4.4,
     "rank_history": [
       283,
-      283,
-      283,
+      284,
+      284,
+      284,
+      284,
       284,
       284,
       284
@@ -64097,6 +64613,8 @@
       285,
       285,
       285,
+      285,
+      285,
       285
     ],
     "rank_move_window": 0,
@@ -64303,8 +64821,10 @@
     "top_rank_driver_delta": -1.86,
     "rank_history": [
       287,
-      287,
-      287,
+      286,
+      286,
+      286,
+      286,
       286,
       286,
       286
@@ -64509,8 +65029,10 @@
     "top_rank_driver_delta": -2.36,
     "rank_history": [
       288,
-      288,
-      288,
+      287,
+      287,
+      287,
+      287,
       287,
       287,
       287
@@ -64743,8 +65265,10 @@
     "top_rank_driver_delta": -4.78,
     "rank_history": [
       289,
-      289,
-      289,
+      288,
+      288,
+      288,
+      288,
       288,
       288,
       288
@@ -64923,8 +65447,10 @@
     "top_rank_driver_delta": -2.45,
     "rank_history": [
       290,
-      290,
-      290,
+      289,
+      289,
+      289,
+      289,
       289,
       289,
       289
@@ -64948,10 +65474,10 @@
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 6.5,
-      "sg_cov_forced_incompletion_rate": 9.7,
-      "sg_cov_snaps_per_target": 41.9,
-      "sg_cov_yards_per_snap": 96.8,
+      "sg_cov_grade": 6.2,
+      "sg_cov_forced_incompletion_rate": 9.4,
+      "sg_cov_snaps_per_target": 43.8,
+      "sg_cov_yards_per_snap": 96.9,
       "sg_cov_qb_rating_against": 100.0,
       "sg_cov_man_grade": 38.7,
       "sg_slot_cov_snaps_per_target": 42.3,
@@ -64963,7 +65489,7 @@
         "label": "Coverage Grade",
         "raw": 63.4,
         "display": "63.4",
-        "pct": 6.5,
+        "pct": 6.2,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -64973,7 +65499,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 6.5,
         "display": "6.5%",
-        "pct": 9.7,
+        "pct": 9.4,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -64983,7 +65509,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 7.0,
         "display": "7.0",
-        "pct": 41.9,
+        "pct": 43.8,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -64993,7 +65519,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 1.3,
         "display": "1.30",
-        "pct": 3.2,
+        "pct": 3.1,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -65061,10 +65587,10 @@
       "sg_slot_cov_qb_rating_against": 154.2
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 6.5,
-      "sg_cov_forced_incompletion_rate": 9.7,
-      "sg_cov_snaps_per_target": 41.9,
-      "sg_cov_yards_per_snap": 96.8,
+      "sg_cov_grade": 6.2,
+      "sg_cov_forced_incompletion_rate": 9.4,
+      "sg_cov_snaps_per_target": 43.8,
+      "sg_cov_yards_per_snap": 96.9,
       "sg_cov_qb_rating_against": 100.0,
       "sg_cov_man_grade": 38.7,
       "sg_slot_cov_snaps_per_target": 42.3,
@@ -65114,7 +65640,7 @@
       "cfb_db_tfl": 1.0,
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 22.5,
+    "production_composite_pct": 22.6,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -65122,12 +65648,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 22.6,
+          "pct": 23.4,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 7.5,
+          "pct": 7.3,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -65216,8 +65742,10 @@
     "top_rank_driver_delta": -2.53,
     "rank_history": [
       291,
-      291,
-      291,
+      290,
+      290,
+      290,
+      290,
       290,
       290,
       290
@@ -65460,8 +65988,10 @@
     "top_rank_driver_delta": -1.67,
     "rank_history": [
       294,
-      294,
-      294,
+      291,
+      291,
+      291,
+      291,
       291,
       291,
       291
@@ -65701,6 +66231,8 @@
       292,
       292,
       292,
+      292,
+      292,
       292
     ],
     "rank_move_window": 0,
@@ -65854,6 +66386,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.9,
     "rank_history": [
+      293,
+      293,
       293,
       293,
       293,
@@ -66099,8 +66633,10 @@
     "top_rank_driver_delta": -2.18,
     "rank_history": [
       286,
-      286,
-      286,
+      294,
+      294,
+      294,
+      294,
       294,
       294,
       294
@@ -66347,6 +66883,8 @@
       295,
       295,
       295,
+      295,
+      295,
       295
     ],
     "rank_move_window": 0,
@@ -66569,6 +67107,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
     "rank_history": [
+      296,
+      296,
       296,
       296,
       296,
@@ -66863,6 +67403,8 @@
       297,
       297,
       297,
+      297,
+      297,
       297
     ],
     "rank_move_window": 0,
@@ -67095,6 +67637,8 @@
       298,
       298,
       298,
+      298,
+      298,
       298
     ],
     "rank_move_window": 0,
@@ -67280,6 +67824,8 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.55,
     "rank_history": [
+      299,
+      299,
       299,
       299,
       299,
@@ -67529,6 +68075,8 @@
       300,
       300,
       300,
+      300,
+      300,
       300
     ],
     "rank_move_window": 0,
@@ -67695,6 +68243,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.38,
     "rank_history": [
+      301,
+      301,
       301,
       301,
       301,
@@ -67944,6 +68494,8 @@
       302,
       302,
       302,
+      302,
+      302,
       302
     ],
     "rank_move_window": 0,
@@ -68167,6 +68719,8 @@
       303,
       303,
       303,
+      303,
+      303,
       303
     ],
     "rank_move_window": 0,
@@ -68368,8 +68922,8 @@
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.66,
     "rank_history": [
-      262,
-      262,
+      304,
+      304,
       304,
       304,
       304,
@@ -68377,7 +68931,7 @@
       304,
       304
     ],
-    "rank_move_window": -42,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 66.9,
@@ -68594,8 +69148,10 @@
     "top_rank_driver_delta": -3.24,
     "rank_history": [
       306,
-      306,
-      306,
+      305,
+      305,
+      305,
+      305,
       305,
       305,
       305
@@ -68619,11 +69175,11 @@
       "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
-      "sg_cov_grade": 9.7,
-      "sg_cov_forced_incompletion_rate": 87.1,
-      "sg_cov_snaps_per_target": 22.6,
-      "sg_cov_yards_per_snap": 41.9,
-      "sg_cov_qb_rating_against": 45.2,
+      "sg_cov_grade": 9.4,
+      "sg_cov_forced_incompletion_rate": 87.5,
+      "sg_cov_snaps_per_target": 25.0,
+      "sg_cov_yards_per_snap": 40.6,
+      "sg_cov_qb_rating_against": 46.9,
       "sg_cov_man_grade": 74.2,
       "sg_slot_cov_snaps_per_target": 50.0,
       "sg_slot_cov_qb_rating_against": 53.8
@@ -68634,7 +69190,7 @@
         "label": "Coverage Grade",
         "raw": 64.4,
         "display": "64.4",
-        "pct": 9.7,
+        "pct": 9.4,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.24
@@ -68644,7 +69200,7 @@
         "label": "Forced Incompletion Rate",
         "raw": 21.1,
         "display": "21.1%",
-        "pct": 87.1,
+        "pct": 87.5,
         "fmt": "pct100",
         "lower_better": false,
         "weight": 0.16
@@ -68654,7 +69210,7 @@
         "label": "Coverage Snaps / Target",
         "raw": 6.5,
         "display": "6.5",
-        "pct": 22.6,
+        "pct": 25.0,
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.14
@@ -68664,7 +69220,7 @@
         "label": "Yards / Coverage Snap",
         "raw": 0.7,
         "display": "0.70",
-        "pct": 58.1,
+        "pct": 59.4,
         "fmt": "dec2",
         "lower_better": true,
         "weight": 0.18
@@ -68674,7 +69230,7 @@
         "label": "QB Rating Against",
         "raw": 65.5,
         "display": "65.5",
-        "pct": 54.8,
+        "pct": 53.1,
         "fmt": "dec1",
         "lower_better": true,
         "weight": 0.16
@@ -68732,11 +69288,11 @@
       "sg_slot_cov_qb_rating_against": 60.4
     },
     "advanced_percentiles": {
-      "sg_cov_grade": 9.7,
-      "sg_cov_forced_incompletion_rate": 87.1,
-      "sg_cov_snaps_per_target": 22.6,
-      "sg_cov_yards_per_snap": 41.9,
-      "sg_cov_qb_rating_against": 45.2,
+      "sg_cov_grade": 9.4,
+      "sg_cov_forced_incompletion_rate": 87.5,
+      "sg_cov_snaps_per_target": 25.0,
+      "sg_cov_yards_per_snap": 40.6,
+      "sg_cov_qb_rating_against": 46.9,
       "sg_cov_man_grade": 74.2,
       "sg_slot_cov_snaps_per_target": 50.0,
       "sg_slot_cov_qb_rating_against": 53.8
@@ -68785,7 +69341,7 @@
       "cfb_db_tfl": 5.0,
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 47.8,
+    "production_composite_pct": 48.1,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -68793,12 +69349,12 @@
       "rows": [
         {
           "label": "Target Deterrence",
-          "pct": 40.4,
+          "pct": 42.2,
           "detail": "how expensive it is to attack this defender"
         },
         {
           "label": "Ball Disruption",
-          "pct": 80.6,
+          "pct": 80.2,
           "detail": "forced misses and passer suppression"
         },
         {
@@ -68889,8 +69445,10 @@
     "top_rank_driver_delta": -4.8,
     "rank_history": [
       305,
-      305,
-      305,
+      306,
+      306,
+      306,
+      306,
       306,
       306,
       306
@@ -69124,8 +69682,10 @@
     "top_rank_driver_delta": -2.26,
     "rank_history": [
       308,
-      308,
-      308,
+      307,
+      307,
+      307,
+      307,
       307,
       307,
       307
@@ -69359,8 +69919,10 @@
     "top_rank_driver_delta": -1.88,
     "rank_history": [
       307,
-      307,
-      307,
+      308,
+      308,
+      308,
+      308,
       308,
       308,
       308
@@ -69598,6 +70160,8 @@
       309,
       309,
       309,
+      309,
+      309,
       309
     ],
     "rank_move_window": 0,
@@ -69829,8 +70393,10 @@
     "top_rank_driver_delta": -1.94,
     "rank_history": [
       311,
-      311,
-      311,
+      310,
+      310,
+      310,
+      310,
       310,
       310,
       310
@@ -70043,8 +70609,10 @@
     "top_rank_driver_delta": -2.51,
     "rank_history": [
       310,
-      310,
-      310,
+      311,
+      311,
+      311,
+      311,
       311,
       311,
       311

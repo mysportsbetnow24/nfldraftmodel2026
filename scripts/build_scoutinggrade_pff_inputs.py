@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import re
 from collections import defaultdict
+from shutil import copyfile
 from pathlib import Path
 
 from src.ingest.rankings_loader import canonical_player_name, normalize_pos
@@ -28,14 +29,17 @@ PREMIUM_FILES = {
     "pass_rush_summary": DOWNLOADS / "pass_rush_summary.csv",
     "run_defense_summary": DOWNLOADS / "run_defense_summary.csv",
     "defense_coverage_summary": DOWNLOADS / "defense_coverage_summary.csv",
+    "defense_coverage_summary_2024": DOWNLOADS / "defense_coverage_summary (1).csv",
     "defense_coverage_scheme": DOWNLOADS / "defense_coverage_scheme.csv",
     "slot_coverage": DOWNLOADS / "slot_coverage.csv",
     "pass_rush_productivity": DOWNLOADS / "pass_rush_productivity.csv",
 }
+DB_FALLBACK_POSITIONS = {"CB", "S", "LB", "EDGE", "DT"}
 
 PFF_BOARD_OUT = MANUAL_DIR / "pff_big_board_2026_latest.csv"
 PFF_MASTER_OUT = MANUAL_DIR / "pff_master_2026.csv"
 SG_ADVANCED_OUT = MANUAL_DIR / "scoutinggrade_advanced_2025.csv"
+DB_2024_ARCHIVE_OUT = MANUAL_DIR / "defense_coverage_summary_2024.csv"
 REPORT_OUT = OUTPUTS_DIR / "scoutinggrade_pff_build_report_2026.md"
 MISSING_PID_OUT = OUTPUTS_DIR / "pff_missing_player_id_review_2026.csv"
 
@@ -236,6 +240,8 @@ def build() -> None:
         raise SystemExit(f"Missing PFF board: {PFF_BOARD_PATH}")
 
     premium_rows_by_file = {name: _read_csv(path) for name, path in PREMIUM_FILES.items() if path.exists()}
+    if PREMIUM_FILES.get("defense_coverage_summary_2024", Path()).exists():
+        copyfile(PREMIUM_FILES["defense_coverage_summary_2024"], DB_2024_ARCHIVE_OUT)
     by_exact, by_name_pos, by_name, by_pid = _identity_maps(premium_rows_by_file)
 
     pff_board_rows = _read_csv(PFF_BOARD_PATH)
@@ -543,6 +549,39 @@ def build() -> None:
                 "sg_cov_yards_per_snap": row.get("yards_per_coverage_snap", ""),
                 "sg_cov_qb_rating_against": row.get("qb_rating_against", ""),
                 "sg_cov_catch_rate": row.get("catch_rate", ""),
+                "sg_cov_source_season": "2025",
+            }
+        )
+
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("defense_coverage_summary_2024", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        expected_pos = _norm_pos(expected_by_pid.get(pid, {}).get("position", ""))
+        row_pos = _norm_pos(row.get("position", ""))
+        if expected_pos not in DB_FALLBACK_POSITIONS or row_pos not in DB_FALLBACK_POSITIONS:
+            continue
+        # Only backfill DB coverage from 2024 if 2025 premium coverage is absent.
+        if str(metrics_by_pid[pid].get("sg_cov_grade", "")).strip():
+            continue
+        metrics_by_pid[pid].update(
+            {
+                "player_name": row.get("player", metrics_by_pid[pid].get("player_name", "")),
+                "position": _norm_pos(row.get("position", metrics_by_pid[pid].get("position", ""))),
+                "school": row.get("team_name", metrics_by_pid[pid].get("school", "")),
+                "sg_cov_grade": row.get("grades_coverage_defense", ""),
+                "sg_cov_forced_incompletion_rate": row.get("forced_incompletion_rate", ""),
+                "sg_cov_snaps_per_target": row.get("coverage_snaps_per_target", ""),
+                "sg_cov_snaps_per_reception": row.get("coverage_snaps_per_reception", ""),
+                "sg_cov_yards_per_snap": row.get("yards_per_coverage_snap", ""),
+                "sg_cov_qb_rating_against": row.get("qb_rating_against", ""),
+                "sg_cov_catch_rate": row.get("catch_rate", ""),
+                "sg_def_interceptions": row.get("interceptions", metrics_by_pid[pid].get("sg_def_interceptions", "")),
+                "sg_def_pass_break_ups": row.get("pass_break_ups", metrics_by_pid[pid].get("sg_def_pass_break_ups", "")),
+                "sg_def_tackles": row.get("tackles", metrics_by_pid[pid].get("sg_def_tackles", "")),
+                "sg_def_tackles_for_loss": row.get("tackles_for_loss", metrics_by_pid[pid].get("sg_def_tackles_for_loss", "")),
+                "sg_cov_source_season": "2024",
             }
         )
 
@@ -582,6 +621,8 @@ def build() -> None:
         row["position"] = _norm_pos(row.get("position", ""))
         row["source"] = "scoutinggrade_advanced_signal_2025"
         row["season"] = 2025
+        if str(row.get("sg_cov_source_season", "")).strip() == "2024":
+            row["source"] = "scoutinggrade_advanced_signal_2025_with_2024_db_fallback"
         if row.get("player_name") and row.get("position"):
             advanced_rows.append(row)
 
@@ -597,6 +638,8 @@ def build() -> None:
         f"- PFF board rows with inferred premium player_id: `{len(matched_pids)}`",
         f"- PFF board rows missing player_id match: `{len(missing_pid_rows)}`",
         f"- ScoutingGrade advanced rows written: `{len(advanced_rows)}`",
+        f"- 2024 DB fallback archive written: `{DB_2024_ARCHIVE_OUT.exists()}`",
+        f"- 2024 DB fallback rows used: `{sum(1 for row in advanced_rows if str(row.get('sg_cov_source_season', '')).strip() == '2024')}`",
     ]
     REPORT_OUT.write_text("\n".join(report), encoding="utf-8")
     print(f"Wrote {PFF_BOARD_OUT}")

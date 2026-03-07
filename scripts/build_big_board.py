@@ -4938,6 +4938,7 @@ def main() -> None:
             "sg_cov_snaps_per_target": cfb.get("sg_cov_snaps_per_target", ""),
             "sg_cov_yards_per_snap": cfb.get("sg_cov_yards_per_snap", ""),
             "sg_cov_qb_rating_against": cfb.get("sg_cov_qb_rating_against", ""),
+            "sg_cov_source_season": cfb.get("sg_cov_source_season", ""),
             "sg_cov_man_grade": cfb.get("sg_cov_man_grade", ""),
             "sg_cov_zone_grade": cfb.get("sg_cov_zone_grade", ""),
             "sg_slot_cov_snaps": cfb.get("sg_slot_cov_snaps", ""),

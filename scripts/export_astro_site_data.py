@@ -3151,6 +3151,10 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         production_snapshot = _clean_public_snapshot(row.get("scouting_production_snapshot", "") or "")
         if production_override.get("text"):
             production_snapshot = str(production_override.get("text", "")).strip()
+        advanced_source_season = _safe_int(row.get("sg_cov_source_season"), 0)
+        if advanced_source_season and advanced_source_season < 2025 and not production_override.get("text"):
+            note = f"{advanced_source_season} premium coverage data used because equivalent 2025 premium coverage rows are unavailable."
+            production_snapshot = f"{note} {production_snapshot}".strip()
         low_evidence_flag = pff_grade <= 0 and combine_ras_official <= 0 and ras_estimate <= 0
         athletic_percentile = _pct_rank(
             float(athletic_profile_score),
@@ -3424,7 +3428,10 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "counting_metrics": counting_metrics,
                 "production_composite_pct": production_composite_pct,
                 "production_source_tier": production_source_tier,
-                "production_snapshot_heading": str(production_override.get("heading", "")).strip() or "2025 Production Snapshot",
+                "production_snapshot_heading": (
+                    str(production_override.get("heading", "")).strip()
+                    or ("2024 Production Snapshot*" if advanced_source_season and advanced_source_season < 2025 else "2025 Production Snapshot")
+                ),
                 "position_lens": position_lens,
                 "historical_comp_floor": _public_comp_dict(comp_floor),
                 "historical_comp_median": _public_comp_dict(comp_median),
