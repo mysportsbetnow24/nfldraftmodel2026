@@ -39,6 +39,8 @@ NFLVERSE_PLAYERS = NFLVERSE_DIR / "players.parquet"
 NFLVERSE_PARTICIPATION = NFLVERSE_DIR / "participation.parquet"
 HISTORICAL_DRAFT_COMPILATION = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "notebook" / "compilations" / "drafts2015To2022.csv"
 HISTORICAL_DRAFT_REFINED = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "old-data" / "pfr-compilations" / "2014To2018Drafts-refined.csv"
+HISTORICAL_DRAFT_2014_2018 = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "old-data" / "pfr-compilations" / "2014To2018Drafts.csv"
+HISTORICAL_DRAFT_2023 = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "notebook" / "drafts" / "2023Draft.csv"
 HISTORICAL_LABELS_LEAGIFY = ROOT / "data" / "processed" / "historical_labels_leagify_2015_2023.csv"
 OWNER_SCOUTING_NOTES_CSV = ROOT / "data" / "sources" / "manual" / "owner_scouting_notes_2026.csv"
 PRODUCTION_SNAPSHOT_OVERRIDES_CSV = ROOT / "data" / "sources" / "manual" / "production_snapshot_overrides_2026.csv"
@@ -3004,14 +3006,171 @@ def _historical_position_family(raw_pos: str) -> str:
 def _comp_outcome_window(position: str) -> tuple[int, float]:
     family = _historical_position_family(position)
     if family == "QB":
-        return (30, 20.0)
+        return (36, 22.0)
     if family == "SKILL":
-        return (24, 16.0)
+        return (32, 20.0)
     if family == "OL":
-        return (20, 14.0)
+        return (24, 16.0)
     if family in {"DL", "LB", "DB"}:
-        return (18, 12.0)
-    return (15, 12.0)
+        return (24, 15.0)
+    return (20, 14.0)
+
+
+def _comp_pool_thresholds(position: str) -> tuple[float, float]:
+    family = _historical_position_family(position)
+    if family == "QB":
+        return (0.30, 0.75)
+    if family == "SKILL":
+        return (0.35, 0.78)
+    if family == "OL":
+        return (0.35, 0.78)
+    if family in {"DL", "LB", "DB"}:
+        return (0.32, 0.76)
+    return (0.34, 0.78)
+
+
+def _pick_comp_from_pool(items: list[dict], preference: str) -> dict:
+    if not items:
+        return {}
+    if preference == "floor":
+        ranked = sorted(
+            items,
+            key=lambda r: (
+                -(r.get("similarity") or 0.0),
+                float(r.get("premium_profile_score") or 0.0),
+                float(r.get("outcome_score") or 0.0),
+            ),
+        )
+        return ranked[0]
+    if preference == "ceiling":
+        ranked = sorted(
+            items,
+            key=lambda r: (
+                -(r.get("outcome_score") or 0.0),
+                -(r.get("premium_profile_score") or 0.0),
+                -(r.get("similarity") or 0.0),
+            ),
+        )
+        return ranked[0]
+    ranked = sorted(
+        items,
+        key=lambda r: (
+            -(r.get("similarity") or 0.0),
+            -(r.get("outcome_score") or 0.0),
+            -(r.get("premium_profile_score") or 0.0),
+        ),
+    )
+    return ranked[0]
+
+
+def _comp_has_outcome_evidence(item: dict) -> bool:
+    if not item:
+        return False
+    if _safe_float(item.get("outcome_evidence")):
+        return True
+    for key in (
+        "DrAV",
+        "wAV",
+        "CarAV",
+        "ValuePerYear",
+        "St",
+        "starter_seasons",
+        "starter_seasons_proxy",
+        "PB",
+        "AP1",
+        "G",
+        "games",
+        "second_contract",
+        "second_contract_proxy",
+        "success_label",
+        "success_label_3yr",
+        "ceiling_label",
+    ):
+        raw = item.get(key)
+        if raw in ("", None):
+            continue
+        val = _safe_float(raw)
+        if val is not None and val > 0:
+            return True
+    return False
+
+
+def _select_comp_triplet(position: str, comp_items: list[dict]) -> tuple[dict, dict, dict]:
+    if not comp_items:
+        return {}, {}, {}
+
+    top_n, sim_delta = _comp_outcome_window(position)
+    top_similarity_band = comp_items[:top_n]
+    if not top_similarity_band:
+        return {}, {}, {}
+
+    best_sim = float(top_similarity_band[0].get("similarity") or 0.0)
+    min_similarity = max(65.0, best_sim - sim_delta)
+    eligible = [
+        item for item in top_similarity_band
+        if item.get("outcome_score") is not None and float(item.get("similarity") or 0.0) >= min_similarity
+    ]
+    if len(eligible) < 3:
+        eligible = [item for item in top_similarity_band if item.get("outcome_score") is not None]
+    if len(eligible) < 3:
+        eligible = top_similarity_band
+
+    with_outcome_evidence = [item for item in eligible if _comp_has_outcome_evidence(item)]
+    if len(with_outcome_evidence) >= 3:
+        eligible = with_outcome_evidence
+
+    if len(eligible) == 1:
+        return eligible[0], {}, eligible[0]
+    if len(eligible) == 2:
+        floor, ceiling = sorted(
+            eligible,
+            key=lambda r: (float(r.get("outcome_score") or 0.0), float(r.get("premium_profile_score") or 0.0)),
+        )
+        return floor, ceiling, ceiling
+
+    ranked = sorted(
+        eligible,
+        key=lambda r: (
+            float(r.get("outcome_score") or 0.0),
+            float(r.get("premium_profile_score") or 0.0),
+            -(r.get("similarity") or 0.0),
+        ),
+    )
+    floor_cut, ceiling_cut = _comp_pool_thresholds(position)
+    floor_idx = max(1, int(len(ranked) * floor_cut))
+    ceiling_idx = min(len(ranked) - 1, max(floor_idx + 1, int(len(ranked) * ceiling_cut)))
+
+    floor_pool = ranked[:floor_idx]
+    median_pool = ranked[floor_idx:ceiling_idx] or ranked[floor_idx - 1:ceiling_idx]
+    ceiling_pool = ranked[ceiling_idx:] or ranked[-1:]
+
+    best_sim_full = float(comp_items[0].get("similarity") or 0.0)
+    deeper_ceiling_band = [
+        item for item in comp_items[: max(top_n * 2, 40)]
+        if _comp_has_outcome_evidence(item) and float(item.get("similarity") or 0.0) >= max(62.0, best_sim_full - (sim_delta + 6.0))
+    ]
+    if len(deeper_ceiling_band) >= 3:
+        ceiling_pool = deeper_ceiling_band
+
+    floor = _pick_comp_from_pool(floor_pool, "floor")
+    median = _pick_comp_from_pool(median_pool, "median")
+    ceiling = _pick_comp_from_pool(ceiling_pool, "ceiling")
+
+    used = set()
+    out = []
+    for comp in (floor, median, ceiling):
+        name = str(comp.get("name", "")).strip()
+        if name and name not in used:
+            out.append(comp)
+            used.add(name)
+            continue
+        replacement = next((item for item in ranked if str(item.get("name", "")).strip() and str(item.get("name", "")).strip() not in used), {})
+        out.append(replacement)
+        used.add(str(replacement.get("name", "")).strip())
+
+    while len(out) < 3:
+        out.append({})
+    return out[0], out[1], out[2]
 
 
 def _position_aware_outcome_score(position_family: str, row: dict) -> float:
@@ -3142,7 +3301,13 @@ def _position_aware_outcome_score(position_family: str, row: dict) -> float:
 
 
 def _load_historical_comp_outcomes() -> dict[tuple[str, int], dict]:
-    sources = [HISTORICAL_DRAFT_COMPILATION, HISTORICAL_DRAFT_REFINED, HISTORICAL_LABELS_LEAGIFY]
+    sources = [
+        HISTORICAL_DRAFT_COMPILATION,
+        HISTORICAL_DRAFT_REFINED,
+        HISTORICAL_DRAFT_2014_2018,
+        HISTORICAL_DRAFT_2023,
+        HISTORICAL_LABELS_LEAGIFY,
+    ]
     outcomes: dict[tuple[str, int], dict] = {}
     premium_2024_scores = _load_premium_2024_comp_scores()
     for path in sources:
@@ -3181,6 +3346,8 @@ def _load_historical_comp_outcomes() -> dict[tuple[str, int], dict]:
                 for field, raw in merge_fields.items():
                     if raw not in ("", None):
                         existing[field] = raw
+                if _comp_has_outcome_evidence(existing):
+                    existing["outcome_evidence"] = 1
                 outcomes[key] = existing
 
     for key, payload in list(outcomes.items()):
@@ -3197,6 +3364,7 @@ def _load_historical_comp_outcomes() -> dict[tuple[str, int], dict]:
         payload["success_label"] = _safe_float(payload.get("success_label_3yr") or payload.get("success_label"))
         payload["ceiling_label"] = _safe_float(payload.get("ceiling_label"))
         payload["premium_profile_score"] = premium_2024_scores.get(key, 0.0)
+        payload["outcome_evidence"] = 1 if _comp_has_outcome_evidence(payload) else 0
         payload["outcome_score"] = round(outcome_score, 3)
     return outcomes
 
@@ -3741,6 +3909,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                     "year": slot.get("year"),
                     "outcome_score": outcome.get("outcome_score"),
                     "premium_profile_score": outcome.get("premium_profile_score"),
+                    "outcome_evidence": outcome.get("outcome_evidence"),
                 }
             )
 
@@ -3748,48 +3917,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             comp_items,
             key=lambda r: (r.get("similarity") is None, -(r.get("similarity") or 0.0)),
         )
-        top_n, sim_delta = _comp_outcome_window(pos)
-        top_similarity_band = comp_items[:top_n]
-        if top_similarity_band:
-            best_sim = float(top_similarity_band[0].get("similarity") or 0.0)
-            outcome_pool = [
-                item for item in top_similarity_band
-                if item.get("outcome_score") is not None and float(item.get("similarity") or 0.0) >= max(65.0, best_sim - sim_delta)
-            ]
-            if len(outcome_pool) < 3:
-                outcome_pool = [item for item in top_similarity_band if item.get("outcome_score") is not None]
-        else:
-            outcome_pool = []
-        if len(outcome_pool) >= 3:
-            outcome_sorted = sorted(
-                outcome_pool,
-                key=lambda r: (
-                    float(r.get("outcome_score") or 0.0),
-                    float(r.get("premium_profile_score") or 0.0),
-                    -(r.get("similarity") or 0.0),
-                ),
-            )
-            mid_idx = len(outcome_sorted) // 2
-            comp_floor = outcome_sorted[0]
-            comp_median = outcome_sorted[mid_idx]
-            comp_ceiling = outcome_sorted[-1]
-        elif len(comp_items) >= 3:
-            mid_idx = len(comp_items) // 2
-            comp_ceiling = comp_items[0]
-            comp_median = comp_items[mid_idx]
-            comp_floor = comp_items[-1]
-        elif len(comp_items) == 2:
-            comp_ceiling = comp_items[0]
-            comp_median = comp_items[1]
-            comp_floor = {}
-        elif len(comp_items) == 1:
-            comp_ceiling = comp_items[0]
-            comp_median = {}
-            comp_floor = {}
-        else:
-            comp_ceiling = {}
-            comp_median = {}
-            comp_floor = {}
+        comp_floor, comp_median, comp_ceiling = _select_comp_triplet(pos, comp_items)
 
         consensus_mean_rank_val = _safe_float(row.get("consensus_board_mean_rank"))
         if consensus_mean_rank_val is None or consensus_mean_rank_val <= 0:

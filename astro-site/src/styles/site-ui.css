@@ -453,6 +453,11 @@ tbody tr.clickable-row {
   gap: 0.65rem;
 }
 
+.compare-slot-control {
+  display: grid;
+  gap: 0.45rem;
+}
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
@@ -1159,6 +1164,10 @@ tbody tr.clickable-row {
 
 @media (max-width: 720px) {
   .compare-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-grid {
     grid-template-columns: 1fr;
   }
 
