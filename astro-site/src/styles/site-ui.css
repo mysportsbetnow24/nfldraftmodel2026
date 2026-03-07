@@ -688,6 +688,17 @@ tbody tr.clickable-row {
   font-size: 1.28rem;
 }
 
+.team-card__title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.team-card__abbr {
+  font-size: 0.8rem;
+}
+
 .team-card__need-pills {
   display: flex;
   flex-wrap: wrap;
@@ -714,6 +725,29 @@ tbody tr.clickable-row {
 .team-card__block h3 {
   margin: 0 0 0.45rem;
   font-size: 0.95rem;
+}
+
+.team-card__subhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.45rem;
+}
+
+.team-card__subhead h3 {
+  margin: 0;
+}
+
+.team-card__subhead-link {
+  color: var(--brand-2);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.team-card--overview {
+  gap: 0.75rem;
 }
 
 .team-pill-list {
@@ -749,6 +783,10 @@ tbody tr.clickable-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.lane-grid--full {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .lane-players {
@@ -862,9 +900,53 @@ tbody tr.clickable-row {
   background: #fff;
 }
 
+.overview-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 1px solid #8fb6dd;
+  background: linear-gradient(135deg, #e6f2ff 0%, #d9ecff 52%, #dcf7ea 100%);
+  color: #103457;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.48rem 0.8rem;
+  white-space: nowrap;
+}
+
+.overview-cta:hover {
+  border-color: #5f95ce;
+}
+
+.overview-snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.overview-snapshot-card {
+  border: 1px solid #e4eaf1;
+  border-radius: 10px;
+  background: #fff;
+  padding: 0.5rem;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.overview-snapshot-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .field-stack {
   display: grid;
   gap: 0.7rem;
+}
+
+.field-stack--team-page {
+  gap: 0.95rem;
 }
 
 .field-board {
@@ -903,6 +985,10 @@ tbody tr.clickable-row {
   gap: 0.45rem;
 }
 
+.field-board--team-page {
+  padding: 0.8rem;
+}
+
 .field-slot {
   position: relative;
   z-index: 1;
@@ -914,6 +1000,10 @@ tbody tr.clickable-row {
   gap: 0.2rem;
   align-content: start;
   min-height: 84px;
+}
+
+.field-board--team-page .field-slot {
+  min-height: 140px;
 }
 
 .field-slot__head {
@@ -938,6 +1028,36 @@ tbody tr.clickable-row {
 .slot-def-lb { grid-column: 2; grid-row: 2; }
 .slot-def-dt { grid-column: 1; grid-row: 2; }
 .slot-def-edge { grid-column: 3; grid-row: 2; }
+
+.team-page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.team-page-hero__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.team-page-hero__meta {
+  display: grid;
+  gap: 0.4rem;
+  justify-items: end;
+}
+
+.hero-back-link {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 0.45rem;
+}
 
 .footer {
   color: var(--muted);
@@ -964,6 +1084,23 @@ tbody tr.clickable-row {
     grid-template-columns: 1fr;
   }
 
+  .team-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card__title-row,
+  .team-page-hero__top {
+    flex-direction: column;
+  }
+
+  .team-page-hero__meta {
+    justify-items: start;
+  }
+
+  .overview-snapshot-grid {
+    grid-template-columns: 1fr;
+  }
+
   table {
     font-size: 0.88rem;
   }
@@ -975,6 +1112,32 @@ tbody tr.clickable-row {
 
   .translation-block {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .team-needs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field-board--offense,
+  .field-board--defense {
+    grid-template-columns: 1fr;
+  }
+
+  .slot-off-wr,
+  .slot-off-te,
+  .slot-off-ot,
+  .slot-off-rb,
+  .slot-off-iol,
+  .slot-off-qb,
+  .slot-def-cb,
+  .slot-def-s,
+  .slot-def-dt,
+  .slot-def-lb,
+  .slot-def-edge {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
 

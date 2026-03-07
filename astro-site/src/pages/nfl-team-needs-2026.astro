@@ -1,8 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import teamNeeds from "../data/team_needs_2026.json";
+import {
+  TEAM_SEARCH_ALIASES,
+  normalizeSearch,
+  designationClass,
+  txClass,
+  laneFor,
+  lanePlayers,
+  roleContractLine,
+  metaLine,
+  searchableText,
+  teamDisplayName,
+  teamPath,
+} from "../lib/teamNeeds";
 
-const pageDescription = "NFL Team Needs 2026 with team-by-team weakness tiers, depth chart context, free-agent risk, and position priority.";
+const pageDescription = "NFL Team Needs 2026 with team-by-team weakness tiers, contract pressure, free-agent exposure, and links to full team depth chart pages.";
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -26,44 +39,11 @@ const itemListSchema = {
   itemListElement: rows.map((row: any, idx: number) => ({
     "@type": "ListItem",
     position: idx + 1,
-    name: `${row.team} top need: ${row?.top_needs?.[0]?.position || "N/A"}`,
-    url: "https://scoutinggrade.com/nfl-team-needs-2026",
+    name: `${teamDisplayName(row.team)} top need: ${row?.top_needs?.[0]?.position || "N/A"}`,
+    url: `https://scoutinggrade.com${teamPath(row.team)}`,
   })),
 };
-const TEAM_SEARCH_ALIASES: Record<string, string[]> = {
-  ARI: ["ARI", "Arizona", "Arizona Cardinals", "Cardinals"],
-  ATL: ["ATL", "Atlanta", "Atlanta Falcons", "Falcons"],
-  BAL: ["BAL", "Baltimore", "Baltimore Ravens", "Ravens"],
-  BUF: ["BUF", "Buffalo", "Buffalo Bills", "Bills"],
-  CAR: ["CAR", "Carolina", "Carolina Panthers", "Panthers"],
-  CHI: ["CHI", "Chicago", "Chicago Bears", "Bears"],
-  CIN: ["CIN", "Cincinnati", "Cincinnati Bengals", "Bengals"],
-  CLE: ["CLE", "Cleveland", "Cleveland Browns", "Browns"],
-  DAL: ["DAL", "Dallas", "Dallas Cowboys", "Cowboys"],
-  DEN: ["DEN", "Denver", "Denver Broncos", "Broncos"],
-  DET: ["DET", "Detroit", "Detroit Lions", "Lions"],
-  GB: ["GB", "Green Bay", "Green Bay Packers", "Packers"],
-  HOU: ["HOU", "Houston", "Houston Texans", "Texans"],
-  IND: ["IND", "Indianapolis", "Indianapolis Colts", "Colts"],
-  JAX: ["JAX", "Jacksonville", "Jacksonville Jaguars", "Jaguars"],
-  KC: ["KC", "Kansas City", "Kansas City Chiefs", "Chiefs"],
-  LAC: ["LAC", "Los Angeles Chargers", "LA Chargers", "Chargers"],
-  LAR: ["LAR", "Los Angeles Rams", "LA Rams", "Rams"],
-  LV: ["LV", "Las Vegas", "Las Vegas Raiders", "Raiders"],
-  MIA: ["MIA", "Miami", "Miami Dolphins", "Dolphins"],
-  MIN: ["MIN", "Minnesota", "Minnesota Vikings", "Vikings"],
-  NE: ["NE", "New England", "New England Patriots", "Patriots"],
-  NO: ["NO", "New Orleans", "New Orleans Saints", "Saints"],
-  NYG: ["NYG", "New York Giants", "Giants"],
-  NYJ: ["NYJ", "New York Jets", "Jets"],
-  PHI: ["PHI", "Philadelphia", "Philadelphia Eagles", "Eagles"],
-  PIT: ["PIT", "Pittsburgh", "Pittsburgh Steelers", "Steelers"],
-  SEA: ["SEA", "Seattle", "Seattle Seahawks", "Seahawks"],
-  SF: ["SF", "San Francisco", "San Francisco 49ers", "49ers", "Niners"],
-  TB: ["TB", "Tampa Bay", "Tampa Bay Buccaneers", "Buccaneers", "Bucs"],
-  TEN: ["TEN", "Tennessee", "Tennessee Titans", "Titans"],
-  WAS: ["WAS", "Washington", "Washington Commanders", "Commanders"],
-};
+
 const sortedTeams = [...rows]
   .map((row) => String(row.team || "").trim())
   .filter(Boolean)
@@ -78,60 +58,15 @@ const teamOptions = sortedTeams.map((team) => {
   return { team, display };
 });
 
-const normalizeSearch = (value: string | number | null | undefined) => {
-  return String(value || "")
-    .toLowerCase()
-    .normalize("NFKD")
-    .replace(/[^a-z0-9]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-};
-
-function designationClass(label: string) {
-  return `designation designation--${String(label || "backup")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")}`;
-}
-
-function txClass(kind: string) {
-  return String(kind || "").toLowerCase() === "confirmed" ? "chip good" : "chip warn";
-}
-
-function laneFor(lanes: any[], pos: string) {
-  return (lanes || []).find((lane: any) => String(lane.position || "").toUpperCase() === pos) || { position: pos, players: [] };
-}
-
-function lanePlayers(lane: any) {
-  return ((lane?.players || []) as any[]).slice(0, 2);
-}
-
-function roleContractLine(player: any) {
-  const role = String(player?.role_label || player?.position || "").trim();
-  const contract = String(player?.contract_label || "").trim() || "FA";
-  return [role, contract].filter(Boolean).join(" • ");
-}
-
-function metaLine(player: any) {
-  return String(player?.meta_label || "").trim();
-}
-
-function contractChipLabel(player: any) {
-  const contract = String(player?.contract_label || "").trim();
-  if (!contract || contract.toUpperCase() === "FA") return "FA";
-  const match = contract.match(/^(\d+)y/i);
-  if (!match) return "Rostered";
-  const years = Number(match[1] || 0);
-  if (years <= 1) return "1y";
-  if (years === 2) return "2y";
-  return `${years}y`;
-}
-
-function contractChipClass(player: any) {
-  const label = contractChipLabel(player);
-  if (label === "FA" || label === "1y") return "chip warn contract-chip";
-  if (label === "2y") return "chip info contract-chip";
-  return "chip good contract-chip";
+function snapshotLaneLabel(row: any, position: string) {
+  const depthChart = (row.depth_chart || {}) as any;
+  const offense = (depthChart.offense || []) as any[];
+  const defense = (depthChart.defense || []) as any[];
+  const lanes = ["QB", "RB", "WR", "TE", "OT", "IOL"].includes(position) ? offense : defense;
+  const lane = laneFor(lanes, position);
+  const players = lanePlayers(lane, 2);
+  if (!players.length) return "No current lane data";
+  return players.map((p: any) => `${p.player_name} (${p.role_label || p.position})`).join(" • ");
 }
 ---
 <BaseLayout
@@ -143,7 +78,7 @@ function contractChipClass(player: any) {
 >
   <section class="hero hero--data">
     <h1>NFL Team Needs 2026</h1>
-    <p>Team-by-team weakness tiers with depth chart, contract pressure, free-agent exposure, and roster trajectory context.</p>
+    <p>Overview page for every roster’s top need stack, contract pressure, and trajectory. Open each team page for the full depth chart, contract detail, and transaction context.</p>
   </section>
 
   <section class="card">
@@ -160,7 +95,7 @@ function contractChipClass(player: any) {
         placeholder="Search team, position need, or player..."
         autocomplete="off"
       />
-    <select class="control" id="team-needs-team">
+      <select class="control" id="team-needs-team">
         <option value="">All Teams</option>
         {teamOptions.map((entry) => (
           <option value={entry.team}>{entry.team} — {entry.display}</option>
@@ -172,53 +107,28 @@ function contractChipClass(player: any) {
   <section class="team-needs-grid" id="team-needs-grid">
     {rows.map((row) => {
       const team = String(row.team || "").trim();
-      const teamAliases = TEAM_SEARCH_ALIASES[team] || [team];
       const topNeeds = (row.top_needs || []) as any[];
       const weakness = (row.weakness_positions || []) as string[];
       const freeAgents = (row.free_agents || []) as any[];
       const youngPlayers = (row.young_players_on_rise || []) as any[];
-      const depthChart = (row.depth_chart || {}) as any;
-      const offense = (depthChart.offense || []) as any[];
-      const defense = (depthChart.defense || []) as any[];
       const tx = (row.recent_transactions || []) as any[];
-      const offQB = laneFor(offense, "QB");
-      const offRB = laneFor(offense, "RB");
-      const offWR = laneFor(offense, "WR");
-      const offTE = laneFor(offense, "TE");
-      const offOT = laneFor(offense, "OT");
-      const offIOL = laneFor(offense, "IOL");
-
-      const defEDGE = laneFor(defense, "EDGE");
-      const defDT = laneFor(defense, "DT");
-      const defLB = laneFor(defense, "LB");
-      const defCB = laneFor(defense, "CB");
-      const defS = laneFor(defense, "S");
-      const searchable = [
-        team,
-        ...teamAliases,
-        ...weakness,
-        ...freeAgents.map((p) => p.player_name),
-        ...youngPlayers.map((p) => p.player_name),
-        ...offense.flatMap((lane) => (lane.players || []).map((p: any) => p.player_name)),
-        ...defense.flatMap((lane) => (lane.players || []).map((p: any) => p.player_name)),
-      ]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
+      const needPositions = topNeeds.slice(0, 3).map((need: any) => String(need.position || "").trim()).filter(Boolean);
       return (
-        <article class="card team-card" data-team={team} data-search={searchable}>
+        <article class="card team-card team-card--overview" data-team={team} data-search={searchableText(row)}>
           <header class="team-card__head">
-            <h2>{team}</h2>
+            <div class="team-card__title-row">
+              <div>
+                <h2><a class="player-link" href={teamPath(team)}>{teamDisplayName(team)}</a></h2>
+                <div class="muted team-card__abbr">{team}</div>
+              </div>
+              <a class="overview-cta" href={teamPath(team)}>Full Team Page</a>
+            </div>
             <div class="team-card__need-pills">
               {topNeeds.map((need: any, idx: number) => (
                 <span class="chip info">{`Need ${idx + 1}: ${need.position} (${Number(need.need_score || 0).toFixed(2)})`}</span>
               ))}
             </div>
-            {weakness.length > 0 ? (
-              <div class="muted team-card__weakness">Weakness focus: {weakness.join(" • ")}</div>
-            ) : (
-              <div class="muted team-card__weakness">Weakness focus: n/a</div>
-            )}
+            <div class="muted team-card__weakness">Weakness focus: {weakness.length ? weakness.join(" • ") : "n/a"}</div>
           </header>
 
           <div class="team-card__columns">
@@ -226,7 +136,7 @@ function contractChipClass(player: any) {
               <h3>Free Agents (Today)</h3>
               {freeAgents.length > 0 ? (
                 <div class="team-pill-list">
-                  {freeAgents.map((p: any) => (
+                  {freeAgents.slice(0, 2).map((p: any) => (
                     <div class="team-pill">
                       <strong>{p.player_name}</strong>
                       <span class={designationClass(p.designation)}>{p.designation}</span>
@@ -234,6 +144,7 @@ function contractChipClass(player: any) {
                       {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
                     </div>
                   ))}
+                  {freeAgents.length > 2 ? <div class="muted">+{freeAgents.length - 2} more on full team page</div> : null}
                 </div>
               ) : (
                 <p class="muted">No immediate free-agent exposure in top lanes.</p>
@@ -244,7 +155,7 @@ function contractChipClass(player: any) {
               <h3>Young Players On The Rise</h3>
               {youngPlayers.length > 0 ? (
                 <div class="team-pill-list">
-                  {youngPlayers.map((p: any) => (
+                  {youngPlayers.slice(0, 2).map((p: any) => (
                     <div class="team-pill">
                       <strong>{p.player_name}</strong>
                       <span class={designationClass(p.designation)}>{p.designation}</span>
@@ -252,6 +163,7 @@ function contractChipClass(player: any) {
                       {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
                     </div>
                   ))}
+                  {youngPlayers.length > 2 ? <div class="muted">+{youngPlayers.length - 2} more on full team page</div> : null}
                 </div>
               ) : (
                 <p class="muted">No rising-player signal flagged this refresh.</p>
@@ -260,219 +172,27 @@ function contractChipClass(player: any) {
           </div>
 
           <section class="team-card__block">
-            <h3>Depth Chart Field View</h3>
-            <div class="field-stack">
-              <div class="field-board field-board--offense">
-                <div class="field-board__title">Offense</div>
-
-                <div class="field-slot slot-off-wr">
-                  <div class="field-slot__head"><span class="badge">WR</span></div>
-                  <div class="lane-players">
-                    {lanePlayers(offWR).length > 0 ? lanePlayers(offWR).map((p: any) => (
-                      <article class="depth-player">
-                        <div class="depth-player__top">
-                          <strong>{p.player_name}</strong>
-                          <div class="depth-player__chips">
-                            <span class={designationClass(p.designation)}>{p.designation}</span>
-                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
-                          </div>
-                        </div>
-                        <div class="muted">{roleContractLine(p)}</div>
-                      </article>
-                    )) : <div class="muted">No player data.</div>}
+            <h3>Depth Snapshot</h3>
+            <div class="overview-snapshot-grid">
+              {needPositions.map((position) => (
+                <div class="overview-snapshot-card">
+                  <div class="overview-snapshot-card__head">
+                    <span class="badge">{position}</span>
                   </div>
+                  <div class="muted">{snapshotLaneLabel(row, position)}</div>
                 </div>
-
-                <div class="field-slot slot-off-te">
-                  <div class="field-slot__head"><span class="badge">TE</span></div>
-                  <div class="lane-players">
-                    {lanePlayers(offTE).length > 0 ? lanePlayers(offTE).map((p: any) => (
-                      <article class="depth-player">
-                        <div class="depth-player__top">
-                          <strong>{p.player_name}</strong>
-                          <div class="depth-player__chips">
-                            <span class={designationClass(p.designation)}>{p.designation}</span>
-                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
-                          </div>
-                        </div>
-                        <div class="muted">{roleContractLine(p)}</div>
-                      </article>
-                    )) : <div class="muted">No player data.</div>}
-                  </div>
-                </div>
-
-                <div class="field-slot slot-off-ot">
-                  <div class="field-slot__head"><span class="badge">OT</span></div>
-                  <div class="lane-players">
-                    {lanePlayers(offOT).length > 0 ? lanePlayers(offOT).map((p: any) => (
-                      <article class="depth-player">
-                        <div class="depth-player__top">
-                          <strong>{p.player_name}</strong>
-                          <div class="depth-player__chips">
-                            <span class={designationClass(p.designation)}>{p.designation}</span>
-                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
-                          </div>
-                        </div>
-                        <div class="muted">{roleContractLine(p)}</div>
-                      </article>
-                    )) : <div class="muted">No player data.</div>}
-                  </div>
-                </div>
-
-                <div class="field-slot slot-off-iol">
-                  <div class="field-slot__head"><span class="badge">IOL</span></div>
-                  <div class="lane-players">
-                    {lanePlayers(offIOL).length > 0 ? lanePlayers(offIOL).map((p: any) => (
-                      <article class="depth-player">
-                        <div class="depth-player__top">
-                          <strong>{p.player_name}</strong>
-                          <div class="depth-player__chips">
-                            <span class={designationClass(p.designation)}>{p.designation}</span>
-                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
-                          </div>
-                        </div>
-                        <div class="muted">{roleContractLine(p)}</div>
-                      </article>
-                    )) : <div class="muted">No player data.</div>}
-                  </div>
-                </div>
-
-                <div class="field-slot slot-off-rb">
-                  <div class="field-slot__head"><span class="badge">RB</span></div>
-                  <div class="lane-players">
-                    {lanePlayers(offRB).length > 0 ? lanePlayers(offRB).map((p: any) => (
-                      <article class="depth-player">
-                        <div class="depth-player__top">
-                          <strong>{p.player_name}</strong>
-                          <div class="depth-player__chips">
-                            <span class={designationClass(p.designation)}>{p.designation}</span>
-                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
-                          </div>
-                        </div>
-                        <div class="muted">{roleContractLine(p)}</div>
-                      </article>
-                    )) : <div class="muted">No player data.</div>}
-                  </div>
-                </div>
-
-                <div class="field-slot slot-off-qb">
-                  <div class="field-slot__head"><span class="badge">QB</span></div>
-                  <div class="lane-players">
-                    {lanePlayers(offQB).length > 0 ? lanePlayers(offQB).map((p: any) => (
-                      <article class="depth-player">
-                        <div class="depth-player__top">
-                          <strong>{p.player_name}</strong>
-                          <div class="depth-player__chips">
-                            <span class={designationClass(p.designation)}>{p.designation}</span>
-                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
-                          </div>
-                        </div>
-                        <div class="muted">{roleContractLine(p)}</div>
-                      </article>
-                    )) : <div class="muted">No player data.</div>}
-                  </div>
-                </div>
-              </div>
-
-              <div class="field-board field-board--defense">
-                <div class="field-board__title">Defense</div>
-
-                <div class="field-slot slot-def-s">
-                  <div class="field-slot__head"><span class="badge">S</span></div>
-                  <div class="lane-players">
-                    {lanePlayers(defS).length > 0 ? lanePlayers(defS).map((p: any) => (
-                      <article class="depth-player">
-                        <div class="depth-player__top">
-                          <strong>{p.player_name}</strong>
-                          <div class="depth-player__chips">
-                            <span class={designationClass(p.designation)}>{p.designation}</span>
-                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
-                          </div>
-                        </div>
-                        <div class="muted">{roleContractLine(p)}</div>
-                      </article>
-                    )) : <div class="muted">No player data.</div>}
-                  </div>
-                </div>
-
-                <div class="field-slot slot-def-cb">
-                  <div class="field-slot__head"><span class="badge">CB</span></div>
-                  <div class="lane-players">
-                    {lanePlayers(defCB).length > 0 ? lanePlayers(defCB).map((p: any) => (
-                      <article class="depth-player">
-                        <div class="depth-player__top">
-                          <strong>{p.player_name}</strong>
-                          <div class="depth-player__chips">
-                            <span class={designationClass(p.designation)}>{p.designation}</span>
-                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
-                          </div>
-                        </div>
-                        <div class="muted">{roleContractLine(p)}</div>
-                      </article>
-                    )) : <div class="muted">No player data.</div>}
-                  </div>
-                </div>
-
-                <div class="field-slot slot-def-lb">
-                  <div class="field-slot__head"><span class="badge">LB</span></div>
-                  <div class="lane-players">
-                    {lanePlayers(defLB).length > 0 ? lanePlayers(defLB).map((p: any) => (
-                      <article class="depth-player">
-                        <div class="depth-player__top">
-                          <strong>{p.player_name}</strong>
-                          <div class="depth-player__chips">
-                            <span class={designationClass(p.designation)}>{p.designation}</span>
-                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
-                          </div>
-                        </div>
-                        <div class="muted">{roleContractLine(p)}</div>
-                      </article>
-                    )) : <div class="muted">No player data.</div>}
-                  </div>
-                </div>
-
-                <div class="field-slot slot-def-dt">
-                  <div class="field-slot__head"><span class="badge">DT</span></div>
-                  <div class="lane-players">
-                    {lanePlayers(defDT).length > 0 ? lanePlayers(defDT).map((p: any) => (
-                      <article class="depth-player">
-                        <div class="depth-player__top">
-                          <strong>{p.player_name}</strong>
-                          <div class="depth-player__chips">
-                            <span class={designationClass(p.designation)}>{p.designation}</span>
-                            <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
-                          </div>
-                        </div>
-                        <div class="muted">{roleContractLine(p)}</div>
-                      </article>
-                    )) : <div class="muted">No player data.</div>}
-                  </div>
-                </div>
-
-                <div class="field-slot slot-def-edge">
-                  <div class="field-slot__head"><span class="badge">EDGE</span></div>
-                  <div class="lane-players">
-                    {lanePlayers(defEDGE).length > 0 ? lanePlayers(defEDGE).map((p: any) => (
-                      <article class="depth-player">
-                        <div class="depth-player__top">
-                          <strong>{p.player_name}</strong>
-                          <span class={designationClass(p.designation)}>{p.designation}</span>
-                        </div>
-                        <div class="muted">{p.detail_label || p.contract_label}</div>
-                        {p.meta_label ? <div class="muted">{p.meta_label}</div> : null}
-                      </article>
-                    )) : <div class="muted">No player data.</div>}
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </section>
 
           <section class="team-card__block">
-            <h3>Recent Transactions</h3>
+            <div class="team-card__subhead">
+              <h3>Recent Transactions</h3>
+              <a class="team-card__subhead-link" href={teamPath(team)}>Open full team page</a>
+            </div>
             {tx.length > 0 ? (
               <div class="tx-list">
-                {tx.map((item: any) => (
+                {tx.slice(0, 2).map((item: any) => (
                   <div class="tx-row">
                     <span class={txClass(item.status_kind)}>{item.status}</span>
                     <strong>{item.label}</strong>
@@ -508,21 +228,21 @@ function contractChipClass(player: any) {
       };
 
       const applyFilters = () => {
-        const search = normalizeSearch((searchEl as HTMLInputElement).value || "");
-        const team = String((teamEl as HTMLSelectElement).value || "").trim().toLowerCase();
+        const search = normalizeSearch(searchEl.value || "");
+        const team = String(teamEl.value || "").trim().toLowerCase();
 
         for (const card of cards) {
           const cardTeam = String(card.getAttribute("data-team") || "").toLowerCase();
           const hay = normalizeSearch(card.getAttribute("data-search"));
           const teamOk = !team || cardTeam === team;
           const searchOk = !search || hay.includes(search);
-          (card as HTMLElement).style.display = teamOk && searchOk ? "" : "none";
+          card.style.display = teamOk && searchOk ? "" : "none";
         }
       };
 
       const resetFilters = () => {
-        (searchEl as HTMLInputElement).value = "";
-        (teamEl as HTMLSelectElement).value = "";
+        searchEl.value = "";
+        teamEl.value = "";
         applyFilters();
       };
 

@@ -1,0 +1,256 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import teamNeeds from "../../data/team_needs_2026.json";
+import {
+  contractChipClass,
+  contractChipLabel,
+  designationClass,
+  laneFor,
+  lanePlayers,
+  metaLine,
+  roleContractLine,
+  teamDisplayName,
+  teamPath,
+  teamSlug,
+  txClass,
+} from "../../lib/teamNeeds";
+
+export function getStaticPaths() {
+  return ((teamNeeds || []) as any[]).map((row) => ({
+    params: { slug: teamSlug(row.team) },
+    props: { row },
+  }));
+}
+
+const { row } = Astro.props as { row: any };
+const team = String(row.team || "").trim();
+const displayName = teamDisplayName(team);
+const pageUrl = `https://scoutinggrade.com${teamPath(team)}`;
+const topNeeds = (row.top_needs || []) as any[];
+const weakness = (row.weakness_positions || []) as string[];
+const freeAgents = (row.free_agents || []) as any[];
+const youngPlayers = (row.young_players_on_rise || []) as any[];
+const depthChart = (row.depth_chart || {}) as any;
+const offense = (depthChart.offense || []) as any[];
+const defense = (depthChart.defense || []) as any[];
+const tx = (row.recent_transactions || []) as any[];
+
+const pageDescription = `${displayName} team needs for the 2026 NFL Draft with full depth chart, contract context, top positional weaknesses, free agents, and recent transactions.`;
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: `${displayName} Team Needs 2026`,
+  url: pageUrl,
+  description: pageDescription,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Scouting Grade",
+    url: "https://scoutinggrade.com",
+  },
+};
+
+const offenseSlots = ["WR", "TE", "OT", "RB", "IOL", "QB"];
+const defenseSlots = ["CB", "S", "DT", "LB", "EDGE"];
+---
+<BaseLayout
+  title={`${displayName} Team Needs 2026 | Full Depth Chart | Scouting Grade`}
+  description={pageDescription}
+  keywords={[`${displayName} team needs`, `${displayName} depth chart`, `${displayName} nfl draft needs`, "nfl team needs 2026"]}
+  collectionSchema={collectionSchema}
+>
+  <section class="hero hero--data">
+    <div class="team-page-hero__top">
+      <div>
+        <a class="hero-back-link" href="/nfl-team-needs-2026">Back to Team Needs Overview</a>
+        <h1>{displayName} Team Needs 2026</h1>
+        <p>Full roster-context page with complete lane-by-lane depth view, contract pressure, young-player growth, and recent transaction context.</p>
+      </div>
+      <div class="team-page-hero__meta">
+        <span class="badge">{team}</span>
+        <span class="muted">Weakness focus: {weakness.length ? weakness.join(" • ") : "n/a"}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="result-bar">
+      <h2 class="section-title">Priority Stack</h2>
+      <a class="overview-cta" href="/nfl-team-needs-2026">Browse all teams</a>
+    </div>
+    <div class="team-card__need-pills">
+      {topNeeds.map((need: any, idx: number) => (
+        <span class="chip info">{`Need ${idx + 1}: ${need.position} (${Number(need.need_score || 0).toFixed(2)})`}</span>
+      ))}
+    </div>
+  </section>
+
+  <section class="team-page-grid">
+    <section class="card">
+      <h2 class="section-title">Free Agents (Today)</h2>
+      {freeAgents.length > 0 ? (
+        <div class="team-pill-list">
+          {freeAgents.map((p: any) => (
+            <div class="team-pill">
+              <strong>{p.player_name}</strong>
+              <span class={designationClass(p.designation)}>{p.designation}</span>
+              <div class="muted">{roleContractLine(p)}</div>
+              {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p class="muted">No immediate free-agent exposure in top lanes.</p>
+      )}
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">Young Players On The Rise</h2>
+      {youngPlayers.length > 0 ? (
+        <div class="team-pill-list">
+          {youngPlayers.map((p: any) => (
+            <div class="team-pill">
+              <strong>{p.player_name}</strong>
+              <span class={designationClass(p.designation)}>{p.designation}</span>
+              <div class="muted">{roleContractLine(p)}</div>
+              {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p class="muted">No rising-player signal flagged this refresh.</p>
+      )}
+    </section>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">Depth Chart Field View</h2>
+    <div class="field-stack field-stack--team-page">
+      <div class="field-board field-board--offense field-board--team-page">
+        <div class="field-board__title">Offense</div>
+        {offenseSlots.map((slot) => {
+          const lane = laneFor(offense, slot);
+          const players = lanePlayers(lane, lane.players?.length || 99);
+          return (
+            <div class={`field-slot slot-off-${slot.toLowerCase()}`}>
+              <div class="field-slot__head"><span class="badge">{slot}</span></div>
+              <div class="lane-players">
+                {players.length > 0 ? players.map((p: any) => (
+                  <article class="depth-player">
+                    <div class="depth-player__top">
+                      <strong>{p.player_name}</strong>
+                      <div class="depth-player__chips">
+                        <span class={designationClass(p.designation)}>{p.designation}</span>
+                        <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                      </div>
+                    </div>
+                    <div class="muted">{roleContractLine(p)}</div>
+                    {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
+                  </article>
+                )) : <div class="muted">No player data.</div>}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div class="field-board field-board--defense field-board--team-page">
+        <div class="field-board__title">Defense</div>
+        {defenseSlots.map((slot) => {
+          const lane = laneFor(defense, slot);
+          const players = lanePlayers(lane, lane.players?.length || 99);
+          return (
+            <div class={`field-slot slot-def-${slot.toLowerCase()}`}>
+              <div class="field-slot__head"><span class="badge">{slot}</span></div>
+              <div class="lane-players">
+                {players.length > 0 ? players.map((p: any) => (
+                  <article class="depth-player">
+                    <div class="depth-player__top">
+                      <strong>{p.player_name}</strong>
+                      <div class="depth-player__chips">
+                        <span class={designationClass(p.designation)}>{p.designation}</span>
+                        <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                      </div>
+                    </div>
+                    <div class="muted">{roleContractLine(p)}</div>
+                    {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
+                  </article>
+                )) : <div class="muted">No player data.</div>}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="team-page-grid">
+    <section class="card">
+      <h2 class="section-title">Offensive Lane Detail</h2>
+      <div class="lane-grid lane-grid--full">
+        {offense.map((lane: any) => (
+          <div class="lane-card">
+            <div class="lane-card__head"><span class="badge">{lane.position}</span></div>
+            <div class="lane-players">
+              {(lane.players || []).map((p: any) => (
+                <article class="depth-player">
+                  <div class="depth-player__top">
+                    <strong>{p.player_name}</strong>
+                    <div class="depth-player__chips">
+                      <span class={designationClass(p.designation)}>{p.designation}</span>
+                      <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                    </div>
+                  </div>
+                  <div class="muted">{roleContractLine(p)}</div>
+                  {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">Defensive Lane Detail</h2>
+      <div class="lane-grid lane-grid--full">
+        {defense.map((lane: any) => (
+          <div class="lane-card">
+            <div class="lane-card__head"><span class="badge">{lane.position}</span></div>
+            <div class="lane-players">
+              {(lane.players || []).map((p: any) => (
+                <article class="depth-player">
+                  <div class="depth-player__top">
+                    <strong>{p.player_name}</strong>
+                    <div class="depth-player__chips">
+                      <span class={designationClass(p.designation)}>{p.designation}</span>
+                      <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                    </div>
+                  </div>
+                  <div class="muted">{roleContractLine(p)}</div>
+                  {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">Recent Transactions</h2>
+    {tx.length > 0 ? (
+      <div class="tx-list">
+        {tx.map((item: any) => (
+          <div class="tx-row">
+            <span class={txClass(item.status_kind)}>{item.status}</span>
+            <strong>{item.label}</strong>
+            <span class="muted">{item.event_date}</span>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <p class="muted">No recent transactions in this window.</p>
+    )}
+  </section>
+</BaseLayout>

@@ -1,6 +1,8 @@
 import type { APIRoute } from "astro";
 import meta from "../data/build_meta.json";
 import board from "../data/big_board_2026.json";
+import teamNeeds from "../data/team_needs_2026.json";
+import { teamPath } from "../lib/teamNeeds";
 
 const ROUTES = [
   "/",
@@ -30,7 +32,10 @@ export const GET: APIRoute = ({ site }) => {
   const playerRoutes = (board as any[])
     .map((p: any) => p?.slug ? `/players/${p.slug}` : "")
     .filter(Boolean);
-  const allRoutes = [...ROUTES, ...playerRoutes];
+  const teamRoutes = (teamNeeds as any[])
+    .map((row: any) => row?.team ? teamPath(row.team) : "")
+    .filter(Boolean);
+  const allRoutes = [...ROUTES, ...playerRoutes, ...teamRoutes];
 
   const urls = allRoutes.map((path) => {
     const loc = `${base}${path === "/" ? "/" : path}`;
