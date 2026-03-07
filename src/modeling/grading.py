@@ -1266,6 +1266,175 @@ def _film_trait_blend_weight(coverage: float) -> float:
     return 0.25
 
 
+def _named_bucket(label: str, score: float | None) -> tuple[str, float] | None:
+    if score is None:
+        return None
+    return (label, round(float(score), 2))
+
+
+def _build_trait_buckets(
+    *,
+    position: str,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
+) -> tuple[str, list[tuple[str, float]], float | None]:
+    prod = production_context or {}
+    buckets: list[tuple[str, float] | None]
+    family = position
+
+    if position == "QB":
+        processing = _safe_trait_value(film_subtraits, "processing")
+        accuracy = _safe_trait_value(film_subtraits, "accuracy")
+        arm_talent = _safe_trait_value(film_subtraits, "arm_talent")
+        creation = _safe_trait_value(film_subtraits, "creation")
+        pocket = _safe_trait_value(film_subtraits, "pocket_presence")
+        situational = _safe_trait_value(film_subtraits, "situational_command")
+        qb_eff_signal = _safe_prod_value(prod, "cfb_qb_eff_signal")
+        qb_pressure_signal = _safe_prod_value(prod, "cfb_qb_pressure_signal")
+        qb_epa = _safe_prod_value(prod, "cfb_qb_epa_per_play")
+        buckets = [
+            _named_bucket("Processing", _avg_defined([processing, situational, qb_pressure_signal, qb_eff_signal])),
+            _named_bucket("Arm Talent", _avg_defined([arm_talent, accuracy, qb_eff_signal])),
+            _named_bucket("Pocket Function", _avg_defined([pocket, processing, qb_pressure_signal, qb_epa])),
+            _named_bucket("Creation", _avg_defined([creation, arm_talent, athletic_score, qb_epa])),
+        ]
+    elif position == "RB":
+        family = "RB"
+        vision = _safe_trait_value(film_subtraits, "vision")
+        burst = _safe_trait_value(film_subtraits, "burst")
+        contact_balance = _safe_trait_value(film_subtraits, "contact_balance")
+        lateral = _safe_trait_value(film_subtraits, "lateral_agility")
+        receiving = _safe_trait_value(film_subtraits, "receiving")
+        pass_pro = _safe_trait_value(film_subtraits, "pass_pro")
+        rb_explosive_signal = _safe_prod_value(prod, "cfb_rb_explosive_signal")
+        rb_mtf_signal = _safe_prod_value(prod, "cfb_rb_mtf_signal")
+        rb_yac_signal = _safe_prod_value(prod, "cfb_rb_yac_per_att_signal")
+        rb_target_signal = _safe_prod_value(prod, "cfb_rb_target_share_signal")
+        rb_receiving_signal = _safe_prod_value(prod, "cfb_rb_receiving_eff_signal")
+        buckets = [
+            _named_bucket("Contact Balance", _avg_defined([contact_balance, vision, rb_mtf_signal, rb_yac_signal])),
+            _named_bucket("Burst", _avg_defined([burst, athletic_score, rb_explosive_signal])),
+            _named_bucket("Flexibility", _avg_defined([lateral, vision, burst, rb_target_signal])),
+            _named_bucket("Receiving Utility", _avg_defined([receiving, pass_pro, rb_receiving_signal, rb_target_signal])),
+        ]
+    elif position in {"WR", "TE"}:
+        family = "WRTE"
+        release = _safe_trait_value(film_subtraits, "release")
+        route_running = _safe_trait_value(film_subtraits, "route_running")
+        separation = _safe_trait_value(film_subtraits, "separation")
+        ball_skills = _safe_trait_value(film_subtraits, "ball_skills")
+        yac = _safe_trait_value(film_subtraits, "yac")
+        play_strength = _safe_trait_value(film_subtraits, "play_strength")
+        inline_blocking = _safe_trait_value(film_subtraits, "inline_blocking")
+        wr_yprr_signal = _safe_prod_value(prod, "cfb_wrte_yprr_signal")
+        wr_target_signal = _safe_prod_value(prod, "cfb_wrte_target_share_signal")
+        wr_tprr_signal = _safe_prod_value(prod, "cfb_wrte_targets_per_route_signal")
+        buckets = [
+            _named_bucket("Separation", _avg_defined([separation, route_running, wr_yprr_signal, wr_tprr_signal])),
+            _named_bucket("Ball Skills", _avg_defined([ball_skills, play_strength, wr_target_signal])),
+            _named_bucket("YAC", _avg_defined([yac, play_strength, wr_yprr_signal])),
+            _named_bucket(
+                "Release Package" if position == "WR" else "In-Line Utility",
+                _avg_defined([release, route_running, wr_tprr_signal] if position == "WR" else [inline_blocking, route_running, ball_skills, wr_target_signal]),
+            ),
+        ]
+    elif position in {"OT", "IOL"}:
+        family = "OL"
+        pass_set = _safe_trait_value(film_subtraits, "pass_set")
+        anchor = _safe_trait_value(film_subtraits, "anchor")
+        leverage = _safe_trait_value(film_subtraits, "leverage")
+        hand_usage = _safe_trait_value(film_subtraits, "hand_usage")
+        recovery = _safe_trait_value(film_subtraits, "recovery")
+        lateral = _safe_trait_value(film_subtraits, "lateral_agility")
+        run_blocking = _safe_trait_value(film_subtraits, "run_blocking")
+        processing = _safe_trait_value(film_subtraits, "processing")
+        ol_proxy_signal = _safe_prod_value(prod, "cfb_ol_proxy_signal")
+        years_played = _safe_prod_value(prod, "cfb_years_played")
+        versatility_seed = _avg_defined([processing, recovery, lateral, ol_proxy_signal, years_played * 20.0 if years_played is not None else None])
+        buckets = [
+            _named_bucket("Anchor", _avg_defined([anchor, leverage, hand_usage, ol_proxy_signal])),
+            _named_bucket("Feet", _avg_defined([pass_set, lateral, recovery, athletic_score])),
+            _named_bucket("Recovery", _avg_defined([recovery, hand_usage, processing, ol_proxy_signal])),
+            _named_bucket("Power", _avg_defined([run_blocking, anchor, leverage, ol_proxy_signal])),
+            _named_bucket("Versatility", versatility_seed),
+        ]
+    elif position in {"EDGE", "DT"}:
+        family = "DL"
+        get_off = _safe_trait_value(film_subtraits, "get_off")
+        bend = _safe_trait_value(film_subtraits, "bend")
+        power = _safe_trait_value(film_subtraits, "power")
+        hand_usage = _safe_trait_value(film_subtraits, "hand_usage")
+        rush_plan = _safe_trait_value(film_subtraits, "rush_plan")
+        counter_moves = _safe_trait_value(film_subtraits, "counter_moves")
+        pass_rush = _safe_trait_value(film_subtraits, "pass_rush")
+        sacks_signal = _safe_prod_value(prod, "cfb_edge_sacks_per_pr_snap_signal", "cfb_edge_pressure_signal")
+        pressure_signal = _safe_prod_value(prod, "cfb_edge_pressure_signal")
+        finish_seed = _avg_defined([counter_moves, rush_plan, pass_rush, sacks_signal, pressure_signal])
+        buckets = [
+            _named_bucket("Burst", _avg_defined([get_off, athletic_score, pass_rush, pressure_signal])),
+            _named_bucket("Bend" if position == "EDGE" else "Power", _avg_defined([bend, get_off, sacks_signal] if position == "EDGE" else [power, hand_usage, pass_rush, pressure_signal])),
+            _named_bucket("Hand Usage", _avg_defined([hand_usage, rush_plan, counter_moves, pressure_signal])),
+            _named_bucket("Finish", finish_seed),
+        ]
+    elif position == "LB":
+        family = "LB"
+        processing = _safe_trait_value(film_subtraits, "processing")
+        trigger = _safe_trait_value(film_subtraits, "trigger")
+        range_score = _safe_trait_value(film_subtraits, "range")
+        decon = _safe_trait_value(film_subtraits, "block_deconstruction")
+        coverage = _safe_trait_value(film_subtraits, "coverage")
+        tackling = _safe_trait_value(film_subtraits, "tackling")
+        lb_signal = _safe_prod_value(prod, "cfb_lb_signal")
+        lb_tackle_signal = _safe_prod_value(prod, "cfb_lb_tackle_signal")
+        lb_tfl_signal = _safe_prod_value(prod, "cfb_lb_tfl_signal")
+        lb_pressure_signal = _safe_prod_value(prod, "cfb_lb_rush_impact_signal")
+        buckets = [
+            _named_bucket("Instincts", _avg_defined([processing, trigger, lb_signal])),
+            _named_bucket("Range", _avg_defined([range_score, coverage, athletic_score, lb_signal])),
+            _named_bucket("Block Deconstruction", _avg_defined([decon, tackling, lb_tfl_signal, lb_pressure_signal])),
+            _named_bucket("Coverage", _avg_defined([coverage, range_score, processing, lb_signal])),
+            _named_bucket("Tackling", _avg_defined([tackling, trigger, lb_tackle_signal, lb_tfl_signal])),
+        ]
+    elif position in {"CB", "S"}:
+        family = "DB"
+        press = _safe_trait_value(film_subtraits, "press")
+        footwork = _safe_trait_value(film_subtraits, "footwork")
+        recovery_speed = _safe_trait_value(film_subtraits, "recovery_speed")
+        processing = _safe_trait_value(film_subtraits, "processing")
+        range_score = _safe_trait_value(film_subtraits, "range")
+        man_coverage = _safe_trait_value(film_subtraits, "man_coverage")
+        ball_skills = _safe_trait_value(film_subtraits, "ball_skills")
+        tackling = _safe_trait_value(film_subtraits, "tackling")
+        angles = _safe_trait_value(film_subtraits, "angles")
+        communication = _safe_trait_value(film_subtraits, "communication")
+        db_cov_signal = _safe_prod_value(prod, "cfb_db_cov_plays_per_target_signal", "cfb_db_yards_allowed_per_cov_snap_signal")
+        buckets = [
+            _named_bucket(
+                "Mirror",
+                _avg_defined([press, footwork, recovery_speed] if position == "CB" else [man_coverage, range_score, athletic_score]),
+            ),
+            _named_bucket(
+                "Instincts",
+                _avg_defined([processing, footwork] if position == "CB" else [processing, angles, communication]),
+            ),
+            _named_bucket(
+                "Ball Skills",
+                _avg_defined([ball_skills, recovery_speed, db_cov_signal] if position == "CB" else [range_score, man_coverage, db_cov_signal]),
+            ),
+            _named_bucket(
+                "Tackling",
+                _avg_defined([tackling, press] if position == "CB" else [tackling, angles, communication]),
+            ),
+        ]
+    else:
+        buckets = [_named_bucket("Trait Composite", athletic_score)]
+
+    clean_buckets = [bucket for bucket in buckets if bucket is not None]
+    bucket_score = _avg_defined([score for _, score in clean_buckets]) if clean_buckets else None
+    return family, clean_buckets, bucket_score
+
+
 def _production_score(class_year: str, rank_seed: int) -> float:
     exp_bonus = 1.2 if class_year.endswith("SR") or class_year == "SR" else 0.5
     if class_year in {"SO", "RSO"}:
@@ -1312,6 +1481,12 @@ def grade_player(
     size = _size_score(position, height_in, weight_lb)
     context = _context_score(rank_seed)
     risk = _risk_penalty(class_year, rank_seed)
+    trait_bucket_family, trait_buckets, trait_bucket_score = _build_trait_buckets(
+        position=position,
+        athletic_score=ath,
+        film_subtraits=film_inputs,
+        production_context=production_context or {},
+    )
 
     if position == "LB":
         lb_archetype_seed = _infer_lb_archetype(
@@ -1356,6 +1531,8 @@ def grade_player(
 
     core_stat_name = CORE_STAT_BY_POS.get(position, "Prospect Signature Index")
     core_stat_value = round(50.0 + (psi - 70.0) * 1.4 + (100 - rank_seed) * 0.08, 2)
+    trait_bucket_labels = [label for label, _ in trait_buckets]
+    trait_bucket_values = [score for _, score in trait_buckets]
 
     return {
         "trait_score": round(trait, 2),
@@ -1380,6 +1557,18 @@ def grade_player(
         "best_role": best_role,
         "best_scheme_fit": best_scheme_fit,
         "lb_archetype": lb_archetype,
+        "trait_bucket_family": trait_bucket_family,
+        "trait_bucket_score": round(trait_bucket_score, 2) if trait_bucket_score is not None else "",
+        "trait_bucket_1_label": trait_bucket_labels[0] if len(trait_bucket_labels) >= 1 else "",
+        "trait_bucket_1_score": trait_bucket_values[0] if len(trait_bucket_values) >= 1 else "",
+        "trait_bucket_2_label": trait_bucket_labels[1] if len(trait_bucket_labels) >= 2 else "",
+        "trait_bucket_2_score": trait_bucket_values[1] if len(trait_bucket_values) >= 2 else "",
+        "trait_bucket_3_label": trait_bucket_labels[2] if len(trait_bucket_labels) >= 3 else "",
+        "trait_bucket_3_score": trait_bucket_values[2] if len(trait_bucket_values) >= 3 else "",
+        "trait_bucket_4_label": trait_bucket_labels[3] if len(trait_bucket_labels) >= 4 else "",
+        "trait_bucket_4_score": trait_bucket_values[3] if len(trait_bucket_values) >= 4 else "",
+        "trait_bucket_5_label": trait_bucket_labels[4] if len(trait_bucket_labels) >= 5 else "",
+        "trait_bucket_5_score": trait_bucket_values[4] if len(trait_bucket_values) >= 5 else "",
     }
 
 

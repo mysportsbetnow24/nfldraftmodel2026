@@ -709,13 +709,43 @@ def _slot_display_label(position: str, slot: str, front_family: str, slot_rank: 
 
 def _player_sort_tuple(player: dict, slot_priority: dict[str, int]) -> tuple:
     slot = str(player.get("depth_chart_position") or "").strip().upper()
+    model_position = str(player.get("position") or "").strip().upper()
+    apy_m = float(player.get("apy_m") or 0.0)
+    apy_pct = float(player.get("apy_pct") or 0.0)
+    years_exp = _safe_int(player.get("years_exp"), 0)
+    age = _safe_int(player.get("age"), 0)
+    draft_number = _safe_int(player.get("draft_number"), 9999)
+    rookie_weight = 0.0
+    if draft_number > 0:
+        rookie_weight = max(0.0, 1.0 - (min(draft_number, 256) / 300.0))
+
+    starter_signal = apy_pct + min(apy_m, 40.0) + (years_exp * 1.5) + (rookie_weight * 18.0)
+    if model_position == "QB":
+        starter_signal += min(apy_m, 50.0) * 1.2
+        starter_signal += apy_pct * 0.45
+        if draft_number > 0 and draft_number <= 15 and years_exp <= 2 and 21 <= age <= 26:
+            starter_signal += 42.0
+        if years_exp <= 2 and 21 <= age <= 26 and apy_m >= 5.0:
+            starter_signal += 72.0
+        if apy_m >= 18.0 and years_exp <= 3:
+            starter_signal += 16.0
+        if years_exp >= 4 and 24 <= age <= 34:
+            starter_signal += 18.0
+        if years_exp >= 10 and age >= 35:
+            starter_signal -= 58.0
+        if years_exp >= 8 and age >= 33 and apy_m <= 12.0:
+            starter_signal -= 38.0
+    elif model_position in {"OT", "IOL", "EDGE", "DT", "CB", "S"}:
+        starter_signal += apy_pct * 0.2
+
     return (
         slot_priority.get(slot, 99),
-        _safe_int(player.get("espn_rank"), 99),
+        -round(starter_signal, 4),
         0 if player.get("has_contract") else 1,
-        -(float(player.get("apy_m") or 0.0)),
-        -int(player.get("years_exp") or 0),
-        int(player.get("draft_number") or 9999),
+        _safe_int(player.get("espn_rank"), 99),
+        -apy_m,
+        -years_exp,
+        draft_number,
         str(player.get("player_name", "")),
     )
 
@@ -754,6 +784,42 @@ def _designation_priority(label: str) -> int:
     ]
     lookup = {name: idx for idx, name in enumerate(ordered)}
     return lookup.get(str(label or "").strip(), 999)
+
+
+def _minimum_star_apy(position: str) -> float:
+    pos = str(position or "").strip().upper()
+    thresholds = {
+        "QB": 20.0,
+        "RB": 8.0,
+        "WR": 14.0,
+        "TE": 11.0,
+        "OT": 12.0,
+        "IOL": 9.0,
+        "EDGE": 14.0,
+        "DT": 11.0,
+        "LB": 8.0,
+        "CB": 10.0,
+        "S": 10.0,
+    }
+    return thresholds.get(pos, 10.0)
+
+
+def _minimum_cornerstone_apy(position: str) -> float:
+    pos = str(position or "").strip().upper()
+    thresholds = {
+        "QB": 30.0,
+        "RB": 10.0,
+        "WR": 18.0,
+        "TE": 14.0,
+        "OT": 16.0,
+        "IOL": 12.0,
+        "EDGE": 18.0,
+        "DT": 15.0,
+        "LB": 11.0,
+        "CB": 14.0,
+        "S": 13.0,
+    }
+    return thresholds.get(pos, 14.0)
 
 
 def _usage_proxy_from_role(model_position: str, role_label: str, depth_rank: int) -> float:
@@ -844,6 +910,7 @@ def _player_designation(
     draft_number: int | None,
     role_label: str,
 ) -> str:
+    apy_value = float(apy_m or 0.0)
     if not has_contract:
         return "FA"
     starter_cutoff = int(STARTERS_BY_POSITION.get(model_position, 1))
@@ -865,9 +932,15 @@ def _player_designation(
         or years_exp > 0
     )
 
-    if usage_proxy >= 0.95 and apy_pct >= 97.0 and effective_years_exp >= 6:
+    if usage_proxy >= 0.95 and apy_pct >= 98.5 and apy_value >= max(20.0, _minimum_cornerstone_apy(model_position)) and effective_years_exp >= 6:
         return "HOF Path"
-    if usage_proxy >= 0.86 and apy_pct >= 90.0 and effective_years_exp >= 4:
+    if (
+        usage_proxy >= 0.88
+        and apy_pct >= 96.0
+        and apy_value >= _minimum_cornerstone_apy(model_position)
+        and effective_years_exp >= 4
+        and (age is None or age <= 31)
+    ):
         return "All-Pro"
     if usage_proxy >= 0.62 and (
         (age is not None and age >= 33 and effective_years_exp >= 8)
@@ -876,23 +949,83 @@ def _player_designation(
     ):
         return "Older Mentor"
     if usage_proxy >= 0.84 and (
-        (apy_pct >= 78.0 and effective_years_exp >= 2)
-        or (apy_pct >= 70.0 and (apy_m or 0.0) >= 10.0)
-        or (is_early_pick and effective_years_exp <= 2 and is_top_starter)
+        (
+            effective_years_exp >= 2
+            and apy_pct >= 88.0
+            and apy_value >= _minimum_cornerstone_apy(model_position)
+        )
+        or (
+            model_position == "QB"
+            and effective_years_exp >= 2
+            and apy_pct >= 80.0
+            and apy_value >= 24.0
+        )
     ) and (age is None or age <= 31):
         return "Franchise Cornerstone"
-    if usage_proxy >= 0.78 and apy_pct >= 70.0 and 3 <= effective_years_exp <= 9 and age is not None and age <= 31:
+    if (
+        usage_proxy >= 0.78
+        and apy_pct >= 80.0
+        and apy_value >= _minimum_star_apy(model_position)
+        and 3 <= effective_years_exp <= 9
+        and age is not None
+        and age <= 31
+    ):
         return "In His Prime Star"
     if years_exp <= 1 and not veteran_inference:
         if is_early_pick and usage_proxy >= 0.62:
             return "Blue Chip Prospect"
-        if usage_proxy >= 0.4 and likely_young_player:
+        if usage_proxy >= 0.46 and likely_young_player and (age is None or age <= 25):
             return "Prospect"
     if usage_proxy >= 0.56:
         return "Starter"
-    if years_exp <= 2 and usage_proxy >= 0.35 and likely_young_player:
+    if years_exp <= 1 and usage_proxy >= 0.4 and likely_young_player and (age is None or age <= 25):
         return "Prospect"
     return "Backup"
+
+
+def _transaction_priority(event: dict) -> int:
+    status_kind = str(event.get("status_kind") or "").strip().lower()
+    label = str(event.get("label") or "").strip().lower()
+    affects_team_needs = bool(event.get("affects_team_needs"))
+
+    score = 0
+    if status_kind == "confirmed":
+        score += 20
+    elif status_kind == "rumored":
+        score += 8
+
+    is_resign = "re-signed" in label or "resigned" in label
+    if "traded" in label:
+        score += 55
+    if "released" in label:
+        score += 48
+    if "cut" in label:
+        score += 48
+    if "waived" in label:
+        score += 46
+    if "retired" in label:
+        score += 52
+    if "franchise tag" in label or "tagged" in label:
+        score += 40
+    if "signed" in label and not is_resign:
+        score += 28
+    if "agreed" in label:
+        score += 24
+    if is_resign:
+        score += 4
+    if "extension" in label:
+        score += 6
+    if "tendered" in label:
+        score += 10
+    if "promoted" in label:
+        score += 6
+    if "designated" in label:
+        score += 8
+    if affects_team_needs:
+        score += 12
+    if str(event.get("player_name") or "").strip():
+        score += 4
+    return score
 
 
 def _build_team_depth_context() -> dict[str, dict]:
@@ -1026,7 +1159,13 @@ def _build_team_depth_context() -> dict[str, dict]:
             "position": pos,
             "team_text": team_text,
         }
-        if team_norm and pos and name:
+        player_master = players_master_by_name.get(payload["name_key"], {})
+        latest_team_match = (
+            bool(player_master)
+            and str(player_master.get("latest_team") or "").strip().upper() == team_norm
+            and str(player_master.get("status") or "").strip().upper() not in {"RET", "CUT"}
+        )
+        if team_norm and pos and name and latest_team_match:
             contract_players_by_team_pos[(team_norm, pos)].append(
                 {
                     "player_name": name,
@@ -1056,6 +1195,9 @@ def _build_team_depth_context() -> dict[str, dict]:
     for row in subset.iter_rows(named=True):
         team = str(row.get("team") or "").strip().upper()
         if not team:
+            continue
+        roster_status = str(row.get("status") or row.get("roster_status") or "").strip().upper()
+        if roster_status in {"RET", "CUT"}:
             continue
         model_pos = _map_team_needs_position(row.get("position", ""), row.get("depth_chart_position", ""))
         if model_pos not in TEAM_NEEDS_POS_ORDER:
@@ -1550,6 +1692,24 @@ def _weighted_percentile_composite(cards: list[dict]) -> float | None:
     return round(weighted_sum / weight_total, 1)
 
 
+def _build_trait_bucket_cards(row: dict) -> tuple[list[dict], float | None, str]:
+    family = str(row.get("trait_bucket_family", "")).strip()
+    cards: list[dict] = []
+    scores: list[float] = []
+    for idx in range(1, 6):
+        label = str(row.get(f"trait_bucket_{idx}_label", "")).strip()
+        score = _safe_float(row.get(f"trait_bucket_{idx}_score"))
+        if not label or score is None:
+            continue
+        value = round(float(score), 2)
+        cards.append({"label": label, "score": value})
+        scores.append(value)
+    bucket_score = _safe_float(row.get("trait_bucket_score"))
+    if bucket_score is None and scores:
+        bucket_score = sum(scores) / len(scores)
+    return cards, (round(float(bucket_score), 2) if bucket_score is not None else None), family
+
+
 def _metric_public_pct(
     row: dict,
     position: str,
@@ -1987,6 +2147,9 @@ def _build_transactions_feed(window_days: int = 14) -> list[dict]:
 def _build_public_transactions(window_days: int = 14) -> dict[str, list[dict]]:
     by_team: dict[str, list[dict]] = defaultdict(list)
     for event in _build_transactions_feed(window_days=window_days):
+        score = _transaction_priority(event)
+        if score < 60:
+            continue
         by_team[event.get("team", "")].append(
             {
                 "event_date": event.get("event_date", ""),
@@ -1996,8 +2159,30 @@ def _build_public_transactions(window_days: int = 14) -> dict[str, list[dict]]:
                 "affects_team_needs": bool(event.get("affects_team_needs")),
                 "source_url": event.get("source_url", ""),
                 "source_account": event.get("source_account", ""),
+                "_priority": score,
             }
         )
+    for team, rows in by_team.items():
+        rows.sort(
+            key=lambda item: (
+                int(item.get("_priority") or 0),
+                str(item.get("event_date") or ""),
+                str(item.get("label") or ""),
+            ),
+            reverse=True,
+        )
+        by_team[team] = [
+            {
+                "event_date": row.get("event_date", ""),
+                "status": row.get("status", ""),
+                "status_kind": row.get("status_kind", ""),
+                "label": row.get("label", ""),
+                "affects_team_needs": bool(row.get("affects_team_needs")),
+                "source_url": row.get("source_url", ""),
+                "source_account": row.get("source_account", ""),
+            }
+            for row in rows[:6]
+        ]
     return by_team
 
 
@@ -2403,6 +2588,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             position=pos,
             pos_metric_values=pos_metric_values,
         )
+        trait_bucket_cards, trait_bucket_score, trait_bucket_family = _build_trait_bucket_cards(row)
 
         uid = row.get("player_uid", "")
         hist = rank_history.get(uid, [])
@@ -2577,6 +2763,9 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "pff_grade": pff_grade,
                 "trait_score": round(_safe_float(row.get("trait_score")) or 0.0, 2),
                 "trait_percentile": trait_percentile,
+                "trait_bucket_family": trait_bucket_family,
+                "trait_bucket_score": trait_bucket_score,
+                "trait_bucket_cards": trait_bucket_cards,
                 "athletic_profile_score": round(float(athletic_profile_score), 3) if athletic_profile_score is not None and athletic_profile_score > 0 else None,
                 "athletic_metric_coverage_rate": round(float(athletic_metric_coverage_rate), 4) if athletic_metric_coverage_rate is not None and athletic_metric_coverage_rate >= 0 else None,
                 "athletic_percentile": athletic_percentile,
