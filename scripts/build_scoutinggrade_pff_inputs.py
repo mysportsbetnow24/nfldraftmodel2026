@@ -16,7 +16,7 @@ MANUAL_DIR = ROOT / "data" / "sources" / "manual"
 OUTPUTS_DIR = ROOT / "data" / "outputs"
 
 PFF_BOARD_PATH = DOWNLOADS / "pff-my-big-board-2026-03-06.csv"
-PREMIUM_FILES = {
+PREMIUM_FILES_2025 = {
     "passing_summary": DOWNLOADS / "passing_summary (1).csv",
     "passing_pressure": DOWNLOADS / "passing_pressure.csv",
     "passing_concept": DOWNLOADS / "passing_concept.csv",
@@ -34,12 +34,55 @@ PREMIUM_FILES = {
     "slot_coverage": DOWNLOADS / "slot_coverage.csv",
     "pass_rush_productivity": DOWNLOADS / "pass_rush_productivity.csv",
 }
+PREMIUM_FILES_2024 = {
+    "passing_summary_2024": DOWNLOADS / "passing_summary (3).csv",
+    "passing_depth_2024": DOWNLOADS / "passing_depth (1).csv",
+    "passing_pressure_2024": DOWNLOADS / "passing_pressure (1).csv",
+    "passing_concept_2024": DOWNLOADS / "passing_concept (1).csv",
+    "passing_allowed_pressure_2024": DOWNLOADS / "passing_allowed_pressure (1).csv",
+    "receiving_depth_2024": DOWNLOADS / "receiving_depth.csv",
+    "receiving_concept_2024": DOWNLOADS / "receiving_concept.csv",
+    "receiving_scheme_2024": DOWNLOADS / "receiving_scheme (2).csv",
+    "rushing_summary_2024": DOWNLOADS / "rushing_summary (1).csv",
+    "offense_blocking_2024": DOWNLOADS / "offense_blocking (1).csv",
+    "offense_pass_blocking_2024": DOWNLOADS / "offense_pass_blocking.csv",
+    "offense_run_blocking_2024": DOWNLOADS / "offense_run_blockng.csv",
+    "defense_summary_2024": DOWNLOADS / "defense_summary (1).csv",
+    "pass_rush_summary_2024": DOWNLOADS / "pass_rush_summary (1).csv",
+    "run_defense_summary_2024": DOWNLOADS / "run_defense_summary (1).csv",
+    "defense_coverage_summary_2024": DOWNLOADS / "defense_coverage_summary (2).csv",
+    "defense_coverage_scheme_2024": DOWNLOADS / "defense_coverage_scheme (1).csv",
+    "slot_coverage_2024": DOWNLOADS / "slot_coverage (1).csv",
+    "pass_rush_productivity_2024": DOWNLOADS / "pass_rush_productivity (1).csv",
+}
+PREMIUM_FILES = {**PREMIUM_FILES_2025, **PREMIUM_FILES_2024}
 DB_FALLBACK_POSITIONS = {"CB", "S", "LB", "EDGE", "DT"}
 
 PFF_BOARD_OUT = MANUAL_DIR / "pff_big_board_2026_latest.csv"
 PFF_MASTER_OUT = MANUAL_DIR / "pff_master_2026.csv"
 SG_ADVANCED_OUT = MANUAL_DIR / "scoutinggrade_advanced_2025.csv"
 DB_2024_ARCHIVE_OUT = MANUAL_DIR / "defense_coverage_summary_2024.csv"
+ARCHIVE_OUTPUTS_2024 = {
+    "passing_summary_2024": MANUAL_DIR / "passing_summary_2024.csv",
+    "passing_depth_2024": MANUAL_DIR / "passing_depth_2024.csv",
+    "passing_pressure_2024": MANUAL_DIR / "passing_pressure_2024.csv",
+    "passing_concept_2024": MANUAL_DIR / "passing_concept_2024.csv",
+    "passing_allowed_pressure_2024": MANUAL_DIR / "passing_allowed_pressure_2024.csv",
+    "receiving_depth_2024": MANUAL_DIR / "receiving_depth_2024.csv",
+    "receiving_concept_2024": MANUAL_DIR / "receiving_concept_2024.csv",
+    "receiving_scheme_2024": MANUAL_DIR / "receiving_scheme_2024.csv",
+    "rushing_summary_2024": MANUAL_DIR / "rushing_summary_2024.csv",
+    "offense_blocking_2024": MANUAL_DIR / "offense_blocking_2024.csv",
+    "offense_pass_blocking_2024": MANUAL_DIR / "offense_pass_blocking_2024.csv",
+    "offense_run_blocking_2024": MANUAL_DIR / "offense_run_blocking_2024.csv",
+    "defense_summary_2024": MANUAL_DIR / "defense_summary_2024.csv",
+    "pass_rush_summary_2024": MANUAL_DIR / "pass_rush_summary_2024.csv",
+    "run_defense_summary_2024": MANUAL_DIR / "run_defense_summary_2024.csv",
+    "defense_coverage_summary_2024": MANUAL_DIR / "defense_coverage_summary_2024.csv",
+    "defense_coverage_scheme_2024": MANUAL_DIR / "defense_coverage_scheme_2024.csv",
+    "slot_coverage_2024": MANUAL_DIR / "slot_coverage_2024.csv",
+    "pass_rush_productivity_2024": MANUAL_DIR / "pass_rush_productivity_2024.csv",
+}
 REPORT_OUT = OUTPUTS_DIR / "scoutinggrade_pff_build_report_2026.md"
 MISSING_PID_OUT = OUTPUTS_DIR / "pff_missing_player_id_review_2026.csv"
 
@@ -235,11 +278,34 @@ def _versatility_count(row: dict) -> int:
     return count
 
 
+def _has_value(value) -> bool:
+    return str(value or "").strip() != ""
+
+
+def _backfill_fields(target: dict, updates: dict, source_season: str = "") -> bool:
+    applied = False
+    for key, value in updates.items():
+        if _has_value(value) and not _has_value(target.get(key)):
+            target[key] = value
+            applied = True
+    if applied and source_season and not _has_value(target.get("sg_source_season")):
+        target["sg_source_season"] = source_season
+    return applied
+
+
+def _expected_pos_is(expected_by_pid: dict, pid: str, allowed: set[str]) -> bool:
+    return _norm_pos(expected_by_pid.get(pid, {}).get("position", "")) in allowed
+
+
 def build() -> None:
     if not PFF_BOARD_PATH.exists():
         raise SystemExit(f"Missing PFF board: {PFF_BOARD_PATH}")
 
     premium_rows_by_file = {name: _read_csv(path) for name, path in PREMIUM_FILES.items() if path.exists()}
+    for key, archive_out in ARCHIVE_OUTPUTS_2024.items():
+        src = PREMIUM_FILES.get(key)
+        if src and src.exists():
+            copyfile(src, archive_out)
     if PREMIUM_FILES.get("defense_coverage_summary_2024", Path()).exists():
         copyfile(PREMIUM_FILES["defense_coverage_summary_2024"], DB_2024_ARCHIVE_OUT)
     by_exact, by_name_pos, by_name, by_pid = _identity_maps(premium_rows_by_file)
@@ -303,6 +369,8 @@ def build() -> None:
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("passing_summary", [])):
         if pid not in metrics_by_pid:
             continue
+        if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
+            continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
         m = metrics_by_pid[pid]
@@ -321,8 +389,36 @@ def build() -> None:
             }
         )
 
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("passing_summary_2024", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        m = metrics_by_pid[pid]
+        if _backfill_fields(
+            m,
+            {
+                "player_name": row.get("player", ""),
+                "position": _norm_pos(row.get("position", "")),
+                "school": row.get("team_name", ""),
+                "sg_qb_pass_grade": row.get("grades_pass", ""),
+                "sg_qb_btt_rate": row.get("btt_rate", ""),
+                "sg_qb_twp_rate": row.get("twp_rate", ""),
+                "sg_qb_pressure_to_sack_rate": row.get("pressure_to_sack_rate", ""),
+                "sg_qb_avg_depth_of_target": row.get("avg_depth_of_target", ""),
+                "sg_qb_avg_time_to_throw": row.get("avg_time_to_throw", ""),
+                "sg_qb_qb_rating": row.get("qb_rating", ""),
+            },
+            source_season="2024",
+        ):
+            m["source"] = "scoutinggrade_advanced_signal_2025_with_2024_fallback"
+
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("passing_pressure", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -339,8 +435,33 @@ def build() -> None:
             if src in row:
                 m[dest] = row.get(src, "")
 
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("passing_pressure_2024", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        m = metrics_by_pid[pid]
+        updates = {}
+        for src, dest in [
+            ("pressure_grades_pass", "sg_qb_pressure_grade"),
+            ("pressure_qb_rating", "sg_qb_pressure_qb_rating"),
+            ("pressure_twp_rate", "sg_qb_pressure_twp_rate"),
+            ("pressure_btt_rate", "sg_qb_pressure_btt_rate"),
+            ("pressure_pressure_to_sack_rate", "sg_qb_pressure_pressure_to_sack_rate"),
+            ("blitz_grades_pass", "sg_qb_blitz_grade"),
+            ("blitz_qb_rating", "sg_qb_blitz_qb_rating"),
+        ]:
+            if src in row:
+                updates[dest] = row.get(src, "")
+        if _backfill_fields(m, updates, source_season="2024"):
+            m["source"] = "scoutinggrade_advanced_signal_2025_with_2024_fallback"
+
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("passing_concept", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -355,8 +476,31 @@ def build() -> None:
             if src in row:
                 m[dest] = row.get(src, "")
 
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("passing_concept_2024", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        m = metrics_by_pid[pid]
+        updates = {}
+        for src, dest in [
+            ("no_screen_grades_pass", "sg_qb_no_screen_grade"),
+            ("no_screen_btt_rate", "sg_qb_no_screen_btt_rate"),
+            ("no_screen_twp_rate", "sg_qb_no_screen_twp_rate"),
+            ("pa_grades_pass", "sg_qb_play_action_grade"),
+            ("npa_grades_pass", "sg_qb_non_play_action_grade"),
+        ]:
+            if src in row:
+                updates[dest] = row.get(src, "")
+        if _backfill_fields(m, updates, source_season="2024"):
+            m["source"] = "scoutinggrade_advanced_signal_2025_with_2024_fallback"
+
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("time_in_pocket", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"QB"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -374,6 +518,8 @@ def build() -> None:
 
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("rushing_summary", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"RB"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -398,8 +544,41 @@ def build() -> None:
             }
         )
 
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("rushing_summary_2024", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"RB"}):
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        m = metrics_by_pid[pid]
+        routes = _safe_float(row.get("routes"))
+        targets = _safe_float(row.get("targets"))
+        tpr = _rate(targets, routes)
+        if _backfill_fields(
+            m,
+            {
+                "player_name": row.get("player", m.get("player_name", "")),
+                "position": _norm_pos(row.get("position", m.get("position", ""))),
+                "school": row.get("team_name", m.get("school", "")),
+                "sg_rb_run_grade": row.get("grades_run", ""),
+                "sg_rb_elusive_rating": row.get("elusive_rating", ""),
+                "sg_rb_mtf": row.get("elu_rush_mtf", ""),
+                "sg_rb_yco_attempt": row.get("yco_attempt", ""),
+                "sg_rb_explosive_rate": row.get("explosive", ""),
+                "sg_rb_breakaway_percent": row.get("breakaway_percent", ""),
+                "sg_rb_targets_per_route": round(tpr, 4) if tpr is not None else "",
+                "sg_rb_yprr": row.get("yprr", ""),
+                "sg_rb_total_touches": row.get("total_touches", ""),
+            },
+            source_season="2024",
+        ):
+            m["source"] = "scoutinggrade_advanced_signal_2025_with_2024_fallback"
+
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("receiving_summary", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"WR", "TE"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -427,6 +606,8 @@ def build() -> None:
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("receiving_scheme", [])):
         if pid not in metrics_by_pid:
             continue
+        if not _expected_pos_is(expected_by_pid, pid, {"WR", "TE"}):
+            continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
         metrics_by_pid[pid].update(
@@ -437,8 +618,28 @@ def build() -> None:
             }
         )
 
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("receiving_scheme_2024", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"WR", "TE"}):
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        if _backfill_fields(
+            metrics_by_pid[pid],
+            {
+                "sg_wrte_man_yprr": row.get("man_yprr", ""),
+                "sg_wrte_zone_yprr": row.get("zone_yprr", ""),
+                "sg_wrte_man_targets_percent": row.get("man_targets_percent", ""),
+            },
+            source_season="2024",
+        ):
+            metrics_by_pid[pid]["source"] = "scoutinggrade_advanced_signal_2025_with_2024_fallback"
+
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("offense_blocking", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"OT", "IOL"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -463,8 +664,41 @@ def build() -> None:
             }
         )
 
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("offense_blocking_2024", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"OT", "IOL"}):
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        m = metrics_by_pid[pid]
+        pressures_allowed = _safe_float(row.get("pressures_allowed"))
+        pass_block_snaps = _safe_float(row.get("snap_counts_pass_block"))
+        pr = _rate(pressures_allowed, pass_block_snaps)
+        if _backfill_fields(
+            m,
+            {
+                "player_name": row.get("player", m.get("player_name", "")),
+                "position": _norm_pos(row.get("position", m.get("position", ""))),
+                "school": row.get("team_name", m.get("school", "")),
+                "sg_ol_pass_block_grade": row.get("grades_pass_block", ""),
+                "sg_ol_run_block_grade": row.get("grades_run_block", ""),
+                "sg_ol_pbe": row.get("pbe", ""),
+                "sg_ol_pressure_allowed_rate": round(pr, 5) if pr is not None else "",
+                "sg_ol_pressures_allowed": row.get("pressures_allowed", ""),
+                "sg_ol_sacks_allowed": row.get("sacks_allowed", ""),
+                "sg_ol_hits_allowed": row.get("hits_allowed", ""),
+                "sg_ol_hurries_allowed": row.get("hurries_allowed", ""),
+                "sg_ol_versatility_count": _versatility_count(row),
+            },
+            source_season="2024",
+        ):
+            m["source"] = "scoutinggrade_advanced_signal_2025_with_2024_fallback"
+
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("pass_rush_summary", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"EDGE", "DT", "LB"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -483,8 +717,35 @@ def build() -> None:
             }
         )
 
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("pass_rush_summary_2024", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"EDGE", "DT", "LB"}):
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        if _backfill_fields(
+            metrics_by_pid[pid],
+            {
+                "player_name": row.get("player", metrics_by_pid[pid].get("player_name", "")),
+                "position": _norm_pos(row.get("position", metrics_by_pid[pid].get("position", ""))),
+                "school": row.get("team_name", metrics_by_pid[pid].get("school", "")),
+                "sg_dl_pass_rush_grade": row.get("grades_pass_rush_defense", ""),
+                "sg_dl_pass_rush_win_rate": row.get("pass_rush_win_rate", ""),
+                "sg_dl_prp": row.get("prp", ""),
+                "sg_dl_total_pressures": row.get("total_pressures", ""),
+                "sg_dl_true_pass_set_win_rate": row.get("true_pass_set_pass_rush_win_rate", ""),
+                "sg_dl_true_pass_set_prp": row.get("true_pass_set_prp", ""),
+                "sg_dl_true_pass_set_total_pressures": row.get("true_pass_set_total_pressures", ""),
+            },
+            source_season="2024",
+        ):
+            metrics_by_pid[pid]["source"] = "scoutinggrade_advanced_signal_2025_with_2024_fallback"
+
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("pass_rush_productivity", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"EDGE", "DT", "LB"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -499,8 +760,30 @@ def build() -> None:
             }
         )
 
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("pass_rush_productivity_2024", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"EDGE", "DT", "LB"}):
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        if _backfill_fields(
+            metrics_by_pid[pid],
+            {
+                "player_name": row.get("player", metrics_by_pid[pid].get("player_name", "")),
+                "position": _norm_pos(row.get("position", metrics_by_pid[pid].get("position", ""))),
+                "school": row.get("team_name", metrics_by_pid[pid].get("school", "")),
+                "sg_dl_prp": row.get("prp", ""),
+                "sg_dl_total_pressures": row.get("pressures", ""),
+            },
+            source_season="2024",
+        ):
+            metrics_by_pid[pid]["source"] = "scoutinggrade_advanced_signal_2025_with_2024_fallback"
+
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("run_defense_summary", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"EDGE", "DT", "LB"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -512,8 +795,28 @@ def build() -> None:
             }
         )
 
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("run_defense_summary_2024", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"EDGE", "DT", "LB"}):
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        if _backfill_fields(
+            metrics_by_pid[pid],
+            {
+                "sg_front_run_def_grade": row.get("grades_run_defense", ""),
+                "sg_front_stop_percent": row.get("stop_percent", ""),
+                "sg_front_missed_tackle_rate": row.get("missed_tackle_rate", ""),
+            },
+            source_season="2024",
+        ):
+            metrics_by_pid[pid]["source"] = "scoutinggrade_advanced_signal_2025_with_2024_fallback"
+
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("defense_summary", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"LB", "CB", "S", "EDGE", "DT"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -535,8 +838,38 @@ def build() -> None:
             }
         )
 
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("defense_summary_2024", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"LB", "CB", "S", "EDGE", "DT"}):
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        if _backfill_fields(
+            metrics_by_pid[pid],
+            {
+                "player_name": row.get("player", metrics_by_pid[pid].get("player_name", "")),
+                "position": _norm_pos(row.get("position", metrics_by_pid[pid].get("position", ""))),
+                "school": row.get("team_name", metrics_by_pid[pid].get("school", "")),
+                "sg_def_coverage_grade": row.get("grades_coverage_defense", ""),
+                "sg_def_run_grade": row.get("grades_run_defense", ""),
+                "sg_def_tackle_grade": row.get("grades_tackle", ""),
+                "sg_def_missed_tackle_rate": row.get("missed_tackle_rate", ""),
+                "sg_def_qb_rating_against": row.get("qb_rating_against", ""),
+                "sg_def_interceptions": row.get("interceptions", ""),
+                "sg_def_pass_break_ups": row.get("pass_break_ups", ""),
+                "sg_def_tackles": row.get("tackles", ""),
+                "sg_def_tackles_for_loss": row.get("tackles_for_loss", ""),
+                "sg_def_total_pressures": row.get("total_pressures", ""),
+            },
+            source_season="2024",
+        ):
+            metrics_by_pid[pid]["source"] = "scoutinggrade_advanced_signal_2025_with_2024_fallback"
+
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("defense_coverage_summary", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"CB", "S", "LB", "EDGE", "DT"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -549,12 +882,15 @@ def build() -> None:
                 "sg_cov_yards_per_snap": row.get("yards_per_coverage_snap", ""),
                 "sg_cov_qb_rating_against": row.get("qb_rating_against", ""),
                 "sg_cov_catch_rate": row.get("catch_rate", ""),
+                "sg_source_season": "2025",
                 "sg_cov_source_season": "2025",
             }
         )
 
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("defense_coverage_summary_2024", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"CB", "S", "LB", "EDGE", "DT"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -581,12 +917,15 @@ def build() -> None:
                 "sg_def_pass_break_ups": row.get("pass_break_ups", metrics_by_pid[pid].get("sg_def_pass_break_ups", "")),
                 "sg_def_tackles": row.get("tackles", metrics_by_pid[pid].get("sg_def_tackles", "")),
                 "sg_def_tackles_for_loss": row.get("tackles_for_loss", metrics_by_pid[pid].get("sg_def_tackles_for_loss", "")),
+                "sg_source_season": "2024",
                 "sg_cov_source_season": "2024",
             }
         )
 
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("defense_coverage_scheme", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"CB", "S", "LB", "EDGE", "DT"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -601,8 +940,31 @@ def build() -> None:
             }
         )
 
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("defense_coverage_scheme_2024", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"CB", "S", "LB", "EDGE", "DT"}):
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        if _backfill_fields(
+            metrics_by_pid[pid],
+            {
+                "sg_cov_man_grade": row.get("man_grades_coverage_defense", ""),
+                "sg_cov_man_qb_rating_against": row.get("man_qb_rating_against", ""),
+                "sg_cov_man_yards_per_snap": row.get("man_yards_per_coverage_snap", ""),
+                "sg_cov_zone_grade": row.get("zone_grades_coverage_defense", ""),
+                "sg_cov_zone_qb_rating_against": row.get("zone_qb_rating_against", ""),
+                "sg_cov_zone_yards_per_snap": row.get("zone_yards_per_coverage_snap", ""),
+            },
+            source_season="2024",
+        ):
+            metrics_by_pid[pid]["source"] = "scoutinggrade_advanced_signal_2025_with_2024_fallback"
+
     for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("slot_coverage", [])):
         if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"CB", "S", "LB"}):
             continue
         if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
             continue
@@ -615,14 +977,31 @@ def build() -> None:
             }
         )
 
+    for pid, row in ((str(r.get("player_id", "")).strip(), r) for r in premium_rows_by_file.get("slot_coverage_2024", [])):
+        if pid not in metrics_by_pid:
+            continue
+        if not _expected_pos_is(expected_by_pid, pid, {"CB", "S", "LB"}):
+            continue
+        if not _row_matches_expected(expected_by_pid.get(pid, {}), row):
+            continue
+        if _backfill_fields(
+            metrics_by_pid[pid],
+            {
+                "sg_slot_cov_snaps": row.get("coverage_snaps", ""),
+                "sg_slot_cov_snaps_per_target": row.get("coverage_snaps_per_target", ""),
+                "sg_slot_cov_qb_rating_against": row.get("qb_rating_against", ""),
+                "sg_slot_cov_yards_per_snap": row.get("yards_per_coverage_snap", ""),
+            },
+            source_season="2024",
+        ):
+            metrics_by_pid[pid]["source"] = "scoutinggrade_advanced_signal_2025_with_2024_fallback"
+
     advanced_rows = []
     for pid in sorted(metrics_by_pid):
         row = metrics_by_pid[pid]
         row["position"] = _norm_pos(row.get("position", ""))
-        row["source"] = "scoutinggrade_advanced_signal_2025"
+        row["source"] = row.get("source", "scoutinggrade_advanced_signal_2025")
         row["season"] = 2025
-        if str(row.get("sg_cov_source_season", "")).strip() == "2024":
-            row["source"] = "scoutinggrade_advanced_signal_2025_with_2024_db_fallback"
         if row.get("player_name") and row.get("position"):
             advanced_rows.append(row)
 
@@ -638,8 +1017,8 @@ def build() -> None:
         f"- PFF board rows with inferred premium player_id: `{len(matched_pids)}`",
         f"- PFF board rows missing player_id match: `{len(missing_pid_rows)}`",
         f"- ScoutingGrade advanced rows written: `{len(advanced_rows)}`",
-        f"- 2024 DB fallback archive written: `{DB_2024_ARCHIVE_OUT.exists()}`",
-        f"- 2024 DB fallback rows used: `{sum(1 for row in advanced_rows if str(row.get('sg_cov_source_season', '')).strip() == '2024')}`",
+        f"- 2024 premium archives written: `{sum(1 for path in ARCHIVE_OUTPUTS_2024.values() if path.exists())}`",
+        f"- 2024 premium fallback rows used: `{sum(1 for row in advanced_rows if str(row.get('sg_source_season', '')).strip() == '2024' or str(row.get('sg_cov_source_season', '')).strip() == '2024')}`",
     ]
     REPORT_OUT.write_text("\n".join(report), encoding="utf-8")
     print(f"Wrote {PFF_BOARD_OUT}")

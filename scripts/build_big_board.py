@@ -1170,6 +1170,176 @@ def _assert_no_team_metrics_in_player_feed(player_name: str, cfb_row: dict) -> N
         )
 
 
+_SG_POSITION_FIELD_FAMILIES = {
+    "QB": {
+        "sg_qb_pass_grade",
+        "sg_qb_btt_rate",
+        "sg_qb_twp_rate",
+        "sg_qb_pressure_to_sack_rate",
+        "sg_qb_pressure_grade",
+        "sg_qb_blitz_grade",
+        "sg_qb_no_screen_grade",
+        "sg_qb_quick_qb_rating",
+    },
+    "RB": {
+        "sg_rb_run_grade",
+        "sg_rb_elusive_rating",
+        "sg_rb_yco_attempt",
+        "sg_rb_explosive_rate",
+        "sg_rb_breakaway_percent",
+        "sg_rb_targets_per_route",
+        "sg_rb_yprr",
+    },
+    "WR": {
+        "sg_wrte_route_grade",
+        "sg_wrte_yprr",
+        "sg_wrte_targets_per_route",
+        "sg_wrte_man_yprr",
+        "sg_wrte_zone_yprr",
+        "sg_wrte_contested_catch_rate",
+        "sg_wrte_drop_rate",
+    },
+    "TE": {
+        "sg_wrte_route_grade",
+        "sg_wrte_yprr",
+        "sg_wrte_targets_per_route",
+        "sg_wrte_man_yprr",
+        "sg_wrte_zone_yprr",
+        "sg_wrte_contested_catch_rate",
+        "sg_wrte_drop_rate",
+    },
+    "EDGE": {
+        "sg_dl_pass_rush_grade",
+        "sg_dl_pass_rush_win_rate",
+        "sg_dl_prp",
+        "sg_dl_true_pass_set_win_rate",
+        "sg_dl_true_pass_set_prp",
+        "sg_dl_total_pressures",
+        "sg_front_run_def_grade",
+        "sg_front_stop_percent",
+        "sg_def_total_pressures",
+        "sg_def_tackles_for_loss",
+        "sg_def_tackles",
+    },
+    "DT": {
+        "sg_dl_pass_rush_grade",
+        "sg_dl_pass_rush_win_rate",
+        "sg_dl_prp",
+        "sg_dl_true_pass_set_win_rate",
+        "sg_dl_true_pass_set_prp",
+        "sg_dl_total_pressures",
+        "sg_front_run_def_grade",
+        "sg_front_stop_percent",
+        "sg_def_total_pressures",
+        "sg_def_tackles_for_loss",
+        "sg_def_tackles",
+    },
+    "LB": {
+        "sg_def_coverage_grade",
+        "sg_def_run_grade",
+        "sg_def_tackle_grade",
+        "sg_def_missed_tackle_rate",
+        "sg_def_total_pressures",
+        "sg_def_tackles_for_loss",
+        "sg_def_tackles",
+        "sg_def_pass_break_ups",
+        "sg_def_interceptions",
+        "sg_cov_grade",
+        "sg_cov_forced_incompletion_rate",
+        "sg_cov_snaps_per_target",
+        "sg_cov_yards_per_snap",
+        "sg_cov_qb_rating_against",
+        "sg_cov_man_grade",
+        "sg_cov_zone_grade",
+        "sg_slot_cov_snaps",
+        "sg_slot_cov_snaps_per_target",
+        "sg_slot_cov_qb_rating_against",
+        "sg_slot_cov_yards_per_snap",
+    },
+    "CB": {
+        "sg_cov_grade",
+        "sg_cov_forced_incompletion_rate",
+        "sg_cov_snaps_per_target",
+        "sg_cov_yards_per_snap",
+        "sg_cov_qb_rating_against",
+        "sg_cov_man_grade",
+        "sg_cov_zone_grade",
+        "sg_slot_cov_snaps",
+        "sg_slot_cov_snaps_per_target",
+        "sg_slot_cov_qb_rating_against",
+        "sg_slot_cov_yards_per_snap",
+        "sg_def_pass_break_ups",
+        "sg_def_interceptions",
+        "sg_def_tackles",
+        "sg_def_tackles_for_loss",
+        "sg_def_total_pressures",
+    },
+    "S": {
+        "sg_cov_grade",
+        "sg_cov_forced_incompletion_rate",
+        "sg_cov_snaps_per_target",
+        "sg_cov_yards_per_snap",
+        "sg_cov_qb_rating_against",
+        "sg_cov_man_grade",
+        "sg_cov_zone_grade",
+        "sg_slot_cov_snaps",
+        "sg_slot_cov_snaps_per_target",
+        "sg_slot_cov_qb_rating_against",
+        "sg_slot_cov_yards_per_snap",
+        "sg_def_pass_break_ups",
+        "sg_def_interceptions",
+        "sg_def_tackles",
+        "sg_def_tackles_for_loss",
+        "sg_def_total_pressures",
+    },
+    "OT": {
+        "sg_ol_pass_block_grade",
+        "sg_ol_run_block_grade",
+        "sg_ol_pbe",
+        "sg_ol_pressure_allowed_rate",
+        "sg_ol_versatility_count",
+    },
+    "IOL": {
+        "sg_ol_pass_block_grade",
+        "sg_ol_run_block_grade",
+        "sg_ol_pbe",
+        "sg_ol_pressure_allowed_rate",
+        "sg_ol_versatility_count",
+    },
+}
+
+
+def _sanitize_position_scoped_cfb_payload(position: str, cfb_row: dict) -> dict:
+    if not cfb_row:
+        return {}
+    cleaned = dict(cfb_row)
+    allowed = _SG_POSITION_FIELD_FAMILIES.get(position, set())
+    sg_raw_fields = {
+        key
+        for key in cleaned
+        if key.startswith("sg_")
+        and key
+        not in {
+            "sg_advanced_signal",
+            "sg_advanced_available_count",
+            "sg_advanced_source",
+            "sg_source_season",
+            "sg_cov_source_season",
+        }
+    }
+    for field in sg_raw_fields:
+        if field not in allowed:
+            cleaned[field] = ""
+    has_allowed_values = any(str(cleaned.get(field, "")).strip() for field in allowed)
+    if not has_allowed_values:
+        cleaned["sg_advanced_signal"] = ""
+        cleaned["sg_advanced_available_count"] = 0
+        cleaned["sg_advanced_source"] = ""
+        cleaned["sg_source_season"] = ""
+        cleaned["sg_cov_source_season"] = ""
+    return cleaned
+
+
 def _consensus_anchor_adjustment(
     *,
     rank_seed: int,
@@ -3813,6 +3983,7 @@ def main() -> None:
         tdn_ringer = tdn_ringer_by_name_pos.get((key, pos), tdn_ringer_by_name.get(key, {}))
         consensus = consensus_by_name.get(key, {})
         cfb = cfb_prod_by_name_pos.get((key, pos), cfb_prod_by_name.get(key, {}))
+        cfb = _sanitize_position_scoped_cfb_payload(pos, cfb)
         draft_age_row = draft_age_by_name_pos.get((key, pos), draft_age_by_name.get(key, {}))
         early_declare_row = early_declare_by_name_pos.get((key, pos), early_declare_by_name.get(key, {}))
         _assert_no_team_metrics_in_player_feed(row["player_name"], cfb)
@@ -4938,6 +5109,7 @@ def main() -> None:
             "sg_cov_snaps_per_target": cfb.get("sg_cov_snaps_per_target", ""),
             "sg_cov_yards_per_snap": cfb.get("sg_cov_yards_per_snap", ""),
             "sg_cov_qb_rating_against": cfb.get("sg_cov_qb_rating_against", ""),
+            "sg_source_season": cfb.get("sg_source_season", ""),
             "sg_cov_source_season": cfb.get("sg_cov_source_season", ""),
             "sg_cov_man_grade": cfb.get("sg_cov_man_grade", ""),
             "sg_cov_zone_grade": cfb.get("sg_cov_zone_grade", ""),

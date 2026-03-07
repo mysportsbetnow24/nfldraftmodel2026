@@ -710,6 +710,35 @@ def _map_team_needs_position(position: str, depth_chart_position: str = "") -> s
     return ""
 
 
+def _slot_implied_position(depth_chart_position: str) -> str:
+    slot = str(depth_chart_position or "").strip().upper()
+    if not slot:
+        return ""
+    if slot in {"QB"}:
+        return "QB"
+    if slot in {"RB", "HB", "TB", "FB"}:
+        return "RB"
+    if slot in {"WR", "LWR", "RWR", "XWR", "ZWR", "SWR", "SLOT"}:
+        return "WR"
+    if slot in {"TE", "Y", "F"}:
+        return "TE"
+    if slot in {"LT", "RT", "T"}:
+        return "OT"
+    if slot in {"LG", "RG", "C", "OC", "G"}:
+        return "IOL"
+    if slot in {"LOLB", "ROLB", "OLB"}:
+        return "EDGE"
+    if slot in {"LDE", "RDE", "DE", "NT", "DT", "LDT", "RDT", "IDL"}:
+        return "DT"
+    if slot in {"MLB", "LILB", "RILB", "ILB", "WLB", "SLB", "LB"}:
+        return "LB"
+    if slot in {"LCB", "RCB", "NB", "CB"}:
+        return "CB"
+    if slot in {"FS", "SS", "S", "SAF", "RS"}:
+        return "S"
+    return ""
+
+
 def _team_front_family(position_groups: list[str]) -> str:
     counts = Counter()
     for raw in position_groups:
@@ -875,6 +904,112 @@ def _player_sort_tuple(player: dict, slot_priority: dict[str, int]) -> tuple:
         draft_number,
         str(player.get("player_name", "")),
     )
+
+
+def _canonical_position_score(player: dict, candidate_pos: str) -> float:
+    slot = str(player.get("depth_chart_position") or "").strip().upper()
+    current_pos = str(player.get("position") or "").strip().upper()
+    implied_pos = _slot_implied_position(slot)
+    score = 0.0
+
+    if candidate_pos == current_pos:
+        score += 20.0
+    if implied_pos and candidate_pos == implied_pos:
+        score += 60.0
+
+    if slot in {"LT", "RT", "LG", "RG", "C", "OC"}:
+        score += 12.0
+    if slot in {"LCB", "RCB", "NB", "FS", "SS", "QB"}:
+        score += 10.0
+
+    score += min(float(player.get("apy_m") or 0.0), 40.0) * 0.35
+    score += float(player.get("apy_pct") or 0.0) * 0.12
+    score += min(float(player.get("snap_count") or 0), 1200.0) / 40.0
+    score += min(float(player.get("offense_snaps") or 0), 900.0) / 75.0
+    score += min(float(player.get("defense_snaps") or 0), 900.0) / 75.0
+    score += max(0, 8 - _safe_int(player.get("espn_rank"), 99)) * 2.0
+    if player.get("has_contract"):
+        score += 6.0
+    if str(player.get("depth_source") or "").strip().lower() == "espn":
+        score += 10.0
+    return score
+
+
+def _canonicalize_team_position_rooms(
+    team_players: dict[str, dict[str, list[dict]]],
+    espn_by_team_pos: dict[tuple[str, str], list[dict]],
+    espn_by_team_slot: dict[tuple[str, str], list[dict]],
+    contract_players_by_team_pos: dict[tuple[str, str], list[dict]],
+) -> None:
+    canonical_by_team_player: dict[tuple[str, str], str] = {}
+
+    for team, by_pos in team_players.items():
+        candidates: dict[str, list[tuple[str, dict]]] = defaultdict(list)
+        for pos, players in by_pos.items():
+            for player in players:
+                player_key = _norm_player_key(player.get("player_name", ""))
+                if player_key:
+                    candidates[player_key].append((pos, player))
+
+        for (slot_team, pos), players in espn_by_team_pos.items():
+            if slot_team != team:
+                continue
+            for player in players:
+                player_key = _norm_player_key(player.get("player_name", ""))
+                if player_key:
+                    candidates[player_key].append((pos, player))
+
+        for (contract_team, pos), players in contract_players_by_team_pos.items():
+            if contract_team != team:
+                continue
+            for player in players:
+                player_key = _norm_player_key(player.get("player_name", ""))
+                if player_key:
+                    candidates[player_key].append((pos, player))
+
+        for player_key, entries in candidates.items():
+            best_pos = ""
+            best_score = float("-inf")
+            for pos, player in entries:
+                score = _canonical_position_score(player, pos)
+                if score > best_score:
+                    best_score = score
+                    best_pos = pos
+            if best_pos:
+                canonical_by_team_player[(team, player_key)] = best_pos
+
+    for team, by_pos in list(team_players.items()):
+        for pos, players in list(by_pos.items()):
+            by_pos[pos] = [
+                player
+                for player in players
+                if canonical_by_team_player.get((team, _norm_player_key(player.get("player_name", ""))), pos) == pos
+            ]
+
+    for key, players in list(espn_by_team_pos.items()):
+        team, pos = key
+        espn_by_team_pos[key] = [
+            player
+            for player in players
+            if canonical_by_team_player.get((team, _norm_player_key(player.get("player_name", ""))), pos) == pos
+        ]
+
+    for key, players in list(espn_by_team_slot.items()):
+        team = key[0]
+        espn_by_team_slot[key] = [
+            player
+            for player in players
+            if canonical_by_team_player.get((team, _norm_player_key(player.get("player_name", ""))), str(player.get("position") or "").strip().upper())
+            == str(player.get("position") or "").strip().upper()
+        ]
+
+    for key, players in list(contract_players_by_team_pos.items()):
+        team, pos = key
+        contract_players_by_team_pos[key] = [
+            player
+            for player in players
+            if canonical_by_team_player.get((team, _norm_player_key(player.get("player_name", ""))), pos) == pos
+        ]
 
 
 def _player_detail_line(player: dict, role_label: str) -> str:
@@ -1906,6 +2041,13 @@ def _build_team_depth_context() -> dict[str, dict]:
                 existing_keys.add(player_key)
         if merged_players:
             team_players[team][pos] = merged_players
+
+    _canonicalize_team_position_rooms(
+        team_players,
+        espn_by_team_pos,
+        espn_by_team_slot,
+        contract_players_by_team_pos,
+    )
 
     out: dict[str, dict] = {}
     for team, by_pos in team_players.items():
@@ -3151,9 +3293,9 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         production_snapshot = _clean_public_snapshot(row.get("scouting_production_snapshot", "") or "")
         if production_override.get("text"):
             production_snapshot = str(production_override.get("text", "")).strip()
-        advanced_source_season = _safe_int(row.get("sg_cov_source_season"), 0)
+        advanced_source_season = _safe_int(row.get("sg_source_season"), 0) or _safe_int(row.get("sg_cov_source_season"), 0)
         if advanced_source_season and advanced_source_season < 2025 and not production_override.get("text"):
-            note = f"{advanced_source_season} premium coverage data used because equivalent 2025 premium coverage rows are unavailable."
+            note = f"{advanced_source_season} premium data used because equivalent 2025 premium rows are unavailable."
             production_snapshot = f"{note} {production_snapshot}".strip()
         low_evidence_flag = pff_grade <= 0 and combine_ras_official <= 0 and ras_estimate <= 0
         athletic_percentile = _pct_rank(

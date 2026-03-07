@@ -354,7 +354,7 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 353,Gunner Maldonado,S,Kansas State,65.9,,,129727,exact,kansas state
 354,Tanner Arkin,TE,Illinois,68.7,,,146008,exact,illinois
 355,Garrett DiGiorgio,IOL,UCLA,67.2,,,146395,exact,ucla
-356,Mark Petry,IOL,Syracuse,,,,,,
+356,Mark Petry,IOL,Syracuse,,,,123053,exact,syracuse
 357,Mo Westmoreland,EDGE,Tulane,79.2,,,157883,exact,tulane
 358,Evan Beerntsen,IOL,Northwestern,79.3,,,103865,exact,northwestern
 359,Kendal Daniels,S,Oklahoma,77.4,,,144668,exact,oklahoma
@@ -414,7 +414,7 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 413,Max Tomczak,WR,Youngstown State,85.0,,,,,
 414,Chamon Metayer,TE,Arizona State,56.3,,,144230,exact,arizona state
 415,Nyjalik Kelly,EDGE,UCF,75.9,,,156339,exact,ucf
-416,Tyler Van Dyke,QB,SMU,,,,,,
+416,Tyler Van Dyke,QB,SMU,,,,122225,name_pos,wisconsin
 417,Cash Jones,RB,Georgia,66.4,,,155211,exact,georgia
 418,Matt Lauter,TE,Boise State,49.6,,,145992,name_pos,boise st
 419,Corey Walker,EDGE,Wisconsin,69.4,,,145937,exact,wisconsin
@@ -438,11 +438,11 @@ pff_rank,player_name,position,school,pff_grade,pff_waa,analysis,player_id,match_
 437,Ka'ena Decambra,IOL,Arizona,67.9,,,146066,exact,arizona
 438,DT Sheffield,WR,Rutgers,61.8,,,174143,exact,rutgers
 439,Namdi Obiazor,LB,TCU,71.5,,,157288,exact,tcu
-440,Trey Smack,K,Florida,,,,,,
+440,Trey Smack,K,Florida,,,,157733,exact,florida
 441,Will Ferrin,K,BYU,,,,145985,exact,byu
 442,Drew Stevens,K,Iowa,,,,,,
-443,Dominic Zvada,K,Michigan,,,,,,
+443,Dominic Zvada,K,Michigan,,,,156657,exact,michigan
 444,Brett Thorson,P,Georgia,,,,157071,exact,georgia
-445,Ryan Eckley,P,Michigan State,,,,,,
-446,Jack Stonehouse,P,Syracuse,,,,,,
+445,Ryan Eckley,P,Michigan State,,,,158380,name_pos,mich state
+446,Jack Stonehouse,P,Syracuse,,,,146897,exact,syracuse
 447,Tommy Doman,P,Florida,,,,144944,exact,florida
