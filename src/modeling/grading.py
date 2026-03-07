@@ -113,6 +113,68 @@ def _avg_defined(values: list[Optional[float]]) -> Optional[float]:
     return sum(usable) / len(usable)
 
 
+def _infer_lb_archetype(
+    *,
+    height_in: int,
+    weight_lb: int,
+    athletic_score: float,
+    film_subtraits: Mapping[str, float],
+    production_context: Mapping[str, object] | None = None,
+) -> str:
+    processing = _safe_trait_value(film_subtraits, "processing")
+    trigger = _safe_trait_value(film_subtraits, "trigger")
+    range_score = _safe_trait_value(film_subtraits, "range")
+    decon = _safe_trait_value(film_subtraits, "block_deconstruction")
+    coverage = _safe_trait_value(film_subtraits, "coverage")
+    tackling = _safe_trait_value(film_subtraits, "tackling")
+
+    coverage_profile = _avg_defined([coverage, range_score, trigger])
+    box_profile = _avg_defined([processing, decon, tackling])
+    pressure_profile = _avg_defined([trigger, decon, processing])
+
+    prod = production_context or {}
+    lb_sacks = _safe_prod_value(prod, "cfb_lb_sacks", "lb_sacks")
+    lb_hurries = _safe_prod_value(prod, "cfb_lb_qb_hurries", "lb_qb_hurries")
+    lb_rush_signal = _safe_prod_value(prod, "cfb_lb_rush_impact_signal")
+    sg_pressures = _safe_prod_value(prod, "sg_def_total_pressures")
+    sg_tfl = _safe_prod_value(prod, "sg_def_tackles_for_loss")
+    sg_cov_grade = _safe_prod_value(prod, "sg_def_coverage_grade", "sg_cov_grade")
+    sg_slot_snaps = _safe_prod_value(prod, "sg_slot_cov_snaps")
+    sg_slot_spt = _safe_prod_value(prod, "sg_slot_cov_snaps_per_target")
+
+    light_frame = weight_lb <= 228
+    big_frame = weight_lb >= 236
+    long_frame = height_in >= 75
+    mobile_athlete = athletic_score >= 85.0
+
+    pressure_usage = (
+        (lb_sacks is not None and lb_sacks >= 4.0)
+        or (lb_hurries is not None and lb_hurries >= 9.0)
+        or (lb_rush_signal is not None and lb_rush_signal >= 74.0)
+        or (sg_pressures is not None and sg_pressures >= 18.0)
+    )
+    strong_coverage = (
+        (coverage_profile is not None and coverage_profile >= 79.0)
+        or (sg_cov_grade is not None and sg_cov_grade >= 78.0)
+        or (sg_slot_spt is not None and sg_slot_spt >= 5.0)
+    )
+    overhang_usage = (sg_slot_snaps is not None and sg_slot_snaps >= 35.0) or (sg_slot_spt is not None and sg_slot_spt >= 5.0)
+    strong_box = (
+        (box_profile is not None and box_profile >= 76.0)
+        or (sg_tfl is not None and sg_tfl >= 6.0)
+    )
+
+    if pressure_usage and ((pressure_profile is not None and pressure_profile >= 76.0) or mobile_athlete) and not strong_coverage:
+        return "hybrid_edge_lb"
+    if strong_coverage and (overhang_usage or light_frame or mobile_athlete or long_frame):
+        return "coverage_overhang_lb"
+    if strong_box or big_frame:
+        return "off_ball_lb"
+    if pressure_usage and strong_coverage:
+        return "coverage_overhang_lb"
+    return "off_ball_lb"
+
+
 def _infer_lb_role_and_scheme(
     *,
     height_in: int,
@@ -120,7 +182,8 @@ def _infer_lb_role_and_scheme(
     athletic_score: float,
     film_subtraits: Mapping[str, float],
     production_context: Mapping[str, object] | None = None,
-) -> tuple[str, str]:
+) -> tuple[str, str, str]:
+    # Returns: best_role, best_scheme_fit, lb_archetype
     """
     Role/scheme inference for off-ball linebackers.
     Keeps labels scouting-native while avoiding one-size-fits-all defaults.
@@ -157,47 +220,66 @@ def _infer_lb_role_and_scheme(
         or (lb_hurries is not None and lb_hurries >= 9.0)
         or (lb_rush_signal is not None and lb_rush_signal >= 76.0)
     )
+    archetype = _infer_lb_archetype(
+        height_in=height_in,
+        weight_lb=weight_lb,
+        athletic_score=athletic_score,
+        film_subtraits=film_subtraits,
+        production_context=production_context or {},
+    )
+
+    if archetype == "coverage_overhang_lb":
+        if pressure_usage and (coverage_profile is not None and coverage_profile >= 78.0):
+            return ("Coverage overhang WILL/SAM hybrid", "Big nickel overhang match", "coverage_overhang_lb")
+        if high_volume_tackler and (coverage_profile is not None and coverage_profile >= 76.0):
+            return ("Coverage WILL backer", "Two-high match zone", "coverage_overhang_lb")
+        return ("Space-match overhang backer", "Big nickel overhang match", "coverage_overhang_lb")
+
+    if archetype == "hybrid_edge_lb":
+        if pressure_usage and mobile_athlete and (big_frame or long_frame):
+            return ("Stand-up pressure SAM/EDGE hybrid", "Sim-pressure multiple front", "hybrid_edge_lb")
+        return ("Pressure SAM backer", "Sim-pressure multiple front", "hybrid_edge_lb")
 
     # Production-supported role nudges.
     if pressure_usage and mobile_athlete and (big_frame or long_frame):
-        return ("Pressure SAM backer", "Sim-pressure multiple front")
+        return ("Pressure SAM backer", "Sim-pressure multiple front", "off_ball_lb")
     if high_volume_tackler and impact_run_game and (big_frame or xl_frame):
-        return ("Stack-and-shed MIKE backer", "Base over-under run fit")
+        return ("Stack-and-shed MIKE backer", "Base over-under run fit", "off_ball_lb")
     if high_volume_tackler and (light_frame or mobile_athlete):
-        return ("Run-and-chase WILL backer", "Pursuit-heavy split-safety fit")
+        return ("Run-and-chase WILL backer", "Pursuit-heavy split-safety fit", "off_ball_lb")
 
     # Film-first role classification when sub-trait coverage exists.
     if coverage_profile is not None and coverage_profile >= 82.0 and (light_frame or (mobile_athlete and long_frame)):
-        return ("STAR overhang coverage backer", "Big-nickel overhang match")
+        return ("STAR overhang coverage backer", "Big-nickel overhang match", "coverage_overhang_lb")
     if coverage_profile is not None and coverage_profile >= 78.0 and (light_frame or mobile_athlete):
-        return ("Coverage WILL backer", "Two-high match zone")
+        return ("Coverage WILL backer", "Two-high match zone", "coverage_overhang_lb")
     if pressure_profile is not None and pressure_profile >= 79.0 and mobile_athlete and (big_frame or long_frame):
-        return ("Pressure SAM backer", "Sim-pressure multiple front")
+        return ("Pressure SAM backer", "Sim-pressure multiple front", "hybrid_edge_lb")
     if box_profile is not None and box_profile >= 77.0 and xl_frame:
-        return ("MIKE thumper (stack-and-shed)", "Single-high run-fit zone match")
+        return ("MIKE thumper (stack-and-shed)", "Single-high run-fit zone match", "off_ball_lb")
     if box_profile is not None and box_profile >= 75.0 and big_frame:
-        return ("Stack-and-shed MIKE backer", "Base over-under run fit")
+        return ("Stack-and-shed MIKE backer", "Base over-under run fit", "off_ball_lb")
     if trigger is not None and trigger >= 79.0 and mobile_athlete and not big_frame:
-        return ("Run-and-chase WILL backer", "Pursuit-heavy split-safety fit")
+        return ("Run-and-chase WILL backer", "Pursuit-heavy split-safety fit", "off_ball_lb")
 
     # Fallback classification for sparse film traits.
     if light_frame and explosive_athlete:
         if long_frame:
-            return ("STAR overhang coverage backer", "Big-nickel overhang match")
-        return ("Coverage WILL backer", "Two-high match zone")
+            return ("STAR overhang coverage backer", "Big-nickel overhang match", "coverage_overhang_lb")
+        return ("Coverage WILL backer", "Two-high match zone", "coverage_overhang_lb")
     if light_frame and mobile_athlete:
-        return ("Coverage WILL backer", "Two-high match zone")
+        return ("Coverage WILL backer", "Two-high match zone", "coverage_overhang_lb")
     if light_frame:
-        return ("Run-and-chase WILL backer", "Split-safety pursuit fit")
+        return ("off_ball_lb", "Run-and-chase WILL backer", "Split-safety pursuit fit")
     if big_frame and mobile_athlete:
-        return ("Pressure SAM backer", "Sim-pressure multiple front")
+        return ("Pressure SAM backer", "Sim-pressure multiple front", "hybrid_edge_lb")
     if xl_frame or (big_frame and limited_athlete):
-        return ("MIKE thumper (stack-and-shed)", "Single-high run-fit zone match")
+        return ("MIKE thumper (stack-and-shed)", "Single-high run-fit zone match", "off_ball_lb")
     if big_frame:
-        return ("Stack-and-shed MIKE backer", "Base over-under run fit")
+        return ("Stack-and-shed MIKE backer", "Base over-under run fit", "off_ball_lb")
     if mobile_athlete:
-        return ("Run-and-chase WILL backer", "Pursuit-heavy split-safety fit")
-    return ("Balanced MIKE/WILL communicator", "Match-zone multiple")
+        return ("Run-and-chase WILL backer", "Pursuit-heavy split-safety fit", "off_ball_lb")
+    return ("Balanced MIKE/WILL communicator", "Match-zone multiple", "off_ball_lb")
 
 
 def _infer_rb_role_and_scheme(
@@ -437,23 +519,25 @@ def _infer_role_and_scheme(
     athletic_score: float,
     film_subtraits: Mapping[str, float],
     production_context: Mapping[str, object] | None = None,
-) -> tuple[str, str]:
+) -> tuple[str, str, str]:
     if position == "QB":
-        return _infer_qb_role_and_scheme(
+        role, scheme = _infer_qb_role_and_scheme(
             height_in=height_in,
             weight_lb=weight_lb,
             athletic_score=athletic_score,
             film_subtraits=film_subtraits,
             production_context=production_context or {},
         )
+        return role, scheme, ""
     if position == "RB":
-        return _infer_rb_role_and_scheme(
+        role, scheme = _infer_rb_role_and_scheme(
             height_in=height_in,
             weight_lb=weight_lb,
             athletic_score=athletic_score,
             film_subtraits=film_subtraits,
             production_context=production_context,
         )
+        return role, scheme, ""
     if position == "LB":
         return _infer_lb_role_and_scheme(
             height_in=height_in,
@@ -465,6 +549,7 @@ def _infer_role_and_scheme(
     return (
         ROLE_BY_POS.get(position, "Depth and developmental value"),
         SCHEME_FIT_BY_POS.get(position, "multiple"),
+        "",
     )
 
 
@@ -584,7 +669,7 @@ def grade_player(
     size = _size_score(position, height_in, weight_lb)
     context = _context_score(rank_seed)
     risk = _risk_penalty(class_year, rank_seed)
-    best_role, best_scheme_fit = _infer_role_and_scheme(
+    best_role, best_scheme_fit, lb_archetype = _infer_role_and_scheme(
         position=position,
         height_in=height_in,
         weight_lb=weight_lb,
@@ -630,6 +715,7 @@ def grade_player(
         "core_stat_value": core_stat_value,
         "best_role": best_role,
         "best_scheme_fit": best_scheme_fit,
+        "lb_archetype": lb_archetype,
     }
 
 

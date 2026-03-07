@@ -2541,6 +2541,7 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "uncertainty_score": round(_safe_float(row.get("uncertainty_score")) or 0.0, 2),
                 "best_role": _clean_token_label(raw_best_role),
                 "best_scheme_fit": _clean_token_label(raw_best_scheme),
+                "lb_archetype": str(row.get("lb_archetype", "")).strip(),
                 "rank_driver_summary": rank_driver_summary,
                 "top_rank_driver": top_driver_key,
                 "top_rank_driver_delta": round(top_driver_delta, 2),
