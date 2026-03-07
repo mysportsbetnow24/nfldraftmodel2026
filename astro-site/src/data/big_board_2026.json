@@ -298,9 +298,9 @@
       3,
       3,
       3,
-      2
+      3
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 84.2,
@@ -471,14 +471,14 @@
     "rank_history": [
       5,
       5,
+      5,
       4,
       4,
       4,
       4,
-      4,
-      3
+      4
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 86.1,
@@ -658,14 +658,14 @@
     "rank_history": [
       4,
       4,
+      4,
       5,
       5,
       5,
       5,
-      5,
-      4
+      5
     ],
-    "rank_move_window": 0,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 93.7,
@@ -895,9 +895,9 @@
       6,
       6,
       6,
-      5
+      6
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 82.1,
@@ -1086,19 +1086,63 @@
       7,
       7,
       7,
-      6
+      7
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_wrte_yprr": 1.988,
+      "cfb_wrte_target_share": 0.31,
+      "cfb_wrte_targets_per_route": 0.3335,
       "cfb_wrte_rec": 61.0,
       "cfb_wrte_rec_yds": 711.0,
       "cfb_wrte_rec_td": 8.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_wrte_yprr": 23.7,
+      "cfb_wrte_target_share": 97.4
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_wrte_yprr",
+        "label": "Yards / Route Run",
+        "raw": 1.988,
+        "display": "1.99",
+        "pct": 23.7,
+        "fmt": "dec2",
+        "lower_better": false,
+        "weight": 0.3
+      },
+      {
+        "key": "cfb_wrte_target_share",
+        "label": "Target Share",
+        "raw": 0.31,
+        "display": "0.3%",
+        "pct": 97.4,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.22
+      },
+      {
+        "key": "cfb_wrte_targets_per_route",
+        "label": "Targets / Route",
+        "raw": 0.3335,
+        "display": "0.334",
+        "pct": 50.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.22
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_wrte_yprr": 1.988,
+      "cfb_wrte_target_share": 0.31,
+      "cfb_wrte_targets_per_route": 0.3335
+    },
+    "advanced_percentiles": {
+      "cfb_wrte_yprr": 23.7,
+      "cfb_wrte_target_share": 97.4
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_wrte_rec",
@@ -1127,7 +1171,7 @@
       "cfb_wrte_rec_yds": 711.0,
       "cfb_wrte_rec_td": 8.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 53.4,
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -1205,9 +1249,9 @@
       8,
       8,
       8,
-      7
+      8
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 89.6,
@@ -1434,9 +1478,7 @@
     "rank_driver_summary": "score=92.67; prior_signal=96.93; trait:+4.29 | production:+0.50 | prior:-0.50 | risk:-0.24",
     "top_rank_driver": "production",
     "top_rank_driver_delta": 0.5,
-    "rank_history": [
-      8
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -1606,9 +1648,7 @@
     "rank_driver_summary": "score=92.47; prior_signal=93.88; trait:+4.06 | prior:-1.97 | production:+1.13 | language:-0.31",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.97,
-    "rank_history": [
-      9
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -1854,9 +1894,9 @@
       2,
       2,
       2,
-      10
+      2
     ],
-    "rank_move_window": -8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 86.5,
@@ -2104,7 +2144,7 @@
       13,
       13,
       13,
-      11,
+      13,
       11
     ],
     "rank_move_window": 2,
@@ -2339,9 +2379,7 @@
     "rank_driver_summary": "score=91.6; prior_signal=94.25; trait:+3.98 | prior:-1.78 | production:+1.34 | language:-0.42",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.78,
-    "rank_history": [
-      12
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -2567,9 +2605,7 @@
     "rank_driver_summary": "score=91.55; prior_signal=88.32; trait:+3.76 | prior:-2.65 | risk:-0.43 | language:-0.41",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.65,
-    "rank_history": [
-      13
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -2802,9 +2838,9 @@
       16,
       16,
       16,
-      14
+      16
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 91.1,
@@ -3033,9 +3069,7 @@
     "rank_driver_summary": "score=91.32; prior_signal=93.01; trait:+4.12 | prior:-1.79 | production:+0.31 | language:-0.25",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.79,
-    "rank_history": [
-      15
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -3220,14 +3254,14 @@
     "rank_history": [
       36,
       36,
+      36,
       35,
       35,
       35,
       35,
-      34,
-      16
+      34
     ],
-    "rank_move_window": 20,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 89.0,
@@ -3686,9 +3720,7 @@
     "rank_driver_summary": "score=90.7; prior_signal=88.69; trait:+3.70 | prior:-1.69 | athletic:-1.63 | production:+1.33",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.69,
-    "rank_history": [
-      18
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -3939,9 +3971,9 @@
       18,
       18,
       18,
-      19
+      18
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 69.0,
@@ -4169,10 +4201,10 @@
       30,
       30,
       30,
-      27,
-      20
+      30,
+      27
     ],
-    "rank_move_window": 10,
+    "rank_move_window": 3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 87.2,
@@ -4392,9 +4424,9 @@
       20,
       20,
       20,
-      21
+      20
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 81.5,
@@ -4585,10 +4617,10 @@
       12,
       12,
       12,
-      13,
-      22
+      12,
+      13
     ],
-    "rank_move_window": -10,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 88.6,
@@ -4836,10 +4868,10 @@
       21,
       21,
       21,
-      22,
-      23
+      21,
+      22
     ],
-    "rank_move_window": -2,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 93.8,
@@ -5080,10 +5112,10 @@
       22,
       22,
       22,
-      21,
-      24
+      22,
+      21
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 90.7,
@@ -5304,21 +5336,51 @@
     "rank_driver_summary": "score=88.75; prior_signal=84.47; trait:+1.55 | prior:-1.23 | athletic:+1.01 | production:-0.68",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.23,
-    "rank_history": [
-      25
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.2828,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.836,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 5.0,
       "cfb_db_tackles": 27.0,
       "cfb_db_tfl": 2.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_db_coverage_plays_per_target": 32.0,
+      "cfb_db_yards_allowed_per_coverage_snap": 84.0
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_db_coverage_plays_per_target",
+        "label": "Plays on Ball / Target",
+        "raw": 0.2828,
+        "display": "0.283",
+        "pct": 32.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.32
+      },
+      {
+        "key": "cfb_db_yards_allowed_per_coverage_snap",
+        "label": "Yards / Coverage Snap",
+        "raw": 0.836,
+        "display": "0.836",
+        "pct": 16.0,
+        "fmt": "dec3",
+        "lower_better": true,
+        "weight": 0.3
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.2828,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.836
+    },
+    "advanced_percentiles": {
+      "cfb_db_coverage_plays_per_target": 32.0,
+      "cfb_db_yards_allowed_per_coverage_snap": 84.0
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_db_int",
@@ -5355,7 +5417,7 @@
       "cfb_db_tackles": 27.0,
       "cfb_db_tfl": 2.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 24.3,
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [],
@@ -5441,9 +5503,9 @@
       24,
       24,
       24,
-      26
+      24
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 65.4,
@@ -5661,9 +5723,7 @@
     "rank_driver_summary": "score=88.65; prior_signal=86.02; trait:+1.33 | production:+1.06 | prior:-0.92 | athletic:-0.32",
     "top_rank_driver": "production",
     "top_rank_driver_delta": 1.06,
-    "rank_history": [
-      27
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -5834,9 +5894,7 @@
     "rank_driver_summary": "score=88.62; prior_signal=86.38; trait:+1.69 | language:-0.46 | prior:-0.35 | risk:-0.23",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -0.35,
-    "rank_history": [
-      28
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -6015,9 +6073,7 @@
     "rank_driver_summary": "score=88.46; prior_signal=85.54; trait:+1.46 | prior:-0.82 | production:+0.72 | language:-0.38",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -0.82,
-    "rank_history": [
-      29
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -6229,9 +6285,7 @@
     "rank_driver_summary": "score=88.43; prior_signal=85.41; trait:+1.82 | prior:-1.22 | risk:-0.65 | guardrail:-0.60",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.22,
-    "rank_history": [
-      30
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -6435,9 +6489,9 @@
       26,
       26,
       26,
-      31
+      26
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 74.6,
@@ -6662,10 +6716,10 @@
       27,
       27,
       27,
-      29,
-      32
+      27,
+      29
     ],
-    "rank_move_window": -5,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 92.4,
@@ -6864,9 +6918,7 @@
     "rank_driver_summary": "score=87.79; prior_signal=81.84; athletic:+3.01 | trait:-2.30 | production:-0.62 | language:-0.27",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.3,
-    "rank_history": [
-      33
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -7094,9 +7146,7 @@
     "rank_driver_summary": "score=87.46; prior_signal=86.49; trait:+1.50 | prior:+1.27 | athletic:-0.71 | risk:-0.41",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 1.27,
-    "rank_history": [
-      34
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -7332,9 +7382,9 @@
       42,
       42,
       42,
-      35
+      42
     ],
-    "rank_move_window": 7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 76.9,
@@ -7547,9 +7597,7 @@
     "rank_driver_summary": "score=87.02; prior_signal=87.17; trait:+3.40 | risk:-2.45 | prior:+1.15 | language:-0.38",
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -2.45,
-    "rank_history": [
-      36
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -7746,9 +7794,7 @@
     "rank_driver_summary": "score=86.15; prior_signal=80.42; trait:-1.18 | prior:+1.08 | language:-0.39 | risk:-0.24",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 1.08,
-    "rank_history": [
-      37
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -7982,9 +8028,7 @@
     "rank_driver_summary": "score=86.13; prior_signal=86.71; prior:+2.20 | production:+0.68 | athletic:-0.64 | language:-0.53",
     "top_rank_driver": "production",
     "top_rank_driver_delta": 0.68,
-    "rank_history": [
-      38
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -8205,9 +8249,7 @@
     "rank_driver_summary": "score=85.89; prior_signal=87.84; prior:+4.20 | athletic:-1.23 | risk:-1.13 | production:-0.97",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.23,
-    "rank_history": [
-      39
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -8420,9 +8462,7 @@
     "rank_driver_summary": "score=85.74; prior_signal=73.48; prior:-4.22 | athletic:+2.47 | guardrail:-1.83 | trait:-1.22",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.47,
-    "rank_history": [
-      40
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -8656,14 +8696,14 @@
     "rank_history": [
       43,
       43,
+      43,
       41,
       41,
       41,
       41,
-      40,
-      41
+      40
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 85.3,
@@ -8892,9 +8932,7 @@
     "rank_driver_summary": "score=85.6; prior_signal=76.18; trait:-2.16 | athletic:+1.79 | production:-0.57 | risk:-0.42",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 1.79,
-    "rank_history": [
-      42
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -9137,20 +9175,62 @@
     "rank_driver_summary": "score=85.35; prior_signal=70.1; prior:-4.47 | production:+0.42 | risk:-0.35 | athletic:+0.20",
     "top_rank_driver": "production",
     "top_rank_driver_delta": 0.42,
-    "rank_history": [
-      43
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_wrte_yprr": 2.114,
+      "cfb_wrte_target_share": 0.321,
+      "cfb_wrte_targets_per_route": 0.34,
       "cfb_wrte_rec": 101.0,
       "cfb_wrte_rec_yds": 1276.0,
       "cfb_wrte_rec_td": 13.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_wrte_yprr": 44.7,
+      "cfb_wrte_target_share": 100.0
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_wrte_yprr",
+        "label": "Yards / Route Run",
+        "raw": 2.114,
+        "display": "2.11",
+        "pct": 44.7,
+        "fmt": "dec2",
+        "lower_better": false,
+        "weight": 0.3
+      },
+      {
+        "key": "cfb_wrte_target_share",
+        "label": "Target Share",
+        "raw": 0.321,
+        "display": "0.3%",
+        "pct": 100.0,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.22
+      },
+      {
+        "key": "cfb_wrte_targets_per_route",
+        "label": "Targets / Route",
+        "raw": 0.34,
+        "display": "0.340",
+        "pct": 50.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.22
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_wrte_yprr": 2.114,
+      "cfb_wrte_target_share": 0.321,
+      "cfb_wrte_targets_per_route": 0.34
+    },
+    "advanced_percentiles": {
+      "cfb_wrte_yprr": 44.7,
+      "cfb_wrte_target_share": 100.0
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_wrte_rec",
@@ -9179,7 +9259,7 @@
       "cfb_wrte_rec_yds": 1276.0,
       "cfb_wrte_rec_td": 13.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 62.7,
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -9245,9 +9325,7 @@
     "rank_driver_summary": "score=85.31; prior_signal=78.08; prior:-3.33 | athletic:+3.16 | guardrail:-2.81 | trait:-1.97",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.16,
-    "rank_history": [
-      44
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -9480,14 +9558,14 @@
     "rank_history": [
       32,
       32,
+      32,
       46,
       46,
       46,
       46,
-      44,
-      45
+      44
     ],
-    "rank_move_window": -13,
+    "rank_move_window": -12,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 65.8,
@@ -9717,9 +9795,7 @@
     "rank_driver_summary": "score=85.11; prior_signal=69.82; prior:-4.72 | guardrail:-1.17 | athletic:+0.64 | risk:-0.34",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 0.64,
-    "rank_history": [
-      46
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -9950,9 +10026,7 @@
     "rank_driver_summary": "score=84.83; prior_signal=81.47; trait:-1.65 | prior:+1.55 | guardrail:-0.65 | language:-0.48",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 1.55,
-    "rank_history": [
-      47
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -10188,11 +10262,11 @@
     "rank_history": [
       52,
       52,
+      52,
       51,
       51,
       51,
       51,
-      48,
       48
     ],
     "rank_move_window": 4,
@@ -10407,9 +10481,7 @@
     "rank_driver_summary": "score=84.66; prior_signal=74.84; prior:-2.06 | guardrail:-1.58 | trait:-0.89 | production:+0.84",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -0.89,
-    "rank_history": [
-      49
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -10643,9 +10715,7 @@
     "rank_driver_summary": "score=84.59; prior_signal=79.35; prior:+2.47 | trait:-2.04 | athletic:-0.97 | production:+0.55",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.04,
-    "rank_history": [
-      50
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -10873,9 +10943,7 @@
     "rank_driver_summary": "score=84.41; prior_signal=84.82; prior:+4.18 | risk:-1.93 | production:-0.76 | language:-0.61",
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -1.93,
-    "rank_history": [
-      51
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -10954,14 +11022,14 @@
     "rank_history": [
       53,
       53,
+      53,
       54,
       54,
       54,
       54,
-      54,
-      52
+      54
     ],
-    "rank_move_window": 1,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 70.7,
@@ -11134,10 +11202,10 @@
       49,
       49,
       49,
-      51,
-      53
+      49,
+      51
     ],
-    "rank_move_window": -4,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 90.4,
@@ -11331,9 +11399,7 @@
     "rank_driver_summary": "score=84.07; prior_signal=72.64; trait:-2.29 | athletic:+1.28 | prior:-1.27 | guardrail:-0.58",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 1.28,
-    "rank_history": [
-      54
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -11574,9 +11640,9 @@
       57,
       57,
       57,
-      55
+      57
     ],
-    "rank_move_window": 2,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 82.6,
@@ -11809,9 +11875,9 @@
       55,
       55,
       55,
-      56
+      55
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 81.8,
@@ -12025,14 +12091,14 @@
     "rank_history": [
       133,
       133,
+      133,
       134,
       134,
       134,
       134,
-      134,
-      57
+      134
     ],
-    "rank_move_window": 76,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 81.0,
@@ -12277,9 +12343,7 @@
     "rank_driver_summary": "score=83.65; prior_signal=79.94; prior:+3.91 | trait:-2.45 | athletic:-0.75 | language:-0.43",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.45,
-    "rank_history": [
-      58
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -12507,9 +12571,7 @@
     "rank_driver_summary": "score=83.51; prior_signal=74.28; trait:-2.17 | athletic:+1.46 | production:-1.01 | risk:-0.45",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 1.46,
-    "rank_history": [
-      59
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -12593,20 +12655,52 @@
       56,
       56,
       56,
-      60
+      56
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.2973,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.7637,
       "cfb_db_int": 4.0,
       "cfb_db_pbu": 7.0,
       "cfb_db_tackles": 47.0,
       "cfb_db_tfl": 3.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_db_coverage_plays_per_target": 84.0,
+      "cfb_db_yards_allowed_per_coverage_snap": 28.0
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_db_coverage_plays_per_target",
+        "label": "Plays on Ball / Target",
+        "raw": 0.2973,
+        "display": "0.297",
+        "pct": 84.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.32
+      },
+      {
+        "key": "cfb_db_yards_allowed_per_coverage_snap",
+        "label": "Yards / Coverage Snap",
+        "raw": 0.7637,
+        "display": "0.764",
+        "pct": 72.0,
+        "fmt": "dec3",
+        "lower_better": true,
+        "weight": 0.3
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.2973,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.7637
+    },
+    "advanced_percentiles": {
+      "cfb_db_coverage_plays_per_target": 84.0,
+      "cfb_db_yards_allowed_per_coverage_snap": 28.0
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_db_int",
@@ -12643,7 +12737,7 @@
       "cfb_db_tackles": 47.0,
       "cfb_db_tfl": 3.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 78.2,
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [],
@@ -12709,9 +12803,7 @@
     "rank_driver_summary": "score=83.31; prior_signal=57.23; prior:-5.62 | guardrail:-1.03 | production:-0.87 | trait:-0.76",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.87,
-    "rank_history": [
-      61
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -12794,10 +12886,10 @@
       60,
       60,
       60,
-      59,
-      62
+      60,
+      59
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 80.7,
@@ -13038,9 +13130,7 @@
     "rank_driver_summary": "score=83.09; prior_signal=78.43; prior:+2.46 | trait:-2.17 | guardrail:-0.78 | athletic:-0.66",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.17,
-    "rank_history": [
-      63
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -13274,9 +13364,7 @@
     "rank_driver_summary": "score=82.98; prior_signal=67.44; trait:-2.44 | prior:-2.24 | production:+0.66 | risk:-0.36",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.24,
-    "rank_history": [
-      64
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -13496,9 +13584,7 @@
     "rank_driver_summary": "score=82.95; prior_signal=72.5; trait:-1.77 | athletic:-0.64 | language:-0.23 | production:+0.18",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -0.64,
-    "rank_history": [
-      65
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -13715,14 +13801,14 @@
     "rank_history": [
       59,
       59,
+      59,
       58,
       58,
       58,
       58,
-      60,
-      66
+      60
     ],
-    "rank_move_window": -7,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -13801,9 +13887,7 @@
     "rank_driver_summary": "score=82.77; prior_signal=66.92; trait:-2.64 | prior:-1.85 | risk:-0.45 | guardrail:-0.40",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.85,
-    "rank_history": [
-      67
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -14045,9 +14129,7 @@
     "rank_driver_summary": "score=82.77; prior_signal=73.7; trait:-2.46 | prior:+1.90 | production:-0.93 | risk:-0.47",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 1.9,
-    "rank_history": [
-      68
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -14260,14 +14342,14 @@
     "rank_history": [
       65,
       65,
-      64,
-      64,
-      64,
-      64,
       65,
-      69
+      64,
+      64,
+      64,
+      64,
+      65
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 84.1,
@@ -14452,9 +14534,7 @@
     "rank_driver_summary": "score=82.63; prior_signal=72.1; trait:-2.85 | prior:+0.98 | guardrail:-0.71 | athletic:-0.69",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 0.98,
-    "rank_history": [
-      70
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -14696,9 +14776,7 @@
     "rank_driver_summary": "score=82.58; prior_signal=70.03; production:-1.68 | trait:-1.42 | prior:-0.84 | athletic:+0.82",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.42,
-    "rank_history": [
-      71
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -14908,9 +14986,7 @@
     "rank_driver_summary": "score=82.47; prior_signal=61.35; prior:-4.23 | athletic:-1.93 | guardrail:-1.14 | production:+0.52",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.93,
-    "rank_history": [
-      72
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -15091,9 +15167,7 @@
     "rank_driver_summary": "score=82.41; prior_signal=66.35; trait:-1.98 | guardrail:-1.07 | prior:-0.94 | production:-0.69",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -0.94,
-    "rank_history": [
-      73
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -15313,10 +15387,10 @@
       71,
       71,
       71,
-      69,
-      74
+      71,
+      69
     ],
-    "rank_move_window": -3,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 83.3,
@@ -15541,9 +15615,7 @@
     "rank_driver_summary": "score=82.02; prior_signal=66.42; trait:-2.08 | guardrail:-1.23 | prior:-1.20 | risk:-0.64",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.2,
-    "rank_history": [
-      75
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -15769,10 +15841,10 @@
       69,
       69,
       69,
-      71,
-      76
+      69,
+      71
     ],
-    "rank_move_window": -7,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -15855,9 +15927,7 @@
     "rank_driver_summary": "score=81.92; prior_signal=75.51; prior:+2.05 | trait:-1.66 | athletic:-1.33 | language:-0.47",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.66,
-    "rank_history": [
-      77
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -16093,14 +16163,14 @@
     "rank_history": [
       81,
       81,
+      81,
       80,
       80,
       80,
       80,
-      76,
-      78
+      76
     ],
-    "rank_move_window": 3,
+    "rank_move_window": 5,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 92.4,
@@ -16336,14 +16406,14 @@
     "rank_history": [
       106,
       106,
+      106,
       104,
       104,
       104,
       104,
-      105,
-      79
+      105
     ],
-    "rank_move_window": 27,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 72.1,
@@ -16560,9 +16630,7 @@
     "rank_driver_summary": "score=81.52; prior_signal=69.71; athletic:-2.28 | trait:-1.89 | prior:+0.97 | production:+0.66",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.89,
-    "rank_history": [
-      80
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -16638,9 +16706,7 @@
     "rank_driver_summary": "score=81.67; prior_signal=67.23; guardrail:-3.52 | prior:-3.50 | trait:-2.36 | production:+1.02",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.5,
-    "rank_history": [
-      81
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -16877,24 +16943,56 @@
     "rank_history": [
       80,
       80,
+      80,
       77,
       77,
       77,
       77,
-      78,
-      82
+      78
     ],
-    "rank_move_window": -2,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.2984,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.7578,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 10.0,
       "cfb_db_tackles": 54.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_db_coverage_plays_per_target": 100.0,
+      "cfb_db_yards_allowed_per_coverage_snap": 6.2
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_db_coverage_plays_per_target",
+        "label": "Plays on Ball / Target",
+        "raw": 0.2984,
+        "display": "0.298",
+        "pct": 100.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.3
+      },
+      {
+        "key": "cfb_db_yards_allowed_per_coverage_snap",
+        "label": "Yards / Coverage Snap",
+        "raw": 0.7578,
+        "display": "0.758",
+        "pct": 93.8,
+        "fmt": "dec3",
+        "lower_better": true,
+        "weight": 0.26
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.2984,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.7578
+    },
+    "advanced_percentiles": {
+      "cfb_db_coverage_plays_per_target": 100.0,
+      "cfb_db_yards_allowed_per_coverage_snap": 6.2
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_db_int",
@@ -16923,7 +17021,7 @@
       "cfb_db_pbu": 10.0,
       "cfb_db_tackles": 54.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 97.1,
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [],
@@ -16992,14 +17090,14 @@
     "rank_history": [
       77,
       77,
+      77,
       78,
       78,
       78,
       78,
-      79,
-      83
+      79
     ],
-    "rank_move_window": -6,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 69.8,
@@ -17232,9 +17330,7 @@
     "rank_driver_summary": "score=81.31; prior_signal=63.63; trait:-2.71 | athletic:-1.41 | prior:-1.15 | production:+0.37",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.41,
-    "rank_history": [
-      84
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -17487,10 +17583,10 @@
       72,
       72,
       72,
-      73,
-      85
+      72,
+      73
     ],
-    "rank_move_window": -13,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 83.6,
@@ -17732,10 +17828,10 @@
       79,
       79,
       79,
-      80,
-      86
+      79,
+      80
     ],
-    "rank_move_window": -7,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 76.9,
@@ -17953,9 +18049,7 @@
     "rank_driver_summary": "score=80.88; prior_signal=66.02; trait:-3.02 | athletic:-1.30 | production:+0.43 | guardrail:-0.40",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.3,
-    "rank_history": [
-      87
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -18125,14 +18219,14 @@
     "rank_history": [
       132,
       132,
+      132,
       135,
       135,
       135,
       135,
-      135,
-      88
+      135
     ],
-    "rank_move_window": 44,
+    "rank_move_window": -3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 64.8,
@@ -18327,11 +18421,11 @@
     "rank_history": [
       97,
       97,
+      97,
       96,
       96,
       96,
       96,
-      89,
       89
     ],
     "rank_move_window": 8,
@@ -18543,9 +18637,7 @@
     "rank_driver_summary": "score=80.56; prior_signal=59.31; trait:-2.68 | prior:-2.67 | guardrail:-0.87 | athletic:-0.59",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.67,
-    "rank_history": [
-      90
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -18637,21 +18729,62 @@
     "rank_driver_summary": "score=80.38; prior_signal=56.34; trait:-3.11 | prior:-2.34 | athletic:-1.22 | guardrail:-1.09",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.34,
-    "rank_history": [
-      91
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
-      "cfb_lb_tackles": 32.0,
+      "cfb_lb_tfl": 10.0,
+      "cfb_lb_sacks": 4.0,
+      "cfb_lb_qb_hurries": 5.0,
+      "cfb_lb_tackles": 32.0
+    },
+    "production_percentiles": {
+      "cfb_lb_tfl": 90.9,
+      "cfb_lb_sacks": 95.5,
+      "cfb_lb_qb_hurries": 90.9
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_lb_tfl",
+        "label": "TFL",
+        "raw": 10.0,
+        "display": "10",
+        "pct": 90.9,
+        "fmt": "int",
+        "lower_better": false,
+        "weight": 0.26
+      },
+      {
+        "key": "cfb_lb_sacks",
+        "label": "Sacks",
+        "raw": 4.0,
+        "display": "4.0",
+        "pct": 95.5,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.18
+      },
+      {
+        "key": "cfb_lb_qb_hurries",
+        "label": "QB Hurries",
+        "raw": 5.0,
+        "display": "5",
+        "pct": 90.9,
+        "fmt": "int",
+        "lower_better": false,
+        "weight": 0.16
+      }
+    ],
+    "advanced_metrics": {
       "cfb_lb_tfl": 10.0,
       "cfb_lb_sacks": 4.0,
       "cfb_lb_qb_hurries": 5.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "advanced_percentiles": {
+      "cfb_lb_tfl": 90.9,
+      "cfb_lb_sacks": 95.5,
+      "cfb_lb_qb_hurries": 90.9
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_lb_tackles",
@@ -18688,7 +18821,7 @@
       "cfb_lb_sacks": 4.0,
       "cfb_lb_qb_hurries": 5.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 92.3,
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -18778,9 +18911,7 @@
     "rank_driver_summary": "score=80.6; prior_signal=61.99; trait:-3.17 | athletic:-1.08 | guardrail:-0.80 | production:-0.61",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.08,
-    "rank_history": [
-      92
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -19010,9 +19141,7 @@
     "rank_driver_summary": "score=80.51; prior_signal=64.09; trait:-2.54 | athletic:-2.10 | risk:-0.44 | guardrail:-0.40",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.1,
-    "rank_history": [
-      93
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -19091,14 +19220,14 @@
     "rank_history": [
       88,
       88,
+      88,
       85,
       85,
       85,
       85,
-      85,
-      94
+      85
     ],
-    "rank_move_window": -6,
+    "rank_move_window": 3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 66.7,
@@ -19281,14 +19410,14 @@
     "rank_history": [
       99,
       99,
+      99,
       93,
       93,
       93,
       93,
-      87,
-      95
+      87
     ],
-    "rank_move_window": 4,
+    "rank_move_window": 12,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 71.6,
@@ -19497,9 +19626,7 @@
     "rank_driver_summary": "score=80.35; prior_signal=66.61; trait:-2.53 | athletic:-1.74 | prior:+0.63 | risk:-0.45",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.74,
-    "rank_history": [
-      96
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -19738,25 +19865,67 @@
     "rank_history": [
       101,
       101,
+      101,
       95,
       95,
       95,
       95,
-      88,
-      97
+      88
     ],
-    "rank_move_window": 4,
+    "rank_move_window": 13,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_rb_explosive_rate": 0.1132,
+      "cfb_rb_target_share": 0.1353,
+      "cfb_rb_receiving_efficiency": 5.0,
       "cfb_rb_rush_yds": 905.0,
       "cfb_rb_rush_td": 10.0,
       "cfb_rb_rec": 28.0,
       "cfb_rb_rec_yds": 140.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_rb_explosive_rate": 52.9
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_rb_explosive_rate",
+        "label": "Explosive Run Rate",
+        "raw": 0.1132,
+        "display": "0.1%",
+        "pct": 52.9,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.28
+      },
+      {
+        "key": "cfb_rb_target_share",
+        "label": "Receiving Share",
+        "raw": 0.1353,
+        "display": "0.1%",
+        "pct": 50.0,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.18
+      },
+      {
+        "key": "cfb_rb_receiving_efficiency",
+        "label": "Receiving Efficiency",
+        "raw": 5.0,
+        "display": "5.00",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": false,
+        "weight": 0.18
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_rb_explosive_rate": 0.1132,
+      "cfb_rb_target_share": 0.1353,
+      "cfb_rb_receiving_efficiency": 5.0
+    },
+    "advanced_percentiles": {
+      "cfb_rb_explosive_rate": 52.9
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_rb_rush_yds",
@@ -19793,7 +19962,7 @@
       "cfb_rb_rec": 28.0,
       "cfb_rb_rec_yds": 140.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 51.3,
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [],
@@ -19870,14 +20039,14 @@
     "rank_history": [
       90,
       90,
-      87,
-      87,
-      87,
-      87,
       90,
-      98
+      87,
+      87,
+      87,
+      87,
+      90
     ],
-    "rank_move_window": -8,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_def_run_grade": 69.0,
@@ -20080,9 +20249,7 @@
     "rank_driver_summary": "score=80.19; prior_signal=74.54; prior:+4.00 | trait:-3.21 | production:-0.79 | risk:-0.75",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.21,
-    "rank_history": [
-      99
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -20300,9 +20467,7 @@
     "rank_driver_summary": "score=80.07; prior_signal=54.05; prior:-4.85 | trait:-2.90 | guardrail:-2.40 | risk:-0.35",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.9,
-    "rank_history": [
-      100
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -20540,9 +20705,7 @@
     "rank_driver_summary": "score=79.9; prior_signal=56.32; prior:-8.55 | guardrail:-5.13 | production:+1.02 | trait:-0.52",
     "top_rank_driver": "production",
     "top_rank_driver_delta": 1.02,
-    "rank_history": [
-      101
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -20767,14 +20930,14 @@
     "rank_history": [
       96,
       96,
-      92,
-      92,
-      92,
-      92,
       96,
-      102
+      92,
+      92,
+      92,
+      92,
+      96
     ],
-    "rank_move_window": -6,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 65.0,
@@ -21013,9 +21176,7 @@
     "rank_driver_summary": "score=79.88; prior_signal=66.3; trait:-2.62 | athletic:-2.32 | prior:+1.63 | risk:-0.62",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.32,
-    "rank_history": [
-      103
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -21238,9 +21399,7 @@
     "rank_driver_summary": "score=79.93; prior_signal=75.41; trait:-4.40 | prior:+4.26 | guardrail:-0.81 | language:-0.73",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 4.26,
-    "rank_history": [
-      104
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -21423,9 +21582,7 @@
     "rank_driver_summary": "score=79.9; prior_signal=60.52; prior:-4.59 | guardrail:-3.40 | trait:-2.50 | athletic:+1.12",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.5,
-    "rank_history": [
-      105
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -21608,9 +21765,7 @@
     "rank_driver_summary": "score=79.75; prior_signal=68.3; trait:-2.41 | production:-1.44 | prior:+1.05 | guardrail:-0.80",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.44,
-    "rank_history": [
-      106
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -21785,9 +21940,7 @@
     "rank_driver_summary": "score=79.75; prior_signal=67.88; athletic:-3.11 | trait:-2.63 | prior:+2.13 | production:+0.60",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.63,
-    "rank_history": [
-      107
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -22018,20 +22171,62 @@
     "rank_driver_summary": "score=79.67; prior_signal=65.63; trait:-2.82 | guardrail:-2.70 | prior:-1.18 | risk:-0.63",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -1.18,
-    "rank_history": [
-      108
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_wrte_yprr": 2.324,
+      "cfb_wrte_target_share": 0.27,
+      "cfb_wrte_targets_per_route": 0.2995,
       "cfb_wrte_rec": 71.0,
       "cfb_wrte_rec_yds": 1004.0,
       "cfb_wrte_rec_td": 6.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_wrte_yprr": 57.9,
+      "cfb_wrte_target_share": 89.5
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_wrte_yprr",
+        "label": "Yards / Route Run",
+        "raw": 2.324,
+        "display": "2.32",
+        "pct": 57.9,
+        "fmt": "dec2",
+        "lower_better": false,
+        "weight": 0.3
+      },
+      {
+        "key": "cfb_wrte_target_share",
+        "label": "Target Share",
+        "raw": 0.27,
+        "display": "0.3%",
+        "pct": 89.5,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.22
+      },
+      {
+        "key": "cfb_wrte_targets_per_route",
+        "label": "Targets / Route",
+        "raw": 0.2995,
+        "display": "0.299",
+        "pct": 50.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.22
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_wrte_yprr": 2.324,
+      "cfb_wrte_target_share": 0.27,
+      "cfb_wrte_targets_per_route": 0.2995
+    },
+    "advanced_percentiles": {
+      "cfb_wrte_yprr": 57.9,
+      "cfb_wrte_target_share": 89.5
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_wrte_rec",
@@ -22060,7 +22255,7 @@
       "cfb_wrte_rec_yds": 1004.0,
       "cfb_wrte_rec_td": 6.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 64.9,
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -22138,9 +22333,7 @@
     "rank_driver_summary": "score=79.44; prior_signal=69.31; athletic:-3.32 | prior:+3.02 | trait:-1.83 | production:-0.62",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": 3.02,
-    "rank_history": [
-      109
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -22369,10 +22562,10 @@
       105,
       105,
       105,
-      102,
-      110
+      105,
+      102
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 66.5,
@@ -22595,9 +22788,7 @@
     "rank_driver_summary": "score=79.59; prior_signal=65.67; guardrail:-3.27 | production:-1.68 | prior:-1.68 | athletic:-0.88",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
-    "rank_history": [
-      111
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -22819,9 +23010,7 @@
     "rank_driver_summary": "score=79.59; prior_signal=63.07; guardrail:-3.64 | prior:-3.25 | production:-1.68 | risk:-0.34",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.25,
-    "rank_history": [
-      112
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -23043,9 +23232,7 @@
     "rank_driver_summary": "score=79.4; prior_signal=63.82; trait:-3.62 | guardrail:-0.80 | risk:-0.65 | production:-0.52",
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -0.65,
-    "rank_history": [
-      113
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -23273,14 +23460,14 @@
     "rank_history": [
       107,
       107,
+      107,
       106,
       106,
       106,
       106,
-      106,
-      114
+      106
     ],
-    "rank_move_window": -7,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 70.9,
@@ -23498,14 +23685,14 @@
     "rank_history": [
       121,
       121,
-      120,
-      120,
-      120,
-      120,
       121,
-      115
+      120,
+      120,
+      120,
+      120,
+      121
     ],
-    "rank_move_window": 6,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 64.0,
@@ -23725,9 +23912,7 @@
     "rank_driver_summary": "score=79.27; prior_signal=51.34; prior:-5.70 | guardrail:-2.19 | production:-1.28 | athletic:-1.20",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.28,
-    "rank_history": [
-      116
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -23908,20 +24093,62 @@
     "rank_driver_summary": "score=79.17; prior_signal=70.72; guardrail:-4.40 | trait:-3.61 | production:+1.30 | prior:-0.73",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.61,
-    "rank_history": [
-      117
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_wrte_yprr": 3.318,
+      "cfb_wrte_target_share": 0.211,
+      "cfb_wrte_targets_per_route": 0.3763,
       "cfb_wrte_rec": 51.0,
       "cfb_wrte_rec_yds": 1079.0,
       "cfb_wrte_rec_td": 8.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_wrte_yprr": 100.0,
+      "cfb_wrte_target_share": 65.8
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_wrte_yprr",
+        "label": "Yards / Route Run",
+        "raw": 3.318,
+        "display": "3.32",
+        "pct": 100.0,
+        "fmt": "dec2",
+        "lower_better": false,
+        "weight": 0.3
+      },
+      {
+        "key": "cfb_wrte_target_share",
+        "label": "Target Share",
+        "raw": 0.211,
+        "display": "0.2%",
+        "pct": 65.8,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.22
+      },
+      {
+        "key": "cfb_wrte_targets_per_route",
+        "label": "Targets / Route",
+        "raw": 0.3763,
+        "display": "0.376",
+        "pct": 50.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.22
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_wrte_yprr": 3.318,
+      "cfb_wrte_target_share": 0.211,
+      "cfb_wrte_targets_per_route": 0.3763
+    },
+    "advanced_percentiles": {
+      "cfb_wrte_yprr": 100.0,
+      "cfb_wrte_target_share": 65.8
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_wrte_rec",
@@ -23950,7 +24177,7 @@
       "cfb_wrte_rec_yds": 1079.0,
       "cfb_wrte_rec_td": 8.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 75.0,
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -24032,9 +24259,7 @@
     "rank_driver_summary": "score=79.21; prior_signal=59.6; trait:-2.95 | athletic:-2.82 | guardrail:-0.90 | prior:+0.89",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.82,
-    "rank_history": [
-      118
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -24276,9 +24501,7 @@
     "rank_driver_summary": "score=79.17; prior_signal=63.45; guardrail:-4.79 | prior:-4.30 | production:-1.06 | risk:-0.36",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -4.3,
-    "rank_history": [
-      119
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -24503,14 +24726,14 @@
     "rank_history": [
       149,
       149,
+      149,
       144,
       144,
       144,
       144,
-      144,
-      120
+      144
     ],
-    "rank_move_window": 29,
+    "rank_move_window": 5,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 66.1,
@@ -24728,9 +24951,7 @@
     "rank_driver_summary": "score=78.97; prior_signal=59.24; prior:-5.75 | guardrail:-4.53 | risk:-0.47 | trait:-0.43",
     "top_rank_driver": "risk",
     "top_rank_driver_delta": -0.47,
-    "rank_history": [
-      121
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -24907,10 +25128,10 @@
       113,
       113,
       113,
-      115,
-      122
+      113,
+      115
     ],
-    "rank_move_window": -9,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 79.4,
@@ -25088,20 +25309,62 @@
     "rank_driver_summary": "score=78.95; prior_signal=49.55; prior:-6.74 | trait:-3.06 | guardrail:-2.30 | risk:-0.35",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.06,
-    "rank_history": [
-      123
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_wrte_yprr": 2.94,
+      "cfb_wrte_target_share": 0.184,
+      "cfb_wrte_targets_per_route": 0.31,
       "cfb_wrte_rec": 57.0,
       "cfb_wrte_rec_yds": 1054.0,
       "cfb_wrte_rec_td": 6.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_wrte_yprr": 97.4,
+      "cfb_wrte_target_share": 42.1
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_wrte_yprr",
+        "label": "Yards / Route Run",
+        "raw": 2.94,
+        "display": "2.94",
+        "pct": 97.4,
+        "fmt": "dec2",
+        "lower_better": false,
+        "weight": 0.3
+      },
+      {
+        "key": "cfb_wrte_target_share",
+        "label": "Target Share",
+        "raw": 0.184,
+        "display": "0.2%",
+        "pct": 42.1,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.22
+      },
+      {
+        "key": "cfb_wrte_targets_per_route",
+        "label": "Targets / Route",
+        "raw": 0.31,
+        "display": "0.310",
+        "pct": 50.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.22
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_wrte_yprr": 2.94,
+      "cfb_wrte_target_share": 0.184,
+      "cfb_wrte_targets_per_route": 0.31
+    },
+    "advanced_percentiles": {
+      "cfb_wrte_yprr": 97.4,
+      "cfb_wrte_target_share": 42.1
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_wrte_rec",
@@ -25130,7 +25393,7 @@
       "cfb_wrte_rec_yds": 1054.0,
       "cfb_wrte_rec_td": 6.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 66.9,
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -25196,9 +25459,7 @@
     "rank_driver_summary": "score=78.83; prior_signal=53.6; prior:-4.61 | trait:-3.31 | guardrail:-1.90 | risk:-0.46",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.31,
-    "rank_history": [
-      124
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -25383,9 +25644,7 @@
     "rank_driver_summary": "score=78.88; prior_signal=51.33; prior:-6.91 | guardrail:-4.61 | trait:-1.16 | production:-0.83",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.16,
-    "rank_history": [
-      125
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -25631,9 +25890,7 @@
     "rank_driver_summary": "score=78.88; prior_signal=49.34; prior:-6.29 | guardrail:-2.09 | trait:-1.46 | athletic:-1.17",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.46,
-    "rank_history": [
-      126
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -25871,9 +26128,7 @@
     "rank_driver_summary": "score=78.88; prior_signal=43.0; prior:-11.15 | guardrail:-5.06 | trait:-0.68 | risk:-0.44",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -0.68,
-    "rank_history": [
-      127
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -26068,9 +26323,7 @@
     "rank_driver_summary": "score=78.67; prior_signal=65.71; trait:-2.94 | athletic:-2.20 | prior:+1.87 | guardrail:-1.00",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.2,
-    "rank_history": [
-      128
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -26310,9 +26563,7 @@
     "rank_driver_summary": "score=79.09; prior_signal=57.36; trait:-3.63 | prior:-2.78 | guardrail:-2.22 | risk:-0.37",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.78,
-    "rank_history": [
-      129
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -26531,9 +26782,7 @@
     "rank_driver_summary": "score=78.7; prior_signal=55.21; prior:-4.35 | trait:-2.53 | guardrail:-2.30 | production:-0.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.53,
-    "rank_history": [
-      130
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -26714,9 +26963,7 @@
     "rank_driver_summary": "score=78.64; prior_signal=52.44; prior:-7.62 | guardrail:-5.57 | production:-0.71 | trait:-0.60",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.71,
-    "rank_history": [
-      131
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -26946,14 +27193,14 @@
     "rank_history": [
       146,
       146,
+      146,
       124,
       124,
       124,
       124,
-      125,
-      132
+      125
     ],
-    "rank_move_window": 14,
+    "rank_move_window": 21,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 80.0,
@@ -27186,14 +27433,14 @@
     "rank_history": [
       129,
       129,
+      129,
       128,
       128,
       128,
       128,
-      123,
-      133
+      123
     ],
-    "rank_move_window": -4,
+    "rank_move_window": 6,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 76.4,
@@ -27415,9 +27662,7 @@
     "rank_driver_summary": "score=78.57; prior_signal=54.67; prior:-7.63 | guardrail:-6.29 | athletic:-0.82 | production:+0.63",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -0.82,
-    "rank_history": [
-      134
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -27659,9 +27904,7 @@
     "rank_driver_summary": "score=78.64; prior_signal=52.24; prior:-5.05 | guardrail:-3.49 | trait:-2.90 | risk:-0.47",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.9,
-    "rank_history": [
-      135
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -27882,19 +28125,49 @@
     "rank_driver_summary": "score=78.17; prior_signal=61.32; trait:-4.23 | guardrail:-3.14 | prior:-0.99 | risk:-0.45",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -0.99,
-    "rank_history": [
-      136
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.2654,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.9232,
       "cfb_db_int": 4.0,
       "cfb_db_tackles": 1.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_db_coverage_plays_per_target": 12.0,
+      "cfb_db_yards_allowed_per_coverage_snap": 96.0
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_db_coverage_plays_per_target",
+        "label": "Plays on Ball / Target",
+        "raw": 0.2654,
+        "display": "0.265",
+        "pct": 12.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.32
+      },
+      {
+        "key": "cfb_db_yards_allowed_per_coverage_snap",
+        "label": "Yards / Coverage Snap",
+        "raw": 0.9232,
+        "display": "0.923",
+        "pct": 4.0,
+        "fmt": "dec3",
+        "lower_better": true,
+        "weight": 0.3
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.2654,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.9232
+    },
+    "advanced_percentiles": {
+      "cfb_db_coverage_plays_per_target": 12.0,
+      "cfb_db_yards_allowed_per_coverage_snap": 96.0
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_db_int",
@@ -27915,7 +28188,7 @@
       "cfb_db_int": 4.0,
       "cfb_db_tackles": 1.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 8.1,
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [],
@@ -27993,9 +28266,7 @@
     "rank_driver_summary": "score=78.28; prior_signal=53.14; athletic:-4.36 | prior:-2.15 | guardrail:-1.90 | production:-0.75",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -2.15,
-    "rank_history": [
-      137
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -28214,9 +28485,7 @@
     "rank_driver_summary": "score=78.27; prior_signal=60.69; trait:-2.77 | guardrail:-1.80 | production:-1.68 | athletic:-1.08",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
-    "rank_history": [
-      138
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -28443,9 +28712,7 @@
     "rank_driver_summary": "score=78.4; prior_signal=57.74; prior:-3.76 | guardrail:-3.35 | production:-1.68 | athletic:-1.08",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
-    "rank_history": [
-      139
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -28664,20 +28931,50 @@
     "rank_driver_summary": "score=78.17; prior_signal=51.89; prior:-6.93 | guardrail:-3.35 | production:-1.68 | trait:-0.57",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
-    "rank_history": [
-      140
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.2828,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.836,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 20.0,
       "cfb_db_tfl": 2.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_db_coverage_plays_per_target": 32.0,
+      "cfb_db_yards_allowed_per_coverage_snap": 84.0
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_db_coverage_plays_per_target",
+        "label": "Plays on Ball / Target",
+        "raw": 0.2828,
+        "display": "0.283",
+        "pct": 32.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.32
+      },
+      {
+        "key": "cfb_db_yards_allowed_per_coverage_snap",
+        "label": "Yards / Coverage Snap",
+        "raw": 0.836,
+        "display": "0.836",
+        "pct": 16.0,
+        "fmt": "dec3",
+        "lower_better": true,
+        "weight": 0.3
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.2828,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.836
+    },
+    "advanced_percentiles": {
+      "cfb_db_coverage_plays_per_target": 32.0,
+      "cfb_db_yards_allowed_per_coverage_snap": 84.0
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_db_pbu",
@@ -28706,7 +29003,7 @@
       "cfb_db_tackles": 20.0,
       "cfb_db_tfl": 2.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 24.3,
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [],
@@ -28784,9 +29081,7 @@
     "rank_driver_summary": "score=78.04; prior_signal=57.62; prior:-4.88 | guardrail:-4.01 | trait:-1.86 | risk:-0.87",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.86,
-    "rank_history": [
-      141
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -29005,9 +29300,7 @@
     "rank_driver_summary": "score=77.89; prior_signal=48.98; prior:-7.51 | guardrail:-3.75 | athletic:-1.73 | trait:-0.77",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.73,
-    "rank_history": [
-      142
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -29103,9 +29396,9 @@
       136,
       136,
       136,
-      143
+      136
     ],
-    "rank_move_window": -7,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 59.4,
@@ -29335,9 +29628,7 @@
     "rank_driver_summary": "score=77.83; prior_signal=56.89; guardrail:-4.18 | athletic:-3.49 | prior:-2.90 | risk:-0.46",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.49,
-    "rank_history": [
-      144
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -29559,9 +29850,7 @@
     "rank_driver_summary": "score=77.77; prior_signal=56.58; prior:-5.62 | guardrail:-5.36 | athletic:-1.96 | production:+0.66",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.96,
-    "rank_history": [
-      145
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -29733,14 +30022,14 @@
     "rank_history": [
       163,
       163,
+      163,
       161,
       161,
       161,
       161,
-      162,
-      146
+      162
     ],
-    "rank_move_window": 17,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {},
     "production_percentiles": {},
@@ -29815,9 +30104,7 @@
     "rank_driver_summary": "score=77.69; prior_signal=51.67; prior:-3.71 | trait:-3.01 | guardrail:-2.30 | production:-1.57",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.01,
-    "rank_history": [
-      147
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -29905,20 +30192,62 @@
     "rank_driver_summary": "score=77.67; prior_signal=55.72; prior:-2.77 | trait:-2.71 | guardrail:-2.47 | production:-1.19",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.71,
-    "rank_history": [
-      148
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_wrte_yprr": 2.352,
+      "cfb_wrte_target_share": 0.169,
+      "cfb_wrte_targets_per_route": 0.2137,
       "cfb_wrte_rec": 47.0,
       "cfb_wrte_rec_yds": 671.0,
       "cfb_wrte_rec_td": 2.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_wrte_yprr": 63.2,
+      "cfb_wrte_target_share": 23.7
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_wrte_yprr",
+        "label": "Yards / Route Run",
+        "raw": 2.352,
+        "display": "2.35",
+        "pct": 63.2,
+        "fmt": "dec2",
+        "lower_better": false,
+        "weight": 0.3
+      },
+      {
+        "key": "cfb_wrte_target_share",
+        "label": "Target Share",
+        "raw": 0.169,
+        "display": "0.2%",
+        "pct": 23.7,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.22
+      },
+      {
+        "key": "cfb_wrte_targets_per_route",
+        "label": "Targets / Route",
+        "raw": 0.2137,
+        "display": "0.214",
+        "pct": 50.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.22
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_wrte_yprr": 2.352,
+      "cfb_wrte_target_share": 0.169,
+      "cfb_wrte_targets_per_route": 0.2137
+    },
+    "advanced_percentiles": {
+      "cfb_wrte_yprr": 63.2,
+      "cfb_wrte_target_share": 23.7
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_wrte_rec",
@@ -29947,7 +30276,7 @@
       "cfb_wrte_rec_yds": 671.0,
       "cfb_wrte_rec_td": 2.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 47.5,
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -30025,21 +30354,62 @@
     "rank_driver_summary": "score=77.64; prior_signal=39.34; prior:-11.93 | guardrail:-3.72 | trait:-1.21 | risk:-0.46",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.21,
-    "rank_history": [
-      149
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_edge_pressure_rate": 0.2342,
+      "cfb_edge_sacks_per_pr_snap": 0.0703,
+      "cfb_edge_tfl": 9.0,
       "cfb_edge_sacks": 3.0,
       "cfb_edge_qb_hurries": 7.0,
-      "cfb_edge_tfl": 9.0,
       "cfb_edge_tackles": 58.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_edge_pressure_rate": 90.9,
+      "cfb_edge_tfl": 95.5
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_edge_pressure_rate",
+        "label": "Pressure / Rush Snap",
+        "raw": 0.2342,
+        "display": "0.2%",
+        "pct": 90.9,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.28
+      },
+      {
+        "key": "cfb_edge_sacks_per_pr_snap",
+        "label": "Sacks / Rush Snap",
+        "raw": 0.0703,
+        "display": "0.1%",
+        "pct": 50.0,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.16
+      },
+      {
+        "key": "cfb_edge_tfl",
+        "label": "TFL",
+        "raw": 9.0,
+        "display": "9",
+        "pct": 95.5,
+        "fmt": "int",
+        "lower_better": false,
+        "weight": 0.18
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_edge_pressure_rate": 0.2342,
+      "cfb_edge_sacks_per_pr_snap": 0.0703,
+      "cfb_edge_tfl": 9.0
+    },
+    "advanced_percentiles": {
+      "cfb_edge_pressure_rate": 90.9,
+      "cfb_edge_tfl": 95.5
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_edge_sacks",
@@ -30076,7 +30446,7 @@
       "cfb_edge_tfl": 9.0,
       "cfb_edge_tackles": 58.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 81.7,
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [],
@@ -30142,9 +30512,7 @@
     "rank_driver_summary": "score=77.61; prior_signal=59.0; trait:-3.44 | athletic:-2.25 | risk:-1.13 | guardrail:-1.10",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.25,
-    "rank_history": [
-      150
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -30330,9 +30698,7 @@
     "rank_driver_summary": "score=77.88; prior_signal=50.08; prior:-8.66 | guardrail:-4.53 | trait:-0.74 | risk:-0.47",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -0.74,
-    "rank_history": [
-      151
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -30572,21 +30938,37 @@
     "rank_driver_summary": "score=78.04; prior_signal=56.16; prior:-5.56 | guardrail:-4.29 | trait:-2.69 | production:+1.44",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.69,
-    "rank_history": [
-      152
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_qb_epa_per_play": 0.569,
       "cfb_qb_pass_td": 16.0,
       "cfb_qb_pass_int": 4.0,
       "cfb_qb_pass_yds": 2719.0,
       "cfb_qb_rush_yds": 777.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_qb_epa_per_play": 100.0
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_qb_epa_per_play",
+        "label": "EPA / Play",
+        "raw": 0.569,
+        "display": "0.569",
+        "pct": 100.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.28
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_qb_epa_per_play": 0.569
+    },
+    "advanced_percentiles": {
+      "cfb_qb_epa_per_play": 100.0
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_qb_pass_td",
@@ -30623,7 +31005,7 @@
       "cfb_qb_pass_yds": 2719.0,
       "cfb_qb_rush_yds": 777.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 100.0,
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [],
@@ -30701,20 +31083,62 @@
     "rank_driver_summary": "score=77.67; prior_signal=56.05; prior:-7.28 | guardrail:-6.18 | production:-0.43 | risk:-0.35",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.43,
-    "rank_history": [
-      153
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_wrte_yprr": 2.408,
+      "cfb_wrte_target_share": 0.131,
+      "cfb_wrte_targets_per_route": 0.2871,
       "cfb_wrte_rec": 55.0,
       "cfb_wrte_rec_yds": 811.0,
       "cfb_wrte_rec_td": 6.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_wrte_yprr": 68.4,
+      "cfb_wrte_target_share": 13.2
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_wrte_yprr",
+        "label": "Yards / Route Run",
+        "raw": 2.408,
+        "display": "2.41",
+        "pct": 68.4,
+        "fmt": "dec2",
+        "lower_better": false,
+        "weight": 0.3
+      },
+      {
+        "key": "cfb_wrte_target_share",
+        "label": "Target Share",
+        "raw": 0.131,
+        "display": "0.1%",
+        "pct": 13.2,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.22
+      },
+      {
+        "key": "cfb_wrte_targets_per_route",
+        "label": "Targets / Route",
+        "raw": 0.2871,
+        "display": "0.287",
+        "pct": 50.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.22
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_wrte_yprr": 2.408,
+      "cfb_wrte_target_share": 0.131,
+      "cfb_wrte_targets_per_route": 0.2871
+    },
+    "advanced_percentiles": {
+      "cfb_wrte_yprr": 68.4,
+      "cfb_wrte_target_share": 13.2
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_wrte_rec",
@@ -30743,7 +31167,7 @@
       "cfb_wrte_rec_yds": 811.0,
       "cfb_wrte_rec_td": 6.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 46.5,
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -30809,21 +31233,51 @@
     "rank_driver_summary": "score=77.55; prior_signal=53.6; trait:-3.19 | athletic:-2.73 | guardrail:-1.90 | prior:-1.88",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.73,
-    "rank_history": [
-      154
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.3,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.75,
       "cfb_db_int": 5.0,
       "cfb_db_pbu": 12.0,
       "cfb_db_tackles": 47.0,
       "cfb_db_tfl": 1.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_db_coverage_plays_per_target": 100.0,
+      "cfb_db_yards_allowed_per_coverage_snap": 4.0
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_db_coverage_plays_per_target",
+        "label": "Plays on Ball / Target",
+        "raw": 0.3,
+        "display": "0.300",
+        "pct": 100.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.32
+      },
+      {
+        "key": "cfb_db_yards_allowed_per_coverage_snap",
+        "label": "Yards / Coverage Snap",
+        "raw": 0.75,
+        "display": "0.750",
+        "pct": 96.0,
+        "fmt": "dec3",
+        "lower_better": true,
+        "weight": 0.3
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.3,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.75
+    },
+    "advanced_percentiles": {
+      "cfb_db_coverage_plays_per_target": 100.0,
+      "cfb_db_yards_allowed_per_coverage_snap": 4.0
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_db_int",
@@ -30860,7 +31314,7 @@
       "cfb_db_tackles": 47.0,
       "cfb_db_tfl": 1.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 98.1,
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [],
@@ -30938,9 +31392,7 @@
     "rank_driver_summary": "score=77.64; prior_signal=51.89; prior:-5.26 | guardrail:-3.15 | athletic:-2.56 | production:-0.61",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.56,
-    "rank_history": [
-      155
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -31176,14 +31628,14 @@
     "rank_history": [
       213,
       213,
+      213,
       214,
       214,
       214,
       214,
-      211,
-      156
+      211
     ],
-    "rank_move_window": 57,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 66.6,
@@ -31404,14 +31856,14 @@
     "rank_history": [
       152,
       152,
+      152,
       147,
       147,
       147,
       147,
-      148,
-      157
+      148
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 4,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 65.2,
@@ -31580,14 +32032,14 @@
     "rank_history": [
       153,
       153,
+      153,
       148,
       148,
       148,
       148,
-      149,
-      158
+      149
     ],
-    "rank_move_window": -5,
+    "rank_move_window": 4,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 75.6,
@@ -31753,9 +32205,7 @@
     "rank_driver_summary": "score=77.47; prior_signal=50.46; prior:-7.99 | guardrail:-3.78 | production:-0.91 | trait:-0.70",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -0.91,
-    "rank_history": [
-      159
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -31924,9 +32374,7 @@
     "rank_driver_summary": "score=77.47; prior_signal=51.96; prior:-6.19 | guardrail:-2.87 | production:-1.06 | athletic:-0.94",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.06,
-    "rank_history": [
-      160
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -32108,9 +32556,7 @@
     "rank_driver_summary": "score=77.42; prior_signal=50.43; prior:-4.14 | trait:-2.99 | guardrail:-2.30 | production:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.99,
-    "rank_history": [
-      161
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -32335,14 +32781,14 @@
     "rank_history": [
       155,
       155,
+      155,
       152,
       152,
       152,
       152,
-      154,
-      162
+      154
     ],
-    "rank_move_window": -7,
+    "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_qb_pass_grade": 77.4,
@@ -32573,14 +33019,14 @@
     "rank_history": [
       157,
       157,
+      157,
       154,
       154,
       154,
       154,
-      155,
-      163
+      155
     ],
-    "rank_move_window": -6,
+    "rank_move_window": 2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_rb_run_grade": 81.9,
@@ -32802,9 +33248,7 @@
     "rank_driver_summary": "score=77.41; prior_signal=71.5; prior:+6.84 | trait:-5.28 | athletic:-1.34 | production:-1.12",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -5.28,
-    "rank_history": [
-      164
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -33023,9 +33467,7 @@
     "rank_driver_summary": "score=77.47; prior_signal=59.67; guardrail:-5.35 | prior:-4.70 | production:-1.30 | risk:-0.45",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -4.7,
-    "rank_history": [
-      165
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -33192,9 +33634,7 @@
     "rank_driver_summary": "score=77.07; prior_signal=24.99; prior:-18.29 | guardrail:-6.18 | athletic:+3.53 | trait:-1.75",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 3.53,
-    "rank_history": [
-      166
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -33402,9 +33842,7 @@
     "rank_driver_summary": "score=76.64; prior_signal=44.65; prior:-6.87 | trait:-3.47 | guardrail:-2.90 | athletic:-0.77",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.47,
-    "rank_history": [
-      167
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -33579,9 +34017,7 @@
     "rank_driver_summary": "score=76.67; prior_signal=30.17; prior:-11.90 | guardrail:-2.82 | athletic:-2.40 | trait:-1.49",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.4,
-    "rank_history": [
-      168
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -33790,14 +34226,14 @@
     "rank_history": [
       137,
       137,
+      137,
       162,
       162,
       162,
       162,
-      163,
-      169
+      163
     ],
-    "rank_move_window": -32,
+    "rank_move_window": -26,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 87.3,
@@ -34010,9 +34446,7 @@
     "rank_driver_summary": "score=75.57; prior_signal=25.69; prior:-14.67 | guardrail:-3.80 | trait:-2.21 | risk:-0.47",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.21,
-    "rank_history": [
-      170
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -34219,9 +34653,7 @@
     "rank_driver_summary": "score=76.67; prior_signal=51.31; prior:-8.61 | guardrail:-5.38 | trait:-0.58 | risk:-0.37",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -0.58,
-    "rank_history": [
-      171
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -34450,21 +34882,62 @@
     "rank_driver_summary": "score=77.36; prior_signal=30.66; prior:-12.02 | trait:-3.33 | guardrail:-3.21 | production:-0.46",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.33,
-    "rank_history": [
-      172
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
-      "cfb_lb_tackles": 54.0,
+      "cfb_lb_tfl": 10.0,
+      "cfb_lb_sacks": 1.0,
+      "cfb_lb_qb_hurries": 2.0,
+      "cfb_lb_tackles": 54.0
+    },
+    "production_percentiles": {
+      "cfb_lb_tfl": 90.9,
+      "cfb_lb_sacks": 36.4,
+      "cfb_lb_qb_hurries": 50.0
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_lb_tfl",
+        "label": "TFL",
+        "raw": 10.0,
+        "display": "10",
+        "pct": 90.9,
+        "fmt": "int",
+        "lower_better": false,
+        "weight": 0.26
+      },
+      {
+        "key": "cfb_lb_sacks",
+        "label": "Sacks",
+        "raw": 1.0,
+        "display": "1.0",
+        "pct": 36.4,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.18
+      },
+      {
+        "key": "cfb_lb_qb_hurries",
+        "label": "QB Hurries",
+        "raw": 2.0,
+        "display": "2",
+        "pct": 50.0,
+        "fmt": "int",
+        "lower_better": false,
+        "weight": 0.16
+      }
+    ],
+    "advanced_metrics": {
       "cfb_lb_tfl": 10.0,
       "cfb_lb_sacks": 1.0,
       "cfb_lb_qb_hurries": 2.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "advanced_percentiles": {
+      "cfb_lb_tfl": 90.9,
+      "cfb_lb_sacks": 36.4,
+      "cfb_lb_qb_hurries": 50.0
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_lb_tackles",
@@ -34501,7 +34974,7 @@
       "cfb_lb_sacks": 1.0,
       "cfb_lb_qb_hurries": 2.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 63.6,
     "position_lens": {
       "title": "LB Dual-Threat Defender",
       "rows": [
@@ -34583,9 +35056,7 @@
     "rank_driver_summary": "score=76.28; prior_signal=39.13; prior:-9.63 | guardrail:-5.22 | trait:-3.30 | production:+0.36",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.3,
-    "rank_history": [
-      173
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -34793,9 +35264,7 @@
     "rank_driver_summary": "score=76.67; prior_signal=46.71; prior:-7.99 | guardrail:-2.70 | athletic:-1.50 | trait:-0.71",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.5,
-    "rank_history": [
-      174
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -35020,9 +35489,7 @@
     "rank_driver_summary": "score=76.4; prior_signal=43.04; prior:-8.73 | guardrail:-2.90 | production:-1.68 | trait:-1.11",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
-    "rank_history": [
-      175
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -35244,20 +35711,62 @@
     "rank_driver_summary": "score=76.35; prior_signal=43.71; prior:-8.84 | guardrail:-2.85 | production:-1.34 | trait:-0.98",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.34,
-    "rank_history": [
-      176
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_wrte_yprr": 2.632,
+      "cfb_wrte_target_share": 0.104,
+      "cfb_wrte_targets_per_route": 0.2203,
       "cfb_wrte_rec": 39.0,
       "cfb_wrte_rec_yds": 635.0,
       "cfb_wrte_rec_td": 5.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_wrte_yprr": 100.0,
+      "cfb_wrte_target_share": 27.3
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_wrte_yprr",
+        "label": "Yards / Route Run",
+        "raw": 2.632,
+        "display": "2.63",
+        "pct": 100.0,
+        "fmt": "dec2",
+        "lower_better": false,
+        "weight": 0.3
+      },
+      {
+        "key": "cfb_wrte_target_share",
+        "label": "Target Share",
+        "raw": 0.104,
+        "display": "0.1%",
+        "pct": 27.3,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.22
+      },
+      {
+        "key": "cfb_wrte_targets_per_route",
+        "label": "Targets / Route",
+        "raw": 0.2203,
+        "display": "0.220",
+        "pct": 50.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.22
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_wrte_yprr": 2.632,
+      "cfb_wrte_target_share": 0.104,
+      "cfb_wrte_targets_per_route": 0.2203
+    },
+    "advanced_percentiles": {
+      "cfb_wrte_yprr": 100.0,
+      "cfb_wrte_target_share": 27.3
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_wrte_rec",
@@ -35286,7 +35795,7 @@
       "cfb_wrte_rec_yds": 635.0,
       "cfb_wrte_rec_td": 5.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 63.5,
     "position_lens": {
       "title": "TE Route Earner",
       "rows": [],
@@ -35352,9 +35861,7 @@
     "rank_driver_summary": "score=76.28; prior_signal=49.4; prior:-3.63 | trait:-3.29 | guardrail:-2.90 | production:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.29,
-    "rank_history": [
-      177
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -35521,9 +36028,7 @@
     "rank_driver_summary": "score=76.29; prior_signal=39.28; prior:-12.13 | guardrail:-4.59 | trait:-1.17 | risk:-0.47",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.17,
-    "rank_history": [
-      178
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -35709,14 +36214,14 @@
     "rank_history": [
       189,
       189,
+      189,
       190,
       190,
       190,
       190,
-      190,
-      179
+      190
     ],
-    "rank_move_window": 10,
+    "rank_move_window": -1,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_dl_pass_rush_grade": 86.1,
@@ -35899,14 +36404,14 @@
     "rank_history": [
       168,
       168,
+      168,
       167,
       167,
       167,
       167,
-      170,
-      180
+      170
     ],
-    "rank_move_window": -12,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 87.5,
@@ -36075,9 +36580,7 @@
     "rank_driver_summary": "score=76.19; prior_signal=50.7; prior:-3.94 | trait:-3.33 | guardrail:-2.50 | athletic:-1.17",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.33,
-    "rank_history": [
-      181
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -36313,9 +36816,7 @@
     "rank_driver_summary": "score=76.19; prior_signal=33.25; prior:-13.93 | guardrail:-2.74 | trait:-1.44 | production:+1.31",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.44,
-    "rank_history": [
-      182
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -36531,9 +37032,7 @@
     "rank_driver_summary": "score=76.17; prior_signal=33.66; prior:-11.86 | guardrail:-4.00 | production:-1.68 | trait:-1.36",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
-    "rank_history": [
-      183
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -36709,9 +37208,7 @@
     "rank_driver_summary": "score=76.17; prior_signal=30.82; prior:-12.72 | guardrail:-3.73 | trait:-1.41 | production:-1.27",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.41,
-    "rank_history": [
-      184
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -36904,9 +37401,7 @@
     "rank_driver_summary": "score=76.24; prior_signal=53.36; prior:-2.90 | athletic:-2.80 | guardrail:-1.98 | production:-1.65",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.8,
-    "rank_history": [
-      185
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -37123,14 +37618,14 @@
     "rank_history": [
       171,
       171,
+      171,
       170,
       170,
       170,
       170,
-      173,
-      186
+      173
     ],
-    "rank_move_window": -15,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 61.6,
@@ -37356,9 +37851,7 @@
     "rank_driver_summary": "score=75.88; prior_signal=8.44; prior:-20.75 | guardrail:-4.14 | trait:-1.86 | production:-0.51",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.86,
-    "rank_history": [
-      187
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -37560,9 +38053,7 @@
     "rank_driver_summary": "score=75.88; prior_signal=8.74; prior:-20.17 | guardrail:-3.79 | trait:-2.14 | production:-0.80",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.14,
-    "rank_history": [
-      188
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -37758,9 +38249,7 @@
     "rank_driver_summary": "score=75.72; prior_signal=40.73; prior:-6.91 | trait:-3.49 | athletic:-2.64 | guardrail:-2.50",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.49,
-    "rank_history": [
-      189
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -38000,9 +38489,7 @@
     "rank_driver_summary": "score=75.6; prior_signal=46.97; prior:-4.37 | trait:-3.29 | guardrail:-2.90 | athletic:-2.04",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.29,
-    "rank_history": [
-      190
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -38212,9 +38699,7 @@
     "rank_driver_summary": "score=75.64; prior_signal=8.74; prior:-20.02 | guardrail:-3.74 | trait:-2.51 | risk:-0.46",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      191
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -38409,21 +38894,62 @@
     "rank_driver_summary": "score=75.62; prior_signal=45.33; prior:-4.53 | guardrail:-3.72 | trait:-3.18 | athletic:-2.32",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.18,
-    "rank_history": [
-      192
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_edge_pressure_rate": 0.25,
+      "cfb_edge_sacks_per_pr_snap": 0.075,
+      "cfb_edge_tfl": 22.0,
       "cfb_edge_sacks": 14.0,
       "cfb_edge_qb_hurries": 16.0,
-      "cfb_edge_tfl": 22.0,
       "cfb_edge_tackles": 55.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_edge_pressure_rate": 100.0,
+      "cfb_edge_tfl": 100.0
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_edge_pressure_rate",
+        "label": "Pressure / Rush Snap",
+        "raw": 0.25,
+        "display": "0.2%",
+        "pct": 100.0,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.34
+      },
+      {
+        "key": "cfb_edge_sacks_per_pr_snap",
+        "label": "Sacks / Rush Snap",
+        "raw": 0.075,
+        "display": "0.1%",
+        "pct": 50.0,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.22
+      },
+      {
+        "key": "cfb_edge_tfl",
+        "label": "TFL",
+        "raw": 22.0,
+        "display": "22",
+        "pct": 100.0,
+        "fmt": "int",
+        "lower_better": false,
+        "weight": 0.14
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_edge_pressure_rate": 0.25,
+      "cfb_edge_sacks_per_pr_snap": 0.075,
+      "cfb_edge_tfl": 22.0
+    },
+    "advanced_percentiles": {
+      "cfb_edge_pressure_rate": 100.0,
+      "cfb_edge_tfl": 100.0
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_edge_sacks",
@@ -38460,7 +38986,7 @@
       "cfb_edge_tfl": 22.0,
       "cfb_edge_tackles": 55.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 84.3,
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [],
@@ -38526,9 +39052,7 @@
     "rank_driver_summary": "score=75.57; prior_signal=13.56; prior:-19.93 | guardrail:-5.20 | trait:-2.23 | production:+0.56",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.23,
-    "rank_history": [
-      193
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -38722,9 +39246,7 @@
     "rank_driver_summary": "score=75.57; prior_signal=8.74; prior:-20.47 | guardrail:-4.03 | trait:-2.51 | production:-0.97",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      194
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -38916,9 +39438,7 @@
     "rank_driver_summary": "score=75.93; prior_signal=51.98; prior:-4.59 | guardrail:-3.17 | athletic:-2.94 | production:-0.77",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.94,
-    "rank_history": [
-      195
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -39087,9 +39607,7 @@
     "rank_driver_summary": "score=75.56; prior_signal=20.66; prior:-16.16 | guardrail:-2.99 | trait:-2.19 | risk:-1.52",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.19,
-    "rank_history": [
-      196
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -39274,9 +39792,7 @@
     "rank_driver_summary": "score=74.77; prior_signal=29.03; prior:-13.60 | guardrail:-5.47 | trait:-4.88 | production:+1.50",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.88,
-    "rank_history": [
-      197
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -39450,14 +39966,14 @@
     "rank_history": [
       199,
       199,
+      199,
       201,
       201,
       201,
       201,
-      201,
-      198
+      201
     ],
-    "rank_move_window": 1,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 74.4,
@@ -39672,9 +40188,7 @@
     "rank_driver_summary": "score=75.38; prior_signal=28.22; prior:-12.42 | guardrail:-3.33 | production:-1.68 | trait:-1.62",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
-    "rank_history": [
-      199
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -39855,9 +40369,7 @@
     "rank_driver_summary": "score=75.38; prior_signal=19.8; prior:-16.29 | guardrail:-2.99 | trait:-2.18 | risk:-1.50",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.18,
-    "rank_history": [
-      200
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -39933,9 +40445,7 @@
     "rank_driver_summary": "score=75.37; prior_signal=37.01; prior:-13.16 | guardrail:-4.96 | trait:-1.18 | production:+0.55",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.18,
-    "rank_history": [
-      201
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -40182,9 +40692,7 @@
     "rank_driver_summary": "score=75.38; prior_signal=35.28; prior:-10.51 | guardrail:-2.85 | athletic:-2.11 | trait:-1.04",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.11,
-    "rank_history": [
-      202
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -40430,9 +40938,7 @@
     "rank_driver_summary": "score=75.05; prior_signal=27.43; prior:-14.28 | guardrail:-4.00 | trait:-1.72 | production:-1.34",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.72,
-    "rank_history": [
-      203
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -40674,9 +41180,7 @@
     "rank_driver_summary": "score=75.04; prior_signal=33.56; prior:-15.46 | guardrail:-5.45 | athletic:+2.44 | trait:-1.97",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 2.44,
-    "rank_history": [
-      204
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -40897,10 +41401,10 @@
       112,
       112,
       112,
-      114,
-      205
+      112,
+      114
     ],
-    "rank_move_window": -93,
+    "rank_move_window": -2,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 73.8,
@@ -41086,9 +41590,7 @@
     "rank_driver_summary": "score=75.17; prior_signal=7.4; prior:-21.84 | guardrail:-4.56 | trait:-2.45 | athletic:+1.50",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.45,
-    "rank_history": [
-      206
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -41275,9 +41777,7 @@
     "rank_driver_summary": "score=75.23; prior_signal=39.95; prior:-9.88 | guardrail:-2.85 | production:-1.68 | trait:-1.04",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
-    "rank_history": [
-      207
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -41466,9 +41966,7 @@
     "rank_driver_summary": "score=75.19; prior_signal=37.66; prior:-10.58 | guardrail:-2.45 | trait:-1.16 | production:-0.59",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.16,
-    "rank_history": [
-      208
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -41695,9 +42193,7 @@
     "rank_driver_summary": "score=75.02; prior_signal=8.17; prior:-19.59 | guardrail:-4.03 | trait:-2.15 | production:-0.74",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.15,
-    "rank_history": [
-      209
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -41901,9 +42397,7 @@
     "rank_driver_summary": "score=75.2; prior_signal=51.1; prior:-4.97 | guardrail:-3.46 | athletic:-1.75 | production:-1.68",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.75,
-    "rank_history": [
-      210
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -42113,9 +42607,7 @@
     "rank_driver_summary": "score=74.82; prior_signal=7.39; prior:-19.57 | guardrail:-3.63 | trait:-2.51 | athletic:-1.30",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      211
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -42309,9 +42801,7 @@
     "rank_driver_summary": "score=74.62; prior_signal=8.7; prior:-19.09 | guardrail:-4.03 | trait:-2.51 | production:-0.76",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      212
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -42496,9 +42986,7 @@
     "rank_driver_summary": "score=74.65; prior_signal=35.72; prior:-9.86 | guardrail:-2.85 | production:-1.68 | trait:-1.22",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
-    "rank_history": [
-      213
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -42726,9 +43214,7 @@
     "rank_driver_summary": "score=74.56; prior_signal=8.74; prior:-18.91 | guardrail:-3.40 | trait:-2.42 | production:-1.34",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.42,
-    "rank_history": [
-      214
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -42885,9 +43371,7 @@
     "rank_driver_summary": "score=74.58; prior_signal=39.92; prior:-8.38 | guardrail:-2.85 | athletic:-2.07 | trait:-0.93",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.07,
-    "rank_history": [
-      215
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -42963,9 +43447,7 @@
     "rank_driver_summary": "score=74.47; prior_signal=9.12; prior:-20.65 | guardrail:-4.24 | trait:-2.51 | production:+0.50",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      216
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -43053,9 +43535,7 @@
     "rank_driver_summary": "score=74.45; prior_signal=11.67; prior:-17.61 | guardrail:-4.03 | trait:-2.28 | production:-1.51",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.28,
-    "rank_history": [
-      217
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -43274,9 +43754,7 @@
     "rank_driver_summary": "score=74.44; prior_signal=39.24; prior:-8.19 | guardrail:-4.30 | trait:-2.83 | production:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.83,
-    "rank_history": [
-      218
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -43453,9 +43931,7 @@
     "rank_driver_summary": "score=74.37; prior_signal=8.23; prior:-18.74 | guardrail:-4.03 | trait:-2.62 | production:-0.96",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.62,
-    "rank_history": [
-      219
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -43647,9 +44123,7 @@
     "rank_driver_summary": "score=74.37; prior_signal=47.42; prior:-5.20 | trait:-3.40 | guardrail:-2.90 | production:-1.30",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.4,
-    "rank_history": [
-      220
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -43830,9 +44304,7 @@
     "rank_driver_summary": "score=74.29; prior_signal=47.18; prior:-4.27 | athletic:-3.41 | guardrail:-2.90 | production:-1.33",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.41,
-    "rank_history": [
-      221
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -44037,9 +44509,7 @@
     "rank_driver_summary": "score=74.21; prior_signal=10.01; prior:-18.01 | guardrail:-3.40 | trait:-2.31 | athletic:-1.49",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.31,
-    "rank_history": [
-      222
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -44239,9 +44709,7 @@
     "rank_driver_summary": "score=74.05; prior_signal=8.04; prior:-18.40 | guardrail:-4.03 | trait:-2.20 | athletic:-1.66",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.2,
-    "rank_history": [
-      223
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -44445,9 +44913,7 @@
     "rank_driver_summary": "score=74.17; prior_signal=33.17; prior:-14.40 | guardrail:-4.41 | athletic:+1.27 | production:-1.18",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": 1.27,
-    "rank_history": [
-      224
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -44673,9 +45139,7 @@
     "rank_driver_summary": "score=73.92; prior_signal=24.95; prior:-15.07 | guardrail:-3.87 | trait:-2.01 | production:-0.73",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.01,
-    "rank_history": [
-      225
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -44915,9 +45379,7 @@
     "rank_driver_summary": "score=74.06; prior_signal=48.21; guardrail:-4.02 | prior:-3.87 | trait:-2.99 | athletic:-2.38",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.87,
-    "rank_history": [
-      226
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -45133,9 +45595,7 @@
     "rank_driver_summary": "score=74.01; prior_signal=48.16; prior:-4.92 | guardrail:-3.62 | athletic:-2.45 | production:-1.68",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.45,
-    "rank_history": [
-      227
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -45316,9 +45776,7 @@
     "rank_driver_summary": "score=73.96; prior_signal=34.98; prior:-12.37 | guardrail:-4.25 | trait:-1.01 | production:-1.01",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.01,
-    "rank_history": [
-      228
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -45494,9 +45952,7 @@
     "rank_driver_summary": "score=73.69; prior_signal=8.74; prior:-18.45 | guardrail:-3.40 | trait:-2.47 | production:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.47,
-    "rank_history": [
-      229
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -45685,9 +46141,7 @@
     "rank_driver_summary": "score=73.68; prior_signal=44.05; prior:-4.77 | trait:-3.27 | guardrail:-2.70 | athletic:-2.06",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.27,
-    "rank_history": [
-      230
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -45920,9 +46374,7 @@
     "rank_driver_summary": "score=73.81; prior_signal=38.94; prior:-8.53 | guardrail:-2.85 | athletic:-2.79 | trait:-0.98",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.79,
-    "rank_history": [
-      231
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -46134,9 +46586,7 @@
     "rank_driver_summary": "score=73.65; prior_signal=35.46; prior:-9.85 | guardrail:-2.85 | athletic:-2.06 | trait:-1.33",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.06,
-    "rank_history": [
-      232
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -46319,9 +46769,7 @@
     "rank_driver_summary": "score=73.55; prior_signal=30.55; prior:-11.88 | guardrail:-3.54 | trait:-1.46 | production:-1.36",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.46,
-    "rank_history": [
-      233
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -46392,9 +46840,7 @@
     "rank_driver_summary": "score=73.5; prior_signal=19.82; prior:-13.76 | guardrail:-4.03 | athletic:-2.19 | trait:-1.88",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.19,
-    "rank_history": [
-      234
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -46465,9 +46911,7 @@
     "rank_driver_summary": "score=73.49; prior_signal=14.98; prior:-16.37 | guardrail:-4.03 | trait:-2.10 | athletic:-1.25",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.1,
-    "rank_history": [
-      235
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -46645,9 +47089,7 @@
     "rank_driver_summary": "score=73.45; prior_signal=11.64; prior:-17.86 | guardrail:-4.03 | trait:-2.19 | production:-1.41",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.19,
-    "rank_history": [
-      236
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -46840,9 +47282,7 @@
     "rank_driver_summary": "score=73.55; prior_signal=44.04; prior:-5.15 | athletic:-3.68 | guardrail:-2.70 | production:-0.85",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.68,
-    "rank_history": [
-      237
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -47046,9 +47486,7 @@
     "rank_driver_summary": "score=73.42; prior_signal=8.33; prior:-18.42 | guardrail:-4.03 | trait:-2.42 | production:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.42,
-    "rank_history": [
-      238
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -47215,9 +47653,7 @@
     "rank_driver_summary": "score=73.29; prior_signal=35.89; prior:-8.96 | guardrail:-4.00 | athletic:-2.24 | production:-1.51",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.24,
-    "rank_history": [
-      239
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -47410,9 +47846,7 @@
     "rank_driver_summary": "score=73.4; prior_signal=44.59; prior:-5.03 | athletic:-3.02 | guardrail:-2.85 | production:-1.68",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.02,
-    "rank_history": [
-      240
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -47634,9 +48068,7 @@
     "rank_driver_summary": "score=73.27; prior_signal=38.27; prior:-10.25 | guardrail:-3.91 | trait:-1.47 | risk:-1.41",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.47,
-    "rank_history": [
-      241
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -47859,21 +48291,51 @@
     "rank_driver_summary": "score=73.16; prior_signal=36.32; prior:-8.96 | guardrail:-4.40 | trait:-3.85 | production:-0.88",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.85,
-    "rank_history": [
-      242
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.2654,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.9232,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 59.0,
       "cfb_db_tfl": 3.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_db_coverage_plays_per_target": 43.8,
+      "cfb_db_yards_allowed_per_coverage_snap": 62.5
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_db_coverage_plays_per_target",
+        "label": "Plays on Ball / Target",
+        "raw": 0.2654,
+        "display": "0.265",
+        "pct": 43.8,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.3
+      },
+      {
+        "key": "cfb_db_yards_allowed_per_coverage_snap",
+        "label": "Yards / Coverage Snap",
+        "raw": 0.9232,
+        "display": "0.923",
+        "pct": 37.5,
+        "fmt": "dec3",
+        "lower_better": true,
+        "weight": 0.26
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_db_coverage_plays_per_target": 0.2654,
+      "cfb_db_yards_allowed_per_coverage_snap": 0.9232
+    },
+    "advanced_percentiles": {
+      "cfb_db_coverage_plays_per_target": 43.8,
+      "cfb_db_yards_allowed_per_coverage_snap": 62.5
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_db_int",
@@ -47910,7 +48372,7 @@
       "cfb_db_tackles": 59.0,
       "cfb_db_tfl": 3.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 40.9,
     "position_lens": {
       "title": "DB Coverage Tax",
       "rows": [],
@@ -47988,9 +48450,7 @@
     "rank_driver_summary": "score=72.87; prior_signal=34.21; prior:-9.09 | guardrail:-4.00 | trait:-3.93 | production:-1.22",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.93,
-    "rank_history": [
-      243
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -48195,9 +48655,7 @@
     "rank_driver_summary": "score=73.06; prior_signal=27.71; prior:-9.54 | guardrail:-3.33 | athletic:-2.99 | production:-1.68",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.99,
-    "rank_history": [
-      244
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -48378,9 +48836,7 @@
     "rank_driver_summary": "score=73.0; prior_signal=6.32; prior:-18.83 | guardrail:-4.03 | trait:-2.44 | production:-1.51",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.44,
-    "rank_history": [
-      245
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -48573,9 +49029,7 @@
     "rank_driver_summary": "score=72.17; prior_signal=24.37; prior:-11.44 | trait:-4.97 | guardrail:-4.38 | risk:-0.45",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.97,
-    "rank_history": [
-      246
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -48796,9 +49250,7 @@
     "rank_driver_summary": "score=72.8; prior_signal=8.13; prior:-18.64 | guardrail:-4.03 | trait:-2.51 | athletic:-1.84",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      247
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -48874,9 +49326,7 @@
     "rank_driver_summary": "score=72.74; prior_signal=8.06; prior:-17.76 | guardrail:-4.03 | trait:-2.44 | athletic:-2.20",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.44,
-    "rank_history": [
-      248
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -49052,9 +49502,7 @@
     "rank_driver_summary": "score=72.65; prior_signal=8.55; prior:-18.15 | guardrail:-4.03 | trait:-2.51 | production:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      249
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -49247,9 +49695,7 @@
     "rank_driver_summary": "score=72.66; prior_signal=19.95; prior:-17.58 | guardrail:-3.87 | trait:-1.76 | risk:-0.46",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.76,
-    "rank_history": [
-      250
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -49480,9 +49926,7 @@
     "rank_driver_summary": "score=73.01; prior_signal=39.19; prior:-9.47 | guardrail:-4.10 | production:-1.63 | athletic:-1.06",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.63,
-    "rank_history": [
-      251
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -49692,9 +50136,7 @@
     "rank_driver_summary": "score=72.6; prior_signal=18.27; prior:-14.19 | guardrail:-4.03 | trait:-2.03 | production:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.03,
-    "rank_history": [
-      252
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -49875,9 +50317,7 @@
     "rank_driver_summary": "score=72.55; prior_signal=8.59; prior:-17.20 | guardrail:-4.03 | trait:-2.42 | athletic:-2.35",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.42,
-    "rank_history": [
-      253
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -50041,9 +50481,7 @@
     "rank_driver_summary": "score=72.45; prior_signal=8.35; prior:-17.97 | guardrail:-4.03 | trait:-2.51 | athletic:-1.47",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      254
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -50224,9 +50662,7 @@
     "rank_driver_summary": "score=72.38; prior_signal=9.44; prior:-15.69 | guardrail:-3.85 | athletic:-3.12 | trait:-2.51",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.12,
-    "rank_history": [
-      255
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -50407,9 +50843,7 @@
     "rank_driver_summary": "score=72.32; prior_signal=8.74; prior:-16.94 | guardrail:-4.03 | athletic:-2.47 | trait:-2.44",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.47,
-    "rank_history": [
-      256
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -50592,9 +51026,7 @@
     "rank_driver_summary": "score=72.31; prior_signal=7.29; prior:-18.37 | guardrail:-4.03 | trait:-2.51 | athletic:-1.13",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      257
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -50670,9 +51102,7 @@
     "rank_driver_summary": "score=72.08; prior_signal=8.74; prior:-17.46 | guardrail:-4.03 | trait:-2.51 | athletic:-1.78",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      258
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -50854,9 +51284,7 @@
     "rank_driver_summary": "score=72.05; prior_signal=19.35; prior:-17.16 | guardrail:-4.17 | trait:-1.88 | athletic:-0.79",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.88,
-    "rank_history": [
-      259
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -51087,9 +51515,7 @@
     "rank_driver_summary": "score=72.33; prior_signal=32.61; prior:-12.90 | guardrail:-4.69 | production:-1.68 | trait:-1.06",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
-    "rank_history": [
-      260
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -51307,9 +51733,7 @@
     "rank_driver_summary": "score=72.03; prior_signal=11.52; prior:-21.65 | guardrail:-4.17 | trait:-2.14 | athletic:+0.93",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.14,
-    "rank_history": [
-      261
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -51540,9 +51964,7 @@
     "rank_driver_summary": "score=71.88; prior_signal=24.13; prior:-14.89 | guardrail:-3.41 | trait:-2.11 | production:+1.44",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.11,
-    "rank_history": [
-      262
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -51781,9 +52203,7 @@
     "rank_driver_summary": "score=71.67; prior_signal=8.82; prior:-20.71 | guardrail:-4.50 | trait:-1.88 | risk:-0.47",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.88,
-    "rank_history": [
-      263
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -52008,9 +52428,7 @@
     "rank_driver_summary": "score=71.64; prior_signal=8.37; prior:-16.21 | guardrail:-4.03 | trait:-2.45 | athletic:-2.05",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.45,
-    "rank_history": [
-      264
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -52090,9 +52508,7 @@
     "rank_driver_summary": "score=71.53; prior_signal=7.42; prior:-21.12 | guardrail:-4.17 | trait:-2.44 | risk:-0.47",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.44,
-    "rank_history": [
-      265
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -52334,9 +52750,7 @@
     "rank_driver_summary": "score=71.56; prior_signal=29.71; prior:-11.97 | guardrail:-3.87 | production:-1.60 | trait:-1.44",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.6,
-    "rank_history": [
-      266
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -52558,21 +52972,62 @@
     "rank_driver_summary": "score=70.64; prior_signal=28.57; prior:-5.85 | trait:-4.96 | guardrail:-4.30 | athletic:-3.55",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.96,
-    "rank_history": [
-      267
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_edge_pressure_rate": 0.1855,
+      "cfb_edge_sacks_per_pr_snap": 0.0742,
+      "cfb_edge_tfl": 6.0,
       "cfb_edge_sacks": 2.0,
       "cfb_edge_qb_hurries": 1.0,
-      "cfb_edge_tfl": 6.0,
       "cfb_edge_tackles": 42.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_edge_pressure_rate": 27.3,
+      "cfb_edge_tfl": 72.7
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_edge_pressure_rate",
+        "label": "Pressure / Rush Snap",
+        "raw": 0.1855,
+        "display": "0.2%",
+        "pct": 27.3,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.28
+      },
+      {
+        "key": "cfb_edge_sacks_per_pr_snap",
+        "label": "Sacks / Rush Snap",
+        "raw": 0.0742,
+        "display": "0.1%",
+        "pct": 50.0,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.16
+      },
+      {
+        "key": "cfb_edge_tfl",
+        "label": "TFL",
+        "raw": 6.0,
+        "display": "6",
+        "pct": 72.7,
+        "fmt": "int",
+        "lower_better": false,
+        "weight": 0.18
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_edge_pressure_rate": 0.1855,
+      "cfb_edge_sacks_per_pr_snap": 0.0742,
+      "cfb_edge_tfl": 6.0
+    },
+    "advanced_percentiles": {
+      "cfb_edge_pressure_rate": 27.3,
+      "cfb_edge_tfl": 72.7
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_edge_sacks",
@@ -52609,7 +53064,7 @@
       "cfb_edge_tfl": 6.0,
       "cfb_edge_tackles": 42.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 46.3,
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [],
@@ -52675,9 +53130,7 @@
     "rank_driver_summary": "score=71.06; prior_signal=39.73; trait:-3.90 | prior:-3.63 | guardrail:-3.60 | athletic:-3.58",
     "top_rank_driver": "prior",
     "top_rank_driver_delta": -3.63,
-    "rank_history": [
-      268
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -52898,9 +53351,7 @@
     "rank_driver_summary": "score=71.24; prior_signal=6.61; prior:-16.35 | guardrail:-4.03 | athletic:-2.93 | trait:-2.42",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.93,
-    "rank_history": [
-      269
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -53067,9 +53518,7 @@
     "rank_driver_summary": "score=70.97; prior_signal=23.69; prior:-14.13 | guardrail:-3.87 | trait:-1.73 | production:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.73,
-    "rank_history": [
-      270
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -53248,9 +53697,7 @@
     "rank_driver_summary": "score=70.15; prior_signal=21.75; prior:-12.13 | trait:-4.88 | guardrail:-4.50 | production:-0.94",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.88,
-    "rank_history": [
-      271
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -53460,9 +53907,7 @@
     "rank_driver_summary": "score=71.27; prior_signal=34.62; prior:-10.84 | guardrail:-5.12 | production:-1.68 | athletic:-1.04",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.68,
-    "rank_history": [
-      272
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -53550,9 +53995,7 @@
     "rank_driver_summary": "score=70.47; prior_signal=23.71; prior:-12.83 | guardrail:-3.87 | athletic:-2.14 | trait:-1.84",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.14,
-    "rank_history": [
-      273
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -53780,9 +54223,7 @@
     "rank_driver_summary": "score=70.57; prior_signal=5.83; prior:-20.56 | guardrail:-4.50 | trait:-2.23 | production:-1.15",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.23,
-    "rank_history": [
-      274
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -54022,9 +54463,7 @@
     "rank_driver_summary": "score=70.41; prior_signal=8.74; prior:-15.07 | guardrail:-4.03 | athletic:-3.04 | trait:-2.47",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.04,
-    "rank_history": [
-      275
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -54220,9 +54659,7 @@
     "rank_driver_summary": "score=70.35; prior_signal=6.86; prior:-15.91 | guardrail:-4.03 | athletic:-2.65 | trait:-2.51",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.65,
-    "rank_history": [
-      276
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -54415,9 +54852,7 @@
     "rank_driver_summary": "score=70.24; prior_signal=29.68; prior:-7.81 | guardrail:-4.40 | trait:-4.05 | athletic:-2.37",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.05,
-    "rank_history": [
-      277
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -54636,9 +55071,7 @@
     "rank_driver_summary": "score=69.53; prior_signal=17.78; prior:-13.32 | trait:-4.97 | guardrail:-4.50 | production:-1.10",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.97,
-    "rank_history": [
-      278
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -54807,9 +55240,7 @@
     "rank_driver_summary": "score=70.1; prior_signal=8.74; prior:-14.08 | athletic:-4.98 | guardrail:-4.03 | trait:-2.44",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -4.98,
-    "rank_history": [
-      279
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {},
@@ -54901,9 +55332,7 @@
     "rank_driver_summary": "score=69.62; prior_signal=13.76; prior:-14.23 | trait:-4.50 | guardrail:-4.50 | production:-0.91",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.5,
-    "rank_history": [
-      280
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -55143,9 +55572,7 @@
     "rank_driver_summary": "score=70.07; prior_signal=28.3; prior:-11.23 | guardrail:-3.91 | athletic:-2.40 | trait:-1.90",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.4,
-    "rank_history": [
-      281
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -55379,14 +55806,14 @@
     "rank_history": [
       233,
       233,
+      233,
       234,
       234,
       234,
       234,
-      230,
-      282
+      230
     ],
-    "rank_move_window": -49,
+    "rank_move_window": 3,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 67.5,
@@ -55611,9 +56038,7 @@
     "rank_driver_summary": "score=69.67; prior_signal=26.35; prior:-8.57 | trait:-4.40 | guardrail:-4.40 | athletic:-1.96",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.4,
-    "rank_history": [
-      283
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -55853,9 +56278,7 @@
     "rank_driver_summary": "score=69.73; prior_signal=7.1; prior:-14.97 | trait:-4.93 | guardrail:-3.97 | athletic:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.93,
-    "rank_history": [
-      284
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -56062,9 +56485,7 @@
     "rank_driver_summary": "score=69.59; prior_signal=27.11; prior:-10.42 | guardrail:-3.87 | athletic:-2.62 | production:-1.68",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.62,
-    "rank_history": [
-      285
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -56257,9 +56678,7 @@
     "rank_driver_summary": "score=69.43; prior_signal=9.55; prior:-17.75 | guardrail:-4.50 | trait:-2.18 | athletic:-1.94",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.18,
-    "rank_history": [
-      286
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -56494,9 +56913,7 @@
     "rank_driver_summary": "score=69.46; prior_signal=14.22; prior:-18.30 | guardrail:-5.14 | trait:-1.86 | production:-0.82",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.86,
-    "rank_history": [
-      287
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -56689,9 +57106,7 @@
     "rank_driver_summary": "score=69.19; prior_signal=5.77; prior:-21.00 | guardrail:-5.33 | trait:-2.36 | production:-0.54",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.36,
-    "rank_history": [
-      288
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -56912,9 +57327,7 @@
     "rank_driver_summary": "score=68.43; prior_signal=25.87; prior:-8.77 | trait:-4.78 | guardrail:-4.50 | athletic:-1.64",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -4.78,
-    "rank_history": [
-      289
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -57081,9 +57494,7 @@
     "rank_driver_summary": "score=68.84; prior_signal=6.39; prior:-19.24 | guardrail:-4.50 | trait:-2.45 | production:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.45,
-    "rank_history": [
-      290
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -57323,9 +57734,7 @@
     "rank_driver_summary": "score=68.88; prior_signal=9.97; prior:-18.54 | guardrail:-3.91 | trait:-2.53 | risk:-1.43",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.53,
-    "rank_history": [
-      291
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -57556,21 +57965,37 @@
     "rank_driver_summary": "score=68.83; prior_signal=12.81; prior:-18.02 | guardrail:-4.50 | trait:-2.30 | athletic:-1.74",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.3,
-    "rank_history": [
-      292
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_qb_epa_per_play": 0.464,
       "cfb_qb_pass_td": 28.0,
       "cfb_qb_pass_int": 1.0,
       "cfb_qb_pass_yds": 3441.0,
       "cfb_qb_rush_yds": 131.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_qb_epa_per_play": 85.7
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_qb_epa_per_play",
+        "label": "EPA / Play",
+        "raw": 0.464,
+        "display": "0.464",
+        "pct": 85.7,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.28
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_qb_epa_per_play": 0.464
+    },
+    "advanced_percentiles": {
+      "cfb_qb_epa_per_play": 85.7
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_qb_pass_td",
@@ -57607,7 +58032,7 @@
       "cfb_qb_pass_yds": 3441.0,
       "cfb_qb_rush_yds": 131.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 85.7,
     "position_lens": {
       "title": "QB Stress / Process",
       "rows": [],
@@ -57685,9 +58110,7 @@
     "rank_driver_summary": "score=68.34; prior_signal=31.76; prior:-6.65 | guardrail:-4.80 | trait:-3.90 | athletic:-1.89",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -3.9,
-    "rank_history": [
-      293
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -57918,9 +58341,7 @@
     "rank_driver_summary": "score=68.8; prior_signal=19.59; prior:-15.46 | guardrail:-5.52 | athletic:-1.67 | trait:-1.54",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -1.67,
-    "rank_history": [
-      294
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -58144,9 +58565,7 @@
     "rank_driver_summary": "score=68.14; prior_signal=9.94; prior:-15.92 | guardrail:-4.50 | athletic:-3.16 | trait:-2.33",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.16,
-    "rank_history": [
-      295
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -58360,9 +58779,7 @@
     "rank_driver_summary": "score=68.4; prior_signal=4.22; prior:-21.14 | guardrail:-6.25 | trait:-2.51 | production:-1.14",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      296
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -58598,9 +59015,7 @@
     "rank_driver_summary": "score=67.62; prior_signal=11.78; prior:-16.30 | guardrail:-4.50 | trait:-2.34 | athletic:-1.87",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.34,
-    "rank_history": [
-      297
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -58819,9 +59234,7 @@
     "rank_driver_summary": "score=67.68; prior_signal=6.39; prior:-18.50 | guardrail:-4.50 | trait:-2.51 | production:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      298
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -58998,21 +59411,61 @@
     "rank_driver_summary": "score=68.13; prior_signal=18.58; prior:-16.93 | guardrail:-6.72 | production:-1.63 | trait:-1.50",
     "top_rank_driver": "production",
     "top_rank_driver_delta": -1.63,
-    "rank_history": [
-      299
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_rb_explosive_rate": 0.1104,
+      "cfb_rb_target_share": 0.1652,
+      "cfb_rb_receiving_efficiency": 6.2105,
       "cfb_rb_rush_yds": 470.0,
       "cfb_rb_rush_td": 3.0,
       "cfb_rb_rec": 19.0,
       "cfb_rb_rec_yds": 118.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_rb_explosive_rate": 41.2
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_rb_explosive_rate",
+        "label": "Explosive Run Rate",
+        "raw": 0.1104,
+        "display": "0.1%",
+        "pct": 41.2,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.28
+      },
+      {
+        "key": "cfb_rb_target_share",
+        "label": "Receiving Share",
+        "raw": 0.1652,
+        "display": "0.2%",
+        "pct": 50.0,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.18
+      },
+      {
+        "key": "cfb_rb_receiving_efficiency",
+        "label": "Receiving Efficiency",
+        "raw": 6.2105,
+        "display": "6.21",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": false,
+        "weight": 0.18
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_rb_explosive_rate": 0.1104,
+      "cfb_rb_target_share": 0.1652,
+      "cfb_rb_receiving_efficiency": 6.2105
+    },
+    "advanced_percentiles": {
+      "cfb_rb_explosive_rate": 41.2
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_rb_rush_yds",
@@ -59049,7 +59502,7 @@
       "cfb_rb_rec": 19.0,
       "cfb_rb_rec_yds": 118.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 46.1,
     "position_lens": {
       "title": "RB Three-Down Creator",
       "rows": [],
@@ -59127,20 +59580,62 @@
     "rank_driver_summary": "score=67.08; prior_signal=26.29; prior:-7.47 | trait:-5.73 | guardrail:-4.17 | athletic:-2.33",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -5.73,
-    "rank_history": [
-      300
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_wrte_yprr": 2.044,
+      "cfb_wrte_target_share": 0.278,
+      "cfb_wrte_targets_per_route": 0.3063,
       "cfb_wrte_rec": 70.0,
       "cfb_wrte_rec_yds": 847.0,
       "cfb_wrte_rec_td": 8.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_wrte_yprr": 31.6,
+      "cfb_wrte_target_share": 92.1
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_wrte_yprr",
+        "label": "Yards / Route Run",
+        "raw": 2.044,
+        "display": "2.04",
+        "pct": 31.6,
+        "fmt": "dec2",
+        "lower_better": false,
+        "weight": 0.3
+      },
+      {
+        "key": "cfb_wrte_target_share",
+        "label": "Target Share",
+        "raw": 0.278,
+        "display": "0.3%",
+        "pct": 92.1,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.22
+      },
+      {
+        "key": "cfb_wrte_targets_per_route",
+        "label": "Targets / Route",
+        "raw": 0.3063,
+        "display": "0.306",
+        "pct": 50.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.22
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_wrte_yprr": 2.044,
+      "cfb_wrte_target_share": 0.278,
+      "cfb_wrte_targets_per_route": 0.3063
+    },
+    "advanced_percentiles": {
+      "cfb_wrte_yprr": 31.6,
+      "cfb_wrte_target_share": 92.1
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_wrte_rec",
@@ -59169,7 +59664,7 @@
       "cfb_wrte_rec_yds": 847.0,
       "cfb_wrte_rec_td": 8.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 55.1,
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -59243,9 +59738,7 @@
     "rank_driver_summary": "score=67.61; prior_signal=5.93; prior:-20.02 | guardrail:-5.47 | trait:-2.38 | production:-1.57",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.38,
-    "rank_history": [
-      301
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -59476,9 +59969,7 @@
     "rank_driver_summary": "score=67.09; prior_signal=6.5; prior:-17.71 | guardrail:-4.50 | trait:-2.51 | production:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      302
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -59688,9 +60179,7 @@
     "rank_driver_summary": "score=67.18; prior_signal=6.84; prior:-18.31 | guardrail:-6.30 | trait:-2.26 | production:-1.51",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.26,
-    "rank_history": [
-      303
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -59891,9 +60380,9 @@
       262,
       262,
       262,
-      304
+      262
     ],
-    "rank_move_window": -42,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_wrte_route_grade": 66.9,
@@ -60114,9 +60603,7 @@
     "rank_driver_summary": "score=66.58; prior_signal=8.65; prior:-14.47 | athletic:-4.80 | guardrail:-4.50 | trait:-2.25",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -4.8,
-    "rank_history": [
-      305
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -60326,9 +60813,7 @@
     "rank_driver_summary": "score=66.47; prior_signal=6.39; prior:-16.20 | guardrail:-4.50 | athletic:-3.24 | trait:-2.45",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.24,
-    "rank_history": [
-      306
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -60570,9 +61055,7 @@
     "rank_driver_summary": "score=66.76; prior_signal=12.66; prior:-16.81 | guardrail:-6.33 | trait:-1.88 | production:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.88,
-    "rank_history": [
-      307
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -60794,20 +61277,62 @@
     "rank_driver_summary": "score=66.57; prior_signal=6.58; prior:-18.59 | guardrail:-5.90 | trait:-2.26 | athletic:-1.87",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.26,
-    "rank_history": [
-      308
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
+      "cfb_wrte_yprr": 2.492,
+      "cfb_wrte_target_share": 0.176,
+      "cfb_wrte_targets_per_route": 0.3505,
       "cfb_wrte_rec": 61.0,
       "cfb_wrte_rec_yds": 934.0,
       "cfb_wrte_rec_td": 4.0
     },
-    "production_percentiles": {},
-    "advanced_metric_cards": [],
-    "advanced_metrics": {},
-    "advanced_percentiles": {},
+    "production_percentiles": {
+      "cfb_wrte_yprr": 78.9,
+      "cfb_wrte_target_share": 28.9
+    },
+    "advanced_metric_cards": [
+      {
+        "key": "cfb_wrte_yprr",
+        "label": "Yards / Route Run",
+        "raw": 2.492,
+        "display": "2.49",
+        "pct": 78.9,
+        "fmt": "dec2",
+        "lower_better": false,
+        "weight": 0.3
+      },
+      {
+        "key": "cfb_wrte_target_share",
+        "label": "Target Share",
+        "raw": 0.176,
+        "display": "0.2%",
+        "pct": 28.9,
+        "fmt": "pct100",
+        "lower_better": false,
+        "weight": 0.22
+      },
+      {
+        "key": "cfb_wrte_targets_per_route",
+        "label": "Targets / Route",
+        "raw": 0.3505,
+        "display": "0.350",
+        "pct": 50.0,
+        "fmt": "dec3",
+        "lower_better": false,
+        "weight": 0.22
+      }
+    ],
+    "advanced_metrics": {
+      "cfb_wrte_yprr": 2.492,
+      "cfb_wrte_target_share": 0.176,
+      "cfb_wrte_targets_per_route": 0.3505
+    },
+    "advanced_percentiles": {
+      "cfb_wrte_yprr": 78.9,
+      "cfb_wrte_target_share": 28.9
+    },
     "counting_stat_chips": [
       {
         "key": "cfb_wrte_rec",
@@ -60836,7 +61361,7 @@
       "cfb_wrte_rec_yds": 934.0,
       "cfb_wrte_rec_td": 4.0
     },
-    "production_composite_pct": null,
+    "production_composite_pct": 55.4,
     "position_lens": {
       "title": "WR Route Earner",
       "rows": [],
@@ -60914,9 +61439,7 @@
     "rank_driver_summary": "score=65.22; prior_signal=7.52; prior:-14.67 | guardrail:-4.50 | athletic:-3.58 | trait:-2.40",
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -3.58,
-    "rank_history": [
-      309
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -61126,9 +61649,7 @@
     "rank_driver_summary": "score=65.33; prior_signal=4.84; prior:-17.70 | guardrail:-5.72 | trait:-2.51 | athletic:-1.90",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.51,
-    "rank_history": [
-      310
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
@@ -61310,9 +61831,7 @@
     "rank_driver_summary": "score=65.46; prior_signal=11.85; prior:-16.08 | guardrail:-6.63 | trait:-1.94 | production:-1.68",
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -1.94,
-    "rank_history": [
-      311
-    ],
+    "rank_history": [],
     "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {

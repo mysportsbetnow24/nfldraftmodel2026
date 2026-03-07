@@ -129,11 +129,47 @@ def build_adjustments(window_days: int = 7) -> list[dict]:
         event_date = _safe_date(row.get("event_date", ""))
         if event_date is None or event_date < min_date:
             continue
-        team = str(row.get("team", "")).strip().upper()
-        if not team:
+        tx_status = str(row.get("transaction_status", "")).strip().lower() or "confirmed"
+        if not _is_confirmed_status(tx_status):
             continue
         weight = _safe_float(row.get("impact_weight"), 0.0)
         if abs(weight) < 0.001:
+            continue
+        from_team = str(row.get("from_team", "")).strip().upper()
+        to_team = str(row.get("to_team", "")).strip().upper()
+        transaction_type = str(row.get("transaction_type", "")).strip().lower()
+        action_text = str(row.get("action_text", "")).strip()
+        if transaction_type == "traded" and (from_team or to_team):
+            base_weight = abs(weight) if abs(weight) > 0.001 else 1.0
+            if from_team:
+                events.append(
+                    {
+                        "event_date": event_date,
+                        "team": from_team,
+                        "position": pos,
+                        "weight": base_weight,
+                        "transaction_status": tx_status,
+                        "player_name": str(row.get("player_name", "")).strip(),
+                        "action_text": action_text or "trade_out",
+                        "source_url": str(row.get("source_url", "")).strip(),
+                    }
+                )
+            if to_team:
+                events.append(
+                    {
+                        "event_date": event_date,
+                        "team": to_team,
+                        "position": pos,
+                        "weight": -base_weight,
+                        "transaction_status": tx_status,
+                        "player_name": str(row.get("player_name", "")).strip(),
+                        "action_text": action_text or "trade_in",
+                        "source_url": str(row.get("source_url", "")).strip(),
+                    }
+                )
+            continue
+        team = str(row.get("team", "")).strip().upper()
+        if not team:
             continue
         events.append(
             {
@@ -141,9 +177,9 @@ def build_adjustments(window_days: int = 7) -> list[dict]:
                 "team": team,
                 "position": pos,
                 "weight": weight,
-                "transaction_status": "confirmed",
+                "transaction_status": tx_status,
                 "player_name": str(row.get("player_name", "")).strip(),
-                "action_text": str(row.get("action_text", "")).strip(),
+                "action_text": action_text,
                 "source_url": str(row.get("source_url", "")).strip(),
             }
         )

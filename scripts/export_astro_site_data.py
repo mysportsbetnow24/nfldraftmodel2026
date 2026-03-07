@@ -281,6 +281,70 @@ POSITION_COUNTING_STAT_CONFIG = {
     ],
 }
 
+POSITION_FALLBACK_METRIC_CONFIG = {
+    "QB": [
+        {"key": "cfb_qb_epa_per_play", "label": "EPA / Play", "fmt": "dec3", "weight": 0.28},
+        {"key": "cfb_qb_success_rate", "label": "Success Rate", "fmt": "pct100", "weight": 0.22},
+        {"key": "cfb_qb_pressure_to_sack_rate", "label": "Pressure-to-Sack Rate", "fmt": "pct100", "lower_better": True, "weight": 0.22},
+        {"key": "cfb_qb_under_pressure_success_rate", "label": "Under-Pressure Success", "fmt": "pct100", "weight": 0.14},
+        {"key": "game_consistency_index", "label": "Weekly Consistency", "fmt": "dec3", "weight": 0.14},
+    ],
+    "RB": [
+        {"key": "cfb_rb_explosive_rate", "label": "Explosive Run Rate", "fmt": "pct100", "weight": 0.28},
+        {"key": "cfb_rb_target_share", "label": "Receiving Share", "fmt": "pct100", "weight": 0.18},
+        {"key": "cfb_rb_receiving_efficiency", "label": "Receiving Efficiency", "fmt": "dec2", "weight": 0.18},
+        {"key": "game_consistency_index", "label": "Weekly Consistency", "fmt": "dec3", "weight": 0.18},
+        {"key": "top_defense_performance_index", "label": "Top-Defense Performance", "fmt": "dec3", "weight": 0.18},
+    ],
+    "WR": [
+        {"key": "cfb_wrte_yprr", "label": "Yards / Route Run", "fmt": "dec2", "weight": 0.30},
+        {"key": "cfb_wrte_target_share", "label": "Target Share", "fmt": "pct100", "weight": 0.22},
+        {"key": "cfb_wrte_targets_per_route", "label": "Targets / Route", "fmt": "dec3", "weight": 0.22},
+        {"key": "game_consistency_index", "label": "Weekly Consistency", "fmt": "dec3", "weight": 0.12},
+        {"key": "top_defense_performance_index", "label": "Top-Defense Performance", "fmt": "dec3", "weight": 0.14},
+    ],
+    "TE": [
+        {"key": "cfb_wrte_yprr", "label": "Yards / Route Run", "fmt": "dec2", "weight": 0.30},
+        {"key": "cfb_wrte_target_share", "label": "Target Share", "fmt": "pct100", "weight": 0.22},
+        {"key": "cfb_wrte_targets_per_route", "label": "Targets / Route", "fmt": "dec3", "weight": 0.22},
+        {"key": "game_consistency_index", "label": "Weekly Consistency", "fmt": "dec3", "weight": 0.12},
+        {"key": "top_defense_performance_index", "label": "Top-Defense Performance", "fmt": "dec3", "weight": 0.14},
+    ],
+    "EDGE": [
+        {"key": "cfb_edge_pressure_rate", "label": "Pressure / Rush Snap", "fmt": "pct100", "weight": 0.34},
+        {"key": "cfb_edge_sacks_per_pr_snap", "label": "Sacks / Rush Snap", "fmt": "pct100", "weight": 0.22},
+        {"key": "cfb_edge_tfl", "label": "TFL", "fmt": "int", "weight": 0.14},
+        {"key": "game_consistency_index", "label": "Weekly Consistency", "fmt": "dec3", "weight": 0.14},
+        {"key": "top_defense_performance_index", "label": "Top-Offense Performance", "fmt": "dec3", "weight": 0.16},
+    ],
+    "DT": [
+        {"key": "cfb_edge_pressure_rate", "label": "Pressure / Rush Snap", "fmt": "pct100", "weight": 0.28},
+        {"key": "cfb_edge_sacks_per_pr_snap", "label": "Sacks / Rush Snap", "fmt": "pct100", "weight": 0.16},
+        {"key": "cfb_edge_tfl", "label": "TFL", "fmt": "int", "weight": 0.18},
+        {"key": "game_consistency_index", "label": "Weekly Consistency", "fmt": "dec3", "weight": 0.18},
+        {"key": "top_defense_performance_index", "label": "Top-Offense Performance", "fmt": "dec3", "weight": 0.20},
+    ],
+    "LB": [
+        {"key": "cfb_lb_tfl", "label": "TFL", "fmt": "int", "weight": 0.26},
+        {"key": "cfb_lb_sacks", "label": "Sacks", "fmt": "dec1", "weight": 0.18},
+        {"key": "cfb_lb_qb_hurries", "label": "QB Hurries", "fmt": "int", "weight": 0.16},
+        {"key": "game_consistency_index", "label": "Weekly Consistency", "fmt": "dec3", "weight": 0.18},
+        {"key": "top_defense_performance_index", "label": "Top-Offense Performance", "fmt": "dec3", "weight": 0.22},
+    ],
+    "CB": [
+        {"key": "cfb_db_coverage_plays_per_target", "label": "Plays on Ball / Target", "fmt": "dec3", "weight": 0.32},
+        {"key": "cfb_db_yards_allowed_per_coverage_snap", "label": "Yards / Coverage Snap", "fmt": "dec3", "lower_better": True, "weight": 0.30},
+        {"key": "game_consistency_index", "label": "Weekly Consistency", "fmt": "dec3", "weight": 0.16},
+        {"key": "top_defense_performance_index", "label": "Top-Offense Performance", "fmt": "dec3", "weight": 0.22},
+    ],
+    "S": [
+        {"key": "cfb_db_coverage_plays_per_target", "label": "Plays on Ball / Target", "fmt": "dec3", "weight": 0.30},
+        {"key": "cfb_db_yards_allowed_per_coverage_snap", "label": "Yards / Coverage Snap", "fmt": "dec3", "lower_better": True, "weight": 0.26},
+        {"key": "game_consistency_index", "label": "Weekly Consistency", "fmt": "dec3", "weight": 0.18},
+        {"key": "top_defense_performance_index", "label": "Top-Offense Performance", "fmt": "dec3", "weight": 0.26},
+    ],
+}
+
 
 CANONICAL_SCHOOL_ALIASES = {
     "alabama": "Alabama Crimson Tide",
@@ -2575,6 +2639,13 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             config_map=POSITION_ADVANCED_METRIC_CONFIG,
             pos_metric_values=pos_metric_values,
         )
+        if not advanced_metric_cards:
+            advanced_metric_cards, advanced_metrics, advanced_percentiles = _build_metric_cards(
+                row=row,
+                position=pos,
+                config_map=POSITION_FALLBACK_METRIC_CONFIG,
+                pos_metric_values=pos_metric_values,
+            )
         counting_stat_chips, counting_metrics = _build_counting_stat_chips(
             row=row,
             position=pos,
@@ -2583,6 +2654,10 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         production_metrics: dict[str, float] = {**advanced_metrics, **counting_metrics}
         production_percentiles: dict[str, float] = dict(advanced_percentiles)
         production_composite_pct = _weighted_percentile_composite(advanced_metric_cards)
+        if production_composite_pct is None:
+            production_composite_pct = _safe_float(row.get("cfb_prod_percentile_signal"))
+            if production_composite_pct is not None:
+                production_composite_pct = round(float(production_composite_pct), 1)
         position_lens = _build_position_lens(
             row=row,
             position=pos,
