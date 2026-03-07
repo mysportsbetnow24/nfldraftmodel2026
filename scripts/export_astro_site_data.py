@@ -992,10 +992,10 @@ def _usage_proxy_from_role(model_position: str, role_label: str, depth_rank: int
         "EDGE 2": 0.82,
         "RUSH OLB 1": 0.88,
         "RUSH OLB 2": 0.8,
-        "NOSE": 0.78,
-        "5-TECH": 0.78,
-        "DT": 0.76,
-        "IDL": 0.7,
+        "NOSE": 0.82,
+        "5-TECH": 0.82,
+        "DT": 0.84,
+        "IDL": 0.8,
         "MIKE": 0.84,
         "WILL": 0.8,
         "SAM": 0.72,
@@ -1089,6 +1089,25 @@ def _player_designation(
         and (age is None or age <= 24)
     ):
         return "Franchise Cornerstone"
+    if (
+        usage_proxy >= 0.84
+        and is_top_starter
+        and draft_number is not None
+        and 0 < draft_number <= 32
+        and 2 <= effective_years_exp <= 4
+        and (age is None or age <= 25)
+    ):
+        return "Franchise Cornerstone"
+    if (
+        usage_proxy >= 0.76
+        and is_top_starter
+        and years_exp <= 2
+        and contract_years >= 3
+        and draft_number is not None
+        and 0 < draft_number <= 40
+        and (age is None or age <= 25)
+    ):
+        return "Blue Chip Prospect"
     if usage_proxy >= 0.84 and (
         (
             effective_years_exp >= 2
@@ -1111,6 +1130,15 @@ def _player_designation(
         and (age is None or age <= 34)
     ):
         return "All-Pro"
+    if (
+        is_top_starter
+        and usage_proxy >= 0.76
+        and 2 <= effective_years_exp <= 6
+        and (age is None or age <= 29)
+        and apy_pct >= 88.0
+        and apy_value >= _minimum_star_apy(model_position)
+    ):
+        return "In His Prime Star"
     if (
         usage_proxy >= 0.78
         and apy_pct >= 80.0
@@ -1138,6 +1166,12 @@ def _designation_depth_rank(position: str, slot: str, overall_rank: int, slot_ra
     overall = max(1, int(overall_rank or 1))
     slot_rank = max(1, int(slot_rank or 1))
     if pos == "S" and depth_slot in {"FS", "SS", "S", "SAF", "RS"}:
+        return slot_rank
+    if pos == "CB" and depth_slot in {"LCB", "RCB", "NB", "CB"}:
+        return slot_rank
+    if pos == "OT" and depth_slot in {"LT", "RT", "T"}:
+        return slot_rank
+    if pos == "IOL" and depth_slot in {"LG", "C", "RG", "G"}:
         return slot_rank
     return overall
 
@@ -1205,6 +1239,41 @@ def _build_team_depth_context() -> dict[str, dict]:
     subset = subset.filter(pl.col("week") == latest_week)
     subset = subset.unique(subset=["team", "gsis_id"], keep="first")
 
+    transaction_team_override_by_name: dict[str, dict[str, str]] = {}
+    for row in _read_csv(TRANSACTION_OVERRIDES_CSV):
+        status_kind = _status_kind(row.get("transaction_status", "confirmed"))
+        if status_kind != "confirmed":
+            continue
+        player_key = _norm_player_key(row.get("player_name", ""))
+        if not player_key:
+            continue
+        event_date = _parse_event_date(row.get("event_date", ""))
+        action = str(row.get("action_text") or "").strip().lower()
+        from_team = str(row.get("from_team", "")).strip().upper()
+        to_team = str(row.get("to_team", "")).strip().upper()
+        current_team = ""
+        if "trade" in action or "signed" in action or "claimed" in action or "agreed" in action:
+            current_team = to_team or current_team
+        elif any(token in action for token in {"cut", "waived", "released", "retired"}):
+            current_team = ""
+        else:
+            current_team = to_team or from_team
+        existing = transaction_team_override_by_name.get(player_key)
+        if existing is None or str(existing.get("event_date") or "") < str(event_date or ""):
+            transaction_team_override_by_name[player_key] = {
+                "event_date": event_date.isoformat() if event_date else "",
+                "current_team": current_team,
+                "from_team": from_team,
+                "to_team": to_team,
+                "action": action,
+            }
+
+    player_team_candidates: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    for player_key, override in transaction_team_override_by_name.items():
+        current_team = str(override.get("current_team") or "").strip().upper()
+        if current_team:
+            player_team_candidates[player_key][current_team] += 100.0
+
     players_master_by_name: dict[str, dict] = {}
     if NFLVERSE_PLAYERS.exists():
         players_master = pl.read_parquet(NFLVERSE_PLAYERS)
@@ -1219,6 +1288,9 @@ def _build_team_depth_context() -> dict[str, dict]:
                 years_of_experience = _safe_int(row.get("years_of_experience"), 0)
                 draft_pick = _safe_int(row.get("draft_pick"), 0)
                 latest_team = str(row.get("latest_team") or "").strip().upper()
+                latest_team = (
+                    transaction_team_override_by_name.get(key, {}).get("current_team", latest_team) or latest_team
+                )
                 status = str(row.get("status") or "").strip().upper()
                 payload = {
                     "display_name": name,
@@ -1267,6 +1339,7 @@ def _build_team_depth_context() -> dict[str, dict]:
     for row in contract_rows:
         gsis = str(row.get("gsis_id") or "").strip()
         name = str(row.get("player") or "").strip()
+        name_key = _norm_player_key(name)
         apy = _safe_float(row.get("apy"))
         years = _safe_int(row.get("years"), 0)
         pos = _map_team_needs_position(row.get("position", ""))
@@ -1312,11 +1385,12 @@ def _build_team_depth_context() -> dict[str, dict]:
                 break
         payload = {
             "gsis_id": gsis,
-            "name_key": _norm_player_key(name),
+            "name_key": name_key,
             "apy": apy,
             "years": years,
             "position": pos,
             "team_text": team_text,
+            "team_norm": team_norm,
         }
         player_master = players_master_by_name.get(payload["name_key"], {})
         latest_team_match = (
@@ -1325,6 +1399,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             and str(player_master.get("status") or "").strip().upper() not in {"RET", "CUT"}
         )
         if team_norm and pos and name and latest_team_match:
+            player_team_candidates[payload["name_key"]][team_norm] += 70.0
             contract_players_by_team_pos[(team_norm, pos)].append(
                 {
                     "player_name": name,
@@ -1354,6 +1429,10 @@ def _build_team_depth_context() -> dict[str, dict]:
     for row in subset.iter_rows(named=True):
         team = str(row.get("team") or "").strip().upper()
         if not team:
+            continue
+        player_key = _norm_player_key(row.get("full_name") or row.get("football_name") or "")
+        override_team = transaction_team_override_by_name.get(player_key, {}).get("current_team", "")
+        if override_team and team != override_team:
             continue
         roster_status = str(row.get("status") or row.get("roster_status") or "").strip().upper()
         if roster_status in {"RET", "CUT"}:
@@ -1393,6 +1472,8 @@ def _build_team_depth_context() -> dict[str, dict]:
             "apy_m": round(apy, 2) if apy is not None else "",
             "apy_pct": apy_pct,
         }
+        if player_key:
+            player_team_candidates[player_key][team] += 60.0
 
         team_players[team][model_pos].append(
             {
@@ -1430,13 +1511,14 @@ def _build_team_depth_context() -> dict[str, dict]:
         player_key = _norm_player_key(player_name)
         roster_info = roster_lookup_by_team.get(team, {}).get(player_key, {})
         contract = contract_by_name.get(player_key)
+        contract_team_match = bool(contract) and str(contract.get("team_norm") or "").strip().upper() == team
         player_master = players_master_by_name.get(player_key, {})
         latest_team_match = (
             bool(player_master)
             and str(player_master.get("latest_team") or "").strip().upper() == team
             and str(player_master.get("status") or "").strip().upper() not in {"RET", "CUT"}
         )
-        if not roster_info and not contract and not latest_team_match:
+        if not roster_info and not contract_team_match and not latest_team_match:
             skipped_espn_rows.append(
                 {
                     "team": team,
@@ -1448,6 +1530,14 @@ def _build_team_depth_context() -> dict[str, dict]:
                 }
             )
             continue
+        if player_key:
+            player_team_candidates[player_key][team] += 25.0
+            if roster_info:
+                player_team_candidates[player_key][team] += 15.0
+            if contract_team_match:
+                player_team_candidates[player_key][team] += 20.0
+            if latest_team_match:
+                player_team_candidates[player_key][team] += 15.0
         apy = _safe_float(contract.get("apy")) if contract else _safe_float(roster_info.get("apy_m"))
         apy_pct = (
             _pct_score(apy, apy_pool_by_pos.get(model_pos, []))
@@ -1492,6 +1582,47 @@ def _build_team_depth_context() -> dict[str, dict]:
             espn_by_team_slot[(team, slot)].append(payload)
         if model_pos in DEFENSE_POS_ORDER and payload["position_group"]:
             espn_defense_groups_by_team[team].append(payload["position_group"])
+
+    preferred_team_by_player: dict[str, str] = {}
+    for player_key, team_scores in player_team_candidates.items():
+        if not player_key or not team_scores:
+            continue
+        preferred_team_by_player[player_key] = max(
+            team_scores.items(),
+            key=lambda item: (float(item[1]), item[0]),
+        )[0]
+
+    for team, by_pos in list(team_players.items()):
+        for pos, players in list(by_pos.items()):
+            by_pos[pos] = [
+                player
+                for player in players
+                if preferred_team_by_player.get(_norm_player_key(player.get("player_name", "")), team) == team
+            ]
+
+    for key, rows in list(espn_by_team_pos.items()):
+        team = key[0]
+        espn_by_team_pos[key] = [
+            row
+            for row in rows
+            if preferred_team_by_player.get(_norm_player_key(row.get("player_name", "")), team) == team
+        ]
+
+    for key, rows in list(espn_by_team_slot.items()):
+        team = key[0]
+        espn_by_team_slot[key] = [
+            row
+            for row in rows
+            if preferred_team_by_player.get(_norm_player_key(row.get("player_name", "")), team) == team
+        ]
+
+    for key, rows in list(contract_players_by_team_pos.items()):
+        team = key[0]
+        contract_players_by_team_pos[key] = [
+            row
+            for row in rows
+            if preferred_team_by_player.get(_norm_player_key(row.get("player_name", "")), team) == team
+        ]
 
     for (team, pos), rows in espn_by_team_pos.items():
         normalized_players = []
