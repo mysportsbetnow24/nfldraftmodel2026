@@ -1410,7 +1410,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 54.5,
         "display": "54.5",
         "pct": 76.2,
@@ -1450,7 +1450,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 79.2,
         "display": "79.2",
         "pct": 61.9,
@@ -1877,7 +1877,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 31.3,
         "display": "31.3",
         "pct": 93.8,
@@ -1917,7 +1917,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 56.3,
         "display": "56.3",
         "pct": 51.6,
@@ -2971,7 +2971,7 @@
     },
     "production_composite_pct": 68.5,
     "production_source_tier": "premium",
-    "production_snapshot_heading": "2024 Production Snapshot*",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -3015,7 +3015,7 @@
     "scouting_why_he_wins": "- Usage fit: Double-team absorbing anchor within Odd-front shade / early-down interior fit.\n- Film translation comes from disruption and block control: strike timing, gap integrity, and pocket compression on long downs.\n- Model + film note: instant starter profile; controls interior gaps and collapses pocket.",
     "scouting_primary_concerns": "- Pad-level consistency is required to convert flashes into down-to-down run-defense value.\n- Pass-rush impact must hold beyond first contact when NFL guards reset and anchor late.",
     "scouting_film_notes": "",
-    "scouting_production_snapshot": "2024 premium data used because equivalent 2025 premium rows are unavailable. PFF grade 86.5\nStat context: tackles 65; TFL 9; sacks 3; QB hurries 2",
+    "scouting_production_snapshot": "PFF grade 86.5\nStat context: tackles 65; TFL 9; sacks 3; QB hurries 2",
     "scouting_role_projection": "Best early team fit: BUF. Expected early deployment: Double-team absorbing anchor in Odd-front shade / early-down interior fit. Early value comes from early-down run control plus enough third-down pocket push to keep fronts multiple. Historical combine comp: Beau Allen (2014), athletic-profile match 95.82%.",
     "seo_description_override": "Kayden McDonald DT scouting report, traits, role fit, concerns, and NFL Draft projection.",
     "player_report_url": "/players/kayden-mcdonald"
@@ -3144,7 +3144,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 80.4,
         "display": "80.4",
         "pct": 28.6,
@@ -3184,7 +3184,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 99.8,
         "display": "99.8",
         "pct": 33.3,
@@ -3619,7 +3619,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 50.3,
         "display": "50.3",
         "pct": 81.0,
@@ -3659,7 +3659,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 79.2,
         "display": "79.2",
         "pct": 61.9,
@@ -6234,7 +6234,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 78.9,
         "display": "78.9",
         "pct": 37.5,
@@ -6274,7 +6274,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 45.1,
         "display": "45.1",
         "pct": 64.5,
@@ -7829,7 +7829,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 70.8,
         "display": "70.8",
         "pct": 43.8,
@@ -7869,7 +7869,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 39.6,
         "display": "39.6",
         "pct": 77.4,
@@ -8111,7 +8111,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 96.9,
         "display": "96.9",
         "pct": 15.6,
@@ -8151,7 +8151,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 55.1,
         "display": "55.1",
         "pct": 58.1,
@@ -10022,7 +10022,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 55.4,
         "display": "55.4",
         "pct": 68.8,
@@ -10271,7 +10271,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 84.2,
         "display": "84.2",
         "pct": 31.2,
@@ -10311,7 +10311,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 42.4,
         "display": "42.4",
         "pct": 71.0,
@@ -11281,7 +11281,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 69.9,
         "display": "69.9",
         "pct": 50.0,
@@ -11321,7 +11321,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 69.3,
         "display": "69.3",
         "pct": 41.9,
@@ -11809,7 +11809,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 59.0,
         "display": "59.0",
         "pct": 52.4,
@@ -11849,7 +11849,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 158.3,
         "display": "158.3",
         "pct": 0.0,
@@ -13382,7 +13382,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 42.6,
         "display": "42.6",
         "pct": 84.4,
@@ -13422,7 +13422,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 0.0,
         "display": "0.0",
         "pct": 96.8,
@@ -13668,7 +13668,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 16.1,
         "display": "16.1",
         "pct": 96.9,
@@ -13708,7 +13708,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 79.7,
         "display": "79.7",
         "pct": 25.8,
@@ -14838,7 +14838,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 84.9,
         "display": "84.9",
         "pct": 28.1,
@@ -14878,7 +14878,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 60.9,
         "display": "60.9",
         "pct": 45.2,
@@ -15595,7 +15595,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 53.6,
         "display": "53.6",
         "pct": 71.9,
@@ -15635,7 +15635,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 81.3,
         "display": "81.3",
         "pct": 22.6,
@@ -15878,7 +15878,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 91.4,
         "display": "91.4",
         "pct": 14.3,
@@ -15918,7 +15918,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 70.1,
         "display": "70.1",
         "pct": 71.4,
@@ -18461,7 +18461,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 46.1,
         "display": "46.1",
         "pct": 81.2,
@@ -18501,7 +18501,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 42.4,
         "display": "42.4",
         "pct": 71.0,
@@ -18962,7 +18962,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 34.4,
         "display": "34.4",
         "pct": 90.6,
@@ -19002,7 +19002,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 38.6,
         "display": "38.6",
         "pct": 93.5,
@@ -19251,7 +19251,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 69.2,
         "display": "69.2",
         "pct": 42.9,
@@ -19291,7 +19291,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 125.3,
         "display": "125.3",
         "pct": 4.8,
@@ -19536,7 +19536,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 57.8,
         "display": "57.8",
         "pct": 62.5,
@@ -19576,7 +19576,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 70.1,
         "display": "70.1",
         "pct": 38.7,
@@ -20069,7 +20069,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 68.1,
         "display": "68.1",
         "pct": 47.6,
@@ -20109,7 +20109,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 65.7,
         "display": "65.7",
         "pct": 76.2,
@@ -22439,7 +22439,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 70.0,
         "display": "70.0",
         "pct": 46.9,
@@ -22479,7 +22479,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 39.6,
         "display": "39.6",
         "pct": 77.4,
@@ -23097,8 +23097,8 @@
       99,
       99,
       99,
-      99,
-      99,
+      98,
+      98,
       98,
       98,
       98
@@ -23335,8 +23335,8 @@
       98,
       98,
       98,
-      98,
-      98,
+      99,
+      99,
       99,
       99,
       99
@@ -23412,7 +23412,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 75.9,
         "display": "75.9",
         "pct": 38.1,
@@ -23452,7 +23452,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 89.8,
         "display": "89.8",
         "pct": 52.4,
@@ -23943,7 +23943,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 50.6,
         "display": "50.6",
         "pct": 78.1,
@@ -23983,7 +23983,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 56.3,
         "display": "56.3",
         "pct": 51.6,
@@ -28588,8 +28588,8 @@
       123,
       123,
       123,
-      123,
-      123,
+      122,
+      122,
       122,
       122,
       122
@@ -28770,8 +28770,8 @@
       124,
       124,
       124,
-      124,
-      124,
+      123,
+      123,
       123,
       123,
       123
@@ -28966,8 +28966,8 @@
       122,
       122,
       122,
-      122,
-      122,
+      124,
+      124,
       124,
       124,
       124
@@ -29722,7 +29722,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 82.5,
         "display": "82.5",
         "pct": 34.4,
@@ -29762,7 +29762,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 77.1,
         "display": "77.1",
         "pct": 29.0,
@@ -31291,7 +31291,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 54.6,
         "display": "54.6",
         "pct": 71.4,
@@ -31331,7 +31331,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 79.9,
         "display": "79.9",
         "pct": 57.1,
@@ -31655,7 +31655,7 @@
     },
     "production_composite_pct": 71.1,
     "production_source_tier": "premium",
-    "production_snapshot_heading": "2024 Production Snapshot*",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -31699,7 +31699,7 @@
     "scouting_why_he_wins": "- Usage fit: Early-down anchor with interior rush upside within One-gap attack interior rotation.\n- Film translation comes from disruption and block control: strike timing, gap integrity, and pocket compression on long downs.\n- Model + film note: developmental contributor profile; controls interior gaps and collapses pocket.",
     "scouting_primary_concerns": "- Interior mass profile is light for consistent NFL anchor control on early downs.\n- Pad-level consistency is required to convert flashes into down-to-down run-defense value.\n- Pass-rush impact must hold beyond first contact when NFL guards reset and anchor late.",
     "scouting_film_notes": "",
-    "scouting_production_snapshot": "2024 premium data used because equivalent 2025 premium rows are unavailable. PFF grade 78.2\nStat context: tackles 35; TFL 3; sacks 2; QB hurries 2",
+    "scouting_production_snapshot": "PFF grade 78.2\nStat context: tackles 35; TFL 3; sacks 2; QB hurries 2",
     "scouting_role_projection": "Best early team fit: BUF. Expected early deployment: Early-down anchor with interior rush upside in One-gap attack interior rotation. Early value comes from early-down run control plus enough third-down pocket push to keep fronts multiple. Historical combine comp: Jay Bromley (2014), athletic-profile match 96.44%.",
     "seo_description_override": "Rayshaun Benny DT scouting report, traits, role fit, concerns, and NFL Draft projection.",
     "player_report_url": "/players/rayshaun-benny"
@@ -31967,7 +31967,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 106.6,
         "display": "106.6",
         "pct": 6.2,
@@ -32007,7 +32007,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 135.4,
         "display": "135.4",
         "pct": 6.5,
@@ -32729,7 +32729,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 105.3,
         "display": "105.3",
         "pct": 9.4,
@@ -32769,7 +32769,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 90.2,
         "display": "90.2",
         "pct": 16.1,
@@ -33915,8 +33915,8 @@
       146,
       146,
       146,
-      146,
-      146,
+      145,
+      145,
       145,
       145,
       145
@@ -34099,8 +34099,8 @@
       145,
       145,
       145,
-      145,
-      145,
+      146,
+      146,
       146,
       146,
       146
@@ -36947,7 +36947,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 59.0,
         "display": "59.0",
         "pct": 59.4,
@@ -36987,7 +36987,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 104.2,
         "display": "104.2",
         "pct": 12.9,
@@ -37481,7 +37481,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 96.2,
         "display": "96.2",
         "pct": 9.5,
@@ -37521,7 +37521,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 109.7,
         "display": "109.7",
         "pct": 14.3,
@@ -37941,7 +37941,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 100.7,
         "display": "100.7",
         "pct": 4.8,
@@ -37981,7 +37981,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 104.7,
         "display": "104.7",
         "pct": 19.0,
@@ -38662,7 +38662,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 45.1,
         "display": "45.1",
         "pct": 85.7,
@@ -38702,7 +38702,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 57.3,
         "display": "57.3",
         "pct": 85.7,
@@ -39148,7 +39148,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 56.5,
         "display": "56.5",
         "pct": 65.6,
@@ -39188,7 +39188,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 39.6,
         "display": "39.6",
         "pct": 77.4,
@@ -39400,7 +39400,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 108.2,
         "display": "108.2",
         "pct": 3.1,
@@ -39440,7 +39440,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 39.6,
         "display": "39.6",
         "pct": 77.4,
@@ -41882,7 +41882,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 87.2,
         "display": "87.2",
         "pct": 21.9,
@@ -41922,7 +41922,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 85.0,
         "display": "85.0",
         "pct": 19.4,
@@ -43459,7 +43459,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 79.4,
         "display": "79.4",
         "pct": 33.3,
@@ -43499,7 +43499,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 100.0,
         "display": "100.0",
         "pct": 28.6,
@@ -44628,7 +44628,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 88.4,
         "display": "88.4",
         "pct": 19.0,
@@ -44668,7 +44668,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 99.3,
         "display": "99.3",
         "pct": 38.1,
@@ -45579,7 +45579,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 55.8,
         "display": "55.8",
         "pct": 66.7,
@@ -45619,7 +45619,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 95.1,
         "display": "95.1",
         "pct": 42.9,
@@ -45828,7 +45828,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 35.4,
         "display": "35.4",
         "pct": 95.2,
@@ -45868,7 +45868,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 4.8,
         "display": "4.8",
         "pct": 95.2,
@@ -46465,7 +46465,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 39.4,
         "display": "39.4",
         "pct": 87.5,
@@ -46505,7 +46505,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 51.0,
         "display": "51.0",
         "pct": 61.3,
@@ -47416,7 +47416,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 53.4,
         "display": "53.4",
         "pct": 75.0,
@@ -47456,7 +47456,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 72.4,
         "display": "72.4",
         "pct": 32.3,
@@ -47658,7 +47658,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 86.5,
         "display": "86.5",
         "pct": 25.0,
@@ -47698,7 +47698,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 44.0,
         "display": "44.0",
         "pct": 67.7,
@@ -49035,7 +49035,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 37.8,
         "display": "37.8",
         "pct": 90.5,
@@ -49075,7 +49075,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 58.7,
         "display": "58.7",
         "pct": 81.0,
@@ -51275,7 +51275,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 88.4,
         "display": "88.4",
         "pct": 18.8,
@@ -51315,7 +51315,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 152.1,
         "display": "152.1",
         "pct": 3.2,
@@ -51530,7 +51530,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 118.9,
         "display": "118.9",
         "pct": 0.0,
@@ -51570,7 +51570,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 101.8,
         "display": "101.8",
         "pct": 23.8,
@@ -51744,8 +51744,8 @@
       226,
       226,
       226,
-      226,
-      226,
+      225,
+      225,
       225,
       225,
       225
@@ -51937,8 +51937,8 @@
       225,
       225,
       225,
-      225,
-      225,
+      226,
+      226,
       226,
       226,
       226
@@ -54286,8 +54286,8 @@
     "top_rank_driver": "trait",
     "top_rank_driver_delta": -2.42,
     "rank_history": [
-      238,
-      238,
+      237,
+      237,
       237,
       237,
       237,
@@ -54295,7 +54295,7 @@
       237,
       237
     ],
-    "rank_move_window": 1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_ol_pass_block_grade": 64.7,
@@ -54463,8 +54463,8 @@
     "top_rank_driver": "athletic",
     "top_rank_driver_delta": -2.19,
     "rank_history": [
-      237,
-      237,
+      238,
+      238,
       238,
       238,
       238,
@@ -54472,7 +54472,7 @@
       238,
       238
     ],
-    "rank_move_window": -1,
+    "rank_move_window": 0,
     "low_evidence_flag": false,
     "production_metrics": {
       "sg_cov_grade": 75.7,
@@ -54539,7 +54539,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 59.4,
         "display": "59.4",
         "pct": 56.2,
@@ -54579,7 +54579,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 122.2,
         "display": "122.2",
         "pct": 9.7,
@@ -55473,7 +55473,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 57.4,
         "display": "57.4",
         "pct": 57.1,
@@ -55513,7 +55513,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 46.4,
         "display": "46.4",
         "pct": 90.5,
@@ -58283,7 +58283,7 @@
     "counting_metrics": {},
     "production_composite_pct": 41.4,
     "production_source_tier": "premium",
-    "production_snapshot_heading": "2024 Production Snapshot*",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -58325,7 +58325,7 @@
     "scouting_why_he_wins": "- Usage fit: Early-down anchor with interior rush upside within One-gap attack interior rotation.\n- Film translation comes from disruption and block control: strike timing, gap integrity, and pocket compression on long downs.\n- Model + film note: developmental contributor profile; controls interior gaps and collapses pocket.",
     "scouting_primary_concerns": "- PFF grade 71.2 suggests current performance volatility that needs film-confirmed cleanup.\n- Pad-level consistency is required to convert flashes into down-to-down run-defense value.\n- Pass-rush impact must hold beyond first contact when NFL guards reset and anchor late.",
     "scouting_film_notes": "",
-    "scouting_production_snapshot": "2024 premium data used because equivalent 2025 premium rows are unavailable. PFF grade 71.2",
+    "scouting_production_snapshot": "PFF grade 71.2",
     "scouting_role_projection": "Best early team fit: BUF. Expected early deployment: Early-down anchor with interior rush upside in One-gap attack interior rotation. Early value comes from early-down run control plus enough third-down pocket push to keep fronts multiple. Historical combine comp: Nesta Jade Silvera (2023), athletic-profile match 94.33%.",
     "seo_description_override": "Bryson Eason DT scouting report, traits, role fit, concerns, and NFL Draft projection.",
     "player_report_url": "/players/bryson-eason"
@@ -59993,7 +59993,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 97.6,
         "display": "97.6",
         "pct": 12.5,
@@ -60033,7 +60033,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 71.7,
         "display": "71.7",
         "pct": 35.5,
@@ -60248,7 +60248,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 55.9,
         "display": "55.9",
         "pct": 61.9,
@@ -60288,7 +60288,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 121.2,
         "display": "121.2",
         "pct": 9.5,
@@ -61199,7 +61199,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 71.8,
         "display": "71.8",
         "pct": 40.6,
@@ -61239,7 +61239,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 39.6,
         "display": "39.6",
         "pct": 77.4,
@@ -65888,7 +65888,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 118.1,
         "display": "118.1",
         "pct": 0.0,
@@ -65928,7 +65928,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 154.2,
         "display": "154.2",
         "pct": 0.0,
@@ -67229,7 +67229,7 @@
     },
     "production_composite_pct": 47.0,
     "production_source_tier": "premium",
-    "production_snapshot_heading": "2024 Production Snapshot*",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -67271,7 +67271,7 @@
     "scouting_why_he_wins": "- Usage fit: Early-down anchor with interior rush upside within One-gap attack interior rotation.\n- Film translation comes from disruption and block control: strike timing, gap integrity, and pocket compression on long downs.\n- Model + film note: developmental contributor profile; controls interior gaps and collapses pocket.",
     "scouting_primary_concerns": "- PFF grade 72.1 suggests current performance volatility that needs film-confirmed cleanup.\n- Pad-level consistency is required to convert flashes into down-to-down run-defense value.\n- Pass-rush impact must hold beyond first contact when NFL guards reset and anchor late.",
     "scouting_film_notes": "",
-    "scouting_production_snapshot": "2024 premium data used because equivalent 2025 premium rows are unavailable. PFF grade 72.1\nStat context: tackles 36; TFL 7; sacks 2; QB hurries 3",
+    "scouting_production_snapshot": "PFF grade 72.1\nStat context: tackles 36; TFL 7; sacks 2; QB hurries 3",
     "scouting_role_projection": "Best early team fit: BUF. Expected early deployment: Early-down anchor with interior rush upside in One-gap attack interior rotation. Early value comes from early-down run control plus enough third-down pocket push to keep fronts multiple. Historical combine comp: Kyonte Hamilton (2024), athletic-profile match 97.9%.",
     "seo_description_override": "Brandon Cleveland DT scouting report, traits, role fit, concerns, and NFL Draft projection.",
     "player_report_url": "/players/brandon-cleveland"
@@ -67466,7 +67466,7 @@
     },
     "production_composite_pct": 44.3,
     "production_source_tier": "premium",
-    "production_snapshot_heading": "2024 Production Snapshot*",
+    "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "True-Pass-Set Disruption",
       "rows": [
@@ -67508,7 +67508,7 @@
     "scouting_why_he_wins": "- Usage fit: Early-down anchor with interior rush upside within One-gap attack interior rotation.\n- Film translation comes from disruption and block control: strike timing, gap integrity, and pocket compression on long downs.\n- Model + film note: developmental contributor profile; controls interior gaps and collapses pocket.",
     "scouting_primary_concerns": "- PFF grade 70.6 suggests current performance volatility that needs film-confirmed cleanup.\n- Pad-level consistency is required to convert flashes into down-to-down run-defense value.\n- Pass-rush impact must hold beyond first contact when NFL guards reset and anchor late.",
     "scouting_film_notes": "",
-    "scouting_production_snapshot": "2024 premium data used because equivalent 2025 premium rows are unavailable. PFF grade 70.6\nStat context: tackles 27; TFL 4; QB hurries 6",
+    "scouting_production_snapshot": "PFF grade 70.6\nStat context: tackles 27; TFL 4; QB hurries 6",
     "scouting_role_projection": "Best early team fit: BUF. Expected early deployment: Early-down anchor with interior rush upside in One-gap attack interior rotation. Early value comes from early-down run control plus enough third-down pocket push to keep fronts multiple. Historical combine comp: Cam Horsley (2025), athletic-profile match 98.61%.",
     "seo_description_override": "Cameron Ball DT scouting report, traits, role fit, concerns, and NFL Draft projection.",
     "player_report_url": "/players/cameron-ball"
@@ -67637,7 +67637,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 84.9,
         "display": "84.9",
         "pct": 23.8,
@@ -67677,7 +67677,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 91.6,
         "display": "91.6",
         "pct": 47.6,
@@ -69677,7 +69677,7 @@
       },
       {
         "key": "sg_cov_qb_rating_against",
-        "label": "QB Rating Against",
+        "label": "Passer Rating Allowed",
         "raw": 65.5,
         "display": "65.5",
         "pct": 53.1,
@@ -69717,7 +69717,7 @@
       },
       {
         "key": "sg_slot_cov_qb_rating_against",
-        "label": "Slot QB Rating Against",
+        "label": "Slot Passer Rating Allowed",
         "raw": 60.4,
         "display": "60.4",
         "pct": 48.4,

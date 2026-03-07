@@ -208,22 +208,22 @@ POSITION_ADVANCED_METRIC_CONFIG = {
         {"key": "sg_cov_forced_incompletion_rate", "label": "Forced Incompletion Rate", "fmt": "pct100", "weight": 0.16},
         {"key": "sg_cov_snaps_per_target", "label": "Coverage Snaps per Target", "fmt": "dec1", "weight": 0.14},
         {"key": "sg_cov_yards_per_snap", "label": "Yards Allowed / Coverage Snap", "fmt": "dec2", "lower_better": True, "weight": 0.18},
-        {"key": "sg_cov_qb_rating_against", "label": "QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.16},
+        {"key": "sg_cov_qb_rating_against", "label": "Passer Rating Allowed", "fmt": "dec1", "lower_better": True, "weight": 0.16},
         {"key": "sg_cov_man_grade", "label": "Man Coverage Grade", "fmt": "dec1", "weight": 0.12},
         {"key": "sg_slot_cov_snaps_per_target", "label": "Slot Snaps per Target", "fmt": "dec1", "weight": 0.10},
         {"key": "sg_slot_cov_yards_per_snap", "label": "Slot Yards Allowed / Snap", "fmt": "dec2", "lower_better": True, "weight": 0.10},
-        {"key": "sg_slot_cov_qb_rating_against", "label": "Slot QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.10},
+        {"key": "sg_slot_cov_qb_rating_against", "label": "Slot Passer Rating Allowed", "fmt": "dec1", "lower_better": True, "weight": 0.10},
     ],
     "S": [
         {"key": "sg_cov_grade", "label": "Coverage Grade", "fmt": "dec1", "weight": 0.22},
         {"key": "sg_cov_forced_incompletion_rate", "label": "Forced Incompletion Rate", "fmt": "pct100", "weight": 0.14},
         {"key": "sg_cov_snaps_per_target", "label": "Coverage Snaps per Target", "fmt": "dec1", "weight": 0.14},
         {"key": "sg_cov_yards_per_snap", "label": "Yards Allowed / Coverage Snap", "fmt": "dec2", "lower_better": True, "weight": 0.18},
-        {"key": "sg_cov_qb_rating_against", "label": "QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.14},
+        {"key": "sg_cov_qb_rating_against", "label": "Passer Rating Allowed", "fmt": "dec1", "lower_better": True, "weight": 0.14},
         {"key": "sg_cov_zone_grade", "label": "Zone Coverage Grade", "fmt": "dec1", "weight": 0.18},
         {"key": "sg_slot_cov_snaps_per_target", "label": "Slot Snaps per Target", "fmt": "dec1", "weight": 0.10},
         {"key": "sg_slot_cov_yards_per_snap", "label": "Slot Yards Allowed / Snap", "fmt": "dec2", "lower_better": True, "weight": 0.10},
-        {"key": "sg_slot_cov_qb_rating_against", "label": "Slot QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.10},
+        {"key": "sg_slot_cov_qb_rating_against", "label": "Slot Passer Rating Allowed", "fmt": "dec1", "lower_better": True, "weight": 0.10},
     ],
     "OT": [
         {"key": "sg_ol_pass_block_grade", "label": "Pass Block Grade", "fmt": "dec1", "weight": 0.34},
@@ -1385,6 +1385,32 @@ def _free_agent_priority(payload: dict) -> tuple:
     )
 
 
+def _contract_watch_priority(payload: dict) -> tuple:
+    position = str(payload.get("position") or "").strip().upper()
+    designation = str(payload.get("designation") or "").strip()
+    role_label = str(payload.get("role_label") or "").strip()
+    depth_rank = _safe_int(payload.get("depth_rank"), 99)
+    snap_count = _safe_int(payload.get("snap_count"), 0)
+    usage_proxy = _usage_proxy_from_role(position, role_label, depth_rank)
+    apy_pct = float(payload.get("apy_pct") or 0.0)
+    apy_m = _safe_float(payload.get("apy_m")) or 0.0
+    contract_years = _safe_int(payload.get("contract_years"), 0)
+    years_exp = _safe_int(payload.get("years_exp"), 0)
+    age = _safe_int(payload.get("age"), 99)
+    return (
+        _designation_priority(designation),
+        contract_years,
+        -snap_count,
+        -round(usage_proxy, 4),
+        -apy_pct,
+        -apy_m,
+        TEAM_NEEDS_POS_ORDER.index(position) if position in TEAM_NEEDS_POS_ORDER else 99,
+        -years_exp,
+        age,
+        str(payload.get("player_name", "")),
+    )
+
+
 def _player_designation(
     *,
     has_contract: bool,
@@ -1833,6 +1859,12 @@ def _build_team_depth_context() -> dict[str, dict]:
         draft_number = _safe_int(row.get("draft_number"), 0) or None
 
         contract = contract_by_gsis.get(gsis_id) or contract_by_name.get(_norm_player_key(name))
+        player_override = transaction_team_override_by_name.get(_norm_player_key(name), {})
+        override_current_team = str(player_override.get("current_team") or "").strip().upper()
+        override_action = str(player_override.get("action") or "").strip().lower()
+        transaction_rostered = override_current_team == team and any(
+            token in override_action for token in {"trade", "signed", "claimed", "agreed"}
+        )
         player_master = players_master_by_name.get(_norm_player_key(name), {})
         historical_contract = contract_history_by_name_team.get((_norm_player_key(name), team))
         apy = _safe_float(contract.get("apy")) if contract else None
@@ -1852,7 +1884,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             and _safe_int(player_master.get("rookie_season"), 0) >= (latest_season - 1)
             and _safe_int(player_master.get("years_of_experience"), 0) <= 1
         )
-        has_contract = bool(contract) or historical_contract_valid or inferred_rookie_contract
+        has_contract = bool(contract) or historical_contract_valid or inferred_rookie_contract or transaction_rostered
         contract_status_kind = "active_contract"
         if contract is not None:
             contract_label = f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
@@ -1871,6 +1903,9 @@ def _build_team_depth_context() -> dict[str, dict]:
         elif inferred_rookie_contract:
             contract_status_kind = "rookie_deal"
             contract_label = "Rookie deal"
+        elif transaction_rostered:
+            contract_status_kind = "transaction_rostered"
+            contract_label = "Rostered"
         else:
             contract_status_kind = "unsigned_watch"
             contract_label = "Contract watch"
@@ -1939,7 +1974,16 @@ def _build_team_depth_context() -> dict[str, dict]:
             continue
         roster_info = roster_lookup_by_team.get(team, {}).get(player_key, {})
         contract = contract_by_name.get(player_key)
-        contract_team_match = bool(contract) and str(contract.get("team_norm") or "").strip().upper() == team
+        player_override = transaction_team_override_by_name.get(player_key, {})
+        override_current_team = str(player_override.get("current_team") or "").strip().upper()
+        override_action = str(player_override.get("action") or "").strip().lower()
+        transaction_rostered = override_current_team == team and any(
+            token in override_action for token in {"trade", "signed", "claimed", "agreed"}
+        )
+        moved_with_existing_contract = bool(contract) and transaction_rostered
+        contract_team_match = bool(contract) and (
+            str(contract.get("team_norm") or "").strip().upper() == team or moved_with_existing_contract
+        )
         historical_contract = contract_history_by_name_team.get((player_key, team))
         player_master = players_master_by_name.get(player_key, {})
         latest_team_match = (
@@ -1947,7 +1991,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             and str(player_master.get("latest_team") or "").strip().upper() == team
             and str(player_master.get("status") or "").strip().upper() not in {"RET", "CUT"}
         )
-        if not roster_info and not contract_team_match and not latest_team_match:
+        if not roster_info and not contract_team_match and not latest_team_match and not transaction_rostered:
             skipped_espn_rows.append(
                 {
                     "team": team,
@@ -1985,9 +2029,9 @@ def _build_team_depth_context() -> dict[str, dict]:
             and latest_team_match
             and _safe_int(historical_contract.get("contract_end_year"), 0) >= CURRENT_DRAFT_YEAR
         )
-        has_contract = bool(contract) or roster_has_contract or inferred_rookie_contract or historical_team_contract
+        has_contract = contract_team_match or roster_has_contract or inferred_rookie_contract or historical_team_contract or transaction_rostered
         contract_status_kind = "active_contract"
-        if contract:
+        if contract_team_match and contract:
             contract_label = f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
         elif historical_team_contract:
             hist_years = _safe_int(historical_contract.get("years"), 0)
@@ -2007,6 +2051,9 @@ def _build_team_depth_context() -> dict[str, dict]:
         elif inferred_rookie_contract:
             contract_status_kind = "rookie_deal"
             contract_label = "Rookie deal"
+        elif transaction_rostered:
+            contract_status_kind = "transaction_rostered"
+            contract_label = "Rostered"
         else:
             contract_status_kind = "unsigned_watch"
             contract_label = "Contract watch"
@@ -2268,7 +2315,23 @@ def _build_team_depth_context() -> dict[str, dict]:
             key=_free_agent_priority,
         )
         key_free_agents = free_agents[:2]
-        contract_watch = free_agents[2:]
+        contract_watch_pool = list(free_agents[2:])
+        watch_seen = {
+            _norm_player_key(p.get("player_name", ""))
+            for p in contract_watch_pool
+            if _norm_player_key(p.get("player_name", ""))
+        }
+        for payload in unique_player_payloads:
+            status_kind = str(payload.get("contract_status_kind") or "").strip()
+            player_key = _norm_player_key(payload.get("player_name", ""))
+            contract_years = _safe_int(payload.get("contract_years"), 0)
+            snap_count = _safe_int(payload.get("snap_count"), 0)
+            if not player_key or player_key in watch_seen:
+                continue
+            if status_kind != "unsigned_watch" and contract_years <= 1 and snap_count >= 150:
+                contract_watch_pool.append(payload)
+                watch_seen.add(player_key)
+        contract_watch = sorted(contract_watch_pool, key=_contract_watch_priority)[:8]
 
         youth = sorted(
             [p for p in unique_player_payloads if _is_rising_young_player(p)],

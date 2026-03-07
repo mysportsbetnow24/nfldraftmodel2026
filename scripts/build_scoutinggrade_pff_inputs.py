@@ -714,6 +714,7 @@ def build() -> None:
                 "sg_dl_true_pass_set_win_rate": row.get("true_pass_set_pass_rush_win_rate", ""),
                 "sg_dl_true_pass_set_prp": row.get("true_pass_set_prp", ""),
                 "sg_dl_true_pass_set_total_pressures": row.get("true_pass_set_total_pressures", ""),
+                "sg_source_season": "2025",
             }
         )
 
@@ -757,6 +758,7 @@ def build() -> None:
                 "school": row.get("team_name", m.get("school", "")),
                 "sg_dl_prp": row.get("prp", m.get("sg_dl_prp", "")),
                 "sg_dl_total_pressures": row.get("pressures", m.get("sg_dl_total_pressures", "")),
+                "sg_source_season": "2025",
             }
         )
 
@@ -792,6 +794,7 @@ def build() -> None:
                 "sg_front_run_def_grade": row.get("grades_run_defense", metrics_by_pid[pid].get("sg_front_run_def_grade", "")),
                 "sg_front_stop_percent": row.get("stop_percent", metrics_by_pid[pid].get("sg_front_stop_percent", "")),
                 "sg_front_missed_tackle_rate": row.get("missed_tackle_rate", metrics_by_pid[pid].get("sg_front_missed_tackle_rate", "")),
+                "sg_source_season": "2025",
             }
         )
 
@@ -835,6 +838,7 @@ def build() -> None:
                 "sg_def_tackles": row.get("tackles", ""),
                 "sg_def_tackles_for_loss": row.get("tackles_for_loss", ""),
                 "sg_def_total_pressures": row.get("total_pressures", ""),
+                "sg_source_season": "2025",
             }
         )
 
@@ -996,9 +1000,53 @@ def build() -> None:
         ):
             metrics_by_pid[pid]["source"] = "scoutinggrade_advanced_signal_2025_with_2024_fallback"
 
+    premium_2025_any_pids: set[str] = set()
+    premium_2025_cov_pids: set[str] = set()
+    premium_2025_files = {
+        "passing_summary",
+        "passing_depth",
+        "passing_pressure",
+        "passing_concept",
+        "time_in_pocket",
+        "rushing_summary",
+        "receiving_summary",
+        "receiving_scheme",
+        "receiving_depth",
+        "receiving_concept",
+        "offense_blocking",
+        "offense_pass_blocking",
+        "offense_run_blocking",
+        "pass_rush_summary",
+        "pass_rush_productivity",
+        "run_defense_summary",
+        "defense_summary",
+        "defense_coverage_summary",
+        "defense_coverage_scheme",
+        "slot_coverage",
+    }
+    premium_2025_cov_files = {
+        "defense_coverage_summary",
+        "defense_coverage_scheme",
+        "slot_coverage",
+    }
+    for source_name in premium_2025_files:
+        for source_row in premium_rows_by_file.get(source_name, []):
+            pid = str(source_row.get("player_id", "")).strip()
+            if not pid or pid not in expected_by_pid:
+                continue
+            if not _row_matches_expected(expected_by_pid.get(pid, {}), source_row):
+                continue
+            premium_2025_any_pids.add(pid)
+            if source_name in premium_2025_cov_files:
+                premium_2025_cov_pids.add(pid)
+
     advanced_rows = []
     for pid in sorted(metrics_by_pid):
         row = metrics_by_pid[pid]
+        if pid in premium_2025_any_pids:
+            row["sg_source_season"] = "2025"
+        if pid in premium_2025_cov_pids:
+            row["sg_cov_source_season"] = "2025"
         row["position"] = _norm_pos(row.get("position", ""))
         row["source"] = row.get("source", "scoutinggrade_advanced_signal_2025")
         row["season"] = 2025

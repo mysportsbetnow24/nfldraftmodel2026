@@ -1,76 +1,11 @@
 {
   "delta_source": "delta_audit_2026_latest.csv",
-  "risers": [
-    {
-      "player_name": "Demond Claiborne",
-      "position": "RB",
-      "school": "Wake Forest Demon Deacons",
-      "rank_delta_prev_minus_curr": 1,
-      "top_driver": "production (up 0.20)"
-    },
-    {
-      "player_name": "Aamil Wagner",
-      "position": "OT",
-      "school": "Notre Dame Fighting Irish",
-      "rank_delta_prev_minus_curr": 1,
-      "top_driver": "athletic (up 0.00)"
-    },
-    {
-      "player_name": "Pat Coogan",
-      "position": "IOL",
-      "school": "Indiana Hoosiers",
-      "rank_delta_prev_minus_curr": 1,
-      "top_driver": "athletic (up 0.00)"
-    },
-    {
-      "player_name": "J.C. Davis",
-      "position": "OT",
-      "school": "Illinois Fighting Illini",
-      "rank_delta_prev_minus_curr": 1,
-      "top_driver": "athletic (up 0.00)"
-    },
-    {
-      "player_name": "Namdi Obiazor",
-      "position": "LB",
-      "school": "TCU Horned Frogs",
-      "rank_delta_prev_minus_curr": 1,
-      "top_driver": "athletic (up 0.00)"
-    }
-  ],
-  "fallers": [
-    {
-      "player_name": "Brenen Thompson",
-      "position": "WR",
-      "school": "Mississippi State Bulldogs",
-      "rank_delta_prev_minus_curr": -2,
-      "top_driver": "production (down 0.31)"
-    },
-    {
-      "player_name": "Bud Clark",
-      "position": "S",
-      "school": "TCU Horned Frogs",
-      "rank_delta_prev_minus_curr": -1,
-      "top_driver": "athletic (up 0.00)"
-    },
-    {
-      "player_name": "Kage Casey",
-      "position": "OT",
-      "school": "Boise State Broncos",
-      "rank_delta_prev_minus_curr": -1,
-      "top_driver": "production (down 0.66)"
-    },
-    {
-      "player_name": "Fa'alili Fa'amoe",
-      "position": "OT",
-      "school": "Wake Forest Demon Deacons",
-      "rank_delta_prev_minus_curr": -1,
-      "top_driver": "production (down 0.92)"
-    }
-  ],
+  "risers": [],
+  "fallers": [],
   "summary": {
-    "movers_total": 9,
-    "risers_total": 5,
-    "fallers_total": 4,
+    "movers_total": 0,
+    "risers_total": 0,
+    "fallers_total": 0,
     "qa_watch_total": 0,
     "qa_clear_total": 311
   }
