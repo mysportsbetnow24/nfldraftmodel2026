@@ -50,7 +50,13 @@ from src.modeling.comp_model import assign_comp
 from src.modeling.calibration import load_calibration_config, calibrated_success_probability
 from src.modeling.grading import grade_player, scouting_note
 from src.modeling.mockdraftable_features import compute_mockdraftable_composite
-from src.modeling.ras import historical_ras_comparison, ras_percentile, ras_tier
+from src.modeling.ras import (
+    estimate_ras,
+    historical_ras_comparison,
+    ras_from_combine_profile,
+    ras_percentile,
+    ras_tier,
+)
 from src.modeling.team_fit import best_team_fit
 from src.schemas import parse_height_to_inches, round_from_grade
 
@@ -872,32 +878,63 @@ def _scale_waa(pff_waa: float | None) -> float:
 
 
 
-def _official_ras_fields(position: str, combine: dict) -> tuple[dict, dict]:
+def _athletic_source_confidence(source: str) -> float:
+    source_key = str(source or "").strip().lower()
+    if source_key == "combine_official":
+        return 1.0
+    if source_key == "combine_derived_partial":
+        return 0.82
+    if source_key == "estimated_profile_proxy":
+        return 0.58
+    if source_key == "pending_combine":
+        return 0.35
+    return 0.5
+
+
+def _official_ras_fields(position: str, combine: dict, *, fallback_ras: dict) -> tuple[dict, dict]:
     official = combine.get("ras_official")
-    if official is None:
+    if official is not None:
+        score = round(max(0.0, min(10.0, float(official))), 2)
+        tier = ras_tier(score)
+        ras = {
+            "ras_estimate": score,
+            "ras_tier": tier,
+            "ras_percentile": ras_percentile(score),
+            "ras_source": "combine_official",
+        }
+        return ras, historical_ras_comparison(position, tier)
+
+    derived = ras_from_combine_profile(position, combine, fallback_ras)
+    if str(derived.get("ras_source") or "").strip() == "combine_derived_partial":
+        return derived, historical_ras_comparison(position, str(derived.get("ras_tier") or "average"))
+
+    if derived.get("ras_estimate") not in {"", None}:
+        return derived, historical_ras_comparison(position, str(derived.get("ras_tier") or "average"))
+
+    if combine.get("combine_testing_event_count"):
         return (
             {
-                "ras_estimate": "",
-                "ras_tier": "",
-                "ras_percentile": "",
-                "ras_source": "pending_combine",
+                "ras_estimate": fallback_ras.get("ras_estimate", ""),
+                "ras_tier": fallback_ras.get("ras_tier", ""),
+                "ras_percentile": fallback_ras.get("ras_percentile", ""),
+                "ras_source": fallback_ras.get("ras_source", "estimated_profile_proxy"),
             },
-            {
-                "ras_historical_comp_1": "",
-                "ras_historical_comp_2": "",
-                "ras_comparison_note": "Pending official combine RAS",
-            },
+            historical_ras_comparison(position, str(fallback_ras.get("ras_tier") or "average")),
         )
 
-    score = round(max(0.0, min(10.0, float(official))), 2)
-    tier = ras_tier(score)
-    ras = {
-        "ras_estimate": score,
-        "ras_tier": tier,
-        "ras_percentile": ras_percentile(score),
-        "ras_source": "combine_official",
-    }
-    return ras, historical_ras_comparison(position, tier)
+    return (
+        {
+            "ras_estimate": "",
+            "ras_tier": "",
+            "ras_percentile": "",
+            "ras_source": "pending_combine",
+        },
+        {
+            "ras_historical_comp_1": "",
+            "ras_historical_comp_2": "",
+            "ras_comparison_note": "Pending official combine RAS",
+        },
+    )
 
 
 def _build_analyst_pos_votes(analyst_rows: list[dict]) -> dict[str, dict[str, int]]:
@@ -1341,6 +1378,9 @@ def _compute_formula_score(
         production_guardrail_delta = production_component - PRODUCTION_SIGNAL_NEUTRAL
 
     official_ras = _as_float(ras.get("ras_estimate"))
+    ras_source = str(ras.get("ras_source") or "").strip().lower()
+    has_official_ras = ras_source == "combine_official"
+    has_partial_ras = ras_source == "combine_derived_partial"
     md_speed_pct = _as_float(md_features.get("md_speed_pct"))
     md_explosion_pct = _as_float(md_features.get("md_explosion_pct"))
     md_agility_pct = _as_float(md_features.get("md_agility_pct"))
@@ -1367,13 +1407,20 @@ def _compute_formula_score(
     athletic_evidence_count = max(athletic_profile_cov_count, len(legacy_athletic_parts))
     athletic_cap_applied = ""
     athletic_source = "neutral_default"
-    if official_ras is not None and athletic_profile_score is not None:
+    if has_official_ras and official_ras is not None and athletic_profile_score is not None:
         profile_w = _clamp(0.20 + (0.35 * athletic_profile_cov_rate), 0.20, 0.55)
         athletic_component = ((1.0 - profile_w) * (official_ras * 10.0)) + (profile_w * athletic_profile_score)
-        athletic_source = "ras_plus_position_era_profile"
-    elif official_ras is not None:
+        athletic_source = "official_combine_plus_position_era_profile"
+    elif has_official_ras and official_ras is not None:
         athletic_component = official_ras * 10.0
-        athletic_source = "ras_only"
+        athletic_source = "official_combine_only"
+    elif has_partial_ras and official_ras is not None and athletic_profile_score is not None:
+        profile_w = _clamp(0.25 + (0.45 * athletic_profile_cov_rate), 0.25, 0.70)
+        athletic_component = ((1.0 - profile_w) * (official_ras * 10.0)) + (profile_w * athletic_profile_score)
+        athletic_source = "pro_day_or_partial_plus_position_era_profile"
+    elif has_partial_ras and official_ras is not None:
+        athletic_component = official_ras * 10.0
+        athletic_source = "pro_day_or_partial_only"
     elif athletic_profile_score is not None:
         profile_w = _clamp(0.20 + (0.55 * athletic_profile_cov_rate), 0.20, 0.75)
         athletic_component = (profile_w * athletic_profile_score) + ((1.0 - profile_w) * legacy_athletic_component)
@@ -1382,13 +1429,26 @@ def _compute_formula_score(
         athletic_component = legacy_athletic_component
         athletic_source = "md_fallback"
 
+    strong_athletic_profile = athletic_profile_score is not None and athletic_profile_score >= 68.0
+    elite_athletic_profile = athletic_profile_score is not None and athletic_profile_score >= 74.0
     if position in {"EDGE", "DT", "LB"}:
-        # Keep front-seven athletic upside from sparse testing in check.
-        if athletic_evidence_count <= 2:
-            capped = min(athletic_component, 86.0)
+        # Keep front-seven athletic upside from sparse testing in check without over-penalizing
+        # a class where many top prospects are skipping full official testing.
+        cap_ceiling = None
+        if not has_official_ras and athletic_evidence_count <= 1:
+            if has_partial_ras and not strong_athletic_profile:
+                cap_ceiling = 89.0
+            elif not has_partial_ras and elite_athletic_profile:
+                cap_ceiling = None
+            elif not has_partial_ras and strong_athletic_profile:
+                cap_ceiling = 90.0
+            else:
+                cap_ceiling = 87.5
+        if cap_ceiling is not None:
+            capped = min(athletic_component, cap_ceiling)
             if capped < athletic_component:
                 athletic_component = capped
-                athletic_cap_applied = "front7_sparse_testing_cap_86"
+                athletic_cap_applied = f"front7_sparse_testing_cap_{cap_ceiling:.1f}"
 
     size_component = float(grades.get("size_score", 75.0) or 75.0)
     context_component = _class_context_score(class_year)
@@ -1491,6 +1551,10 @@ def _compute_formula_score(
         testing_missing_weight = TESTING_MISSING_SIGNAL_WEIGHT_QB if position == "QB" else TESTING_MISSING_SIGNAL_WEIGHT_NON_QB
         evidence_testing_missing_weight = EVIDENCE_GUARDRAIL_TESTING_MISSING_WEIGHT
         athletic_missing_risk_factor = 1.0
+    if has_partial_ras:
+        athletic_missing_risk_factor *= 0.35
+    elif strong_athletic_profile and not has_official_ras:
+        athletic_missing_risk_factor *= 0.55
     missing_signal_count = missing_non_testing_count + (testing_missing_weight * testing_missing_count)
     missing_signal_count_raw = missing_non_testing_count + testing_missing_count
 
@@ -1604,6 +1668,7 @@ def _compute_formula_score(
         "formula_athletic_component": round(athletic_component, 2),
         "formula_athletic_evidence_count": athletic_evidence_count,
         "formula_athletic_source": athletic_source,
+        "formula_athletic_source_confidence": round(_athletic_source_confidence(ras_source or athletic_source), 2),
         "formula_athletic_cap_applied": athletic_cap_applied,
         "athletic_profile_score": athletic_profile.get("athletic_profile_score", ""),
         "athletic_speed_score": athletic_profile.get("athletic_speed_score", ""),
@@ -3904,7 +3969,14 @@ def main() -> None:
             athletic_score=float(_as_float(grades.get("athletic_score")) or 0.0),
         )
         comp = assign_comp(pos, row["rank_seed"])
-        ras, ras_comps = _official_ras_fields(pos, combine)
+        fallback_ras = estimate_ras(
+            pos,
+            int(effective_height_in or POSITION_DEFAULT_FRAME.get(pos, (72, 210))[0]),
+            int(effective_weight_lb or POSITION_DEFAULT_FRAME.get(pos, (72, 210))[1]),
+            float(_as_float(grades.get("athletic_score")) or 70.0),
+            int(row["rank_seed"]),
+        )
+        ras, ras_comps = _official_ras_fields(pos, combine, fallback_ras=fallback_ras)
         ras_score_val = _as_float(ras.get("ras_estimate"))
         ras_bench = ras_benchmarks.get(pos, {})
         starter_target = _as_float(ras_bench.get("starter_target_ras"))

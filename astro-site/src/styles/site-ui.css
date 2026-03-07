@@ -502,6 +502,7 @@ tbody tr.clickable-row {
 
 .compare-cta-row {
   margin-top: 0.2rem;
+  display: flex;
 }
 
 .compare-cta {
@@ -1029,5 +1030,15 @@ tbody tr.clickable-row {
 
   .compare-card {
     padding: 0.8rem;
+  }
+
+  .compare-cta-row {
+    width: 100%;
+  }
+
+  .compare-cta {
+    width: 100%;
+    padding: 0.62rem 1rem;
+    font-size: 0.9rem;
   }
 }
