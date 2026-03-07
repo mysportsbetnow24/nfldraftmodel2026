@@ -191,6 +191,9 @@ POSITION_ADVANCED_METRIC_CONFIG = {
         {"key": "sg_cov_yards_per_snap", "label": "Yards / Coverage Snap", "fmt": "dec2", "lower_better": True, "weight": 0.18},
         {"key": "sg_cov_qb_rating_against", "label": "QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.16},
         {"key": "sg_cov_man_grade", "label": "Man Coverage Grade", "fmt": "dec1", "weight": 0.12},
+        {"key": "sg_slot_cov_snaps_per_target", "label": "Slot Snaps / Target", "fmt": "dec1", "weight": 0.10},
+        {"key": "sg_slot_cov_yards_per_snap", "label": "Slot Yards / Snap", "fmt": "dec2", "lower_better": True, "weight": 0.10},
+        {"key": "sg_slot_cov_qb_rating_against", "label": "Slot QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.10},
     ],
     "S": [
         {"key": "sg_cov_grade", "label": "Coverage Grade", "fmt": "dec1", "weight": 0.22},
@@ -199,6 +202,9 @@ POSITION_ADVANCED_METRIC_CONFIG = {
         {"key": "sg_cov_yards_per_snap", "label": "Yards / Coverage Snap", "fmt": "dec2", "lower_better": True, "weight": 0.18},
         {"key": "sg_cov_qb_rating_against", "label": "QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.14},
         {"key": "sg_cov_zone_grade", "label": "Zone Coverage Grade", "fmt": "dec1", "weight": 0.18},
+        {"key": "sg_slot_cov_snaps_per_target", "label": "Slot Snaps / Target", "fmt": "dec1", "weight": 0.10},
+        {"key": "sg_slot_cov_yards_per_snap", "label": "Slot Yards / Snap", "fmt": "dec2", "lower_better": True, "weight": 0.10},
+        {"key": "sg_slot_cov_qb_rating_against", "label": "Slot QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.10},
     ],
     "OT": [
         {"key": "sg_ol_pass_block_grade", "label": "Pass Block Grade", "fmt": "dec1", "weight": 0.34},

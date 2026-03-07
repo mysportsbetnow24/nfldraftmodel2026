@@ -21,6 +21,32 @@ Astro starter for `scoutinggrade.com` that reads model outputs from this repo.
 
 Output goes to `astro-site/dist`.
 
+## Regular Refresh Workflow
+
+Run the full daily update pipeline from `astro-site`:
+
+```bash
+npm run refresh:workflow
+```
+
+That workflow runs, in order:
+
+1. consensus pull + big-board rebuild
+2. CBS transactions pull
+3. team-needs transaction adjustment rebuild
+4. mock rebuild
+5. Astro data export
+6. site build
+
+Useful direct flags from repo root:
+
+```bash
+python3 scripts/refresh_update_workflow.py --skip-consensus-fetch
+python3 scripts/refresh_update_workflow.py --skip-transactions-fetch
+python3 scripts/refresh_update_workflow.py --skip-mocks
+python3 scripts/refresh_update_workflow.py --skip-site-build
+```
+
 ## Cloudflare Pages
 
 - Framework preset: `Astro`

@@ -1363,6 +1363,9 @@
       "sg_cov_yards_per_snap": 0.5,
       "sg_cov_qb_rating_against": 54.5,
       "sg_cov_zone_grade": 72.0,
+      "sg_slot_cov_snaps_per_target": 4.6,
+      "sg_slot_cov_yards_per_snap": 0.88,
+      "sg_slot_cov_qb_rating_against": 79.2,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 1.0,
       "cfb_db_tackles": 68.0,
@@ -1375,7 +1378,9 @@
       "sg_cov_snaps_per_target": 28.6,
       "sg_cov_yards_per_snap": 52.4,
       "sg_cov_qb_rating_against": 23.8,
-      "sg_cov_zone_grade": 52.4
+      "sg_cov_zone_grade": 52.4,
+      "sg_slot_cov_snaps_per_target": 33.3,
+      "sg_slot_cov_qb_rating_against": 38.1
     },
     "advanced_metric_cards": [
       {
@@ -1437,6 +1442,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 4.6,
+        "display": "4.6",
+        "pct": 33.3,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.88,
+        "display": "0.88",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 79.2,
+        "display": "79.2",
+        "pct": 61.9,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -1445,7 +1480,10 @@
       "sg_cov_snaps_per_target": 8.9,
       "sg_cov_yards_per_snap": 0.5,
       "sg_cov_qb_rating_against": 54.5,
-      "sg_cov_zone_grade": 72.0
+      "sg_cov_zone_grade": 72.0,
+      "sg_slot_cov_snaps_per_target": 4.6,
+      "sg_slot_cov_yards_per_snap": 0.88,
+      "sg_slot_cov_qb_rating_against": 79.2
     },
     "advanced_percentiles": {
       "sg_cov_grade": 85.7,
@@ -1453,7 +1491,9 @@
       "sg_cov_snaps_per_target": 28.6,
       "sg_cov_yards_per_snap": 52.4,
       "sg_cov_qb_rating_against": 23.8,
-      "sg_cov_zone_grade": 52.4
+      "sg_cov_zone_grade": 52.4,
+      "sg_slot_cov_snaps_per_target": 33.3,
+      "sg_slot_cov_qb_rating_against": 38.1
     },
     "counting_stat_chips": [
       {
@@ -1499,7 +1539,7 @@
       "cfb_db_tfl": 5.0,
       "sg_def_total_pressures": 5.0
     },
-    "production_composite_pct": 55.5,
+    "production_composite_pct": 53.9,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -1787,6 +1827,9 @@
       "sg_cov_yards_per_snap": 0.5,
       "sg_cov_qb_rating_against": 31.3,
       "sg_cov_man_grade": 89.1,
+      "sg_slot_cov_snaps_per_target": 8.5,
+      "sg_slot_cov_yards_per_snap": 0.35,
+      "sg_slot_cov_qb_rating_against": 56.3,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 11.0,
       "cfb_db_tackles": 45.0,
@@ -1798,7 +1841,9 @@
       "sg_cov_snaps_per_target": 93.5,
       "sg_cov_yards_per_snap": 12.9,
       "sg_cov_qb_rating_against": 6.5,
-      "sg_cov_man_grade": 100.0
+      "sg_cov_man_grade": 100.0,
+      "sg_slot_cov_snaps_per_target": 96.2,
+      "sg_slot_cov_qb_rating_against": 50.0
     },
     "advanced_metric_cards": [
       {
@@ -1860,6 +1905,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 8.5,
+        "display": "8.5",
+        "pct": 96.2,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.35,
+        "display": "0.35",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 56.3,
+        "display": "56.3",
+        "pct": 50.0,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -1868,7 +1943,10 @@
       "sg_cov_snaps_per_target": 9.7,
       "sg_cov_yards_per_snap": 0.5,
       "sg_cov_qb_rating_against": 31.3,
-      "sg_cov_man_grade": 89.1
+      "sg_cov_man_grade": 89.1,
+      "sg_slot_cov_snaps_per_target": 8.5,
+      "sg_slot_cov_yards_per_snap": 0.35,
+      "sg_slot_cov_qb_rating_against": 56.3
     },
     "advanced_percentiles": {
       "sg_cov_grade": 96.8,
@@ -1876,7 +1954,9 @@
       "sg_cov_snaps_per_target": 93.5,
       "sg_cov_yards_per_snap": 12.9,
       "sg_cov_qb_rating_against": 6.5,
-      "sg_cov_man_grade": 100.0
+      "sg_cov_man_grade": 100.0,
+      "sg_slot_cov_snaps_per_target": 96.2,
+      "sg_slot_cov_qb_rating_against": 50.0
     },
     "counting_stat_chips": [
       {
@@ -1914,7 +1994,7 @@
       "cfb_db_tackles": 45.0,
       "sg_def_total_pressures": 3.0
     },
-    "production_composite_pct": 95.0,
+    "production_composite_pct": 88.1,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -3022,6 +3102,9 @@
       "sg_cov_yards_per_snap": 0.4,
       "sg_cov_qb_rating_against": 80.4,
       "sg_cov_zone_grade": 89.7,
+      "sg_slot_cov_snaps_per_target": 6.5,
+      "sg_slot_cov_yards_per_snap": 0.82,
+      "sg_slot_cov_qb_rating_against": 99.8,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 5.0,
       "cfb_db_tackles": 92.0,
@@ -3034,7 +3117,9 @@
       "sg_cov_snaps_per_target": 71.4,
       "sg_cov_yards_per_snap": 38.1,
       "sg_cov_qb_rating_against": 71.4,
-      "sg_cov_zone_grade": 95.2
+      "sg_cov_zone_grade": 95.2,
+      "sg_slot_cov_snaps_per_target": 71.4,
+      "sg_slot_cov_qb_rating_against": 66.7
     },
     "advanced_metric_cards": [
       {
@@ -3096,6 +3181,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.5,
+        "display": "6.5",
+        "pct": 71.4,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.82,
+        "display": "0.82",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 99.8,
+        "display": "99.8",
+        "pct": 33.3,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -3104,7 +3219,10 @@
       "sg_cov_snaps_per_target": 14.2,
       "sg_cov_yards_per_snap": 0.4,
       "sg_cov_qb_rating_against": 80.4,
-      "sg_cov_zone_grade": 89.7
+      "sg_cov_zone_grade": 89.7,
+      "sg_slot_cov_snaps_per_target": 6.5,
+      "sg_slot_cov_yards_per_snap": 0.82,
+      "sg_slot_cov_qb_rating_against": 99.8
     },
     "advanced_percentiles": {
       "sg_cov_grade": 95.2,
@@ -3112,7 +3230,9 @@
       "sg_cov_snaps_per_target": 71.4,
       "sg_cov_yards_per_snap": 38.1,
       "sg_cov_qb_rating_against": 71.4,
-      "sg_cov_zone_grade": 95.2
+      "sg_cov_zone_grade": 95.2,
+      "sg_slot_cov_snaps_per_target": 71.4,
+      "sg_slot_cov_qb_rating_against": 66.7
     },
     "counting_stat_chips": [
       {
@@ -3158,7 +3278,7 @@
       "cfb_db_tfl": 4.0,
       "sg_def_total_pressures": 4.0
     },
-    "production_composite_pct": 75.9,
+    "production_composite_pct": 70.3,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -3453,6 +3573,9 @@
       "sg_cov_yards_per_snap": 0.4,
       "sg_cov_qb_rating_against": 50.3,
       "sg_cov_zone_grade": 92.5,
+      "sg_slot_cov_snaps_per_target": 21.0,
+      "sg_slot_cov_yards_per_snap": -0.05,
+      "sg_slot_cov_qb_rating_against": 79.2,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 77.0,
@@ -3465,7 +3588,9 @@
       "sg_cov_snaps_per_target": 95.2,
       "sg_cov_yards_per_snap": 38.1,
       "sg_cov_qb_rating_against": 19.0,
-      "sg_cov_zone_grade": 100.0
+      "sg_cov_zone_grade": 100.0,
+      "sg_slot_cov_snaps_per_target": 100.0,
+      "sg_slot_cov_qb_rating_against": 38.1
     },
     "advanced_metric_cards": [
       {
@@ -3527,6 +3652,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 21.0,
+        "display": "21.0",
+        "pct": 100.0,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": -0.05,
+        "display": "-0.05",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 79.2,
+        "display": "79.2",
+        "pct": 61.9,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -3535,7 +3690,10 @@
       "sg_cov_snaps_per_target": 20.9,
       "sg_cov_yards_per_snap": 0.4,
       "sg_cov_qb_rating_against": 50.3,
-      "sg_cov_zone_grade": 92.5
+      "sg_cov_zone_grade": 92.5,
+      "sg_slot_cov_snaps_per_target": 21.0,
+      "sg_slot_cov_yards_per_snap": -0.05,
+      "sg_slot_cov_qb_rating_against": 79.2
     },
     "advanced_percentiles": {
       "sg_cov_grade": 100.0,
@@ -3543,7 +3701,9 @@
       "sg_cov_snaps_per_target": 95.2,
       "sg_cov_yards_per_snap": 38.1,
       "sg_cov_qb_rating_against": 19.0,
-      "sg_cov_zone_grade": 100.0
+      "sg_cov_zone_grade": 100.0,
+      "sg_slot_cov_snaps_per_target": 100.0,
+      "sg_slot_cov_qb_rating_against": 38.1
     },
     "counting_stat_chips": [
       {
@@ -3589,7 +3749,7 @@
       "cfb_db_tfl": 6.0,
       "sg_def_total_pressures": 5.0
     },
-    "production_composite_pct": 89.8,
+    "production_composite_pct": 85.4,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -6038,6 +6198,9 @@
       "sg_cov_yards_per_snap": 1.4,
       "sg_cov_qb_rating_against": 78.9,
       "sg_cov_man_grade": 61.6,
+      "sg_slot_cov_snaps_per_target": 6.3,
+      "sg_slot_cov_yards_per_snap": 0.58,
+      "sg_slot_cov_qb_rating_against": 45.1,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 5.0,
       "cfb_db_tackles": 27.0,
@@ -6050,7 +6213,9 @@
       "sg_cov_snaps_per_target": 29.0,
       "sg_cov_yards_per_snap": 100.0,
       "sg_cov_qb_rating_against": 61.3,
-      "sg_cov_man_grade": 29.0
+      "sg_cov_man_grade": 29.0,
+      "sg_slot_cov_snaps_per_target": 73.1,
+      "sg_slot_cov_qb_rating_against": 34.6
     },
     "advanced_metric_cards": [
       {
@@ -6112,6 +6277,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.3,
+        "display": "6.3",
+        "pct": 73.1,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.58,
+        "display": "0.58",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 45.1,
+        "display": "45.1",
+        "pct": 65.4,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -6120,7 +6315,10 @@
       "sg_cov_snaps_per_target": 6.6,
       "sg_cov_yards_per_snap": 1.4,
       "sg_cov_qb_rating_against": 78.9,
-      "sg_cov_man_grade": 61.6
+      "sg_cov_man_grade": 61.6,
+      "sg_slot_cov_snaps_per_target": 6.3,
+      "sg_slot_cov_yards_per_snap": 0.58,
+      "sg_slot_cov_qb_rating_against": 45.1
     },
     "advanced_percentiles": {
       "sg_cov_grade": 29.0,
@@ -6128,7 +6326,9 @@
       "sg_cov_snaps_per_target": 29.0,
       "sg_cov_yards_per_snap": 100.0,
       "sg_cov_qb_rating_against": 61.3,
-      "sg_cov_man_grade": 29.0
+      "sg_cov_man_grade": 29.0,
+      "sg_slot_cov_snaps_per_target": 73.1,
+      "sg_slot_cov_qb_rating_against": 34.6
     },
     "counting_stat_chips": [
       {
@@ -6174,7 +6374,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 42.2,
+    "production_composite_pct": 47.7,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -7595,6 +7795,9 @@
       "sg_cov_yards_per_snap": 0.8,
       "sg_cov_qb_rating_against": 70.8,
       "sg_cov_man_grade": 74.6,
+      "sg_slot_cov_snaps_per_target": 5.0,
+      "sg_slot_cov_yards_per_snap": 0.0,
+      "sg_slot_cov_qb_rating_against": 39.6,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 8.0,
       "cfb_db_tackles": 50.0,
@@ -7607,7 +7810,9 @@
       "sg_cov_snaps_per_target": 83.9,
       "sg_cov_yards_per_snap": 54.8,
       "sg_cov_qb_rating_against": 54.8,
-      "sg_cov_man_grade": 71.0
+      "sg_cov_man_grade": 71.0,
+      "sg_slot_cov_snaps_per_target": 42.3,
+      "sg_slot_cov_qb_rating_against": 23.1
     },
     "advanced_metric_cards": [
       {
@@ -7669,6 +7874,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 5.0,
+        "display": "5.0",
+        "pct": 42.3,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.0,
+        "display": "0.00",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 39.6,
+        "display": "39.6",
+        "pct": 76.9,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -7677,7 +7912,10 @@
       "sg_cov_snaps_per_target": 8.1,
       "sg_cov_yards_per_snap": 0.8,
       "sg_cov_qb_rating_against": 70.8,
-      "sg_cov_man_grade": 74.6
+      "sg_cov_man_grade": 74.6,
+      "sg_slot_cov_snaps_per_target": 5.0,
+      "sg_slot_cov_yards_per_snap": 0.0,
+      "sg_slot_cov_qb_rating_against": 39.6
     },
     "advanced_percentiles": {
       "sg_cov_grade": 64.5,
@@ -7685,7 +7923,9 @@
       "sg_cov_snaps_per_target": 83.9,
       "sg_cov_yards_per_snap": 54.8,
       "sg_cov_qb_rating_against": 54.8,
-      "sg_cov_man_grade": 71.0
+      "sg_cov_man_grade": 71.0,
+      "sg_slot_cov_snaps_per_target": 42.3,
+      "sg_slot_cov_qb_rating_against": 23.1
     },
     "counting_stat_chips": [
       {
@@ -7731,7 +7971,7 @@
       "cfb_db_tfl": 4.0,
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 57.3,
+    "production_composite_pct": 57.1,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -7838,6 +8078,9 @@
       "sg_cov_yards_per_snap": 0.9,
       "sg_cov_qb_rating_against": 96.9,
       "sg_cov_man_grade": 66.7,
+      "sg_slot_cov_snaps_per_target": 4.9,
+      "sg_slot_cov_yards_per_snap": 0.78,
+      "sg_slot_cov_qb_rating_against": 55.1,
       "cfb_db_pbu": 8.0,
       "cfb_db_tackles": 48.0,
       "cfb_db_tfl": 4.0,
@@ -7849,7 +8092,9 @@
       "sg_cov_snaps_per_target": 51.6,
       "sg_cov_yards_per_snap": 71.0,
       "sg_cov_qb_rating_against": 83.9,
-      "sg_cov_man_grade": 45.2
+      "sg_cov_man_grade": 45.2,
+      "sg_slot_cov_snaps_per_target": 34.6,
+      "sg_slot_cov_qb_rating_against": 42.3
     },
     "advanced_metric_cards": [
       {
@@ -7911,6 +8156,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 4.9,
+        "display": "4.9",
+        "pct": 34.6,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.78,
+        "display": "0.78",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 55.1,
+        "display": "55.1",
+        "pct": 57.7,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -7919,7 +8194,10 @@
       "sg_cov_snaps_per_target": 7.3,
       "sg_cov_yards_per_snap": 0.9,
       "sg_cov_qb_rating_against": 96.9,
-      "sg_cov_man_grade": 66.7
+      "sg_cov_man_grade": 66.7,
+      "sg_slot_cov_snaps_per_target": 4.9,
+      "sg_slot_cov_yards_per_snap": 0.78,
+      "sg_slot_cov_qb_rating_against": 55.1
     },
     "advanced_percentiles": {
       "sg_cov_grade": 54.8,
@@ -7927,7 +8205,9 @@
       "sg_cov_snaps_per_target": 51.6,
       "sg_cov_yards_per_snap": 71.0,
       "sg_cov_qb_rating_against": 83.9,
-      "sg_cov_man_grade": 45.2
+      "sg_cov_man_grade": 45.2,
+      "sg_slot_cov_snaps_per_target": 34.6,
+      "sg_slot_cov_qb_rating_against": 42.3
     },
     "counting_stat_chips": [
       {
@@ -7965,7 +8245,7 @@
       "cfb_db_tfl": 4.0,
       "sg_def_total_pressures": 6.0
     },
-    "production_composite_pct": 43.9,
+    "production_composite_pct": 44.7,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -9960,6 +10240,9 @@
       "sg_cov_yards_per_snap": 1.0,
       "sg_cov_qb_rating_against": 84.2,
       "sg_cov_man_grade": 52.2,
+      "sg_slot_cov_snaps_per_target": 2.3,
+      "sg_slot_cov_yards_per_snap": 0.93,
+      "sg_slot_cov_qb_rating_against": 42.4,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 8.0,
       "cfb_db_tackles": 48.0,
@@ -9971,7 +10254,9 @@
       "sg_cov_snaps_per_target": 19.4,
       "sg_cov_yards_per_snap": 77.4,
       "sg_cov_qb_rating_against": 67.7,
-      "sg_cov_man_grade": 3.2
+      "sg_cov_man_grade": 3.2,
+      "sg_slot_cov_snaps_per_target": 15.4,
+      "sg_slot_cov_qb_rating_against": 30.8
     },
     "advanced_metric_cards": [
       {
@@ -10033,6 +10318,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 2.3,
+        "display": "2.3",
+        "pct": 15.4,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.93,
+        "display": "0.93",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 42.4,
+        "display": "42.4",
+        "pct": 69.2,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -10041,7 +10356,10 @@
       "sg_cov_snaps_per_target": 6.3,
       "sg_cov_yards_per_snap": 1.0,
       "sg_cov_qb_rating_against": 84.2,
-      "sg_cov_man_grade": 52.2
+      "sg_cov_man_grade": 52.2,
+      "sg_slot_cov_snaps_per_target": 2.3,
+      "sg_slot_cov_yards_per_snap": 0.93,
+      "sg_slot_cov_qb_rating_against": 42.4
     },
     "advanced_percentiles": {
       "sg_cov_grade": 19.4,
@@ -10049,7 +10367,9 @@
       "sg_cov_snaps_per_target": 19.4,
       "sg_cov_yards_per_snap": 77.4,
       "sg_cov_qb_rating_against": 67.7,
-      "sg_cov_man_grade": 3.2
+      "sg_cov_man_grade": 3.2,
+      "sg_slot_cov_snaps_per_target": 15.4,
+      "sg_slot_cov_qb_rating_against": 30.8
     },
     "counting_stat_chips": [
       {
@@ -10087,7 +10407,7 @@
       "cfb_db_tackles": 48.0,
       "sg_def_total_pressures": 5.0
     },
-    "production_composite_pct": 20.6,
+    "production_composite_pct": 26.2,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -10857,6 +11177,9 @@
       "sg_cov_yards_per_snap": 0.9,
       "sg_cov_qb_rating_against": 69.9,
       "sg_cov_man_grade": 77.7,
+      "sg_slot_cov_snaps_per_target": 5.8,
+      "sg_slot_cov_yards_per_snap": 1.03,
+      "sg_slot_cov_qb_rating_against": 69.3,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 5.0,
       "cfb_db_tackles": 64.0,
@@ -10869,7 +11192,9 @@
       "sg_cov_snaps_per_target": 29.0,
       "sg_cov_yards_per_snap": 71.0,
       "sg_cov_qb_rating_against": 48.4,
-      "sg_cov_man_grade": 83.9
+      "sg_cov_man_grade": 83.9,
+      "sg_slot_cov_snaps_per_target": 57.7,
+      "sg_slot_cov_qb_rating_against": 61.5
     },
     "advanced_metric_cards": [
       {
@@ -10931,6 +11256,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 5.8,
+        "display": "5.8",
+        "pct": 57.7,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 1.03,
+        "display": "1.03",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 69.3,
+        "display": "69.3",
+        "pct": 38.5,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -10939,7 +11294,10 @@
       "sg_cov_snaps_per_target": 6.6,
       "sg_cov_yards_per_snap": 0.9,
       "sg_cov_qb_rating_against": 69.9,
-      "sg_cov_man_grade": 77.7
+      "sg_cov_man_grade": 77.7,
+      "sg_slot_cov_snaps_per_target": 5.8,
+      "sg_slot_cov_yards_per_snap": 1.03,
+      "sg_slot_cov_qb_rating_against": 69.3
     },
     "advanced_percentiles": {
       "sg_cov_grade": 83.9,
@@ -10947,7 +11305,9 @@
       "sg_cov_snaps_per_target": 29.0,
       "sg_cov_yards_per_snap": 71.0,
       "sg_cov_qb_rating_against": 48.4,
-      "sg_cov_man_grade": 83.9
+      "sg_cov_man_grade": 83.9,
+      "sg_slot_cov_snaps_per_target": 57.7,
+      "sg_slot_cov_qb_rating_against": 61.5
     },
     "counting_stat_chips": [
       {
@@ -10993,7 +11353,7 @@
       "cfb_db_tfl": 13.0,
       "sg_def_total_pressures": 20.0
     },
-    "production_composite_pct": 50.3,
+    "production_composite_pct": 50.0,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -11344,6 +11704,9 @@
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 59.0,
       "sg_cov_zone_grade": 80.9,
+      "sg_slot_cov_snaps_per_target": 6.6,
+      "sg_slot_cov_yards_per_snap": 2.33,
+      "sg_slot_cov_qb_rating_against": 158.3,
       "cfb_db_int": 3.0,
       "cfb_db_pbu": 4.0,
       "cfb_db_tackles": 88.0,
@@ -11356,7 +11719,9 @@
       "sg_cov_snaps_per_target": 47.6,
       "sg_cov_yards_per_snap": 81.0,
       "sg_cov_qb_rating_against": 47.6,
-      "sg_cov_zone_grade": 66.7
+      "sg_cov_zone_grade": 66.7,
+      "sg_slot_cov_snaps_per_target": 76.2,
+      "sg_slot_cov_qb_rating_against": 100.0
     },
     "advanced_metric_cards": [
       {
@@ -11418,6 +11783,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.6,
+        "display": "6.6",
+        "pct": 76.2,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 2.33,
+        "display": "2.33",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 158.3,
+        "display": "158.3",
+        "pct": 0.0,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -11426,7 +11821,10 @@
       "sg_cov_snaps_per_target": 10.4,
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 59.0,
-      "sg_cov_zone_grade": 80.9
+      "sg_cov_zone_grade": 80.9,
+      "sg_slot_cov_snaps_per_target": 6.6,
+      "sg_slot_cov_yards_per_snap": 2.33,
+      "sg_slot_cov_qb_rating_against": 158.3
     },
     "advanced_percentiles": {
       "sg_cov_grade": 71.4,
@@ -11434,7 +11832,9 @@
       "sg_cov_snaps_per_target": 47.6,
       "sg_cov_yards_per_snap": 81.0,
       "sg_cov_qb_rating_against": 47.6,
-      "sg_cov_zone_grade": 66.7
+      "sg_cov_zone_grade": 66.7,
+      "sg_slot_cov_snaps_per_target": 76.2,
+      "sg_slot_cov_qb_rating_against": 100.0
     },
     "counting_stat_chips": [
       {
@@ -11480,7 +11880,7 @@
       "cfb_db_tfl": 0.0,
       "sg_def_total_pressures": 3.0
     },
-    "production_composite_pct": 54.5,
+    "production_composite_pct": 55.9,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -12873,6 +13273,9 @@
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 42.6,
       "sg_cov_man_grade": 80.0,
+      "sg_slot_cov_snaps_per_target": 7.7,
+      "sg_slot_cov_yards_per_snap": 0.0,
+      "sg_slot_cov_qb_rating_against": 0.0,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 52.0,
@@ -12885,7 +13288,9 @@
       "sg_cov_snaps_per_target": 71.0,
       "sg_cov_yards_per_snap": 22.6,
       "sg_cov_qb_rating_against": 16.1,
-      "sg_cov_man_grade": 87.1
+      "sg_cov_man_grade": 87.1,
+      "sg_slot_cov_snaps_per_target": 92.3,
+      "sg_slot_cov_qb_rating_against": 3.8
     },
     "advanced_metric_cards": [
       {
@@ -12947,6 +13352,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 7.7,
+        "display": "7.7",
+        "pct": 92.3,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.0,
+        "display": "0.00",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 0.0,
+        "display": "0.0",
+        "pct": 96.2,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -12955,7 +13390,10 @@
       "sg_cov_snaps_per_target": 7.6,
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 42.6,
-      "sg_cov_man_grade": 80.0
+      "sg_cov_man_grade": 80.0,
+      "sg_slot_cov_snaps_per_target": 7.7,
+      "sg_slot_cov_yards_per_snap": 0.0,
+      "sg_slot_cov_qb_rating_against": 0.0
     },
     "advanced_percentiles": {
       "sg_cov_grade": 71.0,
@@ -12963,7 +13401,9 @@
       "sg_cov_snaps_per_target": 71.0,
       "sg_cov_yards_per_snap": 22.6,
       "sg_cov_qb_rating_against": 16.1,
-      "sg_cov_man_grade": 87.1
+      "sg_cov_man_grade": 87.1,
+      "sg_slot_cov_snaps_per_target": 92.3,
+      "sg_slot_cov_qb_rating_against": 3.8
     },
     "counting_stat_chips": [
       {
@@ -13009,7 +13449,7 @@
       "cfb_db_tfl": 0.0,
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 79.2,
+    "production_composite_pct": 79.3,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -13119,6 +13559,9 @@
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 16.1,
       "sg_cov_man_grade": 74.0,
+      "sg_slot_cov_snaps_per_target": 1.9,
+      "sg_slot_cov_yards_per_snap": 3.27,
+      "sg_slot_cov_qb_rating_against": 79.7,
       "cfb_db_int": 4.0,
       "cfb_db_pbu": 7.0,
       "cfb_db_tackles": 47.0,
@@ -13131,7 +13574,9 @@
       "sg_cov_snaps_per_target": 74.2,
       "sg_cov_yards_per_snap": 22.6,
       "sg_cov_qb_rating_against": 3.2,
-      "sg_cov_man_grade": 67.7
+      "sg_cov_man_grade": 67.7,
+      "sg_slot_cov_snaps_per_target": 7.7,
+      "sg_slot_cov_qb_rating_against": 76.9
     },
     "advanced_metric_cards": [
       {
@@ -13193,6 +13638,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 1.9,
+        "display": "1.9",
+        "pct": 7.7,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 3.27,
+        "display": "3.27",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 79.7,
+        "display": "79.7",
+        "pct": 23.1,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -13201,7 +13676,10 @@
       "sg_cov_snaps_per_target": 7.7,
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 16.1,
-      "sg_cov_man_grade": 74.0
+      "sg_cov_man_grade": 74.0,
+      "sg_slot_cov_snaps_per_target": 1.9,
+      "sg_slot_cov_yards_per_snap": 3.27,
+      "sg_slot_cov_qb_rating_against": 79.7
     },
     "advanced_percentiles": {
       "sg_cov_grade": 100.0,
@@ -13209,7 +13687,9 @@
       "sg_cov_snaps_per_target": 74.2,
       "sg_cov_yards_per_snap": 22.6,
       "sg_cov_qb_rating_against": 3.2,
-      "sg_cov_man_grade": 67.7
+      "sg_cov_man_grade": 67.7,
+      "sg_slot_cov_snaps_per_target": 7.7,
+      "sg_slot_cov_qb_rating_against": 76.9
     },
     "counting_stat_chips": [
       {
@@ -13255,7 +13735,7 @@
       "cfb_db_tfl": 3.0,
       "sg_def_total_pressures": 4.0
     },
-    "production_composite_pct": 83.3,
+    "production_composite_pct": 70.3,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -14267,6 +14747,9 @@
       "sg_cov_yards_per_snap": 1.1,
       "sg_cov_qb_rating_against": 84.9,
       "sg_cov_man_grade": 76.3,
+      "sg_slot_cov_snaps_per_target": 5.1,
+      "sg_slot_cov_yards_per_snap": 1.15,
+      "sg_slot_cov_qb_rating_against": 60.9,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 8.0,
       "cfb_db_tackles": 59.0,
@@ -14279,7 +14762,9 @@
       "sg_cov_snaps_per_target": 51.6,
       "sg_cov_yards_per_snap": 80.6,
       "sg_cov_qb_rating_against": 71.0,
-      "sg_cov_man_grade": 77.4
+      "sg_cov_man_grade": 77.4,
+      "sg_slot_cov_snaps_per_target": 46.2,
+      "sg_slot_cov_qb_rating_against": 57.7
     },
     "advanced_metric_cards": [
       {
@@ -14341,6 +14826,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 5.1,
+        "display": "5.1",
+        "pct": 46.2,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 1.15,
+        "display": "1.15",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 60.9,
+        "display": "60.9",
+        "pct": 42.3,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -14349,7 +14864,10 @@
       "sg_cov_snaps_per_target": 7.3,
       "sg_cov_yards_per_snap": 1.1,
       "sg_cov_qb_rating_against": 84.9,
-      "sg_cov_man_grade": 76.3
+      "sg_cov_man_grade": 76.3,
+      "sg_slot_cov_snaps_per_target": 5.1,
+      "sg_slot_cov_yards_per_snap": 1.15,
+      "sg_slot_cov_qb_rating_against": 60.9
     },
     "advanced_percentiles": {
       "sg_cov_grade": 67.7,
@@ -14357,7 +14875,9 @@
       "sg_cov_snaps_per_target": 51.6,
       "sg_cov_yards_per_snap": 80.6,
       "sg_cov_qb_rating_against": 71.0,
-      "sg_cov_man_grade": 77.4
+      "sg_cov_man_grade": 77.4,
+      "sg_slot_cov_snaps_per_target": 46.2,
+      "sg_slot_cov_qb_rating_against": 57.7
     },
     "counting_stat_chips": [
       {
@@ -14403,7 +14923,7 @@
       "cfb_db_tfl": 4.0,
       "sg_def_total_pressures": 6.0
     },
-    "production_composite_pct": 48.6,
+    "production_composite_pct": 48.1,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -15113,6 +15633,9 @@
       "sg_cov_yards_per_snap": 0.5,
       "sg_cov_qb_rating_against": 91.4,
       "sg_cov_zone_grade": 70.3,
+      "sg_slot_cov_snaps_per_target": 6.5,
+      "sg_slot_cov_yards_per_snap": 0.13,
+      "sg_slot_cov_qb_rating_against": 70.1,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 8.0,
       "cfb_db_tackles": 77.0,
@@ -15125,7 +15648,9 @@
       "sg_cov_snaps_per_target": 81.0,
       "sg_cov_yards_per_snap": 52.4,
       "sg_cov_qb_rating_against": 85.7,
-      "sg_cov_zone_grade": 38.1
+      "sg_cov_zone_grade": 38.1,
+      "sg_slot_cov_snaps_per_target": 71.4,
+      "sg_slot_cov_qb_rating_against": 28.6
     },
     "advanced_metric_cards": [
       {
@@ -15187,6 +15712,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.5,
+        "display": "6.5",
+        "pct": 71.4,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.13,
+        "display": "0.13",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 70.1,
+        "display": "70.1",
+        "pct": 71.4,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -15195,7 +15750,10 @@
       "sg_cov_snaps_per_target": 15.7,
       "sg_cov_yards_per_snap": 0.5,
       "sg_cov_qb_rating_against": 91.4,
-      "sg_cov_zone_grade": 70.3
+      "sg_cov_zone_grade": 70.3,
+      "sg_slot_cov_snaps_per_target": 6.5,
+      "sg_slot_cov_yards_per_snap": 0.13,
+      "sg_slot_cov_qb_rating_against": 70.1
     },
     "advanced_percentiles": {
       "sg_cov_grade": 61.9,
@@ -15203,7 +15761,9 @@
       "sg_cov_snaps_per_target": 81.0,
       "sg_cov_yards_per_snap": 52.4,
       "sg_cov_qb_rating_against": 85.7,
-      "sg_cov_zone_grade": 38.1
+      "sg_cov_zone_grade": 38.1,
+      "sg_slot_cov_snaps_per_target": 71.4,
+      "sg_slot_cov_qb_rating_against": 28.6
     },
     "counting_stat_chips": [
       {
@@ -15249,7 +15809,7 @@
       "cfb_db_tfl": 3.0,
       "sg_def_total_pressures": 6.0
     },
-    "production_composite_pct": 55.7,
+    "production_composite_pct": 57.7,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -17662,6 +18222,9 @@
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 46.1,
       "sg_cov_man_grade": 71.1,
+      "sg_slot_cov_snaps_per_target": 1.7,
+      "sg_slot_cov_yards_per_snap": 1.2,
+      "sg_slot_cov_qb_rating_against": 42.4,
       "sg_def_total_pressures": 2.0
     },
     "production_percentiles": {
@@ -17670,7 +18233,9 @@
       "sg_cov_snaps_per_target": 9.7,
       "sg_cov_yards_per_snap": 41.9,
       "sg_cov_qb_rating_against": 19.4,
-      "sg_cov_man_grade": 61.3
+      "sg_cov_man_grade": 61.3,
+      "sg_slot_cov_snaps_per_target": 3.8,
+      "sg_slot_cov_qb_rating_against": 30.8
     },
     "advanced_metric_cards": [
       {
@@ -17732,6 +18297,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 1.7,
+        "display": "1.7",
+        "pct": 3.8,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 1.2,
+        "display": "1.20",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 42.4,
+        "display": "42.4",
+        "pct": 69.2,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -17740,7 +18335,10 @@
       "sg_cov_snaps_per_target": 6.0,
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 46.1,
-      "sg_cov_man_grade": 71.1
+      "sg_cov_man_grade": 71.1,
+      "sg_slot_cov_snaps_per_target": 1.7,
+      "sg_slot_cov_yards_per_snap": 1.2,
+      "sg_slot_cov_qb_rating_against": 42.4
     },
     "advanced_percentiles": {
       "sg_cov_grade": 80.6,
@@ -17748,7 +18346,9 @@
       "sg_cov_snaps_per_target": 9.7,
       "sg_cov_yards_per_snap": 41.9,
       "sg_cov_qb_rating_against": 19.4,
-      "sg_cov_man_grade": 61.3
+      "sg_cov_man_grade": 61.3,
+      "sg_slot_cov_snaps_per_target": 3.8,
+      "sg_slot_cov_qb_rating_against": 30.8
     },
     "counting_stat_chips": [
       {
@@ -17762,7 +18362,7 @@
     "counting_metrics": {
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 56.1,
+    "production_composite_pct": 52.6,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -18117,6 +18717,9 @@
       "sg_cov_yards_per_snap": 0.8,
       "sg_cov_qb_rating_against": 34.4,
       "sg_cov_man_grade": 83.2,
+      "sg_slot_cov_snaps_per_target": 6.5,
+      "sg_slot_cov_yards_per_snap": 0.87,
+      "sg_slot_cov_qb_rating_against": 38.6,
       "cfb_db_int": 4.0,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 52.0,
@@ -18129,7 +18732,9 @@
       "sg_cov_snaps_per_target": 35.5,
       "sg_cov_yards_per_snap": 54.8,
       "sg_cov_qb_rating_against": 9.7,
-      "sg_cov_man_grade": 93.5
+      "sg_cov_man_grade": 93.5,
+      "sg_slot_cov_snaps_per_target": 80.8,
+      "sg_slot_cov_qb_rating_against": 7.7
     },
     "advanced_metric_cards": [
       {
@@ -18191,6 +18796,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.5,
+        "display": "6.5",
+        "pct": 80.8,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.87,
+        "display": "0.87",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 38.6,
+        "display": "38.6",
+        "pct": 92.3,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -18199,7 +18834,10 @@
       "sg_cov_snaps_per_target": 6.8,
       "sg_cov_yards_per_snap": 0.8,
       "sg_cov_qb_rating_against": 34.4,
-      "sg_cov_man_grade": 83.2
+      "sg_cov_man_grade": 83.2,
+      "sg_slot_cov_snaps_per_target": 6.5,
+      "sg_slot_cov_yards_per_snap": 0.87,
+      "sg_slot_cov_qb_rating_against": 38.6
     },
     "advanced_percentiles": {
       "sg_cov_grade": 93.5,
@@ -18207,7 +18845,9 @@
       "sg_cov_snaps_per_target": 35.5,
       "sg_cov_yards_per_snap": 54.8,
       "sg_cov_qb_rating_against": 9.7,
-      "sg_cov_man_grade": 93.5
+      "sg_cov_man_grade": 93.5,
+      "sg_slot_cov_snaps_per_target": 80.8,
+      "sg_slot_cov_qb_rating_against": 7.7
     },
     "counting_stat_chips": [
       {
@@ -18253,7 +18893,7 @@
       "cfb_db_tfl": 1.0,
       "sg_def_total_pressures": 4.0
     },
-    "production_composite_pct": 67.4,
+    "production_composite_pct": 69.0,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -18364,6 +19004,9 @@
       "sg_cov_yards_per_snap": 0.1,
       "sg_cov_qb_rating_against": 69.2,
       "sg_cov_zone_grade": 74.1,
+      "sg_slot_cov_snaps_per_target": 6.9,
+      "sg_slot_cov_yards_per_snap": 0.67,
+      "sg_slot_cov_qb_rating_against": 125.3,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 1.0,
       "cfb_db_tackles": 74.0,
@@ -18376,7 +19019,9 @@
       "sg_cov_snaps_per_target": 100.0,
       "sg_cov_yards_per_snap": 4.8,
       "sg_cov_qb_rating_against": 57.1,
-      "sg_cov_zone_grade": 57.1
+      "sg_cov_zone_grade": 57.1,
+      "sg_slot_cov_snaps_per_target": 81.0,
+      "sg_slot_cov_qb_rating_against": 95.2
     },
     "advanced_metric_cards": [
       {
@@ -18438,6 +19083,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.9,
+        "display": "6.9",
+        "pct": 81.0,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.67,
+        "display": "0.67",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 125.3,
+        "display": "125.3",
+        "pct": 4.8,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -18446,7 +19121,10 @@
       "sg_cov_snaps_per_target": 30.9,
       "sg_cov_yards_per_snap": 0.1,
       "sg_cov_qb_rating_against": 69.2,
-      "sg_cov_zone_grade": 74.1
+      "sg_cov_zone_grade": 74.1,
+      "sg_slot_cov_snaps_per_target": 6.9,
+      "sg_slot_cov_yards_per_snap": 0.67,
+      "sg_slot_cov_qb_rating_against": 125.3
     },
     "advanced_percentiles": {
       "sg_cov_grade": 57.1,
@@ -18454,7 +19132,9 @@
       "sg_cov_snaps_per_target": 100.0,
       "sg_cov_yards_per_snap": 4.8,
       "sg_cov_qb_rating_against": 57.1,
-      "sg_cov_zone_grade": 57.1
+      "sg_cov_zone_grade": 57.1,
+      "sg_slot_cov_snaps_per_target": 81.0,
+      "sg_slot_cov_qb_rating_against": 95.2
     },
     "counting_stat_chips": [
       {
@@ -18500,7 +19180,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 4.0
     },
-    "production_composite_pct": 65.3,
+    "production_composite_pct": 60.7,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -19117,6 +19797,9 @@
       "sg_cov_yards_per_snap": 1.1,
       "sg_cov_qb_rating_against": 68.1,
       "sg_cov_zone_grade": 55.7,
+      "sg_slot_cov_snaps_per_target": 4.5,
+      "sg_slot_cov_yards_per_snap": 1.35,
+      "sg_slot_cov_qb_rating_against": 65.7,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 10.0,
       "cfb_db_tackles": 54.0,
@@ -19128,7 +19811,9 @@
       "sg_cov_snaps_per_target": 4.8,
       "sg_cov_yards_per_snap": 95.2,
       "sg_cov_qb_rating_against": 52.4,
-      "sg_cov_zone_grade": 14.3
+      "sg_cov_zone_grade": 14.3,
+      "sg_slot_cov_snaps_per_target": 28.6,
+      "sg_slot_cov_qb_rating_against": 23.8
     },
     "advanced_metric_cards": [
       {
@@ -19190,6 +19875,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 4.5,
+        "display": "4.5",
+        "pct": 28.6,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 1.35,
+        "display": "1.35",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 65.7,
+        "display": "65.7",
+        "pct": 76.2,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -19198,7 +19913,10 @@
       "sg_cov_snaps_per_target": 5.5,
       "sg_cov_yards_per_snap": 1.1,
       "sg_cov_qb_rating_against": 68.1,
-      "sg_cov_zone_grade": 55.7
+      "sg_cov_zone_grade": 55.7,
+      "sg_slot_cov_snaps_per_target": 4.5,
+      "sg_slot_cov_yards_per_snap": 1.35,
+      "sg_slot_cov_qb_rating_against": 65.7
     },
     "advanced_percentiles": {
       "sg_cov_grade": 19.0,
@@ -19206,7 +19924,9 @@
       "sg_cov_snaps_per_target": 4.8,
       "sg_cov_yards_per_snap": 95.2,
       "sg_cov_qb_rating_against": 52.4,
-      "sg_cov_zone_grade": 14.3
+      "sg_cov_zone_grade": 14.3,
+      "sg_slot_cov_snaps_per_target": 28.6,
+      "sg_slot_cov_qb_rating_against": 23.8
     },
     "counting_stat_chips": [
       {
@@ -19244,7 +19964,7 @@
       "cfb_db_tackles": 54.0,
       "sg_def_total_pressures": 3.0
     },
-    "production_composite_pct": 26.3,
+    "production_composite_pct": 32.1,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -21448,6 +22168,9 @@
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 70.0,
       "sg_cov_man_grade": 72.7,
+      "sg_slot_cov_snaps_per_target": 7.0,
+      "sg_slot_cov_yards_per_snap": 0.0,
+      "sg_slot_cov_qb_rating_against": 39.6,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 35.0,
@@ -21460,7 +22183,9 @@
       "sg_cov_snaps_per_target": 87.1,
       "sg_cov_yards_per_snap": 41.9,
       "sg_cov_qb_rating_against": 51.6,
-      "sg_cov_man_grade": 64.5
+      "sg_cov_man_grade": 64.5,
+      "sg_slot_cov_snaps_per_target": 88.5,
+      "sg_slot_cov_qb_rating_against": 23.1
     },
     "advanced_metric_cards": [
       {
@@ -21522,6 +22247,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 7.0,
+        "display": "7.0",
+        "pct": 88.5,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.0,
+        "display": "0.00",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 39.6,
+        "display": "39.6",
+        "pct": 76.9,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -21530,7 +22285,10 @@
       "sg_cov_snaps_per_target": 8.5,
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 70.0,
-      "sg_cov_man_grade": 72.7
+      "sg_cov_man_grade": 72.7,
+      "sg_slot_cov_snaps_per_target": 7.0,
+      "sg_slot_cov_yards_per_snap": 0.0,
+      "sg_slot_cov_qb_rating_against": 39.6
     },
     "advanced_percentiles": {
       "sg_cov_grade": 77.4,
@@ -21538,7 +22296,9 @@
       "sg_cov_snaps_per_target": 87.1,
       "sg_cov_yards_per_snap": 41.9,
       "sg_cov_qb_rating_against": 51.6,
-      "sg_cov_man_grade": 64.5
+      "sg_cov_man_grade": 64.5,
+      "sg_slot_cov_snaps_per_target": 88.5,
+      "sg_slot_cov_qb_rating_against": 23.1
     },
     "counting_stat_chips": [
       {
@@ -21584,7 +22344,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 60.8,
+    "production_composite_pct": 63.4,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -22147,6 +22907,9 @@
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 75.9,
       "sg_cov_zone_grade": 75.3,
+      "sg_slot_cov_snaps_per_target": 9.0,
+      "sg_slot_cov_yards_per_snap": 0.82,
+      "sg_slot_cov_qb_rating_against": 89.8,
       "cfb_db_int": 4.0,
       "cfb_db_pbu": 7.0,
       "cfb_db_tackles": 56.0,
@@ -22159,7 +22922,9 @@
       "sg_cov_snaps_per_target": 33.3,
       "sg_cov_yards_per_snap": 81.0,
       "sg_cov_qb_rating_against": 61.9,
-      "sg_cov_zone_grade": 61.9
+      "sg_cov_zone_grade": 61.9,
+      "sg_slot_cov_snaps_per_target": 85.7,
+      "sg_slot_cov_qb_rating_against": 47.6
     },
     "advanced_metric_cards": [
       {
@@ -22221,6 +22986,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 9.0,
+        "display": "9.0",
+        "pct": 85.7,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.82,
+        "display": "0.82",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 89.8,
+        "display": "89.8",
+        "pct": 52.4,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -22229,7 +23024,10 @@
       "sg_cov_snaps_per_target": 9.0,
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 75.9,
-      "sg_cov_zone_grade": 75.3
+      "sg_cov_zone_grade": 75.3,
+      "sg_slot_cov_snaps_per_target": 9.0,
+      "sg_slot_cov_yards_per_snap": 0.82,
+      "sg_slot_cov_qb_rating_against": 89.8
     },
     "advanced_percentiles": {
       "sg_cov_grade": 42.9,
@@ -22237,7 +23035,9 @@
       "sg_cov_snaps_per_target": 33.3,
       "sg_cov_yards_per_snap": 81.0,
       "sg_cov_qb_rating_against": 61.9,
-      "sg_cov_zone_grade": 61.9
+      "sg_cov_zone_grade": 61.9,
+      "sg_slot_cov_snaps_per_target": 85.7,
+      "sg_slot_cov_qb_rating_against": 47.6
     },
     "counting_stat_chips": [
       {
@@ -22283,7 +23083,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 4.0
     },
-    "production_composite_pct": 46.0,
+    "production_composite_pct": 49.8,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -22816,6 +23616,9 @@
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 50.6,
       "sg_cov_man_grade": 53.6,
+      "sg_slot_cov_snaps_per_target": 10.5,
+      "sg_slot_cov_yards_per_snap": 0.19,
+      "sg_slot_cov_qb_rating_against": 56.3,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 4.0,
       "cfb_db_tackles": 20.0,
@@ -22828,7 +23631,9 @@
       "sg_cov_snaps_per_target": 77.4,
       "sg_cov_yards_per_snap": 41.9,
       "sg_cov_qb_rating_against": 22.6,
-      "sg_cov_man_grade": 6.5
+      "sg_cov_man_grade": 6.5,
+      "sg_slot_cov_snaps_per_target": 100.0,
+      "sg_slot_cov_qb_rating_against": 50.0
     },
     "advanced_metric_cards": [
       {
@@ -22890,6 +23695,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 10.5,
+        "display": "10.5",
+        "pct": 100.0,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.19,
+        "display": "0.19",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 56.3,
+        "display": "56.3",
+        "pct": 50.0,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -22898,7 +23733,10 @@
       "sg_cov_snaps_per_target": 7.8,
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 50.6,
-      "sg_cov_man_grade": 53.6
+      "sg_cov_man_grade": 53.6,
+      "sg_slot_cov_snaps_per_target": 10.5,
+      "sg_slot_cov_yards_per_snap": 0.19,
+      "sg_slot_cov_qb_rating_against": 56.3
     },
     "advanced_percentiles": {
       "sg_cov_grade": 12.9,
@@ -22906,7 +23744,9 @@
       "sg_cov_snaps_per_target": 77.4,
       "sg_cov_yards_per_snap": 41.9,
       "sg_cov_qb_rating_against": 22.6,
-      "sg_cov_man_grade": 6.5
+      "sg_cov_man_grade": 6.5,
+      "sg_slot_cov_snaps_per_target": 100.0,
+      "sg_slot_cov_qb_rating_against": 50.0
     },
     "counting_stat_chips": [
       {
@@ -22952,7 +23792,7 @@
       "cfb_db_tfl": 1.0,
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 48.4,
+    "production_composite_pct": 52.6,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -28430,6 +29270,9 @@
       "sg_cov_yards_per_snap": 1.0,
       "sg_cov_qb_rating_against": 82.5,
       "sg_cov_man_grade": 66.3,
+      "sg_slot_cov_snaps_per_target": 2.3,
+      "sg_slot_cov_yards_per_snap": 2.0,
+      "sg_slot_cov_qb_rating_against": 77.1,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 10.0,
       "cfb_db_tackles": 55.0,
@@ -28442,7 +29285,9 @@
       "sg_cov_snaps_per_target": 64.5,
       "sg_cov_yards_per_snap": 77.4,
       "sg_cov_qb_rating_against": 64.5,
-      "sg_cov_man_grade": 41.9
+      "sg_cov_man_grade": 41.9,
+      "sg_slot_cov_snaps_per_target": 15.4,
+      "sg_slot_cov_qb_rating_against": 73.1
     },
     "advanced_metric_cards": [
       {
@@ -28504,6 +29349,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 2.3,
+        "display": "2.3",
+        "pct": 15.4,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 2.0,
+        "display": "2.00",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 77.1,
+        "display": "77.1",
+        "pct": 26.9,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -28512,7 +29387,10 @@
       "sg_cov_snaps_per_target": 7.4,
       "sg_cov_yards_per_snap": 1.0,
       "sg_cov_qb_rating_against": 82.5,
-      "sg_cov_man_grade": 66.3
+      "sg_cov_man_grade": 66.3,
+      "sg_slot_cov_snaps_per_target": 2.3,
+      "sg_slot_cov_yards_per_snap": 2.0,
+      "sg_slot_cov_qb_rating_against": 77.1
     },
     "advanced_percentiles": {
       "sg_cov_grade": 51.6,
@@ -28520,7 +29398,9 @@
       "sg_cov_snaps_per_target": 64.5,
       "sg_cov_yards_per_snap": 77.4,
       "sg_cov_qb_rating_against": 64.5,
-      "sg_cov_man_grade": 41.9
+      "sg_cov_man_grade": 41.9,
+      "sg_slot_cov_snaps_per_target": 15.4,
+      "sg_slot_cov_qb_rating_against": 73.1
     },
     "counting_stat_chips": [
       {
@@ -28566,7 +29446,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 3.0
     },
-    "production_composite_pct": 44.4,
+    "production_composite_pct": 41.3,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -29949,6 +30829,9 @@
       "sg_cov_yards_per_snap": 0.3,
       "sg_cov_qb_rating_against": 54.6,
       "sg_cov_zone_grade": 88.7,
+      "sg_slot_cov_snaps_per_target": 15.7,
+      "sg_slot_cov_yards_per_snap": 0.34,
+      "sg_slot_cov_qb_rating_against": 79.9,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 1.0,
       "cfb_db_tackles": 70.0,
@@ -29961,7 +30844,9 @@
       "sg_cov_snaps_per_target": 85.7,
       "sg_cov_yards_per_snap": 14.3,
       "sg_cov_qb_rating_against": 28.6,
-      "sg_cov_zone_grade": 85.7
+      "sg_cov_zone_grade": 85.7,
+      "sg_slot_cov_snaps_per_target": 90.5,
+      "sg_slot_cov_qb_rating_against": 42.9
     },
     "advanced_metric_cards": [
       {
@@ -30023,6 +30908,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 15.7,
+        "display": "15.7",
+        "pct": 90.5,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.34,
+        "display": "0.34",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 79.9,
+        "display": "79.9",
+        "pct": 57.1,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -30031,7 +30946,10 @@
       "sg_cov_snaps_per_target": 17.1,
       "sg_cov_yards_per_snap": 0.3,
       "sg_cov_qb_rating_against": 54.6,
-      "sg_cov_zone_grade": 88.7
+      "sg_cov_zone_grade": 88.7,
+      "sg_slot_cov_snaps_per_target": 15.7,
+      "sg_slot_cov_yards_per_snap": 0.34,
+      "sg_slot_cov_qb_rating_against": 79.9
     },
     "advanced_percentiles": {
       "sg_cov_grade": 81.0,
@@ -30039,7 +30957,9 @@
       "sg_cov_snaps_per_target": 85.7,
       "sg_cov_yards_per_snap": 14.3,
       "sg_cov_qb_rating_against": 28.6,
-      "sg_cov_zone_grade": 85.7
+      "sg_cov_zone_grade": 85.7,
+      "sg_slot_cov_snaps_per_target": 90.5,
+      "sg_slot_cov_qb_rating_against": 42.9
     },
     "counting_stat_chips": [
       {
@@ -30085,7 +31005,7 @@
       "cfb_db_tfl": 1.0,
       "sg_def_total_pressures": 3.0
     },
-    "production_composite_pct": 71.3,
+    "production_composite_pct": 70.1,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -30432,44 +31352,56 @@
     "rank_move_window": 1,
     "low_evidence_flag": false,
     "production_metrics": {
-      "cfb_db_coverage_plays_per_target": 0.2654,
-      "cfb_db_yards_allowed_per_coverage_snap": 0.9232,
+      "sg_slot_cov_snaps_per_target": 4.7,
+      "sg_slot_cov_yards_per_snap": 1.43,
+      "sg_slot_cov_qb_rating_against": 97.2,
       "cfb_db_int": 4.0,
       "cfb_db_tackles": 1.0
     },
     "production_percentiles": {
-      "cfb_db_coverage_plays_per_target": 12.0,
-      "cfb_db_yards_allowed_per_coverage_snap": 96.0
+      "sg_slot_cov_snaps_per_target": 30.8,
+      "sg_slot_cov_qb_rating_against": 88.5
     },
     "advanced_metric_cards": [
       {
-        "key": "cfb_db_coverage_plays_per_target",
-        "label": "Plays on Ball / Target",
-        "raw": 0.2654,
-        "display": "0.265",
-        "pct": 12.0,
-        "fmt": "dec3",
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 4.7,
+        "display": "4.7",
+        "pct": 30.8,
+        "fmt": "dec1",
         "lower_better": false,
-        "weight": 0.32
+        "weight": 0.1
       },
       {
-        "key": "cfb_db_yards_allowed_per_coverage_snap",
-        "label": "Yards / Coverage Snap",
-        "raw": 0.9232,
-        "display": "0.923",
-        "pct": 4.0,
-        "fmt": "dec3",
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 1.43,
+        "display": "1.43",
+        "pct": 50.0,
+        "fmt": "dec2",
         "lower_better": true,
-        "weight": 0.3
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 97.2,
+        "display": "97.2",
+        "pct": 11.5,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
-      "cfb_db_coverage_plays_per_target": 0.2654,
-      "cfb_db_yards_allowed_per_coverage_snap": 0.9232
+      "sg_slot_cov_snaps_per_target": 4.7,
+      "sg_slot_cov_yards_per_snap": 1.43,
+      "sg_slot_cov_qb_rating_against": 97.2
     },
     "advanced_percentiles": {
-      "cfb_db_coverage_plays_per_target": 12.0,
-      "cfb_db_yards_allowed_per_coverage_snap": 96.0
+      "sg_slot_cov_snaps_per_target": 30.8,
+      "sg_slot_cov_qb_rating_against": 88.5
     },
     "counting_stat_chips": [
       {
@@ -30491,8 +31423,8 @@
       "cfb_db_int": 4.0,
       "cfb_db_tackles": 1.0
     },
-    "production_composite_pct": 8.1,
-    "production_source_tier": "fallback",
+    "production_composite_pct": 30.8,
+    "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
       "title": "DB Coverage Tax",
@@ -30586,6 +31518,9 @@
       "sg_cov_yards_per_snap": 1.3,
       "sg_cov_qb_rating_against": 106.6,
       "sg_cov_man_grade": 76.6,
+      "sg_slot_cov_snaps_per_target": 6.5,
+      "sg_slot_cov_yards_per_snap": 2.77,
+      "sg_slot_cov_qb_rating_against": 135.4,
       "cfb_db_pbu": 7.0,
       "cfb_db_tackles": 50.0,
       "cfb_db_tfl": 2.0,
@@ -30597,7 +31532,9 @@
       "sg_cov_snaps_per_target": 35.5,
       "sg_cov_yards_per_snap": 96.8,
       "sg_cov_qb_rating_against": 93.5,
-      "sg_cov_man_grade": 80.6
+      "sg_cov_man_grade": 80.6,
+      "sg_slot_cov_snaps_per_target": 80.8,
+      "sg_slot_cov_qb_rating_against": 96.2
     },
     "advanced_metric_cards": [
       {
@@ -30659,6 +31596,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.5,
+        "display": "6.5",
+        "pct": 80.8,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 2.77,
+        "display": "2.77",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 135.4,
+        "display": "135.4",
+        "pct": 3.8,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -30667,7 +31634,10 @@
       "sg_cov_snaps_per_target": 6.8,
       "sg_cov_yards_per_snap": 1.3,
       "sg_cov_qb_rating_against": 106.6,
-      "sg_cov_man_grade": 76.6
+      "sg_cov_man_grade": 76.6,
+      "sg_slot_cov_snaps_per_target": 6.5,
+      "sg_slot_cov_yards_per_snap": 2.77,
+      "sg_slot_cov_qb_rating_against": 135.4
     },
     "advanced_percentiles": {
       "sg_cov_grade": 22.6,
@@ -30675,7 +31645,9 @@
       "sg_cov_snaps_per_target": 35.5,
       "sg_cov_yards_per_snap": 96.8,
       "sg_cov_qb_rating_against": 93.5,
-      "sg_cov_man_grade": 80.6
+      "sg_cov_man_grade": 80.6,
+      "sg_slot_cov_snaps_per_target": 80.8,
+      "sg_slot_cov_qb_rating_against": 96.2
     },
     "counting_stat_chips": [
       {
@@ -30713,7 +31685,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 26.8,
+    "production_composite_pct": 31.0,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -31302,6 +32274,9 @@
       "sg_cov_yards_per_snap": 1.2,
       "sg_cov_qb_rating_against": 105.3,
       "sg_cov_man_grade": 57.4,
+      "sg_slot_cov_snaps_per_target": 6.1,
+      "sg_slot_cov_yards_per_snap": 1.12,
+      "sg_slot_cov_qb_rating_against": 90.2,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 20.0,
       "cfb_db_tfl": 2.0,
@@ -31313,7 +32288,9 @@
       "sg_cov_snaps_per_target": 71.0,
       "sg_cov_yards_per_snap": 90.3,
       "sg_cov_qb_rating_against": 90.3,
-      "sg_cov_man_grade": 19.4
+      "sg_cov_man_grade": 19.4,
+      "sg_slot_cov_snaps_per_target": 65.4,
+      "sg_slot_cov_qb_rating_against": 84.6
     },
     "advanced_metric_cards": [
       {
@@ -31375,6 +32352,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.1,
+        "display": "6.1",
+        "pct": 65.4,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 1.12,
+        "display": "1.12",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 90.2,
+        "display": "90.2",
+        "pct": 15.4,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -31383,7 +32390,10 @@
       "sg_cov_snaps_per_target": 7.6,
       "sg_cov_yards_per_snap": 1.2,
       "sg_cov_qb_rating_against": 105.3,
-      "sg_cov_man_grade": 57.4
+      "sg_cov_man_grade": 57.4,
+      "sg_slot_cov_snaps_per_target": 6.1,
+      "sg_slot_cov_yards_per_snap": 1.12,
+      "sg_slot_cov_qb_rating_against": 90.2
     },
     "advanced_percentiles": {
       "sg_cov_grade": 16.1,
@@ -31391,7 +32401,9 @@
       "sg_cov_snaps_per_target": 71.0,
       "sg_cov_yards_per_snap": 90.3,
       "sg_cov_qb_rating_against": 90.3,
-      "sg_cov_man_grade": 19.4
+      "sg_cov_man_grade": 19.4,
+      "sg_slot_cov_snaps_per_target": 65.4,
+      "sg_slot_cov_qb_rating_against": 84.6
     },
     "counting_stat_chips": [
       {
@@ -31429,7 +32441,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 31.3,
+    "production_composite_pct": 34.1,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -35388,6 +36400,9 @@
       "sg_cov_yards_per_snap": 0.9,
       "sg_cov_qb_rating_against": 59.0,
       "sg_cov_man_grade": 58.4,
+      "sg_slot_cov_snaps_per_target": 2.5,
+      "sg_slot_cov_yards_per_snap": 2.0,
+      "sg_slot_cov_qb_rating_against": 104.2,
       "cfb_db_int": 5.0,
       "cfb_db_pbu": 12.0,
       "cfb_db_tackles": 47.0,
@@ -35400,7 +36415,9 @@
       "sg_cov_snaps_per_target": 64.5,
       "sg_cov_yards_per_snap": 71.0,
       "sg_cov_qb_rating_against": 38.7,
-      "sg_cov_man_grade": 22.6
+      "sg_cov_man_grade": 22.6,
+      "sg_slot_cov_snaps_per_target": 19.2,
+      "sg_slot_cov_qb_rating_against": 92.3
     },
     "advanced_metric_cards": [
       {
@@ -35462,6 +36479,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 2.5,
+        "display": "2.5",
+        "pct": 19.2,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 2.0,
+        "display": "2.00",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 104.2,
+        "display": "104.2",
+        "pct": 7.7,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -35470,7 +36517,10 @@
       "sg_cov_snaps_per_target": 7.4,
       "sg_cov_yards_per_snap": 0.9,
       "sg_cov_qb_rating_against": 59.0,
-      "sg_cov_man_grade": 58.4
+      "sg_cov_man_grade": 58.4,
+      "sg_slot_cov_snaps_per_target": 2.5,
+      "sg_slot_cov_yards_per_snap": 2.0,
+      "sg_slot_cov_qb_rating_against": 104.2
     },
     "advanced_percentiles": {
       "sg_cov_grade": 74.2,
@@ -35478,7 +36528,9 @@
       "sg_cov_snaps_per_target": 64.5,
       "sg_cov_yards_per_snap": 71.0,
       "sg_cov_qb_rating_against": 38.7,
-      "sg_cov_man_grade": 22.6
+      "sg_cov_man_grade": 22.6,
+      "sg_slot_cov_snaps_per_target": 19.2,
+      "sg_slot_cov_qb_rating_against": 92.3
     },
     "counting_stat_chips": [
       {
@@ -35524,7 +36576,7 @@
       "cfb_db_tfl": 1.0,
       "sg_def_total_pressures": 0.0
     },
-    "production_composite_pct": 57.5,
+    "production_composite_pct": 50.1,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -35881,6 +36933,9 @@
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 96.2,
       "sg_cov_zone_grade": 67.0,
+      "sg_slot_cov_snaps_per_target": 6.0,
+      "sg_slot_cov_yards_per_snap": 0.96,
+      "sg_slot_cov_qb_rating_against": 109.7,
       "cfb_db_pbu": 2.0,
       "cfb_db_tackles": 21.0,
       "cfb_db_tfl": 2.0,
@@ -35892,7 +36947,9 @@
       "sg_cov_snaps_per_target": 14.3,
       "sg_cov_yards_per_snap": 81.0,
       "sg_cov_qb_rating_against": 90.5,
-      "sg_cov_zone_grade": 28.6
+      "sg_cov_zone_grade": 28.6,
+      "sg_slot_cov_snaps_per_target": 52.4,
+      "sg_slot_cov_qb_rating_against": 85.7
     },
     "advanced_metric_cards": [
       {
@@ -35954,6 +37011,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.0,
+        "display": "6.0",
+        "pct": 52.4,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.96,
+        "display": "0.96",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 109.7,
+        "display": "109.7",
+        "pct": 14.3,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -35962,7 +37049,10 @@
       "sg_cov_snaps_per_target": 7.6,
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 96.2,
-      "sg_cov_zone_grade": 67.0
+      "sg_cov_zone_grade": 67.0,
+      "sg_slot_cov_snaps_per_target": 6.0,
+      "sg_slot_cov_yards_per_snap": 0.96,
+      "sg_slot_cov_qb_rating_against": 109.7
     },
     "advanced_percentiles": {
       "sg_cov_grade": 38.1,
@@ -35970,7 +37060,9 @@
       "sg_cov_snaps_per_target": 14.3,
       "sg_cov_yards_per_snap": 81.0,
       "sg_cov_qb_rating_against": 90.5,
-      "sg_cov_zone_grade": 28.6
+      "sg_cov_zone_grade": 28.6,
+      "sg_slot_cov_snaps_per_target": 52.4,
+      "sg_slot_cov_qb_rating_against": 85.7
     },
     "counting_stat_chips": [
       {
@@ -36008,7 +37100,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 24.9,
+    "production_composite_pct": 28.2,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -36297,6 +37389,9 @@
       "sg_cov_yards_per_snap": 1.2,
       "sg_cov_qb_rating_against": 100.7,
       "sg_cov_zone_grade": 64.5,
+      "sg_slot_cov_snaps_per_target": 4.3,
+      "sg_slot_cov_yards_per_snap": 1.94,
+      "sg_slot_cov_qb_rating_against": 104.7,
       "cfb_db_pbu": 2.0,
       "cfb_db_tackles": 30.0,
       "cfb_db_tfl": 2.0,
@@ -36308,7 +37403,9 @@
       "sg_cov_snaps_per_target": 9.5,
       "sg_cov_yards_per_snap": 100.0,
       "sg_cov_qb_rating_against": 95.2,
-      "sg_cov_zone_grade": 23.8
+      "sg_cov_zone_grade": 23.8,
+      "sg_slot_cov_snaps_per_target": 19.0,
+      "sg_slot_cov_qb_rating_against": 81.0
     },
     "advanced_metric_cards": [
       {
@@ -36370,6 +37467,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 4.3,
+        "display": "4.3",
+        "pct": 19.0,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 1.94,
+        "display": "1.94",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 104.7,
+        "display": "104.7",
+        "pct": 19.0,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -36378,7 +37505,10 @@
       "sg_cov_snaps_per_target": 6.8,
       "sg_cov_yards_per_snap": 1.2,
       "sg_cov_qb_rating_against": 100.7,
-      "sg_cov_zone_grade": 64.5
+      "sg_cov_zone_grade": 64.5,
+      "sg_slot_cov_snaps_per_target": 4.3,
+      "sg_slot_cov_yards_per_snap": 1.94,
+      "sg_slot_cov_qb_rating_against": 104.7
     },
     "advanced_percentiles": {
       "sg_cov_grade": 14.3,
@@ -36386,7 +37516,9 @@
       "sg_cov_snaps_per_target": 9.5,
       "sg_cov_yards_per_snap": 100.0,
       "sg_cov_qb_rating_against": 95.2,
-      "sg_cov_zone_grade": 23.8
+      "sg_cov_zone_grade": 23.8,
+      "sg_slot_cov_snaps_per_target": 19.0,
+      "sg_slot_cov_qb_rating_against": 81.0
     },
     "counting_stat_chips": [
       {
@@ -36424,7 +37556,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 21.3,
+    "production_composite_pct": 23.4,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -36976,6 +38108,9 @@
       "sg_cov_yards_per_snap": 0.4,
       "sg_cov_qb_rating_against": 45.1,
       "sg_cov_zone_grade": 85.7,
+      "sg_slot_cov_snaps_per_target": 5.3,
+      "sg_slot_cov_yards_per_snap": 0.61,
+      "sg_slot_cov_qb_rating_against": 57.3,
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
@@ -36984,7 +38119,9 @@
       "sg_cov_snaps_per_target": 66.7,
       "sg_cov_yards_per_snap": 38.1,
       "sg_cov_qb_rating_against": 14.3,
-      "sg_cov_zone_grade": 71.4
+      "sg_cov_zone_grade": 71.4,
+      "sg_slot_cov_snaps_per_target": 38.1,
+      "sg_slot_cov_qb_rating_against": 14.3
     },
     "advanced_metric_cards": [
       {
@@ -37046,6 +38183,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 5.3,
+        "display": "5.3",
+        "pct": 38.1,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.61,
+        "display": "0.61",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 57.3,
+        "display": "57.3",
+        "pct": 85.7,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -37054,7 +38221,10 @@
       "sg_cov_snaps_per_target": 14.0,
       "sg_cov_yards_per_snap": 0.4,
       "sg_cov_qb_rating_against": 45.1,
-      "sg_cov_zone_grade": 85.7
+      "sg_cov_zone_grade": 85.7,
+      "sg_slot_cov_snaps_per_target": 5.3,
+      "sg_slot_cov_yards_per_snap": 0.61,
+      "sg_slot_cov_qb_rating_against": 57.3
     },
     "advanced_percentiles": {
       "sg_cov_grade": 57.1,
@@ -37062,7 +38232,9 @@
       "sg_cov_snaps_per_target": 66.7,
       "sg_cov_yards_per_snap": 38.1,
       "sg_cov_qb_rating_against": 14.3,
-      "sg_cov_zone_grade": 71.4
+      "sg_cov_zone_grade": 71.4,
+      "sg_slot_cov_snaps_per_target": 38.1,
+      "sg_slot_cov_qb_rating_against": 14.3
     },
     "counting_stat_chips": [
       {
@@ -37076,7 +38248,7 @@
     "counting_metrics": {
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 67.9,
+    "production_composite_pct": 65.6,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -37420,6 +38592,9 @@
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 56.5,
       "sg_cov_man_grade": 84.4,
+      "sg_slot_cov_snaps_per_target": 6.6,
+      "sg_slot_cov_yards_per_snap": 0.42,
+      "sg_slot_cov_qb_rating_against": 39.6,
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
@@ -37428,7 +38603,9 @@
       "sg_cov_snaps_per_target": 38.7,
       "sg_cov_yards_per_snap": 41.9,
       "sg_cov_qb_rating_against": 32.3,
-      "sg_cov_man_grade": 96.8
+      "sg_cov_man_grade": 96.8,
+      "sg_slot_cov_snaps_per_target": 84.6,
+      "sg_slot_cov_qb_rating_against": 23.1
     },
     "advanced_metric_cards": [
       {
@@ -37490,6 +38667,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.6,
+        "display": "6.6",
+        "pct": 84.6,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.42,
+        "display": "0.42",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 39.6,
+        "display": "39.6",
+        "pct": 76.9,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -37498,7 +38705,10 @@
       "sg_cov_snaps_per_target": 6.9,
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 56.5,
-      "sg_cov_man_grade": 84.4
+      "sg_cov_man_grade": 84.4,
+      "sg_slot_cov_snaps_per_target": 6.6,
+      "sg_slot_cov_yards_per_snap": 0.42,
+      "sg_slot_cov_qb_rating_against": 39.6
     },
     "advanced_percentiles": {
       "sg_cov_grade": 61.3,
@@ -37506,7 +38716,9 @@
       "sg_cov_snaps_per_target": 38.7,
       "sg_cov_yards_per_snap": 41.9,
       "sg_cov_qb_rating_against": 32.3,
-      "sg_cov_man_grade": 96.8
+      "sg_cov_man_grade": 96.8,
+      "sg_slot_cov_snaps_per_target": 84.6,
+      "sg_slot_cov_qb_rating_against": 23.1
     },
     "counting_stat_chips": [
       {
@@ -37520,7 +38732,7 @@
     "counting_metrics": {
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 68.0,
+    "production_composite_pct": 68.6,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -40063,6 +41275,9 @@
       "sg_cov_yards_per_snap": 0.8,
       "sg_cov_qb_rating_against": 87.2,
       "sg_cov_man_grade": 66.8,
+      "sg_slot_cov_snaps_per_target": 4.0,
+      "sg_slot_cov_yards_per_snap": 1.08,
+      "sg_slot_cov_qb_rating_against": 85.0,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 7.0,
       "cfb_db_tackles": 48.0,
@@ -40075,7 +41290,9 @@
       "sg_cov_snaps_per_target": 12.9,
       "sg_cov_yards_per_snap": 54.8,
       "sg_cov_qb_rating_against": 77.4,
-      "sg_cov_man_grade": 48.4
+      "sg_cov_man_grade": 48.4,
+      "sg_slot_cov_snaps_per_target": 26.9,
+      "sg_slot_cov_qb_rating_against": 80.8
     },
     "advanced_metric_cards": [
       {
@@ -40137,6 +41354,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 4.0,
+        "display": "4.0",
+        "pct": 26.9,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 1.08,
+        "display": "1.08",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 85.0,
+        "display": "85.0",
+        "pct": 19.2,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -40145,7 +41392,10 @@
       "sg_cov_snaps_per_target": 6.1,
       "sg_cov_yards_per_snap": 0.8,
       "sg_cov_qb_rating_against": 87.2,
-      "sg_cov_man_grade": 66.8
+      "sg_cov_man_grade": 66.8,
+      "sg_slot_cov_snaps_per_target": 4.0,
+      "sg_slot_cov_yards_per_snap": 1.08,
+      "sg_slot_cov_qb_rating_against": 85.0
     },
     "advanced_percentiles": {
       "sg_cov_grade": 51.6,
@@ -40153,7 +41403,9 @@
       "sg_cov_snaps_per_target": 12.9,
       "sg_cov_yards_per_snap": 54.8,
       "sg_cov_qb_rating_against": 77.4,
-      "sg_cov_man_grade": 48.4
+      "sg_cov_man_grade": 48.4,
+      "sg_slot_cov_snaps_per_target": 26.9,
+      "sg_slot_cov_qb_rating_against": 80.8
     },
     "counting_stat_chips": [
       {
@@ -40199,7 +41451,7 @@
       "cfb_db_tfl": 1.0,
       "sg_def_total_pressures": 0.0
     },
-    "production_composite_pct": 39.5,
+    "production_composite_pct": 37.8,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -41593,6 +42845,9 @@
       "sg_cov_yards_per_snap": 0.5,
       "sg_cov_qb_rating_against": 79.4,
       "sg_cov_zone_grade": 60.5,
+      "sg_slot_cov_snaps_per_target": 19.0,
+      "sg_slot_cov_yards_per_snap": 0.42,
+      "sg_slot_cov_qb_rating_against": 100.0,
       "cfb_db_int": 1.0,
       "cfb_db_tackles": 76.0,
       "cfb_db_tfl": 1.0,
@@ -41604,7 +42859,9 @@
       "sg_cov_snaps_per_target": 76.2,
       "sg_cov_yards_per_snap": 52.4,
       "sg_cov_qb_rating_against": 66.7,
-      "sg_cov_zone_grade": 19.0
+      "sg_cov_zone_grade": 19.0,
+      "sg_slot_cov_snaps_per_target": 95.2,
+      "sg_slot_cov_qb_rating_against": 71.4
     },
     "advanced_metric_cards": [
       {
@@ -41666,6 +42923,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 19.0,
+        "display": "19.0",
+        "pct": 95.2,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.42,
+        "display": "0.42",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 100.0,
+        "display": "100.0",
+        "pct": 28.6,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -41674,7 +42961,10 @@
       "sg_cov_snaps_per_target": 14.3,
       "sg_cov_yards_per_snap": 0.5,
       "sg_cov_qb_rating_against": 79.4,
-      "sg_cov_zone_grade": 60.5
+      "sg_cov_zone_grade": 60.5,
+      "sg_slot_cov_snaps_per_target": 19.0,
+      "sg_slot_cov_yards_per_snap": 0.42,
+      "sg_slot_cov_qb_rating_against": 100.0
     },
     "advanced_percentiles": {
       "sg_cov_grade": 9.5,
@@ -41682,7 +42972,9 @@
       "sg_cov_snaps_per_target": 76.2,
       "sg_cov_yards_per_snap": 52.4,
       "sg_cov_qb_rating_against": 66.7,
-      "sg_cov_zone_grade": 19.0
+      "sg_cov_zone_grade": 19.0,
+      "sg_slot_cov_snaps_per_target": 95.2,
+      "sg_slot_cov_qb_rating_against": 71.4
     },
     "counting_stat_chips": [
       {
@@ -41720,7 +43012,7 @@
       "cfb_db_tfl": 1.0,
       "sg_def_total_pressures": 4.0
     },
-    "production_composite_pct": 31.4,
+    "production_composite_pct": 37.5,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -42739,6 +44031,9 @@
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 88.4,
       "sg_cov_zone_grade": 89.4,
+      "sg_slot_cov_snaps_per_target": 3.9,
+      "sg_slot_cov_yards_per_snap": 2.13,
+      "sg_slot_cov_qb_rating_against": 99.3,
       "cfb_db_int": 5.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 51.0,
@@ -42751,7 +44046,9 @@
       "sg_cov_snaps_per_target": 61.9,
       "sg_cov_yards_per_snap": 66.7,
       "sg_cov_qb_rating_against": 81.0,
-      "sg_cov_zone_grade": 90.5
+      "sg_cov_zone_grade": 90.5,
+      "sg_slot_cov_snaps_per_target": 14.3,
+      "sg_slot_cov_qb_rating_against": 61.9
     },
     "advanced_metric_cards": [
       {
@@ -42813,6 +44110,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 3.9,
+        "display": "3.9",
+        "pct": 14.3,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 2.13,
+        "display": "2.13",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 99.3,
+        "display": "99.3",
+        "pct": 38.1,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -42821,7 +44148,10 @@
       "sg_cov_snaps_per_target": 11.3,
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 88.4,
-      "sg_cov_zone_grade": 89.4
+      "sg_cov_zone_grade": 89.4,
+      "sg_slot_cov_snaps_per_target": 3.9,
+      "sg_slot_cov_yards_per_snap": 2.13,
+      "sg_slot_cov_qb_rating_against": 99.3
     },
     "advanced_percentiles": {
       "sg_cov_grade": 90.5,
@@ -42829,7 +44159,9 @@
       "sg_cov_snaps_per_target": 61.9,
       "sg_cov_yards_per_snap": 66.7,
       "sg_cov_qb_rating_against": 81.0,
-      "sg_cov_zone_grade": 90.5
+      "sg_cov_zone_grade": 90.5,
+      "sg_slot_cov_snaps_per_target": 14.3,
+      "sg_slot_cov_qb_rating_against": 61.9
     },
     "counting_stat_chips": [
       {
@@ -42875,7 +44207,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 62.2,
+    "production_composite_pct": 55.7,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -43646,6 +44978,9 @@
       "sg_cov_yards_per_snap": 0.9,
       "sg_cov_qb_rating_against": 55.8,
       "sg_cov_zone_grade": 71.6,
+      "sg_slot_cov_snaps_per_target": 3.3,
+      "sg_slot_cov_yards_per_snap": 2.07,
+      "sg_slot_cov_qb_rating_against": 95.1,
       "sg_def_total_pressures": 14.0
     },
     "production_percentiles": {
@@ -43654,7 +44989,9 @@
       "sg_cov_snaps_per_target": 19.0,
       "sg_cov_yards_per_snap": 85.7,
       "sg_cov_qb_rating_against": 33.3,
-      "sg_cov_zone_grade": 42.9
+      "sg_cov_zone_grade": 42.9,
+      "sg_slot_cov_snaps_per_target": 4.8,
+      "sg_slot_cov_qb_rating_against": 57.1
     },
     "advanced_metric_cards": [
       {
@@ -43716,6 +45053,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 3.3,
+        "display": "3.3",
+        "pct": 4.8,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 2.07,
+        "display": "2.07",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 95.1,
+        "display": "95.1",
+        "pct": 42.9,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -43724,7 +45091,10 @@
       "sg_cov_snaps_per_target": 7.9,
       "sg_cov_yards_per_snap": 0.9,
       "sg_cov_qb_rating_against": 55.8,
-      "sg_cov_zone_grade": 71.6
+      "sg_cov_zone_grade": 71.6,
+      "sg_slot_cov_snaps_per_target": 3.3,
+      "sg_slot_cov_yards_per_snap": 2.07,
+      "sg_slot_cov_qb_rating_against": 95.1
     },
     "advanced_percentiles": {
       "sg_cov_grade": 76.2,
@@ -43732,7 +45102,9 @@
       "sg_cov_snaps_per_target": 19.0,
       "sg_cov_yards_per_snap": 85.7,
       "sg_cov_qb_rating_against": 33.3,
-      "sg_cov_zone_grade": 42.9
+      "sg_cov_zone_grade": 42.9,
+      "sg_slot_cov_snaps_per_target": 4.8,
+      "sg_slot_cov_qb_rating_against": 57.1
     },
     "counting_stat_chips": [
       {
@@ -43746,7 +45118,7 @@
     "counting_metrics": {
       "sg_def_total_pressures": 14.0
     },
-    "production_composite_pct": 46.4,
+    "production_composite_pct": 43.2,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -43853,6 +45225,9 @@
       "sg_cov_yards_per_snap": 0.4,
       "sg_cov_qb_rating_against": 35.4,
       "sg_cov_zone_grade": 67.8,
+      "sg_slot_cov_snaps_per_target": 5.8,
+      "sg_slot_cov_yards_per_snap": 0.26,
+      "sg_slot_cov_qb_rating_against": 4.8,
       "sg_def_total_pressures": 6.0
     },
     "production_percentiles": {
@@ -43861,7 +45236,9 @@
       "sg_cov_snaps_per_target": 42.9,
       "sg_cov_yards_per_snap": 38.1,
       "sg_cov_qb_rating_against": 4.8,
-      "sg_cov_zone_grade": 33.3
+      "sg_cov_zone_grade": 33.3,
+      "sg_slot_cov_snaps_per_target": 47.6,
+      "sg_slot_cov_qb_rating_against": 4.8
     },
     "advanced_metric_cards": [
       {
@@ -43923,6 +45300,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 5.8,
+        "display": "5.8",
+        "pct": 47.6,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.26,
+        "display": "0.26",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 4.8,
+        "display": "4.8",
+        "pct": 95.2,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -43931,7 +45338,10 @@
       "sg_cov_snaps_per_target": 10.0,
       "sg_cov_yards_per_snap": 0.4,
       "sg_cov_qb_rating_against": 35.4,
-      "sg_cov_zone_grade": 67.8
+      "sg_cov_zone_grade": 67.8,
+      "sg_slot_cov_snaps_per_target": 5.8,
+      "sg_slot_cov_yards_per_snap": 0.26,
+      "sg_slot_cov_qb_rating_against": 4.8
     },
     "advanced_percentiles": {
       "sg_cov_grade": 28.6,
@@ -43939,7 +45349,9 @@
       "sg_cov_snaps_per_target": 42.9,
       "sg_cov_yards_per_snap": 38.1,
       "sg_cov_qb_rating_against": 4.8,
-      "sg_cov_zone_grade": 33.3
+      "sg_cov_zone_grade": 33.3,
+      "sg_slot_cov_snaps_per_target": 47.6,
+      "sg_slot_cov_qb_rating_against": 4.8
     },
     "counting_stat_chips": [
       {
@@ -43953,7 +45365,7 @@
     "counting_metrics": {
       "sg_def_total_pressures": 6.0
     },
-    "production_composite_pct": 46.1,
+    "production_composite_pct": 50.3,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -44440,6 +45852,9 @@
       "sg_cov_yards_per_snap": 0.3,
       "sg_cov_qb_rating_against": 39.4,
       "sg_cov_man_grade": 80.4,
+      "sg_slot_cov_snaps_per_target": 6.2,
+      "sg_slot_cov_yards_per_snap": 0.45,
+      "sg_slot_cov_qb_rating_against": 51.0,
       "cfb_db_int": 2.0,
       "cfb_db_pbu": 6.0,
       "cfb_db_tackles": 39.0,
@@ -44452,7 +45867,9 @@
       "sg_cov_snaps_per_target": 90.3,
       "sg_cov_yards_per_snap": 3.2,
       "sg_cov_qb_rating_against": 12.9,
-      "sg_cov_man_grade": 90.3
+      "sg_cov_man_grade": 90.3,
+      "sg_slot_cov_snaps_per_target": 69.2,
+      "sg_slot_cov_qb_rating_against": 38.5
     },
     "advanced_metric_cards": [
       {
@@ -44514,6 +45931,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.2,
+        "display": "6.2",
+        "pct": 69.2,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.45,
+        "display": "0.45",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 51.0,
+        "display": "51.0",
+        "pct": 61.5,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -44522,7 +45969,10 @@
       "sg_cov_snaps_per_target": 8.8,
       "sg_cov_yards_per_snap": 0.3,
       "sg_cov_qb_rating_against": 39.4,
-      "sg_cov_man_grade": 80.4
+      "sg_cov_man_grade": 80.4,
+      "sg_slot_cov_snaps_per_target": 6.2,
+      "sg_slot_cov_yards_per_snap": 0.45,
+      "sg_slot_cov_qb_rating_against": 51.0
     },
     "advanced_percentiles": {
       "sg_cov_grade": 87.1,
@@ -44530,7 +45980,9 @@
       "sg_cov_snaps_per_target": 90.3,
       "sg_cov_yards_per_snap": 3.2,
       "sg_cov_qb_rating_against": 12.9,
-      "sg_cov_man_grade": 90.3
+      "sg_cov_man_grade": 90.3,
+      "sg_slot_cov_snaps_per_target": 69.2,
+      "sg_slot_cov_qb_rating_against": 38.5
     },
     "counting_stat_chips": [
       {
@@ -44576,7 +46028,7 @@
       "cfb_db_tfl": 1.0,
       "sg_def_total_pressures": 5.0
     },
-    "production_composite_pct": 82.4,
+    "production_composite_pct": 77.3,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -45349,6 +46801,9 @@
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 53.4,
       "sg_cov_man_grade": 67.6,
+      "sg_slot_cov_snaps_per_target": 5.8,
+      "sg_slot_cov_yards_per_snap": 1.2,
+      "sg_slot_cov_qb_rating_against": 72.4,
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
@@ -45357,7 +46812,9 @@
       "sg_cov_snaps_per_target": 64.5,
       "sg_cov_yards_per_snap": 22.6,
       "sg_cov_qb_rating_against": 25.8,
-      "sg_cov_man_grade": 51.6
+      "sg_cov_man_grade": 51.6,
+      "sg_slot_cov_snaps_per_target": 57.7,
+      "sg_slot_cov_qb_rating_against": 69.2
     },
     "advanced_metric_cards": [
       {
@@ -45419,6 +46876,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 5.8,
+        "display": "5.8",
+        "pct": 57.7,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 1.2,
+        "display": "1.20",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 72.4,
+        "display": "72.4",
+        "pct": 30.8,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -45427,7 +46914,10 @@
       "sg_cov_snaps_per_target": 7.4,
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 53.4,
-      "sg_cov_man_grade": 67.6
+      "sg_cov_man_grade": 67.6,
+      "sg_slot_cov_snaps_per_target": 5.8,
+      "sg_slot_cov_yards_per_snap": 1.2,
+      "sg_slot_cov_qb_rating_against": 72.4
     },
     "advanced_percentiles": {
       "sg_cov_grade": 35.5,
@@ -45435,7 +46925,9 @@
       "sg_cov_snaps_per_target": 64.5,
       "sg_cov_yards_per_snap": 22.6,
       "sg_cov_qb_rating_against": 25.8,
-      "sg_cov_man_grade": 51.6
+      "sg_cov_man_grade": 51.6,
+      "sg_slot_cov_snaps_per_target": 57.7,
+      "sg_slot_cov_qb_rating_against": 69.2
     },
     "counting_stat_chips": [
       {
@@ -45449,7 +46941,7 @@
     "counting_metrics": {
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 52.1,
+    "production_composite_pct": 50.7,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -46914,6 +48406,9 @@
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 37.8,
       "sg_cov_zone_grade": 88.5,
+      "sg_slot_cov_snaps_per_target": 4.5,
+      "sg_slot_cov_yards_per_snap": 1.13,
+      "sg_slot_cov_qb_rating_against": 58.7,
       "sg_def_total_pressures": 1.0
     },
     "production_percentiles": {
@@ -46922,7 +48417,9 @@
       "sg_cov_snaps_per_target": 23.8,
       "sg_cov_yards_per_snap": 66.7,
       "sg_cov_qb_rating_against": 9.5,
-      "sg_cov_zone_grade": 81.0
+      "sg_cov_zone_grade": 81.0,
+      "sg_slot_cov_snaps_per_target": 28.6,
+      "sg_slot_cov_qb_rating_against": 19.0
     },
     "advanced_metric_cards": [
       {
@@ -46984,6 +48481,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 4.5,
+        "display": "4.5",
+        "pct": 28.6,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 1.13,
+        "display": "1.13",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 58.7,
+        "display": "58.7",
+        "pct": 81.0,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -46992,7 +48519,10 @@
       "sg_cov_snaps_per_target": 8.2,
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 37.8,
-      "sg_cov_zone_grade": 88.5
+      "sg_cov_zone_grade": 88.5,
+      "sg_slot_cov_snaps_per_target": 4.5,
+      "sg_slot_cov_yards_per_snap": 1.13,
+      "sg_slot_cov_qb_rating_against": 58.7
     },
     "advanced_percentiles": {
       "sg_cov_grade": 71.4,
@@ -47000,7 +48530,9 @@
       "sg_cov_snaps_per_target": 23.8,
       "sg_cov_yards_per_snap": 66.7,
       "sg_cov_qb_rating_against": 9.5,
-      "sg_cov_zone_grade": 81.0
+      "sg_cov_zone_grade": 81.0,
+      "sg_slot_cov_snaps_per_target": 28.6,
+      "sg_slot_cov_qb_rating_against": 19.0
     },
     "counting_stat_chips": [
       {
@@ -47014,7 +48546,7 @@
     "counting_metrics": {
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 58.3,
+    "production_composite_pct": 57.1,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -49222,6 +50754,9 @@
       "sg_cov_yards_per_snap": 1.0,
       "sg_cov_qb_rating_against": 118.9,
       "sg_cov_zone_grade": 51.6,
+      "sg_slot_cov_snaps_per_target": 6.4,
+      "sg_slot_cov_yards_per_snap": 2.42,
+      "sg_slot_cov_qb_rating_against": 101.8,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 2.0,
       "cfb_db_tackles": 59.0,
@@ -49234,7 +50769,9 @@
       "sg_cov_snaps_per_target": 57.1,
       "sg_cov_yards_per_snap": 90.5,
       "sg_cov_qb_rating_against": 100.0,
-      "sg_cov_zone_grade": 4.8
+      "sg_cov_zone_grade": 4.8,
+      "sg_slot_cov_snaps_per_target": 61.9,
+      "sg_slot_cov_qb_rating_against": 76.2
     },
     "advanced_metric_cards": [
       {
@@ -49296,6 +50833,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.4,
+        "display": "6.4",
+        "pct": 61.9,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 2.42,
+        "display": "2.42",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 101.8,
+        "display": "101.8",
+        "pct": 23.8,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -49304,7 +50871,10 @@
       "sg_cov_snaps_per_target": 11.0,
       "sg_cov_yards_per_snap": 1.0,
       "sg_cov_qb_rating_against": 118.9,
-      "sg_cov_zone_grade": 51.6
+      "sg_cov_zone_grade": 51.6,
+      "sg_slot_cov_snaps_per_target": 6.4,
+      "sg_slot_cov_yards_per_snap": 2.42,
+      "sg_slot_cov_qb_rating_against": 101.8
     },
     "advanced_percentiles": {
       "sg_cov_grade": 4.8,
@@ -49312,7 +50882,9 @@
       "sg_cov_snaps_per_target": 57.1,
       "sg_cov_yards_per_snap": 90.5,
       "sg_cov_qb_rating_against": 100.0,
-      "sg_cov_zone_grade": 4.8
+      "sg_cov_zone_grade": 4.8,
+      "sg_slot_cov_snaps_per_target": 61.9,
+      "sg_slot_cov_qb_rating_against": 76.2
     },
     "counting_stat_chips": [
       {
@@ -49358,7 +50930,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 0.0
     },
-    "production_composite_pct": 15.1,
+    "production_composite_pct": 22.9,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -52987,6 +54559,9 @@
       "sg_cov_yards_per_snap": 0.4,
       "sg_cov_qb_rating_against": 57.4,
       "sg_cov_zone_grade": 71.9,
+      "sg_slot_cov_snaps_per_target": 3.6,
+      "sg_slot_cov_yards_per_snap": 0.91,
+      "sg_slot_cov_qb_rating_against": 46.4,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 59.0,
@@ -52999,7 +54574,9 @@
       "sg_cov_snaps_per_target": 38.1,
       "sg_cov_yards_per_snap": 38.1,
       "sg_cov_qb_rating_against": 42.9,
-      "sg_cov_zone_grade": 47.6
+      "sg_cov_zone_grade": 47.6,
+      "sg_slot_cov_snaps_per_target": 9.5,
+      "sg_slot_cov_qb_rating_against": 9.5
     },
     "advanced_metric_cards": [
       {
@@ -53061,6 +54638,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 3.6,
+        "display": "3.6",
+        "pct": 9.5,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.91,
+        "display": "0.91",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 46.4,
+        "display": "46.4",
+        "pct": 90.5,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -53069,7 +54676,10 @@
       "sg_cov_snaps_per_target": 9.9,
       "sg_cov_yards_per_snap": 0.4,
       "sg_cov_qb_rating_against": 57.4,
-      "sg_cov_zone_grade": 71.9
+      "sg_cov_zone_grade": 71.9,
+      "sg_slot_cov_snaps_per_target": 3.6,
+      "sg_slot_cov_yards_per_snap": 0.91,
+      "sg_slot_cov_qb_rating_against": 46.4
     },
     "advanced_percentiles": {
       "sg_cov_grade": 33.3,
@@ -53077,7 +54687,9 @@
       "sg_cov_snaps_per_target": 38.1,
       "sg_cov_yards_per_snap": 38.1,
       "sg_cov_qb_rating_against": 42.9,
-      "sg_cov_zone_grade": 47.6
+      "sg_cov_zone_grade": 47.6,
+      "sg_slot_cov_snaps_per_target": 9.5,
+      "sg_slot_cov_qb_rating_against": 9.5
     },
     "counting_stat_chips": [
       {
@@ -53123,7 +54735,7 @@
       "cfb_db_tfl": 3.0,
       "sg_def_total_pressures": 3.0
     },
-    "production_composite_pct": 51.0,
+    "production_composite_pct": 50.8,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -57443,6 +59055,9 @@
       "sg_cov_yards_per_snap": 1.2,
       "sg_cov_qb_rating_against": 97.6,
       "sg_cov_man_grade": 56.1,
+      "sg_slot_cov_snaps_per_target": 3.7,
+      "sg_slot_cov_yards_per_snap": 1.42,
+      "sg_slot_cov_qb_rating_against": 71.7,
       "sg_def_total_pressures": 3.0
     },
     "production_percentiles": {
@@ -57451,7 +59066,9 @@
       "sg_cov_snaps_per_target": 9.7,
       "sg_cov_yards_per_snap": 90.3,
       "sg_cov_qb_rating_against": 87.1,
-      "sg_cov_man_grade": 12.9
+      "sg_cov_man_grade": 12.9,
+      "sg_slot_cov_snaps_per_target": 23.1,
+      "sg_slot_cov_qb_rating_against": 65.4
     },
     "advanced_metric_cards": [
       {
@@ -57513,6 +59130,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 3.7,
+        "display": "3.7",
+        "pct": 23.1,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 1.42,
+        "display": "1.42",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 71.7,
+        "display": "71.7",
+        "pct": 34.6,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -57521,7 +59168,10 @@
       "sg_cov_snaps_per_target": 6.0,
       "sg_cov_yards_per_snap": 1.2,
       "sg_cov_qb_rating_against": 97.6,
-      "sg_cov_man_grade": 56.1
+      "sg_cov_man_grade": 56.1,
+      "sg_slot_cov_snaps_per_target": 3.7,
+      "sg_slot_cov_yards_per_snap": 1.42,
+      "sg_slot_cov_qb_rating_against": 71.7
     },
     "advanced_percentiles": {
       "sg_cov_grade": 3.2,
@@ -57529,7 +59179,9 @@
       "sg_cov_snaps_per_target": 9.7,
       "sg_cov_yards_per_snap": 90.3,
       "sg_cov_qb_rating_against": 87.1,
-      "sg_cov_man_grade": 12.9
+      "sg_cov_man_grade": 12.9,
+      "sg_slot_cov_snaps_per_target": 23.1,
+      "sg_slot_cov_qb_rating_against": 65.4
     },
     "counting_stat_chips": [
       {
@@ -57543,7 +59195,7 @@
     "counting_metrics": {
       "sg_def_total_pressures": 3.0
     },
-    "production_composite_pct": 16.3,
+    "production_composite_pct": 20.8,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -57652,6 +59304,9 @@
       "sg_cov_yards_per_snap": 0.2,
       "sg_cov_qb_rating_against": 55.9,
       "sg_cov_zone_grade": 86.2,
+      "sg_slot_cov_snaps_per_target": 5.7,
+      "sg_slot_cov_yards_per_snap": 1.16,
+      "sg_slot_cov_qb_rating_against": 121.2,
       "cfb_db_int": 4.0,
       "cfb_db_pbu": 2.0,
       "cfb_db_tackles": 72.0,
@@ -57664,7 +59319,9 @@
       "sg_cov_snaps_per_target": 90.5,
       "sg_cov_yards_per_snap": 9.5,
       "sg_cov_qb_rating_against": 38.1,
-      "sg_cov_zone_grade": 76.2
+      "sg_cov_zone_grade": 76.2,
+      "sg_slot_cov_snaps_per_target": 42.9,
+      "sg_slot_cov_qb_rating_against": 90.5
     },
     "advanced_metric_cards": [
       {
@@ -57726,6 +59383,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 5.7,
+        "display": "5.7",
+        "pct": 42.9,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 1.16,
+        "display": "1.16",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 121.2,
+        "display": "121.2",
+        "pct": 9.5,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -57734,7 +59421,10 @@
       "sg_cov_snaps_per_target": 19.9,
       "sg_cov_yards_per_snap": 0.2,
       "sg_cov_qb_rating_against": 55.9,
-      "sg_cov_zone_grade": 86.2
+      "sg_cov_zone_grade": 86.2,
+      "sg_slot_cov_snaps_per_target": 5.7,
+      "sg_slot_cov_yards_per_snap": 1.16,
+      "sg_slot_cov_qb_rating_against": 121.2
     },
     "advanced_percentiles": {
       "sg_cov_grade": 57.1,
@@ -57742,7 +59432,9 @@
       "sg_cov_snaps_per_target": 90.5,
       "sg_cov_yards_per_snap": 9.5,
       "sg_cov_qb_rating_against": 38.1,
-      "sg_cov_zone_grade": 76.2
+      "sg_cov_zone_grade": 76.2,
+      "sg_slot_cov_snaps_per_target": 42.9,
+      "sg_slot_cov_qb_rating_against": 90.5
     },
     "counting_stat_chips": [
       {
@@ -57788,7 +59480,7 @@
       "cfb_db_tfl": 2.0,
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 70.6,
+    "production_composite_pct": 62.2,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -58556,6 +60248,9 @@
       "sg_cov_yards_per_snap": 1.2,
       "sg_cov_qb_rating_against": 71.8,
       "sg_cov_man_grade": 61.1,
+      "sg_slot_cov_snaps_per_target": 6.0,
+      "sg_slot_cov_yards_per_snap": 0.0,
+      "sg_slot_cov_qb_rating_against": 39.6,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 10.0,
       "cfb_db_tackles": 47.0,
@@ -58567,7 +60262,9 @@
       "sg_cov_snaps_per_target": 3.2,
       "sg_cov_yards_per_snap": 90.3,
       "sg_cov_qb_rating_against": 58.1,
-      "sg_cov_man_grade": 25.8
+      "sg_cov_man_grade": 25.8,
+      "sg_slot_cov_snaps_per_target": 61.5,
+      "sg_slot_cov_qb_rating_against": 23.1
     },
     "advanced_metric_cards": [
       {
@@ -58629,6 +60326,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.0,
+        "display": "6.0",
+        "pct": 61.5,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.0,
+        "display": "0.00",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 39.6,
+        "display": "39.6",
+        "pct": 76.9,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -58637,7 +60364,10 @@
       "sg_cov_snaps_per_target": 5.2,
       "sg_cov_yards_per_snap": 1.2,
       "sg_cov_qb_rating_against": 71.8,
-      "sg_cov_man_grade": 61.1
+      "sg_cov_man_grade": 61.1,
+      "sg_slot_cov_snaps_per_target": 6.0,
+      "sg_slot_cov_yards_per_snap": 0.0,
+      "sg_slot_cov_qb_rating_against": 39.6
     },
     "advanced_percentiles": {
       "sg_cov_grade": 41.9,
@@ -58645,7 +60375,9 @@
       "sg_cov_snaps_per_target": 3.2,
       "sg_cov_yards_per_snap": 90.3,
       "sg_cov_qb_rating_against": 58.1,
-      "sg_cov_man_grade": 25.8
+      "sg_cov_man_grade": 25.8,
+      "sg_slot_cov_snaps_per_target": 61.5,
+      "sg_slot_cov_qb_rating_against": 23.1
     },
     "counting_stat_chips": [
       {
@@ -58683,7 +60415,7 @@
       "cfb_db_tackles": 47.0,
       "sg_def_total_pressures": 0.0
     },
-    "production_composite_pct": 34.4,
+    "production_composite_pct": 41.0,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -63206,6 +64938,9 @@
       "sg_cov_yards_per_snap": 1.3,
       "sg_cov_qb_rating_against": 118.1,
       "sg_cov_man_grade": 63.2,
+      "sg_slot_cov_snaps_per_target": 5.0,
+      "sg_slot_cov_yards_per_snap": 2.3,
+      "sg_slot_cov_qb_rating_against": 154.2,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 40.0,
@@ -63218,7 +64953,9 @@
       "sg_cov_snaps_per_target": 41.9,
       "sg_cov_yards_per_snap": 96.8,
       "sg_cov_qb_rating_against": 100.0,
-      "sg_cov_man_grade": 38.7
+      "sg_cov_man_grade": 38.7,
+      "sg_slot_cov_snaps_per_target": 42.3,
+      "sg_slot_cov_qb_rating_against": 100.0
     },
     "advanced_metric_cards": [
       {
@@ -63280,6 +65017,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 5.0,
+        "display": "5.0",
+        "pct": 42.3,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 2.3,
+        "display": "2.30",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 154.2,
+        "display": "154.2",
+        "pct": 0.0,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -63288,7 +65055,10 @@
       "sg_cov_snaps_per_target": 7.0,
       "sg_cov_yards_per_snap": 1.3,
       "sg_cov_qb_rating_against": 118.1,
-      "sg_cov_man_grade": 63.2
+      "sg_cov_man_grade": 63.2,
+      "sg_slot_cov_snaps_per_target": 5.0,
+      "sg_slot_cov_yards_per_snap": 2.3,
+      "sg_slot_cov_qb_rating_against": 154.2
     },
     "advanced_percentiles": {
       "sg_cov_grade": 6.5,
@@ -63296,7 +65066,9 @@
       "sg_cov_snaps_per_target": 41.9,
       "sg_cov_yards_per_snap": 96.8,
       "sg_cov_qb_rating_against": 100.0,
-      "sg_cov_man_grade": 38.7
+      "sg_cov_man_grade": 38.7,
+      "sg_slot_cov_snaps_per_target": 42.3,
+      "sg_slot_cov_qb_rating_against": 100.0
     },
     "counting_stat_chips": [
       {
@@ -63342,7 +65114,7 @@
       "cfb_db_tfl": 1.0,
       "sg_def_total_pressures": 1.0
     },
-    "production_composite_pct": 16.9,
+    "production_composite_pct": 22.5,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -64813,6 +66585,9 @@
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 84.9,
       "sg_cov_zone_grade": 54.8,
+      "sg_slot_cov_snaps_per_target": 6.1,
+      "sg_slot_cov_yards_per_snap": 0.81,
+      "sg_slot_cov_qb_rating_against": 91.6,
       "cfb_db_int": 5.0,
       "cfb_db_pbu": 3.0,
       "cfb_db_tackles": 104.0,
@@ -64825,7 +66600,9 @@
       "sg_cov_snaps_per_target": 57.1,
       "sg_cov_yards_per_snap": 66.7,
       "sg_cov_qb_rating_against": 76.2,
-      "sg_cov_zone_grade": 9.5
+      "sg_cov_zone_grade": 9.5,
+      "sg_slot_cov_snaps_per_target": 57.1,
+      "sg_slot_cov_qb_rating_against": 52.4
     },
     "advanced_metric_cards": [
       {
@@ -64887,6 +66664,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.18
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 6.1,
+        "display": "6.1",
+        "pct": 57.1,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 0.81,
+        "display": "0.81",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 91.6,
+        "display": "91.6",
+        "pct": 47.6,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -64895,7 +66702,10 @@
       "sg_cov_snaps_per_target": 11.0,
       "sg_cov_yards_per_snap": 0.6,
       "sg_cov_qb_rating_against": 84.9,
-      "sg_cov_zone_grade": 54.8
+      "sg_cov_zone_grade": 54.8,
+      "sg_slot_cov_snaps_per_target": 6.1,
+      "sg_slot_cov_yards_per_snap": 0.81,
+      "sg_slot_cov_qb_rating_against": 91.6
     },
     "advanced_percentiles": {
       "sg_cov_grade": 23.8,
@@ -64903,7 +66713,9 @@
       "sg_cov_snaps_per_target": 57.1,
       "sg_cov_yards_per_snap": 66.7,
       "sg_cov_qb_rating_against": 76.2,
-      "sg_cov_zone_grade": 9.5
+      "sg_cov_zone_grade": 9.5,
+      "sg_slot_cov_snaps_per_target": 57.1,
+      "sg_slot_cov_qb_rating_against": 52.4
     },
     "counting_stat_chips": [
       {
@@ -64949,7 +66761,7 @@
       "cfb_db_tfl": 6.0,
       "sg_def_total_pressures": 5.0
     },
-    "production_composite_pct": 26.9,
+    "production_composite_pct": 32.6,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
@@ -66797,6 +68609,9 @@
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 65.5,
       "sg_cov_man_grade": 74.8,
+      "sg_slot_cov_snaps_per_target": 5.5,
+      "sg_slot_cov_yards_per_snap": 1.21,
+      "sg_slot_cov_qb_rating_against": 60.4,
       "cfb_db_int": 1.0,
       "cfb_db_pbu": 10.0,
       "cfb_db_tackles": 42.0,
@@ -66809,7 +68624,9 @@
       "sg_cov_snaps_per_target": 22.6,
       "sg_cov_yards_per_snap": 41.9,
       "sg_cov_qb_rating_against": 45.2,
-      "sg_cov_man_grade": 74.2
+      "sg_cov_man_grade": 74.2,
+      "sg_slot_cov_snaps_per_target": 50.0,
+      "sg_slot_cov_qb_rating_against": 53.8
     },
     "advanced_metric_cards": [
       {
@@ -66871,6 +68688,36 @@
         "fmt": "dec1",
         "lower_better": false,
         "weight": 0.12
+      },
+      {
+        "key": "sg_slot_cov_snaps_per_target",
+        "label": "Slot Snaps / Target",
+        "raw": 5.5,
+        "display": "5.5",
+        "pct": 50.0,
+        "fmt": "dec1",
+        "lower_better": false,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_yards_per_snap",
+        "label": "Slot Yards / Snap",
+        "raw": 1.21,
+        "display": "1.21",
+        "pct": 50.0,
+        "fmt": "dec2",
+        "lower_better": true,
+        "weight": 0.1
+      },
+      {
+        "key": "sg_slot_cov_qb_rating_against",
+        "label": "Slot QB Rating Against",
+        "raw": 60.4,
+        "display": "60.4",
+        "pct": 46.2,
+        "fmt": "dec1",
+        "lower_better": true,
+        "weight": 0.1
       }
     ],
     "advanced_metrics": {
@@ -66879,7 +68726,10 @@
       "sg_cov_snaps_per_target": 6.5,
       "sg_cov_yards_per_snap": 0.7,
       "sg_cov_qb_rating_against": 65.5,
-      "sg_cov_man_grade": 74.8
+      "sg_cov_man_grade": 74.8,
+      "sg_slot_cov_snaps_per_target": 5.5,
+      "sg_slot_cov_yards_per_snap": 1.21,
+      "sg_slot_cov_qb_rating_against": 60.4
     },
     "advanced_percentiles": {
       "sg_cov_grade": 9.7,
@@ -66887,7 +68737,9 @@
       "sg_cov_snaps_per_target": 22.6,
       "sg_cov_yards_per_snap": 41.9,
       "sg_cov_qb_rating_against": 45.2,
-      "sg_cov_man_grade": 74.2
+      "sg_cov_man_grade": 74.2,
+      "sg_slot_cov_snaps_per_target": 50.0,
+      "sg_slot_cov_qb_rating_against": 53.8
     },
     "counting_stat_chips": [
       {
@@ -66933,7 +68785,7 @@
       "cfb_db_tfl": 5.0,
       "sg_def_total_pressures": 2.0
     },
-    "production_composite_pct": 47.6,
+    "production_composite_pct": 47.8,
     "production_source_tier": "premium",
     "production_snapshot_heading": "2025 Production Snapshot",
     "position_lens": {
