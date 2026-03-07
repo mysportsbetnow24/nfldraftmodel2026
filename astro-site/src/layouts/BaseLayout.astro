@@ -11,6 +11,7 @@ interface Props {
   ogImage?: string;
   ogType?: "website" | "article";
   canonicalPath?: string;
+  shellClass?: string;
 }
 
 const {
@@ -22,6 +23,7 @@ const {
   ogImage = "/og-default.svg",
   ogType = "website",
   canonicalPath = Astro.url.pathname,
+  shellClass = "",
 } = Astro.props;
 const siteUrl = (Astro.site ?? new URL("https://scoutinggrade.com")).toString().replace(/\/$/, "");
 const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
@@ -65,7 +67,7 @@ const generatedAt = (meta as { generated_at?: string }).generated_at || "";
     ))}
   </head>
   <body>
-    <div class="shell">
+    <div class={`shell ${shellClass}`.trim()}>
       <header class="header">
         <div class="brand"><a href="/">Scouting Grade</a></div>
         <nav class="nav">

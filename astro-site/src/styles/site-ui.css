@@ -41,6 +41,10 @@ body {
   padding: 1.25rem;
 }
 
+.compare-shell {
+  max-width: 1600px;
+}
+
 .header {
   display: flex;
   gap: 1rem;
@@ -456,6 +460,8 @@ tbody tr.clickable-row {
 }
 
 .compare-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-bottom: 1rem;
 }
 
@@ -1098,6 +1104,10 @@ tbody tr.clickable-row {
 }
 
 @media (max-width: 1080px) {
+  .compare-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .filters-grid {
     grid-template-columns: repeat(2, minmax(160px, 1fr));
   }
@@ -1148,6 +1158,10 @@ tbody tr.clickable-row {
 }
 
 @media (max-width: 720px) {
+  .compare-cards {
+    grid-template-columns: 1fr;
+  }
+
   .team-needs-grid {
     grid-template-columns: 1fr;
   }
