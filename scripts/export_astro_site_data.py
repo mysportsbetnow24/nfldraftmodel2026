@@ -199,28 +199,28 @@ POSITION_ADVANCED_METRIC_CONFIG = {
         {"key": "sg_def_tackle_grade", "label": "Tackle Grade", "fmt": "dec1", "weight": 0.16},
         {"key": "sg_def_missed_tackle_rate", "label": "Missed Tackle Rate", "fmt": "pct100", "lower_better": True, "weight": 0.14},
         {"key": "sg_front_stop_percent", "label": "Stop Rate", "fmt": "pct100", "weight": 0.12},
-        {"key": "sg_cov_yards_per_snap", "label": "Yards / Coverage Snap", "fmt": "dec2", "lower_better": True, "weight": 0.12},
+        {"key": "sg_cov_yards_per_snap", "label": "Yards Allowed / Coverage Snap", "fmt": "dec2", "lower_better": True, "weight": 0.12},
     ],
     "CB": [
         {"key": "sg_cov_grade", "label": "Coverage Grade", "fmt": "dec1", "weight": 0.24},
         {"key": "sg_cov_forced_incompletion_rate", "label": "Forced Incompletion Rate", "fmt": "pct100", "weight": 0.16},
-        {"key": "sg_cov_snaps_per_target", "label": "Coverage Snaps / Target", "fmt": "dec1", "weight": 0.14},
-        {"key": "sg_cov_yards_per_snap", "label": "Yards / Coverage Snap", "fmt": "dec2", "lower_better": True, "weight": 0.18},
+        {"key": "sg_cov_snaps_per_target", "label": "Coverage Snaps per Target", "fmt": "dec1", "weight": 0.14},
+        {"key": "sg_cov_yards_per_snap", "label": "Yards Allowed / Coverage Snap", "fmt": "dec2", "lower_better": True, "weight": 0.18},
         {"key": "sg_cov_qb_rating_against", "label": "QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.16},
         {"key": "sg_cov_man_grade", "label": "Man Coverage Grade", "fmt": "dec1", "weight": 0.12},
-        {"key": "sg_slot_cov_snaps_per_target", "label": "Slot Snaps / Target", "fmt": "dec1", "weight": 0.10},
-        {"key": "sg_slot_cov_yards_per_snap", "label": "Slot Yards / Snap", "fmt": "dec2", "lower_better": True, "weight": 0.10},
+        {"key": "sg_slot_cov_snaps_per_target", "label": "Slot Snaps per Target", "fmt": "dec1", "weight": 0.10},
+        {"key": "sg_slot_cov_yards_per_snap", "label": "Slot Yards Allowed / Snap", "fmt": "dec2", "lower_better": True, "weight": 0.10},
         {"key": "sg_slot_cov_qb_rating_against", "label": "Slot QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.10},
     ],
     "S": [
         {"key": "sg_cov_grade", "label": "Coverage Grade", "fmt": "dec1", "weight": 0.22},
         {"key": "sg_cov_forced_incompletion_rate", "label": "Forced Incompletion Rate", "fmt": "pct100", "weight": 0.14},
-        {"key": "sg_cov_snaps_per_target", "label": "Coverage Snaps / Target", "fmt": "dec1", "weight": 0.14},
-        {"key": "sg_cov_yards_per_snap", "label": "Yards / Coverage Snap", "fmt": "dec2", "lower_better": True, "weight": 0.18},
+        {"key": "sg_cov_snaps_per_target", "label": "Coverage Snaps per Target", "fmt": "dec1", "weight": 0.14},
+        {"key": "sg_cov_yards_per_snap", "label": "Yards Allowed / Coverage Snap", "fmt": "dec2", "lower_better": True, "weight": 0.18},
         {"key": "sg_cov_qb_rating_against", "label": "QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.14},
         {"key": "sg_cov_zone_grade", "label": "Zone Coverage Grade", "fmt": "dec1", "weight": 0.18},
-        {"key": "sg_slot_cov_snaps_per_target", "label": "Slot Snaps / Target", "fmt": "dec1", "weight": 0.10},
-        {"key": "sg_slot_cov_yards_per_snap", "label": "Slot Yards / Snap", "fmt": "dec2", "lower_better": True, "weight": 0.10},
+        {"key": "sg_slot_cov_snaps_per_target", "label": "Slot Snaps per Target", "fmt": "dec1", "weight": 0.10},
+        {"key": "sg_slot_cov_yards_per_snap", "label": "Slot Yards Allowed / Snap", "fmt": "dec2", "lower_better": True, "weight": 0.10},
         {"key": "sg_slot_cov_qb_rating_against", "label": "Slot QB Rating Against", "fmt": "dec1", "lower_better": True, "weight": 0.10},
     ],
     "OT": [
@@ -885,6 +885,9 @@ def _player_sort_tuple(player: dict, slot_priority: dict[str, int]) -> tuple:
     apy_m = float(player.get("apy_m") or 0.0)
     apy_pct = float(player.get("apy_pct") or 0.0)
     years_exp = _safe_int(player.get("years_exp"), 0)
+    snap_count = _safe_int(player.get("snap_count"), 0)
+    offense_snaps = _safe_int(player.get("offense_snaps"), 0)
+    defense_snaps = _safe_int(player.get("defense_snaps"), 0)
     age = _safe_int(player.get("age"), 0)
     draft_number = _safe_int(player.get("draft_number"), 9999)
     rookie_weight = 0.0
@@ -892,6 +895,15 @@ def _player_sort_tuple(player: dict, slot_priority: dict[str, int]) -> tuple:
         rookie_weight = max(0.0, 1.0 - (min(draft_number, 256) / 300.0))
 
     starter_signal = apy_pct + min(apy_m, 40.0) + (years_exp * 1.5) + (rookie_weight * 18.0)
+    if model_position in {"WR", "TE", "RB"}:
+        starter_signal += min(offense_snaps, 1200) / 20.0
+        starter_signal += min(snap_count, 1200) / 35.0
+    elif model_position in {"CB", "S", "LB", "EDGE", "DT"}:
+        starter_signal += min(defense_snaps, 1200) / 20.0
+        starter_signal += min(snap_count, 1200) / 35.0
+    elif model_position in {"OT", "IOL"}:
+        starter_signal += min(offense_snaps, 1200) / 16.0
+        starter_signal += min(snap_count, 1200) / 30.0
     if model_position == "QB":
         starter_signal += min(apy_m, 50.0) * 1.2
         starter_signal += apy_pct * 0.45
@@ -1672,6 +1684,19 @@ def _build_team_depth_context() -> dict[str, dict]:
     all_contract_rows = []
     contract_rows = []
     apy_pool_by_pos: dict[str, list[float]] = defaultdict(list)
+
+    def _contract_end_year(row: dict) -> int:
+        years = _safe_int(row.get("years"), 0)
+        year_signed = _safe_int(row.get("year_signed"), 0)
+        if years and year_signed:
+            return year_signed + max(years - 1, 0)
+        return 0
+
+    def _contract_years_remaining(row: dict) -> int:
+        end_year = _contract_end_year(row)
+        if end_year:
+            return max(0, end_year - CURRENT_DRAFT_YEAR + 1)
+        return _safe_int(row.get("years"), 0)
     contract_by_gsis: dict[str, dict] = {}
     contract_by_name: dict[str, dict] = {}
     contract_history_by_name_team: dict[tuple[str, str], dict] = {}
@@ -1680,14 +1705,21 @@ def _build_team_depth_context() -> dict[str, dict]:
         contracts = pl.read_parquet(NFLVERSE_CONTRACTS)
         if not contracts.is_empty():
             all_contract_rows = list(contracts.iter_rows(named=True))
-            contract_rows = list(contracts.filter(pl.col("is_active") == True).iter_rows(named=True))
+            contract_rows = []
+            for row in all_contract_rows:
+                end_year = _contract_end_year(row)
+                is_current = bool(row.get("is_active"))
+                if end_year:
+                    is_current = end_year >= CURRENT_DRAFT_YEAR
+                if is_current:
+                    contract_rows.append(row)
     for row in all_contract_rows:
         name_key = _norm_player_key(row.get("player") or "")
         if not name_key:
             continue
         years = _safe_int(row.get("years"), 0)
         year_signed = _safe_int(row.get("year_signed"), 0)
-        contract_end_year = year_signed + max(years - 1, 0) if year_signed and years else 0
+        contract_end_year = _contract_end_year(row)
         apy = _safe_float(row.get("apy"))
         for team_code in _normalize_contract_team_codes(row.get("team") or ""):
             key = (name_key, team_code)
@@ -1715,7 +1747,7 @@ def _build_team_depth_context() -> dict[str, dict]:
         name = str(row.get("player") or "").strip()
         name_key = _norm_player_key(name)
         apy = _safe_float(row.get("apy"))
-        years = _safe_int(row.get("years"), 0)
+        years = _contract_years_remaining(row)
         pos = _map_team_needs_position(row.get("position", ""))
         team_text = str(row.get("team") or "").strip()
         candidate_team_codes = _normalize_contract_team_codes(team_text)
