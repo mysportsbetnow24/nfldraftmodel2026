@@ -833,6 +833,66 @@ def _player_meta_line(player: dict) -> str:
     return " | ".join(parts)
 
 
+def _youth_priority(payload: dict) -> tuple:
+    designation = str(payload.get("designation") or "").strip()
+    label_priority = {
+        "Franchise Cornerstone": 0,
+        "All-Pro": 1,
+        "Blue Chip Prospect": 2,
+        "In His Prime Star": 3,
+        "Starter": 4,
+        "Prospect": 5,
+        "Backup": 6,
+        "Older Mentor": 7,
+        "FA": 8,
+    }
+    age = _safe_int(payload.get("age"), 99)
+    years_exp = _safe_int(payload.get("years_exp"), 99)
+    draft_number = _safe_int(payload.get("draft_number"), 9999)
+    apy_m = _safe_float(payload.get("apy_m")) or 0.0
+    depth_rank = _safe_int(payload.get("depth_rank"), 99)
+    return (
+        label_priority.get(designation, 99),
+        age,
+        years_exp,
+        depth_rank,
+        draft_number,
+        -apy_m,
+        str(payload.get("player_name", "")),
+    )
+
+
+def _is_rising_young_player(payload: dict) -> bool:
+    designation = str(payload.get("designation") or "").strip()
+    age = _safe_int(payload.get("age"), 99)
+    years_exp = _safe_int(payload.get("years_exp"), 99)
+    depth_rank = _safe_int(payload.get("depth_rank"), 99)
+    draft_number = _safe_int(payload.get("draft_number"), 9999)
+    apy_pct = float(payload.get("apy_pct") or 0.0)
+    apy_m = _safe_float(payload.get("apy_m")) or 0.0
+    position = str(payload.get("position") or "").strip().upper()
+
+    if age > 26 or years_exp > 4 or depth_rank > 2:
+        return False
+    if designation in {"Backup", "Older Mentor", "FA"}:
+        return False
+    if designation in {"Franchise Cornerstone", "All-Pro", "Blue Chip Prospect"}:
+        return True
+    if designation == "Prospect":
+        return age <= 24 or draft_number <= 80
+    if designation == "In His Prime Star":
+        return age <= 26 and years_exp <= 4
+    if designation == "Starter":
+        if age <= 24:
+            return True
+        if years_exp <= 2 and (draft_number <= 80 or apy_pct >= 65.0):
+            return True
+        if position == "QB" and years_exp <= 3 and apy_m >= 8.0 and age <= 26:
+            return True
+        return False
+    return False
+
+
 def _designation_priority(label: str) -> int:
     ordered = [
         "HOF Path",
@@ -1360,15 +1420,19 @@ def _build_team_depth_context() -> dict[str, dict]:
             else float(roster_info.get("apy_pct") or 0.0)
         )
         years_left = _safe_int(contract.get("years"), 0) if contract else 0
-        has_contract = bool(contract) or bool(roster_info) or latest_team_match
+        roster_has_contract = bool(roster_info) and bool(roster_info.get("has_contract"))
+        inferred_rookie_contract = (
+            latest_team_match
+            and _safe_int(player_master.get("rookie_season"), 0) >= (latest_season - 1)
+            and _safe_int(player_master.get("years_of_experience"), 0) <= 1
+        )
+        has_contract = bool(contract) or roster_has_contract or inferred_rookie_contract
         if contract:
             contract_label = f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
-        elif roster_info:
+        elif roster_has_contract and roster_info:
             contract_label = str(roster_info.get("contract_label") or "Rostered")
-        elif latest_team_match and _safe_int(player_master.get("rookie_season"), 0) >= 2025:
+        elif inferred_rookie_contract:
             contract_label = "Rookie deal"
-        elif latest_team_match:
-            contract_label = "Rostered"
         else:
             contract_label = "FA"
 
@@ -1417,7 +1481,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             existing_keys = { _norm_player_key(p.get("player_name", "")) for p in normalized_players }
             for player in existing_players:
                 player_key = _norm_player_key(player.get("player_name", ""))
-                if player_key and player_key not in existing_keys and len(normalized_players) < 4:
+                if player_key and player_key not in existing_keys:
                     normalized_players.append(player)
                     existing_keys.add(player_key)
             for player in sorted(
@@ -1428,7 +1492,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                 ),
             ):
                 player_key = _norm_player_key(player.get("player_name", ""))
-                if player_key and player_key not in existing_keys and len(normalized_players) < 4:
+                if player_key and player_key not in existing_keys:
                     normalized_players.append(player)
                     existing_keys.add(player_key)
             team_players[team][pos] = normalized_players
@@ -1445,7 +1509,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             ),
         ):
             player_key = _norm_player_key(player.get("player_name", ""))
-            if player_key and player_key not in existing_keys and len(merged_players) < 4:
+            if player_key and player_key not in existing_keys:
                 merged_players.append(player)
                 existing_keys.add(player_key)
         if merged_players:
@@ -1455,8 +1519,7 @@ def _build_team_depth_context() -> dict[str, dict]:
     for team, by_pos in team_players.items():
         offense_lanes = []
         defense_lanes = []
-        free_agents = []
-        youth = []
+        team_payloads = []
         front_family = _team_front_family(espn_defense_groups_by_team.get(team, []))
         for pos in TEAM_NEEDS_POS_ORDER:
             lane_slots = _lane_slot_order(pos, front_family)
@@ -1478,10 +1541,6 @@ def _build_team_depth_context() -> dict[str, dict]:
                         continue
                     selected_players.append(player)
                     selected_keys.add(player_key)
-                    if len(selected_players) >= 4:
-                        break
-                if len(selected_players) >= 4:
-                    break
 
             players = sorted(by_pos.get(pos, []), key=lambda p: _player_sort_tuple(p, slot_priority))
             for player in players:
@@ -1490,8 +1549,6 @@ def _build_team_depth_context() -> dict[str, dict]:
                     continue
                 selected_players.append(player)
                 selected_keys.add(player_key)
-                if len(selected_players) >= 4:
-                    break
 
             selected_players = sorted(selected_players, key=lambda p: _player_sort_tuple(p, slot_priority))
 
@@ -1525,36 +1582,49 @@ def _build_team_depth_context() -> dict[str, dict]:
                     "years_exp": int(player.get("years_exp") or 0),
                     "age": player.get("age", ""),
                     "apy_m": player.get("apy_m", ""),
+                    "apy_pct": float(player.get("apy_pct") or 0.0),
+                    "draft_number": int(player.get("draft_number")) if str(player.get("draft_number", "")).strip() else "",
                 }
                 lane_players.append(payload)
-                if label == "FA" and len(free_agents) < 12:
-                    free_agents.append(payload)
-                if (
-                    int(player.get("years_exp") or 0) <= 3
-                    and int(payload.get("depth_rank") or 99) <= 2
-                    and (
-                        not str(player.get("age", "")).strip()
-                        or _safe_int(player.get("age"), 0) <= 27
-                    )
-                    and label in {"Prospect", "Blue Chip Prospect", "Starter", "Franchise Cornerstone"}
-                ):
-                    youth.append(payload)
+                team_payloads.append(payload)
 
-            lane = {"position": pos, "players": lane_players[:4]}
+            lane = {"position": pos, "players": lane_players}
             if pos in OFFENSE_POS_ORDER:
                 offense_lanes.append(lane)
             if pos in DEFENSE_POS_ORDER:
                 defense_lanes.append(lane)
 
-        youth = sorted(
-            youth,
+        unique_team_payloads = []
+        seen_payload_keys: set[str] = set()
+        for payload in sorted(
+            team_payloads,
             key=lambda p: (
-                _designation_priority(p.get("designation", "")),
-                -float(p.get("apy_m") or 0.0),
+                TEAM_NEEDS_POS_ORDER.index(str(p.get("position") or "").strip().upper()) if str(p.get("position") or "").strip().upper() in TEAM_NEEDS_POS_ORDER else 99,
                 int(p.get("depth_rank") or 99),
                 str(p.get("player_name", "")),
             ),
-        )[:8]
+        ):
+            player_key = _norm_player_key(payload.get("player_name", ""))
+            pos = str(payload.get("position") or "").strip().upper()
+            composite_key = f"{pos}:{player_key}"
+            if not player_key or composite_key in seen_payload_keys:
+                continue
+            seen_payload_keys.add(composite_key)
+            unique_team_payloads.append(payload)
+
+        free_agents = sorted(
+            [p for p in unique_team_payloads if str(p.get("designation") or "").strip() == "FA"],
+            key=lambda p: (
+                TEAM_NEEDS_POS_ORDER.index(str(p.get("position") or "").strip().upper()) if str(p.get("position") or "").strip().upper() in TEAM_NEEDS_POS_ORDER else 99,
+                int(p.get("depth_rank") or 99),
+                str(p.get("player_name", "")),
+            ),
+        )[:16]
+
+        youth = sorted(
+            [p for p in unique_team_payloads if _is_rising_young_player(p)],
+            key=_youth_priority,
+        )[:10]
 
         out[team] = {
             "depth_chart": {
