@@ -37,6 +37,10 @@ NFLVERSE_ROSTERS = NFLVERSE_DIR / "rosters_weekly.parquet"
 NFLVERSE_CONTRACTS = NFLVERSE_DIR / "contracts.parquet"
 NFLVERSE_PLAYERS = NFLVERSE_DIR / "players.parquet"
 NFLVERSE_PARTICIPATION = NFLVERSE_DIR / "participation.parquet"
+NFLVERSE_SNAP_COUNTS = NFLVERSE_DIR / "snap_counts.parquet"
+NFLVERSE_PLAYER_STATS = NFLVERSE_DIR / "player_stats.parquet"
+NFLVERSE_NEXTGEN = NFLVERSE_DIR / "nextgen_stats.parquet"
+NFLVERSE_PFR_ADVSTATS = NFLVERSE_DIR / "pfr_advstats.parquet"
 HISTORICAL_DRAFT_COMPILATION = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "notebook" / "compilations" / "drafts2015To2022.csv"
 HISTORICAL_DRAFT_REFINED = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "old-data" / "pfr-compilations" / "2014To2018Drafts-refined.csv"
 HISTORICAL_DRAFT_2014_2018 = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "old-data" / "pfr-compilations" / "2014To2018Drafts.csv"
@@ -3237,6 +3241,7 @@ def _select_comp_triplet(position: str, comp_items: list[dict]) -> tuple[dict, d
 
 
 def _position_aware_outcome_score(position_family: str, row: dict) -> float:
+    raw_position = str(row.get("position") or row.get("Pos") or "").strip().upper()
     drav = _safe_float(row.get("DrAV") or row.get("career_value"))
     wav = _safe_float(row.get("wAV") or row.get("CarAV"))
     value_per_year = _safe_float(row.get("ValuePerYear"))
@@ -3245,11 +3250,26 @@ def _position_aware_outcome_score(position_family: str, row: dict) -> float:
     all_pros = _safe_float(row.get("AP1"))
     games = _safe_float(row.get("G"))
     starts = _safe_float(row.get("starts") or row.get("Starts"))
+    pass_cmp = _safe_float(row.get("PassCmp"))
+    pass_att = _safe_float(row.get("PassAtt"))
     pass_yds = _safe_float(row.get("PassYds"))
     pass_td = _safe_float(row.get("PassTD"))
+    pass_int = _safe_float(row.get("PassInt"))
+    rush_att = _safe_float(row.get("RushAtt"))
+    rush_yds = _safe_float(row.get("RushYds"))
+    rush_td = _safe_float(row.get("RushTD"))
+    receptions = _safe_float(row.get("Rec"))
+    rec_yds = _safe_float(row.get("RecYds"))
+    rec_td = _safe_float(row.get("RecTD"))
+    solo_tkl = _safe_float(row.get("SoloTkl"))
+    interceptions = _safe_float(row.get("Int"))
+    sacks = _safe_float(row.get("Sk"))
     second_contract = _safe_float(row.get("second_contract_proxy") or row.get("second_contract"))
     success_label = _safe_float(row.get("success_label_3yr") or row.get("success_label"))
     ceiling_label = _safe_float(row.get("ceiling_label"))
+    career_snaps = _safe_float(row.get("career_snaps"))
+    peak_snaps = _safe_float(row.get("peak_snaps"))
+    modern_efficiency = _safe_float(row.get("modern_efficiency_score"))
 
     score = 0.0
     if position_family == "QB":
@@ -3267,6 +3287,15 @@ def _position_aware_outcome_score(position_family: str, row: dict) -> float:
             score += min(float(pass_yds), 45000.0) / 45000.0 * 8.0
         if pass_td is not None:
             score += min(float(pass_td), 320.0) / 320.0 * 8.0
+        if pass_cmp is not None and pass_att is not None and pass_att > 0:
+            completion_rate = float(pass_cmp) / float(pass_att)
+            score += _clamp((completion_rate - 0.5) / 0.22, 0.0, 1.0) * 6.0
+        if pass_int is not None:
+            score -= min(float(pass_int), 120.0) / 120.0 * 5.0
+        if rush_yds is not None:
+            score += min(float(rush_yds), 4500.0) / 4500.0 * 4.0
+        if rush_td is not None:
+            score += min(float(rush_td), 45.0) / 45.0 * 4.0
         if pro_bowls is not None:
             score += min(float(pro_bowls), 8.0) / 8.0 * 10.0
         if all_pros is not None:
@@ -3277,6 +3306,12 @@ def _position_aware_outcome_score(position_family: str, row: dict) -> float:
             score += _clamp(float(ceiling_label), 0.0, 1.0) * 8.0
         if games is not None:
             score += min(float(games), 180.0) / 180.0 * 4.0
+        if career_snaps is not None:
+            score += min(float(career_snaps), 8500.0) / 8500.0 * 4.0
+        if peak_snaps is not None:
+            score += min(float(peak_snaps), 1150.0) / 1150.0 * 2.0
+        if modern_efficiency is not None:
+            score += _clamp(float(modern_efficiency), 0.0, 1.0) * 6.0
         return score
 
     if position_family == "SKILL":
@@ -3300,6 +3335,30 @@ def _position_aware_outcome_score(position_family: str, row: dict) -> float:
             score += _clamp(float(success_label), 0.0, 1.0) * 8.0
         if ceiling_label is not None:
             score += _clamp(float(ceiling_label), 0.0, 1.0) * 6.0
+        if raw_position == "RB":
+            if rush_yds is not None:
+                score += min(float(rush_yds), 9500.0) / 9500.0 * 10.0
+            if rush_td is not None:
+                score += min(float(rush_td), 90.0) / 90.0 * 8.0
+            if receptions is not None:
+                score += min(float(receptions), 450.0) / 450.0 * 5.0
+            if rec_yds is not None:
+                score += min(float(rec_yds), 3500.0) / 3500.0 * 4.0
+        else:
+            if receptions is not None:
+                score += min(float(receptions), 900.0) / 900.0 * 7.0
+            if rec_yds is not None:
+                score += min(float(rec_yds), 13000.0) / 13000.0 * 10.0
+            if rec_td is not None:
+                score += min(float(rec_td), 110.0) / 110.0 * 7.0
+            if raw_position == "TE" and games is not None:
+                score += min(float(games), 220.0) / 220.0 * 3.0
+        if career_snaps is not None:
+            score += min(float(career_snaps), 9000.0) / 9000.0 * 3.0
+        if peak_snaps is not None:
+            score += min(float(peak_snaps), 900.0) / 900.0 * 2.0
+        if modern_efficiency is not None:
+            score += _clamp(float(modern_efficiency), 0.0, 1.0) * 5.0
         return score
 
     if position_family == "OL":
@@ -3321,6 +3380,10 @@ def _position_aware_outcome_score(position_family: str, row: dict) -> float:
             score += _clamp(float(success_label), 0.0, 1.0) * 8.0
         if ceiling_label is not None:
             score += _clamp(float(ceiling_label), 0.0, 1.0) * 6.0
+        if career_snaps is not None:
+            score += min(float(career_snaps), 8500.0) / 8500.0 * 8.0
+        if peak_snaps is not None:
+            score += min(float(peak_snaps), 1200.0) / 1200.0 * 4.0
         return score
 
     if position_family in {"DL", "LB", "DB"}:
@@ -3344,6 +3407,29 @@ def _position_aware_outcome_score(position_family: str, row: dict) -> float:
             score += _clamp(float(success_label), 0.0, 1.0) * 10.0
         if ceiling_label is not None:
             score += _clamp(float(ceiling_label), 0.0, 1.0) * 10.0
+        if raw_position in {"EDGE", "DE", "DT", "DL", "NT"}:
+            if sacks is not None:
+                score += min(float(sacks), 100.0) / 100.0 * 10.0
+            if solo_tkl is not None:
+                score += min(float(solo_tkl), 450.0) / 450.0 * 3.0
+        elif raw_position in {"LB", "ILB", "OLB", "MLB"}:
+            if solo_tkl is not None:
+                score += min(float(solo_tkl), 900.0) / 900.0 * 8.0
+            if sacks is not None:
+                score += min(float(sacks), 40.0) / 40.0 * 5.0
+            if interceptions is not None:
+                score += min(float(interceptions), 15.0) / 15.0 * 4.0
+        else:
+            if interceptions is not None:
+                score += min(float(interceptions), 30.0) / 30.0 * 8.0
+            if solo_tkl is not None:
+                score += min(float(solo_tkl), 700.0) / 700.0 * 4.0
+        if career_snaps is not None:
+            score += min(float(career_snaps), 9000.0) / 9000.0 * 4.0
+        if peak_snaps is not None:
+            score += min(float(peak_snaps), 1200.0) / 1200.0 * 2.0
+        if modern_efficiency is not None:
+            score += _clamp(float(modern_efficiency), 0.0, 1.0) * 5.0
         return score
 
     if drav is not None:
@@ -3400,8 +3486,20 @@ def _load_historical_comp_outcomes() -> dict[tuple[str, int], dict]:
                     "AP1": row.get("AP1") or row.get("ap1"),
                     "G": row.get("G") or row.get("games"),
                     "starts": row.get("starts"),
+                    "PassCmp": row.get("PassCmp"),
+                    "PassAtt": row.get("PassAtt"),
                     "PassYds": row.get("PassYds"),
                     "PassTD": row.get("PassTD"),
+                    "PassInt": row.get("PassInt"),
+                    "RushAtt": row.get("RushAtt"),
+                    "RushYds": row.get("RushYds"),
+                    "RushTD": row.get("RushTD"),
+                    "Rec": row.get("Rec"),
+                    "RecYds": row.get("RecYds"),
+                    "RecTD": row.get("RecTD"),
+                    "SoloTkl": row.get("SoloTkl"),
+                    "Int": row.get("Int"),
+                    "Sk": row.get("Sk"),
                     "second_contract_proxy": row.get("second_contract_proxy") or row.get("second_contract"),
                     "success_label_3yr": row.get("success_label_3yr") or row.get("success_label"),
                     "ceiling_label": row.get("ceiling_label"),
@@ -3427,6 +3525,9 @@ def _load_historical_comp_outcomes() -> dict[tuple[str, int], dict]:
         payload["success_label"] = _safe_float(payload.get("success_label_3yr") or payload.get("success_label"))
         payload["ceiling_label"] = _safe_float(payload.get("ceiling_label"))
         payload["premium_profile_score"] = premium_2024_scores.get(key, 0.0)
+        payload.setdefault("career_snaps", None)
+        payload.setdefault("peak_snaps", None)
+        payload.setdefault("modern_efficiency_score", None)
         payload["outcome_evidence"] = 1 if _comp_has_outcome_evidence(payload) else 0
         payload["outcome_score"] = round(outcome_score, 3)
     return outcomes

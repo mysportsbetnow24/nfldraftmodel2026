@@ -223,13 +223,13 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Jamin Davis",
-      "similarity": 81.113,
+      "name": "Baron Browning",
+      "similarity": 80.624,
       "year": 2021
     },
     "historical_comp_median": {
-      "name": "Baron Browning",
-      "similarity": 80.624,
+      "name": "Jamin Davis",
+      "similarity": 81.113,
       "year": 2021
     },
     "historical_comp_ceiling": {
@@ -9645,8 +9645,8 @@
       "year": 2009
     },
     "historical_comp_ceiling": {
-      "name": "Grant Calcaterra",
-      "similarity": 85.089,
+      "name": "James Mitchell",
+      "similarity": 83.641,
       "year": 2022
     },
     "comp_confidence": "A",
@@ -48905,9 +48905,9 @@
       "year": 2022
     },
     "historical_comp_ceiling": {
-      "name": "Joel Iyiegbuniwe",
-      "similarity": 90.259,
-      "year": 2018
+      "name": "Tanner Vallejo",
+      "similarity": 88.482,
+      "year": 2017
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Owen Heinecke (LB, Oklahoma) projects as a Round 5-6 talent with his cleanest NFL path coming as a space-match overhang backer in Big nickel overhang match. The current model grade sits at 75.10, with the board currently slotting him at No. 205. developmental contributor profile; processes quickly and closes efficiently.",
@@ -62475,14 +62475,14 @@
       "year": 2018
     },
     "historical_comp_median": {
-      "name": "Christian Harris",
-      "similarity": 90.052,
-      "year": 2022
-    },
-    "historical_comp_ceiling": {
       "name": "Davion Taylor",
       "similarity": 89.262,
       "year": 2020
+    },
+    "historical_comp_ceiling": {
+      "name": "Christian Harris",
+      "similarity": 90.052,
+      "year": 2022
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Wesley Bissainthe (LB, Miami (FL) Hurricanes) projects as a Round 6-7 talent with his cleanest NFL path coming as a space-match overhang backer in Big nickel overhang match. The current model grade sits at 70.58, with the board currently slotting him at No. 272. developmental contributor profile; processes quickly and closes efficiently.",
