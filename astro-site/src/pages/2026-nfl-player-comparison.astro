@@ -343,6 +343,7 @@ const collectionSchema = {
               <span class="chip info">RAS ${ras}</span>
               <span class="chip ${market.tone === "good" ? "good" : (market.tone === "warn" ? "warn" : "info")}">Market ${market.label}</span>
             </div>
+            ${p.player_report_url ? `<div class="compare-cta-row"><a class="compare-cta" href="${p.player_report_url}">Full Scouting Card</a></div>` : ``}
           </div>
 
           <div class="translation-block">

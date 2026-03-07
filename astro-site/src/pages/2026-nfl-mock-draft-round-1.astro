@@ -104,7 +104,10 @@ const itemListSchema = {
               data-school={p.school}
               data-pick={p.overall_pick}
               data-grade={p.final_grade}
+              data-url={p.player_report_url || ""}
               data-search={`${String(p.player_name || "")} ${String(p.position || "")} ${String(p.school || "")}`.toLowerCase()}
+              class:list={{ "clickable-row": !!p.player_report_url }}
+              tabindex={p.player_report_url ? "0" : undefined}
             >
               <td>{p.overall_pick}</td>
               <td>{p.team}</td>
@@ -137,6 +140,21 @@ const itemListSchema = {
       const summary = document.getElementById("summaryText");
       const tbody = document.querySelector("#round1MockTable tbody");
       const rows = Array.from(document.querySelectorAll("#round1MockTable tbody tr"));
+
+      rows.forEach((row) => {
+        const href = row.getAttribute("data-url") || "";
+        if (!href) return;
+        row.addEventListener("click", (event) => {
+          if (event.target instanceof HTMLElement && event.target.closest("a")) return;
+          window.location.href = href;
+        });
+        row.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            window.location.href = href;
+          }
+        });
+      });
 
       const cmp = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
 

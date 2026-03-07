@@ -231,6 +231,10 @@ tbody tr:hover {
   background: #f2f7fc;
 }
 
+tbody tr.clickable-row {
+  cursor: pointer;
+}
+
 .badge {
   display: inline-block;
   padding: 0.2rem 0.45rem;
@@ -494,6 +498,32 @@ tbody tr:hover {
 .kpi-row .chip {
   white-space: nowrap;
   flex: 0 0 auto;
+}
+
+.compare-cta-row {
+  margin-top: 0.2rem;
+}
+
+.compare-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--ui-cta-ink);
+  border: 1px solid var(--ui-cta-border);
+  background: linear-gradient(135deg, #e6f2ff 0%, #d9ecff 52%, #dcf7ea 100%);
+  border-radius: 999px;
+  padding: 0.48rem 0.85rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(15, 45, 74, 0.08);
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.12s ease;
+}
+
+.compare-cta:hover {
+  border-color: var(--ui-cta-hover-border);
+  background: var(--ui-cta-hover-bg);
+  transform: translateY(-1px);
 }
 
 .translation-block {
