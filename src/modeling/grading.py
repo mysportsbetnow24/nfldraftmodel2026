@@ -707,19 +707,26 @@ def _infer_edge_role_and_scheme(
     explosive = athletic_score >= 87.0
     clean_pocket_rusher = (
         (speed_rush_profile is not None and speed_rush_profile >= 77.0)
-        or (true_win is not None and true_win >= 18.0 and true_prp is not None and true_prp >= 9.5)
+        or (true_win is not None and true_win >= 17.0 and true_prp is not None and true_prp >= 9.0)
+        or (rush_grade is not None and rush_grade >= 81.0 and true_win is not None and true_win >= 15.0)
     )
     three_down = (
         (run_grade is not None and run_grade >= 74.0 and stop_pct is not None and stop_pct >= 7.0)
         or (power_profile is not None and power_profile >= 75.0)
+        or (run_grade is not None and run_grade >= 78.0)
     )
-    high_volume_pressure = pressures is not None and pressures >= 28.0
+    high_volume_pressure = pressures is not None and pressures >= 26.0
+    rush_driver = (
+        (rush_grade is not None and rush_grade >= 78.0)
+        or (true_prp is not None and true_prp >= 10.5)
+        or (pressures is not None and pressures >= 24.0)
+    )
 
     if clean_pocket_rusher and explosive and high_volume_pressure:
         return ("Wide-alignment speed pressure creator", "Multiple-front upfield rush plan")
-    if clean_pocket_rusher and three_down:
+    if clean_pocket_rusher and (three_down or rush_driver):
         return ("Three-down pressure creator", "Multiple-front every-down edge role")
-    if three_down:
+    if three_down and (run_grade is not None and run_grade >= 77.0):
         return ("Power edge with base-down value", "Odd-even front edge-setting role")
     return ("Rotational rush specialist", "Sub-package designated rush lane")
 
@@ -745,12 +752,22 @@ def _infer_dt_role_and_scheme(
     prod = production_context or {}
     rush_grade = _safe_prod_value(prod, "sg_dl_pass_rush_grade")
     true_win = _safe_prod_value(prod, "sg_dl_true_pass_set_win_rate")
+    true_prp = _safe_prod_value(prod, "sg_dl_true_pass_set_prp")
     run_grade = _safe_prod_value(prod, "sg_front_run_def_grade")
     stop_pct = _safe_prod_value(prod, "sg_front_stop_percent")
 
     explosive = athletic_score >= 82.0
-    strong_anchor = (anchor_profile is not None and anchor_profile >= 76.0) or (run_grade is not None and run_grade >= 78.0 and stop_pct is not None and stop_pct >= 8.0)
-    interior_rush = (penetration_profile is not None and penetration_profile >= 74.0) or (rush_grade is not None and rush_grade >= 72.0 and true_win is not None and true_win >= 10.0)
+    strong_anchor = (
+        (anchor_profile is not None and anchor_profile >= 76.0)
+        or (run_grade is not None and run_grade >= 80.0 and stop_pct is not None and stop_pct >= 8.5)
+    )
+    interior_rush = (
+        (penetration_profile is not None and penetration_profile >= 74.0)
+        or (rush_grade is not None and rush_grade >= 70.0 and true_win is not None and true_win >= 10.0)
+        or (rush_grade is not None and rush_grade >= 74.0 and explosive)
+        or (true_win is not None and true_win >= 14.0 and explosive)
+        or (true_prp is not None and true_prp >= 7.0 and rush_grade is not None and rush_grade >= 68.0)
+    )
 
     if interior_rush and explosive and not strong_anchor:
         return ("One-gap interior disruptor", "Upfield one-gap attack front")
@@ -787,21 +804,39 @@ def _infer_cb_role_and_scheme(
     slot_snaps = _safe_prod_value(prod, "sg_slot_cov_snaps")
     qbr = _safe_prod_value(prod, "sg_cov_qb_rating_against")
     run_grade = _safe_prod_value(prod, "sg_def_run_grade")
+    snaps_per_target = _safe_prod_value(prod, "sg_cov_snaps_per_target")
 
     long_frame = height_in >= 72
     explosive = athletic_score >= 87.0
     strong_press = (press_profile is not None and press_profile >= 76.0) or (man_grade is not None and man_grade >= 78.0)
     strong_zone = (off_profile is not None and off_profile >= 75.0) or (zone_grade is not None and zone_grade >= 76.0)
-    slot_usage = slot_snaps is not None and slot_snaps >= 80.0
+    slot_usage = slot_snaps is not None and slot_snaps >= 120.0
     ball_disruption = (fir is not None and fir >= 0.18) or (qbr is not None and qbr <= 70.0)
+    elite_coverage = (
+        (cov_grade is not None and cov_grade >= 83.0)
+        and (
+            (snaps_per_target is not None and snaps_per_target >= 8.0)
+            or (qbr is not None and qbr <= 60.0)
+            or (fir is not None and fir >= 0.22)
+        )
+    )
+    true_slot_corner = slot_snaps is not None and slot_snaps >= 180.0
+    zone_tilt = (
+        zone_grade is not None
+        and man_grade is not None
+        and zone_grade >= 77.0
+        and zone_grade >= man_grade + 4.0
+    )
 
-    if slot_usage and strong_zone and ball_disruption:
+    if true_slot_corner and strong_zone and (ball_disruption or (cov_grade is not None and cov_grade >= 80.0)):
         return ("Nickel matchup corner", "Match-zone / big-nickel coverage family")
+    if elite_coverage and strong_press and strong_zone:
+        return ("Outside matchup corner", "Press-match / quarters travel-capable fit")
     if strong_press and long_frame and explosive:
         return ("Press-man outside corner", "Press-match outside corner framework")
-    if strong_zone and ball_disruption:
+    if strong_zone and ball_disruption and (zone_tilt or not strong_press):
         return ("Off-zone ballhawk corner", "Pattern-match zone / off-alignment corner fit")
-    if run_grade is not None and run_grade >= 74.0 and slot_usage:
+    if true_slot_corner and run_grade is not None and run_grade >= 80.0 and (cov_grade is None or cov_grade < 80.0):
         return ("Slot-support corner", "Nickel fit with run-support stress")
     return ("Outside starter with matchup flexibility", "Press-match / quarters hybrid")
 
@@ -833,21 +868,58 @@ def _infer_s_role_and_scheme(
     pressures = _safe_prod_value(prod, "sg_def_total_pressures")
     slot_snaps = _safe_prod_value(prod, "sg_slot_cov_snaps")
     tfl = _safe_prod_value(prod, "sg_def_tackles_for_loss")
+    snaps_per_target = _safe_prod_value(prod, "sg_cov_snaps_per_target")
+    qbr = _safe_prod_value(prod, "sg_cov_qb_rating_against")
 
     explosive = athletic_score >= 85.0
-    slot_usage = slot_snaps is not None and slot_snaps >= 70.0
-    deep_safety = (deep_profile is not None and deep_profile >= 76.0) or (zone_grade is not None and zone_grade >= 76.0)
+    slot_usage = slot_snaps is not None and slot_snaps >= 90.0
+    deep_safety = (
+        (deep_profile is not None and deep_profile >= 76.0)
+        or (zone_grade is not None and zone_grade >= 79.0)
+        or (
+            cov_grade is not None
+            and cov_grade >= 88.0
+            and snaps_per_target is not None
+            and snaps_per_target >= 10.0
+        )
+    )
     matchup_safety = (coverage_profile is not None and coverage_profile >= 75.0) or (man_grade is not None and man_grade >= 76.0)
     box_safety = (box_profile is not None and box_profile >= 75.0) or (run_grade is not None and run_grade >= 76.0)
     pressure_role = (pressures is not None and pressures >= 4.0) or (tfl is not None and tfl >= 4.0)
+    complete_coverage = (
+        cov_grade is not None
+        and cov_grade >= 86.0
+        and man_grade is not None
+        and man_grade >= 78.0
+        and zone_grade is not None
+        and zone_grade >= 78.0
+    )
+    slot_matchup_star = (
+        slot_usage
+        and cov_grade is not None
+        and cov_grade >= 88.0
+        and man_grade is not None
+        and man_grade >= 88.0
+        and run_grade is not None
+        and run_grade >= 80.0
+    )
+    deep_eraser = (
+        deep_safety
+        and cov_grade is not None
+        and cov_grade >= 89.0
+        and zone_grade is not None
+        and zone_grade >= 87.0
+        and snaps_per_target is not None
+        and snaps_per_target >= 12.0
+    )
 
-    if slot_usage and matchup_safety:
+    if slot_matchup_star or (slot_usage and matchup_safety and box_safety and not (deep_safety and complete_coverage)):
         return ("Big nickel matchup safety", "Big-nickel / split-safety coverage family")
-    if deep_safety and explosive:
+    if deep_eraser or (deep_safety and explosive):
         return ("Range-first split safety", "Quarters / middle-field-open range fit")
     if box_safety and pressure_role:
         return ("Robber/box safety with pressure value", "Sim-pressure / robber rotation family")
-    if matchup_safety:
+    if matchup_safety or (qbr is not None and qbr <= 65.0):
         return ("Coverage-adjustment back-end starter", "Split-safety multiplicity")
     return ("Coverage-adjustment back-end starter", "Split-safety multiplicity")
 
