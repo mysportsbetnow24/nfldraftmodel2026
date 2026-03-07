@@ -655,7 +655,7 @@ def _map_team_needs_position(position: str, depth_chart_position: str = "") -> s
         return "DT"
     if pos in {"ILB", "MLB", "LB", "SLB", "WLB", "LILB", "RILB"}:
         return "LB"
-    if pos in {"FS", "SS", "SAF", "RS", "LS"}:
+    if pos in {"FS", "SS", "SAF", "RS"}:
         return "S"
     if pos in {"LCB", "RCB", "NB"}:
         return "CB"
@@ -1005,8 +1005,8 @@ def _usage_proxy_from_role(model_position: str, role_label: str, depth_rank: int
         "CB1": 0.9,
         "CB2": 0.84,
         "NICKEL": 0.78,
-        "FS": 0.82,
-        "SS": 0.8,
+        "FS": 0.88,
+        "SS": 0.86,
         "S1": 0.78,
         "S2": 0.72,
     }
@@ -1079,6 +1079,16 @@ def _player_designation(
         or (model_position == "QB" and age is not None and age >= 34)
     ):
         return "Older Mentor"
+    if (
+        usage_proxy >= 0.84
+        and is_top_starter
+        and years_exp <= 2
+        and contract_years >= 3
+        and draft_number is not None
+        and 0 < draft_number <= 32
+        and (age is None or age <= 24)
+    ):
+        return "Franchise Cornerstone"
     if usage_proxy >= 0.84 and (
         (
             effective_years_exp >= 2
@@ -1094,12 +1104,20 @@ def _player_designation(
     ) and (age is None or age <= 31):
         return "Franchise Cornerstone"
     if (
+        usage_proxy >= 0.82
+        and effective_years_exp >= 6
+        and apy_pct >= 95.0
+        and apy_value >= _minimum_star_apy(model_position)
+        and (age is None or age <= 34)
+    ):
+        return "All-Pro"
+    if (
         usage_proxy >= 0.78
         and apy_pct >= 80.0
         and apy_value >= _minimum_star_apy(model_position)
-        and 3 <= effective_years_exp <= 9
+        and 3 <= effective_years_exp <= 10
         and age is not None
-        and age <= 31
+        and age <= 33
     ):
         return "In His Prime Star"
     if years_exp <= 1 and not veteran_inference:
@@ -1112,6 +1130,16 @@ def _player_designation(
     if years_exp <= 1 and usage_proxy >= 0.4 and likely_young_player and (age is None or age <= 25):
         return "Prospect"
     return "Backup"
+
+
+def _designation_depth_rank(position: str, slot: str, overall_rank: int, slot_rank: int) -> int:
+    pos = str(position or "").strip().upper()
+    depth_slot = str(slot or "").strip().upper()
+    overall = max(1, int(overall_rank or 1))
+    slot_rank = max(1, int(slot_rank or 1))
+    if pos == "S" and depth_slot in {"FS", "SS", "S", "SAF", "RS"}:
+        return slot_rank
+    return overall
 
 
 def _transaction_priority(event: dict) -> int:
@@ -1564,7 +1592,9 @@ def _build_team_depth_context() -> dict[str, dict]:
             for idx, player in enumerate(selected_players, start=1):
                 slot = str(player.get("depth_chart_position") or "").strip().upper()
                 slot_counts[slot] += 1
-                role_label = _slot_display_label(pos, slot, front_family, slot_counts[slot] or idx)
+                slot_rank = slot_counts[slot] or idx
+                role_label = _slot_display_label(pos, slot, front_family, slot_rank)
+                designation_depth_rank = _designation_depth_rank(pos, slot, idx, slot_rank)
                 label = _player_designation(
                     has_contract=bool(player.get("has_contract")),
                     years_exp=int(player.get("years_exp") or 0),
@@ -1572,7 +1602,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                     apy_pct=float(player.get("apy_pct") or 0.0),
                     apy_m=_safe_float(player.get("apy_m")),
                     contract_years=int(player.get("contract_years") or 0),
-                    depth_rank=idx,
+                    depth_rank=designation_depth_rank,
                     model_position=pos,
                     draft_number=int(player.get("draft_number")) if str(player.get("draft_number", "")).strip() else None,
                     role_label=role_label,
@@ -1580,7 +1610,8 @@ def _build_team_depth_context() -> dict[str, dict]:
                 payload = {
                     "player_name": player.get("player_name", ""),
                     "position": pos,
-                    "depth_rank": idx,
+                    "depth_rank": designation_depth_rank,
+                    "lane_depth_rank": idx,
                     "designation": label,
                     "role_label": role_label,
                     "detail_label": _player_detail_line(player, role_label),
