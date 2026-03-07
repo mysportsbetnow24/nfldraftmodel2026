@@ -449,13 +449,23 @@ tbody tr.clickable-row {
 
 .compare-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: minmax(150px, 180px) repeat(4, minmax(240px, 1fr));
   gap: 0.65rem;
+  align-items: start;
 }
 
 .compare-slot-control {
   display: grid;
   gap: 0.45rem;
+  min-width: 0;
+}
+
+.compare-slot-control .control {
+  min-width: 0;
+}
+
+.compare-slot-control select.control {
+  min-width: 240px;
 }
 
 .cards-grid {
@@ -545,6 +555,17 @@ tbody tr.clickable-row {
   grid-template-columns: 1fr;
   gap: 0.9rem;
   align-items: start;
+}
+
+@media (max-width: 1360px) {
+  .compare-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+
+  .compare-grid > :first-child {
+    grid-column: 1 / -1;
+    max-width: 220px;
+  }
 }
 
 .radar-wrap {

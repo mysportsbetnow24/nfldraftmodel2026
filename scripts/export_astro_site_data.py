@@ -3167,20 +3167,20 @@ def _select_comp_triplet(position: str, comp_items: list[dict]) -> tuple[dict, d
         return {}, {}, {}
 
     top_n, sim_delta = _comp_outcome_window(position)
-    top_similarity_band = comp_items[:top_n]
-    if not top_similarity_band:
+    candidate_band = comp_items[: max(top_n * 3, 60)]
+    if not candidate_band:
         return {}, {}, {}
 
-    best_sim = float(top_similarity_band[0].get("similarity") or 0.0)
+    best_sim = float(candidate_band[0].get("similarity") or 0.0)
     min_similarity = max(65.0, best_sim - sim_delta)
     eligible = [
-        item for item in top_similarity_band
+        item for item in candidate_band
         if item.get("outcome_score") is not None and float(item.get("similarity") or 0.0) >= min_similarity
     ]
     if len(eligible) < 3:
-        eligible = [item for item in top_similarity_band if item.get("outcome_score") is not None]
+        eligible = [item for item in candidate_band if item.get("outcome_score") is not None]
     if len(eligible) < 3:
-        eligible = top_similarity_band
+        eligible = candidate_band
 
     with_outcome_evidence = [item for item in eligible if _comp_has_outcome_evidence(item)]
     if len(with_outcome_evidence) >= 3:
@@ -3195,7 +3195,7 @@ def _select_comp_triplet(position: str, comp_items: list[dict]) -> tuple[dict, d
         )
         return floor, ceiling, ceiling
 
-    ranked = sorted(
+    ranked_by_outcome = sorted(
         eligible,
         key=lambda r: (
             float(r.get("outcome_score") or 0.0),
@@ -3204,20 +3204,12 @@ def _select_comp_triplet(position: str, comp_items: list[dict]) -> tuple[dict, d
         ),
     )
     floor_cut, ceiling_cut = _comp_pool_thresholds(position)
-    floor_idx = max(1, int(len(ranked) * floor_cut))
-    ceiling_idx = min(len(ranked) - 1, max(floor_idx + 1, int(len(ranked) * ceiling_cut)))
+    floor_idx = max(1, int(len(ranked_by_outcome) * floor_cut))
+    ceiling_idx = min(len(ranked_by_outcome) - 1, max(floor_idx + 1, int(len(ranked_by_outcome) * ceiling_cut)))
 
-    floor_pool = ranked[:floor_idx]
-    median_pool = ranked[floor_idx:ceiling_idx] or ranked[floor_idx - 1:ceiling_idx]
-    ceiling_pool = ranked[ceiling_idx:] or ranked[-1:]
-
-    best_sim_full = float(comp_items[0].get("similarity") or 0.0)
-    deeper_ceiling_band = [
-        item for item in comp_items[: max(top_n * 2, 40)]
-        if _comp_has_outcome_evidence(item) and float(item.get("similarity") or 0.0) >= max(62.0, best_sim_full - (sim_delta + 6.0))
-    ]
-    if len(deeper_ceiling_band) >= 3:
-        ceiling_pool = deeper_ceiling_band
+    floor_pool = ranked_by_outcome[:floor_idx] or ranked_by_outcome[:1]
+    median_pool = ranked_by_outcome[floor_idx:ceiling_idx] or ranked_by_outcome[floor_idx - 1:ceiling_idx]
+    ceiling_pool = ranked_by_outcome[ceiling_idx:] or ranked_by_outcome[-1:]
 
     floor = _pick_comp_from_pool(floor_pool, "floor")
     median = _pick_comp_from_pool(median_pool, "median")
@@ -3231,7 +3223,7 @@ def _select_comp_triplet(position: str, comp_items: list[dict]) -> tuple[dict, d
             out.append(comp)
             used.add(name)
             continue
-        replacement = next((item for item in ranked if str(item.get("name", "")).strip() and str(item.get("name", "")).strip() not in used), {})
+        replacement = next((item for item in ranked_by_outcome if str(item.get("name", "")).strip() and str(item.get("name", "")).strip() not in used), {})
         out.append(replacement)
         used.add(str(replacement.get("name", "")).strip())
 
@@ -3830,6 +3822,20 @@ def _needs_score(row: dict) -> float:
 def export_board(player_school_map: dict[str, str]) -> list[dict]:
     rows = _read_csv(BOARD_CSV)
     comp_outcomes = _load_historical_comp_outcomes()
+    comp_outcomes_by_name: dict[str, list[dict]] = defaultdict(list)
+    for payload in comp_outcomes.values():
+        identity_key = _norm_comp_identity_key(payload.get("name", ""))
+        if identity_key:
+            comp_outcomes_by_name[identity_key].append(payload)
+    for items in comp_outcomes_by_name.values():
+        items.sort(
+            key=lambda item: (
+                float(item.get("outcome_score") or 0.0),
+                float(item.get("premium_profile_score") or 0.0),
+                float(item.get("games") or 0.0),
+            ),
+            reverse=True,
+        )
     owner_notes = _load_owner_scouting_notes()
     production_snapshot_overrides = _load_production_snapshot_overrides()
     consensus_mean_population = [
@@ -3986,6 +3992,23 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         player_identity_key = _norm_comp_identity_key(player_name)
         comp_blend: dict[str, dict] = {}
 
+        def _resolve_comp_year(comp_name: str) -> int | None:
+            identity_key = _norm_comp_identity_key(comp_name)
+            if not identity_key:
+                return None
+            candidates = comp_outcomes_by_name.get(identity_key, [])
+            if not candidates:
+                return None
+            position_family = _historical_position_family(pos)
+            family_matches = [
+                cand for cand in candidates
+                if _historical_position_family(cand.get("position")) == position_family
+            ]
+            pick_pool = family_matches or candidates
+            picked = pick_pool[0] if pick_pool else None
+            year = _safe_int((picked or {}).get("year"), 0)
+            return year if year > 0 else None
+
         def _ingest_comp(name: str, year_value, sim_value, source: str, is_production: bool) -> None:
             comp_name = str(name or "").strip()
             if not comp_name:
@@ -4048,6 +4071,28 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 row.get(f"production_knn_comp_{idx}_similarity", ""),
                 source="production_knn",
                 is_production=True,
+            )
+        ath_seed_sims: list[float] = []
+        for idx in (1, 2, 3):
+            for source_prefix in ("historical_combine_comp", "athletic_nn_comp"):
+                sim = _norm_similarity_pct(row.get(f"{source_prefix}_{idx}_similarity", ""))
+                if sim is not None:
+                    ath_seed_sims.append(sim)
+        inferred_ras_similarity = None
+        if ath_seed_sims:
+            inferred_ras_similarity = round(max(84.0, min(95.0, (sum(ath_seed_sims) / len(ath_seed_sims)) - 5.0)), 2)
+        else:
+            inferred_ras_similarity = 88.0
+        for idx in (1, 2, 3):
+            ras_name = str(row.get(f"ras_historical_comp_{idx}", "")).strip()
+            if not ras_name:
+                continue
+            _ingest_comp(
+                ras_name,
+                _resolve_comp_year(ras_name),
+                inferred_ras_similarity,
+                source="ras_historical",
+                is_production=False,
             )
 
         ath_w, prod_w = _comp_blend_weights(pos)
