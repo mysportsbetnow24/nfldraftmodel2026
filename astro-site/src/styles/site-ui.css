@@ -680,9 +680,9 @@ tbody tr.clickable-row {
 }
 
 .report-summary {
-  margin: 0.15rem 0 0.2rem;
-  line-height: 1.75;
-  max-width: 76ch;
+  margin: 0;
+  line-height: 1.58;
+  letter-spacing: 0.003em;
 }
 
 .team-needs-filters {

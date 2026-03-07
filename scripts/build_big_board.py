@@ -3469,6 +3469,13 @@ def _build_scouting_sections(
                     return out
         return out
 
+    def _with_article(text: str) -> str:
+        phrase = " ".join(str(text or "").split()).strip()
+        if not phrase:
+            return ""
+        article = "an" if phrase[:1].lower() in {"a", "e", "i", "o", "u"} else "a"
+        return f"{article} {phrase}"
+
     strengths = _phrase_list(kiper_strength_tags, tdn_strengths, br_strengths, atoz_strengths, si_strengths, max_items=8)
     concerns = _phrase_list(kiper_concern_tags, tdn_concerns, br_concerns, atoz_concerns, si_concerns, max_items=8)
 
@@ -3537,6 +3544,108 @@ def _build_scouting_sections(
             "Receiver style lens: evaluate from snap to catch — release plan, break mechanics, edge attack, "
             "and contact-point finish — to separate true NFL translatability."
         )
+
+    def _strengths_phrase() -> str:
+        cleaned = [s.rstrip(".") for s in strengths[:2] if str(s or "").strip()]
+        if not cleaned:
+            return ""
+        if len(cleaned) == 1:
+            return cleaned[0]
+        return f"{cleaned[0]} and {cleaned[1]}"
+
+    def _summary_detail_sentence() -> str:
+        strengths_text = _strengths_phrase()
+        if pos == "QB":
+            if qb_epa is not None and qb_epa >= 0.20:
+                core = "The passing profile is driven by on-time structure play, with enough anticipation to stay ahead of coverage rotations"
+            elif qb_press is not None and qb_press >= 0.0:
+                core = "The projection is cleaner in a managed pocket structure where timing, field mapping, and controlled off-platform answers stay married"
+            else:
+                core = "The projection still leans on structure and sequencing more than chaos creation, so pocket discipline remains the central swing trait"
+            if strengths_text:
+                return f"{core}; the best tape flashes come from {strengths_text.lower()}."
+            return core + "."
+        if pos == "RB":
+            if rb_mtf is not None and rb_mtf >= 0.24 and rb_explosive is not None and rb_explosive >= 0.14:
+                core = "The best translation comes when his run style can pair contact creation with enough chunk-play stress to keep boxes honest"
+            elif rb_mtf is not None and rb_mtf >= 0.24:
+                core = "The projection is strongest as a physical chain-mover who creates hidden yards through contact balance and track discipline"
+            elif rb_explosive is not None and rb_explosive >= 0.14:
+                core = "The profile wins most cleanly when the run game can stress edges and let his burst show up before contact muddies the lane"
+            else:
+                core = "The projection is cleaner as a schedule-on-time runner than a true space-creator, so efficiency has to carry more of the value"
+            if strengths_text:
+                return f"{core}; the most bankable snaps come from {strengths_text.lower()}."
+            return core + "."
+        if pos in {"WR", "TE"}:
+            if wr_share is not None and wr_share >= 0.24 and wr_yprr is not None and wr_yprr >= 2.4:
+                core = "The profile already looks like a real target earner, with route volume and efficiency supporting a primary-read role in the right menu"
+            elif wr_yprr is not None and wr_yprr >= 2.2:
+                core = "The receiving translation is strongest when route craft and spacing discipline can create clean separation without forcing constant contested finishes"
+            else:
+                core = "The role is easier to buy inside a controlled usage lane where releases, leverage work, and finish technique create enough dependable targets"
+            if strengths_text:
+                return f"{core}; the strongest film moments come from {strengths_text.lower()}."
+            return core + "."
+        if pos == "OT":
+            if arm_pct is not None and arm_pct >= 50 and shuttle_pct is not None and shuttle_pct >= 50:
+                core = "The tackle projection is built on cleaner pass-set geometry, recovery movement, and enough length to survive wider NFL rush tracks"
+            else:
+                core = "The projection works best when his set points, timing, and recovery mechanics stay inside a stable pass-protection environment"
+            if strengths_text:
+                return f"{core}; the best reps show up through {strengths_text.lower()}."
+            return core + "."
+        if pos == "IOL":
+            if weight_pct is not None and weight_pct >= 45:
+                core = "The interior profile is built on pocket firmness and play-strength, with value tied to keeping interior rushers from collapsing launch depth"
+            else:
+                core = "The projection is strongest in a communication-heavy interior role where leverage, angles, and recovery technique do more of the work than raw mass"
+            if strengths_text:
+                return f"{core}; the cleaner snaps come through {strengths_text.lower()}."
+            return core + "."
+        if pos == "EDGE":
+            if edge_pr is not None and edge_pr >= 0.16:
+                core = "The translation is easiest to buy when first-step stress can force protection issues and let the rush plan work through counters instead of one-move wins"
+            else:
+                core = "The profile still needs the rush plan to become more down-to-down reliable, so role value currently comes more from controlled deployment than takeover volume"
+            if strengths_text:
+                return f"{core}; the best tape flashes come via {strengths_text.lower()}."
+            return core + "."
+        if pos == "DT":
+            if edge_pr is not None and edge_pr >= 0.11:
+                core = "The interior translation works when he can pair block control with real pocket push, keeping him useful on both early downs and passing situations"
+            else:
+                core = "The profile is cleaner as an interior tone-setter than a pure disruption bet, so the run-game floor is still carrying more of the projection"
+            if strengths_text:
+                return f"{core}; his better reps are driven by {strengths_text.lower()}."
+            return core + "."
+        if pos == "LB":
+            if shuttle_pct is not None and shuttle_pct >= 55:
+                core = "The linebacker projection is strongest when read/trigger speed and range let him play fast from depth without overrunning the fit"
+            else:
+                core = "The role is cleaner when the read path is defined and the profile can play downhill without living in difficult space-match situations"
+            if strengths_text:
+                return f"{core}; the tape is most convincing when {strengths_text.lower()}."
+            return core + "."
+        if pos == "CB":
+            if db_plays_ball is not None and db_plays_ball >= 0.24:
+                core = "The corner profile is easiest to trust when leverage discipline turns into real catch-point disruption instead of passive phase coverage"
+            else:
+                core = "The projection depends on leverage consistency and route recognition holding up often enough to avoid living purely on recovery athleticism"
+            if strengths_text:
+                return f"{core}; the best snaps come from {strengths_text.lower()}."
+            return core + "."
+        if pos == "S":
+            if db_plays_ball is not None and db_plays_ball >= 0.22:
+                core = "The safety projection gains value when range and route anticipation turn into true overlap plays instead of just tidy alignment flexibility"
+            else:
+                core = "The profile is cleaner in a structure that can let his eyes and angles stay in phase, because the value currently comes more from control than splash"
+            if strengths_text:
+                return f"{core}; the better tape sequences show up through {strengths_text.lower()}."
+            return core + "."
+        if strengths_text:
+            return f"The projection is strongest when the role stays inside the player’s cleanest lane, with the best tape coming from {strengths_text.lower()}."
+        return "The projection is strongest when the role stays inside the player’s cleanest lane and asks for repeatable execution rather than broad expansion."
 
     wins_logic = {
         "QB": "Film translation comes from timing/processing: ID leverage pre-snap, hold structure from the pocket, and create only when structure breaks.",
@@ -3663,8 +3772,9 @@ def _build_scouting_sections(
         production_snapshot = pff_line
 
     report_parts = [
-        f"{name} ({position}, {school}) projects as a {round_value} talent with his cleanest NFL path coming as a {clean_role.lower()} in {clean_scheme}.",
-        f"The current model grade sits at {final_grade:.2f}, with the board currently slotting him at No. {consensus_rank}.",
+        f"{name} ({position}, {school}) projects as a {round_value} talent with his cleanest NFL path coming as {_with_article(clean_role.lower())} in {clean_scheme}.",
+        _compact_text(_summary_detail_sentence(), 235),
+        f"The current model grade sits at {final_grade:.2f}, with the board currently slotting him at No. {consensus_rank}; the early NFL path points toward {_with_article(clean_role.lower())} whose value grows if the current strengths hold against better size, speed, and processing.",
     ]
     if str(scouting_notes or "").strip():
         report_parts.append(_compact_text(scouting_notes, 220))
@@ -3675,7 +3785,7 @@ def _build_scouting_sections(
                     pos,
                     "NFL translation is strongest when deployment and technique stay inside the current role lane.",
                 ),
-                210,
+                220,
             )
         )
     report = " ".join(report_parts)
