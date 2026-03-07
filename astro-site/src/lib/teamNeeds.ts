@@ -91,6 +91,7 @@ export function metaLine(player: any) {
 export function contractChipLabel(player: any) {
   const contract = String(player?.contract_label || "").trim();
   if (!contract || contract.toUpperCase() === "FA") return "FA";
+  if (contract.toLowerCase().includes("watch")) return "Watch";
   const match = contract.match(/^(\d+)y/i);
   if (!match) return "Rostered";
   const years = Number(match[1] || 0);
@@ -101,7 +102,7 @@ export function contractChipLabel(player: any) {
 
 export function contractChipClass(player: any) {
   const label = contractChipLabel(player);
-  if (label === "FA" || label === "1y") return "chip warn contract-chip";
+  if (label === "FA" || label === "1y" || label === "Watch") return "chip warn contract-chip";
   if (label === "2y") return "chip info contract-chip";
   return "chip good contract-chip";
 }
@@ -111,6 +112,7 @@ export function searchableText(row: any) {
   const aliases = TEAM_SEARCH_ALIASES[team] || [team];
   const weakness = (row.weakness_positions || []) as string[];
   const freeAgents = (row.free_agents || []) as any[];
+  const freeAgentsFull = (row.free_agents_full || []) as any[];
   const youngPlayers = (row.young_players_on_rise || []) as any[];
   const depthChart = (row.depth_chart || {}) as any;
   const offense = (depthChart.offense || []) as any[];
@@ -120,6 +122,7 @@ export function searchableText(row: any) {
     ...aliases,
     ...weakness,
     ...freeAgents.map((p) => p.player_name),
+    ...freeAgentsFull.map((p) => p.player_name),
     ...youngPlayers.map((p) => p.player_name),
     ...offense.flatMap((lane) => (lane.players || []).map((p: any) => p.player_name)),
     ...defense.flatMap((lane) => (lane.players || []).map((p: any) => p.player_name)),

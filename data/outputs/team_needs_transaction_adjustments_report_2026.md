@@ -1,15 +1,15 @@
 # Team Needs Transaction Adjustments
 
-- generated_at_utc: `2026-03-07T03:59:41.733786+00:00`
+- generated_at_utc: `2026-03-07T06:00:18.500577+00:00`
 - window_days: `7`
 - rows: `17`
 
 | Team | Pos | Txn Count | Depth Δ | Future1Y Δ | StarterQ Δ |
 |---|---|---:|---:|---:|---:|
+| BUF | WR | 2 | 0.015 | 0.025 | -0.01 |
 | LAC | CB | 2 | -0.1125 | -0.0825 | 0.09 |
 | LAR | CB | 2 | -0.1275 | -0.0935 | 0.102 |
 | BAL | EDGE | 1 | -0.075 | -0.055 | 0.06 |
-| BUF | WR | 1 | -0.075 | -0.055 | 0.06 |
 | CAR | WR | 1 | -0.0525 | -0.0385 | 0.042 |
 | CHI | WR | 1 | 0.09 | 0.08 | -0.07 |
 | DEN | CB | 1 | -0.0525 | -0.0385 | 0.042 |

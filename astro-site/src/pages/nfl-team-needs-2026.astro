@@ -3,6 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import teamNeeds from "../data/team_needs_2026.json";
 import {
   TEAM_SEARCH_ALIASES,
+  contractChipClass,
+  contractChipLabel,
   normalizeSearch,
   designationClass,
   txClass,
@@ -133,13 +135,18 @@ function snapshotLaneLabel(row: any, position: string) {
 
           <div class="team-card__columns">
             <section class="team-card__block">
-              <h3>Free Agents (Today)</h3>
+              <h3>Key Free Agents</h3>
               {freeAgents.length > 0 ? (
                 <div class="team-pill-list">
                   {freeAgents.slice(0, 2).map((p: any) => (
                     <div class="team-pill">
-                      <strong>{p.player_name}</strong>
-                      <span class={designationClass(p.designation)}>{p.designation}</span>
+                      <div class="depth-player__top">
+                        <strong>{p.player_name}</strong>
+                        <div class="depth-player__chips">
+                          <span class={designationClass(p.designation)}>{p.designation}</span>
+                          <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                        </div>
+                      </div>
                       <div class="muted">{roleContractLine(p)}</div>
                       {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
                     </div>
@@ -147,7 +154,7 @@ function snapshotLaneLabel(row: any, position: string) {
                   {freeAgents.length > 2 ? <div class="muted">+{freeAgents.length - 2} more on full team page</div> : null}
                 </div>
               ) : (
-                <p class="muted">No immediate free-agent exposure in top lanes.</p>
+                <p class="muted">No high-value unsigned or contract-watch players flagged this refresh.</p>
               )}
             </section>
 

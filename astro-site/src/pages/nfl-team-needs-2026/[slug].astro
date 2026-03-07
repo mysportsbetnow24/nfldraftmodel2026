@@ -29,6 +29,8 @@ const pageUrl = `https://scoutinggrade.com${teamPath(team)}`;
 const topNeeds = (row.top_needs || []) as any[];
 const weakness = (row.weakness_positions || []) as string[];
 const freeAgents = (row.free_agents || []) as any[];
+const freeAgentsFull = (row.free_agents_full || []) as any[];
+const additionalFreeAgents = freeAgentsFull.slice(freeAgents.length);
 const youngPlayers = (row.young_players_on_rise || []) as any[];
 const depthChart = (row.depth_chart || {}) as any;
 const offense = (depthChart.offense || []) as any[];
@@ -86,20 +88,25 @@ const defenseSlots = ["CB", "S", "DT", "LB", "EDGE"];
 
   <section class="team-page-grid">
     <section class="card">
-      <h2 class="section-title">Free Agents (Today)</h2>
+      <h2 class="section-title">Key Free Agents</h2>
       {freeAgents.length > 0 ? (
         <div class="team-pill-list">
           {freeAgents.map((p: any) => (
             <div class="team-pill">
-              <strong>{p.player_name}</strong>
-              <span class={designationClass(p.designation)}>{p.designation}</span>
+              <div class="depth-player__top">
+                <strong>{p.player_name}</strong>
+                <div class="depth-player__chips">
+                  <span class={designationClass(p.designation)}>{p.designation}</span>
+                  <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+                </div>
+              </div>
               <div class="muted">{roleContractLine(p)}</div>
               {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
             </div>
           ))}
         </div>
       ) : (
-        <p class="muted">No immediate free-agent exposure in top lanes.</p>
+        <p class="muted">No high-value unsigned or contract-watch players flagged this refresh.</p>
       )}
     </section>
 
@@ -120,6 +127,29 @@ const defenseSlots = ["CB", "S", "DT", "LB", "EDGE"];
         <p class="muted">No rising-player signal flagged this refresh.</p>
       )}
     </section>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">Additional Contract Watch</h2>
+    {additionalFreeAgents.length > 0 ? (
+      <div class="team-pill-list">
+        {additionalFreeAgents.map((p: any) => (
+          <div class="team-pill">
+            <div class="depth-player__top">
+              <strong>{p.player_name}</strong>
+              <div class="depth-player__chips">
+                <span class={designationClass(p.designation)}>{p.designation}</span>
+                <span class={contractChipClass(p)}>{contractChipLabel(p)}</span>
+              </div>
+            </div>
+            <div class="muted">{roleContractLine(p)}</div>
+            {metaLine(p) ? <div class="muted">{metaLine(p)}</div> : null}
+          </div>
+        ))}
+      </div>
+    ) : (
+      <p class="muted">No additional unsigned or contract-watch players beyond the key free-agent group.</p>
+    )}
   </section>
 
   <section class="card">

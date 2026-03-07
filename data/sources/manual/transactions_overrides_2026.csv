@@ -1,4 +1,5 @@
 event_date,player_name,position,from_team,to_team,action_text,impact_weight,transaction_status,apply_to_team_needs,source_url,source_account,notes
+2026-03-07,Amari Cooper,WR,BUF,,retired,1.0,confirmed,true,https://www.cbssports.com/nfl/transactions/,Manual Override,User-confirmed retirement override so BUF no longer treats Cooper as unsigned/contract-watch.
 2026-03-05,DJ Moore,WR,CHI,BUF,traded,1.0,confirmed,true,https://www.cbssports.com/nfl/news/bills-acquire-former-pro-bowl-wideout-from-bears-in-first-major-trade-of-offseason-per-reports/,CBS Sports,Confirmed trade: BUF acquires DJ Moore from CHI.
 2026-03-06,Maxx Crosby,EDGE,LV,BAL,traded,1.0,confirmed,true,https://www.cbssports.com/nfl/transactions/,CBS Sports,Confirmed trade override so LV loss and BAL gain both flow into team-needs logic and downstream mock updates.
 2026-03-04,Trent McDuffie,CB,KC,LAR,traded,1.0,confirmed,true,https://www.cbssports.com/nfl/news/chiefs-trade-all-pro-cornerback-to-rams-as-defending-super-bowl-champs-load-up-in-the-2026-nfl-draft/,CBS Sports,Two-sided trade override so KC loss and LAR gain both hit team-needs logic.

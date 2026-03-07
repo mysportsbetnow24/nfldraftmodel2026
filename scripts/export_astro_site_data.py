@@ -35,6 +35,7 @@ NFLVERSE_DIR = ROOT / "data" / "sources" / "external" / "nflverse"
 NFLVERSE_ROSTERS = NFLVERSE_DIR / "rosters_weekly.parquet"
 NFLVERSE_CONTRACTS = NFLVERSE_DIR / "contracts.parquet"
 NFLVERSE_PLAYERS = NFLVERSE_DIR / "players.parquet"
+NFLVERSE_PARTICIPATION = NFLVERSE_DIR / "participation.parquet"
 HISTORICAL_DRAFT_COMPILATION = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "notebook" / "compilations" / "drafts2015To2022.csv"
 HISTORICAL_DRAFT_REFINED = ROOT / "data" / "sources" / "external" / "historical-nfl-draft-data" / "old-data" / "pfr-compilations" / "2014To2018Drafts-refined.csv"
 HISTORICAL_LABELS_LEAGIFY = ROOT / "data" / "processed" / "historical_labels_leagify_2015_2023.csv"
@@ -913,8 +914,10 @@ def _youth_priority(payload: dict) -> tuple:
     draft_number = _safe_int(payload.get("draft_number"), 9999)
     apy_m = _safe_float(payload.get("apy_m")) or 0.0
     depth_rank = _safe_int(payload.get("depth_rank"), 99)
+    snap_count = _safe_int(payload.get("snap_count"), 0)
     return (
         label_priority.get(designation, 99),
+        -snap_count,
         age,
         years_exp,
         depth_rank,
@@ -933,21 +936,30 @@ def _is_rising_young_player(payload: dict) -> bool:
     apy_pct = float(payload.get("apy_pct") or 0.0)
     apy_m = _safe_float(payload.get("apy_m")) or 0.0
     position = str(payload.get("position") or "").strip().upper()
+    role_label = str(payload.get("role_label") or "").strip()
+    usage_proxy = _usage_proxy_from_role(position, role_label, depth_rank)
+    snap_count = _safe_int(payload.get("snap_count"), 0)
+    starter_cutoff = int(STARTERS_BY_POSITION.get(position, 1))
 
-    if age > 26 or years_exp > 4 or depth_rank > 2:
+    if age > 26 or years_exp > 4 or depth_rank > max(2, starter_cutoff + 1):
         return False
     if designation in {"Backup", "Older Mentor", "FA"}:
         return False
     if designation in {"Franchise Cornerstone", "All-Pro", "Blue Chip Prospect"}:
         return True
     if designation == "Prospect":
-        return age <= 24 or draft_number <= 80
+        return ((age <= 24 and draft_number <= 60) or snap_count >= 700)
     if designation == "In His Prime Star":
-        return age <= 26 and years_exp <= 4
+        return age <= 27 and years_exp <= 4 and (snap_count >= 450 or usage_proxy >= 0.84)
     if designation == "Starter":
-        if age <= 24:
+        if age <= 24 and snap_count >= 360:
             return True
-        if years_exp <= 2 and (draft_number <= 80 or apy_pct >= 65.0):
+        if (
+            years_exp <= 2
+            and depth_rank <= starter_cutoff
+            and (draft_number <= 80 or apy_pct >= 65.0 or apy_m >= 4.0)
+            and (snap_count >= 500 or usage_proxy >= 0.84)
+        ):
             return True
         if position == "QB" and years_exp <= 3 and apy_m >= 8.0 and age <= 26:
             return True
@@ -1081,6 +1093,88 @@ def _read_csv_rows(path: Path) -> list[dict]:
         return []
     with path.open(newline="", encoding="utf-8") as handle:
         return list(csv.DictReader(handle))
+
+
+def _split_semis(value: str) -> list[str]:
+    return [part.strip() for part in str(value or "").split(";") if part.strip()]
+
+
+def _parse_game_teams(game_id: str) -> tuple[str, str]:
+    text = str(game_id or "").strip().upper()
+    match = re.match(r"^\d{4}_\d{2}_([A-Z0-9]{2,3})_([A-Z0-9]{2,3})$", text)
+    if not match:
+        return "", ""
+    return match.group(1), match.group(2)
+
+
+def _build_player_snap_counts() -> dict[tuple[str, str], dict[str, int]]:
+    if pl is None or not NFLVERSE_PARTICIPATION.exists():
+        return {}
+    participation = pl.read_parquet(NFLVERSE_PARTICIPATION)
+    if participation.is_empty():
+        return {}
+
+    p = participation.with_columns(
+        pl.col("nflverse_game_id").str.slice(0, 4).cast(pl.Int32, strict=False).alias("season_tag")
+    )
+    latest_season = _safe_int(p.select(pl.col("season_tag").max()).item(), 0)
+    if latest_season:
+        p = p.filter(pl.col("season_tag") == latest_season)
+
+    snap_counts: dict[tuple[str, str], dict[str, int]] = defaultdict(
+        lambda: {"snap_count": 0, "offense_snaps": 0, "defense_snaps": 0}
+    )
+    for row in p.select(["nflverse_game_id", "possession_team", "offense_names", "defense_names"]).iter_rows(named=True):
+        offense_team = str(row.get("possession_team") or "").strip().upper()
+        away_team, home_team = _parse_game_teams(row.get("nflverse_game_id") or "")
+        defense_team = ""
+        if offense_team and away_team and home_team:
+            if offense_team == away_team:
+                defense_team = home_team
+            elif offense_team == home_team:
+                defense_team = away_team
+
+        for name in _split_semis(row.get("offense_names", "")):
+            player_key = _norm_player_key(name)
+            if not player_key or not offense_team:
+                continue
+            payload = snap_counts[(player_key, offense_team)]
+            payload["snap_count"] += 1
+            payload["offense_snaps"] += 1
+
+        for name in _split_semis(row.get("defense_names", "")):
+            player_key = _norm_player_key(name)
+            if not player_key or not defense_team:
+                continue
+            payload = snap_counts[(player_key, defense_team)]
+            payload["snap_count"] += 1
+            payload["defense_snaps"] += 1
+
+    return snap_counts
+
+
+def _free_agent_priority(payload: dict) -> tuple:
+    position = str(payload.get("position") or "").strip().upper()
+    designation = str(payload.get("designation") or "").strip()
+    role_label = str(payload.get("role_label") or "").strip()
+    depth_rank = _safe_int(payload.get("depth_rank"), 99)
+    snap_count = _safe_int(payload.get("snap_count"), 0)
+    usage_proxy = _usage_proxy_from_role(position, role_label, depth_rank)
+    apy_pct = float(payload.get("apy_pct") or 0.0)
+    apy_m = _safe_float(payload.get("apy_m")) or 0.0
+    years_exp = _safe_int(payload.get("years_exp"), 0)
+    age = _safe_int(payload.get("age"), 99)
+    return (
+        _designation_priority(designation),
+        -snap_count,
+        -round(usage_proxy, 4),
+        -apy_pct,
+        -apy_m,
+        TEAM_NEEDS_POS_ORDER.index(position) if position in TEAM_NEEDS_POS_ORDER else 99,
+        -years_exp,
+        age,
+        str(payload.get("player_name", "")),
+    )
 
 
 def _player_designation(
@@ -1295,6 +1389,7 @@ def _build_team_depth_context() -> dict[str, dict]:
     subset = subset.unique(subset=["team", "gsis_id"], keep="first")
 
     transaction_team_override_by_name: dict[str, dict[str, str]] = {}
+    retired_or_released_players: set[str] = set()
     for row in _read_csv(TRANSACTION_OVERRIDES_CSV):
         status_kind = _status_kind(row.get("transaction_status", "confirmed"))
         if status_kind != "confirmed":
@@ -1311,6 +1406,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             current_team = to_team or current_team
         elif any(token in action for token in {"cut", "waived", "released", "retired"}):
             current_team = ""
+            retired_or_released_players.add(player_key)
         else:
             current_team = to_team or from_team
         existing = transaction_team_override_by_name.get(player_key)
@@ -1322,6 +1418,8 @@ def _build_team_depth_context() -> dict[str, dict]:
                 "to_team": to_team,
                 "action": action,
             }
+
+    player_snap_counts = _build_player_snap_counts()
 
     player_team_candidates: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
     for player_key, override in transaction_team_override_by_name.items():
@@ -1486,6 +1584,8 @@ def _build_team_depth_context() -> dict[str, dict]:
         if not team:
             continue
         player_key = _norm_player_key(row.get("full_name") or row.get("football_name") or "")
+        if player_key in retired_or_released_players:
+            continue
         override_team = transaction_team_override_by_name.get(player_key, {}).get("current_team", "")
         if override_team and team != override_team:
             continue
@@ -1505,6 +1605,7 @@ def _build_team_depth_context() -> dict[str, dict]:
         draft_number = _safe_int(row.get("draft_number"), 0) or None
 
         contract = contract_by_gsis.get(gsis_id) or contract_by_name.get(_norm_player_key(name))
+        player_master = players_master_by_name.get(_norm_player_key(name), {})
         historical_contract = contract_history_by_name_team.get((_norm_player_key(name), team))
         apy = _safe_float(contract.get("apy")) if contract else None
         apy_pct = _pct_score(apy, apy_pool_by_pos.get(model_pos, []))
@@ -1513,7 +1614,18 @@ def _build_team_depth_context() -> dict[str, dict]:
             bool(historical_contract)
             and _safe_int(historical_contract.get("contract_end_year"), 0) >= CURRENT_DRAFT_YEAR
         )
-        has_contract = True
+        latest_team_match = (
+            bool(player_master)
+            and str(player_master.get("latest_team") or "").strip().upper() == team
+            and str(player_master.get("status") or "").strip().upper() not in {"RET", "CUT"}
+        )
+        inferred_rookie_contract = (
+            latest_team_match
+            and _safe_int(player_master.get("rookie_season"), 0) >= (latest_season - 1)
+            and _safe_int(player_master.get("years_of_experience"), 0) <= 1
+        )
+        has_contract = bool(contract) or historical_contract_valid or inferred_rookie_contract
+        contract_status_kind = "active_contract"
         if contract is not None:
             contract_label = f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
         elif historical_contract_valid:
@@ -1522,13 +1634,20 @@ def _build_team_depth_context() -> dict[str, dict]:
             years_left = hist_years
             apy = hist_apy
             apy_pct = _pct_score(apy, apy_pool_by_pos.get(model_pos, [])) if apy is not None else apy_pct
+            contract_status_kind = "historical_contract"
             contract_label = (
                 f"{hist_years}y | ${hist_apy:.1f}M APY"
                 if hist_apy is not None and hist_years
                 else "Rostered"
             )
+        elif inferred_rookie_contract:
+            contract_status_kind = "rookie_deal"
+            contract_label = "Rookie deal"
         else:
-            contract_label = "Rostered"
+            contract_status_kind = "unsigned_watch"
+            contract_label = "Contract watch"
+
+        snap_payload = player_snap_counts.get((_norm_player_key(name), team), {})
 
         roster_lookup_by_team[team][_norm_player_key(name)] = {
             "player_name": name,
@@ -1540,8 +1659,12 @@ def _build_team_depth_context() -> dict[str, dict]:
             "contract_years": years_left,
             "has_contract": has_contract,
             "contract_label": contract_label,
+            "contract_status_kind": contract_status_kind,
             "apy_m": round(apy, 2) if apy is not None else "",
             "apy_pct": apy_pct,
+            "snap_count": int(snap_payload.get("snap_count", 0)),
+            "offense_snaps": int(snap_payload.get("offense_snaps", 0)),
+            "defense_snaps": int(snap_payload.get("defense_snaps", 0)),
         }
         if player_key:
             player_team_candidates[player_key][team] += 60.0
@@ -1557,8 +1680,12 @@ def _build_team_depth_context() -> dict[str, dict]:
                 "contract_years": years_left,
                 "has_contract": has_contract,
                 "contract_label": contract_label,
+                "contract_status_kind": contract_status_kind,
                 "apy_m": round(apy, 2) if apy is not None else "",
                 "apy_pct": apy_pct,
+                "snap_count": int(snap_payload.get("snap_count", 0)),
+                "offense_snaps": int(snap_payload.get("offense_snaps", 0)),
+                "defense_snaps": int(snap_payload.get("defense_snaps", 0)),
             }
         )
 
@@ -1580,6 +1707,8 @@ def _build_team_depth_context() -> dict[str, dict]:
         if model_pos not in TEAM_NEEDS_POS_ORDER:
             continue
         player_key = _norm_player_key(player_name)
+        if player_key in retired_or_released_players:
+            continue
         roster_info = roster_lookup_by_team.get(team, {}).get(player_key, {})
         contract = contract_by_name.get(player_key)
         contract_team_match = bool(contract) and str(contract.get("team_norm") or "").strip().upper() == team
@@ -1629,6 +1758,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             and _safe_int(historical_contract.get("contract_end_year"), 0) >= CURRENT_DRAFT_YEAR
         )
         has_contract = bool(contract) or roster_has_contract or inferred_rookie_contract or historical_team_contract
+        contract_status_kind = "active_contract"
         if contract:
             contract_label = f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
         elif historical_team_contract:
@@ -1637,17 +1767,21 @@ def _build_team_depth_context() -> dict[str, dict]:
             years_left = hist_years
             apy = hist_apy if hist_apy is not None else apy
             apy_pct = _pct_score(apy, apy_pool_by_pos.get(model_pos, [])) if apy is not None else apy_pct
+            contract_status_kind = "historical_contract"
             contract_label = (
                 f"{hist_years}y | ${hist_apy:.1f}M APY"
                 if hist_apy is not None and hist_years
                 else "Rostered"
             )
         elif roster_has_contract and roster_info:
+            contract_status_kind = str(roster_info.get("contract_status_kind") or "active_contract")
             contract_label = str(roster_info.get("contract_label") or "Rostered")
         elif inferred_rookie_contract:
+            contract_status_kind = "rookie_deal"
             contract_label = "Rookie deal"
         else:
-            contract_label = "FA"
+            contract_status_kind = "unsigned_watch"
+            contract_label = "Contract watch"
 
         payload = {
             "player_name": player_name,
@@ -1659,11 +1793,15 @@ def _build_team_depth_context() -> dict[str, dict]:
             "contract_years": years_left if contract else _safe_int(roster_info.get("contract_years"), 0),
             "has_contract": has_contract,
             "contract_label": contract_label,
+            "contract_status_kind": contract_status_kind,
             "apy_m": round(apy, 2) if apy is not None else roster_info.get("apy_m", ""),
             "apy_pct": apy_pct,
             "depth_source": "espn",
             "espn_rank": _safe_int(row.get("rank"), 99),
             "position_group": str(row.get("position_group") or "").strip(),
+            "snap_count": _safe_int(roster_info.get("snap_count"), 0),
+            "offense_snaps": _safe_int(roster_info.get("offense_snaps"), 0),
+            "defense_snaps": _safe_int(roster_info.get("defense_snaps"), 0),
         }
         espn_by_team_pos[(team, model_pos)].append(payload)
         if slot:
@@ -1836,11 +1974,13 @@ def _build_team_depth_context() -> dict[str, dict]:
                     "detail_label": _player_detail_line(player, role_label),
                     "meta_label": _player_meta_line(player),
                     "contract_label": player.get("contract_label", ""),
+                    "contract_status_kind": str(player.get("contract_status_kind") or ""),
                     "years_exp": int(player.get("years_exp") or 0),
                     "age": player.get("age", ""),
                     "apy_m": player.get("apy_m", ""),
                     "apy_pct": float(player.get("apy_pct") or 0.0),
                     "draft_number": int(player.get("draft_number")) if str(player.get("draft_number", "")).strip() else "",
+                    "snap_count": int(player.get("snap_count") or 0),
                 }
                 lane_players.append(payload)
                 team_payloads.append(payload)
@@ -1869,19 +2009,33 @@ def _build_team_depth_context() -> dict[str, dict]:
             seen_payload_keys.add(composite_key)
             unique_team_payloads.append(payload)
 
-        free_agents = sorted(
-            [p for p in unique_team_payloads if str(p.get("designation") or "").strip() == "FA"],
+        unique_player_payloads = []
+        seen_player_keys: set[str] = set()
+        for payload in sorted(
+            unique_team_payloads,
             key=lambda p: (
+                _designation_priority(str(p.get("designation") or "").strip()),
+                -_safe_int(p.get("snap_count"), 0),
                 TEAM_NEEDS_POS_ORDER.index(str(p.get("position") or "").strip().upper()) if str(p.get("position") or "").strip().upper() in TEAM_NEEDS_POS_ORDER else 99,
-                int(p.get("depth_rank") or 99),
                 str(p.get("player_name", "")),
             ),
-        )[:16]
+        ):
+            player_key = _norm_player_key(payload.get("player_name", ""))
+            if not player_key or player_key in seen_player_keys:
+                continue
+            seen_player_keys.add(player_key)
+            unique_player_payloads.append(payload)
+
+        free_agents = sorted(
+            [p for p in unique_player_payloads if str(p.get("contract_status_kind") or "").strip() == "unsigned_watch"],
+            key=_free_agent_priority,
+        )
+        key_free_agents = free_agents[:8]
 
         youth = sorted(
-            [p for p in unique_team_payloads if _is_rising_young_player(p)],
+            [p for p in unique_player_payloads if _is_rising_young_player(p)],
             key=_youth_priority,
-        )[:10]
+        )[:8]
 
         out[team] = {
             "depth_chart": {
@@ -1890,7 +2044,8 @@ def _build_team_depth_context() -> dict[str, dict]:
                 "season": latest_season,
                 "week": latest_week,
             },
-            "free_agents": free_agents,
+            "free_agents": key_free_agents,
+            "free_agents_full": free_agents,
             "young_players_on_rise": youth,
         }
 
@@ -3385,6 +3540,7 @@ def export_team_needs() -> list[dict]:
                 "weakness_positions": weakness_positions,
                 "depth_chart": ctx.get("depth_chart", {"offense": [], "defense": [], "season": "", "week": ""}),
                 "free_agents": ctx.get("free_agents", []),
+                "free_agents_full": ctx.get("free_agents_full", ctx.get("free_agents", [])),
                 "young_players_on_rise": ctx.get("young_players_on_rise", []),
                 "recent_transactions": public_tx_by_team.get(team, [])[:3],
             }
