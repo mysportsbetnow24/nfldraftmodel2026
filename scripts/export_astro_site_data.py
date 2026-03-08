@@ -363,13 +363,13 @@ POSITION_FALLBACK_METRIC_CONFIG = {
     ],
     "CB": [
         {"key": "cfb_db_coverage_plays_per_target", "label": "Plays on Ball / Target", "fmt": "dec3", "weight": 0.32},
-        {"key": "cfb_db_yards_allowed_per_coverage_snap", "label": "Yards / Coverage Snap", "fmt": "dec3", "lower_better": True, "weight": 0.30},
+        {"key": "cfb_db_yards_allowed_per_coverage_snap", "label": "Yards Allowed / Coverage Snap", "fmt": "dec3", "lower_better": True, "weight": 0.30},
         {"key": "game_consistency_index", "label": "Weekly Consistency", "fmt": "dec3", "weight": 0.16},
         {"key": "top_defense_performance_index", "label": "Top-Offense Performance", "fmt": "dec3", "weight": 0.22},
     ],
     "S": [
         {"key": "cfb_db_coverage_plays_per_target", "label": "Plays on Ball / Target", "fmt": "dec3", "weight": 0.30},
-        {"key": "cfb_db_yards_allowed_per_coverage_snap", "label": "Yards / Coverage Snap", "fmt": "dec3", "lower_better": True, "weight": 0.26},
+        {"key": "cfb_db_yards_allowed_per_coverage_snap", "label": "Yards Allowed / Coverage Snap", "fmt": "dec3", "lower_better": True, "weight": 0.26},
         {"key": "game_consistency_index", "label": "Weekly Consistency", "fmt": "dec3", "weight": 0.18},
         {"key": "top_defense_performance_index", "label": "Top-Offense Performance", "fmt": "dec3", "weight": 0.26},
     ],

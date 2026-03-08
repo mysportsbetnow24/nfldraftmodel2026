@@ -31778,7 +31778,7 @@
       },
       {
         "key": "cfb_db_yards_allowed_per_coverage_snap",
-        "label": "Yards / Coverage Snap",
+        "label": "Yards Allowed / Coverage Snap",
         "raw": 0.9232,
         "display": "0.923",
         "pct": 4.0,
