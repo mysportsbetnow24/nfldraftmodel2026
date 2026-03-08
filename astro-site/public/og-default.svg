@@ -16,10 +16,14 @@
     <text x="80" y="282" font-family="Segoe UI, Arial, sans-serif" font-size="70" font-weight="800">2026 NFL Draft Hub</text>
     <text x="80" y="350" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="500" fill="#c8d5e2">Big Board · Mock Drafts · Scouting Cards · Player Compare</text>
   </g>
-  <g transform="translate(880 170)">
-    <circle cx="110" cy="110" r="108" fill="none" stroke="#89a3be" stroke-width="4" />
-    <path d="M110 8c-31 20-54 60-54 102s23 82 54 102c31-20 54-60 54-102S141 28 110 8z" fill="none" stroke="#89a3be" stroke-width="3"/>
-    <path d="M14 110h192M110 14v192" stroke="#89a3be" stroke-width="3"/>
-    <circle cx="110" cy="110" r="8" fill="#2fd07a" />
+  <g transform="translate(846 112)">
+    <rect width="272" height="272" rx="56" fill="#123A63" />
+    <rect x="30" y="30" width="212" height="212" rx="48" stroke="#EEF3F7" stroke-opacity="0.18" stroke-width="6"/>
+    <path d="M184 76H112C90 76 74 88 74 107C74 127 89 137 118 143L146 149C161 153 169 158 169 167C169 177 160 184 145 184H73" stroke="#EEF3F7" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M193 121V191C193 207 179 220 161 220H128C107 220 93 207 93 188V170" stroke="#17A34A" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M137 120H193" stroke="#17A34A" stroke-width="16" stroke-linecap="round"/>
+    <path d="M116 52V83" stroke="#0EA5E9" stroke-width="7" stroke-linecap="round" stroke-opacity="0.9"/>
+    <path d="M148 52V83" stroke="#0EA5E9" stroke-width="7" stroke-linecap="round" stroke-opacity="0.9"/>
+    <path d="M180 52V83" stroke="#0EA5E9" stroke-width="7" stroke-linecap="round" stroke-opacity="0.9"/>
   </g>
 </svg>
