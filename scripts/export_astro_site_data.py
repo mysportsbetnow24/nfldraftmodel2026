@@ -1749,8 +1749,9 @@ def _build_team_depth_context() -> dict[str, dict]:
             for row in all_contract_rows:
                 end_year = _contract_end_year(row)
                 is_current = bool(row.get("is_active"))
+                # Prefer explicit contract term over stale active flags in offseason data.
                 if end_year:
-                    is_current = is_current or end_year >= CURRENT_DRAFT_YEAR
+                    is_current = end_year >= CURRENT_DRAFT_YEAR
                 if is_current:
                     contract_rows.append(row)
     for row in all_contract_rows:
@@ -2474,7 +2475,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             player_master = players_master_by_name.get(player_key, {})
             role_label = position
             faux_payload = {
-                "player_name": payload.get("player_name", ""),
+                "player_name": payload.get("player_name") or payload.get("name") or "",
                 "position": position,
                 "depth_rank": 99,
                 "lane_depth_rank": 99,
