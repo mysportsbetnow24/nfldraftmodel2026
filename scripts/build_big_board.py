@@ -66,6 +66,8 @@ SOURCE_RELIABILITY_PATH = ROOT / "data" / "sources" / "manual" / "source_reliabi
 SOURCE_RELIABILITY_POS_YEAR_PATH = (
     ROOT / "data" / "sources" / "manual" / "source_reliability_by_pos_year_2016_2025.csv"
 )
+SCOUTING_GLOSSARY_PATH = ROOT / "data" / "sources" / "manual" / "scouting_glossary_2026.csv"
+SCOUTING_LANGUAGE_INPUTS_PATH = ROOT / "data" / "sources" / "manual" / "scouting_language_inputs_2026.csv"
 NFL_OFFICIAL_PROSPECT_PATH = ROOT / "data" / "sources" / "manual" / "nfl_combine_invites_2026.csv"
 CURRENT_DRAFT_YEAR = int(os.getenv("DRAFT_YEAR", "2026"))
 
@@ -3108,6 +3110,188 @@ def _compact_text(value: str, max_chars: int = 180) -> str:
     return txt[: max_chars - 3].rstrip() + "..."
 
 
+_SCOUTING_GLOSSARY_CACHE: dict[str, dict] | None = None
+_SCOUTING_LANGUAGE_CACHE: dict[tuple[str, str, str], dict] | None = None
+
+
+def _scouting_key(name: str, position: str = "", school: str = "") -> tuple[str, str, str]:
+    return (
+        canonical_player_name(name or ""),
+        normalize_pos(position or ""),
+        canonical_player_name(school or ""),
+    )
+
+
+def _load_scouting_glossary() -> dict[str, dict]:
+    global _SCOUTING_GLOSSARY_CACHE
+    if _SCOUTING_GLOSSARY_CACHE is not None:
+        return _SCOUTING_GLOSSARY_CACHE
+    terms_by_id: dict[str, dict] = {}
+    if SCOUTING_GLOSSARY_PATH.exists():
+        with SCOUTING_GLOSSARY_PATH.open("r", encoding="utf-8", newline="") as fh:
+            reader = csv.DictReader(fh)
+            for row in reader:
+                term_id = str(row.get("term_id", "")).strip()
+                if not term_id:
+                    continue
+                terms_by_id[term_id] = {k: str(v or "").strip() for k, v in row.items()}
+    _SCOUTING_GLOSSARY_CACHE = terms_by_id
+    return terms_by_id
+
+
+def _load_scouting_language_inputs() -> dict[tuple[str, str, str], dict]:
+    global _SCOUTING_LANGUAGE_CACHE
+    if _SCOUTING_LANGUAGE_CACHE is not None:
+        return _SCOUTING_LANGUAGE_CACHE
+    rows: dict[tuple[str, str, str], dict] = {}
+    if SCOUTING_LANGUAGE_INPUTS_PATH.exists():
+        with SCOUTING_LANGUAGE_INPUTS_PATH.open("r", encoding="utf-8", newline="") as fh:
+            reader = csv.DictReader(fh)
+            for row in reader:
+                name = str(row.get("player_name", "")).strip()
+                pos = str(row.get("position", "")).strip()
+                school = str(row.get("school", "")).strip()
+                if not name or not pos:
+                    continue
+                clean_row = {k: str(v or "").strip() for k, v in row.items()}
+                rows[_scouting_key(name, pos, school)] = clean_row
+                rows.setdefault(_scouting_key(name, pos, ""), clean_row)
+    _SCOUTING_LANGUAGE_CACHE = rows
+    return rows
+
+
+def _get_scouting_language_row(name: str, position: str, school: str) -> dict:
+    rows = _load_scouting_language_inputs()
+    return rows.get(_scouting_key(name, position, school), rows.get(_scouting_key(name, position, ""), {}))
+
+
+def _phrase_from_term(term: dict) -> str:
+    sample = _compact_text(term.get("sample_phrase", ""), 180)
+    if sample:
+        return sample.rstrip(".") + "."
+    plain = _compact_text(term.get("plain_english", ""), 180)
+    return plain.rstrip(".") + "." if plain else ""
+
+
+def _lookup_glossary_terms(term_ids: list[str], *, section: str) -> list[dict]:
+    glossary = _load_scouting_glossary()
+    out: list[dict] = []
+    seen: set[str] = set()
+    for term_id in term_ids:
+        row = glossary.get(term_id)
+        if not row:
+            continue
+        if row.get("audience") != "public_safe":
+            continue
+        if row.get("section") != section:
+            continue
+        if term_id in seen:
+            continue
+        seen.add(term_id)
+        out.append(row)
+    return out
+
+
+def _default_glossary_tags(
+    *,
+    pos: str,
+    qb_epa: float | None,
+    qb_press: float | None,
+    wr_yprr: float | None,
+    wr_share: float | None,
+    rb_explosive: float | None,
+    rb_mtf: float | None,
+    edge_pr: float | None,
+    edge_sacks_pr: float | None,
+    db_plays_ball: float | None,
+    db_yards_cov: float | None,
+    shuttle_pct: float | None,
+    cone_pct: float | None,
+    forty_pct: float | None,
+    ten_pct: float | None,
+    arm_pct: float | None,
+    weight_pct: float | None,
+) -> list[str]:
+    tags: list[str] = []
+    if pos == "QB":
+        if qb_epa is not None and qb_epa >= 0.20:
+            tags.extend(["qb_anticipation_distributor", "qb_mental_processing"])
+        else:
+            tags.append("qb_structure_creation_hybrid")
+        if ((forty_pct or 0) >= 65) or ((ten_pct or 0) >= 65):
+            tags.append("qb_play_speed")
+        if qb_press is not None and qb_press < 0.0:
+            tags.append("qb_pressure_sensitive")
+    elif pos == "RB":
+        if rb_explosive is not None and rb_explosive >= 0.14:
+            tags.append("rb_explosive_runner")
+        if rb_mtf is not None and rb_mtf >= 0.24:
+            tags.append("rb_contact_creator")
+        if rb_mtf is not None and rb_mtf >= 0.18:
+            tags.append("rb_functional_athleticism")
+        tags.append("rb_passing_game_utility")
+    elif pos == "WR":
+        if wr_share is not None and wr_share >= 0.22:
+            tags.append("wr_volume_target_earner")
+        if wr_yprr is not None and wr_yprr >= 2.0:
+            tags.append("wr_route_craft_separator")
+        if forty_pct is not None and forty_pct >= 65:
+            tags.append("wr_vertical_stressor")
+        if ((shuttle_pct or 0) >= 65) or ((cone_pct or 0) >= 65):
+            tags.append("wr_twitchy_mover")
+        tags.append("wr_press_answers")
+    elif pos == "TE":
+        tags.append("te_inline_move_mismatch")
+        if arm_pct is not None and arm_pct < 20:
+            tags.append("te_anchor_point")
+    elif pos == "OT":
+        tags.extend(["ol_anchor", "ol_inside_out_recovery"])
+        tags.append("ol_anchor_consistency")
+    elif pos == "IOL":
+        tags.extend(["ol_anchor", "ol_inside_out_recovery"])
+        tags.append("ol_anchor_consistency")
+    elif pos == "EDGE":
+        if edge_pr is not None and edge_pr >= 0.14:
+            tags.append("edge_true_pass_set_winner")
+        if edge_sacks_pr is not None and edge_sacks_pr >= 0.02:
+            tags.append("edge_clean_pocket_finisher")
+        if ((cone_pct or 0) >= 45) or ((shuttle_pct or 0) >= 45):
+            tags.append("edge_bend")
+        if weight_pct is not None and weight_pct >= 35:
+            tags.append("edge_set_the_edge")
+        tags.append("edge_rush_plan_depth")
+    elif pos == "DT":
+        tags.append("dt_one_gap_disruptor")
+        if weight_pct is not None and weight_pct >= 30:
+            tags.append("dl_point_of_attack")
+        tags.append("dt_stack_and_shed")
+    elif pos == "LB":
+        tags.append("lb_run_fit_anchor")
+        if ((shuttle_pct or 0) >= 50) or ((forty_pct or 0) >= 50):
+            tags.extend(["lb_coverage_range", "lb_play_speed"])
+        if edge_pr is not None and edge_pr >= 0.10:
+            tags.append("lb_pressure_utility")
+        if weight_pct is not None and weight_pct >= 25:
+            tags.append("lb_stack_and_shed")
+    elif pos in {"CB", "S"}:
+        if db_plays_ball is not None and db_plays_ball >= 0.22:
+            tags.append("db_ball_disruptor")
+        if db_yards_cov is not None and db_yards_cov <= 1.05:
+            tags.append("db_target_deterrent")
+        if ((shuttle_pct or 0) >= 55) or ((cone_pct or 0) >= 55):
+            tags.extend(["db_click_and_close", "db_reactive_athleticism"])
+        tags.append("db_scheme_translator")
+        tags.append("db_angle_discipline")
+    deduped: list[str] = []
+    seen: set[str] = set()
+    for tag in tags:
+        if tag in seen:
+            continue
+        seen.add(tag)
+        deduped.append(tag)
+    return deduped
+
+
 def _cfb_prod_snapshot_label(position: str, cfb: dict) -> str:
     def _fmt_int(value) -> str:
         val = _as_float(value)
@@ -3440,6 +3624,7 @@ def _build_scouting_sections(
     clean_role = " ".join(str(best_role or "").replace("_", " ").split()) or "Role TBD"
     clean_scheme = " ".join(str(best_scheme_fit or "").replace("_", " ").split()) or "Scheme TBD"
     clean_team = " ".join(str(best_team_fit or "").replace("_", " ").split()) or "Team TBD"
+    language_row = _get_scouting_language_row(name, pos, school)
 
     def _phrase_list(*raw_values: str, max_items: int = 8) -> list[str]:
         out: list[str] = []
@@ -3476,6 +3661,22 @@ def _build_scouting_sections(
         article = "an" if phrase[:1].lower() in {"a", "e", "i", "o", "u"} else "a"
         return f"{article} {phrase}"
 
+    def _dedupe_points(points: list[str], limit: int) -> list[str]:
+        out: list[str] = []
+        seen: set[str] = set()
+        for point in points:
+            clean = " ".join(str(point or "").split()).strip()
+            if not clean:
+                continue
+            key = clean.lower().rstrip(".")
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append(clean)
+            if len(out) >= limit:
+                break
+        return out
+
     strengths = _phrase_list(kiper_strength_tags, tdn_strengths, br_strengths, atoz_strengths, si_strengths, max_items=8)
     concerns = _phrase_list(kiper_concern_tags, tdn_concerns, br_concerns, atoz_concerns, si_concerns, max_items=8)
 
@@ -3507,6 +3708,44 @@ def _build_scouting_sections(
     db_yards_cov = _f(cfb_db_yards_allowed_per_coverage_snap)
     db_int = _f(cfb_db_int)
     db_pbu = _f(cfb_db_pbu)
+    glossary_tags = [
+        tag.strip()
+        for tag in str(language_row.get("glossary_tags", "")).split("|")
+        if tag.strip()
+    ]
+    glossary_tags.extend(
+        _default_glossary_tags(
+            pos=pos,
+            qb_epa=qb_epa,
+            qb_press=qb_press,
+            wr_yprr=wr_yprr,
+            wr_share=wr_share,
+            rb_explosive=rb_explosive,
+            rb_mtf=rb_mtf,
+            edge_pr=edge_pr,
+            edge_sacks_pr=edge_sacks_pr,
+            db_plays_ball=db_plays_ball,
+            db_yards_cov=db_yards_cov,
+            shuttle_pct=shuttle_pct,
+            cone_pct=cone_pct,
+            forty_pct=forty_pct,
+            ten_pct=ten_pct,
+            arm_pct=arm_pct,
+            weight_pct=weight_pct,
+        )
+    )
+    deduped_tags: list[str] = []
+    seen_tags: set[str] = set()
+    for tag in glossary_tags:
+        if tag in seen_tags:
+            continue
+        seen_tags.add(tag)
+        deduped_tags.append(tag)
+    glossary_tags = deduped_tags
+    wins_glossary_terms = _lookup_glossary_terms(glossary_tags, section="How He Wins")
+    concern_glossary_terms = _lookup_glossary_terms(glossary_tags, section="Primary Concerns")
+    player_how_he_wins_notes = _compact_text(language_row.get("how_he_wins_notes", ""), 210)
+    player_primary_concerns_notes = _compact_text(language_row.get("primary_concerns_notes", ""), 210)
 
     def _qb_style_profile() -> str:
         if qb_epa is None and qb_press is None and qb_int is None:
@@ -3792,6 +4031,13 @@ def _build_scouting_sections(
 
     wins_points: list[str] = []
     wins_points.append(f"Usage fit: {clean_role} within {clean_scheme}.")
+    if player_how_he_wins_notes:
+        wins_points.append(player_how_he_wins_notes.rstrip(".") + ".")
+    elif wins_glossary_terms:
+        for term in wins_glossary_terms[:2]:
+            phrase = _phrase_from_term(term)
+            if phrase:
+                wins_points.append(phrase)
     wins_points.append(wins_logic.get(pos, "Film translation is defined by repeatable technique, processing, and role clarity under NFL speed."))
     if pos == "QB":
         wins_points.append(_qb_style_profile())
@@ -3801,9 +4047,16 @@ def _build_scouting_sections(
         wins_points.append("Model + film note: " + _compact_text(str(scouting_notes), 180).rstrip(".") + ".")
     if strengths:
         wins_points.append("Scout-logged strength indicators: " + "; ".join(strengths[:4]) + ".")
-    wins = "\n".join(f"- {point}" for point in wins_points[:5])
+    wins = "\n".join(f"- {point}" for point in _dedupe_points(wins_points, 5))
 
     concern_points: list[str] = []
+    if player_primary_concerns_notes:
+        concern_points.append(player_primary_concerns_notes.rstrip(".") + ".")
+    elif concern_glossary_terms:
+        for term in concern_glossary_terms[:2]:
+            phrase = _phrase_from_term(term)
+            if phrase:
+                concern_points.append(phrase)
 
     if pos == "QB":
         if qb_epa is not None and qb_epa < 0.08:
@@ -3903,7 +4156,7 @@ def _build_scouting_sections(
         concern_points.append(
             "No major red flag stands out in the current profile, but the NFL transition still depends on holding this role against better athletes and processing speed."
         )
-    primary_concerns = "\n".join(f"- {point}" for point in concern_points[:4])
+    primary_concerns = "\n".join(f"- {point}" for point in _dedupe_points(concern_points, 4))
 
     hist_comp_text = ""
     if str(historical_combine_comp_1 or "").strip():
