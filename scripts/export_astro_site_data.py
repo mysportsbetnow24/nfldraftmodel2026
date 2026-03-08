@@ -1368,9 +1368,26 @@ def _build_player_snap_counts() -> dict[tuple[str, str], dict[str, int]]:
     return snap_counts
 
 
-def _free_agent_priority(payload: dict) -> tuple:
+def _contract_sort_pos_priority(position: str) -> int:
+    order = {
+        "QB": 0,
+        "OT": 1,
+        "IOL": 2,
+        "EDGE": 3,
+        "CB": 4,
+        "WR": 5,
+        "S": 6,
+        "DT": 7,
+        "LB": 8,
+        "TE": 9,
+        "RB": 10,
+    }
+    pos = str(position or "").strip().upper()
+    return order.get(pos, 99)
+
+
+def _contract_importance_score(payload: dict) -> tuple[int, int, float, int, float, float, int]:
     position = str(payload.get("position") or "").strip().upper()
-    designation = str(payload.get("designation") or "").strip()
     role_label = str(payload.get("role_label") or "").strip()
     depth_rank = _safe_int(payload.get("depth_rank"), 99)
     snap_count = _safe_int(payload.get("snap_count"), 0)
@@ -1378,43 +1395,59 @@ def _free_agent_priority(payload: dict) -> tuple:
     apy_pct = float(payload.get("apy_pct") or 0.0)
     apy_m = _safe_float(payload.get("apy_m")) or 0.0
     years_exp = _safe_int(payload.get("years_exp"), 0)
-    age = _safe_int(payload.get("age"), 99)
+
+    if usage_proxy >= 0.88 and snap_count >= 700:
+        tier = 0
+    elif usage_proxy >= 0.78 and snap_count >= 450:
+        tier = 1
+    elif usage_proxy >= 0.64 and snap_count >= 200:
+        tier = 2
+    else:
+        tier = 3
+
     return (
-        _designation_priority(designation),
+        tier,
         -snap_count,
         -round(usage_proxy, 4),
+        _contract_sort_pos_priority(position),
         -apy_pct,
         -apy_m,
-        TEAM_NEEDS_POS_ORDER.index(position) if position in TEAM_NEEDS_POS_ORDER else 99,
         -years_exp,
+    )
+
+
+def _is_key_free_agent_candidate(payload: dict) -> bool:
+    position = str(payload.get("position") or "").strip().upper()
+    role_label = str(payload.get("role_label") or "").strip()
+    depth_rank = _safe_int(payload.get("depth_rank"), 99)
+    snap_count = _safe_int(payload.get("snap_count"), 0)
+    usage_proxy = _usage_proxy_from_role(position, role_label, depth_rank)
+    apy_m = _safe_float(payload.get("apy_m")) or 0.0
+    return (
+        snap_count >= 500
+        or (usage_proxy >= 0.78 and snap_count >= 250)
+        or apy_m >= 4.0
+        or (position == "QB" and snap_count >= 50)
+    )
+
+
+def _free_agent_priority(payload: dict) -> tuple:
+    age = _safe_int(payload.get("age"), 99)
+    return (
+        *_contract_importance_score(payload),
         age,
         str(payload.get("player_name", "")),
     )
 
 
 def _contract_watch_priority(payload: dict) -> tuple:
-    position = str(payload.get("position") or "").strip().upper()
-    designation = str(payload.get("designation") or "").strip()
-    role_label = str(payload.get("role_label") or "").strip()
-    depth_rank = _safe_int(payload.get("depth_rank"), 99)
-    snap_count = _safe_int(payload.get("snap_count"), 0)
-    usage_proxy = _usage_proxy_from_role(position, role_label, depth_rank)
-    apy_pct = float(payload.get("apy_pct") or 0.0)
-    apy_m = _safe_float(payload.get("apy_m")) or 0.0
     contract_years = _safe_int(payload.get("contract_years"), 0)
-    years_exp = _safe_int(payload.get("years_exp"), 0)
     age = _safe_int(payload.get("age"), 99)
     status_kind = str(payload.get("contract_status_kind") or "").strip()
     return (
         0 if status_kind == "unsigned_watch" else 1,
-        _designation_priority(designation),
-        -snap_count,
-        -round(usage_proxy, 4),
-        -apy_pct,
-        -apy_m,
+        *_contract_importance_score(payload),
         contract_years,
-        TEAM_NEEDS_POS_ORDER.index(position) if position in TEAM_NEEDS_POS_ORDER else 99,
-        -years_exp,
         age,
         str(payload.get("player_name", "")),
     )
@@ -2540,8 +2573,22 @@ def _build_team_depth_context() -> dict[str, dict]:
                 free_agent_pool.append(payload)
                 free_agent_seen.add(player_key)
         free_agents = sorted(free_agent_pool, key=_free_agent_priority)
-        key_free_agents = free_agents[:2]
-        contract_watch_pool = list(free_agents[2:])
+        prioritized_key_free_agents = [p for p in free_agents if _is_key_free_agent_candidate(p)]
+        key_free_agents = prioritized_key_free_agents[:2]
+        if len(key_free_agents) < 2:
+            seen_keys = {_norm_player_key(p.get("player_name", "")) for p in key_free_agents}
+            for payload in free_agents:
+                player_key = _norm_player_key(payload.get("player_name", ""))
+                if player_key and player_key not in seen_keys:
+                    key_free_agents.append(payload)
+                    seen_keys.add(player_key)
+                if len(key_free_agents) >= 2:
+                    break
+        key_free_agent_keys = {_norm_player_key(p.get("player_name", "")) for p in key_free_agents}
+        contract_watch_pool = [
+            p for p in free_agents
+            if _norm_player_key(p.get("player_name", "")) not in key_free_agent_keys
+        ]
         watch_seen = {
             _norm_player_key(p.get("player_name", ""))
             for p in contract_watch_pool
