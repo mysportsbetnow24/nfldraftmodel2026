@@ -32,16 +32,20 @@ npm run refresh:workflow
 That workflow runs, in order:
 
 1. consensus pull + big-board rebuild
-2. CBS transactions pull
-3. team-needs transaction adjustment rebuild
-4. mock rebuild
-5. Astro data export
-6. site build
+2. ESPN depth chart pull
+3. team-needs context rebuild
+4. CBS transactions pull
+5. team-needs transaction adjustment rebuild
+6. mock rebuild
+7. Astro data export
+8. site build
 
 Useful direct flags from repo root:
 
 ```bash
 python3 scripts/refresh_update_workflow.py --skip-consensus-fetch
+python3 scripts/refresh_update_workflow.py --skip-depth-charts-fetch
+python3 scripts/refresh_update_workflow.py --skip-team-needs-context
 python3 scripts/refresh_update_workflow.py --skip-transactions-fetch
 python3 scripts/refresh_update_workflow.py --skip-mocks
 python3 scripts/refresh_update_workflow.py --skip-site-build

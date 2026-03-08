@@ -20,14 +20,24 @@ def _run(cmd: list[str], *, cwd: Path | None = None, env: dict[str, str] | None 
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
-            "Regular ScoutingGrade refresh workflow: consensus first, then transactions, "
-            "then mocks/site outputs."
+            "Regular ScoutingGrade refresh workflow: consensus, depth charts, team-needs "
+            "context, transactions, then mocks/site outputs."
         )
     )
     parser.add_argument(
         "--skip-consensus-fetch",
         action="store_true",
         help="Do not hit remote consensus sources; use local/manual fallback rows only.",
+    )
+    parser.add_argument(
+        "--skip-depth-charts-fetch",
+        action="store_true",
+        help="Do not fetch ESPN depth charts before rebuilding team-needs context.",
+    )
+    parser.add_argument(
+        "--skip-team-needs-context",
+        action="store_true",
+        help="Skip rebuilding team_needs_context_2026.csv from nflverse + ESPN inputs.",
     )
     parser.add_argument(
         "--skip-transactions-fetch",
@@ -63,6 +73,12 @@ def main() -> None:
     if args.strict_production_knn:
         refresh_cmd.append("--strict-production-knn")
     _run(refresh_cmd, cwd=ROOT, env=env)
+
+    if not args.skip_depth_charts_fetch:
+        _run([sys.executable, "scripts/pull_espn_depth_charts.py", "--season", "2026"], cwd=ROOT, env=env)
+
+    if not args.skip_team_needs_context:
+        _run([sys.executable, "scripts/build_team_needs_context_from_nflverse.py"], cwd=ROOT, env=env)
 
     if not args.skip_transactions_fetch:
         _run([sys.executable, "scripts/pull_cbs_transactions.py"], cwd=ROOT, env=env)

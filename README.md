@@ -38,7 +38,7 @@ Consensus output:
 ## Regular refresh workflow
 
 Use this when you want the normal site/model update path to start with a fresh consensus pull before
-transactions, mocks, and Astro data rebuilds:
+depth charts, team-needs context, transactions, mocks, and Astro data rebuilds:
 
 ```bash
 cd astro-site
@@ -47,19 +47,44 @@ npm run refresh:workflow
 
 What it runs, in order:
 1. `scripts/refresh_consensus_pipeline.py`
-2. `scripts/pull_cbs_transactions.py`
-3. `scripts/build_team_needs_transaction_adjustments.py`
-4. `scripts/run_mock_draft.py`
-5. `scripts/export_astro_site_data.py`
-6. `astro build`
+2. `scripts/pull_espn_depth_charts.py --season 2026`
+3. `scripts/build_team_needs_context_from_nflverse.py`
+4. `scripts/pull_cbs_transactions.py`
+5. `scripts/build_team_needs_transaction_adjustments.py`
+6. `scripts/run_mock_draft.py`
+7. `scripts/export_astro_site_data.py`
+8. `astro build`
 
 Useful flags:
 
 ```bash
 python3 scripts/refresh_update_workflow.py --skip-consensus-fetch
+python3 scripts/refresh_update_workflow.py --skip-depth-charts-fetch
+python3 scripts/refresh_update_workflow.py --skip-team-needs-context
 python3 scripts/refresh_update_workflow.py --skip-transactions-fetch
 python3 scripts/refresh_update_workflow.py --skip-mocks
 python3 scripts/refresh_update_workflow.py --skip-site-build
+```
+
+## Daily refresh automation
+
+For a Mac-based daily refresh, copy the launchd template:
+
+`ops/launchd/com.scoutinggrade.daily-refresh.plist`
+
+Then update:
+- the repo path
+- the desired hour/minute
+- the log file paths if needed
+
+After editing, install it with:
+
+```bash
+mkdir -p ~/Library/LaunchAgents
+cp ops/launchd/com.scoutinggrade.daily-refresh.plist ~/Library/LaunchAgents/
+launchctl unload ~/Library/LaunchAgents/com.scoutinggrade.daily-refresh.plist 2>/dev/null || true
+launchctl load ~/Library/LaunchAgents/com.scoutinggrade.daily-refresh.plist
+launchctl start com.scoutinggrade.daily-refresh
 ```
 
 ## Historical Calibration (real data only)
