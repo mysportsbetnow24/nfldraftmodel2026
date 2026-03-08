@@ -1,0 +1,3 @@
+player_name,team_norm,position,is_active,status_kind,years_remaining,contract_end_year,apy_m,contract_label,source_url,notes
+Christian Watson,GB,WR,true,active_contract,1,2026,11.0,1y | $11.0M APY,https://overthecap.com/player/christian-watson/10079/,Manual override for confirmed 2025 extension so GB team page does not treat Watson as unsigned.
+Marlon Humphrey,BAL,CB,true,active_contract,1,2026,19.5,1y | $19.5M APY,https://overthecap.com/player/marlon-humphrey/5600/,Manual override for current active contract so BAL team page keeps Humphrey rostered through 2026.

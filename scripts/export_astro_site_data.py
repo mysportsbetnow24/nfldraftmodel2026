@@ -26,6 +26,7 @@ ROUND7_CSV = OUTPUTS / "mock_2026_7round.csv"
 TEAM_NEEDS_CSV = ROOT / "data" / "sources" / "team_needs_context_2026.csv"
 CBS_TRANSACTIONS_CSV = ROOT / "data" / "processed" / "cbs_nfl_transactions_2026.csv"
 TRANSACTION_OVERRIDES_CSV = ROOT / "data" / "sources" / "manual" / "transactions_overrides_2026.csv"
+CONTRACT_STATE_OVERRIDES_CSV = ROOT / "data" / "sources" / "manual" / "contract_state_overrides_2026.csv"
 INSIDER_TRANSACTIONS_CSV = ROOT / "data" / "sources" / "manual" / "insider_transactions_feed_2026.csv"
 ESPN_PROSPECTS_CSV = ROOT / "data" / "sources" / "external" / "espn_nfl_draft_prospect_data" / "nfl_draft_prospects.csv"
 ESPN_DEPTH_CHARTS_CSV = ROOT / "data" / "sources" / "external" / "espn_depth_charts_2026.csv"
@@ -1310,6 +1311,11 @@ def _read_csv_rows(path: Path) -> list[dict]:
         return list(csv.DictReader(handle))
 
 
+def _truthy(value) -> bool:
+    text = str(value or "").strip().lower()
+    return text in {"1", "true", "yes", "y"}
+
+
 def _split_semis(value: str) -> list[str]:
     return [part.strip() for part in str(value or "").split(";") if part.strip()]
 
@@ -1756,9 +1762,11 @@ def _build_team_depth_context() -> dict[str, dict]:
     apy_pool_by_pos: dict[str, list[float]] = defaultdict(list)
     spotrac_contract_rows = _read_csv_rows(SPOTRAC_CONTRACTS_CSV)
     spotrac_free_agent_rows = _read_csv_rows(SPOTRAC_FREE_AGENTS_CSV)
+    contract_state_override_rows = _read_csv_rows(CONTRACT_STATE_OVERRIDES_CSV)
     spotrac_contract_by_name: dict[str, dict] = {}
     spotrac_free_agent_by_name: dict[str, dict] = {}
     spotrac_free_agents_by_team: dict[str, list[dict]] = defaultdict(list)
+    contract_state_override_by_name: dict[str, dict] = {}
 
     def _contract_end_year(row: dict) -> int:
         cols = row.get("cols")
@@ -1786,6 +1794,23 @@ def _build_team_depth_context() -> dict[str, dict]:
         if end_year:
             return max(0, end_year - CURRENT_DRAFT_YEAR + 1)
         return _safe_int(row.get("years"), 0)
+
+    for row in contract_state_override_rows:
+        name_key = _norm_player_key(row.get("player_name") or "")
+        if not name_key:
+            continue
+        contract_state_override_by_name[name_key] = {
+            "name_key": name_key,
+            "team_norm": str(row.get("team_norm") or "").strip().upper(),
+            "position": _map_team_needs_position(row.get("position", "")),
+            "years": _safe_int(row.get("years_remaining"), 0),
+            "contract_end_year": _safe_int(row.get("contract_end_year"), 0),
+            "apy": _safe_float(row.get("apy_m")),
+            "is_active": _truthy(row.get("is_active")),
+            "status_kind": str(row.get("status_kind") or "active_contract").strip().lower(),
+            "label": str(row.get("contract_label") or "").strip(),
+            "source": "manual_override",
+        }
     contract_by_gsis: dict[str, dict] = {}
     contract_by_name: dict[str, dict] = {}
     contract_history_by_name_team: dict[tuple[str, str], dict] = {}
@@ -1798,9 +1823,20 @@ def _build_team_depth_context() -> dict[str, dict]:
             for row in all_contract_rows:
                 end_year = _contract_end_year(row)
                 is_current = bool(row.get("is_active"))
-                # Prefer explicit contract term over stale active flags in offseason data.
+                draft_year = _safe_int(row.get("draft_year"), 0)
+                year_signed = _safe_int(row.get("year_signed"), 0)
+                # Prefer explicit contract term over stale active flags in offseason data,
+                # except for known active veteran/extension rows where nflverse/OTC is ahead of term math.
                 if end_year:
                     is_current = end_year >= CURRENT_DRAFT_YEAR
+                    if (
+                        not is_current
+                        and bool(row.get("is_active"))
+                        and year_signed > 0
+                        and draft_year > 0
+                        and year_signed > draft_year
+                    ):
+                        is_current = True
                 if is_current:
                     contract_rows.append(row)
     for row in all_contract_rows:
@@ -2002,6 +2038,41 @@ def _build_team_depth_context() -> dict[str, dict]:
         if prev_team_norm:
             spotrac_free_agents_by_team[prev_team_norm].append(payload)
 
+    for name_key, payload in contract_state_override_by_name.items():
+        team_norm = str(payload.get("team_norm") or "").strip().upper()
+        if not team_norm:
+            continue
+        if payload.get("is_active"):
+            spotrac_contract_by_name[name_key] = {
+                "gsis_id": "",
+                "name_key": name_key,
+                "apy": payload.get("apy"),
+                "years": payload.get("years"),
+                "position": payload.get("position"),
+                "team_text": team_norm,
+                "team_norm": team_norm,
+                "team_codes": [team_norm],
+                "source": "manual_override",
+                "contract_end_year": payload.get("contract_end_year"),
+                "is_active": True,
+                "contract_label_override": payload.get("label"),
+                "status_kind_override": payload.get("status_kind"),
+            }
+        elif payload.get("status_kind") in {"unsigned_watch", "fa", "free_agent"}:
+            spotrac_free_agent_by_name[name_key] = {
+                "player_name": name_key,
+                "name_key": name_key,
+                "prev_team": team_norm,
+                "prev_team_norm": team_norm,
+                "position": payload.get("position"),
+                "age": 0,
+                "years_exp": 0,
+                "market_value_apy_m": payload.get("apy"),
+                "prev_apy_m": payload.get("apy"),
+                "source": "manual_override",
+            }
+            spotrac_free_agents_by_team[team_norm].append(spotrac_free_agent_by_name[name_key])
+
     team_players: dict[str, dict[str, list[dict]]] = defaultdict(lambda: defaultdict(list))
     roster_lookup_by_team: dict[str, dict[str, dict]] = defaultdict(dict)
     for row in subset.iter_rows(named=True):
@@ -2037,7 +2108,7 @@ def _build_team_depth_context() -> dict[str, dict]:
         override_current_team = str(player_override.get("current_team") or "").strip().upper()
         override_action = str(player_override.get("action") or "").strip().lower()
         transaction_rostered = override_current_team == team and any(
-            token in override_action for token in {"trade", "signed", "claimed", "agreed"}
+            token in override_action for token in {"trade", "signed", "claimed", "agreed", "re-signed", "resigned", "extension"}
         )
         player_master = players_master_by_name.get(player_key, {})
         historical_contract = contract_history_by_name_team.get((player_key, team))
@@ -2069,7 +2140,10 @@ def _build_team_depth_context() -> dict[str, dict]:
         has_contract = bool(contract) or historical_contract_valid or inferred_rookie_contract or transaction_rostered
         contract_status_kind = "active_contract"
         if contract is not None:
-            contract_label = f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
+            contract_label = str(contract.get("contract_label_override") or "").strip() or (
+                f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
+            )
+            contract_status_kind = str(contract.get("status_kind_override") or "active_contract")
         elif historical_contract_valid:
             hist_years = _contract_years_remaining(historical_contract)
             hist_apy = _safe_float(historical_contract.get("apy"))
@@ -2163,7 +2237,7 @@ def _build_team_depth_context() -> dict[str, dict]:
         override_current_team = str(player_override.get("current_team") or "").strip().upper()
         override_action = str(player_override.get("action") or "").strip().lower()
         transaction_rostered = override_current_team == team and any(
-            token in override_action for token in {"trade", "signed", "claimed", "agreed"}
+            token in override_action for token in {"trade", "signed", "claimed", "agreed", "re-signed", "resigned", "extension"}
         )
         moved_with_existing_contract = bool(contract) and transaction_rostered
         contract_team_match = bool(contract) and (
@@ -2227,7 +2301,10 @@ def _build_team_depth_context() -> dict[str, dict]:
         has_contract = contract_team_match or roster_has_contract or inferred_rookie_contract or historical_team_contract or transaction_rostered
         contract_status_kind = "active_contract"
         if contract_team_match and contract:
-            contract_label = f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
+            contract_label = str(contract.get("contract_label_override") or "").strip() or (
+                f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
+            )
+            contract_status_kind = str(contract.get("status_kind_override") or "active_contract")
         elif historical_team_contract:
             hist_years = _contract_years_remaining(historical_contract)
             hist_apy = _safe_float(historical_contract.get("apy"))
