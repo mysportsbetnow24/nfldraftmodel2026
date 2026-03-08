@@ -71,14 +71,14 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  padding: 0.42rem 0.78rem 0.42rem 0.5rem;
-  border: 1px solid rgba(31, 94, 168, 0.16);
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgba(234, 243, 255, 0.96) 0%, rgba(228, 241, 255, 0.94) 62%, rgba(232, 248, 239, 0.92) 100%);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--brand);
   text-decoration: none;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset, 0 8px 18px rgba(15, 23, 42, 0.08);
-  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+  box-shadow: none;
+  transition: opacity 0.14s ease, transform 0.14s ease;
 }
 
 .brand-mark {
@@ -105,9 +105,8 @@ body {
 }
 
 .brand a:hover {
+  opacity: 0.94;
   transform: translateY(-1px);
-  border-color: rgba(31, 94, 168, 0.28);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset, 0 10px 24px rgba(15, 23, 42, 0.1);
 }
 
 .nav {
