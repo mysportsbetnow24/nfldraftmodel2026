@@ -3043,6 +3043,121 @@ def _write_json(path: Path, payload) -> None:
     path.write_text(json.dumps(payload, indent=2))
 
 
+def _write_advanced_metric_audit(board_rows: list[dict]) -> None:
+    INTERNAL_OUTPUTS.mkdir(parents=True, exist_ok=True)
+
+    population_sizes: dict[tuple[str, str], int] = defaultdict(int)
+    for row in board_rows:
+        pos = str(row.get("position", "")).strip().upper()
+        metrics = row.get("production_metrics") or {}
+        if not pos or not isinstance(metrics, dict):
+            continue
+        for key, raw in metrics.items():
+            if _safe_float(raw) is None:
+                continue
+            population_sizes[(pos, str(key))] += 1
+
+    audit_rows: list[dict[str, object]] = []
+    for row in board_rows:
+        pos = str(row.get("position", "")).strip().upper()
+        source_tier = str(row.get("production_source_tier", "")).strip() or "missing"
+        cards = row.get("advanced_metric_cards") or []
+        if not pos or not isinstance(cards, list):
+            continue
+        for card in cards:
+            if not isinstance(card, dict):
+                continue
+            key = str(card.get("key", "")).strip()
+            if not key:
+                continue
+            audit_rows.append(
+                {
+                    "player_name": str(row.get("player_name", "")).strip(),
+                    "position": pos,
+                    "consensus_rank": _safe_int(row.get("consensus_rank"), 9999),
+                    "source_tier": source_tier,
+                    "label": str(card.get("label", key)).strip(),
+                    "raw_field": key,
+                    "raw_value": _safe_float(card.get("raw")),
+                    "display_value": str(card.get("display", "")).strip(),
+                    "percentile": _safe_float(card.get("pct")),
+                    "population_n": population_sizes.get((pos, key), 0),
+                    "lower_better": bool(card.get("lower_better", False)),
+                    "weight": _safe_float(card.get("weight")),
+                }
+            )
+
+    audit_csv = INTERNAL_OUTPUTS / "advanced_metric_cards_audit_2026.csv"
+    fieldnames = [
+        "player_name",
+        "position",
+        "consensus_rank",
+        "source_tier",
+        "label",
+        "raw_field",
+        "raw_value",
+        "display_value",
+        "percentile",
+        "population_n",
+        "lower_better",
+        "weight",
+    ]
+    with audit_csv.open("w", encoding="utf-8", newline="") as fh:
+        writer = csv.DictWriter(fh, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in sorted(
+            audit_rows,
+            key=lambda item: (
+                str(item.get("position", "")),
+                int(item.get("consensus_rank") or 9999),
+                str(item.get("player_name", "")),
+                str(item.get("raw_field", "")),
+            ),
+        ):
+            writer.writerow(row)
+
+    spotcheck_md = INTERNAL_OUTPUTS / "advanced_metric_cards_spotcheck_2026.md"
+    lines = [
+        "# Advanced Metric Cards Spot Check",
+        "",
+        f"- Generated: {datetime.now(timezone.utc).isoformat()}",
+        "",
+    ]
+
+    def _append_group(title: str, positions: set[str]) -> None:
+        sample = [
+            row
+            for row in board_rows
+            if str(row.get("position", "")).strip().upper() in positions
+        ]
+        sample = sorted(sample, key=lambda item: _safe_int(item.get("consensus_rank"), 9999))[:10]
+        lines.extend([f"## {title}", ""])
+        if not sample:
+            lines.extend(["No rows found.", ""])
+            return
+        for row in sample:
+            pos = str(row.get("position", "")).strip().upper()
+            lines.append(f"### {row.get('player_name', '')} ({pos})")
+            lines.append(
+                f"- Rank: {row.get('consensus_rank', '')} | Source tier: {row.get('production_source_tier', '')}"
+            )
+            cards = row.get("advanced_metric_cards") or []
+            if not cards:
+                lines.append("- No advanced metric cards exported.")
+                lines.append("")
+                continue
+            for card in cards:
+                key = str(card.get("key", "")).strip()
+                lines.append(
+                    f"- {card.get('label', key)}: {card.get('display', '')} | {card.get('pct', '')} pct | n={population_sizes.get((pos, key), 0)}"
+                )
+            lines.append("")
+
+    _append_group("DB Spot Check", {"CB", "S"})
+    _append_group("DL Spot Check", {"EDGE", "DT"})
+    spotcheck_md.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def _public_comp_dict(comp: dict) -> dict:
     if not comp:
         return {}
@@ -4750,6 +4865,7 @@ def export_weekly_changes(board_rows: list[dict]) -> dict:
 def main() -> None:
     player_school_map = _load_player_school_map()
     board = export_board(player_school_map)
+    _write_advanced_metric_audit(board)
     player_url_map = {}
     for row in board:
         uid = str(row.get("player_uid", "")).strip()

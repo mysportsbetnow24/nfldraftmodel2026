@@ -1,0 +1,1913 @@
+player_name,position,consensus_rank,source_tier,label,raw_field,raw_value,display_value,percentile,population_n,lower_better,weight
+Mansoor Delane,CB,9,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,31.4,31.4%,100.0,32,False,0.16
+Mansoor Delane,CB,9,premium,Coverage Grade,sg_cov_grade,90.7,90.7,96.9,32,False,0.24
+Mansoor Delane,CB,9,premium,Man Coverage Grade,sg_cov_man_grade,89.1,89.1,100.0,32,False,0.12
+Mansoor Delane,CB,9,premium,Passer Rating Allowed,sg_cov_qb_rating_against,31.3,31.3,93.8,32,True,0.16
+Mansoor Delane,CB,9,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,9.7,9.7,93.8,32,False,0.14
+Mansoor Delane,CB,9,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.5,0.50,87.5,32,True,0.18
+Mansoor Delane,CB,9,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,56.3,56.3,51.6,30,True,0.1
+Mansoor Delane,CB,9,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,8.5,8.5,96.8,31,False,0.1
+Mansoor Delane,CB,9,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.35,0.35,50.0,26,True,0.1
+Brandon Cisse,CB,27,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,21.1,21.1%,87.5,32,False,0.16
+Brandon Cisse,CB,27,premium,Coverage Grade,sg_cov_grade,71.2,71.2,28.1,32,False,0.24
+Brandon Cisse,CB,27,premium,Man Coverage Grade,sg_cov_man_grade,61.6,61.6,28.1,32,False,0.12
+Brandon Cisse,CB,27,premium,Passer Rating Allowed,sg_cov_qb_rating_against,78.9,78.9,37.5,32,True,0.16
+Brandon Cisse,CB,27,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,6.6,6.6,31.2,32,False,0.14
+Brandon Cisse,CB,27,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.4,1.40,,32,True,0.18
+Brandon Cisse,CB,27,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,45.1,45.1,64.5,30,True,0.1
+Brandon Cisse,CB,27,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.3,6.3,71.0,31,False,0.1
+Brandon Cisse,CB,27,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.58,0.58,50.0,26,True,0.1
+Colton Hood,CB,34,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,15.4,15.4%,37.5,32,False,0.16
+Colton Hood,CB,34,premium,Coverage Grade,sg_cov_grade,80.3,80.3,62.5,32,False,0.24
+Colton Hood,CB,34,premium,Man Coverage Grade,sg_cov_man_grade,74.6,74.6,68.8,32,False,0.12
+Colton Hood,CB,34,premium,Passer Rating Allowed,sg_cov_qb_rating_against,70.8,70.8,43.8,32,True,0.16
+Colton Hood,CB,34,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,8.1,8.1,84.4,32,False,0.14
+Colton Hood,CB,34,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.8,0.80,46.9,32,True,0.18
+Colton Hood,CB,34,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,39.6,39.6,77.4,30,True,0.1
+Colton Hood,CB,34,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,5.0,5.0,41.9,31,False,0.1
+Colton Hood,CB,34,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,,0.00,50.0,26,True,0.1
+Avieon Terrell,CB,35,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,17.6,17.6%,62.5,32,False,0.16
+Avieon Terrell,CB,35,premium,Coverage Grade,sg_cov_grade,76.9,76.9,53.1,32,False,0.24
+Avieon Terrell,CB,35,premium,Man Coverage Grade,sg_cov_man_grade,66.7,66.7,43.8,32,False,0.12
+Avieon Terrell,CB,35,premium,Passer Rating Allowed,sg_cov_qb_rating_against,96.9,96.9,15.6,32,True,0.16
+Avieon Terrell,CB,35,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.3,7.3,53.1,32,False,0.14
+Avieon Terrell,CB,35,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.9,0.90,31.2,32,True,0.18
+Avieon Terrell,CB,35,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,55.1,55.1,58.1,30,True,0.1
+Avieon Terrell,CB,35,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,4.9,4.9,35.5,31,False,0.1
+Avieon Terrell,CB,35,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.78,0.78,50.0,26,True,0.1
+D'Angelo Ponds,CB,43,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,17.2,17.2%,56.2,32,False,0.16
+D'Angelo Ponds,CB,43,premium,Coverage Grade,sg_cov_grade,89.5,89.5,87.5,32,False,0.24
+D'Angelo Ponds,CB,43,premium,Man Coverage Grade,sg_cov_man_grade,69.0,69.0,53.1,32,False,0.12
+D'Angelo Ponds,CB,43,premium,Passer Rating Allowed,sg_cov_qb_rating_against,55.4,55.4,68.8,32,True,0.16
+D'Angelo Ponds,CB,43,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.4,7.4,65.6,32,False,0.14
+D'Angelo Ponds,CB,43,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.8,0.80,46.9,32,True,0.18
+Daylen Everette,CB,44,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,13.2,13.2%,21.9,32,False,0.16
+Daylen Everette,CB,44,premium,Coverage Grade,sg_cov_grade,65.8,65.8,18.8,32,False,0.24
+Daylen Everette,CB,44,premium,Man Coverage Grade,sg_cov_man_grade,52.2,52.2,3.1,32,False,0.12
+Daylen Everette,CB,44,premium,Passer Rating Allowed,sg_cov_qb_rating_against,84.2,84.2,31.2,32,True,0.16
+Daylen Everette,CB,44,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,6.3,6.3,21.9,32,False,0.14
+Daylen Everette,CB,44,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.0,1.00,25.0,32,True,0.18
+Daylen Everette,CB,44,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,42.4,42.4,71.0,30,True,0.1
+Daylen Everette,CB,44,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,2.3,2.3,16.1,31,False,0.1
+Daylen Everette,CB,44,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.93,0.93,50.0,26,True,0.1
+Keionte Scott,CB,48,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,8.9,8.9%,15.6,32,False,0.16
+Keionte Scott,CB,48,premium,Coverage Grade,sg_cov_grade,87.1,87.1,81.2,32,False,0.24
+Keionte Scott,CB,48,premium,Man Coverage Grade,sg_cov_man_grade,77.7,77.7,84.4,32,False,0.12
+Keionte Scott,CB,48,premium,Passer Rating Allowed,sg_cov_qb_rating_against,69.9,69.9,50.0,32,True,0.16
+Keionte Scott,CB,48,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,6.6,6.6,31.2,32,False,0.14
+Keionte Scott,CB,48,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.9,0.90,31.2,32,True,0.18
+Keionte Scott,CB,48,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,69.3,69.3,41.9,30,True,0.1
+Keionte Scott,CB,48,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,5.8,5.8,54.8,31,False,0.1
+Keionte Scott,CB,48,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.03,1.03,50.0,26,True,0.1
+Davison Igbinosun,CB,57,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,21.7,21.7%,90.6,32,False,0.16
+Davison Igbinosun,CB,57,premium,Coverage Grade,sg_cov_grade,81.0,81.0,68.8,32,False,0.24
+Davison Igbinosun,CB,57,premium,Man Coverage Grade,sg_cov_man_grade,80.0,80.0,87.5,32,False,0.12
+Davison Igbinosun,CB,57,premium,Passer Rating Allowed,sg_cov_qb_rating_against,42.6,42.6,84.4,32,True,0.16
+Davison Igbinosun,CB,57,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.6,7.6,71.9,32,False,0.14
+Davison Igbinosun,CB,57,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.6,0.60,78.1,32,True,0.18
+Davison Igbinosun,CB,57,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,,0.0,96.8,30,True,0.1
+Davison Igbinosun,CB,57,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,7.7,7.7,90.3,31,False,0.1
+Davison Igbinosun,CB,57,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,,0.00,50.0,26,True,0.1
+Chris Johnson,CB,58,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,18.6,18.6%,68.8,32,False,0.16
+Chris Johnson,CB,58,premium,Coverage Grade,sg_cov_grade,92.4,92.4,100.0,32,False,0.24
+Chris Johnson,CB,58,premium,Man Coverage Grade,sg_cov_man_grade,74.0,74.0,65.6,32,False,0.12
+Chris Johnson,CB,58,premium,Passer Rating Allowed,sg_cov_qb_rating_against,16.1,16.1,96.9,32,True,0.16
+Chris Johnson,CB,58,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.7,7.7,75.0,32,False,0.14
+Chris Johnson,CB,58,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.6,0.60,78.1,32,True,0.18
+Chris Johnson,CB,58,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,79.7,79.7,25.8,30,True,0.1
+Chris Johnson,CB,58,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,1.9,1.9,6.5,31,False,0.1
+Chris Johnson,CB,58,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,3.27,3.27,50.0,26,True,0.1
+Chandler Rivers,CB,63,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,16.4,16.4%,46.9,32,False,0.16
+Chandler Rivers,CB,63,premium,Coverage Grade,sg_cov_grade,80.7,80.7,65.6,32,False,0.24
+Chandler Rivers,CB,63,premium,Man Coverage Grade,sg_cov_man_grade,76.3,76.3,75.0,32,False,0.12
+Chandler Rivers,CB,63,premium,Passer Rating Allowed,sg_cov_qb_rating_against,84.9,84.9,28.1,32,True,0.16
+Chandler Rivers,CB,63,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.3,7.3,53.1,32,False,0.14
+Chandler Rivers,CB,63,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.1,1.10,18.8,32,True,0.18
+Chandler Rivers,CB,63,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,60.9,60.9,45.2,30,True,0.1
+Chandler Rivers,CB,63,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,5.1,5.1,45.2,31,False,0.1
+Chandler Rivers,CB,63,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.15,1.15,50.0,26,True,0.1
+Jermod McCoy,CB,66,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,19.4,19.4%,78.1,32,False,0.16
+Jermod McCoy,CB,66,premium,Coverage Grade,sg_cov_grade,89.6,89.6,90.6,32,False,0.24
+Jermod McCoy,CB,66,premium,Man Coverage Grade,sg_cov_man_grade,77.4,77.4,81.2,32,False,0.12
+Jermod McCoy,CB,66,premium,Passer Rating Allowed,sg_cov_qb_rating_against,53.6,53.6,71.9,32,True,0.16
+Jermod McCoy,CB,66,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,5.9,5.9,6.2,32,False,0.14
+Jermod McCoy,CB,66,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.1,1.10,18.8,32,True,0.18
+Jermod McCoy,CB,66,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,81.3,81.3,22.6,30,True,0.1
+Jermod McCoy,CB,66,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,3.0,3.0,25.8,31,False,0.1
+Jermod McCoy,CB,66,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.89,1.89,50.0,26,True,0.1
+Keith Abney II,CB,78,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,13.9,13.9%,28.1,32,False,0.16
+Keith Abney II,CB,78,premium,Coverage Grade,sg_cov_grade,85.3,85.3,78.1,32,False,0.24
+Keith Abney II,CB,78,premium,Man Coverage Grade,sg_cov_man_grade,71.1,71.1,59.4,32,False,0.12
+Keith Abney II,CB,78,premium,Passer Rating Allowed,sg_cov_qb_rating_against,46.1,46.1,81.2,32,True,0.16
+Keith Abney II,CB,78,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,6.0,6.0,12.5,32,False,0.14
+Keith Abney II,CB,78,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,59.4,32,True,0.18
+Keith Abney II,CB,78,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,42.4,42.4,71.0,30,True,0.1
+Keith Abney II,CB,78,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,1.7,1.7,3.2,31,False,0.1
+Keith Abney II,CB,78,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.2,1.20,50.0,26,True,0.1
+Treydan Stukes,CB,80,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,15.4,15.4%,37.5,32,False,0.16
+Treydan Stukes,CB,80,premium,Coverage Grade,sg_cov_grade,90.4,90.4,93.8,32,False,0.24
+Treydan Stukes,CB,80,premium,Man Coverage Grade,sg_cov_man_grade,83.2,83.2,93.8,32,False,0.12
+Treydan Stukes,CB,80,premium,Passer Rating Allowed,sg_cov_qb_rating_against,34.4,34.4,90.6,32,True,0.16
+Treydan Stukes,CB,80,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,6.8,6.8,37.5,32,False,0.14
+Treydan Stukes,CB,80,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.8,0.80,46.9,32,True,0.18
+Treydan Stukes,CB,80,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,38.6,38.6,93.5,30,True,0.1
+Treydan Stukes,CB,80,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.5,6.5,77.4,31,False,0.1
+Treydan Stukes,CB,80,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.87,0.87,50.0,26,True,0.1
+Malik Muhammad,CB,82,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,5.7,5.7%,6.2,32,False,0.16
+Malik Muhammad,CB,82,premium,Coverage Grade,sg_cov_grade,69.8,69.8,25.0,32,False,0.24
+Malik Muhammad,CB,82,premium,Man Coverage Grade,sg_cov_man_grade,61.9,61.9,31.2,32,False,0.12
+Malik Muhammad,CB,82,premium,Passer Rating Allowed,sg_cov_qb_rating_against,57.8,57.8,62.5,32,True,0.16
+Malik Muhammad,CB,82,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,10.0,10.0,96.9,32,False,0.14
+Malik Muhammad,CB,82,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.5,0.50,87.5,32,True,0.18
+Malik Muhammad,CB,82,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,70.1,70.1,38.7,30,True,0.1
+Malik Muhammad,CB,82,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.0,6.0,61.3,31,False,0.1
+Malik Muhammad,CB,82,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.61,1.61,50.0,26,True,0.1
+Devin Moore,CB,95,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,13.3,13.3%,25.0,32,False,0.16
+Devin Moore,CB,95,premium,Coverage Grade,sg_cov_grade,81.5,81.5,75.0,32,False,0.24
+Devin Moore,CB,95,premium,Man Coverage Grade,sg_cov_man_grade,72.7,72.7,62.5,32,False,0.12
+Devin Moore,CB,95,premium,Passer Rating Allowed,sg_cov_qb_rating_against,70.0,70.0,46.9,32,True,0.16
+Devin Moore,CB,95,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,8.5,8.5,87.5,32,False,0.14
+Devin Moore,CB,95,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,59.4,32,True,0.18
+Devin Moore,CB,95,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,39.6,39.6,77.4,30,True,0.1
+Devin Moore,CB,95,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,7.0,7.0,83.9,31,False,0.1
+Devin Moore,CB,95,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,,0.00,50.0,26,True,0.1
+Tacario Davis,CB,101,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,17.9,17.9%,65.6,32,False,0.16
+Tacario Davis,CB,101,premium,Coverage Grade,sg_cov_grade,65.0,65.0,12.5,32,False,0.24
+Tacario Davis,CB,101,premium,Man Coverage Grade,sg_cov_man_grade,53.6,53.6,6.2,32,False,0.12
+Tacario Davis,CB,101,premium,Passer Rating Allowed,sg_cov_qb_rating_against,50.6,50.6,78.1,32,True,0.16
+Tacario Davis,CB,101,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.8,7.8,78.1,32,False,0.14
+Tacario Davis,CB,101,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,59.4,32,True,0.18
+Tacario Davis,CB,101,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,56.3,56.3,51.6,30,True,0.1
+Tacario Davis,CB,101,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,10.5,10.5,100.0,31,False,0.1
+Tacario Davis,CB,101,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.19,0.19,50.0,26,True,0.1
+Julian Neal,CB,127,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,16.7,16.7%,50.0,32,False,0.16
+Julian Neal,CB,127,premium,Coverage Grade,sg_cov_grade,76.5,76.5,50.0,32,False,0.24
+Julian Neal,CB,127,premium,Man Coverage Grade,sg_cov_man_grade,66.3,66.3,40.6,32,False,0.12
+Julian Neal,CB,127,premium,Passer Rating Allowed,sg_cov_qb_rating_against,82.5,82.5,34.4,32,True,0.16
+Julian Neal,CB,127,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.4,7.4,65.6,32,False,0.14
+Julian Neal,CB,127,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.0,1.00,25.0,32,True,0.18
+Julian Neal,CB,127,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,77.1,77.1,29.0,30,True,0.1
+Julian Neal,CB,127,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,2.3,2.3,16.1,31,False,0.1
+Julian Neal,CB,127,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,2.0,2.00,50.0,26,True,0.1
+Charles Demmings,CB,136,fallback,Plays on Ball / Target,cfb_db_coverage_plays_per_target,0.2654,0.265,12.0,1,False,0.32
+Charles Demmings,CB,136,fallback,Yards Allowed / Coverage Snap,cfb_db_yards_allowed_per_coverage_snap,0.9232,0.923,4.0,1,True,0.3
+Will Lee III,CB,137,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,15.3,15.3%,31.2,32,False,0.16
+Will Lee III,CB,137,premium,Coverage Grade,sg_cov_grade,68.5,68.5,21.9,32,False,0.24
+Will Lee III,CB,137,premium,Man Coverage Grade,sg_cov_man_grade,76.6,76.6,78.1,32,False,0.12
+Will Lee III,CB,137,premium,Passer Rating Allowed,sg_cov_qb_rating_against,106.6,106.6,6.2,32,True,0.16
+Will Lee III,CB,137,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,6.8,6.8,37.5,32,False,0.14
+Will Lee III,CB,137,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.3,1.30,3.1,32,True,0.18
+Will Lee III,CB,137,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,135.4,135.4,6.5,30,True,0.1
+Will Lee III,CB,137,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.5,6.5,77.4,31,False,0.1
+Will Lee III,CB,137,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,2.77,2.77,50.0,26,True,0.1
+Thaddeus Dixon,CB,140,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,19.2,19.2%,71.9,32,False,0.16
+Thaddeus Dixon,CB,140,premium,Coverage Grade,sg_cov_grade,65.5,65.5,15.6,32,False,0.24
+Thaddeus Dixon,CB,140,premium,Man Coverage Grade,sg_cov_man_grade,57.4,57.4,18.8,32,False,0.12
+Thaddeus Dixon,CB,140,premium,Passer Rating Allowed,sg_cov_qb_rating_against,105.3,105.3,9.4,32,True,0.16
+Thaddeus Dixon,CB,140,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.6,7.6,71.9,32,False,0.14
+Thaddeus Dixon,CB,140,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.2,1.20,9.4,32,True,0.18
+Thaddeus Dixon,CB,140,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,90.2,90.2,16.1,30,True,0.1
+Thaddeus Dixon,CB,140,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.1,6.1,64.5,31,False,0.1
+Thaddeus Dixon,CB,140,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.12,1.12,50.0,26,True,0.1
+Hezekiah Masses,CB,159,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,19.7,19.7%,81.2,32,False,0.16
+Hezekiah Masses,CB,159,premium,Coverage Grade,sg_cov_grade,81.2,81.2,71.9,32,False,0.24
+Hezekiah Masses,CB,159,premium,Man Coverage Grade,sg_cov_man_grade,58.4,58.4,21.9,32,False,0.12
+Hezekiah Masses,CB,159,premium,Passer Rating Allowed,sg_cov_qb_rating_against,59.0,59.0,59.4,32,True,0.16
+Hezekiah Masses,CB,159,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.4,7.4,65.6,32,False,0.14
+Hezekiah Masses,CB,159,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.9,0.90,31.2,32,True,0.18
+Hezekiah Masses,CB,159,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,104.2,104.2,12.9,30,True,0.1
+Hezekiah Masses,CB,159,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,2.5,2.5,19.4,31,False,0.1
+Hezekiah Masses,CB,159,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,2.0,2.00,50.0,26,True,0.1
+Andre Fuller,CB,168,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,23.1,23.1%,93.8,32,False,0.16
+Andre Fuller,CB,168,premium,Coverage Grade,sg_cov_grade,80.0,80.0,59.4,32,False,0.24
+Andre Fuller,CB,168,premium,Man Coverage Grade,sg_cov_man_grade,84.4,84.4,96.9,32,False,0.12
+Andre Fuller,CB,168,premium,Passer Rating Allowed,sg_cov_qb_rating_against,56.5,56.5,65.6,32,True,0.16
+Andre Fuller,CB,168,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,6.9,6.9,40.6,32,False,0.14
+Andre Fuller,CB,168,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,59.4,32,True,0.18
+Andre Fuller,CB,168,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,39.6,39.6,77.4,30,True,0.1
+Andre Fuller,CB,168,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.6,6.6,80.6,31,False,0.1
+Andre Fuller,CB,168,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.42,0.42,50.0,26,True,0.1
+Domani Jackson,CB,169,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,4.8,4.8%,3.1,32,False,0.16
+Domani Jackson,CB,169,premium,Coverage Grade,sg_cov_grade,74.4,74.4,40.6,32,False,0.24
+Domani Jackson,CB,169,premium,Man Coverage Grade,sg_cov_man_grade,62.0,62.0,34.4,32,False,0.12
+Domani Jackson,CB,169,premium,Passer Rating Allowed,sg_cov_qb_rating_against,108.2,108.2,3.1,32,True,0.16
+Domani Jackson,CB,169,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,13.6,13.6,100.0,32,False,0.14
+Domani Jackson,CB,169,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.5,0.50,87.5,32,True,0.18
+Domani Jackson,CB,169,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,39.6,39.6,77.4,30,True,0.1
+Domani Jackson,CB,169,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,2.0,2.0,9.7,31,False,0.1
+Domani Jackson,CB,169,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,,0.00,50.0,26,True,0.1
+Ephesians Prysock,CB,181,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,16.4,16.4%,46.9,32,False,0.16
+Ephesians Prysock,CB,181,premium,Coverage Grade,sg_cov_grade,76.5,76.5,50.0,32,False,0.24
+Ephesians Prysock,CB,181,premium,Man Coverage Grade,sg_cov_man_grade,66.8,66.8,46.9,32,False,0.12
+Ephesians Prysock,CB,181,premium,Passer Rating Allowed,sg_cov_qb_rating_against,87.2,87.2,21.9,32,True,0.16
+Ephesians Prysock,CB,181,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,6.1,6.1,15.6,32,False,0.14
+Ephesians Prysock,CB,181,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.8,0.80,46.9,32,True,0.18
+Ephesians Prysock,CB,181,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,85.0,85.0,19.4,30,True,0.1
+Ephesians Prysock,CB,181,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,4.0,4.0,32.3,31,False,0.1
+Ephesians Prysock,CB,181,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.08,1.08,50.0,26,True,0.1
+Jadon Canady,CB,201,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,16.2,16.2%,40.6,32,False,0.16
+Jadon Canady,CB,201,premium,Coverage Grade,sg_cov_grade,88.0,88.0,84.4,32,False,0.24
+Jadon Canady,CB,201,premium,Man Coverage Grade,sg_cov_man_grade,80.4,80.4,90.6,32,False,0.12
+Jadon Canady,CB,201,premium,Passer Rating Allowed,sg_cov_qb_rating_against,39.4,39.4,87.5,32,True,0.16
+Jadon Canady,CB,201,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,8.8,8.8,90.6,32,False,0.14
+Jadon Canady,CB,201,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.3,0.30,96.9,32,True,0.18
+Jadon Canady,CB,201,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,51.0,51.0,61.3,30,True,0.1
+Jadon Canady,CB,201,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.2,6.2,67.7,31,False,0.1
+Jadon Canady,CB,201,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.45,0.45,50.0,26,True,0.1
+Toriano Pride Jr.,CB,205,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,8.9,8.9%,15.6,32,False,0.16
+Toriano Pride Jr.,CB,205,premium,Coverage Grade,sg_cov_grade,73.8,73.8,34.4,32,False,0.24
+Toriano Pride Jr.,CB,205,premium,Man Coverage Grade,sg_cov_man_grade,67.6,67.6,50.0,32,False,0.12
+Toriano Pride Jr.,CB,205,premium,Passer Rating Allowed,sg_cov_qb_rating_against,53.4,53.4,75.0,32,True,0.16
+Toriano Pride Jr.,CB,205,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.4,7.4,65.6,32,False,0.14
+Toriano Pride Jr.,CB,205,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.6,0.60,78.1,32,True,0.18
+Toriano Pride Jr.,CB,205,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,72.4,72.4,32.3,30,True,0.1
+Toriano Pride Jr.,CB,205,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,5.8,5.8,54.8,31,False,0.1
+Toriano Pride Jr.,CB,205,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.2,1.20,50.0,26,True,0.1
+Collin Wright,CB,206,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,11.4,11.4%,18.8,32,False,0.16
+Collin Wright,CB,206,premium,Coverage Grade,sg_cov_grade,73.5,73.5,31.2,32,False,0.24
+Collin Wright,CB,206,premium,Man Coverage Grade,sg_cov_man_grade,56.7,56.7,15.6,32,False,0.12
+Collin Wright,CB,206,premium,Passer Rating Allowed,sg_cov_qb_rating_against,86.5,86.5,25.0,32,True,0.16
+Collin Wright,CB,206,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,6.3,6.3,21.9,32,False,0.14
+Collin Wright,CB,206,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.9,0.90,31.2,32,True,0.18
+Collin Wright,CB,206,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,44.0,44.0,67.7,30,True,0.1
+Collin Wright,CB,206,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,7.2,7.2,87.1,31,False,0.1
+Collin Wright,CB,206,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.73,0.73,50.0,26,True,0.1
+Latrell McCutchin Sr.,CB,223,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,17.6,17.6%,62.5,32,False,0.16
+Latrell McCutchin Sr.,CB,223,premium,Coverage Grade,sg_cov_grade,77.7,77.7,56.2,32,False,0.24
+Latrell McCutchin Sr.,CB,223,premium,Man Coverage Grade,sg_cov_man_grade,70.4,70.4,56.2,32,False,0.12
+Latrell McCutchin Sr.,CB,223,premium,Passer Rating Allowed,sg_cov_qb_rating_against,88.4,88.4,18.8,32,True,0.16
+Latrell McCutchin Sr.,CB,223,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,8.0,8.0,81.2,32,False,0.14
+Latrell McCutchin Sr.,CB,223,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.9,0.90,31.2,32,True,0.18
+Latrell McCutchin Sr.,CB,223,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,152.1,152.1,3.2,30,True,0.1
+Latrell McCutchin Sr.,CB,223,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,8.0,8.0,93.5,31,False,0.1
+Latrell McCutchin Sr.,CB,223,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.38,1.38,50.0,26,True,0.1
+Ahmari Harvey,CB,238,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,23.5,23.5%,96.9,32,False,0.16
+Ahmari Harvey,CB,238,premium,Coverage Grade,sg_cov_grade,75.7,75.7,43.8,32,False,0.24
+Ahmari Harvey,CB,238,premium,Man Coverage Grade,sg_cov_man_grade,53.7,53.7,9.4,32,False,0.12
+Ahmari Harvey,CB,238,premium,Passer Rating Allowed,sg_cov_qb_rating_against,59.4,59.4,56.2,32,True,0.16
+Ahmari Harvey,CB,238,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.1,7.1,46.9,32,False,0.14
+Ahmari Harvey,CB,238,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,59.4,32,True,0.18
+Ahmari Harvey,CB,238,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,122.2,122.2,9.7,30,True,0.1
+Ahmari Harvey,CB,238,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,3.0,3.0,25.8,31,False,0.1
+Ahmari Harvey,CB,238,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,2.0,2.00,50.0,26,True,0.1
+Marcus Allen,CB,263,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,16.9,16.9%,53.1,32,False,0.16
+Marcus Allen,CB,263,premium,Coverage Grade,sg_cov_grade,62.1,62.1,3.1,32,False,0.24
+Marcus Allen,CB,263,premium,Man Coverage Grade,sg_cov_man_grade,56.1,56.1,12.5,32,False,0.12
+Marcus Allen,CB,263,premium,Passer Rating Allowed,sg_cov_qb_rating_against,97.6,97.6,12.5,32,True,0.16
+Marcus Allen,CB,263,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,6.0,6.0,12.5,32,False,0.14
+Marcus Allen,CB,263,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.2,1.20,9.4,32,True,0.18
+Marcus Allen,CB,263,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,71.7,71.7,35.5,30,True,0.1
+Marcus Allen,CB,263,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,3.7,3.7,29.0,31,False,0.1
+Marcus Allen,CB,263,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.42,1.42,50.0,26,True,0.1
+TJ Hall,CB,268,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,19.4,19.4%,78.1,32,False,0.16
+TJ Hall,CB,268,premium,Coverage Grade,sg_cov_grade,74.4,74.4,40.6,32,False,0.24
+TJ Hall,CB,268,premium,Man Coverage Grade,sg_cov_man_grade,61.1,61.1,25.0,32,False,0.12
+TJ Hall,CB,268,premium,Passer Rating Allowed,sg_cov_qb_rating_against,71.8,71.8,40.6,32,True,0.16
+TJ Hall,CB,268,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,5.2,5.2,3.1,32,False,0.14
+TJ Hall,CB,268,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.2,1.20,9.4,32,True,0.18
+TJ Hall,CB,268,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,39.6,39.6,77.4,30,True,0.1
+TJ Hall,CB,268,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.0,6.0,61.3,31,False,0.1
+TJ Hall,CB,268,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,,0.00,50.0,26,True,0.1
+Jaylon Guilbeau,CB,289,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,6.5,6.5%,9.4,32,False,0.16
+Jaylon Guilbeau,CB,289,premium,Coverage Grade,sg_cov_grade,63.4,63.4,6.2,32,False,0.24
+Jaylon Guilbeau,CB,289,premium,Man Coverage Grade,sg_cov_man_grade,63.2,63.2,37.5,32,False,0.12
+Jaylon Guilbeau,CB,289,premium,Passer Rating Allowed,sg_cov_qb_rating_against,118.1,118.1,,32,True,0.16
+Jaylon Guilbeau,CB,289,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.0,7.0,43.8,32,False,0.14
+Jaylon Guilbeau,CB,289,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.3,1.30,3.1,32,True,0.18
+Jaylon Guilbeau,CB,289,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,154.2,154.2,,30,True,0.1
+Jaylon Guilbeau,CB,289,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,5.0,5.0,41.9,31,False,0.1
+Jaylon Guilbeau,CB,289,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,2.3,2.30,50.0,26,True,0.1
+Avery Smith,CB,305,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,21.1,21.1%,87.5,32,False,0.16
+Avery Smith,CB,305,premium,Coverage Grade,sg_cov_grade,64.4,64.4,9.4,32,False,0.24
+Avery Smith,CB,305,premium,Man Coverage Grade,sg_cov_man_grade,74.8,74.8,71.9,32,False,0.12
+Avery Smith,CB,305,premium,Passer Rating Allowed,sg_cov_qb_rating_against,65.5,65.5,53.1,32,True,0.16
+Avery Smith,CB,305,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,6.5,6.5,25.0,32,False,0.14
+Avery Smith,CB,305,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,59.4,32,True,0.18
+Avery Smith,CB,305,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,60.4,60.4,48.4,30,True,0.1
+Avery Smith,CB,305,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,5.5,5.5,48.4,31,False,0.1
+Avery Smith,CB,305,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.21,1.21,50.0,26,True,0.1
+Kayden McDonald,DT,13,premium,Pass Rush Grade,sg_dl_pass_rush_grade,62.8,62.8,42.9,28,False,0.2
+Kayden McDonald,DT,13,premium,Total Pressures,sg_dl_total_pressures,14.0,14,58.6,29,False,0.12
+Kayden McDonald,DT,13,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,7.7,7.7,82.1,28,False,0.16
+Kayden McDonald,DT,13,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,7.7,7.7%,32.1,28,False,0.18
+Kayden McDonald,DT,13,premium,Run Defense Grade,sg_front_run_def_grade,91.2,91.2,100.0,28,False,0.2
+Kayden McDonald,DT,13,premium,Stop Rate,sg_front_stop_percent,13.8,13.8%,100.0,28,False,0.14
+Peter Woods,DT,25,premium,Pass Rush Grade,sg_dl_pass_rush_grade,65.4,65.4,71.4,28,False,0.2
+Peter Woods,DT,25,premium,Total Pressures,sg_dl_total_pressures,14.0,14,58.6,29,False,0.12
+Peter Woods,DT,25,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,5.7,5.7,67.9,28,False,0.16
+Peter Woods,DT,25,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,16.0,16.0%,82.1,28,False,0.18
+Peter Woods,DT,25,premium,Run Defense Grade,sg_front_run_def_grade,74.2,74.2,42.9,28,False,0.2
+Peter Woods,DT,25,premium,Stop Rate,sg_front_stop_percent,10.1,10.1%,78.6,28,False,0.14
+Christen Miller,DT,37,premium,Pass Rush Grade,sg_dl_pass_rush_grade,70.0,70.0,85.7,28,False,0.2
+Christen Miller,DT,37,premium,Total Pressures,sg_dl_total_pressures,19.0,19,79.3,29,False,0.12
+Christen Miller,DT,37,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,8.8,8.8,89.3,28,False,0.16
+Christen Miller,DT,37,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,17.6,17.6%,100.0,28,False,0.18
+Christen Miller,DT,37,premium,Run Defense Grade,sg_front_run_def_grade,90.2,90.2,96.4,28,False,0.2
+Christen Miller,DT,37,premium,Stop Rate,sg_front_stop_percent,7.4,7.4%,39.3,28,False,0.14
+Caleb Banks,DT,39,premium,Pass Rush Grade,sg_dl_pass_rush_grade,64.2,64.2,57.1,28,False,0.2
+Caleb Banks,DT,39,premium,Total Pressures,sg_dl_total_pressures,3.0,3,3.4,29,False,0.12
+Caleb Banks,DT,39,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,4.8,4.8,42.9,28,False,0.16
+Caleb Banks,DT,39,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,9.5,9.5%,46.4,28,False,0.18
+Caleb Banks,DT,39,premium,Run Defense Grade,sg_front_run_def_grade,68.5,68.5,21.4,28,False,0.2
+Caleb Banks,DT,39,premium,Stop Rate,sg_front_stop_percent,4.8,4.8%,25.0,28,False,0.14
+Domonique Orange,DT,68,premium,Pass Rush Grade,sg_dl_pass_rush_grade,62.8,62.8,42.9,28,False,0.2
+Domonique Orange,DT,68,premium,Total Pressures,sg_dl_total_pressures,13.0,13,44.8,29,False,0.12
+Domonique Orange,DT,68,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,5.0,5.0,50.0,28,False,0.16
+Domonique Orange,DT,68,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,17.5,17.5%,96.4,28,False,0.18
+Domonique Orange,DT,68,premium,Run Defense Grade,sg_front_run_def_grade,67.4,67.4,14.3,28,False,0.2
+Domonique Orange,DT,68,premium,Stop Rate,sg_front_stop_percent,6.9,6.9%,32.1,28,False,0.14
+Dontay Corleone,DT,72,premium,Pass Rush Grade,sg_dl_pass_rush_grade,59.5,59.5,17.9,28,False,0.2
+Dontay Corleone,DT,72,premium,Total Pressures,sg_dl_total_pressures,8.0,8,13.8,29,False,0.12
+Dontay Corleone,DT,72,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,10.5,10.5,92.9,28,False,0.16
+Dontay Corleone,DT,72,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,10.5,10.5%,57.1,28,False,0.18
+Dontay Corleone,DT,72,premium,Run Defense Grade,sg_front_run_def_grade,80.9,80.9,64.3,28,False,0.2
+Dontay Corleone,DT,72,premium,Stop Rate,sg_front_stop_percent,3.9,3.9%,10.7,28,False,0.14
+Darrell Jackson Jr.,DT,76,premium,Pass Rush Grade,sg_dl_pass_rush_grade,58.5,58.5,14.3,28,False,0.2
+Darrell Jackson Jr.,DT,76,premium,Total Pressures,sg_dl_total_pressures,14.0,14,58.6,29,False,0.12
+Darrell Jackson Jr.,DT,76,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,5.4,5.4,60.7,28,False,0.16
+Darrell Jackson Jr.,DT,76,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,9.6,9.6%,50.0,28,False,0.18
+Darrell Jackson Jr.,DT,76,premium,Run Defense Grade,sg_front_run_def_grade,81.3,81.3,67.9,28,False,0.2
+Darrell Jackson Jr.,DT,76,premium,Stop Rate,sg_front_stop_percent,8.9,8.9%,67.9,28,False,0.14
+Lee Hunter,DT,79,premium,Pass Rush Grade,sg_dl_pass_rush_grade,72.1,72.1,89.3,28,False,0.2
+Lee Hunter,DT,79,premium,Total Pressures,sg_dl_total_pressures,26.0,26,93.1,29,False,0.12
+Lee Hunter,DT,79,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,7.2,7.2,75.0,28,False,0.16
+Lee Hunter,DT,79,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,17.5,17.5%,96.4,28,False,0.18
+Lee Hunter,DT,79,premium,Run Defense Grade,sg_front_run_def_grade,84.5,84.5,85.7,28,False,0.2
+Lee Hunter,DT,79,premium,Stop Rate,sg_front_stop_percent,11.9,11.9%,92.9,28,False,0.14
+Gracen Halton,DT,102,premium,Pass Rush Grade,sg_dl_pass_rush_grade,76.9,76.9,96.4,28,False,0.2
+Gracen Halton,DT,102,premium,Total Pressures,sg_dl_total_pressures,30.0,30,96.6,29,False,0.12
+Gracen Halton,DT,102,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,8.3,8.3,85.7,28,False,0.16
+Gracen Halton,DT,102,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,14.4,14.4%,78.6,28,False,0.18
+Gracen Halton,DT,102,premium,Run Defense Grade,sg_front_run_def_grade,86.9,86.9,92.9,28,False,0.2
+Gracen Halton,DT,102,premium,Stop Rate,sg_front_stop_percent,10.2,10.2%,82.1,28,False,0.14
+Zane Durant,DT,113,premium,Pass Rush Grade,sg_dl_pass_rush_grade,64.0,64.0,53.6,28,False,0.2
+Zane Durant,DT,113,premium,Total Pressures,sg_dl_total_pressures,19.0,19,79.3,29,False,0.12
+Zane Durant,DT,113,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,10.7,10.7,96.4,28,False,0.16
+Zane Durant,DT,113,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,12.6,12.6%,75.0,28,False,0.18
+Zane Durant,DT,113,premium,Run Defense Grade,sg_front_run_def_grade,61.0,61.0,10.7,28,False,0.2
+Zane Durant,DT,113,premium,Stop Rate,sg_front_stop_percent,4.3,4.3%,17.9,28,False,0.14
+DeMonte Capehart,DT,131,premium,Pass Rush Grade,sg_dl_pass_rush_grade,61.9,61.9,28.6,28,False,0.2
+DeMonte Capehart,DT,131,premium,Total Pressures,sg_dl_total_pressures,11.0,11,24.1,29,False,0.12
+DeMonte Capehart,DT,131,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,1.6,1.6,3.6,28,False,0.16
+DeMonte Capehart,DT,131,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,6.6,6.6%,21.4,28,False,0.18
+DeMonte Capehart,DT,131,premium,Run Defense Grade,sg_front_run_def_grade,74.5,74.5,46.4,28,False,0.2
+DeMonte Capehart,DT,131,premium,Stop Rate,sg_front_stop_percent,8.6,8.6%,60.7,28,False,0.14
+Kaleb Proctor,DT,132,premium,Total Pressures,sg_dl_total_pressures,39.0,39,100.0,29,False,0.12
+Rayshaun Benny,DT,135,premium,Pass Rush Grade,sg_dl_pass_rush_grade,65.5,65.5,75.0,28,False,0.2
+Rayshaun Benny,DT,135,premium,Total Pressures,sg_dl_total_pressures,18.0,18,72.4,29,False,0.12
+Rayshaun Benny,DT,135,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,6.2,6.2,71.4,28,False,0.16
+Rayshaun Benny,DT,135,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,11.3,11.3%,71.4,28,False,0.18
+Rayshaun Benny,DT,135,premium,Run Defense Grade,sg_front_run_def_grade,84.5,84.5,85.7,28,False,0.2
+Rayshaun Benny,DT,135,premium,Stop Rate,sg_front_stop_percent,7.5,7.5%,42.9,28,False,0.14
+Tim Keenan III,DT,138,premium,Pass Rush Grade,sg_dl_pass_rush_grade,63.0,63.0,46.4,28,False,0.2
+Tim Keenan III,DT,138,premium,Total Pressures,sg_dl_total_pressures,12.0,12,31.0,29,False,0.12
+Tim Keenan III,DT,138,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,2.8,2.8,17.9,28,False,0.16
+Tim Keenan III,DT,138,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,3.8,3.8%,3.6,28,False,0.18
+Tim Keenan III,DT,138,premium,Run Defense Grade,sg_front_run_def_grade,73.7,73.7,35.7,28,False,0.2
+Tim Keenan III,DT,138,premium,Stop Rate,sg_front_stop_percent,3.6,3.6%,7.1,28,False,0.14
+Skyler Gill-Howard,DT,144,premium,Pass Rush Grade,sg_dl_pass_rush_grade,90.0,90.0,100.0,28,False,0.2
+Skyler Gill-Howard,DT,144,premium,Total Pressures,sg_dl_total_pressures,12.0,12,31.0,29,False,0.12
+Skyler Gill-Howard,DT,144,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,11.3,11.3,100.0,28,False,0.16
+Skyler Gill-Howard,DT,144,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,16.1,16.1%,85.7,28,False,0.18
+Skyler Gill-Howard,DT,144,premium,Run Defense Grade,sg_front_run_def_grade,70.4,70.4,28.6,28,False,0.2
+Skyler Gill-Howard,DT,144,premium,Stop Rate,sg_front_stop_percent,11.7,11.7%,89.3,28,False,0.14
+Zxavian Harris,DT,148,premium,Pass Rush Grade,sg_dl_pass_rush_grade,62.3,62.3,35.7,28,False,0.2
+Zxavian Harris,DT,148,premium,Total Pressures,sg_dl_total_pressures,24.0,24,89.7,29,False,0.12
+Zxavian Harris,DT,148,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,5.3,5.3,57.1,28,False,0.16
+Zxavian Harris,DT,148,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,9.2,9.2%,42.9,28,False,0.18
+Zxavian Harris,DT,148,premium,Run Defense Grade,sg_front_run_def_grade,77.5,77.5,57.1,28,False,0.2
+Zxavian Harris,DT,148,premium,Stop Rate,sg_front_stop_percent,8.1,8.1%,53.6,28,False,0.14
+Albert Regis,DT,154,premium,Pass Rush Grade,sg_dl_pass_rush_grade,58.0,58.0,10.7,28,False,0.2
+Albert Regis,DT,154,premium,Total Pressures,sg_dl_total_pressures,13.0,13,44.8,29,False,0.12
+Albert Regis,DT,154,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,5.0,5.0,50.0,28,False,0.16
+Albert Regis,DT,154,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,6.3,6.3%,17.9,28,False,0.18
+Albert Regis,DT,154,premium,Run Defense Grade,sg_front_run_def_grade,82.6,82.6,75.0,28,False,0.2
+Albert Regis,DT,154,premium,Stop Rate,sg_front_stop_percent,9.0,9.0%,71.4,28,False,0.14
+Bobby Jamison-Travis,DT,194,premium,Pass Rush Grade,sg_dl_pass_rush_grade,63.4,63.4,50.0,28,False,0.2
+Bobby Jamison-Travis,DT,194,premium,Total Pressures,sg_dl_total_pressures,8.0,8,13.8,29,False,0.12
+Bobby Jamison-Travis,DT,194,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,2.3,2.3,7.1,28,False,0.16
+Bobby Jamison-Travis,DT,194,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,6.1,6.1%,14.3,28,False,0.18
+Bobby Jamison-Travis,DT,194,premium,Run Defense Grade,sg_front_run_def_grade,84.6,84.6,89.3,28,False,0.2
+Bobby Jamison-Travis,DT,194,premium,Stop Rate,sg_front_stop_percent,12.1,12.1%,96.4,28,False,0.14
+Tyler Onyedim,DT,213,premium,Pass Rush Grade,sg_dl_pass_rush_grade,65.0,65.0,67.9,28,False,0.2
+Tyler Onyedim,DT,213,premium,Total Pressures,sg_dl_total_pressures,17.0,17,69.0,29,False,0.12
+Tyler Onyedim,DT,213,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,4.8,4.8,42.9,28,False,0.16
+Tyler Onyedim,DT,213,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,10.6,10.6%,64.3,28,False,0.18
+Tyler Onyedim,DT,213,premium,Run Defense Grade,sg_front_run_def_grade,73.2,73.2,32.1,28,False,0.2
+Tyler Onyedim,DT,213,premium,Stop Rate,sg_front_stop_percent,11.7,11.7%,89.3,28,False,0.14
+Damonic Williams,DT,217,premium,Pass Rush Grade,sg_dl_pass_rush_grade,58.0,58.0,10.7,28,False,0.2
+Damonic Williams,DT,217,premium,Total Pressures,sg_dl_total_pressures,13.0,13,44.8,29,False,0.12
+Damonic Williams,DT,217,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,2.4,2.4,10.7,28,False,0.16
+Damonic Williams,DT,217,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,7.9,7.9%,35.7,28,False,0.18
+Damonic Williams,DT,217,premium,Run Defense Grade,sg_front_run_def_grade,55.5,55.5,3.6,28,False,0.2
+Damonic Williams,DT,217,premium,Stop Rate,sg_front_stop_percent,7.0,7.0%,35.7,28,False,0.14
+Chris McClellan,DT,228,premium,Pass Rush Grade,sg_dl_pass_rush_grade,73.2,73.2,92.9,28,False,0.2
+Chris McClellan,DT,228,premium,Total Pressures,sg_dl_total_pressures,21.0,21,86.2,29,False,0.12
+Chris McClellan,DT,228,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,5.6,5.6,64.3,28,False,0.16
+Chris McClellan,DT,228,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,10.3,10.3%,53.6,28,False,0.18
+Chris McClellan,DT,228,premium,Run Defense Grade,sg_front_run_def_grade,75.2,75.2,53.6,28,False,0.2
+Chris McClellan,DT,228,premium,Stop Rate,sg_front_stop_percent,8.1,8.1%,53.6,28,False,0.14
+David Gusta,DT,247,premium,Pass Rush Grade,sg_dl_pass_rush_grade,69.7,69.7,82.1,28,False,0.2
+David Gusta,DT,247,premium,Total Pressures,sg_dl_total_pressures,15.0,15,65.5,29,False,0.12
+David Gusta,DT,247,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,5.3,5.3,57.1,28,False,0.16
+David Gusta,DT,247,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,17.5,17.5%,96.4,28,False,0.18
+David Gusta,DT,247,premium,Run Defense Grade,sg_front_run_def_grade,77.8,77.8,60.7,28,False,0.2
+David Gusta,DT,247,premium,Stop Rate,sg_front_stop_percent,3.2,3.2%,3.6,28,False,0.14
+Bryson Eason,DT,255,premium,Pass Rush Grade,sg_dl_pass_rush_grade,64.5,64.5,64.3,28,False,0.2
+Bryson Eason,DT,255,premium,Total Pressures,sg_dl_total_pressures,15.0,15,65.5,29,False,0.12
+Bryson Eason,DT,255,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,4.6,4.6,35.7,28,False,0.16
+Bryson Eason,DT,255,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,6.9,6.9%,28.6,28,False,0.18
+Bryson Eason,DT,255,premium,Run Defense Grade,sg_front_run_def_grade,74.1,74.1,39.3,28,False,0.2
+Bryson Eason,DT,255,premium,Stop Rate,sg_front_stop_percent,4.1,4.1%,14.3,28,False,0.14
+Nick Barrett,DT,266,premium,Pass Rush Grade,sg_dl_pass_rush_grade,60.1,60.1,21.4,28,False,0.2
+Nick Barrett,DT,266,premium,Total Pressures,sg_dl_total_pressures,9.0,9,17.2,29,False,0.12
+Nick Barrett,DT,266,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,4.2,4.2,25.0,28,False,0.16
+Nick Barrett,DT,266,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,6.9,6.9%,28.6,28,False,0.18
+Nick Barrett,DT,266,premium,Run Defense Grade,sg_front_run_def_grade,82.9,82.9,78.6,28,False,0.2
+Nick Barrett,DT,266,premium,Stop Rate,sg_front_stop_percent,10.0,10.0%,75.0,28,False,0.14
+Deven Eastern,DT,275,premium,Pass Rush Grade,sg_dl_pass_rush_grade,66.0,66.0,78.6,28,False,0.2
+Deven Eastern,DT,275,premium,Total Pressures,sg_dl_total_pressures,14.0,14,58.6,29,False,0.12
+Deven Eastern,DT,275,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,4.5,4.5,28.6,28,False,0.16
+Deven Eastern,DT,275,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,5.2,5.2%,7.1,28,False,0.18
+Deven Eastern,DT,275,premium,Run Defense Grade,sg_front_run_def_grade,68.3,68.3,17.9,28,False,0.2
+Deven Eastern,DT,275,premium,Stop Rate,sg_front_stop_percent,7.6,7.6%,46.4,28,False,0.14
+Brandon Cleveland,DT,294,premium,Pass Rush Grade,sg_dl_pass_rush_grade,62.0,62.0,32.1,28,False,0.2
+Brandon Cleveland,DT,294,premium,Total Pressures,sg_dl_total_pressures,13.0,13,44.8,29,False,0.12
+Brandon Cleveland,DT,294,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,4.1,4.1,21.4,28,False,0.16
+Brandon Cleveland,DT,294,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,10.6,10.6%,64.3,28,False,0.18
+Brandon Cleveland,DT,294,premium,Run Defense Grade,sg_front_run_def_grade,75.2,75.2,53.6,28,False,0.2
+Brandon Cleveland,DT,294,premium,Stop Rate,sg_front_stop_percent,8.9,8.9%,67.9,28,False,0.14
+Cameron Ball,DT,295,premium,Pass Rush Grade,sg_dl_pass_rush_grade,64.4,64.4,60.7,28,False,0.2
+Cameron Ball,DT,295,premium,Total Pressures,sg_dl_total_pressures,21.0,21,86.2,29,False,0.12
+Cameron Ball,DT,295,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,4.6,4.6,35.7,28,False,0.16
+Cameron Ball,DT,295,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,8.2,8.2%,39.3,28,False,0.18
+Cameron Ball,DT,295,premium,Run Defense Grade,sg_front_run_def_grade,68.8,68.8,25.0,28,False,0.2
+Cameron Ball,DT,295,premium,Stop Rate,sg_front_stop_percent,5.2,5.2%,28.6,28,False,0.14
+Jackie Marshall,DT,303,premium,Pass Rush Grade,sg_dl_pass_rush_grade,60.2,60.2,25.0,28,False,0.2
+Jackie Marshall,DT,303,premium,Total Pressures,sg_dl_total_pressures,11.0,11,24.1,29,False,0.12
+Jackie Marshall,DT,303,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,7.3,7.3,78.6,28,False,0.16
+Jackie Marshall,DT,303,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,10.9,10.9%,67.9,28,False,0.18
+Jackie Marshall,DT,303,premium,Run Defense Grade,sg_front_run_def_grade,56.0,56.0,7.1,28,False,0.2
+Jackie Marshall,DT,303,premium,Stop Rate,sg_front_stop_percent,4.4,4.4%,21.4,28,False,0.14
+Gary Smith III,DT,306,premium,Pass Rush Grade,sg_dl_pass_rush_grade,54.7,54.7,3.6,28,False,0.2
+Gary Smith III,DT,306,premium,Total Pressures,sg_dl_total_pressures,5.0,5,6.9,29,False,0.12
+Gary Smith III,DT,306,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,2.7,2.7,14.3,28,False,0.16
+Gary Smith III,DT,306,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,5.4,5.4%,10.7,28,False,0.18
+Gary Smith III,DT,306,premium,Run Defense Grade,sg_front_run_def_grade,82.3,82.3,71.4,28,False,0.2
+Gary Smith III,DT,306,premium,Stop Rate,sg_front_stop_percent,8.4,8.4%,57.1,28,False,0.14
+Keldric Faulk,EDGE,11,premium,Pass Rush Grade,sg_dl_pass_rush_grade,66.0,66.0,21.9,32,False,0.24
+Keldric Faulk,EDGE,11,premium,Total Pressures,sg_dl_total_pressures,30.0,30,34.4,32,False,0.12
+Keldric Faulk,EDGE,11,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,10.1,10.1,28.1,32,False,0.18
+Keldric Faulk,EDGE,11,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,19.2,19.2%,31.2,32,False,0.22
+Keldric Faulk,EDGE,11,premium,Run Defense Grade,sg_front_run_def_grade,85.5,85.5,87.5,32,False,0.14
+Keldric Faulk,EDGE,11,premium,Stop Rate,sg_front_stop_percent,8.6,8.6%,81.2,32,False,0.1
+Cashius Howell,EDGE,18,premium,Pass Rush Grade,sg_dl_pass_rush_grade,90.3,90.3,75.0,32,False,0.24
+Cashius Howell,EDGE,18,premium,Total Pressures,sg_dl_total_pressures,41.0,41,62.5,32,False,0.12
+Cashius Howell,EDGE,18,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,15.4,15.4,75.0,32,False,0.18
+Cashius Howell,EDGE,18,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,28.8,28.8%,75.0,32,False,0.22
+Cashius Howell,EDGE,18,premium,Run Defense Grade,sg_front_run_def_grade,73.6,73.6,50.0,32,False,0.14
+Cashius Howell,EDGE,18,premium,Stop Rate,sg_front_stop_percent,3.1,3.1%,3.1,32,False,0.1
+David Bailey,EDGE,23,premium,Pass Rush Grade,sg_dl_pass_rush_grade,93.8,93.8,100.0,32,False,0.24
+David Bailey,EDGE,23,premium,Total Pressures,sg_dl_total_pressures,79.0,79,96.9,32,False,0.12
+David Bailey,EDGE,23,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,24.6,24.6,100.0,32,False,0.18
+David Bailey,EDGE,23,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,38.6,38.6%,96.9,32,False,0.22
+David Bailey,EDGE,23,premium,Run Defense Grade,sg_front_run_def_grade,81.5,81.5,81.2,32,False,0.14
+David Bailey,EDGE,23,premium,Stop Rate,sg_front_stop_percent,9.0,9.0%,84.4,32,False,0.1
+Akheem Mesidor,EDGE,30,premium,Pass Rush Grade,sg_dl_pass_rush_grade,92.5,92.5,90.6,32,False,0.24
+Akheem Mesidor,EDGE,30,premium,Total Pressures,sg_dl_total_pressures,67.0,67,93.8,32,False,0.12
+Akheem Mesidor,EDGE,30,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,17.4,17.4,87.5,32,False,0.18
+Akheem Mesidor,EDGE,30,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,36.6,36.6%,93.8,32,False,0.22
+Akheem Mesidor,EDGE,30,premium,Run Defense Grade,sg_front_run_def_grade,88.3,88.3,100.0,32,False,0.14
+Akheem Mesidor,EDGE,30,premium,Stop Rate,sg_front_stop_percent,4.9,4.9%,18.8,32,False,0.1
+T.J. Parker,EDGE,31,premium,Pass Rush Grade,sg_dl_pass_rush_grade,74.6,74.6,34.4,32,False,0.24
+T.J. Parker,EDGE,31,premium,Total Pressures,sg_dl_total_pressures,41.0,41,62.5,32,False,0.12
+T.J. Parker,EDGE,31,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,10.0,10.0,25.0,32,False,0.18
+T.J. Parker,EDGE,31,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,27.6,27.6%,68.8,32,False,0.22
+T.J. Parker,EDGE,31,premium,Run Defense Grade,sg_front_run_def_grade,77.5,77.5,65.6,32,False,0.14
+T.J. Parker,EDGE,31,premium,Stop Rate,sg_front_stop_percent,7.6,7.6%,65.6,32,False,0.1
+Rueben Bain Jr.,EDGE,32,premium,Pass Rush Grade,sg_dl_pass_rush_grade,92.4,92.4,87.5,32,False,0.24
+Rueben Bain Jr.,EDGE,32,premium,Total Pressures,sg_dl_total_pressures,83.0,83,100.0,32,False,0.12
+Rueben Bain Jr.,EDGE,32,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,13.9,13.9,65.6,32,False,0.18
+Rueben Bain Jr.,EDGE,32,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,30.3,30.3%,78.1,32,False,0.22
+Rueben Bain Jr.,EDGE,32,premium,Run Defense Grade,sg_front_run_def_grade,86.2,86.2,90.6,32,False,0.14
+Rueben Bain Jr.,EDGE,32,premium,Stop Rate,sg_front_stop_percent,6.9,6.9%,46.9,32,False,0.1
+Gabe Jacas,EDGE,40,premium,Pass Rush Grade,sg_dl_pass_rush_grade,88.5,88.5,65.6,32,False,0.24
+Gabe Jacas,EDGE,40,premium,Total Pressures,sg_dl_total_pressures,40.0,40,56.2,32,False,0.12
+Gabe Jacas,EDGE,40,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,13.2,13.2,59.4,32,False,0.18
+Gabe Jacas,EDGE,40,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,24.1,24.1%,46.9,32,False,0.22
+Gabe Jacas,EDGE,40,premium,Run Defense Grade,sg_front_run_def_grade,64.3,64.3,15.6,32,False,0.14
+Gabe Jacas,EDGE,40,premium,Stop Rate,sg_front_stop_percent,7.0,7.0%,50.0,32,False,0.1
+Dani Dennis-Sutton,EDGE,46,premium,Pass Rush Grade,sg_dl_pass_rush_grade,79.7,79.7,43.8,32,False,0.24
+Dani Dennis-Sutton,EDGE,46,premium,Total Pressures,sg_dl_total_pressures,50.0,50,81.2,32,False,0.12
+Dani Dennis-Sutton,EDGE,46,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,11.9,11.9,43.8,32,False,0.18
+Dani Dennis-Sutton,EDGE,46,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,22.2,22.2%,37.5,32,False,0.22
+Dani Dennis-Sutton,EDGE,46,premium,Run Defense Grade,sg_front_run_def_grade,77.7,77.7,68.8,32,False,0.14
+Dani Dennis-Sutton,EDGE,46,premium,Stop Rate,sg_front_stop_percent,5.8,5.8%,31.2,32,False,0.1
+Zion Young,EDGE,47,premium,Pass Rush Grade,sg_dl_pass_rush_grade,82.7,82.7,53.1,32,False,0.24
+Zion Young,EDGE,47,premium,Total Pressures,sg_dl_total_pressures,57.0,57,84.4,32,False,0.12
+Zion Young,EDGE,47,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,13.2,13.2,59.4,32,False,0.18
+Zion Young,EDGE,47,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,25.6,25.6%,59.4,32,False,0.22
+Zion Young,EDGE,47,premium,Run Defense Grade,sg_front_run_def_grade,86.6,86.6,93.8,32,False,0.14
+Zion Young,EDGE,47,premium,Stop Rate,sg_front_stop_percent,9.3,9.3%,90.6,32,False,0.1
+R Mason Thomas,EDGE,53,premium,Pass Rush Grade,sg_dl_pass_rush_grade,90.4,90.4,78.1,32,False,0.24
+R Mason Thomas,EDGE,53,premium,Total Pressures,sg_dl_total_pressures,28.0,28,28.1,32,False,0.12
+R Mason Thomas,EDGE,53,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,17.5,17.5,90.6,32,False,0.18
+R Mason Thomas,EDGE,53,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,35.1,35.1%,87.5,32,False,0.22
+R Mason Thomas,EDGE,53,premium,Run Defense Grade,sg_front_run_def_grade,79.4,79.4,75.0,32,False,0.14
+R Mason Thomas,EDGE,53,premium,Stop Rate,sg_front_stop_percent,6.2,6.2%,37.5,32,False,0.1
+Malachi Lawrence,EDGE,54,premium,Pass Rush Grade,sg_dl_pass_rush_grade,89.5,89.5,71.9,32,False,0.24
+Malachi Lawrence,EDGE,54,premium,Total Pressures,sg_dl_total_pressures,40.0,40,56.2,32,False,0.12
+Malachi Lawrence,EDGE,54,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,17.3,17.3,84.4,32,False,0.18
+Malachi Lawrence,EDGE,54,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,34.7,34.7%,81.2,32,False,0.22
+Malachi Lawrence,EDGE,54,premium,Run Defense Grade,sg_front_run_def_grade,66.2,66.2,25.0,32,False,0.14
+Malachi Lawrence,EDGE,54,premium,Stop Rate,sg_front_stop_percent,4.2,4.2%,15.6,32,False,0.1
+Romello Height,EDGE,62,premium,Pass Rush Grade,sg_dl_pass_rush_grade,92.6,92.6,93.8,32,False,0.24
+Romello Height,EDGE,62,premium,Total Pressures,sg_dl_total_pressures,62.0,62,90.6,32,False,0.12
+Romello Height,EDGE,62,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,15.3,15.3,71.9,32,False,0.18
+Romello Height,EDGE,62,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,28.0,28.0%,71.9,32,False,0.22
+Romello Height,EDGE,62,premium,Run Defense Grade,sg_front_run_def_grade,65.6,65.6,21.9,32,False,0.14
+Romello Height,EDGE,62,premium,Stop Rate,sg_front_stop_percent,7.1,7.1%,56.2,32,False,0.1
+Anthony Lucas,EDGE,74,premium,Pass Rush Grade,sg_dl_pass_rush_grade,77.1,77.1,40.6,32,False,0.24
+Anthony Lucas,EDGE,74,premium,Total Pressures,sg_dl_total_pressures,23.0,23,12.5,32,False,0.12
+Anthony Lucas,EDGE,74,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,10.6,10.6,31.2,32,False,0.18
+Anthony Lucas,EDGE,74,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,27.3,27.3%,65.6,32,False,0.22
+Anthony Lucas,EDGE,74,premium,Run Defense Grade,sg_front_run_def_grade,69.1,69.1,34.4,32,False,0.14
+Anthony Lucas,EDGE,74,premium,Stop Rate,sg_front_stop_percent,5.5,5.5%,25.0,32,False,0.1
+Derrick Moore,EDGE,77,premium,Pass Rush Grade,sg_dl_pass_rush_grade,92.4,92.4,87.5,32,False,0.24
+Derrick Moore,EDGE,77,premium,Total Pressures,sg_dl_total_pressures,40.0,40,56.2,32,False,0.12
+Derrick Moore,EDGE,77,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,24.2,24.2,96.9,32,False,0.18
+Derrick Moore,EDGE,77,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,36.0,36.0%,90.6,32,False,0.22
+Derrick Moore,EDGE,77,premium,Run Defense Grade,sg_front_run_def_grade,76.3,76.3,56.2,32,False,0.14
+Derrick Moore,EDGE,77,premium,Stop Rate,sg_front_stop_percent,5.5,5.5%,25.0,32,False,0.1
+LT Overton,EDGE,88,premium,Pass Rush Grade,sg_dl_pass_rush_grade,64.8,64.8,15.6,32,False,0.24
+LT Overton,EDGE,88,premium,Total Pressures,sg_dl_total_pressures,24.0,24,18.8,32,False,0.12
+LT Overton,EDGE,88,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,8.6,8.6,18.8,32,False,0.18
+LT Overton,EDGE,88,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,18.4,18.4%,28.1,32,False,0.22
+LT Overton,EDGE,88,premium,Run Defense Grade,sg_front_run_def_grade,64.7,64.7,18.8,32,False,0.14
+LT Overton,EDGE,88,premium,Stop Rate,sg_front_stop_percent,9.7,9.7%,100.0,32,False,0.1
+Joshua Josephs,EDGE,103,premium,Pass Rush Grade,sg_dl_pass_rush_grade,90.6,90.6,81.2,32,False,0.24
+Joshua Josephs,EDGE,103,premium,Total Pressures,sg_dl_total_pressures,32.0,32,40.6,32,False,0.12
+Joshua Josephs,EDGE,103,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,16.7,16.7,78.1,32,False,0.18
+Joshua Josephs,EDGE,103,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,34.8,34.8%,84.4,32,False,0.22
+Joshua Josephs,EDGE,103,premium,Run Defense Grade,sg_front_run_def_grade,77.0,77.0,62.5,32,False,0.14
+Joshua Josephs,EDGE,103,premium,Stop Rate,sg_front_stop_percent,8.2,8.2%,71.9,32,False,0.1
+Keyron Crawford,EDGE,128,premium,Pass Rush Grade,sg_dl_pass_rush_grade,85.8,85.8,59.4,32,False,0.24
+Keyron Crawford,EDGE,128,premium,Total Pressures,sg_dl_total_pressures,43.0,43,65.6,32,False,0.12
+Keyron Crawford,EDGE,128,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,17.0,17.0,81.2,32,False,0.18
+Keyron Crawford,EDGE,128,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,27.0,27.0%,62.5,32,False,0.22
+Keyron Crawford,EDGE,128,premium,Run Defense Grade,sg_front_run_def_grade,73.9,73.9,53.1,32,False,0.14
+Keyron Crawford,EDGE,128,premium,Stop Rate,sg_front_stop_percent,6.1,6.1%,34.4,32,False,0.1
+Tyreak Sapp,EDGE,143,premium,Pass Rush Grade,sg_dl_pass_rush_grade,59.4,59.4,6.2,32,False,0.24
+Tyreak Sapp,EDGE,143,premium,Total Pressures,sg_dl_total_pressures,18.0,18,9.4,32,False,0.12
+Tyreak Sapp,EDGE,143,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,6.5,6.5,6.2,32,False,0.18
+Tyreak Sapp,EDGE,143,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,11.7,11.7%,9.4,32,False,0.22
+Tyreak Sapp,EDGE,143,premium,Run Defense Grade,sg_front_run_def_grade,68.8,68.8,31.2,32,False,0.14
+Tyreak Sapp,EDGE,143,premium,Stop Rate,sg_front_stop_percent,7.5,7.5%,62.5,32,False,0.1
+Patrick Payton,EDGE,160,premium,Pass Rush Grade,sg_dl_pass_rush_grade,66.6,66.6,25.0,32,False,0.24
+Patrick Payton,EDGE,160,premium,Total Pressures,sg_dl_total_pressures,27.0,27,25.0,32,False,0.12
+Patrick Payton,EDGE,160,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,4.6,4.6,3.1,32,False,0.18
+Patrick Payton,EDGE,160,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,9.2,9.2%,6.2,32,False,0.22
+Patrick Payton,EDGE,160,premium,Run Defense Grade,sg_front_run_def_grade,66.8,66.8,28.1,32,False,0.14
+Patrick Payton,EDGE,160,premium,Stop Rate,sg_front_stop_percent,6.5,6.5%,43.8,32,False,0.1
+Max Llewellyn,EDGE,176,premium,Pass Rush Grade,sg_dl_pass_rush_grade,86.1,86.1,62.5,32,False,0.24
+Max Llewellyn,EDGE,176,premium,Total Pressures,sg_dl_total_pressures,45.0,45,75.0,32,False,0.12
+Max Llewellyn,EDGE,176,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,12.2,12.2,46.9,32,False,0.18
+Max Llewellyn,EDGE,176,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,24.5,24.5%,53.1,32,False,0.22
+Max Llewellyn,EDGE,176,premium,Run Defense Grade,sg_front_run_def_grade,56.5,56.5,6.2,32,False,0.14
+Max Llewellyn,EDGE,176,premium,Stop Rate,sg_front_stop_percent,4.1,4.1%,9.4,32,False,0.1
+Caden Curry,EDGE,178,premium,Pass Rush Grade,sg_dl_pass_rush_grade,88.7,88.7,68.8,32,False,0.24
+Caden Curry,EDGE,178,premium,Total Pressures,sg_dl_total_pressures,44.0,44,68.8,32,False,0.12
+Caden Curry,EDGE,178,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,12.6,12.6,53.1,32,False,0.18
+Caden Curry,EDGE,178,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,18.2,18.2%,25.0,32,False,0.22
+Caden Curry,EDGE,178,premium,Run Defense Grade,sg_front_run_def_grade,86.7,86.7,96.9,32,False,0.14
+Caden Curry,EDGE,178,premium,Stop Rate,sg_front_stop_percent,8.6,8.6%,81.2,32,False,0.1
+George Gumbs Jr.,EDGE,183,premium,Pass Rush Grade,sg_dl_pass_rush_grade,68.2,68.2,28.1,32,False,0.24
+George Gumbs Jr.,EDGE,183,premium,Total Pressures,sg_dl_total_pressures,12.0,12,3.1,32,False,0.12
+George Gumbs Jr.,EDGE,183,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,10.7,10.7,34.4,32,False,0.18
+George Gumbs Jr.,EDGE,183,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,12.5,12.5%,15.6,32,False,0.22
+George Gumbs Jr.,EDGE,183,premium,Run Defense Grade,sg_front_run_def_grade,69.2,69.2,37.5,32,False,0.14
+George Gumbs Jr.,EDGE,183,premium,Stop Rate,sg_front_stop_percent,8.3,8.3%,75.0,32,False,0.1
+Nadame Tucker,EDGE,192,premium,Pass Rush Grade,sg_dl_pass_rush_grade,93.3,93.3,96.9,32,False,0.24
+Nadame Tucker,EDGE,192,premium,Total Pressures,sg_dl_total_pressures,61.0,61,87.5,32,False,0.12
+Nadame Tucker,EDGE,192,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,18.5,18.5,93.8,32,False,0.18
+Nadame Tucker,EDGE,192,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,40.8,40.8%,100.0,32,False,0.22
+Nadame Tucker,EDGE,192,premium,Run Defense Grade,sg_front_run_def_grade,72.6,72.6,46.9,32,False,0.14
+Nadame Tucker,EDGE,192,premium,Stop Rate,sg_front_stop_percent,9.3,9.3%,90.6,32,False,0.1
+Quintayvious Hutchins,EDGE,219,premium,Pass Rush Grade,sg_dl_pass_rush_grade,69.7,69.7,31.2,32,False,0.24
+Quintayvious Hutchins,EDGE,219,premium,Total Pressures,sg_dl_total_pressures,24.0,24,18.8,32,False,0.12
+Quintayvious Hutchins,EDGE,219,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,11.4,11.4,40.6,32,False,0.18
+Quintayvious Hutchins,EDGE,219,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,24.3,24.3%,50.0,32,False,0.22
+Quintayvious Hutchins,EDGE,219,premium,Run Defense Grade,sg_front_run_def_grade,71.5,71.5,40.6,32,False,0.14
+Quintayvious Hutchins,EDGE,219,premium,Stop Rate,sg_front_stop_percent,6.5,6.5%,43.8,32,False,0.1
+Vincent Anthony Jr.,EDGE,239,premium,Pass Rush Grade,sg_dl_pass_rush_grade,64.7,64.7,12.5,32,False,0.24
+Vincent Anthony Jr.,EDGE,239,premium,Total Pressures,sg_dl_total_pressures,32.0,32,40.6,32,False,0.12
+Vincent Anthony Jr.,EDGE,239,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,7.9,7.9,12.5,32,False,0.18
+Vincent Anthony Jr.,EDGE,239,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,12.1,12.1%,12.5,32,False,0.22
+Vincent Anthony Jr.,EDGE,239,premium,Run Defense Grade,sg_front_run_def_grade,55.0,55.0,3.1,32,False,0.14
+Vincent Anthony Jr.,EDGE,239,premium,Stop Rate,sg_front_stop_percent,3.4,3.4%,6.2,32,False,0.1
+Marvin Jones Jr.,EDGE,245,premium,Pass Rush Grade,sg_dl_pass_rush_grade,57.7,57.7,3.1,32,False,0.24
+Marvin Jones Jr.,EDGE,245,premium,Total Pressures,sg_dl_total_pressures,13.0,13,6.2,32,False,0.12
+Marvin Jones Jr.,EDGE,245,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,8.6,8.6,18.8,32,False,0.18
+Marvin Jones Jr.,EDGE,245,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,6.3,6.3%,3.1,32,False,0.22
+Marvin Jones Jr.,EDGE,245,premium,Run Defense Grade,sg_front_run_def_grade,59.5,59.5,9.4,32,False,0.14
+Marvin Jones Jr.,EDGE,245,premium,Stop Rate,sg_front_stop_percent,4.2,4.2%,15.6,32,False,0.1
+Logan Fano,EDGE,246,premium,Pass Rush Grade,sg_dl_pass_rush_grade,74.8,74.8,37.5,32,False,0.24
+Logan Fano,EDGE,246,premium,Total Pressures,sg_dl_total_pressures,34.0,34,46.9,32,False,0.12
+Logan Fano,EDGE,246,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,12.6,12.6,53.1,32,False,0.18
+Logan Fano,EDGE,246,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,25.3,25.3%,56.2,32,False,0.22
+Logan Fano,EDGE,246,premium,Run Defense Grade,sg_front_run_def_grade,76.8,76.8,59.4,32,False,0.14
+Logan Fano,EDGE,246,premium,Stop Rate,sg_front_stop_percent,7.1,7.1%,56.2,32,False,0.1
+Nyjalik Kelly,EDGE,248,premium,Pass Rush Grade,sg_dl_pass_rush_grade,80.9,80.9,50.0,32,False,0.24
+Nyjalik Kelly,EDGE,248,premium,Total Pressures,sg_dl_total_pressures,26.0,26,21.9,32,False,0.12
+Nyjalik Kelly,EDGE,248,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,11.3,11.3,37.5,32,False,0.18
+Nyjalik Kelly,EDGE,248,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,21.3,21.3%,34.4,32,False,0.22
+Nyjalik Kelly,EDGE,248,premium,Run Defense Grade,sg_front_run_def_grade,72.4,72.4,43.8,32,False,0.14
+Nyjalik Kelly,EDGE,248,premium,Stop Rate,sg_front_stop_percent,9.7,9.7%,100.0,32,False,0.1
+Wesley Williams,EDGE,256,premium,Pass Rush Grade,sg_dl_pass_rush_grade,65.3,65.3,18.8,32,False,0.24
+Wesley Williams,EDGE,256,premium,Total Pressures,sg_dl_total_pressures,46.0,46,78.1,32,False,0.12
+Wesley Williams,EDGE,256,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,9.5,9.5,21.9,32,False,0.18
+Wesley Williams,EDGE,256,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,15.5,15.5%,18.8,32,False,0.22
+Wesley Williams,EDGE,256,premium,Run Defense Grade,sg_front_run_def_grade,80.4,80.4,78.1,32,False,0.14
+Wesley Williams,EDGE,256,premium,Stop Rate,sg_front_stop_percent,9.7,9.7%,100.0,32,False,0.1
+Mason Reiger,EDGE,259,premium,Pass Rush Grade,sg_dl_pass_rush_grade,83.0,83.0,56.2,32,False,0.24
+Mason Reiger,EDGE,259,premium,Total Pressures,sg_dl_total_pressures,45.0,45,75.0,32,False,0.12
+Mason Reiger,EDGE,259,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,13.3,13.3,62.5,32,False,0.18
+Mason Reiger,EDGE,259,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,23.0,23.0%,43.8,32,False,0.22
+Mason Reiger,EDGE,259,premium,Run Defense Grade,sg_front_run_def_grade,78.0,78.0,71.9,32,False,0.14
+Mason Reiger,EDGE,259,premium,Stop Rate,sg_front_stop_percent,7.2,7.2%,59.4,32,False,0.1
+Aidan Hubbard,EDGE,279,premium,Pass Rush Grade,sg_dl_pass_rush_grade,79.8,79.8,46.9,32,False,0.24
+Aidan Hubbard,EDGE,279,premium,Total Pressures,sg_dl_total_pressures,30.0,30,34.4,32,False,0.12
+Aidan Hubbard,EDGE,279,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,15.3,15.3,71.9,32,False,0.18
+Aidan Hubbard,EDGE,279,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,22.6,22.6%,40.6,32,False,0.22
+Aidan Hubbard,EDGE,279,premium,Run Defense Grade,sg_front_run_def_grade,62.1,62.1,12.5,32,False,0.14
+Aidan Hubbard,EDGE,279,premium,Stop Rate,sg_front_stop_percent,5.8,5.8%,31.2,32,False,0.1
+Jack Pyburn,EDGE,287,premium,Pass Rush Grade,sg_dl_pass_rush_grade,62.9,62.9,9.4,32,False,0.24
+Jack Pyburn,EDGE,287,premium,Total Pressures,sg_dl_total_pressures,34.0,34,46.9,32,False,0.12
+Jack Pyburn,EDGE,287,premium,True Pass Set PRP,sg_dl_true_pass_set_prp,7.5,7.5,9.4,32,False,0.18
+Jack Pyburn,EDGE,287,premium,True Pass Set Win Rate,sg_dl_true_pass_set_win_rate,17.7,17.7%,21.9,32,False,0.22
+Jack Pyburn,EDGE,287,premium,Run Defense Grade,sg_front_run_def_grade,85.3,85.3,84.4,32,False,0.14
+Jack Pyburn,EDGE,287,premium,Stop Rate,sg_front_stop_percent,7.7,7.7%,68.8,32,False,0.1
+Olaivavega Ioane,IOL,15,premium,Pass Block Grade,sg_ol_pass_block_grade,87.0,87.0,76.7,30,False,0.3
+Olaivavega Ioane,IOL,15,premium,Pass Block Efficiency,sg_ol_pbe,99.3,99.3,83.3,30,False,0.26
+Olaivavega Ioane,IOL,15,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0129,1.3%,70.0,30,True,0.14
+Olaivavega Ioane,IOL,15,premium,Run Block Grade,sg_ol_run_block_grade,78.6,78.6,83.3,30,False,0.22
+Olaivavega Ioane,IOL,15,premium,Alignment Versatility,sg_ol_versatility_count,5.0,5,100.0,30,False,0.08
+Emmanuel Pregnon,IOL,26,premium,Pass Block Grade,sg_ol_pass_block_grade,88.1,88.1,86.7,30,False,0.3
+Emmanuel Pregnon,IOL,26,premium,Pass Block Efficiency,sg_ol_pbe,99.3,99.3,83.3,30,False,0.26
+Emmanuel Pregnon,IOL,26,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0106,1.1%,76.7,30,True,0.14
+Emmanuel Pregnon,IOL,26,premium,Run Block Grade,sg_ol_run_block_grade,85.8,85.8,100.0,30,False,0.22
+Emmanuel Pregnon,IOL,26,premium,Alignment Versatility,sg_ol_versatility_count,5.0,5,100.0,30,False,0.08
+Chase Bisontis,IOL,51,premium,Pass Block Grade,sg_ol_pass_block_grade,70.7,70.7,13.3,30,False,0.3
+Chase Bisontis,IOL,51,premium,Pass Block Efficiency,sg_ol_pbe,98.4,98.4,36.7,30,False,0.26
+Chase Bisontis,IOL,51,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0272,2.7%,33.3,30,True,0.14
+Chase Bisontis,IOL,51,premium,Run Block Grade,sg_ol_run_block_grade,62.7,62.7,23.3,30,False,0.22
+Chase Bisontis,IOL,51,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Jake Slaughter,IOL,69,premium,Pass Block Grade,sg_ol_pass_block_grade,84.1,84.1,73.3,30,False,0.3
+Jake Slaughter,IOL,69,premium,Pass Block Efficiency,sg_ol_pbe,99.4,99.4,90.0,30,False,0.26
+Jake Slaughter,IOL,69,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0095,0.9%,80.0,30,True,0.14
+Jake Slaughter,IOL,69,premium,Run Block Grade,sg_ol_run_block_grade,80.2,80.2,86.7,30,False,0.22
+Jake Slaughter,IOL,69,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Keylan Rutledge,IOL,90,premium,Pass Block Grade,sg_ol_pass_block_grade,78.4,78.4,50.0,30,False,0.3
+Keylan Rutledge,IOL,90,premium,Pass Block Efficiency,sg_ol_pbe,99.3,99.3,83.3,30,False,0.26
+Keylan Rutledge,IOL,90,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0136,1.4%,63.3,30,True,0.14
+Keylan Rutledge,IOL,90,premium,Run Block Grade,sg_ol_run_block_grade,76.8,76.8,76.7,30,False,0.22
+Keylan Rutledge,IOL,90,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,73.3,30,False,0.08
+Sam Hecht,IOL,93,premium,Pass Block Grade,sg_ol_pass_block_grade,79.6,79.6,60.0,30,False,0.3
+Sam Hecht,IOL,93,premium,Pass Block Efficiency,sg_ol_pbe,99.1,99.1,63.3,30,False,0.26
+Sam Hecht,IOL,93,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0179,1.8%,53.3,30,True,0.14
+Sam Hecht,IOL,93,premium,Run Block Grade,sg_ol_run_block_grade,77.7,77.7,80.0,30,False,0.22
+Sam Hecht,IOL,93,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Connor Lew,IOL,105,premium,Pass Block Grade,sg_ol_pass_block_grade,71.9,71.9,20.0,30,False,0.3
+Connor Lew,IOL,105,premium,Pass Block Efficiency,sg_ol_pbe,98.7,98.7,50.0,30,False,0.26
+Connor Lew,IOL,105,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0164,1.6%,56.7,30,True,0.14
+Connor Lew,IOL,105,premium,Run Block Grade,sg_ol_run_block_grade,64.9,64.9,26.7,30,False,0.22
+Connor Lew,IOL,105,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Billy Schrauth,IOL,121,premium,Pass Block Grade,sg_ol_pass_block_grade,82.7,82.7,63.3,30,False,0.3
+Billy Schrauth,IOL,121,premium,Pass Block Efficiency,sg_ol_pbe,99.5,99.5,96.7,30,False,0.26
+Billy Schrauth,IOL,121,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0094,0.9%,86.7,30,True,0.14
+Billy Schrauth,IOL,121,premium,Run Block Grade,sg_ol_run_block_grade,73.1,73.1,63.3,30,False,0.22
+Billy Schrauth,IOL,121,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Pat Coogan,IOL,123,premium,Pass Block Grade,sg_ol_pass_block_grade,84.0,84.0,70.0,30,False,0.3
+Pat Coogan,IOL,123,premium,Pass Block Efficiency,sg_ol_pbe,98.9,98.9,56.7,30,False,0.26
+Pat Coogan,IOL,123,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0207,2.1%,50.0,30,True,0.14
+Pat Coogan,IOL,123,premium,Run Block Grade,sg_ol_run_block_grade,75.3,75.3,73.3,30,False,0.22
+Pat Coogan,IOL,123,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Trey Zuhn III,IOL,129,premium,Pass Block Grade,sg_ol_pass_block_grade,96.8,96.8,100.0,30,False,0.3
+Trey Zuhn III,IOL,129,premium,Pass Block Efficiency,sg_ol_pbe,98.5,98.5,40.0,30,False,0.26
+Trey Zuhn III,IOL,129,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.023,2.3%,43.3,30,True,0.14
+Trey Zuhn III,IOL,129,premium,Run Block Grade,sg_ol_run_block_grade,59.7,59.7,13.3,30,False,0.22
+Trey Zuhn III,IOL,129,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,73.3,30,False,0.08
+Beau Stephens,IOL,149,premium,Pass Block Grade,sg_ol_pass_block_grade,91.6,91.6,96.7,30,False,0.3
+Beau Stephens,IOL,149,premium,Pass Block Efficiency,sg_ol_pbe,99.3,99.3,83.3,30,False,0.26
+Beau Stephens,IOL,149,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0132,1.3%,66.7,30,True,0.14
+Beau Stephens,IOL,149,premium,Run Block Grade,sg_ol_run_block_grade,83.0,83.0,96.7,30,False,0.22
+Beau Stephens,IOL,149,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Parker Brailsford,IOL,155,premium,Pass Block Grade,sg_ol_pass_block_grade,75.6,75.6,40.0,30,False,0.3
+Parker Brailsford,IOL,155,premium,Pass Block Efficiency,sg_ol_pbe,98.6,98.6,46.7,30,False,0.26
+Parker Brailsford,IOL,155,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0244,2.4%,40.0,30,True,0.14
+Parker Brailsford,IOL,155,premium,Run Block Grade,sg_ol_run_block_grade,60.0,60.0,16.7,30,False,0.22
+Parker Brailsford,IOL,155,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Ar'maj Reed-Adams,IOL,157,premium,Pass Block Grade,sg_ol_pass_block_grade,65.2,65.2,3.3,30,False,0.3
+Ar'maj Reed-Adams,IOL,157,premium,Pass Block Efficiency,sg_ol_pbe,97.9,97.9,23.3,30,False,0.26
+Ar'maj Reed-Adams,IOL,157,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0368,3.7%,16.7,30,True,0.14
+Ar'maj Reed-Adams,IOL,157,premium,Run Block Grade,sg_ol_run_block_grade,72.7,72.7,56.7,30,False,0.22
+Ar'maj Reed-Adams,IOL,157,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Jalen Farmer,IOL,162,premium,Pass Block Grade,sg_ol_pass_block_grade,72.4,72.4,26.7,30,False,0.3
+Jalen Farmer,IOL,162,premium,Pass Block Efficiency,sg_ol_pbe,98.0,98.0,26.7,30,False,0.26
+Jalen Farmer,IOL,162,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0306,3.1%,30.0,30,True,0.14
+Jalen Farmer,IOL,162,premium,Run Block Grade,sg_ol_run_block_grade,67.4,67.4,43.3,30,False,0.22
+Jalen Farmer,IOL,162,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Logan Jones,IOL,164,premium,Pass Block Grade,sg_ol_pass_block_grade,90.7,90.7,90.0,30,False,0.3
+Logan Jones,IOL,164,premium,Pass Block Efficiency,sg_ol_pbe,99.4,99.4,90.0,30,False,0.26
+Logan Jones,IOL,164,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0089,0.9%,93.3,30,True,0.14
+Logan Jones,IOL,164,premium,Run Block Grade,sg_ol_run_block_grade,73.0,73.0,60.0,30,False,0.22
+Logan Jones,IOL,164,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Jager Burton,IOL,171,premium,Pass Block Grade,sg_ol_pass_block_grade,79.5,79.5,56.7,30,False,0.3
+Jager Burton,IOL,171,premium,Pass Block Efficiency,sg_ol_pbe,98.6,98.6,46.7,30,False,0.26
+Jager Burton,IOL,171,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0263,2.6%,36.7,30,True,0.14
+Jager Burton,IOL,171,premium,Run Block Grade,sg_ol_run_block_grade,67.5,67.5,46.7,30,False,0.22
+Jager Burton,IOL,171,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,73.3,30,False,0.08
+DJ Campbell,IOL,175,premium,Pass Block Grade,sg_ol_pass_block_grade,77.6,77.6,46.7,30,False,0.3
+DJ Campbell,IOL,175,premium,Pass Block Efficiency,sg_ol_pbe,97.9,97.9,23.3,30,False,0.26
+DJ Campbell,IOL,175,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0372,3.7%,13.3,30,True,0.14
+DJ Campbell,IOL,175,premium,Run Block Grade,sg_ol_run_block_grade,73.6,73.6,70.0,30,False,0.22
+DJ Campbell,IOL,175,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,73.3,30,False,0.08
+Jaeden Roberts,IOL,182,premium,Pass Block Grade,sg_ol_pass_block_grade,87.5,87.5,80.0,30,False,0.3
+Jaeden Roberts,IOL,182,premium,Pass Block Efficiency,sg_ol_pbe,99.3,99.3,83.3,30,False,0.26
+Jaeden Roberts,IOL,182,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0094,0.9%,83.3,30,True,0.14
+Jaeden Roberts,IOL,182,premium,Run Block Grade,sg_ol_run_block_grade,62.6,62.6,20.0,30,False,0.22
+Jaeden Roberts,IOL,182,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,73.3,30,False,0.08
+Matt Gulbin,IOL,216,premium,Pass Block Grade,sg_ol_pass_block_grade,87.8,87.8,83.3,30,False,0.3
+Matt Gulbin,IOL,216,premium,Pass Block Efficiency,sg_ol_pbe,99.1,99.1,63.3,30,False,0.26
+Matt Gulbin,IOL,216,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0117,1.2%,73.3,30,True,0.14
+Matt Gulbin,IOL,216,premium,Run Block Grade,sg_ol_run_block_grade,81.9,81.9,93.3,30,False,0.22
+Matt Gulbin,IOL,216,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Alex Harkey,IOL,218,premium,Pass Block Grade,sg_ol_pass_block_grade,74.0,74.0,33.3,30,False,0.3
+Alex Harkey,IOL,218,premium,Pass Block Efficiency,sg_ol_pbe,97.5,97.5,13.3,30,False,0.26
+Alex Harkey,IOL,218,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0428,4.3%,3.3,30,True,0.14
+Alex Harkey,IOL,218,premium,Run Block Grade,sg_ol_run_block_grade,65.0,65.0,30.0,30,False,0.22
+Alex Harkey,IOL,218,premium,Alignment Versatility,sg_ol_versatility_count,3.0,3,86.7,30,False,0.08
+Jeremiah Wright,IOL,222,premium,Pass Block Grade,sg_ol_pass_block_grade,67.1,67.1,10.0,30,False,0.3
+Jeremiah Wright,IOL,222,premium,Pass Block Efficiency,sg_ol_pbe,96.8,96.8,3.3,30,False,0.26
+Jeremiah Wright,IOL,222,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.049,4.9%,,30,True,0.14
+Jeremiah Wright,IOL,222,premium,Run Block Grade,sg_ol_run_block_grade,66.6,66.6,33.3,30,False,0.22
+Jeremiah Wright,IOL,222,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,73.3,30,False,0.08
+Evan Beerntsen,IOL,249,premium,Pass Block Grade,sg_ol_pass_block_grade,74.4,74.4,36.7,30,False,0.3
+Evan Beerntsen,IOL,249,premium,Pass Block Efficiency,sg_ol_pbe,99.2,99.2,66.7,30,False,0.26
+Evan Beerntsen,IOL,249,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.014,1.4%,60.0,30,True,0.14
+Evan Beerntsen,IOL,249,premium,Run Block Grade,sg_ol_run_block_grade,81.3,81.3,90.0,30,False,0.22
+Evan Beerntsen,IOL,249,premium,Alignment Versatility,sg_ol_versatility_count,3.0,3,86.7,30,False,0.08
+Logan Taylor,IOL,257,premium,Pass Block Grade,sg_ol_pass_block_grade,71.4,71.4,16.7,30,False,0.3
+Logan Taylor,IOL,257,premium,Pass Block Efficiency,sg_ol_pbe,97.4,97.4,10.0,30,False,0.26
+Logan Taylor,IOL,257,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.041,4.1%,10.0,30,True,0.14
+Logan Taylor,IOL,257,premium,Run Block Grade,sg_ol_run_block_grade,72.3,72.3,53.3,30,False,0.22
+Logan Taylor,IOL,257,premium,Alignment Versatility,sg_ol_versatility_count,4.0,4,93.3,30,False,0.08
+Febechi Nwaiwu,IOL,258,premium,Pass Block Grade,sg_ol_pass_block_grade,91.6,91.6,96.7,30,False,0.3
+Febechi Nwaiwu,IOL,258,premium,Pass Block Efficiency,sg_ol_pbe,99.8,99.8,100.0,30,False,0.26
+Febechi Nwaiwu,IOL,258,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.004,0.4%,96.7,30,True,0.14
+Febechi Nwaiwu,IOL,258,premium,Run Block Grade,sg_ol_run_block_grade,59.4,59.4,10.0,30,False,0.22
+Febechi Nwaiwu,IOL,258,premium,Alignment Versatility,sg_ol_versatility_count,3.0,3,86.7,30,False,0.08
+Joshua Braun,IOL,269,premium,Pass Block Grade,sg_ol_pass_block_grade,77.4,77.4,43.3,30,False,0.3
+Joshua Braun,IOL,269,premium,Pass Block Efficiency,sg_ol_pbe,97.9,97.9,23.3,30,False,0.26
+Joshua Braun,IOL,269,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0328,3.3%,26.7,30,True,0.14
+Joshua Braun,IOL,269,premium,Run Block Grade,sg_ol_run_block_grade,57.4,57.4,6.7,30,False,0.22
+Joshua Braun,IOL,269,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Anez Cooper,IOL,280,premium,Pass Block Grade,sg_ol_pass_block_grade,78.9,78.9,53.3,30,False,0.3
+Anez Cooper,IOL,280,premium,Pass Block Efficiency,sg_ol_pbe,98.8,98.8,53.3,30,False,0.26
+Anez Cooper,IOL,280,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0218,2.2%,46.7,30,True,0.14
+Anez Cooper,IOL,280,premium,Run Block Grade,sg_ol_run_block_grade,67.4,67.4,43.3,30,False,0.22
+Anez Cooper,IOL,280,premium,Alignment Versatility,sg_ol_versatility_count,4.0,4,93.3,30,False,0.08
+Micah Morris,IOL,286,premium,Pass Block Grade,sg_ol_pass_block_grade,83.7,83.7,66.7,30,False,0.3
+Micah Morris,IOL,286,premium,Pass Block Efficiency,sg_ol_pbe,99.5,99.5,96.7,30,False,0.26
+Micah Morris,IOL,286,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0094,0.9%,86.7,30,True,0.14
+Micah Morris,IOL,286,premium,Run Block Grade,sg_ol_run_block_grade,67.2,67.2,36.7,30,False,0.22
+Micah Morris,IOL,286,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,73.3,30,False,0.08
+Fernando Carmona,IOL,288,premium,Pass Block Grade,sg_ol_pass_block_grade,72.3,72.3,23.3,30,False,0.3
+Fernando Carmona,IOL,288,premium,Pass Block Efficiency,sg_ol_pbe,98.1,98.1,33.3,30,False,0.26
+Fernando Carmona,IOL,288,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0341,3.4%,20.0,30,True,0.14
+Fernando Carmona,IOL,288,premium,Run Block Grade,sg_ol_run_block_grade,71.3,71.3,50.0,30,False,0.22
+Fernando Carmona,IOL,288,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,46.7,30,False,0.08
+Dillon Wade,IOL,298,premium,Pass Block Grade,sg_ol_pass_block_grade,66.9,66.9,6.7,30,False,0.3
+Dillon Wade,IOL,298,premium,Pass Block Efficiency,sg_ol_pbe,98.1,98.1,33.3,30,False,0.26
+Dillon Wade,IOL,298,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0336,3.4%,23.3,30,True,0.14
+Dillon Wade,IOL,298,premium,Run Block Grade,sg_ol_run_block_grade,56.3,56.3,3.3,30,False,0.22
+Dillon Wade,IOL,298,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,73.3,30,False,0.08
+Garrett DiGiorgio,IOL,311,premium,Pass Block Grade,sg_ol_pass_block_grade,74.0,74.0,33.3,30,False,0.3
+Garrett DiGiorgio,IOL,311,premium,Pass Block Efficiency,sg_ol_pbe,97.4,97.4,10.0,30,False,0.26
+Garrett DiGiorgio,IOL,311,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0422,4.2%,6.7,30,True,0.14
+Garrett DiGiorgio,IOL,311,premium,Run Block Grade,sg_ol_run_block_grade,73.2,73.2,66.7,30,False,0.22
+Garrett DiGiorgio,IOL,311,premium,Alignment Versatility,sg_ol_versatility_count,3.0,3,86.7,30,False,0.08
+Sonny Styles,LB,1,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.6,0.60,65.5,28,True,0.12
+Sonny Styles,LB,1,premium,Coverage Grade,sg_def_coverage_grade,86.9,86.9,93.1,29,False,0.22
+Sonny Styles,LB,1,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,2.2,2.2%,96.6,29,True,0.14
+Sonny Styles,LB,1,premium,Run Defense Grade,sg_def_run_grade,87.4,87.4,79.3,29,False,0.24
+Sonny Styles,LB,1,premium,Tackle Grade,sg_def_tackle_grade,91.6,91.6,100.0,29,False,0.16
+Arvell Reese,LB,10,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.9,0.90,24.1,28,True,0.12
+Arvell Reese,LB,10,premium,Coverage Grade,sg_def_coverage_grade,56.6,56.6,24.1,29,False,0.22
+Arvell Reese,LB,10,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,6.0,6.0%,86.2,29,True,0.14
+Arvell Reese,LB,10,premium,Run Defense Grade,sg_def_run_grade,86.5,86.5,75.9,29,False,0.24
+Arvell Reese,LB,10,premium,Tackle Grade,sg_def_tackle_grade,85.6,85.6,86.2,29,False,0.16
+C.J. Allen,LB,22,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.3,1.30,3.4,28,True,0.12
+C.J. Allen,LB,22,premium,Coverage Grade,sg_def_coverage_grade,55.5,55.5,20.7,29,False,0.22
+C.J. Allen,LB,22,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,7.8,7.8%,79.3,29,True,0.14
+C.J. Allen,LB,22,premium,Run Defense Grade,sg_def_run_grade,88.6,88.6,82.8,29,False,0.24
+C.J. Allen,LB,22,premium,Tackle Grade,sg_def_tackle_grade,84.1,84.1,82.8,29,False,0.16
+Anthony Hill Jr.,LB,33,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.9,0.90,24.1,28,True,0.12
+Anthony Hill Jr.,LB,33,premium,Coverage Grade,sg_def_coverage_grade,63.6,63.6,37.9,29,False,0.22
+Anthony Hill Jr.,LB,33,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,4.5,4.5%,93.1,29,True,0.14
+Anthony Hill Jr.,LB,33,premium,Run Defense Grade,sg_def_run_grade,79.7,79.7,65.5,29,False,0.24
+Anthony Hill Jr.,LB,33,premium,Tackle Grade,sg_def_tackle_grade,88.8,88.8,96.6,29,False,0.16
+Josiah Trotter,LB,42,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.1,1.10,13.8,28,True,0.12
+Josiah Trotter,LB,42,premium,Coverage Grade,sg_def_coverage_grade,47.9,47.9,10.3,29,False,0.22
+Josiah Trotter,LB,42,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,11.0,11.0%,51.7,29,True,0.14
+Josiah Trotter,LB,42,premium,Run Defense Grade,sg_def_run_grade,89.2,89.2,89.7,29,False,0.24
+Josiah Trotter,LB,42,premium,Tackle Grade,sg_def_tackle_grade,78.0,78.0,62.1,29,False,0.16
+Jake Golday,LB,59,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.8,0.80,41.4,28,True,0.12
+Jake Golday,LB,59,premium,Coverage Grade,sg_def_coverage_grade,77.5,77.5,82.8,29,False,0.22
+Jake Golday,LB,59,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,9.0,9.0%,69.0,29,True,0.14
+Jake Golday,LB,59,premium,Run Defense Grade,sg_def_run_grade,90.6,90.6,93.1,29,False,0.24
+Jake Golday,LB,59,premium,Tackle Grade,sg_def_tackle_grade,83.1,83.1,79.3,29,False,0.16
+Keyshaun Elliott,LB,60,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,48.3,28,True,0.12
+Keyshaun Elliott,LB,60,premium,Coverage Grade,sg_def_coverage_grade,47.9,47.9,10.3,29,False,0.22
+Keyshaun Elliott,LB,60,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,16.8,16.8%,20.7,29,True,0.14
+Keyshaun Elliott,LB,60,premium,Run Defense Grade,sg_def_run_grade,79.3,79.3,58.6,29,False,0.24
+Keyshaun Elliott,LB,60,premium,Tackle Grade,sg_def_tackle_grade,61.1,61.1,31.0,29,False,0.16
+Jacob Rodriguez,LB,70,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.2,1.20,6.9,28,True,0.12
+Jacob Rodriguez,LB,70,premium,Coverage Grade,sg_def_coverage_grade,92.3,92.3,100.0,29,False,0.22
+Jacob Rodriguez,LB,70,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,13.9,13.9%,41.4,29,True,0.14
+Jacob Rodriguez,LB,70,premium,Run Defense Grade,sg_def_run_grade,94.8,94.8,100.0,29,False,0.24
+Jacob Rodriguez,LB,70,premium,Tackle Grade,sg_def_tackle_grade,65.5,65.5,41.4,29,False,0.16
+Deontae Lawson,LB,83,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,48.3,28,True,0.12
+Deontae Lawson,LB,83,premium,Coverage Grade,sg_def_coverage_grade,69.3,69.3,58.6,29,False,0.22
+Deontae Lawson,LB,83,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,16.3,16.3%,31.0,29,True,0.14
+Deontae Lawson,LB,83,premium,Run Defense Grade,sg_def_run_grade,83.6,83.6,72.4,29,False,0.24
+Deontae Lawson,LB,83,premium,Tackle Grade,sg_def_tackle_grade,57.6,57.6,24.1,29,False,0.16
+Jaishawn Barham,LB,87,fallback,QB Hurries,cfb_lb_qb_hurries,5.0,5,90.9,22,False,0.16
+Jaishawn Barham,LB,87,fallback,Sacks,cfb_lb_sacks,4.0,4.0,95.5,22,False,0.18
+Jaishawn Barham,LB,87,fallback,TFL,cfb_lb_tfl,10.0,10,90.9,22,False,0.26
+Kyle Louis,LB,91,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.5,1.50,,28,True,0.12
+Kyle Louis,LB,91,premium,Coverage Grade,sg_def_coverage_grade,72.3,72.3,65.5,29,False,0.22
+Kyle Louis,LB,91,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,10.9,10.9%,55.2,29,True,0.14
+Kyle Louis,LB,91,premium,Run Defense Grade,sg_def_run_grade,75.3,75.3,48.3,29,False,0.24
+Kyle Louis,LB,91,premium,Tackle Grade,sg_def_tackle_grade,74.7,74.7,55.2,29,False,0.16
+Harold Perkins Jr.,LB,96,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.9,0.90,24.1,28,True,0.12
+Harold Perkins Jr.,LB,96,premium,Coverage Grade,sg_def_coverage_grade,51.7,51.7,17.2,29,False,0.22
+Harold Perkins Jr.,LB,96,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,21.0,21.0%,6.9,29,True,0.14
+Harold Perkins Jr.,LB,96,premium,Run Defense Grade,sg_def_run_grade,69.0,69.0,24.1,29,False,0.24
+Harold Perkins Jr.,LB,96,premium,Tackle Grade,sg_def_tackle_grade,53.5,53.5,10.3,29,False,0.16
+Taurean York,LB,118,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.6,0.60,65.5,28,True,0.12
+Taurean York,LB,118,premium,Coverage Grade,sg_def_coverage_grade,90.8,90.8,96.6,29,False,0.22
+Taurean York,LB,118,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,12.8,12.8%,48.3,29,True,0.14
+Taurean York,LB,118,premium,Run Defense Grade,sg_def_run_grade,74.0,74.0,44.8,29,False,0.24
+Taurean York,LB,118,premium,Tackle Grade,sg_def_tackle_grade,70.5,70.5,51.7,29,False,0.16
+Aiden Fisher,LB,125,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,48.3,28,True,0.12
+Aiden Fisher,LB,125,premium,Coverage Grade,sg_def_coverage_grade,65.2,65.2,48.3,29,False,0.22
+Aiden Fisher,LB,125,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,13.4,13.4%,44.8,29,True,0.14
+Aiden Fisher,LB,125,premium,Run Defense Grade,sg_def_run_grade,69.3,69.3,27.6,29,False,0.24
+Aiden Fisher,LB,125,premium,Tackle Grade,sg_def_tackle_grade,68.8,68.8,48.3,29,False,0.16
+Kaleb Elarms-Orr,LB,126,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,48.3,28,True,0.12
+Kaleb Elarms-Orr,LB,126,premium,Coverage Grade,sg_def_coverage_grade,75.4,75.4,75.9,29,False,0.22
+Kaleb Elarms-Orr,LB,126,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,7.1,7.1%,82.8,29,True,0.14
+Kaleb Elarms-Orr,LB,126,premium,Run Defense Grade,sg_def_run_grade,89.1,89.1,86.2,29,False,0.24
+Kaleb Elarms-Orr,LB,126,premium,Tackle Grade,sg_def_tackle_grade,86.2,86.2,89.7,29,False,0.16
+Trey Moore,LB,142,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.1,1.10,13.8,28,True,0.12
+Trey Moore,LB,142,premium,Coverage Grade,sg_def_coverage_grade,50.6,50.6,13.8,29,False,0.22
+Trey Moore,LB,142,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,15.4,15.4%,34.5,29,True,0.14
+Trey Moore,LB,142,premium,Run Defense Grade,sg_def_run_grade,73.2,73.2,41.4,29,False,0.24
+Trey Moore,LB,142,premium,Tackle Grade,sg_def_tackle_grade,68.1,68.1,44.8,29,False,0.16
+Bryce Boettcher,LB,151,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.6,0.60,65.5,28,True,0.12
+Bryce Boettcher,LB,151,premium,Coverage Grade,sg_def_coverage_grade,78.3,78.3,86.2,29,False,0.22
+Bryce Boettcher,LB,151,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,10.0,10.0%,58.6,29,True,0.14
+Bryce Boettcher,LB,151,premium,Run Defense Grade,sg_def_run_grade,72.1,72.1,37.9,29,False,0.24
+Bryce Boettcher,LB,151,premium,Tackle Grade,sg_def_tackle_grade,79.0,79.0,65.5,29,False,0.16
+Kendal Daniels,LB,170,fallback,QB Hurries,cfb_lb_qb_hurries,2.0,2,50.0,22,False,0.16
+Kendal Daniels,LB,170,fallback,Sacks,cfb_lb_sacks,1.0,1.0,36.4,22,False,0.18
+Kendal Daniels,LB,170,fallback,TFL,cfb_lb_tfl,10.0,10,90.9,22,False,0.26
+Red Murdock,LB,172,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.6,0.60,65.5,28,True,0.12
+Red Murdock,LB,172,premium,Coverage Grade,sg_def_coverage_grade,86.5,86.5,89.7,29,False,0.22
+Red Murdock,LB,172,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,9.4,9.4%,65.5,29,True,0.14
+Red Murdock,LB,172,premium,Run Defense Grade,sg_def_run_grade,91.3,91.3,96.6,29,False,0.24
+Red Murdock,LB,172,premium,Tackle Grade,sg_def_tackle_grade,82.2,82.2,72.4,29,False,0.16
+Karson Sharar,LB,189,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.6,0.60,65.5,28,True,0.12
+Karson Sharar,LB,189,premium,Coverage Grade,sg_def_coverage_grade,65.0,65.0,44.8,29,False,0.22
+Karson Sharar,LB,189,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,16.8,16.8%,20.7,29,True,0.14
+Karson Sharar,LB,189,premium,Run Defense Grade,sg_def_run_grade,79.6,79.6,62.1,29,False,0.24
+Karson Sharar,LB,189,premium,Tackle Grade,sg_def_tackle_grade,61.4,61.4,37.9,29,False,0.16
+Wade Woodaz,LB,190,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.9,0.90,24.1,28,True,0.12
+Wade Woodaz,LB,190,premium,Coverage Grade,sg_def_coverage_grade,75.5,75.5,79.3,29,False,0.22
+Wade Woodaz,LB,190,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,9.0,9.0%,69.0,29,True,0.14
+Wade Woodaz,LB,190,premium,Run Defense Grade,sg_def_run_grade,70.8,70.8,34.5,29,False,0.24
+Wade Woodaz,LB,190,premium,Tackle Grade,sg_def_tackle_grade,75.7,75.7,58.6,29,False,0.16
+Lander Barton,LB,207,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.3,0.30,93.1,28,True,0.12
+Lander Barton,LB,207,premium,Coverage Grade,sg_def_coverage_grade,64.1,64.1,41.4,29,False,0.22
+Lander Barton,LB,207,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,18.5,18.5%,13.8,29,True,0.14
+Lander Barton,LB,207,premium,Run Defense Grade,sg_def_run_grade,59.7,59.7,6.9,29,False,0.24
+Lander Barton,LB,207,premium,Tackle Grade,sg_def_tackle_grade,60.8,60.8,27.6,29,False,0.16
+Jimmy Rolder,LB,209,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.2,1.20,6.9,28,True,0.12
+Jimmy Rolder,LB,209,premium,Coverage Grade,sg_def_coverage_grade,61.1,61.1,34.5,29,False,0.22
+Jimmy Rolder,LB,209,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,4.7,4.7%,89.7,29,True,0.14
+Jimmy Rolder,LB,209,premium,Run Defense Grade,sg_def_run_grade,80.0,80.0,69.0,29,False,0.24
+Jimmy Rolder,LB,209,premium,Tackle Grade,sg_def_tackle_grade,88.8,88.8,96.6,29,False,0.16
+Owen Heinecke,LB,211,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.6,0.60,65.5,28,True,0.12
+Owen Heinecke,LB,211,premium,Coverage Grade,sg_def_coverage_grade,67.0,67.0,55.2,29,False,0.22
+Owen Heinecke,LB,211,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,20.5,20.5%,10.3,29,True,0.14
+Owen Heinecke,LB,211,premium,Run Defense Grade,sg_def_run_grade,78.8,78.8,55.2,29,False,0.24
+Owen Heinecke,LB,211,premium,Tackle Grade,sg_def_tackle_grade,50.6,50.6,6.9,29,False,0.16
+Jack Kelly,LB,220,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.9,0.90,24.1,28,True,0.12
+Jack Kelly,LB,220,premium,Coverage Grade,sg_def_coverage_grade,60.7,60.7,31.0,29,False,0.22
+Jack Kelly,LB,220,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,22.4,22.4%,,29,True,0.14
+Jack Kelly,LB,220,premium,Run Defense Grade,sg_def_run_grade,65.0,65.0,17.2,29,False,0.24
+Jack Kelly,LB,220,premium,Tackle Grade,sg_def_tackle_grade,57.2,57.2,17.2,29,False,0.16
+Namdi Obiazor,LB,225,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.8,0.80,41.4,28,True,0.12
+Namdi Obiazor,LB,225,premium,Coverage Grade,sg_def_coverage_grade,59.5,59.5,27.6,29,False,0.22
+Namdi Obiazor,LB,225,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,8.0,8.0%,75.9,29,True,0.14
+Namdi Obiazor,LB,225,premium,Run Defense Grade,sg_def_run_grade,75.9,75.9,51.7,29,False,0.24
+Namdi Obiazor,LB,225,premium,Tackle Grade,sg_def_tackle_grade,82.3,82.3,75.9,29,False,0.16
+Eric Gentry,LB,231,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.5,0.50,86.2,28,True,0.12
+Eric Gentry,LB,231,premium,Coverage Grade,sg_def_coverage_grade,72.1,72.1,62.1,29,False,0.22
+Eric Gentry,LB,231,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,17.2,17.2%,17.2,29,True,0.14
+Eric Gentry,LB,231,premium,Run Defense Grade,sg_def_run_grade,67.5,67.5,20.7,29,False,0.24
+Eric Gentry,LB,231,premium,Tackle Grade,sg_def_tackle_grade,57.4,57.4,20.7,29,False,0.16
+Scooby Williams,LB,262,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,,0.00,96.6,28,True,0.12
+Scooby Williams,LB,262,premium,Coverage Grade,sg_def_coverage_grade,73.2,73.2,69.0,29,False,0.22
+Scooby Williams,LB,262,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,15.0,15.0%,37.9,29,True,0.14
+Scooby Williams,LB,262,premium,Run Defense Grade,sg_def_run_grade,69.7,69.7,31.0,29,False,0.24
+Scooby Williams,LB,262,premium,Tackle Grade,sg_def_tackle_grade,56.2,56.2,13.8,29,False,0.16
+Wesley Bissainthe,LB,273,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.5,0.50,86.2,28,True,0.12
+Wesley Bissainthe,LB,273,premium,Coverage Grade,sg_def_coverage_grade,65.9,65.9,51.7,29,False,0.22
+Wesley Bissainthe,LB,273,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,16.5,16.5%,27.6,29,True,0.14
+Wesley Bissainthe,LB,273,premium,Run Defense Grade,sg_def_run_grade,64.9,64.9,13.8,29,False,0.24
+Wesley Bissainthe,LB,273,premium,Tackle Grade,sg_def_tackle_grade,61.4,61.4,37.9,29,False,0.16
+Justin Jefferson,LB,281,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.0,1.00,20.7,28,True,0.12
+Justin Jefferson,LB,281,premium,Coverage Grade,sg_def_coverage_grade,73.9,73.9,72.4,29,False,0.22
+Justin Jefferson,LB,281,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,10.0,10.0%,58.6,29,True,0.14
+Justin Jefferson,LB,281,premium,Run Defense Grade,sg_def_run_grade,62.7,62.7,10.3,29,False,0.24
+Justin Jefferson,LB,281,premium,Tackle Grade,sg_def_tackle_grade,79.1,79.1,69.0,29,False,0.16
+Xavian Sorey Jr.,LB,284,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,48.3,28,True,0.12
+Xavian Sorey Jr.,LB,284,premium,Coverage Grade,sg_def_coverage_grade,47.2,47.2,3.4,29,False,0.22
+Xavian Sorey Jr.,LB,284,premium,Missed Tackle Rate,sg_def_missed_tackle_rate,22.1,22.1%,3.4,29,True,0.14
+Xavian Sorey Jr.,LB,284,premium,Run Defense Grade,sg_def_run_grade,49.3,49.3,3.4,29,False,0.24
+Xavian Sorey Jr.,LB,284,premium,Tackle Grade,sg_def_tackle_grade,43.2,43.2,3.4,29,False,0.16
+Kadyn Proctor,OT,2,premium,Pass Block Grade,sg_ol_pass_block_grade,84.2,84.2,84.0,25,False,0.34
+Kadyn Proctor,OT,2,premium,Pass Block Efficiency,sg_ol_pbe,98.0,98.0,56.0,25,False,0.28
+Kadyn Proctor,OT,2,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0344,3.4%,44.0,25,True,0.14
+Kadyn Proctor,OT,2,premium,Run Block Grade,sg_ol_run_block_grade,81.1,81.1,80.0,25,False,0.18
+Kadyn Proctor,OT,2,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,60.0,25,False,0.06
+Monroe Freeling,OT,3,premium,Pass Block Grade,sg_ol_pass_block_grade,86.1,86.1,96.0,25,False,0.34
+Monroe Freeling,OT,3,premium,Pass Block Efficiency,sg_ol_pbe,98.8,98.8,88.0,25,False,0.28
+Monroe Freeling,OT,3,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0171,1.7%,88.0,25,True,0.14
+Monroe Freeling,OT,3,premium,Run Block Grade,sg_ol_run_block_grade,61.7,61.7,16.0,25,False,0.18
+Monroe Freeling,OT,3,premium,Alignment Versatility,sg_ol_versatility_count,3.0,3,96.0,25,False,0.06
+Caleb Lomu,OT,5,premium,Pass Block Grade,sg_ol_pass_block_grade,82.1,82.1,68.0,25,False,0.34
+Caleb Lomu,OT,5,premium,Pass Block Efficiency,sg_ol_pbe,98.9,98.9,92.0,25,False,0.28
+Caleb Lomu,OT,5,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0209,2.1%,76.0,25,True,0.14
+Caleb Lomu,OT,5,premium,Run Block Grade,sg_ol_run_block_grade,62.0,62.0,24.0,25,False,0.18
+Caleb Lomu,OT,5,premium,Alignment Versatility,sg_ol_versatility_count,3.0,3,96.0,25,False,0.06
+Francis Mauigoa,OT,8,premium,Pass Block Grade,sg_ol_pass_block_grade,87.0,87.0,100.0,25,False,0.34
+Francis Mauigoa,OT,8,premium,Pass Block Efficiency,sg_ol_pbe,98.4,98.4,64.0,25,False,0.28
+Francis Mauigoa,OT,8,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0269,2.7%,64.0,25,True,0.14
+Francis Mauigoa,OT,8,premium,Run Block Grade,sg_ol_run_block_grade,77.1,77.1,68.0,25,False,0.18
+Francis Mauigoa,OT,8,premium,Alignment Versatility,sg_ol_versatility_count,3.0,3,96.0,25,False,0.06
+Spencer Fano,OT,21,premium,Pass Block Grade,sg_ol_pass_block_grade,81.5,81.5,64.0,25,False,0.34
+Spencer Fano,OT,21,premium,Pass Block Efficiency,sg_ol_pbe,99.3,99.3,100.0,25,False,0.28
+Spencer Fano,OT,21,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0131,1.3%,96.0,25,True,0.14
+Spencer Fano,OT,21,premium,Run Block Grade,sg_ol_run_block_grade,80.0,80.0,76.0,25,False,0.18
+Spencer Fano,OT,21,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,60.0,25,False,0.06
+Blake Miller,OT,28,premium,Pass Block Grade,sg_ol_pass_block_grade,83.5,83.5,80.0,25,False,0.34
+Blake Miller,OT,28,premium,Pass Block Efficiency,sg_ol_pbe,98.4,98.4,64.0,25,False,0.28
+Blake Miller,OT,28,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0265,2.6%,72.0,25,True,0.14
+Blake Miller,OT,28,premium,Run Block Grade,sg_ol_run_block_grade,73.3,73.3,60.0,25,False,0.18
+Blake Miller,OT,28,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,60.0,25,False,0.06
+Max Iheanachor,OT,52,premium,Pass Block Grade,sg_ol_pass_block_grade,78.3,78.3,48.0,25,False,0.34
+Max Iheanachor,OT,52,premium,Pass Block Efficiency,sg_ol_pbe,98.5,98.5,76.0,25,False,0.28
+Max Iheanachor,OT,52,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0289,2.9%,56.0,25,True,0.14
+Max Iheanachor,OT,52,premium,Run Block Grade,sg_ol_run_block_grade,66.8,66.8,40.0,25,False,0.18
+Max Iheanachor,OT,52,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,20.0,25,False,0.06
+Caleb Tiernan,OT,61,premium,Pass Block Grade,sg_ol_pass_block_grade,84.3,84.3,88.0,25,False,0.34
+Caleb Tiernan,OT,61,premium,Pass Block Efficiency,sg_ol_pbe,98.0,98.0,56.0,25,False,0.28
+Caleb Tiernan,OT,61,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0302,3.0%,52.0,25,True,0.14
+Caleb Tiernan,OT,61,premium,Run Block Grade,sg_ol_run_block_grade,59.7,59.7,12.0,25,False,0.18
+Caleb Tiernan,OT,61,premium,Alignment Versatility,sg_ol_versatility_count,3.0,3,96.0,25,False,0.06
+Gennings Dunker,OT,86,premium,Pass Block Grade,sg_ol_pass_block_grade,77.3,77.3,40.0,25,False,0.34
+Gennings Dunker,OT,86,premium,Pass Block Efficiency,sg_ol_pbe,98.0,98.0,56.0,25,False,0.28
+Gennings Dunker,OT,86,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0316,3.2%,48.0,25,True,0.14
+Gennings Dunker,OT,86,premium,Run Block Grade,sg_ol_run_block_grade,80.0,80.0,76.0,25,False,0.18
+Gennings Dunker,OT,86,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,20.0,25,False,0.06
+Austin Barber,OT,92,premium,Pass Block Grade,sg_ol_pass_block_grade,66.7,66.7,16.0,25,False,0.34
+Austin Barber,OT,92,premium,Pass Block Efficiency,sg_ol_pbe,97.5,97.5,36.0,25,False,0.28
+Austin Barber,OT,92,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0403,4.0%,36.0,25,True,0.14
+Austin Barber,OT,92,premium,Run Block Grade,sg_ol_run_block_grade,90.0,90.0,96.0,25,False,0.18
+Austin Barber,OT,92,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,60.0,25,False,0.06
+Brian Parker II,OT,115,premium,Pass Block Grade,sg_ol_pass_block_grade,83.4,83.4,72.0,25,False,0.34
+Brian Parker II,OT,115,premium,Pass Block Efficiency,sg_ol_pbe,97.7,97.7,44.0,25,False,0.28
+Brian Parker II,OT,115,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0372,3.7%,40.0,25,True,0.14
+Brian Parker II,OT,115,premium,Run Block Grade,sg_ol_run_block_grade,83.9,83.9,84.0,25,False,0.18
+Brian Parker II,OT,115,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,20.0,25,False,0.06
+Drew Shelton,OT,116,premium,Pass Block Grade,sg_ol_pass_block_grade,71.2,71.2,32.0,25,False,0.34
+Drew Shelton,OT,116,premium,Pass Block Efficiency,sg_ol_pbe,97.2,97.2,16.0,25,False,0.28
+Drew Shelton,OT,116,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0506,5.1%,12.0,25,True,0.14
+Drew Shelton,OT,116,premium,Run Block Grade,sg_ol_run_block_grade,66.4,66.4,36.0,25,False,0.18
+Drew Shelton,OT,116,premium,Alignment Versatility,sg_ol_versatility_count,4.0,4,100.0,25,False,0.06
+Aamil Wagner,OT,122,premium,Pass Block Grade,sg_ol_pass_block_grade,79.4,79.4,52.0,25,False,0.34
+Aamil Wagner,OT,122,premium,Pass Block Efficiency,sg_ol_pbe,98.7,98.7,84.0,25,False,0.28
+Aamil Wagner,OT,122,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0205,2.0%,80.0,25,True,0.14
+Aamil Wagner,OT,122,premium,Run Block Grade,sg_ol_run_block_grade,61.9,61.9,20.0,25,False,0.18
+Aamil Wagner,OT,122,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,20.0,25,False,0.06
+J.C. Davis,OT,145,premium,Pass Block Grade,sg_ol_pass_block_grade,77.4,77.4,44.0,25,False,0.34
+J.C. Davis,OT,145,premium,Pass Block Efficiency,sg_ol_pbe,97.3,97.3,24.0,25,False,0.28
+J.C. Davis,OT,145,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0432,4.3%,32.0,25,True,0.14
+J.C. Davis,OT,145,premium,Run Block Grade,sg_ol_run_block_grade,86.7,86.7,92.0,25,False,0.18
+J.C. Davis,OT,145,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,60.0,25,False,0.06
+Kage Casey,OT,146,premium,Pass Block Grade,sg_ol_pass_block_grade,80.1,80.1,56.0,25,False,0.34
+Kage Casey,OT,146,premium,Pass Block Efficiency,sg_ol_pbe,98.5,98.5,76.0,25,False,0.28
+Kage Casey,OT,146,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0197,2.0%,84.0,25,True,0.14
+Kage Casey,OT,146,premium,Run Block Grade,sg_ol_run_block_grade,75.8,75.8,64.0,25,False,0.18
+Kage Casey,OT,146,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,60.0,25,False,0.06
+Jude Bowry,OT,152,premium,Pass Block Grade,sg_ol_pass_block_grade,66.4,66.4,12.0,25,False,0.34
+Jude Bowry,OT,152,premium,Pass Block Efficiency,sg_ol_pbe,97.7,97.7,44.0,25,False,0.28
+Jude Bowry,OT,152,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0437,4.4%,28.0,25,True,0.14
+Jude Bowry,OT,152,premium,Run Block Grade,sg_ol_run_block_grade,68.2,68.2,44.0,25,False,0.18
+Jude Bowry,OT,152,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,60.0,25,False,0.06
+Dametrious Crownover,OT,177,premium,Pass Block Grade,sg_ol_pass_block_grade,58.4,58.4,4.0,25,False,0.34
+Dametrious Crownover,OT,177,premium,Pass Block Efficiency,sg_ol_pbe,96.4,96.4,12.0,25,False,0.28
+Dametrious Crownover,OT,177,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0631,6.3%,4.0,25,True,0.14
+Dametrious Crownover,OT,177,premium,Run Block Grade,sg_ol_run_block_grade,72.4,72.4,56.0,25,False,0.18
+Dametrious Crownover,OT,177,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,60.0,25,False,0.06
+Markel Bell,OT,187,premium,Pass Block Grade,sg_ol_pass_block_grade,83.5,83.5,80.0,25,False,0.34
+Markel Bell,OT,187,premium,Pass Block Efficiency,sg_ol_pbe,98.6,98.6,80.0,25,False,0.28
+Markel Bell,OT,187,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0269,2.7%,68.0,25,True,0.14
+Markel Bell,OT,187,premium,Run Block Grade,sg_ol_run_block_grade,66.0,66.0,32.0,25,False,0.18
+Markel Bell,OT,187,premium,Alignment Versatility,sg_ol_versatility_count,3.0,3,96.0,25,False,0.06
+Keagen Trost,OT,200,premium,Pass Block Grade,sg_ol_pass_block_grade,85.4,85.4,92.0,25,False,0.34
+Keagen Trost,OT,200,premium,Pass Block Efficiency,sg_ol_pbe,99.0,99.0,96.0,25,False,0.28
+Keagen Trost,OT,200,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0162,1.6%,92.0,25,True,0.14
+Keagen Trost,OT,200,premium,Run Block Grade,sg_ol_run_block_grade,91.4,91.4,100.0,25,False,0.18
+Keagen Trost,OT,200,premium,Alignment Versatility,sg_ol_versatility_count,3.0,3,96.0,25,False,0.06
+Enrique Cruz Jr.,OT,215,premium,Pass Block Grade,sg_ol_pass_block_grade,67.3,67.3,20.0,25,False,0.34
+Enrique Cruz Jr.,OT,215,premium,Pass Block Efficiency,sg_ol_pbe,97.4,97.4,32.0,25,False,0.28
+Enrique Cruz Jr.,OT,215,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0452,4.5%,20.0,25,True,0.14
+Enrique Cruz Jr.,OT,215,premium,Run Block Grade,sg_ol_run_block_grade,69.9,69.9,52.0,25,False,0.18
+Enrique Cruz Jr.,OT,215,premium,Alignment Versatility,sg_ol_versatility_count,3.0,3,96.0,25,False,0.06
+Fa'alili Fa'amoe,OT,226,premium,Pass Block Grade,sg_ol_pass_block_grade,71.2,71.2,32.0,25,False,0.34
+Fa'alili Fa'amoe,OT,226,premium,Pass Block Efficiency,sg_ol_pbe,97.4,97.4,32.0,25,False,0.28
+Fa'alili Fa'amoe,OT,226,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0446,4.5%,24.0,25,True,0.14
+Fa'alili Fa'amoe,OT,226,premium,Run Block Grade,sg_ol_run_block_grade,63.5,63.5,28.0,25,False,0.18
+Fa'alili Fa'amoe,OT,226,premium,Alignment Versatility,sg_ol_versatility_count,3.0,3,96.0,25,False,0.06
+Chris Adams,OT,237,premium,Pass Block Grade,sg_ol_pass_block_grade,64.7,64.7,8.0,25,False,0.34
+Chris Adams,OT,237,premium,Pass Block Efficiency,sg_ol_pbe,96.0,96.0,4.0,25,False,0.28
+Chris Adams,OT,237,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0561,5.6%,8.0,25,True,0.14
+Chris Adams,OT,237,premium,Run Block Grade,sg_ol_run_block_grade,69.8,69.8,48.0,25,False,0.18
+Chris Adams,OT,237,premium,Alignment Versatility,sg_ol_versatility_count,1.0,1,20.0,25,False,0.06
+Carver Willis,OT,252,premium,Pass Block Grade,sg_ol_pass_block_grade,69.2,69.2,24.0,25,False,0.34
+Carver Willis,OT,252,premium,Pass Block Efficiency,sg_ol_pbe,96.1,96.1,8.0,25,False,0.28
+Carver Willis,OT,252,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.069,6.9%,,25,True,0.14
+Carver Willis,OT,252,premium,Run Block Grade,sg_ol_run_block_grade,84.8,84.8,88.0,25,False,0.18
+Carver Willis,OT,252,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,60.0,25,False,0.06
+Alan Herron,OT,267,premium,Pass Block Grade,sg_ol_pass_block_grade,80.3,80.3,60.0,25,False,0.34
+Alan Herron,OT,267,premium,Pass Block Efficiency,sg_ol_pbe,97.3,97.3,24.0,25,False,0.28
+Alan Herron,OT,267,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0461,4.6%,16.0,25,True,0.14
+Alan Herron,OT,267,premium,Run Block Grade,sg_ol_run_block_grade,58.7,58.7,8.0,25,False,0.18
+Alan Herron,OT,267,premium,Alignment Versatility,sg_ol_versatility_count,2.0,2,60.0,25,False,0.06
+Diego Pounds,OT,278,premium,Pass Block Grade,sg_ol_pass_block_grade,75.8,75.8,36.0,25,False,0.34
+Diego Pounds,OT,278,premium,Pass Block Efficiency,sg_ol_pbe,98.5,98.5,76.0,25,False,0.28
+Diego Pounds,OT,278,premium,Pressure Allowed Rate,sg_ol_pressure_allowed_rate,0.0274,2.7%,60.0,25,True,0.14
+Diego Pounds,OT,278,premium,Run Block Grade,sg_ol_run_block_grade,51.7,51.7,4.0,25,False,0.18
+Diego Pounds,OT,278,premium,Alignment Versatility,sg_ol_versatility_count,3.0,3,96.0,25,False,0.06
+Fernando Mendoza,QB,24,premium,Blitz Grade,sg_qb_blitz_grade,85.2,85.2,86.7,15,False,0.14
+Fernando Mendoza,QB,24,premium,Big-Time Throw Rate,sg_qb_btt_rate,5.7,5.7%,80.0,15,False,0.14
+Fernando Mendoza,QB,24,premium,Pass Grade,sg_qb_pass_grade,90.7,90.7,100.0,15,False,0.24
+Fernando Mendoza,QB,24,premium,Under-Pressure Grade,sg_qb_pressure_grade,70.6,70.6,100.0,15,False,0.16
+Fernando Mendoza,QB,24,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,18.9,18.9%,26.7,15,True,0.16
+Fernando Mendoza,QB,24,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,2.6,2.6%,46.7,15,True,0.16
+Ty Simpson,QB,38,premium,Blitz Grade,sg_qb_blitz_grade,68.5,68.5,46.7,15,False,0.14
+Ty Simpson,QB,38,premium,Big-Time Throw Rate,sg_qb_btt_rate,6.0,6.0%,86.7,15,False,0.14
+Ty Simpson,QB,38,premium,Pass Grade,sg_qb_pass_grade,81.4,81.4,73.3,15,False,0.24
+Ty Simpson,QB,38,premium,Under-Pressure Grade,sg_qb_pressure_grade,45.7,45.7,26.7,15,False,0.16
+Ty Simpson,QB,38,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,18.3,18.3%,33.3,15,True,0.16
+Ty Simpson,QB,38,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,3.0,3.0%,33.3,15,True,0.16
+Drew Allar,QB,120,premium,Blitz Grade,sg_qb_blitz_grade,57.1,57.1,6.7,15,False,0.14
+Drew Allar,QB,120,premium,Big-Time Throw Rate,sg_qb_btt_rate,2.5,2.5%,6.7,15,False,0.14
+Drew Allar,QB,120,premium,Pass Grade,sg_qb_pass_grade,66.1,66.1,13.3,15,False,0.24
+Drew Allar,QB,120,premium,Under-Pressure Grade,sg_qb_pressure_grade,56.0,56.0,60.0,15,False,0.16
+Drew Allar,QB,120,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,13.6,13.6%,73.3,15,True,0.16
+Drew Allar,QB,120,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,2.6,2.6%,46.7,15,True,0.16
+Garrett Nussmeier,QB,133,premium,Blitz Grade,sg_qb_blitz_grade,67.2,67.2,40.0,15,False,0.14
+Garrett Nussmeier,QB,133,premium,Big-Time Throw Rate,sg_qb_btt_rate,4.5,4.5%,53.3,15,False,0.14
+Garrett Nussmeier,QB,133,premium,Pass Grade,sg_qb_pass_grade,76.4,76.4,53.3,15,False,0.24
+Garrett Nussmeier,QB,133,premium,Under-Pressure Grade,sg_qb_pressure_grade,55.9,55.9,53.3,15,False,0.16
+Garrett Nussmeier,QB,133,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,19.0,19.0%,13.3,15,True,0.16
+Garrett Nussmeier,QB,133,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,3.0,3.0%,33.3,15,True,0.16
+Carson Beck,QB,141,premium,Blitz Grade,sg_qb_blitz_grade,63.6,63.6,20.0,15,False,0.14
+Carson Beck,QB,141,premium,Big-Time Throw Rate,sg_qb_btt_rate,3.3,3.3%,33.3,15,False,0.14
+Carson Beck,QB,141,premium,Pass Grade,sg_qb_pass_grade,75.6,75.6,46.7,15,False,0.24
+Carson Beck,QB,141,premium,Under-Pressure Grade,sg_qb_pressure_grade,48.8,48.8,40.0,15,False,0.16
+Carson Beck,QB,141,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,18.0,18.0%,40.0,15,True,0.16
+Carson Beck,QB,141,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,2.2,2.2%,66.7,15,True,0.16
+Cole Payton,QB,150,fallback,EPA / Play,cfb_qb_epa_per_play,0.569,0.569,100.0,1,False,0.28
+Cade Klubnik,QB,158,premium,Blitz Grade,sg_qb_blitz_grade,77.8,77.8,80.0,15,False,0.14
+Cade Klubnik,QB,158,premium,Big-Time Throw Rate,sg_qb_btt_rate,3.8,3.8%,40.0,15,False,0.14
+Cade Klubnik,QB,158,premium,Pass Grade,sg_qb_pass_grade,77.4,77.4,60.0,15,False,0.24
+Cade Klubnik,QB,158,premium,Under-Pressure Grade,sg_qb_pressure_grade,62.6,62.6,86.7,15,False,0.16
+Cade Klubnik,QB,158,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,11.6,11.6%,86.7,15,True,0.16
+Cade Klubnik,QB,158,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,2.2,2.2%,66.7,15,True,0.16
+Joey Aguilar,QB,199,premium,Blitz Grade,sg_qb_blitz_grade,88.6,88.6,93.3,15,False,0.14
+Joey Aguilar,QB,199,premium,Big-Time Throw Rate,sg_qb_btt_rate,4.8,4.8%,66.7,15,False,0.14
+Joey Aguilar,QB,199,premium,Pass Grade,sg_qb_pass_grade,90.6,90.6,86.7,15,False,0.24
+Joey Aguilar,QB,199,premium,Under-Pressure Grade,sg_qb_pressure_grade,64.0,64.0,93.3,15,False,0.16
+Joey Aguilar,QB,199,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,14.6,14.6%,60.0,15,True,0.16
+Joey Aguilar,QB,199,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,1.9,1.9%,80.0,15,True,0.16
+Taylen Green,QB,204,premium,Blitz Grade,sg_qb_blitz_grade,64.4,64.4,33.3,15,False,0.14
+Taylen Green,QB,204,premium,Big-Time Throw Rate,sg_qb_btt_rate,3.2,3.2%,26.7,15,False,0.14
+Taylen Green,QB,204,premium,Pass Grade,sg_qb_pass_grade,65.6,65.6,6.7,15,False,0.24
+Taylen Green,QB,204,premium,Under-Pressure Grade,sg_qb_pressure_grade,29.5,29.5,6.7,15,False,0.16
+Taylen Green,QB,204,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,19.0,19.0%,13.3,15,True,0.16
+Taylen Green,QB,204,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,5.3,5.3%,,15,True,0.16
+Haynes King,QB,214,premium,Blitz Grade,sg_qb_blitz_grade,71.1,71.1,60.0,15,False,0.14
+Haynes King,QB,214,premium,Big-Time Throw Rate,sg_qb_btt_rate,4.0,4.0%,46.7,15,False,0.14
+Haynes King,QB,214,premium,Pass Grade,sg_qb_pass_grade,80.9,80.9,66.7,15,False,0.24
+Haynes King,QB,214,premium,Under-Pressure Grade,sg_qb_pressure_grade,48.7,48.7,33.3,15,False,0.16
+Haynes King,QB,214,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,8.1,8.1%,93.3,15,True,0.16
+Haynes King,QB,214,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,1.0,1.0%,93.3,15,True,0.16
+Jalon Daniels,QB,241,premium,Blitz Grade,sg_qb_blitz_grade,68.7,68.7,53.3,15,False,0.14
+Jalon Daniels,QB,241,premium,Big-Time Throw Rate,sg_qb_btt_rate,5.4,5.4%,73.3,15,False,0.14
+Jalon Daniels,QB,241,premium,Pass Grade,sg_qb_pass_grade,72.0,72.0,26.7,15,False,0.24
+Jalon Daniels,QB,241,premium,Under-Pressure Grade,sg_qb_pressure_grade,44.6,44.6,20.0,15,False,0.16
+Jalon Daniels,QB,241,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,16.1,16.1%,46.7,15,True,0.16
+Jalon Daniels,QB,241,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,3.9,3.9%,13.3,15,True,0.16
+Diego Pavia,QB,261,premium,Blitz Grade,sg_qb_blitz_grade,90.9,90.9,100.0,15,False,0.14
+Diego Pavia,QB,261,premium,Big-Time Throw Rate,sg_qb_btt_rate,7.4,7.4%,100.0,15,False,0.14
+Diego Pavia,QB,261,premium,Pass Grade,sg_qb_pass_grade,90.7,90.7,100.0,15,False,0.24
+Diego Pavia,QB,261,premium,Under-Pressure Grade,sg_qb_pressure_grade,61.6,61.6,80.0,15,False,0.16
+Diego Pavia,QB,261,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,13.3,13.3%,80.0,15,True,0.16
+Diego Pavia,QB,261,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,2.5,2.5%,60.0,15,True,0.16
+Luke Altmyer,QB,277,premium,Blitz Grade,sg_qb_blitz_grade,59.5,59.5,13.3,15,False,0.14
+Luke Altmyer,QB,277,premium,Big-Time Throw Rate,sg_qb_btt_rate,3.1,3.1%,13.3,15,False,0.14
+Luke Altmyer,QB,277,premium,Pass Grade,sg_qb_pass_grade,74.2,74.2,40.0,15,False,0.24
+Luke Altmyer,QB,277,premium,Under-Pressure Grade,sg_qb_pressure_grade,57.5,57.5,73.3,15,False,0.16
+Luke Altmyer,QB,277,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,21.5,21.5%,6.7,15,True,0.16
+Luke Altmyer,QB,277,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,3.1,3.1%,26.7,15,True,0.16
+Behren Morton,QB,290,premium,Blitz Grade,sg_qb_blitz_grade,74.9,74.9,73.3,15,False,0.14
+Behren Morton,QB,290,premium,Big-Time Throw Rate,sg_qb_btt_rate,6.3,6.3%,93.3,15,False,0.14
+Behren Morton,QB,290,premium,Pass Grade,sg_qb_pass_grade,72.7,72.7,33.3,15,False,0.24
+Behren Morton,QB,290,premium,Under-Pressure Grade,sg_qb_pressure_grade,41.1,41.1,13.3,15,False,0.16
+Behren Morton,QB,290,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,23.6,23.6%,,15,True,0.16
+Behren Morton,QB,290,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,4.5,4.5%,6.7,15,True,0.16
+Joe Fagnano,QB,292,premium,Blitz Grade,sg_qb_blitz_grade,71.7,71.7,66.7,15,False,0.14
+Joe Fagnano,QB,292,premium,Big-Time Throw Rate,sg_qb_btt_rate,3.2,3.2%,26.7,15,False,0.14
+Joe Fagnano,QB,292,premium,Pass Grade,sg_qb_pass_grade,81.9,81.9,80.0,15,False,0.24
+Joe Fagnano,QB,292,premium,Under-Pressure Grade,sg_qb_pressure_grade,50.8,50.8,46.7,15,False,0.16
+Joe Fagnano,QB,292,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,14.0,14.0%,66.7,15,True,0.16
+Joe Fagnano,QB,292,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,1.7,1.7%,86.7,15,True,0.16
+Sawyer Robertson,QB,293,premium,Blitz Grade,sg_qb_blitz_grade,63.9,63.9,26.7,15,False,0.14
+Sawyer Robertson,QB,293,premium,Big-Time Throw Rate,sg_qb_btt_rate,4.6,4.6%,60.0,15,False,0.14
+Sawyer Robertson,QB,293,premium,Pass Grade,sg_qb_pass_grade,67.2,67.2,20.0,15,False,0.24
+Sawyer Robertson,QB,293,premium,Under-Pressure Grade,sg_qb_pressure_grade,56.6,56.6,66.7,15,False,0.16
+Sawyer Robertson,QB,293,premium,Pressure-to-Sack Rate,sg_qb_pressure_to_sack_rate,15.0,15.0%,53.3,15,True,0.16
+Sawyer Robertson,QB,293,premium,Turnover-Worthy Play Rate,sg_qb_twp_rate,3.6,3.6%,20.0,15,True,0.16
+Jeremiyah Love,RB,4,premium,Breakaway Rate,sg_rb_breakaway_percent,52.9,52.9%,95.0,20,False,0.14
+Jeremiyah Love,RB,4,premium,Elusive Rating,sg_rb_elusive_rating,127.5,127.5,100.0,20,False,0.22
+Jeremiyah Love,RB,4,premium,Explosive Run Rate,sg_rb_explosive_rate,39.0,39.0%,100.0,20,False,0.18
+Jeremiyah Love,RB,4,premium,Run Grade,sg_rb_run_grade,93.7,93.7,100.0,20,False,0.18
+Jeremiyah Love,RB,4,premium,Targets / Route,sg_rb_targets_per_route,0.2222,0.222,95.0,20,False,0.1
+Jeremiyah Love,RB,4,premium,Yards After Contact / Att,sg_rb_yco_attempt,4.5,4.50,100.0,20,False,0.18
+Jonah Coleman,RB,65,premium,Breakaway Rate,sg_rb_breakaway_percent,33.4,33.4%,50.0,20,False,0.14
+Jonah Coleman,RB,65,premium,Elusive Rating,sg_rb_elusive_rating,85.7,85.7,65.0,20,False,0.22
+Jonah Coleman,RB,65,premium,Explosive Run Rate,sg_rb_explosive_rate,20.0,20.0%,50.0,20,False,0.18
+Jonah Coleman,RB,65,premium,Run Grade,sg_rb_run_grade,83.8,83.8,70.0,20,False,0.18
+Jonah Coleman,RB,65,premium,Targets / Route,sg_rb_targets_per_route,0.17,0.170,55.0,20,False,0.1
+Jonah Coleman,RB,65,premium,Yards After Contact / Att,sg_rb_yco_attempt,3.58,3.58,75.0,20,False,0.18
+Jadarian Price,RB,75,premium,Breakaway Rate,sg_rb_breakaway_percent,45.0,45.0%,85.0,20,False,0.14
+Jadarian Price,RB,75,premium,Elusive Rating,sg_rb_elusive_rating,118.6,118.6,95.0,20,False,0.22
+Jadarian Price,RB,75,premium,Explosive Run Rate,sg_rb_explosive_rate,24.0,24.0%,75.0,20,False,0.18
+Jadarian Price,RB,75,premium,Run Grade,sg_rb_run_grade,79.9,79.9,45.0,20,False,0.18
+Jadarian Price,RB,75,premium,Targets / Route,sg_rb_targets_per_route,0.0986,0.099,10.0,20,False,0.1
+Jadarian Price,RB,75,premium,Yards After Contact / Att,sg_rb_yco_attempt,3.92,3.92,90.0,20,False,0.18
+Nicholas Singleton,RB,85,premium,Breakaway Rate,sg_rb_breakaway_percent,23.4,23.4%,20.0,20,False,0.14
+Nicholas Singleton,RB,85,premium,Elusive Rating,sg_rb_elusive_rating,47.3,47.3,15.0,20,False,0.22
+Nicholas Singleton,RB,85,premium,Explosive Run Rate,sg_rb_explosive_rate,12.0,12.0%,25.0,20,False,0.18
+Nicholas Singleton,RB,85,premium,Run Grade,sg_rb_run_grade,76.9,76.9,30.0,20,False,0.18
+Nicholas Singleton,RB,85,premium,Targets / Route,sg_rb_targets_per_route,0.2014,0.201,85.0,20,False,0.1
+Nicholas Singleton,RB,85,premium,Yards After Contact / Att,sg_rb_yco_attempt,2.69,2.69,15.0,20,False,0.18
+Demond Claiborne,RB,98,premium,Breakaway Rate,sg_rb_breakaway_percent,42.5,42.5%,75.0,20,False,0.14
+Demond Claiborne,RB,98,premium,Elusive Rating,sg_rb_elusive_rating,66.1,66.1,50.0,20,False,0.22
+Demond Claiborne,RB,98,premium,Explosive Run Rate,sg_rb_explosive_rate,23.0,23.0%,65.0,20,False,0.18
+Demond Claiborne,RB,98,premium,Run Grade,sg_rb_run_grade,76.8,76.8,25.0,20,False,0.18
+Demond Claiborne,RB,98,premium,Targets / Route,sg_rb_targets_per_route,0.1827,0.183,65.0,20,False,0.1
+Demond Claiborne,RB,98,premium,Yards After Contact / Att,sg_rb_yco_attempt,3.04,3.04,35.0,20,False,0.18
+Kaytron Allen,RB,100,premium,Breakaway Rate,sg_rb_breakaway_percent,40.4,40.4%,70.0,20,False,0.14
+Kaytron Allen,RB,100,premium,Elusive Rating,sg_rb_elusive_rating,102.6,102.6,90.0,20,False,0.22
+Kaytron Allen,RB,100,premium,Explosive Run Rate,sg_rb_explosive_rate,30.0,30.0%,90.0,20,False,0.18
+Kaytron Allen,RB,100,premium,Run Grade,sg_rb_run_grade,91.3,91.3,95.0,20,False,0.18
+Kaytron Allen,RB,100,premium,Targets / Route,sg_rb_targets_per_route,0.162,0.162,50.0,20,False,0.1
+Kaytron Allen,RB,100,premium,Yards After Contact / Att,sg_rb_yco_attempt,3.77,3.77,80.0,20,False,0.18
+Mike Washington Jr.,RB,104,premium,Breakaway Rate,sg_rb_breakaway_percent,48.3,48.3%,90.0,20,False,0.14
+Mike Washington Jr.,RB,104,premium,Elusive Rating,sg_rb_elusive_rating,73.2,73.2,55.0,20,False,0.22
+Mike Washington Jr.,RB,104,premium,Explosive Run Rate,sg_rb_explosive_rate,30.0,30.0%,90.0,20,False,0.18
+Mike Washington Jr.,RB,104,premium,Run Grade,sg_rb_run_grade,84.3,84.3,75.0,20,False,0.18
+Mike Washington Jr.,RB,104,premium,Targets / Route,sg_rb_targets_per_route,0.1572,0.157,35.0,20,False,0.1
+Mike Washington Jr.,RB,104,premium,Yards After Contact / Att,sg_rb_yco_attempt,3.86,3.86,85.0,20,False,0.18
+Emmett Johnson,RB,106,premium,Breakaway Rate,sg_rb_breakaway_percent,27.9,27.9%,35.0,20,False,0.14
+Emmett Johnson,RB,106,premium,Elusive Rating,sg_rb_elusive_rating,88.3,88.3,75.0,20,False,0.22
+Emmett Johnson,RB,106,premium,Explosive Run Rate,sg_rb_explosive_rate,36.0,36.0%,95.0,20,False,0.18
+Emmett Johnson,RB,106,premium,Run Grade,sg_rb_run_grade,88.1,88.1,85.0,20,False,0.18
+Emmett Johnson,RB,106,premium,Targets / Route,sg_rb_targets_per_route,0.1856,0.186,70.0,20,False,0.1
+Emmett Johnson,RB,106,premium,Yards After Contact / Att,sg_rb_yco_attempt,2.95,2.95,30.0,20,False,0.18
+Le'Veon Moss,RB,130,premium,Breakaway Rate,sg_rb_breakaway_percent,25.4,25.4%,25.0,20,False,0.14
+Le'Veon Moss,RB,130,premium,Elusive Rating,sg_rb_elusive_rating,65.8,65.8,45.0,20,False,0.22
+Le'Veon Moss,RB,130,premium,Explosive Run Rate,sg_rb_explosive_rate,12.0,12.0%,25.0,20,False,0.18
+Le'Veon Moss,RB,130,premium,Run Grade,sg_rb_run_grade,80.0,80.0,50.0,20,False,0.18
+Le'Veon Moss,RB,130,premium,Targets / Route,sg_rb_targets_per_route,0.0606,0.061,5.0,20,False,0.1
+Le'Veon Moss,RB,130,premium,Yards After Contact / Att,sg_rb_yco_attempt,3.47,3.47,65.0,20,False,0.18
+Seth McGowan,RB,139,premium,Breakaway Rate,sg_rb_breakaway_percent,14.7,14.7%,10.0,20,False,0.14
+Seth McGowan,RB,139,premium,Elusive Rating,sg_rb_elusive_rating,51.8,51.8,20.0,20,False,0.22
+Seth McGowan,RB,139,premium,Explosive Run Rate,sg_rb_explosive_rate,13.0,13.0%,30.0,20,False,0.18
+Seth McGowan,RB,139,premium,Run Grade,sg_rb_run_grade,77.2,77.2,35.0,20,False,0.18
+Seth McGowan,RB,139,premium,Targets / Route,sg_rb_targets_per_route,0.1503,0.150,30.0,20,False,0.1
+Seth McGowan,RB,139,premium,Yards After Contact / Att,sg_rb_yco_attempt,2.72,2.72,20.0,20,False,0.18
+Roman Hemby,RB,184,premium,Breakaway Rate,sg_rb_breakaway_percent,28.4,28.4%,40.0,20,False,0.14
+Roman Hemby,RB,184,premium,Elusive Rating,sg_rb_elusive_rating,62.6,62.6,35.0,20,False,0.22
+Roman Hemby,RB,184,premium,Explosive Run Rate,sg_rb_explosive_rate,26.0,26.0%,80.0,20,False,0.18
+Roman Hemby,RB,184,premium,Run Grade,sg_rb_run_grade,81.9,81.9,60.0,20,False,0.18
+Roman Hemby,RB,184,premium,Targets / Route,sg_rb_targets_per_route,0.1029,0.103,15.0,20,False,0.1
+Roman Hemby,RB,184,premium,Yards After Contact / Att,sg_rb_yco_attempt,3.36,3.36,50.0,20,False,0.18
+Eli Heidenreich,RB,185,premium,Breakaway Rate,sg_rb_breakaway_percent,32.1,32.1%,45.0,20,False,0.14
+Eli Heidenreich,RB,185,premium,Elusive Rating,sg_rb_elusive_rating,76.7,76.7,60.0,20,False,0.22
+Eli Heidenreich,RB,185,premium,Explosive Run Rate,sg_rb_explosive_rate,16.0,16.0%,45.0,20,False,0.18
+Eli Heidenreich,RB,185,premium,Run Grade,sg_rb_run_grade,86.1,86.1,80.0,20,False,0.18
+Eli Heidenreich,RB,185,premium,Targets / Route,sg_rb_targets_per_route,0.397,0.397,100.0,20,False,0.1
+Eli Heidenreich,RB,185,premium,Yards After Contact / Att,sg_rb_yco_attempt,3.17,3.17,45.0,20,False,0.18
+Desmond Reid,RB,210,premium,Breakaway Rate,sg_rb_breakaway_percent,37.6,37.6%,65.0,20,False,0.14
+Desmond Reid,RB,210,premium,Elusive Rating,sg_rb_elusive_rating,56.4,56.4,25.0,20,False,0.22
+Desmond Reid,RB,210,premium,Explosive Run Rate,sg_rb_explosive_rate,8.0,8.0%,10.0,20,False,0.18
+Desmond Reid,RB,210,premium,Run Grade,sg_rb_run_grade,74.0,74.0,20.0,20,False,0.18
+Desmond Reid,RB,210,premium,Targets / Route,sg_rb_targets_per_route,0.2131,0.213,90.0,20,False,0.1
+Desmond Reid,RB,210,premium,Yards After Contact / Att,sg_rb_yco_attempt,2.79,2.79,25.0,20,False,0.18
+J'Mari Taylor,RB,227,premium,Breakaway Rate,sg_rb_breakaway_percent,33.9,33.9%,55.0,20,False,0.14
+J'Mari Taylor,RB,227,premium,Elusive Rating,sg_rb_elusive_rating,90.9,90.9,80.0,20,False,0.22
+J'Mari Taylor,RB,227,premium,Explosive Run Rate,sg_rb_explosive_rate,21.0,21.0%,55.0,20,False,0.18
+J'Mari Taylor,RB,227,premium,Run Grade,sg_rb_run_grade,80.3,80.3,55.0,20,False,0.18
+J'Mari Taylor,RB,227,premium,Targets / Route,sg_rb_targets_per_route,0.1957,0.196,80.0,20,False,0.1
+J'Mari Taylor,RB,227,premium,Yards After Contact / Att,sg_rb_yco_attempt,3.39,3.39,55.0,20,False,0.18
+Robert Henry Jr.,RB,234,premium,Breakaway Rate,sg_rb_breakaway_percent,60.8,60.8%,100.0,20,False,0.14
+Robert Henry Jr.,RB,234,premium,Elusive Rating,sg_rb_elusive_rating,93.0,93.0,85.0,20,False,0.22
+Robert Henry Jr.,RB,234,premium,Explosive Run Rate,sg_rb_explosive_rate,24.0,24.0%,75.0,20,False,0.18
+Robert Henry Jr.,RB,234,premium,Run Grade,sg_rb_run_grade,77.7,77.7,40.0,20,False,0.18
+Robert Henry Jr.,RB,234,premium,Targets / Route,sg_rb_targets_per_route,0.1231,0.123,20.0,20,False,0.1
+Robert Henry Jr.,RB,234,premium,Yards After Contact / Att,sg_rb_yco_attempt,4.25,4.25,95.0,20,False,0.18
+Jam Miller,RB,251,premium,Breakaway Rate,sg_rb_breakaway_percent,20.4,20.4%,15.0,20,False,0.14
+Jam Miller,RB,251,premium,Elusive Rating,sg_rb_elusive_rating,37.8,37.8,10.0,20,False,0.22
+Jam Miller,RB,251,premium,Explosive Run Rate,sg_rb_explosive_rate,11.0,11.0%,15.0,20,False,0.18
+Jam Miller,RB,251,premium,Run Grade,sg_rb_run_grade,69.4,69.4,5.0,20,False,0.18
+Jam Miller,RB,251,premium,Targets / Route,sg_rb_targets_per_route,0.1586,0.159,45.0,20,False,0.1
+Jam Miller,RB,251,premium,Yards After Contact / Att,sg_rb_yco_attempt,2.45,2.45,10.0,20,False,0.18
+Noah Whittington,RB,260,premium,Breakaway Rate,sg_rb_breakaway_percent,43.7,43.7%,80.0,20,False,0.14
+Noah Whittington,RB,260,premium,Elusive Rating,sg_rb_elusive_rating,64.1,64.1,40.0,20,False,0.22
+Noah Whittington,RB,260,premium,Explosive Run Rate,sg_rb_explosive_rate,15.0,15.0%,40.0,20,False,0.18
+Noah Whittington,RB,260,premium,Run Grade,sg_rb_run_grade,88.5,88.5,90.0,20,False,0.18
+Noah Whittington,RB,260,premium,Targets / Route,sg_rb_targets_per_route,0.1905,0.191,75.0,20,False,0.1
+Noah Whittington,RB,260,premium,Yards After Contact / Att,sg_rb_yco_attempt,3.51,3.51,70.0,20,False,0.18
+Adam Randall,RB,297,premium,Breakaway Rate,sg_rb_breakaway_percent,26.8,26.8%,30.0,20,False,0.14
+Adam Randall,RB,297,premium,Elusive Rating,sg_rb_elusive_rating,61.4,61.4,30.0,20,False,0.22
+Adam Randall,RB,297,premium,Explosive Run Rate,sg_rb_explosive_rate,23.0,23.0%,65.0,20,False,0.18
+Adam Randall,RB,297,premium,Run Grade,sg_rb_run_grade,83.3,83.3,65.0,20,False,0.18
+Adam Randall,RB,297,premium,Targets / Route,sg_rb_targets_per_route,0.1775,0.177,60.0,20,False,0.1
+Adam Randall,RB,297,premium,Yards After Contact / Att,sg_rb_yco_attempt,3.13,3.13,40.0,20,False,0.18
+Rahsul Faison,RB,299,premium,Breakaway Rate,sg_rb_breakaway_percent,35.4,35.4%,60.0,20,False,0.14
+Rahsul Faison,RB,299,premium,Elusive Rating,sg_rb_elusive_rating,87.5,87.5,70.0,20,False,0.22
+Rahsul Faison,RB,299,premium,Explosive Run Rate,sg_rb_explosive_rate,14.0,14.0%,35.0,20,False,0.18
+Rahsul Faison,RB,299,premium,Run Grade,sg_rb_run_grade,71.3,71.3,10.0,20,False,0.18
+Rahsul Faison,RB,299,premium,Targets / Route,sg_rb_targets_per_route,0.1278,0.128,25.0,20,False,0.1
+Rahsul Faison,RB,299,premium,Yards After Contact / Att,sg_rb_yco_attempt,3.47,3.47,65.0,20,False,0.18
+CJ Donaldson,RB,301,premium,Breakaway Rate,sg_rb_breakaway_percent,7.5,7.5%,5.0,20,False,0.14
+CJ Donaldson,RB,301,premium,Elusive Rating,sg_rb_elusive_rating,22.8,22.8,5.0,20,False,0.22
+CJ Donaldson,RB,301,premium,Explosive Run Rate,sg_rb_explosive_rate,7.0,7.0%,5.0,20,False,0.18
+CJ Donaldson,RB,301,premium,Run Grade,sg_rb_run_grade,72.5,72.5,15.0,20,False,0.18
+CJ Donaldson,RB,301,premium,Targets / Route,sg_rb_targets_per_route,0.1574,0.157,40.0,20,False,0.1
+CJ Donaldson,RB,301,premium,Yards After Contact / Att,sg_rb_yco_attempt,2.3,2.30,5.0,20,False,0.18
+Caleb Downs,S,7,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,7.7,7.7%,28.6,20,False,0.14
+Caleb Downs,S,7,premium,Coverage Grade,sg_cov_grade,89.6,89.6,85.7,21,False,0.22
+Caleb Downs,S,7,premium,Passer Rating Allowed,sg_cov_qb_rating_against,54.5,54.5,76.2,21,True,0.14
+Caleb Downs,S,7,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,8.9,8.9,28.6,21,False,0.14
+Caleb Downs,S,7,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.5,0.50,47.6,21,True,0.18
+Caleb Downs,S,7,premium,Zone Coverage Grade,sg_cov_zone_grade,72.0,72.0,52.4,21,False,0.18
+Caleb Downs,S,7,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,79.2,79.2,61.9,21,True,0.1
+Caleb Downs,S,7,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,4.6,4.6,33.3,21,False,0.1
+Caleb Downs,S,7,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.88,0.88,50.0,21,True,0.1
+Dillon Thieneman,S,14,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,17.2,17.2%,90.5,20,False,0.14
+Dillon Thieneman,S,14,premium,Coverage Grade,sg_cov_grade,91.1,91.1,95.2,21,False,0.22
+Dillon Thieneman,S,14,premium,Passer Rating Allowed,sg_cov_qb_rating_against,80.4,80.4,28.6,21,True,0.14
+Dillon Thieneman,S,14,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,14.2,14.2,71.4,21,False,0.14
+Dillon Thieneman,S,14,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.4,0.40,61.9,21,True,0.18
+Dillon Thieneman,S,14,premium,Zone Coverage Grade,sg_cov_zone_grade,89.7,89.7,95.2,21,False,0.18
+Dillon Thieneman,S,14,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,99.8,99.8,33.3,21,True,0.1
+Dillon Thieneman,S,14,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.5,6.5,71.4,21,False,0.1
+Dillon Thieneman,S,14,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.82,0.82,50.0,21,True,0.1
+Emmanuel McNeil-Warren,S,16,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,33.3,33.3%,100.0,20,False,0.14
+Emmanuel McNeil-Warren,S,16,premium,Coverage Grade,sg_cov_grade,92.0,92.0,100.0,21,False,0.22
+Emmanuel McNeil-Warren,S,16,premium,Passer Rating Allowed,sg_cov_qb_rating_against,50.3,50.3,81.0,21,True,0.14
+Emmanuel McNeil-Warren,S,16,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,20.9,20.9,95.2,21,False,0.14
+Emmanuel McNeil-Warren,S,16,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.4,0.40,61.9,21,True,0.18
+Emmanuel McNeil-Warren,S,16,premium,Zone Coverage Grade,sg_cov_zone_grade,92.5,92.5,100.0,21,False,0.18
+Emmanuel McNeil-Warren,S,16,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,79.2,79.2,61.9,21,True,0.1
+Emmanuel McNeil-Warren,S,16,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,21.0,21.0,100.0,21,False,0.1
+Emmanuel McNeil-Warren,S,16,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,-0.05,-0.05,50.0,21,True,0.1
+A.J. Haulcy,S,50,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,13.5,13.5%,66.7,20,False,0.14
+A.J. Haulcy,S,50,premium,Coverage Grade,sg_cov_grade,88.6,88.6,71.4,21,False,0.22
+A.J. Haulcy,S,50,premium,Passer Rating Allowed,sg_cov_qb_rating_against,59.0,59.0,52.4,21,True,0.14
+A.J. Haulcy,S,50,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,10.4,10.4,47.6,21,False,0.14
+A.J. Haulcy,S,50,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,19.0,21,True,0.18
+A.J. Haulcy,S,50,premium,Zone Coverage Grade,sg_cov_zone_grade,80.9,80.9,66.7,21,False,0.18
+A.J. Haulcy,S,50,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,158.3,158.3,,21,True,0.1
+A.J. Haulcy,S,50,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.6,6.6,76.2,21,False,0.1
+A.J. Haulcy,S,50,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,2.33,2.33,50.0,21,True,0.1
+Genesis Smith,S,67,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,26.1,26.1%,95.2,20,False,0.14
+Genesis Smith,S,67,premium,Coverage Grade,sg_cov_grade,88.5,88.5,61.9,21,False,0.22
+Genesis Smith,S,67,premium,Passer Rating Allowed,sg_cov_qb_rating_against,91.4,91.4,14.3,21,True,0.14
+Genesis Smith,S,67,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,15.7,15.7,81.0,21,False,0.14
+Genesis Smith,S,67,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.5,0.50,47.6,21,True,0.18
+Genesis Smith,S,67,premium,Zone Coverage Grade,sg_cov_zone_grade,70.3,70.3,38.1,21,False,0.18
+Genesis Smith,S,67,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,70.1,70.1,71.4,21,True,0.1
+Genesis Smith,S,67,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.5,6.5,71.4,21,False,0.1
+Genesis Smith,S,67,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.13,0.13,50.0,21,True,0.1
+Zakee Wheatley,S,81,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,10.0,10.0%,38.1,20,False,0.14
+Zakee Wheatley,S,81,premium,Coverage Grade,sg_cov_grade,83.5,83.5,57.1,21,False,0.22
+Zakee Wheatley,S,81,premium,Passer Rating Allowed,sg_cov_qb_rating_against,69.2,69.2,42.9,21,True,0.14
+Zakee Wheatley,S,81,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,30.9,30.9,100.0,21,False,0.14
+Zakee Wheatley,S,81,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.1,0.10,95.2,21,True,0.18
+Zakee Wheatley,S,81,premium,Zone Coverage Grade,sg_cov_zone_grade,74.1,74.1,57.1,21,False,0.18
+Zakee Wheatley,S,81,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,125.3,125.3,4.8,21,True,0.1
+Zakee Wheatley,S,81,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.9,6.9,81.0,21,False,0.1
+Zakee Wheatley,S,81,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.67,0.67,50.0,21,True,0.1
+Jalon Kilgore,S,84,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,16.9,16.9%,81.0,20,False,0.14
+Jalon Kilgore,S,84,premium,Coverage Grade,sg_cov_grade,65.3,65.3,19.0,21,False,0.22
+Jalon Kilgore,S,84,premium,Passer Rating Allowed,sg_cov_qb_rating_against,68.1,68.1,47.6,21,True,0.14
+Jalon Kilgore,S,84,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,5.5,5.5,4.8,21,False,0.14
+Jalon Kilgore,S,84,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.1,1.10,4.8,21,True,0.18
+Jalon Kilgore,S,84,premium,Zone Coverage Grade,sg_cov_zone_grade,55.7,55.7,14.3,21,False,0.18
+Jalon Kilgore,S,84,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,65.7,65.7,76.2,21,True,0.1
+Jalon Kilgore,S,84,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,4.5,4.5,28.6,21,False,0.1
+Jalon Kilgore,S,84,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.35,1.35,50.0,21,True,0.1
+Bud Clark,S,99,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,17.1,17.1%,85.7,20,False,0.14
+Bud Clark,S,99,premium,Coverage Grade,sg_cov_grade,77.2,77.2,42.9,21,False,0.22
+Bud Clark,S,99,premium,Passer Rating Allowed,sg_cov_qb_rating_against,75.9,75.9,38.1,21,True,0.14
+Bud Clark,S,99,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,9.0,9.0,33.3,21,False,0.14
+Bud Clark,S,99,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,19.0,21,True,0.18
+Bud Clark,S,99,premium,Zone Coverage Grade,sg_cov_zone_grade,75.3,75.3,61.9,21,False,0.18
+Bud Clark,S,99,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,89.8,89.8,52.4,21,True,0.1
+Bud Clark,S,99,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,9.0,9.0,85.7,21,False,0.1
+Bud Clark,S,99,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.82,0.82,50.0,21,True,0.1
+Michael Taaffe,S,134,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,,0.0%,4.8,20,False,0.14
+Michael Taaffe,S,134,premium,Coverage Grade,sg_cov_grade,89.4,89.4,81.0,21,False,0.22
+Michael Taaffe,S,134,premium,Passer Rating Allowed,sg_cov_qb_rating_against,54.6,54.6,71.4,21,True,0.14
+Michael Taaffe,S,134,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,17.1,17.1,85.7,21,False,0.14
+Michael Taaffe,S,134,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.3,0.30,85.7,21,True,0.18
+Michael Taaffe,S,134,premium,Zone Coverage Grade,sg_cov_zone_grade,88.7,88.7,85.7,21,False,0.18
+Michael Taaffe,S,134,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,79.9,79.9,57.1,21,True,0.1
+Michael Taaffe,S,134,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,15.7,15.7,90.5,21,False,0.1
+Michael Taaffe,S,134,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.34,0.34,50.0,21,True,0.1
+Kamari Ramsey,S,161,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,9.7,9.7%,33.3,20,False,0.14
+Kamari Ramsey,S,161,premium,Coverage Grade,sg_cov_grade,77.0,77.0,38.1,21,False,0.22
+Kamari Ramsey,S,161,premium,Passer Rating Allowed,sg_cov_qb_rating_against,96.2,96.2,9.5,21,True,0.14
+Kamari Ramsey,S,161,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.6,7.6,14.3,21,False,0.14
+Kamari Ramsey,S,161,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.7,0.70,19.0,21,True,0.18
+Kamari Ramsey,S,161,premium,Zone Coverage Grade,sg_cov_zone_grade,67.0,67.0,28.6,21,False,0.18
+Kamari Ramsey,S,161,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,109.7,109.7,14.3,21,True,0.1
+Kamari Ramsey,S,161,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.0,6.0,52.4,21,False,0.1
+Kamari Ramsey,S,161,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.96,0.96,50.0,21,True,0.1
+Lorenzo Styles Jr.,S,163,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,12.1,12.1%,57.1,20,False,0.14
+Lorenzo Styles Jr.,S,163,premium,Coverage Grade,sg_cov_grade,63.5,63.5,14.3,21,False,0.22
+Lorenzo Styles Jr.,S,163,premium,Passer Rating Allowed,sg_cov_qb_rating_against,100.7,100.7,4.8,21,True,0.14
+Lorenzo Styles Jr.,S,163,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,6.8,6.8,9.5,21,False,0.14
+Lorenzo Styles Jr.,S,163,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.2,1.20,,21,True,0.18
+Lorenzo Styles Jr.,S,163,premium,Zone Coverage Grade,sg_cov_zone_grade,64.5,64.5,23.8,21,False,0.18
+Lorenzo Styles Jr.,S,163,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,104.7,104.7,19.0,21,True,0.1
+Lorenzo Styles Jr.,S,163,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,4.3,4.3,19.0,21,False,0.1
+Lorenzo Styles Jr.,S,163,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.94,1.94,50.0,21,True,0.1
+Louis Moore,S,166,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,14.3,14.3%,71.4,20,False,0.14
+Louis Moore,S,166,premium,Coverage Grade,sg_cov_grade,83.5,83.5,57.1,21,False,0.22
+Louis Moore,S,166,premium,Passer Rating Allowed,sg_cov_qb_rating_against,45.1,45.1,85.7,21,True,0.14
+Louis Moore,S,166,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,14.0,14.0,66.7,21,False,0.14
+Louis Moore,S,166,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.4,0.40,61.9,21,True,0.18
+Louis Moore,S,166,premium,Zone Coverage Grade,sg_cov_zone_grade,85.7,85.7,71.4,21,False,0.18
+Louis Moore,S,166,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,57.3,57.3,85.7,21,True,0.1
+Louis Moore,S,166,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,5.3,5.3,38.1,21,False,0.1
+Louis Moore,S,166,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.61,0.61,50.0,21,True,0.1
+Xavier Nwankpa,S,188,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,3.7,3.7%,14.3,20,False,0.14
+Xavier Nwankpa,S,188,premium,Coverage Grade,sg_cov_grade,61.6,61.6,9.5,21,False,0.22
+Xavier Nwankpa,S,188,premium,Passer Rating Allowed,sg_cov_qb_rating_against,79.4,79.4,33.3,21,True,0.14
+Xavier Nwankpa,S,188,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,14.3,14.3,76.2,21,False,0.14
+Xavier Nwankpa,S,188,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.5,0.50,47.6,21,True,0.18
+Xavier Nwankpa,S,188,premium,Zone Coverage Grade,sg_cov_zone_grade,60.5,60.5,19.0,21,False,0.18
+Xavier Nwankpa,S,188,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,100.0,100.0,28.6,21,True,0.1
+Xavier Nwankpa,S,188,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,19.0,19.0,95.2,21,False,0.1
+Xavier Nwankpa,S,188,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.42,0.42,50.0,21,True,0.1
+Bishop Fitzgerald,S,193,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,12.5,12.5%,61.9,20,False,0.14
+Bishop Fitzgerald,S,193,premium,Coverage Grade,sg_cov_grade,90.8,90.8,90.5,21,False,0.22
+Bishop Fitzgerald,S,193,premium,Passer Rating Allowed,sg_cov_qb_rating_against,88.4,88.4,19.0,21,True,0.14
+Bishop Fitzgerald,S,193,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,11.3,11.3,61.9,21,False,0.14
+Bishop Fitzgerald,S,193,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.6,0.60,33.3,21,True,0.18
+Bishop Fitzgerald,S,193,premium,Zone Coverage Grade,sg_cov_zone_grade,89.4,89.4,90.5,21,False,0.18
+Bishop Fitzgerald,S,193,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,99.3,99.3,38.1,21,True,0.1
+Bishop Fitzgerald,S,193,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,3.9,3.9,14.3,21,False,0.1
+Bishop Fitzgerald,S,193,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,2.13,2.13,50.0,21,True,0.1
+Jakobe Thomas,S,197,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,12.0,12.0%,52.4,20,False,0.14
+Jakobe Thomas,S,197,premium,Coverage Grade,sg_cov_grade,89.1,89.1,76.2,21,False,0.22
+Jakobe Thomas,S,197,premium,Passer Rating Allowed,sg_cov_qb_rating_against,55.8,55.8,66.7,21,True,0.14
+Jakobe Thomas,S,197,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,7.9,7.9,19.0,21,False,0.14
+Jakobe Thomas,S,197,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.9,0.90,14.3,21,True,0.18
+Jakobe Thomas,S,197,premium,Zone Coverage Grade,sg_cov_zone_grade,71.6,71.6,42.9,21,False,0.18
+Jakobe Thomas,S,197,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,95.1,95.1,42.9,21,True,0.1
+Jakobe Thomas,S,197,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,3.3,3.3,4.8,21,False,0.1
+Jakobe Thomas,S,197,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,2.07,2.07,50.0,21,True,0.1
+DeShon Singleton,S,198,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,6.9,6.9%,23.8,20,False,0.14
+DeShon Singleton,S,198,premium,Coverage Grade,sg_cov_grade,65.9,65.9,28.6,21,False,0.22
+DeShon Singleton,S,198,premium,Passer Rating Allowed,sg_cov_qb_rating_against,35.4,35.4,95.2,21,True,0.14
+DeShon Singleton,S,198,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,10.0,10.0,42.9,21,False,0.14
+DeShon Singleton,S,198,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.4,0.40,61.9,21,True,0.18
+DeShon Singleton,S,198,premium,Zone Coverage Grade,sg_cov_zone_grade,67.8,67.8,33.3,21,False,0.18
+DeShon Singleton,S,198,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,4.8,4.8,95.2,21,True,0.1
+DeShon Singleton,S,198,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,5.8,5.8,47.6,21,False,0.1
+DeShon Singleton,S,198,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.26,0.26,50.0,21,True,0.1
+Dalton Johnson,S,212,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,11.1,11.1%,42.9,20,False,0.14
+Dalton Johnson,S,212,premium,Coverage Grade,sg_cov_grade,88.6,88.6,71.4,21,False,0.22
+Dalton Johnson,S,212,premium,Passer Rating Allowed,sg_cov_qb_rating_against,37.8,37.8,90.5,21,True,0.14
+Dalton Johnson,S,212,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,8.2,8.2,23.8,21,False,0.14
+Dalton Johnson,S,212,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.6,0.60,33.3,21,True,0.18
+Dalton Johnson,S,212,premium,Zone Coverage Grade,sg_cov_zone_grade,88.5,88.5,81.0,21,False,0.18
+Dalton Johnson,S,212,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,58.7,58.7,81.0,21,True,0.1
+Dalton Johnson,S,212,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,4.5,4.5,28.6,21,False,0.1
+Dalton Johnson,S,212,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.13,1.13,50.0,21,True,0.1
+Robert Spears-Jennings,S,224,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,3.3,3.3%,9.5,20,False,0.14
+Robert Spears-Jennings,S,224,premium,Coverage Grade,sg_cov_grade,49.6,49.6,4.8,21,False,0.22
+Robert Spears-Jennings,S,224,premium,Passer Rating Allowed,sg_cov_qb_rating_against,118.9,118.9,,21,True,0.14
+Robert Spears-Jennings,S,224,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,11.0,11.0,57.1,21,False,0.14
+Robert Spears-Jennings,S,224,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,1.0,1.00,9.5,21,True,0.18
+Robert Spears-Jennings,S,224,premium,Zone Coverage Grade,sg_cov_zone_grade,51.6,51.6,4.8,21,False,0.18
+Robert Spears-Jennings,S,224,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,101.8,101.8,23.8,21,True,0.1
+Robert Spears-Jennings,S,224,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.4,6.4,61.9,21,False,0.1
+Robert Spears-Jennings,S,224,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,2.42,2.42,50.0,21,True,0.1
+VJ Payne,S,242,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,16.7,16.7%,76.2,20,False,0.14
+VJ Payne,S,242,premium,Coverage Grade,sg_cov_grade,74.1,74.1,33.3,21,False,0.22
+VJ Payne,S,242,premium,Passer Rating Allowed,sg_cov_qb_rating_against,57.4,57.4,57.1,21,True,0.14
+VJ Payne,S,242,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,9.9,9.9,38.1,21,False,0.14
+VJ Payne,S,242,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.4,0.40,61.9,21,True,0.18
+VJ Payne,S,242,premium,Zone Coverage Grade,sg_cov_zone_grade,71.9,71.9,47.6,21,False,0.18
+VJ Payne,S,242,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,46.4,46.4,90.5,21,True,0.1
+VJ Payne,S,242,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,3.6,3.6,9.5,21,False,0.1
+VJ Payne,S,242,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.91,0.91,50.0,21,True,0.1
+Jalen Huskey,S,264,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,11.8,11.8%,47.6,20,False,0.14
+Jalen Huskey,S,264,premium,Coverage Grade,sg_cov_grade,83.5,83.5,57.1,21,False,0.22
+Jalen Huskey,S,264,premium,Passer Rating Allowed,sg_cov_qb_rating_against,55.9,55.9,61.9,21,True,0.14
+Jalen Huskey,S,264,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,19.9,19.9,90.5,21,False,0.14
+Jalen Huskey,S,264,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.2,0.20,90.5,21,True,0.18
+Jalen Huskey,S,264,premium,Zone Coverage Grade,sg_cov_zone_grade,86.2,86.2,76.2,21,False,0.18
+Jalen Huskey,S,264,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,121.2,121.2,9.5,21,True,0.1
+Jalen Huskey,S,264,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,5.7,5.7,42.9,21,False,0.1
+Jalen Huskey,S,264,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,1.16,1.16,50.0,21,True,0.1
+Ahmaad Moses,S,296,premium,Forced Incompletion Rate,sg_cov_forced_incompletion_rate,4.3,4.3%,19.0,20,False,0.14
+Ahmaad Moses,S,296,premium,Coverage Grade,sg_cov_grade,65.7,65.7,23.8,21,False,0.22
+Ahmaad Moses,S,296,premium,Passer Rating Allowed,sg_cov_qb_rating_against,84.9,84.9,23.8,21,True,0.14
+Ahmaad Moses,S,296,premium,Coverage Snaps per Target,sg_cov_snaps_per_target,11.0,11.0,57.1,21,False,0.14
+Ahmaad Moses,S,296,premium,Yards Allowed / Coverage Snap,sg_cov_yards_per_snap,0.6,0.60,33.3,21,True,0.18
+Ahmaad Moses,S,296,premium,Zone Coverage Grade,sg_cov_zone_grade,54.8,54.8,9.5,21,False,0.18
+Ahmaad Moses,S,296,premium,Slot Passer Rating Allowed,sg_slot_cov_qb_rating_against,91.6,91.6,47.6,21,True,0.1
+Ahmaad Moses,S,296,premium,Slot Snaps per Target,sg_slot_cov_snaps_per_target,6.1,6.1,57.1,21,False,0.1
+Ahmaad Moses,S,296,premium,Slot Yards Allowed / Snap,sg_slot_cov_yards_per_snap,0.81,0.81,50.0,21,True,0.1
+Kenyon Sadiq,TE,19,premium,Drop Rate,sg_wrte_drop_rate,10.5,10.5%,21.4,23,True,0.1
+Kenyon Sadiq,TE,19,premium,Man YPRR,sg_wrte_man_yprr,1.15,1.15,57.1,26,False,0.14
+Kenyon Sadiq,TE,19,premium,Route Grade,sg_wrte_route_grade,69.0,69.0,53.6,28,False,0.24
+Kenyon Sadiq,TE,19,premium,Targets / Route,sg_wrte_targets_per_route,0.1936,0.194,64.3,28,False,0.18
+Kenyon Sadiq,TE,19,premium,Yards / Route Run,sg_wrte_yprr,1.62,1.62,67.9,28,False,0.22
+Kenyon Sadiq,TE,19,premium,Zone YPRR,sg_wrte_zone_yprr,1.71,1.71,57.1,28,False,0.12
+Eli Stowers,TE,41,premium,Drop Rate,sg_wrte_drop_rate,6.1,6.1%,46.4,23,True,0.1
+Eli Stowers,TE,41,premium,Man YPRR,sg_wrte_man_yprr,1.78,1.78,96.4,26,False,0.14
+Eli Stowers,TE,41,premium,Route Grade,sg_wrte_route_grade,85.3,85.3,96.4,28,False,0.24
+Eli Stowers,TE,41,premium,Targets / Route,sg_wrte_targets_per_route,0.2824,0.282,96.4,28,False,0.18
+Eli Stowers,TE,41,premium,Yards / Route Run,sg_wrte_yprr,2.55,2.55,100.0,28,False,0.22
+Eli Stowers,TE,41,premium,Zone YPRR,sg_wrte_zone_yprr,3.06,3.06,100.0,28,False,0.12
+Michael Trigg,TE,97,premium,Drop Rate,sg_wrte_drop_rate,12.3,12.3%,10.7,23,True,0.1
+Michael Trigg,TE,97,premium,Man YPRR,sg_wrte_man_yprr,2.1,2.10,100.0,26,False,0.14
+Michael Trigg,TE,97,premium,Route Grade,sg_wrte_route_grade,77.3,77.3,85.7,28,False,0.24
+Michael Trigg,TE,97,premium,Targets / Route,sg_wrte_targets_per_route,0.2665,0.267,92.9,28,False,0.18
+Michael Trigg,TE,97,premium,Yards / Route Run,sg_wrte_yprr,2.18,2.18,89.3,28,False,0.22
+Michael Trigg,TE,97,premium,Zone YPRR,sg_wrte_zone_yprr,2.1,2.10,78.6,28,False,0.12
+Max Klare,TE,109,premium,Drop Rate,sg_wrte_drop_rate,4.4,4.4%,64.3,23,True,0.1
+Max Klare,TE,109,premium,Man YPRR,sg_wrte_man_yprr,1.69,1.69,85.7,26,False,0.14
+Max Klare,TE,109,premium,Route Grade,sg_wrte_route_grade,66.5,66.5,42.9,28,False,0.24
+Max Klare,TE,109,premium,Targets / Route,sg_wrte_targets_per_route,0.1821,0.182,53.6,28,False,0.18
+Max Klare,TE,109,premium,Yards / Route Run,sg_wrte_yprr,1.48,1.48,50.0,28,False,0.22
+Max Klare,TE,109,premium,Zone YPRR,sg_wrte_zone_yprr,1.37,1.37,35.7,28,False,0.12
+Jack Endries,TE,110,premium,Drop Rate,sg_wrte_drop_rate,,0.0%,82.1,23,True,0.1
+Jack Endries,TE,110,premium,Man YPRR,sg_wrte_man_yprr,0.64,0.64,32.1,26,False,0.14
+Jack Endries,TE,110,premium,Route Grade,sg_wrte_route_grade,65.1,65.1,35.7,28,False,0.24
+Jack Endries,TE,110,premium,Targets / Route,sg_wrte_targets_per_route,0.1389,0.139,21.4,28,False,0.18
+Jack Endries,TE,110,premium,Yards / Route Run,sg_wrte_yprr,1.07,1.07,7.1,28,False,0.22
+Jack Endries,TE,110,premium,Zone YPRR,sg_wrte_zone_yprr,1.09,1.09,21.4,28,False,0.12
+Sam Roush,TE,111,premium,Drop Rate,sg_wrte_drop_rate,12.5,12.5%,7.1,23,True,0.1
+Sam Roush,TE,111,premium,Man YPRR,sg_wrte_man_yprr,1.42,1.42,71.4,26,False,0.14
+Sam Roush,TE,111,premium,Route Grade,sg_wrte_route_grade,56.6,56.6,14.3,28,False,0.24
+Sam Roush,TE,111,premium,Targets / Route,sg_wrte_targets_per_route,0.2046,0.205,75.0,28,False,0.18
+Sam Roush,TE,111,premium,Yards / Route Run,sg_wrte_yprr,1.39,1.39,35.7,28,False,0.22
+Sam Roush,TE,111,premium,Zone YPRR,sg_wrte_zone_yprr,1.52,1.52,50.0,28,False,0.12
+Justin Joly,TE,112,premium,Drop Rate,sg_wrte_drop_rate,2.0,2.0%,78.6,23,True,0.1
+Justin Joly,TE,112,premium,Man YPRR,sg_wrte_man_yprr,0.93,0.93,50.0,26,False,0.14
+Justin Joly,TE,112,premium,Route Grade,sg_wrte_route_grade,81.6,81.6,89.3,28,False,0.24
+Justin Joly,TE,112,premium,Targets / Route,sg_wrte_targets_per_route,0.2509,0.251,82.1,28,False,0.18
+Justin Joly,TE,112,premium,Yards / Route Run,sg_wrte_yprr,1.78,1.78,78.6,28,False,0.22
+Justin Joly,TE,112,premium,Zone YPRR,sg_wrte_zone_yprr,2.29,2.29,89.3,28,False,0.12
+Eli Raridon,TE,114,premium,Drop Rate,sg_wrte_drop_rate,8.6,8.6%,25.0,23,True,0.1
+Eli Raridon,TE,114,premium,Man YPRR,sg_wrte_man_yprr,0.94,0.94,53.6,26,False,0.14
+Eli Raridon,TE,114,premium,Route Grade,sg_wrte_route_grade,70.9,70.9,57.1,28,False,0.24
+Eli Raridon,TE,114,premium,Targets / Route,sg_wrte_targets_per_route,0.2037,0.204,71.4,28,False,0.18
+Eli Raridon,TE,114,premium,Yards / Route Run,sg_wrte_yprr,2.23,2.23,92.9,28,False,0.22
+Eli Raridon,TE,114,premium,Zone YPRR,sg_wrte_zone_yprr,2.93,2.93,92.9,28,False,0.12
+Joe Royer,TE,156,premium,Drop Rate,sg_wrte_drop_rate,,0.0%,82.1,23,True,0.1
+Joe Royer,TE,156,premium,Man YPRR,sg_wrte_man_yprr,0.74,0.74,35.7,26,False,0.14
+Joe Royer,TE,156,premium,Route Grade,sg_wrte_route_grade,64.6,64.6,28.6,28,False,0.24
+Joe Royer,TE,156,premium,Targets / Route,sg_wrte_targets_per_route,0.1183,0.118,7.1,28,False,0.18
+Joe Royer,TE,156,premium,Yards / Route Run,sg_wrte_yprr,1.49,1.49,53.6,28,False,0.22
+Joe Royer,TE,156,premium,Zone YPRR,sg_wrte_zone_yprr,1.95,1.95,67.9,28,False,0.12
+Tanner Koziol,TE,167,premium,Drop Rate,sg_wrte_drop_rate,2.6,2.6%,71.4,23,True,0.1
+Tanner Koziol,TE,167,premium,Man YPRR,sg_wrte_man_yprr,1.75,1.75,89.3,26,False,0.14
+Tanner Koziol,TE,167,premium,Route Grade,sg_wrte_route_grade,87.3,87.3,100.0,28,False,0.24
+Tanner Koziol,TE,167,premium,Targets / Route,sg_wrte_targets_per_route,0.2919,0.292,100.0,28,False,0.18
+Tanner Koziol,TE,167,premium,Yards / Route Run,sg_wrte_yprr,2.26,2.26,96.4,28,False,0.22
+Tanner Koziol,TE,167,premium,Zone YPRR,sg_wrte_zone_yprr,3.04,3.04,96.4,28,False,0.12
+Dallen Bentley,TE,173,premium,Drop Rate,sg_wrte_drop_rate,,0.0%,82.1,23,True,0.1
+Dallen Bentley,TE,173,premium,Man YPRR,sg_wrte_man_yprr,1.28,1.28,64.3,26,False,0.14
+Dallen Bentley,TE,173,premium,Route Grade,sg_wrte_route_grade,83.1,83.1,92.9,28,False,0.24
+Dallen Bentley,TE,173,premium,Targets / Route,sg_wrte_targets_per_route,0.2533,0.253,89.3,28,False,0.18
+Dallen Bentley,TE,173,premium,Yards / Route Run,sg_wrte_yprr,2.07,2.07,82.1,28,False,0.22
+Dallen Bentley,TE,173,premium,Zone YPRR,sg_wrte_zone_yprr,2.03,2.03,75.0,28,False,0.12
+Oscar Delp,TE,174,premium,Drop Rate,sg_wrte_drop_rate,4.8,4.8%,60.7,23,True,0.1
+Oscar Delp,TE,174,premium,Man YPRR,sg_wrte_man_yprr,0.18,0.18,14.3,26,False,0.14
+Oscar Delp,TE,174,premium,Route Grade,sg_wrte_route_grade,60.3,60.3,17.9,28,False,0.24
+Oscar Delp,TE,174,premium,Targets / Route,sg_wrte_targets_per_route,0.1386,0.139,17.9,28,False,0.18
+Oscar Delp,TE,174,premium,Yards / Route Run,sg_wrte_yprr,1.29,1.29,28.6,28,False,0.22
+Oscar Delp,TE,174,premium,Zone YPRR,sg_wrte_zone_yprr,1.47,1.47,39.3,28,False,0.12
+Dae'Quan Wright,TE,186,premium,Drop Rate,sg_wrte_drop_rate,4.9,4.9%,57.1,23,True,0.1
+Dae'Quan Wright,TE,186,premium,Man YPRR,sg_wrte_man_yprr,1.67,1.67,82.1,26,False,0.14
+Dae'Quan Wright,TE,186,premium,Route Grade,sg_wrte_route_grade,75.5,75.5,82.1,28,False,0.24
+Dae'Quan Wright,TE,186,premium,Targets / Route,sg_wrte_targets_per_route,0.1803,0.180,50.0,28,False,0.18
+Dae'Quan Wright,TE,186,premium,Yards / Route Run,sg_wrte_yprr,2.08,2.08,85.7,28,False,0.22
+Dae'Quan Wright,TE,186,premium,Zone YPRR,sg_wrte_zone_yprr,2.2,2.20,85.7,28,False,0.12
+Josh Cuevas,TE,191,premium,Drop Rate,sg_wrte_drop_rate,7.5,7.5%,32.1,23,True,0.1
+Josh Cuevas,TE,191,premium,Man YPRR,sg_wrte_man_yprr,1.27,1.27,60.7,26,False,0.14
+Josh Cuevas,TE,191,premium,Route Grade,sg_wrte_route_grade,71.1,71.1,60.7,28,False,0.24
+Josh Cuevas,TE,191,premium,Targets / Route,sg_wrte_targets_per_route,0.1524,0.152,35.7,28,False,0.18
+Josh Cuevas,TE,191,premium,Yards / Route Run,sg_wrte_yprr,1.25,1.25,25.0,28,False,0.22
+Josh Cuevas,TE,191,premium,Zone YPRR,sg_wrte_zone_yprr,1.31,1.31,32.1,28,False,0.12
+Max Bredeson,TE,202,premium,Drop Rate,sg_wrte_drop_rate,33.3,33.3%,,23,True,0.1
+Max Bredeson,TE,202,premium,Man YPRR,sg_wrte_man_yprr,,0.00,7.1,26,False,0.14
+Max Bredeson,TE,202,premium,Route Grade,sg_wrte_route_grade,43.2,43.2,3.6,28,False,0.24
+Max Bredeson,TE,202,premium,Targets / Route,sg_wrte_targets_per_route,0.0811,0.081,3.6,28,False,0.18
+Max Bredeson,TE,202,premium,Yards / Route Run,sg_wrte_yprr,0.3,0.30,3.6,28,False,0.22
+Max Bredeson,TE,202,premium,Zone YPRR,sg_wrte_zone_yprr,0.3,0.30,3.6,28,False,0.12
+Marlin Klein,TE,203,premium,Drop Rate,sg_wrte_drop_rate,11.1,11.1%,14.3,23,True,0.1
+Marlin Klein,TE,203,premium,Man YPRR,sg_wrte_man_yprr,0.25,0.25,17.9,26,False,0.14
+Marlin Klein,TE,203,premium,Route Grade,sg_wrte_route_grade,65.3,65.3,39.3,28,False,0.24
+Marlin Klein,TE,203,premium,Targets / Route,sg_wrte_targets_per_route,0.2531,0.253,85.7,28,False,0.18
+Marlin Klein,TE,203,premium,Yards / Route Run,sg_wrte_yprr,1.53,1.53,60.7,28,False,0.22
+Marlin Klein,TE,203,premium,Zone YPRR,sg_wrte_zone_yprr,1.27,1.27,28.6,28,False,0.12
+John Michael Gyllenborg,TE,208,premium,Drop Rate,sg_wrte_drop_rate,11.1,11.1%,14.3,23,True,0.1
+John Michael Gyllenborg,TE,208,premium,Man YPRR,sg_wrte_man_yprr,1.6,1.60,78.6,26,False,0.14
+John Michael Gyllenborg,TE,208,premium,Route Grade,sg_wrte_route_grade,64.0,64.0,25.0,28,False,0.24
+John Michael Gyllenborg,TE,208,premium,Targets / Route,sg_wrte_targets_per_route,0.1955,0.196,67.9,28,False,0.18
+John Michael Gyllenborg,TE,208,premium,Yards / Route Run,sg_wrte_yprr,1.18,1.18,21.4,28,False,0.22
+John Michael Gyllenborg,TE,208,premium,Zone YPRR,sg_wrte_zone_yprr,0.84,0.84,7.1,28,False,0.12
+Nate Boerkircher,TE,221,premium,Drop Rate,sg_wrte_drop_rate,5.0,5.0%,53.6,23,True,0.1
+Nate Boerkircher,TE,221,premium,Man YPRR,sg_wrte_man_yprr,1.5,1.50,75.0,26,False,0.14
+Nate Boerkircher,TE,221,premium,Route Grade,sg_wrte_route_grade,67.4,67.4,46.4,28,False,0.24
+Nate Boerkircher,TE,221,premium,Targets / Route,sg_wrte_targets_per_route,0.1243,0.124,10.7,28,False,0.18
+Nate Boerkircher,TE,221,premium,Yards / Route Run,sg_wrte_yprr,1.12,1.12,14.3,28,False,0.22
+Nate Boerkircher,TE,221,premium,Zone YPRR,sg_wrte_zone_yprr,1.02,1.02,14.3,28,False,0.12
+DJ Rogers,TE,236,premium,Drop Rate,sg_wrte_drop_rate,5.6,5.6%,50.0,23,True,0.1
+DJ Rogers,TE,236,premium,Man YPRR,sg_wrte_man_yprr,0.88,0.88,42.9,26,False,0.14
+DJ Rogers,TE,236,premium,Route Grade,sg_wrte_route_grade,74.7,74.7,75.0,28,False,0.24
+DJ Rogers,TE,236,premium,Targets / Route,sg_wrte_targets_per_route,0.1754,0.175,46.4,28,False,0.18
+DJ Rogers,TE,236,premium,Yards / Route Run,sg_wrte_yprr,1.4,1.40,39.3,28,False,0.22
+DJ Rogers,TE,236,premium,Zone YPRR,sg_wrte_zone_yprr,1.49,1.49,42.9,28,False,0.12
+Miles Kitselman,TE,240,premium,Drop Rate,sg_wrte_drop_rate,15.6,15.6%,3.6,23,True,0.1
+Miles Kitselman,TE,240,premium,Man YPRR,sg_wrte_man_yprr,1.78,1.78,96.4,26,False,0.14
+Miles Kitselman,TE,240,premium,Route Grade,sg_wrte_route_grade,64.7,64.7,32.1,28,False,0.24
+Miles Kitselman,TE,240,premium,Targets / Route,sg_wrte_targets_per_route,0.2246,0.225,78.6,28,False,0.18
+Miles Kitselman,TE,240,premium,Yards / Route Run,sg_wrte_yprr,1.41,1.41,42.9,28,False,0.22
+Miles Kitselman,TE,240,premium,Zone YPRR,sg_wrte_zone_yprr,1.14,1.14,25.0,28,False,0.12
+Matthew Hibner,TE,250,premium,Drop Rate,sg_wrte_drop_rate,3.1,3.1%,67.9,23,True,0.1
+Matthew Hibner,TE,250,premium,Man YPRR,sg_wrte_man_yprr,0.75,0.75,39.3,26,False,0.14
+Matthew Hibner,TE,250,premium,Route Grade,sg_wrte_route_grade,61.3,61.3,21.4,28,False,0.24
+Matthew Hibner,TE,250,premium,Targets / Route,sg_wrte_targets_per_route,0.1348,0.135,14.3,28,False,0.18
+Matthew Hibner,TE,250,premium,Yards / Route Run,sg_wrte_yprr,1.37,1.37,32.1,28,False,0.22
+Matthew Hibner,TE,250,premium,Zone YPRR,sg_wrte_zone_yprr,1.52,1.52,50.0,28,False,0.12
+Will Kacmarek,TE,253,premium,Drop Rate,sg_wrte_drop_rate,,0.0%,82.1,23,True,0.1
+Will Kacmarek,TE,253,premium,Man YPRR,sg_wrte_man_yprr,0.93,0.93,50.0,26,False,0.14
+Will Kacmarek,TE,253,premium,Route Grade,sg_wrte_route_grade,73.5,73.5,71.4,28,False,0.24
+Will Kacmarek,TE,253,premium,Targets / Route,sg_wrte_targets_per_route,0.1478,0.148,32.1,28,False,0.18
+Will Kacmarek,TE,253,premium,Yards / Route Run,sg_wrte_yprr,1.46,1.46,46.4,28,False,0.22
+Will Kacmarek,TE,253,premium,Zone YPRR,sg_wrte_zone_yprr,1.79,1.79,60.7,28,False,0.12
+Lake McRee,TE,265,premium,Drop Rate,sg_wrte_drop_rate,6.3,6.3%,42.9,23,True,0.1
+Lake McRee,TE,265,premium,Man YPRR,sg_wrte_man_yprr,0.64,0.64,32.1,26,False,0.14
+Lake McRee,TE,265,premium,Route Grade,sg_wrte_route_grade,72.0,72.0,67.9,28,False,0.24
+Lake McRee,TE,265,premium,Targets / Route,sg_wrte_targets_per_route,0.1633,0.163,42.9,28,False,0.18
+Lake McRee,TE,265,premium,Yards / Route Run,sg_wrte_yprr,1.51,1.51,57.1,28,False,0.22
+Lake McRee,TE,265,premium,Zone YPRR,sg_wrte_zone_yprr,1.84,1.84,64.3,28,False,0.12
+Riley Nowakowski,TE,272,premium,Drop Rate,sg_wrte_drop_rate,,0.0%,82.1,23,True,0.1
+Riley Nowakowski,TE,272,premium,Man YPRR,sg_wrte_man_yprr,1.37,1.37,67.9,26,False,0.14
+Riley Nowakowski,TE,272,premium,Route Grade,sg_wrte_route_grade,75.5,75.5,82.1,28,False,0.24
+Riley Nowakowski,TE,272,premium,Targets / Route,sg_wrte_targets_per_route,0.1565,0.157,39.3,28,False,0.18
+Riley Nowakowski,TE,272,premium,Yards / Route Run,sg_wrte_yprr,1.68,1.68,71.4,28,False,0.22
+Riley Nowakowski,TE,272,premium,Zone YPRR,sg_wrte_zone_yprr,1.61,1.61,53.6,28,False,0.12
+Khalil Dinkins,TE,276,premium,Drop Rate,sg_wrte_drop_rate,6.7,6.7%,39.3,23,True,0.1
+Khalil Dinkins,TE,276,premium,Man YPRR,sg_wrte_man_yprr,,0.00,7.1,26,False,0.14
+Khalil Dinkins,TE,276,premium,Route Grade,sg_wrte_route_grade,50.1,50.1,10.7,28,False,0.24
+Khalil Dinkins,TE,276,premium,Targets / Route,sg_wrte_targets_per_route,0.1409,0.141,25.0,28,False,0.18
+Khalil Dinkins,TE,276,premium,Yards / Route Run,sg_wrte_yprr,1.12,1.12,14.3,28,False,0.22
+Khalil Dinkins,TE,276,premium,Zone YPRR,sg_wrte_zone_yprr,0.92,0.92,10.7,28,False,0.12
+RJ Maryland,TE,282,premium,Drop Rate,sg_wrte_drop_rate,6.9,6.9%,35.7,23,True,0.1
+RJ Maryland,TE,282,premium,Man YPRR,sg_wrte_man_yprr,0.17,0.17,10.7,26,False,0.14
+RJ Maryland,TE,282,premium,Route Grade,sg_wrte_route_grade,67.5,67.5,50.0,28,False,0.24
+RJ Maryland,TE,282,premium,Targets / Route,sg_wrte_targets_per_route,0.1929,0.193,60.7,28,False,0.18
+RJ Maryland,TE,282,premium,Yards / Route Run,sg_wrte_yprr,1.62,1.62,67.9,28,False,0.22
+RJ Maryland,TE,282,premium,Zone YPRR,sg_wrte_zone_yprr,2.11,2.11,82.1,28,False,0.12
+Bauer Sharp,TE,302,premium,Drop Rate,sg_wrte_drop_rate,7.7,7.7%,28.6,23,True,0.1
+Bauer Sharp,TE,302,premium,Man YPRR,sg_wrte_man_yprr,0.26,0.26,21.4,26,False,0.14
+Bauer Sharp,TE,302,premium,Route Grade,sg_wrte_route_grade,49.3,49.3,7.1,28,False,0.24
+Bauer Sharp,TE,302,premium,Targets / Route,sg_wrte_targets_per_route,0.1422,0.142,28.6,28,False,0.18
+Bauer Sharp,TE,302,premium,Yards / Route Run,sg_wrte_yprr,1.14,1.14,17.9,28,False,0.22
+Bauer Sharp,TE,302,premium,Zone YPRR,sg_wrte_zone_yprr,1.09,1.09,21.4,28,False,0.12
+Jaren Kanak,TE,310,premium,Drop Rate,sg_wrte_drop_rate,2.2,2.2%,75.0,23,True,0.1
+Jaren Kanak,TE,310,premium,Man YPRR,sg_wrte_man_yprr,0.62,0.62,25.0,26,False,0.14
+Jaren Kanak,TE,310,premium,Route Grade,sg_wrte_route_grade,71.2,71.2,64.3,28,False,0.24
+Jaren Kanak,TE,310,premium,Targets / Route,sg_wrte_targets_per_route,0.1863,0.186,57.1,28,False,0.18
+Jaren Kanak,TE,310,premium,Yards / Route Run,sg_wrte_yprr,1.73,1.73,75.0,28,False,0.22
+Jaren Kanak,TE,310,premium,Zone YPRR,sg_wrte_zone_yprr,1.97,1.97,71.4,28,False,0.12
+Jordyn Tyson,WR,6,premium,Drop Rate,sg_wrte_drop_rate,1.6,1.6%,90.9,43,True,0.12
+Jordyn Tyson,WR,6,premium,Man YPRR,sg_wrte_man_yprr,3.02,3.02,77.3,44,False,0.14
+Jordyn Tyson,WR,6,premium,Route Grade,sg_wrte_route_grade,85.3,85.3,88.6,44,False,0.24
+Jordyn Tyson,WR,6,premium,Targets / Route,sg_wrte_targets_per_route,0.3233,0.323,97.7,44,False,0.18
+Jordyn Tyson,WR,6,premium,Yards / Route Run,sg_wrte_yprr,2.37,2.37,63.6,44,False,0.2
+Jordyn Tyson,WR,6,premium,Zone YPRR,sg_wrte_zone_yprr,2.18,2.18,56.8,44,False,0.12
+Makai Lemon,WR,12,premium,Drop Rate,sg_wrte_drop_rate,2.5,2.5%,77.3,43,True,0.12
+Makai Lemon,WR,12,premium,Man YPRR,sg_wrte_man_yprr,3.29,3.29,90.9,44,False,0.14
+Makai Lemon,WR,12,premium,Route Grade,sg_wrte_route_grade,91.4,91.4,100.0,44,False,0.24
+Makai Lemon,WR,12,premium,Targets / Route,sg_wrte_targets_per_route,0.2954,0.295,90.9,44,False,0.18
+Makai Lemon,WR,12,premium,Yards / Route Run,sg_wrte_yprr,3.13,3.13,100.0,44,False,0.2
+Makai Lemon,WR,12,premium,Zone YPRR,sg_wrte_zone_yprr,3.09,3.09,90.9,44,False,0.12
+Carnell Tate,WR,17,premium,Drop Rate,sg_wrte_drop_rate,,0.0%,97.7,43,True,0.12
+Carnell Tate,WR,17,premium,Man YPRR,sg_wrte_man_yprr,3.12,3.12,86.4,44,False,0.14
+Carnell Tate,WR,17,premium,Route Grade,sg_wrte_route_grade,89.0,89.0,97.7,44,False,0.24
+Carnell Tate,WR,17,premium,Targets / Route,sg_wrte_targets_per_route,0.2276,0.228,50.0,44,False,0.18
+Carnell Tate,WR,17,premium,Yards / Route Run,sg_wrte_yprr,3.02,3.02,95.5,44,False,0.2
+Carnell Tate,WR,17,premium,Zone YPRR,sg_wrte_zone_yprr,2.71,2.71,77.3,44,False,0.12
+Denzel Boston,WR,20,premium,Drop Rate,sg_wrte_drop_rate,3.1,3.1%,70.5,43,True,0.12
+Denzel Boston,WR,20,premium,Man YPRR,sg_wrte_man_yprr,2.66,2.66,72.7,44,False,0.14
+Denzel Boston,WR,20,premium,Route Grade,sg_wrte_route_grade,87.2,87.2,93.2,44,False,0.24
+Denzel Boston,WR,20,premium,Targets / Route,sg_wrte_targets_per_route,0.2632,0.263,72.7,44,False,0.18
+Denzel Boston,WR,20,premium,Yards / Route Run,sg_wrte_yprr,2.44,2.44,75.0,44,False,0.2
+Denzel Boston,WR,20,premium,Zone YPRR,sg_wrte_zone_yprr,2.17,2.17,52.3,44,False,0.12
+Omar Cooper Jr.,WR,29,premium,Drop Rate,sg_wrte_drop_rate,4.2,4.2%,56.8,43,True,0.12
+Omar Cooper Jr.,WR,29,premium,Man YPRR,sg_wrte_man_yprr,1.81,1.81,40.9,44,False,0.14
+Omar Cooper Jr.,WR,29,premium,Route Grade,sg_wrte_route_grade,86.0,86.0,90.9,44,False,0.24
+Omar Cooper Jr.,WR,29,premium,Targets / Route,sg_wrte_targets_per_route,0.248,0.248,59.1,44,False,0.18
+Omar Cooper Jr.,WR,29,premium,Yards / Route Run,sg_wrte_yprr,2.55,2.55,81.8,44,False,0.2
+Omar Cooper Jr.,WR,29,premium,Zone YPRR,sg_wrte_zone_yprr,3.15,3.15,95.5,44,False,0.12
+KC Concepcion,WR,36,premium,Drop Rate,sg_wrte_drop_rate,10.3,10.3%,6.8,43,True,0.12
+KC Concepcion,WR,36,premium,Man YPRR,sg_wrte_man_yprr,2.83,2.83,75.0,44,False,0.14
+KC Concepcion,WR,36,premium,Route Grade,sg_wrte_route_grade,79.9,79.9,72.7,44,False,0.24
+KC Concepcion,WR,36,premium,Targets / Route,sg_wrte_targets_per_route,0.2701,0.270,79.5,44,False,0.18
+KC Concepcion,WR,36,premium,Yards / Route Run,sg_wrte_yprr,2.46,2.46,77.3,44,False,0.2
+KC Concepcion,WR,36,premium,Zone YPRR,sg_wrte_zone_yprr,2.52,2.52,75.0,44,False,0.12
+Skyler Bell,WR,45,premium,Drop Rate,sg_wrte_drop_rate,3.8,3.8%,61.4,43,True,0.12
+Skyler Bell,WR,45,premium,Man YPRR,sg_wrte_man_yprr,3.46,3.46,93.2,44,False,0.14
+Skyler Bell,WR,45,premium,Route Grade,sg_wrte_route_grade,85.1,85.1,86.4,44,False,0.24
+Skyler Bell,WR,45,premium,Targets / Route,sg_wrte_targets_per_route,0.3447,0.345,100.0,44,False,0.18
+Skyler Bell,WR,45,premium,Yards / Route Run,sg_wrte_yprr,3.13,3.13,100.0,44,False,0.2
+Skyler Bell,WR,45,premium,Zone YPRR,sg_wrte_zone_yprr,3.16,3.16,97.7,44,False,0.12
+Chris Brazzell II,WR,49,premium,Drop Rate,sg_wrte_drop_rate,3.2,3.2%,68.2,43,True,0.12
+Chris Brazzell II,WR,49,premium,Man YPRR,sg_wrte_man_yprr,2.05,2.05,56.8,44,False,0.14
+Chris Brazzell II,WR,49,premium,Route Grade,sg_wrte_route_grade,80.6,80.6,75.0,44,False,0.24
+Chris Brazzell II,WR,49,premium,Targets / Route,sg_wrte_targets_per_route,0.2194,0.219,47.7,44,False,0.18
+Chris Brazzell II,WR,49,premium,Yards / Route Run,sg_wrte_yprr,2.57,2.57,86.4,44,False,0.2
+Chris Brazzell II,WR,49,premium,Zone YPRR,sg_wrte_zone_yprr,3.1,3.10,93.2,44,False,0.12
+Zachariah Branch,WR,55,premium,Drop Rate,sg_wrte_drop_rate,2.4,2.4%,79.5,43,True,0.12
+Zachariah Branch,WR,55,premium,Man YPRR,sg_wrte_man_yprr,4.23,4.23,100.0,44,False,0.14
+Zachariah Branch,WR,55,premium,Route Grade,sg_wrte_route_grade,82.6,82.6,81.8,44,False,0.24
+Zachariah Branch,WR,55,premium,Targets / Route,sg_wrte_targets_per_route,0.2943,0.294,86.4,44,False,0.18
+Zachariah Branch,WR,55,premium,Yards / Route Run,sg_wrte_yprr,2.57,2.57,86.4,44,False,0.2
+Zachariah Branch,WR,55,premium,Zone YPRR,sg_wrte_zone_yprr,2.28,2.28,65.9,44,False,0.12
+Ja'Kobi Lane,WR,56,premium,Drop Rate,sg_wrte_drop_rate,7.5,7.5%,29.5,43,True,0.12
+Ja'Kobi Lane,WR,56,premium,Man YPRR,sg_wrte_man_yprr,3.05,3.05,81.8,44,False,0.14
+Ja'Kobi Lane,WR,56,premium,Route Grade,sg_wrte_route_grade,81.8,81.8,77.3,44,False,0.24
+Ja'Kobi Lane,WR,56,premium,Targets / Route,sg_wrte_targets_per_route,0.2387,0.239,56.8,44,False,0.18
+Ja'Kobi Lane,WR,56,premium,Yards / Route Run,sg_wrte_yprr,2.42,2.42,70.5,44,False,0.2
+Ja'Kobi Lane,WR,56,premium,Zone YPRR,sg_wrte_zone_yprr,2.28,2.28,65.9,44,False,0.12
+Elijah Sarratt,WR,64,premium,Drop Rate,sg_wrte_drop_rate,4.5,4.5%,52.3,43,True,0.12
+Elijah Sarratt,WR,64,premium,Man YPRR,sg_wrte_man_yprr,3.03,3.03,79.5,44,False,0.14
+Elijah Sarratt,WR,64,premium,Route Grade,sg_wrte_route_grade,87.3,87.3,95.5,44,False,0.24
+Elijah Sarratt,WR,64,premium,Targets / Route,sg_wrte_targets_per_route,0.2522,0.252,61.4,44,False,0.18
+Elijah Sarratt,WR,64,premium,Yards / Route Run,sg_wrte_yprr,2.39,2.39,65.9,44,False,0.2
+Elijah Sarratt,WR,64,premium,Zone YPRR,sg_wrte_zone_yprr,2.24,2.24,59.1,44,False,0.12
+Deion Burks,WR,71,premium,Drop Rate,sg_wrte_drop_rate,4.9,4.9%,45.5,43,True,0.12
+Deion Burks,WR,71,premium,Man YPRR,sg_wrte_man_yprr,1.98,1.98,50.0,44,False,0.14
+Deion Burks,WR,71,premium,Route Grade,sg_wrte_route_grade,65.8,65.8,11.4,44,False,0.24
+Deion Burks,WR,71,premium,Targets / Route,sg_wrte_targets_per_route,0.2019,0.202,27.3,44,False,0.18
+Deion Burks,WR,71,premium,Yards / Route Run,sg_wrte_yprr,1.45,1.45,9.1,44,False,0.2
+Deion Burks,WR,71,premium,Zone YPRR,sg_wrte_zone_yprr,1.17,1.17,6.8,44,False,0.12
+Chris Bell,WR,73,premium,Drop Rate,sg_wrte_drop_rate,4.0,4.0%,59.1,43,True,0.12
+Chris Bell,WR,73,premium,Man YPRR,sg_wrte_man_yprr,3.25,3.25,88.6,44,False,0.14
+Chris Bell,WR,73,premium,Route Grade,sg_wrte_route_grade,83.3,83.3,84.1,44,False,0.24
+Chris Bell,WR,73,premium,Targets / Route,sg_wrte_targets_per_route,0.2944,0.294,88.6,44,False,0.18
+Chris Bell,WR,73,premium,Yards / Route Run,sg_wrte_yprr,2.55,2.55,81.8,44,False,0.2
+Chris Bell,WR,73,premium,Zone YPRR,sg_wrte_zone_yprr,2.52,2.52,75.0,44,False,0.12
+Antonio Williams,WR,89,premium,Drop Rate,sg_wrte_drop_rate,1.8,1.8%,86.4,43,True,0.12
+Antonio Williams,WR,89,premium,Man YPRR,sg_wrte_man_yprr,2.64,2.64,70.5,44,False,0.14
+Antonio Williams,WR,89,premium,Route Grade,sg_wrte_route_grade,79.6,79.6,65.9,44,False,0.24
+Antonio Williams,WR,89,premium,Targets / Route,sg_wrte_targets_per_route,0.2677,0.268,77.3,44,False,0.18
+Antonio Williams,WR,89,premium,Yards / Route Run,sg_wrte_yprr,2.27,2.27,54.5,44,False,0.2
+Antonio Williams,WR,89,premium,Zone YPRR,sg_wrte_zone_yprr,1.98,1.98,40.9,44,False,0.12
+Germie Bernard,WR,94,premium,Drop Rate,sg_wrte_drop_rate,1.5,1.5%,93.2,43,True,0.12
+Germie Bernard,WR,94,premium,Man YPRR,sg_wrte_man_yprr,1.21,1.21,13.6,44,False,0.14
+Germie Bernard,WR,94,premium,Route Grade,sg_wrte_route_grade,71.6,71.6,34.1,44,False,0.24
+Germie Bernard,WR,94,premium,Targets / Route,sg_wrte_targets_per_route,0.2008,0.201,25.0,44,False,0.18
+Germie Bernard,WR,94,premium,Yards / Route Run,sg_wrte_yprr,1.7,1.70,27.3,44,False,0.2
+Germie Bernard,WR,94,premium,Zone YPRR,sg_wrte_zone_yprr,1.82,1.82,31.8,44,False,0.12
+Ted Hurst,WR,107,premium,Drop Rate,sg_wrte_drop_rate,9.0,9.0%,13.6,43,True,0.12
+Ted Hurst,WR,107,premium,Man YPRR,sg_wrte_man_yprr,1.85,1.85,43.2,44,False,0.14
+Ted Hurst,WR,107,premium,Route Grade,sg_wrte_route_grade,82.1,82.1,79.5,44,False,0.24
+Ted Hurst,WR,107,premium,Targets / Route,sg_wrte_targets_per_route,0.3002,0.300,95.5,44,False,0.18
+Ted Hurst,WR,107,premium,Yards / Route Run,sg_wrte_yprr,2.42,2.42,70.5,44,False,0.2
+Ted Hurst,WR,107,premium,Zone YPRR,sg_wrte_zone_yprr,2.99,2.99,86.4,44,False,0.12
+Malachi Fields,WR,108,premium,Drop Rate,sg_wrte_drop_rate,2.7,2.7%,75.0,43,True,0.12
+Malachi Fields,WR,108,premium,Man YPRR,sg_wrte_man_yprr,2.05,2.05,56.8,44,False,0.14
+Malachi Fields,WR,108,premium,Route Grade,sg_wrte_route_grade,76.2,76.2,52.3,44,False,0.24
+Malachi Fields,WR,108,premium,Targets / Route,sg_wrte_targets_per_route,0.2168,0.217,43.2,44,False,0.18
+Malachi Fields,WR,108,premium,Yards / Route Run,sg_wrte_yprr,2.2,2.20,47.7,44,False,0.2
+Malachi Fields,WR,108,premium,Zone YPRR,sg_wrte_zone_yprr,1.98,1.98,40.9,44,False,0.12
+Bryce Lance,WR,117,fallback,Target Share,cfb_wrte_target_share,0.211,0.2%,65.8,2,False,0.22
+Bryce Lance,WR,117,fallback,Targets / Route,cfb_wrte_targets_per_route,0.3763,0.376,50.0,2,False,0.22
+Bryce Lance,WR,117,fallback,Yards / Route Run,cfb_wrte_yprr,3.318,3.32,100.0,2,False,0.3
+CJ Daniels,WR,119,premium,Drop Rate,sg_wrte_drop_rate,3.8,3.8%,61.4,43,True,0.12
+CJ Daniels,WR,119,premium,Man YPRR,sg_wrte_man_yprr,1.44,1.44,25.0,44,False,0.14
+CJ Daniels,WR,119,premium,Route Grade,sg_wrte_route_grade,73.8,73.8,45.5,44,False,0.24
+CJ Daniels,WR,119,premium,Targets / Route,sg_wrte_targets_per_route,0.2081,0.208,34.1,44,False,0.18
+CJ Daniels,WR,119,premium,Yards / Route Run,sg_wrte_yprr,1.73,1.73,29.5,44,False,0.2
+CJ Daniels,WR,119,premium,Zone YPRR,sg_wrte_zone_yprr,1.81,1.81,29.5,44,False,0.12
+Brenen Thompson,WR,124,premium,Drop Rate,sg_wrte_drop_rate,8.1,8.1%,22.7,43,True,0.12
+Brenen Thompson,WR,124,premium,Man YPRR,sg_wrte_man_yprr,3.64,3.64,95.5,44,False,0.14
+Brenen Thompson,WR,124,premium,Route Grade,sg_wrte_route_grade,79.9,79.9,72.7,44,False,0.24
+Brenen Thompson,WR,124,premium,Targets / Route,sg_wrte_targets_per_route,0.2289,0.229,52.3,44,False,0.18
+Brenen Thompson,WR,124,premium,Yards / Route Run,sg_wrte_yprr,2.77,2.77,93.2,44,False,0.2
+Brenen Thompson,WR,124,premium,Zone YPRR,sg_wrte_zone_yprr,2.96,2.96,84.1,44,False,0.12
+Eric Rivers,WR,147,premium,Drop Rate,sg_wrte_drop_rate,6.3,6.3%,38.6,43,True,0.12
+Eric Rivers,WR,147,premium,Man YPRR,sg_wrte_man_yprr,2.03,2.03,52.3,44,False,0.14
+Eric Rivers,WR,147,premium,Route Grade,sg_wrte_route_grade,72.8,72.8,40.9,44,False,0.24
+Eric Rivers,WR,147,premium,Targets / Route,sg_wrte_targets_per_route,0.2102,0.210,36.4,44,False,0.18
+Eric Rivers,WR,147,premium,Yards / Route Run,sg_wrte_yprr,2.07,2.07,38.6,44,False,0.2
+Eric Rivers,WR,147,premium,Zone YPRR,sg_wrte_zone_yprr,2.25,2.25,61.4,44,False,0.12
+De'Zhaun Stribling,WR,153,premium,Drop Rate,sg_wrte_drop_rate,1.8,1.8%,86.4,43,True,0.12
+De'Zhaun Stribling,WR,153,premium,Man YPRR,sg_wrte_man_yprr,2.5,2.50,63.6,44,False,0.14
+De'Zhaun Stribling,WR,153,premium,Route Grade,sg_wrte_route_grade,78.8,78.8,63.6,44,False,0.24
+De'Zhaun Stribling,WR,153,premium,Targets / Route,sg_wrte_targets_per_route,0.1958,0.196,18.2,44,False,0.18
+De'Zhaun Stribling,WR,153,premium,Yards / Route Run,sg_wrte_yprr,2.15,2.15,40.9,44,False,0.2
+De'Zhaun Stribling,WR,153,premium,Zone YPRR,sg_wrte_zone_yprr,1.99,1.99,43.2,44,False,0.12
+Eric McAlister,WR,165,premium,Drop Rate,sg_wrte_drop_rate,7.8,7.8%,27.3,43,True,0.12
+Eric McAlister,WR,165,premium,Man YPRR,sg_wrte_man_yprr,2.59,2.59,68.2,44,False,0.14
+Eric McAlister,WR,165,premium,Route Grade,sg_wrte_route_grade,77.5,77.5,61.4,44,False,0.24
+Eric McAlister,WR,165,premium,Targets / Route,sg_wrte_targets_per_route,0.2633,0.263,75.0,44,False,0.18
+Eric McAlister,WR,165,premium,Yards / Route Run,sg_wrte_yprr,2.6,2.60,90.9,44,False,0.2
+Eric McAlister,WR,165,premium,Zone YPRR,sg_wrte_zone_yprr,2.74,2.74,79.5,44,False,0.12
+J. Michael Sturdivant,WR,179,premium,Drop Rate,sg_wrte_drop_rate,3.6,3.6%,65.9,43,True,0.12
+J. Michael Sturdivant,WR,179,premium,Man YPRR,sg_wrte_man_yprr,0.87,0.87,6.8,44,False,0.14
+J. Michael Sturdivant,WR,179,premium,Route Grade,sg_wrte_route_grade,62.8,62.8,9.1,44,False,0.24
+J. Michael Sturdivant,WR,179,premium,Targets / Route,sg_wrte_targets_per_route,0.1603,0.160,6.8,44,False,0.18
+J. Michael Sturdivant,WR,179,premium,Yards / Route Run,sg_wrte_yprr,1.32,1.32,6.8,44,False,0.2
+J. Michael Sturdivant,WR,179,premium,Zone YPRR,sg_wrte_zone_yprr,1.4,1.40,11.4,44,False,0.12
+Kendrick Law,WR,180,premium,Drop Rate,sg_wrte_drop_rate,1.9,1.9%,84.1,43,True,0.12
+Kendrick Law,WR,180,premium,Man YPRR,sg_wrte_man_yprr,1.65,1.65,34.1,44,False,0.14
+Kendrick Law,WR,180,premium,Route Grade,sg_wrte_route_grade,73.0,73.0,43.2,44,False,0.24
+Kendrick Law,WR,180,premium,Targets / Route,sg_wrte_targets_per_route,0.2184,0.218,45.5,44,False,0.18
+Kendrick Law,WR,180,premium,Yards / Route Run,sg_wrte_yprr,1.84,1.84,36.4,44,False,0.2
+Kendrick Law,WR,180,premium,Zone YPRR,sg_wrte_zone_yprr,2.18,2.18,56.8,44,False,0.12
+Kevin Coleman Jr.,WR,195,premium,Drop Rate,sg_wrte_drop_rate,2.9,2.9%,72.7,43,True,0.12
+Kevin Coleman Jr.,WR,195,premium,Man YPRR,sg_wrte_man_yprr,1.95,1.95,47.7,44,False,0.14
+Kevin Coleman Jr.,WR,195,premium,Route Grade,sg_wrte_route_grade,79.9,79.9,72.7,44,False,0.24
+Kevin Coleman Jr.,WR,195,premium,Targets / Route,sg_wrte_targets_per_route,0.2561,0.256,65.9,44,False,0.18
+Kevin Coleman Jr.,WR,195,premium,Yards / Route Run,sg_wrte_yprr,2.23,2.23,50.0,44,False,0.2
+Kevin Coleman Jr.,WR,195,premium,Zone YPRR,sg_wrte_zone_yprr,1.87,1.87,34.1,44,False,0.12
+Jeff Caldwell,WR,196,premium,Drop Rate,sg_wrte_drop_rate,8.6,8.6%,18.2,43,True,0.12
+Jeff Caldwell,WR,196,premium,Man YPRR,sg_wrte_man_yprr,1.76,1.76,38.6,44,False,0.14
+Jeff Caldwell,WR,196,premium,Route Grade,sg_wrte_route_grade,71.5,71.5,31.8,44,False,0.24
+Jeff Caldwell,WR,196,premium,Targets / Route,sg_wrte_targets_per_route,0.2624,0.262,70.5,44,False,0.18
+Jeff Caldwell,WR,196,premium,Yards / Route Run,sg_wrte_yprr,2.16,2.16,45.5,44,False,0.2
+Jeff Caldwell,WR,196,premium,Zone YPRR,sg_wrte_zone_yprr,2.5,2.50,70.5,44,False,0.12
+Donaven McCulley,WR,229,premium,Drop Rate,sg_wrte_drop_rate,7.1,7.1%,31.8,43,True,0.12
+Donaven McCulley,WR,229,premium,Man YPRR,sg_wrte_man_yprr,1.56,1.56,29.5,44,False,0.14
+Donaven McCulley,WR,229,premium,Route Grade,sg_wrte_route_grade,67.8,67.8,25.0,44,False,0.24
+Donaven McCulley,WR,229,premium,Targets / Route,sg_wrte_targets_per_route,0.207,0.207,31.8,44,False,0.18
+Donaven McCulley,WR,229,premium,Yards / Route Run,sg_wrte_yprr,1.58,1.58,20.5,44,False,0.2
+Donaven McCulley,WR,229,premium,Zone YPRR,sg_wrte_zone_yprr,1.71,1.71,20.5,44,False,0.12
+Reggie Virgil,WR,230,premium,Drop Rate,sg_wrte_drop_rate,8.1,8.1%,22.7,43,True,0.12
+Reggie Virgil,WR,230,premium,Man YPRR,sg_wrte_man_yprr,1.26,1.26,18.2,44,False,0.14
+Reggie Virgil,WR,230,premium,Route Grade,sg_wrte_route_grade,67.5,67.5,18.2,44,False,0.24
+Reggie Virgil,WR,230,premium,Targets / Route,sg_wrte_targets_per_route,0.1953,0.195,15.9,44,False,0.18
+Reggie Virgil,WR,230,premium,Yards / Route Run,sg_wrte_yprr,1.5,1.50,15.9,44,False,0.2
+Reggie Virgil,WR,230,premium,Zone YPRR,sg_wrte_zone_yprr,1.72,1.72,22.7,44,False,0.12
+Aaron Anderson,WR,232,premium,Drop Rate,sg_wrte_drop_rate,10.8,10.8%,4.5,43,True,0.12
+Aaron Anderson,WR,232,premium,Man YPRR,sg_wrte_man_yprr,3.06,3.06,84.1,44,False,0.14
+Aaron Anderson,WR,232,premium,Route Grade,sg_wrte_route_grade,72.8,72.8,40.9,44,False,0.24
+Aaron Anderson,WR,232,premium,Targets / Route,sg_wrte_targets_per_route,0.2988,0.299,93.2,44,False,0.18
+Aaron Anderson,WR,232,premium,Yards / Route Run,sg_wrte_yprr,2.43,2.43,72.7,44,False,0.2
+Aaron Anderson,WR,232,premium,Zone YPRR,sg_wrte_zone_yprr,2.15,2.15,50.0,44,False,0.12
+Chase Roberts,WR,233,premium,Drop Rate,sg_wrte_drop_rate,12.9,12.9%,,43,True,0.12
+Chase Roberts,WR,233,premium,Man YPRR,sg_wrte_man_yprr,1.7,1.70,36.4,44,False,0.14
+Chase Roberts,WR,233,premium,Route Grade,sg_wrte_route_grade,76.9,76.9,56.8,44,False,0.24
+Chase Roberts,WR,233,premium,Targets / Route,sg_wrte_targets_per_route,0.2602,0.260,68.2,44,False,0.18
+Chase Roberts,WR,233,premium,Yards / Route Run,sg_wrte_yprr,2.35,2.35,61.4,44,False,0.2
+Chase Roberts,WR,233,premium,Zone YPRR,sg_wrte_zone_yprr,2.76,2.76,81.8,44,False,0.12
+Malik Benson,WR,235,premium,Drop Rate,sg_wrte_drop_rate,2.3,2.3%,81.8,43,True,0.12
+Malik Benson,WR,235,premium,Man YPRR,sg_wrte_man_yprr,1.86,1.86,45.5,44,False,0.14
+Malik Benson,WR,235,premium,Route Grade,sg_wrte_route_grade,75.6,75.6,50.0,44,False,0.24
+Malik Benson,WR,235,premium,Targets / Route,sg_wrte_targets_per_route,0.213,0.213,40.9,44,False,0.18
+Malik Benson,WR,235,premium,Yards / Route Run,sg_wrte_yprr,2.6,2.60,90.9,44,False,0.2
+Malik Benson,WR,235,premium,Zone YPRR,sg_wrte_zone_yprr,3.31,3.31,100.0,44,False,0.12
+Josh Cameron,WR,243,premium,Drop Rate,sg_wrte_drop_rate,1.4,1.4%,95.5,43,True,0.12
+Josh Cameron,WR,243,premium,Man YPRR,sg_wrte_man_yprr,1.22,1.22,15.9,44,False,0.14
+Josh Cameron,WR,243,premium,Route Grade,sg_wrte_route_grade,71.9,71.9,36.4,44,False,0.24
+Josh Cameron,WR,243,premium,Targets / Route,sg_wrte_targets_per_route,0.1992,0.199,22.7,44,False,0.18
+Josh Cameron,WR,243,premium,Yards / Route Run,sg_wrte_yprr,1.7,1.70,27.3,44,False,0.2
+Josh Cameron,WR,243,premium,Zone YPRR,sg_wrte_zone_yprr,1.8,1.80,27.3,44,False,0.12
+Kaden Wetjen,WR,244,premium,Drop Rate,sg_wrte_drop_rate,4.3,4.3%,54.5,43,True,0.12
+Kaden Wetjen,WR,244,premium,Man YPRR,sg_wrte_man_yprr,1.0,1.00,11.4,44,False,0.14
+Kaden Wetjen,WR,244,premium,Route Grade,sg_wrte_route_grade,61.1,61.1,6.8,44,False,0.24
+Kaden Wetjen,WR,244,premium,Targets / Route,sg_wrte_targets_per_route,0.2778,0.278,84.1,44,False,0.18
+Kaden Wetjen,WR,244,premium,Yards / Route Run,sg_wrte_yprr,1.46,1.46,11.4,44,False,0.2
+Kaden Wetjen,WR,244,premium,Zone YPRR,sg_wrte_zone_yprr,1.93,1.93,36.4,44,False,0.12
+Caleb Douglas,WR,254,premium,Drop Rate,sg_wrte_drop_rate,11.5,11.5%,2.3,43,True,0.12
+Caleb Douglas,WR,254,premium,Man YPRR,sg_wrte_man_yprr,2.33,2.33,61.4,44,False,0.14
+Caleb Douglas,WR,254,premium,Route Grade,sg_wrte_route_grade,68.3,68.3,27.3,44,False,0.24
+Caleb Douglas,WR,254,premium,Targets / Route,sg_wrte_targets_per_route,0.195,0.195,13.6,44,False,0.18
+Caleb Douglas,WR,254,premium,Yards / Route Run,sg_wrte_yprr,1.77,1.77,34.1,44,False,0.2
+Caleb Douglas,WR,254,premium,Zone YPRR,sg_wrte_zone_yprr,1.68,1.68,18.2,44,False,0.12
+Zavion Thomas,WR,270,premium,Drop Rate,sg_wrte_drop_rate,4.7,4.7%,47.7,43,True,0.12
+Zavion Thomas,WR,270,premium,Man YPRR,sg_wrte_man_yprr,1.44,1.44,25.0,44,False,0.14
+Zavion Thomas,WR,270,premium,Route Grade,sg_wrte_route_grade,67.5,67.5,18.2,44,False,0.24
+Zavion Thomas,WR,270,premium,Targets / Route,sg_wrte_targets_per_route,0.1829,0.183,9.1,44,False,0.18
+Zavion Thomas,WR,270,premium,Yards / Route Run,sg_wrte_yprr,1.5,1.50,15.9,44,False,0.2
+Zavion Thomas,WR,270,premium,Zone YPRR,sg_wrte_zone_yprr,1.63,1.63,13.6,44,False,0.12
+Jordan Hudson,WR,271,premium,Drop Rate,sg_wrte_drop_rate,6.0,6.0%,43.2,43,True,0.12
+Jordan Hudson,WR,271,premium,Man YPRR,sg_wrte_man_yprr,2.11,2.11,59.1,44,False,0.14
+Jordan Hudson,WR,271,premium,Route Grade,sg_wrte_route_grade,74.7,74.7,47.7,44,False,0.24
+Jordan Hudson,WR,271,premium,Targets / Route,sg_wrte_targets_per_route,0.2527,0.253,63.6,44,False,0.18
+Jordan Hudson,WR,271,premium,Yards / Route Run,sg_wrte_yprr,2.16,2.16,45.5,44,False,0.2
+Jordan Hudson,WR,271,premium,Zone YPRR,sg_wrte_zone_yprr,1.67,1.67,15.9,44,False,0.12
+Chris Hilton Jr.,WR,274,premium,Drop Rate,sg_wrte_drop_rate,9.1,9.1%,11.4,43,True,0.12
+Chris Hilton Jr.,WR,274,premium,Man YPRR,sg_wrte_man_yprr,0.5,0.50,2.3,44,False,0.14
+Chris Hilton Jr.,WR,274,premium,Route Grade,sg_wrte_route_grade,51.5,51.5,2.3,44,False,0.24
+Chris Hilton Jr.,WR,274,premium,Targets / Route,sg_wrte_targets_per_route,0.1141,0.114,2.3,44,False,0.18
+Chris Hilton Jr.,WR,274,premium,Yards / Route Run,sg_wrte_yprr,0.81,0.81,2.3,44,False,0.2
+Chris Hilton Jr.,WR,274,premium,Zone YPRR,sg_wrte_zone_yprr,1.07,1.07,4.5,44,False,0.12
+Emmanuel Henderson Jr.,WR,283,premium,Drop Rate,sg_wrte_drop_rate,8.2,8.2%,20.5,43,True,0.12
+Emmanuel Henderson Jr.,WR,283,premium,Man YPRR,sg_wrte_man_yprr,2.58,2.58,65.9,44,False,0.14
+Emmanuel Henderson Jr.,WR,283,premium,Route Grade,sg_wrte_route_grade,70.8,70.8,29.5,44,False,0.24
+Emmanuel Henderson Jr.,WR,283,premium,Targets / Route,sg_wrte_targets_per_route,0.2048,0.205,29.5,44,False,0.18
+Emmanuel Henderson Jr.,WR,283,premium,Yards / Route Run,sg_wrte_yprr,2.31,2.31,59.1,44,False,0.2
+Emmanuel Henderson Jr.,WR,283,premium,Zone YPRR,sg_wrte_zone_yprr,2.14,2.14,47.7,44,False,0.12
+Vinny Anthony II,WR,285,premium,Drop Rate,sg_wrte_drop_rate,8.8,8.8%,15.9,43,True,0.12
+Vinny Anthony II,WR,285,premium,Man YPRR,sg_wrte_man_yprr,1.65,1.65,34.1,44,False,0.14
+Vinny Anthony II,WR,285,premium,Route Grade,sg_wrte_route_grade,67.8,67.8,25.0,44,False,0.24
+Vinny Anthony II,WR,285,premium,Targets / Route,sg_wrte_targets_per_route,0.1907,0.191,11.4,44,False,0.18
+Vinny Anthony II,WR,285,premium,Yards / Route Run,sg_wrte_yprr,1.52,1.52,18.2,44,False,0.2
+Vinny Anthony II,WR,285,premium,Zone YPRR,sg_wrte_zone_yprr,1.39,1.39,9.1,44,False,0.12
+Colbie Young,WR,291,premium,Drop Rate,sg_wrte_drop_rate,7.1,7.1%,31.8,43,True,0.12
+Colbie Young,WR,291,premium,Man YPRR,sg_wrte_man_yprr,3.71,3.71,97.7,44,False,0.14
+Colbie Young,WR,291,premium,Route Grade,sg_wrte_route_grade,76.7,76.7,54.5,44,False,0.24
+Colbie Young,WR,291,premium,Targets / Route,sg_wrte_targets_per_route,0.1988,0.199,20.5,44,False,0.18
+Colbie Young,WR,291,premium,Yards / Route Run,sg_wrte_yprr,2.3,2.30,56.8,44,False,0.2
+Colbie Young,WR,291,premium,Zone YPRR,sg_wrte_zone_yprr,2.14,2.14,47.7,44,False,0.12
+Jalen Walthall,WR,300,fallback,Target Share,cfb_wrte_target_share,0.278,0.3%,92.1,2,False,0.22
+Jalen Walthall,WR,300,fallback,Targets / Route,cfb_wrte_targets_per_route,0.3063,0.306,50.0,2,False,0.22
+Jalen Walthall,WR,300,fallback,Yards / Route Run,cfb_wrte_yprr,2.044,2.04,31.6,2,False,0.3
+Barion Brown,WR,304,premium,Drop Rate,sg_wrte_drop_rate,10.2,10.2%,9.1,43,True,0.12
+Barion Brown,WR,304,premium,Man YPRR,sg_wrte_man_yprr,0.77,0.77,4.5,44,False,0.14
+Barion Brown,WR,304,premium,Route Grade,sg_wrte_route_grade,66.9,66.9,13.6,44,False,0.24
+Barion Brown,WR,304,premium,Targets / Route,sg_wrte_targets_per_route,0.2757,0.276,81.8,44,False,0.18
+Barion Brown,WR,304,premium,Yards / Route Run,sg_wrte_yprr,1.77,1.77,34.1,44,False,0.2
+Barion Brown,WR,304,premium,Zone YPRR,sg_wrte_zone_yprr,2.42,2.42,68.2,44,False,0.12
+Harrison Wallace III,WR,307,premium,Drop Rate,sg_wrte_drop_rate,4.7,4.7%,47.7,43,True,0.12
+Harrison Wallace III,WR,307,premium,Man YPRR,sg_wrte_man_yprr,1.31,1.31,20.5,44,False,0.14
+Harrison Wallace III,WR,307,premium,Route Grade,sg_wrte_route_grade,77.1,77.1,59.1,44,False,0.24
+Harrison Wallace III,WR,307,premium,Targets / Route,sg_wrte_targets_per_route,0.2302,0.230,54.5,44,False,0.18
+Harrison Wallace III,WR,307,premium,Yards / Route Run,sg_wrte_yprr,2.24,2.24,52.3,44,False,0.2
+Harrison Wallace III,WR,307,premium,Zone YPRR,sg_wrte_zone_yprr,3.0,3.00,88.6,44,False,0.12
+Dillon Bell,WR,308,premium,Drop Rate,sg_wrte_drop_rate,6.9,6.9%,36.4,43,True,0.12
+Dillon Bell,WR,308,premium,Man YPRR,sg_wrte_man_yprr,1.0,1.00,11.4,44,False,0.14
+Dillon Bell,WR,308,premium,Route Grade,sg_wrte_route_grade,58.5,58.5,4.5,44,False,0.24
+Dillon Bell,WR,308,premium,Targets / Route,sg_wrte_targets_per_route,0.1515,0.151,4.5,44,False,0.18
+Dillon Bell,WR,308,premium,Yards / Route Run,sg_wrte_yprr,1.06,1.06,4.5,44,False,0.2
+Dillon Bell,WR,308,premium,Zone YPRR,sg_wrte_zone_yprr,1.06,1.06,2.3,44,False,0.12
+Caullin Lacy,WR,309,premium,Drop Rate,sg_wrte_drop_rate,6.3,6.3%,38.6,43,True,0.12
+Caullin Lacy,WR,309,premium,Man YPRR,sg_wrte_man_yprr,1.56,1.56,29.5,44,False,0.14
+Caullin Lacy,WR,309,premium,Route Grade,sg_wrte_route_grade,67.8,67.8,25.0,44,False,0.24
+Caullin Lacy,WR,309,premium,Targets / Route,sg_wrte_targets_per_route,0.2119,0.212,38.6,44,False,0.18
+Caullin Lacy,WR,309,premium,Yards / Route Run,sg_wrte_yprr,1.64,1.64,22.7,44,False,0.2
+Caullin Lacy,WR,309,premium,Zone YPRR,sg_wrte_zone_yprr,1.8,1.80,27.3,44,False,0.12
