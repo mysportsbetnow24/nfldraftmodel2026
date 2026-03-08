@@ -44300,6 +44300,15 @@
         "source_account": "CBS Sports"
       },
       {
+        "event_date": "2026-03-07",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Darious Williams Retired",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
+      {
         "event_date": "2026-03-03",
         "status": "Confirmed",
         "status_kind": "confirmed",
@@ -46794,6 +46803,15 @@
         "status": "Confirmed",
         "status_kind": "confirmed",
         "label": "Maxx Crosby (EDGE) traded",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
+      {
+        "event_date": "2026-03-07",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Alex Cappa Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"

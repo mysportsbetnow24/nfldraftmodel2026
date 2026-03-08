@@ -68,6 +68,22 @@ python3 scripts/refresh_update_workflow.py --skip-mocks
 python3 scripts/refresh_update_workflow.py --skip-site-build
 ```
 
+## Transactions-only refresh
+
+Use this when you want the transactions page and team-needs transaction deltas updated daily without
+waiting on the full board/mock workflow:
+
+```bash
+cd astro-site
+npm run refresh:transactions
+```
+
+That workflow runs, in order:
+1. `scripts/pull_cbs_transactions.py`
+2. `scripts/build_team_needs_transaction_adjustments.py`
+3. `scripts/export_astro_site_data.py`
+4. `astro build`
+
 ## Daily refresh automation
 
 For a Mac-based daily refresh, copy the launchd template:

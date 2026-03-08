@@ -1,6 +1,6 @@
 # Team Needs Transaction Adjustments
 
-- generated_at_utc: `2026-03-07T06:00:18.500577+00:00`
+- generated_at_utc: `2026-03-08T03:09:10.719634+00:00`
 - window_days: `7`
 - rows: `17`
 

@@ -1,13 +1,14 @@
 # CBS NFL Transactions Pull Report
 
-- pulled_at_utc: `2026-03-07T05:06:30.419768+00:00`
+- pulled_at_utc: `2026-03-08T03:05:34.561443+00:00`
 - source_url: `https://www.cbssports.com/nfl/transactions/`
-- parsed_rows: `92`
+- parsed_rows: `101`
 
 ## Rows By Event Date
 
 | Date | Rows |
 |---|---:|
+| March 7, 2026 | 9 |
 | March 6, 2026 | 29 |
 | March 5, 2026 | 17 |
 | March 4, 2026 | 17 |

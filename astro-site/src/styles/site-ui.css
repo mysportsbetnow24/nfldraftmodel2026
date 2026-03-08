@@ -118,20 +118,20 @@ body {
 
 .nav a {
   text-decoration: none;
-  color: var(--ui-cta-ink);
-  border: 1px solid var(--ui-cta-border);
-  background: linear-gradient(135deg, #eaf3ff 0%, #e4f1ff 62%, #e8f8ef 100%);
+  color: #123556;
+  border: 1px solid #8fb2d8;
+  background: linear-gradient(135deg, #dcecff 0%, #d4e7fb 62%, #dff3e7 100%);
   border-radius: 999px;
   padding: 0.45rem 0.72rem;
   font-size: 0.9rem;
   font-weight: 650;
-  box-shadow: 0 1px 0 rgba(20, 59, 100, 0.1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.72) inset, 0 1px 0 rgba(20, 59, 100, 0.08);
   transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.12s ease;
 }
 
 .nav a:hover {
-  border-color: var(--ui-cta-hover-border);
-  background: var(--ui-cta-hover-bg);
+  border-color: #6f98c8;
+  background: linear-gradient(135deg, #d4e6fb 0%, #cfe2f9 62%, #d7efdf 100%);
   color: #102f4f;
   transform: translateY(-1px);
 }

@@ -53,6 +53,20 @@ python3 scripts/refresh_update_workflow.py --skip-mocks
 python3 scripts/refresh_update_workflow.py --skip-site-build
 ```
 
+## Transactions-only Refresh
+
+Run this when you only need the transactions page and team-needs transaction deltas refreshed:
+
+```bash
+npm run refresh:transactions
+```
+
+That workflow runs:
+1. CBS transactions pull
+2. transaction adjustment rebuild
+3. Astro data export
+4. site build
+
 ## Cloudflare Pages
 
 - Framework preset: `Astro`
