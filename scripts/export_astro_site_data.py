@@ -1404,13 +1404,15 @@ def _contract_watch_priority(payload: dict) -> tuple:
     contract_years = _safe_int(payload.get("contract_years"), 0)
     years_exp = _safe_int(payload.get("years_exp"), 0)
     age = _safe_int(payload.get("age"), 99)
+    status_kind = str(payload.get("contract_status_kind") or "").strip()
     return (
+        0 if status_kind == "unsigned_watch" else 1,
         _designation_priority(designation),
-        contract_years,
         -snap_count,
         -round(usage_proxy, 4),
         -apy_pct,
         -apy_m,
+        contract_years,
         TEAM_NEEDS_POS_ORDER.index(position) if position in TEAM_NEEDS_POS_ORDER else 99,
         -years_exp,
         age,
@@ -1726,6 +1728,20 @@ def _build_team_depth_context() -> dict[str, dict]:
     spotrac_free_agents_by_team: dict[str, list[dict]] = defaultdict(list)
 
     def _contract_end_year(row: dict) -> int:
+        cols = row.get("cols")
+        if isinstance(cols, list):
+            season_years: list[int] = []
+            for item in cols:
+                if not isinstance(item, dict):
+                    continue
+                season = str(item.get("year") or "").strip()
+                if not season.isdigit():
+                    continue
+                year_int = _safe_int(season, 0)
+                if year_int:
+                    season_years.append(year_int)
+            if season_years:
+                return max(season_years)
         years = _safe_int(row.get("years"), 0)
         year_signed = _safe_int(row.get("year_signed"), 0)
         if years and year_signed:
@@ -2000,7 +2016,7 @@ def _build_team_depth_context() -> dict[str, dict]:
         contract_active = bool(contract) and bool(contract.get("is_active"))
         apy = _safe_float(contract.get("apy")) if contract else None
         apy_pct = _pct_score(apy, apy_pool_by_pos.get(model_pos, []))
-        years_left = _safe_int(contract.get("years"), 0) if contract else 0
+        years_left = _contract_years_remaining(contract) if contract else 0
         if contract_active and years_left <= 0:
             years_left = 1
         historical_contract_valid = (
@@ -2022,7 +2038,7 @@ def _build_team_depth_context() -> dict[str, dict]:
         if contract is not None:
             contract_label = f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
         elif historical_contract_valid:
-            hist_years = _safe_int(historical_contract.get("years"), 0)
+            hist_years = _contract_years_remaining(historical_contract)
             hist_apy = _safe_float(historical_contract.get("apy"))
             years_left = hist_years
             apy = hist_apy
@@ -2161,7 +2177,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             else float(roster_info.get("apy_pct") or 0.0)
         )
         contract_active = bool(contract) and bool(contract.get("is_active"))
-        years_left = _safe_int(contract.get("years"), 0) if contract else 0
+        years_left = _contract_years_remaining(contract) if contract else 0
         if contract_active and contract_team_match and years_left <= 0:
             years_left = 1
         roster_has_contract = bool(roster_info) and bool(roster_info.get("has_contract"))
@@ -2180,7 +2196,7 @@ def _build_team_depth_context() -> dict[str, dict]:
         if contract_team_match and contract:
             contract_label = f"{years_left}y | ${apy:.1f}M APY" if apy is not None else f"{years_left}y contract"
         elif historical_team_contract:
-            hist_years = _safe_int(historical_contract.get("years"), 0)
+            hist_years = _contract_years_remaining(historical_contract)
             hist_apy = _safe_float(historical_contract.get("apy"))
             years_left = hist_years
             apy = hist_apy if hist_apy is not None else apy
@@ -2538,7 +2554,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             snap_count = _safe_int(payload.get("snap_count"), 0)
             if not player_key or player_key in watch_seen:
                 continue
-            if status_kind != "unsigned_watch" and contract_years <= 1 and snap_count >= 150:
+            if status_kind != "unsigned_watch" and contract_years <= 2 and snap_count >= 150:
                 contract_watch_pool.append(payload)
                 watch_seen.add(player_key)
         contract_watch = sorted(contract_watch_pool, key=_contract_watch_priority)[:8]
@@ -5017,6 +5033,7 @@ def export_team_needs() -> list[dict]:
                 "depth_chart": ctx.get("depth_chart", {"offense": [], "defense": [], "season": "", "week": ""}),
                 "free_agents": ctx.get("free_agents", []),
                 "free_agents_full": ctx.get("free_agents_full", ctx.get("free_agents", [])),
+                "contract_watch": ctx.get("contract_watch", []),
                 "young_players_on_rise": ctx.get("young_players_on_rise", []),
                 "recent_transactions": public_tx_by_team.get(team, [])[:3],
             }
