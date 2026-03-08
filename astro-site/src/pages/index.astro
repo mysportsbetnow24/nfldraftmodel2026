@@ -25,7 +25,13 @@ const landingSchema = {
   collectionSchema={landingSchema}
 >
   <section class="hero hero--data">
-    <h1>NFL Draft Hub 2026</h1>
+    <div class="home-hero-brand">
+      <img src="/brand/sg-mark-yardline.svg" alt="Scouting Grade logo" class="home-hero-mark" />
+      <div class="home-hero-copy">
+        <span class="home-hero-kicker">Scouting Grade</span>
+        <h1>NFL Draft Hub 2026</h1>
+      </div>
+    </div>
     <p>Model-first big board, mock drafts, and scouting cards.</p>
   </section>
 
@@ -101,3 +107,54 @@ const landingSchema = {
   </section>
 
 </BaseLayout>
+
+<style>
+  .home-hero-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .home-hero-mark {
+    width: 64px;
+    height: 64px;
+    flex: 0 0 auto;
+    filter: drop-shadow(0 4px 18px rgba(15, 23, 42, 0.18));
+  }
+
+  .home-hero-copy {
+    display: grid;
+    gap: 0.18rem;
+  }
+
+  .home-hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .home-hero-copy h1 {
+    margin: 0;
+  }
+
+  @media (max-width: 720px) {
+    .home-hero-brand {
+      align-items: flex-start;
+    }
+
+    .home-hero-mark {
+      width: 54px;
+      height: 54px;
+    }
+  }
+</style>

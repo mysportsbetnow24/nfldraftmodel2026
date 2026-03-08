@@ -47,6 +47,8 @@ const generatedAt = (meta as { generated_at?: string }).generated_at || "";
     <meta name="copyright" content="Scouting Grade. All rights reserved." />
     {keywords.length ? <meta name="keywords" content={keywords.join(", ")} /> : null}
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/brand/sg-mark-yardline.svg" />
+    <link rel="apple-touch-icon" href="/brand/sg-mark-yardline.svg" />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="Scouting Grade" />
     <meta property="og:title" content={title} />
@@ -69,7 +71,12 @@ const generatedAt = (meta as { generated_at?: string }).generated_at || "";
   <body>
     <div class={`shell ${shellClass}`.trim()}>
       <header class="header">
-        <div class="brand"><a href="/">Scouting Grade</a></div>
+        <div class="brand">
+          <a href="/">
+            <img src="/brand/sg-mark-yardline.svg" alt="" aria-hidden="true" class="brand-mark" />
+            <span>Scouting Grade</span>
+          </a>
+        </div>
         <nav class="nav">
           <a href="/2026-nfl-draft-big-board">Big Board</a>
           <a href="/2026-nfl-mock-draft">Mock Draft</a>

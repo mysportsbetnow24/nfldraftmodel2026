@@ -61,8 +61,18 @@ body {
 }
 
 .brand a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
   color: var(--ink);
   text-decoration: none;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: block;
+  flex: 0 0 auto;
 }
 
 .nav {
