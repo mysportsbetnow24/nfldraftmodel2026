@@ -29,6 +29,9 @@ TRANSACTION_OVERRIDES_CSV = ROOT / "data" / "sources" / "manual" / "transactions
 INSIDER_TRANSACTIONS_CSV = ROOT / "data" / "sources" / "manual" / "insider_transactions_feed_2026.csv"
 ESPN_PROSPECTS_CSV = ROOT / "data" / "sources" / "external" / "espn_nfl_draft_prospect_data" / "nfl_draft_prospects.csv"
 ESPN_DEPTH_CHARTS_CSV = ROOT / "data" / "sources" / "external" / "espn_depth_charts_2026.csv"
+SPOTRAC_DIR = ROOT / "data" / "sources" / "external" / "spotrac"
+SPOTRAC_CONTRACTS_CSV = SPOTRAC_DIR / "spotrac_contracts_2026.csv"
+SPOTRAC_FREE_AGENTS_CSV = SPOTRAC_DIR / "spotrac_free_agents_2026.csv"
 DELTA_AUDIT_LATEST_CSV = OUTPUTS / "delta_audit_2026_latest.csv"
 STABILITY_SNAPSHOTS_DIR = OUTPUTS / "stability_snapshots"
 CURRENT_DRAFT_YEAR = 2026
@@ -1716,6 +1719,11 @@ def _build_team_depth_context() -> dict[str, dict]:
     all_contract_rows = []
     contract_rows = []
     apy_pool_by_pos: dict[str, list[float]] = defaultdict(list)
+    spotrac_contract_rows = _read_csv_rows(SPOTRAC_CONTRACTS_CSV)
+    spotrac_free_agent_rows = _read_csv_rows(SPOTRAC_FREE_AGENTS_CSV)
+    spotrac_contract_by_name: dict[str, dict] = {}
+    spotrac_free_agent_by_name: dict[str, dict] = {}
+    spotrac_free_agents_by_team: dict[str, list[dict]] = defaultdict(list)
 
     def _contract_end_year(row: dict) -> int:
         years = _safe_int(row.get("years"), 0)
@@ -1835,6 +1843,110 @@ def _build_team_depth_context() -> dict[str, dict]:
             if existing is None or (_safe_float(existing.get("apy")) or 0.0) < (_safe_float(apy) or 0.0):
                 contract_by_name[payload["name_key"]] = payload
 
+    for row in spotrac_contract_rows:
+        name = str(row.get("player_name") or "").strip()
+        name_key = _norm_player_key(name)
+        if not name_key:
+            continue
+        team_norm = str(row.get("team_norm") or "").strip().upper()
+        if not team_norm:
+            codes = _normalize_contract_team_codes(str(row.get("team") or ""))
+            team_norm = codes[0] if codes else ""
+        if not team_norm:
+            continue
+        apy = _safe_float(row.get("apy_m"))
+        years = _safe_int(row.get("years_remaining"), 0) or _safe_int(row.get("years"), 0)
+        contract_end_year = _safe_int(row.get("contract_end_year"), 0)
+        pos = _map_team_needs_position(row.get("position", ""))
+        payload = {
+            "gsis_id": "",
+            "name_key": name_key,
+            "apy": apy,
+            "years": years,
+            "position": pos,
+            "team_text": str(row.get("team") or "").strip(),
+            "team_norm": team_norm,
+            "team_codes": [team_norm],
+            "source": "spotrac",
+            "contract_end_year": contract_end_year,
+        }
+        hist_key = (name_key, team_norm)
+        existing_hist = contract_history_by_name_team.get(hist_key)
+        existing_hist_score = (
+            _safe_int(existing_hist.get("contract_end_year"), 0) if existing_hist else 0,
+            _safe_float(existing_hist.get("apy")) or 0.0 if existing_hist else 0.0,
+        )
+        new_hist_score = (contract_end_year, apy or 0.0)
+        if existing_hist is None or new_hist_score >= existing_hist_score:
+            contract_history_by_name_team[hist_key] = {
+                "team_norm": team_norm,
+                "years": years,
+                "year_signed": 0,
+                "contract_end_year": contract_end_year,
+                "apy": apy,
+                "source": "spotrac",
+            }
+        existing = spotrac_contract_by_name.get(name_key)
+        existing_score = (
+            _safe_int(existing.get("contract_end_year"), 0) if existing else 0,
+            _safe_float(existing.get("apy")) or 0.0 if existing else 0.0,
+        )
+        new_score = (contract_end_year, apy or 0.0)
+        if existing is None or new_score >= existing_score:
+            spotrac_contract_by_name[name_key] = payload
+            contract_by_name[name_key] = payload
+        if pos and apy is not None and apy > 0:
+            apy_pool_by_pos[pos].append(float(apy))
+        player_team_candidates[name_key][team_norm] += 40.0
+        if team_norm and pos:
+            contract_players_by_team_pos[(team_norm, pos)].append(
+                {
+                    "player_name": name,
+                    "position": pos,
+                    "depth_chart_position": pos,
+                    "years_exp": 0,
+                    "age": _safe_int(row.get("age"), 0) or "",
+                    "draft_number": "",
+                    "contract_years": years,
+                    "has_contract": True,
+                    "contract_label": f"{years}y | ${apy:.1f}M APY" if apy is not None else f"{years}y contract",
+                    "contract_status_kind": "active_contract",
+                    "apy_m": round(apy, 2) if apy is not None else "",
+                    "apy_pct": _pct_score(apy, apy_pool_by_pos.get(pos, [])),
+                    "snap_count": 0,
+                    "offense_snaps": 0,
+                    "defense_snaps": 0,
+                }
+            )
+
+    for row in spotrac_free_agent_rows:
+        name = str(row.get("player_name") or "").strip()
+        name_key = _norm_player_key(name)
+        if not name_key:
+            continue
+        prev_team_norm = str(row.get("prev_team_norm") or "").strip().upper()
+        if not prev_team_norm:
+            codes = _normalize_contract_team_codes(str(row.get("prev_team") or ""))
+            prev_team_norm = codes[0] if codes else ""
+        pos = _map_team_needs_position(row.get("position", ""))
+        apy = _safe_float(row.get("market_value_apy_m"))
+        prev_apy = _safe_float(row.get("prev_apy_m"))
+        payload = {
+            "player_name": name,
+            "name_key": name_key,
+            "prev_team": str(row.get("prev_team") or "").strip(),
+            "prev_team_norm": prev_team_norm,
+            "position": pos,
+            "age": _safe_int(row.get("age"), 0),
+            "years_exp": _safe_int(row.get("years_exp"), 0),
+            "market_value_apy_m": apy,
+            "prev_apy_m": prev_apy,
+            "source": "spotrac",
+        }
+        spotrac_free_agent_by_name[name_key] = payload
+        if prev_team_norm:
+            spotrac_free_agents_by_team[prev_team_norm].append(payload)
+
     team_players: dict[str, dict[str, list[dict]]] = defaultdict(lambda: defaultdict(list))
     roster_lookup_by_team: dict[str, dict[str, dict]] = defaultdict(dict)
     for row in subset.iter_rows(named=True):
@@ -1862,15 +1974,23 @@ def _build_team_depth_context() -> dict[str, dict]:
         age = _parse_birth_years(row.get("birth_date", ""))
         draft_number = _safe_int(row.get("draft_number"), 0) or None
 
-        contract = contract_by_gsis.get(gsis_id) or contract_by_name.get(_norm_player_key(name))
-        player_override = transaction_team_override_by_name.get(_norm_player_key(name), {})
+        player_key = _norm_player_key(name)
+        contract = contract_by_gsis.get(gsis_id) or contract_by_name.get(player_key)
+        spotrac_contract = spotrac_contract_by_name.get(player_key)
+        spotrac_free_agent = spotrac_free_agent_by_name.get(player_key)
+        player_override = transaction_team_override_by_name.get(player_key, {})
         override_current_team = str(player_override.get("current_team") or "").strip().upper()
         override_action = str(player_override.get("action") or "").strip().lower()
         transaction_rostered = override_current_team == team and any(
             token in override_action for token in {"trade", "signed", "claimed", "agreed"}
         )
-        player_master = players_master_by_name.get(_norm_player_key(name), {})
-        historical_contract = contract_history_by_name_team.get((_norm_player_key(name), team))
+        player_master = players_master_by_name.get(player_key, {})
+        historical_contract = contract_history_by_name_team.get((player_key, team))
+        if spotrac_contract and str(spotrac_contract.get("team_norm") or "").strip().upper() == team:
+            contract = spotrac_contract
+        elif spotrac_free_agent and str(spotrac_free_agent.get("prev_team_norm") or "").strip().upper() == team and not transaction_rostered:
+            contract = None
+            historical_contract = None
         apy = _safe_float(contract.get("apy")) if contract else None
         apy_pct = _pct_score(apy, apy_pool_by_pos.get(model_pos, []))
         years_left = _safe_int(contract.get("years"), 0) if contract else 0
@@ -1916,7 +2036,7 @@ def _build_team_depth_context() -> dict[str, dict]:
 
         snap_payload = player_snap_counts.get((_norm_player_key(name), team), {})
 
-        roster_lookup_by_team[team][_norm_player_key(name)] = {
+        roster_lookup_by_team[team][player_key] = {
             "player_name": name,
             "position": model_pos,
             "depth_chart_position": depth_pos,
@@ -1978,6 +2098,8 @@ def _build_team_depth_context() -> dict[str, dict]:
             continue
         roster_info = roster_lookup_by_team.get(team, {}).get(player_key, {})
         contract = contract_by_name.get(player_key)
+        spotrac_contract = spotrac_contract_by_name.get(player_key)
+        spotrac_free_agent = spotrac_free_agent_by_name.get(player_key)
         player_override = transaction_team_override_by_name.get(player_key, {})
         override_current_team = str(player_override.get("current_team") or "").strip().upper()
         override_action = str(player_override.get("action") or "").strip().lower()
@@ -1995,6 +2117,13 @@ def _build_team_depth_context() -> dict[str, dict]:
             and str(player_master.get("latest_team") or "").strip().upper() == team
             and str(player_master.get("status") or "").strip().upper() not in {"RET", "CUT"}
         )
+        if spotrac_contract and str(spotrac_contract.get("team_norm") or "").strip().upper() == team:
+            contract = spotrac_contract
+            contract_team_match = True
+        elif spotrac_free_agent and str(spotrac_free_agent.get("prev_team_norm") or "").strip().upper() == team and not transaction_rostered:
+            contract = None
+            contract_team_match = False
+            historical_contract = None
         if not roster_info and not contract_team_match and not latest_team_match and not transaction_rostered:
             skipped_espn_rows.append(
                 {
@@ -2314,10 +2443,73 @@ def _build_team_depth_context() -> dict[str, dict]:
             seen_player_keys.add(player_key)
             unique_player_payloads.append(payload)
 
-        free_agents = sorted(
-            [p for p in unique_player_payloads if str(p.get("contract_status_kind") or "").strip() == "unsigned_watch"],
-            key=_free_agent_priority,
-        )
+        spotrac_extra_free_agents = []
+        for payload in spotrac_free_agents_by_team.get(team, []):
+            player_key = str(payload.get("name_key") or "").strip()
+            if (
+                not player_key
+                or player_key in seen_player_keys
+                or player_key in retired_or_released_players
+                or player_key in spotrac_contract_by_name
+            ):
+                continue
+            position = str(payload.get("position") or "").strip().upper()
+            apy_m = _safe_float(payload.get("market_value_apy_m"))
+            if apy_m is None:
+                apy_m = _safe_float(payload.get("prev_apy_m"))
+            snap_payload = player_snap_counts.get((player_key, team), {})
+            player_master = players_master_by_name.get(player_key, {})
+            role_label = position
+            faux_payload = {
+                "player_name": payload.get("player_name", ""),
+                "position": position,
+                "depth_rank": 99,
+                "lane_depth_rank": 99,
+                "designation": _player_designation(
+                    has_contract=False,
+                    years_exp=_safe_int(payload.get("years_exp"), 0),
+                    age=_safe_int(payload.get("age"), 0) or None,
+                    apy_pct=_pct_score(apy_m, apy_pool_by_pos.get(position, [])),
+                    apy_m=apy_m,
+                    contract_years=0,
+                    depth_rank=99,
+                    model_position=position,
+                    draft_number=_safe_int(player_master.get("draft_pick"), 0) or None,
+                    role_label=role_label,
+                ),
+                "role_label": role_label,
+                "detail_label": f"{position} • FA",
+                "meta_label": _player_meta_line(
+                    {
+                        "years_exp": _safe_int(payload.get("years_exp"), 0),
+                        "age": _safe_int(payload.get("age"), 0),
+                    }
+                ),
+                "contract_label": "FA",
+                "contract_status_kind": "unsigned_watch",
+                "years_exp": _safe_int(payload.get("years_exp"), 0),
+                "age": _safe_int(payload.get("age"), 0) or "",
+                "apy_m": round(apy_m, 2) if apy_m is not None else "",
+                "apy_pct": _pct_score(apy_m, apy_pool_by_pos.get(position, [])),
+                "draft_number": _safe_int(player_master.get("draft_pick"), 0) or "",
+                "snap_count": int(snap_payload.get("snap_count", 0)),
+            }
+            spotrac_extra_free_agents.append(faux_payload)
+
+        free_agent_pool = [
+            p for p in unique_player_payloads if str(p.get("contract_status_kind") or "").strip() == "unsigned_watch"
+        ]
+        free_agent_seen = {
+            _norm_player_key(p.get("player_name", ""))
+            for p in free_agent_pool
+            if _norm_player_key(p.get("player_name", ""))
+        }
+        for payload in spotrac_extra_free_agents:
+            player_key = _norm_player_key(payload.get("player_name", ""))
+            if player_key and player_key not in free_agent_seen:
+                free_agent_pool.append(payload)
+                free_agent_seen.add(player_key)
+        free_agents = sorted(free_agent_pool, key=_free_agent_priority)
         key_free_agents = free_agents[:2]
         contract_watch_pool = list(free_agents[2:])
         watch_seen = {
