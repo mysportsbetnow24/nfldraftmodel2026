@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const concepts = [
+  {
+    name: "Yardline Monogram",
+    file: "/brand/sg-mark-yardline.svg",
+    note: "Safest option. Clean SG monogram with subtle field markers.",
+  },
+  {
+    name: "Scouting Reticle",
+    file: "/brand/sg-mark-reticle.svg",
+    note: "Most ownable for your product. Adds scouting-target language without looking gimmicky.",
+  },
+  {
+    name: "Route + Grade",
+    file: "/brand/sg-mark-routegrade.svg",
+    note: "Most editorial. Mixes route-stem movement with grade/check language.",
+  },
+];
+---
+<BaseLayout
+  title="Scouting Grade Logo Preview"
+  description="Internal preview page for Scouting Grade logo directions."
+>
+  <section class="hero hero--data">
+    <h1>Scouting Grade Logo Directions</h1>
+    <p>Three SVG directions built for favicon, navbar, and homepage hero use.</p>
+  </section>
+
+  <section class="card">
+    <div class="logo-preview-grid">
+      {concepts.map((concept) => (
+        <article class="logo-preview-card">
+          <div class="logo-preview-art">
+            <img src={concept.file} alt={concept.name} />
+          </div>
+          <h2 class="section-title">{concept.name}</h2>
+          <p class="muted">{concept.note}</p>
+          <code>{concept.file}</code>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .logo-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .logo-preview-card {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+  }
+
+  .logo-preview-art {
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(circle at top, rgba(255,255,255,.5), rgba(255,255,255,.05)),
+      linear-gradient(180deg, rgba(18,58,99,.08), rgba(15,45,74,.02));
+    display: grid;
+    place-items: center;
+    padding: 1.25rem;
+  }
+
+  .logo-preview-art img {
+    width: min(100%, 280px);
+    height: auto;
+    display: block;
+  }
+
+  .logo-preview-card code {
+    display: inline-block;
+    padding: .45rem .65rem;
+    border-radius: 999px;
+    background: rgba(18,58,99,.08);
+    color: var(--brand);
+    font-size: .82rem;
+    word-break: break-all;
+  }
+
+  @media (max-width: 980px) {
+    .logo-preview-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
