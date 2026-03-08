@@ -3152,6 +3152,9 @@ def _comp_has_outcome_evidence(item: dict) -> bool:
         "success_label",
         "success_label_3yr",
         "ceiling_label",
+        "career_snaps",
+        "peak_snaps",
+        "modern_efficiency_score",
     ):
         raw = item.get(key)
         if raw in ("", None):
@@ -3160,6 +3163,326 @@ def _comp_has_outcome_evidence(item: dict) -> bool:
         if val is not None and val > 0:
             return True
     return False
+
+
+def _safe_ratio(num: float | int | None, den: float | int | None) -> float | None:
+    if num in (None, "") or den in (None, ""):
+        return None
+    try:
+        den_f = float(den)
+        if den_f == 0:
+            return None
+        return float(num) / den_f
+    except Exception:
+        return None
+
+
+def _nonnull_max(*values: object) -> float | None:
+    nums = []
+    for value in values:
+        val = _safe_float(value)
+        if val is not None:
+            nums.append(float(val))
+    return max(nums) if nums else None
+
+
+def _modern_efficiency_score(position_family: str, raw_position: str, stats: dict, nextgen: dict, pfr_adv: dict) -> float | None:
+    components: list[float] = []
+    pos = str(raw_position or "").upper()
+
+    if position_family == "QB":
+        for value, lo, hi in [
+            (nextgen.get("passer_rating"), 70.0, 115.0),
+            (nextgen.get("completion_percentage_above_expectation"), -5.0, 8.0),
+            (stats.get("peak_passing_epa"), -40.0, 180.0),
+            (stats.get("peak_passing_cpoe"), -5.0, 8.0),
+            (pfr_adv.get("on_tgt_pct"), 60.0, 82.0),
+        ]:
+            if value is not None:
+                components.append(_clamp((float(value) - lo) / (hi - lo), 0.0, 1.0))
+        for value, lo, hi in [
+            (pfr_adv.get("pressure_pct"), 38.0, 12.0),
+            (pfr_adv.get("bad_throw_pct"), 24.0, 10.0),
+        ]:
+            if value is not None:
+                components.append(_clamp((lo - float(value)) / (lo - hi), 0.0, 1.0))
+    elif position_family == "SKILL":
+        if pos == "RB":
+            for value, lo, hi in [
+                (stats.get("peak_rushing_epa"), -20.0, 80.0),
+                (stats.get("peak_receiving_epa"), -10.0, 35.0),
+                (pfr_adv.get("yac_att"), 1.2, 3.8),
+                (nextgen.get("rush_yards_over_expected_per_att"), -0.8, 1.8),
+            ]:
+                if value is not None:
+                    components.append(_clamp((float(value) - lo) / (hi - lo), 0.0, 1.0))
+        else:
+            for value, lo, hi in [
+                (stats.get("peak_receiving_epa"), -15.0, 90.0),
+                (stats.get("peak_target_share"), 0.05, 0.34),
+                (stats.get("peak_wopr"), 0.15, 0.85),
+                (nextgen.get("avg_separation"), 2.0, 4.1),
+                (pfr_adv.get("yds_tgt"), 4.5, 11.5),
+            ]:
+                if value is not None:
+                    components.append(_clamp((float(value) - lo) / (hi - lo), 0.0, 1.0))
+            if pfr_adv.get("drop_pct") is not None:
+                components.append(_clamp((12.0 - float(pfr_adv["drop_pct"])) / 12.0, 0.0, 1.0))
+    elif position_family == "DL":
+        for value, lo, hi in [
+            (_safe_ratio(stats.get("career_sacks"), stats.get("career_games")), 0.0, 0.85),
+            (_safe_ratio(stats.get("career_qb_hits"), stats.get("career_games")), 0.0, 1.8),
+            (_safe_ratio(stats.get("career_tfl"), stats.get("career_games")), 0.0, 1.8),
+        ]:
+            if value is not None:
+                components.append(_clamp((float(value) - lo) / (hi - lo), 0.0, 1.0))
+    elif position_family == "LB":
+        for value, lo, hi in [
+            (_safe_ratio(stats.get("career_solo_tkl"), stats.get("career_games")), 1.0, 7.5),
+            (_safe_ratio(stats.get("career_sacks"), stats.get("career_games")), 0.0, 0.6),
+            (_safe_ratio(stats.get("career_interceptions"), stats.get("career_games")), 0.0, 0.18),
+        ]:
+            if value is not None:
+                components.append(_clamp((float(value) - lo) / (hi - lo), 0.0, 1.0))
+        if pfr_adv.get("m_tkl_percent") is not None:
+            components.append(_clamp((20.0 - float(pfr_adv["m_tkl_percent"])) / 20.0, 0.0, 1.0))
+    elif position_family == "DB":
+        for value, lo, hi in [
+            (_safe_ratio(stats.get("career_interceptions"), stats.get("career_games")), 0.0, 0.35),
+            (_safe_ratio(stats.get("career_pass_defended"), stats.get("career_games")), 0.0, 1.5),
+            (_safe_ratio(stats.get("career_solo_tkl"), stats.get("career_games")), 1.0, 5.5),
+        ]:
+            if value is not None:
+                components.append(_clamp((float(value) - lo) / (hi - lo), 0.0, 1.0))
+        if pfr_adv.get("m_tkl_percent") is not None:
+            components.append(_clamp((18.0 - float(pfr_adv["m_tkl_percent"])) / 18.0, 0.0, 1.0))
+    elif position_family == "OL":
+        snap_score = stats.get("career_snaps")
+        peak_score = stats.get("peak_snaps")
+        if snap_score is not None:
+            components.append(_clamp(float(snap_score) / 8000.0, 0.0, 1.0))
+        if peak_score is not None:
+            components.append(_clamp(float(peak_score) / 1100.0, 0.0, 1.0))
+
+    if not components:
+        return None
+    return round(sum(components) / len(components), 4)
+
+
+def _load_nflverse_modern_outcomes() -> dict[tuple[str, int], dict]:
+    if pl is None or not NFLVERSE_PLAYERS.exists():
+        return {}
+
+    players = pl.read_parquet(NFLVERSE_PLAYERS).with_columns(
+        pl.coalesce([pl.col("draft_year"), pl.col("rookie_season")]).alias("resolved_draft_year")
+    )
+    players = players.filter(
+        pl.col("resolved_draft_year").is_not_null()
+        & (pl.col("resolved_draft_year") > 0)
+        & (pl.col("resolved_draft_year") < CURRENT_DRAFT_YEAR)
+    ).select(
+        [
+            "display_name",
+            "position",
+            "resolved_draft_year",
+            "pfr_id",
+            "gsis_id",
+            "years_of_experience",
+        ]
+    )
+
+    refs: dict[tuple[str, int], dict] = {}
+    for row in players.iter_rows(named=True):
+        key = (_norm_comp_identity_key(row.get("display_name")), int(row.get("resolved_draft_year") or 0))
+        if not key[0] or key[1] <= 0:
+            continue
+        existing = refs.get(key, {})
+        if not existing or (
+            bool(row.get("pfr_id")) + bool(row.get("gsis_id"))
+            > bool(existing.get("pfr_id")) + bool(existing.get("gsis_id"))
+        ):
+            refs[key] = {
+                "name": row.get("display_name"),
+                "position": row.get("position"),
+                "draft_year": row.get("resolved_draft_year"),
+                "pfr_id": row.get("pfr_id"),
+                "gsis_id": row.get("gsis_id"),
+                "years_of_experience": row.get("years_of_experience"),
+            }
+
+    stats_by_gsis: dict[str, dict] = {}
+    if NFLVERSE_PLAYER_STATS.exists():
+        player_stats = pl.read_parquet(NFLVERSE_PLAYER_STATS).filter(pl.col("season_type") == "REG")
+        grouped = player_stats.group_by("player_id").agg(
+            [
+                pl.first("position").alias("position"),
+                pl.sum("games").alias("career_games"),
+                pl.sum("completions").alias("career_completions"),
+                pl.sum("attempts").alias("career_attempts"),
+                pl.sum("passing_yards").alias("career_pass_yards"),
+                pl.sum("passing_tds").alias("career_pass_tds"),
+                pl.sum("passing_interceptions").alias("career_pass_int"),
+                pl.sum("carries").alias("career_rush_att"),
+                pl.sum("rushing_yards").alias("career_rush_yards"),
+                pl.sum("rushing_tds").alias("career_rush_tds"),
+                pl.sum("receptions").alias("career_receptions"),
+                pl.sum("targets").alias("career_targets"),
+                pl.sum("receiving_yards").alias("career_rec_yards"),
+                pl.sum("receiving_tds").alias("career_rec_tds"),
+                pl.sum("def_tackles_solo").alias("career_solo_tkl"),
+                pl.sum("def_tackles_for_loss").alias("career_tfl"),
+                pl.sum("def_sacks").alias("career_sacks"),
+                pl.sum("def_qb_hits").alias("career_qb_hits"),
+                pl.sum("def_interceptions").alias("career_interceptions"),
+                pl.sum("def_pass_defended").alias("career_pass_defended"),
+                pl.max("passing_epa").alias("peak_passing_epa"),
+                pl.max("passing_cpoe").alias("peak_passing_cpoe"),
+                pl.max("rushing_epa").alias("peak_rushing_epa"),
+                pl.max("receiving_epa").alias("peak_receiving_epa"),
+                pl.max("target_share").alias("peak_target_share"),
+                pl.max("wopr").alias("peak_wopr"),
+            ]
+        )
+        stats_by_gsis = {str(r["player_id"]): dict(r) for r in grouped.iter_rows(named=True)}
+
+    snap_by_pfr: dict[str, dict] = {}
+    if NFLVERSE_SNAP_COUNTS.exists():
+        snaps = pl.read_parquet(NFLVERSE_SNAP_COUNTS).with_columns(
+            (
+                pl.coalesce([pl.col("offense_snaps"), pl.lit(0)])
+                + pl.coalesce([pl.col("defense_snaps"), pl.lit(0)])
+                + pl.coalesce([pl.col("st_snaps"), pl.lit(0)])
+            ).alias("total_snaps")
+        )
+        season_snaps = snaps.group_by(["pfr_player_id", "season"]).agg(pl.sum("total_snaps").alias("season_snaps"))
+        grouped = season_snaps.group_by("pfr_player_id").agg(
+            [
+                pl.sum("season_snaps").alias("career_snaps"),
+                pl.max("season_snaps").alias("peak_snaps"),
+            ]
+        )
+        snap_by_pfr = {str(r["pfr_player_id"]): dict(r) for r in grouped.iter_rows(named=True)}
+
+    nextgen_by_gsis: dict[str, dict] = {}
+    if NFLVERSE_NEXTGEN.exists():
+        ng = pl.read_parquet(NFLVERSE_NEXTGEN)
+        grouped = ng.group_by(["player_gsis_id", "stat_type"]).agg(
+            [
+                pl.mean("passer_rating").alias("passer_rating"),
+                pl.mean("completion_percentage_above_expectation").alias("completion_percentage_above_expectation"),
+                pl.mean("avg_separation").alias("avg_separation"),
+                pl.mean("catch_percentage").alias("catch_percentage"),
+                pl.mean("rush_yards_over_expected_per_att").alias("rush_yards_over_expected_per_att"),
+                pl.mean("avg_yac_above_expectation").alias("avg_yac_above_expectation"),
+            ]
+        )
+        for row in grouped.iter_rows(named=True):
+            key = str(row.get("player_gsis_id") or "")
+            if not key:
+                continue
+            target = nextgen_by_gsis.setdefault(key, {})
+            stat_type = str(row.get("stat_type") or "").lower()
+            for field in (
+                "passer_rating",
+                "completion_percentage_above_expectation",
+                "avg_separation",
+                "catch_percentage",
+                "rush_yards_over_expected_per_att",
+                "avg_yac_above_expectation",
+            ):
+                val = _safe_float(row.get(field))
+                if val is not None:
+                    target[field if stat_type == "" else field] = _nonnull_max(target.get(field), val)
+
+    pfr_by_id: dict[str, dict] = {}
+    if NFLVERSE_PFR_ADVSTATS.exists():
+        pfr = pl.read_parquet(NFLVERSE_PFR_ADVSTATS)
+        grouped = pfr.group_by(["pfr_id", "stat_type"]).agg(
+            [
+                pl.mean("on_tgt_pct").alias("on_tgt_pct"),
+                pl.mean("pressure_pct").alias("pressure_pct"),
+                pl.mean("bad_throw_pct").alias("bad_throw_pct"),
+                pl.mean("yac_att").alias("yac_att"),
+                pl.mean("yds_tgt").alias("yds_tgt"),
+                pl.mean("drop_pct").alias("drop_pct"),
+                pl.mean("m_tkl_percent").alias("m_tkl_percent"),
+            ]
+        )
+        for row in grouped.iter_rows(named=True):
+            key = str(row.get("pfr_id") or "")
+            if not key:
+                continue
+            target = pfr_by_id.setdefault(key, {})
+            for field in ("on_tgt_pct", "pressure_pct", "bad_throw_pct", "yac_att", "yds_tgt", "drop_pct", "m_tkl_percent"):
+                val = _safe_float(row.get(field))
+                if val is not None:
+                    target[field] = _nonnull_max(target.get(field), val) if field in {"on_tgt_pct", "yac_att", "yds_tgt"} else val
+
+    contract_by_gsis: dict[str, dict] = {}
+    if NFLVERSE_CONTRACTS.exists():
+        contracts = pl.read_parquet(NFLVERSE_CONTRACTS)
+        grouped = contracts.group_by("gsis_id").agg(
+            [
+                pl.len().alias("contract_rows"),
+                pl.max("year_signed").alias("max_year_signed"),
+                pl.max("years").alias("max_contract_years"),
+                pl.max("apy").alias("max_apy"),
+            ]
+        )
+        contract_by_gsis = {str(r["gsis_id"]): dict(r) for r in grouped.iter_rows(named=True)}
+
+    enriched: dict[tuple[str, int], dict] = {}
+    for key, ref in refs.items():
+        gsis_id = str(ref.get("gsis_id") or "")
+        pfr_id = str(ref.get("pfr_id") or "")
+        stats = stats_by_gsis.get(gsis_id, {})
+        snaps = snap_by_pfr.get(pfr_id, {})
+        nextgen = nextgen_by_gsis.get(gsis_id, {})
+        pfr_adv = pfr_by_id.get(pfr_id, {})
+        contracts = contract_by_gsis.get(gsis_id, {})
+        family = _historical_position_family(ref.get("position"))
+
+        payload = {
+            "name": ref.get("name"),
+            "position": ref.get("position"),
+            "G": stats.get("career_games"),
+            "PassCmp": stats.get("career_completions"),
+            "PassAtt": stats.get("career_attempts"),
+            "PassYds": stats.get("career_pass_yards"),
+            "PassTD": stats.get("career_pass_tds"),
+            "PassInt": stats.get("career_pass_int"),
+            "RushAtt": stats.get("career_rush_att"),
+            "RushYds": stats.get("career_rush_yards"),
+            "RushTD": stats.get("career_rush_tds"),
+            "Rec": stats.get("career_receptions"),
+            "RecYds": stats.get("career_rec_yards"),
+            "RecTD": stats.get("career_rec_tds"),
+            "SoloTkl": stats.get("career_solo_tkl"),
+            "Int": stats.get("career_interceptions"),
+            "Sk": stats.get("career_sacks"),
+            "career_snaps": snaps.get("career_snaps"),
+            "peak_snaps": snaps.get("peak_snaps"),
+        }
+        if stats.get("career_tfl") not in (None, ""):
+            payload["career_tfl"] = stats.get("career_tfl")
+        if stats.get("career_qb_hits") not in (None, ""):
+            payload["career_qb_hits"] = stats.get("career_qb_hits")
+        if stats.get("career_pass_defended") not in (None, ""):
+            payload["career_pass_defended"] = stats.get("career_pass_defended")
+
+        draft_year = _safe_int(ref.get("draft_year"), 0)
+        if draft_year > 0:
+            max_signed = _safe_int(contracts.get("max_year_signed"), 0)
+            if max_signed >= draft_year + 4:
+                payload["second_contract_proxy"] = 1.0
+
+        modern_eff = _modern_efficiency_score(family, str(ref.get("position") or ""), {**stats, **snaps}, nextgen, pfr_adv)
+        if modern_eff is not None:
+            payload["modern_efficiency_score"] = modern_eff
+
+        if _comp_has_outcome_evidence(payload):
+            enriched[key] = payload
+    return enriched
 
 
 def _select_comp_triplet(position: str, comp_items: list[dict]) -> tuple[dict, dict, dict]:
@@ -3451,6 +3774,7 @@ def _load_historical_comp_outcomes() -> dict[tuple[str, int], dict]:
     ]
     outcomes: dict[tuple[str, int], dict] = {}
     premium_2024_scores = _load_premium_2024_comp_scores()
+    nflverse_modern_outcomes = _load_nflverse_modern_outcomes()
     for path in sources:
         if not path.exists():
             continue
@@ -3502,6 +3826,54 @@ def _load_historical_comp_outcomes() -> dict[tuple[str, int], dict]:
                 if _comp_has_outcome_evidence(existing):
                     existing["outcome_evidence"] = 1
                 outcomes[key] = existing
+
+    for key, modern in nflverse_modern_outcomes.items():
+        existing = outcomes.get(key)
+        if existing is None:
+            existing = {
+                "name": modern.get("name") or "",
+                "year": key[1],
+                "position": modern.get("position") or "",
+                "position_family": _historical_position_family(modern.get("position") or ""),
+            }
+        for field, raw in modern.items():
+            if raw in ("", None):
+                continue
+            if field in {
+                "G",
+                "PassCmp",
+                "PassAtt",
+                "PassYds",
+                "PassTD",
+                "PassInt",
+                "RushAtt",
+                "RushYds",
+                "RushTD",
+                "Rec",
+                "RecYds",
+                "RecTD",
+                "SoloTkl",
+                "Int",
+                "Sk",
+                "career_snaps",
+                "peak_snaps",
+                "modern_efficiency_score",
+                "second_contract_proxy",
+                "career_tfl",
+                "career_qb_hits",
+                "career_pass_defended",
+            }:
+                current = _safe_float(existing.get(field))
+                incoming = _safe_float(raw)
+                if incoming is None:
+                    continue
+                if field == "modern_efficiency_score":
+                    existing[field] = incoming
+                elif current is None or incoming > current:
+                    existing[field] = incoming
+        if _comp_has_outcome_evidence(existing):
+            existing["outcome_evidence"] = 1
+        outcomes[key] = existing
 
     for key, payload in list(outcomes.items()):
         position_family = str(payload.get("position_family") or "")

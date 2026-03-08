@@ -223,9 +223,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Baron Browning",
-      "similarity": 80.624,
-      "year": 2021
+      "name": "Tipa Galeai",
+      "similarity": 81.348,
+      "year": 2020
     },
     "historical_comp_median": {
       "name": "Isaiah Simmons",
@@ -233,9 +233,9 @@
       "year": 2020
     },
     "historical_comp_ceiling": {
-      "name": "Devin White",
+      "name": "Micah Parsons",
       "similarity": 78.96,
-      "year": 2019
+      "year": 2021
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Sonny Styles (LB, Ohio State) projects as a Round 1 talent with his cleanest NFL path coming as a space-match overhang backer in Big nickel overhang match. The current model grade sits at 94.33, with the board currently slotting him at No. 1. instant starter profile; processes quickly and closes efficiently.",
@@ -412,9 +412,9 @@
       "year": 2021
     },
     "historical_comp_median": {
-      "name": "Tristan Wirfs",
-      "similarity": 79.75,
-      "year": 2020
+      "name": "Marcus Cannon",
+      "similarity": 85.07,
+      "year": 2011
     },
     "historical_comp_ceiling": {
       "name": "Donovan Smith",
@@ -592,19 +592,19 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Lucas Niang",
-      "similarity": 85.643,
-      "year": 2020
+      "name": "Joe Thomas",
+      "similarity": 88.379,
+      "year": 2007
     },
     "historical_comp_median": {
+      "name": "Yosh Nijman",
+      "similarity": 87.815,
+      "year": 2019
+    },
+    "historical_comp_ceiling": {
       "name": "Tristan Wirfs",
       "similarity": 81.94,
       "year": 2020
-    },
-    "historical_comp_ceiling": {
-      "name": "Kaleb McGary",
-      "similarity": 87.777,
-      "year": 2019
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Monroe Freeling (OT, Georgia) projects as a Round 1 talent with his cleanest NFL path coming as a blindside pass-pro translator in Wide-zone / vertical-set tackle playbook. The current model grade sits at 93.99, with the board currently slotting him at No. 3. instant starter profile; has playable pass-pro mechanics with growth runway.",
@@ -838,19 +838,19 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Jahmyr Gibbs",
-      "similarity": 86.8,
-      "year": 2023
-    },
-    "historical_comp_median": {
       "name": "Zamir White",
       "similarity": 91.171,
       "year": 2022
     },
+    "historical_comp_median": {
+      "name": "Jerious Norwood",
+      "similarity": 91.171,
+      "year": 2006
+    },
     "historical_comp_ceiling": {
-      "name": "Breece Hall",
-      "similarity": 86.8,
-      "year": 2022
+      "name": "DeMarco Murray",
+      "similarity": 93.163,
+      "year": 2011
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Jeremiyah Love (RB, Notre Dame) projects as a Round 1 talent with his cleanest NFL path coming as a primary every-down creator in Wide-zone/play-action feature back. The current model grade sits at 93.87, with the board currently slotting him at No. 4. instant starter profile; creates hidden yards and stays on schedule.",
@@ -1033,9 +1033,9 @@
       "year": 2015
     },
     "historical_comp_ceiling": {
-      "name": "Trey Pipkins",
-      "similarity": 88.482,
-      "year": 2019
+      "name": "Tristan Wirfs",
+      "similarity": 84.91,
+      "year": 2020
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Caleb Lomu (OT, Utah) projects as a Round 1 talent with his cleanest NFL path coming as a blindside pass-pro translator in Wide-zone / vertical-set tackle playbook. The current model grade sits at 93.81, with the board currently slotting him at No. 5. instant starter profile; has playable pass-pro mechanics with growth runway.",
@@ -1262,9 +1262,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Michael Wilson",
-      "similarity": 85.211,
-      "year": 2023
+      "name": "Craig Davis",
+      "similarity": 88.463,
+      "year": 2007
     },
     "historical_comp_median": {
       "name": "Tyler Johnson",
@@ -1734,13 +1734,13 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Rashawn Slater",
-      "similarity": 84.891,
+      "name": "Penei Sewell",
+      "similarity": 90.052,
       "year": 2021
     },
     "historical_comp_median": {
-      "name": "Penei Sewell",
-      "similarity": 90.052,
+      "name": "Rashawn Slater",
+      "similarity": 84.891,
       "year": 2021
     },
     "historical_comp_ceiling": {
@@ -2507,14 +2507,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "George Karlaftis",
-      "similarity": 86.095,
-      "year": 2022
+      "name": "Brian Johnston",
+      "similarity": 92.769,
+      "year": 2008
     },
     "historical_comp_median": {
-      "name": "Taco Charlton",
-      "similarity": 89.084,
-      "year": 2017
+      "name": "Mike Montgomery",
+      "similarity": 91.33,
+      "year": 2005
     },
     "historical_comp_ceiling": {
       "name": "Zach Allen",
@@ -2996,14 +2996,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Beau Allen",
-      "similarity": 90.071,
+      "name": "Zach Kerr",
+      "similarity": 88.416,
       "year": 2014
     },
     "historical_comp_median": {
-      "name": "Malcom Brown",
-      "similarity": 88.736,
-      "year": 2015
+      "name": "Beau Allen",
+      "similarity": 90.071,
+      "year": 2014
     },
     "historical_comp_ceiling": {
       "name": "Chris Jones",
@@ -3285,14 +3285,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Kyle Hamilton",
+      "similarity": 82.87,
+      "year": 2022
+    },
+    "historical_comp_median": {
       "name": "Michael Huff",
       "similarity": 88.868,
       "year": 2006
-    },
-    "historical_comp_median": {
-      "name": "Qwynnterrio Cole",
-      "similarity": 87.599,
-      "year": 2022
     },
     "historical_comp_ceiling": {
       "name": "Derwin James",
@@ -3471,14 +3471,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Larry Borom",
-      "similarity": 88.586,
-      "year": 2021
+      "name": "Chris DeGeare",
+      "similarity": 90.09,
+      "year": 2010
     },
     "historical_comp_median": {
-      "name": "Spencer Long",
-      "similarity": 88.022,
-      "year": 2014
+      "name": "John Moffitt",
+      "similarity": 90.635,
+      "year": 2011
     },
     "historical_comp_ceiling": {
       "name": "Frank Ragnow",
@@ -3761,14 +3761,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Deshon Elliott",
-      "similarity": 86.959,
-      "year": 2018
+      "name": "Brandon Underwood",
+      "similarity": 85.85,
+      "year": 2009
     },
     "historical_comp_median": {
-      "name": "Tre Flowers",
-      "similarity": 88.595,
-      "year": 2018
+      "name": "Tommie Campbell",
+      "similarity": 89.779,
+      "year": 2011
     },
     "historical_comp_ceiling": {
       "name": "Budda Baker",
@@ -4250,14 +4250,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Bobby Carpenter",
-      "similarity": 90.137,
+      "name": "Ryan LaCasse",
+      "similarity": 89.695,
       "year": 2006
     },
     "historical_comp_median": {
-      "name": "Antonio Wilson",
-      "similarity": 89.563,
-      "year": 2000
+      "name": "Bobby Carpenter",
+      "similarity": 90.137,
+      "year": 2006
     },
     "historical_comp_ceiling": {
       "name": "Zach Allen",
@@ -4492,9 +4492,9 @@
       "year": 2010
     },
     "historical_comp_median": {
-      "name": "Devin Culp",
-      "similarity": 83.688,
-      "year": 2024
+      "name": "Virgil Green",
+      "similarity": 83.848,
+      "year": 2011
     },
     "historical_comp_ceiling": {
       "name": "Kyle Pitts",
@@ -4727,9 +4727,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "P.K. Sam",
-      "similarity": 92.158,
-      "year": 2004
+      "name": "Keelan Doss",
+      "similarity": 89.93,
+      "year": 2019
     },
     "historical_comp_median": {
       "name": "Jacoby Jones",
@@ -4912,19 +4912,19 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Ben Bartch",
-      "similarity": 86.508,
-      "year": 2020
+      "name": "Roger Rosengarten",
+      "similarity": 88.83,
+      "year": 2024
     },
     "historical_comp_median": {
+      "name": "Tyron Smith",
+      "similarity": 91.142,
+      "year": 2011
+    },
+    "historical_comp_ceiling": {
       "name": "Tristan Wirfs",
       "similarity": 83.491,
       "year": 2020
-    },
-    "historical_comp_ceiling": {
-      "name": "Cedric Ogbuehi",
-      "similarity": 89.187,
-      "year": 2015
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Spencer Fano (OT, Utah) projects as a Round 1-2 talent with his cleanest NFL path coming as a balanced starting tackle in Zone-power hybrid tackle menu. The current model grade sits at 88.99, with the board currently slotting him at No. 21. instant starter profile; has playable pass-pro mechanics with growth runway.",
@@ -5159,19 +5159,19 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Logan Wilson",
-      "similarity": 86.405,
-      "year": 2020
+      "name": "Tuf Borland",
+      "similarity": 91.274,
+      "year": 2021
     },
     "historical_comp_median": {
-      "name": "Patrick Queen",
-      "similarity": 91.265,
-      "year": 2020
-    },
-    "historical_comp_ceiling": {
       "name": "Bobby Okereke",
       "similarity": 86.405,
       "year": 2019
+    },
+    "historical_comp_ceiling": {
+      "name": "Patrick Queen",
+      "similarity": 91.265,
+      "year": 2020
     },
     "comp_confidence": "A",
     "scouting_report_summary": "C.J. Allen (LB, Georgia) projects as a Round 1-2 talent with his cleanest NFL path coming as a run-and-chase will backer in Pursuit-heavy split-safety fit. The current model grade sits at 89.65, with the board currently slotting him at No. 22. instant starter profile; processes quickly and closes efficiently.",
@@ -5409,14 +5409,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Drake Jackson",
-      "similarity": 89.629,
-      "year": 2022
+      "name": "Hamilcar Rashed",
+      "similarity": 88.557,
+      "year": 2021
     },
     "historical_comp_median": {
-      "name": "Micah Parsons",
-      "similarity": 85.343,
-      "year": 2021
+      "name": "LaVar Arrington",
+      "similarity": 92.158,
+      "year": 2000
     },
     "historical_comp_ceiling": {
       "name": "Myles Garrett",
@@ -5904,14 +5904,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Ed Oliver",
-      "similarity": 88.05,
-      "year": 2019
+      "name": "Tyler Davis",
+      "similarity": 91.659,
+      "year": 2024
     },
     "historical_comp_median": {
-      "name": "Jeffery Simmons",
-      "similarity": 84.6,
-      "year": 2019
+      "name": "Josiah Bronson",
+      "similarity": 88.191,
+      "year": 2021
     },
     "historical_comp_ceiling": {
       "name": "Chris Jones",
@@ -6090,14 +6090,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Spencer Long",
-      "similarity": 86.565,
-      "year": 2014
+      "name": "Ben Ijalana",
+      "similarity": 91.979,
+      "year": 2011
     },
     "historical_comp_median": {
-      "name": "Kevin Dotson",
-      "similarity": 85.051,
-      "year": 2020
+      "name": "Alex Mack",
+      "similarity": 91.246,
+      "year": 2009
     },
     "historical_comp_ceiling": {
       "name": "Graham Glasgow",
@@ -6555,14 +6555,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Will Campbell",
-      "similarity": 91.481,
-      "year": 2025
-    },
-    "historical_comp_median": {
       "name": "Jammal Brown",
       "similarity": 89.685,
       "year": 2005
+    },
+    "historical_comp_median": {
+      "name": "D'Brickashaw Ferguson",
+      "similarity": 90.108,
+      "year": 2006
     },
     "historical_comp_ceiling": {
       "name": "Taylor Decker",
@@ -6794,14 +6794,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Devin Fuller",
-      "similarity": 90.296,
-      "year": 2016
+      "name": "Aundrae Allison",
+      "similarity": 91.659,
+      "year": 2007
     },
     "historical_comp_median": {
-      "name": "Courtland Sutton",
-      "similarity": 86.226,
-      "year": 2018
+      "name": "Jeremy Maclin",
+      "similarity": 92.938,
+      "year": 2009
     },
     "historical_comp_ceiling": {
       "name": "Nelson Agholor",
@@ -7239,14 +7239,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Jamal Reynolds",
+      "similarity": 90.879,
+      "year": 2001
+    },
+    "historical_comp_median": {
       "name": "Eku Leota",
       "similarity": 91.556,
       "year": 2023
-    },
-    "historical_comp_median": {
-      "name": "Barryn Sorrell",
-      "similarity": 91.039,
-      "year": 2025
     },
     "historical_comp_ceiling": {
       "name": "Myles Garrett",
@@ -7443,9 +7443,9 @@
       "year": 2009
     },
     "historical_comp_median": {
-      "name": "Derrell Johnson",
-      "similarity": 88.322,
-      "year": 2014
+      "name": "Brian Burns",
+      "similarity": 83.81,
+      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Danielle Hunter",
@@ -7685,19 +7685,19 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Kenneth Murray",
-      "similarity": 89.14,
-      "year": 2020
+      "name": "Junior Colson",
+      "similarity": 89.826,
+      "year": 2024
     },
     "historical_comp_median": {
+      "name": "Dan Morgan",
+      "similarity": 91.349,
+      "year": 2001
+    },
+    "historical_comp_ceiling": {
       "name": "Micah Parsons",
       "similarity": 85.314,
       "year": 2021
-    },
-    "historical_comp_ceiling": {
-      "name": "Devin White",
-      "similarity": 85.314,
-      "year": 2019
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Anthony Hill Jr. (LB, Texas Longhorns) projects as a Round 2-3 talent with his cleanest NFL path coming as a stand-up pressure sam/edge hybrid in Sim-pressure multiple front. The current model grade sits at 87.79, with the board currently slotting him at No. 32. early contributor profile; processes quickly and closes efficiently.",
@@ -7973,9 +7973,9 @@
       "year": 2000
     },
     "historical_comp_median": {
-      "name": "Jarvis Brownlee Jr.",
-      "similarity": 90.719,
-      "year": 2024
+      "name": "Trent McDuffie",
+      "similarity": 93.906,
+      "year": 2022
     },
     "historical_comp_ceiling": {
       "name": "Carlton Davis",
@@ -8242,9 +8242,9 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Donte Kent",
-      "similarity": 91.876,
-      "year": 2024
+      "name": "Johnny Adams",
+      "similarity": 91.537,
+      "year": 2013
     },
     "historical_comp_median": {
       "name": "B.J. Tucker",
@@ -8437,14 +8437,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Durron Neal",
-      "similarity": 92.242,
-      "year": 2016
-    },
-    "historical_comp_median": {
       "name": "Preston Parker",
       "similarity": 92.12,
       "year": 2010
+    },
+    "historical_comp_median": {
+      "name": "CeeDee Lamb",
+      "similarity": 87.373,
+      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "A.J. Brown",
@@ -8686,14 +8686,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Justin Rogers",
-      "similarity": 90.738,
-      "year": 2024
-    },
-    "historical_comp_median": {
       "name": "Marcell Dareus",
       "similarity": 90.522,
       "year": 2011
+    },
+    "historical_comp_median": {
+      "name": "Jeffery Simmons",
+      "similarity": 85.766,
+      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Chris Jones",
@@ -8932,14 +8932,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Kaleb Eleby",
-      "similarity": 90.522,
-      "year": 2022
-    },
-    "historical_comp_median": {
       "name": "Colt McCoy",
       "similarity": 90.466,
       "year": 2010
+    },
+    "historical_comp_median": {
+      "name": "Jordan Love",
+      "similarity": 85.775,
+      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "Dak Prescott",
@@ -9148,14 +9148,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Leki Fotu",
-      "similarity": 85.991,
-      "year": 2020
+      "name": "Jason Shirley",
+      "similarity": 86.527,
+      "year": 2008
     },
     "historical_comp_median": {
-      "name": "Alim McNeill",
-      "similarity": 82.034,
-      "year": 2021
+      "name": "Albert Haynesworth",
+      "similarity": 89.093,
+      "year": 2002
     },
     "historical_comp_ceiling": {
       "name": "Javon Kinlaw",
@@ -9394,14 +9394,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Cameron Sheffield",
+      "similarity": 90.832,
+      "year": 2010
+    },
+    "historical_comp_median": {
       "name": "Anthony Spencer",
       "similarity": 93.492,
       "year": 2007
-    },
-    "historical_comp_median": {
-      "name": "Nic Scourton",
-      "similarity": 92.684,
-      "year": 2025
     },
     "historical_comp_ceiling": {
       "name": "Trey Hendrickson",
@@ -9635,14 +9635,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Grant Calcaterra",
-      "similarity": 85.089,
-      "year": 2022
+      "name": "Travis Beckum",
+      "similarity": 86.743,
+      "year": 2009
     },
     "historical_comp_median": {
-      "name": "James Mitchell",
-      "similarity": 83.641,
-      "year": 2022
+      "name": "Brock Bowers",
+      "similarity": 90.466,
+      "year": 2024
     },
     "historical_comp_ceiling": {
       "name": "Kyle Pitts",
@@ -9883,9 +9883,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Logan Wilson",
-      "similarity": 85.465,
-      "year": 2020
+      "name": "Thomas Williams",
+      "similarity": 91.753,
+      "year": 2008
     },
     "historical_comp_median": {
       "name": "Bryce Hager",
@@ -10128,14 +10128,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Amik Robertson",
-      "similarity": 81.545,
-      "year": 2020
+      "name": "Chris McKenzie",
+      "similarity": 88.388,
+      "year": 2005
     },
     "historical_comp_median": {
-      "name": "Riq Woolen",
-      "similarity": 79.853,
-      "year": 2022
+      "name": "Scott Starks",
+      "similarity": 83.876,
+      "year": 2005
     },
     "historical_comp_ceiling": {
       "name": "Denzel Ward",
@@ -10402,19 +10402,19 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Ras-I Dowling",
+      "similarity": 91.227,
+      "year": 2011
+    },
+    "historical_comp_median": {
       "name": "Tariq Castro-Fields",
       "similarity": 93.004,
       "year": 2022
     },
-    "historical_comp_median": {
-      "name": "Bryce Hall",
-      "similarity": 88.219,
-      "year": 2020
-    },
     "historical_comp_ceiling": {
-      "name": "Patrick Surtain II",
-      "similarity": 85.361,
-      "year": 2021
+      "name": "Eli Apple",
+      "similarity": 90.437,
+      "year": 2016
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Daylen Everette (CB, Georgia) projects as a Round 2-3 talent with his cleanest NFL path coming as a outside starter with matchup flexibility in Press-match / quarters hybrid. The current model grade sits at 85.48, with the board currently slotting him at No. 46. early contributor profile; matches routes with disciplined leverage.",
@@ -10643,14 +10643,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Percy Harvin",
-      "similarity": 93.116,
-      "year": 2009
-    },
-    "historical_comp_median": {
       "name": "Armanti Edwards",
       "similarity": 90.907,
       "year": 2010
+    },
+    "historical_comp_median": {
+      "name": "Donnie Avery",
+      "similarity": 91.359,
+      "year": 2008
     },
     "historical_comp_ceiling": {
       "name": "Amon-Ra St. Brown",
@@ -10889,9 +10889,9 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Chase Young",
-      "similarity": 89.676,
-      "year": 2020
+      "name": "Quanterus Smith",
+      "similarity": 88.999,
+      "year": 2013
     },
     "historical_comp_median": {
       "name": "Kemoko Turay",
@@ -11137,14 +11137,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Laiatu Latu",
-      "similarity": 90.456,
-      "year": 2024
-    },
-    "historical_comp_median": {
       "name": "Chris Ellis",
       "similarity": 90.137,
       "year": 2008
+    },
+    "historical_comp_median": {
+      "name": "Laiatu Latu",
+      "similarity": 90.456,
+      "year": 2024
     },
     "historical_comp_ceiling": {
       "name": "Danielle Hunter",
@@ -11422,14 +11422,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Logan Ryan",
-      "similarity": 92.186,
-      "year": 2013
-    },
-    "historical_comp_median": {
       "name": "Quan Martin",
       "similarity": 92.035,
       "year": 2023
+    },
+    "historical_comp_median": {
+      "name": "Dominique Franks",
+      "similarity": 91.697,
+      "year": 2010
     },
     "historical_comp_ceiling": {
       "name": "Denzel Ward",
@@ -11661,14 +11661,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Chris Olave",
-      "similarity": 85.286,
-      "year": 2022
+      "name": "Drew Carter",
+      "similarity": 90.334,
+      "year": 2004
     },
     "historical_comp_median": {
-      "name": "DJ Chark",
-      "similarity": 88.633,
-      "year": 2018
+      "name": "Devin Aromashodu",
+      "similarity": 88.473,
+      "year": 2006
     },
     "historical_comp_ceiling": {
       "name": "Marquez Valdes-Scantling",
@@ -11948,13 +11948,13 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Khari Willis",
-      "similarity": 92.101,
-      "year": 2019
+      "name": "Stevie Brown",
+      "similarity": 90.701,
+      "year": 2010
     },
     "historical_comp_median": {
-      "name": "C.J. Gardner-Johnson",
-      "similarity": 89.413,
+      "name": "Khari Willis",
+      "similarity": 92.101,
       "year": 2019
     },
     "historical_comp_ceiling": {
@@ -12510,14 +12510,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Bryan Kehl",
-      "similarity": 93.492,
+      "name": "Beau Bell",
+      "similarity": 89.845,
       "year": 2008
     },
     "historical_comp_median": {
-      "name": "Nathan Stupar",
-      "similarity": 92.816,
-      "year": 2012
+      "name": "Bryan Kehl",
+      "similarity": 93.492,
+      "year": 2008
     },
     "historical_comp_ceiling": {
       "name": "Zach Allen",
@@ -12763,9 +12763,9 @@
       "year": 2022
     },
     "historical_comp_median": {
-      "name": "Brian Burns",
-      "similarity": 85.014,
-      "year": 2019
+      "name": "John Abraham",
+      "similarity": 92.158,
+      "year": 2000
     },
     "historical_comp_ceiling": {
       "name": "Danielle Hunter",
@@ -12999,14 +12999,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Tre Tucker",
-      "similarity": 88.614,
-      "year": 2023
+      "name": "Daryl Jones",
+      "similarity": 89.648,
+      "year": 2002
     },
     "historical_comp_median": {
-      "name": "CeeDee Lamb",
-      "similarity": 84.027,
-      "year": 2020
+      "name": "Sinorice Moss",
+      "similarity": 89.657,
+      "year": 2006
     },
     "historical_comp_ceiling": {
       "name": "A.J. Brown",
@@ -13243,9 +13243,9 @@
       "year": 2005
     },
     "historical_comp_median": {
-      "name": "Felton Davis",
-      "similarity": 87.035,
-      "year": 2019
+      "name": "Ashley Lelie",
+      "similarity": 89.3,
+      "year": 2002
     },
     "historical_comp_ceiling": {
       "name": "DK Metcalf",
@@ -13529,9 +13529,9 @@
       "year": 2022
     },
     "historical_comp_median": {
-      "name": "Isaac Yiadom",
-      "similarity": 86.903,
-      "year": 2018
+      "name": "Dre Kirkpatrick",
+      "similarity": 88.98,
+      "year": 2012
     },
     "historical_comp_ceiling": {
       "name": "Jaire Alexander",
@@ -13816,9 +13816,9 @@
       "year": 2022
     },
     "historical_comp_median": {
-      "name": "Lionel Smith",
-      "similarity": 90.588,
-      "year": 2012
+      "name": "Desmond Trufant",
+      "similarity": 90.625,
+      "year": 2013
     },
     "historical_comp_ceiling": {
       "name": "Carlton Davis",
@@ -14058,14 +14058,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Chad Muma",
-      "similarity": 87.58,
+      "name": "Darrian Beavers",
+      "similarity": 87.317,
       "year": 2022
     },
     "historical_comp_median": {
-      "name": "Carter Coughlin",
-      "similarity": 85.39,
-      "year": 2020
+      "name": "Chad Muma",
+      "similarity": 87.58,
+      "year": 2022
     },
     "historical_comp_ceiling": {
       "name": "Germaine Pratt",
@@ -14261,14 +14261,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Ernest Jones",
-      "similarity": 92.28,
-      "year": 2021
+      "name": "Anfernee Orji",
+      "similarity": 90.014,
+      "year": 2023
     },
     "historical_comp_median": {
-      "name": "Logan Wilson",
-      "similarity": 85.672,
-      "year": 2020
+      "name": "Terez Hall",
+      "similarity": 91.753,
+      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Bobby Okereke",
@@ -14445,13 +14445,13 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Rick Leonard",
-      "similarity": 82.391,
-      "year": 2018
+      "name": "Alex Barron",
+      "similarity": 91.913,
+      "year": 2005
     },
     "historical_comp_median": {
-      "name": "Kaleb McGary",
-      "similarity": 88.05,
+      "name": "Yosh Nijman",
+      "similarity": 89.996,
       "year": 2019
     },
     "historical_comp_ceiling": {
@@ -14694,14 +14694,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Slade Norris",
+      "similarity": 90.334,
+      "year": 2009
+    },
+    "historical_comp_median": {
       "name": "Nick Herbig",
       "similarity": 93.22,
       "year": 2023
-    },
-    "historical_comp_median": {
-      "name": "Neiron Ball",
-      "similarity": 92.364,
-      "year": 2015
     },
     "historical_comp_ceiling": {
       "name": "Zach Allen",
@@ -14979,14 +14979,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Tre Brown",
-      "similarity": 85.296,
-      "year": 2021
+      "name": "RJ Stanford",
+      "similarity": 87.514,
+      "year": 2010
     },
     "historical_comp_median": {
-      "name": "Jason Verrett",
-      "similarity": 89.77,
-      "year": 2014
+      "name": "Josiah Scott",
+      "similarity": 92.082,
+      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "Jaire Alexander",
@@ -15218,14 +15218,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Elic Ayomanor",
-      "similarity": 91.847,
-      "year": 2025
+      "name": "Chris Olave",
+      "similarity": 86.706,
+      "year": 2022
     },
     "historical_comp_median": {
-      "name": "Jadon Haselwood",
-      "similarity": 91.321,
-      "year": 2023
+      "name": "Miles Austin",
+      "similarity": 91.048,
+      "year": 2006
     },
     "historical_comp_ceiling": {
       "name": "Amon-Ra St. Brown",
@@ -15460,14 +15460,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Josh Robinson",
-      "similarity": 91.584,
+      "name": "Terrence Magee",
+      "similarity": 90.343,
       "year": 2015
     },
     "historical_comp_median": {
-      "name": "Rhamondre Stevenson",
-      "similarity": 85.202,
-      "year": 2021
+      "name": "Josh Robinson",
+      "similarity": 91.584,
+      "year": 2015
     },
     "historical_comp_ceiling": {
       "name": "David Montgomery",
@@ -15730,14 +15730,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Brian Branch",
-      "similarity": 91.998,
-      "year": 2023
-    },
-    "historical_comp_median": {
       "name": "Damian Swann",
       "similarity": 91.283,
       "year": 2015
+    },
+    "historical_comp_median": {
+      "name": "Brian Branch",
+      "similarity": 91.998,
+      "year": 2023
     },
     "historical_comp_ceiling": {
       "name": "Jaire Alexander",
@@ -16017,9 +16017,9 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Talanoa Hufanga",
-      "similarity": 82.043,
-      "year": 2021
+      "name": "Idrees Bashir",
+      "similarity": 87.025,
+      "year": 2001
     },
     "historical_comp_median": {
       "name": "Marcus Williams",
@@ -16254,14 +16254,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Olive Sagapolu",
+      "similarity": 89.422,
+      "year": 2019
+    },
+    "historical_comp_median": {
       "name": "Dan Williams",
       "similarity": 91.236,
       "year": 2010
-    },
-    "historical_comp_median": {
-      "name": "Justin Rogers",
-      "similarity": 89.845,
-      "year": 2024
     },
     "historical_comp_ceiling": {
       "name": "Quinnen Williams",
@@ -16439,14 +16439,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Creed Humphrey",
-      "similarity": 86.358,
-      "year": 2021
+      "name": "Jon Asamoah",
+      "similarity": 92.045,
+      "year": 2010
     },
     "historical_comp_median": {
-      "name": "Connor McGovern",
-      "similarity": 91.838,
-      "year": 2016
+      "name": "Greg Mancz",
+      "similarity": 92.374,
+      "year": 2015
     },
     "historical_comp_ceiling": {
       "name": "Quenton Nelson",
@@ -16921,19 +16921,19 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Calvin Austin III",
-      "similarity": 85.267,
-      "year": 2022
+      "name": "Daryl Jones",
+      "similarity": 89.601,
+      "year": 2002
     },
     "historical_comp_median": {
-      "name": "Chris Olave",
-      "similarity": 82.645,
-      "year": 2022
+      "name": "T.Y. Hilton",
+      "similarity": 90.052,
+      "year": 2012
     },
     "historical_comp_ceiling": {
-      "name": "Amon-Ra St. Brown",
-      "similarity": 82.645,
-      "year": 2021
+      "name": "Santana Moss",
+      "similarity": 89.291,
+      "year": 2001
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Deion Burks (WR, Oklahoma) projects as a Round 3-4 talent with his cleanest NFL path coming as a field-stretching z receiver in Vertical spread / play-action launcher. The current model grade sits at 83.57, with the board currently slotting him at No. 60. early contributor profile; creates separation and finishes at the catch point.",
@@ -17149,14 +17149,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Forrest Merrill",
+      "similarity": 86.01,
+      "year": 2021
+    },
+    "historical_comp_median": {
       "name": "Ryan Carrethers",
       "similarity": 86.997,
       "year": 2014
-    },
-    "historical_comp_median": {
-      "name": "D.J. Reader",
-      "similarity": 82.118,
-      "year": 2016
     },
     "historical_comp_ceiling": {
       "name": "Dexter Lawrence",
@@ -17395,9 +17395,9 @@
       "year": 2017
     },
     "historical_comp_median": {
-      "name": "Syvelle Newton",
-      "similarity": 90.381,
-      "year": 2007
+      "name": "Keenan Allen",
+      "similarity": 85.634,
+      "year": 2013
     },
     "historical_comp_ceiling": {
       "name": "Cooper Kupp",
@@ -17641,9 +17641,9 @@
       "year": 2019
     },
     "historical_comp_median": {
-      "name": "Josh Sweat",
-      "similarity": 85.803,
-      "year": 2018
+      "name": "Quanterus Smith",
+      "similarity": 90.174,
+      "year": 2013
     },
     "historical_comp_ceiling": {
       "name": "Trey Hendrickson",
@@ -17881,9 +17881,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Kylin Hill",
-      "similarity": 88.153,
-      "year": 2021
+      "name": "Bernard Scott",
+      "similarity": 90.55,
+      "year": 2009
     },
     "historical_comp_median": {
       "name": "Javonte Williams",
@@ -18331,14 +18331,14 @@
       "year": 2017
     },
     "historical_comp_median": {
-      "name": "Kiante Anderson",
-      "similarity": 90.964,
-      "year": 2018
-    },
-    "historical_comp_ceiling": {
       "name": "Peter Kalambayi",
       "similarity": 91.048,
       "year": 2018
+    },
+    "historical_comp_ceiling": {
+      "name": "Carl Granderson",
+      "similarity": 86.433,
+      "year": 2019
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Derrick Moore (EDGE, Michigan) projects as a Round 3-4 talent with his cleanest NFL path coming as a three-down pressure creator in Multiple-front every-down edge role. The current model grade sits at 80.63, with the board currently slotting him at No. 78. developmental contributor profile; produces pressure through get-off and counters.",
@@ -18568,14 +18568,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Tre Brown",
-      "similarity": 87.523,
-      "year": 2021
+      "name": "Antwan Harris",
+      "similarity": 91.537,
+      "year": 2000
     },
     "historical_comp_median": {
-      "name": "Riq Woolen",
-      "similarity": 85.549,
-      "year": 2022
+      "name": "Jerraud Powers",
+      "similarity": 93.004,
+      "year": 2009
     },
     "historical_comp_ceiling": {
       "name": "Denzel Ward",
@@ -18818,14 +18818,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Kendrick Norton",
-      "similarity": 89.535,
-      "year": 2018
+      "name": "Kelcy Quarles",
+      "similarity": 85.399,
+      "year": 2014
     },
     "historical_comp_median": {
-      "name": "Darius Kilgo",
-      "similarity": 85.39,
-      "year": 2015
+      "name": "Marcus Thomas",
+      "similarity": 90.419,
+      "year": 2007
     },
     "historical_comp_ceiling": {
       "name": "Alim McNeill",
@@ -19108,9 +19108,9 @@
       "year": 2023
     },
     "historical_comp_median": {
-      "name": "Denzel Ward",
-      "similarity": 83.961,
-      "year": 2018
+      "name": "Desmond Trufant",
+      "similarity": 88.219,
+      "year": 2013
     },
     "historical_comp_ceiling": {
       "name": "Marshon Lattimore",
@@ -19392,14 +19392,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "James Sample",
-      "similarity": 86.057,
-      "year": 2015
+      "name": "Zayne Anderson",
+      "similarity": 86.959,
+      "year": 2021
     },
     "historical_comp_median": {
-      "name": "Tre Flowers",
-      "similarity": 88.247,
-      "year": 2018
+      "name": "Tommie Campbell",
+      "similarity": 90.108,
+      "year": 2011
     },
     "historical_comp_ceiling": {
       "name": "Jordan Whitehead",
@@ -19677,14 +19677,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Sauce Gardner",
-      "similarity": 83.481,
-      "year": 2022
+      "name": "Kevin Barnes",
+      "similarity": 88.745,
+      "year": 2009
     },
     "historical_comp_median": {
-      "name": "Patrick Surtain II",
-      "similarity": 83.481,
-      "year": 2021
+      "name": "Sammy Davis",
+      "similarity": 89.864,
+      "year": 2003
     },
     "historical_comp_ceiling": {
       "name": "Kendall Fuller",
@@ -19922,14 +19922,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Nate Hall",
+      "similarity": 90.231,
+      "year": 2019
+    },
+    "historical_comp_median": {
       "name": "Tanner Muse",
       "similarity": 89.159,
       "year": 2020
-    },
-    "historical_comp_median": {
-      "name": "Cole Holcomb",
-      "similarity": 84.985,
-      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Germaine Pratt",
@@ -20202,14 +20202,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Ronnie Hickman Jr.",
+      "similarity": 91.265,
+      "year": 2023
+    },
+    "historical_comp_median": {
       "name": "Dezmen Southward",
       "similarity": 87.74,
       "year": 2014
-    },
-    "historical_comp_median": {
-      "name": "Marcell Harris",
-      "similarity": 87.777,
-      "year": 2018
     },
     "historical_comp_ceiling": {
       "name": "Derwin James",
@@ -20444,9 +20444,9 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Ryan Mathews",
-      "similarity": 91.509,
-      "year": 2010
+      "name": "Deneric Prince",
+      "similarity": 90.926,
+      "year": 2023
     },
     "historical_comp_median": {
       "name": "Isaac Guerendo",
@@ -20454,9 +20454,9 @@
       "year": 2024
     },
     "historical_comp_ceiling": {
-      "name": "Breece Hall",
-      "similarity": 86.536,
-      "year": 2022
+      "name": "Ryan Mathews",
+      "similarity": 91.509,
+      "year": 2010
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Nicholas Singleton (RB, Penn State) projects as a Round 3-4 talent with his cleanest NFL path coming as a explosive one-cut slasher in Wide-zone one-cut system. The current model grade sits at 81.90, with the board currently slotting him at No. 85. developmental contributor profile; creates hidden yards and stays on schedule.",
@@ -20628,9 +20628,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Yodny Cajuste",
-      "similarity": 88.473,
-      "year": 2019
+      "name": "Xavier Nixon",
+      "similarity": 89.309,
+      "year": 2013
     },
     "historical_comp_median": {
       "name": "Le'Raven Clark",
@@ -20825,14 +20825,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Danny Batten",
+      "similarity": 87.881,
+      "year": 2010
+    },
+    "historical_comp_median": {
       "name": "Garret Wallow",
       "similarity": 91.876,
       "year": 2021
-    },
-    "historical_comp_median": {
-      "name": "Raekwon McMillan",
-      "similarity": 88.398,
-      "year": 2017
     },
     "historical_comp_ceiling": {
       "name": "Nick Vigil",
@@ -21021,19 +21021,19 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Tamba Hali",
-      "similarity": 93.492,
-      "year": 2006
-    },
-    "historical_comp_median": {
-      "name": "Martin Ifedi",
-      "similarity": 93.22,
-      "year": 2015
-    },
-    "historical_comp_ceiling": {
       "name": "Aidan Hutchinson",
       "similarity": 87.082,
       "year": 2022
+    },
+    "historical_comp_median": {
+      "name": "Mitch Unrein",
+      "similarity": 90.287,
+      "year": 2010
+    },
+    "historical_comp_ceiling": {
+      "name": "Michael Bennett",
+      "similarity": 93.408,
+      "year": 2009
     },
     "comp_confidence": "A",
     "scouting_report_summary": "LT Overton (EDGE, Alabama) projects as a Round 4-5 talent with his cleanest NFL path coming as a rotational rush specialist in Sub-package designated rush lane. The current model grade sits at 78.29, with the board currently slotting him at No. 140. developmental contributor profile; produces pressure through get-off and counters.",
@@ -21258,14 +21258,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "John Metchie III",
-      "similarity": 92.91,
-      "year": 2022
+      "name": "Armanti Edwards",
+      "similarity": 93.906,
+      "year": 2010
     },
     "historical_comp_median": {
-      "name": "CeeDee Lamb",
-      "similarity": 87.523,
-      "year": 2020
+      "name": "Greg Ward Jr.",
+      "similarity": 93.408,
+      "year": 2017
     },
     "historical_comp_ceiling": {
       "name": "A.J. Brown",
@@ -21443,14 +21443,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Jamaree Salyer",
-      "similarity": 89.883,
-      "year": 2022
+      "name": "Christian Haynes",
+      "similarity": 91.547,
+      "year": 2024
     },
     "historical_comp_median": {
-      "name": "Quinn Meinerz",
-      "similarity": 87.542,
-      "year": 2021
+      "name": "Jonathan Goodwin",
+      "similarity": 89.911,
+      "year": 2002
     },
     "historical_comp_ceiling": {
       "name": "Frank Ragnow",
@@ -21690,9 +21690,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Davion Taylor",
-      "similarity": 83.058,
-      "year": 2020
+      "name": "Spencer Adkins",
+      "similarity": 83.359,
+      "year": 2009
     },
     "historical_comp_median": {
       "name": "Jabrill Peppers",
@@ -21874,14 +21874,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Paris Johnson Jr.",
-      "similarity": 90.4,
-      "year": 2023
+      "name": "Jammal Brown",
+      "similarity": 90.588,
+      "year": 2005
     },
     "historical_comp_median": {
-      "name": "Penei Sewell",
-      "similarity": 85.578,
-      "year": 2021
+      "name": "Taliese Fuaga",
+      "similarity": 90.86,
+      "year": 2024
     },
     "historical_comp_ceiling": {
       "name": "Tristan Wirfs",
@@ -22058,14 +22058,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Kevin Dotson",
-      "similarity": 86.066,
-      "year": 2020
+      "name": "Jon Asamoah",
+      "similarity": 92.045,
+      "year": 2010
     },
     "historical_comp_median": {
-      "name": "Billy Price",
-      "similarity": 90.221,
-      "year": 2018
+      "name": "Greg Mancz",
+      "similarity": 92.374,
+      "year": 2015
     },
     "historical_comp_ceiling": {
       "name": "Graham Glasgow",
@@ -22295,14 +22295,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Roddy White",
-      "similarity": 92.139,
-      "year": 2005
-    },
-    "historical_comp_median": {
       "name": "Jordan Whittington",
       "similarity": 91.697,
       "year": 2024
+    },
+    "historical_comp_median": {
+      "name": "Roddy White",
+      "similarity": 92.139,
+      "year": 2005
     },
     "historical_comp_ceiling": {
       "name": "DK Metcalf",
@@ -22585,9 +22585,9 @@
       "year": 2023
     },
     "historical_comp_median": {
-      "name": "Akayleb Evans",
-      "similarity": 87.552,
-      "year": 2022
+      "name": "Holton Hill",
+      "similarity": 91.782,
+      "year": 2018
     },
     "historical_comp_ceiling": {
       "name": "Taron Johnson",
@@ -22786,9 +22786,9 @@
       "year": 2006
     },
     "historical_comp_median": {
-      "name": "Travis Williams",
-      "similarity": 86.856,
-      "year": 2006
+      "name": "Roquan Smith",
+      "similarity": 82.56,
+      "year": 2018
     },
     "historical_comp_ceiling": {
       "name": "Fred Warner",
@@ -23264,14 +23264,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Devon Achane",
-      "similarity": 90.71,
-      "year": 2023
-    },
-    "historical_comp_median": {
       "name": "T.J. Logan",
       "similarity": 90.155,
       "year": 2017
+    },
+    "historical_comp_median": {
+      "name": "Devon Achane",
+      "similarity": 90.71,
+      "year": 2023
     },
     "historical_comp_ceiling": {
       "name": "Josh Jacobs",
@@ -23553,14 +23553,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Millard Bradford",
+      "similarity": 87.693,
+      "year": 2024
+    },
+    "historical_comp_median": {
       "name": "Julian Blackmon",
       "similarity": 90.146,
       "year": 2020
-    },
-    "historical_comp_median": {
-      "name": "Talanoa Hufanga",
-      "similarity": 82.88,
-      "year": 2021
     },
     "historical_comp_ceiling": {
       "name": "Minkah Fitzpatrick",
@@ -23799,9 +23799,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Rhamondre Stevenson",
-      "similarity": 84.873,
-      "year": 2021
+      "name": "Brandon Wegher",
+      "similarity": 90.343,
+      "year": 2015
     },
     "historical_comp_median": {
       "name": "Tony Pollard",
@@ -24087,14 +24087,14 @@
       "year": 2022
     },
     "historical_comp_median": {
+      "name": "Chris Westry",
+      "similarity": 86.189,
+      "year": 2019
+    },
+    "historical_comp_ceiling": {
       "name": "Sauce Gardner",
       "similarity": 87.805,
       "year": 2022
-    },
-    "historical_comp_ceiling": {
-      "name": "Patrick Surtain II",
-      "similarity": 83.077,
-      "year": 2021
     },
     "comp_confidence": "A",
     "scouting_report_summary": "Tacario Davis (CB, Washington) projects as a Round 3-4 talent with his cleanest NFL path coming as a outside starter with matchup flexibility in Press-match / quarters hybrid. The current model grade sits at 80.17, with the board currently slotting him at No. 99. developmental contributor profile; matches routes with disciplined leverage.",
@@ -24332,14 +24332,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "PJ Hall",
-      "similarity": 85.098,
-      "year": 2018
+      "name": "Darwin Walker",
+      "similarity": 93.906,
+      "year": 2000
     },
     "historical_comp_median": {
-      "name": "Alim McNeill",
-      "similarity": 84.111,
-      "year": 2021
+      "name": "Tommie Harris",
+      "similarity": 91.537,
+      "year": 2004
     },
     "historical_comp_ceiling": {
       "name": "Javon Hargrave",
@@ -24530,14 +24530,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Jamal Davis",
+      "similarity": 90.249,
+      "year": 2019
+    },
+    "historical_comp_median": {
       "name": "Dallas Turner",
       "similarity": 90.832,
       "year": 2024
-    },
-    "historical_comp_median": {
-      "name": "Jake Pugh",
-      "similarity": 90.813,
-      "year": 2018
     },
     "historical_comp_ceiling": {
       "name": "Trey Hendrickson",
@@ -24728,14 +24728,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Adrian Peterson",
-      "similarity": 89.394,
-      "year": 2007
+      "name": "Kyren Williams",
+      "similarity": 82.523,
+      "year": 2022
     },
     "historical_comp_median": {
-      "name": "Luke Staley",
-      "similarity": 87.721,
-      "year": 2002
+      "name": "Deuce McAllister",
+      "similarity": 88.717,
+      "year": 2001
     },
     "historical_comp_ceiling": {
       "name": "Josh Jacobs",
@@ -24915,8 +24915,8 @@
       "year": 2019
     },
     "historical_comp_median": {
-      "name": "Landon Dickerson",
-      "similarity": 86.405,
+      "name": "Kayode Awosika",
+      "similarity": 91.312,
       "year": 2021
     },
     "historical_comp_ceiling": {
@@ -25154,14 +25154,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Adam Muema",
-      "similarity": 93.906,
-      "year": 2014
+      "name": "Sean Tucker",
+      "similarity": 88.332,
+      "year": 2023
     },
     "historical_comp_median": {
-      "name": "Woody Marks",
-      "similarity": 90.174,
-      "year": 2025
+      "name": "Reggie Bush",
+      "similarity": 90.437,
+      "year": 2006
     },
     "historical_comp_ceiling": {
       "name": "James Conner",
@@ -25393,14 +25393,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Justyn Ross",
+      "similarity": 89.986,
+      "year": 2022
+    },
+    "historical_comp_median": {
       "name": "Braylon Edwards",
       "similarity": 90.033,
       "year": 2005
-    },
-    "historical_comp_median": {
-      "name": "Brian Robiskie",
-      "similarity": 89.789,
-      "year": 2009
     },
     "historical_comp_ceiling": {
       "name": "Courtland Sutton",
@@ -25630,14 +25630,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Collin Johnson",
-      "similarity": 87.758,
-      "year": 2020
+      "name": "Dwayne Jarrett",
+      "similarity": 92.938,
+      "year": 2007
     },
     "historical_comp_median": {
-      "name": "Noah Brown",
-      "similarity": 87.082,
-      "year": 2017
+      "name": "Marlon Brown",
+      "similarity": 90.55,
+      "year": 2013
     },
     "historical_comp_ceiling": {
       "name": "Cooper Kupp",
@@ -25869,14 +25869,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Peyton Hendershot",
+      "similarity": 88.181,
+      "year": 2022
+    },
+    "historical_comp_median": {
       "name": "Mitchell Wilcox",
       "similarity": 90.795,
       "year": 2020
-    },
-    "historical_comp_median": {
-      "name": "Evan Butts",
-      "similarity": 90.795,
-      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Cole Kmet",
@@ -26106,14 +26106,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Cade Stover",
+      "similarity": 89.554,
+      "year": 2024
+    },
+    "historical_comp_median": {
       "name": "Grant Calcaterra",
       "similarity": 90.4,
       "year": 2022
-    },
-    "historical_comp_median": {
-      "name": "Tyler Conklin",
-      "similarity": 83.792,
-      "year": 2018
     },
     "historical_comp_ceiling": {
       "name": "Dalton Schultz",
@@ -26343,14 +26343,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Brenton Strange",
-      "similarity": 80.831,
-      "year": 2023
+      "name": "Taylor Thompson",
+      "similarity": 81.254,
+      "year": 2012
     },
     "historical_comp_median": {
-      "name": "Tyler Conklin",
-      "similarity": 78.969,
-      "year": 2018
+      "name": "Jerramy Stevens",
+      "similarity": 85.944,
+      "year": 2002
     },
     "historical_comp_ceiling": {
       "name": "Dalton Schultz",
@@ -26587,9 +26587,9 @@
       "year": 2015
     },
     "historical_comp_median": {
-      "name": "Sam LaPorta",
-      "similarity": 88.539,
-      "year": 2023
+      "name": "Mychal Rivera",
+      "similarity": 89.375,
+      "year": 2013
     },
     "historical_comp_ceiling": {
       "name": "Dalton Schultz",
@@ -26831,14 +26831,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Greg Milhouse",
-      "similarity": 88.21,
-      "year": 2016
+      "name": "Mitch King",
+      "similarity": 87.768,
+      "year": 2009
     },
     "historical_comp_median": {
-      "name": "Geno Atkins",
-      "similarity": 87.956,
-      "year": 2010
+      "name": "Byron Murphy II",
+      "similarity": 87.824,
+      "year": 2024
     },
     "historical_comp_ceiling": {
       "name": "Aaron Donald",
@@ -27062,9 +27062,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Luke Musgrave",
-      "similarity": 86.63,
-      "year": 2023
+      "name": "Isaiah Likely",
+      "similarity": 87.514,
+      "year": 2022
     },
     "historical_comp_median": {
       "name": "Stephen Sullivan",
@@ -27430,14 +27430,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Rodger Saffold",
+      "similarity": 89.093,
+      "year": 2010
+    },
+    "historical_comp_median": {
       "name": "Le'Raven Clark",
       "similarity": 91.988,
       "year": 2016
-    },
-    "historical_comp_median": {
-      "name": "Rob Havenstein",
-      "similarity": 86.414,
-      "year": 2015
     },
     "historical_comp_ceiling": {
       "name": "Orlando Brown Jr.",
@@ -27607,14 +27607,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Drew Carter",
+      "similarity": 89.648,
+      "year": 2004
+    },
+    "historical_comp_median": {
       "name": "Quentin Johnston",
       "similarity": 90.541,
       "year": 2023
-    },
-    "historical_comp_median": {
-      "name": "Bryan Edwards",
-      "similarity": 88.369,
-      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "Amon-Ra St. Brown",
@@ -27854,14 +27854,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Blake Gallagher",
-      "similarity": 86.471,
-      "year": 2021
+      "name": "Darien Butler",
+      "similarity": 86.442,
+      "year": 2022
     },
     "historical_comp_median": {
-      "name": "Gionni Paul",
-      "similarity": 86.301,
-      "year": 2016
+      "name": "E.J. Speed",
+      "similarity": 80.586,
+      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Alex Anzalone",
@@ -28521,9 +28521,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Kevin Dotson",
-      "similarity": 87.129,
-      "year": 2020
+      "name": "Kyle Kalis",
+      "similarity": 92.017,
+      "year": 2017
     },
     "historical_comp_median": {
       "name": "Max Garcia",
@@ -28703,9 +28703,9 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Broderick Jones",
-      "similarity": 90.795,
-      "year": 2023
+      "name": "Christian Jones",
+      "similarity": 92.374,
+      "year": 2024
     },
     "historical_comp_median": {
       "name": "Cedric Ogbuehi",
@@ -28892,9 +28892,9 @@
       "year": 2018
     },
     "historical_comp_median": {
-      "name": "Anton Harrison",
-      "similarity": 87.674,
-      "year": 2023
+      "name": "John Molchon",
+      "similarity": 88.257,
+      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "Will Hernandez",
@@ -29132,9 +29132,9 @@
       "year": 2014
     },
     "historical_comp_median": {
-      "name": "Amon-Ra St. Brown",
-      "similarity": 82.194,
-      "year": 2021
+      "name": "J.J. Nelson",
+      "similarity": 87.57,
+      "year": 2015
     },
     "historical_comp_ceiling": {
       "name": "Marquise Brown",
@@ -29374,9 +29374,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Cole Holcomb",
-      "similarity": 86.574,
-      "year": 2019
+      "name": "AJ Tarpley",
+      "similarity": 90.823,
+      "year": 2015
     },
     "historical_comp_median": {
       "name": "Germaine Pratt",
@@ -29578,14 +29578,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Chance Campbell",
-      "similarity": 87.834,
-      "year": 2022
-    },
-    "historical_comp_median": {
       "name": "Trenton Simpson",
       "similarity": 91.321,
       "year": 2023
+    },
+    "historical_comp_median": {
+      "name": "Pete Werner",
+      "similarity": 87.881,
+      "year": 2021
     },
     "historical_comp_ceiling": {
       "name": "Bobby Okereke",
@@ -29861,8 +29861,8 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Jaylen Watson",
-      "similarity": 87.119,
+      "name": "Sam Webb",
+      "similarity": 89.92,
       "year": 2022
     },
     "historical_comp_median": {
@@ -30533,14 +30533,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "D'Ernest Johnson",
-      "similarity": 91.152,
-      "year": 2018
-    },
-    "historical_comp_median": {
       "name": "Kory Sheets",
       "similarity": 91.142,
       "year": 2009
+    },
+    "historical_comp_median": {
+      "name": "Kyren Williams",
+      "similarity": 86.395,
+      "year": 2022
     },
     "historical_comp_ceiling": {
       "name": "Josh Jacobs",
@@ -30784,8 +30784,8 @@
       "year": 2002
     },
     "historical_comp_median": {
-      "name": "Nicholas Williams",
-      "similarity": 89.262,
+      "name": "Nick Williams",
+      "similarity": 89.356,
       "year": 2013
     },
     "historical_comp_ceiling": {
@@ -30897,14 +30897,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Dominique Easley",
-      "similarity": 86.875,
-      "year": 2014
+      "name": "Byron Murphy II",
+      "similarity": 89.103,
+      "year": 2024
     },
     "historical_comp_median": {
-      "name": "D.J. Reader",
-      "similarity": 83.293,
-      "year": 2016
+      "name": "Mike Daniels",
+      "similarity": 89.291,
+      "year": 2012
     },
     "historical_comp_ceiling": {
       "name": "Dexter Lawrence",
@@ -31432,14 +31432,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Stephen Roberts",
-      "similarity": 91.161,
-      "year": 2018
-    },
-    "historical_comp_median": {
       "name": "Tim Scott",
       "similarity": 88.83,
       "year": 2015
+    },
+    "historical_comp_median": {
+      "name": "Michael Jameson",
+      "similarity": 90.202,
+      "year": 2001
     },
     "historical_comp_ceiling": {
       "name": "Jordan Whitehead",
@@ -31680,14 +31680,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Corvey Irvin",
+      "similarity": 90.513,
+      "year": 2009
+    },
+    "historical_comp_median": {
       "name": "Jay Bromley",
       "similarity": 90.654,
       "year": 2014
-    },
-    "historical_comp_median": {
-      "name": "D.J. Reader",
-      "similarity": 85.813,
-      "year": 2016
     },
     "historical_comp_ceiling": {
       "name": "Dexter Lawrence",
@@ -31824,9 +31824,9 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Tariq Castro-Fields",
-      "similarity": 89.074,
-      "year": 2022
+      "name": "Chris Greenwood",
+      "similarity": 90.738,
+      "year": 2012
     },
     "historical_comp_median": {
       "name": "Christian Gonzalez",
@@ -32103,9 +32103,9 @@
       "year": 2022
     },
     "historical_comp_median": {
-      "name": "Isaiah Oliver",
-      "similarity": 91.838,
-      "year": 2018
+      "name": "Jeremy Lane",
+      "similarity": 89.168,
+      "year": 2012
     },
     "historical_comp_ceiling": {
       "name": "Carlton Davis",
@@ -32344,14 +32344,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Trey Lewis",
+      "similarity": 82.4,
+      "year": 2007
+    },
+    "historical_comp_median": {
       "name": "Marcus Bell",
       "similarity": 87.194,
       "year": 2001
-    },
-    "historical_comp_median": {
-      "name": "Jesse Mahelona",
-      "similarity": 83.134,
-      "year": 2006
     },
     "historical_comp_ceiling": {
       "name": "Alim McNeill",
@@ -32586,14 +32586,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Chris Rodriguez Jr.",
-      "similarity": 87.777,
-      "year": 2023
+      "name": "Tre Madden",
+      "similarity": 91.368,
+      "year": 2016
     },
     "historical_comp_median": {
-      "name": "Devontae Booker",
-      "similarity": 88.069,
-      "year": 2016
+      "name": "Willis McGahee",
+      "similarity": 91.368,
+      "year": 2003
     },
     "historical_comp_ceiling": {
       "name": "David Montgomery",
@@ -32860,14 +32860,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Bradley Roby",
-      "similarity": 88.332,
-      "year": 2014
+      "name": "Andre Chachere",
+      "similarity": 88.426,
+      "year": 2018
     },
     "historical_comp_median": {
-      "name": "Denzel Ward",
-      "similarity": 85.361,
-      "year": 2018
+      "name": "Carlos Rogers",
+      "similarity": 90.813,
+      "year": 2005
     },
     "historical_comp_ceiling": {
       "name": "Marlon Humphrey",
@@ -33353,14 +33353,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Ty Summers",
-      "similarity": 84.703,
-      "year": 2019
+      "name": "Patrick Willis",
+      "similarity": 91.603,
+      "year": 2007
     },
     "historical_comp_median": {
-      "name": "Genard Avery",
-      "similarity": 85.277,
-      "year": 2018
+      "name": "Donald Butler",
+      "similarity": 89.225,
+      "year": 2010
     },
     "historical_comp_ceiling": {
       "name": "Germaine Pratt",
@@ -33604,9 +33604,9 @@
       "year": 2003
     },
     "historical_comp_median": {
-      "name": "Lawrence Sidbury",
-      "similarity": 90.437,
-      "year": 2009
+      "name": "Brian Young",
+      "similarity": 90.823,
+      "year": 2000
     },
     "historical_comp_ceiling": {
       "name": "Zach Allen",
@@ -33848,14 +33848,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Mekhi Wingo",
+      "similarity": 89.883,
+      "year": 2024
+    },
+    "historical_comp_median": {
       "name": "Calijah Kancey",
       "similarity": 88.351,
       "year": 2023
-    },
-    "historical_comp_median": {
-      "name": "D.J. Reader",
-      "similarity": 82.899,
-      "year": 2016
     },
     "historical_comp_ceiling": {
       "name": "Dexter Lawrence",
@@ -34032,14 +34032,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "James Carpenter",
+      "similarity": 90.964,
+      "year": 2011
+    },
+    "historical_comp_median": {
       "name": "Jamon Brown",
       "similarity": 90.005,
       "year": 2015
-    },
-    "historical_comp_median": {
-      "name": "Jawaan Taylor",
-      "similarity": 83.839,
-      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Dion Dawkins",
@@ -34451,19 +34451,19 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Samie Parker",
+      "similarity": 89.789,
+      "year": 2004
+    },
+    "historical_comp_median": {
       "name": "Darnell Mooney",
       "similarity": 89.902,
       "year": 2020
     },
-    "historical_comp_median": {
-      "name": "Jaylen Waddle",
-      "similarity": 88.623,
-      "year": 2021
-    },
     "historical_comp_ceiling": {
-      "name": "Marquise Brown",
-      "similarity": 88.51,
-      "year": 2019
+      "name": "Courtland Sutton",
+      "similarity": 84.356,
+      "year": 2018
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Eric Rivers (WR, Georgia Tech Yellow Jackets) projects as a Round 4-5 talent with his cleanest NFL path coming as a alignment-flexible target earner in Spread vertical / spacing menu. The current model grade sits at 77.67, with the board currently slotting him at No. 146. developmental contributor profile; creates separation and finishes at the catch point.",
@@ -34697,14 +34697,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Alfred Collins",
-      "similarity": 88.633,
-      "year": 2025
+      "name": "Eyioma Uwazurike",
+      "similarity": 85.728,
+      "year": 2022
     },
     "historical_comp_median": {
-      "name": "Yahya Black",
-      "similarity": 86.668,
-      "year": 2025
+      "name": "Teair Tart",
+      "similarity": 82.306,
+      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "Alim McNeill",
@@ -34887,9 +34887,9 @@
       "year": 2018
     },
     "historical_comp_median": {
-      "name": "Will Clapp",
-      "similarity": 87.279,
-      "year": 2018
+      "name": "Lucas Nix",
+      "similarity": 90.55,
+      "year": 2012
     },
     "historical_comp_ceiling": {
       "name": "Will Hernandez",
@@ -35042,9 +35042,9 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Anthony Richardson",
-      "similarity": 81.987,
-      "year": 2023
+      "name": "Joe Reed",
+      "similarity": 82.814,
+      "year": 2020
     },
     "historical_comp_median": {
       "name": "Justin Fields",
@@ -35711,9 +35711,9 @@
       "year": 2022
     },
     "historical_comp_median": {
-      "name": "Romeo Doubs",
-      "similarity": 89.272,
-      "year": 2022
+      "name": "Ricardo Lockette",
+      "similarity": 91.462,
+      "year": 2011
     },
     "historical_comp_ceiling": {
       "name": "Courtland Sutton",
@@ -36141,9 +36141,9 @@
       "year": 2022
     },
     "historical_comp_median": {
-      "name": "Tyler Smith",
-      "similarity": 80.502,
-      "year": 2022
+      "name": "Adam Gettis",
+      "similarity": 85.756,
+      "year": 2012
     },
     "historical_comp_ceiling": {
       "name": "Joe Thuney",
@@ -36555,14 +36555,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Joshua Jones",
-      "similarity": 90.484,
-      "year": 2020
+      "name": "Trevor Keegan",
+      "similarity": 89.507,
+      "year": 2024
     },
     "historical_comp_median": {
-      "name": "Garrett Chisolm",
-      "similarity": 89.911,
-      "year": 2011
+      "name": "Ben Brown",
+      "similarity": 89.996,
+      "year": 2022
     },
     "historical_comp_ceiling": {
       "name": "Frank Ragnow",
@@ -37088,14 +37088,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Travarous Bain",
-      "similarity": 89.836,
-      "year": 2007
+      "name": "Kris Abrams-Draine",
+      "similarity": 86.941,
+      "year": 2024
     },
     "historical_comp_median": {
-      "name": "DJ James",
-      "similarity": 88.454,
-      "year": 2024
+      "name": "Kenny Moore II",
+      "similarity": 83.096,
+      "year": 2017
     },
     "historical_comp_ceiling": {
       "name": "Taron Johnson",
@@ -37339,9 +37339,9 @@
       "year": 2018
     },
     "historical_comp_median": {
-      "name": "Josh Sweat",
-      "similarity": 86.903,
-      "year": 2018
+      "name": "Connor Barwin",
+      "similarity": 91.048,
+      "year": 2009
     },
     "historical_comp_ceiling": {
       "name": "Trey Hendrickson",
@@ -37612,14 +37612,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Ashtyn Davis",
-      "similarity": 88.576,
-      "year": 2020
+      "name": "Jerron McMillian",
+      "similarity": 90.014,
+      "year": 2012
     },
     "historical_comp_median": {
-      "name": "Jabrill Peppers",
-      "similarity": 85.531,
-      "year": 2017
+      "name": "Michael Griffin",
+      "similarity": 92.74,
+      "year": 2007
     },
     "historical_comp_ceiling": {
       "name": "Jordan Whitehead",
@@ -37794,14 +37794,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Landon Dickerson",
-      "similarity": 84.111,
-      "year": 2021
+      "name": "Alvin Bailey",
+      "similarity": 87.993,
+      "year": 2013
     },
     "historical_comp_median": {
-      "name": "Elgton Jenkins",
-      "similarity": 91.086,
-      "year": 2019
+      "name": "Forrest Lamp",
+      "similarity": 89.591,
+      "year": 2017
     },
     "historical_comp_ceiling": {
       "name": "Frank Ragnow",
@@ -38072,14 +38072,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Shawn Davis",
+      "similarity": 85.371,
+      "year": 2021
+    },
+    "historical_comp_median": {
       "name": "Derek Stingley Jr.",
       "similarity": 85.822,
       "year": 2022
-    },
-    "historical_comp_median": {
-      "name": "Darnell Savage",
-      "similarity": 84.675,
-      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Eddie Jackson",
@@ -38283,14 +38283,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Tyler Linderbaum",
-      "similarity": 86.311,
-      "year": 2022
+      "name": "Roberto Garza",
+      "similarity": 87.044,
+      "year": 2001
     },
     "historical_comp_median": {
-      "name": "Joey Hunt",
-      "similarity": 84.769,
-      "year": 2016
+      "name": "Chris Chester",
+      "similarity": 84.356,
+      "year": 2006
     },
     "historical_comp_ceiling": {
       "name": "Frank Ragnow",
@@ -38522,14 +38522,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Michael Jefferson",
-      "similarity": 89.93,
-      "year": 2023
-    },
-    "historical_comp_median": {
       "name": "Geronimo Allison",
       "similarity": 89.77,
       "year": 2016
+    },
+    "historical_comp_median": {
+      "name": "Tony Lippett",
+      "similarity": 91.142,
+      "year": 2015
     },
     "historical_comp_ceiling": {
       "name": "Courtland Sutton",
@@ -39013,14 +39013,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Chase Coffman",
+      "similarity": 90.531,
+      "year": 2009
+    },
+    "historical_comp_median": {
       "name": "Stephen Sullivan",
       "similarity": 88.445,
       "year": 2020
-    },
-    "historical_comp_median": {
-      "name": "Kyle Pitts",
-      "similarity": 84.13,
-      "year": 2021
     },
     "historical_comp_ceiling": {
       "name": "Tyler Higbee",
@@ -39262,9 +39262,9 @@
       "year": 2022
     },
     "historical_comp_median": {
-      "name": "BoPete Keyes",
-      "similarity": 88.736,
-      "year": 2020
+      "name": "Chris Gamble",
+      "similarity": 90.494,
+      "year": 2004
     },
     "historical_comp_ceiling": {
       "name": "Taron Johnson",
@@ -39533,14 +39533,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Derion Kendrick",
-      "similarity": 92.938,
+      "name": "Josh Thompson",
+      "similarity": 93.041,
       "year": 2022
     },
     "historical_comp_median": {
-      "name": "Kadar Hollman",
-      "similarity": 90.55,
-      "year": 2019
+      "name": "A.J. Jefferson",
+      "similarity": 92.609,
+      "year": 2010
     },
     "historical_comp_ceiling": {
       "name": "Carlton Davis",
@@ -39730,9 +39730,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Logan Wilson",
-      "similarity": 80.285,
-      "year": 2020
+      "name": "Mark Herzlich",
+      "similarity": 84.177,
+      "year": 2011
     },
     "historical_comp_median": {
       "name": "Marquel Lee",
@@ -40124,9 +40124,9 @@
       "year": 2020
     },
     "historical_comp_median": {
-      "name": "Michael Scherer",
-      "similarity": 88.52,
-      "year": 2017
+      "name": "E.J. Speed",
+      "similarity": 83.594,
+      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Alex Anzalone",
@@ -40359,14 +40359,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Chris Herndon",
-      "similarity": 88.821,
-      "year": 2018
+      "name": "Cade Stover",
+      "similarity": 89.535,
+      "year": 2024
     },
     "historical_comp_median": {
-      "name": "Dalton Schultz",
-      "similarity": 84.008,
-      "year": 2018
+      "name": "Kellen Winslow",
+      "similarity": 89.667,
+      "year": 2004
     },
     "historical_comp_ceiling": {
       "name": "Dallas Goedert",
@@ -40780,14 +40780,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Dylan Parham",
-      "similarity": 86.724,
-      "year": 2022
+      "name": "Alvin Bailey",
+      "similarity": 91.02,
+      "year": 2013
     },
     "historical_comp_median": {
-      "name": "Kevin Dotson",
-      "similarity": 84.29,
-      "year": 2020
+      "name": "Joe Looney",
+      "similarity": 91.33,
+      "year": 2012
     },
     "historical_comp_ceiling": {
       "name": "Graham Glasgow",
@@ -40981,14 +40981,14 @@
       "year": 2007
     },
     "historical_comp_median": {
-      "name": "Michael Buchanan",
-      "similarity": 91.001,
-      "year": 2013
+      "name": "Micheal Clemons",
+      "similarity": 91.105,
+      "year": 2022
     },
     "historical_comp_ceiling": {
-      "name": "Aidan Hutchinson",
+      "name": "Carl Granderson",
       "similarity": 85.831,
-      "year": 2022
+      "year": 2019
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Max Llewellyn (EDGE, Iowa) projects as a Round 5-6 talent with his cleanest NFL path coming as a three-down pressure creator in Multiple-front every-down edge role. The current model grade sits at 75.83, with the board currently slotting him at No. 190. developmental contributor profile; produces pressure through get-off and counters.",
@@ -41163,9 +41163,9 @@
       "year": 2003
     },
     "historical_comp_median": {
-      "name": "Obinna Eze",
-      "similarity": 92.007,
-      "year": 2022
+      "name": "Kelly Butler",
+      "similarity": 92.374,
+      "year": 2004
     },
     "historical_comp_ceiling": {
       "name": "Orlando Brown Jr.",
@@ -41361,14 +41361,14 @@
       "year": 2024
     },
     "historical_comp_median": {
-      "name": "John Stepec",
-      "similarity": 88.191,
-      "year": 2017
+      "name": "Bruce Miller",
+      "similarity": 87.589,
+      "year": 2011
     },
     "historical_comp_ceiling": {
-      "name": "Aidan Hutchinson",
+      "name": "Carl Granderson",
       "similarity": 83.35,
-      "year": 2022
+      "year": 2019
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Caden Curry (EDGE, Ohio State) projects as a Round 4-5 talent with his cleanest NFL path coming as a three-down pressure creator in Multiple-front every-down edge role. The current model grade sits at 76.29, with the board currently slotting him at No. 176. developmental contributor profile; produces pressure through get-off and counters.",
@@ -41547,14 +41547,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "DeMarco Sampson",
+      "similarity": 92.017,
+      "year": 2011
+    },
+    "historical_comp_median": {
       "name": "Denzel Mims",
       "similarity": 90.456,
       "year": 2020
-    },
-    "historical_comp_median": {
-      "name": "Ricardo Louis",
-      "similarity": 89.676,
-      "year": 2016
     },
     "historical_comp_ceiling": {
       "name": "Courtland Sutton",
@@ -41743,9 +41743,9 @@
       "year": 2000
     },
     "historical_comp_median": {
-      "name": "Emeka Egbuka",
-      "similarity": 87.317,
-      "year": 2025
+      "name": "Devery Henderson",
+      "similarity": 89.394,
+      "year": 2004
     },
     "historical_comp_ceiling": {
       "name": "Courtland Sutton",
@@ -42206,14 +42206,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "William Dunkle",
-      "similarity": 90.315,
-      "year": 2022
+      "name": "Kraig Urbik",
+      "similarity": 89.826,
+      "year": 2009
     },
     "historical_comp_median": {
-      "name": "Stephen Berg",
-      "similarity": 90.202,
-      "year": 2007
+      "name": "Kevin Dotson",
+      "similarity": 85.418,
+      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "Graham Glasgow",
@@ -42407,9 +42407,9 @@
       "year": 2021
     },
     "historical_comp_median": {
-      "name": "Pete Werner",
-      "similarity": 88.069,
-      "year": 2021
+      "name": "Jacob Ford",
+      "similarity": 91.876,
+      "year": 2007
     },
     "historical_comp_ceiling": {
       "name": "Zach Allen",
@@ -42888,14 +42888,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Rhamondre Stevenson",
-      "similarity": 83.585,
-      "year": 2021
+      "name": "Joe McKnight",
+      "similarity": 88.933,
+      "year": 2010
     },
     "historical_comp_median": {
-      "name": "Tony Pollard",
-      "similarity": 86.555,
-      "year": 2019
+      "name": "Lee Suggs",
+      "similarity": 91.913,
+      "year": 2003
     },
     "historical_comp_ceiling": {
       "name": "David Montgomery",
@@ -43127,14 +43127,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Jack Westover",
+      "similarity": 90.071,
+      "year": 2024
+    },
+    "historical_comp_median": {
       "name": "Isaac Nauta",
       "similarity": 89.855,
       "year": 2019
-    },
-    "historical_comp_median": {
-      "name": "Trey McBride",
-      "similarity": 85.408,
-      "year": 2022
     },
     "historical_comp_ceiling": {
       "name": "Cole Kmet",
@@ -43793,14 +43793,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Anfernee Orji",
+      "similarity": 90.118,
+      "year": 2023
+    },
+    "historical_comp_median": {
       "name": "Uani Unga",
       "similarity": 91.246,
       "year": 2014
-    },
-    "historical_comp_median": {
-      "name": "Marcus Mallett",
-      "similarity": 88.407,
-      "year": 2015
     },
     "historical_comp_ceiling": {
       "name": "Bobby Okereke",
@@ -43994,14 +43994,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Otaro Alaka",
+      "similarity": 88.501,
+      "year": 2019
+    },
+    "historical_comp_median": {
       "name": "Joe Walker",
       "similarity": 89.601,
       "year": 2016
-    },
-    "historical_comp_median": {
-      "name": "E.J. Speed",
-      "similarity": 84.309,
-      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Alex Anzalone",
@@ -44231,14 +44231,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Michael Mayer",
-      "similarity": 85.07,
-      "year": 2023
+      "name": "Travis Beckum",
+      "similarity": 90.898,
+      "year": 2009
     },
     "historical_comp_median": {
-      "name": "Trey McBride",
-      "similarity": 83.284,
-      "year": 2022
+      "name": "Cethan Carter",
+      "similarity": 89.939,
+      "year": 2017
     },
     "historical_comp_ceiling": {
       "name": "Cole Kmet",
@@ -44767,14 +44767,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Gary Berry",
+      "similarity": 91.152,
+      "year": 2000
+    },
+    "historical_comp_median": {
       "name": "Ed Reed",
       "similarity": 92.223,
       "year": 2002
-    },
-    "historical_comp_median": {
-      "name": "Dexter Reid",
-      "similarity": 91.904,
-      "year": 2004
     },
     "historical_comp_ceiling": {
       "name": "Budda Baker",
@@ -44970,9 +44970,9 @@
       "year": 2009
     },
     "historical_comp_median": {
-      "name": "Darren Lake",
-      "similarity": 88.952,
-      "year": 2016
+      "name": "Mazi Smith",
+      "similarity": 89.516,
+      "year": 2023
     },
     "historical_comp_ceiling": {
       "name": "Alim McNeill",
@@ -45202,14 +45202,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Airese Currie",
-      "similarity": 90.4,
-      "year": 2005
+      "name": "Kelly Campbell",
+      "similarity": 89.178,
+      "year": 2002
     },
     "historical_comp_median": {
-      "name": "Kevin Jurovich",
-      "similarity": 89.535,
-      "year": 2010
+      "name": "Cedrick Wilson",
+      "similarity": 90.212,
+      "year": 2001
     },
     "historical_comp_ceiling": {
       "name": "Cooper Kupp",
@@ -45439,14 +45439,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Justyn Ross",
+      "similarity": 86.01,
+      "year": 2022
+    },
+    "historical_comp_median": {
       "name": "Jacob Harris",
       "similarity": 87.373,
       "year": 2021
-    },
-    "historical_comp_median": {
-      "name": "Drake London",
-      "similarity": 86.79,
-      "year": 2022
     },
     "historical_comp_ceiling": {
       "name": "Amon-Ra St. Brown",
@@ -45688,14 +45688,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Malik Hooker",
-      "similarity": 88.398,
-      "year": 2017
+      "name": "Jeremy Cash",
+      "similarity": 88.83,
+      "year": 2016
     },
     "historical_comp_median": {
-      "name": "Julian Love",
-      "similarity": 83.839,
-      "year": 2019
+      "name": "Kurtis Drummond",
+      "similarity": 88.388,
+      "year": 2015
     },
     "historical_comp_ceiling": {
       "name": "Budda Baker",
@@ -45935,14 +45935,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Marvell Tell",
-      "similarity": 83.406,
-      "year": 2019
+      "name": "Idrees Bashir",
+      "similarity": 86.555,
+      "year": 2001
     },
     "historical_comp_median": {
-      "name": "Justin Simmons",
-      "similarity": 86.762,
-      "year": 2016
+      "name": "Jon McGraw",
+      "similarity": 88.266,
+      "year": 2002
     },
     "historical_comp_ceiling": {
       "name": "Minkah Fitzpatrick",
@@ -46321,14 +46321,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Jaylon Moore",
-      "similarity": 91.218,
-      "year": 2021
+      "name": "Travelle Wharton",
+      "similarity": 92.458,
+      "year": 2004
     },
     "historical_comp_median": {
-      "name": "Jawaan Taylor",
-      "similarity": 84.421,
-      "year": 2019
+      "name": "Michael Oher",
+      "similarity": 92.064,
+      "year": 2009
     },
     "historical_comp_ceiling": {
       "name": "Dion Dawkins",
@@ -46612,9 +46612,9 @@
       "year": 2024
     },
     "historical_comp_median": {
-      "name": "Nick Waisome",
-      "similarity": 90.146,
-      "year": 2015
+      "name": "Brandin Echols",
+      "similarity": 90.804,
+      "year": 2021
     },
     "historical_comp_ceiling": {
       "name": "Taron Johnson",
@@ -46798,9 +46798,9 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Trey McBride",
-      "similarity": 78.96,
-      "year": 2022
+      "name": "EJ Bibbs",
+      "similarity": 84.027,
+      "year": 2015
     },
     "historical_comp_median": {
       "name": "Cole Kmet",
@@ -47035,14 +47035,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Trey McBride",
-      "similarity": 82.41,
-      "year": 2022
+      "name": "Tanner McLachlan",
+      "similarity": 87.862,
+      "year": 2024
     },
     "historical_comp_median": {
-      "name": "Cade Otton",
-      "similarity": 86.292,
-      "year": 2022
+      "name": "Payne Durham",
+      "similarity": 88.67,
+      "year": 2023
     },
     "historical_comp_ceiling": {
       "name": "Cole Kmet",
@@ -47286,9 +47286,9 @@
       "year": 2023
     },
     "historical_comp_median": {
-      "name": "Zach Mettenberger",
-      "similarity": 78.311,
-      "year": 2014
+      "name": "Vince Young",
+      "similarity": 87.693,
+      "year": 2006
     },
     "historical_comp_ceiling": {
       "name": "Josh Allen",
@@ -47523,14 +47523,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Jaycee Horn",
-      "similarity": 84.177,
-      "year": 2021
+      "name": "Phillip Buchanon",
+      "similarity": 92.609,
+      "year": 2002
     },
     "historical_comp_median": {
-      "name": "Will Redmond",
-      "similarity": 87.467,
-      "year": 2016
+      "name": "Andre Goodman",
+      "similarity": 89.121,
+      "year": 2002
     },
     "historical_comp_ceiling": {
       "name": "Jaire Alexander",
@@ -47765,19 +47765,19 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Randall Evans",
-      "similarity": 89.385,
-      "year": 2015
+      "name": "Kevin Barnes",
+      "similarity": 92.129,
+      "year": 2009
     },
     "historical_comp_median": {
+      "name": "Ashton Youboty",
+      "similarity": 92.27,
+      "year": 2006
+    },
+    "historical_comp_ceiling": {
       "name": "Kyle Fuller",
       "similarity": 91.453,
       "year": 2014
-    },
-    "historical_comp_ceiling": {
-      "name": "Taron Johnson",
-      "similarity": 86.461,
-      "year": 2018
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Collin Wright (CB, Stanford) projects as a Round 5-6 talent with his cleanest NFL path coming as a outside starter with matchup flexibility in Press-match / quarters hybrid. The current model grade sits at 75.17, with the board currently slotting him at No. 203. developmental contributor profile; matches routes with disciplined leverage.",
@@ -48012,14 +48012,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Kiko Alonso",
+      "similarity": 86.969,
+      "year": 2013
+    },
+    "historical_comp_median": {
       "name": "Troy Dye",
       "similarity": 89.046,
       "year": 2020
-    },
-    "historical_comp_median": {
-      "name": "E.J. Speed",
-      "similarity": 82.682,
-      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Alex Anzalone",
@@ -48208,14 +48208,14 @@
       "year": 2023
     },
     "historical_comp_median": {
-      "name": "Jake Butt",
-      "similarity": 85.935,
-      "year": 2017
+      "name": "Todd Heap",
+      "similarity": 88.275,
+      "year": 2001
     },
     "historical_comp_ceiling": {
-      "name": "Dalton Schultz",
-      "similarity": 83.04,
-      "year": 2018
+      "name": "Travis Kelce",
+      "similarity": 88.285,
+      "year": 2013
     },
     "comp_confidence": "B",
     "scouting_report_summary": "John Michael Gyllenborg (TE, Wyoming Cowboys) projects as a Round 4-5 talent with his cleanest NFL path coming as a move tight end mismatch piece in Detach / slot seam package. The current model grade sits at 76.09, with the board currently slotting him at No. 185. developmental contributor profile; projects as a mismatch in multiple alignments.",
@@ -48406,14 +48406,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Cedric Gray",
+      "similarity": 90.315,
+      "year": 2024
+    },
+    "historical_comp_median": {
       "name": "Micah Kiser",
       "similarity": 91.227,
       "year": 2018
-    },
-    "historical_comp_median": {
-      "name": "Ryan Connelly",
-      "similarity": 87.542,
-      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Germaine Pratt",
@@ -48653,9 +48653,9 @@
       "year": 2020
     },
     "historical_comp_median": {
-      "name": "Kenny Young",
-      "similarity": 85.568,
-      "year": 2019
+      "name": "Austin Ekeler",
+      "similarity": 80.53,
+      "year": 2017
     },
     "historical_comp_ceiling": {
       "name": "James Conner",
@@ -48895,14 +48895,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "JoJo Domann",
+      "similarity": 93.276,
+      "year": 2022
+    },
+    "historical_comp_median": {
       "name": "Joel Iyiegbuniwe",
       "similarity": 90.259,
       "year": 2018
-    },
-    "historical_comp_median": {
-      "name": "Tanner Vallejo",
-      "similarity": 88.482,
-      "year": 2017
     },
     "historical_comp_ceiling": {
       "name": "Alex Anzalone",
@@ -49144,14 +49144,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Jalen Pitre",
-      "similarity": 86.997,
+      "name": "Verone McKinley III",
+      "similarity": 89.178,
       "year": 2022
     },
     "historical_comp_median": {
-      "name": "Jabrill Peppers",
-      "similarity": 83.669,
-      "year": 2017
+      "name": "Jalen Pitre",
+      "similarity": 86.997,
+      "year": 2022
     },
     "historical_comp_ceiling": {
       "name": "Jordan Whitehead",
@@ -49345,9 +49345,9 @@
       "year": 2023
     },
     "historical_comp_median": {
-      "name": "Christian Wilkins",
-      "similarity": 85.897,
-      "year": 2019
+      "name": "Anthony Weaver",
+      "similarity": 90.475,
+      "year": 2002
     },
     "historical_comp_ceiling": {
       "name": "Quinnen Williams",
@@ -49536,14 +49536,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "JJ McCarthy",
-      "similarity": 88.623,
-      "year": 2024
+      "name": "Isaiah Stanback",
+      "similarity": 86.226,
+      "year": 2007
     },
     "historical_comp_median": {
-      "name": "Shedeur Sanders",
-      "similarity": 87.044,
-      "year": 2025
+      "name": "Jordan Love",
+      "similarity": 82.532,
+      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "Dak Prescott",
@@ -50150,14 +50150,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Alim McNeill",
-      "similarity": 86.574,
-      "year": 2021
+      "name": "Sione Fua",
+      "similarity": 92.252,
+      "year": 2011
     },
     "historical_comp_median": {
-      "name": "Andrew Billings",
-      "similarity": 90.87,
-      "year": 2016
+      "name": "Jordan Hill",
+      "similarity": 89.112,
+      "year": 2013
     },
     "historical_comp_ceiling": {
       "name": "Grady Jarrett",
@@ -50339,9 +50339,9 @@
       "year": 2023
     },
     "historical_comp_median": {
-      "name": "Kevin Dotson",
-      "similarity": 85.521,
-      "year": 2020
+      "name": "Nick Gates",
+      "similarity": 90.484,
+      "year": 2018
     },
     "historical_comp_ceiling": {
       "name": "Graham Glasgow",
@@ -50530,9 +50530,9 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Aidan Hutchinson",
-      "similarity": 85.578,
-      "year": 2022
+      "name": "Stevenson Sylvester",
+      "similarity": 91.96,
+      "year": 2010
     },
     "historical_comp_median": {
       "name": "Darius Leonard",
@@ -50731,14 +50731,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Micah Kiser",
-      "similarity": 86.602,
-      "year": 2018
+      "name": "Trevin Wallace",
+      "similarity": 89.601,
+      "year": 2024
     },
     "historical_comp_median": {
-      "name": "Ty Summers",
-      "similarity": 89.648,
-      "year": 2019
+      "name": "Josh Mauga",
+      "similarity": 90.24,
+      "year": 2009
     },
     "historical_comp_ceiling": {
       "name": "Germaine Pratt",
@@ -50968,14 +50968,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Trey McBride",
-      "similarity": 85.324,
-      "year": 2022
+      "name": "Trent Smith",
+      "similarity": 91.49,
+      "year": 2003
     },
     "historical_comp_median": {
-      "name": "Harrison Bryant",
-      "similarity": 91.49,
-      "year": 2020
+      "name": "Rhett Ellison",
+      "similarity": 88.191,
+      "year": 2012
     },
     "historical_comp_ceiling": {
       "name": "Dalton Schultz",
@@ -51394,14 +51394,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Ashton Youboty",
+      "similarity": 88.05,
+      "year": 2006
+    },
+    "historical_comp_median": {
       "name": "Riley Moss",
       "similarity": 88.473,
       "year": 2023
-    },
-    "historical_comp_median": {
-      "name": "Kaiir Elam",
-      "similarity": 86.922,
-      "year": 2022
     },
     "historical_comp_ceiling": {
       "name": "Taron Johnson",
@@ -51681,14 +51681,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Chris Clemons",
+      "similarity": 86.301,
+      "year": 2009
+    },
+    "historical_comp_median": {
       "name": "T.J. Green",
       "similarity": 86.621,
       "year": 2016
-    },
-    "historical_comp_median": {
-      "name": "Malik Hooker",
-      "similarity": 87.495,
-      "year": 2017
     },
     "historical_comp_ceiling": {
       "name": "Jordan Whitehead",
@@ -51882,14 +51882,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Cole Holcomb",
-      "similarity": 82.278,
-      "year": 2019
+      "name": "Gerald McRath",
+      "similarity": 86.903,
+      "year": 2009
     },
     "historical_comp_median": {
-      "name": "Germaine Pratt",
-      "similarity": 82.278,
-      "year": 2019
+      "name": "Edgerrin Cooper",
+      "similarity": 88.181,
+      "year": 2024
     },
     "historical_comp_ceiling": {
       "name": "C.J. Mosley",
@@ -52066,14 +52066,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Quinn Ojinnaka",
+      "similarity": 91.443,
+      "year": 2006
+    },
+    "historical_comp_median": {
       "name": "Caleb Benenoch",
       "similarity": 92.797,
       "year": 2016
-    },
-    "historical_comp_median": {
-      "name": "Rob Havenstein",
-      "similarity": 86.151,
-      "year": 2015
     },
     "historical_comp_ceiling": {
       "name": "Orlando Brown Jr.",
@@ -52310,14 +52310,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Marques Hagans",
+      "similarity": 91.744,
+      "year": 2006
+    },
+    "historical_comp_median": {
       "name": "Jahmyr Gibbs",
       "similarity": 91.124,
       "year": 2023
-    },
-    "historical_comp_median": {
-      "name": "Rhamondre Stevenson",
-      "similarity": 85.681,
-      "year": 2021
     },
     "historical_comp_ceiling": {
       "name": "David Montgomery",
@@ -52558,14 +52558,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Alim McNeill",
-      "similarity": 84.656,
-      "year": 2021
+      "name": "Johnathan Sullivan",
+      "similarity": 91.283,
+      "year": 2003
     },
     "historical_comp_median": {
-      "name": "Willie Henry",
-      "similarity": 87.157,
-      "year": 2016
+      "name": "Marcus Harrison",
+      "similarity": 91.453,
+      "year": 2008
     },
     "historical_comp_ceiling": {
       "name": "Carlos Watkins",
@@ -52940,14 +52940,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Darvin Adams",
+      "similarity": 92.017,
+      "year": 2011
+    },
+    "historical_comp_median": {
       "name": "Mike Thomas",
       "similarity": 90.146,
       "year": 2016
-    },
-    "historical_comp_median": {
-      "name": "Josh Reynolds",
-      "similarity": 88.811,
-      "year": 2017
     },
     "historical_comp_ceiling": {
       "name": "Cooper Kupp",
@@ -53185,14 +53185,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Tipa Galeai",
+      "similarity": 70.754,
+      "year": 2020
+    },
+    "historical_comp_median": {
       "name": "Brandon Johnson",
       "similarity": 73.875,
       "year": 2006
-    },
-    "historical_comp_median": {
-      "name": "Cameron Brown",
-      "similarity": 73.094,
-      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "Alex Anzalone",
@@ -53415,14 +53415,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Shun Brown",
-      "similarity": 89.526,
-      "year": 2019
+      "name": "Isaiah Burse",
+      "similarity": 86.066,
+      "year": 2014
     },
     "historical_comp_median": {
-      "name": "Jameon Lewis",
-      "similarity": 89.215,
-      "year": 2015
+      "name": "Sammie Stroughter",
+      "similarity": 88.642,
+      "year": 2009
     },
     "historical_comp_ceiling": {
       "name": "Cooper Kupp",
@@ -53652,13 +53652,13 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Greg Orton",
-      "similarity": 90.644,
-      "year": 2009
+      "name": "Erik Ezukanma",
+      "similarity": 90.343,
+      "year": 2022
     },
     "historical_comp_median": {
-      "name": "Marvin Harrison Jr.",
-      "similarity": 89.582,
+      "name": "Keon Coleman",
+      "similarity": 90.287,
       "year": 2024
     },
     "historical_comp_ceiling": {
@@ -53850,14 +53850,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Rafael Little",
-      "similarity": 92.957,
-      "year": 2008
+      "name": "Fozzy Whittaker",
+      "similarity": 91.481,
+      "year": 2012
     },
     "historical_comp_median": {
-      "name": "Foswhitt Whittaker",
-      "similarity": 89.46,
-      "year": 2012
+      "name": "LeSean McCoy",
+      "similarity": 88.962,
+      "year": 2009
     },
     "historical_comp_ceiling": {
       "name": "James Conner",
@@ -54043,14 +54043,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Trey Palmer",
-      "similarity": 90.052,
-      "year": 2023
+      "name": "David Clowney",
+      "similarity": 92.562,
+      "year": 2007
     },
     "historical_comp_median": {
-      "name": "Chris Olave",
-      "similarity": 90.917,
-      "year": 2022
+      "name": "Deontay Burnett",
+      "similarity": 91.077,
+      "year": 2018
     },
     "historical_comp_ceiling": {
       "name": "Courtland Sutton",
@@ -54239,9 +54239,9 @@
       "year": 2020
     },
     "historical_comp_median": {
-      "name": "Trey McBride",
-      "similarity": 85.286,
-      "year": 2022
+      "name": "Fred Davis",
+      "similarity": 90.672,
+      "year": 2008
     },
     "historical_comp_ceiling": {
       "name": "Cole Kmet",
@@ -54658,14 +54658,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Lavelle Westbrooks",
-      "similarity": 93.004,
-      "year": 2014
+      "name": "BW Webb",
+      "similarity": 90.202,
+      "year": 2013
     },
     "historical_comp_median": {
-      "name": "Taron Johnson",
-      "similarity": 87.1,
-      "year": 2018
+      "name": "Dunta Robinson",
+      "similarity": 93.004,
+      "year": 2004
     },
     "historical_comp_ceiling": {
       "name": "Kendall Fuller",
@@ -54854,14 +54854,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Jordan Allen",
-      "similarity": 91.885,
-      "year": 2015
+      "name": "Aidan Hutchinson",
+      "similarity": 85.878,
+      "year": 2022
     },
     "historical_comp_median": {
-      "name": "Jimmy Bean",
-      "similarity": 90.466,
-      "year": 2016
+      "name": "Carl Granderson",
+      "similarity": 85.878,
+      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Chase Young",
@@ -55091,14 +55091,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Carson Meier",
+      "similarity": 90.907,
+      "year": 2019
+    },
+    "historical_comp_median": {
       "name": "Jake Butt",
       "similarity": 89.244,
       "year": 2017
-    },
-    "historical_comp_median": {
-      "name": "Trey McBride",
-      "similarity": 85.211,
-      "year": 2022
     },
     "historical_comp_ceiling": {
       "name": "Cole Kmet",
@@ -55337,14 +55337,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Bryan Randall",
-      "similarity": 88.463,
-      "year": 2005
+      "name": "Jarious Jackson",
+      "similarity": 88.407,
+      "year": 2000
     },
     "historical_comp_median": {
-      "name": "Jordan Lynch",
-      "similarity": 88.181,
-      "year": 2014
+      "name": "Tua Tagovailoa",
+      "similarity": 87.683,
+      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "Jared Goff",
@@ -55624,14 +55624,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Tommie Campbell",
+      "similarity": 87.918,
+      "year": 2011
+    },
+    "historical_comp_median": {
       "name": "Montae Nicholson",
       "similarity": 87.185,
       "year": 2017
-    },
-    "historical_comp_median": {
-      "name": "T.J. Green",
-      "similarity": 86.941,
-      "year": 2016
     },
     "historical_comp_ceiling": {
       "name": "Jordan Whitehead",
@@ -55866,9 +55866,9 @@
       "year": 2024
     },
     "historical_comp_median": {
-      "name": "DeAndre Hopkins",
-      "similarity": 89.77,
-      "year": 2013
+      "name": "Devin Thomas",
+      "similarity": 89.742,
+      "year": 2008
     },
     "historical_comp_ceiling": {
       "name": "Cooper Kupp",
@@ -56248,19 +56248,19 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Obum Gwacham",
-      "similarity": 92.158,
-      "year": 2015
-    },
-    "historical_comp_median": {
       "name": "Trevor Reilly",
       "similarity": 92.816,
       "year": 2014
     },
-    "historical_comp_ceiling": {
+    "historical_comp_median": {
       "name": "Kyler Fackrell",
       "similarity": 92.223,
       "year": 2016
+    },
+    "historical_comp_ceiling": {
+      "name": "Anthony Barr",
+      "similarity": 89.009,
+      "year": 2014
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Marvin Jones Jr. (EDGE, Oklahoma) projects as a Round 5-6 talent with his cleanest NFL path coming as a rotational rush specialist in Sub-package designated rush lane. The current model grade sits at 72.70, with the board currently slotting him at No. 243. developmental contributor profile; produces pressure through get-off and counters.",
@@ -56499,9 +56499,9 @@
       "year": 2020
     },
     "historical_comp_median": {
-      "name": "Aidan Hutchinson",
+      "name": "Carl Granderson",
       "similarity": 84.581,
-      "year": 2022
+      "year": 2019
     },
     "historical_comp_ceiling": {
       "name": "Kyle Emanuel",
@@ -56747,9 +56747,9 @@
       "year": 2011
     },
     "historical_comp_median": {
-      "name": "Larry Tripplett",
-      "similarity": 88.134,
-      "year": 2002
+      "name": "Roy Miller",
+      "similarity": 88.567,
+      "year": 2009
     },
     "historical_comp_ceiling": {
       "name": "Quinnen Williams",
@@ -56938,19 +56938,19 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Blake Lueders",
-      "similarity": 91.885,
-      "year": 2015
-    },
-    "historical_comp_median": {
-      "name": "Jordan Allen",
-      "similarity": 90.889,
-      "year": 2015
-    },
-    "historical_comp_ceiling": {
       "name": "Aidan Hutchinson",
       "similarity": 85.869,
       "year": 2022
+    },
+    "historical_comp_median": {
+      "name": "Carl Granderson",
+      "similarity": 85.869,
+      "year": 2019
+    },
+    "historical_comp_ceiling": {
+      "name": "Willie Young",
+      "similarity": 90.954,
+      "year": 2010
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Nyjalik Kelly (EDGE, UCF) projects as a Round 5-6 talent with his cleanest NFL path coming as a three-down pressure creator in Multiple-front every-down edge role. The current model grade sits at 72.29, with the board currently slotting him at No. 249. developmental contributor profile; produces pressure through get-off and counters.",
@@ -57123,9 +57123,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Kevin Dotson",
-      "similarity": 85.615,
-      "year": 2020
+      "name": "Khaled Holmes",
+      "similarity": 91.96,
+      "year": 2013
     },
     "historical_comp_median": {
       "name": "Austin Reiter",
@@ -57319,9 +57319,9 @@
       "year": 2022
     },
     "historical_comp_median": {
-      "name": "Cade Otton",
-      "similarity": 86.395,
-      "year": 2022
+      "name": "Visanthe Shiancoe",
+      "similarity": 86.63,
+      "year": 2003
     },
     "historical_comp_ceiling": {
       "name": "Dallas Goedert",
@@ -57515,9 +57515,9 @@
       "year": 2019
     },
     "historical_comp_median": {
-      "name": "Jerome Ford",
-      "similarity": 88.125,
-      "year": 2022
+      "name": "Thomas Jones",
+      "similarity": 89.845,
+      "year": 2000
     },
     "historical_comp_ceiling": {
       "name": "Dalvin Cook",
@@ -57694,14 +57694,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Markus Zusevics",
-      "similarity": 92.524,
-      "year": 2012
-    },
-    "historical_comp_median": {
       "name": "Demetress Bell",
       "similarity": 91.142,
       "year": 2008
+    },
+    "historical_comp_median": {
+      "name": "Dallas Thomas",
+      "similarity": 91.5,
+      "year": 2013
     },
     "historical_comp_ceiling": {
       "name": "Dion Dawkins",
@@ -57885,14 +57885,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Trey McBride",
-      "similarity": 84.515,
-      "year": 2022
+      "name": "Matt Schobel",
+      "similarity": 89.432,
+      "year": 2002
     },
     "historical_comp_median": {
-      "name": "Austin Seferian-Jenkins",
-      "similarity": 92.9,
-      "year": 2014
+      "name": "Sean Culkin",
+      "similarity": 87.674,
+      "year": 2017
     },
     "historical_comp_ceiling": {
       "name": "Cole Kmet",
@@ -58127,9 +58127,9 @@
       "year": 2013
     },
     "historical_comp_median": {
-      "name": "Felton Davis",
-      "similarity": 90.146,
-      "year": 2019
+      "name": "Keenan Allen",
+      "similarity": 89.883,
+      "year": 2013
     },
     "historical_comp_ceiling": {
       "name": "Courtland Sutton",
@@ -58323,14 +58323,14 @@
       "year": 2023
     },
     "historical_comp_median": {
+      "name": "Rashad Moore",
+      "similarity": 87.815,
+      "year": 2003
+    },
+    "historical_comp_ceiling": {
       "name": "Vince Wilfork",
       "similarity": 87.843,
       "year": 2004
-    },
-    "historical_comp_ceiling": {
-      "name": "Alim McNeill",
-      "similarity": 83.246,
-      "year": 2021
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Bryson Eason (DT, Tennessee) projects as a Round 5-6 talent with his cleanest NFL path coming as a early-down anchor with interior rush upside in One-gap attack interior rotation. The current model grade sits at 72.37, with the board currently slotting him at No. 247. developmental contributor profile; controls interior gaps and collapses pocket.",
@@ -58516,19 +58516,19 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Ron Thompson",
-      "similarity": 91.659,
-      "year": 2016
+      "name": "Scott Solomon",
+      "similarity": 89.836,
+      "year": 2012
     },
     "historical_comp_median": {
-      "name": "Oluwafemi Oladejo",
-      "similarity": 91.349,
-      "year": 2025
-    },
-    "historical_comp_ceiling": {
       "name": "Aidan Hutchinson",
       "similarity": 85.775,
       "year": 2022
+    },
+    "historical_comp_ceiling": {
+      "name": "Carl Granderson",
+      "similarity": 85.775,
+      "year": 2019
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Wesley Williams (EDGE, Duke) projects as a Round 6-7 talent with his cleanest NFL path coming as a power edge with base-down value in Odd-even front edge-setting role. The current model grade sits at 71.80, with the board currently slotting him at No. 260. developmental contributor profile; produces pressure through get-off and counters.",
@@ -58700,9 +58700,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Aaron Banks",
-      "similarity": 83.716,
-      "year": 2021
+      "name": "Beau Benzschawel",
+      "similarity": 89.93,
+      "year": 2019
     },
     "historical_comp_median": {
       "name": "Michael Deiter",
@@ -58885,14 +58885,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Chris Paul",
-      "similarity": 86.104,
-      "year": 2022
+      "name": "Sataoa Laumea",
+      "similarity": 90.174,
+      "year": 2024
     },
     "historical_comp_median": {
-      "name": "Aaron Banks",
-      "similarity": 83.66,
-      "year": 2021
+      "name": "Isaiah Adams",
+      "similarity": 90.635,
+      "year": 2024
     },
     "historical_comp_ceiling": {
       "name": "Will Hernandez",
@@ -59131,14 +59131,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Darrell Robertson",
-      "similarity": 91.65,
-      "year": 2008
+      "name": "Curt Maggitt",
+      "similarity": 88.153,
+      "year": 2016
     },
     "historical_comp_median": {
-      "name": "Bralen Trice",
-      "similarity": 89.319,
-      "year": 2024
+      "name": "Quanterus Smith",
+      "similarity": 88.633,
+      "year": 2013
     },
     "historical_comp_ceiling": {
       "name": "Zach Allen",
@@ -59373,9 +59373,9 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Darwin Thompson",
-      "similarity": 88.792,
-      "year": 2019
+      "name": "Michael Smith",
+      "similarity": 90.917,
+      "year": 2012
     },
     "historical_comp_median": {
       "name": "Deandre Washington",
@@ -60406,9 +60406,9 @@
       "year": 2024
     },
     "historical_comp_median": {
-      "name": "Dennis Keyes",
-      "similarity": 86.085,
-      "year": 2008
+      "name": "Demetrious Cox",
+      "similarity": 86.019,
+      "year": 2017
     },
     "historical_comp_ceiling": {
       "name": "Budda Baker",
@@ -60638,14 +60638,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Hunter Kampmoyer",
+      "similarity": 91.951,
+      "year": 2021
+    },
+    "historical_comp_median": {
       "name": "Brycen Hopkins",
       "similarity": 91.274,
       "year": 2020
-    },
-    "historical_comp_median": {
-      "name": "Trey McBride",
-      "similarity": 85.512,
-      "year": 2022
     },
     "historical_comp_ceiling": {
       "name": "Cole Kmet",
@@ -60886,9 +60886,9 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Ryan Pickett",
-      "similarity": 92.252,
-      "year": 2001
+      "name": "Claude Wroten",
+      "similarity": 88.896,
+      "year": 2006
     },
     "historical_comp_median": {
       "name": "Matt Toeaina",
@@ -60896,9 +60896,9 @@
       "year": 2007
     },
     "historical_comp_ceiling": {
-      "name": "Alim McNeill",
-      "similarity": 85.672,
-      "year": 2021
+      "name": "Ryan Pickett",
+      "similarity": 92.252,
+      "year": 2001
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Nick Barrett (DT, South Carolina) projects as a Round 6-7 talent with his cleanest NFL path coming as a early-down anchor with interior rush upside in One-gap attack interior rotation. The current model grade sits at 71.50, with the board currently slotting him at No. 248. developmental contributor profile; controls interior gaps and collapses pocket.",
@@ -61068,14 +61068,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Ben Bartch",
-      "similarity": 88.426,
-      "year": 2020
+      "name": "Tony Hills",
+      "similarity": 90.484,
+      "year": 2008
     },
     "historical_comp_median": {
-      "name": "Jawaan Taylor",
-      "similarity": 84.957,
-      "year": 2019
+      "name": "Dallas Thomas",
+      "similarity": 92.571,
+      "year": 2013
     },
     "historical_comp_ceiling": {
       "name": "Dion Dawkins",
@@ -61526,14 +61526,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Kevin Dotson",
-      "similarity": 82.946,
-      "year": 2020
+      "name": "Marcus Johnson",
+      "similarity": 89.413,
+      "year": 2005
     },
     "historical_comp_median": {
-      "name": "Brandon Linder",
-      "similarity": 85.145,
-      "year": 2014
+      "name": "Alaric Jackson",
+      "similarity": 90.287,
+      "year": 2021
     },
     "historical_comp_ceiling": {
       "name": "Quenton Nelson",
@@ -61763,19 +61763,19 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Chris Olave",
-      "similarity": 85.399,
-      "year": 2022
+      "name": "Johnny Knox",
+      "similarity": 88.435,
+      "year": 2009
     },
     "historical_comp_median": {
+      "name": "Santonio Holmes",
+      "similarity": 91.001,
+      "year": 2006
+    },
+    "historical_comp_ceiling": {
       "name": "Brandin Cooks",
       "similarity": 90.155,
       "year": 2014
-    },
-    "historical_comp_ceiling": {
-      "name": "Amon-Ra St. Brown",
-      "similarity": 85.399,
-      "year": 2021
     },
     "comp_confidence": "B",
     "scouting_report_summary": "Zavion Thomas (WR, LSU Tigers) projects as a Round 6-7 talent with his cleanest NFL path coming as a field-stretching z receiver in Vertical spread / play-action launcher. The current model grade sits at 71.83, with the board currently slotting him at No. 264. developmental contributor profile; creates separation and finishes at the catch point.",
@@ -62242,9 +62242,9 @@
       "year": 2004
     },
     "historical_comp_median": {
-      "name": "Aaron Hernandez",
-      "similarity": 89.328,
-      "year": 2010
+      "name": "Orson Charles",
+      "similarity": 89.497,
+      "year": 2012
     },
     "historical_comp_ceiling": {
       "name": "Cole Kmet",
@@ -62710,14 +62710,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Quinten Lawrence",
+      "similarity": 91.471,
+      "year": 2009
+    },
+    "historical_comp_median": {
       "name": "Rashod Bateman",
       "similarity": 90.137,
       "year": 2021
-    },
-    "historical_comp_median": {
-      "name": "Dante Pettis",
-      "similarity": 89.535,
-      "year": 2018
     },
     "historical_comp_ceiling": {
       "name": "Cooper Kupp",
@@ -62961,9 +62961,9 @@
       "year": 2024
     },
     "historical_comp_median": {
-      "name": "Myles Murphy",
-      "similarity": 87.251,
-      "year": 2024
+      "name": "Teair Tart",
+      "similarity": 82.043,
+      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "Alim McNeill",
@@ -63147,14 +63147,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Jason Croom",
+      "similarity": 89.413,
+      "year": 2017
+    },
+    "historical_comp_median": {
       "name": "James Mitchell",
       "similarity": 88.849,
       "year": 2022
-    },
-    "historical_comp_median": {
-      "name": "Cole Kmet",
-      "similarity": 84.497,
-      "year": 2020
     },
     "historical_comp_ceiling": {
       "name": "Hayden Hurst",
@@ -63393,8 +63393,8 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Aaron Murray",
-      "similarity": 87.881,
+      "name": "Connor Shaw",
+      "similarity": 88.473,
       "year": 2014
     },
     "historical_comp_median": {
@@ -63577,14 +63577,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Max Scharping",
-      "similarity": 87.655,
-      "year": 2019
+      "name": "Ray Willis",
+      "similarity": 92.007,
+      "year": 2005
     },
     "historical_comp_median": {
-      "name": "Rob Havenstein",
-      "similarity": 84.337,
-      "year": 2015
+      "name": "Taliese Fuaga",
+      "similarity": 89.469,
+      "year": 2024
     },
     "historical_comp_ceiling": {
       "name": "Orlando Brown Jr.",
@@ -63773,19 +63773,19 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Larry Birdine",
-      "similarity": 93.492,
-      "year": 2007
-    },
-    "historical_comp_median": {
       "name": "Chris Harrington",
       "similarity": 91.96,
       "year": 2008
     },
+    "historical_comp_median": {
+      "name": "Carlos Hall",
+      "similarity": 92.035,
+      "year": 2002
+    },
     "historical_comp_ceiling": {
-      "name": "Aidan Hutchinson",
+      "name": "Carl Granderson",
       "similarity": 86.292,
-      "year": 2022
+      "year": 2019
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Aidan Hubbard (EDGE, Northwestern) projects as a Round 6-7 talent with his cleanest NFL path coming as a rotational rush specialist in Sub-package designated rush lane. The current model grade sits at 70.10, with the board currently slotting him at No. 277. developmental contributor profile; produces pressure through get-off and counters.",
@@ -63957,14 +63957,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Stephen Berg",
-      "similarity": 90.343,
-      "year": 2007
-    },
-    "historical_comp_median": {
       "name": "Kraig Urbik",
       "similarity": 88.379,
       "year": 2009
+    },
+    "historical_comp_median": {
+      "name": "Aaron Banks",
+      "similarity": 84.233,
+      "year": 2021
     },
     "historical_comp_ceiling": {
       "name": "Will Hernandez",
@@ -64202,14 +64202,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Buddy Johnson",
-      "similarity": 88.426,
-      "year": 2021
-    },
-    "historical_comp_median": {
       "name": "Brian Asamoah II",
       "similarity": 88.886,
       "year": 2022
+    },
+    "historical_comp_median": {
+      "name": "Buddy Johnson",
+      "similarity": 88.426,
+      "year": 2021
     },
     "historical_comp_ceiling": {
       "name": "Eric Kendricks",
@@ -64444,9 +64444,9 @@
       "year": 2023
     },
     "historical_comp_median": {
-      "name": "Will Mallory",
-      "similarity": 84.938,
-      "year": 2023
+      "name": "Grant Calcaterra",
+      "similarity": 85.728,
+      "year": 2022
     },
     "historical_comp_ceiling": {
       "name": "George Kittle",
@@ -64678,14 +64678,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Jonathan Holland",
+      "similarity": 90.954,
+      "year": 2007
+    },
+    "historical_comp_median": {
       "name": "Jamari Thrash",
       "similarity": 91.077,
       "year": 2024
-    },
-    "historical_comp_median": {
-      "name": "Quinten Lawrence",
-      "similarity": 90.428,
-      "year": 2009
     },
     "historical_comp_ceiling": {
       "name": "Courtland Sutton",
@@ -64923,14 +64923,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Cody Simon",
-      "similarity": 91.142,
-      "year": 2025
+      "name": "Cedric Gray",
+      "similarity": 87.749,
+      "year": 2024
     },
     "historical_comp_median": {
-      "name": "Marist Liufau",
-      "similarity": 88.36,
-      "year": 2024
+      "name": "Dan Connor",
+      "similarity": 90.24,
+      "year": 2008
     },
     "historical_comp_ceiling": {
       "name": "Alex Anzalone",
@@ -65114,13 +65114,13 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Josh Johnson",
-      "similarity": 91.838,
+      "name": "John Metchie III",
+      "similarity": 89.949,
       "year": 2022
     },
     "historical_comp_median": {
-      "name": "Brennan Marion",
-      "similarity": 91.048,
+      "name": "Brandon Tate",
+      "similarity": 89.883,
       "year": 2009
     },
     "historical_comp_ceiling": {
@@ -65326,14 +65326,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Kevin Dotson",
-      "similarity": 82.429,
-      "year": 2020
-    },
-    "historical_comp_median": {
       "name": "Landon Dickerson",
       "similarity": 86.63,
       "year": 2021
+    },
+    "historical_comp_median": {
+      "name": "Louis Vasquez",
+      "similarity": 87.674,
+      "year": 2009
     },
     "historical_comp_ceiling": {
       "name": "Graham Glasgow",
@@ -65579,14 +65579,14 @@
       "year": 2010
     },
     "historical_comp_median": {
-      "name": "Antwaun Powell-Ryland",
-      "similarity": 88.633,
-      "year": 2025
-    },
-    "historical_comp_ceiling": {
       "name": "Aidan Hutchinson",
       "similarity": 84.412,
       "year": 2022
+    },
+    "historical_comp_ceiling": {
+      "name": "Carl Granderson",
+      "similarity": 84.412,
+      "year": 2019
     },
     "comp_confidence": "C",
     "scouting_report_summary": "Jack Pyburn (EDGE, LSU Tigers) projects as a Round 6-7 talent with his cleanest NFL path coming as a power edge with base-down value in Odd-even front edge-setting role. The current model grade sits at 69.20, with the board currently slotting him at No. 286. developmental contributor profile; produces pressure through get-off and counters.",
@@ -65761,9 +65761,9 @@
       "year": 2011
     },
     "historical_comp_median": {
-      "name": "Alex Mack",
-      "similarity": 89.93,
-      "year": 2009
+      "name": "Donald Penn",
+      "similarity": 89.695,
+      "year": 2006
     },
     "historical_comp_ceiling": {
       "name": "Will Hernandez",
@@ -66044,9 +66044,9 @@
       "year": 2006
     },
     "historical_comp_median": {
-      "name": "Jaylin Smith",
-      "similarity": 90.061,
-      "year": 2025
+      "name": "Cornell Armstrong",
+      "similarity": 90.776,
+      "year": 2018
     },
     "historical_comp_ceiling": {
       "name": "Taron Johnson",
@@ -66285,14 +66285,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Brock Purdy",
-      "similarity": 86.8,
-      "year": 2022
+      "name": "Ingle Martin",
+      "similarity": 91.236,
+      "year": 2006
     },
     "historical_comp_median": {
-      "name": "CJ Beathard",
-      "similarity": 91.547,
-      "year": 2017
+      "name": "Greg McElroy",
+      "similarity": 91.716,
+      "year": 2011
     },
     "historical_comp_ceiling": {
       "name": "Tua Tagovailoa",
@@ -66772,14 +66772,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Andrew Manley",
-      "similarity": 90.39,
-      "year": 2015
+      "name": "Zac Dysert",
+      "similarity": 90.024,
+      "year": 2013
     },
     "historical_comp_median": {
-      "name": "Jeremiah Briscoe",
-      "similarity": 89.488,
-      "year": 2018
+      "name": "Pat Devlin",
+      "similarity": 89.394,
+      "year": 2011
     },
     "historical_comp_ceiling": {
       "name": "Tua Tagovailoa",
@@ -67018,14 +67018,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Seth Russell",
-      "similarity": 89.272,
-      "year": 2017
-    },
-    "historical_comp_median": {
       "name": "Isaiah Stanback",
       "similarity": 88.473,
       "year": 2007
+    },
+    "historical_comp_median": {
+      "name": "Jayden Daniels",
+      "similarity": 89.131,
+      "year": 2024
     },
     "historical_comp_ceiling": {
       "name": "Jared Goff",
@@ -67788,14 +67788,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Verone McKinley III",
+      "similarity": 85.672,
+      "year": 2022
+    },
+    "historical_comp_median": {
       "name": "David Sims",
       "similarity": 89.911,
       "year": 2011
-    },
-    "historical_comp_median": {
-      "name": "Willie Andrews",
-      "similarity": 88.67,
-      "year": 2006
     },
     "historical_comp_ceiling": {
       "name": "Budda Baker",
@@ -68214,14 +68214,14 @@
       ]
     },
     "historical_comp_floor": {
-      "name": "Kevin Dotson",
-      "similarity": 84.844,
-      "year": 2020
+      "name": "Arron Sears",
+      "similarity": 90.08,
+      "year": 2007
     },
     "historical_comp_median": {
-      "name": "Tyler Biadasz",
-      "similarity": 89.15,
-      "year": 2020
+      "name": "Brian Schwenke",
+      "similarity": 88.285,
+      "year": 2013
     },
     "historical_comp_ceiling": {
       "name": "Graham Glasgow",
@@ -68456,14 +68456,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Kyren Williams",
-      "similarity": 85.991,
-      "year": 2022
+      "name": "Kory Sheets",
+      "similarity": 92.195,
+      "year": 2009
     },
     "historical_comp_median": {
-      "name": "Josh Jacobs",
-      "similarity": 85.991,
-      "year": 2019
+      "name": "Bilal Powell",
+      "similarity": 89.61,
+      "year": 2011
     },
     "historical_comp_ceiling": {
       "name": "Christian McCaffrey",
@@ -68633,14 +68633,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Mark Dell",
-      "similarity": 91.105,
-      "year": 2011
-    },
-    "historical_comp_median": {
       "name": "Jabar Gaffney",
       "similarity": 89.761,
       "year": 2002
+    },
+    "historical_comp_median": {
+      "name": "Darrell Jackson",
+      "similarity": 90.334,
+      "year": 2000
     },
     "historical_comp_ceiling": {
       "name": "Cooper Kupp",
@@ -68875,14 +68875,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Le'Veon Bell",
-      "similarity": 91.406,
-      "year": 2013
-    },
-    "historical_comp_median": {
       "name": "Hunter Luepke",
       "similarity": 91.189,
       "year": 2023
+    },
+    "historical_comp_median": {
+      "name": "Le'Veon Bell",
+      "similarity": 91.406,
+      "year": 2013
     },
     "historical_comp_ceiling": {
       "name": "James Conner",
@@ -69112,14 +69112,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Isaiah Likely",
-      "similarity": 88.181,
-      "year": 2022
+      "name": "Cade Stover",
+      "similarity": 90.052,
+      "year": 2024
     },
     "historical_comp_median": {
-      "name": "Chris Herndon",
-      "similarity": 89.855,
-      "year": 2018
+      "name": "Cole Hikutini",
+      "similarity": 92.205,
+      "year": 2017
     },
     "historical_comp_ceiling": {
       "name": "Dalton Schultz",
@@ -69308,14 +69308,14 @@
       "tags": []
     },
     "historical_comp_floor": {
+      "name": "Darwin Walker",
+      "similarity": 90.738,
+      "year": 2000
+    },
+    "historical_comp_median": {
       "name": "Christian Covington",
       "similarity": 91.424,
       "year": 2015
-    },
-    "historical_comp_median": {
-      "name": "D.J. Reader",
-      "similarity": 85.549,
-      "year": 2016
     },
     "historical_comp_ceiling": {
       "name": "Dexter Lawrence",
@@ -69550,9 +69550,9 @@
       "year": 2023
     },
     "historical_comp_median": {
-      "name": "Dede Westbrook",
-      "similarity": 89.046,
-      "year": 2017
+      "name": "Ted Ginn",
+      "similarity": 92.139,
+      "year": 2007
     },
     "historical_comp_ceiling": {
       "name": "Courtland Sutton",
@@ -69835,9 +69835,9 @@
       "year": 2004
     },
     "historical_comp_median": {
-      "name": "Stanford Samuels",
-      "similarity": 89.121,
-      "year": 2004
+      "name": "Robert McClain",
+      "similarity": 86.264,
+      "year": 2010
     },
     "historical_comp_ceiling": {
       "name": "Taron Johnson",
@@ -70067,14 +70067,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Alim McNeill",
-      "similarity": 86.405,
-      "year": 2021
+      "name": "Ian Williams",
+      "similarity": 92.515,
+      "year": 2011
     },
     "historical_comp_median": {
-      "name": "D.J. Jones",
-      "similarity": 92.515,
-      "year": 2017
+      "name": "Zach Kerr",
+      "similarity": 89.977,
+      "year": 2014
     },
     "historical_comp_ceiling": {
       "name": "Derrick Nnadi",
@@ -70309,9 +70309,9 @@
       "year": 2004
     },
     "historical_comp_median": {
-      "name": "Eli Stove",
-      "similarity": 92.816,
-      "year": 2021
+      "name": "Julian Edelman",
+      "similarity": 90.56,
+      "year": 2009
     },
     "historical_comp_ceiling": {
       "name": "Cooper Kupp",
@@ -70546,9 +70546,9 @@
       "year": 2019
     },
     "historical_comp_median": {
-      "name": "Ty Fryfogle",
-      "similarity": 88.999,
-      "year": 2022
+      "name": "Pierre Garcon",
+      "similarity": 88.003,
+      "year": 2008
     },
     "historical_comp_ceiling": {
       "name": "Courtland Sutton",
@@ -70778,14 +70778,14 @@
       "tags": []
     },
     "historical_comp_floor": {
-      "name": "Lance Moore",
-      "similarity": 89.573,
-      "year": 2005
-    },
-    "historical_comp_median": {
       "name": "Skyler Green",
       "similarity": 88.924,
       "year": 2006
+    },
+    "historical_comp_median": {
+      "name": "Lance Moore",
+      "similarity": 89.573,
+      "year": 2005
     },
     "historical_comp_ceiling": {
       "name": "Cooper Kupp",
@@ -71011,9 +71011,9 @@
       "year": 2022
     },
     "historical_comp_median": {
-      "name": "Tyler Conklin",
-      "similarity": 79.599,
-      "year": 2018
+      "name": "Quintin Morris",
+      "similarity": 85.662,
+      "year": 2021
     },
     "historical_comp_ceiling": {
       "name": "Dalton Schultz",
@@ -71190,14 +71190,14 @@
       ]
     },
     "historical_comp_floor": {
+      "name": "Mark Asper",
+      "similarity": 92.064,
+      "year": 2012
+    },
+    "historical_comp_median": {
       "name": "Andrew Vorhees",
       "similarity": 88.633,
       "year": 2023
-    },
-    "historical_comp_median": {
-      "name": "Aaron Banks",
-      "similarity": 84.365,
-      "year": 2021
     },
     "historical_comp_ceiling": {
       "name": "Will Hernandez",
