@@ -17,6 +17,16 @@ def _run(cmd: list[str], *, cwd: Path | None = None, env: dict[str, str] | None 
     subprocess.run(cmd, cwd=cwd or ROOT, env=env, check=True)
 
 
+def _run_espn_depth_chart_pull(*, env: dict[str, str]) -> None:
+    cmd = [sys.executable, "scripts/pull_espn_depth_charts.py", "--season", "2026"]
+    try:
+        _run(cmd, cwd=ROOT, env=env)
+    except subprocess.CalledProcessError:
+        retry_cmd = [*cmd, "--insecure"]
+        print("Retrying ESPN depth chart pull with --insecure due to local SSL verification failure.", flush=True)
+        _run(retry_cmd, cwd=ROOT, env=env)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
@@ -80,7 +90,7 @@ def main() -> None:
     _run(refresh_cmd, cwd=ROOT, env=env)
 
     if not args.skip_depth_charts_fetch:
-        _run([sys.executable, "scripts/pull_espn_depth_charts.py", "--season", "2026"], cwd=ROOT, env=env)
+        _run_espn_depth_chart_pull(env=env)
 
     if not args.skip_team_needs_context:
         _run([sys.executable, "scripts/build_team_needs_context_from_nflverse.py"], cwd=ROOT, env=env)
