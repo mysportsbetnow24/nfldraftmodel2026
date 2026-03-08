@@ -55,24 +55,52 @@ body {
 }
 
 .brand {
-  font-size: 1.55rem;
+  font-size: 1.62rem;
   font-weight: 800;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
 }
 
 .brand a {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  color: var(--ink);
+  padding: 0.42rem 0.78rem 0.42rem 0.5rem;
+  border: 1px solid rgba(31, 94, 168, 0.16);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(234, 243, 255, 0.96) 0%, rgba(228, 241, 255, 0.94) 62%, rgba(232, 248, 239, 0.92) 100%);
+  color: var(--brand);
   text-decoration: none;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset, 0 8px 18px rgba(15, 23, 42, 0.08);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
 }
 
 .brand-mark {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   display: block;
   flex: 0 0 auto;
+  filter: drop-shadow(0 3px 10px rgba(15, 23, 42, 0.14));
+}
+
+.brand-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.38rem;
+  line-height: 1;
+}
+
+.brand-wordmark-main {
+  color: var(--brand);
+}
+
+.brand-wordmark-accent {
+  color: var(--brand-2);
+}
+
+.brand a:hover {
+  transform: translateY(-1px);
+  border-color: rgba(31, 94, 168, 0.28);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset, 0 10px 24px rgba(15, 23, 42, 0.1);
 }
 
 .nav {
@@ -1194,6 +1222,24 @@ tbody tr.clickable-row {
 }
 
 @media (max-width: 720px) {
+  .brand {
+    font-size: 1.38rem;
+  }
+
+  .brand a {
+    gap: 0.58rem;
+    padding: 0.38rem 0.68rem 0.38rem 0.45rem;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand-wordmark {
+    gap: 0.24rem;
+  }
+
   .compare-cards {
     grid-template-columns: 1fr;
   }
