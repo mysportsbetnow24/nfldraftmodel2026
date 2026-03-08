@@ -1750,7 +1750,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                 end_year = _contract_end_year(row)
                 is_current = bool(row.get("is_active"))
                 if end_year:
-                    is_current = end_year >= CURRENT_DRAFT_YEAR
+                    is_current = is_current or end_year >= CURRENT_DRAFT_YEAR
                 if is_current:
                     contract_rows.append(row)
     for row in all_contract_rows:
@@ -1800,6 +1800,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             "team_text": team_text,
             "team_norm": "",
             "team_codes": candidate_team_codes,
+            "is_active": bool(row.get("is_active")),
         }
         player_master = players_master_by_name.get(payload["name_key"], {})
         latest_team = str(player_master.get("latest_team") or "").strip().upper()
@@ -1819,6 +1820,8 @@ def _build_team_depth_context() -> dict[str, dict]:
         )
         if resolved_team and pos and name and (latest_team_match or override_team == resolved_team or len(candidate_team_codes) == 1):
             player_team_candidates[payload["name_key"]][resolved_team] += 70.0
+            if payload["is_active"]:
+                player_team_candidates[payload["name_key"]][resolved_team] += 40.0
             contract_players_by_team_pos[(resolved_team, pos)].append(
                 {
                     "player_name": name,
@@ -1832,6 +1835,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                     "contract_label": f"{years}y | ${apy:.1f}M APY" if apy is not None else f"{years}y contract",
                     "apy_m": round(apy, 2) if apy is not None else "",
                     "apy_pct": _pct_score(apy, apy_pool_by_pos.get(pos, [])),
+                    "contract_is_active": payload["is_active"],
                 }
             )
         if gsis:
@@ -1869,6 +1873,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             "team_codes": [team_norm],
             "source": "spotrac",
             "contract_end_year": contract_end_year,
+            "is_active": True,
         }
         hist_key = (name_key, team_norm)
         existing_hist = contract_history_by_name_team.get(hist_key)
@@ -1991,9 +1996,12 @@ def _build_team_depth_context() -> dict[str, dict]:
         elif spotrac_free_agent and str(spotrac_free_agent.get("prev_team_norm") or "").strip().upper() == team and not transaction_rostered:
             contract = None
             historical_contract = None
+        contract_active = bool(contract) and bool(contract.get("is_active"))
         apy = _safe_float(contract.get("apy")) if contract else None
         apy_pct = _pct_score(apy, apy_pool_by_pos.get(model_pos, []))
         years_left = _safe_int(contract.get("years"), 0) if contract else 0
+        if contract_active and years_left <= 0:
+            years_left = 1
         historical_contract_valid = (
             bool(historical_contract)
             and _safe_int(historical_contract.get("contract_end_year"), 0) >= CURRENT_DRAFT_YEAR
@@ -2047,6 +2055,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             "has_contract": has_contract,
             "contract_label": contract_label,
             "contract_status_kind": contract_status_kind,
+            "contract_is_active": contract_active,
             "apy_m": round(apy, 2) if apy is not None else "",
             "apy_pct": apy_pct,
             "snap_count": int(snap_payload.get("snap_count", 0)),
@@ -2150,7 +2159,10 @@ def _build_team_depth_context() -> dict[str, dict]:
             if apy is not None
             else float(roster_info.get("apy_pct") or 0.0)
         )
+        contract_active = bool(contract) and bool(contract.get("is_active"))
         years_left = _safe_int(contract.get("years"), 0) if contract else 0
+        if contract_active and contract_team_match and years_left <= 0:
+            years_left = 1
         roster_has_contract = bool(roster_info) and bool(roster_info.get("has_contract"))
         inferred_rookie_contract = (
             latest_team_match
@@ -2202,6 +2214,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             "has_contract": has_contract,
             "contract_label": contract_label,
             "contract_status_kind": contract_status_kind,
+            "contract_is_active": contract_active or bool(roster_info.get("contract_is_active")),
             "apy_m": round(apy, 2) if apy is not None else roster_info.get("apy_m", ""),
             "apy_pct": apy_pct,
             "depth_source": "espn",
