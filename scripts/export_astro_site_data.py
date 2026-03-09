@@ -700,9 +700,11 @@ def _parse_birth_years(birth_date: str) -> int | None:
     return years if years >= 0 else None
 
 
-def _map_team_needs_position(position: str, depth_chart_position: str = "") -> str:
+def _map_team_needs_position(position: str, depth_chart_position: str = "", position_group: str = "") -> str:
     pos = str(position or "").strip().upper()
     depth = str(depth_chart_position or "").strip().upper()
+    group = str(position_group or "").strip().lower()
+    is_34_front = "3-4" in group
     if pos in TEAM_NEEDS_POS_ORDER:
         return pos
     if pos in {"LWR", "RWR", "SWR", "XWR", "ZWR"}:
@@ -717,6 +719,8 @@ def _map_team_needs_position(position: str, depth_chart_position: str = "") -> s
         return "EDGE"
     if pos in {"NT", "IDL", "LDT", "RDT"}:
         return "DT"
+    if pos in {"SLB", "WLB"} and is_34_front:
+        return "EDGE"
     if pos in {"ILB", "MLB", "LB", "SLB", "WLB", "LILB", "RILB"}:
         return "LB"
     if pos in {"FS", "SS", "SAF", "RS"}:
@@ -783,6 +787,17 @@ def _team_front_family(position_groups: list[str]) -> str:
     if counts["4-3"] > 0:
         return "4-3"
     return "generic"
+
+
+def _slot_position_for_front(slot: str, front_family: str) -> str:
+    slot = str(slot or "").strip().upper()
+    if not slot:
+        return ""
+    if front_family == "3-4" and slot in {"SLB", "WLB", "LOLB", "ROLB", "OLB"}:
+        return "EDGE"
+    if front_family == "4-3" and slot in {"SLB", "WLB", "MLB", "ILB", "LB"}:
+        return "LB"
+    return _slot_implied_position(slot)
 
 
 def _normalize_contract_team_codes(value: str) -> list[str]:
@@ -1022,7 +1037,8 @@ def _canonical_position_score(player: dict, candidate_pos: str) -> float:
     roster_pos = str(player.get("roster_position_raw") or "").strip().upper()
     contract_pos = str(player.get("contract_position_raw") or "").strip().upper()
     master_pos = str(player.get("player_master_position") or "").strip().upper()
-    implied_pos = _slot_implied_position(slot)
+    front_family = str(player.get("front_family_hint") or "").strip()
+    implied_pos = _slot_position_for_front(slot, front_family)
     score = 0.0
 
     if candidate_pos == current_pos:
@@ -1035,6 +1051,15 @@ def _canonical_position_score(player: dict, candidate_pos: str) -> float:
         score += 18.0
     if implied_pos and candidate_pos == implied_pos:
         score += 32.0
+
+    if front_family == "3-4" and slot in {"SLB", "WLB", "LOLB", "ROLB", "OLB"}:
+        if candidate_pos == "EDGE":
+            score += 95.0
+        if candidate_pos == "LB":
+            score -= 95.0
+    if front_family == "4-3" and slot in {"SLB", "WLB", "MLB", "ILB", "LB"}:
+        if candidate_pos == "LB":
+            score += 35.0
 
     current_family = _room_family(roster_pos or current_pos)
     candidate_family = _room_family(candidate_pos)
@@ -1053,7 +1078,7 @@ def _canonical_position_score(player: dict, candidate_pos: str) -> float:
         score -= 8.0
     position_for_penalty = roster_pos or current_pos
     if position_for_penalty == "LB" and candidate_pos == "EDGE":
-        score -= 18.0
+        score -= 6.0 if front_family == "3-4" and slot in {"SLB", "WLB", "LOLB", "ROLB", "OLB"} else 18.0
     if position_for_penalty == "EDGE" and candidate_pos == "LB":
         score -= 14.0
     if position_for_penalty == "DT" and candidate_pos == "EDGE":
@@ -2497,7 +2522,10 @@ def _build_team_depth_context() -> dict[str, dict]:
         roster_status = str(row.get("status") or row.get("roster_status") or "").strip().upper()
         if roster_status in {"RET", "CUT"}:
             continue
-        model_pos = _map_team_needs_position(row.get("position", ""), row.get("depth_chart_position", ""))
+        model_pos = _map_team_needs_position(
+            row.get("position", ""),
+            row.get("depth_chart_position", ""),
+        )
         if model_pos not in TEAM_NEEDS_POS_ORDER:
             continue
         name = str(row.get("full_name") or row.get("football_name") or "").strip()
@@ -2605,6 +2633,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             "nfl_games": int(nfl_value_payload.get("nfl_games", 0) or 0),
             "player_master_position": str(player_master.get("position") or "").strip().upper(),
             "contract_position_raw": str((contract or {}).get("raw_position") or (contract or {}).get("position") or "").strip().upper(),
+            "front_family_hint": "",
         }
         if player_key:
             player_team_candidates[player_key][team] += 60.0
@@ -2632,6 +2661,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                 "nfl_games": int(nfl_value_payload.get("nfl_games", 0) or 0),
                 "player_master_position": str(player_master.get("position") or "").strip().upper(),
                 "contract_position_raw": str((contract or {}).get("raw_position") or (contract or {}).get("position") or "").strip().upper(),
+                "front_family_hint": "",
             }
         )
 
@@ -2646,9 +2676,11 @@ def _build_team_depth_context() -> dict[str, dict]:
         if not team or not player_name:
             continue
         slot = str(row.get("position_slot") or row.get("position_key") or row.get("position_abbreviation") or "").strip().upper()
+        position_group = str(row.get("position_group") or "").strip()
         model_pos = _map_team_needs_position(
             row.get("position_abbreviation", ""),
             slot,
+            position_group,
         )
         if model_pos not in TEAM_NEEDS_POS_ORDER:
             continue
@@ -2807,6 +2839,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             "depth_source": "espn",
             "espn_rank": _safe_int(row.get("rank"), 99),
             "position_group": str(row.get("position_group") or "").strip(),
+            "front_family_hint": "3-4" if "3-4" in position_group.lower() else ("4-3" if "4-3" in position_group.lower() else ""),
             "snap_count": _safe_int(roster_info.get("snap_count"), 0),
             "offense_snaps": _safe_int(roster_info.get("offense_snaps"), 0),
             "defense_snaps": _safe_int(roster_info.get("defense_snaps"), 0),

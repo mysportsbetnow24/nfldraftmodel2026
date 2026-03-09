@@ -860,6 +860,7 @@ tbody tr.clickable-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 0.55rem;
+  align-items: start;
 }
 
 .lane-card {
@@ -869,6 +870,7 @@ tbody tr.clickable-row {
   padding: 0.5rem;
   display: grid;
   gap: 0.4rem;
+  align-self: start;
 }
 
 .lane-card__head {
@@ -1079,6 +1081,15 @@ tbody tr.clickable-row {
 
 .field-board--team-page {
   padding: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.field-board--team-page .field-board__title {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
 }
 
 .field-slot {
@@ -1095,7 +1106,8 @@ tbody tr.clickable-row {
 }
 
 .field-board--team-page .field-slot {
-  min-height: 140px;
+  min-height: 0;
+  align-self: flex-start;
 }
 
 .field-slot__head {
@@ -1126,6 +1138,7 @@ tbody tr.clickable-row {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.9rem;
   margin-top: 1rem;
+  align-items: start;
 }
 
 .team-page-hero__top {
@@ -1197,6 +1210,14 @@ tbody tr.clickable-row {
 
   .team-page-grid {
     grid-template-columns: 1fr;
+  }
+
+  .field-board--team-page .field-slot {
+    grid-column: span 1;
+  }
+
+  .field-board--team-page {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .team-card__title-row,
@@ -1330,6 +1351,14 @@ tbody tr.clickable-row {
   }
 
   .lane-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field-board--team-page .field-slot {
+    grid-column: auto;
+  }
+
+  .field-board--team-page {
     grid-template-columns: 1fr;
   }
 
