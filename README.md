@@ -38,7 +38,7 @@ Consensus output:
 ## Regular refresh workflow
 
 Use this when you want the normal site/model update path to start with a fresh consensus pull before
-depth charts, team-needs context, Spotrac contract/free-agent refresh, transactions, mocks, and Astro data rebuilds:
+depth charts, team-needs context, OTC contract/free-agent refresh, transactions, mocks, and Astro data rebuilds:
 
 ```bash
 cd astro-site
@@ -49,7 +49,7 @@ What it runs, in order:
 1. `scripts/refresh_consensus_pipeline.py`
 2. `scripts/pull_espn_depth_charts.py --season 2026`
 3. `scripts/build_team_needs_context_from_nflverse.py`
-4. `scripts/pull_spotrac_contracts.py`
+4. `scripts/pull_otc_contracts.py`
 5. `scripts/pull_cbs_transactions.py`
 6. `scripts/build_team_needs_transaction_adjustments.py`
 7. `scripts/run_mock_draft.py`
@@ -62,7 +62,7 @@ Useful flags:
 python3 scripts/refresh_update_workflow.py --skip-consensus-fetch
 python3 scripts/refresh_update_workflow.py --skip-depth-charts-fetch
 python3 scripts/refresh_update_workflow.py --skip-team-needs-context
-python3 scripts/refresh_update_workflow.py --skip-spotrac-fetch
+python3 scripts/refresh_update_workflow.py --skip-otc-fetch
 python3 scripts/refresh_update_workflow.py --skip-transactions-fetch
 python3 scripts/refresh_update_workflow.py --skip-mocks
 python3 scripts/refresh_update_workflow.py --skip-site-build

@@ -33,6 +33,9 @@ ESPN_DEPTH_CHARTS_CSV = ROOT / "data" / "sources" / "external" / "espn_depth_cha
 SPOTRAC_DIR = ROOT / "data" / "sources" / "external" / "spotrac"
 SPOTRAC_CONTRACTS_CSV = SPOTRAC_DIR / "spotrac_contracts_2026.csv"
 SPOTRAC_FREE_AGENTS_CSV = SPOTRAC_DIR / "spotrac_free_agents_2026.csv"
+OTC_DIR = ROOT / "data" / "sources" / "external" / "otc"
+OTC_CONTRACTS_CSV = OTC_DIR / "otc_contracts_2026.csv"
+OTC_FREE_AGENTS_CSV = OTC_DIR / "otc_free_agents_2026.csv"
 DELTA_AUDIT_LATEST_CSV = OUTPUTS / "delta_audit_2026_latest.csv"
 STABILITY_SNAPSHOTS_DIR = OUTPUTS / "stability_snapshots"
 CURRENT_DRAFT_YEAR = 2026
@@ -1762,10 +1765,15 @@ def _build_team_depth_context() -> dict[str, dict]:
     apy_pool_by_pos: dict[str, list[float]] = defaultdict(list)
     spotrac_contract_rows = _read_csv_rows(SPOTRAC_CONTRACTS_CSV)
     spotrac_free_agent_rows = _read_csv_rows(SPOTRAC_FREE_AGENTS_CSV)
+    otc_contract_rows = _read_csv_rows(OTC_CONTRACTS_CSV)
+    otc_free_agent_rows = _read_csv_rows(OTC_FREE_AGENTS_CSV)
     contract_state_override_rows = _read_csv_rows(CONTRACT_STATE_OVERRIDES_CSV)
     spotrac_contract_by_name: dict[str, dict] = {}
     spotrac_free_agent_by_name: dict[str, dict] = {}
     spotrac_free_agents_by_team: dict[str, list[dict]] = defaultdict(list)
+    otc_contract_by_name: dict[str, dict] = {}
+    otc_free_agent_by_name: dict[str, dict] = {}
+    otc_free_agents_by_team: dict[str, list[dict]] = defaultdict(list)
     contract_state_override_by_name: dict[str, dict] = {}
 
     def _contract_end_year(row: dict) -> int:
@@ -1933,6 +1941,42 @@ def _build_team_depth_context() -> dict[str, dict]:
             if existing is None or (_safe_float(existing.get("apy")) or 0.0) < (_safe_float(apy) or 0.0):
                 contract_by_name[payload["name_key"]] = payload
 
+    def _merge_supplemental_contract_payload(
+        *,
+        name_key: str,
+        team_norm: str,
+        position: str,
+        years: int,
+        contract_end_year: int,
+        apy: float | None,
+        source: str,
+        team_text: str,
+    ) -> dict:
+        existing = contract_by_name.get(name_key) or {}
+        existing_codes = [code for code in existing.get("team_codes", []) if code]
+        merged_codes = [team_norm, *existing_codes]
+        deduped_codes: list[str] = []
+        for code in merged_codes:
+            if code and code not in deduped_codes:
+                deduped_codes.append(code)
+        merged_apy = apy if apy is not None else _safe_float(existing.get("apy"))
+        merged_years = years or _safe_int(existing.get("years"), 0)
+        merged_end_year = contract_end_year or _safe_int(existing.get("contract_end_year"), 0)
+        merged_position = position or str(existing.get("position") or "").strip().upper()
+        return {
+            "gsis_id": str(existing.get("gsis_id") or "").strip(),
+            "name_key": name_key,
+            "apy": merged_apy,
+            "years": merged_years,
+            "position": merged_position,
+            "team_text": team_text or str(existing.get("team_text") or "").strip(),
+            "team_norm": team_norm,
+            "team_codes": deduped_codes or [team_norm],
+            "source": source,
+            "contract_end_year": merged_end_year,
+            "is_active": True,
+        }
+
     for row in spotrac_contract_rows:
         name = str(row.get("player_name") or "").strip()
         name_key = _norm_player_key(name)
@@ -2037,6 +2081,95 @@ def _build_team_depth_context() -> dict[str, dict]:
         spotrac_free_agent_by_name[name_key] = payload
         if prev_team_norm:
             spotrac_free_agents_by_team[prev_team_norm].append(payload)
+
+    for row in otc_contract_rows:
+        name = str(row.get("player_name") or "").strip()
+        name_key = _norm_player_key(name)
+        if not name_key:
+            continue
+        team_norm = str(row.get("team_norm") or "").strip().upper()
+        if not team_norm:
+            codes = _normalize_contract_team_codes(str(row.get("team") or ""))
+            team_norm = codes[0] if codes else ""
+        if not team_norm:
+            continue
+        position = _map_team_needs_position(row.get("position", ""))
+        apy = _safe_float(row.get("apy_m"))
+        years = _safe_int(row.get("years_remaining"), 0) or _safe_int(row.get("years"), 0)
+        contract_end_year = _safe_int(row.get("contract_end_year"), 0)
+        payload = _merge_supplemental_contract_payload(
+            name_key=name_key,
+            team_norm=team_norm,
+            position=position,
+            years=years,
+            contract_end_year=contract_end_year,
+            apy=apy,
+            source="otc",
+            team_text=str(row.get("team") or "").strip(),
+        )
+        existing = otc_contract_by_name.get(name_key)
+        existing_score = (
+            _safe_int(existing.get("contract_end_year"), 0) if existing else 0,
+            _safe_float(existing.get("apy")) or 0.0 if existing else 0.0,
+        )
+        new_score = (
+            _safe_int(payload.get("contract_end_year"), 0),
+            _safe_float(payload.get("apy")) or 0.0,
+        )
+        if existing is None or new_score >= existing_score:
+            otc_contract_by_name[name_key] = payload
+            contract_by_name[name_key] = payload
+        hist_key = (name_key, team_norm)
+        existing_hist = contract_history_by_name_team.get(hist_key)
+        existing_hist_score = (
+            _safe_int(existing_hist.get("contract_end_year"), 0) if existing_hist else 0,
+            _safe_float(existing_hist.get("apy")) or 0.0 if existing_hist else 0.0,
+        )
+        if new_score >= existing_hist_score:
+            contract_history_by_name_team[hist_key] = {
+                "team_norm": team_norm,
+                "years": _safe_int(payload.get("years"), 0),
+                "year_signed": 0,
+                "contract_end_year": _safe_int(payload.get("contract_end_year"), 0),
+                "apy": _safe_float(payload.get("apy")),
+                "source": "otc",
+            }
+        player_team_candidates[name_key][team_norm] += 55.0
+
+    for row in otc_free_agent_rows:
+        name = str(row.get("player_name") or "").strip()
+        name_key = _norm_player_key(name)
+        if not name_key:
+            continue
+        prev_team_norm = str(row.get("prev_team_norm") or "").strip().upper()
+        if not prev_team_norm:
+            codes = _normalize_contract_team_codes(str(row.get("prev_team") or ""))
+            prev_team_norm = codes[0] if codes else ""
+        if not prev_team_norm:
+            continue
+        payload = {
+            "player_name": name,
+            "name_key": name_key,
+            "prev_team": str(row.get("prev_team") or "").strip(),
+            "prev_team_norm": prev_team_norm,
+            "position": _map_team_needs_position(row.get("position", "")),
+            "age": _safe_int(row.get("age"), 0),
+            "years_exp": _safe_int(row.get("years_exp"), 0),
+            "market_value_apy_m": _safe_float(row.get("market_value_apy_m")),
+            "prev_apy_m": _safe_float(row.get("prev_apy_m")),
+            "source": "otc",
+        }
+        otc_free_agent_by_name[name_key] = payload
+        otc_free_agents_by_team[prev_team_norm].append(payload)
+
+    # Preserve existing downstream logic by treating OTC as the higher-precedence
+    # supplemental contract/free-agent source when available.
+    for name_key, payload in otc_contract_by_name.items():
+        spotrac_contract_by_name[name_key] = payload
+    for name_key, payload in otc_free_agent_by_name.items():
+        spotrac_free_agent_by_name[name_key] = payload
+    for team_norm, payloads in otc_free_agents_by_team.items():
+        spotrac_free_agents_by_team[team_norm] = payloads
 
     for name_key, payload in contract_state_override_by_name.items():
         team_norm = str(payload.get("team_norm") or "").strip().upper()

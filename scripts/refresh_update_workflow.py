@@ -50,9 +50,14 @@ def main() -> None:
         help="Skip rebuilding team_needs_context_2026.csv from nflverse + ESPN inputs.",
     )
     parser.add_argument(
+        "--skip-otc-fetch",
+        action="store_true",
+        help="Do not fetch OTC contract/free-agent tables before transactions/export.",
+    )
+    parser.add_argument(
         "--skip-spotrac-fetch",
         action="store_true",
-        help="Do not fetch Spotrac contract/free-agent tables before transactions/export.",
+        help=argparse.SUPPRESS,
     )
     parser.add_argument(
         "--skip-transactions-fetch",
@@ -95,8 +100,9 @@ def main() -> None:
     if not args.skip_team_needs_context:
         _run([sys.executable, "scripts/build_team_needs_context_from_nflverse.py"], cwd=ROOT, env=env)
 
-    if not args.skip_spotrac_fetch:
-        _run([sys.executable, "scripts/pull_spotrac_contracts.py"], cwd=ROOT, env=env)
+    skip_contract_refresh = args.skip_otc_fetch or args.skip_spotrac_fetch
+    if not skip_contract_refresh:
+        _run([sys.executable, "scripts/pull_otc_contracts.py"], cwd=ROOT, env=env)
 
     if not args.skip_transactions_fetch:
         _run([sys.executable, "scripts/pull_cbs_transactions.py"], cwd=ROOT, env=env)

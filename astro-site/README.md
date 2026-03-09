@@ -34,7 +34,7 @@ That workflow runs, in order:
 1. consensus pull + big-board rebuild
 2. ESPN depth chart pull
 3. team-needs context rebuild
-4. Spotrac contract/free-agent pull
+4. OTC contract/free-agent pull
 5. CBS transactions pull
 6. team-needs transaction adjustment rebuild
 7. mock rebuild
@@ -47,7 +47,7 @@ Useful direct flags from repo root:
 python3 scripts/refresh_update_workflow.py --skip-consensus-fetch
 python3 scripts/refresh_update_workflow.py --skip-depth-charts-fetch
 python3 scripts/refresh_update_workflow.py --skip-team-needs-context
-python3 scripts/refresh_update_workflow.py --skip-spotrac-fetch
+python3 scripts/refresh_update_workflow.py --skip-otc-fetch
 python3 scripts/refresh_update_workflow.py --skip-transactions-fetch
 python3 scripts/refresh_update_workflow.py --skip-mocks
 python3 scripts/refresh_update_workflow.py --skip-site-build
