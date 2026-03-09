@@ -83,6 +83,14 @@ function snapshotLaneLabel(row: any, position: string) {
     <p>Overview page for every roster’s top need stack, contract pressure, and trajectory. Open each team page for the full depth chart, contract detail, and transaction context.</p>
   </section>
 
+  <section class="card page-intro">
+    <h2 class="section-title">League-Wide Need Stack</h2>
+    <p class="muted">
+      This page is the fastest way to scan every roster’s top needs, free-agent pressure, and current direction heading into the 2026 draft.
+      Open the full team page for deeper room detail, contract watch, and the full field-view depth chart.
+    </p>
+  </section>
+
   <section class="card">
     <div class="result-bar">
       <div class="muted">Showing {rows.length} teams.</div>
@@ -103,6 +111,24 @@ function snapshotLaneLabel(row: any, position: string) {
           <option value={entry.team}>{entry.team} — {entry.display}</option>
         ))}
       </select>
+    </div>
+  </section>
+
+  <section class="card related-links">
+    <h2 class="section-title">Related Draft Tools</h2>
+    <div class="related-links-grid">
+      <a class="related-link" href="/2026-nfl-mock-draft">
+        <strong>Mock Draft Hub</strong>
+        <span class="muted">See how roster pressure and team need are shaping the current projection.</span>
+      </a>
+      <a class="related-link" href="/2026-nfl-draft-big-board">
+        <strong>Big Board</strong>
+        <span class="muted">Cross-check team need against the best available talent on the full board.</span>
+      </a>
+      <a class="related-link" href="/nfl-transactions-feed-2026">
+        <strong>Transactions Feed</strong>
+        <span class="muted">Track confirmed moves and rumor monitoring behind the team-needs updates.</span>
+      </a>
     </div>
   </section>
 
