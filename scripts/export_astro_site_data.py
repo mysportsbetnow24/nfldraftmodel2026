@@ -901,6 +901,8 @@ def _player_sort_tuple(player: dict, slot_priority: dict[str, int]) -> tuple:
     snap_count = _safe_int(player.get("snap_count"), 0)
     offense_snaps = _safe_int(player.get("offense_snaps"), 0)
     defense_snaps = _safe_int(player.get("defense_snaps"), 0)
+    nfl_value_pct = _safe_float(player.get("nfl_value_pct")) or 0.0
+    nfl_games = _safe_int(player.get("nfl_games"), 0)
     age = _safe_int(player.get("age"), 0)
     draft_number = _safe_int(player.get("draft_number"), 9999)
     rookie_weight = 0.0
@@ -911,15 +913,23 @@ def _player_sort_tuple(player: dict, slot_priority: dict[str, int]) -> tuple:
     if model_position in {"WR", "TE", "RB"}:
         starter_signal += min(offense_snaps, 1200) / 20.0
         starter_signal += min(snap_count, 1200) / 35.0
+        starter_signal += nfl_value_pct * 0.85
+        starter_signal += nfl_games * 0.8
     elif model_position in {"CB", "S", "LB", "EDGE", "DT"}:
         starter_signal += min(defense_snaps, 1200) / 20.0
         starter_signal += min(snap_count, 1200) / 35.0
+        starter_signal += nfl_value_pct * 0.82
+        starter_signal += nfl_games * 0.7
     elif model_position in {"OT", "IOL"}:
         starter_signal += min(offense_snaps, 1200) / 16.0
         starter_signal += min(snap_count, 1200) / 30.0
+        starter_signal += nfl_value_pct * 0.5
+        starter_signal += nfl_games * 0.5
     if model_position == "QB":
         starter_signal += min(apy_m, 50.0) * 1.2
         starter_signal += apy_pct * 0.45
+        starter_signal += nfl_value_pct * 0.9
+        starter_signal += nfl_games * 1.2
         if draft_number > 0 and draft_number <= 15 and years_exp <= 2 and 21 <= age <= 26:
             starter_signal += 42.0
         if years_exp <= 2 and 21 <= age <= 26 and apy_m >= 5.0:
@@ -934,6 +944,38 @@ def _player_sort_tuple(player: dict, slot_priority: dict[str, int]) -> tuple:
             starter_signal -= 38.0
     elif model_position in {"OT", "IOL", "EDGE", "DT", "CB", "S"}:
         starter_signal += apy_pct * 0.2
+
+    if model_position == "WR":
+        room_priority = (nfl_value_pct * 0.9) + (min(snap_count, 1200) / 18.0) + (years_exp * 1.2)
+        room_priority += max(0.0, min(apy_m, 35.0) - 2.0) * 1.2
+        room_priority += rookie_weight * 10.0
+        if nfl_games == 0 and years_exp >= 5 and apy_m >= 8.0:
+            room_priority += 12.0
+        return (
+            0 if player.get("has_contract") else 1,
+            -round(room_priority, 4),
+            -round(starter_signal, 4),
+            -nfl_value_pct,
+            -snap_count,
+            _safe_int(player.get("espn_rank"), 99),
+            slot_priority.get(slot, 99),
+            -apy_m,
+            -years_exp,
+            draft_number,
+            str(player.get("player_name", "")),
+        )
+
+    if model_position in {"CB", "S"}:
+        return (
+            -round(starter_signal, 4),
+            0 if player.get("has_contract") else 1,
+            _safe_int(player.get("espn_rank"), 99),
+            slot_priority.get(slot, 99),
+            -apy_m,
+            -years_exp,
+            draft_number,
+            str(player.get("player_name", "")),
+        )
 
     return (
         slot_priority.get(slot, 99),
@@ -1132,10 +1174,12 @@ def _youth_priority(payload: dict) -> tuple:
     years_exp = _safe_int(payload.get("years_exp"), 99)
     draft_number = _safe_int(payload.get("draft_number"), 9999)
     apy_m = _safe_float(payload.get("apy_m")) or 0.0
+    nfl_value_pct = _safe_float(payload.get("nfl_value_pct")) or 0.0
     depth_rank = _safe_int(payload.get("depth_rank"), 99)
     snap_count = _safe_int(payload.get("snap_count"), 0)
     return (
         label_priority.get(designation, 99),
+        -round(nfl_value_pct, 3),
         -snap_count,
         age,
         years_exp,
@@ -1154,6 +1198,7 @@ def _is_rising_young_player(payload: dict) -> bool:
     draft_number = _safe_int(payload.get("draft_number"), 9999)
     apy_pct = float(payload.get("apy_pct") or 0.0)
     apy_m = _safe_float(payload.get("apy_m")) or 0.0
+    nfl_value_pct = _safe_float(payload.get("nfl_value_pct")) or 0.0
     position = str(payload.get("position") or "").strip().upper()
     role_label = str(payload.get("role_label") or "").strip()
     usage_proxy = _usage_proxy_from_role(position, role_label, depth_rank)
@@ -1167,9 +1212,9 @@ def _is_rising_young_player(payload: dict) -> bool:
     if designation in {"Franchise Cornerstone", "All-Pro", "Blue Chip Prospect"}:
         return True
     if designation == "Prospect":
-        return ((age <= 24 and draft_number <= 60) or snap_count >= 700)
+        return ((age <= 24 and draft_number <= 60) or snap_count >= 700 or nfl_value_pct >= 78.0)
     if designation == "In His Prime Star":
-        return age <= 27 and years_exp <= 4 and (snap_count >= 450 or usage_proxy >= 0.84)
+        return age <= 27 and years_exp <= 4 and (snap_count >= 450 or usage_proxy >= 0.84 or nfl_value_pct >= 85.0)
     if designation == "Starter":
         if age <= 24 and snap_count >= 360:
             return True
@@ -1179,6 +1224,8 @@ def _is_rising_young_player(payload: dict) -> bool:
             and (draft_number <= 80 or apy_pct >= 65.0 or apy_m >= 4.0)
             and (snap_count >= 500 or usage_proxy >= 0.84)
         ):
+            return True
+        if age <= 25 and years_exp <= 3 and nfl_value_pct >= 82.0:
             return True
         if position == "QB" and years_exp <= 3 and apy_m >= 8.0 and age <= 26:
             return True
@@ -1331,8 +1378,71 @@ def _parse_game_teams(game_id: str) -> tuple[str, str]:
     return match.group(1), match.group(2)
 
 
+def _normalize_team_code(value: str) -> str:
+    text = str(value or "").strip().upper()
+    if not text:
+        return ""
+    legacy_map = {
+        "LA": "LAR",
+        "STL": "LAR",
+        "SD": "LAC",
+        "OAK": "LV",
+        "JAC": "JAX",
+    }
+    if text in legacy_map:
+        return legacy_map[text]
+    codes = _normalize_contract_team_codes(text)
+    if codes:
+        return codes[0]
+    return text
+
+
 def _build_player_snap_counts() -> dict[tuple[str, str], dict[str, int]]:
-    if pl is None or not NFLVERSE_PARTICIPATION.exists():
+    if pl is None:
+        return {}
+
+    # Prefer nflverse snap-count totals when available; they are much better for
+    # current-NFL room ordering than play participation name splits.
+    if NFLVERSE_SNAP_COUNTS.exists():
+        snaps = pl.read_parquet(NFLVERSE_SNAP_COUNTS)
+        if not snaps.is_empty():
+            name_col = "player" if "player" in snaps.columns else ("player_display_name" if "player_display_name" in snaps.columns else "")
+            team_col = "team" if "team" in snaps.columns else ("recent_team" if "recent_team" in snaps.columns else "")
+            season_col = "season" if "season" in snaps.columns else ""
+            if name_col and team_col and season_col:
+                latest_season = _safe_int(snaps.select(pl.col(season_col).max()).item(), 0)
+                if latest_season:
+                    snaps = snaps.filter(pl.col(season_col) == latest_season)
+                snaps = (
+                    snaps.group_by([name_col, team_col])
+                    .agg(
+                        [
+                            pl.col("offense_snaps").sum().alias("offense_snaps"),
+                            pl.col("defense_snaps").sum().alias("defense_snaps"),
+                            pl.col("st_snaps").sum().alias("st_snaps"),
+                        ]
+                    )
+                    .to_dicts()
+                )
+                out: dict[tuple[str, str], dict[str, int]] = {}
+                for row in snaps:
+                    player_key = _norm_player_key(row.get(name_col, ""))
+                    team = _normalize_team_code(row.get(team_col) or "")
+                    if not player_key or not team:
+                        continue
+                    offense = _safe_int(row.get("offense_snaps"), 0)
+                    defense = _safe_int(row.get("defense_snaps"), 0)
+                    st = _safe_int(row.get("st_snaps"), 0)
+                    out[(player_key, team)] = {
+                        "snap_count": offense + defense,
+                        "offense_snaps": offense,
+                        "defense_snaps": defense,
+                        "st_snaps": st,
+                    }
+                if out:
+                    return out
+
+    if not NFLVERSE_PARTICIPATION.exists():
         return {}
     participation = pl.read_parquet(NFLVERSE_PARTICIPATION)
     if participation.is_empty():
@@ -1375,6 +1485,73 @@ def _build_player_snap_counts() -> dict[tuple[str, str], dict[str, int]]:
             payload["defense_snaps"] += 1
 
     return snap_counts
+
+
+def _build_player_current_nfl_value() -> dict[tuple[str, str], dict[str, float]]:
+    if pl is None or not NFLVERSE_PLAYER_STATS.exists():
+        return {}
+    stats = pl.read_parquet(NFLVERSE_PLAYER_STATS)
+    if stats.is_empty():
+        return {}
+    stats = stats.filter(pl.col("season_type") == "REG")
+    latest_season = _safe_int(stats.select(pl.col("season").max()).item(), 0)
+    if latest_season:
+        stats = stats.filter(pl.col("season") == latest_season)
+    if stats.is_empty():
+        return {}
+
+    rows = stats.to_dicts()
+    raw_scores: list[tuple[tuple[str, str], str, float, int]] = []
+    score_pools: dict[str, list[float]] = defaultdict(list)
+    for row in rows:
+        name_key = _norm_player_key(row.get("player_display_name") or row.get("player_name") or "")
+        team = _normalize_team_code(row.get("recent_team") or "")
+        pos_group = str(row.get("position_group") or "").strip().upper()
+        if not name_key or not team or not pos_group:
+            continue
+        score = 0.0
+        games = _safe_int(row.get("games"), 0)
+        if pos_group == "QB":
+            score += (_safe_float(row.get("passing_yards")) or 0.0) * 0.012
+            score += (_safe_float(row.get("passing_tds")) or 0.0) * 2.5
+            score -= (_safe_float(row.get("passing_interceptions")) or 0.0) * 1.5
+            score += (_safe_float(row.get("rushing_yards")) or 0.0) * 0.004
+        elif pos_group in {"WR", "TE"}:
+            score += (_safe_float(row.get("receiving_yards")) or 0.0) * 0.016
+            score += (_safe_float(row.get("receptions")) or 0.0) * 0.18
+            score += (_safe_float(row.get("receiving_tds")) or 0.0) * 2.3
+            score += (_safe_float(row.get("targets")) or 0.0) * 0.05
+        elif pos_group == "RB":
+            score += (_safe_float(row.get("rushing_yards")) or 0.0) * 0.014
+            score += (_safe_float(row.get("rushing_tds")) or 0.0) * 2.2
+            score += (_safe_float(row.get("receiving_yards")) or 0.0) * 0.006
+            score += (_safe_float(row.get("receptions")) or 0.0) * 0.08
+        elif pos_group in {"DB"}:
+            score += (_safe_float(row.get("def_interceptions")) or 0.0) * 5.0
+            score += (_safe_float(row.get("def_pass_defended")) or 0.0) * 1.35
+            score += (_safe_float(row.get("def_tackles_solo")) or 0.0) * 0.08
+            score += (_safe_float(row.get("def_qb_hits")) or 0.0) * 0.8
+            score += (_safe_float(row.get("def_sacks")) or 0.0) * 2.5
+        elif pos_group in {"DL", "LB"}:
+            score += (_safe_float(row.get("def_sacks")) or 0.0) * 3.8
+            score += (_safe_float(row.get("def_qb_hits")) or 0.0) * 1.1
+            score += (_safe_float(row.get("def_tackles_for_loss")) or 0.0) * 1.2
+            score += (_safe_float(row.get("def_tackles_solo")) or 0.0) * 0.07
+            score += (_safe_float(row.get("def_interceptions")) or 0.0) * 4.0
+        score += games * 0.4
+        raw_scores.append(((name_key, team), pos_group, score, games))
+        score_pools[pos_group].append(score)
+
+    out: dict[tuple[str, str], dict[str, float]] = {}
+    for key, pos_group, score, games in raw_scores:
+        pool = score_pools.get(pos_group, [])
+        pct = _pct_score(score, pool) if pool else 0.0
+        out[key] = {
+            "nfl_value_score": round(score, 3),
+            "nfl_value_pct": pct,
+            "nfl_games": games,
+        }
+    return out
 
 
 def _contract_sort_pos_priority(position: str) -> int:
@@ -1474,6 +1651,9 @@ def _player_designation(
     model_position: str,
     draft_number: int | None,
     role_label: str,
+    snap_count: int = 0,
+    nfl_value_pct: float = 0.0,
+    nfl_games: int = 0,
 ) -> str:
     apy_value = float(apy_m or 0.0)
     if not has_contract:
@@ -1497,6 +1677,14 @@ def _player_designation(
         or years_exp > 0
     )
 
+    if (
+        usage_proxy >= 0.82
+        and is_top_starter
+        and nfl_games >= 8
+        and nfl_value_pct >= 97.0
+        and (age is None or age <= 33)
+    ):
+        return "All-Pro"
     if usage_proxy >= 0.95 and apy_pct >= 98.5 and apy_value >= max(20.0, _minimum_cornerstone_apy(model_position)) and effective_years_exp >= 6:
         return "HOF Path"
     if (
@@ -1533,6 +1721,35 @@ def _player_designation(
     ):
         return "Franchise Cornerstone"
     if (
+        usage_proxy >= 0.74
+        and is_top_starter
+        and nfl_games >= 8
+        and nfl_value_pct >= 90.0
+        and years_exp <= 4
+        and (age is None or age <= 26)
+    ):
+        return "Franchise Cornerstone"
+    if (
+        usage_proxy >= 0.72
+        and is_top_starter
+        and snap_count >= 700
+        and nfl_games >= 8
+        and nfl_value_pct >= 88.0
+        and years_exp <= 4
+        and (age is None or age <= 26)
+    ):
+        return "Franchise Cornerstone"
+    if (
+        usage_proxy >= 0.68
+        and is_top_starter
+        and snap_count >= 500
+        and nfl_games >= 8
+        and nfl_value_pct >= 82.0
+        and years_exp <= 4
+        and (age is None or age <= 25)
+    ):
+        return "Franchise Cornerstone"
+    if (
         usage_proxy >= 0.76
         and is_top_starter
         and years_exp <= 2
@@ -1564,6 +1781,24 @@ def _player_designation(
         and (age is None or age <= 34)
     ):
         return "All-Pro"
+    if (
+        usage_proxy >= 0.72
+        and is_top_starter
+        and nfl_games >= 8
+        and nfl_value_pct >= 85.0
+        and (age is None or age <= 31)
+    ):
+        return "In His Prime Star"
+    if (
+        usage_proxy >= 0.68
+        and is_top_starter
+        and snap_count >= 500
+        and nfl_games >= 8
+        and nfl_value_pct >= 80.0
+        and years_exp <= 4
+        and (age is None or age <= 27)
+    ):
+        return "In His Prime Star"
     if (
         is_top_starter
         and usage_proxy >= 0.76
@@ -1705,6 +1940,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             }
 
     player_snap_counts = _build_player_snap_counts()
+    player_current_nfl_value = _build_player_current_nfl_value()
 
     player_team_candidates: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
     for player_key, override in transaction_team_override_by_name.items():
@@ -1725,7 +1961,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                 rookie_season = _safe_int(row.get("rookie_season"), 0)
                 years_of_experience = _safe_int(row.get("years_of_experience"), 0)
                 draft_pick = _safe_int(row.get("draft_pick"), 0)
-                latest_team = str(row.get("latest_team") or "").strip().upper()
+                latest_team = _normalize_team_code(row.get("latest_team") or "")
                 latest_team = (
                     transaction_team_override_by_name.get(key, {}).get("current_team", latest_team) or latest_team
                 )
@@ -2209,7 +2445,7 @@ def _build_team_depth_context() -> dict[str, dict]:
     team_players: dict[str, dict[str, list[dict]]] = defaultdict(lambda: defaultdict(list))
     roster_lookup_by_team: dict[str, dict[str, dict]] = defaultdict(dict)
     for row in subset.iter_rows(named=True):
-        team = str(row.get("team") or "").strip().upper()
+        team = _normalize_team_code(row.get("team") or "")
         if not team:
             continue
         player_key = _norm_player_key(row.get("full_name") or row.get("football_name") or "")
@@ -2244,7 +2480,11 @@ def _build_team_depth_context() -> dict[str, dict]:
             token in override_action for token in {"trade", "signed", "claimed", "agreed", "re-signed", "resigned", "extension"}
         )
         player_master = players_master_by_name.get(player_key, {})
+        latest_team = str(player_master.get("latest_team") or "").strip().upper()
         historical_contract = contract_history_by_name_team.get((player_key, team))
+        contract_team_norm = str((spotrac_contract or contract or {}).get("team_norm") or "").strip().upper()
+        if latest_team and latest_team != team and override_current_team != team and contract_team_norm not in {team, override_current_team}:
+            continue
         if spotrac_contract and str(spotrac_contract.get("team_norm") or "").strip().upper() == team:
             contract = spotrac_contract
         elif spotrac_free_agent and str(spotrac_free_agent.get("prev_team_norm") or "").strip().upper() == team and not transaction_rostered:
@@ -2262,7 +2502,7 @@ def _build_team_depth_context() -> dict[str, dict]:
         )
         latest_team_match = (
             bool(player_master)
-            and str(player_master.get("latest_team") or "").strip().upper() == team
+            and latest_team == team
             and str(player_master.get("status") or "").strip().upper() not in {"RET", "CUT"}
         )
         inferred_rookie_contract = (
@@ -2300,12 +2540,13 @@ def _build_team_depth_context() -> dict[str, dict]:
             contract_label = "Contract watch"
 
         snap_payload = player_snap_counts.get((_norm_player_key(name), team), {})
+        nfl_value_payload = player_current_nfl_value.get((_norm_player_key(name), team), {})
 
         roster_lookup_by_team[team][player_key] = {
             "player_name": name,
             "position": model_pos,
             "depth_chart_position": depth_pos,
-            "years_exp": years_exp,
+            "years_exp": max(years_exp, _safe_int(player_master.get("years_of_experience"), 0)),
             "age": age if age is not None else "",
             "draft_number": draft_number if draft_number is not None else "",
             "contract_years": years_left,
@@ -2318,6 +2559,9 @@ def _build_team_depth_context() -> dict[str, dict]:
             "snap_count": int(snap_payload.get("snap_count", 0)),
             "offense_snaps": int(snap_payload.get("offense_snaps", 0)),
             "defense_snaps": int(snap_payload.get("defense_snaps", 0)),
+            "nfl_value_score": round(_safe_float(nfl_value_payload.get("nfl_value_score")) or 0.0, 3),
+            "nfl_value_pct": round(_safe_float(nfl_value_payload.get("nfl_value_pct")) or 0.0, 1),
+            "nfl_games": int(nfl_value_payload.get("nfl_games", 0) or 0),
         }
         if player_key:
             player_team_candidates[player_key][team] += 60.0
@@ -2327,7 +2571,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                 "player_name": name,
                 "position": model_pos,
                 "depth_chart_position": depth_pos,
-                "years_exp": years_exp,
+                "years_exp": max(years_exp, _safe_int(player_master.get("years_of_experience"), 0)),
                 "age": age if age is not None else "",
                 "draft_number": draft_number if draft_number is not None else "",
                 "contract_years": years_left,
@@ -2339,6 +2583,9 @@ def _build_team_depth_context() -> dict[str, dict]:
                 "snap_count": int(snap_payload.get("snap_count", 0)),
                 "offense_snaps": int(snap_payload.get("offense_snaps", 0)),
                 "defense_snaps": int(snap_payload.get("defense_snaps", 0)),
+                "nfl_value_score": round(_safe_float(nfl_value_payload.get("nfl_value_score")) or 0.0, 3),
+                "nfl_value_pct": round(_safe_float(nfl_value_payload.get("nfl_value_pct")) or 0.0, 1),
+                "nfl_games": int(nfl_value_payload.get("nfl_games", 0) or 0),
             }
         )
 
@@ -2378,11 +2625,33 @@ def _build_team_depth_context() -> dict[str, dict]:
         )
         historical_contract = contract_history_by_name_team.get((player_key, team))
         player_master = players_master_by_name.get(player_key, {})
+        latest_team = str(player_master.get("latest_team") or "").strip().upper()
         latest_team_match = (
             bool(player_master)
-            and str(player_master.get("latest_team") or "").strip().upper() == team
+            and latest_team == team
             and str(player_master.get("status") or "").strip().upper() not in {"RET", "CUT"}
         )
+        spotrac_contract_team = str(spotrac_contract.get("team_norm") or "").strip().upper() if spotrac_contract else ""
+        contract_team_norm = str(contract.get("team_norm") or "").strip().upper() if contract else ""
+        if (
+            latest_team
+            and latest_team != team
+            and override_current_team != team
+            and spotrac_contract_team not in {team, override_current_team}
+            and contract_team_norm not in {team, override_current_team}
+        ):
+            skipped_espn_rows.append(
+                {
+                    "team": team,
+                    "player_name": player_name,
+                    "position_slot": slot,
+                    "model_position": model_pos,
+                    "reason": "latest_team_mismatch",
+                    "espn_rank": _safe_int(row.get("rank"), 99),
+                    "latest_team": latest_team,
+                }
+            )
+            continue
         if spotrac_contract and str(spotrac_contract.get("team_norm") or "").strip().upper() == team:
             contract = spotrac_contract
             contract_team_match = True
@@ -2463,11 +2732,20 @@ def _build_team_depth_context() -> dict[str, dict]:
             contract_status_kind = "unsigned_watch"
             contract_label = "Contract watch"
 
+        nfl_value_payload = (
+            roster_info
+            if _safe_float((roster_info or {}).get("nfl_value_pct")) is not None
+            else player_current_nfl_value.get((player_key, team), {})
+        )
+
         payload = {
             "player_name": player_name,
             "position": model_pos,
             "depth_chart_position": slot,
-            "years_exp": _safe_int(roster_info.get("years_exp"), 0) or _safe_int(player_master.get("years_of_experience"), 0),
+            "years_exp": max(
+                _safe_int(roster_info.get("years_exp"), 0),
+                _safe_int(player_master.get("years_of_experience"), 0),
+            ),
             "age": roster_info.get("age", "") or _parse_birth_years(player_master.get("birth_date", "")) or "",
             "draft_number": roster_info.get("draft_number", "") or _safe_int(player_master.get("draft_pick"), 0) or "",
             "contract_years": years_left if contract else _safe_int(roster_info.get("contract_years"), 0),
@@ -2483,6 +2761,9 @@ def _build_team_depth_context() -> dict[str, dict]:
             "snap_count": _safe_int(roster_info.get("snap_count"), 0),
             "offense_snaps": _safe_int(roster_info.get("offense_snaps"), 0),
             "defense_snaps": _safe_int(roster_info.get("defense_snaps"), 0),
+            "nfl_value_score": round(_safe_float((nfl_value_payload or {}).get("nfl_value_score")) or 0.0, 3),
+            "nfl_value_pct": round(_safe_float((nfl_value_payload or {}).get("nfl_value_pct")) or 0.0, 1),
+            "nfl_games": _safe_int((nfl_value_payload or {}).get("nfl_games"), 0),
         }
         espn_by_team_pos[(team, model_pos)].append(payload)
         if slot:
@@ -2653,6 +2934,9 @@ def _build_team_depth_context() -> dict[str, dict]:
                     model_position=pos,
                     draft_number=int(player.get("draft_number")) if str(player.get("draft_number", "")).strip() else None,
                     role_label=role_label,
+                    snap_count=int(player.get("snap_count") or 0),
+                    nfl_value_pct=float(player.get("nfl_value_pct") or 0.0),
+                    nfl_games=int(player.get("nfl_games") or 0),
                 )
                 payload = {
                     "player_name": player.get("player_name", ""),
@@ -2671,6 +2955,8 @@ def _build_team_depth_context() -> dict[str, dict]:
                     "apy_pct": float(player.get("apy_pct") or 0.0),
                     "draft_number": int(player.get("draft_number")) if str(player.get("draft_number", "")).strip() else "",
                     "snap_count": int(player.get("snap_count") or 0),
+                    "nfl_value_pct": float(player.get("nfl_value_pct") or 0.0),
+                    "nfl_games": int(player.get("nfl_games") or 0),
                 }
                 lane_players.append(payload)
                 team_payloads.append(payload)
@@ -2749,6 +3035,9 @@ def _build_team_depth_context() -> dict[str, dict]:
                     model_position=position,
                     draft_number=_safe_int(player_master.get("draft_pick"), 0) or None,
                     role_label=role_label,
+                    snap_count=_safe_int(snap_payload.get("snap_count"), 0),
+                    nfl_value_pct=0.0,
+                    nfl_games=0,
                 ),
                 "role_label": role_label,
                 "detail_label": f"{position} • FA",
