@@ -895,6 +895,7 @@ def _slot_display_label(position: str, slot: str, front_family: str, slot_rank: 
 def _player_sort_tuple(player: dict, slot_priority: dict[str, int]) -> tuple:
     slot = str(player.get("depth_chart_position") or "").strip().upper()
     model_position = str(player.get("position") or "").strip().upper()
+    roster_position_raw = str(player.get("roster_position_raw") or "").strip().upper()
     apy_m = float(player.get("apy_m") or 0.0)
     apy_pct = float(player.get("apy_pct") or 0.0)
     years_exp = _safe_int(player.get("years_exp"), 0)
@@ -949,8 +950,15 @@ def _player_sort_tuple(player: dict, slot_priority: dict[str, int]) -> tuple:
         room_priority = (nfl_value_pct * 0.9) + (min(snap_count, 1200) / 18.0) + (years_exp * 1.2)
         room_priority += max(0.0, min(apy_m, 35.0) - 2.0) * 1.2
         room_priority += rookie_weight * 10.0
-        if nfl_games == 0 and years_exp >= 5 and apy_m >= 8.0:
-            room_priority += 12.0
+        if nfl_games == 0 and years_exp >= 4 and apy_m >= 8.0:
+            if 24 <= age <= 31:
+                room_priority += 28.0
+            elif age >= 32:
+                room_priority += 8.0
+        if player.get("has_contract") and 24 <= age <= 31 and years_exp >= 4:
+            room_priority += max(0.0, min(apy_m, 35.0) - 8.0) * 2.2
+        if player.get("has_contract") and roster_position_raw == "WR" and nfl_games == 0 and apy_m >= 12.0:
+            room_priority += 18.0
         return (
             0 if player.get("has_contract") else 1,
             -round(room_priority, 4),
@@ -1011,36 +1019,52 @@ def _room_family(position: str) -> str:
 def _canonical_position_score(player: dict, candidate_pos: str) -> float:
     slot = str(player.get("depth_chart_position") or "").strip().upper()
     current_pos = str(player.get("position") or "").strip().upper()
+    roster_pos = str(player.get("roster_position_raw") or "").strip().upper()
+    contract_pos = str(player.get("contract_position_raw") or "").strip().upper()
+    master_pos = str(player.get("player_master_position") or "").strip().upper()
     implied_pos = _slot_implied_position(slot)
     score = 0.0
 
     if candidate_pos == current_pos:
         score += 60.0
+    if roster_pos and candidate_pos == _map_team_needs_position(roster_pos, slot):
+        score += 95.0
+    if contract_pos and candidate_pos == _map_team_needs_position(contract_pos, slot):
+        score += 55.0
+    if master_pos and candidate_pos == _map_team_needs_position(master_pos, slot):
+        score += 18.0
     if implied_pos and candidate_pos == implied_pos:
         score += 32.0
 
-    current_family = _room_family(current_pos)
+    current_family = _room_family(roster_pos or current_pos)
     candidate_family = _room_family(candidate_pos)
     implied_family = _room_family(implied_pos)
+    contract_family = _room_family(contract_pos)
+    master_family = _room_family(master_pos)
     if current_family and candidate_family and current_family != candidate_family:
         score -= 28.0
     elif current_pos and candidate_pos and current_pos != candidate_pos:
         score -= 10.0
+    if contract_family and candidate_family and contract_family != candidate_family:
+        score -= 18.0
+    if master_family and candidate_family and master_family != candidate_family:
+        score -= 6.0
     if implied_family and candidate_family and implied_family != candidate_family:
         score -= 8.0
-    if current_pos == "LB" and candidate_pos == "EDGE":
+    position_for_penalty = roster_pos or current_pos
+    if position_for_penalty == "LB" and candidate_pos == "EDGE":
         score -= 18.0
-    if current_pos == "EDGE" and candidate_pos == "LB":
+    if position_for_penalty == "EDGE" and candidate_pos == "LB":
         score -= 14.0
-    if current_pos == "DT" and candidate_pos == "EDGE":
+    if position_for_penalty == "DT" and candidate_pos == "EDGE":
         score -= 12.0
-    if current_pos == "OT" and candidate_pos == "IOL":
+    if position_for_penalty == "OT" and candidate_pos == "IOL":
         score -= 10.0
-    if current_pos == "IOL" and candidate_pos == "OT":
+    if position_for_penalty == "IOL" and candidate_pos == "OT":
         score -= 10.0
-    if current_pos == "CB" and candidate_pos == "S":
+    if position_for_penalty == "CB" and candidate_pos == "S":
         score -= 14.0
-    if current_pos == "S" and candidate_pos == "CB":
+    if position_for_penalty == "S" and candidate_pos == "CB":
         score -= 14.0
 
     if slot in {"LT", "RT", "LG", "RG", "C", "OC"}:
@@ -1817,6 +1841,17 @@ def _player_designation(
         and age <= 33
     ):
         return "In His Prime Star"
+    if (
+        model_position in {"WR", "CB", "S", "TE"}
+        and is_top_starter
+        and nfl_games == 0
+        and 4 <= effective_years_exp <= 10
+        and age is not None
+        and age <= 31
+        and apy_value >= _minimum_star_apy(model_position)
+        and apy_pct >= 80.0
+    ):
+        return "In His Prime Star"
     if years_exp <= 1 and not veteran_inference:
         if is_early_pick and usage_proxy >= 0.62:
             return "Blue Chip Prospect"
@@ -2127,6 +2162,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             "apy": apy,
             "years": years,
             "position": pos,
+            "raw_position": str(row.get("position") or "").strip().upper(),
             "team_text": team_text,
             "team_norm": "",
             "team_codes": candidate_team_codes,
@@ -2156,6 +2192,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                 {
                     "player_name": name,
                     "position": pos,
+                    "contract_position_raw": str(payload.get("raw_position") or pos or "").strip().upper(),
                     "depth_chart_position": pos,
                     "years_exp": 0,
                     "age": "",
@@ -2205,6 +2242,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             "apy": merged_apy,
             "years": merged_years,
             "position": merged_position,
+            "raw_position": str(position or existing.get("raw_position") or merged_position or "").strip().upper(),
             "team_text": team_text or str(existing.get("team_text") or "").strip(),
             "team_norm": team_norm,
             "team_codes": deduped_codes or [team_norm],
@@ -2234,6 +2272,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             "apy": apy,
             "years": years,
             "position": pos,
+            "raw_position": str(row.get("position") or "").strip().upper(),
             "team_text": str(row.get("team") or "").strip(),
             "team_norm": team_norm,
             "team_codes": [team_norm],
@@ -2274,6 +2313,7 @@ def _build_team_depth_context() -> dict[str, dict]:
                 {
                     "player_name": name,
                     "position": pos,
+                    "contract_position_raw": str(row.get("position") or pos or "").strip().upper(),
                     "depth_chart_position": pos,
                     "years_exp": 0,
                     "age": _safe_int(row.get("age"), 0) or "",
@@ -2545,6 +2585,7 @@ def _build_team_depth_context() -> dict[str, dict]:
         roster_lookup_by_team[team][player_key] = {
             "player_name": name,
             "position": model_pos,
+            "roster_position_raw": str(row.get("position") or "").strip().upper(),
             "depth_chart_position": depth_pos,
             "years_exp": max(years_exp, _safe_int(player_master.get("years_of_experience"), 0)),
             "age": age if age is not None else "",
@@ -2562,6 +2603,8 @@ def _build_team_depth_context() -> dict[str, dict]:
             "nfl_value_score": round(_safe_float(nfl_value_payload.get("nfl_value_score")) or 0.0, 3),
             "nfl_value_pct": round(_safe_float(nfl_value_payload.get("nfl_value_pct")) or 0.0, 1),
             "nfl_games": int(nfl_value_payload.get("nfl_games", 0) or 0),
+            "player_master_position": str(player_master.get("position") or "").strip().upper(),
+            "contract_position_raw": str((contract or {}).get("raw_position") or (contract or {}).get("position") or "").strip().upper(),
         }
         if player_key:
             player_team_candidates[player_key][team] += 60.0
@@ -2570,6 +2613,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             {
                 "player_name": name,
                 "position": model_pos,
+                "roster_position_raw": str(row.get("position") or "").strip().upper(),
                 "depth_chart_position": depth_pos,
                 "years_exp": max(years_exp, _safe_int(player_master.get("years_of_experience"), 0)),
                 "age": age if age is not None else "",
@@ -2586,6 +2630,8 @@ def _build_team_depth_context() -> dict[str, dict]:
                 "nfl_value_score": round(_safe_float(nfl_value_payload.get("nfl_value_score")) or 0.0, 3),
                 "nfl_value_pct": round(_safe_float(nfl_value_payload.get("nfl_value_pct")) or 0.0, 1),
                 "nfl_games": int(nfl_value_payload.get("nfl_games", 0) or 0),
+                "player_master_position": str(player_master.get("position") or "").strip().upper(),
+                "contract_position_raw": str((contract or {}).get("raw_position") or (contract or {}).get("position") or "").strip().upper(),
             }
         )
 
@@ -2741,6 +2787,9 @@ def _build_team_depth_context() -> dict[str, dict]:
         payload = {
             "player_name": player_name,
             "position": model_pos,
+            "roster_position_raw": str((roster_info or {}).get("roster_position_raw") or "").strip().upper(),
+            "contract_position_raw": str((roster_info or {}).get("contract_position_raw") or "").strip().upper(),
+            "player_master_position": str(player_master.get("position") or "").strip().upper(),
             "depth_chart_position": slot,
             "years_exp": max(
                 _safe_int(roster_info.get("years_exp"), 0),
