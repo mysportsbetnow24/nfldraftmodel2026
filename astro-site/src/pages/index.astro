@@ -410,8 +410,13 @@ const landingSchema = {
       grid-template-columns: 1fr;
     }
 
+    .home-main {
+      order: 1;
+    }
+
     .home-rail {
       position: static;
+      order: 2;
     }
 
     .home-hero-brand {
@@ -429,6 +434,10 @@ const landingSchema = {
 
     .featured-report--hero {
       grid-template-rows: 210px 1fr;
+    }
+
+    .home-shell > .home-rail:last-child {
+      order: 3;
     }
   }
 </style>
