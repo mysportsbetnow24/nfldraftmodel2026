@@ -141,7 +141,7 @@ const compLine = (title: string, comp: any, fallback: string) => {
       <div class="card"><strong>Model Rank</strong><div>{player.consensus_rank}</div></div>
       <div class="card"><strong>Model Grade</strong><div>{player.final_grade}</div></div>
       <div class="card"><strong>Round Range</strong><div>{player.round_value}</div></div>
-      <div class="card"><strong>PFF Grade</strong><div>{Number(player.pff_grade || 0) > 0 ? Number(player.pff_grade).toFixed(1) : "-"}</div></div>
+      <div class="card"><strong>Performance Grade</strong><div>{Number(player.pff_grade || 0) > 0 ? Number(player.pff_grade).toFixed(1) : "-"}</div></div>
       <div class="card"><strong>Trait Score</strong><div>{Number(player.trait_score || 0) > 0 ? Number(player.trait_score).toFixed(2) : "-"}</div></div>
       <div class="card"><strong>RAS Score</strong><div>{ras}</div></div>
     </div>
