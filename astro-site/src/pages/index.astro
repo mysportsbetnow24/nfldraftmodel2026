@@ -27,6 +27,34 @@ const featuredTeams = [
   { href: "/nfl-team-needs-2026/new-england-patriots", label: "Patriots Team Needs", detail: "See how roster build shapes the top of the mock." },
   { href: "/nfl-team-needs-2026/dallas-cowboys", label: "Cowboys Team Needs", detail: "Cross-check roster stress against the current board." },
 ];
+const featuredReports = [
+  {
+    href: "/players/fernando-mendoza",
+    player: "Fernando Mendoza",
+    meta: "QB • Indiana",
+    detail: "Top-of-board quarterback with size, poise, and enough off-platform creation to stress the full field.",
+    cta: "Open Scouting Report",
+    accent: "Board QB1",
+    image: "/features/fernando-mendoza.jpg",
+    hero: true,
+  },
+  {
+    href: "/players/sonny-styles",
+    player: "Sonny Styles",
+    meta: "LB • Ohio State",
+    detail: "Former safety athlete with big-space range, pressure utility, and true defensive chess-piece upside.",
+    cta: "View Sonny Styles",
+    accent: "Top-5 Athlete",
+  },
+  {
+    href: "/players/jordyn-tyson",
+    player: "Jordyn Tyson",
+    meta: "WR • Arizona State",
+    detail: "Route-craft volume earner whose leverage control and late-hands finishing keep pushing him into Round 1 territory.",
+    cta: "View Jordyn Tyson",
+    accent: "Round 1 WR",
+  },
+];
 const landingSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -84,41 +112,32 @@ const landingSchema = {
     </aside>
 
     <div class="home-main">
-      <section class="card page-grid-card">
-        <h2 class="section-title">Pages</h2>
-        <div class="page-grid">
-          <a class="card page-link" href="/2026-nfl-draft-big-board">
-            <strong>2026 NFL Draft Big Board</strong><br />
-            <span class="muted">Ranked prospects with grade + role context.</span>
-          </a>
-          <a class="card page-link" href="/2026-nfl-mock-draft-round-1">
-            <strong>2026 NFL Mock Draft (Round 1)</strong><br />
-            <span class="muted">One-round projection with pick rationale.</span>
-          </a>
-          <a class="card page-link" href="/2026-nfl-7-round-mock-draft">
-            <strong>2026 7-Round NFL Mock Draft</strong><br />
-            <span class="muted">Searchable by team for full draft classes.</span>
-          </a>
-          <a class="card page-link" href="/2026-nfl-player-comparison">
-            <strong>2026 NFL Player Comparison</strong><br />
-            <span class="muted">Side-by-side snapshot of top prospects.</span>
-          </a>
-          <a class="card page-link" href="/nfl-team-needs-2026">
-            <strong>NFL Team Needs 2026</strong><br />
-            <span class="muted">High-level team need stack with transaction context.</span>
-          </a>
-          <a class="card page-link" href="/nfl-transactions-feed-2026">
-            <strong>NFL Transactions Feed 2026</strong><br />
-            <span class="muted">Confirmed vs rumored tracker with impact visibility.</span>
-          </a>
-          <a class="card page-link" href="/nfl-draft-methodology">
-            <strong>Evaluation Approach</strong><br />
-            <span class="muted">Public high-level guide for reading grades and ranks.</span>
-          </a>
-          <a class="card page-link" href="/2026-nfl-draft-weekly-updates">
-            <strong>Weekly Updates</strong><br />
-            <span class="muted">Latest refresh timestamps and model coverage snapshot.</span>
-          </a>
+      <section class="card featured-reports-card">
+        <div class="result-bar">
+          <h2 class="section-title">Featured Scouting Reports</h2>
+          <a class="reset-btn" href="/scouting-cards">Browse All Cards</a>
+        </div>
+        <div class="featured-reports-grid">
+          {featuredReports.map((item) => (
+            <a class:list={["featured-report", item.hero && "featured-report--hero"]} href={item.href}>
+              {item.image && (
+                <div class="featured-report__media">
+                  <img src={item.image} alt={`${item.player} scouting report`} loading="lazy" />
+                  <span class="featured-report__badge">{item.accent}</span>
+                  <span class="featured-report__mark">
+                    <img src="/brand/sg-mark-yardline.svg" alt="" aria-hidden="true" />
+                  </span>
+                </div>
+              )}
+              <div class="featured-report__body">
+                {!item.image && <span class="featured-report__badge featured-report__badge--inline">{item.accent}</span>}
+                <strong>{item.player}</strong>
+                <span class="featured-report__meta">{item.meta}</span>
+                <span class="muted">{item.detail}</span>
+                <span class="featured-report__cta">{item.cta}</span>
+              </div>
+            </a>
+          ))}
         </div>
       </section>
 
@@ -247,6 +266,142 @@ const landingSchema = {
     margin: 0;
   }
 
+  .featured-reports-card {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .featured-reports-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(240px, 1fr) minmax(240px, 1fr);
+    gap: 0.85rem;
+  }
+
+  .featured-report {
+    display: grid;
+    min-height: 100%;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #8fb6dd;
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(150deg, rgba(15, 58, 99, 0.98), rgba(20, 84, 140, 0.94) 56%, rgba(12, 80, 62, 0.92));
+    box-shadow: 0 16px 30px rgba(15, 45, 74, 0.16);
+    transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+  }
+
+  .featured-report:hover {
+    transform: translateY(-2px);
+    border-color: #7ca6d2;
+    box-shadow: 0 20px 34px rgba(15, 45, 74, 0.2);
+  }
+
+  .featured-report--hero {
+    grid-template-rows: 230px 1fr;
+  }
+
+  .featured-report__media {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .featured-report__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(7, 21, 36, 0.08), rgba(7, 21, 36, 0.56));
+  }
+
+  .featured-report__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 24%;
+    display: block;
+  }
+
+  .featured-report__mark {
+    position: absolute;
+    right: 0.85rem;
+    bottom: 0.85rem;
+    z-index: 1;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(8, 22, 38, 0.76);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 10px 22px rgba(8, 22, 38, 0.22);
+  }
+
+  .featured-report__mark img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+
+  .featured-report__badge {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.28rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    color: #eef7ff;
+    background: rgba(8, 22, 38, 0.76);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .featured-report__badge--inline {
+    position: static;
+    justify-self: start;
+    margin-bottom: 0.12rem;
+    background: rgba(230, 242, 255, 0.16);
+  }
+
+  .featured-report__body {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1rem 1.05rem 1.05rem;
+    color: #eff6fb;
+  }
+
+  .featured-report__body strong {
+    font-size: 1.35rem;
+    line-height: 1.06;
+    color: #fff;
+  }
+
+  .featured-report__meta {
+    color: rgba(231, 241, 249, 0.9);
+    font-weight: 600;
+  }
+
+  .featured-report__body .muted {
+    color: rgba(227, 239, 248, 0.88);
+    line-height: 1.5;
+  }
+
+  .featured-report__cta {
+    margin-top: 0.3rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+    color: #eef7ff;
+    font-weight: 800;
+  }
+
+  .featured-report__cta::after {
+    content: "->";
+    font-size: 0.92rem;
+  }
+
   @media (max-width: 720px) {
     .home-shell {
       grid-template-columns: 1fr;
@@ -263,6 +418,14 @@ const landingSchema = {
     .home-hero-mark {
       width: 54px;
       height: 54px;
+    }
+
+    .featured-reports-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .featured-report--hero {
+      grid-template-rows: 210px 1fr;
     }
   }
 </style>
