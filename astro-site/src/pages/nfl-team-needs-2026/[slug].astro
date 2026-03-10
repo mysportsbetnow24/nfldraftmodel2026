@@ -160,7 +160,7 @@ const defenseSlots = ["CB", "S", "DT", "LB", "EDGE"];
         <div class="field-board__title">Offense</div>
         {offenseSlots.map((slot) => {
           const lane = laneFor(offense, slot);
-          const players = lanePlayers(lane, 6);
+          const players = lanePlayers(lane, 3);
           return (
             <div class={`field-slot slot-off-${slot.toLowerCase()}`}>
               <div class="field-slot__head"><span class="badge">{slot}</span></div>
@@ -188,7 +188,7 @@ const defenseSlots = ["CB", "S", "DT", "LB", "EDGE"];
         <div class="field-board__title">Defense</div>
         {defenseSlots.map((slot) => {
           const lane = laneFor(defense, slot);
-          const players = lanePlayers(lane, 6);
+          const players = lanePlayers(lane, 3);
           return (
             <div class={`field-slot slot-def-${slot.toLowerCase()}`}>
               <div class="field-slot__head"><span class="badge">{slot}</span></div>

@@ -5,6 +5,28 @@ import meta from "../data/build_meta.json";
 
 const top = (board || []).slice(0, 25);
 const pageDescription = "NFL Draft Hub 2026 featuring the latest big board rankings, mock drafts, team needs, transactions, and scouting cards.";
+const featuredDraftTools = [
+  { href: "/2026-nfl-draft-big-board", label: "Big Board", detail: "Full class ranking with grades and role context." },
+  { href: "/2026-nfl-mock-draft", label: "Mock Draft Hub", detail: "Jump between round-one and seven-round projections." },
+  { href: "/nfl-team-needs-2026", label: "Team Needs", detail: "Scan roster pressure, contract watch, and priority needs." },
+  { href: "/2026-nfl-player-comparison", label: "Player Compare", detail: "Stack prospects by profile, fit, and comps." },
+];
+const featuredProspects = [
+  { href: "/players/fernando-mendoza", label: "Fernando Mendoza", detail: "QB1 on the current board." },
+  { href: "/players/jeremiyah-love", label: "Jeremiyah Love", detail: "Complete back with rare ceiling traits." },
+  { href: "/players/jordyn-tyson", label: "Jordyn Tyson", detail: "Route-craft volume earner with Round 1 juice." },
+  { href: "/players/sonny-styles", label: "Sonny Styles", detail: "Former safety athlete with LB range and power." },
+  { href: "/players/caleb-downs", label: "Caleb Downs", detail: "Coverage eraser with elite back-end versatility." },
+  { href: "/players/arvell-reese", label: "Arvell Reese", detail: "Hybrid pressure linebacker with edge traits." },
+];
+const featuredTeams = [
+  { href: "/nfl-team-needs-2026/las-vegas-raiders", label: "Raiders Team Needs", detail: "Check the current QB and front-seven pressure points." },
+  { href: "/nfl-team-needs-2026/baltimore-ravens", label: "Ravens Team Needs", detail: "Monitor line depth, contracts, and 2026 priorities." },
+  { href: "/nfl-team-needs-2026/green-bay-packers", label: "Packers Team Needs", detail: "Review OL, front-seven, and roster pressure spots." },
+  { href: "/nfl-team-needs-2026/kansas-city-chiefs", label: "Chiefs Team Needs", detail: "Track expiring contributors and defensive pressure points." },
+  { href: "/nfl-team-needs-2026/new-england-patriots", label: "Patriots Team Needs", detail: "See how roster build shapes the top of the mock." },
+  { href: "/nfl-team-needs-2026/dallas-cowboys", label: "Cowboys Team Needs", detail: "Cross-check roster stress against the current board." },
+];
 const landingSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -34,80 +56,174 @@ const landingSchema = {
     <p>Model-first big board, mock drafts, and scouting cards.</p>
   </section>
 
-  <section class="card page-grid-card">
-    <h2 class="section-title">Pages</h2>
-    <div class="page-grid">
-      <a class="card page-link" href="/2026-nfl-draft-big-board">
-        <strong>2026 NFL Draft Big Board</strong><br />
-        <span class="muted">Ranked prospects with grade + role context.</span>
-      </a>
-      <a class="card page-link" href="/2026-nfl-mock-draft-round-1">
-        <strong>2026 NFL Mock Draft (Round 1)</strong><br />
-        <span class="muted">One-round projection with pick rationale.</span>
-      </a>
-      <a class="card page-link" href="/2026-nfl-7-round-mock-draft">
-        <strong>2026 7-Round NFL Mock Draft</strong><br />
-        <span class="muted">Searchable by team for full draft classes.</span>
-      </a>
-      <a class="card page-link" href="/2026-nfl-player-comparison">
-        <strong>2026 NFL Player Comparison</strong><br />
-        <span class="muted">Side-by-side snapshot of top prospects.</span>
-      </a>
-      <a class="card page-link" href="/nfl-team-needs-2026">
-        <strong>NFL Team Needs 2026</strong><br />
-        <span class="muted">High-level team need stack with transaction context.</span>
-      </a>
-      <a class="card page-link" href="/nfl-transactions-feed-2026">
-        <strong>NFL Transactions Feed 2026</strong><br />
-        <span class="muted">Confirmed vs rumored tracker with impact visibility.</span>
-      </a>
-      <a class="card page-link" href="/nfl-draft-methodology">
-        <strong>Evaluation Approach</strong><br />
-        <span class="muted">Public high-level guide for reading grades and ranks.</span>
-      </a>
-      <a class="card page-link" href="/2026-nfl-draft-weekly-updates">
-        <strong>Weekly Updates</strong><br />
-        <span class="muted">Latest refresh timestamps and model coverage snapshot.</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="card">
-    <div class="result-bar">
-      <h2 class="section-title">Top Board Snapshot</h2>
-      <span class="muted">Generated: {meta.generated_at || "Auto refreshed after latest pull"}</span>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Player</th>
-            <th>Pos</th>
-            <th>School</th>
-            <th>Grade</th>
-            <th>Round</th>
-          </tr>
-        </thead>
-        <tbody>
-          {top.map((r: any) => (
-            <tr>
-              <td>{r.consensus_rank}</td>
-              <td><a href={`/players/${r.slug}`} class="player-link">{r.player_name}</a></td>
-              <td><span class="badge">{r.position}</span></td>
-              <td>{r.school}</td>
-              <td>{r.final_grade}</td>
-              <td>{r.round_value}</td>
-            </tr>
+  <section class="home-shell">
+    <aside class="home-rail">
+      <section class="card home-rail-card">
+        <h2 class="section-title">Featured Draft Tools</h2>
+        <div class="home-rail-list">
+          {featuredDraftTools.map((item) => (
+            <a class="home-rail-link" href={item.href}>
+              <strong>{item.label}</strong>
+              <span class="muted">{item.detail}</span>
+            </a>
           ))}
-        </tbody>
-      </table>
+        </div>
+      </section>
+
+      <section class="card home-rail-card">
+        <h2 class="section-title">Featured Team Pages</h2>
+        <div class="home-rail-list">
+          {featuredTeams.map((item) => (
+            <a class="home-rail-link" href={item.href}>
+              <strong>{item.label}</strong>
+              <span class="muted">{item.detail}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    </aside>
+
+    <div class="home-main">
+      <section class="card page-grid-card">
+        <h2 class="section-title">Pages</h2>
+        <div class="page-grid">
+          <a class="card page-link" href="/2026-nfl-draft-big-board">
+            <strong>2026 NFL Draft Big Board</strong><br />
+            <span class="muted">Ranked prospects with grade + role context.</span>
+          </a>
+          <a class="card page-link" href="/2026-nfl-mock-draft-round-1">
+            <strong>2026 NFL Mock Draft (Round 1)</strong><br />
+            <span class="muted">One-round projection with pick rationale.</span>
+          </a>
+          <a class="card page-link" href="/2026-nfl-7-round-mock-draft">
+            <strong>2026 7-Round NFL Mock Draft</strong><br />
+            <span class="muted">Searchable by team for full draft classes.</span>
+          </a>
+          <a class="card page-link" href="/2026-nfl-player-comparison">
+            <strong>2026 NFL Player Comparison</strong><br />
+            <span class="muted">Side-by-side snapshot of top prospects.</span>
+          </a>
+          <a class="card page-link" href="/nfl-team-needs-2026">
+            <strong>NFL Team Needs 2026</strong><br />
+            <span class="muted">High-level team need stack with transaction context.</span>
+          </a>
+          <a class="card page-link" href="/nfl-transactions-feed-2026">
+            <strong>NFL Transactions Feed 2026</strong><br />
+            <span class="muted">Confirmed vs rumored tracker with impact visibility.</span>
+          </a>
+          <a class="card page-link" href="/nfl-draft-methodology">
+            <strong>Evaluation Approach</strong><br />
+            <span class="muted">Public high-level guide for reading grades and ranks.</span>
+          </a>
+          <a class="card page-link" href="/2026-nfl-draft-weekly-updates">
+            <strong>Weekly Updates</strong><br />
+            <span class="muted">Latest refresh timestamps and model coverage snapshot.</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="result-bar">
+          <h2 class="section-title">Top Board Snapshot</h2>
+          <span class="muted">Generated: {meta.generated_at || "Auto refreshed after latest pull"}</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>Pos</th>
+                <th>School</th>
+                <th>Grade</th>
+                <th>Round</th>
+              </tr>
+            </thead>
+            <tbody>
+              {top.map((r: any) => (
+                <tr>
+                  <td>{r.consensus_rank}</td>
+                  <td><a href={`/players/${r.slug}`} class="player-link">{r.player_name}</a></td>
+                  <td><span class="badge">{r.position}</span></td>
+                  <td>{r.school}</td>
+                  <td>{r.final_grade}</td>
+                  <td>{r.round_value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
+
+    <aside class="home-rail">
+      <section class="card home-rail-card">
+        <h2 class="section-title">Featured Prospects</h2>
+        <div class="home-rail-list">
+          {featuredProspects.map((item) => (
+            <a class="home-rail-link" href={item.href}>
+              <strong>{item.label}</strong>
+              <span class="muted">{item.detail}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    </aside>
   </section>
 
 </BaseLayout>
 
 <style>
+  .home-shell {
+    display: grid;
+    grid-template-columns: minmax(220px, 260px) minmax(0, 1fr) minmax(220px, 260px);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .home-main {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .home-rail {
+    display: grid;
+    gap: 1rem;
+    position: sticky;
+    top: 1rem;
+  }
+
+  .home-rail-card {
+    background: linear-gradient(180deg, rgba(245, 250, 253, 0.98), rgba(235, 244, 249, 0.92));
+  }
+
+  .home-rail-list {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .home-rail-link {
+    display: grid;
+    gap: 0.18rem;
+    padding: 0.85rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.76);
+    transition: border-color 0.14s ease, box-shadow 0.14s ease, transform 0.12s ease;
+  }
+
+  .home-rail-link strong {
+    color: var(--brand);
+  }
+
+  .home-rail-link:hover {
+    transform: translateY(-1px);
+    border-color: #8fb2d8;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+  }
+
   .home-hero-brand {
     display: flex;
     align-items: center;
@@ -132,6 +248,14 @@ const landingSchema = {
   }
 
   @media (max-width: 720px) {
+    .home-shell {
+      grid-template-columns: 1fr;
+    }
+
+    .home-rail {
+      position: static;
+    }
+
     .home-hero-brand {
       align-items: flex-start;
     }
