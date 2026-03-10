@@ -41,6 +41,10 @@ body {
   padding: 1.25rem;
 }
 
+.home-shell-wide {
+  max-width: 1460px;
+}
+
 .compare-shell {
   max-width: 1600px;
 }
