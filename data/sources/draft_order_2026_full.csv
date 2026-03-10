@@ -95,9 +95,9 @@ round,pick_in_round,overall_pick,current_team,original_team,acquired_via,source_
 3,30,94,DEN,DEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 3,31,95,NE,NE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 3,32,96,SEA,SEA,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-3,33,97,MIN,MIN,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-3,34,98,PHI,PHI,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-3,35,99,PIT,PIT,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+3,33,97,MIN,MIN,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+3,34,98,PHI,PHI,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+3,35,99,PIT,PIT,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
 3,36,100,JAX,DET,JAX g DET (NFL Draft Trade),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 4,1,101,TEN,TEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 4,2,102,LV,LV,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
@@ -131,12 +131,12 @@ round,pick_in_round,overall_pick,current_team,original_team,acquired_via,source_
 4,30,130,DEN,DEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 4,31,131,NE,NE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 4,32,132,NO,SEA,NO g SEA (R Shaheed),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-4,33,133,SF,SF,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-4,34,134,LV,LV,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-4,35,135,PIT,PIT,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-4,36,136,NO,NO,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-4,37,137,PHI,PHI,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-4,38,138,SF,SF,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+4,33,133,SF,SF,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+4,34,134,LV,LV,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+4,35,135,PIT,PIT,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+4,36,136,NO,NO,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+4,37,137,PHI,PHI,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+4,38,138,SF,SF,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
 5,1,139,CLE,LV,CLE g LV (K Pickett),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 5,2,140,TEN,BAL,TEN g NYJ t BAL (2025 Draft Trade),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 5,3,141,ARI,ARI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
@@ -169,15 +169,15 @@ round,pick_in_round,overall_pick,current_team,original_team,acquired_via,source_
 5,30,168,DEN,DEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 5,31,169,NE,NE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 5,32,170,NO,SEA,NO g SEA (R Shaheed),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-5,33,171,SF,SF,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-5,34,172,BAL,BAL,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-5,35,173,BAL,BAL,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-5,36,174,LV,LV,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-5,37,175,NYJ,NYJ,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-5,38,176,KC,KC,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-5,39,177,DAL,DAL,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-5,40,178,NYJ,NYJ,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-5,41,179,PHI,PHI,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+5,33,171,SF,SF,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+5,34,172,BAL,BAL,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+5,35,173,BAL,BAL,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+5,36,174,LV,LV,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+5,37,175,NYJ,NYJ,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+5,38,176,KC,KC,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+5,39,177,DAL,DAL,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+5,40,178,NYJ,NYJ,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+5,41,179,PHI,PHI,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
 6,1,180,LV,LV,LAR g NYJ t CLE t JAX (J Meyers),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 6,2,181,ARI,ARI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 6,3,182,TEN,TEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
@@ -210,11 +210,11 @@ round,pick_in_round,overall_pick,current_team,original_team,acquired_via,source_
 6,30,209,BAL,PHI,BAL g DEN t NYJ t MIN t PHI(J Alexander/Various),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 6,31,210,NE,NE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 6,32,211,DET,JAX,DET g SEA t JAX(R Robertson-Harris/T Patrick),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-6,33,212,DET,DET,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-6,34,213,PIT,PIT,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-6,35,214,PIT,PIT,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-6,36,215,DAL,DAL,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-6,37,216,IND,IND,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+6,33,212,DET,DET,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+6,34,213,PIT,PIT,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+6,35,214,PIT,PIT,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+6,36,215,DAL,DAL,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+6,37,216,IND,IND,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
 7,1,217,ARI,ARI,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 7,2,218,NYJ,TEN,NYJ g TEN (J Brownlee),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 7,3,219,LV,LV,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
@@ -247,12 +247,12 @@ round,pick_in_round,overall_pick,current_team,original_team,acquired_via,source_
 7,30,246,DEN,DEN,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 7,31,247,NE,NE,,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
 7,32,248,CLE,SEA,CLE g SEA (N Harris),https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-7,33,249,BAL,BAL,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-7,34,250,LAR,LAR,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-7,35,251,DEN,DEN,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-7,36,252,BAL,BAL,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-7,37,253,IND,IND,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-7,38,254,GB,GB,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-7,39,255,DEN,DEN,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-7,40,256,LAR,LAR,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
-7,41,257,GB,GB,Proj. Compensatory Pick,https://www.drafttek.com/NFL-Trade-Value-Chart.asp
+7,33,249,BAL,BAL,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+7,34,250,LAR,LAR,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+7,35,251,DEN,DEN,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+7,36,252,BAL,BAL,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+7,37,253,IND,IND,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+7,38,254,GB,GB,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+7,39,255,DEN,DEN,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+7,40,256,LAR,LAR,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
+7,41,257,GB,GB,Compensatory Pick,https://operations.nfl.com/updates/football-ops/2026-nfl-draft-to-feature-35-compensatory-picks/
