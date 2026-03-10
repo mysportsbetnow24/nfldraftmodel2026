@@ -4003,12 +4003,11 @@ def _build_scouting_sections(
     stat_parts = [p for p in stat_parts if p]
     # Keep stable ordering and remove exact duplicates.
     stat_parts = list(dict.fromkeys(stat_parts))
-    pff_line = f"PFF grade {pff_grade:.1f}" if pff_grade is not None else "PFF grade pending"
     if stat_parts:
         stat_line = "Stat context: " + _compact_text("; ".join(stat_parts), 260)
-        production_snapshot = pff_line + "\n" + stat_line
+        production_snapshot = stat_line
     else:
-        production_snapshot = pff_line
+        production_snapshot = ""
 
     report_parts = [
         f"{name} ({position}, {school}) projects as a {round_value} talent with his cleanest NFL path coming as {_with_article(clean_role.lower())} in {clean_scheme}.",
@@ -4501,6 +4500,7 @@ def main() -> None:
             role_hint=str(grades.get("best_role", "") or ""),
             scheme_hint=str(grades.get("best_scheme_fit", "") or ""),
             athletic_score=float(_as_float(grades.get("athletic_score")) or 0.0),
+            prospect_rank_seed=int(row.get("rank_seed") or 9999),
         )
         comp = assign_comp(pos, row["rank_seed"])
         fallback_ras = estimate_ras(

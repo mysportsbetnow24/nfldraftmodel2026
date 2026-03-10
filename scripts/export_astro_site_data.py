@@ -600,6 +600,13 @@ def _clean_public_snapshot(value: str) -> str:
             continue
         lines.append(line)
     cleaned = "\n".join(lines)
+    cleaned = re.sub(
+        r"(?:^|\s)PFF(?:\s+coverage)?\s+grade\s+\d+(?:\.\d+)?\.?\s*",
+        " ",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+    cleaned = re.sub(r"\s{2,}", " ", cleaned).replace("\n ", "\n").strip()
     if not cleaned.strip():
         return ""
     return cleaned.strip()
@@ -5073,7 +5080,7 @@ def _load_production_snapshot_overrides() -> dict[str, dict[str, object]]:
             continue
         out[slug] = {
             "heading": str(row.get("production_snapshot_heading", "")).strip(),
-            "text": str(row.get("production_snapshot_text", "")).strip(),
+            "text": _clean_public_snapshot(str(row.get("production_snapshot_text", "")).strip()),
             "counting_stat_chips": _parse_manual_counting_stats(row.get("production_counting_stats", "")),
         }
     return out

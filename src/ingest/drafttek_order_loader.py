@@ -106,7 +106,7 @@ def _extract_trade_details(page_html: str) -> Dict[Tuple[int, int], str]:
 def _parse_trade_route(detail: str) -> Tuple[str | None, str | None, List[str]]:
     if not detail:
         return None, None, []
-    if "proj. compensatory pick" in detail.lower():
+    if "compensatory pick" in detail.lower():
         return None, None, []
 
     head = detail.split("(", 1)[0].upper()
@@ -163,7 +163,7 @@ def parse_drafttek_order(page_html: str, source_url: str = DEFAULT_URL) -> Tuple
         note = (row.get("acquired_via") or "").strip()
         if not note:
             continue
-        if "proj. compensatory pick" in note.lower():
+        if "compensatory pick" in note.lower():
             continue
         original = (row.get("original_team") or "").strip()
         current = (row.get("current_team") or "").strip()
