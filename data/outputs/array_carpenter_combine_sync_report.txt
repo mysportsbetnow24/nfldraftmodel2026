@@ -1,4 +1,4 @@
-array-carpenter combine sync @ 2026-03-06T02:24:27.143463+00:00
+array-carpenter combine sync @ 2026-03-13T22:09:48.762469+00:00
 pro_day_path: /Users/nickholz/nfldraftmodel2026/data/sources/external/array-carpenter-nfl-draft-data/data/combine_pro_day.csv
 official_path: /Users/nickholz/nfldraftmodel2026/data/sources/external/array-carpenter-nfl-draft-data/data/combine_official.csv
 hist_out: /Users/nickholz/nfldraftmodel2026/data/sources/external/combine_data_unique_athlete_id_step4.csv
