@@ -57,7 +57,7 @@ from src.modeling.ras import (
     ras_percentile,
     ras_tier,
 )
-from src.modeling.team_fit import best_team_fit
+from src.modeling.team_fit import best_team_fit, reset_team_fit_state
 from src.schemas import parse_height_to_inches, round_from_grade
 
 PROCESSED = ROOT / "data" / "processed"
@@ -3746,6 +3746,7 @@ def _build_scouting_sections(
     concern_glossary_terms = _lookup_glossary_terms(glossary_tags, section="Primary Concerns")
     player_how_he_wins_notes = _compact_text(language_row.get("how_he_wins_notes", ""), 210)
     player_primary_concerns_notes = _compact_text(language_row.get("primary_concerns_notes", ""), 210)
+    player_role_projection_notes = _compact_text(language_row.get("role_projection_notes", ""), 220)
 
     def _qb_style_profile() -> str:
         if qb_epa is None and qb_press is None and qb_int is None:
@@ -3974,6 +3975,190 @@ def _build_scouting_sections(
         "S": "Early value comes from rotation versatility, overlap range, and communication that prevents explosive busts.",
     }
 
+    def _sentence(text: str, max_chars: int = 220) -> str:
+        clean = _compact_text(text, max_chars)
+        if not clean:
+            return ""
+        return clean.rstrip(".") + "."
+
+    def _useful_scouting_note(text: str) -> str:
+        clean = _compact_text(text, 180)
+        if not clean:
+            return ""
+        lower = clean.lower()
+        generic_patterns = [
+            "instant starter profile",
+            "early contributor profile",
+            "developmental contributor profile",
+            "starter-caliber profile",
+            "starter-caliber distributor profile",
+        ]
+        if any(pattern in lower for pattern in generic_patterns):
+            parts = [part.strip(" ;.") for part in clean.split(";")]
+            meaningful = [part for part in parts if part and "profile" not in part.lower()]
+            clean = "; ".join(meaningful).strip()
+        return clean
+
+    def _wins_mechanism_sentence() -> str:
+        if pos == "QB":
+            if qb_epa is not None and qb_epa >= 0.20:
+                return "Wins when he can stay on platform, throw windows open before coverage fully settles, and keep the operation on schedule from structure."
+            if (forty_pct is not None and forty_pct >= 75) or (ten_pct is not None and ten_pct >= 75):
+                return "Wins by stressing structure with movement ability, then resetting his base quickly enough to keep throws alive after the pocket shifts."
+            return "Wins when the drop, eyes, and trigger stay married, because the profile is built more on sequencing and pocket order than pure off-script creation."
+        if pos == "RB":
+            if rb_explosive is not None and rb_explosive >= 0.14 and rb_mtf is not None and rb_mtf >= 0.24:
+                return "Wins by pressing the track with patience, accelerating through narrow entry points, and carrying contact without losing north-south momentum."
+            if rb_mtf is not None and rb_mtf >= 0.24:
+                return "Wins through contact creation and pad-level control, which lets him steal hidden yards when the first crease closes quickly."
+            return "Wins when the read path is clear enough for him to trust the track, get downhill on time, and keep the run on schedule."
+        if pos in {"WR", "TE"}:
+            if wr_share is not None and wr_share >= 0.24 and wr_yprr is not None and wr_yprr >= 2.4:
+                return "Wins by earning targets through pacing, leverage work, and dependable timing into the quarterback's window rather than living on contested variance."
+            if (shuttle_pct is not None and shuttle_pct >= 65) or (cone_pct is not None and cone_pct >= 65):
+                return "Wins by pacing stems and forcing defenders to turn early, which creates late separation at the breakpoint without needing pure track speed."
+            return "Wins when releases stay on time and the route can re-stack leverage before the catch phase, giving him a cleaner target picture through traffic."
+        if pos == "OT":
+            if arm_pct is not None and arm_pct >= 50 and shuttle_pct is not None and shuttle_pct >= 50:
+                return "Wins with set-point control and recovery movement that keep rushers on his edges instead of letting them cross his face into the chest."
+            return "Wins when the feet and hands stay synchronized early in the rep, because the profile depends on geometry and recovery more than overpowering contact."
+        if pos == "IOL":
+            if weight_pct is not None and weight_pct >= 45:
+                return "Wins by building a firm pocket from the inside out, anchoring first contact, and passing off movement without giving away launch depth."
+            return "Wins when leverage, angles, and hand timing let him stay square through interior games instead of trying to absorb reps with raw mass alone."
+        if pos == "EDGE":
+            if edge_pr is not None and edge_pr >= 0.16:
+                return "Wins by threatening the upfield shoulder early, then cashing that stress into counters once tackles overset to protect the edge."
+            return "Wins when the first step forces protection to honor speed, because the rush becomes much cleaner once he can work from tackle panic instead of neutral sets."
+        if pos == "DT":
+            if edge_pr is not None and edge_pr >= 0.11:
+                return "Wins by controlling first contact, compressing the pocket through the guard's frame, and staying disruptive without losing gap integrity."
+            return "Wins when strike timing and pad level let him own the block first, because the profile still leans on tone-setting control more than pure interior juice."
+        if pos == "LB":
+            if shuttle_pct is not None and shuttle_pct >= 55:
+                return "Wins by seeing the picture early, fitting through traffic on time, and closing space before the run lane or route window fully opens."
+            return "Wins when the read path stays clean enough for him to trigger downhill on time, because the value comes from fit speed and controlled range."
+        if pos == "CB":
+            if db_plays_ball is not None and db_plays_ball >= 0.24:
+                return "Wins by staying patient in phase, preserving leverage through the stem, and attacking the catch point once the receiver declares."
+            return "Wins when footwork and eyes stay quiet enough to keep him on top of routes, because the profile depends on controlled transitions more than panic recovery."
+        if pos == "S":
+            if db_plays_ball is not None and db_plays_ball >= 0.22:
+                return "Wins by reading route distribution early, overlapping windows on time, and finishing the rep with real ball disruption instead of passive overlap."
+            return "Wins when his eyes, angles, and communication stay in phase, which lets range show up before the route picture gets stretched."
+        return "Wins when technique, processing, and deployment stay inside the cleanest lane of the role."
+
+    def _wins_translation_sentence() -> str:
+        if pos == "QB":
+            return "The cleanest translation is into a structure-first passing game that still leaves room for controlled creation once pressure moves the launch point."
+        if pos == "RB":
+            return "That style carries best in an offense that values efficient early-down creation and trusts him to hold his own on passing downs."
+        if pos in {"WR", "TE"}:
+            return "That profile translates best when route detail and leverage manipulation are allowed to create the target rather than forcing him into constant off-schedule catches."
+        if pos in {"OT", "IOL"}:
+            return "That gives him a cleaner NFL path in a front that values repeatable pass-pro structure and communication over constant recovery chaos."
+        if pos in {"EDGE", "DT"}:
+            return "That carries best when the front can let him attack with a plan instead of asking every pressure snap to win the same way."
+        if pos == "LB":
+            return "That translates best in a role that asks him to sort the picture early, fit on time, and use range as a result of clean processing."
+        if pos in {"CB", "S"}:
+            return "That profile works best when the coverage structure lets his eyes and leverage stay connected to the route picture."
+        return "That profile works best when the NFL role keeps his execution inside the current strength lane."
+
+    def _concern_mechanism_sentence() -> str:
+        if pos == "QB":
+            if qb_press is not None and qb_press < 0.0:
+                return "When interior pressure compresses the platform, placement can flatten and force him into late reactions instead of on-time throws."
+            if qb_int is not None and qb_int >= 10:
+                return "When the picture changes after the top of the drop, turnover-worthy decisions can show up because the answer arrives late."
+            return "When the pocket picture muddies, the projection still depends on staying disciplined enough to keep the feet and eyes tied together."
+        if pos == "RB":
+            if rb_explosive is not None and rb_explosive < 0.12:
+                return "When the first lane is not clean, he does not always have the sudden burst to erase a late read and still create chunk yardage."
+            if rb_mtf is not None and rb_mtf < 0.20:
+                return "When contact arrives early, the run can die on schedule because the profile is not consistently creating extra yards on its own."
+            return "When the first picture clouds, he can get too eager to bounce the run instead of trusting the track into efficient north-south space."
+        if pos in {"WR", "TE"}:
+            if wr_share is not None and wr_share < 0.20:
+                return "When defenders disrupt timing early in the rep, target volume can dry up because the route is not consistently re-winning leverage."
+            if cone_pct is not None and cone_pct < 35:
+                return "When he has to snap off route breaks under tighter spacing, the transition can take too long and squeeze the throw window."
+            return "When corners or safeties land first contact into the route, the timing can get compressed before he fully re-stacks leverage."
+        if pos == "OT":
+            if arm_pct is not None and arm_pct < 20:
+                return "When rushers get into his frame first, recovery windows shrink because the length margin is lighter than ideal for NFL edge stress."
+            return "When counters arrive after the initial set point, the anchor and recovery have to stay cleaner or the rep spills back into the pocket."
+        if pos == "IOL":
+            if weight_pct is not None and weight_pct < 25:
+                return "When heavier interior rushers land first contact, the pocket can soften because the anchor is working without ideal mass behind it."
+            return "When games force him to redirect late, the recovery mechanics still have to prove they can hold up against NFL interior movement."
+        if pos == "EDGE":
+            if edge_pr is not None and edge_pr < 0.14:
+                return "When the first move stalls, the rush can flatten because the second answer is not yet forcing consistent tackle panic."
+            if (cone_pct is not None and cone_pct < 35) or (shuttle_pct is not None and shuttle_pct < 35):
+                return "When he has to corner tightly through the top of the rush, the bend can run out and turn pressure into a near-miss."
+            return "When tackles stay square on the first threat, the rush still needs more sequencing so reps do not end without a clean counter."
+        if pos == "DT":
+            return "When he loses pad level through first contact, the rep can stall because the profile still needs cleaner conversion from control into disruption."
+        if pos == "LB":
+            return "When eye candy widens the first step, the fit can get late and force him to recover with speed instead of controlling the angle early."
+        if pos == "CB":
+            return "When he has to open and redirect from off leverage, the transition can get too linear against sharper in-breakers."
+        if pos == "S":
+            return "When the route picture changes late, the angle can get stressed because the profile still depends on clean eyes and timely rotation."
+        return "When the role expands beyond the current strength lane, the technique has to stay stable enough to survive faster NFL processing speed."
+
+    def _concern_consequence_sentence() -> str:
+        if pos == "QB":
+            return "That is the swing trait separating a stable starter path from a pressure-sensitive projection."
+        if pos == "RB":
+            return "That is what determines whether the profile holds three-down value or settles into a narrower early-down lane."
+        if pos in {"WR", "TE"}:
+            return "That is the difference between dependable target earning and a role that has to be manufactured more aggressively."
+        if pos in {"OT", "IOL"}:
+            return "That is the floor variable that decides whether he can hold structure against NFL power and movement."
+        if pos in {"EDGE", "DT"}:
+            return "That is the difference between real four-down disruption and a role that needs more controlled deployment."
+        if pos == "LB":
+            return "That is the key to keeping the projection in phase against NFL spacing stress instead of living on recovery athleticism."
+        if pos in {"CB", "S"}:
+            return "That is the trait that decides whether the coverage value is proactive or merely reactive at the next level."
+        return "That is the swing factor in the NFL transition."
+
+    def _summary_driver_clause() -> str:
+        if pos == "QB":
+            return "platform discipline and on-time passing from structure"
+        if pos == "RB":
+            return "track discipline, contact balance, and enough passing-down value to stay on the field"
+        if pos in {"WR", "TE"}:
+            return "route pacing, leverage manipulation, and finish timing through the catch phase"
+        if pos in {"OT", "IOL"}:
+            return "pass-pro structure, leverage control, and recovery timing"
+        if pos in {"EDGE", "DT"}:
+            return "first-contact stress, rush sequencing, and front-aligned deployment"
+        if pos == "LB":
+            return "read/trigger speed, block navigation, and range that shows up after the key declares"
+        if pos in {"CB", "S"}:
+            return "leverage discipline, transition control, and ball-finish timing"
+        return "repeatable technique and role clarity"
+
+    def _summary_concern_clause() -> str:
+        if pos == "QB":
+            return "pressure response and late-down platform stability"
+        if pos == "RB":
+            return "how much of the passing-down value survives against NFL size and disguise"
+        if pos in {"WR", "TE"}:
+            return "whether releases and route timing still hold once defenders disrupt the rep early"
+        if pos in {"OT", "IOL"}:
+            return "whether the anchor and recovery mechanics stay firm against NFL power and movement"
+        if pos in {"EDGE", "DT"}:
+            return "how reliably the rush gets to a second answer once the first move is stalled"
+        if pos == "LB":
+            return "processing discipline once offenses start stressing the eyes and fit rules"
+        if pos in {"CB", "S"}:
+            return "whether transitions and eyes stay connected once route distribution gets sharper"
+        return "how the profile holds once the role expands against NFL speed"
+
     if kiper_rank and kiper_rank_delta:
         try:
             delta = int(float(str(kiper_rank_delta)))
@@ -4010,12 +4195,16 @@ def _build_scouting_sections(
         production_snapshot = ""
 
     report_parts = [
-        f"{name} ({position}, {school}) projects as a {round_value} talent with his cleanest NFL path coming as {_with_article(clean_role.lower())} in {clean_scheme}.",
+        (
+            f"{name} ({position}, {school}) projects as a {round_value} talent with his cleanest NFL path coming as "
+            f"{_with_article(clean_role.lower())} in {clean_scheme}. The translation case is driven by {_summary_driver_clause()}, "
+            f"while the main swing factor is {_summary_concern_clause()}."
+        ),
         _compact_text(_summary_detail_sentence(), 235),
         f"The current model grade sits at {final_grade:.2f}, with the board currently slotting him at No. {consensus_rank}; the early NFL path points toward {_with_article(clean_role.lower())} whose value grows if the current strengths hold against better size, speed, and processing.",
     ]
-    if str(scouting_notes or "").strip():
-        report_parts.append(_compact_text(scouting_notes, 220))
+    if player_role_projection_notes:
+        report_parts.append(_sentence(player_role_projection_notes, 220))
     else:
         report_parts.append(
             _compact_text(
@@ -4029,122 +4218,116 @@ def _build_scouting_sections(
     report = " ".join(report_parts)
 
     wins_points: list[str] = []
-    wins_points.append(f"Usage fit: {clean_role} within {clean_scheme}.")
     if player_how_he_wins_notes:
-        wins_points.append(player_how_he_wins_notes.rstrip(".") + ".")
+        wins_points.append(_sentence(player_how_he_wins_notes, 230))
     elif wins_glossary_terms:
         for term in wins_glossary_terms[:2]:
             phrase = _phrase_from_term(term)
             if phrase:
-                wins_points.append(phrase)
-    wins_points.append(wins_logic.get(pos, "Film translation is defined by repeatable technique, processing, and role clarity under NFL speed."))
+                wins_points.append(_sentence(phrase, 220))
+    wins_points.append(_wins_mechanism_sentence())
+    wins_points.append(_wins_translation_sentence())
     if pos == "QB":
-        wins_points.append(_qb_style_profile())
+        wins_points.append(_sentence(_qb_style_profile(), 210))
     elif pos in {"WR", "TE"}:
-        wins_points.append(_receiver_style_profile())
-    if str(scouting_notes or "").strip():
-        wins_points.append("Model + film note: " + _compact_text(str(scouting_notes), 180).rstrip(".") + ".")
-    if strengths:
-        wins_points.append("Scout-logged strength indicators: " + "; ".join(strengths[:4]) + ".")
+        wins_points.append(_sentence(_receiver_style_profile(), 210))
     wins = "\n".join(f"- {point}" for point in _dedupe_points(wins_points, 5))
 
     concern_points: list[str] = []
     if player_primary_concerns_notes:
-        concern_points.append(player_primary_concerns_notes.rstrip(".") + ".")
+        concern_points.append(_sentence(player_primary_concerns_notes, 230))
     elif concern_glossary_terms:
         for term in concern_glossary_terms[:2]:
             phrase = _phrase_from_term(term)
             if phrase:
-                concern_points.append(phrase)
+                concern_points.append(_sentence(phrase, 220))
+    concern_points.append(_concern_mechanism_sentence())
+    concern_points.append(_concern_consequence_sentence())
 
     if pos == "QB":
         if qb_epa is not None and qb_epa < 0.08:
-            concern_points.append(f"Anticipation/processing consistency is below top-tier starter range (EPA/play {qb_epa:.2f}), which can cap ceiling.")
+            concern_points.append(f"Drive efficiency still sits below top-tier starter range (EPA/play {qb_epa:.2f}), so timing and anticipation have to keep climbing.")
         if qb_press is not None and qb_press < 0.0:
-            concern_points.append("Pressure response profile trends negative, suggesting pocket drift/late-trigger risk versus NFL pressure looks.")
+            concern_points.append("Pressure response trends negative right now, which raises the risk of pocket drift and late-trigger throws against NFL pressure looks.")
         if qb_int is not None and qb_int >= 10:
-            concern_points.append(f"Turnover risk needs cleanup ({int(round(qb_int))} INT) before high-leverage starter projection is stable.")
+            concern_points.append(f"Turnover management still needs cleanup ({int(round(qb_int))} INT) before the high-leverage starter path is fully stable.")
     elif pos == "RB":
         if rb_explosive is not None and rb_explosive < 0.12:
-            concern_points.append(f"Lack of explosive-run creation ({rb_explosive*100:.1f}% explosive rate) narrows home-run ceiling.")
+            concern_points.append(f"Explosive-run creation ({rb_explosive*100:.1f}% rate) is still light, which narrows the home-run element of the profile.")
         if rb_mtf is not None and rb_mtf < 0.20:
-            concern_points.append(f"Contact-creation efficiency is modest (MTF/touch {rb_mtf:.2f}), limiting independent yardage profile.")
+            concern_points.append(f"Contact-creation efficiency (MTF/touch {rb_mtf:.2f}) is modest, so more yards have to come from blocked space than self-creation.")
         if ten_pct is not None and ten_pct < 40:
-            concern_points.append("Short-area burst (10-split percentile) is below ideal three-down threshold.")
+            concern_points.append("Short-area burst is below the ideal three-down threshold, which can show up when second-level angles close quickly.")
     elif pos in {"WR", "TE"}:
         if wr_yprr is not None and wr_yprr < 2.0:
-            concern_points.append(f"Route-level efficiency is light for top projection tiers (YPRR {wr_yprr:.2f}).")
+            concern_points.append(f"Route-level efficiency (YPRR {wr_yprr:.2f}) is still light for top projection tiers, so the route menu has to keep expanding.")
         if wr_share is not None and wr_share < 0.20:
-            concern_points.append(f"Target-earning rate ({wr_share*100:.1f}% share) suggests volume translation risk against NFL coverage.")
+            concern_points.append(f"Target-earning rate ({wr_share*100:.1f}% share) suggests some volume-translation risk once NFL coverage disrupts timing.")
         if cone_pct is not None and cone_pct < 35:
-            concern_points.append("Change-of-direction profile is below ideal separator threshold, raising route-precision volatility.")
+            concern_points.append("Change-of-direction indicators are below the ideal separator threshold, which can tighten route precision margins against man coverage.")
         if pos == "WR" and arm_pct is not None and arm_pct < 20:
-            concern_points.append("Short-arm profile can compress catch-radius margin at the boundary and through contact.")
+            concern_points.append("Short-arm profile compresses the catch-radius margin at the boundary and through contact, so late placement has less room for error.")
     elif pos == "OT":
         if arm_pct is not None and arm_pct < 20:
-            concern_points.append("Short-arm profile for tackle projects to tighter recovery windows versus long-edge rushers.")
+            concern_points.append("Short-arm profile projects to tighter recovery windows against long-edge rushers, especially once first contact is lost.")
         if shuttle_pct is not None and shuttle_pct < 35:
-            concern_points.append("Lateral recovery movement is below ideal tackle threshold, which can stress pass-pro consistency.")
+            concern_points.append("Lateral recovery movement is below the ideal tackle threshold, which can stress pass-pro consistency once counters start chaining together.")
         if weight_pct is not None and weight_pct < 25:
-            concern_points.append("Play-mass profile is light for NFL tackle anchor demands against speed-to-power.")
+            concern_points.append("Play-mass profile is light for NFL tackle anchor demands, so speed-to-power conversion will keep testing the pocket depth.")
     elif pos == "IOL":
         if weight_pct is not None and weight_pct < 25:
-            concern_points.append("Interior anchor mass is light versus NFL power fronts, creating pocket-depth stress risk.")
+            concern_points.append("Interior anchor mass is light versus NFL power fronts, creating real pocket-depth stress if first contact is not won cleanly.")
         if shuttle_pct is not None and shuttle_pct < 35:
-            concern_points.append("Short-area movement profile may limit recovery against interior stunts/games.")
+            concern_points.append("Short-area movement profile may limit late recovery against interior stunts and games once the picture changes post-snap.")
     elif pos == "EDGE":
         if edge_pr is not None and edge_pr < 0.14:
-            concern_points.append(f"Pressure rate ({edge_pr*100:.1f}%) is below premium EDGE translation zone.")
+            concern_points.append(f"Pressure rate ({edge_pr*100:.1f}%) is still below the premium EDGE translation zone, so the rush needs more down-to-down disruption.")
         if edge_sacks_pr is not None and edge_sacks_pr < 0.020:
-            concern_points.append(f"Finish rate (sacks/pass-rush snap {edge_sacks_pr:.3f}) is light for high-ceiling rusher projection.")
+            concern_points.append(f"Finish rate (sacks/pass-rush snap {edge_sacks_pr:.3f}) is light for a high-ceiling rusher projection, so pressure has to convert more often.")
         if (vert_pct is not None and vert_pct < 40) or (broad_pct is not None and broad_pct < 40):
-            concern_points.append("Burst/explosion profile is below ideal EDGE threshold, which can limit first-step stress.")
+            concern_points.append("Burst/explosion profile is below the ideal EDGE threshold, which can limit how much immediate stress the first step creates.")
         if (cone_pct is not None and cone_pct < 35) or (shuttle_pct is not None and shuttle_pct < 35):
-            concern_points.append("Bend/cornering indicators are modest, which can cap true speed-to-dip conversion.")
+            concern_points.append("Bend/cornering indicators are modest, which can cap true speed-to-dip conversion once NFL tackles keep him high through the arc.")
         if edge_hurries is not None and edge_hurries < 20:
-            concern_points.append(f"Total hurry volume ({edge_hurries:.1f}) leaves less evidence of sustained rush disruption.")
+            concern_points.append(f"Total hurry volume ({edge_hurries:.1f}) leaves less evidence of sustained rush disruption across full-game sample sizes.")
     elif pos == "DT":
         if edge_pr is not None and edge_pr < 0.10:
-            concern_points.append(f"Interior pressure rate ({edge_pr*100:.1f}%) suggests limited pass-rush ceiling without role tailoring.")
+            concern_points.append(f"Interior pressure rate ({edge_pr*100:.1f}%) suggests the pass-rush ceiling still needs role tailoring to show up consistently.")
         if weight_pct is not None and weight_pct < 30:
-            concern_points.append("Interior mass profile is light for consistent NFL anchor control on early downs.")
+            concern_points.append("Interior mass profile is light for consistent NFL anchor control on early downs, which can stress the run-game floor.")
         if vert_pct is not None and vert_pct < 35:
-            concern_points.append("Lower-body explosion is below preferred interior disruption threshold.")
+            concern_points.append("Lower-body explosion is below the preferred interior disruption threshold, so pocket push has to come more from leverage than raw twitch.")
     elif pos == "LB":
         if shuttle_pct is not None and shuttle_pct < 35:
-            concern_points.append("Space-change profile is below ideal linebacker threshold, stressing mismatch coverage range.")
+            concern_points.append("Space-change profile is below the ideal linebacker threshold, which can stress mismatch coverage range against faster route distribution.")
         if weight_pct is not None and weight_pct < 20:
-            concern_points.append("Play-strength profile can limit block deconstruction consistency at NFL second level.")
+            concern_points.append("Play-strength profile can limit block deconstruction consistency once NFL second-level bodies get into him cleanly.")
     elif pos == "CB":
         if forty_pct is not None and forty_pct < 35:
-            concern_points.append("Long-speed percentile is below ideal outside-CB threshold, increasing vertical stress risk.")
+            concern_points.append("Long-speed percentile is below the ideal outside-CB threshold, increasing vertical stress when receivers force him to open early.")
         if arm_pct is not None and arm_pct < 20:
-            concern_points.append("Short-arm profile can limit catch-point disruption margin versus NFL size/length.")
+            concern_points.append("Short-arm profile can limit catch-point disruption margin versus NFL size and length, especially once the receiver owns the window.")
         if db_plays_ball is not None and db_plays_ball < 0.22:
-            concern_points.append(f"Ball-production rate (plays on ball/target {db_plays_ball:.2f}) is below premium outside-CB bands.")
+            concern_points.append(f"Ball-production rate (plays on ball/target {db_plays_ball:.2f}) is below premium outside-CB bands, so passive phase reps need to become finishes.")
         if db_yards_cov is not None and db_yards_cov > 1.30:
-            concern_points.append(f"Coverage efficiency ({db_yards_cov:.2f} yards/cov snap) needs tighter leverage-to-finish translation.")
+            concern_points.append(f"Coverage efficiency ({db_yards_cov:.2f} yards/cov snap) needs tighter leverage-to-finish translation once route tempo improves.")
         if (db_int is not None and db_int < 1) and (db_pbu is not None and db_pbu < 5):
-            concern_points.append("Limited pure ball-finish production (INT/PBU) keeps takeaway ceiling less certain.")
+            concern_points.append("Limited pure ball-finish production keeps the takeaway ceiling less certain until more catch-point disruption shows up on tape.")
     elif pos == "S":
         if forty_pct is not None and forty_pct < 35:
-            concern_points.append("Range-speed profile is below ideal safety threshold for deep-half overlap demands.")
+            concern_points.append("Range-speed profile is below the ideal safety threshold for deep-half overlap demands, so angle discipline has to stay clean.")
         if db_plays_ball is not None and db_plays_ball < 0.20:
-            concern_points.append(f"Plays-on-ball rate ({db_plays_ball:.2f} per target) is light for top-end safety projection.")
+            concern_points.append(f"Plays-on-ball rate ({db_plays_ball:.2f} per target) is light for a top-end safety projection, so overlap has to turn into more finishes.")
         if db_yards_cov is not None and db_yards_cov > 1.30:
-            concern_points.append(f"Coverage efficiency ({db_yards_cov:.2f} yards/cov snap) suggests transition/angle cleanup.")
-    if concerns:
+            concern_points.append(f"Coverage efficiency ({db_yards_cov:.2f} yards/cov snap) suggests transition and angle cleanup once the route picture stretches vertically.")
+    if concerns and len(concern_points) < 4:
         for concern in concerns[:2]:
-            concern_points.append(f"Scouting concern to verify: {concern}.")
-    if pff_grade is None:
-        concern_points.append("No stable PFF grade loaded yet; track week-to-week consistency until the performance baseline is complete.")
+            concern_points.append(f"Film note to verify: {concern.rstrip('.')}.")
     if pos == "QB":
         if not str(espn_qbr or "").strip():
-            concern_points.append("Missing ESPN QBR context increases uncertainty in down-to-down efficiency under pressure.")
+            concern_points.append("Missing ESPN QBR context leaves more uncertainty around down-to-down efficiency under pressure.")
         if not str(espn_epa_per_play or "").strip():
-            concern_points.append("Missing EPA/play context limits separation of explosive production versus sustainable drive efficiency.")
-    if not concerns and pff_grade is not None and pff_grade < 75.0:
-        concern_points.append(f"PFF grade {pff_grade:.1f} suggests current performance volatility that needs film-confirmed cleanup.")
+            concern_points.append("Missing EPA/play context limits separation of explosive production from sustainable drive efficiency.")
     if len(concern_points) < 2:
         for fallback_concern in concern_depth.get(pos, []):
             if len(concern_points) >= 3:
@@ -4192,6 +4375,7 @@ def _build_scouting_sections(
 
 
 def main() -> None:
+    reset_team_fit_state()
     prebuild_report = run_prebuild_checks(
         seed_path=PROCESSED / "prospect_seed_2026.csv",
         combine_path=ROOT / "data" / "sources" / "manual" / "combine_2026_results.csv",

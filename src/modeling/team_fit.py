@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+from collections import defaultdict
 from functools import lru_cache
 from pathlib import Path
 from typing import Dict, List, Tuple
@@ -47,6 +48,12 @@ CFBD_BLOCKLIST_COLUMNS = {
     "totalopportunies",
     "totalopportunities",
 }
+
+_POSITION_TEAM_REPEAT_COUNTS: dict[str, dict[str, int]] = defaultdict(dict)
+
+
+def reset_team_fit_state() -> None:
+    _POSITION_TEAM_REPEAT_COUNTS.clear()
 
 
 def load_team_profiles(path: Path | None = None) -> List[dict]:
@@ -712,6 +719,45 @@ def _fit_pool_sizes(position: str, prospect_rank_seed: int | None) -> tuple[int,
     return 5, 5
 
 
+def _repeat_fit_tolerance(position: str, prospect_rank_seed: int | None) -> int:
+    seed = int(prospect_rank_seed or 120)
+    if position in {"WR", "EDGE"}:
+        return 2 if seed <= 75 else 1
+    if position in {"LB"}:
+        return 2 if seed <= 40 else 1
+    if position in {"QB"}:
+        return 1
+    return 1
+
+
+def _repeat_fit_penalty(position: str, team: str, prospect_rank_seed: int | None) -> float:
+    team_counts = _POSITION_TEAM_REPEAT_COUNTS.get(position, {})
+    count = int(team_counts.get(team, 0))
+    tolerance = _repeat_fit_tolerance(position, prospect_rank_seed)
+    if count < tolerance:
+        return 0.0
+    step = {
+        "QB": 0.080,
+        "RB": 0.060,
+        "WR": 0.050,
+        "TE": 0.075,
+        "OT": 0.065,
+        "IOL": 0.070,
+        "EDGE": 0.050,
+        "DT": 0.060,
+        "LB": 0.050,
+        "CB": 0.060,
+        "S": 0.065,
+    }.get(position, 0.060)
+    penalty = (count - tolerance + 1) * step
+    return min(0.20, penalty)
+
+
+def _record_team_fit(position: str, team: str) -> None:
+    team_counts = _POSITION_TEAM_REPEAT_COUNTS.setdefault(position, {})
+    team_counts[team] = int(team_counts.get(team, 0)) + 1
+
+
 def _candidate_team_pool(
     position: str,
     team_rows: list[dict],
@@ -805,6 +851,7 @@ def best_team_fit(
     best_team = ""
     best_score = -1.0
     for row in candidate_rows:
+        team = str(row.get("team", ""))
         need_component = composite_need_score(
             row,
             position,
@@ -815,7 +862,7 @@ def best_team_fit(
         )
         scheme_component = scheme_score(row, position)
         gm_component = gm_tendency_score(row, position)
-        draft_component = _draft_order_score(str(row.get("team", "")), position, prospect_rank_seed)
+        draft_component = _draft_order_score(team, position, prospect_rank_seed)
         role_bonus = _role_scheme_bonus(
             row,
             position=position,
@@ -832,9 +879,12 @@ def best_team_fit(
             + draft_weight * draft_component
         )
         score *= _draft_plausibility_multiplier(draft_component, prospect_rank_seed)
+        score -= _repeat_fit_penalty(position, team, prospect_rank_seed)
         if score > best_score:
             best_score = score
-            best_team = row["team"]
+            best_team = team
+    if best_team:
+        _record_team_fit(position, best_team)
     return best_team, round(best_score * 100.0, 2)
 
 

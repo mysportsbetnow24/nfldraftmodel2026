@@ -63,7 +63,7 @@ def _fetch_json(url: str, *, insecure: bool = False) -> dict:
     context = None
     if insecure:
         context = ssl._create_unverified_context()
-    with urlopen(url, context=context) as response:
+    with urlopen(url, context=context, timeout=20) as response:
         return json.loads(response.read().decode("utf-8"))
 
 

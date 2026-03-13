@@ -4921,6 +4921,7 @@ def _load_owner_scouting_notes() -> dict[str, dict[str, str]]:
             "film_notes": str(row.get("public_film_notes", "")).strip(),
             "role_projection": str(row.get("public_role_projection", "")).strip(),
             "seo_description": str(row.get("seo_description", "")).strip(),
+            "private_owner_notes": str(row.get("private_owner_notes", "")).strip(),
         }
     return out
 
@@ -5481,9 +5482,13 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
         comp_confidence = str(row.get("comp_confidence", "")).strip()
         owner_primary_concerns = owner_note.get("primary_concerns", "")
         generated_primary_concerns = row.get("scouting_primary_concerns", "")
+        owner_has_manual_override = bool(
+            str(owner_note.get("film_notes", "")).strip()
+            or str(owner_note.get("private_owner_notes", "")).strip()
+        )
         public_primary_concern_bullets = (
             _sanitize_primary_concern_text(owner_primary_concerns)
-            if str(owner_primary_concerns or "").strip()
+            if owner_has_manual_override and str(owner_primary_concerns or "").strip()
             else _sanitize_primary_concern_text(generated_primary_concerns)
         )
         if public_primary_concern_bullets:
@@ -5557,12 +5562,21 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
                 "historical_comp_median": _public_comp_dict(comp_median),
                 "historical_comp_ceiling": _public_comp_dict(comp_ceiling),
                 "comp_confidence": comp_confidence,
-                "scouting_report_summary": owner_note.get("report_summary") or row.get("scouting_report_summary", ""),
-                "scouting_why_he_wins": owner_note.get("why_he_wins") or row.get("scouting_why_he_wins", ""),
+                "scouting_report_summary": (
+                    owner_note.get("report_summary") if owner_has_manual_override and owner_note.get("report_summary")
+                    else row.get("scouting_report_summary", "")
+                ),
+                "scouting_why_he_wins": (
+                    owner_note.get("why_he_wins") if owner_has_manual_override and owner_note.get("why_he_wins")
+                    else row.get("scouting_why_he_wins", "")
+                ),
                 "scouting_primary_concerns": scouting_primary_concerns,
                 "scouting_film_notes": owner_note.get("film_notes") or row.get("scouting_film_notes", ""),
                 "scouting_production_snapshot": production_snapshot,
-                "scouting_role_projection": owner_note.get("role_projection") or row.get("scouting_role_projection", ""),
+                "scouting_role_projection": (
+                    owner_note.get("role_projection") if owner_has_manual_override and owner_note.get("role_projection")
+                    else row.get("scouting_role_projection", "")
+                ),
                 "seo_description_override": owner_note.get("seo_description") or "",
                 "player_report_url": f"/players/{slug}",
             }
