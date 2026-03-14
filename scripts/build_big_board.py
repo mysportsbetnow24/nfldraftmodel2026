@@ -3173,6 +3173,28 @@ def _phrase_from_term(term: dict) -> str:
     return plain.rstrip(".") + "." if plain else ""
 
 
+def _glossary_text(term: dict, key: str, fallback: str = "") -> str:
+    txt = _compact_text(term.get(key, ""), 180)
+    if txt:
+        return txt.rstrip(".") + "."
+    if fallback:
+        txt = _compact_text(term.get(fallback, ""), 180)
+        if txt:
+            return txt.rstrip(".") + "."
+    return ""
+
+
+def _term_is_public_safe(row: dict) -> bool:
+    audience = str(row.get("audience", "")).strip().lower()
+    public_flag = str(row.get("public_safe", "")).strip().lower()
+    internal_flag = str(row.get("internal_only", "")).strip().lower()
+    if public_flag in {"1", "true", "yes", "y"}:
+        return True
+    if internal_flag in {"1", "true", "yes", "y"}:
+        return False
+    return audience == "public_safe"
+
+
 def _lookup_glossary_terms(term_ids: list[str], *, section: str) -> list[dict]:
     glossary = _load_scouting_glossary()
     out: list[dict] = []
@@ -3181,7 +3203,7 @@ def _lookup_glossary_terms(term_ids: list[str], *, section: str) -> list[dict]:
         row = glossary.get(term_id)
         if not row:
             continue
-        if row.get("audience") != "public_safe":
+        if not _term_is_public_safe(row):
             continue
         if row.get("section") != section:
             continue
@@ -3708,6 +3730,8 @@ def _build_scouting_sections(
     db_yards_cov = _f(cfb_db_yards_allowed_per_coverage_snap)
     db_int = _f(cfb_db_int)
     db_pbu = _f(cfb_db_pbu)
+    role_lower = clean_role.lower()
+    scheme_lower = clean_scheme.lower()
     glossary_tags = [
         tag.strip()
         for tag in str(language_row.get("glossary_tags", "")).split("|")
@@ -3744,6 +3768,16 @@ def _build_scouting_sections(
     glossary_tags = deduped_tags
     wins_glossary_terms = _lookup_glossary_terms(glossary_tags, section="How He Wins")
     concern_glossary_terms = _lookup_glossary_terms(glossary_tags, section="Primary Concerns")
+    player_wins_mechanism_notes = _compact_text(
+        language_row.get("wins_mechanism_notes", "") or language_row.get("how_he_wins_notes", ""),
+        230,
+    )
+    player_fails_when_notes = _compact_text(language_row.get("fails_when_notes", ""), 220)
+    player_usage_context_notes = _compact_text(
+        language_row.get("usage_context_notes", "") or language_row.get("role_projection_notes", ""),
+        220,
+    )
+    player_translation_notes = _compact_text(language_row.get("translation_notes", ""), 220)
     player_how_he_wins_notes = _compact_text(language_row.get("how_he_wins_notes", ""), 210)
     player_primary_concerns_notes = _compact_text(language_row.get("primary_concerns_notes", ""), 210)
     player_role_projection_notes = _compact_text(language_row.get("role_projection_notes", ""), 220)
@@ -4159,6 +4193,205 @@ def _build_scouting_sections(
             return "whether transitions and eyes stay connected once route distribution gets sharper"
         return "how the profile holds once the role expands against NFL speed"
 
+    def _strip_role_prefix(text: str) -> str:
+        phrase = " ".join(str(text or "").split()).strip().rstrip(".")
+        lower = phrase.lower()
+        for prefix in [
+            "best as ",
+            "best in ",
+            "best deployed as ",
+            "projects most cleanly as ",
+        ]:
+            if lower.startswith(prefix):
+                return phrase[len(prefix):]
+        return phrase
+
+    def _split_usage_note(text: str) -> tuple[str, str]:
+        phrase = _strip_role_prefix(text)
+        if not phrase:
+            return "", ""
+        lower = phrase.lower()
+        for splitter in [
+            " where ",
+            " who can ",
+            " that can ",
+            " built to ",
+            " built for ",
+            " while ",
+        ]:
+            idx = lower.find(splitter)
+            if idx != -1:
+                head = phrase[:idx].strip(" ,;")
+                detail = phrase[idx + 1 :].strip()
+                if detail:
+                    detail = detail[0].upper() + detail[1:]
+                return head, detail
+        return phrase.strip(" ,;"), ""
+
+    def _summary_role_phrase() -> str:
+        for note in [player_role_projection_notes, player_usage_context_notes]:
+            head, _detail = _split_usage_note(note)
+            if head:
+                return head
+        return f"{_with_article(clean_role.lower())} in {clean_scheme}"
+
+    def _summary_role_preposition(phrase: str) -> str:
+        lower = phrase.lower()
+        if any(token in lower for token in ["offense", "scheme", "package", "menu", "framework", "usage", "fit"]):
+            return "in"
+        if lower.startswith(("a ", "an ", "the ")):
+            return "as"
+        if any(
+            token in lower
+            for token in [
+                "quarterback",
+                "passer",
+                "runner",
+                "target",
+                "receiver",
+                "tight end",
+                "tackle",
+                "guard",
+                "center",
+                "backer",
+                "linebacker",
+                "corner",
+                "safety",
+                "rusher",
+                "defender",
+            ]
+        ):
+            return "as"
+        return "in"
+
+    def _projection_intro_sentence(role_phrase: str) -> str:
+        variants = {
+            "as": [
+                "Projects as {role}.",
+                "Profiles as {role}.",
+                "Looks like {role}.",
+                "Sets up as {role}.",
+                "Carries the profile of {role}.",
+            ],
+            "in": [
+                "Projects best in {role}.",
+                "Fits best in {role}.",
+                "Looks most comfortable in {role}.",
+                "The profile lands best in {role}.",
+                "The cleanest deployment is in {role}.",
+            ],
+        }
+        prep = _summary_role_preposition(role_phrase)
+        options = variants.get(prep, variants["in"])
+        idx = sum(ord(c) for c in f"{name}|{pos}|{role_phrase}") % len(options)
+        template = options[idx]
+        if prep == "as":
+            if role_phrase.lower().startswith(("a ", "an ", "the ")):
+                return _sentence(template.format(role=role_phrase), 220)
+            article = "an" if role_phrase[:1].lower() in "aeiou" else "a"
+            return _sentence(template.format(role=f"{article} {role_phrase}"), 220)
+        return _sentence(template.format(role=role_phrase), 220)
+
+    def _role_projection_sentence() -> str:
+        role_phrase = _summary_role_phrase()
+        if role_phrase:
+            return _projection_intro_sentence(role_phrase)
+        return _sentence(
+            f"Projects most cleanly as {_with_article(clean_role.lower())} in {clean_scheme}, where the deployment can stay inside his current strength lane.",
+            220,
+        )
+
+    def _cleanest_path_sentence() -> str:
+        head, detail = _split_usage_note(player_usage_context_notes or player_role_projection_notes)
+        if head and detail:
+            prep = _summary_role_preposition(head)
+            detail_text = detail[:1].lower() + detail[1:] if detail else detail
+            connector = " " if detail_text.lower().startswith(("where ", "who ", "that ", "while ")) else ", "
+            return _sentence(f"The cleanest path keeps him {prep} {head}{connector}{detail_text}.", 220)
+        if head:
+            prep = _summary_role_preposition(head)
+            return _sentence(
+                f"The cleanest path keeps him {prep} {head}, where the deployment can stay aligned with {_summary_driver_clause()}.",
+                220,
+            )
+        return _compact_text(_summary_detail_sentence(), 220)
+
+    def _main_driver_sentence() -> str:
+        if player_translation_notes:
+            return _sentence(player_translation_notes, 220)
+        return _sentence(f"The main driver is {_summary_driver_clause()}.", 220)
+
+    def _swing_concern_sentence() -> str:
+        if player_primary_concerns_notes:
+            return _sentence(player_primary_concerns_notes, 220)
+        if player_fails_when_notes:
+            trigger = player_fails_when_notes.rstrip(".")
+            match = re.search(r"\bwhen\b\s+(.*)", trigger, flags=re.IGNORECASE)
+            if match:
+                trigger = match.group(1).strip()
+            return _sentence(
+                f"The swing concern shows up when {trigger.lower()}.",
+                220,
+            )
+        return _sentence(f"The swing concern is {_summary_concern_clause()}.", 220)
+
+    def _wins_role_sentence() -> str:
+        if player_usage_context_notes:
+            return _sentence(player_usage_context_notes, 220)
+        if player_role_projection_notes:
+            return _sentence(player_role_projection_notes, 220)
+        return _sentence(
+            f"Best deployed as {_with_article(clean_role.lower())} in {clean_scheme}, where the usage can stay inside the current role lane.",
+            220,
+        )
+
+    def _wins_glossary_mechanism_sentence() -> str:
+        for term in wins_glossary_terms:
+            phrase = _glossary_text(term, "mechanism", "sample_phrase")
+            if phrase:
+                return _sentence(phrase, 220)
+        return ""
+
+    def _wins_translation_detail_sentence() -> str:
+        if player_translation_notes:
+            return _sentence(player_translation_notes, 220)
+        for term in wins_glossary_terms:
+            phrase = _glossary_text(term, "nfl_consequence")
+            if phrase:
+                return _sentence(phrase, 220)
+        return _sentence(_wins_translation_sentence(), 220)
+
+    def _concern_trigger_sentence() -> str:
+        if player_fails_when_notes:
+            trigger = player_fails_when_notes.rstrip(".")
+            match = re.search(r"\bwhen\b\s+(.*)", trigger, flags=re.IGNORECASE)
+            if match:
+                return _sentence("When " + match.group(1).strip(), 220)
+            return _sentence(f"When {trigger.lower()}", 220)
+        for term in concern_glossary_terms:
+            phrase = _glossary_text(term, "trigger")
+            if phrase:
+                if phrase.lower().startswith("when "):
+                    return _sentence(phrase, 220)
+                return _sentence(f"When {phrase.rstrip('.').lower()}", 220)
+        return _sentence(_concern_mechanism_sentence(), 220)
+
+    def _concern_failure_sentence() -> str:
+        if player_primary_concerns_notes:
+            return _sentence(player_primary_concerns_notes, 220)
+        for term in concern_glossary_terms:
+            phrase = _glossary_text(term, "mechanism", "plain_english")
+            if phrase:
+                return _sentence(phrase, 220)
+        return _sentence(_concern_mechanism_sentence(), 220)
+
+    def _concern_nfl_consequence_sentence() -> str:
+        for term in concern_glossary_terms:
+            phrase = _glossary_text(term, "nfl_consequence")
+            if phrase:
+                return _sentence(phrase, 220)
+        return _sentence(_concern_consequence_sentence(), 220)
+
     if kiper_rank and kiper_rank_delta:
         try:
             delta = int(float(str(kiper_rank_delta)))
@@ -4195,54 +4428,29 @@ def _build_scouting_sections(
         production_snapshot = ""
 
     report_parts = [
-        (
-            f"{name} ({position}, {school}) projects as a {round_value} talent with his cleanest NFL path coming as "
-            f"{_with_article(clean_role.lower())} in {clean_scheme}. The translation case is driven by {_summary_driver_clause()}, "
-            f"while the main swing factor is {_summary_concern_clause()}."
-        ),
-        _compact_text(_summary_detail_sentence(), 235),
-        f"The current model grade sits at {final_grade:.2f}, with the board currently slotting him at No. {consensus_rank}; the early NFL path points toward {_with_article(clean_role.lower())} whose value grows if the current strengths hold against better size, speed, and processing.",
+        _role_projection_sentence(),
+        _cleanest_path_sentence(),
+        _main_driver_sentence(),
+        _swing_concern_sentence(),
     ]
-    if player_role_projection_notes:
-        report_parts.append(_sentence(player_role_projection_notes, 220))
-    else:
-        report_parts.append(
-            _compact_text(
-                role_projection_logic.get(
-                    pos,
-                    "NFL translation is strongest when deployment and technique stay inside the current role lane.",
-                ),
-                220,
-            )
-        )
     report = " ".join(report_parts)
 
     wins_points: list[str] = []
-    if player_how_he_wins_notes:
-        wins_points.append(_sentence(player_how_he_wins_notes, 230))
-    elif wins_glossary_terms:
-        for term in wins_glossary_terms[:2]:
-            phrase = _phrase_from_term(term)
-            if phrase:
-                wins_points.append(_sentence(phrase, 220))
-    wins_points.append(_wins_mechanism_sentence())
-    wins_points.append(_wins_translation_sentence())
-    if pos == "QB":
-        wins_points.append(_sentence(_qb_style_profile(), 210))
-    elif pos in {"WR", "TE"}:
-        wins_points.append(_sentence(_receiver_style_profile(), 210))
-    wins = "\n".join(f"- {point}" for point in _dedupe_points(wins_points, 5))
+    wins_points.append(_wins_role_sentence())
+    if player_wins_mechanism_notes:
+        wins_points.append(_sentence(player_wins_mechanism_notes, 230))
+    else:
+        glossary_mechanism = _wins_glossary_mechanism_sentence()
+        if glossary_mechanism:
+            wins_points.append(glossary_mechanism)
+        wins_points.append(_sentence(_wins_mechanism_sentence(), 220))
+    wins_points.append(_wins_translation_detail_sentence())
+    wins = "\n".join(f"- {point}" for point in _dedupe_points(wins_points, 4))
 
     concern_points: list[str] = []
-    if player_primary_concerns_notes:
-        concern_points.append(_sentence(player_primary_concerns_notes, 230))
-    elif concern_glossary_terms:
-        for term in concern_glossary_terms[:2]:
-            phrase = _phrase_from_term(term)
-            if phrase:
-                concern_points.append(_sentence(phrase, 220))
-    concern_points.append(_concern_mechanism_sentence())
-    concern_points.append(_concern_consequence_sentence())
+    concern_points.append(_concern_trigger_sentence())
+    concern_points.append(_concern_failure_sentence())
+    concern_points.append(_concern_nfl_consequence_sentence())
 
     if pos == "QB":
         if qb_epa is not None and qb_epa < 0.08:
@@ -4280,15 +4488,38 @@ def _build_scouting_sections(
         if shuttle_pct is not None and shuttle_pct < 35:
             concern_points.append("Short-area movement profile may limit late recovery against interior stunts and games once the picture changes post-snap.")
     elif pos == "EDGE":
+        edge_speed_role = any(
+            phrase in role_lower
+            for phrase in [
+                "speed pressure creator",
+                "upfield speed",
+                "wide-alignment speed",
+                "speed rusher",
+            ]
+        )
+        edge_getoff_supported = (
+            edge_speed_role
+            or (forty_pct is not None and forty_pct >= 65)
+            or (ten_pct is not None and ten_pct >= 65)
+            or (edge_pr is not None and edge_pr >= 0.16)
+        )
+        edge_disruption_supported = (
+            (edge_pr is not None and edge_pr >= 0.16)
+            or edge_speed_role
+            or "upfield rush" in scheme_lower
+        )
         if edge_pr is not None and edge_pr < 0.14:
             concern_points.append(f"Pressure rate ({edge_pr*100:.1f}%) is still below the premium EDGE translation zone, so the rush needs more down-to-down disruption.")
         if edge_sacks_pr is not None and edge_sacks_pr < 0.020:
             concern_points.append(f"Finish rate (sacks/pass-rush snap {edge_sacks_pr:.3f}) is light for a high-ceiling rusher projection, so pressure has to convert more often.")
-        if (vert_pct is not None and vert_pct < 40) or (broad_pct is not None and broad_pct < 40):
+        if (
+            ((vert_pct is not None and vert_pct < 40) or (broad_pct is not None and broad_pct < 40))
+            and not edge_getoff_supported
+        ):
             concern_points.append("Burst/explosion profile is below the ideal EDGE threshold, which can limit how much immediate stress the first step creates.")
         if (cone_pct is not None and cone_pct < 35) or (shuttle_pct is not None and shuttle_pct < 35):
             concern_points.append("Bend/cornering indicators are modest, which can cap true speed-to-dip conversion once NFL tackles keep him high through the arc.")
-        if edge_hurries is not None and edge_hurries < 20:
+        if edge_hurries is not None and edge_hurries < 20 and not edge_disruption_supported:
             concern_points.append(f"Total hurry volume ({edge_hurries:.1f}) leaves less evidence of sustained rush disruption across full-game sample sizes.")
     elif pos == "DT":
         if edge_pr is not None and edge_pr < 0.10:

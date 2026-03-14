@@ -1,330 +1,365 @@
 player_name,school,position,height_in,weight_lb,arm_in,hand_in,forty,ten_split,vertical,broad,shuttle,three_cone,bench,ras_official,source,last_updated
-Aamil Wagner,Notre Dame,OT,77.875,306.0,34.5,10.25,5.01,1.79,29.5,108.0,,,,8.37,array-carpenter-combine,2026-03-13
-Aaron Anderson,LSU,WR,68.0,191.0,29.75,9.25,,,30.0,113.0,,,,,array-carpenter-combine,2026-03-13
-Adam Randall,Clemson,RB,75.375,232.0,32.375,9.75,4.5,1.6,37.0,124.0,4.53,,26.0,,array-carpenter-combine,2026-03-13
-Ahmaad Moses,SMU,S,69.375,196.0,30.25,9.125,,,38.0,,,,,,array-carpenter-combine,2026-03-13
-Ahmari Harvey,Georgia Tech,CB,71.375,185.0,30.375,9.375,,,,,,,15.0,,array-carpenter-combine,2026-03-13
-Aidan Hubbard,Northwestern,EDGE,76.5,260.0,32.0,9.125,,,,,,,21.0,,array-carpenter-combine,2026-03-13
-Aiden Fisher,Indiana,LB,72.875,232.0,31.125,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-A.J. Haulcy,LSU,S,71.625,215.0,30.875,9.25,4.52,1.62,,,,,,,array-carpenter-combine,2026-03-13
-Akheem Mesidor,Miami,EDGE,75.0,259.0,32.125,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Alan Herron,Maryland,OT,77.25,308.0,33.125,9.125,5.09,1.84,32.0,,5.09,8.2,,,array-carpenter-combine,2026-03-13
-Albert Regis,Texas A&M,DT,73.375,295.0,31.625,9.625,4.88,1.72,34.0,116.0,4.85,7.77,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Alex Harkey,Oregon,IOL,77.625,308.0,31.75,10.125,,,,,,,,,array-carpenter-combine,2026-03-13
-Andre Fuller,Toledo,CB,73.0,200.0,30.75,9.375,4.49,1.56,35.0,129.0,4.28,,,,array-carpenter-combine,2026-03-13
-Anez Cooper,Miami,IOL,77.875,334.0,34.0,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Anthony Hill Jr.,Texas,LB,74.0,238.0,32.375,9.625,4.51,1.58,37.0,125.0,,,21.0,9.84,CBS Live Results; array-carpenter-combine,2026-03-13
-Anthony Lucas,USC,EDGE,77.5,256.0,33.5,10.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Antonio Williams,Clemson,WR,71.5,187.0,30.75,9.25,4.41,1.55,39.5,124.0,,7.0,10.0,8.17,array-carpenter-combine,2026-03-13
-Ar'maj Reed-Adams,Texas A&M,IOL,77.75,314.0,34.375,10.0,5.28,1.85,29.5,110.0,,7.88,,7.94,array-carpenter-combine,2026-03-13
-Arvell Reese,Ohio State,EDGE,76.125,241.0,32.5,9.5,4.46,1.58,,,,,,,array-carpenter-combine,2026-03-13
-Austin Barber,Florida,OT,78.875,318.0,33.125,9.625,5.12,1.77,32.0,111.0,,,,9.76,array-carpenter-combine,2026-03-13
-Avery Smith,Toledo,CB,70.5,196.0,29.375,8.375,4.54,1.61,38.5,125.0,4.46,7.03,,,array-carpenter-combine,2026-03-13
-Avieon Terrell,Clemson,CB,70.75,186.0,31.0,8.625,,,34.0,123.0,,,17.0,,array-carpenter-combine,2026-03-13
-Barion Brown,LSU,WR,71.0,177.0,31.5,9.0,4.4,1.62,,,,,,,array-carpenter-combine,2026-03-13
-Bauer Sharp,LSU,TE,76.625,249.0,31.75,9.75,4.63,1.68,35.0,120.0,,,20.0,,array-carpenter-combine,2026-03-13
-Beau Stephens,Iowa,IOL,77.5,315.0,31.125,9.25,5.35,1.82,28.0,102.0,,,,,array-carpenter-combine,2026-03-13
-Behren Morton,Texas Tech,QB,74.125,221.0,30.625,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Billy Schrauth,Notre Dame,IOL,76.75,310.0,32.875,10.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Bishop Fitzgerald,USC,S,71.0,201.0,31.25,9.5,4.55,1.58,33.0,,,,12.0,,array-carpenter-combine,2026-03-13
-Blake Miller,Clemson,OT,78.75,317.0,34.25,9.75,5.04,1.75,32.0,113.0,,,,,array-carpenter-combine,2026-03-13
-Bobby Jamison-Travis,Auburn,DT,75.375,328.0,34.25,9.625,,,,,,,,,array-carpenter-combine,2026-03-13
+Aamil Wagner,Notre Dame,OT,77.875,306.0,34.5,10.25,5.01,1.79,29.5,108.0,,,,8.37,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Aaron Anderson,LSU,WR,68.0,191.0,29.75,9.25,,,30.0,113.0,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Aaron Graves,Iowa,DT,76.5,298,30.75,9.25,5.10,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Aaron Hall,Duke,DT,75.75,296,33.5,10,5.15,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Adam Randall,Clemson,RB,75.375,232.0,32.375,9.75,4.5,1.6,37.0,124.0,4.53,,26.0,9.49,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Ahmaad Moses,SMU,S,69.375,196.0,30.25,9.125,,,38.0,,,,,,array-carpenter-combine,2026-03-14
+Ahmad Moses,SMU,S,69,196,30.125,9.125,,,38.0,,,,,,nfl-draft-westen-measurements,2026-03-14
+Ahmari Harvey,Georgia Tech,CB,71.375,185.0,30.375,9.375,,,,,,,15.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Aidan Hubbard,Northwestern,EDGE,76.5,260.0,32.0,9.125,,,,,,,21.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Aiden Fisher,Indiana,LB,72.875,232.0,31.125,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+A.J. Haulcy,LSU,S,71.625,215.0,30.875,9.25,4.52,1.62,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Akheem Mesidor,Miami,EDGE,75.0,259.0,32.125,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Al-Jay Henderson,Buffalo,RB,69.5,206,31.125,8.375,4.50,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Alan Herron,Maryland,OT,77.25,308.0,33.125,9.125,5.09,1.84,32.0,,5.09,8.2,,5.45,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Albert Regis,Texas A&M,DT,73.375,295.0,31.625,9.625,4.88,1.72,34.0,116.0,4.85,7.77,,8.32,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Alex Harkey,Oregon,IOL,77.625,308.0,31.75,10.125,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Andre Fuller,Toledo,CB,73.0,200.0,30.75,9.375,4.49,1.56,35.0,129.0,4.28,,,9.19,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Anez Cooper,Miami,IOL,77.875,334.0,34.0,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Anthony Hill Jr.,Texas,LB,74.0,238.0,32.375,9.625,4.51,1.58,37.0,125.0,,,21.0,9.84,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Anthony Lucas,USC,EDGE,77.5,256.0,33.5,10.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Antonio Williams,Clemson,WR,71.5,187.0,30.75,9.25,4.41,1.55,39.5,124.0,,7.0,10.0,8.17,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Ar'maj Reed-Adams,Texas A&M,IOL,77.75,314.0,34.375,10.0,5.28,1.85,29.5,110.0,,7.88,,7.94,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Arvell Reese,Ohio State,EDGE,76.125,241.0,32.5,9.5,4.46,1.58,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Austin Barber,Florida,OT,78.875,318.0,33.125,9.625,5.12,1.77,32.0,111.0,,,,9.76,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Avery Smith,Toledo,CB,70.5,196.0,29.375,8.375,4.54,1.61,38.5,125.0,4.46,7.03,,6.95,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Avieon Terrell,Clemson,CB,70.75,186.0,31.0,8.625,,,34.0,123.0,,,17.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Barion Brown,LSU,WR,71.0,177.0,31.5,9.0,4.4,1.62,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Bauer Sharp,LSU,TE,76.625,249.0,31.75,9.75,4.63,1.68,35.0,120.0,,,20.0,9.09,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Beau Stephens,Iowa,IOL,77.5,315.0,31.125,9.25,5.35,1.82,28.0,102.0,,,,7.40,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Behren Morton,Texas Tech,QB,74.125,221.0,30.625,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Billy Schrauth,Notre Dame,IOL,76.75,310.0,32.875,10.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Bishop Fitzgerald,USC,S,71.0,201.0,31.25,9.5,4.55,1.58,33.0,,,,12.0,6.50,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Blake Miller,Clemson,OT,78.75,317.0,34.25,9.75,5.04,1.75,32.0,113.0,,,,9.94,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Bobby Jamison-Travis,Auburn,DT,75.375,328.0,34.25,9.625,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
 Brady Latham,Arkansas,IOL,,,,,,,,,,,,8.77,RAS Historical Import,2026-03-05
-Brandon Cisse,South Carolina,CB,71.75,189.0,30.75,8.5,,,41.0,131.0,,,,,array-carpenter-combine,2026-03-13
-Brandon Cleveland,N.C. State,DT,75.0,307.0,32.375,9.25,5.12,1.78,,,,,,,array-carpenter-combine,2026-03-13
-Brenen Thompson,Mississippi State,WR,69.375,164.0,29.375,9.0,4.26,1.54,,,,,,,array-carpenter-combine,2026-03-13
-Brett Thorson,Georgia,,73.25,237.0,30.375,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Brian Parker II,Duke,IOL,77.25,309.0,32.875,10.0,5.14,1.78,,109.0,4.8,7.66,,,array-carpenter-combine,2026-03-13
-Bryce Boettcher,Oregon,LB,73.25,233.0,30.75,9.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Bryce Lance,North Dakota State,WR,75.375,204.0,32.125,9.25,4.34,1.49,41.5,133.0,4.15,7.0,,,array-carpenter-combine,2026-03-13
-Bryson Eason,Tennessee,DT,74.125,323.0,33.125,10.0,5.09,1.8,30.5,112.0,5.0,,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Bud Clark,TCU,S,72.875,188.0,31.5,9.0,4.41,1.56,38.0,127.0,,,,,array-carpenter-combine,2026-03-13
-Cade Klubnik,Clemson,QB,74.25,207.0,31.125,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Caden Curry,Ohio State,EDGE,74.75,257.0,30.125,9.375,,,,,,,,,array-carpenter-combine,2026-03-13
-Caleb Banks,Florida,DT,78.25,327.0,35.0,10.875,5.04,1.76,32.0,114.0,,,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Caleb Douglas,Texas Tech,WR,75.5,206.0,32.5,10.125,4.39,1.55,31.5,126.0,,,,,array-carpenter-combine,2026-03-13
-Caleb Downs,Ohio State,S,71.625,206.0,30.25,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Caleb Lomu,Utah,OT,78.25,313.0,33.375,9.5,4.99,1.74,32.5,113.0,,,,9.89,array-carpenter-combine,2026-03-13
-Caleb Tiernan,Northwestern,OT,79.625,323.0,32.25,9.0,,,35.5,111.0,,,,,array-carpenter-combine,2026-03-13
-Cameron Ball,Arkansas,DT,75.625,310.0,33.0,9.5,5.13,1.79,32.0,109.0,4.76,8.02,,,array-carpenter-combine,2026-03-13
-Carnell Tate,Ohio State,WR,74.25,192.0,31.75,10.25,4.53,1.61,,,,,,,array-carpenter-combine,2026-03-13
-Carson Beck,Miami,QB,76.75,233.0,30.625,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Carver Willis,Washington,OT,77.0,303.0,32.5,9.5,5.11,1.84,26.5,108.0,,,,,array-carpenter-combine,2026-03-13
-Cashius Howell,Texas A&M,EDGE,74.5,253.0,30.25,9.25,4.59,1.58,32.5,115.0,,,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Caullin Lacy,Louisville,WR,69.125,183.0,29.375,9.875,4.55,1.59,33.5,116.0,,,,,array-carpenter-combine,2026-03-13
-Chandler Rivers,Duke,CB,69.5,185.0,29.375,9.5,4.4,1.55,39.0,130.0,,,,8.80,array-carpenter-combine,2026-03-13
-Charles Demmings,Stephen F. Austin State,CB,73.125,193.0,32.0,10.125,4.41,1.55,42.0,132.0,,,,,array-carpenter-combine,2026-03-13
-Chase Bisontis,Texas A&M,IOL,77.25,315.0,31.75,9.75,5.02,1.76,32.0,105.0,4.78,7.53,,9.84,array-carpenter-combine,2026-03-13
-Chase Roberts,BYU,WR,75.25,209.0,31.5,9.75,4.64,1.6,37.0,126.0,,,,,array-carpenter-combine,2026-03-13
-Chris Adams,Memphis,OT,77.125,311.0,33.625,10.375,,,,,,,,,array-carpenter-combine,2026-03-13
-Chris Bell,Louisville,WR,73.875,222.0,31.75,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Chris Brazzell II,Tennessee,WR,76.0,198.0,32.375,9.0,4.37,1.52,,,,,,,array-carpenter-combine,2026-03-13
-Chris Hilton Jr.,LSU,WR,72.0,188.0,32.0,9.25,4.41,1.57,34.5,122.0,4.41,7.25,,,array-carpenter-combine,2026-03-13
-Chris Johnson,San Diego State,CB,72.375,193.0,30.625,9.875,4.4,1.54,38.0,126.0,,,17.0,,array-carpenter-combine,2026-03-13
-Chris McClellan,Missouri,DT,75.75,313.0,34.0,11.0,5.05,1.8,29.5,108.0,,,25.0,,CBS Live Results; array-carpenter-combine,2026-03-13
-Christen Miller,Georgia,DT,75.75,321.0,33.0,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
-CJ Allen,Georgia,LB,72.75,230.0,31.5,10.125,,,,,,,,,array-carpenter-combine,2026-03-13
-CJ Daniels,Miami,WR,74.25,202.0,31.75,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-CJ Donaldson,Ohio State,RB,73.625,230.0,31.75,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Colbie Young,Georgia,WR,76.75,218.0,31.875,9.5,4.49,1.59,,,,,,,array-carpenter-combine,2026-03-13
-Cole Payton,North Dakota State,QB,74.625,232.0,31.625,10.25,4.56,1.57,40.0,130.0,4.36,7.12,,,array-carpenter-combine,2026-03-13
-Collin Wright,Stanford,CB,72.25,188.0,30.75,8.75,,,39.0,,,,,,array-carpenter-combine,2026-03-13
-Colton Hood,Tennessee,CB,71.625,193.0,31.375,9.0,4.44,1.58,40.5,125.0,,,,,array-carpenter-combine,2026-03-13
-Connor Lew,Auburn,IOL,75.5,310.0,32.375,9.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Dae'Quan Wright,Mississippi,TE,75.75,246.0,32.25,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Dallen Bentley,Utah,TE,76.125,253.0,33.125,9.25,4.62,1.62,35.0,118.0,4.42,,24.0,,array-carpenter-combine,2026-03-13
-Dalton Johnson,Arizona,S,70.875,192.0,30.875,9.125,4.41,1.59,36.0,119.0,,,,,array-carpenter-combine,2026-03-13
-Dametrious Crownover,Texas A&M,OT,79.25,319.0,35.375,10.0,5.14,1.79,,,,,,,array-carpenter-combine,2026-03-13
-Damonic Williams,Oklahoma,DT,73.625,305.0,33.125,10.0,,,,,,,30.0,,array-carpenter-combine,2026-03-13
-D'Angelo Ponds,Indiana,CB,68.625,182.0,29.375,9.625,,,43.5,,,,,,array-carpenter-combine,2026-03-13
-Dani Dennis-Sutton,Penn State,EDGE,77.625,256.0,33.5,10.125,4.63,1.63,39.5,131.0,,6.9,,,array-carpenter-combine,2026-03-13
-Darrell Jackson Jr.,Florida State,DT,77.5,315.0,34.75,11.0,,,,,,,,,array-carpenter-combine,2026-03-13
-David Bailey,Texas Tech,EDGE,75.625,251.0,33.75,10.25,4.5,1.62,35.0,129.0,,,,9.68,CBS Live Results; array-carpenter-combine,2026-03-13
-David Gusta,Kentucky,DT,74.375,308.0,31.125,10.0,4.88,1.68,32.0,,,,37.0,,CBS Live Results; array-carpenter-combine,2026-03-13
-Davison Igbinosun,Ohio State,CB,74.125,189.0,32.875,9.125,4.45,1.58,34.0,120.0,,,,8.64,array-carpenter-combine,2026-03-13
-Daylen Everette,Georgia,CB,73.25,196.0,31.875,9.625,4.38,1.54,37.5,124.0,,,,9.82,array-carpenter-combine,2026-03-13
-Deion Burks,Oklahoma,WR,69.75,180.0,29.375,9.5,4.3,1.49,42.5,131.0,,,26.0,,array-carpenter-combine,2026-03-13
-Demond Claiborne,Wake Forest,RB,69.75,188.0,30.125,9.0,4.37,1.59,,122.0,,,,7.98,array-carpenter-combine,2026-03-13
-DeMonte Capehart,Clemson,DT,76.875,313.0,33.875,10.25,4.85,1.71,33.5,107.0,,,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Denzel Boston,Washington,WR,75.625,212.0,32.0,9.75,,,35.0,,4.28,,,,array-carpenter-combine,2026-03-13
-Deontae Lawson,Alabama,LB,74.875,226.0,31.875,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Derrick Moore,Michigan,EDGE,75.875,255.0,33.375,9.125,,,,,,,,,array-carpenter-combine,2026-03-13
-DeShon Singleton,Nebraska,S,75.0,205.0,32.875,10.0,,,39.5,130.0,,,,,array-carpenter-combine,2026-03-13
-Desmond Reid,Pittsburgh,RB,66.25,174.0,28.125,8.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Deven Eastern,Minnesota,DT,77.25,315.0,34.0,10.0,,,27.5,112.0,,8.07,,,array-carpenter-combine,2026-03-13
-Devin Moore,Florida,CB,75.25,198.0,31.625,8.625,4.5,1.56,,,,,,,array-carpenter-combine,2026-03-13
-De'Zhaun Stribling,Mississippi,WR,74.125,207.0,31.625,10.0,4.36,1.53,36.0,127.0,,,,,array-carpenter-combine,2026-03-13
-Diego Pavia,Vanderbilt,QB,70.125,207.0,28.625,9.625,,,,,,,,,array-carpenter-combine,2026-03-13
-Diego Pounds,Mississippi,OT,78.0,325.0,33.75,9.75,5.15,1.77,30.0,112.0,,7.9,,,array-carpenter-combine,2026-03-13
-Dillon Bell,Georgia,WR,72.75,209.0,30.25,9.5,4.5,1.58,39.0,126.0,,,,,array-carpenter-combine,2026-03-13
-Dillon Thieneman,Oregon,S,72.125,201.0,31.375,9.0,4.35,1.52,41.0,125.0,,,18.0,9.65,array-carpenter-combine,2026-03-13
-Dillon Wade,Auburn,IOL,75.375,316.0,31.875,10.0,5.02,1.75,28.5,104.0,,,,,array-carpenter-combine,2026-03-13
-DJ Campbell,Texas,IOL,75.0,313.0,34.25,10.25,5.01,1.76,26.5,104.0,,,,,array-carpenter-combine,2026-03-13
-DJ Rogers,TCU,TE,75.875,258.0,33.625,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Domani Jackson,Alabama,CB,72.75,194.0,31.125,9.125,4.41,1.58,,,,,,,array-carpenter-combine,2026-03-13
-Dominic Zvada,Michigan,,75.25,178.0,31.75,9.125,,,,,,,,,array-carpenter-combine,2026-03-13
-Domonique Orange,Iowa State,DT,74.375,322.0,33.375,10.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Donaven McCulley,Michigan,WR,76.5,203.0,32.625,10.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Dontay Corleone,Cincinnati,DT,72.5,340.0,31.875,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Drew Allar,Penn State,QB,77.25,228.0,32.75,9.875,,,,,,,,,array-carpenter-combine,2026-03-13
-Drew Shelton,Penn State,OT,77.125,313.0,33.375,9.625,5.16,1.79,31.0,112.0,,,,,array-carpenter-combine,2026-03-13
-Drew Stevens,Iowa,,73.125,213.0,29.875,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Eli Heidenreich,Navy,RB,72.0,198.0,29.25,9.5,4.44,1.55,35.5,120.0,,,16.0,,array-carpenter-combine,2026-03-13
-Eli Raridon,Notre Dame,TE,78.125,245.0,32.75,10.75,4.62,1.6,36.0,123.0,,,20.0,9.66,array-carpenter-combine,2026-03-13
-Eli Stowers,Vanderbilt,TE,75.75,239.0,32.625,9.75,4.51,1.59,45.5,135.0,,,,9.46,array-carpenter-combine,2026-03-13
-Elijah Sarratt,Indiana,WR,74.5,210.0,31.25,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Emmanuel Henderson Jr.,Kansas,WR,72.875,185.0,31.0,8.375,4.44,1.56,35.0,120.0,,,,,array-carpenter-combine,2026-03-13
-Emmanuel McNeil-Warren,Toledo,S,75.5,201.0,32.125,9.25,4.52,1.58,35.5,122.0,,,,,array-carpenter-combine,2026-03-13
-Emmanuel Pregnon,Oregon,IOL,76.25,314.0,33.625,11.0,5.21,1.82,35.0,111.0,,,,,array-carpenter-combine,2026-03-13
-Emmett Johnson,Nebraska,RB,70.25,202.0,30.25,9.75,4.56,1.59,35.5,120.0,4.29,7.32,16.0,,array-carpenter-combine,2026-03-13
-Enrique Cruz,Houston,OT,77.5,313.0,33.75,10.25,4.94,1.74,35.0,116.0,,,,,array-carpenter-combine,2026-03-13
-Ephesians Prysock,Washington,CB,75.375,196.0,33.125,9.75,4.45,1.57,39.0,124.0,,,,,array-carpenter-combine,2026-03-13
-Eric Gentry,USC,LB,78.625,221.0,35.0,10.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Eric McAlister,TCU,WR,75.625,194.0,32.625,9.75,,,,,,,,,array-carpenter-combine,2026-03-13
-Eric Rivers,Georgia Tech,WR,70.125,176.0,30.5,9.0,4.35,1.52,37.0,127.0,,,,,array-carpenter-combine,2026-03-13
+Brandon Cisse,South Carolina,CB,71.75,189.0,30.75,8.5,,,41.0,131.0,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Brandon Cleveland,N.C. State,DT,75.0,307.0,32.375,9.25,5.12,1.78,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Brenen Thompson,Mississippi State,WR,69.375,164.0,29.375,9.0,4.26,1.54,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Brett Thorson,Georgia,,73.25,237.0,30.375,9.25,,,,,,,,,array-carpenter-combine,2026-03-14
+Brian Parker II,Duke,IOL,77.25,309.0,32.875,10.0,5.14,1.78,,109.0,4.8,7.66,,9.07,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Bryce Boettcher,Oregon,LB,73.25,233.0,30.75,9.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Bryce Foster,Kansas,IOL,76.25,317,31.875,10.125,5.25,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Bryce Lance,North Dakota State,WR,75.375,204.0,32.125,9.25,4.34,1.49,41.5,133.0,4.15,7.0,,9.95,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Bryson Eason,Tennessee,DT,74.125,323.0,33.125,10.0,5.09,1.8,30.5,112.0,5.0,,,6.98,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Bud Clark,TCU,S,72.875,188.0,31.5,9.0,4.41,1.56,38.0,127.0,,,,9.32,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Cade Klubnik,Clemson,QB,74.25,207.0,31.125,9.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Caden Barnett,Wyoming,IOL,75.875,316,32.125,9.5,5.20,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Caden Curry,Ohio State,EDGE,74.75,257.0,30.125,9.375,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Caleb Banks,Florida,DT,78.25,327.0,35.0,10.875,5.04,1.76,32.0,114.0,,,,9.86,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Caleb Douglas,Texas Tech,WR,75.5,206.0,32.5,10.125,4.39,1.55,31.5,126.0,,,,9.45,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Caleb Downs,Ohio State,S,71.625,206.0,30.25,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Caleb Lomu,Utah,OT,78.25,313.0,33.375,9.5,4.99,1.74,32.5,113.0,,,,9.89,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Caleb Tiernan,Northwestern,OT,79.625,323.0,32.25,9.0,,,35.5,111.0,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Cameron Ball,Arkansas,DT,75.625,310.0,33.0,9.5,5.13,1.79,32.0,109.0,4.76,8.02,,7.82,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Cameron Robertson,SMU,EDGE,75.625,255,32,9.5,4.80,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Carnell Tate,Ohio State,WR,74.25,192.0,31.75,10.25,4.53,1.61,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Carson Beck,Miami,QB,76.75,233.0,30.625,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Carver Willis,Washington,OT,77.0,303.0,32.5,9.5,5.11,1.84,26.5,108.0,,,,6.26,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Cashius Howell,Texas A&M,EDGE,74.5,253.0,30.25,9.25,4.59,1.58,32.5,115.0,,,,8.11,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Caullin Lacy,Louisville,WR,69.125,183.0,29.375,9.875,4.55,1.59,33.5,116.0,,,,2.95,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Chandler Rivers,Duke,CB,69.5,185.0,29.375,9.5,4.4,1.55,39.0,130.0,,,,8.80,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Charles Demmings,Stephen F. Austin State,CB,73.125,193.0,32.0,10.125,4.41,1.55,42.0,132.0,,,,9.97,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Chase Bisontis,Texas A&M,IOL,77.25,315.0,31.75,9.75,5.02,1.76,32.0,105.0,4.78,7.53,,9.84,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Chase Roberts,BYU,WR,75.25,209.0,31.5,9.75,4.64,1.6,37.0,126.0,,,,7.81,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Chip Trayanum,Toledo,RB,70.75,224,31,9.625,4.69,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Chris Adams,Memphis,OT,77.125,311.0,33.625,10.375,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Chris Bell,Louisville,WR,73.875,222.0,31.75,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Chris Brazzell II,Tennessee,WR,76.0,198.0,32.375,9.0,4.37,1.52,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Chris Hilton Jr.,LSU,WR,72.0,188.0,32.0,9.25,4.41,1.57,34.5,122.0,4.41,7.25,,6.21,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Chris Johnson,San Diego State,CB,72.375,193.0,30.625,9.875,4.4,1.54,38.0,126.0,3.9,,17.0,9.83,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Chris McClellan,Missouri,DT,75.75,313.0,34.0,11.0,5.05,1.8,29.5,108.0,,,25.0,8.22,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Christen Miller,Georgia,DT,75.75,321.0,33.0,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+CJ Allen,Georgia,LB,72.75,230.0,31.5,10.125,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+CJ Daniels,Miami,WR,74.25,202.0,31.75,9.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+CJ Donaldson,Ohio State,RB,73.625,230.0,31.75,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Colbie Young,Georgia,WR,76.75,218.0,31.875,9.5,4.49,1.59,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Cole Brevard,Texas,DT,74.75,346,33,9.625,5.20,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Cole Payton,North Dakota State,QB,74.625,232.0,31.625,10.25,4.56,1.57,40.0,130.0,4.36,7.12,,9.97,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Cole Wisniewski,Texas Tech,S,75.375,214,31.125,9.75,4.55,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Collin Wright,Stanford,CB,72.25,188.0,30.75,8.75,,,39.0,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Colton Hood,Tennessee,CB,71.625,193.0,31.375,9.0,4.44,1.58,40.5,125.0,,,,9.61,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Connor Lew,Auburn,IOL,75.5,310.0,32.375,9.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Dae'Quan Wright,Mississippi,TE,75.75,246.0,32.25,9.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Dallen Bentley,Utah,TE,76.125,253.0,33.125,9.25,4.62,1.62,35.0,118.0,4.42,,24.0,9.17,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Dalton Johnson,Arizona,S,70.875,192.0,30.875,9.125,4.41,1.59,36.0,119.0,,,,7.65,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Dametrious Crownover,Texas A&M,OT,79.25,319.0,35.375,10.0,5.14,1.79,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Damonic Williams,Oklahoma,DT,73.625,305.0,33.125,10.0,,,,,,,30.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+D'Angelo Ponds,Indiana,CB,68.625,182.0,29.375,9.625,,,43.5,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Dani Dennis-Sutton,Penn State,EDGE,77.625,256.0,33.5,10.125,4.63,1.63,39.5,131.0,,6.9,,9.93,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Darrell Jackson Jr.,Florida State,DT,77.5,315.0,34.75,11.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+David Bailey,Texas Tech,EDGE,75.625,251.0,33.75,10.25,4.5,1.62,35.0,129.0,,,,9.68,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+David Gusta,Kentucky,DT,74.375,308.0,31.125,10.0,4.88,1.68,32.0,,,,37.0,9.89,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Davison Igbinosun,Ohio State,CB,74.125,189.0,32.875,9.125,4.45,1.58,34.0,120.0,,,,8.64,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Daylen Everette,Georgia,CB,73.25,196.0,31.875,9.625,4.38,1.54,37.5,124.0,,,,9.82,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Dean Connors,Houston,RB,71.375,208,29.125,9.375,4.50,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Deion Burks,Oklahoma,WR,69.75,180.0,29.375,9.5,4.3,1.49,42.5,131.0,,,26.0,9.52,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Demond Claiborne,Wake Forest,RB,69.75,188.0,30.125,9.0,4.37,1.59,,122.0,,,,7.98,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+DeMonte Capehart,Clemson,DT,76.875,313.0,33.875,10.25,4.85,1.71,33.5,107.0,,,,9.97,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Denzel Boston,Washington,WR,75.625,212.0,32.0,9.75,,,35.0,,4.28,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Deontae Lawson,Alabama,LB,74.875,226.0,31.875,9.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Derrick Moore,Michigan,EDGE,75.875,255.0,33.375,9.125,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+DeShon Singleton,Nebraska,S,75.0,205.0,32.875,10.0,,,39.5,130.0,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Desmond Reid,Pittsburgh,RB,66.25,174.0,28.125,8.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Deven Eastern,Minnesota,DT,77.25,315.0,34.0,10.0,,,27.5,112.0,,8.07,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Devin Moore,Florida,CB,75.25,198.0,31.625,8.625,4.5,1.56,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+De'Zhaun Stribling,Mississippi,WR,74.125,207.0,31.625,10.0,4.36,1.53,36.0,127.0,,,,9.90,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Diego Pavia,Vanderbilt,QB,70.125,207.0,28.625,9.625,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Diego Pounds,Mississippi,OT,78.0,325.0,33.75,9.75,5.15,1.77,30.0,112.0,,7.9,,9.50,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Dillon Bell,Georgia,WR,72.75,209.0,30.25,9.5,4.5,1.58,39.0,126.0,,,,9.42,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Dillon Thieneman,Oregon,S,72.125,201.0,31.375,9.0,4.35,1.52,41.0,125.0,,,18.0,9.65,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Dillon Wade,Auburn,IOL,75.375,316.0,31.875,10.0,5.02,1.75,28.5,104.0,,,,9.14,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+DJ Campbell,Texas,IOL,75.0,313.0,34.25,10.25,5.01,1.76,26.5,104.0,,,,8.49,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+DJ Harvey,USC,,70.125,191,28.75,8.625,4.55,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+DJ Rogers,TCU,TE,75.875,258.0,33.625,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Domani Jackson,Alabama,CB,72.75,194.0,31.125,9.125,4.41,1.58,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Dominic Zvada,Michigan,,75.25,178.0,31.75,9.125,,,,,,,,,array-carpenter-combine,2026-03-14
+Domonique Orange,Iowa State,DT,74.375,322.0,33.375,10.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Donaven McCulley,Michigan,WR,76.5,203.0,32.625,10.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Dontay Corleone,Cincinnati,DT,72.5,340.0,31.875,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Drew Allar,Penn State,QB,77.25,228.0,32.75,9.875,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Drew Shelton,Penn State,OT,77.125,313.0,33.375,9.625,5.16,1.79,31.0,112.0,,,,8.68,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Drew Stevens,Iowa,,73.125,213.0,29.875,9.25,,,,,,,,,array-carpenter-combine,2026-03-14
+Eli Heidenreich,Navy,RB,72.0,198.0,29.25,9.5,4.44,1.55,35.5,120.0,4.22,6.55,16.0,9.05,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Eli Raridon,Notre Dame,TE,78.125,245.0,32.75,10.75,4.62,1.6,36.0,123.0,,,20.0,9.66,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Eli Stowers,Vanderbilt,TE,75.75,239.0,32.625,9.75,4.51,1.59,45.5,135.0,,,,9.46,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Elijah Sarratt,Indiana,WR,74.5,210.0,31.25,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Emmanuel Henderson Jr.,Kansas,WR,72.875,185.0,31.0,8.375,4.44,1.56,35.0,120.0,,,,7.78,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Emmanuel McNeil-Warren,Toledo,S,75.5,201.0,32.125,9.25,4.52,1.58,35.5,122.0,,,,9.13,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Emmanuel Pregnon,Oregon,IOL,76.25,314.0,33.625,11.0,5.21,1.82,35.0,111.0,,,,9.42,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Emmett Johnson,Nebraska,RB,70.25,202.0,30.25,9.75,4.56,1.59,35.5,120.0,4.29,7.32,16.0,5.78,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Enrique Cruz,Houston,OT,77.5,313.0,33.75,10.25,4.94,1.74,35.0,116.0,,,,,array-carpenter-combine,2026-03-14
+Enrique Cruz Jr.,Kansas,OT,77.5,313,33.75,10.25,4.94,1.74,35.0,116,,,,9.84,nfl-draft-westen-measurements,2026-03-14
+Ephesians Prysock,Washington,CB,75.375,196.0,33.125,9.75,4.45,1.57,39.0,124.0,,,,9.90,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Eric Gentry,USC,LB,78.625,221.0,35.0,10.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Eric McAlister,TCU,WR,75.625,194.0,32.625,9.75,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Eric Rivers,Georgia Tech,WR,70.125,176.0,30.5,9.0,4.35,1.52,37.0,127.0,,,,8.89,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Ethan Burke,Texas,EDGE,78,269,33.5,10.25,4.90,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Ethan Onianwa,Ohio State,IOL,78.25,332,34.375,9.75,5.15,,,,,,,,nfl-draft-westen-measurements,2026-03-14
 Eugene Asante,Auburn,LB,,,,,,,,,,,,8.40,RAS Historical Import,2026-03-05
-Evan Beerntsen,Northwestern,IOL,75.5,301.0,32.125,9.375,5.25,1.82,32.5,105.0,,,,,array-carpenter-combine,2026-03-13
-Fa'alili Fa'amoe,Wake Forest,OT,77.375,311.0,33.875,10.625,,,28.5,104.0,,,,,array-carpenter-combine,2026-03-13
-Febechi Nwaiwu,Oklahoma,IOL,76.25,319.0,34.5,9.625,,,24.5,105.0,4.73,7.8,,,array-carpenter-combine,2026-03-13
-Fernando Carmona,Arkansas,IOL,76.625,316.0,32.125,9.5,5.22,1.85,29.0,103.0,4.75,7.5,,,array-carpenter-combine,2026-03-13
-Fernando Mendoza,Indiana,QB,76.75,236.0,31.875,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Francis Mauigoa,Miami,OT,77.5,329.0,33.25,10.625,,,,,,,,,array-carpenter-combine,2026-03-13
-Gabe Jacas,Illinois,EDGE,75.625,260.0,33.0,10.0,,,,,,,30.0,,array-carpenter-combine,2026-03-13
-Garrett DiGiorgio,UCLA,IOL,78.625,319.0,32.625,10.125,5.36,1.86,29.5,106.0,,,,,array-carpenter-combine,2026-03-13
-Garrett Nussmeier,LSU,QB,73.625,203.0,30.375,9.125,,,,,,,,,array-carpenter-combine,2026-03-13
-Gary Smith III,UCLA,DT,73.0,319.0,32.5,9.75,,,28.0,,,,,,array-carpenter-combine,2026-03-13
-Genesis Smith,Arizona,S,74.125,202.0,32.5,8.875,,,42.5,128.0,4.18,,,,array-carpenter-combine,2026-03-13
-Gennings Dunker,Iowa,IOL,77.0,319.0,33.5,10.0,5.18,1.83,32.5,108.0,4.63,,,,array-carpenter-combine,2026-03-13
-George Gumbs Jr.,Florida,EDGE,76.375,245.0,33.625,9.0,4.66,1.67,41.0,121.0,,7.0,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Germie Bernard,Alabama,WR,73.25,206.0,30.375,9.875,4.48,1.52,32.5,125.0,4.31,6.71,,9.04,array-carpenter-combine,2026-03-13
-Gracen Halton,Oklahoma,DT,74.625,293.0,31.125,10.0,4.82,1.7,36.5,114.0,4.79,8.09,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Harold Perkins Jr.,LSU,LB,72.875,223.0,31.375,8.125,,,,,,,,,array-carpenter-combine,2026-03-13
-Harrison Wallace III,Mississippi,WR,71.875,192.0,32.125,8.375,4.54,1.58,,,,,,,array-carpenter-combine,2026-03-13
-Haynes King,Georgia Tech,QB,74.375,212.0,31.875,9.0,4.46,1.56,33.5,116.0,4.17,6.89,,,array-carpenter-combine,2026-03-13
-Hezekiah Masses,California,CB,72.625,179.0,31.125,8.25,4.46,1.57,31.5,119.0,,,,,array-carpenter-combine,2026-03-13
+Evan Beerntsen,Northwestern,IOL,75.5,301.0,32.125,9.375,5.25,1.82,32.5,105.0,,,,7.27,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Fa'alili Fa'amoe,Wake Forest,OT,77.375,311.0,33.875,10.625,,,28.5,104.0,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Febechi Nwaiwu,Oklahoma,IOL,76.25,319.0,34.5,9.625,,,24.5,105.0,4.73,7.8,,7.19,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Fernando Carmona,Arkansas,IOL,76.625,316.0,32.125,9.5,5.22,1.85,29.0,103.0,4.75,7.5,,8.90,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Fernando Mendoza,Indiana,QB,76.75,236.0,31.875,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Francis Mauigoa,Miami,OT,77.5,329.0,33.25,10.625,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Gabe Jacas,Illinois,EDGE,75.625,260.0,33.0,10.0,,,,,,,30.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Garrett DiGiorgio,UCLA,IOL,78.625,319.0,32.625,10.125,5.36,1.86,29.5,106.0,,,,6.74,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Garrett Nussmeier,LSU,QB,73.625,203.0,30.375,9.125,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Gary Smith III,UCLA,DT,73.0,319.0,32.5,9.75,,,28.0,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Genesis Smith,Arizona,S,74.125,202.0,32.5,8.875,,,42.5,128.0,4.18,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Gennings Dunker,Iowa,IOL,77.0,319.0,33.5,10.0,5.18,1.83,32.5,108.0,4.63,,,8.60,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+George Gumbs Jr.,Florida,EDGE,76.375,245.0,33.625,9.0,4.66,1.67,41.0,121.0,,7.0,,8.72,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Germie Bernard,Alabama,WR,73.25,206.0,30.375,9.875,4.48,1.52,32.5,125.0,4.31,6.71,,9.04,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Gracen Halton,Oklahoma,DT,74.625,293.0,31.125,10.0,4.82,1.7,36.5,114.0,4.79,8.09,,9.23,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Harold Perkins Jr.,LSU,LB,72.875,223.0,31.375,8.125,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Harrison Wallace III,Mississippi,WR,71.875,192.0,32.125,8.375,4.54,1.58,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Haynes King,Georgia Tech,QB,74.375,212.0,31.875,9.0,4.46,1.56,33.5,116.0,4.17,6.89,,9.55,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Hezekiah Masses,California,CB,72.625,179.0,31.125,8.25,4.46,1.57,31.5,119.0,,,,6.07,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
 Isaiah Paul,Baylor,LB,,,,,,,,,,,,5.26,RAS Historical Import,2026-03-05
-Isaiah World,Oregon,OT,80.0,318.0,,,,,,,,,,,array-carpenter-combine,2026-03-13
-J. Michael Sturdivant,Florida,WR,74.875,207.0,32.875,9.5,4.4,1.54,39.0,131.0,,,,,array-carpenter-combine,2026-03-13
+Isaiah World,Oregon,OT,80.0,318.0,,,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+J. Michael Sturdivant,Florida,WR,74.875,207.0,32.875,9.5,4.4,1.54,39.0,131.0,,,,9.96,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
 J Parker,Clemson,,,,,,4.68,,,,,,,,CBS Live Results,2026-02-26
-Jack Endries,Texas,TE,76.625,245.0,31.125,9.625,4.62,1.59,36.0,119.0,,,,,array-carpenter-combine,2026-03-13
-Jack Kelly,BYU,LB,73.625,240.0,31.125,9.125,4.57,1.61,37.0,125.0,4.19,7.12,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Jack Pyburn,LSU,EDGE,75.875,258.0,30.875,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Jack Stonehouse,Syracuse,,74.0,211.0,32.625,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Jackie Marshall,Baylor,DT,74.5,293.0,32.0,9.5,4.88,1.69,,,4.68,,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Jacob Rodriguez,Texas Tech,LB,73.375,231.0,30.875,9.25,4.57,1.6,38.5,121.0,4.19,6.9,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Jadarian Price,Notre Dame,RB,70.625,203.0,30.875,9.625,4.49,1.61,35.0,124.0,,,21.0,,array-carpenter-combine,2026-03-13
-Jadon Canady,Oregon,CB,70.5,181.0,30.0,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Jaeden Roberts,Alabama,IOL,77.25,333.0,33.375,10.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Jager Burton,Kentucky,IOL,76.125,312.0,32.5,10.125,4.94,1.76,28.0,111.0,,,,,array-carpenter-combine,2026-03-13
-Jaishawn Barham,Michigan,EDGE,75.5,240.0,32.375,10.25,4.64,1.61,33.0,123.0,,,,,array-carpenter-combine,2026-03-13
-Jake Golday,Cincinnati,LB,76.5,239.0,31.875,9.5,4.62,1.6,39.0,125.0,4.34,7.02,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Jake Slaughter,Florida,IOL,76.875,303.0,32.375,10.0,5.1,1.74,32.5,110.0,,,,9.91,array-carpenter-combine,2026-03-13
-Jakobe Thomas,Miami,S,73.25,211.0,31.875,10.625,,,,,,,,,array-carpenter-combine,2026-03-13
-Ja'Kobi Lane,USC,WR,76.375,200.0,32.625,10.5,4.47,1.58,40.0,129.0,,,,9.69,array-carpenter-combine,2026-03-13
-Jalen Farmer,Kentucky,IOL,76.875,312.0,34.25,9.25,4.93,1.75,27.0,108.0,,,,,array-carpenter-combine,2026-03-13
-Jalen Huskey,Maryland,S,73.25,196.0,30.875,10.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Jalen Walthall,Incarnate Word,WR,72.75,191.0,31.25,9.0,4.57,1.59,35.0,131.0,,,,,array-carpenter-combine,2026-03-13
-Jalon Daniels,Kansas,QB,72.625,219.0,30.375,9.625,4.65,1.63,,,,,,,array-carpenter-combine,2026-03-13
-Jalon Kilgore,South Carolina,S,73.375,210.0,32.875,9.375,4.4,1.56,37.0,130.0,4.32,,16.0,9.66,array-carpenter-combine,2026-03-13
+Jack Endries,Texas,TE,76.625,245.0,31.125,9.625,4.62,1.59,36.0,119.0,,,,8.65,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jack Kelly,BYU,LB,73.625,240.0,31.125,9.125,4.57,1.61,37.0,125.0,4.19,7.12,,9.81,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jack Pyburn,LSU,EDGE,75.875,258.0,30.875,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jack Stonehouse,Syracuse,,74.0,211.0,32.625,9.25,,,,,,,,,array-carpenter-combine,2026-03-14
+Jack Velling,Michigan State,TE,76.125,248,31.75,9,4.60,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Jackie Marshall,Baylor,DT,74.5,293.0,32.0,9.5,4.88,1.69,,,4.68,,,8.66,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jacob Rodriguez,Texas Tech,LB,73.375,231.0,30.875,9.25,4.57,1.6,38.5,121.0,4.19,6.9,,9.52,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jadarian Price,Notre Dame,RB,70.625,203.0,30.875,9.625,4.49,1.61,35.0,124.0,,,21.0,8.37,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jadon Canady,Oregon,CB,70.5,181.0,30.0,9.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jaeden Roberts,Alabama,IOL,77.25,333.0,33.375,10.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jager Burton,Kentucky,IOL,76.125,312.0,32.5,10.125,4.94,1.76,28.0,111.0,,,,9.90,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jaishawn Barham,Michigan,EDGE,75.5,240.0,32.375,10.25,4.64,1.61,33.0,123.0,,,,8.71,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jake Golday,Cincinnati,LB,76.5,239.0,31.875,9.5,4.62,1.6,39.0,125.0,4.34,7.02,,9.73,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jake Slaughter,Florida,IOL,76.875,303.0,32.375,10.0,5.1,1.74,32.5,110.0,,,,9.91,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jakobe Thomas,Miami,S,73.25,211.0,31.875,10.625,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Ja'Kobi Lane,USC,WR,76.375,200.0,32.625,10.5,4.47,1.58,40.0,129.0,,,,9.69,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jalen Catalon,Missouri,S,68.5,199,29.375,9.375,4.55,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Jalen Farmer,Kentucky,IOL,76.875,312.0,34.25,9.25,4.93,1.75,27.0,108.0,,,,9.69,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jalen Huskey,Maryland,S,73.25,196.0,30.875,10.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jalen McMurray,Tennessee,CB,70.625,179,30.125,8.125,,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Jalen Walthall,Incarnate Word,WR,72.75,191.0,31.25,9.0,4.57,1.59,35.0,131.0,,,,7.03,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jalon Daniels,Kansas,QB,72.625,219.0,30.375,9.625,4.65,1.63,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jalon Kilgore,South Carolina,S,73.375,210.0,32.875,9.375,4.4,1.56,37.0,130.0,4.32,,16.0,9.66,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
 Jalyn Phillips,Georgia,S,,,,,,,,,,,,5.71,RAS Historical Import,2026-03-05
-Jam Miller,Alabama,RB,70.25,209.0,30.375,8.75,4.42,1.53,30.5,115.0,,,,,array-carpenter-combine,2026-03-13
-James Brockermeyer,Miami,IOL,75.0,297.0,,,,,,,,,,,array-carpenter-combine,2026-03-13
-Jaren Kanak,Oklahoma,TE,74.0,234.0,30.5,9.375,4.52,1.61,36.0,119.0,,,24.0,,array-carpenter-combine,2026-03-13
-Jaylon Guilbeau,Texas,CB,71.125,190.0,30.125,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-J.C. Davis,Illinois,OT,76.375,322.0,34.25,10.125,5.16,1.78,30.5,99.0,,,,,array-carpenter-combine,2026-03-13
-Jeff Caldwell,Cincinnati,WR,77.375,216.0,32.625,9.75,4.31,1.48,42.0,134.0,,,,,array-carpenter-combine,2026-03-13
-Jeremiah Wright,Auburn,IOL,77.125,331.0,33.125,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Jeremiyah Love,Notre Dame,RB,72.0,212.0,32.0,9.125,4.36,1.55,,,,,,,array-carpenter-combine,2026-03-13
-Jermod McCoy,Tennessee,CB,72.75,188.0,31.25,9.0,,,,,,,14.0,,array-carpenter-combine,2026-03-13
-Jimmy Rolder,Michigan,LB,74.5,238.0,30.5,9.75,,,36.0,119.0,4.26,7.0,,,array-carpenter-combine,2026-03-13
-J'Mari Taylor,Virginia,RB,69.875,199.0,30.0,9.0,,,34.5,115.0,,,20.0,,array-carpenter-combine,2026-03-13
-Joe Fagnano,Connecticut,QB,75.25,226.0,31.375,9.25,4.83,1.67,35.0,118.0,4.35,,,,array-carpenter-combine,2026-03-13
-Joe Royer,Cincinnati,TE,77.125,247.0,31.5,10.75,,,,,,,,,array-carpenter-combine,2026-03-13
-Joey Aguilar,Tennessee,QB,75.25,229.0,31.75,9.625,,,,,,,,,array-carpenter-combine,2026-03-13
-John Michael Gyllenborg,Wyoming,TE,77.75,249.0,31.0,10.0,4.6,1.6,35.5,128.0,4.22,,,,array-carpenter-combine,2026-03-13
-Jonah Coleman,Washington,RB,68.125,220.0,28.875,9.125,,,,,,,22.0,,array-carpenter-combine,2026-03-13
-Jordan Hudson,SMU,WR,73.25,191.0,31.125,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Jordyn Tyson,Arizona State,WR,74.125,203.0,30.25,9.125,,,,,,,26.0,,array-carpenter-combine,2026-03-13
-Josh Cameron,Baylor,WR,73.5,220.0,33.125,10.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Josh Cuevas,Alabama,TE,75.375,245.0,30.625,9.625,4.65,1.65,34.0,118.0,4.38,7.37,,,array-carpenter-combine,2026-03-13
-Joshua Braun,Kentucky,IOL,78.125,325.0,34.625,10.5,,,,101.0,,7.62,,,array-carpenter-combine,2026-03-13
-Joshua Josephs,Tennessee,EDGE,75.125,242.0,34.25,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Josiah Trotter,Missouri,LB,73.875,237.0,32.25,10.25,,,,,,,27.0,,array-carpenter-combine,2026-03-13
-Jude Bowry,Boston College,OT,77.125,314.0,33.75,10.75,5.08,1.75,34.5,115.0,,,,,array-carpenter-combine,2026-03-13
-Julian Neal,Arkansas,CB,73.625,203.0,32.75,9.5,4.49,1.59,40.0,134.0,4.2,7.13,16.0,,array-carpenter-combine,2026-03-13
-Justin Jefferson,Alabama,LB,72.375,223.0,31.75,10.0,4.57,1.6,38.5,125.0,,,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Justin Joly,N.C. State,TE,75.5,241.0,32.25,10.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Kaden Wetjen,Iowa,WR,69.375,193.0,29.625,8.5,4.47,1.58,35.5,,4.44,6.95,,,array-carpenter-combine,2026-03-13
-Kadyn Proctor,Alabama,OT,78.625,352.0,33.375,9.75,5.21,1.84,32.5,109.0,,,,9.26,array-carpenter-combine,2026-03-13
-Kaelon Black,Indiana,RB,69.0,208.0,,,,,,,,,,,array-carpenter-combine,2026-03-13
-Kage Casey,Boise State,OT,77.625,310.0,32.75,10.25,5.2,1.85,,,,8.01,,6.00,array-carpenter-combine,2026-03-13
-Kaleb Elarms-Orr,TCU,LB,74.0,234.0,31.5,9.0,4.47,1.59,40.0,124.0,4.41,,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Kaleb Proctor,Southeastern Louisiana,DT,73.875,291.0,33.0,9.5,4.79,1.68,33.0,113.0,4.71,,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Kamari Ramsey,USC,S,72.25,202.0,30.625,9.25,4.47,1.57,36.0,120.0,,,16.0,,array-carpenter-combine,2026-03-13
-Karson Sharar,Iowa,LB,73.5,231.0,31.125,10.125,4.56,1.59,40.0,123.0,,,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Kayden McDonald,Ohio State,DT,74.125,326.0,32.25,9.75,,,,,,,,,array-carpenter-combine,2026-03-13
-Kaytron Allen,Penn State,RB,71.375,216.0,29.5,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-KC Concepcion,Texas A&M,WR,71.625,196.0,30.25,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Keagen Trost,Missouri,OT,76.625,311.0,32.375,9.25,,,31.0,,,,,,array-carpenter-combine,2026-03-13
-Keionte Scott,Miami,CB,71.25,193.0,31.375,9.625,,,,,,,,,array-carpenter-combine,2026-03-13
-Keith Abney II,Arizona State,CB,69.875,187.0,30.0,9.75,,,,,,,15.0,,array-carpenter-combine,2026-03-13
-Keldric Faulk,Auburn,EDGE,77.875,276.0,34.375,9.875,,,35.0,117.0,,,,,array-carpenter-combine,2026-03-13
-Kendal Daniels,Oklahoma,LB,77.0,242.0,32.5,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Kendrick Law,Kentucky,WR,71.375,203.0,31.125,9.625,4.45,1.56,42.0,128.0,,,21.0,,array-carpenter-combine,2026-03-13
-Kenyon Sadiq,Oregon,TE,75.125,241.0,31.5,10.0,4.39,1.54,43.5,133.0,,,26.0,9.58,array-carpenter-combine,2026-03-13
-Kevin Coleman Jr.,Missouri,WR,70.25,179.0,30.0,9.5,4.49,1.62,38.5,126.0,,,,,array-carpenter-combine,2026-03-13
-Keylan Rutledge,Georgia Tech,IOL,75.625,316.0,33.25,10.0,5.05,1.81,32.5,104.0,4.54,7.54,,,array-carpenter-combine,2026-03-13
-Keyron Crawford,Auburn,EDGE,76.375,253.0,32.0,9.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Keyshaun Elliott,Arizona State,LB,73.75,231.0,31.25,9.25,,,38.0,125.0,,,21.0,,CBS Live Results; array-carpenter-combine,2026-03-13
-Khalil Dinkins,Penn State,TE,76.25,251.0,33.25,9.5,4.72,1.7,32.5,119.0,4.33,7.28,25.0,,array-carpenter-combine,2026-03-13
-Kyle Louis,Pittsburgh,LB,71.875,220.0,31.25,9.5,4.53,1.58,39.5,129.0,4.26,6.97,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Lake McRee,USC,TE,76.125,243.0,31.5,9.25,,,,,,,22.0,,array-carpenter-combine,2026-03-13
-Lander Barton,Utah,LB,76.625,233.0,32.25,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Latrell McCutchin Sr.,Houston,CB,73.875,191.0,31.25,8.5,4.43,1.58,38.5,131.0,4.18,7.0,,,array-carpenter-combine,2026-03-13
-Lee Hunter,Texas Tech,DT,75.5,318.0,33.25,9.25,5.18,1.79,21.5,100.0,,,,,array-carpenter-combine,2026-03-13
-Le'Veon Moss,Texas A&M,RB,71.0,203.0,31.0,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Logan Fano,Utah,EDGE,76.875,257.0,31.375,9.375,,,,,,,,,array-carpenter-combine,2026-03-13
-Logan Jones,Iowa,IOL,74.875,299.0,30.75,9.5,4.9,1.75,32.0,110.0,4.59,7.46,,,array-carpenter-combine,2026-03-13
-Logan Taylor,Boston College,IOL,78.75,314.0,33.875,10.5,5.19,1.82,31.0,108.0,4.84,7.75,,,array-carpenter-combine,2026-03-13
-Lorenzo Styles Jr.,Ohio State,S,72.5,194.0,31.625,9.5,4.27,1.49,39.0,,,,,9.96,array-carpenter-combine,2026-03-13
-Louis Moore,Indiana,S,70.75,191.0,29.5,9.875,,,,,,,,,array-carpenter-combine,2026-03-13
-LT Overton,Alabama,EDGE,75.0,274.0,33.25,10.625,4.87,1.7,,,,,,,array-carpenter-combine,2026-03-13
-Luke Altmyer,Illinois,QB,73.75,210.0,29.875,9.0,4.72,1.66,32.0,114.0,,,,,array-carpenter-combine,2026-03-13
-Makai Lemon,USC,WR,71.125,192.0,30.5,8.75,,,,,,,,,array-carpenter-combine,2026-03-13
-Malachi Fields,Notre Dame,WR,76.5,218.0,32.125,9.0,4.61,1.63,38.0,124.0,4.35,6.98,,,array-carpenter-combine,2026-03-13
-Malachi Lawrence,UCF,EDGE,76.375,253.0,33.625,9.25,4.52,1.59,40.0,130.0,,,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Malik Benson,Oregon,WR,72.125,189.0,31.875,8.625,4.37,1.55,32.5,122.0,,,,,array-carpenter-combine,2026-03-13
-Malik Muhammad,Texas,CB,72.0,182.0,32.375,9.875,4.42,1.51,39.0,130.0,,,,9.45,array-carpenter-combine,2026-03-13
-Mansoor Delane,LSU,CB,71.75,187.0,30.0,8.875,,,,,,,,,array-carpenter-combine,2026-03-13
-Marcus Allen,North Carolina,CB,73.625,187.0,32.125,8.5,4.5,1.64,39.0,123.0,,,,,array-carpenter-combine,2026-03-13
-Markel Bell,Miami,OT,81.25,346.0,36.375,9.0,5.36,1.84,,,,,,,array-carpenter-combine,2026-03-13
-Marlin Klein,Michigan,TE,78.0,248.0,32.375,9.25,4.61,1.64,36.0,117.0,,7.42,,,array-carpenter-combine,2026-03-13
-Marvin Jones Jr.,Oklahoma,EDGE,77.0,245.0,33.125,9.25,4.69,1.65,,,,,,,array-carpenter-combine,2026-03-13
-Mason Reiger,Wisconsin,EDGE,76.625,251.0,32.625,10.375,4.78,1.61,40.0,125.0,,,,,array-carpenter-combine,2026-03-13
-Matt Gulbin,Michigan State,IOL,75.625,305.0,31.75,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Matthew Hibner,SMU,TE,76.25,251.0,32.375,9.375,4.57,1.61,37.0,116.0,,,28.0,,array-carpenter-combine,2026-03-13
-Max Bredeson,Michigan,RB,74.0,252.0,30.125,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Max Iheanachor,Arizona State,OT,77.875,321.0,33.875,9.0,4.91,1.73,30.5,115.0,,,,,array-carpenter-combine,2026-03-13
-Max Klare,Ohio State,TE,76.375,246.0,32.125,9.125,,,,,,,,,array-carpenter-combine,2026-03-13
-Max Llewellyn,Iowa,EDGE,77.625,258.0,32.25,9.0,4.81,1.64,32.5,115.0,,,,,array-carpenter-combine,2026-03-13
-Micah Morris,Georgia,IOL,77.25,334.0,33.625,10.375,5.09,1.73,29.5,112.0,,,,,array-carpenter-combine,2026-03-13
-Michael Taaffe,Texas,S,71.875,190.0,29.25,9.375,4.5,1.58,,,,,,,array-carpenter-combine,2026-03-13
-Michael Trigg,Baylor,TE,75.75,240.0,34.25,10.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Mike Washington Jr.,Arkansas,RB,73.0,223.0,33.625,9.25,4.33,1.51,39.0,128.0,,,,,array-carpenter-combine,2026-03-13
-Miles Kitselman,Tennessee,TE,77.125,251.0,31.875,9.875,4.9,1.71,34.5,116.0,,,,,array-carpenter-combine,2026-03-13
-Monroe Freeling,Georgia,OT,79.375,315.0,34.75,10.75,4.93,1.71,33.5,115.0,,,,9.99,array-carpenter-combine,2026-03-13
-Nadame Tucker,Western Michigan,EDGE,73.875,247.0,31.375,9.0,4.73,1.63,33.5,119.0,,,,,array-carpenter-combine,2026-03-13
-Namdi Obiazor,TCU,LB,74.75,229.0,30.75,10.5,4.53,1.56,37.0,119.0,4.36,7.24,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Nate Boerkircher,Texas A&M,TE,77.5,245.0,32.625,10.5,,,,,4.4,,,,array-carpenter-combine,2026-03-13
-Nicholas Singleton,Penn State,RB,72.25,219.0,31.0,9.375,,,,,,,,,array-carpenter-combine,2026-03-13
-Nick Barrett,South Carolina,DT,74.875,312.0,33.375,10.0,5.1,1.71,31.5,108.0,4.91,8.17,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Noah Whittington,Oregon,RB,68.25,205.0,29.125,8.25,,,,,,,24.0,,array-carpenter-combine,2026-03-13
-Nyjalik Kelly,UCF,EDGE,77.375,256.0,35.125,10.375,4.88,1.69,37.0,119.0,,,,,array-carpenter-combine,2026-03-13
-Olaivavega Ioane,Penn State,IOL,76.25,320.0,32.75,10.5,,,31.5,104.0,,,,,array-carpenter-combine,2026-03-13
-Omar Cooper Jr.,Indiana,WR,72.125,199.0,30.25,9.625,4.42,1.55,37.0,,,,,,array-carpenter-combine,2026-03-13
-Oscar Delp,Georgia,TE,76.875,245.0,31.625,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Owen Heinecke,Oklahoma,LB,73.5,227.0,30.125,9.75,4.62,1.62,34.5,119.0,,7.15,,,array-carpenter-combine,2026-03-13
-Parker Brailsford,Alabama,IOL,73.875,289.0,32.0,9.5,4.95,1.7,32.5,118.0,4.72,,,8.47,array-carpenter-combine,2026-03-13
-Pat Coogan,Indiana,IOL,77.375,311.0,31.125,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Patrick Payton,LSU,EDGE,76.875,260.0,33.5,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Peter Woods,Clemson,DT,74.5,298.0,31.25,9.125,,,,,,,,,array-carpenter-combine,2026-03-13
-Quintayvious Hutchins,Boston College,EDGE,74.875,233.0,32.625,9.5,4.74,1.73,37.0,,,,,,array-carpenter-combine,2026-03-13
-R Mason Thomas,Oklahoma,EDGE,74.25,241.0,31.625,8.875,4.67,1.63,,,,,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Rahsul Faison,South Carolina,RB,71.0,208.0,30.875,9.0,,,37.5,122.0,,,,,array-carpenter-combine,2026-03-13
-Rayshaun Benny,Michigan,DT,75.25,298.0,33.375,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Red Murdock,Buffalo,LB,73.875,232.0,31.0,10.375,,,,,,,,,array-carpenter-combine,2026-03-13
-Reggie Virgil,Texas Tech,WR,74.625,187.0,31.25,9.25,4.57,1.58,36.0,127.0,,,,,array-carpenter-combine,2026-03-13
-Riley Nowakowski,Indiana,TE,74.25,250.0,31.5,8.75,4.66,1.7,33.5,119.0,,,,,array-carpenter-combine,2026-03-13
-RJ Maryland,SMU,TE,76.125,236.0,32.25,9.0,4.51,1.64,33.0,122.0,,,,8.58,array-carpenter-combine,2026-03-13
-Robert Henry Jr.,Texas-San Antonio,RB,69.25,196.0,30.125,9.125,4.52,1.62,37.0,124.0,4.31,,,,array-carpenter-combine,2026-03-13
-Robert Spears-Jennings,Oklahoma,S,73.875,205.0,32.5,10.375,4.32,1.51,35.0,125.0,4.43,,,,array-carpenter-combine,2026-03-13
-Roman Hemby,Indiana,RB,71.875,207.0,31.0,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Romello Height,Texas Tech,EDGE,74.75,239.0,32.25,9.5,4.64,1.63,39.0,125.0,,,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Rueben Bain Jr.,Miami,EDGE,74.25,263.0,30.875,9.125,,,,,,,,,array-carpenter-combine,2026-03-13
-Ryan Eckley,Michigan State,,72.75,200.0,31.0,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Sam Hecht,Kansas State,IOL,76.125,303.0,31.625,9.875,5.1,1.73,28.0,101.0,4.71,7.75,,,array-carpenter-combine,2026-03-13
-Sam Roush,Stanford,TE,78.0,267.0,30.625,10.0,4.7,1.61,38.5,126.0,4.37,7.08,25.0,,array-carpenter-combine,2026-03-13
-Sawyer Robertson,Baylor,QB,75.75,216.0,32.125,9.375,4.64,1.61,37.5,123.0,4.46,7.45,,,array-carpenter-combine,2026-03-13
-Scooby Williams,Texas A&M,LB,74.25,231.0,32.0,9.25,,,,,,,,,array-carpenter-combine,2026-03-13
-Seth McGowan,Kentucky,RB,72.25,223.0,31.375,8.75,4.49,1.6,42.5,131.0,4.5,,,,array-carpenter-combine,2026-03-13
-Skyler Bell,Connecticut,WR,71.625,192.0,31.125,10.0,4.4,1.53,41.0,133.0,,,,,array-carpenter-combine,2026-03-13
-Skyler Gill-Howard,Texas Tech,DT,72.625,280.0,30.75,9.25,,,,,,,27.0,,array-carpenter-combine,2026-03-13
-Sonny Styles,Ohio State,LB,77.0,244.0,32.875,10.0,4.46,1.56,43.5,134.0,4.26,7.09,,9.99,CBS Live Results; array-carpenter-combine,2026-03-13
-Spencer Fano,Utah,OT,77.5,311.0,32.125,9.0,4.91,1.72,32.0,111.0,4.67,7.34,,9.76,array-carpenter-combine,2026-03-13
-Tacario Davis,Washington,CB,75.875,194.0,33.375,9.25,4.41,1.59,37.0,123.0,,,,9.76,array-carpenter-combine,2026-03-13
-Tanner Koziol,Houston,TE,78.5,247.0,33.75,9.75,4.7,1.62,36.5,122.0,,,,9.72,array-carpenter-combine,2026-03-13
+Jam Miller,Alabama,RB,70.25,209.0,30.375,8.75,4.42,1.53,30.5,115.0,,,,7.31,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jamal Haynes,Georgia Tech,RB,66.875,186,28.375,8.75,4.55,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+James Brockermeyer,Miami,IOL,75.0,297.0,32,9.5,5.25,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jaren Kanak,Oklahoma,TE,74.0,234.0,30.5,9.375,4.52,1.61,36.0,119.0,,,24.0,7.90,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jaydn Ott,Oklahoma,RB,70.875,202,31,9.5,4.45,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Jaylon Guilbeau,Texas,CB,71.125,190.0,30.125,9.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+J.C. Davis,Illinois,OT,76.375,322.0,34.25,10.125,5.16,1.78,30.5,99.0,,,,7.28,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jeff Caldwell,Cincinnati,WR,77.375,216.0,32.625,9.75,4.31,1.48,42.0,134.0,,,,9.99,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jeffrey M'Ba,SMU,DT,77.5,316,33.75,10.375,5.10,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Jeremiah Wright,Auburn,IOL,77.125,331.0,33.125,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jeremiyah Love,Notre Dame,RB,72.0,212.0,32.0,9.125,4.36,1.55,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jermod McCoy,Tennessee,CB,72.75,188.0,31.25,9.0,,,,,,,14.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jimmy Rolder,Michigan,LB,74.5,238.0,30.5,9.75,,,36.0,119.0,4.26,7.0,,9.49,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+J'Mari Taylor,Virginia,RB,69.875,199.0,30.0,9.0,,,34.5,115.0,,,20.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Joe Fagnano,Connecticut,QB,75.25,226.0,31.375,9.25,4.83,1.67,35.0,118.0,4.35,,,8.55,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Joe Royer,Cincinnati,TE,77.125,247.0,31.5,10.75,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Joey Aguilar,Tennessee,QB,75.25,229.0,31.75,9.625,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+John Michael Gyllenborg,Wyoming,TE,77.75,249.0,31.0,10.0,4.6,1.6,35.5,128.0,4.22,,,9.92,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jonah Coleman,Washington,RB,68.125,220.0,28.875,9.125,,,,,,,22.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jordan Hudson,SMU,WR,73.25,191.0,31.125,9.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jordyn Tyson,Arizona State,WR,74.125,203.0,30.25,9.125,,,,,,,26.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Josh Cameron,Baylor,WR,73.5,220.0,33.125,10.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Josh Cuevas,Alabama,TE,75.375,245.0,30.625,9.625,4.65,1.65,34.0,118.0,4.38,7.37,,7.56,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Josh Moten,Southern Mississippi,,71.875,178,29.625,8.875,4.55,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Joshua Braun,Kentucky,IOL,78.125,325.0,34.625,10.5,,,,101.0,,7.62,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Joshua Josephs,Tennessee,EDGE,75.125,242.0,34.25,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Josiah Trotter,Missouri,LB,73.875,237.0,32.25,10.25,,,,,,,27.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Jude Bowry,Boston College,OT,77.125,314.0,33.75,10.75,5.08,1.75,34.5,115.0,,,,9.53,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Julian Neal,Arkansas,CB,73.625,203.0,32.75,9.5,4.49,1.59,40.0,134.0,4.2,7.13,16.0,9.48,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Justin Jefferson,Alabama,LB,72.375,223.0,31.75,10.0,4.57,1.6,38.5,125.0,,,,8.39,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Justin Joly,N.C. State,TE,75.5,241.0,32.25,10.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Kaden Wetjen,Iowa,WR,69.375,193.0,29.625,8.5,4.47,1.58,35.5,,4.44,6.95,,6.56,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Kadyn Proctor,Alabama,OT,78.625,352.0,33.375,9.75,5.21,1.84,32.5,109.0,,,,9.26,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Kaelon Black,Indiana,RB,69.0,208.0,,,,,,,,,,,array-carpenter-combine,2026-03-14
+Kage Casey,Boise State,OT,77.625,310.0,32.75,10.25,5.2,1.85,,,,8.01,,6.00,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Kaleb Elarms-Orr,TCU,LB,74.0,234.0,31.5,9.0,4.47,1.59,40.0,124.0,4.41,,,,CBS Live Results; array-carpenter-combine,2026-03-14
+Kaleb Proctor,Southeastern Louisiana,DT,73.875,291.0,33.0,9.5,4.79,1.68,33.0,113.0,4.71,,,9.13,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Kalei Flarms-Orr,TCU,LB,74,234,31.5,9,4.47,1.59,40.0,124,4.41,,,9.71,nfl-draft-westen-measurements,2026-03-14
+Kamari Ramsey,USC,S,72.25,202.0,30.625,9.25,4.47,1.57,36.0,120.0,,,16.0,8.57,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Karson Sharar,Iowa,LB,73.5,231.0,31.125,10.125,4.56,1.59,40.0,123.0,,,,9.54,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Kayden McDonald,Ohio State,DT,74.125,326.0,32.25,9.75,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Kaytron Allen,Penn State,RB,71.375,216.0,29.5,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+KC Concepcion,Texas A&M,WR,71.625,196.0,30.25,9.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Keagen Trost,Missouri,OT,76.625,311.0,32.375,9.25,,,31.0,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Keionte Scott,Miami,CB,71.25,193.0,31.375,9.625,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Keith Abney II,Arizona State,CB,69.875,187.0,30.0,9.75,,,,,,,15.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Keldric Faulk,Auburn,EDGE,77.875,276.0,34.375,9.875,,,35.0,117.0,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Kendal Daniels,Oklahoma,LB,77.0,242.0,32.5,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Kendrick Law,Kentucky,WR,71.375,203.0,31.125,9.625,4.45,1.56,42.0,128.0,,,21.0,9.60,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Kenyon Sadiq,Oregon,TE,75.125,241.0,31.5,10.0,4.39,1.54,43.5,133.0,,,26.0,9.58,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Kevin Coleman Jr.,Missouri,WR,70.25,179.0,30.0,9.5,4.49,1.62,38.5,126.0,,,,6.45,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Keylan Rutledge,Georgia Tech,IOL,75.625,316.0,33.25,10.0,5.05,1.81,32.5,104.0,4.54,7.54,,9.62,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Keyron Crawford,Auburn,EDGE,76.375,253.0,32.0,9.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Keyshaun Elliott,Arizona State,LB,73.75,231.0,31.25,9.25,,,38.0,125.0,,,21.0,,CBS Live Results; array-carpenter-combine,2026-03-14
+Keyshawn Elliott,Arizona State,LB,74,231,31.125,9.125,,,38.0,125,,,,,nfl-draft-westen-measurements,2026-03-14
+Khalil Dinkins,Penn State,TE,76.25,251.0,33.25,9.5,4.72,1.7,32.5,119.0,4.33,7.28,25.0,7.83,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Kyle Louis,Pittsburgh,LB,71.875,220.0,31.25,9.5,4.53,1.58,39.5,129.0,4.26,6.97,,9.10,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Lake McRee,USC,TE,76.125,243.0,31.5,9.25,,,,,,,22.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Lander Barton,Utah,LB,76.625,233.0,32.25,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Landon Robinson,Navy,,71.25,293,31.75,9.125,4.91,1.65,32.50,110,4.48,7.28,30.00,9.40,nfl-draft-westen-measurements,2026-03-14
+Latrell McCutchin Jr.,Houston,CB,73.875,191,31.125,8.125,4.43,1.58,38.5,131,4.18,7,,9.70,nfl-draft-westen-measurements,2026-03-14
+Latrell McCutchin Sr.,Houston,CB,73.875,191.0,31.25,8.5,4.43,1.58,38.5,131.0,4.18,7.0,,,array-carpenter-combine,2026-03-14
+Lee Hunter,Texas Tech,DT,75.5,318.0,33.25,9.25,5.18,1.79,21.5,100.0,,,,3.72,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Le'Veon Moss,Texas A&M,RB,71.0,203.0,31.0,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Logan Fano,Utah,EDGE,76.875,257.0,31.375,9.375,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Logan Jones,Iowa,IOL,74.875,299.0,30.75,9.5,4.9,1.75,32.0,110.0,4.59,7.46,,9.66,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Logan Taylor,Boston College,IOL,78.75,314.0,33.875,10.5,5.19,1.82,31.0,108.0,4.84,7.75,,9.29,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Lorenzo Styles Jr.,Ohio State,S,72.5,194.0,31.625,9.5,4.27,1.49,39.0,,,,,9.96,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Louis Moore,Indiana,S,70.75,191.0,29.5,9.875,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+LT Overton,Alabama,EDGE,75.0,274.0,33.25,10.625,4.87,1.7,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Luke Altmeyer,Illinois,QB,73.25,210,30.375,9,,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Luke Altmyer,Illinois,QB,73.75,210.0,29.875,9.0,4.72,1.66,32.0,114.0,,,,7.05,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Makai Lemon,USC,WR,71.125,192.0,30.5,8.75,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Malachi Fields,Notre Dame,WR,76.5,218.0,32.125,9.0,4.61,1.63,38.0,124.0,4.35,6.98,,7.50,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Malachi Lawrence,UCF,EDGE,76.375,253.0,33.625,9.25,4.52,1.59,40.0,130.0,,,,9.90,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Malik Benson,Oregon,WR,72.125,189.0,31.875,8.625,4.37,1.55,32.5,122.0,,,,7.73,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Malik Muhammad,Texas,CB,72.0,182.0,32.375,9.875,4.42,1.51,39.0,130.0,,,,9.45,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Mansoor Delane,LSU,CB,71.75,187.0,30.0,8.875,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Marcus Allen,North Carolina,CB,73.625,187.0,32.125,8.5,4.5,1.64,39.0,123.0,,,,8.91,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Markel Bell,Miami,OT,81.25,346.0,36.375,9.0,5.36,1.84,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Marlin Klein,Michigan,TE,78.0,248.0,32.375,9.25,4.61,1.64,36.0,117.0,,7.42,,9.00,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Marvin Jones Jr.,Oklahoma,EDGE,77.0,245.0,33.125,9.25,4.69,1.65,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Mason Reiger,Wisconsin,EDGE,76.625,251.0,32.625,10.375,4.78,1.61,40.0,125.0,,,,9.53,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Matt Gulbin,Michigan State,IOL,75.625,305.0,31.75,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Matthew Hibner,SMU,TE,76.25,251.0,32.375,9.375,4.57,1.61,37.0,116.0,,,28.0,9.56,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Max Bredeson,Michigan,RB,74.0,252.0,30.125,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Max Iheanachor,Arizona State,OT,77.875,321.0,33.875,9.0,4.91,1.73,30.5,115.0,,,,9.91,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Max Klare,Ohio State,TE,76.375,246.0,32.125,9.125,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Max Llewellyn,Iowa,EDGE,77.625,258.0,32.25,9.0,4.81,1.64,32.5,115.0,,,,7.72,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Micah Morris,Georgia,IOL,77.25,334.0,33.625,10.375,5.09,1.73,29.5,112.0,,,,9.98,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Michael Taaffe,Texas,S,71.875,190.0,29.25,9.375,4.5,1.58,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Michael Trigg,Baylor,TE,75.75,240.0,34.25,10.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Mikail Kamara,Indiana,EDGE,72.5,260,32.75,9.5,4.75,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Mike Washington Jr.,Arkansas,RB,73.0,223.0,33.625,9.25,4.33,1.51,39.0,128.0,,,,10.00,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Miles Kitselman,Tennessee,TE,77.125,251.0,31.875,9.875,4.9,1.71,34.5,116.0,,,,5.83,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Miles Scott,Illinois,S,71.375,208,30.5,10.375,,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Miller Moss,Louisville,QB,73.125,211,29.625,9.375,4.80,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Monroe Freeling,Georgia,OT,79.375,315.0,34.75,10.75,4.93,1.71,33.5,115.0,,,,9.99,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Nadame Tucker,Western Michigan,EDGE,73.875,247.0,31.375,9.0,4.73,1.63,33.5,119.0,,,,6.82,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Namdi Obiazor,TCU,LB,74.75,229.0,30.75,10.5,4.53,1.56,37.0,119.0,4.36,7.24,,9.12,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Nate Boerkircher,Texas A&M,TE,77.5,245.0,32.625,10.5,,,,,4.4,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Nicholas Singleton,Penn State,RB,72.25,219.0,31.0,9.375,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Nick Barrett,South Carolina,DT,74.875,312.0,33.375,10.0,5.1,1.71,31.5,108.0,4.91,8.17,,7.84,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Noah Whittington,Oregon,RB,68.25,205.0,29.125,8.25,,,,,,,24.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Nyjalik Kelly,UCF,EDGE,77.375,256.0,35.125,10.375,4.88,1.69,37.0,119.0,,,,7.61,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Olaivavega Ioane,Penn State,IOL,76.25,320.0,32.75,10.5,,,31.5,104.0,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Omar Cooper Jr.,Indiana,WR,72.125,199.0,30.25,9.625,4.42,1.55,37.0,,,,,8.70,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Oscar Delp,Georgia,TE,76.875,245.0,31.625,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Owen Heinecke,Oklahoma,LB,73.5,227.0,30.125,9.75,4.62,1.62,34.5,119.0,,7.15,,7.86,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Parker Brailsford,Alabama,IOL,73.875,289.0,32.0,9.5,4.95,1.7,32.5,118.0,4.72,,,8.47,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Pat Coogan,Indiana,IOL,77.375,311.0,31.125,9.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Patrick Payton,LSU,EDGE,76.875,260.0,33.5,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Peter Woods,Clemson,DT,74.5,298.0,31.25,9.125,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Quintayvious Hutchins,Boston College,EDGE,74.875,233.0,32.625,9.5,4.74,1.73,37.0,,,,,5.49,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+R Mason Thomas,Oklahoma,EDGE,74.25,241.0,31.625,8.875,4.67,1.63,,,,,,,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Rahsul Faison,South Carolina,RB,71.0,208.0,30.875,9.0,,,37.5,122.0,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Rayshaun Benny,Michigan,DT,75.25,298.0,33.375,9.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Red Murdock,Buffalo,LB,73.875,232.0,31.0,10.375,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Reggie Virgil,Texas Tech,WR,74.625,187.0,31.25,9.25,4.57,1.58,36.0,127.0,,,,7.78,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Ricardo Hallman,Wisconsin,CB,69,183,30.75,8.875,4.55,1.58,37.0,115,4.38,7.22,13,3.28,nfl-draft-westen-measurements,2026-03-14
+Riley Mahlman,Wisconsin,OT,80.125,304,32.25,9.125,,,30.0,106,4.59,7.65,17,7.96,nfl-draft-westen-measurements,2026-03-14
+Riley Nowakowski,Indiana,TE,74.25,250.0,31.5,8.75,4.66,1.7,33.5,119.0,,,,7.97,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+RJ Maryland,SMU,TE,76.125,236.0,32.25,9.0,4.51,1.64,33.0,122.0,,,,8.58,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Robert Henry Jr.,Texas-San Antonio,RB,69.25,196.0,30.125,9.125,4.52,1.62,37.0,124.0,4.31,,,6.81,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Robert Spears-Jennings,Oklahoma,S,73.875,205.0,32.5,10.375,4.32,1.51,35.0,125.0,4.43,,,9.78,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Roman Hemby,Indiana,RB,71.875,207.0,31.0,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Romello Height,Texas Tech,EDGE,74.75,239.0,32.25,9.5,4.64,1.63,39.0,125.0,,,,,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Rueben Bain Jr.,Miami,EDGE,74.25,263.0,30.875,9.125,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Ryan Eckley,Michigan State,,72.75,200.0,31.0,9.25,,,,,,,,,array-carpenter-combine,2026-03-14
+Sage Ryan,Ole Miss,S,70.125,206,30.875,8.625,4.60,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+Sam Hecht,Kansas State,IOL,76.125,303.0,31.625,9.875,5.1,1.73,28.0,101.0,4.71,7.75,,8.13,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Sam Roush,Stanford,TE,78.0,267.0,30.625,10.0,4.7,1.61,38.5,126.0,4.37,7.08,25.0,9.93,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Sawyer Robertson,Baylor,QB,75.75,216.0,32.125,9.375,4.64,1.61,37.5,123.0,4.46,7.45,,9.78,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Scooby Williams,Texas A&M,LB,74.25,231.0,32.0,9.25,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Seth McGowan,Kentucky,RB,72.25,223.0,31.375,8.75,4.49,1.6,42.5,131.0,4.5,,,9.43,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Skyler Bell,Connecticut,WR,71.625,192.0,31.125,10.0,4.4,1.53,41.0,133.0,,,,9.66,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Skyler Gill-Howard,Texas Tech,DT,72.625,280.0,30.75,9.25,,,,,,,27.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Sonny Styles,Ohio State,LB,77.0,244.0,32.875,10.0,4.46,1.56,43.5,134.0,4.26,7.09,,9.99,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Spencer Fano,Utah,OT,77.5,311.0,32.125,9.0,4.91,1.72,32.0,111.0,4.67,7.34,,9.76,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Tacario Davis,Washington,CB,75.875,194.0,33.375,9.25,4.41,1.59,37.0,123.0,,,,9.76,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Tanner Koziol,Houston,TE,78.5,247.0,33.75,9.75,4.7,1.62,36.5,122.0,,,,9.72,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
 Tanner Miller,Michigan,IOL,,,,,,,,,,,,4.81,RAS Historical Import,2026-03-05
-Taurean York,Texas A&M,LB,70.75,226.0,30.0,8.5,,,,,4.48,7.32,25.0,,array-carpenter-combine,2026-03-13
-Taylen Green,Arkansas,QB,77.875,227.0,34.75,9.875,4.36,1.55,43.5,134.0,,,,,array-carpenter-combine,2026-03-13
-Ted Hurst,Georgia State,WR,75.875,206.0,32.625,9.75,4.42,1.55,36.5,135.0,,,,,array-carpenter-combine,2026-03-13
-Thaddeus Dixon,North Carolina,CB,72.625,195.0,31.125,10.0,,,39.5,125.0,,,,,array-carpenter-combine,2026-03-13
-Tim Keenan III,Alabama,DT,73.0,327.0,30.5,8.625,5.31,1.83,30.0,100.0,,,21.0,,array-carpenter-combine,2026-03-13
-TJ Hall,Iowa,CB,72.75,189.0,30.0,9.5,4.59,1.62,36.0,,4.19,7.19,,,array-carpenter-combine,2026-03-13
-T.J. Parker,Clemson,EDGE,75.625,263.0,33.125,9.5,4.68,1.61,34.0,120.0,,,,9.34,array-carpenter-combine,2026-03-13
-Tommy Doman Jr.,Florida,,76.375,214.0,31.0,9.625,,,,,,,,,array-carpenter-combine,2026-03-13
-Toriano Pride Jr.,Missouri,CB,70.375,185.0,31.0,9.25,4.32,1.51,37.5,128.0,,7.2,13.0,8.20,array-carpenter-combine,2026-03-13
-Travis Burke,Memphis,OT,80.75,325.0,34.25,10.125,5.17,1.79,27.0,107.0,,,,,array-carpenter-combine,2026-03-13
-Trey Moore,Texas,EDGE,73.625,243.0,31.625,10.5,4.54,1.6,38.5,120.0,4.43,,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Trey Smack,Florida,,73.25,188.0,30.0,8.75,,,,,,,,,array-carpenter-combine,2026-03-13
-Trey Zuhn III,Texas A&M,IOL,78.5,312.0,32.5,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Treydan Stukes,Arizona,S,72.625,190.0,31.75,8.5,4.33,1.5,38.0,130.0,,,,,array-carpenter-combine,2026-03-13
-Ty Simpson,Alabama,QB,73.125,211.0,30.875,9.375,,,,,,,,,array-carpenter-combine,2026-03-13
-Tyler Onyedim,Texas A&M,DT,75.5,292.0,34.125,10.125,,,32.0,111.0,,,,,array-carpenter-combine,2026-03-13
-Tyreak Sapp,Florida,EDGE,74.375,273.0,32.0,9.5,,,,,,,28.0,,array-carpenter-combine,2026-03-13
-Tyren Montgomery,John Carroll University,WR,71.0,190.0,,,,,,,,,,,array-carpenter-combine,2026-03-13
-Vincent Anthony Jr.,Duke,EDGE,77.625,258.0,34.125,10.0,4.84,1.67,32.5,123.0,,,,,array-carpenter-combine,2026-03-13
-Vinny Anthony II,Wisconsin,WR,71.875,183.0,31.125,9.125,4.54,1.59,34.5,,4.07,6.86,15.0,,array-carpenter-combine,2026-03-13
-VJ Payne,Kansas State,S,75.25,206.0,33.75,9.5,4.4,1.52,35.0,127.0,,,,,array-carpenter-combine,2026-03-13
-Wade Woodaz,Clemson,LB,75.375,236.0,32.625,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
-Wesley Bissainthe,Miami,LB,73.75,225.0,31.875,9.75,,,,,,,,,array-carpenter-combine,2026-03-13
-Wesley Williams,Duke,EDGE,75.75,256.0,31.875,9.5,4.89,1.68,35.5,120.0,,,,,array-carpenter-combine,2026-03-13
-Will Kacmarek,Ohio State,TE,77.5,261.0,32.25,9.75,4.74,1.7,36.0,119.0,,,,,array-carpenter-combine,2026-03-13
-Will Lee III,Texas A&M,CB,73.5,189.0,32.75,9.0,4.52,1.56,42.0,132.0,,,,,array-carpenter-combine,2026-03-13
-Xavian Sorey Jr.,Arkansas,LB,74.0,228.0,31.625,9.75,4.63,1.66,37.5,120.0,4.42,7.0,,,CBS Live Results; array-carpenter-combine,2026-03-13
-Xavier Nwankpa,Iowa,S,74.5,208.0,30.75,8.25,4.48,1.62,37.5,,,,,9.96,array-carpenter-combine,2026-03-13
-Zachariah Branch,Georgia,WR,68.625,177.0,29.375,9.0,4.35,1.5,38.0,125.0,,,20.0,8.95,array-carpenter-combine,2026-03-13
-Zakee Wheatley,Penn State,S,75.125,203.0,31.0,9.5,,,32.5,122.0,,,,,array-carpenter-combine,2026-03-13
-Zane Durant,Penn State,DT,73.125,290.0,31.875,10.625,4.75,1.66,33.5,112.0,,,,9.20,CBS Live Results; array-carpenter-combine,2026-03-13
-Zavion Thomas,LSU,WR,70.375,190.0,30.5,9.0,4.28,1.52,36.0,,,,,,array-carpenter-combine,2026-03-13
-Zion Young,Missouri,EDGE,77.75,262.0,33.0,9.5,,,,,,,,,array-carpenter-combine,2026-03-13
-Zxavian Harris,Mississippi,DT,79.75,330.0,34.625,10.0,,,,,,,,,array-carpenter-combine,2026-03-13
+Taurean York,Texas A&M,LB,70.75,226.0,30.0,8.5,,,,,4.48,7.32,25.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Taylen Green,Arkansas,QB,77.875,227.0,34.75,9.875,4.36,1.55,43.5,134.0,,,,9.99,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Ted Hurst,Georgia State,WR,75.875,206.0,32.625,9.75,4.42,1.55,36.5,135.0,,,,9.92,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Thaddeus Dixon,North Carolina,CB,72.625,195.0,31.125,10.0,,,39.5,125.0,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Tim Keenan III,Alabama,DT,73.0,327.0,30.5,8.625,5.31,1.83,30.0,100.0,,,21.0,2.47,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+TJ Guy,Michigan,EDGE,75.625,247,31.625,9.875,4.70,,,,,,,,nfl-draft-westen-measurements,2026-03-14
+TJ Hall,Iowa,CB,72.75,189.0,30.0,9.5,4.59,1.62,36.0,,4.19,7.19,,5.97,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+T.J. Parker,Clemson,EDGE,75.625,263.0,33.125,9.5,4.68,1.61,34.0,120.0,,,,9.34,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Tommy Doman Jr.,Florida,,76.375,214.0,31.0,9.625,,,,,,,,,array-carpenter-combine,2026-03-14
+Toriano Pride Jr.,Missouri,CB,70.375,185.0,31.0,9.25,4.32,1.51,37.5,128.0,,7.2,13.0,8.20,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Travis Burke,Memphis,OT,80.75,325.0,34.25,10.125,5.17,1.79,27.0,107.0,,,,9.09,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Trey Moore,Texas,EDGE,73.625,243.0,31.625,10.5,4.54,1.6,38.5,120.0,4.43,,,8.77,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Trey Smack,Florida,,73.25,188.0,30.0,8.75,,,,,,,,,array-carpenter-combine,2026-03-14
+Trey Zuhn III,Texas A&M,IOL,78.5,312.0,32.5,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Treydan Stukes,Arizona,S,72.625,190.0,31.75,8.5,4.33,1.5,38.0,130.0,,,,9.88,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Ty Simpson,Alabama,QB,73.125,211.0,30.875,9.375,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Tyler Onyedim,Texas A&M,DT,75.5,292.0,34.125,10.125,,,32.0,111.0,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Tyreak Sapp,Florida,EDGE,74.375,273.0,32.0,9.5,,,,,,,28.0,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Tyren Montgomery,John Carroll University,WR,71.0,190.0,,,,,,,,,,,array-carpenter-combine,2026-03-14
+Vincent Anthony Jr.,Duke,EDGE,77.625,258.0,34.125,10.0,4.84,1.67,32.5,123.0,,,,8.32,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Vinny Anthony II,Wisconsin,WR,71.875,183.0,31.125,9.125,4.54,1.59,34.5,115,4.07,6.86,15.0,6.84,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+VJ Payne,Kansas State,S,75.25,206.0,33.75,9.5,4.4,1.52,35.0,127.0,,,,9.86,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Wade Woodaz,Clemson,LB,75.375,236.0,32.625,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Wesley Bissainthe,Miami,LB,73.75,225.0,31.875,9.75,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Wesley Williams,Duke,EDGE,75.75,256.0,31.875,9.5,4.89,1.68,35.5,120.0,,,,7.30,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Will Kacmarek,Ohio State,TE,77.5,261.0,32.25,9.75,4.74,1.7,36.0,119.0,,,,,array-carpenter-combine,2026-03-14
+Will Kaczmarek,Ohio State,TE,77.5,261,32.125,9.375,4.74,1.7,36.0,119,,,,9.14,nfl-draft-westen-measurements,2026-03-14
+Will Lee III,Texas A&M,CB,73.5,189.0,32.75,9.0,4.52,1.56,42.0,132.0,,,,9.46,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Xavian Sorey Jr.,Arkansas,LB,74.0,228.0,31.625,9.75,4.63,1.66,37.5,120.0,4.42,7.0,,8.58,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Xavier Nwankpa,Iowa,S,74.5,208.0,30.75,8.25,4.48,1.62,37.5,,,,,9.96,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Zachariah Branch,Georgia,WR,68.625,177.0,29.375,9.0,4.35,1.5,38.0,125.0,,,20.0,8.95,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Zakee Wheatley,Penn State,S,75.125,203.0,31.0,9.5,,,32.5,122.0,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Zane Durant,Penn State,DT,73.125,290.0,31.875,10.625,4.75,1.66,33.5,112.0,,,,9.20,CBS Live Results; array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Zavion Thomas,LSU,WR,70.375,190.0,30.5,9.0,4.28,1.52,36.0,,,,,9.03,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Zion Young,Missouri,EDGE,77.75,262.0,33.0,9.5,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14
+Zxavian Harris,Mississippi,DT,79.75,330.0,34.625,10.0,,,,,,,,,array-carpenter-combine; nfl-draft-westen-measurements,2026-03-14

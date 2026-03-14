@@ -1,6 +1,6 @@
-array-carpenter combine sync @ 2026-03-13T22:09:48.762469+00:00
-pro_day_path: /Users/nickholz/nfldraftmodel2026/data/sources/external/array-carpenter-nfl-draft-data/data/combine_pro_day.csv
-official_path: /Users/nickholz/nfldraftmodel2026/data/sources/external/array-carpenter-nfl-draft-data/data/combine_official.csv
+array-carpenter combine sync @ 2026-03-14T01:39:27.027486+00:00
+pro_day_path: data/sources/external/array-carpenter-nfl-draft-data/data/combine_pro_day.csv
+official_path: data/sources/external/array-carpenter-nfl-draft-data/data/combine_official.csv
 hist_out: /Users/nickholz/nfldraftmodel2026/data/sources/external/combine_data_unique_athlete_id_step4.csv
 combine_2026_out: /Users/nickholz/nfldraftmodel2026/data/sources/manual/combine_2026_results.csv
 
@@ -14,3 +14,10 @@ rows_2026_in_source: 323
 combine_rows_total: 329
 combine_rows_created: 0
 combine_field_updates: 0
+
+westen_path: /Users/nickholz/Downloads/Official Times & Measurements - 2026.csv
+supplement_rows: 556
+supplement_rows_used: 343
+supplement_rows_created: 35
+supplement_field_updates: 349
+combine_rows_total_after_supplement: 364

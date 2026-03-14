@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import csv
 import datetime as dt
+import re
 import urllib.request
 from pathlib import Path
 
@@ -141,9 +142,99 @@ def _to_num_txt(value: str | None) -> str:
     return txt
 
 
+def _fmt_num(value: float | int | str | None) -> str:
+    if value in {None, ""}:
+        return ""
+    txt = str(value).strip()
+    if not txt:
+        return ""
+    try:
+        num = float(txt)
+    except ValueError:
+        return txt
+    return f"{num:.3f}".rstrip("0").rstrip(".")
+
+
 def _sort_key(row: dict) -> tuple[int, str]:
     year = _to_year(row.get("Year")) or 0
     return (year, str(row.get("player", "")).lower())
+
+
+def _parse_westen_height(value: str) -> str:
+    txt = str(value or "").strip()
+    if not txt:
+        return ""
+    if re.fullmatch(r"\d{4}", txt):
+        feet = int(txt[0])
+        inches = int(txt[1:3])
+        eighths = int(txt[3])
+        return _fmt_num(feet * 12 + inches + (eighths / 8.0))
+    return _to_num_txt(txt)
+
+
+def _parse_westen_arm(value: str) -> str:
+    txt = str(value or "").strip()
+    if not txt:
+        return ""
+    if re.fullmatch(r"\d{3}", txt):
+        return _fmt_num(int(txt[:2]) + (int(txt[2]) / 8.0))
+    if re.fullmatch(r"\d{4}", txt):
+        if txt[2:] == "00":
+            return _fmt_num(int(txt[:2]))
+        denominator = int(txt[3]) or 8
+        return _fmt_num(int(txt[:2]) + (int(txt[2]) / denominator))
+    return _to_num_txt(txt)
+
+
+def _parse_westen_hand(value: str) -> str:
+    txt = str(value or "").strip()
+    if not txt:
+        return ""
+    if re.fullmatch(r"\d{2}", txt):
+        return _fmt_num(int(txt[0]) + (int(txt[1]) / 8.0))
+    if re.fullmatch(r"\d{3}", txt):
+        if int(txt[:2]) <= 40:
+            return _fmt_num(int(txt[:2]) + (int(txt[2]) / 8.0))
+        denominator = int(txt[2]) or 8
+        return _fmt_num(int(txt[0]) + (int(txt[1]) / denominator))
+    if re.fullmatch(r"\d{4}", txt):
+        if txt.startswith("0"):
+            denominator = int(txt[3]) or 8
+            return _fmt_num(int(txt[1]) + (int(txt[2]) / denominator))
+        if txt[2:] == "00":
+            return _fmt_num(int(txt[:2]))
+        denominator = int(txt[3]) or 8
+        return _fmt_num(int(txt[:2]) + (int(txt[2]) / denominator))
+    return _to_num_txt(txt)
+
+
+def _parse_westen_broad(value: str) -> str:
+    txt = str(value or "").strip()
+    if not txt:
+        return ""
+    if txt.endswith(".00") and re.fullmatch(r"\d{3,4}\.00", txt):
+        txt = txt[:-3]
+    if re.fullmatch(r"\d{3,4}", txt):
+        feet = int(txt[:-2])
+        inches = int(txt[-2:])
+        return _fmt_num(feet * 12 + inches)
+    return _to_num_txt(txt)
+
+
+WESTEN_TO_2026 = {
+    "HEIGHT": ("height_in", _parse_westen_height),
+    "WEIGHT": ("weight_lb", _to_num_txt),
+    "ARM": ("arm_in", _parse_westen_arm),
+    "HAND": ("hand_in", _parse_westen_hand),
+    "40 (O)": ("forty", _to_num_txt),
+    "10 (O)": ("ten_split", _to_num_txt),
+    "BENCH": ("bench", _to_num_txt),
+    "VERT": ("vertical", _to_num_txt),
+    "BROAD": ("broad", _parse_westen_broad),
+    "SHUTTLE": ("shuttle", _to_num_txt),
+    "3 CONE": ("three_cone", _to_num_txt),
+    "RAS": ("ras_official", _to_num_txt),
+}
 
 
 def _to_pro_day_row_from_official(row: dict) -> dict:
@@ -268,6 +359,82 @@ def _merge_into_combine_2026(merged_rows: list[dict], combine_out: Path) -> dict
     }
 
 
+def _read_westen_rows(path: Path) -> list[dict]:
+    if not path.exists():
+        return []
+    with path.open("r", encoding="utf-8-sig", errors="ignore") as f:
+        lines = f.readlines()
+    if len(lines) < 3:
+        return []
+    return list(csv.DictReader(lines[2:]))
+
+
+def _merge_westen_into_combine_2026(rows: list[dict], combine_out: Path) -> dict:
+    today = dt.datetime.now(dt.UTC).strftime("%Y-%m-%d")
+    existing = _read_csv(combine_out)
+    by_name = {canonical_player_name(r.get("player_name", "")): dict(r) for r in existing if r.get("player_name")}
+
+    created = 0
+    field_updates = 0
+    used_rows = 0
+    for row in rows:
+        player_name = str(row.get("PLAYER", "")).strip()
+        if not player_name:
+            continue
+        values = {}
+        for src_col, (dst_col, parser) in WESTEN_TO_2026.items():
+            parsed = parser(row.get(src_col, ""))
+            if parsed:
+                values[dst_col] = parsed
+        if not values:
+            continue
+        used_rows += 1
+        key = canonical_player_name(player_name)
+        target = by_name.get(key)
+        if target is None:
+            target = {k: "" for k in COMBINE_2026_FIELDS}
+            target["player_name"] = player_name
+            by_name[key] = target
+            created += 1
+
+        school = str(row.get("COLLEGE", "")).strip()
+        pos = normalize_pos(str(row.get("POS", "")).strip())
+        if pos not in ALLOWED_POSITIONS:
+            pos = ""
+        if school and not str(target.get("school", "")).strip():
+            target["school"] = school
+        if pos and not str(target.get("position", "")).strip():
+            target["position"] = pos
+
+        for dst_col, new_val in values.items():
+            cur_val = str(target.get(dst_col, "")).strip()
+            if not cur_val:
+                target[dst_col] = new_val
+                field_updates += 1
+
+        source = str(target.get("source", "")).strip()
+        tag = "nfl-draft-westen-measurements"
+        if not source:
+            target["source"] = tag
+        elif tag not in source:
+            target["source"] = f"{source}; {tag}"
+        target["last_updated"] = today
+
+    out_rows = list(by_name.values())
+    for r in out_rows:
+        pos = normalize_pos(str(r.get("position", "")).strip())
+        r["position"] = pos if pos in ALLOWED_POSITIONS else ""
+    out_rows.sort(key=lambda r: canonical_player_name(r.get("player_name", "")))
+    _write_csv(combine_out, out_rows, COMBINE_2026_FIELDS)
+    return {
+        "supplement_rows": len(rows),
+        "supplement_rows_used": used_rows,
+        "supplement_rows_created": created,
+        "supplement_field_updates": field_updates,
+        "combine_rows_total": len(out_rows),
+    }
+
+
 def main() -> None:
     p = argparse.ArgumentParser(
         description="Sync array-carpenter combine data, merge pro_day + official, and update model combine inputs."
@@ -278,6 +445,7 @@ def main() -> None:
     p.add_argument("--hist-out", type=str, default=str(HIST_OUT), help="Merged historical combine CSV output")
     p.add_argument("--combine-2026-out", type=str, default=str(COMBINE_2026_OUT), help="combine_2026_results output")
     p.add_argument("--report-out", type=str, default=str(REPORT_OUT), help="Sync report path")
+    p.add_argument("--westen-path", type=str, default="", help="Optional NFLDraft_Westen measurements CSV to fill missing 2026 fields")
     args = p.parse_args()
 
     pro_day_path = Path(args.pro_day_path)
@@ -285,6 +453,7 @@ def main() -> None:
     hist_out = Path(args.hist_out)
     combine_2026_out = Path(args.combine_2026_out)
     report_out = Path(args.report_out)
+    westen_path = Path(args.westen_path) if args.westen_path else None
 
     if args.execute:
         _fetch_csv(PRO_DAY_URL, pro_day_path)
@@ -301,6 +470,10 @@ def main() -> None:
     _write_csv(hist_out, merged_rows, PRO_DAY_HEADER)
 
     combine_stats = _merge_into_combine_2026(merged_rows, combine_2026_out)
+    westen_stats = None
+    if westen_path:
+        westen_rows = _read_westen_rows(westen_path)
+        westen_stats = _merge_westen_into_combine_2026(westen_rows, combine_2026_out)
 
     lines = [
         f"array-carpenter combine sync @ {dt.datetime.now(dt.UTC).isoformat()}",
@@ -320,6 +493,18 @@ def main() -> None:
         f"combine_rows_created: {combine_stats['combine_rows_created']}",
         f"combine_field_updates: {combine_stats['combine_field_updates']}",
     ]
+    if westen_stats is not None:
+        lines.extend(
+            [
+                "",
+                f"westen_path: {westen_path}",
+                f"supplement_rows: {westen_stats['supplement_rows']}",
+                f"supplement_rows_used: {westen_stats['supplement_rows_used']}",
+                f"supplement_rows_created: {westen_stats['supplement_rows_created']}",
+                f"supplement_field_updates: {westen_stats['supplement_field_updates']}",
+                f"combine_rows_total_after_supplement: {westen_stats['combine_rows_total']}",
+            ]
+        )
     report_out.parent.mkdir(parents=True, exist_ok=True)
     report_out.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
