@@ -239,9 +239,9 @@ const compLine = (title: string, comp: any, fallback: string) => {
     </article>
     <article class="card">
       <h2 class="block-title">Historical Comp Panel</h2>
-      <div class="muted pre-wrap">{compLine("Floor", player.historical_comp_floor, "Depth / rotation outcome")}</div>
-      <div class="muted pre-wrap">{compLine("Median", player.historical_comp_median, "Starter outcome")}</div>
-      <div class="muted pre-wrap">{compLine("Ceiling", player.historical_comp_ceiling, "Impact starter / all-pro ceiling")}</div>
+      <div class="muted pre-wrap">{compLine("Comp 1", player.historical_comp_floor, "Closest high-confidence outcome comp")}</div>
+      <div class="muted pre-wrap">{compLine("Comp 2", player.historical_comp_median, "Additional profile-aligned comp")}</div>
+      <div class="muted pre-wrap">{compLine("Comp 3", player.historical_comp_ceiling, "Additional profile-aligned comp")}</div>
       <div class="muted pre-wrap" style="margin-top:0.65rem;">Comp confidence: {player.comp_confidence || "-"}</div>
     </article>
     <article class="card">

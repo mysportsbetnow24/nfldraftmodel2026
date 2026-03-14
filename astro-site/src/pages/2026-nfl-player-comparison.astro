@@ -496,9 +496,9 @@ const collectionSchema = {
 
             <div class="subcard">
               <div class="subhead">Historical Comp Panel</div>
-              ${compLine("Floor", p.historical_comp_floor, "Depth/rotation outcome")}
-              ${compLine("Median", p.historical_comp_median, "Starter outcome")}
-              ${compLine("Ceiling", p.historical_comp_ceiling, "Impact starter / all-pro ceiling")}
+              ${compLine("Comp 1", p.historical_comp_floor, "Closest high-confidence outcome comp")}
+              ${compLine("Comp 2", p.historical_comp_median, "Additional profile-aligned comp")}
+              ${compLine("Comp 3", p.historical_comp_ceiling, "Additional profile-aligned comp")}
               <div class="muted">Comp confidence: ${p.comp_confidence || "-"}</div>
             </div>
           </div>
