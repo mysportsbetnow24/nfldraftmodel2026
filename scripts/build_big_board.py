@@ -3804,6 +3804,36 @@ def _build_scouting_sections(
             ]
         )
 
+    def _variant(options: list[str]) -> str:
+        if not options:
+            return ""
+        key = sum(ord(ch) for ch in f"{name}|{pos}|{clean_role}")
+        return options[key % len(options)]
+
+    def _qb_profile_is_strong() -> bool:
+        return any(
+            [
+                final_grade >= 90.0,
+                consensus_rank <= 20,
+                qb_epa is not None and qb_epa >= 0.18,
+                "movement-heavy offense" in scheme_lower,
+                "timing" in role_lower,
+                "anticipation" in player_translation_notes.lower() if player_translation_notes else False,
+            ]
+        )
+
+    def _rb_profile_is_strong() -> bool:
+        return any(
+            [
+                final_grade >= 90.0,
+                consensus_rank <= 20,
+                rb_explosive is not None and rb_explosive >= 0.14,
+                rb_mtf is not None and rb_mtf >= 0.24,
+                "three-down" in role_lower,
+                "complete back" in player_usage_context_notes.lower() if player_usage_context_notes else False,
+            ]
+        )
+
     def _wr_profile_is_strong() -> bool:
         return any(
             [
@@ -3843,6 +3873,19 @@ def _build_scouting_sections(
             ]
         )
 
+    def _dt_profile_is_strong() -> bool:
+        return any(
+            [
+                final_grade >= 89.0,
+                consensus_rank <= 35,
+                edge_pass_rush_grade is not None and edge_pass_rush_grade >= 80.0,
+                edge_true_pass_set_win_rate is not None and edge_true_pass_set_win_rate >= 16.0,
+                edge_total_pressures is not None and edge_total_pressures >= 28.0,
+                "interior disruptor" in role_lower,
+                "one-gap" in role_lower,
+            ]
+        )
+
     def _lb_profile_is_strong() -> bool:
         return any(
             [
@@ -3853,6 +3896,19 @@ def _build_scouting_sections(
                 "overhang" in role_lower,
                 "coverage" in scheme_lower,
                 cfb_prod_signal is not None and cfb_prod_signal >= 75.0,
+            ]
+        )
+
+    def _s_profile_is_strong() -> bool:
+        return any(
+            [
+                final_grade >= 89.0,
+                consensus_rank <= 30,
+                db_yards_cov is not None and db_yards_cov <= 0.95,
+                db_plays_ball is not None and db_plays_ball >= 0.20,
+                "range-first" in role_lower,
+                "split safety" in role_lower,
+                "middle-field-open" in scheme_lower,
             ]
         )
 
@@ -3867,6 +3923,10 @@ def _build_scouting_sections(
         strong_cb = pos == "CB" and _cb_profile_is_strong()
         strong_ot = pos == "OT" and _ot_profile_is_strong()
         strong_lb = pos == "LB" and _lb_profile_is_strong()
+        strong_qb = pos == "QB" and _qb_profile_is_strong()
+        strong_rb = pos == "RB" and _rb_profile_is_strong()
+        strong_s = pos == "S" and _s_profile_is_strong()
+        strong_dt = pos == "DT" and _dt_profile_is_strong()
         edge_speed_role = any(
             phrase in role_lower
             for phrase in [
@@ -3888,6 +3948,24 @@ def _build_scouting_sections(
             if strong_edge and "total hurry volume" in normalized:
                 continue
             if edge_getoff_supported and "burst/explosion profile is below" in normalized:
+                continue
+            if strong_qb and any(
+                phrase in normalized
+                for phrase in [
+                    "drive efficiency still sits below top-tier starter range",
+                    "pressure response trends negative",
+                    "turnover management still needs cleanup",
+                ]
+            ):
+                continue
+            if strong_rb and any(
+                phrase in normalized
+                for phrase in [
+                    "explosive-run creation",
+                    "contact-creation efficiency",
+                    "short-area burst is below",
+                ]
+            ):
                 continue
             if strong_wr and any(
                 phrase in normalized
@@ -3922,6 +4000,24 @@ def _build_scouting_sections(
                 for phrase in [
                     "space-change profile",
                     "play-strength profile can limit",
+                ]
+            ):
+                continue
+            if strong_s and any(
+                phrase in normalized
+                for phrase in [
+                    "range-speed profile is below",
+                    "plays-on-ball rate",
+                    "coverage efficiency",
+                ]
+            ):
+                continue
+            if strong_dt and any(
+                phrase in normalized
+                for phrase in [
+                    "interior pressure rate",
+                    "interior mass profile is light",
+                    "lower-body explosion is below",
                 ]
             ):
                 continue
@@ -4296,19 +4392,47 @@ def _build_scouting_sections(
 
     def _concern_consequence_sentence() -> str:
         if pos == "QB":
-            return "That is the swing trait separating a stable starter path from a pressure-sensitive projection."
+            return _variant([
+                "That is the swing trait separating a stable starter path from a pressure-sensitive projection.",
+                "That is what decides whether the starter path stays on schedule or becomes more volatility-dependent.",
+                "That is the difference between a bankable starting projection and one that still needs protection from pressure chaos.",
+            ])
         if pos == "RB":
-            return "That is what determines whether the profile holds three-down value or settles into a narrower early-down lane."
+            return _variant([
+                "That is what determines whether the profile holds three-down value or settles into a narrower early-down lane.",
+                "That is the detail that decides whether the workload stays complete or narrows into a more managed touch profile.",
+                "That is the swing point between a full-menu back and a role that needs cleaner usage conditions.",
+            ])
         if pos in {"WR", "TE"}:
-            return "That is the difference between dependable target earning and a role that has to be manufactured more aggressively."
+            return _variant([
+                "That is the difference between dependable target earning and a role that has to be manufactured more aggressively.",
+                "That is what separates a steady target-earner from a profile that needs more scheme help to find volume.",
+                "That is the hinge between natural route-volume translation and a role that needs the offense to create touches for him.",
+            ])
         if pos in {"OT", "IOL"}:
-            return "That is the floor variable that decides whether he can hold structure against NFL power and movement."
+            return _variant([
+                "That is the floor variable that decides whether he can hold structure against NFL power and movement.",
+                "That is the stress point that determines whether the pocket stays clean or starts leaking under movement and power.",
+                "That is the piece that decides whether his pass-pro floor stays stable when NFL counters and force arrive together.",
+            ])
         if pos in {"EDGE", "DT"}:
-            return "That is the difference between real four-down disruption and a role that needs more controlled deployment."
+            return _variant([
+                "That is the difference between real four-down disruption and a role that needs more controlled deployment.",
+                "That is the separator between a pressure profile that stays live on every down and one that needs more curated usage.",
+                "That is the swing point between broad front-line value and a rush role that has to be protected situationally.",
+            ])
         if pos == "LB":
-            return "That is the key to keeping the projection in phase against NFL spacing stress instead of living on recovery athleticism."
+            return _variant([
+                "That is the key to keeping the projection in phase against NFL spacing stress instead of living on recovery athleticism.",
+                "That is what keeps the profile proactive instead of forcing him to survive on late speed and recovery.",
+                "That is the separator between clean second-level control and a projection that leans too heavily on reaction talent.",
+            ])
         if pos in {"CB", "S"}:
-            return "That is the trait that decides whether the coverage value is proactive or merely reactive at the next level."
+            return _variant([
+                "That is the trait that decides whether the coverage value is proactive or merely reactive at the next level.",
+                "That is the detail that determines whether the coverage profile stays ahead of the route or just recovers into it.",
+                "That is the hinge between anticipatory coverage value and a projection that has to live on reaction speed alone.",
+            ])
         return "That is the swing factor in the NFL transition."
 
     def _summary_driver_clause() -> str:
@@ -4471,7 +4595,14 @@ def _build_scouting_sections(
     def _main_driver_sentence() -> str:
         if player_translation_notes:
             return _sentence(player_translation_notes, 220)
-        return _sentence(f"The main driver is {_summary_driver_clause()}.", 220)
+        return _sentence(
+            _variant([
+                f"The main driver is {_summary_driver_clause()}.",
+                f"The profile is being carried most by {_summary_driver_clause()}.",
+                f"The clearest translation driver is {_summary_driver_clause()}.",
+            ]),
+            220,
+        )
 
     def _swing_concern_sentence() -> str:
         if player_primary_concerns_notes:
@@ -4482,10 +4613,21 @@ def _build_scouting_sections(
             if match:
                 trigger = match.group(1).strip()
             return _sentence(
-                f"The swing concern shows up when {trigger.lower()}.",
+                _variant([
+                    f"The swing concern shows up when {trigger.lower()}.",
+                    f"The pressure point shows up when {trigger.lower()}.",
+                    f"The risk window opens when {trigger.lower()}.",
+                ]),
                 220,
             )
-        return _sentence(f"The swing concern is {_summary_concern_clause()}.", 220)
+        return _sentence(
+            _variant([
+                f"The swing concern is {_summary_concern_clause()}.",
+                f"The main stress point is {_summary_concern_clause()}.",
+                f"The biggest projection question is {_summary_concern_clause()}.",
+            ]),
+            220,
+        )
 
     def _wins_role_sentence() -> str:
         if player_usage_context_notes:
@@ -4605,18 +4747,20 @@ def _build_scouting_sections(
     concern_points.append(_concern_nfl_consequence_sentence())
 
     if pos == "QB":
-        if qb_epa is not None and qb_epa < 0.08:
+        qb_profile_supported = _qb_profile_is_strong()
+        if qb_epa is not None and qb_epa < 0.08 and not qb_profile_supported:
             concern_points.append(f"Drive efficiency still sits below top-tier starter range (EPA/play {qb_epa:.2f}), so timing and anticipation have to keep climbing.")
-        if qb_press is not None and qb_press < 0.0:
+        if qb_press is not None and qb_press < 0.0 and not qb_profile_supported:
             concern_points.append("Pressure response trends negative right now, which raises the risk of pocket drift and late-trigger throws against NFL pressure looks.")
-        if qb_int is not None and qb_int >= 10:
+        if qb_int is not None and qb_int >= 10 and not qb_profile_supported:
             concern_points.append(f"Turnover management still needs cleanup ({int(round(qb_int))} INT) before the high-leverage starter path is fully stable.")
     elif pos == "RB":
-        if rb_explosive is not None and rb_explosive < 0.12:
+        rb_profile_supported = _rb_profile_is_strong()
+        if rb_explosive is not None and rb_explosive < 0.12 and not rb_profile_supported:
             concern_points.append(f"Explosive-run creation ({rb_explosive*100:.1f}% rate) is still light, which narrows the home-run element of the profile.")
-        if rb_mtf is not None and rb_mtf < 0.20:
+        if rb_mtf is not None and rb_mtf < 0.20 and not rb_profile_supported:
             concern_points.append(f"Contact-creation efficiency (MTF/touch {rb_mtf:.2f}) is modest, so more yards have to come from blocked space than self-creation.")
-        if ten_pct is not None and ten_pct < 40:
+        if ten_pct is not None and ten_pct < 40 and not rb_profile_supported:
             concern_points.append("Short-area burst is below the ideal three-down threshold, which can show up when second-level angles close quickly.")
     elif pos in {"WR", "TE"}:
         wr_profile_supported = _wr_profile_is_strong()
@@ -4682,11 +4826,12 @@ def _build_scouting_sections(
         if edge_hurries is not None and edge_hurries < 20 and not edge_disruption_supported:
             concern_points.append(f"Total hurry volume ({edge_hurries:.1f}) leaves less evidence of sustained rush disruption across full-game sample sizes.")
     elif pos == "DT":
-        if edge_pr is not None and edge_pr < 0.10:
+        dt_profile_supported = _dt_profile_is_strong()
+        if edge_pr is not None and edge_pr < 0.10 and not dt_profile_supported:
             concern_points.append(f"Interior pressure rate ({edge_pr*100:.1f}%) suggests the pass-rush ceiling still needs role tailoring to show up consistently.")
-        if weight_pct is not None and weight_pct < 30:
+        if weight_pct is not None and weight_pct < 30 and not dt_profile_supported:
             concern_points.append("Interior mass profile is light for consistent NFL anchor control on early downs, which can stress the run-game floor.")
-        if vert_pct is not None and vert_pct < 35:
+        if vert_pct is not None and vert_pct < 35 and not dt_profile_supported:
             concern_points.append("Lower-body explosion is below the preferred interior disruption threshold, so pocket push has to come more from leverage than raw twitch.")
     elif pos == "LB":
         lb_profile_supported = _lb_profile_is_strong()
@@ -4707,11 +4852,12 @@ def _build_scouting_sections(
         if (db_int is not None and db_int < 1) and (db_pbu is not None and db_pbu < 5) and not cb_profile_supported:
             concern_points.append("Limited pure ball-finish production keeps the takeaway ceiling less certain until more catch-point disruption shows up on tape.")
     elif pos == "S":
-        if forty_pct is not None and forty_pct < 35:
+        s_profile_supported = _s_profile_is_strong()
+        if forty_pct is not None and forty_pct < 35 and not s_profile_supported:
             concern_points.append("Range-speed profile is below the ideal safety threshold for deep-half overlap demands, so angle discipline has to stay clean.")
-        if db_plays_ball is not None and db_plays_ball < 0.20:
+        if db_plays_ball is not None and db_plays_ball < 0.20 and not s_profile_supported:
             concern_points.append(f"Plays-on-ball rate ({db_plays_ball:.2f} per target) is light for a top-end safety projection, so overlap has to turn into more finishes.")
-        if db_yards_cov is not None and db_yards_cov > 1.30:
+        if db_yards_cov is not None and db_yards_cov > 1.30 and not s_profile_supported:
             concern_points.append(f"Coverage efficiency ({db_yards_cov:.2f} yards/cov snap) suggests transition and angle cleanup once the route picture stretches vertically.")
     if concerns and len(concern_points) < 4:
         for concern in concerns[:2]:

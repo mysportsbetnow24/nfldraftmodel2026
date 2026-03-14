@@ -4968,12 +4968,42 @@ def _sanitize_primary_concern_text(raw: str, *, row: dict | None = None, positio
     consensus_rank = int(float(_safe_float((row or {}).get("consensus_rank")) or 999))
     role_text = str((row or {}).get("best_role", "")).lower()
     scheme_text = str((row or {}).get("best_scheme_fit", "")).lower()
+    qb_epa = _safe_float((row or {}).get("cfb_qb_epa_per_play"))
+    qb_press = _safe_float((row or {}).get("cfb_qb_pressure_signal"))
+    qb_int = _safe_float((row or {}).get("cfb_qb_pass_int"))
+    rb_explosive = _safe_float((row or {}).get("cfb_rb_explosive_rate"))
+    rb_mtf = _safe_float((row or {}).get("cfb_rb_missed_tackles_forced_per_touch"))
     wr_yprr = float(_safe_float((row or {}).get("cfb_wrte_yprr")) or 0.0)
     wr_share = float(_safe_float((row or {}).get("cfb_wrte_target_share")) or 0.0)
     db_yards_cov = _safe_float((row or {}).get("cfb_db_yards_allowed_per_coverage_snap"))
     db_plays_ball = _safe_float((row or {}).get("cfb_db_coverage_plays_per_target"))
+    edge_pr = _safe_float((row or {}).get("cfb_edge_pressure_rate"))
+    edge_pass_rush_grade = _safe_float((row or {}).get("sg_dl_pass_rush_grade"))
+    edge_true_pass_set_win_rate = _safe_float((row or {}).get("sg_dl_true_pass_set_win_rate"))
+    edge_total_pressures = _safe_float((row or {}).get("sg_dl_total_pressures"))
     cfb_prod_signal = float(_safe_float((row or {}).get("cfb_prod_signal")) or 0.0)
 
+    strong_qb = pos == "QB" and any(
+        [
+            final_grade >= 90.0,
+            consensus_rank <= 20,
+            qb_epa is not None and qb_epa >= 0.18,
+            "movement-heavy offense" in scheme_text,
+            "timing" in role_text,
+            qb_press is not None and qb_press >= 0.0,
+            qb_int is not None and qb_int <= 8,
+        ]
+    )
+    strong_rb = pos == "RB" and any(
+        [
+            final_grade >= 90.0,
+            consensus_rank <= 20,
+            rb_explosive is not None and rb_explosive >= 0.14,
+            rb_mtf is not None and rb_mtf >= 0.24,
+            "three-down" in role_text,
+            "complete back" in role_text,
+        ]
+    )
     strong_wr = pos in {"WR", "TE"} and any(
         [
             final_grade >= 90.0,
@@ -5005,6 +5035,18 @@ def _sanitize_primary_concern_text(raw: str, *, row: dict | None = None, positio
             "pass-pro" in role_text,
         ]
     )
+    strong_dt = pos == "DT" and any(
+        [
+            final_grade >= 89.0,
+            consensus_rank <= 35,
+            edge_pass_rush_grade is not None and edge_pass_rush_grade >= 80.0,
+            edge_true_pass_set_win_rate is not None and edge_true_pass_set_win_rate >= 16.0,
+            edge_total_pressures is not None and edge_total_pressures >= 28.0,
+            edge_pr is not None and edge_pr >= 0.10,
+            "interior disruptor" in role_text,
+            "one-gap" in role_text,
+        ]
+    )
     strong_lb = pos == "LB" and any(
         [
             final_grade >= 89.0,
@@ -5013,6 +5055,17 @@ def _sanitize_primary_concern_text(raw: str, *, row: dict | None = None, positio
             "space-match" in role_text,
             "overhang" in role_text,
             cfb_prod_signal >= 75.0,
+        ]
+    )
+    strong_s = pos == "S" and any(
+        [
+            final_grade >= 89.0,
+            consensus_rank <= 30,
+            db_yards_cov is not None and db_yards_cov <= 0.95,
+            db_plays_ball is not None and db_plays_ball >= 0.20,
+            "range-first" in role_text,
+            "split safety" in role_text,
+            "middle-field-open" in scheme_text,
         ]
     )
 
@@ -5024,6 +5077,24 @@ def _sanitize_primary_concern_text(raw: str, *, row: dict | None = None, positio
         if re.search(r"scouting concern to verify:\s*[>.\-]*\s*$", item, flags=re.IGNORECASE):
             continue
         if re.search(r"scouting concern to verify:\s*$", item, flags=re.IGNORECASE):
+            continue
+        if strong_qb and any(
+            phrase in lower
+            for phrase in [
+                "drive efficiency still sits below top-tier starter range",
+                "pressure response trends negative",
+                "turnover management still needs cleanup",
+            ]
+        ):
+            continue
+        if strong_rb and any(
+            phrase in lower
+            for phrase in [
+                "explosive-run creation",
+                "contact-creation efficiency",
+                "short-area burst is below",
+            ]
+        ):
             continue
         if strong_wr and any(
             phrase in lower
@@ -5059,6 +5130,24 @@ def _sanitize_primary_concern_text(raw: str, *, row: dict | None = None, positio
             for phrase in [
                 "space-change profile",
                 "play-strength profile can limit",
+            ]
+        ):
+            continue
+        if strong_s and any(
+            phrase in lower
+            for phrase in [
+                "range-speed profile is below",
+                "plays-on-ball rate",
+                "coverage efficiency",
+            ]
+        ):
+            continue
+        if strong_dt and any(
+            phrase in lower
+            for phrase in [
+                "interior pressure rate",
+                "interior mass profile is light",
+                "lower-body explosion is below",
             ]
         ):
             continue
