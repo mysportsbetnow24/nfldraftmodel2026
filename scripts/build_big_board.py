@@ -3804,6 +3804,58 @@ def _build_scouting_sections(
             ]
         )
 
+    def _wr_profile_is_strong() -> bool:
+        return any(
+            [
+                final_grade >= 90.0,
+                consensus_rank <= 25,
+                wr_yprr is not None and wr_yprr >= 2.2,
+                wr_share is not None and wr_share >= 0.22,
+                "volume target" in role_lower,
+                "separator" in role_lower,
+                "z alignments" in role_lower,
+                "x or z" in role_lower,
+            ]
+        )
+
+    def _cb_profile_is_strong() -> bool:
+        return any(
+            [
+                final_grade >= 90.0,
+                consensus_rank <= 25,
+                db_yards_cov is not None and db_yards_cov <= 0.95,
+                db_plays_ball is not None and db_plays_ball >= 0.22,
+                "outside cb" in role_lower,
+                "match corner" in role_lower,
+                "press" in scheme_lower,
+                "quarters" in scheme_lower,
+            ]
+        )
+
+    def _ot_profile_is_strong() -> bool:
+        return any(
+            [
+                final_grade >= 90.0,
+                consensus_rank <= 20,
+                "blindside pass-pro translator" in role_lower,
+                "vertical-set tackle" in scheme_lower,
+                "pass-pro" in role_lower,
+            ]
+        )
+
+    def _lb_profile_is_strong() -> bool:
+        return any(
+            [
+                final_grade >= 89.0,
+                consensus_rank <= 30,
+                "range" in role_lower,
+                "space-match" in role_lower,
+                "overhang" in role_lower,
+                "coverage" in scheme_lower,
+                cfb_prod_signal is not None and cfb_prod_signal >= 75.0,
+            ]
+        )
+
     def _sanitize_primary_concern_notes(text: str) -> str:
         raw = str(text or "").strip()
         if not raw:
@@ -3811,6 +3863,10 @@ def _build_scouting_sections(
         lines = [line.strip() for line in re.split(r"\n+", raw) if line.strip()]
         keep: list[str] = []
         strong_edge = pos == "EDGE" and _edge_disruption_is_strong()
+        strong_wr = pos in {"WR", "TE"} and _wr_profile_is_strong()
+        strong_cb = pos == "CB" and _cb_profile_is_strong()
+        strong_ot = pos == "OT" and _ot_profile_is_strong()
+        strong_lb = pos == "LB" and _lb_profile_is_strong()
         edge_speed_role = any(
             phrase in role_lower
             for phrase in [
@@ -3832,6 +3888,42 @@ def _build_scouting_sections(
             if strong_edge and "total hurry volume" in normalized:
                 continue
             if edge_getoff_supported and "burst/explosion profile is below" in normalized:
+                continue
+            if strong_wr and any(
+                phrase in normalized
+                for phrase in [
+                    "route-level efficiency",
+                    "target-earning rate",
+                    "change-of-direction indicators",
+                ]
+            ):
+                continue
+            if strong_cb and any(
+                phrase in normalized
+                for phrase in [
+                    "long-speed percentile",
+                    "ball-production rate",
+                    "coverage efficiency",
+                    "limited pure ball-finish production",
+                ]
+            ):
+                continue
+            if strong_ot and any(
+                phrase in normalized
+                for phrase in [
+                    "short-arm profile projects",
+                    "lateral recovery movement",
+                    "play-mass profile is light",
+                ]
+            ):
+                continue
+            if strong_lb and any(
+                phrase in normalized
+                for phrase in [
+                    "space-change profile",
+                    "play-strength profile can limit",
+                ]
+            ):
                 continue
             if "pff grade " in normalized:
                 continue
@@ -4527,20 +4619,22 @@ def _build_scouting_sections(
         if ten_pct is not None and ten_pct < 40:
             concern_points.append("Short-area burst is below the ideal three-down threshold, which can show up when second-level angles close quickly.")
     elif pos in {"WR", "TE"}:
-        if wr_yprr is not None and wr_yprr < 2.0:
+        wr_profile_supported = _wr_profile_is_strong()
+        if wr_yprr is not None and wr_yprr < 2.0 and not wr_profile_supported:
             concern_points.append(f"Route-level efficiency (YPRR {wr_yprr:.2f}) is still light for top projection tiers, so the route menu has to keep expanding.")
-        if wr_share is not None and wr_share < 0.20:
+        if wr_share is not None and wr_share < 0.20 and not wr_profile_supported:
             concern_points.append(f"Target-earning rate ({wr_share*100:.1f}% share) suggests some volume-translation risk once NFL coverage disrupts timing.")
-        if cone_pct is not None and cone_pct < 35:
+        if cone_pct is not None and cone_pct < 35 and not wr_profile_supported:
             concern_points.append("Change-of-direction indicators are below the ideal separator threshold, which can tighten route precision margins against man coverage.")
         if pos == "WR" and arm_pct is not None and arm_pct < 20:
             concern_points.append("Short-arm profile compresses the catch-radius margin at the boundary and through contact, so late placement has less room for error.")
     elif pos == "OT":
-        if arm_pct is not None and arm_pct < 20:
+        ot_profile_supported = _ot_profile_is_strong()
+        if arm_pct is not None and arm_pct < 20 and not ot_profile_supported:
             concern_points.append("Short-arm profile projects to tighter recovery windows against long-edge rushers, especially once first contact is lost.")
-        if shuttle_pct is not None and shuttle_pct < 35:
+        if shuttle_pct is not None and shuttle_pct < 35 and not ot_profile_supported:
             concern_points.append("Lateral recovery movement is below the ideal tackle threshold, which can stress pass-pro consistency once counters start chaining together.")
-        if weight_pct is not None and weight_pct < 25:
+        if weight_pct is not None and weight_pct < 25 and not ot_profile_supported:
             concern_points.append("Play-mass profile is light for NFL tackle anchor demands, so speed-to-power conversion will keep testing the pocket depth.")
     elif pos == "IOL":
         if weight_pct is not None and weight_pct < 25:
@@ -4595,20 +4689,22 @@ def _build_scouting_sections(
         if vert_pct is not None and vert_pct < 35:
             concern_points.append("Lower-body explosion is below the preferred interior disruption threshold, so pocket push has to come more from leverage than raw twitch.")
     elif pos == "LB":
-        if shuttle_pct is not None and shuttle_pct < 35:
+        lb_profile_supported = _lb_profile_is_strong()
+        if shuttle_pct is not None and shuttle_pct < 35 and not lb_profile_supported:
             concern_points.append("Space-change profile is below the ideal linebacker threshold, which can stress mismatch coverage range against faster route distribution.")
-        if weight_pct is not None and weight_pct < 20:
+        if weight_pct is not None and weight_pct < 20 and not lb_profile_supported:
             concern_points.append("Play-strength profile can limit block deconstruction consistency once NFL second-level bodies get into him cleanly.")
     elif pos == "CB":
-        if forty_pct is not None and forty_pct < 35:
+        cb_profile_supported = _cb_profile_is_strong()
+        if forty_pct is not None and forty_pct < 35 and not cb_profile_supported:
             concern_points.append("Long-speed percentile is below the ideal outside-CB threshold, increasing vertical stress when receivers force him to open early.")
         if arm_pct is not None and arm_pct < 20:
             concern_points.append("Short-arm profile can limit catch-point disruption margin versus NFL size and length, especially once the receiver owns the window.")
-        if db_plays_ball is not None and db_plays_ball < 0.22:
+        if db_plays_ball is not None and db_plays_ball < 0.22 and not cb_profile_supported:
             concern_points.append(f"Ball-production rate (plays on ball/target {db_plays_ball:.2f}) is below premium outside-CB bands, so passive phase reps need to become finishes.")
-        if db_yards_cov is not None and db_yards_cov > 1.30:
+        if db_yards_cov is not None and db_yards_cov > 1.30 and not cb_profile_supported:
             concern_points.append(f"Coverage efficiency ({db_yards_cov:.2f} yards/cov snap) needs tighter leverage-to-finish translation once route tempo improves.")
-        if (db_int is not None and db_int < 1) and (db_pbu is not None and db_pbu < 5):
+        if (db_int is not None and db_int < 1) and (db_pbu is not None and db_pbu < 5) and not cb_profile_supported:
             concern_points.append("Limited pure ball-finish production keeps the takeaway ceiling less certain until more catch-point disruption shows up on tape.")
     elif pos == "S":
         if forty_pct is not None and forty_pct < 35:

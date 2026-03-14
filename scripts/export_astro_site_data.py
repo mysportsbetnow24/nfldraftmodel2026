@@ -4962,7 +4962,60 @@ def _split_bullet_lines(raw: str) -> list[str]:
     return items
 
 
-def _sanitize_primary_concern_text(raw: str) -> list[str]:
+def _sanitize_primary_concern_text(raw: str, *, row: dict | None = None, position: str = "") -> list[str]:
+    pos = str(position or row.get("position", "") if row else "").upper()
+    final_grade = float(_safe_float((row or {}).get("final_grade")) or 0.0)
+    consensus_rank = int(float(_safe_float((row or {}).get("consensus_rank")) or 999))
+    role_text = str((row or {}).get("best_role", "")).lower()
+    scheme_text = str((row or {}).get("best_scheme_fit", "")).lower()
+    wr_yprr = float(_safe_float((row or {}).get("cfb_wrte_yprr")) or 0.0)
+    wr_share = float(_safe_float((row or {}).get("cfb_wrte_target_share")) or 0.0)
+    db_yards_cov = _safe_float((row or {}).get("cfb_db_yards_allowed_per_coverage_snap"))
+    db_plays_ball = _safe_float((row or {}).get("cfb_db_coverage_plays_per_target"))
+    cfb_prod_signal = float(_safe_float((row or {}).get("cfb_prod_signal")) or 0.0)
+
+    strong_wr = pos in {"WR", "TE"} and any(
+        [
+            final_grade >= 90.0,
+            consensus_rank <= 25,
+            wr_yprr >= 2.2,
+            wr_share >= 0.22,
+            "volume target" in role_text,
+            "separator" in role_text,
+            "x or z" in role_text,
+        ]
+    )
+    strong_cb = pos == "CB" and any(
+        [
+            final_grade >= 90.0,
+            consensus_rank <= 25,
+            db_yards_cov is not None and db_yards_cov <= 0.95,
+            db_plays_ball is not None and db_plays_ball >= 0.22,
+            "outside cb" in role_text,
+            "match corner" in role_text,
+            "quarters" in scheme_text,
+        ]
+    )
+    strong_ot = pos == "OT" and any(
+        [
+            final_grade >= 90.0,
+            consensus_rank <= 20,
+            "blindside pass-pro translator" in role_text,
+            "vertical-set tackle" in scheme_text,
+            "pass-pro" in role_text,
+        ]
+    )
+    strong_lb = pos == "LB" and any(
+        [
+            final_grade >= 89.0,
+            consensus_rank <= 30,
+            "range" in role_text,
+            "space-match" in role_text,
+            "overhang" in role_text,
+            cfb_prod_signal >= 75.0,
+        ]
+    )
+
     cleaned: list[str] = []
     for item in _split_bullet_lines(raw):
         lower = item.lower()
@@ -4971,6 +5024,43 @@ def _sanitize_primary_concern_text(raw: str) -> list[str]:
         if re.search(r"scouting concern to verify:\s*[>.\-]*\s*$", item, flags=re.IGNORECASE):
             continue
         if re.search(r"scouting concern to verify:\s*$", item, flags=re.IGNORECASE):
+            continue
+        if strong_wr and any(
+            phrase in lower
+            for phrase in [
+                "route-level efficiency",
+                "target-earning rate",
+                "change-of-direction indicators",
+                "yprr ",
+            ]
+        ):
+            continue
+        if strong_cb and any(
+            phrase in lower
+            for phrase in [
+                "long-speed percentile",
+                "ball-production rate",
+                "coverage efficiency",
+                "limited pure ball-finish production",
+            ]
+        ):
+            continue
+        if strong_ot and any(
+            phrase in lower
+            for phrase in [
+                "short-arm profile projects",
+                "lateral recovery movement",
+                "play-mass profile is light",
+            ]
+        ):
+            continue
+        if strong_lb and any(
+            phrase in lower
+            for phrase in [
+                "space-change profile",
+                "play-strength profile can limit",
+            ]
+        ):
             continue
         cleaned.append(item)
     return cleaned
@@ -5486,11 +5576,11 @@ def export_board(player_school_map: dict[str, str]) -> list[dict]:
             str(owner_note.get("film_notes", "")).strip()
             or str(owner_note.get("private_owner_notes", "")).strip()
         )
-        public_primary_concern_bullets = (
-            _sanitize_primary_concern_text(owner_primary_concerns)
-            if owner_has_manual_override and str(owner_primary_concerns or "").strip()
-            else _sanitize_primary_concern_text(generated_primary_concerns)
-        )
+        public_primary_concern_bullets = []
+        if owner_has_manual_override and str(owner_primary_concerns or "").strip():
+            public_primary_concern_bullets = _sanitize_primary_concern_text(owner_primary_concerns, row=row, position=pos)
+        if not public_primary_concern_bullets:
+            public_primary_concern_bullets = _sanitize_primary_concern_text(generated_primary_concerns, row=row, position=pos)
         if public_primary_concern_bullets:
             scouting_primary_concerns = "\n".join(
                 f"- {item}" for item in public_primary_concern_bullets[:4]
