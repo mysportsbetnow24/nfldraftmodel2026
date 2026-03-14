@@ -1977,34 +1977,42 @@ def _build_team_depth_context() -> dict[str, dict]:
 
     transaction_team_override_by_name: dict[str, dict[str, str]] = {}
     retired_or_released_players: set[str] = set()
-    for row in _read_csv(TRANSACTION_OVERRIDES_CSV):
-        status_kind = _status_kind(row.get("transaction_status", "confirmed"))
-        if status_kind != "confirmed":
-            continue
-        player_key = _norm_player_key(row.get("player_name", ""))
-        if not player_key:
-            continue
-        event_date = _parse_event_date(row.get("event_date", ""))
-        action = str(row.get("action_text") or "").strip().lower()
-        from_team = str(row.get("from_team", "")).strip().upper()
-        to_team = str(row.get("to_team", "")).strip().upper()
-        current_team = ""
-        if "trade" in action or "signed" in action or "claimed" in action or "agreed" in action:
-            current_team = to_team or current_team
-        elif any(token in action for token in {"cut", "waived", "released", "retired"}):
+
+    def _ingest_transaction_rows(rows: list[dict]) -> None:
+        for row in rows:
+            status_kind = _status_kind(row.get("transaction_status", "confirmed"))
+            if status_kind != "confirmed":
+                continue
+            apply_raw = str(row.get("apply_to_team_needs") or "").strip().lower()
+            if apply_raw and apply_raw not in {"1", "true", "yes", "y"}:
+                continue
+            player_key = _norm_player_key(row.get("player_name", ""))
+            if not player_key:
+                continue
+            event_date = _parse_event_date(row.get("event_date", ""))
+            action = str(row.get("action_text") or "").strip().lower()
+            from_team = str(row.get("from_team", "")).strip().upper()
+            to_team = str(row.get("to_team", "")).strip().upper()
             current_team = ""
-            retired_or_released_players.add(player_key)
-        else:
-            current_team = to_team or from_team
-        existing = transaction_team_override_by_name.get(player_key)
-        if existing is None or str(existing.get("event_date") or "") < str(event_date or ""):
-            transaction_team_override_by_name[player_key] = {
-                "event_date": event_date.isoformat() if event_date else "",
-                "current_team": current_team,
-                "from_team": from_team,
-                "to_team": to_team,
-                "action": action,
-            }
+            if any(token in action for token in {"trade", "traded", "signed", "re-signed", "resigned", "claimed", "agreed", "extension"}):
+                current_team = to_team or current_team
+            elif any(token in action for token in {"cut", "waived", "released", "retired"}):
+                current_team = ""
+                retired_or_released_players.add(player_key)
+            else:
+                current_team = to_team or from_team
+            existing = transaction_team_override_by_name.get(player_key)
+            if existing is None or str(existing.get("event_date") or "") < str(event_date or ""):
+                transaction_team_override_by_name[player_key] = {
+                    "event_date": event_date.isoformat() if event_date else "",
+                    "current_team": current_team,
+                    "from_team": from_team,
+                    "to_team": to_team,
+                    "action": action,
+                }
+
+    _ingest_transaction_rows(_read_csv_rows(CBS_TRANSACTIONS_CSV))
+    _ingest_transaction_rows(_read_csv_rows(TRANSACTION_OVERRIDES_CSV))
 
     player_snap_counts = _build_player_snap_counts()
     player_current_nfl_value = _build_player_current_nfl_value()
@@ -2154,6 +2162,8 @@ def _build_team_depth_context() -> dict[str, dict]:
         name_key = _norm_player_key(row.get("player") or "")
         if not name_key:
             continue
+        if name_key in retired_or_released_players:
+            continue
         years = _safe_int(row.get("years"), 0)
         year_signed = _safe_int(row.get("year_signed"), 0)
         contract_end_year = _contract_end_year(row)
@@ -2183,6 +2193,8 @@ def _build_team_depth_context() -> dict[str, dict]:
         gsis = str(row.get("gsis_id") or "").strip()
         name = str(row.get("player") or "").strip()
         name_key = _norm_player_key(name)
+        if name_key in retired_or_released_players:
+            continue
         apy = _safe_float(row.get("apy"))
         years = _contract_years_remaining(row)
         pos = _map_team_needs_position(row.get("position", ""))
@@ -2208,7 +2220,7 @@ def _build_team_depth_context() -> dict[str, dict]:
             resolved_team = override_team
         elif latest_team and latest_team in candidate_team_codes:
             resolved_team = latest_team
-        elif len(candidate_team_codes) == 1:
+        elif len(candidate_team_codes) == 1 and not (latest_team and latest_team != candidate_team_codes[0] and not override_team):
             resolved_team = candidate_team_codes[0]
         payload["team_norm"] = resolved_team
         latest_team_match = (
@@ -2287,6 +2299,8 @@ def _build_team_depth_context() -> dict[str, dict]:
         name = str(row.get("player_name") or "").strip()
         name_key = _norm_player_key(name)
         if not name_key:
+            continue
+        if name_key in retired_or_released_players:
             continue
         team_norm = str(row.get("team_norm") or "").strip().upper()
         if not team_norm:
@@ -2367,6 +2381,8 @@ def _build_team_depth_context() -> dict[str, dict]:
         name_key = _norm_player_key(name)
         if not name_key:
             continue
+        if name_key in retired_or_released_players:
+            continue
         prev_team_norm = str(row.get("prev_team_norm") or "").strip().upper()
         if not prev_team_norm:
             codes = _normalize_contract_team_codes(str(row.get("prev_team") or ""))
@@ -2394,6 +2410,8 @@ def _build_team_depth_context() -> dict[str, dict]:
         name = str(row.get("player_name") or "").strip()
         name_key = _norm_player_key(name)
         if not name_key:
+            continue
+        if name_key in retired_or_released_players:
             continue
         team_norm = str(row.get("team_norm") or "").strip().upper()
         if not team_norm:
@@ -2448,6 +2466,8 @@ def _build_team_depth_context() -> dict[str, dict]:
         name = str(row.get("player_name") or "").strip()
         name_key = _norm_player_key(name)
         if not name_key:
+            continue
+        if name_key in retired_or_released_players:
             continue
         prev_team_norm = str(row.get("prev_team_norm") or "").strip().upper()
         if not prev_team_norm:

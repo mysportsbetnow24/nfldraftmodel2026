@@ -1,4 +1,5 @@
 event_date,player_name,position,from_team,to_team,action_text,impact_weight,transaction_status,apply_to_team_needs,source_url,source_account,notes
+2025-11-12,Jaire Alexander,CB,PHI,,retired,1.0,confirmed,true,https://www.philadelphiaeagles.com/news/eagles-place-cb-jaire-alexander-on-reserve-retired-list,Manual Override,Confirmed retirement override so stale GB/PHI roster and contract rows cannot leak Jaire Alexander back into team pages.
 2026-03-07,Amari Cooper,WR,BUF,,retired,1.0,confirmed,true,https://www.cbssports.com/nfl/transactions/,Manual Override,User-confirmed retirement override so BUF no longer treats Cooper as unsigned/contract-watch.
 2025-10-07,Odafe Oweh,EDGE,BAL,LAC,traded,1.0,confirmed,true,https://www.cbssports.com/nfl/transactions/,Manual Override,Confirmed 2025 in-season trade override so current team resolution and team needs reflect Chargers instead of stale Ravens rows.
 2026-03-05,DJ Moore,WR,CHI,BUF,traded,1.0,confirmed,true,https://www.cbssports.com/nfl/news/bills-acquire-former-pro-bowl-wideout-from-bears-in-first-major-trade-of-offseason-per-reports/,CBS Sports,Confirmed trade: BUF acquires DJ Moore from CHI.
