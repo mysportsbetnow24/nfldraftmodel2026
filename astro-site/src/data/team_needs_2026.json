@@ -2748,7 +2748,7 @@
         "event_date": "2026-03-12",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Evan Brown Cut",
+        "label": "Evan Brown (IOL) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -2757,7 +2757,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Kyler Murray Cut",
+        "label": "Kyler Murray (QB) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -2766,7 +2766,7 @@
         "event_date": "2026-03-06",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Dalvin Tomlinson Cut",
+        "label": "Dalvin Tomlinson (EDGE) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -5602,7 +5602,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Kirk Cousins Cut",
+        "label": "Kirk Cousins (QB) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -5611,7 +5611,7 @@
         "event_date": "2026-03-09",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Khadarel Hodge Cut",
+        "label": "Khadarel Hodge (WR) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -5620,7 +5620,7 @@
         "event_date": "2026-03-09",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Darnell Mooney Cut",
+        "label": "Darnell Mooney (WR) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -8565,7 +8565,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Cooper Rush Cut",
+        "label": "Cooper Rush (QB) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -8574,7 +8574,7 @@
         "event_date": "2026-03-12",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Trey Hendrickson Signed/unrest FA Four-year contract (through 2029)",
+        "label": "Trey Hendrickson (EDGE) Signed/unrest FA Four-year contract (through 2029)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -11350,7 +11350,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "DJ Moore Traded w/ pick for 2026 second-round pick",
+        "label": "DJ Moore (CB) Traded w/ pick for 2026 second-round pick",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -14824,7 +14824,7 @@
         "event_date": "2026-03-12",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Yosh Nijman Retired",
+        "label": "Yosh Nijman (OT) Retired",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -14833,7 +14833,7 @@
         "event_date": "2026-03-10",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Popo Aumavae Cut",
+        "label": "Popo Aumavae (DT) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -14842,7 +14842,7 @@
         "event_date": "2026-03-10",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "A'Shawn Robinson Cut",
+        "label": "A'Shawn Robinson (EDGE) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -17638,7 +17638,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Garrett Bradbury Traded for 2027 fifth-round draft pick",
+        "label": "Garrett Bradbury (IOL) Traded for 2027 fifth-round draft pick",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -17656,7 +17656,7 @@
         "event_date": "2026-03-06",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Drew Dalman Retired",
+        "label": "Drew Dalman (IOL) Retired",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -20612,7 +20612,7 @@
         "event_date": "2026-03-13",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Jonathan Allen Signed Two-year contract (through 2027)",
+        "label": "Jonathan Allen (EDGE) Signed Two-year contract (through 2027)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -20621,7 +20621,7 @@
         "event_date": "2026-03-12",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Bryan Cook Signed/unrest FA Three-year contract (through 2028)",
+        "label": "Bryan Cook (S) Signed/unrest FA Three-year contract (through 2028)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -20630,7 +20630,7 @@
         "event_date": "2026-03-12",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Boye Mafe Signed/unrest FA Three-year contract (through 2028)",
+        "label": "Boye Mafe (LB) Signed/unrest FA Three-year contract (through 2028)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -24006,7 +24006,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Tytus Howard Traded for 2026 fifth-round draft pick",
+        "label": "Tytus Howard (OT) Traded for 2026 fifth-round draft pick",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -24015,7 +24015,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Wyatt Teller Cut",
+        "label": "Wyatt Teller (IOL) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -24024,7 +24024,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Jack Conklin Cut",
+        "label": "Jack Conklin (OT) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -27160,7 +27160,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Rashan Gary Traded for 2027 fourth-round draft pick",
+        "label": "Rashan Gary (EDGE) Traded for 2027 fourth-round draft pick",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -27169,7 +27169,7 @@
         "event_date": "2026-03-12",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Will Grier Cut",
+        "label": "Will Grier (QB) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -27178,7 +27178,7 @@
         "event_date": "2026-03-05",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Perrion Winfrey Cut",
+        "label": "Perrion Winfrey (DT) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -29634,7 +29634,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Dre Greenlaw Cut",
+        "label": "Dre Greenlaw (LB) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -32799,7 +32799,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Juice Scruggs Traded w/ picks for RB David Montgomery",
+        "label": "Juice Scruggs (IOL) Traded w/ picks for RB David Montgomery",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -32808,7 +32808,7 @@
         "event_date": "2026-03-09",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Taylor Decker Cut",
+        "label": "Taylor Decker (OT) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -32817,7 +32817,7 @@
         "event_date": "2026-03-02",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Graham Glasgow Cut",
+        "label": "Graham Glasgow (IOL) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -35613,7 +35613,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Zaire Franklin Traded for DT Colby Wooden",
+        "label": "Zaire Franklin (LB) Traded for DT Colby Wooden",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -35622,7 +35622,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Nate Hobbs Cut",
+        "label": "Nate Hobbs (CB) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -35631,7 +35631,7 @@
         "event_date": "2026-03-09",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Elgton Jenkins Cut",
+        "label": "Elgton Jenkins (IOL) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -38436,7 +38436,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "David Montgomery Traded w/ OL Juice Scruggs and draft picks",
+        "label": "David Montgomery (RB) Traded w/ OL Juice Scruggs and draft picks",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -38445,7 +38445,7 @@
         "event_date": "2026-03-13",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Mario Edwards Cut",
+        "label": "Mario Edwards (CB) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -41441,7 +41441,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Colby Wooden Traded for LB Zaire Franklin",
+        "label": "Colby Wooden (EDGE) Traded for LB Zaire Franklin",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -41450,7 +41450,7 @@
         "event_date": "2026-03-13",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Jonathan Owens Signed/unrest FA One-year contract (through 2026)",
+        "label": "Jonathan Owens (CB) Signed/unrest FA One-year contract (through 2026)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -41459,7 +41459,7 @@
         "event_date": "2026-03-13",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Derrick Nnadi Signed/unrest FA One-year contract (through 2026)",
+        "label": "Derrick Nnadi (DT) Signed/unrest FA One-year contract (through 2026)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -47249,7 +47249,7 @@
         "event_date": "2026-03-05",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Jawaan Taylor Cut",
+        "label": "Jawaan Taylor (OT) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -47258,7 +47258,7 @@
         "event_date": "2026-03-13",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Kader Kohou Signed/unrest FA One-year contract (through 2026)",
+        "label": "Kader Kohou (CB) Signed/unrest FA One-year contract (through 2026)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -50494,7 +50494,7 @@
         "event_date": "2026-03-10",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Hayden Hurst Retired",
+        "label": "Hayden Hurst (TE) Retired",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -50503,7 +50503,7 @@
         "event_date": "2026-03-05",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Bradley Bozeman Retired",
+        "label": "Bradley Bozeman (IOL) Retired",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -50512,7 +50512,7 @@
         "event_date": "2026-03-04",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Will Dissly Cut",
+        "label": "Will Dissly (TE) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -53168,7 +53168,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Trent McDuffie Traded for 2026 and 2027 draft picks",
+        "label": "Trent McDuffie (CB) Traded for 2026 and 2027 draft picks",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -53186,7 +53186,7 @@
         "event_date": "2026-03-07",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Darious Williams Retired",
+        "label": "Darious Williams (CB) Retired",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -56242,7 +56242,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Taron Johnson Traded w/ pick for 2026 seventh-round pick",
+        "label": "Taron Johnson (CB) Traded w/ pick for 2026 seventh-round pick",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -56260,7 +56260,7 @@
         "event_date": "2026-03-07",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Alex Cappa Cut",
+        "label": "Alex Cappa (IOL) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -59385,7 +59385,7 @@
         "event_date": "2026-03-12",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Tua Tagovailoa Cut",
+        "label": "Tua Tagovailoa (QB) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -59394,7 +59394,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Bradley Chubb Cut",
+        "label": "Bradley Chubb (LB) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -62230,7 +62230,7 @@
         "event_date": "2026-03-06",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Ryan Kelly Retired",
+        "label": "Ryan Kelly (IOL) Retired",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -62239,7 +62239,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Jonathan Allen Cut",
+        "label": "Jonathan Allen (EDGE) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -62248,7 +62248,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Javon Hargrave Cut",
+        "label": "Javon Hargrave (DT) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -65424,7 +65424,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Stefon Diggs Cut",
+        "label": "Stefon Diggs (WR) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -65433,7 +65433,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Jahlani Tavai Cut",
+        "label": "Jahlani Tavai (LB) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -65442,7 +65442,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Anfernee Jennings Cut",
+        "label": "Anfernee Jennings (LB) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -68578,7 +68578,7 @@
         "event_date": "2026-03-13",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Travis Etienne Signed/unrest FA Four-year contract (through 2029)",
+        "label": "Travis Etienne (RB) Signed/unrest FA Four-year contract (through 2029)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -68596,7 +68596,7 @@
         "event_date": "2026-03-12",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Noah Fant Signed/unrest FA Two-year contract (through 2027)",
+        "label": "Noah Fant (TE) Signed/unrest FA Two-year contract (through 2027)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -71661,7 +71661,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Chris Board Cut",
+        "label": "Chris Board (LB) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -71670,7 +71670,7 @@
         "event_date": "2026-03-10",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Anthony Johnson Jr. Cut",
+        "label": "Anthony Johnson Jr. (S) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -73538,10 +73538,30 @@
               "nfl_games": 17
             },
             {
-              "player_name": "Kobe King",
+              "player_name": "Mykal Walker",
               "position": "LB",
               "depth_rank": 3,
               "lane_depth_rank": 3,
+              "designation": "Starter",
+              "role_label": "Sam",
+              "detail_label": "Sam | 1y | $1.2M APY",
+              "meta_label": "6 yrs exp | Age 28",
+              "contract_label": "1y | $1.2M APY",
+              "contract_status_kind": "active_contract",
+              "years_exp": 6,
+              "age": 28,
+              "apy_m": 1.17,
+              "apy_pct": 73.88,
+              "draft_number": 119,
+              "snap_count": 0,
+              "nfl_value_pct": 0.0,
+              "nfl_games": 0
+            },
+            {
+              "player_name": "Kobe King",
+              "position": "LB",
+              "depth_rank": 4,
+              "lane_depth_rank": 4,
               "designation": "Prospect",
               "role_label": "Sam",
               "detail_label": "Sam | 3y | $1.1M APY",
@@ -73560,8 +73580,8 @@
             {
               "player_name": "C.J. Mosley",
               "position": "LB",
-              "depth_rank": 4,
-              "lane_depth_rank": 4,
+              "depth_rank": 5,
+              "lane_depth_rank": 5,
               "designation": "FA",
               "role_label": "ILB",
               "detail_label": "ILB | Contract watch",
@@ -73580,8 +73600,8 @@
             {
               "player_name": "Sam Eguavoen",
               "position": "LB",
-              "depth_rank": 5,
-              "lane_depth_rank": 5,
+              "depth_rank": 6,
+              "lane_depth_rank": 6,
               "designation": "FA",
               "role_label": "ILB",
               "detail_label": "ILB | Contract watch",
@@ -73598,33 +73618,13 @@
               "nfl_games": 10
             },
             {
-              "player_name": "Mykal Walker",
-              "position": "LB",
-              "depth_rank": 6,
-              "lane_depth_rank": 6,
-              "designation": "Starter",
-              "role_label": "LB1",
-              "detail_label": "LB1 | 0y | $1.2M APY",
-              "meta_label": "",
-              "contract_label": "0y | $1.2M APY",
-              "contract_status_kind": "",
-              "years_exp": 0,
-              "age": "",
-              "apy_m": 1.17,
-              "apy_pct": 73.88,
-              "draft_number": "",
-              "snap_count": 0,
-              "nfl_value_pct": 0.0,
-              "nfl_games": 0
-            },
-            {
               "player_name": "Francisco Mauigoa",
               "position": "LB",
               "depth_rank": 7,
               "lane_depth_rank": 7,
               "designation": "Starter",
-              "role_label": "LB2",
-              "detail_label": "LB2 | 3y | $1.1M APY",
+              "role_label": "LB1",
+              "detail_label": "LB1 | 3y | $1.1M APY",
               "meta_label": "",
               "contract_label": "3y | $1.1M APY",
               "contract_status_kind": "",
@@ -73642,9 +73642,9 @@
               "position": "LB",
               "depth_rank": 8,
               "lane_depth_rank": 8,
-              "designation": "Backup",
-              "role_label": "LB3",
-              "detail_label": "LB3 | 2y | $1.0M APY",
+              "designation": "Starter",
+              "role_label": "LB2",
+              "detail_label": "LB2 | 2y | $1.0M APY",
               "meta_label": "",
               "contract_label": "2y | $1.0M APY",
               "contract_status_kind": "",
@@ -73663,8 +73663,8 @@
               "depth_rank": 9,
               "lane_depth_rank": 9,
               "designation": "Backup",
-              "role_label": "LB4",
-              "detail_label": "LB4 | 3y | $0.8M APY",
+              "role_label": "LB3",
+              "detail_label": "LB3 | 3y | $0.8M APY",
               "meta_label": "",
               "contract_label": "3y | $0.8M APY",
               "contract_status_kind": "",
@@ -73683,8 +73683,8 @@
               "depth_rank": 10,
               "lane_depth_rank": 10,
               "designation": "Backup",
-              "role_label": "LB5",
-              "detail_label": "LB5 | Rookie deal",
+              "role_label": "LB4",
+              "detail_label": "LB4 | Rookie deal",
               "meta_label": "1 yrs exp | Age 25",
               "contract_label": "Rookie deal",
               "contract_status_kind": "rookie_deal",
@@ -74279,8 +74279,8 @@
       {
         "player_name": "C.J. Mosley",
         "position": "LB",
-        "depth_rank": 4,
-        "lane_depth_rank": 4,
+        "depth_rank": 5,
+        "lane_depth_rank": 5,
         "designation": "FA",
         "role_label": "ILB",
         "detail_label": "ILB | Contract watch",
@@ -74479,8 +74479,8 @@
       {
         "player_name": "Sam Eguavoen",
         "position": "LB",
-        "depth_rank": 5,
-        "lane_depth_rank": 5,
+        "depth_rank": 6,
+        "lane_depth_rank": 6,
         "designation": "FA",
         "role_label": "ILB",
         "detail_label": "ILB | Contract watch",
@@ -74621,8 +74621,8 @@
       {
         "player_name": "C.J. Mosley",
         "position": "LB",
-        "depth_rank": 4,
-        "lane_depth_rank": 4,
+        "depth_rank": 5,
+        "lane_depth_rank": 5,
         "designation": "FA",
         "role_label": "ILB",
         "detail_label": "ILB | Contract watch",
@@ -74866,7 +74866,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "T'Vondre Sweat Traded for DE Jermaine Johnson",
+        "label": "T'Vondre Sweat (DT) Traded for DE Jermaine Johnson",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -74875,7 +74875,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Minkah Fitzpatrick Traded for 2026 seventh-round draft pick",
+        "label": "Minkah Fitzpatrick (S) Traded for 2026 seventh-round draft pick",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -74884,7 +74884,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Geno Smith Traded w/ pick for 2026 sixth-round draft pick",
+        "label": "Geno Smith (QB) Traded w/ pick for 2026 sixth-round draft pick",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -77380,7 +77380,7 @@
         "event_date": "2026-03-13",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Jonathan Jones Signed/unrest FA One-year contract (through 2026)",
+        "label": "Jonathan Jones (CB) Signed/unrest FA One-year contract (through 2026)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -77389,7 +77389,7 @@
         "event_date": "2026-03-13",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Johnny Mundt Signed One-year contract (through 2026)",
+        "label": "Johnny Mundt (TE) Signed One-year contract (through 2026)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -77398,7 +77398,7 @@
         "event_date": "2026-03-13",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Arnold Ebiketie Signed/unrest FA One-year contract (through 2026)",
+        "label": "Arnold Ebiketie (LB) Signed/unrest FA One-year contract (through 2026)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -80394,7 +80394,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Michael Pittman Traded w/ pick for 2026 sixth-round draft pick",
+        "label": "Michael Pittman (RB) Traded w/ pick for 2026 sixth-round draft pick",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -80403,7 +80403,7 @@
         "event_date": "2026-03-05",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Jonnu Smith Cut",
+        "label": "Jonnu Smith (TE) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -80412,7 +80412,7 @@
         "event_date": "2026-03-02",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Calvin Anderson Cut",
+        "label": "Calvin Anderson (OT) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -83528,7 +83528,16 @@
         "event_date": "2026-03-13",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Emanuel Wilson Signed/unrest FA One-year contract (through 2026)",
+        "label": "Tyler Hall (CB) Cut",
+        "affects_team_needs": true,
+        "source_url": "https://www.cbssports.com/nfl/transactions/",
+        "source_account": "CBS Sports"
+      },
+      {
+        "event_date": "2026-03-13",
+        "status": "Confirmed",
+        "status_kind": "confirmed",
+        "label": "Emanuel Wilson (RB) Signed/unrest FA One-year contract (through 2026)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -86233,7 +86242,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Osa Odighizuwa Traded for 2026 third-round draft pick",
+        "label": "Osa Odighizuwa (DT) Traded for 2026 third-round draft pick",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -86242,7 +86251,7 @@
         "event_date": "2026-03-12",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Bryce Huff Retired",
+        "label": "Bryce Huff (EDGE) Retired",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -89347,7 +89356,7 @@
         "event_date": "2026-03-13",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Jake Browning Signed/unrest FA One-year contract (through 2026)",
+        "label": "Jake Browning (QB) Signed/unrest FA One-year contract (through 2026)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -89356,7 +89365,7 @@
         "event_date": "2026-03-13",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "A'Shawn Robinson Signed One-year contract (through 2026)",
+        "label": "A'Shawn Robinson (EDGE) Signed One-year contract (through 2026)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -89365,7 +89374,7 @@
         "event_date": "2026-03-12",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Miles Killebrew Signed/unrest FA One-year contract (through 2026)",
+        "label": "Miles Killebrew (S) Signed/unrest FA One-year contract (through 2026)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -92761,7 +92770,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Solomon Thomas Traded w/ pick for 2026 seventh-round pick",
+        "label": "Solomon Thomas (EDGE) Traded w/ pick for 2026 seventh-round pick",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -92770,7 +92779,7 @@
         "event_date": "2026-03-11",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Jermaine Johnson II Traded for NT T'Vondre Sweat",
+        "label": "Jermaine Johnson II (LB) Traded for NT T'Vondre Sweat",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -95375,7 +95384,7 @@
         "event_date": "2026-03-06",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Marshon Lattimore Cut",
+        "label": "Marshon Lattimore (CB) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -95384,7 +95393,7 @@
         "event_date": "2026-03-03",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Tyler Biadasz Cut",
+        "label": "Tyler Biadasz (IOL) Cut",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"
@@ -95393,7 +95402,7 @@
         "event_date": "2026-03-13",
         "status": "Confirmed",
         "status_kind": "confirmed",
-        "label": "Van Jefferson Signed/unrest FA One-year contract (through 2026)",
+        "label": "Van Jefferson (WR) Signed/unrest FA One-year contract (through 2026)",
         "affects_team_needs": true,
         "source_url": "https://www.cbssports.com/nfl/transactions/",
         "source_account": "CBS Sports"

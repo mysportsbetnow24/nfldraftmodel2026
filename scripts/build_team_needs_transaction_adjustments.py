@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CBS_TXN_PATH = ROOT / "data" / "processed" / "cbs_nfl_transactions_2026.csv"
 OVERRIDE_PATH = ROOT / "data" / "sources" / "manual" / "transactions_overrides_2026.csv"
+INSIDER_PATH = ROOT / "data" / "sources" / "manual" / "insider_transactions_feed_2026.csv"
 OUT_PATH = ROOT / "data" / "sources" / "team_needs_transaction_adjustments_2026.csv"
 REPORT_PATH = ROOT / "data" / "outputs" / "team_needs_transaction_adjustments_report_2026.md"
 
@@ -118,6 +119,7 @@ def build_adjustments(window_days: int = 7) -> list[dict]:
 
     cbs_rows = _read_csv(CBS_TXN_PATH)
     ov_rows = _read_csv(OVERRIDE_PATH)
+    insider_rows = _read_csv(INSIDER_PATH)
 
     events: list[dict] = []
 
@@ -226,6 +228,45 @@ def build_adjustments(window_days: int = 7) -> list[dict]:
                     "source_url": str(row.get("source_url", "")).strip(),
                 }
             )
+
+    for row in insider_rows:
+        pos = _norm_pos(row.get("position", ""))
+        if not pos:
+            continue
+        event_date = _safe_date(row.get("event_date", ""))
+        if event_date is None or event_date < min_date:
+            continue
+        tx_status = str(row.get("transaction_status", "")).strip().lower() or "confirmed"
+        apply_raw = row.get("apply_to_team_needs", "")
+        apply_to_needs = _is_truthy(apply_raw) if str(apply_raw).strip() else _is_confirmed_status(tx_status)
+        if not apply_to_needs:
+            continue
+        team = str(row.get("team", "")).strip().upper()
+        if not team:
+            continue
+        weight = _safe_float(row.get("impact_weight"), 0.0)
+        if abs(weight) < 0.001:
+            action_text = str(row.get("action_text", "")).strip().lower()
+            if any(k in action_text for k in ("re-signed", "resigned", "extension", "signed", "claimed", "activated")):
+                weight = -0.8
+            elif any(k in action_text for k in ("released", "waived", "retired", "traded")):
+                weight = 1.0
+            elif "injured reserve" in action_text:
+                weight = 0.6
+        if abs(weight) < 0.001:
+            continue
+        events.append(
+            {
+                "event_date": event_date,
+                "team": team,
+                "position": pos,
+                "weight": weight,
+                "transaction_status": tx_status,
+                "player_name": str(row.get("player_name", "")).strip(),
+                "action_text": str(row.get("action_text", "")).strip(),
+                "source_url": str(row.get("source_url", "")).strip(),
+            }
+        )
 
     grouped: dict[tuple[str, str], dict] = defaultdict(
         lambda: {

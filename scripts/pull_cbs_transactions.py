@@ -9,10 +9,17 @@ import ssl
 import urllib.request
 from pathlib import Path
 
+try:
+    import polars as pl
+except Exception:  # pragma: no cover
+    pl = None
+
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED_PATH = ROOT / "data" / "processed" / "cbs_nfl_transactions_2026.csv"
 REPORT_PATH = ROOT / "data" / "outputs" / "cbs_transactions_pull_report_2026.md"
 SOURCE_URL = "https://www.cbssports.com/nfl/transactions/"
+NFLVERSE_PLAYERS_PATH = ROOT / "data" / "sources" / "external" / "nflverse" / "players.parquet"
+NFLVERSE_ROSTERS_PATH = ROOT / "data" / "sources" / "external" / "nflverse" / "rosters_weekly.parquet"
 
 MONTHS = (
     "January",
@@ -44,6 +51,46 @@ TABLE_SECTION_RE = re.compile(
     r'(?is)<h4[^>]*class="TableBase-title[^"]*"[^>]*>(?P<event_date>.*?)</h4>.*?<tbody>(?P<tbody>.*?)</tbody>'
 )
 TABLE_ROW_RE = re.compile(r'(?is)<tr[^>]*class="TableBase-bodyTr"[^>]*>(?P<row>.*?)</tr>')
+NON_ALNUM_RE = re.compile(r"[^a-z0-9\s-]")
+
+POSITION_MAP = {
+    "QB": "QB",
+    "RB": "RB",
+    "HB": "RB",
+    "FB": "RB",
+    "WR": "WR",
+    "TE": "TE",
+    "OT": "OT",
+    "T": "OT",
+    "LT": "OT",
+    "RT": "OT",
+    "OL": "OT",
+    "OG": "IOL",
+    "LG": "IOL",
+    "RG": "IOL",
+    "G": "IOL",
+    "C": "IOL",
+    "OC": "IOL",
+    "EDGE": "EDGE",
+    "DE": "EDGE",
+    "DL": "DT",
+    "DT": "DT",
+    "NT": "DT",
+    "IDL": "DT",
+    "LB": "LB",
+    "ILB": "LB",
+    "OLB": "LB",
+    "MLB": "LB",
+    "CB": "CB",
+    "DB": "CB",
+    "S": "S",
+    "FS": "S",
+    "SS": "S",
+    "SAF": "S",
+    "K": "",
+    "P": "",
+    "LS": "",
+}
 
 
 def _fetch(url: str) -> str:
@@ -146,6 +193,63 @@ def _clean_html_text(value: str) -> str:
     cleaned = re.sub(r"(?s)<[^>]+>", " ", cleaned)
     cleaned = html.unescape(cleaned)
     return re.sub(r"\s+", " ", cleaned).strip()
+
+
+def _canon_name(name: str) -> str:
+    cleaned = str(name or "").lower().strip().replace(".", "").replace("'", "")
+    cleaned = NON_ALNUM_RE.sub(" ", cleaned)
+    return re.sub(r"\s+", " ", cleaned).strip()
+
+
+def _normalize_position(raw: str) -> str:
+    return POSITION_MAP.get(str(raw or "").strip().upper(), "")
+
+
+def _build_position_lookup() -> dict[str, str]:
+    if pl is None:
+        return {}
+
+    lookup: dict[str, str] = {}
+
+    if NFLVERSE_PLAYERS_PATH.exists():
+        try:
+            players = pl.read_parquet(NFLVERSE_PLAYERS_PATH).select(["display_name", "position"])
+            for row in players.iter_rows(named=True):
+                name = _canon_name(row.get("display_name", ""))
+                pos = _normalize_position(row.get("position", ""))
+                if name and pos and name not in lookup:
+                    lookup[name] = pos
+        except Exception:
+            pass
+
+    if NFLVERSE_ROSTERS_PATH.exists():
+        try:
+            rosters = pl.read_parquet(NFLVERSE_ROSTERS_PATH).select(["full_name", "position"])
+            for row in rosters.iter_rows(named=True):
+                name = _canon_name(row.get("full_name", ""))
+                pos = _normalize_position(row.get("position", ""))
+                if name and pos and name not in lookup:
+                    lookup[name] = pos
+        except Exception:
+            pass
+
+    return lookup
+
+
+def _enrich_missing_positions(rows: list[dict]) -> list[dict]:
+    lookup = _build_position_lookup()
+    if not lookup:
+        return rows
+    for row in rows:
+        if str(row.get("position") or "").strip():
+            continue
+        name_key = _canon_name(row.get("player_name", ""))
+        if not name_key:
+            continue
+        inferred = lookup.get(name_key, "")
+        if inferred:
+            row["position"] = inferred
+    return rows
 
 
 def _parse_table_transactions(page_html: str) -> list[dict]:
@@ -265,7 +369,7 @@ def parse_transactions(page_html: str) -> list[dict]:
             continue
         seen.add(key)
         out.append(r)
-    return out
+    return _enrich_missing_positions(out)
 
 
 def _write_csv(path: Path, rows: list[dict]) -> None:
