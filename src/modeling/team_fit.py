@@ -50,10 +50,12 @@ CFBD_BLOCKLIST_COLUMNS = {
 }
 
 _POSITION_TEAM_REPEAT_COUNTS: dict[str, dict[str, int]] = defaultdict(dict)
+_POSITION_ROLE_TEAM_REPEAT_COUNTS: dict[str, dict[str, dict[str, int]]] = defaultdict(lambda: defaultdict(dict))
 
 
 def reset_team_fit_state() -> None:
     _POSITION_TEAM_REPEAT_COUNTS.clear()
+    _POSITION_ROLE_TEAM_REPEAT_COUNTS.clear()
 
 
 def load_team_profiles(path: Path | None = None) -> List[dict]:
@@ -753,9 +755,123 @@ def _repeat_fit_penalty(position: str, team: str, prospect_rank_seed: int | None
     return min(0.20, penalty)
 
 
+def _role_bucket(position: str, role_hint: str, scheme_hint: str) -> str:
+    role = str(role_hint or "").lower()
+    scheme = str(scheme_hint or "").lower()
+    text = f"{role} {scheme}"
+
+    if position == "QB":
+        if any(token in text for token in {"movement", "creator", "rpo", "boot", "play-action"}):
+            return "movement_creator"
+        if any(token in text for token in {"distributor", "structure", "timing", "pocket"}):
+            return "structure_distributor"
+        return "balanced_qb"
+
+    if position == "RB":
+        if any(token in text for token in {"one-cut", "slasher", "wide-zone", "zone"}):
+            return "zone_runner"
+        if any(token in text for token in {"bruiser", "grinder", "gap", "duo", "power"}):
+            return "power_runner"
+        if any(token in text for token in {"every-down", "passing-down utility", "feature", "receiving"}):
+            return "feature_back"
+        return "balanced_back"
+
+    if position == "WR":
+        if any(token in text for token in {"field-stretching", "vertical", "boundary", "x receiver"}):
+            return "boundary_vertical"
+        if any(token in text for token in {"slot", "movement", "separator", "alignment-flexible", "z receiver"}):
+            return "separator_space"
+        return "balanced_receiver"
+
+    if position == "TE":
+        if any(token in text for token in {"move", "detached", "mismatch", "flex"}):
+            return "move_te"
+        if any(token in text for token in {"in-line", "attach", "y-tight", "inline"}):
+            return "inline_te"
+        return "balanced_te"
+
+    if position in {"OT", "IOL"}:
+        if any(token in text for token in {"movement", "zone", "wide-zone"}):
+            return "zone_mover"
+        if any(token in text for token in {"power", "drive", "displacement", "gap", "duo"}):
+            return "power_displacer"
+        if any(token in text for token in {"pass-pro", "pocket-control", "translator"}):
+            return "pass_pro"
+        return "balanced_ol"
+
+    if position == "EDGE":
+        if any(token in text for token in {"wide-alignment", "speed pressure", "rush specialist", "upfield"}):
+            return "speed_edge"
+        if any(token in text for token in {"power edge", "edge-setting", "compress", "long-arm"}):
+            return "power_edge"
+        if any(token in text for token in {"stand-up", "sam", "pressure linebacker", "hybrid"}):
+            return "hybrid_edge"
+        return "balanced_edge"
+
+    if position == "DT":
+        if any(token in text for token in {"one-gap", "three-tech", "disruptor", "upfield"}):
+            return "penetrating_dt"
+        if any(token in text for token in {"anchor", "double-team", "shade", "nose"}):
+            return "anchor_dt"
+        return "balanced_dt"
+
+    if position == "LB":
+        if any(token in text for token in {"coverage", "will", "overhang", "star", "run-and-chase"}):
+            return "coverage_lb"
+        if any(token in text for token in {"mike", "thumper", "stack-and-shed"}):
+            return "box_lb"
+        if any(token in text for token in {"sam", "pressure", "blitz"}):
+            return "pressure_lb"
+        return "balanced_lb"
+
+    if position == "CB":
+        if any(token in text for token in {"outside matchup", "press-match", "travel-capable", "boundary"}):
+            return "outside_cb"
+        if any(token in text for token in {"off-zone", "pattern-match zone"}):
+            return "zone_cb"
+        if any(token in text for token in {"nickel", "slot"}):
+            return "nickel_cb"
+        return "balanced_cb"
+
+    if position == "S":
+        if any(token in text for token in {"eraser", "range-first", "split safety", "deep"}):
+            return "deep_safety"
+        if any(token in text for token in {"robber", "box", "pressure", "downhill"}):
+            return "box_safety"
+        if any(token in text for token in {"big nickel", "matchup", "slot"}):
+            return "big_nickel"
+        return "balanced_safety"
+
+    return "balanced"
+
+
+def _role_bucket_repeat_penalty(
+    position: str,
+    role_bucket: str,
+    team: str,
+    prospect_rank_seed: int | None,
+) -> float:
+    if not role_bucket or role_bucket.startswith("balanced"):
+        return 0.0
+    team_counts = _POSITION_ROLE_TEAM_REPEAT_COUNTS.get(position, {}).get(role_bucket, {})
+    count = int(team_counts.get(team, 0))
+    if count == 0:
+        return 0.0
+    seed = int(prospect_rank_seed or 120)
+    step = 0.060 if seed <= 40 else 0.045 if seed <= 100 else 0.030
+    return min(0.16, count * step)
+
+
 def _record_team_fit(position: str, team: str) -> None:
     team_counts = _POSITION_TEAM_REPEAT_COUNTS.setdefault(position, {})
     team_counts[team] = int(team_counts.get(team, 0)) + 1
+
+
+def _record_role_bucket_fit(position: str, role_bucket: str, team: str) -> None:
+    if not role_bucket or role_bucket.startswith("balanced"):
+        return
+    bucket_counts = _POSITION_ROLE_TEAM_REPEAT_COUNTS[position].setdefault(role_bucket, {})
+    bucket_counts[team] = int(bucket_counts.get(team, 0)) + 1
 
 
 def _candidate_team_pool(
@@ -770,6 +886,7 @@ def _candidate_team_pool(
 ) -> list[dict]:
     need_count, fit_count = _fit_pool_sizes(position, prospect_rank_seed)
     draft_floor = _minimum_draft_plausibility(prospect_rank_seed)
+    role_bucket = _role_bucket(position, role_hint, scheme_hint)
 
     draft_scores = {
         str(row.get("team", "")): _draft_order_score(str(row.get("team", "")), position, prospect_rank_seed)
@@ -813,6 +930,12 @@ def _candidate_team_pool(
                 scheme_hint=scheme_hint,
                 athletic_score=athletic_score,
             )
+            - _role_bucket_repeat_penalty(
+                position,
+                role_bucket,
+                str(row.get("team", "")),
+                prospect_rank_seed,
+            )
         ),
         reverse=True,
     )
@@ -839,6 +962,7 @@ def best_team_fit(
 ) -> Tuple[str, float]:
     ctx_map = load_team_needs_context()
     team_rows = load_team_profiles()
+    role_bucket = _role_bucket(position, role_hint, scheme_hint)
     candidate_rows = _candidate_team_pool(
         position,
         team_rows,
@@ -880,11 +1004,13 @@ def best_team_fit(
         )
         score *= _draft_plausibility_multiplier(draft_component, prospect_rank_seed)
         score -= _repeat_fit_penalty(position, team, prospect_rank_seed)
+        score -= _role_bucket_repeat_penalty(position, role_bucket, team, prospect_rank_seed)
         if score > best_score:
             best_score = score
             best_team = team
     if best_team:
         _record_team_fit(position, best_team)
+        _record_role_bucket_fit(position, role_bucket, best_team)
     return best_team, round(best_score * 100.0, 2)
 
 

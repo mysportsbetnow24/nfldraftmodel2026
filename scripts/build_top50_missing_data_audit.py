@@ -11,6 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 BOARD_PATH = ROOT / "data" / "processed" / "big_board_2026.csv"
 CSV_OUT = ROOT / "data" / "outputs" / "top50_missing_data_audit_2026.csv"
 MD_OUT = ROOT / "data" / "outputs" / "top50_missing_data_audit_2026.md"
+QUEUE_CSV_OUT = ROOT / "data" / "outputs" / "top50_tuning_queue_2026.csv"
+QUEUE_MD_OUT = ROOT / "data" / "outputs" / "top50_tuning_queue_2026.md"
 
 
 def main() -> None:
@@ -63,6 +65,68 @@ def main() -> None:
     ).round(3)
     board = board.sort_values(["priority_score", "consensus_rank"], ascending=[False, True])
 
+    market_mean = pd.to_numeric(board.get("consensus_board_mean_rank"), errors="coerce")
+    board_rank = pd.to_numeric(board.get("consensus_rank"), errors="coerce")
+    draft_age_available = pd.to_numeric(board.get("draft_age_available", 0), errors="coerce").fillna(0.0)
+
+    board["market_gap"] = (market_mean - board_rank).round(2)
+    board["market_gap_abs"] = (market_mean - board_rank).abs().fillna(0.0).round(2)
+    board["top_board_weight"] = (1.0 / board_rank.clip(lower=1.0)).round(4)
+    board["draft_age_missing"] = (draft_age_available < 0.5).astype(int)
+    board["testing_action_needed"] = (
+        (pd.to_numeric(board.get("athletic_metric_coverage_rate", 0.0), errors="coerce").fillna(0.0) < 0.60)
+        | (pd.to_numeric(board.get("athletic_metric_missing_count", 0), errors="coerce").fillna(0.0) >= 5)
+    ).astype(int)
+    board["film_action_needed"] = (
+        pd.to_numeric(board.get("film_trait_coverage", 0.0), errors="coerce").fillna(0.0) <= 0.05
+    ).astype(int)
+    board["production_action_needed"] = (
+        pd.to_numeric(board.get("cfb_prod_reliability", 0.0), errors="coerce").fillna(0.0) < 0.70
+    ).astype(int)
+    board["disagreement_action_needed"] = (board["market_gap_abs"] >= 10.0).astype(int)
+
+    def recommended_actions(row: pd.Series) -> str:
+        actions: list[str] = []
+        if int(row.get("testing_action_needed", 0) or 0):
+            actions.append("fill testing")
+        if int(row.get("film_action_needed", 0) or 0):
+            actions.append("add film traits")
+        if int(row.get("production_action_needed", 0) or 0):
+            actions.append("verify production context")
+        if int(row.get("draft_age_missing", 0) or 0):
+            actions.append("add age data")
+        if int(row.get("disagreement_action_needed", 0) or 0):
+            actions.append("audit model-vs-market gap")
+        return "; ".join(actions)
+
+    def tuning_lane(row: pd.Series) -> str:
+        actions = recommended_actions(row)
+        if "add film traits" in actions and "audit model-vs-market gap" in actions:
+            return "film + disagreement"
+        if "fill testing" in actions and "add film traits" in actions:
+            return "testing + film"
+        if "add film traits" in actions:
+            return "film-first"
+        if "fill testing" in actions:
+            return "testing-first"
+        if "audit model-vs-market gap" in actions:
+            return "disagreement review"
+        return "maintenance"
+
+    board["recommended_actions"] = board.apply(recommended_actions, axis=1)
+    board["tuning_lane"] = board.apply(tuning_lane, axis=1)
+    board["tuning_priority_score"] = (
+        board["priority_score"]
+        + board["market_gap_abs"].fillna(0.0) * 0.08
+        + (1.0 - board["top_board_weight"].rank(pct=True)) * 0.75
+        + board["draft_age_missing"] * 0.25
+    ).round(3)
+    tuning_queue = board.sort_values(
+        ["tuning_priority_score", "priority_score", "consensus_rank"],
+        ascending=[False, False, True],
+    ).copy()
+    tuning_queue["queue_rank"] = range(1, len(tuning_queue) + 1)
+
     CSV_OUT.parent.mkdir(parents=True, exist_ok=True)
     board[[c for c in keep_cols + ["audit_flags", "priority_score"] if c in board.columns]].to_csv(CSV_OUT, index=False, quoting=csv.QUOTE_MINIMAL)
 
@@ -99,8 +163,67 @@ def main() -> None:
         ]
     )
     MD_OUT.write_text("\n".join(lines))
+
+    queue_cols = [
+        "queue_rank",
+        "consensus_rank",
+        "player_name",
+        "position",
+        "school",
+        "final_grade",
+        "consensus_board_mean_rank",
+        "market_gap",
+        "priority_score",
+        "tuning_priority_score",
+        "tuning_lane",
+        "recommended_actions",
+        "audit_flags",
+        "athletic_metric_coverage_rate",
+        "film_trait_coverage",
+        "cfb_prod_reliability",
+        "best_team_fit",
+    ]
+    tuning_queue[[c for c in queue_cols if c in tuning_queue.columns]].to_csv(
+        QUEUE_CSV_OUT, index=False, quoting=csv.QUOTE_MINIMAL
+    )
+
+    queue_lines = [
+        "# Top-50 Tuning Queue",
+        "",
+        f"- source: `{BOARD_PATH}`",
+        f"- rows: `{len(tuning_queue)}`",
+        "",
+        "## Highest-Leverage Tuning Targets",
+        "",
+        "| Queue | Rank | Player | Pos | Priority | Market Gap | Lane | Recommended Actions | Current Fit |",
+        "|---:|---:|---|---|---:|---:|---|---|---|",
+    ]
+    for _, row in tuning_queue.head(25).iterrows():
+        queue_lines.append(
+            f"| {int(row.get('queue_rank', 0))} | {int(row.get('consensus_rank', 0))} | {row.get('player_name', '')} | "
+            f"{row.get('position', '')} | {float(row.get('tuning_priority_score', 0.0)):.3f} | "
+            f"{float(row.get('market_gap', 0.0)):+.2f} | {row.get('tuning_lane', '')} | "
+            f"{row.get('recommended_actions', '')} | {row.get('best_team_fit', '')} |"
+        )
+    queue_lines.extend(
+        [
+            "",
+            "## Lane Definitions",
+            "",
+            "- `testing + film`: player needs both verified athletic coverage and structured film traits before the rank should harden.",
+            "- `film + disagreement`: player is thin on film coverage and also far from market consensus; strongest candidate for focused review.",
+            "- `film-first`: athletic and production coverage are usable, but the profile still lacks structured scouting traits.",
+            "- `testing-first`: most important next step is verified combine/pro-day coverage.",
+            "- `disagreement review`: coverage is serviceable, but the model is taking a strong stand versus the market.",
+            "",
+            f"Full CSV: `{QUEUE_CSV_OUT}`",
+        ]
+    )
+    QUEUE_MD_OUT.write_text("\n".join(queue_lines))
     print(f"Wrote {CSV_OUT}")
     print(f"Wrote {MD_OUT}")
+    print(f"Wrote {QUEUE_CSV_OUT}")
+    print(f"Wrote {QUEUE_MD_OUT}")
 
 
 if __name__ == "__main__":
