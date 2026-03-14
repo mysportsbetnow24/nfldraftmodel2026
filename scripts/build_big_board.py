@@ -3635,8 +3635,13 @@ def _build_scouting_sections(
     cfb_rb_explosive_rate,
     cfb_rb_missed_tackles_forced_per_touch,
     cfb_edge_pressure_rate,
+    cfb_edge_sacks,
     cfb_edge_sacks_per_pr_snap,
     cfb_edge_qb_hurries,
+    sg_dl_pass_rush_grade,
+    sg_dl_true_pass_set_win_rate,
+    sg_dl_true_pass_set_prp,
+    sg_dl_total_pressures,
     cfb_db_coverage_plays_per_target,
     cfb_db_yards_allowed_per_coverage_snap,
     cfb_db_int,
@@ -3724,8 +3729,13 @@ def _build_scouting_sections(
     rb_explosive = _f(cfb_rb_explosive_rate)
     rb_mtf = _f(cfb_rb_missed_tackles_forced_per_touch)
     edge_pr = _f(cfb_edge_pressure_rate)
+    edge_sacks = _f(cfb_edge_sacks)
     edge_sacks_pr = _f(cfb_edge_sacks_per_pr_snap)
     edge_hurries = _f(cfb_edge_qb_hurries)
+    edge_pass_rush_grade = _f(sg_dl_pass_rush_grade)
+    edge_true_pass_set_win_rate = _f(sg_dl_true_pass_set_win_rate)
+    edge_true_pass_set_prp = _f(sg_dl_true_pass_set_prp)
+    edge_total_pressures = _f(sg_dl_total_pressures)
     db_plays_ball = _f(cfb_db_coverage_plays_per_target)
     db_yards_cov = _f(cfb_db_yards_allowed_per_coverage_snap)
     db_int = _f(cfb_db_int)
@@ -3781,6 +3791,56 @@ def _build_scouting_sections(
     player_how_he_wins_notes = _compact_text(language_row.get("how_he_wins_notes", ""), 210)
     player_primary_concerns_notes = _compact_text(language_row.get("primary_concerns_notes", ""), 210)
     player_role_projection_notes = _compact_text(language_row.get("role_projection_notes", ""), 220)
+
+    def _edge_disruption_is_strong() -> bool:
+        return any(
+            [
+                edge_pr is not None and edge_pr >= 0.16,
+                edge_sacks is not None and edge_sacks >= 8.0,
+                edge_pass_rush_grade is not None and edge_pass_rush_grade >= 82.0,
+                edge_true_pass_set_win_rate is not None and edge_true_pass_set_win_rate >= 20.0,
+                edge_true_pass_set_prp is not None and edge_true_pass_set_prp >= 8.5,
+                edge_total_pressures is not None and edge_total_pressures >= 35.0,
+            ]
+        )
+
+    def _sanitize_primary_concern_notes(text: str) -> str:
+        raw = str(text or "").strip()
+        if not raw:
+            return ""
+        lines = [line.strip() for line in re.split(r"\n+", raw) if line.strip()]
+        keep: list[str] = []
+        strong_edge = pos == "EDGE" and _edge_disruption_is_strong()
+        edge_speed_role = any(
+            phrase in role_lower
+            for phrase in [
+                "speed pressure creator",
+                "upfield speed",
+                "wide-alignment speed",
+                "speed rusher",
+            ]
+        )
+        edge_getoff_supported = (
+            edge_speed_role
+            or (forty_pct is not None and forty_pct >= 65)
+            or (ten_pct is not None and ten_pct >= 65)
+            or (edge_pr is not None and edge_pr >= 0.16)
+            or _edge_disruption_is_strong()
+        )
+        for line in lines:
+            normalized = line.lstrip("-*• ").strip().lower()
+            if strong_edge and "total hurry volume" in normalized:
+                continue
+            if edge_getoff_supported and "burst/explosion profile is below" in normalized:
+                continue
+            if "pff grade " in normalized:
+                continue
+            keep.append(line)
+        if not keep:
+            return ""
+        return "\n".join(keep)
+
+    player_primary_concerns_notes = _sanitize_primary_concern_notes(player_primary_concerns_notes)
 
     def _qb_style_profile() -> str:
         if qb_epa is None and qb_press is None and qb_int is None:
@@ -4502,9 +4562,15 @@ def _build_scouting_sections(
             or (forty_pct is not None and forty_pct >= 65)
             or (ten_pct is not None and ten_pct >= 65)
             or (edge_pr is not None and edge_pr >= 0.16)
+            or _edge_disruption_is_strong()
         )
         edge_disruption_supported = (
             (edge_pr is not None and edge_pr >= 0.16)
+            or (edge_sacks is not None and edge_sacks >= 8.0)
+            or (edge_pass_rush_grade is not None and edge_pass_rush_grade >= 82.0)
+            or (edge_true_pass_set_win_rate is not None and edge_true_pass_set_win_rate >= 20.0)
+            or (edge_true_pass_set_prp is not None and edge_true_pass_set_prp >= 8.5)
+            or (edge_total_pressures is not None and edge_total_pressures >= 35.0)
             or edge_speed_role
             or "upfield rush" in scheme_lower
         )
@@ -5560,8 +5626,13 @@ def main() -> None:
             cfb_rb_explosive_rate=cfb.get("cfb_rb_explosive_rate", ""),
             cfb_rb_missed_tackles_forced_per_touch=cfb.get("cfb_rb_missed_tackles_forced_per_touch", ""),
             cfb_edge_pressure_rate=cfb.get("cfb_edge_pressure_rate", ""),
+            cfb_edge_sacks=cfb.get("cfb_edge_sacks", ""),
             cfb_edge_sacks_per_pr_snap=cfb.get("cfb_edge_sacks_per_pr_snap", ""),
             cfb_edge_qb_hurries=cfb.get("cfb_edge_qb_hurries", ""),
+            sg_dl_pass_rush_grade=cfb.get("sg_dl_pass_rush_grade", ""),
+            sg_dl_true_pass_set_win_rate=cfb.get("sg_dl_true_pass_set_win_rate", ""),
+            sg_dl_true_pass_set_prp=cfb.get("sg_dl_true_pass_set_prp", ""),
+            sg_dl_total_pressures=cfb.get("sg_dl_total_pressures", ""),
             cfb_db_coverage_plays_per_target=cfb.get("cfb_db_coverage_plays_per_target", ""),
             cfb_db_yards_allowed_per_coverage_snap=cfb.get("cfb_db_yards_allowed_per_coverage_snap", ""),
             cfb_db_int=cfb.get("cfb_db_int", ""),
@@ -6339,8 +6410,13 @@ def main() -> None:
             cfb_rb_explosive_rate=row.get("cfb_rb_explosive_rate", ""),
             cfb_rb_missed_tackles_forced_per_touch=row.get("cfb_rb_missed_tackles_forced_per_touch", ""),
             cfb_edge_pressure_rate=row.get("cfb_edge_pressure_rate", ""),
+            cfb_edge_sacks=row.get("cfb_edge_sacks", ""),
             cfb_edge_sacks_per_pr_snap=row.get("cfb_edge_sacks_per_pr_snap", ""),
             cfb_edge_qb_hurries=row.get("cfb_edge_qb_hurries", ""),
+            sg_dl_pass_rush_grade=row.get("sg_dl_pass_rush_grade", ""),
+            sg_dl_true_pass_set_win_rate=row.get("sg_dl_true_pass_set_win_rate", ""),
+            sg_dl_true_pass_set_prp=row.get("sg_dl_true_pass_set_prp", ""),
+            sg_dl_total_pressures=row.get("sg_dl_total_pressures", ""),
             cfb_db_coverage_plays_per_target=row.get("cfb_db_coverage_plays_per_target", ""),
             cfb_db_yards_allowed_per_coverage_snap=row.get("cfb_db_yards_allowed_per_coverage_snap", ""),
             cfb_db_int=row.get("cfb_db_int", ""),
